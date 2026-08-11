@@ -8,7 +8,7 @@ Rather than treating a single hierarchy as universally correct, the framework ex
 
 ## 🖼️ Framework Visual
 
-![Many Pyramids, One Blueprint](visual/interconnected-pyramids.png)
+![Many Pyramids, One Blueprint](interconnected-pyramids.png)
 
 **Many pyramids. Many perspectives. One interconnected system.**
 
