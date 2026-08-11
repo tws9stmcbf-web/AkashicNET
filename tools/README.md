@@ -4,6 +4,17 @@ A collection of practical, reusable tools developed within the Noetic Sciences T
 
 These tools are intended to support reflection, learning, observation, experimentation and human development.
 
+## 🔺 First Tool
+
+### Interconnected Pyramids Reflection Tool
+
+A simple self-reflection framework for exploring which areas of life may currently need attention.
+
+[Open the Interconnected Pyramids Reflection Tool](interconnected-pyramids-reflection.md)
+
+**Observe → Reflect → Experiment → Learn → Adapt**
+
+
 ## 🧩 Tool Categories
 
 ### 🧠 Mind
