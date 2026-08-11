@@ -48,6 +48,7 @@ This repository also includes foundational guidance for the Toolkit's research p
 - [`research/research-database-framework.md`](research-database-framework.md) — structured research metadata and organization
 - [`research/evidence-rating-methodology.md`](evidence-rating-methodology.md) — evidence-rating methodology and transparent classification
 - [`research/open-research-questions.md`](open-research-questions.md) — documenting open questions and gaps
+- [`research/research-landscape.md`](research-landscape.md) — structured overview of established, emerging, mixed and speculative evidence
 
 ## Research Questions
 
