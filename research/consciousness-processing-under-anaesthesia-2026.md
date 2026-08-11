@@ -99,10 +99,10 @@ The Reddit post is therefore treated as a **discovery and discussion source**, r
 
 ## 🔗 Related Modules
 
-- [[Consciousness & Human Potential]]
-- [[Research]]
-- [[Experiments & Citizen Science]]
-- [[References]]
+- [Consciousness & Human Potential](../modules/consciousness-human-potential/README.md)
+- [Research](../research/README.md)
+- [Experiments & Citizen Science](../experiments/README.md)
+- [References](../references/README.md)
 
 ## 🚀 Research Question for the Toolkit
 
