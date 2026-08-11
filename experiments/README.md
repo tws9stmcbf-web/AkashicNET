@@ -46,6 +46,10 @@ Whenever possible, experiments should provide enough information for another per
 
 Negative or inconclusive results are valuable and should not be excluded simply because they do not support the original hypothesis.
 
+## 📄 Protocol Templates
+
+- [`experiments/citizen-science-protocol-template.md`](citizen-science-protocol-template.md) — reusable citizen-science protocol framework
+
 ## 🌱 Purpose
 
 The purpose of experimentation is not to prove a predetermined worldview.
