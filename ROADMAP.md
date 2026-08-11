@@ -16,7 +16,7 @@
 - [x] Build research database
 - [x] Add structured references
 - [x] Develop evidence-rating methodology
-- [ ] Document established and emerging research
+- [x] Document established and emerging research
 - [x] Identify open research questions
 
 ## 🧪 Phase 3 — Experiments
