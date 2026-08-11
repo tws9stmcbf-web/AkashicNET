@@ -6,6 +6,16 @@ An experimental modular framework for connecting different pyramid and hierarchy
 
 Rather than treating a single hierarchy as universally correct, the framework explores whether different models can be connected, rearranged and used as complementary perspectives.
 
+## 🖼️ Framework Visual
+
+![Many Pyramids, One Blueprint](visual/interconnected-pyramids.png)
+
+**Many pyramids. Many perspectives. One interconnected system.**
+
+This visual illustrates how different developmental, cognitive, wellbeing and consciousness models can be explored as complementary and interchangeable perspectives.
+
+## Core Idea
+
 ## Core Idea
 
 **Many pyramids → interchangeable layers → interconnected system**
