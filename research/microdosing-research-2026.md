@@ -1,131 +1,62 @@
-# 🍄 Microdosing Research
+## 🌍 Naturalistic Citizen-Science Context
 
-## Source
+The long-running r/microdosing FAQ is an important community source for this
+research record.
 
-**Community:** r/NeuronsToNirvana  
-**Post:** [Microdosing, Psychedelics & E/I Balance]  
-**Posted:** January 2026  
-**Type:** Community discussion / mechanistic hypothesis
+Originally published in September 2021 and updated in July 2023, the FAQ
+describes itself as a collaborative synthesis drawing on **more than
+100,000 anecdotal reports** from r/microdosing and related communities,
+alongside articles, studies, podcasts and videos. [oai_citation:0‡Reddit](https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/)
 
-The Reddit post explores a proposed relationship between psychedelic microdosing, excitation/inhibition (E/I) dynamics, dose, frequency and homeostatic adaptation.
+It therefore provides a substantial **naturalistic citizen-observation
+corpus** from which research questions can be generated.
 
-It is treated here as a **hypothesis-generating community source**, not as established scientific evidence.
+This is not equivalent to a controlled clinical dataset: Reddit users are
+self-selected, reports are not collected under a uniform protocol, and the
+observations cannot establish population-level causality.
 
-## 🔬 Primary Scientific Evidence
+### ⚡ Sweet-Spot Hypothesis
 
-### Prochazkova et al. (2026)
+The FAQ describes the goal of finding an individual **sub-threshold dose**
+based on observed effects and symptoms rather than assuming a universal
+dose. It also records anecdotal reports of improved workouts and running
+performance and proposes a possible relationship with a slight increase in
+adrenaline. [oai_citation:1‡Reddit](https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/)
 
-**Title:** *Cognitive and subjective effects of psilocybin microdosing: Results from two double-blind placebo-controlled longitudinal trials*
+For the Noetic Sciences Toolkit, this should be classified as:
 
-**Authors:** Luisa Prochazkova et al.  
-**Journal:** *Neuropharmacology*  
-**Year:** 2026  
-**Volume:** 283  
-**Article:** 110722  
-**DOI:** 10.1016/j.neuropharm.2025.110722
+**Community observation → working hypothesis**
 
-**Primary source:**  
-https://doi.org/10.1016/j.neuropharm.2025.110722
+not established pharmacology.
 
-## ❓ Research Question
+### 🌿 Set & Setting
 
-What effects does repeated psilocybin microdosing have on cognition, subjective experience, mood, social cognition and wellbeing when compared with placebo?
+The FAQ also explicitly discusses positive intention, self-care and
+**set and setting** as part of the microdosing experience. [oai_citation:2‡Reddit](https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/)
 
-## 🧪 Study Design
+This supports treating:
 
-The study reports two randomized, double-blind, placebo-controlled longitudinal trials conducted in semi-naturalistic settings.
+**Substance × Person × Set × Setting × Context**
 
-Researchers assessed multiple domains including:
+as potentially relevant variables when interpreting naturalistic reports.
 
-- Cognitive control
-- Memory
-- Social cognition
-- Subjective wellbeing
-- Mood
-- Subjective psychedelic effects
+### 🧪 Research Opportunity
 
-## 📊 Key Findings
+The community corpus could help identify recurring patterns that can then be
+tested prospectively:
 
-The study reported **no significant overall effects compared with placebo** on the behavioural or subjective measures after correction for multiple comparisons.
+**Naturalistic observations**
+→ **Pattern identification**
+→ **Hypothesis generation**
+→ **Physiological measurement**
+→ **Placebo-controlled testing**
+→ **Replication**
 
-Some initial signals were observed in areas including social cognition, mood and self-reported cognitive flexibility, but these did not remain statistically significant after correction.
+> **Citizen observation can tell us what to investigate; controlled research
+> helps determine what actually generalises.**
 
-Participants generally reported their subjective experiences positively, while negative bodily sensations were increased in the active condition.
+### 🔗 Community Source
 
-## ⚖️ Evidence Status
+**r/microdosing — FAQ/Tip 101: What is the sub-threshold dose?**
 
-**Emerging / mixed evidence**
-
-The current evidence does not support a broad claim that psilocybin microdosing reliably enhances cognitive or emotional functioning beyond placebo.
-
-At the same time, this does not establish that every individual experiences no effects.
-
-Individual differences, expectancy, dose, schedule, population and outcome measure remain important research questions.
-
-## 🧩 Community Hypothesis
-
-The r/NeuronsToNirvana post proposes that microdosing may interact with excitation/inhibition dynamics and homeostatic adaptation.
-
-For the Toolkit, this should currently be classified as:
-
-**Working hypothesis / mechanistic proposal**
-
-rather than established fact.
-
-## 🧐 Critical Questions
-
-- Which effects survive rigorous placebo-controlled testing?
-- How important are expectancy effects?
-- Do individual differences predict response?
-- Do dose and frequency alter outcomes?
-- Which outcomes are subjective versus objectively measurable?
-- Are effects different in clinical populations?
-- What are the longer-term effects of repeated exposure?
-- Can proposed neural mechanisms be experimentally tested?
-
-## 🧪 N-of-1 Observations
-
-Personal experiences can generate useful hypotheses but should not automatically be generalised.
-
-Useful observations should distinguish:
-
-**Baseline → Intervention → Context → Measure → Outcome → Alternative explanations**
-
-## 🔗 Evidence Chain
-
-**r/NeuronsToNirvana**  
-↓  
-Community hypothesis  
-↓  
-**Primary scientific research**  
-↓  
-Placebo-controlled evidence  
-↓  
-Critical assessment  
-↓  
-Future experiments
-
-## 🔗 Related Modules
-
-- [[Consciousness & Human Potential]]
-- [[Lifestyle Tools]]
-- [[Experiments & Citizen Science]]
-- [[References]]
-
-## 🚀 Toolkit Research Question
-
-> **Which reported effects of microdosing remain detectable when expectancy and placebo effects are rigorously controlled?**
-
-## 🌱 Broader Question
-
-Could microdosing effects vary substantially between individuals even when average effects across a population are small or null?
-
-This remains an empirical question requiring appropriately designed studies.
-
----
-
-> **Personal experience can generate a hypothesis. Controlled research tells us how confidently we can generalise it.**
-
-### ⚠️ Safety & Scope
-
-This record is for research and knowledge synthesis. It does not recommend psychedelic use, dosing or treatment.
+[oai_citation:3‡reddit.com](https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/?utm_source=chatgpt.com)
