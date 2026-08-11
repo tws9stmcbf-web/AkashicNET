@@ -49,6 +49,7 @@ Negative or inconclusive results are valuable and should not be excluded simply 
 ## 📄 Protocol Templates
 
 - [`experiments/citizen-science-protocol-template.md`](citizen-science-protocol-template.md) — reusable citizen-science protocol framework
+ - [`experiments/visualisation-protocol.md`](visualisation-protocol.md) — protocol for visualisation provenance, licensing and use
 
 ## 🌱 Purpose
 
