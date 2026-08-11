@@ -73,6 +73,10 @@ A useful reference entry should include, where available:
 - Evidence status
 - Brief relevance to the Toolkit
 
+## 📘 Reference Format
+
+For structured reference entries, see [`references/REFERENCE_FORMAT.md`](REFERENCE_FORMAT.md).
+
 ## 🧐 Critical Reading
 
 A citation does not automatically validate a claim.

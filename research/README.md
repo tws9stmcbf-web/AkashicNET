@@ -41,6 +41,14 @@ Whenever possible:
 7. Note conflicting evidence.
 8. Avoid overstating conclusions.
 
+## Research Infrastructure
+
+This repository also includes foundational guidance for the Toolkit's research process:
+
+- [`research/research-database-framework.md`](research-database-framework.md) — structured research metadata and organization
+- [`research/evidence-rating-methodology.md`](evidence-rating-methodology.md) — evidence-rating methodology and transparent classification
+- [`research/open-research-questions.md`](open-research-questions.md) — documenting open questions and gaps
+
 ## Research Questions
 
 This directory can also contain questions that do not yet have satisfactory answers.

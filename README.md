@@ -120,8 +120,12 @@ The project is **pro-inquiry, not pro-belief**.
 
 - [`modules/`](modules/) — Frameworks and Toolkit modules
 - [`research/`](research/) — Research materials
+- [`research/research-database-framework.md`](research/research-database-framework.md) — Structured research database framework
+- [`research/evidence-rating-methodology.md`](research/evidence-rating-methodology.md) — Evidence-rating methodology
+- [`research/open-research-questions.md`](research/open-research-questions.md) — Open research questions and gaps
 - [`experiments/`](experiments/) — Experiments and citizen science
 - [`references/`](references/) — Sources and bibliography
+- [`references/REFERENCE_FORMAT.md`](references/REFERENCE_FORMAT.md) — Structured reference format
 - [`data/`](data/) — Structured data and observations
 - [`tools/`](tools/) — Practical reusable tools
   - [🔺 Interconnected Pyramids Reflection Tool](tools/interconnected-pyramids-reflection.md)
