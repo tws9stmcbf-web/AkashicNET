@@ -22,7 +22,10 @@ Where available, prioritise:
 
 ## 🧭 Source Categories
 
+
 ### 🧠 Consciousness
+
+- [Katlowitz et al. (2026) — Plasticity and Language in the Anaesthetized Human Hippocampus](katlowitz-2026-anaesthetized-hippocampus.md)
 Research concerning consciousness, perception, cognition and subjective experience.
 
 ### 🧘 Contemplative Science
