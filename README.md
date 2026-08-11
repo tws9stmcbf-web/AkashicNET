@@ -124,6 +124,7 @@ The project is **pro-inquiry, not pro-belief**.
 - [`references/`](references/) — Sources and bibliography
 - [`data/`](data/) — Structured data and observations
 - [`tools/`](tools/) — Practical reusable tools
+  - [🔺 Interconnected Pyramids Reflection Tool](tools/interconnected-pyramids-reflection.md)
 - [`ROADMAP.md`](ROADMAP.md) — Development roadmap
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — Contribution guidelines
 
