@@ -28,6 +28,48 @@ This record reflects the verified public metadata state of the Akashic Library G
 
 The current environment does not provide a complete or authoritative inventory of the archive. The root folder is visible, but the contents are not enumerable using the unauthenticated public folder page alone.
 
+## Access assessment: can the current environment enumerate the archive?
+
+### 1. Can all folders be enumerated?
+
+No. The public HTML exposes the root folder landing page but not a full folder tree. There is no verified public listing of child folders from the current access method.
+
+### 2. Can files inside folders be enumerated?
+
+No. The public HTML does not expose a complete file listing inside the folder or any subfolders. There is no verifiable item inventory from this access path.
+
+### 3. Can file metadata be retrieved?
+
+No. The current access method does not expose file-level metadata such as file IDs, MIME types, timestamps, authors, or source fields for individual items.
+
+### 4. Can file sizes and types be retrieved?
+
+No. File sizes and MIME types are not exposed in the public HTML that was accessible here. The environment cannot establish actual file counts, sizes, or media types without a listing API.
+
+### 5. Can authors/sources be identified?
+
+Not reliably. The public root folder metadata exposes only the folder title "Books" and does not provide author names or source attribution for individual files.
+
+### 6. Can licences be determined?
+
+No. No licence or reuse notice was visible in the public HTML. The environment cannot establish reuse terms from the current access method.
+
+### 7. Can the complete collection count be established?
+
+No. The public folder does not expose a complete or verifiable item count. The current environment cannot establish the full collection size without an authenticated or API-backed listing.
+
+## Exact additional capability required
+
+The missing capability is an authenticated Google Drive API listing or equivalent Drive access that can enumerate the shared folder tree and return item metadata. This is required to determine:
+
+- child folders and related paths
+- files in each folder
+- item IDs, names, MIME types, sizes, owners, and timestamps
+- file counts and duplicate records
+- licence or reuse statements embedded in the Drive metadata or linked source documents
+- author/source fields when they are publicly available
+- actual audio/video durations and page counts where available
+
 ## Final verified totals
 
 - TOTAL FOLDERS: 1 root folder observed
