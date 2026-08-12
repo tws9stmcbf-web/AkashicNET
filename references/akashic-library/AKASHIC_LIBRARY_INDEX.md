@@ -2,9 +2,9 @@
 
 ## Scope and status
 
-This file records the discoverable public metadata for the Akashic Library Google Drive archive as of the current review.
+This file records the verified public metadata baseline for the Akashic Library Google Drive archive as observed from the unauthenticated public page in this environment.
 
-This is a provenance-first archival catalogue, not a verified local mirror. The public Google Drive page exposes a root folder titled "Books" but does not expose a reliable item-by-item listing or licence statement in the unauthenticated HTML observed in this environment.
+This is a provenance-first archival catalogue, not a verified local mirror. The public Google Drive page exposes a root folder titled "Books" but does not expose a reliable item-by-item listing, complete archive inventory, or clear licence statement in the public HTML. The baseline therefore reflects only what is actually visible and verifiable.
 
 ## Source provenance
 
@@ -14,17 +14,32 @@ This is a provenance-first archival catalogue, not a verified local mirror. The 
 - Canonical Toolkit framework: Library of Alexandria / Library of Infinite Love & Wisdom
 - Evidence boundary: not scientific evidence; archive metadata only
 
-## Current catalogued record
+## Verified baseline record
 
 | Title | Author / Source | Original URL | Drive path | Year | File type | Subject category | Source type | Licence / reuse | Provenance | Toolkit framework | Evidence status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Books | Public Google Drive folder (author not disclosed in public metadata) | https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ | root | unknown | folder | unknown | archive bundle | unknown / review required | link-only public metadata record | Library of Alexandria / Library of Infinite Love & Wisdom | Not scientific evidence; metadata only |
 
+## Verified baseline counts
+
+- Total folders: 1 root folder observed
+- Total files/items: 0 confirmed via public metadata alone
+- Authors/sources: 1 source label observed; authors not disclosed in public metadata
+- File types: 1 folder record observed; no individual file types confirmed
+- Subjects/topics: none confirmed at item level; root folder is labelled "Books"
+- Dates where available: none confirmed at item level
+- Stated licences/reuse permissions: none observed in public metadata
+- Duplicate items: 0 confirmed
+- Unavailable items: 0 confirmed; item-level availability cannot be established without a fuller listing
+- Metadata-only indexing candidates: 1 root folder record currently suitable for index-only provenance tracking
+- Explicitly permitted import items: 0 confirmed
+
 ## Notes
 
 - The public Drive URL is accessible and the folder title is visible as "Books".
-- No verified item-level listing, licence, or full archive inventory was discoverable from the unauthenticated public HTML available in this environment.
-- The importer therefore defaults to metadata-first indexing and explicit review rather than local copying.
+- No complete item list was discoverable from the unauthenticated public HTML available in this environment.
+- No item-level author, year, subject, or licence metadata was exposed in the accessed public page.
+- The importer therefore defaults to metadata-first indexing, explicit review, and a conservative verified baseline rather than pretending the collection is fully mapped.
 - This record preserves the canonical public source and keeps file-level rights decisions separate from the archive catalogue.
 
 ## Decision classification active
@@ -37,7 +52,6 @@ This is a provenance-first archival catalogue, not a verified local mirror. The 
 
 ## Data quality limits
 
-- authors / sources: 1 source label, but no verifiable author names were publicly exposed
 - folders: 1 root public folder observed
 - PDFs: 0 verified by public metadata alone
 - books: 0 verified by public metadata alone
@@ -46,10 +60,11 @@ This is a provenance-first archival catalogue, not a verified local mirror. The 
 - images: 0 verified by public metadata alone
 - estimated pages: not available
 - actual media duration: not available
+- duplicate detection: not applicable beyond the verified baseline, because no item-level inventory is available
 
 ## Import guardrails
 
-- Do not invent licence information.
+- Do not invent missing metadata or licensing.
 - Do not redistribute files without explicit rights review.
 - Do not treat the archive as a complete, validated corpus until a trusted listing or Drive API path confirms item-level metadata.
 - Continue with resumable batch processing only after a valid listing becomes available.
