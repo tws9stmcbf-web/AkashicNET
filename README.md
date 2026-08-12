@@ -35,6 +35,18 @@ The current publication focuses on Reddit community sources.
 
 **Google Drive ingestion is planned for a later phase and is not part of this publication snapshot.**
 
+## For Normal Users
+
+You do not need to be a developer to explore the project.
+
+- **Browse the toolkit:** open the public GitHub repository.
+- **Explore the archive:** open `references/community/reddit-uri-index.csv`.
+- **Follow source URLs:** use the indexed Reddit URLs to explore the original community material.
+- **Explore the project:** read the README and documentation to understand the provenance and validation approach.
+- **Run the toolkit:** technical users can clone the repository and use the documented tools locally.
+
+The current release is a **public PRE-ALPHA research archive**, not yet a standalone consumer application.
+
 ### Principles
 
 The toolkit is being developed around:
