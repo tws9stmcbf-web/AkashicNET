@@ -1,8 +1,20 @@
-# 🧠 The Noetic Sciences Toolkit
+# 🧠 Noetic Sciences Toolkit — Library of Alexandria Edition
 
-> An open-source toolkit for consciousness research and human potential, integrating science, contemplative practice, measurement, replication and interdisciplinary wisdom to support human flourishing.
+> A Living Knowledge Commons for Consciousness, Human Potential & the Unknown
 
-![Noetic Sciences Toolkit — GitHub Repository Structure & Future Vision](noetic-sciences-toolkit.jpg)
+![Noetic Sciences Toolkit — Library of Alexandria Edition](noetic-sciences-toolkit-library-of-alexandria-edition.png)
+
+The **Noetic Sciences Toolkit** is an open, evolving knowledge commons bringing together science, consciousness inquiry, wisdom traditions, indigenous knowledge, lived experience, nature, community signals, symbolic frameworks, and future possibilities.
+
+> “Nothing is excluded because it is unusual. Nothing is accepted because it is beautiful. Everything is open to evidence and revision.”
+
+This “Library of Alexandria” framing is a metaphor for humanity’s shared and evolving knowledge: a place for gathering, connecting, examining, and revising ideas across disciplines and cultures. It is not a claim that every tradition, worldview, or proposition is scientifically validated or established fact.
+
+The Akashic concept is included here as a philosophical and speculative layer within the project rather than as the primary identity of the edition itself.
+
+Community-signal sources such as r/NeuronsToNirvana and r/TribalGathering may help reveal patterns, stories, and emerging themes, but they are clearly distinguished from empirical evidence and formal research.
+
+Frameworks such as HIERATIC and HOMESENSE are treated as conceptual and applied lenses to be explored, tested, and refined through evidence, reflection, and collaborative inquiry.
 
 ## 🌍 Vision
 
