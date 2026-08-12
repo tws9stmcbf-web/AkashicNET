@@ -20,19 +20,20 @@ This is a provenance-first archival catalogue, not a verified local mirror. The 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Books | Public Google Drive folder (author not disclosed in public metadata) | https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ | root | unknown | folder | unknown | archive bundle | unknown / review required | link-only public metadata record | Library of Alexandria / Library of Infinite Love & Wisdom | Not scientific evidence; metadata only |
 
-## Verified baseline counts
+## Final verified baseline counts
 
 - Total folders: 1 root folder observed
-- Total files/items: 0 confirmed via public metadata alone
-- Authors/sources: 1 source label observed; authors not disclosed in public metadata
-- File types: 1 folder record observed; no individual file types confirmed
-- Subjects/topics: none confirmed at item level; root folder is labelled "Books"
+- Total files/items: 0 confirmed item-level files from the public metadata available here
+- Authors/sources: 1 source label observed; author names not disclosed in public metadata
+- File types: 1 folder entry observed; no item-level file types confirmed
+- Subjects/topics: none confirmed at item level; the root folder is labelled "Books"
 - Dates where available: none confirmed at item level
 - Stated licences/reuse permissions: none observed in public metadata
 - Duplicate items: 0 confirmed
-- Unavailable items: 0 confirmed; item-level availability cannot be established without a fuller listing
+- Unavailable items: 0 confirmed; item-level availability remains unverified without a fuller listing
 - Metadata-only indexing candidates: 1 root folder record currently suitable for index-only provenance tracking
 - Explicitly permitted import items: 0 confirmed
+- Audio/video duration where accessible: no actual audio or video durations were exposed in the public metadata observed here
 
 ## Notes
 
