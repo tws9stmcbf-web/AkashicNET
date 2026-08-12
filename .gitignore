@@ -7,3 +7,8 @@
 tools/akasic-library/client_secret_*.json
 token*.json
 credentials*.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
