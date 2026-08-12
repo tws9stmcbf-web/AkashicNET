@@ -1,6 +1,21 @@
+
+## 🔎 Search the Community Archive
+
+The toolkit includes a searchable index of the archived r/NeuronsToNirvana community record.
+
+Search by title, topic, category, author, framework, summary, evidence classification, or URL:
+
+    python tools/search_reddit.py consciousness
+    python tools/search_reddit.py Akashic
+    python tools/search_reddit.py HOMESENSE
+
+The archive currently contains **9,401 canonical Reddit URLs**, with richer metadata available through the community index.
+
+The search tool is read-only: it searches the local public archive and does not make requests to Reddit.
+
 # Noetic Sciences Toolkit
 
-## PRE-ALPHA v0.1
+## PRE-ALPHA v0.2.0
 
 A provenance-first research toolkit for building an open, auditable knowledge commons around consciousness, psychedelics, interdisciplinary research, and community knowledge.
 
@@ -57,7 +72,7 @@ The goal is not to present the archive as complete or definitive, but to make th
 
 ### Publication Snapshot
 
-- Version: **PRE-ALPHA v0.1**
+- Version: **PRE-ALPHA v0.2.0**
 - Reddit URLs: **9,401**
 - Validation/tests: **Passed**
 - Repository: **Public**
