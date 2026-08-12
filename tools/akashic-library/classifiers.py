@@ -75,7 +75,7 @@ def classify_reuse_decision(licence_status: str, title: str = "") -> str:
     if any(term in normalized for term in ["cc0", "cc-by", "public domain", "open licence", "creative commons", "permitted"]):
         return "IMPORT"
     if any(term in normalized for term in ["unknown", "unclear", "not stated", "review required"]):
-        return "LINK_PLUS_METADATA"
+        return "INDEX_ONLY"
     if any(term in normalized for term in ["copyright", "all rights reserved", "restricted", "not permitted"]):
         return "INDEX_ONLY"
     if "link" in normalized:
@@ -92,5 +92,5 @@ def classify_licence_status(raw_note: str = "") -> str:
     if any(term in lowered for term in ["copyright", "all rights reserved", "restricted"]):
         return "restricted"
     if any(term in lowered for term in ["review required", "unclear", "unknown", "not stated"]):
-        return "unclear"
+        return "unknown"
     return "unknown"

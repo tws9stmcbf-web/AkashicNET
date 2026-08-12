@@ -55,9 +55,9 @@ Why is this research relevant to the Noetic Sciences Toolkit?
 
 ## 🔗 Related Modules
 
-- [[Interconnected Pyramids]]
-- [[Consciousness & Human Potential]]
-- [[Lifestyle Tools]]
+- [Interconnected Pyramids](modules/interconnected-pyramids/README.md)
+- [Consciousness & Human Potential](modules/consciousness-human-potential/README.md)
+- [Lifestyle Tools](modules/lifestyle-tools/README.md)
 
 ## 🧐 Critical Notes
 
