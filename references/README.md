@@ -48,6 +48,15 @@ Research concerning humans, nature, ecology and planetary systems.
 ### 🧩 Interdisciplinary
 Research connecting multiple fields or methodological perspectives.
 
+## 🧭 Community Sources & Provenance
+
+Some Toolkit materials draw on community discourse, symbolic frameworks, or lived-experience narratives as hypothesis-generating inputs. These sources are recorded as community/conceptual material and are kept separate from formal evidence.
+
+- [Project Akashic Library / Codex Nexus](community/akashic-library-codex-nexus.md)
+- [One Source, Many Paths](community/one-source-many-paths.md)
+
+These entries preserve the exact original URLs, attribution, and provenance, and they explicitly note that they are not scientific evidence.
+
 ## ⚖️ Evidence Status
 
 Where useful, sources can be labelled:
