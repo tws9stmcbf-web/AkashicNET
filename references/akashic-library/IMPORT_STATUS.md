@@ -4,6 +4,30 @@
 
 This record reflects the verified public metadata state of the Akashic Library Google Drive folder as observed from the unauthenticated public page in this environment.
 
+## Verified public discovery results
+
+### What was successfully discovered
+
+- The public folder URL is reachable.
+- The root folder title is visible as "Books".
+- The public folder URL itself is preserved as the canonical source reference.
+- The archive is currently classified as `INDEX_ONLY` because no reliable licence or item-level reuse metadata was exposed.
+
+### What could not be accessed from the current public method
+
+- subfolders could not be reliably enumerated from the public page
+- files inside subfolders could not be enumerated from the public page
+- item-level metadata could not be retrieved from the public page
+- file counts could not be established from the public page
+- licence and reuse statements could not be determined from the public page
+- author/source names could not be confirmed beyond the root folder label
+- audio/video durations could not be determined from public metadata
+- no item-level open-licence permissions were exposed
+
+### What this means
+
+The current environment does not provide a complete or authoritative inventory of the archive. The root folder is visible, but the contents are not enumerable using the unauthenticated public folder page alone.
+
 ## Final verified totals
 
 - TOTAL FOLDERS: 1 root folder observed
@@ -46,10 +70,38 @@ This record reflects the verified public metadata state of the Akashic Library G
 - No restricted or copyrighted file was separately identified from the current public metadata because no item-level listing is available.
 - No file-level redistribution is performed.
 
+## Authentication / API requirement
+
+A Google Drive API or another authenticated listing mechanism is required to determine the following reliably:
+
+1. whether subfolders are present
+2. whether files exist inside those subfolders
+3. exact item metadata and file counts
+4. the full author/source attribution set
+5. exact file types and sizes
+6. copyright/licence tags or visibility notes
+7. actual audio/video durations and page totals where available
+8. whether any files are explicitly reusable under an open licence
+
+This environment cannot establish those facts from the public folder page alone.
+
+## Recommended next technical step
+
+Use a Google Drive API or another authenticated drive-listing workflow with explicit permission to enumerate the shared folder tree and collect file metadata. The next step should be a permission-reviewed, authenticated listing pass that captures:
+
+- folder IDs and paths
+- file IDs and MIME types
+- sizes and timestamps
+- author/source fields if exposed
+- licence or reuse notes
+- item counts and duplicate keys
+
+Only after that listing exists should the Toolkit continue to a resumable, batch-based import workflow with explicit rights review.
+
 ## Provenance note
 
 The original discovery remains associated with r/NeuronsToNirvana as the community provenance trail for this archive direction. The Toolkit preserves the original public link and keeps any file-level rights review separate from the general archive index.
 
 ## Validation note
 
-This is not a Phase 3 completion state. It is a conservative, rights-safe, metadata-first index baseline based only on currently discoverable public metadata.
+This is not a Phase 3 completion state. It is a conservative, rights-safe, metadata-first record documenting the discovery limits of the public Google Drive folder.
