@@ -53,6 +53,12 @@ SCOPES = [
 ]
 
 
+def paginate_items(items: List[Dict[str, Any]], page_size: int) -> List[List[Dict[str, Any]]]:
+    if page_size <= 0:
+        return [items]
+    return [items[index : index + page_size] for index in range(0, len(items), page_size)]
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -75,6 +81,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-csv", default="references/akashic-library/AKASHIC_LIBRARY_INDEX.csv", help="Output CSV for the current discovered batch index.")
     parser.add_argument("--out-md", default="references/akashic-library/AKASHIC_LIBRARY_INDEX.md", help="Output Markdown index generated from the current discovered batch.")
     parser.add_argument("--mock-data-path", default="", help="Local JSON mock dataset for testing without live Drive access.")
+    parser.add_argument("--report", action="store_true", help="Print a dry-run summary without downloading or importing any collection files.")
     return parser.parse_args()
 
 
@@ -127,7 +134,16 @@ class DriveImportSession:
         self.resume = resume
         self.limit = limit
         self.service = None
-        self.mock_data = read_mock_dataset(mock_data_path) if mock_data_path else {}
+        if mock_data_path:
+            try:
+                self.mock_data = read_mock_dataset(mock_data_path)
+            except FileNotFoundError:
+                if resume:
+                    self.mock_data = {}
+                else:
+                    raise
+        else:
+            self.mock_data = {}
         self.seen_ids: set[str] = set()
         self.seen_signatures: set[str] = set()
         self.records: List[Dict[str, Any]] = []
@@ -188,7 +204,7 @@ class DriveImportSession:
         subject = classify_subject(title, folder_path)
         source_type = classify_source_type(title, mime)
         reuse_decision = classify_reuse_decision(licence_status, title)
-        item_signature = hashlib.sha1(f"{drive_id}|{title}|{folder_path}|{size or 0}|{modified}".encode("utf-8")).hexdigest()
+        item_signature = hashlib.sha1(f"{title}|{folder_path}|{size or 0}|{modified}".encode("utf-8")).hexdigest()
         return {
             "drive_id": drive_id,
             "title": title,
@@ -287,6 +303,12 @@ class DriveImportSession:
             return
         self.audit_logger.log_event(event="folder_visit", folder_id=folder_id, folder_path=folder_path)
         for item in self._iter_drive_children(folder_id, folder_path):
+            if not isinstance(item, dict):
+                self._log_error("unknown", "Encountered non-dictionary item in Drive listing", {"item": item})
+                continue
+            if item.get("available") is False:
+                self._log_error(str(item.get("id") or "unknown"), "Drive file unavailable", {"detail": item})
+                continue
             item_id = str(item.get("id") or "unknown")
             if not item_id or item_id in self.seen_ids:
                 continue
@@ -375,6 +397,25 @@ class DriveImportSession:
         )
         self.checkpoint_store.save(state)
 
+    def build_dry_run_summary(self) -> Dict[str, Any]:
+        folders_discovered = sum(1 for item in self.records if item.get("file_type") == "folder")
+        files_discovered = sum(1 for item in self.records if item.get("file_type") != "folder")
+        files_eligible_for_import = sum(1 for item in self.records if item.get("reuse_decision") == "IMPORT")
+        index_only_files = sum(1 for item in self.records if item.get("reuse_decision") == "INDEX_ONLY")
+        licence_review_files = sum(1 for item in self.records if item.get("reuse_decision") == "LINK_PLUS_METADATA")
+        errors = 0
+        if self.error_log_path.exists():
+            errors = sum(1 for line in self.error_log_path.read_text(encoding="utf-8").splitlines() if line.strip())
+        return {
+            "folders_discovered": folders_discovered,
+            "files_discovered": files_discovered,
+            "files_eligible_for_import": files_eligible_for_import,
+            "index_only_files": index_only_files,
+            "licence_review_files": licence_review_files,
+            "errors": errors,
+            "dry_run": True,
+        }
+
     def run(self) -> Dict[str, Any]:
         if self.auth_mode == "mock" and not self.mock_data:
             raise ValueError("Mock mode requires --mock-data-path or a local mock dataset.")
@@ -401,14 +442,21 @@ class DriveImportSession:
             "auth_mode": self.auth_mode,
             "dry_run": self.dry_run,
             "discovered_count": len(self.records),
+            "folders_discovered": sum(1 for item in self.records if item.get("file_type") == "folder"),
+            "files_discovered": sum(1 for item in self.records if item.get("file_type") != "folder"),
             "index_only_count": sum(1 for item in self.records if item["reuse_decision"] == "INDEX_ONLY"),
             "link_plus_metadata_count": sum(1 for item in self.records if item["reuse_decision"] == "LINK_PLUS_METADATA"),
             "import_count": sum(1 for item in self.records if item["reuse_decision"] == "IMPORT"),
+            "files_eligible_for_import": sum(1 for item in self.records if item["reuse_decision"] == "IMPORT"),
+            "index_only_files": sum(1 for item in self.records if item["reuse_decision"] == "INDEX_ONLY"),
+            "licence_review_files": sum(1 for item in self.records if item["reuse_decision"] == "LINK_PLUS_METADATA"),
             "checkpoint": str(self.checkpoint_store.path),
             "output_csv": csv_path,
             "output_md": md_path,
             "status": "metadata-only dry run; no file copies performed",
         }
+        if self.error_log_path.exists():
+            summary["errors"] = sum(1 for line in self.error_log_path.read_text(encoding="utf-8").splitlines() if line.strip())
         return summary
 
 
@@ -432,7 +480,10 @@ def main() -> int:
         limit=args.limit,
     )
     result = session.run()
-    print(json.dumps(result, indent=2))
+    if args.report:
+        print(json.dumps(session.build_dry_run_summary(), indent=2))
+    else:
+        print(json.dumps(result, indent=2))
     return 0
 
 
