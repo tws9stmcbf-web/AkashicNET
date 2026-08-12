@@ -1,8 +1,22 @@
 # 🧠 Noetic Sciences Toolkit — Library of Alexandria Edition
 
-## A Living Knowledge Commons for Consciousness, Human Potential & the Unknown
+**PRE-ALPHA v0.0.1 · Phase 3 ACTIVE · Work in Development**
 
-![Noetic Sciences Toolkit — Library of Alexandria Edition](noetic-sciences-toolkit-library-of-alexandria-edition.png)
+![Noetic Sciences Toolkit — Library of Alexandria Edition](noetic-sciences-toolkit-library-of-alexandria-edition-v0.0.1.png)
+
+## Library of Alexandria Edition
+
+An evolving open-source knowledge commons connecting consciousness research, human experience, wisdom traditions, symbolic frameworks, citizen science and emerging questions.
+
+This edition distinguishes between:
+
+- Established evidence
+- Emerging evidence
+- Hypotheses / framework proposals
+- Lived experience
+- Symbolic / philosophical material
+
+These categories are not equivalent. Metaphysical concepts are presented as philosophical or speculative material rather than established scientific facts.
 
 The Library of Alexandria Edition is a metaphor for an open, evolving human knowledge commons: a place to gather, compare, question, and revise ideas across disciplines, cultures, and generations.
 
