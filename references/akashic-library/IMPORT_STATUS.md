@@ -4,7 +4,7 @@
 
 This record reflects the verified public metadata state of the Akashic Library Google Drive folder as observed from the unauthenticated public page in this environment.
 
-## Verified totals
+## Final verified totals
 
 - TOTAL FOLDERS: 1 root folder observed
 - TOTAL ITEMS DISCOVERED: 0 confirmed item-level files; 1 root folder record observed
@@ -27,6 +27,7 @@ This record reflects the verified public metadata state of the Akashic Library G
 - items explicitly permitted for import: 0 confirmed
 - estimated pages: not available
 - actual audio/video duration: not available
+- actual media duration where accessible: none observed via public metadata
 
 ## Import policy status
 
