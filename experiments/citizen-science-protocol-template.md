@@ -1,129 +1,199 @@
+---
+id: experiment-YYYY-NNN
+title: "Short descriptive title"
+authors:
+  - Contributor Name (role)
+year: 2026
+status: exploratory # use Phase 2 categories: established|emerging|working hypothesis|speculative
+preregistered: false
+preregistration_uri: ""
+data_path: data/experiments/experiment-YYYY-NNN/
+evidence_rationale: "Short rationale for evidence status"
+---
+
 # Citizen Science Protocol Template
 
 ## Purpose
 
-This template is a reusable guide for designing citizen-science research protocols in the Noetic Sciences Toolkit.
-It is intended for documenting research plans clearly and transparently, without prescribing a specific study.
+This template is a reusable framework for designing citizen-science research protocols in the Noetic Sciences Toolkit.
+It is intended to support transparent documentation of research planning without prescribing a specific study.
+
+This template is aligned with Phase 2 evidence and documentation principles, including:
+- research database structure
+- evidence-rating methodology
+- structured references
+- research landscape categories
+
+**Required metadata:** contributors must complete the YAML frontmatter above with a unique `id`, `title`, `authors`, `year`, `status`, `preregistered` (boolean), `data_path`, and `evidence_rationale` before publishing the protocol. When `preregistered: true` provide `preregistration_uri` and a timestamped record of the preregistration.
 
 ## 1. Research Question
 
 - What specific question will the protocol investigate?
-- The question should be clear, focused, and answerable by observation or measurement.
+- The question should be clear, focused, and answerable through observation, measurement, or structured inquiry.
+- It should be aligned with the Toolkit's domains, such as consciousness, neuroscience, contemplative science, wellbeing, or systems research.
 
 ## 2. Hypothesis
 
-- What is the expected relationship between variables?
+- Describe the expected relationship or outcome.
 - Distinguish between:
-  - exploratory hypotheses (ideas to investigate)
-  - confirmatory hypotheses (predictions derived from prior evidence)
+  - exploratory hypotheses: tentative ideas intended to guide investigation
+  - confirmatory hypotheses: pre-specified predictions based on prior evidence or theory
+- Include a brief rationale that is consistent with available evidence and does not overstate what is known.
 
-## 3. Preregistration
+## 3. Exploratory vs Confirmatory Status
 
-- Record the protocol before data collection begins.
-- Include the research question, key variables, planned analyses, and criteria for interpretation.
-- Describe where the preregistration will be stored or how the protocol will be timestamped.
+- Explicitly classify the protocol as one of the following:
+  - N-of-1 exploratory work: single-participant observation that generates hypotheses and documents individual experience.
+  - Naturalistic observation: open-ended observation of real-world behaviour or experience without a controlled intervention.
+  - Citizen science: collaborative data collection with participants contributing as co-researchers or volunteers.
+  - Confirmatory research: hypothesis testing with pre-defined criteria, controls, and an analysis plan intended to support inferential conclusions.
 
-## 4. Study Design
+- Note that these modes can overlap, but their research claims and interpretation differ.
+- Emphasise that N-of-1 exploratory work and naturalistic observation are valuable for generating questions, not for generalisable proof.
 
-- Describe the type of design (e.g. observational, within-subject, repeated measures, comparative, longitudinal).
-- Indicate whether the protocol is intended for:
-  - exploratory research
-  - N-of-1 observation
-  - confirmatory or hypothesis-testing research
-- Clarify the distinction between exploratory N-of-1 work and confirmatory research:
-  - Exploratory N-of-1 work is useful for generating hypotheses, identifying patterns, and documenting personal experience. It is not sufficient for generalisable conclusions.
-  - Confirmatory research is designed to test a specific hypothesis with pre-defined criteria, controls, and an analysis plan that supports inferential claims.
+## 4. Preregistration
 
-## 5. Participants
+- State whether the protocol will be preregistered.
+- If yes, specify the preregistration platform or storage method and the planned timestamp.
+- Include the key elements to preregister:
+  - research question
+  - hypothesis
+  - primary outcomes
+  - analysis plan
+  - criteria for interpretation
 
-- Describe who will participate.
-- For citizen-science projects, note whether participants are self-selected, recruited within a community, or invited through a broader call.
-- Note any inclusion or exclusion criteria.
+**Preregistration: required fields (recommended when confirmatory)**
 
-## 6. Variables
+- `primary_outcome`: exact variable name and units
+- `primary_timepoint`: when primary outcome is measured
+- `analysis_plan`: short description plus link to analysis code/notebook
+- `alpha`: statistical threshold or statement if not applicable
+- `sample_size_calc`: either the calculation or reason sample-size calculation is not applicable
+- `stopping_rules`: any stopping or interim analysis plans
+- `preregistration_timestamp`: ISO 8601 timestamp or link to timestamped preregistration
 
-- Independent variables / factors.
-- Dependent variables / outcomes.
-- Covariates or moderator variables.
-- Control variables.
+## 5. Study Design
 
-## 7. Outcomes
+- Describe the overall design, for example:
+  - observational
+  - within-subject or repeated measures
+  - comparative or cross-sectional
+  - longitudinal
+  - mixed methods
+- Indicate the intended level of control and the degree of standardisation.
+- For exploratory work, describe how the design supports pattern discovery or hypothesis generation.
+- For confirmatory research, describe how the design supports hypothesis testing.
+
+## 6. Participants / Sampling
+
+- Define who will participate and how they will be selected.
+- For citizen science, note whether participants are self-selected, community-recruited, or invited through a call.
+- Describe inclusion and exclusion criteria.
+- Note any relevant demographic, experiential, or contextual characteristics.
+
+## 7. Variables
+
+- List independent variables or factors.
+- List dependent variables or outcomes.
+- Identify covariates, moderators, or potential confounders.
+- Clarify which variables are manipulated, observed, or measured.
+
+## 8. Outcomes
 
 - Define primary outcomes clearly.
-- Define secondary or exploratory outcomes.
-- Specify whether outcomes are subjective, behavioral, physiological, or other.
+- Define any secondary or exploratory outcomes.
+- Specify the type of outcomes, such as:
+  - subjective experience
+  - behaviour
+  - physiological measures
+  - task performance
+  - qualitative descriptions
 
-## 8. Measurements
+## 9. Measurements and Instruments
 
 - Describe the instruments, tools, or measures used.
 - Note whether measures are validated, self-report, sensor-based, qualitative, or quantitative.
-- Specify the timing and frequency of measurements.
+- Specify the timing, frequency, and context of measurements.
+- Describe any training or standardised instructions for participants.
 
-## 9. Controls and Confounders
+## 10. Controls and Confounders
 
 - Identify potential confounders.
-- Describe control strategies, such as:
-  - baseline measurement
+- Describe control or comparison strategies, such as:
+  - baseline measures
   - repeated measures
   - within-subject comparisons
-  - standardised instructions
-  - counterbalanced order
-- Acknowledge limitations when controls are not feasible.
+  - standardised procedures
+  - counterbalancing
+- Explain any limitations when control conditions are not feasible.
 
-## 10. Data Collection
+## 11. Data Collection
 
-- Describe how data will be collected.
+- Describe how data will be collected and recorded.
 - Include methods for logging, storing, and preserving data.
 - Note whether data collection is prospective or retrospective.
-- Explain how participant privacy and consent will be handled.
+- Specify any tools, platforms, or formats used for data entry.
 
-## 11. Analysis Plan
+## 12. Analysis Plan
 
-- Describe the planned analysis methods.
-- For exploratory work, specify how patterns will be identified and described.
-- For confirmatory research, specify the statistical or analytic criteria for evaluating hypotheses.
-- Define how outliers, missing data, or incomplete records will be managed.
+- Describe the planned analytic approach.
+- For exploratory work, specify how patterns, themes, or observations will be identified and described.
+- For confirmatory research, specify statistical or analytic criteria for hypothesis evaluation.
+- Describe how data quality will be assessed.
 
-## 12. Reproducibility
+## 13. Missing Data
 
-- Document the protocol clearly enough for another researcher to understand and follow it.
-- Include details of materials, procedures, timing, and measurement tools.
-- Note where raw or summary data may be shared, subject to privacy and ethics constraints.
+- Describe how missing or incomplete data will be handled.
+- Specify whether missing data will be:
+  - excluded
+  - interpolated
+  - documented as part of the protocol
+- Explain how missing data will be reported.
 
-## 13. Ethics and Safety
+## 14. Reproducibility
 
-- Describe potential risks and how they will be minimised.
-- Note when professional oversight or qualified advice is required.
-- Acknowledge that citizen-science protocols are not a substitute for medical or clinical guidance.
+- Document the protocol in enough detail for another researcher to understand and follow it.
+- Include materials, procedures, timings, measurement tools, and analytic steps.
+- Note where raw or anonymised summary data may be shared, subject to privacy and ethics constraints.
 
-## 14. Privacy
+## 15. Ethics and Informed Consent
+
+- Describe ethical considerations and potential risks.
+- Specify how informed consent will be obtained and documented.
+- Note when professional oversight, qualified advice, or ethics review is required.
+- Emphasise that this framework does not replace clinical or ethical review.
+
+## 16. Privacy and Data Minimisation
 
 - Describe how personal data will be protected.
-- Identify whether anonymisation, de-identification, or pseudonymisation will be used.
-- Explain how consent is obtained and documented.
+- Use the minimum data necessary for the research question.
+- Describe anonymisation, de-identification, or pseudonymisation procedures.
+- Explain how data retention and deletion will be managed.
 
-## 15. Limitations
+## 17. Safety Considerations
 
-- Identify known limitations of the protocol.
-- Be explicit about the boundaries of what the protocol can and cannot support.
-- Distinguish between limitations of the design and limitations of inference.
+- Identify any safety risks and how they will be minimised.
+- Describe any contraindications or warning criteria.
+- For research involving wellbeing, cognitive practices, or substances, note when qualified supervision is needed.
+- Emphasise participant wellbeing throughout the protocol.
 
-## 16. Interpretation
+## 18. Limitations
 
-- Describe how results will be interpreted.
-- Emphasise that exploratory N-of-1 observations are not equivalent to generalisable evidence.
-- For confirmatory research, specify the conditions under which a hypothesis would be supported or not supported.
-- Note that all interpretations should remain consistent with the evidence hierarchy:
+- Describe known limitations of the protocol.
+- Distinguish between limitations of the study design and limitations of inference.
+- Be explicit about what the protocol cannot establish.
+- Note any sources of uncertainty.
+
+## 19. Interpretation
+
+- Describe how the results will be interpreted in light of the evidence hierarchy:
   - Evidence → Observation → Interpretation → Hypothesis → Speculation
+- Emphasise that exploratory N-of-1 observations and naturalistic observations are not equivalent to population-level confirmation.
+- For confirmatory research, specify the conditions under which a hypothesis would be supported, not supported, or remain inconclusive.
 
-## 17. Documentation and Reporting
+## 20. Replication / Follow-up
 
-- Specify how the protocol and results will be documented.
-- Include links or references to related research entries, references, and open questions.
-- Encourage transparent reporting of null, mixed, or inconclusive findings.
-
-## 18. Next Steps
-
-- If the protocol is exploratory, describe how insights may generate follow-up research questions.
-- If the protocol is confirmatory, describe potential replication or extension studies.
-- Note any decisions about whether the protocol will remain a single-site/project record or be scaled for broader collaboration.
+- Describe whether and how the protocol can be replicated.
+- Note follow-up studies, extensions, or confirmatory research that could build on the protocol.
+- For exploratory work, describe how the findings could inform future questions or more controlled designs.
+- For confirmatory work, describe replication criteria and potential next steps.
