@@ -1,20 +1,40 @@
 # 🧠 Noetic Sciences Toolkit — Library of Alexandria Edition
 
-> A Living Knowledge Commons for Consciousness, Human Potential & the Unknown
+## A Living Knowledge Commons for Consciousness, Human Potential & the Unknown
 
 ![Noetic Sciences Toolkit — Library of Alexandria Edition](noetic-sciences-toolkit-library-of-alexandria-edition.png)
 
-The **Noetic Sciences Toolkit** is an open, evolving knowledge commons bringing together science, consciousness inquiry, wisdom traditions, indigenous knowledge, lived experience, nature, community signals, symbolic frameworks, and future possibilities.
+The Library of Alexandria Edition is a metaphor for an open, evolving human knowledge commons: a place to gather, compare, question, and revise ideas across disciplines, cultures, and generations.
 
-> “Nothing is excluded because it is unusual. Nothing is accepted because it is beautiful. Everything is open to evidence and revision.”
+> Nothing is excluded because it is unusual.
+> Nothing is accepted because it is beautiful.
+> Everything is open to evidence and revision.
 
-This “Library of Alexandria” framing is a metaphor for humanity’s shared and evolving knowledge: a place for gathering, connecting, examining, and revising ideas across disciplines and cultures. It is not a claim that every tradition, worldview, or proposition is scientifically validated or established fact.
+This project brings together:
 
-The Akashic concept is included here as a philosophical and speculative layer within the project rather than as the primary identity of the edition itself.
+- Science & research
+- Consciousness & noetic inquiry
+- Wisdom traditions & indigenous knowledge
+- Art, symbols & meaning
+- Lived experience & stories
+- Nature & environment
+- Futures & possibilities
 
-Community-signal sources such as r/NeuronsToNirvana and r/TribalGathering may help reveal patterns, stories, and emerging themes, but they are clearly distinguished from empirical evidence and formal research.
+It also explores research and application layers including:
 
-Frameworks such as HIERATIC and HOMESENSE are treated as conceptual and applied lenses to be explored, tested, and refined through evidence, reflection, and collaborative inquiry.
+- Evidence Commons
+- Research Database
+- Knowledge Maps
+- Methods & Protocols
+- Visual Knowledge
+- HIERATIC
+- HOMESENSE
+- Community Signals
+- Citizen Science
+
+Potential community-signal and hypothesis-generation sources include r/NeuronsToNirvana and r/TribalGathering. These are not empirical evidence. They may help surface patterns, stories, and questions, but they remain distinct from research findings and formal validation.
+
+The Akashic concept is kept as a philosophical and speculative layer within the project rather than as an established scientific claim.
 
 ## 🌍 Vision
 
