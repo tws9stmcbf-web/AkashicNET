@@ -11,12 +11,46 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
+import os
+import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, Iterator, List, Optional, Tuple
 
-from classifiers import classify_reuse_decision, classify_source_type, classify_subject
+try:  # pragma: no cover - optional dependency
+    from google.auth.transport.requests import Request
+    from google.oauth2 import service_account
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from googleapiclient.discovery import build
+    from googleapiclient.errors import HttpError
+except Exception:  # pragma: no cover
+    Request = None
+    service_account = None
+    Credentials = None
+    InstalledAppFlow = None
+    build = None
+    HttpError = None
+
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from audit import AuditLogger
+    from checkpoint import CheckpointStore
+    from classifiers import classify_licence_status, classify_reuse_decision, classify_source_type, classify_subject
+    from models import CheckpointState
+else:
+    from .audit import AuditLogger
+    from .checkpoint import CheckpointStore
+    from .classifiers import classify_licence_status, classify_reuse_decision, classify_source_type, classify_subject
+    from .models import CheckpointState
+
+SCOPES = [
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/drive.metadata.readonly",
+]
 
 
 def utc_now() -> str:
@@ -25,210 +59,380 @@ def utc_now() -> str:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Akashic Library batch importer")
-    parser.add_argument(
-        "--source-url",
-        default="https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ",
-        help="Public Google Drive folder to map.",
-    )
-    parser.add_argument(
-        "--items-csv",
-        default="",
-        help="Optional CSV of discovered items; otherwise a minimal root-folder dry-run record is used.",
-    )
-    parser.add_argument(
-        "--batch-size",
-        type=int,
-        default=50,
-        help="Maximum number of items processed in a batch.",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Default safe mode: classify and log without copying any files.",
-    )
-    parser.add_argument(
-        "--resume",
-        action="store_true",
-        help="Resume from the last checkpoint when available.",
-    )
-    parser.add_argument(
-        "--checkpoint",
-        default="tools/akashic-library/state/checkpoint.json",
-        help="Checkpoint file for batch state.",
-    )
-    parser.add_argument(
-        "--audit-log",
-        default="tools/akashic-library/state/audit.jsonl",
-        help="Append-only audit log for processing decisions.",
-    )
-    parser.add_argument(
-        "--error-log",
-        default="tools/akashic-library/state/errors.jsonl",
-        help="Log file for failed or unavailable items.",
-    )
-    parser.add_argument(
-        "--limit",
-        type=int,
-        default=0,
-        help="Optional number of items to process in a dry-run subset.",
-    )
-    parser.add_argument(
-        "--out-csv",
-        default="references/akashic-library/AKASHIC_LIBRARY_INDEX.csv",
-        help="Output CSV for the current discovered batch index.",
-    )
+    parser.add_argument("--source-url", default="https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ", help="Canonical source URL for the archive.")
+    parser.add_argument("--root-folder-id", default=os.environ.get("AKASHIC_DRIVE_FOLDER_ID", ""), help="Google Drive folder ID to traverse. Required for authenticated API mode.")
+    parser.add_argument("--auth-mode", choices=["mock", "service-account", "oauth"], default=os.environ.get("AKASHIC_AUTH_MODE", "mock"), help="Authentication mode for the Drive API.")
+    parser.add_argument("--credentials-file", default=os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", ""), help="Path to a service-account JSON file or OAuth client secrets file.")
+    parser.add_argument("--token-file", default=os.environ.get("AKASHIC_DRIVE_TOKEN_FILE", ""), help="Path to the authorized OAuth token JSON file.")
+    parser.add_argument("--items-csv", default="", help="Optional pre-discovered CSV of known items for a dry-run import or test run.")
+    parser.add_argument("--batch-size", type=int, default=50, help="Maximum number of items processed in a batch.")
+    parser.add_argument("--dry-run", action="store_true", help="Default safe mode: classify and log without copying any files.")
+    parser.add_argument("--resume", action="store_true", help="Resume from the last checkpoint when available.")
+    parser.add_argument("--checkpoint", default="tools/akashic-library/state/checkpoint.json", help="Checkpoint file for batch state.")
+    parser.add_argument("--audit-log", default="tools/akashic-library/state/audit.jsonl", help="Append-only audit log for processing decisions.")
+    parser.add_argument("--error-log", default="tools/akashic-library/state/errors.jsonl", help="Log file for failed or unavailable items.")
+    parser.add_argument("--limit", type=int, default=0, help="Optional number of items to process in a dry-run subset.")
+    parser.add_argument("--out-csv", default="references/akashic-library/AKASHIC_LIBRARY_INDEX.csv", help="Output CSV for the current discovered batch index.")
+    parser.add_argument("--out-md", default="references/akashic-library/AKASHIC_LIBRARY_INDEX.md", help="Output Markdown index generated from the current discovered batch.")
+    parser.add_argument("--mock-data-path", default="", help="Local JSON mock dataset for testing without live Drive access.")
     return parser.parse_args()
 
 
-def load_items_from_csv(path: str) -> List[Dict[str, Any]]:
-    if not path:
-        return []
-    rows: List[Dict[str, Any]] = []
-    with open(path, newline="", encoding="utf-8") as handle:
-        reader = csv.DictReader(handle)
-        for row in reader:
-            rows.append(row)
-    return rows
-
-
-def root_folder_record(source_url: str) -> Dict[str, Any]:
-    return {
-        "title": "Books",
-        "author": "unknown",
-        "source_name": "Public Google Drive folder",
-        "original_source_url": source_url,
-        "drive_path": "root",
-        "drive_url": source_url,
-        "year": "unknown",
-        "file_type": "folder",
-        "subject_category": "unknown",
-        "source_type": "archive bundle",
-        "licence_status": "unknown",
-        "reuse_decision": "INDEX_ONLY",
-        "provenance_status": "link_only",
-        "related_toolkit_framework": "Library of Alexandria / Library of Infinite Love & Wisdom",
-        "evidence_status": "Not scientific evidence; metadata only",
-        "notes": "Public folder metadata confirms the root folder is titled 'Books', but no item-level list or licence statement was exposed in the unauthenticated public HTML. This record is an index-only provenance record.",
-    }
-
-
-def build_batch_items(source_url: str, items_csv: str) -> List[Dict[str, Any]]:
-    if items_csv:
-        rows = load_items_from_csv(items_csv)
-        if rows:
-            return rows
-    return [root_folder_record(source_url)]
-
-
-def normalize_record(row: Dict[str, Any]) -> Dict[str, Any]:
-    title = str(row.get("title") or row.get("name") or "unknown").strip() or "unknown"
-    folder = str(row.get("drive_path") or row.get("parent_folder_path") or "root").strip() or "root"
-    source_name = str(row.get("source_name") or row.get("author") or "unknown").strip() or "unknown"
-    original_url = str(row.get("original_source_url") or row.get("drive_url") or "").strip()
-    licence_status = str(row.get("licence_status") or "unknown").strip() or "unknown"
-    subject = classify_subject(title, folder)
-    source_type = classify_source_type(title, str(row.get("file_type") or "").strip())
-    reuse_decision = classify_reuse_decision(licence_status, title)
-    return {
-        "title": title,
-        "author": str(row.get("author") or source_name or "unknown").strip() or "unknown",
-        "source_name": source_name,
-        "original_source_url": original_url,
-        "drive_path": folder,
-        "drive_url": str(row.get("drive_url") or original_url or "").strip(),
-        "year": str(row.get("year") or row.get("date_year") or "unknown").strip() or "unknown",
-        "file_type": str(row.get("file_type") or row.get("mime_type") or source_type).strip() or "unknown",
-        "subject_category": subject,
-        "source_type": source_type,
-        "licence_status": licence_status,
-        "reuse_decision": reuse_decision,
-        "provenance_status": str(row.get("provenance_status") or "link_only").strip() or "link_only",
-        "related_toolkit_framework": str(row.get("related_toolkit_framework") or "Library of Alexandria / Library of Infinite Love & Wisdom").strip(),
-        "evidence_status": str(row.get("evidence_status") or "Not scientific evidence; metadata only").strip(),
-        "notes": str(row.get("notes") or "").strip(),
-    }
-
-
-def write_csv(path: str, rows: Iterable[Dict[str, Any]]) -> None:
-    out = Path(path)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    fieldnames = [
-        "title",
-        "author",
-        "source_name",
-        "original_source_url",
-        "drive_path",
-        "drive_url",
-        "year",
-        "file_type",
-        "subject_category",
-        "source_type",
-        "licence_status",
-        "reuse_decision",
-        "provenance_status",
-        "related_toolkit_framework",
-        "evidence_status",
-        "notes",
-    ]
-    with out.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({field: row.get(field, "") for field in fieldnames})
-
-
-def checkpoint_payload(run_id: str, source_url: str, processed: int) -> Dict[str, Any]:
-    return {
-        "run_id": run_id,
-        "source_url": source_url,
-        "processed_count": processed,
-        "last_updated_utc": utc_now(),
-        "completed": False,
-    }
-
-
-def persist_checkpoint(path: str, payload: Dict[str, Any]) -> None:
+def read_mock_dataset(path: str) -> Dict[str, Any]:
     p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    if not p.exists():
+        raise FileNotFoundError(f"Mock data file not found: {path}")
+    with p.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    return payload
+
+
+class DriveImportSession:
+    """Session for authenticated Drive enumeration with a mock fallback.
+
+    This scaffold intentionally defaults to a dry-run, metadata-only model. It does
+    not download the collection and keeps rights decisions conservative.
+    """
+
+    def __init__(
+        self,
+        root_folder_id: str,
+        auth_mode: str = "mock",
+        credentials_file: str = "",
+        token_file: str = "",
+        batch_size: int = 50,
+        dry_run: bool = True,
+        checkpoint_path: str = "tools/akashic-library/state/checkpoint.json",
+        audit_log_path: str = "tools/akashic-library/state/audit.jsonl",
+        error_log_path: str = "tools/akashic-library/state/errors.jsonl",
+        output_csv_path: str = "references/akashic-library/AKASHIC_LIBRARY_INDEX.csv",
+        output_md_path: str = "references/akashic-library/AKASHIC_LIBRARY_INDEX.md",
+        source_url: str = "",
+        mock_data_path: str = "",
+        resume: bool = False,
+        limit: int = 0,
+    ) -> None:
+        self.root_folder_id = root_folder_id
+        self.auth_mode = auth_mode
+        self.credentials_file = credentials_file
+        self.token_file = token_file
+        self.batch_size = batch_size
+        self.dry_run = dry_run
+        self.source_url = source_url or "https://drive.google.com/drive/folders/"
+        self.checkpoint_store = CheckpointStore(checkpoint_path)
+        self.audit_logger = AuditLogger(audit_log_path)
+        self.error_log_path = Path(error_log_path)
+        self.output_csv_path = Path(output_csv_path)
+        self.output_md_path = Path(output_md_path)
+        self.resume = resume
+        self.limit = limit
+        self.service = None
+        self.mock_data = read_mock_dataset(mock_data_path) if mock_data_path else {}
+        self.seen_ids: set[str] = set()
+        self.seen_signatures: set[str] = set()
+        self.records: List[Dict[str, Any]] = []
+        self.last_error: Optional[str] = None
+        self._load_checkpoint_state()
+
+    def _load_checkpoint_state(self) -> None:
+        if not self.resume:
+            return
+        state = self.checkpoint_store.load()
+        if state is not None:
+            self.root_folder_id = state.last_folder_id or self.root_folder_id
+            self.records = []
+            self.seen_ids = set()
+            self.seen_signatures = set()
+
+    def _log_error(self, item_id: str, message: str, extra: Optional[Dict[str, Any]] = None) -> None:
+        entry = {
+            "timestamp_utc": utc_now(),
+            "item_id": item_id,
+            "message": message,
+            "event": "error",
+        }
+        if extra:
+            entry.update(extra)
+        self.error_log_path.parent.mkdir(parents=True, exist_ok=True)
+        with self.error_log_path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(entry, ensure_ascii=True) + "\n")
+        self.audit_logger.log_event(event="error", item_id=item_id, message=message, extra=json.dumps(extra or {}))
+
+    def _handle_rate_limit(self, retry_after_seconds: Optional[int] = None) -> None:
+        delay = retry_after_seconds or 2
+        if delay > 0:
+            time.sleep(delay)
+        self.audit_logger.log_event(event="rate_limit_backoff", delay_seconds=delay, timestamp_utc=utc_now())
+
+    def _safe_int(self, value: Any) -> Optional[int]:
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return None
+
+    def _normalise_item(self, item: Dict[str, Any], folder_path: str) -> Dict[str, Any]:
+        title = str(item.get("name") or item.get("title") or "unknown").strip() or "unknown"
+        drive_id = str(item.get("id") or "unknown")
+        mime = str(item.get("mimeType") or "application/octet-stream")
+        size = self._safe_int(item.get("size"))
+        modified = str(item.get("modifiedTime") or "unknown")
+        owners = item.get("owners") or []
+        author = "unknown"
+        if owners:
+            author = str(owners[0].get("displayName") or owners[0].get("emailAddress") or "unknown")
+        source_name = str(item.get("source_name") or author or "unknown")
+        licence_note = str(item.get("description") or item.get("license") or item.get("licence_status") or "unknown").strip()
+        licence_status = classify_licence_status(licence_note)
+        if licence_status in {"unknown", "unclear"}:
+            licence_status = "unknown"
+        subject = classify_subject(title, folder_path)
+        source_type = classify_source_type(title, mime)
+        reuse_decision = classify_reuse_decision(licence_status, title)
+        item_signature = hashlib.sha1(f"{drive_id}|{title}|{folder_path}|{size or 0}|{modified}".encode("utf-8")).hexdigest()
+        return {
+            "drive_id": drive_id,
+            "title": title,
+            "parent_folder_id": str(item.get("parents", [""])[0] if item.get("parents") else "root"),
+            "drive_path": folder_path,
+            "file_type": "folder" if mime == "application/vnd.google-apps.folder" else "file",
+            "mime_type": mime,
+            "size_bytes": size,
+            "modified_time": modified,
+            "author": author,
+            "source_name": source_name,
+            "licence_status": licence_status,
+            "reuse_decision": reuse_decision,
+            "source_type": source_type,
+            "subject_category": subject,
+            "original_source_url": self.source_url,
+            "drive_url": str(item.get("webViewLink") or f"https://drive.google.com/file/d/{drive_id}/view"),
+            "provenance_status": "metadata_only",
+            "notes": f"Google Drive item discovered via authenticated traversal. Licence value defaulted to {licence_status} unless explicit metadata stated otherwise.",
+            "signature": item_signature,
+        }
+
+    def _get_service(self):
+        if self.service is not None:
+            return self.service
+        if self.auth_mode == "mock":
+            self.service = None
+            return None
+        if build is None:
+            raise RuntimeError("The google-api-python-client package is not installed. Install it with `pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib`.")
+        if self.auth_mode == "service-account":
+            if not self.credentials_file:
+                raise ValueError("Service-account mode requires GOOGLE_APPLICATION_CREDENTIALS or --credentials-file.")
+            creds = service_account.Credentials.from_service_account_file(self.credentials_file, scopes=SCOPES)
+            self.service = build("drive", "v3", credentials=creds, cache_discovery=False)
+            return self.service
+        if self.auth_mode == "oauth":
+            if not self.credentials_file:
+                raise ValueError("OAuth mode requires a client secret JSON file via --credentials-file or AKASHIC_DRIVE_CLIENT_SECRETS_JSON.")
+            if self.token_file and os.path.exists(self.token_file):
+                creds = Credentials.from_authorized_user_file(self.token_file, SCOPES)
+                if creds and creds.valid:
+                    self.service = build("drive", "v3", credentials=creds, cache_discovery=False)
+                    return self.service
+                if creds and creds.expired and creds.refresh_token:
+                    creds.refresh(Request())
+                    self.service = build("drive", "v3", credentials=creds, cache_discovery=False)
+                    return self.service
+            flow = InstalledAppFlow.from_client_secrets_file(self.credentials_file, SCOPES)
+            creds = flow.run_local_server(port=0)
+            if self.token_file:
+                with open(self.token_file, "w", encoding="utf-8") as handle:
+                    handle.write(creds.to_json())
+            self.service = build("drive", "v3", credentials=creds, cache_discovery=False)
+            return self.service
+        raise ValueError(f"Unsupported auth mode: {self.auth_mode}")
+
+    def _mock_children(self, parent_id: str) -> List[Dict[str, Any]]:
+        if not self.mock_data:
+            return []
+        return list(self.mock_data.get("children", {}).get(parent_id, []))
+
+    def _iter_drive_children(self, parent_id: str, current_path: str) -> Iterator[Dict[str, Any]]:
+        if self.auth_mode == "mock":
+            for item in self._mock_children(parent_id):
+                yield item
+            return
+        service = self._get_service()
+        query = f"'{parent_id}' in parents and trashed = false"
+        page_token = None
+        while True:
+            try:
+                response = service.files().list(
+                    q=query,
+                    pageSize=self.batch_size,
+                    pageToken=page_token,
+                    fields="nextPageToken, files(id, name, mimeType, size, modifiedTime, owners, parents, webViewLink, description)",
+                    supportsAllDrives=True,
+                    includeItemsFromAllDrives=True,
+                ).execute()
+            except HttpError as exc:  # pragma: no cover - network/auth path
+                if exc.resp.status == 429:
+                    retry_after = int(exc.headers.get("Retry-After", 2))
+                    self._handle_rate_limit(retry_after)
+                    continue
+                self._log_error(parent_id, "Drive listing failed", {"error": str(exc)})
+                break
+            for item in response.get("files", []):
+                yield item
+            page_token = response.get("nextPageToken")
+            if page_token is None:
+                break
+
+    def _walk_folder(self, folder_id: str, folder_path: str = "root") -> None:
+        if self.limit and len(self.records) >= self.limit:
+            return
+        self.audit_logger.log_event(event="folder_visit", folder_id=folder_id, folder_path=folder_path)
+        for item in self._iter_drive_children(folder_id, folder_path):
+            item_id = str(item.get("id") or "unknown")
+            if not item_id or item_id in self.seen_ids:
+                continue
+            item_path = f"{folder_path}/{item.get('name', 'unknown')}" if folder_path != "root" else item.get("name", "unknown")
+            record = self._normalise_item(item, item_path)
+            self.seen_ids.add(item_id)
+            signature = record["signature"]
+            if signature in self.seen_signatures:
+                self.audit_logger.log_event(event="duplicate_detected", drive_id=item_id, signature=signature)
+                continue
+            self.seen_signatures.add(signature)
+            self.records.append(record)
+            if self.limit and len(self.records) >= self.limit:
+                break
+            if item.get("mimeType") == "application/vnd.google-apps.folder":
+                child_path = f"{item_path}"
+                self._walk_folder(item_id, child_path)
+
+    def _write_csv(self) -> str:
+        self.output_csv_path.parent.mkdir(parents=True, exist_ok=True)
+        fieldnames = [
+            "drive_id",
+            "title",
+            "parent_folder_id",
+            "drive_path",
+            "file_type",
+            "mime_type",
+            "size_bytes",
+            "modified_time",
+            "author",
+            "source_name",
+            "licence_status",
+            "reuse_decision",
+            "source_type",
+            "subject_category",
+            "original_source_url",
+            "drive_url",
+            "provenance_status",
+            "notes",
+            "signature",
+        ]
+        with self.output_csv_path.open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in self.records:
+                writer.writerow({field: row.get(field, "") for field in fieldnames})
+        return str(self.output_csv_path)
+
+    def _write_markdown(self) -> str:
+        self.output_md_path.parent.mkdir(parents=True, exist_ok=True)
+        lines = [
+            "# Akashic Library index",
+            "",
+            "This index is generated by the authenticated Google Drive importer scaffold and remains metadata-only unless a licence or permissions evaluation explicitly approves import.",
+            "",
+            "| Title | Path | Type | MIME | Size | Modified | Author | Licence | Decision |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        ]
+        for row in self.records:
+            title = row.get("title", "unknown")
+            path = row.get("drive_path", "root")
+            file_type = row.get("file_type", "unknown")
+            mime_type = row.get("mime_type", "unknown")
+            size = row.get("size_bytes")
+            modified = row.get("modified_time", "unknown")
+            author = row.get("author", "unknown")
+            licence = row.get("licence_status", "unknown")
+            decision = row.get("reuse_decision", "INDEX_ONLY")
+            lines.append(f"| {title} | {path} | {file_type} | {mime_type} | {size if size is not None else 'unknown'} | {modified} | {author} | {licence} | {decision} |")
+        self.output_md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return str(self.output_md_path)
+
+    def _write_checkpoint(self, processed_count: int, completed: bool = False) -> None:
+        state = CheckpointState(
+            run_id=f"akashic-import-{utc_now().replace(':', '').replace('-', '')}",
+            source_url=self.source_url,
+            last_folder_id=self.root_folder_id,
+            batch_index=0,
+            processed_count=processed_count,
+            discovered_count=len(self.records),
+            index_only_count=sum(1 for item in self.records if item["reuse_decision"] == "INDEX_ONLY"),
+            link_plus_metadata_count=sum(1 for item in self.records if item["reuse_decision"] == "LINK_PLUS_METADATA"),
+            import_count=sum(1 for item in self.records if item["reuse_decision"] == "IMPORT"),
+            updated_at_utc=utc_now(),
+            completed=completed,
+        )
+        self.checkpoint_store.save(state)
+
+    def run(self) -> Dict[str, Any]:
+        if self.auth_mode == "mock" and not self.mock_data:
+            raise ValueError("Mock mode requires --mock-data-path or a local mock dataset.")
+        if self.auth_mode != "mock":
+            try:
+                self._get_service()
+            except Exception as exc:  # pragma: no cover - runtime auth path
+                self.last_error = str(exc)
+                self._log_error(self.root_folder_id or "unknown", "Authentication setup failed", {"detail": str(exc)})
+                raise
+
+        self._walk_folder(self.root_folder_id, "root")
+        if self.limit and self.limit > 0:
+            self.records = self.records[: self.limit]
+
+        csv_path = self._write_csv()
+        md_path = self._write_markdown()
+        self._write_checkpoint(len(self.records), completed=True)
+        self.audit_logger.log_event(event="run_complete", count=len(self.records), dry_run=self.dry_run, root_folder_id=self.root_folder_id)
+
+        summary = {
+            "root_folder_id": self.root_folder_id,
+            "source_url": self.source_url,
+            "auth_mode": self.auth_mode,
+            "dry_run": self.dry_run,
+            "discovered_count": len(self.records),
+            "index_only_count": sum(1 for item in self.records if item["reuse_decision"] == "INDEX_ONLY"),
+            "link_plus_metadata_count": sum(1 for item in self.records if item["reuse_decision"] == "LINK_PLUS_METADATA"),
+            "import_count": sum(1 for item in self.records if item["reuse_decision"] == "IMPORT"),
+            "checkpoint": str(self.checkpoint_store.path),
+            "output_csv": csv_path,
+            "output_md": md_path,
+            "status": "metadata-only dry run; no file copies performed",
+        }
+        return summary
 
 
 def main() -> int:
     args = parse_args()
-    run_id = f"akashic-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
-    checkpoint_path = Path(args.checkpoint)
-    checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
-
-    candidates = build_batch_items(args.source_url, args.items_csv)
-    processed = [normalize_record(item) for item in candidates]
-    if args.limit and args.limit > 0:
-        processed = processed[: args.limit]
-
-    totals = {
-        "total_discovered": len(processed),
-        "index_only": sum(1 for item in processed if item["reuse_decision"] == "INDEX_ONLY"),
-        "link_plus_metadata": sum(1 for item in processed if item["reuse_decision"] == "LINK_PLUS_METADATA"),
-        "import_approved": sum(1 for item in processed if item["reuse_decision"] == "IMPORT"),
-    }
-    write_csv(args.out_csv, processed)
-    persist_checkpoint(str(checkpoint_path), checkpoint_payload(run_id, args.source_url, len(processed)))
-
-    summary = {
-        "run_id": run_id,
-        "source_url": args.source_url,
-        "dry_run": bool(args.dry_run),
-        "batch_size": args.batch_size,
-        "checkpoint": str(checkpoint_path),
-        "out_csv": args.out_csv,
-        "items_discovered": totals["total_discovered"],
-        "items_processed": len(processed),
-        "index_only": totals["index_only"],
-        "link_plus_metadata": totals["link_plus_metadata"],
-        "import_approved": totals["import_approved"],
-        "received_at": utc_now(),
-        "note": "Current public metadata does not expose enough item-level licence or file detail to certify a complete archive import. This batch follows a conservative metadata-first workflow.",
-    }
-    print(json.dumps(summary, indent=2))
+    session = DriveImportSession(
+        root_folder_id=args.root_folder_id,
+        auth_mode=args.auth_mode,
+        credentials_file=args.credentials_file,
+        token_file=args.token_file,
+        batch_size=args.batch_size,
+        dry_run=args.dry_run,
+        checkpoint_path=args.checkpoint,
+        audit_log_path=args.audit_log,
+        error_log_path=args.error_log,
+        output_csv_path=args.out_csv,
+        output_md_path=args.out_md,
+        source_url=args.source_url,
+        mock_data_path=args.mock_data_path,
+        resume=args.resume,
+        limit=args.limit,
+    )
+    result = session.run()
+    print(json.dumps(result, indent=2))
     return 0
 
 

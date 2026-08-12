@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import sys
 from pathlib import Path
 from typing import Optional
 
@@ -10,6 +11,7 @@ if module_path.exists():
     spec = importlib.util.spec_from_file_location("akashic_library_models", module_path)
     if spec is not None and spec.loader is not None:
         module = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = module
         spec.loader.exec_module(module)
         CheckpointState = module.CheckpointState
     else:  # pragma: no cover
