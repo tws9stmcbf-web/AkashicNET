@@ -2,261 +2,395 @@
 
 ## Purpose
 
-This document defines a lawful, provenance-first ingestion pipeline for publicly available material from r/NeuronsToNirvana that may be relevant to the Noetic Sciences Toolkit.
+This document defines a lawful, provenance-first ingestion pipeline for publicly available material from r/NeuronsToNirvana that may be included in the Noetic Sciences Toolkit.
 
-The design follows four constraints:
+The design follows the project's existing archive standards:
 
 - The canonical source remains Reddit.
-- The Toolkit stores structured metadata and permitted excerpts, not a blind copy of Reddit pages.
-- Community content remains a community archive, not scientific evidence.
-- All ingestion is subject to Reddit's current API and developer platform requirements, rate limits, and legal terms.
+- The archive stores structured metadata and links, not a Reddit mirror.
+- Community records are not scientific evidence by default.
+- The workflow is intentionally limited to documented, permitted public-access patterns.
+- No large-scale extraction begins before the design and review process is approved.
 
 ## Scope and non-goals
 
 ### In scope
 
 - Public posts from r/NeuronsToNirvana
-- Public metadata: Reddit post ID, title, URL, author handle, creation date, subreddit, permalink, and related flags
-- Permitted content fields only: title, short summary, extracted selftext, links, media metadata, and tags that are explicitly public and intended for archival use
-- Classification into categories such as research, consciousness, philosophy, psychedelics, wisdom, lived experience, frameworks, art, music, humour, stories, nature, community, and speculation
-- Provenance and rights status for each record
-- GitHub-backed archival storage using structured records and stable identifiers
+- Public metadata such as Reddit post ID, title, URL, author, subreddit, creation date, and permalink
+- Permitted short-form content extraction such as summaries or minimal excerpts reviewed by maintainers
+- Classification into archive categories and evidence categories
+- Provenance, attribution, and rights tracking
+- GitHub-backed structured storage for future archival use
 
 ### Out of scope
 
 - Indiscriminate scraping of Reddit pages or comment trees
-- Bulk harvesting without review or rate-limit controls
-- Copying copyrighted text, images, videos, or memes at scale
+- Bulk harvesting without review and rate-limit controls
+- Copying copyrighted text, images, audio, video, or memes at scale
 - Treating community discourse as scientific evidence
-- Any phase that begins a large-scale extraction before the legal and provenance design is approved
+- A public mirror of Reddit content
+- Any extraction phase beyond a curated, reviewed pilot
 
-## Architecture principles
+## Canonical-source model
 
-1. Canonical source first
-   - Every imported record must retain the original Reddit URL and post ID as the authoritative source reference.
-   - The archive should link out; it should not attempt to replace the original publication.
+The archive is not a mirror of Reddit. It is a provenance-first catalogue that stores:
 
-2. Minimal extraction
-   - Prefer metadata and short summaries over full-page or full-body copying.
-   - Extract only what is necessary for classification, provenance, and future discovery.
+- the canonical Reddit URL
+- the Reddit post ID
+- public metadata
+- a short summary or human-written description
+- classification labels
+- provenance/licensing status
+- related external links
 
-3. Evidence separation
-   - Community records are labelled by evidence status and provenance status, never promoted to scientific evidence status by default.
+The canonical source remains the original Reddit post at all times. Reddit is the source of record; GitHub is the archive layer.
 
-4. Traceable provenance
-   - Every record must capture when it was ingested, what fields were captured, and whether the original source later changed, was removed, or was deleted.
+## Consistency check against the existing N2N archive schema
 
-5. Reversible governance
-   - If a post is deleted, edited, removed, or later restricted, the archive must preserve the historical state while flagging the current status.
+The repository already defines a practical schema for the community archive, including the following fields:
 
-## Current permitted Reddit access model
+- title
+- reddit_url
+- author
+- attribution_note
+- date
+- source_type
+- category
+- short_summary
+- external_source_url
+- toolkit_framework
+- research_question_potential
+- visual_audio_art_flag
+- evidence_status
+- provenance_status
 
-The toolkit should rely on Reddit's official developer platform and API access only. It must not use unofficial scraping or headless browser techniques to circumvent rate limits or TOS restrictions.
+This ingestion design is consistent with that schema and adds pipeline-specific fields that are not intended to replace it. The workflow should produce records that can be ingested directly into the existing archive structure without schema drift.
 
-### API / developer platform requirements
+Recommended ingestion-to-archive mapping:
 
-At the time of design, Reddit access is governed by Reddit's Developer Platform and API rules. A compliant implementation should:
+- reddit_post_id -> stored as part of the canonical URL or derived archival ID
+- title -> title
+- reddit_url -> reddit_url
+- author -> author
+- author attribution / public credit -> attribution_note
+- created_utc -> date
+- source_type -> source_type
+- category -> category
+- short summary -> short_summary
+- external links -> external_source_url and related links
+- toolkit relevance -> toolkit_framework
+- research question -> research_question_potential
+- visual/audio/art -> visual_audio_art_flag
+- evidence class -> evidence_status
+- provenance/licensing -> provenance_status
 
-- Create or use a Reddit API app registration with an app name, redirect URI, and platform type appropriate to the operating model
-- Use a respectful User-Agent header that identifies the project and the purpose of the request
-- Use OAuth when required by the endpoint or by Reddit policy for higher-privilege access
-- Prefer documented public endpoints and avoid any endpoint or method that is not explicitly permitted for public content access
-- Maintain separate credentials for ingestion jobs, with no shared secrets embedded in repository files
+## Reddit access model
 
-Operationally, this means the ingestion workflow should be implemented as a controlled script or service run with a dedicated Reddit app identity and a project-specific user agent, rather than as anonymous bulk scraping from arbitrary websites.
+The pipeline must use Reddit's official Developer Platform and documented API access only. It must not rely on unofficial scraping, browser automation, or hidden endpoints meant to circumvent the platform's rules.
 
-### Rate limits and throttling
+### API and developer platform requirements
 
-Reddit enforces rate limiting on API calls and may reject or throttle requests that exceed documented quotas. The ingestion system should assume all limits are strict and must be treated as hard ceilings, not soft guidelines.
+A compliant implementation should:
 
-Required controls:
+- register a Reddit app or use a documented public API workflow appropriate to the deployment model
+- use a clear, project-specific User-Agent string that identifies the Toolkit and its purpose
+- use OAuth when required by the access pattern or platform policy
+- prefer official endpoints and documented public data access methods
+- keep credentials out of the repository and out of shared logs
+- separate staging and production access keys
 
-- Respect `X-Ratelimit-*` headers when present
-- Use exponential backoff on 429 and transient server errors
-- Prefer scheduled, low-volume ingestion rather than bursts
-- Queue requests by post or subreddit, not by page scraping loops
-- Separate one-off reviews from bulk ingestion jobs
-- Record failed requests and retry state in the archive metadata
+### Operational constraints
 
-A conservative implementation should use a queue-based job system with a fixed request budget per hour and a default backoff of 1x to 5x on rate-limit responses. The system should never assume it can fetch vast portions of a subreddit without throttling.
+The workflow should assume that Reddit API usage is rate-limited and subject to policy changes. The implementation must be designed conservatively:
 
-### Permitted data usage
+- use low-volume, scheduled jobs instead of bursts
+- respect rate-limit headers when present
+- use backoff and retry logic for 429 and transient failures
+- avoid any large-scale subreddit crawl without explicit review
+- maintain a queue of pending URLs and a record of prior attempts
 
-Permitted use is limited to public Reddit metadata and content that is lawful to ingest under Reddit's terms and the Toolkit's own provenance rules.
+## Rate limits and enforcement
 
-This design permits:
+Reddit rate limits may change over time and often vary by endpoint and access context. The ingestion system should treat any rate-limit value as a hard ceiling, not a target to hit.
 
-- Public post metadata (ID, title, URL, author, subreddit, created time, score, flair if public, and associated permalink)
-- Public body text only when it is necessary to classify or summarise the record and when its use is consistent with platform rules
-- Public external links and embedded media metadata if they are included in the public post and lawful to archive
-- Historical snapshots of public content when intentionally retained as a provenance-preserving record
+Operational safeguards:
 
-This design does not permit:
+- fixed request budget per hour per job
+- exponential backoff on rate-limit responses
+- deduplication before each fetch
+- per-source provenance tracking for retries
+- quarantine for rejected or restricted posts
 
-- Copying full Reddit pages, comment threads, or media files wholesale
-- Storing private or restricted content
-- Reproducing copyrighted images, memes, videos, or large textual passages without a clear rights basis and a human review decision
-- Using a Reddit dataset as an unreviewed scientific corpus
+## Permitted data usage
 
-### Attribution requirements
+The pipeline may ingest only data that is public and permitted under Reddit's terms and the Toolkit's archival rules.
 
-Every imported record must carry attribution to the original Reddit post and author where appropriate. A compliant archive entry should preserve at least:
+Allowed:
+
+- public post metadata
+- public author handles when visible and appropriate
+- public post URLs and permalinks
+- public links in the post body
+- public media metadata when relevant and lawful to preserve
+- brief summaries written by a human reviewer
+- minimal excerpts only when explicitly approved and necessary for provenance or research context
+
+Disallowed:
+
+- wholesale copying of Reddit pages
+- scraping comment trees indiscriminately
+- storing private or restricted content
+- copying images, video, or audio without review and rights clearance
+- copying large text blocks without a specific legal and editorial review decision
+- using a Reddit archive as a substitute for scientific evidence
+
+## Attribution and author handling
+
+Every record must preserve attribution in a way that is accurate, respectful, and easy to audit.
+
+Required provenance fields:
 
 - Reddit post ID
 - canonical Reddit URL
 - subreddit name
 - title
-- original author handle when publicly shown and not removed by the author
+- original author handle when publicly visible
 - creation date
 - retrieval date
-- provenance status
-
-The archive should clearly state that the source is Reddit and that the Toolkit is preserving a link-based record rather than reproducing the original content at scale.
-
-### Deletion and update handling
-
-Reddit content is dynamic: posts can be edited, deleted, removed by moderators, or made inaccessible after initial retrieval.
-
-The ingestion pipeline must therefore keep a structured lifecycle. Each record should include a state machine such as:
-
-- `active`
-- `edited`
-- `deleted`
-- `removed`
-- `rate_limited`
-- `invalid_url`
-- `rejected_by_policy`
-
-Behavior rules:
-
-- Preserve the original canonical Reddit URL even if the post is later deleted.
-- Keep a historical snapshot of the retrieved metadata and any allowed extracted fields.
-- Do not silently overwrite the canonical record when the source changes.
-- Create a new event or update record rather than deleting the historical provenance trail.
-- Mark the post as `deleted` or `removed` and preserve the old record for auditability.
-
-This is essential because the archive is meant to maintain provenance across time, not just a current state snapshot.
-
-### Copyright and rights considerations
-
-The Toolkit must not treat Reddit as a free-for-reuse public domain source for text, images, or media. The safest default is a link-first archival model.
-
-Required rights controls:
-
-- Store canonical URLs rather than copying full pages
-- Prefer metadata fields and short summaries over long text copies
-- Do not archive images, videos, or user-generated media unless the workflow has a documented rights basis and review decision
-- Do not use Reddit text as if it were a scientific publication or primary evidence source
-- Add a `provenance_status` field that records whether the imported content is link-only, metadata-only, or contains a permitted excerpt
-- If a short excerpt is stored, keep it minimal and clearly labelled as an excerpt from a public Reddit post, not as an original or derived work
-
-In practice, the project should assume that the safest lawful default is: link to Reddit + store metadata + store a short summary, all while avoiding reproduction of copyrighted media and large bodies of text.
-
-## Required record model
-
-Each ingested record must include the following core fields:
-
-- reddit_post_id
-- title
-- reddit_url
-- subreddit
-- author
-- author_attribution_status
-- date_created_utc
-- date_ingested_utc
-- source_type
-- category
-- evidence_status
-- lived_experience_flag
-- external_links
-- toolkit_frameworks
-- short_summary
+- attribution_note
 - provenance_status
-- licensing_status
-- source_state
 
-The repository's existing schema already reflects a comparable pattern, including fields such as title, reddit_url, author, source_type, category, evidence_status, toolkit_framework, and provenance_status.
+Rules:
 
-### Classification support
+- Prefer public author attribution over inferred authorship.
+- Never invent an author.
+- Do not extract or store private or identifying information beyond what is publicly necessary and approved.
+- If author identity is unavailable or restricted, record that fact explicitly rather than guessing.
 
-The classification taxonomy must support the project's community archive categories:
+## Copyright and content ownership
 
-- research
-- consciousness
-- philosophy
-- psychedelics
-- wisdom
-- lived experience
-- frameworks
-- art
-- music
-- humour
-- stories
-- nature
-- community
+The repository should operate under a link-first model and a minimal-extraction model. The archive should not treat Reddit content as a public-domain or unrestricted content source.
+
+Copyright-safe design rules:
+
+- store the canonical URL and not a full page copy
+- prefer metadata and summaries over full-body copies
+- do not archive images, video, or audio without a documented review decision
+- never reproduce a Reddit meme, screenshot, or large post body without explicit clearance
+- include a `provenance_status` label that captures whether the record is link-only, metadata-only, or excerpted
+- keep source text and media separated from research and archive logic
+
+## Deleted, edited, and removed posts
+
+Reddit posts are not stable over time. A proper archive must treat changes as first-class provenance events.
+
+Required lifecycle states:
+
+- active
+- edited
+- deleted
+- removed_by_moderator
+- rate_limited
+- invalid_url
+- rejected_by_policy
+- inaccessible
+
+Behavior:
+
+- preserve the original URL and post ID even if the post is later removed
+- record the retrieval timestamp and any later status changes
+- keep the original record as a historical artifact instead of overwriting it silently
+- create change events rather than deleting provenance history
+- flag the current status separately from the original source record
+
+## Duplicate detection
+
+The archive must avoid duplicate ingestion by repeated post IDs and near-duplicate titles.
+
+Canonical deduplication keys:
+
+- Reddit post ID
+- canonical Reddit URL
+- normalized title + creation timestamp
+
+Operational rules:
+
+- do not ingest the same post ID more than once
+- quarantine near-duplicate posts for review instead of auto-merging them
+- preserve a unique record ID for each accepted item
+- detect duplicates before classification and before publication to GitHub
+
+## Evidence classification
+
+Community material should be classified by evidence status and not by scientific value.
+
+Existing repository categories are consistent with the archive's evidence boundary:
+
+- community_observation
+- lived_experience
+- creative_cultural_material
 - speculation
+- scientific_evidence (explicitly avoided for this archive)
 
-A record may also carry more than one signal, but it should have a primary category for archive navigation and a separate set of supporting tags.
+Rules:
 
-## Data flow design
+- community discussions and reflective commentary are usually `community_observation`
+- first-person testimony is `lived_experience`
+- music, art, humour, storytelling, and cultural material are usually `creative_cultural_material`
+- frameworks, speculative systems, and future-facing models are often `speculation`
+- scientific evidence is not used as a default label for Reddit posts
 
-The canonical ingestion flow is:
+## Lived-experience classification
 
-Reddit post
-→ source URL
-→ metadata
-→ permitted content extraction
-→ classification
-→ provenance
-→ GitHub archive
+The pipeline should support an explicit lived-experience flag to separate personal accounts from general discussion.
 
-### Step 1: Candidate discovery
+Recommended model:
 
-The system should not blindly crawl the entire subreddit. It should work from a controlled intake list such as:
+- lived_experience_flag: yes/no/unknown
+- evidence_status: lived_experience when the record contains first-person report or experiential testimony
 
-- manually selected Reddit URLs
-- approved subreddit search workflows
-- known thematic seed posts identified by project maintainers
-- curated lists of high-value posts for specific topics
+This is especially important for posts describing altered states, sensory changes, shifts in selfhood, or personal integration narratives.
 
-This ensures the project remains provenance-first, reviewable, and narrow in scope.
+The archive must avoid turning such material into clinical or causal evidence. It is evidence-relevant only as lived testimony, not as scientific proof.
 
-### Step 2: Reddit API retrieval
+## Source provenance and audit trail
 
-Each candidate URL is resolved to a canonical Reddit post ID. The system then requests only the required public data from the official API and preserves the original permalink.
+Every ingestion task should leave an auditable record.
 
-Fetches should include:
+Minimum audit fields:
 
-- post metadata
-- title
-- author
-- created_utc
-- subreddit
-- permalink
-- url
-- selftext
-- media metadata if present
-- flair or tags if public
+- source_url
+- reddit_post_id
+- source_status
+- ingestion_timestamp
+- retrieval_method
+- api_endpoint_or_documented_source
+- rate_limit_state
+- duplicate_check_result
+- classification_result
+- human_review_required
+- final_record_status
 
-The system should reject or quarantine requests that would require private data, account-mediated access, or scraping outside the permitted API surface.
+This ensures each imported record has a traceable path from Reddit to GitHub without relying on memory or undocumented assumptions.
 
-### Step 3: Permitted content extraction
+## External source links and related references
 
-Only approved fields are extracted and stored. A safe default is:
+The pipeline should preserve external URLs when they are embedded in the source post and are relevant to the archive.
 
-- title
-- post URL
-- public author name if available
-- date
-- short summary created by a human reviewer
-- external links present in the post body or comments when relevant and safe to archive
-- permitted textual snippet only when necessary and reviewed
+Rules:
 
-Large blocks of final body text should be excluded unless there is a specific, review-approved reason to store them. This is deliberately conservative.
+- keep the canonical Reddit source link as primary
+- record any relevant external links separately from the canonical source
+- do not broaden the archive into a general web crawl
+- do not treat external links as evidence unless separately reviewed
 
-### Step 4: Classification and tagging
+The existing schema already supports `external_source_url` and `toolkit_framework`, which should be used for relevant external links and framework associations without overclaiming.
 
-The ingest pipeline assigns:
+## Images, audio, and video handling
+
+The archive should treat media as secondary evidence and should not mirror Reddit media files by default.
+
+Policy:
+
+- preserve only the URL to the media or a documented reference if it is public and relevant
+- record a flag such as `visual_audio_art_flag` when the content is media-related
+- avoid copying or storing images, audio, or video files unless explicitly approved
+- if a post contains art, music, or visual symbolism, classify it as `creative_cultural_material` rather than treating it as scientific material
+
+This matches the existing archive model, where `visual_audio_art_flag` is already used as a structured indicator.
+
+## Error handling
+
+The pipeline should explicitly handle failure cases rather than silently skipping them.
+
+Common errors:
+
+- 429 rate limit
+- 401 or 403 access error
+- deleted or inaccessible post
+- bad URL or malformed permalink
+- payload changes or missing fields
+- API schema mismatch
+- rejected content due to legal or policy concerns
+
+Handling model:
+
+- log each failure with the source URL and error code
+- quarantine the record rather than discarding it silently
+- retry with backoff only when the failure is transient
+- mark policy rejects and inaccessible posts with explicit status codes
+
+## Validation
+
+Before a record is accepted into the GitHub archive, it should be validated against the schema and project rules.
+
+Validation checks:
+
+- title present
+- reddit_url present and valid
+- author present or explicitly marked as unavailable
+- category valid and from the approved taxonomy
+- source_type valid
+- evidence_status valid
+- provenance_status present
+- short_summary present or flagged as missing
+- toolkit_framework used only when relevant
+- duplicate detection passes
+- no private or identifying data is stored without approval
+
+The system should reject or quarantine records that fail required validations rather than publishing incomplete or ambiguous entries.
+
+## Incremental update strategy
+
+The design should support the eventual 6,000-record target without forcing a one-time bulk extraction.
+
+Recommended process:
+
+- maintain a curated intake queue
+- ingest in reviewed batches
+- update a status log after each accepted batch
+- revalidate counts and schema after each batch
+- preserve change history for deleted or edited posts
+- keep a clear distinction between pending, approved, and archived records
+
+This ensures the archive can scale from a pilot to a broad community catalogue without drifting into a live mirror or a low-quality bulk scrape.
+
+## GitHub archive model
+
+The repository should store the archive in structured form rather than as scraped web pages.
+
+Expected outputs:
+
+- a CSV or JSONL archive for machine-readable records
+- a markdown index for maintainers and readers
+- a provenance/status file documenting scope and record counts
+- a change log or audit log for updates and lifecycle transitions
+
+The archive should remain lightweight and human-readable while staying consistent with the repository's current N2N archive schema.
+
+## Governance and review
+
+For each batch or intake cycle, maintainers should review:
+
+- record quality
+- provenance status
+- rights risk
+- duplicate risk
+- classification fit
+- evidence boundary compliance
+
+No queue entry should be auto-published to the archive without review. This keeps the system aligned to the project's evidence standards and avoids accidental over-interpretation.
+
+## Phase gating
+
+This document is the architecture design step only. It does not begin a large-scale ingestion run, does not add large curated batches, and does not mark Phase 3 complete.
+
+The next allowed phase after design approval would be a small pilot of a curated set of public Reddit posts, with explicit review and provenance checks.
+
+## Summary
+
+This design keeps the project lawful, provenance-first, and consistent with the existing archive schema. The canonical source remains Reddit, while GitHub holds the reviewed, structured archive. The system favors metadata, summaries, attribution, and classification over wholesale copying and does not convert community content into scientific evidence.
 
 - primary category
 - source type
