@@ -1,193 +1,60 @@
-# 🧠 Noetic Sciences Toolkit — Library of Alexandria Edition
+# Noetic Sciences Toolkit
 
-**PRE-ALPHA v0.0.1 · Phase 3 ACTIVE · Work in Development**
+## PRE-ALPHA v0.1
 
-![Noetic Sciences Toolkit — Library of Alexandria Edition](noetic-sciences-toolkit-library-of-alexandria-edition-v0.0.1.png)
+A provenance-first research toolkit for building an open, auditable knowledge commons around consciousness, psychedelics, interdisciplinary research, and community knowledge.
 
-## Library of Alexandria Edition
+### Current Archive
 
-An evolving open-source knowledge commons connecting consciousness research, human experience, wisdom traditions, symbolic frameworks, citizen science and emerging questions.
+**9,401 unique Reddit URLs indexed**
 
-This edition distinguishes between:
+Sources currently include:
 
-- Established evidence
-- Emerging evidence
-- Hypotheses / framework proposals
-- Lived experience
-- Symbolic / philosophical material
+- `r/NeuronsToNirvana`
+- `u/NeuronsToNirvana`
+- `r/TribalGathering`
 
-These categories are not equivalent. Metaphysical concepts are presented as philosophical or speculative material rather than established scientific facts.
+The Reddit URL index is designed to preserve canonical source locations while supporting metadata collection, validation, deduplication, and future enrichment.
 
-The Library of Alexandria Edition is a metaphor for an open, evolving human knowledge commons: a place to gather, compare, question, and revise ideas across disciplines, cultures, and generations.
+### Status
 
-> Nothing is excluded because it is unusual.
-> Nothing is accepted because it is beautiful.
-> Everything is open to evidence and revision.
+**PRE-ALPHA · Public · Actively Developing**
 
-This project brings together:
+Current capabilities include:
 
-- Science & research
-- Consciousness & noetic inquiry
-- Wisdom traditions & indigenous knowledge
-- Art, symbols & meaning
-- Lived experience & stories
-- Nature & environment
-- Futures & possibilities
+- Reddit URL harvesting
+- URL canonicalisation and deduplication
+- Community-source provenance
+- Metadata validation
+- Reproducible archive workflows
+- Automated testing
 
-It also explores research and application layers including:
+### Data Sources
 
-- Evidence Commons
-- Research Database
-- Knowledge Maps
-- Methods & Protocols
-- Visual Knowledge
-- HIERATIC
-- HOMESENSE
-- Community Signals
-- Citizen Science
+The current publication focuses on Reddit community sources.
 
-Potential community-signal and hypothesis-generation sources include r/NeuronsToNirvana and r/TribalGathering. These are not empirical evidence. They may help surface patterns, stories, and questions, but they remain distinct from research findings and formal validation.
+**Google Drive ingestion is planned for a later phase and is not part of this publication snapshot.**
 
-The Akashic concept is kept as a philosophical and speculative layer within the project rather than as an established scientific claim.
+### Principles
 
-## 🌍 Vision
+The toolkit is being developed around:
 
-The **Noetic Sciences Toolkit** is an open, evolving knowledge commons exploring consciousness, human potential, wellbeing and transformative practices.
+**Provenance · Transparency · Reproducibility · Validation · Open Knowledge**
 
-It brings together scientific research, contemplative knowledge, practical tools, citizen science, experimentation and interdisciplinary perspectives.
+The goal is not to present the archive as complete or definitive, but to make the process of building and validating a living knowledge commons transparent and inspectable.
 
-The long-term vision is to grow from a GitHub repository into a collaborative **global knowledge commons** where ideas can be connected, tested, challenged, replicated and improved.
+### Publication Snapshot
 
-## 🔺 Interconnected Pyramids
+- Version: **PRE-ALPHA v0.1**
+- Reddit URLs: **9,401**
+- Validation/tests: **Passed**
+- Repository: **Public**
+- Primary branch: `main`
 
-### Many Pyramids, One Blueprint
+### Contributing
 
-Different models of human development, wellbeing, cognition and consciousness can be explored as complementary and interchangeable perspectives.
+The project is under active development. Future phases will expand source ingestion, metadata enrichment, provenance tracking, validation, and research tooling.
 
-> **Many pyramids. Many perspectives. One interconnected system.**
+---
 
-## 🧠 Consciousness & Human Potential
-
-Explore questions surrounding:
-
-- Consciousness
-- Cognition
-- Human development
-- Creativity
-- Wellbeing
-- Contemplative practice
-- Meaning and purpose
-- Human potential
-
-## 🧰 Lifestyle Tools
-
-Develop practical tools for:
-
-- 🧠 Mind
-- 🏃 Body
-- ❤️ Heart
-- 🧘 Consciousness
-- 🌍 Environment
-- ✨ Purpose
-
-The aim is to support **agency, reflection and informed choice**, rather than prescribe a single way of living.
-
-## 🔬 Research
-
-A growing collection of interdisciplinary research covering areas such as:
-
-- Neuroscience
-- Psychology
-- Consciousness studies
-- Contemplative science
-- Human development
-- Systems science
-- Psychedelic research
-- Human–environment relationships
-
-## 🧪 Experiments & Citizen Science
-
-Develop structured experiments, N-of-1 observations and citizen-science projects.
-
-The basic research cycle is:
-
-**Question → Hypothesis → Method → Observation → Analysis → Replication → Learning**
-
-## 📚 References
-
-A transparent bibliography connecting Toolkit claims and frameworks to research papers, books, datasets and other relevant sources.
-
-## 📊 Data
-
-A dedicated space for structured observations and research data, with an emphasis on documentation, privacy, transparency and reproducibility.
-
-## ⚖️ Evidence Framework
-
-The Toolkit distinguishes between:
-
-**Evidence → Observation → Interpretation → Hypothesis → Speculation**
-
-Interesting ideas are welcome.
-
-So is scepticism.
-
-> **Interesting is not the same as proven.**
-
-The project aims to remain open to evidence that challenges its own assumptions.
-
-## 🔄 Guiding Loop
-
-**Explore → Question → Test → Learn → Connect → Improve**
-
-This is intentionally a **work in progress**.
-
-The goal isn't to create another belief system or impose a predetermined worldview.
-
-It is to create useful frameworks and tools for asking better questions about consciousness and human potential.
-
-## 🤝 Community
-
-The Toolkit welcomes:
-
-- Research
-- Critical review
-- Alternative models
-- Replication
-- Experiments
-- Visualisations
-- Practical tools
-- Documentation
-- Corrections
-- New questions
-
-The project is **pro-inquiry, not pro-belief**.
-
-## 🗺️ Repository
-
-- [`modules/`](modules/) — Frameworks and Toolkit modules
-- [`research/`](research/) — Research materials
-- [`research/research-database-framework.md`](research/research-database-framework.md) — Structured research database framework
-- [`research/evidence-rating-methodology.md`](research/evidence-rating-methodology.md) — Evidence-rating methodology
-- [`research/open-research-questions.md`](research/open-research-questions.md) — Open research questions and gaps
-- [`experiments/`](experiments/) — Experiments and citizen science
-- [`references/`](references/) — Sources and bibliography
-- [`references/REFERENCE_FORMAT.md`](references/REFERENCE_FORMAT.md) — Structured reference format
-- [`data/`](data/) — Structured data and observations
-- [`tools/`](tools/) — Practical reusable tools
-  - [🔺 Interconnected Pyramids Reflection Tool](tools/interconnected-pyramids-reflection.md)
-- [`ROADMAP.md`](ROADMAP.md) — Development roadmap
-- [`CONTRIBUTING.md`](CONTRIBUTING.md) — Contribution guidelines
-
-## 🚀 Future Vision
-
-From a small open repository today toward a living, collaborative knowledge commons tomorrow.
-
-A place where:
-
-**Science + Wisdom + Practice + Experimentation + Community**
-
-can meet without requiring certainty before exploration.
-
-🌱 **Many perspectives. One interconnected toolkit.**
-
-> **The future is co-created.**
+*Living archive · Under active cultivation*
