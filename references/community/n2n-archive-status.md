@@ -1,29 +1,28 @@
 # N2N Community Archive Status
 
-## Stage 1 tracking
+## Stage 2 tracking
 
-Current indexed count: 250 / 6,000
-Stage 1 status: 250 / 250
-Target: 250 curated/indexed records
-Long-term target: 6,000
+Current indexed count / 6,000
+Stage 2 target: 1,000 / 1,000
 
 ## Scope
 
 - Preserve original Reddit URLs and attribution where publicly available.
-- Preserve source provenance and keep provenance uncertainty explicit.
-- Do not reproduce copyrighted post text or images unnecessarily.
-- Separate source type, category, lived-experience status, and evidence status.
-- Include community material across research, consciousness, philosophy, psychedelics, wisdom traditions, lived experience, frameworks, art, music, humour, stories, nature, community, and speculation.
-- Do not treat community posts as scientific evidence.
-- Deduplicate where appropriate.
-- Keep the count accurate from the actual index.
+- Keep source type, category, lived-experience status, and evidence status separate.
+- Include research, philosophical, experiential, cultural, artistic, musical, humorous, storytelling and speculative material.
+- Link external sources where available.
+- Do not reproduce copyrighted Reddit content or images unnecessarily.
+- Do not treat community material as scientific evidence.
+- Deduplicate substantially similar entries.
+- Flag uncertain provenance rather than guessing.
+- Identify relevant Toolkit frameworks only when genuinely applicable.
 
 ## Current repository state
 
-- Actual indexed count in the archive: 250 records
+- Actual indexed count in the archive: 1000 records
 - Long-term archive target: 6,000 candidate records
-- Stage 1 target: 250 curated/indexed records
+- Stage 2 target: 1,000 curated/indexed records
 
 ## Notes
 
-This update keeps the archive focused on provenance and evidence boundaries. No Phase 3 milestone is marked complete.
+This update keeps the archive focused on provenance-aware curation and evidence boundaries. No Phase 3 milestone is marked complete.
