@@ -2,3 +2,8 @@
 # Local Google OAuth credentials
 **/client_secret*.json
 **/token*.json
+
+# Google OAuth credentials
+tools/akasic-library/client_secret_*.json
+token*.json
+credentials*.json
