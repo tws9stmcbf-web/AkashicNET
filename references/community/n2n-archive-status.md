@@ -26,3 +26,10 @@ Stage 2 target: 1,000 / 1,000
 ## Notes
 
 This update keeps the archive focused on provenance-aware curation and evidence boundaries. No Phase 3 milestone is marked complete.
+
+## Prototype test batch
+
+- Prototype test batch: 25 / 25
+- Included categories: research, consciousness, philosophy, psychedelics, wisdom, lived experience, frameworks, art, music, humour, stories, nature, community, speculation
+- Canonical source remains Reddit; no bulk reproduction of copyrighted material
+- No Phase 3 milestone is marked complete.
