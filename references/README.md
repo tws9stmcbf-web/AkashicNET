@@ -57,6 +57,10 @@ Some Toolkit materials draw on community discourse, symbolic frameworks, or live
 
 These entries preserve the exact original URLs, attribution, and provenance, and they explicitly note that they are not scientific evidence.
 
+### 📚 Akashic Library provenance mapping
+
+- [Akashic Library source index](akashic-library/README.md)
+
 ## ⚖️ Evidence Status
 
 Where useful, sources can be labelled:
