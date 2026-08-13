@@ -1,7 +1,21 @@
 {
-  "run_id": "akashic-20260812T015031Z",
+  "run_id": "akashic-20260813T000000Z",
   "source_url": "https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ",
-  "processed_count": 3,
-  "last_updated_utc": "2026-08-12T01:50:31Z",
-  "completed": false
+  "last_folder_id": "Philosophy",
+  "batch_index": 1,
+  "processed_count": 4,
+  "skipped_count": 0,
+  "duplicate_count": 0,
+  "error_count": 0,
+  "discovered_count": 4,
+  "index_only_count": 4,
+  "link_plus_metadata_count": 0,
+  "import_count": 0,
+  "updated_at_utc": "2026-08-13T00:00:00Z",
+  "completed": true,
+  "status": "AUTHENTICATED_METADATA_DISCOVERY_COMPLETE",
+  "rights_review_pending": 4,
+  "confirmed_failures": 0,
+  "total_files_imported": 0,
+  "notes": "Authenticated inventory pass completed for 4 records (1 folder + 3 PDFs). All records remain INDEX_ONLY pending explicit licence or reuse verification. No PDF content was imported, copied, extracted, or redistributed."
 }
