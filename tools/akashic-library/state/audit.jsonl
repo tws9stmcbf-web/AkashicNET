@@ -1,0 +1,217 @@
+{"timestamp_utc": "2026-08-14T05:13:56Z", "event": "folder_visit", "folder_id": "", "folder_path": "root"}
+{"timestamp_utc": "2026-08-14T05:13:56Z", "event": "error", "item_id": "", "message": "Drive listing failed", "extra": "{\"error\": \"<HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%27%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=nextPageToken%2C+files%28id%2C+name%2C+mimeType%2C+size%2C+modifiedTime%2C+owners%2C+parents%2C+webViewLink%2C+description%29&supportsAllDrives=true&includeItemsFromAllDrives=true&alt=json returned \\\"File not found: .\\\". Details: \\\"[{'message': 'File not found: .', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]\\\">\"}"}
+{"timestamp_utc": "2026-08-14T05:13:56Z", "event": "run_complete", "count": 0, "dry_run": false, "root_folder_id": ""}
+{"timestamp_utc": "2026-08-14T05:15:07Z", "event": "folder_visit", "folder_id": "", "folder_path": "root"}
+{"timestamp_utc": "2026-08-14T05:15:08Z", "event": "error", "item_id": "", "message": "Drive listing failed", "extra": "{\"error\": \"<HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%27%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=nextPageToken%2C+files%28id%2C+name%2C+mimeType%2C+size%2C+modifiedTime%2C+owners%2C+parents%2C+webViewLink%2C+description%29&supportsAllDrives=true&includeItemsFromAllDrives=true&alt=json returned \\\"File not found: .\\\". Details: \\\"[{'message': 'File not found: .', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]\\\">\"}"}
+{"timestamp_utc": "2026-08-14T05:15:08Z", "event": "run_complete", "count": 0, "dry_run": false, "root_folder_id": ""}
+{"timestamp_utc": "2026-08-14T05:16:18Z", "event": "folder_visit", "folder_id": "", "folder_path": "root"}
+{"timestamp_utc": "2026-08-14T05:16:18Z", "event": "error", "item_id": "", "message": "Drive listing failed", "extra": "{\"error\": \"<HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%27%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=nextPageToken%2C+files%28id%2C+name%2C+mimeType%2C+size%2C+modifiedTime%2C+owners%2C+parents%2C+webViewLink%2C+description%29&supportsAllDrives=true&includeItemsFromAllDrives=true&alt=json returned \\\"File not found: .\\\". Details: \\\"[{'message': 'File not found: .', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]\\\">\"}"}
+{"timestamp_utc": "2026-08-14T05:16:18Z", "event": "run_complete", "count": 0, "dry_run": false, "root_folder_id": ""}
+{"timestamp_utc": "2026-08-14T05:18:39Z", "event": "folder_visit", "folder_id": "", "folder_path": "root"}
+{"timestamp_utc": "2026-08-14T05:18:40Z", "event": "error", "item_id": "", "message": "Drive listing failed", "extra": "{\"error\": \"<HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%27%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=nextPageToken%2C+files%28id%2C+name%2C+mimeType%2C+size%2C+modifiedTime%2C+owners%2C+parents%2C+webViewLink%2C+description%29&supportsAllDrives=true&includeItemsFromAllDrives=true&alt=json returned \\\"File not found: .\\\". Details: \\\"[{'message': 'File not found: .', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]\\\">\"}"}
+{"timestamp_utc": "2026-08-14T05:18:40Z", "event": "run_complete", "count": 0, "dry_run": false, "root_folder_id": ""}
+{"timestamp_utc": "2026-08-14T05:19:19Z", "event": "folder_visit", "folder_id": "", "folder_path": "root"}
+{"timestamp_utc": "2026-08-14T05:19:20Z", "event": "error", "item_id": "", "message": "Drive listing failed", "extra": "{\"error\": \"<HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%27%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=nextPageToken%2C+files%28id%2C+name%2C+mimeType%2C+size%2C+modifiedTime%2C+owners%2C+parents%2C+webViewLink%2C+description%29&supportsAllDrives=true&includeItemsFromAllDrives=true&alt=json returned \\\"File not found: .\\\". Details: \\\"[{'message': 'File not found: .', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]\\\">\"}"}
+{"timestamp_utc": "2026-08-14T05:19:20Z", "event": "run_complete", "count": 0, "dry_run": false, "root_folder_id": ""}
+{"timestamp_utc": "2026-08-14T05:22:04Z", "event": "folder_visit", "folder_id": "1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ", "folder_path": "root"}
+{"timestamp_utc": "2026-08-14T05:22:05Z", "event": "folder_visit", "folder_id": "1r_k3VvyzYuvD6D8nWq5tdDxAyZA5K0O-", "folder_path": "Golden Dawn"}
+{"timestamp_utc": "2026-08-14T05:22:06Z", "event": "folder_visit", "folder_id": "1zxUqa1_3XqF1U06_7FOnz_smIwSb3Naf", "folder_path": "Masonry"}
+{"timestamp_utc": "2026-08-14T05:22:06Z", "event": "folder_visit", "folder_id": "1HpKueHcCH_Li0JDwnpLYgM9Mgxi3mKGu", "folder_path": "Palmistry"}
+{"timestamp_utc": "2026-08-14T05:22:07Z", "event": "folder_visit", "folder_id": "1l2uPAhKf912J5Wgf9n2bWcARWuFH0au0", "folder_path": "Astral Projection"}
+{"timestamp_utc": "2026-08-14T05:22:07Z", "event": "folder_visit", "folder_id": "16Vsj431nHiCEeEkCv7nazC9DiSLw_6RH", "folder_path": "Aura + Astral Bodies"}
+{"timestamp_utc": "2026-08-14T05:22:08Z", "event": "folder_visit", "folder_id": "1j73DC16J8CclS1oU5Z3J_FuL4XipSerP", "folder_path": "Grimoire"}
+{"timestamp_utc": "2026-08-14T05:22:09Z", "event": "folder_visit", "folder_id": "1KLiJ8J572aQL55Eo69sL3HCtiZ8NQ1tl", "folder_path": "Grimoire/gkos"}
+{"timestamp_utc": "2026-08-14T05:22:09Z", "event": "folder_visit", "folder_id": "1z5kGMqycpcZnRIrt5dFCEb_l5ocyEhKU", "folder_path": "Grimoire/Abramelin"}
+{"timestamp_utc": "2026-08-14T05:22:10Z", "event": "folder_visit", "folder_id": "1koF150kIKIcp8ITZFor2wvo5NeMutrK5", "folder_path": "The Law of One"}
+{"timestamp_utc": "2026-08-14T05:22:10Z", "event": "folder_visit", "folder_id": "1jEGThwQMYfnxO3xKlknbDJrsZx98HOzR", "folder_path": "The Law of Time"}
+{"timestamp_utc": "2026-08-14T05:22:11Z", "event": "folder_visit", "folder_id": "1y8yC_WsdhF5UiQ8W9dz708GJchhjX8rP", "folder_path": "Education"}
+{"timestamp_utc": "2026-08-14T05:22:12Z", "event": "folder_visit", "folder_id": "12yVgzixP8GdmWvul9_5VgUSQdMHPEdw4", "folder_path": "Religion"}
+{"timestamp_utc": "2026-08-14T05:22:12Z", "event": "folder_visit", "folder_id": "1KvG57hE6_fnGSCcfLxpGd8MkB7bknAFk", "folder_path": "Religion/Noahs Flood in the Bible, Quran and Mesopotamian Stories"}
+{"timestamp_utc": "2026-08-14T05:22:13Z", "event": "folder_visit", "folder_id": "11FYnH4T0NySNcnyv4A9EquyIz6jIxLGD", "folder_path": "Apocrypha"}
+{"timestamp_utc": "2026-08-14T05:22:13Z", "event": "folder_visit", "folder_id": "1-IBtG7WwJHwSaFeR67xsTc_BPrgTvSlJ", "folder_path": "Apocrypha/Book of Enoch"}
+{"timestamp_utc": "2026-08-14T05:22:14Z", "event": "folder_visit", "folder_id": "1f9CFPf5qukt-aa67vMFNkbPDJ1gc8TSO", "folder_path": "Apocrypha/Gospels"}
+{"timestamp_utc": "2026-08-14T05:22:15Z", "event": "folder_visit", "folder_id": "1Oeqaww2s9jwlNJp1DJYm2Elnp-9vMiZy", "folder_path": "Apocrypha/Gospels/Books of Esdras"}
+{"timestamp_utc": "2026-08-14T05:22:16Z", "event": "folder_visit", "folder_id": "1pAeUxB-9Q7fUtP5iqGNSej9O_1JYqmqA", "folder_path": "Apocrypha/Gospels/Infancy of Jesus"}
+{"timestamp_utc": "2026-08-14T05:22:16Z", "event": "folder_visit", "folder_id": "1XjPcZnAbQAyVBHsMTR59gZ29YvK7byxG", "folder_path": "Apocrypha/Gospels/Epistle of Clement"}
+{"timestamp_utc": "2026-08-14T05:22:17Z", "event": "folder_visit", "folder_id": "1CRsLGYk27JaGMdKvzaAwyNpXKWTsOPxi", "folder_path": "Apocrypha/Gospels/Gospel of Peace"}
+{"timestamp_utc": "2026-08-14T05:22:17Z", "event": "folder_visit", "folder_id": "1kejfUTwIg1Gz4nI1iOY6HoGQA-kEsziV", "folder_path": "Apocrypha/Gospels/Books of Baruch"}
+{"timestamp_utc": "2026-08-14T05:22:18Z", "event": "folder_visit", "folder_id": "1yImfbT0C0hKaS3a8QUdng5SLk86c_EAP", "folder_path": "Apocrypha/Gospels/Adam and Eve"}
+{"timestamp_utc": "2026-08-14T05:22:19Z", "event": "folder_visit", "folder_id": "142gsqi4RLjwLeo001PEhdliEH9m9pN9z", "folder_path": "Apocrypha/Gospels/Apocalypse of James"}
+{"timestamp_utc": "2026-08-14T05:22:19Z", "event": "folder_visit", "folder_id": "1n8nVzy-RpjUxULOxKMb6i18G6H0hkaHs", "folder_path": "Bible"}
+{"timestamp_utc": "2026-08-14T05:22:20Z", "event": "folder_visit", "folder_id": "1vPrb2R0-3VL7fZX4XwZnfxHAFOpCzYIQ", "folder_path": "World History"}
+{"timestamp_utc": "2026-08-14T05:22:20Z", "event": "folder_visit", "folder_id": "13mwAI96DFTMZ9HBKUrg3JIc1lTsT02Yx", "folder_path": "World History/The Swastika"}
+{"timestamp_utc": "2026-08-14T05:22:21Z", "event": "folder_visit", "folder_id": "1AO4sbKuu3HOmJrdrdejRFvggVlnraz7w", "folder_path": "World History/Natural Genesis"}
+{"timestamp_utc": "2026-08-14T05:22:21Z", "event": "folder_visit", "folder_id": "18a1kDcB_A-SmMPRsWKGqY84hEvuJjTow", "folder_path": "World History/Forbbiden History of Europe"}
+{"timestamp_utc": "2026-08-14T05:22:22Z", "event": "folder_visit", "folder_id": "1vKIGmyduebEDaiU5eW6sxJziwO61u922", "folder_path": "World History/Compendium of World History"}
+{"timestamp_utc": "2026-08-14T05:22:22Z", "event": "folder_visit", "folder_id": "1r6u8J99OBzYO2RF7W5Hq0SShN8G1outO", "folder_path": "World History/Anaclypsis"}
+{"timestamp_utc": "2026-08-14T05:22:23Z", "event": "folder_visit", "folder_id": "12ltBOhZW8OUr7a8sYXWShFdetX1yS9JW", "folder_path": "Metaphysics"}
+{"timestamp_utc": "2026-08-14T05:22:23Z", "event": "folder_visit", "folder_id": "1luiewMefHuC14_LNeqSLTwJ1biibL8dh", "folder_path": "Metaphysics/Knowledge Lecture"}
+{"timestamp_utc": "2026-08-14T05:22:24Z", "event": "folder_visit", "folder_id": "14FqwMl-DpK9FGBJ9yHsJLAwSpYTBpQJW", "folder_path": "Metaphysics/Encyclopedia of Occultism and Parapsychology"}
+{"timestamp_utc": "2026-08-14T05:22:25Z", "event": "folder_visit", "folder_id": "1HhNiCO66FtPVSUsk37nbZcCz82t482tw", "folder_path": "Magick"}
+{"timestamp_utc": "2026-08-14T05:22:26Z", "event": "folder_visit", "folder_id": "115mbr88eCCTVvQgPeinVt6Yau12XoRUa", "folder_path": "Magick/Ceremonial Beginners"}
+{"timestamp_utc": "2026-08-14T05:22:27Z", "event": "folder_visit", "folder_id": "1DBNlwKGnR5AXUDL2cpJecnQ1WpZo-LAx", "folder_path": "Magick/Ceremonial Beginners/Occult Philosophy"}
+{"timestamp_utc": "2026-08-14T05:22:27Z", "event": "folder_visit", "folder_id": "1CQQrq6EiY5ree5SYv1AEo3p4UDHpZqQP", "folder_path": "Magick/Ceremonial Beginners/The Sacred Magi of Abramelin the Mage"}
+{"timestamp_utc": "2026-08-14T05:22:27Z", "event": "folder_visit", "folder_id": "1mKC87Dvlf6YanNGCmCsHTVfbzqvwxSPi", "folder_path": "Magick/Agrippa"}
+{"timestamp_utc": "2026-08-14T05:22:28Z", "event": "folder_visit", "folder_id": "1TrzbE5-XLLGTUibwCXSE8uu0IqPE2CWa", "folder_path": "Magick/Magi Development Course"}
+{"timestamp_utc": "2026-08-14T05:22:29Z", "event": "folder_visit", "folder_id": "13vpzvVDkTab_n7h8Zupc3XCfUwLXmPvH", "folder_path": "Magick/Chaos Magick"}
+{"timestamp_utc": "2026-08-14T05:22:29Z", "event": "folder_visit", "folder_id": "1P88VGU1p0-OY24nC9zKtPeD1-DdHq187", "folder_path": "Magick/Dogma et Rituel de la Haute Magie"}
+{"timestamp_utc": "2026-08-14T05:22:30Z", "event": "folder_visit", "folder_id": "1FfVH3QbLC5BHv3A4Z5K0GuD0TNNvnUqy", "folder_path": "Yoga"}
+{"timestamp_utc": "2026-08-14T05:22:30Z", "event": "folder_visit", "folder_id": "1ENl_3xG2gvBInPjOHBwhAA4VjYvGrqbW", "folder_path": "Yoga/Swami Vivekananda"}
+{"timestamp_utc": "2026-08-14T05:22:31Z", "event": "folder_visit", "folder_id": "1eps6CVXdBdQv56N3r6TG3zDSAtaPKAde", "folder_path": "Yoga/Yogi Ramacharaka"}
+{"timestamp_utc": "2026-08-14T05:22:31Z", "event": "folder_visit", "folder_id": "1etUaGxnioWly2zTD_yn-t4AgAAdEK7Lg", "folder_path": "Voudon"}
+{"timestamp_utc": "2026-08-14T05:22:32Z", "event": "folder_visit", "folder_id": "1wyBHu8GvZc1sa9I_sOXO5bSu-W1P2BL8", "folder_path": "Wicca"}
+{"timestamp_utc": "2026-08-14T05:22:32Z", "event": "folder_visit", "folder_id": "1mMu4pfNmTz4NvHTfLu0pN0uLbkcJhxzp", "folder_path": "Textbooks"}
+{"timestamp_utc": "2026-08-14T05:22:33Z", "event": "folder_visit", "folder_id": "1fSocQAt83xZ3dCW00TGnIj837p6zmwWG", "folder_path": "Ancient Civillizations"}
+{"timestamp_utc": "2026-08-14T05:22:33Z", "event": "folder_visit", "folder_id": "1HTcO-xqfPP7BosMKVwP6dRPCEDtzH2AV", "folder_path": "Ancient Civillizations/G.R.S._Mead"}
+{"timestamp_utc": "2026-08-14T05:22:34Z", "event": "folder_visit", "folder_id": "1di2SA1YsRwoUVdAx40pBIREOgk2yTLS_", "folder_path": "Ancient Civillizations/Writing in Maya Glyphs"}
+{"timestamp_utc": "2026-08-14T05:22:34Z", "event": "folder_visit", "folder_id": "1jXAFWLoXuijF-EFS1sJemuBhgEIkbJ5F", "folder_path": "Ancient Civillizations/Atlantis"}
+{"timestamp_utc": "2026-08-14T05:22:35Z", "event": "folder_visit", "folder_id": "1ThCY7YseeRuZFDtZ8eSwgGctXrMVT4mV", "folder_path": "Founding Fathers"}
+{"timestamp_utc": "2026-08-14T05:22:35Z", "event": "folder_visit", "folder_id": "1m-T7rVrfmyeWwlieTtZ1ihrnUcKkqSKk", "folder_path": "Rosicurcianism"}
+{"timestamp_utc": "2026-08-14T05:22:36Z", "event": "folder_visit", "folder_id": "1y9PMW_IF6gqgtje4flQQ_WE2DoLliDlw", "folder_path": "Fiction"}
+{"timestamp_utc": "2026-08-14T05:22:36Z", "event": "folder_visit", "folder_id": "1ig0GSEweYnZlXFMRtuiCqmMlAjVQl_Kt", "folder_path": "Physics"}
+{"timestamp_utc": "2026-08-14T05:22:37Z", "event": "folder_visit", "folder_id": "1k5hIFLIsbkDBOICasSKMbIS61R7_IPEG", "folder_path": "Politics"}
+{"timestamp_utc": "2026-08-14T05:22:38Z", "event": "folder_visit", "folder_id": "1jXTok0MchLd_yKx2_-qdoQP_aNPwnoli", "folder_path": "Secret Societies"}
+{"timestamp_utc": "2026-08-14T05:22:38Z", "event": "folder_visit", "folder_id": "1aOrx7rB3Rf6v363-jYaUAEEeosIxtJB1", "folder_path": "Secret Societies/Forbbiden History of Europe"}
+{"timestamp_utc": "2026-08-14T05:22:38Z", "event": "folder_visit", "folder_id": "1Spt1RncugnRIV-0o1_ItXagR3zHseaTz", "folder_path": "Native America"}
+{"timestamp_utc": "2026-08-14T05:22:39Z", "event": "folder_visit", "folder_id": "1WH2zK02xXNkpYY4vRlPbSIEpueVIRXQ0", "folder_path": "Native America/The Native Races Wild Tribes"}
+{"timestamp_utc": "2026-08-14T05:22:39Z", "event": "folder_visit", "folder_id": "14jKQgzXO5c26ow1PyzutuEHSS80xmzLX", "folder_path": "Language"}
+{"timestamp_utc": "2026-08-14T05:22:40Z", "event": "folder_visit", "folder_id": "1ZvU4DaVjiEy7DHg_S-2iWnaTlS7wR1kM", "folder_path": "Slavery + Racism"}
+{"timestamp_utc": "2026-08-14T05:22:40Z", "event": "folder_visit", "folder_id": "1vEi14qmz2VepA2Rgv1wW70mPidUOa-rO", "folder_path": "Numerology"}
+{"timestamp_utc": "2026-08-14T05:22:41Z", "event": "folder_visit", "folder_id": "1GT1T94q9xG1oM588uj6lIs3we3GECHTG", "folder_path": "Psychology"}
+{"timestamp_utc": "2026-08-14T05:22:41Z", "event": "folder_visit", "folder_id": "17eO5tDXT8qAnuIoMPCPeR6g8JPPqI8AK", "folder_path": "Psychology/Psychic Development"}
+{"timestamp_utc": "2026-08-14T05:22:42Z", "event": "folder_visit", "folder_id": "1fE8HK-vh1tVIi2ZtlOSGuh0rpI3avpmP", "folder_path": "Psychology/Complete works of John Locke"}
+{"timestamp_utc": "2026-08-14T05:22:42Z", "event": "folder_visit", "folder_id": "1bc63zUFhQ6fayXL7ehlQDDdSkR8iCE-X", "folder_path": "Sufism"}
+{"timestamp_utc": "2026-08-14T05:22:42Z", "event": "folder_visit", "folder_id": "1YSW3C2pNLayMKpSxMUnPqBYT_-g2OvZ9", "folder_path": "Science"}
+{"timestamp_utc": "2026-08-14T05:22:43Z", "event": "folder_visit", "folder_id": "1tBQ-eOt2Yjtc88UK4M6d4kucNuFeUm_1", "folder_path": "Science/Selected works by Niels Bohr"}
+{"timestamp_utc": "2026-08-14T05:22:43Z", "event": "folder_visit", "folder_id": "1mq1lI8Y5dRKFbMOnaX6jz0ILq-Nyk75I", "folder_path": "Theosophy"}
+{"timestamp_utc": "2026-08-14T05:22:44Z", "event": "folder_visit", "folder_id": "1qf0jW3qPCbIVWpYOCvlvl1X-pGrHRx0a", "folder_path": "Theosophy/Powell"}
+{"timestamp_utc": "2026-08-14T05:22:44Z", "event": "folder_visit", "folder_id": "17qihpzKi8cDy724-nAlWabpijtrYOZaD", "folder_path": "Theosophy/Annie Besant"}
+{"timestamp_utc": "2026-08-14T05:22:45Z", "event": "folder_visit", "folder_id": "1lzRi2VBsU2DS7X9DOfbDzRt5PcbDq6-N", "folder_path": "Theosophy/Blavatsky"}
+{"timestamp_utc": "2026-08-14T05:22:45Z", "event": "folder_visit", "folder_id": "1yvbOMV2itEY3gXeKJuFW22pMO752Q6jg", "folder_path": "Theosophy/Leadbeater"}
+{"timestamp_utc": "2026-08-14T05:22:46Z", "event": "folder_visit", "folder_id": "1CanF7c9v57caFhyuBjN6FXZWgm4HPBfi", "folder_path": "The Fourth Way"}
+{"timestamp_utc": "2026-08-14T05:22:47Z", "event": "folder_visit", "folder_id": "1xY4M3UraPbJIz2u-Ncdmm6Sn1bPqxlxT", "folder_path": "Reference"}
+{"timestamp_utc": "2026-08-14T05:22:47Z", "event": "folder_visit", "folder_id": "1UNfVPlyBZ2u16S_6mqSTjiTpeACJMSR3", "folder_path": "Radical Liberations"}
+{"timestamp_utc": "2026-08-14T05:22:48Z", "event": "folder_visit", "folder_id": "1Fi_M1fxwA6MVqpFn6zdxSm9fm1howrEd", "folder_path": "Sikh"}
+{"timestamp_utc": "2026-08-14T05:22:48Z", "event": "folder_visit", "folder_id": "1vZfyJmg1mN1dNdWA9Goxk9ei9FSLxYrx", "folder_path": "Poison Path"}
+{"timestamp_utc": "2026-08-14T05:22:49Z", "event": "folder_visit", "folder_id": "1fvlSQAFQsqRJhPGlUtAvgiRidkcwAWWl", "folder_path": "Uncategorized"}
+{"timestamp_utc": "2026-08-14T05:22:49Z", "event": "folder_visit", "folder_id": "1flzBkKJ3s63CO4S5iLqADnsACk5yymKW", "folder_path": "Philosophy"}
+{"timestamp_utc": "2026-08-14T05:22:49Z", "event": "folder_visit", "folder_id": "1J0BXNpYGOMrTc-Odnh6uSwvMO7KvIv-Q", "folder_path": "Philosophy/Agrippa - Occult Philosophy"}
+{"timestamp_utc": "2026-08-14T05:22:50Z", "event": "folder_visit", "folder_id": "1hGCngTgGkoMePeLD8mS8gALVcWNbWDc8", "folder_path": "Philosophy/A collection of books and writings by S\u00f8ren Kierkegaard"}
+{"timestamp_utc": "2026-08-14T05:22:50Z", "event": "folder_visit", "folder_id": "1AkWWmkY3_gPnA9G3J1RoxD8aH2icthW3", "folder_path": "Philosophy/The Mother \u2013 Collected Works Volume 1 \u2013 17"}
+{"timestamp_utc": "2026-08-14T05:22:51Z", "event": "folder_visit", "folder_id": "1_-3d9hjlWDoagRmJeqHXy5VhYTIuBJNh", "folder_path": "Philosophy/Commentaries on Living I, II and III by Jiddu Krishnamurti"}
+{"timestamp_utc": "2026-08-14T05:22:51Z", "event": "folder_visit", "folder_id": "1_8wqugAe_exJVXHIoKb7uvN59U20mlKL", "folder_path": "Philosophy/A Record of Meetings & A Further Record by Ouspensky"}
+{"timestamp_utc": "2026-08-14T05:22:52Z", "event": "folder_visit", "folder_id": "1sYDZmAHLsZyTDVvKBfhRP_Ucf0Wpjseu", "folder_path": "Philosophy/Selected works by Albert Einstein"}
+{"timestamp_utc": "2026-08-14T05:22:53Z", "event": "folder_visit", "folder_id": "1iLM6-Dra-9hmXDr74GtCbhyA9QuKd_WX", "folder_path": "Philosophy/Leaves of Morya\u2019s Garden by Master Morya and Helena Roerich"}
+{"timestamp_utc": "2026-08-14T05:22:53Z", "event": "folder_visit", "folder_id": "1rYxVplZQ1D236eaTr0jF14XU-UpPlAs1", "folder_path": "Philosophy/The Frankfurt School writings \u2013 Selected works by Karl Mannheim"}
+{"timestamp_utc": "2026-08-14T05:22:54Z", "event": "folder_visit", "folder_id": "1wOHBkLBrHVns2R6fuTcQIBbx7hsmzOpV", "folder_path": "Occultism"}
+{"timestamp_utc": "2026-08-14T05:22:55Z", "event": "folder_visit", "folder_id": "1Uwd3erNfZEyys4Sh3y9u2CslWWJ3tLrW", "folder_path": "Occultism/Occult Philosophy"}
+{"timestamp_utc": "2026-08-14T05:22:55Z", "event": "folder_visit", "folder_id": "1yXHVhy-Hm4lKQTYARUQtTZTrL138e3uo", "folder_path": "Occultism/The Magus \u2013 Celestial Intelligencer by Francis Barrett 1801"}
+{"timestamp_utc": "2026-08-14T05:22:56Z", "event": "folder_visit", "folder_id": "15RdmlK3rf0dBCEB3jGE36BOmGkQ-UJbl", "folder_path": "Occultism/Transcendental Magic Its Doctrine and Ritual by Eliphas Levi"}
+{"timestamp_utc": "2026-08-14T05:22:56Z", "event": "folder_visit", "folder_id": "1H8M4noPSKoR2-PHAkB9IZ-L_EkQKx4XO", "folder_path": "Logic"}
+{"timestamp_utc": "2026-08-14T05:22:57Z", "event": "folder_visit", "folder_id": "1v2NtmzdTfQ1TKxUBLDsiT1M33_fccKWq", "folder_path": "Logic/Selected works by Martin Heidegger"}
+{"timestamp_utc": "2026-08-14T05:22:57Z", "event": "folder_visit", "folder_id": "1AJhkeBhnaLpupOIUPQBdubPVnenLetRV", "folder_path": "Logic/Capital \u2013 A Critique of Political Economy by Karl Marx "}
+{"timestamp_utc": "2026-08-14T05:22:58Z", "event": "folder_visit", "folder_id": "13-Ku6SzMGGGnJPnXUfOjolicdkLlkImz", "folder_path": "Logic/Selected works by Bertrand Russell"}
+{"timestamp_utc": "2026-08-14T05:22:58Z", "event": "folder_visit", "folder_id": "1RSoDlPvPP0NGuSY85L8RxvdIA0nL5RhG", "folder_path": "Non-duality"}
+{"timestamp_utc": "2026-08-14T05:22:59Z", "event": "folder_visit", "folder_id": "1zIwuuWu49wrkJ1dV33SizKLAD23B0yV9", "folder_path": "Literature"}
+{"timestamp_utc": "2026-08-14T05:22:59Z", "event": "folder_visit", "folder_id": "15FQNpifLUSJVUTb60ghfSLPOjCASZ1ek", "folder_path": "Literature/The Poetry Series by Lindsay Traynor"}
+{"timestamp_utc": "2026-08-14T05:23:00Z", "event": "folder_visit", "folder_id": "18FZJEPMsnXIgXUoE1mkmasD8isl4zbHO", "folder_path": "Literature/Six short stories by Kahlil Gibran"}
+{"timestamp_utc": "2026-08-14T05:23:00Z", "event": "folder_visit", "folder_id": "1t4Pf0nVaXlkA1BNcLAajfMvsIpZtpAsM", "folder_path": "Literature/Selected Essays by Lindsay Traynor"}
+{"timestamp_utc": "2026-08-14T05:23:01Z", "event": "folder_visit", "folder_id": "1yPepC4UN_czIZ6gGNLxvJMsozLe125Ku", "folder_path": "Literature/Necronomicon and the complete works of H. P. Lovecraft"}
+{"timestamp_utc": "2026-08-14T05:23:01Z", "event": "folder_visit", "folder_id": "1WSxiTBIysgERIwjD5kpZHJ77OiLL4hUK", "folder_path": "Literature/Fjodor Dostojevskij \u2013 complete works"}
+{"timestamp_utc": "2026-08-14T05:23:02Z", "event": "folder_visit", "folder_id": "1YWcMD1BqkRGHJhw41TgDNBN2vWzVEHVM", "folder_path": "Literature/Complete Works of H. G. Wells"}
+{"timestamp_utc": "2026-08-14T05:23:02Z", "event": "folder_visit", "folder_id": "1gv0WnEe2H6f5UuUCB4rW0ftxkPrRz7-K", "folder_path": "Gnosticism"}
+{"timestamp_utc": "2026-08-14T05:23:03Z", "event": "folder_visit", "folder_id": "10u7SYQn_uHwokAFj9UGOTM62ZQ-VaKQS", "folder_path": "Astrology"}
+{"timestamp_utc": "2026-08-14T05:23:03Z", "event": "duplicate_detected", "drive_id": "1FAzK3CcCiqnffgIY7xThVECTRAipJ4ap", "signature": "fc02bf97d8af8f17d7cd470fdbc31b6665d7d6cf"}
+{"timestamp_utc": "2026-08-14T05:23:03Z", "event": "folder_visit", "folder_id": "18poq_Oz35Cpy8JlrHZ-U9YDXsFLsyv1R", "folder_path": "Judaism"}
+{"timestamp_utc": "2026-08-14T05:23:03Z", "event": "folder_visit", "folder_id": "1AJMCG-c1pkBYqovrFdhnb2Gb05zacfOH", "folder_path": "Judaism/The Talmud \u2013 Complete"}
+{"timestamp_utc": "2026-08-14T05:23:04Z", "event": "folder_visit", "folder_id": "1magauEbA31JIIqwLdhOGm3FxSAOquCKu", "folder_path": "Egyptian Mysteries"}
+{"timestamp_utc": "2026-08-14T05:23:04Z", "event": "folder_visit", "folder_id": "1hGApqG515soixzvFi-7ZpYN5hy97nf5g", "folder_path": "Hermeticism"}
+{"timestamp_utc": "2026-08-14T05:23:05Z", "event": "folder_visit", "folder_id": "194SvqEkwFcVtAZlp8fuva--P_QzWGPic", "folder_path": "Kabbalah"}
+{"timestamp_utc": "2026-08-14T05:23:06Z", "event": "folder_visit", "folder_id": "11SrNtbStsVSuAsRMWQJ01v9u9NPJ4rQe", "folder_path": "Islam"}
+{"timestamp_utc": "2026-08-14T05:23:06Z", "event": "folder_visit", "folder_id": "1CnBcln-BEKtIaPX2JMd5xyzu-8b7ov-Q", "folder_path": "Islam/In The Shade Of The Qur\u2019an \u2013 Fi Dhilal Al Qur\u2019an by Sayyid Qutb"}
+{"timestamp_utc": "2026-08-14T05:23:07Z", "event": "folder_visit", "folder_id": "1cSe8_EPXe9LkvxiOpt713qlwXpRJB7Ee", "folder_path": "Law"}
+{"timestamp_utc": "2026-08-14T05:23:07Z", "event": "folder_visit", "folder_id": "1_3ZZOTmuEjFnDmrrqN90_rUAR8VI-F4B", "folder_path": "Law/Blacks Law Dictionary"}
+{"timestamp_utc": "2026-08-14T05:23:08Z", "event": "folder_visit", "folder_id": "1c3t_RQdTi4jRDNxSLUJMfif57wJz7jG_", "folder_path": "Hinduism"}
+{"timestamp_utc": "2026-08-14T05:23:08Z", "event": "folder_visit", "folder_id": "1zb_uwk5uuNtSTjBVJhm7-JauEePi-aws", "folder_path": "Hinduism/Complete works of Swami Vivekananda"}
+{"timestamp_utc": "2026-08-14T05:23:09Z", "event": "folder_visit", "folder_id": "1NmL7-5-GiQ-Ibznm_XcVnNHSlsFTT5jk", "folder_path": "Hinduism/Atharva Veda Samhita"}
+{"timestamp_utc": "2026-08-14T05:23:09Z", "event": "folder_visit", "folder_id": "195DOTvk9Y2xjdwrx3GDT3C8Jb7KLZPb4", "folder_path": "Hinduism/Nisargadatta Maharaj \u2013 loads of short texts on non-dualism"}
+{"timestamp_utc": "2026-08-14T05:23:10Z", "event": "folder_visit", "folder_id": "1vC_eYqxUp9YkVfVz1m0b26KJYLMcYxBl", "folder_path": "Hinduism/Supermundane \u2013 The Inner Life \u2013 Book I-IV"}
+{"timestamp_utc": "2026-08-14T05:23:10Z", "event": "folder_visit", "folder_id": "1StFNpto-Gl4hSXe6gNQTaCdi3mpzvy5T", "folder_path": "Hinduism/Sri Aurobindo"}
+{"timestamp_utc": "2026-08-14T05:23:11Z", "event": "folder_visit", "folder_id": "1gRyrvHCixwdrxv7t_DDYUZYWZ-nXdApL", "folder_path": "Extraterrestrials"}
+{"timestamp_utc": "2026-08-14T05:23:12Z", "event": "folder_visit", "folder_id": "1h7pB5lmmpoEDQqyYHVAFt2AfMWZgbYh5", "folder_path": "Extraterrestrials/The Law of One"}
+{"timestamp_utc": "2026-08-14T05:23:13Z", "event": "folder_visit", "folder_id": "1DfX1R-_IFk5LpebTtJZWvXoKaTfHaFBp", "folder_path": "Alchemy"}
+{"timestamp_utc": "2026-08-14T05:23:13Z", "event": "folder_visit", "folder_id": "1pZpL3kpTs5qUgcWghFMTRmu8wq474Tqo", "folder_path": "Alchemy/Jean Dubuis"}
+{"timestamp_utc": "2026-08-14T05:23:14Z", "event": "folder_visit", "folder_id": "1nk14O6XK_tWGRwaNj01Mw-ZwknAVFpGx", "folder_path": "Alchemy/Jean Dubuis/Spagyrics"}
+{"timestamp_utc": "2026-08-14T05:23:14Z", "event": "folder_visit", "folder_id": "1jo9uR5WBZhEo5cLTFUfS2VqoeH2kxnZy", "folder_path": "Alchemy/Jean Dubuis/Qabala"}
+{"timestamp_utc": "2026-08-14T05:23:14Z", "event": "folder_visit", "folder_id": "1cuIa6vdL-aBoFskw_7J_cjq3-8Hryb3N", "folder_path": "Alchemy/Jean Dubuis/Mineral Alchemy"}
+{"timestamp_utc": "2026-08-14T05:23:15Z", "event": "folder_visit", "folder_id": "1f66DvtCpbp0_e2Tg88nsrEDWslQLQlZk", "folder_path": "Alchemy/The Sacred Magic of Abramelin the Mage"}
+{"timestamp_utc": "2026-08-14T05:23:15Z", "event": "folder_visit", "folder_id": "14zAc21p5_-Szka2jR4b4xQEddzqEC15I", "folder_path": "Dzogchen"}
+{"timestamp_utc": "2026-08-14T05:23:16Z", "event": "folder_visit", "folder_id": "1f1bSatoy325Lcq3nmHEnaqLQ6EtK5H63", "folder_path": "Dzogchen/Dzogchen Four introductory texts on Dzogchen"}
+{"timestamp_utc": "2026-08-14T05:23:16Z", "event": "folder_visit", "folder_id": "1cOXTqeVsEtMDXI6ZfZR2EozxMLd6Y3U6", "folder_path": "Catholocism"}
+{"timestamp_utc": "2026-08-14T05:23:17Z", "event": "folder_visit", "folder_id": "18YsXxFfGbPws4QJZb-eYZe2NQSQiFvme", "folder_path": "Catholocism/The Gospel of Thomas \u2013 two different translations"}
+{"timestamp_utc": "2026-08-14T05:23:18Z", "event": "folder_visit", "folder_id": "1zOBMuaG1IOzunpS79c5otfVX9D3hgg8p", "folder_path": "Catholocism/Ante-Nicene Fathers \u2013 VOL I \u2013 IX"}
+{"timestamp_utc": "2026-08-14T05:23:18Z", "event": "folder_visit", "folder_id": "1LsmdKjER7QU8__kScZCeRFyIF3BaSIdE", "folder_path": "Catholocism/Nicene and post-Nicene fathers of the Christian church"}
+{"timestamp_utc": "2026-08-14T05:23:19Z", "event": "folder_visit", "folder_id": "1A99Zpykd2p_GIcgYQ-pzsohV6O_dO7kA", "folder_path": "Christianity"}
+{"timestamp_utc": "2026-08-14T05:23:19Z", "event": "folder_visit", "folder_id": "1EvUbiT33J5IpSMShs74l1apf5ycPGNAc", "folder_path": "Christianity/The Apostolic Fathers \u2013 Fathers of the first, second, third and fourth century"}
+{"timestamp_utc": "2026-08-14T05:23:20Z", "event": "folder_visit", "folder_id": "13ZK_-Q7RC0_RlaENvZ0DsF05bXV7u2sV", "folder_path": "Christianity/Christian Critiques"}
+{"timestamp_utc": "2026-08-14T05:23:20Z", "event": "folder_visit", "folder_id": "1tXfJEhKHo-hiPGWwr_lk30L0v_J-P8i-", "folder_path": "Christianity/Christian History"}
+{"timestamp_utc": "2026-08-14T05:23:20Z", "event": "folder_visit", "folder_id": "1cieMTqr2SemeZ7iMflwyOXgj5eN-A7xS", "folder_path": "Christianity/Fathers of the Desert VOL I+II"}
+{"timestamp_utc": "2026-08-14T05:23:21Z", "event": "folder_visit", "folder_id": "1UpRJIyFeJvow0uKNt_SoN7FXARcLJY3c", "folder_path": "Christianity/Aquinas Ethicus Volumes I & II"}
+{"timestamp_utc": "2026-08-14T05:23:22Z", "event": "folder_visit", "folder_id": "13jV_C5HhR2JoalvAatUoL9wIj8TeAvGn", "folder_path": "Shamanism"}
+{"timestamp_utc": "2026-08-14T05:23:22Z", "event": "folder_visit", "folder_id": "1fQIDC0JppwJDp2fb7Fcgooh0v4Pbur0N", "folder_path": "Shamanism/Techniques of modern shamanism"}
+{"timestamp_utc": "2026-08-14T05:23:23Z", "event": "folder_visit", "folder_id": "1pnXpdjDqxI35FK7LYYKJPJKNQ_XIjHwU", "folder_path": "Taoism"}
+{"timestamp_utc": "2026-08-14T05:23:23Z", "event": "folder_visit", "folder_id": "1ybc34p2T4Q81yR4FJWclv3k79-lOwYre", "folder_path": "Ancient Religions"}
+{"timestamp_utc": "2026-08-14T05:23:24Z", "event": "folder_visit", "folder_id": "1_1eRIoqdvxQssmX4giB7zutmQlj97v5V", "folder_path": "Ancient Religions/Sacred Texts"}
+{"timestamp_utc": "2026-08-14T05:23:24Z", "event": "folder_visit", "folder_id": "1rSuChiirrrXco37udDN0bgZ4c4vGcoOh", "folder_path": "Ancient Religions/Enoch"}
+{"timestamp_utc": "2026-08-14T05:23:24Z", "event": "folder_visit", "folder_id": "1KI6_vTeuNGSD4cs8mYrW_v8F4YOPUgYd", "folder_path": "Ancient Religions/Gnosis"}
+{"timestamp_utc": "2026-08-14T05:23:25Z", "event": "folder_visit", "folder_id": "17h9aKDQNw-PrSLfa1vTXrynUZ9k1Pass", "folder_path": "Ancient Religions/The Sacred Books of the East \u2013 all 50 volumes"}
+{"timestamp_utc": "2026-08-14T05:23:25Z", "event": "folder_visit", "folder_id": "1uOqoOgdSlBQTO9eVmVFQXRSMFWTjUc2w", "folder_path": "Ancient Religions/Techniques of Modern Shamanism"}
+{"timestamp_utc": "2026-08-14T05:23:26Z", "event": "folder_visit", "folder_id": "1AX4LqJDJvFKV7Z3l0a6cTpIsL3mD0GSr", "folder_path": "Ancient Religions/Echoes From the Gnosis \u2013 The Gnosis of the Mind \u2013 All Volumes"}
+{"timestamp_utc": "2026-08-14T05:23:26Z", "event": "folder_visit", "folder_id": "1YosCdHyuQTHD-WgFFReWBBjij-fOJDuK", "folder_path": "Ancient Religions/The Demotic Magical Papyrus of London and Leiden"}
+{"timestamp_utc": "2026-08-14T05:23:26Z", "event": "folder_visit", "folder_id": "1Y1Rsm1B-gpOoftvPJnDdZqBI3_kITWx4", "folder_path": "Ancient Religions/Mushrooms Russia and History"}
+{"timestamp_utc": "2026-08-14T05:23:27Z", "event": "folder_visit", "folder_id": "1rwWIyJYxNbbdhPmlZIKndTNJSHWGgdhr", "folder_path": "Ancient Religions/Mahabharata"}
+{"timestamp_utc": "2026-08-14T05:23:27Z", "event": "folder_visit", "folder_id": "1iyCs8CnSiTRv4ea1l1Jub49Rc6mkJCZB", "folder_path": "Ancient Religions/Tantric Texts Series 1-22 Complete PDF works of Sir John Woodroffe"}
+{"timestamp_utc": "2026-08-14T05:23:28Z", "event": "folder_visit", "folder_id": "1haTlvChnDHlS0hPkN5_3vAhrah-Dmzi2", "folder_path": "Ancient Religions/History of Greek Philosophy VOL I-II"}
+{"timestamp_utc": "2026-08-14T05:23:28Z", "event": "folder_visit", "folder_id": "1K6FtQYHnB0HE4JyaVxbpOG0dnzsVqj2U", "folder_path": "Ancient Religions/The Dresden Codex \u2013 and how to read it before it is too late"}
+{"timestamp_utc": "2026-08-14T05:23:29Z", "event": "folder_visit", "folder_id": "15v4LOHeP0yNlAeQGqsWHNgqzrpvVoJmX", "folder_path": "Ancient Religions/Trishasti Shalaka Purusa Caritr"}
+{"timestamp_utc": "2026-08-14T05:23:30Z", "event": "folder_visit", "folder_id": "1zRRev6kDn7I4i23uk5btY6y2RwUBJGvr", "folder_path": "Buddhism"}
+{"timestamp_utc": "2026-08-14T05:23:30Z", "event": "folder_visit", "folder_id": "1xZ-Z1S0nYSzg7ftGvVUUuUxs-dDgf_ci", "folder_path": "Buddhism/Modern Buddhism \u2013 the Path of Compassion and Wisdom"}
+{"timestamp_utc": "2026-08-14T05:23:31Z", "event": "folder_visit", "folder_id": "1aSYN2HQz5WEUL-YOcV9wpnnAgCMAnzlZ", "folder_path": "Buddhism/Buddhist Suttas A-Z"}
+{"timestamp_utc": "2026-08-14T05:23:31Z", "event": "folder_visit", "folder_id": "1uHOZkWQWbplJOZFkSERJM9TA17yTxrKI", "folder_path": "Buddhism/Rude Awakenings and Great Patient One by Ajahn Sucitto and Nick Scott"}
+{"timestamp_utc": "2026-08-14T05:23:32Z", "event": "folder_visit", "folder_id": "1V9jduIr09VMJSjmfnBf-R33Tr_m1kSJE", "folder_path": "Buddhism/Teaching From The Vajrasattva Retreat"}
+{"timestamp_utc": "2026-08-14T05:23:32Z", "event": "folder_visit", "folder_id": "1aL-CctcU9vcJrd97pEFNWyptPJUiXCC7", "folder_path": "Buddhism/The Zen of Advaita"}
+{"timestamp_utc": "2026-08-14T05:23:32Z", "event": "folder_visit", "folder_id": "1H9TEiVLI5Us6r01aAU92vc_7Vo5LnKhE", "folder_path": "Buddhism/Bardo Teachings \u2013 Zhi-Kro and Ngo\u0308ndro Practice"}
+{"timestamp_utc": "2026-08-14T05:23:33Z", "event": "folder_visit", "folder_id": "1j3vx9tUr9H3bMxvrvo7DBjkP8rUFJWEb", "folder_path": "Buddhism/Songs of Milarepa"}
+{"timestamp_utc": "2026-08-14T05:23:33Z", "event": "folder_visit", "folder_id": "1EkGkt7we-mnMOmXiuBl-WJOe7zkgh7KC", "folder_path": "Buddhism/Ramayana"}
+{"timestamp_utc": "2026-08-14T05:23:36Z", "event": "folder_visit", "folder_id": "13K7eQvLdT39aB1KpZsjaQFbSyDsNRkXM", "folder_path": "Buddhism/The Buddhist Monastic Code"}
+{"timestamp_utc": "2026-08-14T05:23:37Z", "event": "folder_visit", "folder_id": "1o6VOAvtTcz9TylchObAemJa_FWfveGyb", "folder_path": "Buddhism/The Complete Works of Sister Nivedita VOL I-V"}
+{"timestamp_utc": "2026-08-14T05:23:37Z", "event": "folder_visit", "folder_id": "1UM1iRxoG04JJ2I647hJT6KPhyIPe4V4K", "folder_path": "Buddhism/Meditations VOL I-V"}
+{"timestamp_utc": "2026-08-14T05:23:37Z", "event": "folder_visit", "folder_id": "167o_MJPk1uI3wqqySNI3CrFQRRKtie0j", "folder_path": "Buddhism/Buddhist Legends"}
+{"timestamp_utc": "2026-08-14T05:23:38Z", "event": "folder_visit", "folder_id": "1wREbMvK6ajHs1abhcdClaZhCgXBTUsaN", "folder_path": "Buddhism/Seeing The Way"}
+{"timestamp_utc": "2026-08-14T05:23:38Z", "event": "folder_visit", "folder_id": "1zgPn3S265lLSV0rk2atjCTIz235j9tpC", "folder_path": "Buddhism/Handful of Leaves VOL I \u2013 IV"}
+{"timestamp_utc": "2026-08-14T05:23:39Z", "event": "folder_visit", "folder_id": "1Je0jMguxsAX0Nys0TbEPii38EU9omy19", "folder_path": "Buddhism/Books by Luang Ta Maha Boowa"}
+{"timestamp_utc": "2026-08-14T05:23:39Z", "event": "folder_visit", "folder_id": "1ETqBx03tXfbhgSw6YBJh_WmXEcchMjS0", "folder_path": "Buddhism/The Great Chronicle Of Buddhas"}
+{"timestamp_utc": "2026-08-14T05:23:41Z", "event": "folder_visit", "folder_id": "1gtWlxilSfKqQkpAmvNN6Wbor4bO1EixW", "folder_path": "Biographies"}
+{"timestamp_utc": "2026-08-14T05:23:42Z", "event": "folder_visit", "folder_id": "1vUaAL0MHu5XfAWZpZT-aAbUwZ0GUVDy_", "folder_path": "Biographies/The Philosophical Works of David Hume VOL I-IV"}
+{"timestamp_utc": "2026-08-14T05:23:42Z", "event": "folder_visit", "folder_id": "1ASEQz9Wla3SuqSY6GM7WMwJEuQo5N48O", "folder_path": "Biographies/The most complete collection of the books by Hermann Hesse"}
+{"timestamp_utc": "2026-08-14T05:23:43Z", "event": "folder_visit", "folder_id": "1aoo5vu16lWHZipECj5vZUEk30vNtM-AK", "folder_path": "Biographies/The spiritual writings of Wassily Kandinsky"}
+{"timestamp_utc": "2026-08-14T05:23:43Z", "event": "folder_visit", "folder_id": "1LHIagXtkhZ2oYFBCMrDC_HQ4rY3q8jYr", "folder_path": "Biographies/The complete works of Friedrich Nietzsche in English as PDF"}
+{"timestamp_utc": "2026-08-14T05:23:44Z", "event": "folder_visit", "folder_id": "1qFjT3G0QhNXr6yD8ySPObB786B6-ks59", "folder_path": "Bizzare"}
+{"timestamp_utc": "2026-08-14T05:23:45Z", "event": "folder_visit", "folder_id": "19twooq7V_vTux7hqY2I-V3kz0Led6dqY", "folder_path": "Bizzare/Mushrooms Russia and History"}
+{"timestamp_utc": "2026-08-14T05:23:45Z", "event": "folder_visit", "folder_id": "1GheOqAL6JE2lF9aQd0qnfMkaw-CSWNWm", "folder_path": "Bizzare/Necronomicon and the complete works of H. P. Lovecraft"}
+{"timestamp_utc": "2026-08-14T05:23:46Z", "event": "folder_visit", "folder_id": "19EQ0UzrihX3JyB9Wj2j1kUDpY_kexJ-M", "folder_path": "PDF"}
+{"timestamp_utc": "2026-08-14T05:23:46Z", "event": "folder_visit", "folder_id": "1PXbbVEp2RC9HhohWKxyl-ScuXwK98Np1", "folder_path": "PDF/Steiner"}
+{"timestamp_utc": "2026-08-14T05:23:47Z", "event": "folder_visit", "folder_id": "1o8yz6GveQI612b02khNCGkkT-G6zK2mh", "folder_path": "PDF/Manly P.Hall"}
+{"timestamp_utc": "2026-08-14T05:23:47Z", "event": "folder_visit", "folder_id": "1sAHrK5lunmOV73H1dQa5ysbfXMgvyUCA", "folder_path": "PDF/Author Avalon"}
+{"timestamp_utc": "2026-08-14T05:23:48Z", "event": "folder_visit", "folder_id": "11UvaQiyIr8fXb-k8op0vDYweZz_UxGZS", "folder_path": "PDF/Author Avalon/Reference Material"}
+{"timestamp_utc": "2026-08-14T05:23:48Z", "event": "folder_visit", "folder_id": "1x5Nz7WEJZt1-sy8btmb-Xq-T3L8sxnu3", "folder_path": "PDF/Aleister Crowley"}
+{"timestamp_utc": "2026-08-14T05:23:49Z", "event": "folder_visit", "folder_id": "1cBUIdOwVA0-NShJNi2DtFcijzVlFa2U2", "folder_path": "PDF/Alice A. Bailey"}
+{"timestamp_utc": "2026-08-14T05:23:49Z", "event": "folder_visit", "folder_id": "1oUrDW0b2y8_WvDo4jRQwkQShUKQRSSd_", "folder_path": "PDF/Daniel A.Schulke"}
+{"timestamp_utc": "2026-08-14T05:23:50Z", "event": "folder_visit", "folder_id": "1V8it6BXmhJk9KOfIo2slQE6L26JSKmFK", "folder_path": "PDF/Andrew Chumbley"}
+{"timestamp_utc": "2026-08-14T05:23:50Z", "event": "folder_visit", "folder_id": "1V3BAIiWAk8p850rwdUHWizHGtpSjyRiM", "folder_path": "PDF/Mabel Collins"}
+{"timestamp_utc": "2026-08-14T05:23:51Z", "event": "folder_visit", "folder_id": "1Rbcs-ivBEZaoJ_Un0pnux7om6UogJmSp", "folder_path": "PDF/F Bardon"}
+{"timestamp_utc": "2026-08-14T05:23:51Z", "event": "folder_visit", "folder_id": "1JNWB3rODIgGSBAXYHiIdB5za0yzxE3-f", "folder_path": "PDF/Montalk"}
+{"timestamp_utc": "2026-08-14T05:23:52Z", "event": "folder_visit", "folder_id": "12bZx4fTQpnbwhQhLM-mKTN7jFHoEwQWT", "folder_path": "PDF/Montalk/Not Important"}
+{"timestamp_utc": "2026-08-14T05:23:52Z", "event": "folder_visit", "folder_id": "1CSQdKsNH7NgTz2reGfSz1RcIkA8yc6Lp", "folder_path": "PDF/Doyle"}
+{"timestamp_utc": "2026-08-14T05:23:52Z", "event": "folder_visit", "folder_id": "1KwoJweFXc-zAm7AVUhw1XWTZ3xOOTydv", "folder_path": "PDF/Bookz"}
+{"timestamp_utc": "2026-08-14T05:23:54Z", "event": "run_complete", "count": 2657, "dry_run": false, "root_folder_id": "1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ"}
