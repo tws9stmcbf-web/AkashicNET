@@ -13,11 +13,13 @@ The archive currently contains **9,401 canonical Reddit URLs**, with richer meta
 
 The search tool is read-only: it searches the local public archive and does not make requests to Reddit.
 
-# Noetic Sciences Toolkit
+# 🕸️ AkashicNET
 
-## PRE-ALPHA v0.2.0
+## Noetic Sciences Toolkit · PRE-ALPHA v0.2.0
 
-A provenance-first research toolkit for building an open, auditable knowledge commons around consciousness, psychedelics, interdisciplinary research, and community knowledge.
+AkashicNET is an open, provenance-first knowledge network for building an auditable living commons around consciousness, psychedelics, interdisciplinary research, and community knowledge.
+
+The **Noetic Sciences Toolkit** is the current research and archival toolkit within AkashicNET, providing the practical infrastructure for provenance, validation, reproducibility, and community-source preservation.
 
 ### Current Archive
 
