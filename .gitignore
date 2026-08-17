@@ -12,3 +12,7 @@ credentials*.json
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Akashic Library runtime state
+/tools/akashic-library/state/*.jsonl
+/tools/akashic-library/state/checkpoint.json
