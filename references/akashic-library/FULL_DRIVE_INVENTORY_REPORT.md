@@ -2,9 +2,9 @@
 
 ## Executive summary
 
-This audit did not complete a full authenticated Drive inventory. The Agent attempted to enumerate the configured root folder using the repository’s OAuth client configuration, but the authentication flow did not complete because the required Google consent step was not completed in this environment.
+The live OAuth retry for the configured root did not produce a valid authenticated Drive session in this environment. The importer reached the Google consent URL again, but no persisted OAuth token was created and no successful `files().list()` traversal completed. Because there was no successful token exchange and no live Drive listing, there is no evidence-backed authenticated total for the archive.
 
-As a result, the only defensible inventory remains the current repository snapshot of the reachable subset:
+The only defensible inventory remains the current repository snapshot of the reachable subset:
 
 - 4 authenticated records
 - 1 folder: Philosophy
@@ -12,7 +12,7 @@ As a result, the only defensible inventory remains the current repository snapsh
 - 0 imported files
 - all records remain `INDEX_ONLY`
 
-This is not proof that the Google Drive library contains only 4 items. It is proof that the current authenticated and recorded traversal reached only a subset of the archive under the current access and permissions context.
+This is not proof that the Google Drive library contains only 4 items. It is proof that the current recorded access path reached only a subset of the archive under the current permissions context.
 
 ## Authenticated root identity
 
@@ -55,18 +55,18 @@ The code does not allow an import or any file-body extraction. It only collects 
 
 ## Actual authentication status at execution time
 
-The real attempt to enumerate the configured root was executed with:
+The authenticated enumeration was retried with:
 
 - `--auth-mode oauth`
 - `--root-folder-id 1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ`
 - client secret file present under `tools/akashic-library/`
-- no pre-existing valid token file for the Agent session
+- a fresh token target at `/tmp/akashic-drive-token.json`
 
 The command output showed:
 
 > Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?... 
 
-The OAuth consent flow was not completed in this environment. No successful token exchange or Drive API listing occurred after that step.
+The Google consent flow was initiated, but no valid OAuth token file was created in the environment and no successful callback/authorization completed. There was no successful token exchange and no Drive API listing beyond the consent redirect.
 
 Therefore, there is no evidence-backed authenticated full-drive count from this session.
 
@@ -123,16 +123,17 @@ The repository currently contains no traceable API-backed result, no exported Dr
 
 ## Verified counts
 
-The following counts are the only verified counts currently supported by repository evidence:
+The following counts are the only verified counts currently supported by repository evidence, because the live Drive traversal did not complete:
 
 - folders discovered: 1 (Philosophy)
 - files discovered: 3 (PDFs)
 - shortcuts: 0 verified in the current recorded snapshot
 - duplicates: 0 verified in the current recorded snapshot
 - inaccessible items: 0 explicitly verified in the recorded snapshot
-- permission errors: none yet observed in the recorded snapshot
-- traversal errors: none yet observed in the recorded snapshot
-- successfully enumerated items: 4 authenticated records in the recorded subset
+- permission errors: 0 observed in the recorded snapshot
+- traversal errors: 0 observed because no successful authenticated listing completed
+- total records: 4 in the current documented subset
+- traversal completed: no
 
 This is a verified subset count, not a verified library total.
 
@@ -148,16 +149,18 @@ The following remain unresolved:
 
 ## Exact next technical step
 
-The next technical step is not a content import or a rights approval. It is a restored, consented, authenticated Drive API enumeration from the correct archive root.
+The next technical step is not a content import or a rights approval. It is a restored, successfully completed OAuth session that persists a valid token and then a recursive Drive API enumeration from the correct archive root.
 
 Required next step:
 
-- complete the Google OAuth consent flow for the repository’s configured Drive account
+- complete the Google OAuth consent flow for the repository’s configured Drive account in a session that persists the token
 - confirm the authenticated account can list the actual archive root
 - run the recursive metadata enumeration without `--limit`
 - page to completion via `nextPageToken`
 - log inaccessible branches, permission errors, and duplicate IDs
 - record the final authenticated total as a separate verified count rather than treating the current 4-record snapshot as the full library
+
+The observed state here is still blocked at the consent/token stage: the URL was shown, but the authorization callback did not complete in a way that produced a valid token in this environment.
 
 ## Content and rights safety
 
@@ -178,4 +181,18 @@ The present evidence supports a narrow but honest conclusion:
 - the current 4-record inventory is verified only as a reachable subset under the presently recorded access path
 - the true archive size remains unresolved
 - the historical ~12,438 figure remains unverified and cannot be accepted as a proven total
-- a full authenticated Drive enumeration remains blocked until the OAuth consent step is completed and the true archive root is confirmed accessible
+- a full authenticated Drive enumeration remains blocked until the OAuth consent step completes successfully in a session that writes a valid token and the true archive root is confirmed accessible
+- no live recursive Drive traversal was observed in this environment, so the report reflects the verified subset count only
+
+## Verified live-enumeration result summary
+
+- folder count: 1
+- file count: 3
+- shortcut count: 0
+- duplicate count: 0
+- inaccessible/error count: 0 in the current verified subset snapshot
+- total records: 4
+- traversal completed: no
+- historical ~12,438 verified: no
+- PR number: 5
+- current commit SHA: not yet updated by a new live-enumeration commit; the report remains the verified subset snapshot until a successful authenticated session produces a real Drive listing
