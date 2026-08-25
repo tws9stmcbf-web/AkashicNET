@@ -9,13 +9,13 @@ Search by title, topic, category, author, framework, summary, evidence classific
     python tools/search_reddit.py Akashic
     python tools/search_reddit.py HOMESENSE
 
-The archive currently contains **9,401 canonical Reddit URLs**, with richer metadata available through the community index.
+The canonical Reddit archive currently contains **9,401 unique Reddit URLs**, with richer metadata available through the community index. A broader unified Akashic search index now contains **12,058 records** across the wider research and archival layers.
 
 The search tool is read-only: it searches the local public archive and does not make requests to Reddit.
 
 # 🕸️ AkashicNET
 
-## Noetic Sciences Toolkit · PRE-ALPHA v0.2.0
+## Noetic Sciences Toolkit · PRE-ALPHA v0.3.0
 
 AkashicNET is an open, provenance-first knowledge network for building an auditable living commons around consciousness, psychedelics, interdisciplinary research, and community knowledge.
 
@@ -23,7 +23,7 @@ The **Noetic Sciences Toolkit** is the current research and archival toolkit wit
 
 ### Current Archive
 
-**9,401 unique Reddit URLs indexed**
+**9,401 unique canonical Reddit URLs indexed**
 
 Sources currently include:
 
@@ -45,12 +45,15 @@ Current capabilities include:
 - Metadata validation
 - Reproducible archive workflows
 - Automated testing
+- Unified Akashic search indexing
+- Research evidence layers
+- Google Drive inventory and audit workflows
 
 ### Data Sources
 
 The current publication focuses on Reddit community sources.
 
-**Google Drive ingestion is planned for a later phase and is not part of this publication snapshot.**
+**Google Drive inventory and audit infrastructure is now part of the project. Full Google Drive ingestion is not yet presented as a completed public archive layer. Inventory, provenance, validation, and ingestion remain deliberately distinct stages.**
 
 ## For Normal Users
 
@@ -74,11 +77,13 @@ The goal is not to present the archive as complete or definitive, but to make th
 
 ### Publication Snapshot
 
-- Version: **PRE-ALPHA v0.2.0**
-- Reddit URLs: **9,401**
+- Version: **PRE-ALPHA v0.3.0**
+- Canonical Reddit URLs: **9,401**
+- Unified Akashic search index: **12,058 records**
 - Validation/tests: **Passed**
 - Repository: **Public**
 - Primary branch: `main`
+- Snapshot date: **2026-08-25**
 
 ### Contributing
 
