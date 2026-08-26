@@ -36,6 +36,19 @@ class RedditBridgeDedupeLineageTests(unittest.TestCase):
         self.assertEqual(records[0].crosspost_chain, ["root1"])
         self.assertEqual(records[0].lineage_status, "official_crosspost")
 
+    def test_external_reddit_url_preserves_its_actual_subreddit(self):
+        records = build_records(self.source, [{
+            "id": "local1",
+            "permalink": "/r/NeuronsToNirvana/comments/local1/local_post/",
+            "url": "https://old.reddit.com/r/TribalGathering/comments/external1/external_post/?utm_source=test",
+            "title": "External Reddit link",
+            "created_utc": 1780000000,
+        }])
+        self.assertEqual(
+            records[0].external_source_url,
+            "https://www.reddit.com/r/TribalGathering/comments/external1/external_post/",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

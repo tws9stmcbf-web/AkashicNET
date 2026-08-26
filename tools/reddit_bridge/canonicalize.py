@@ -29,7 +29,8 @@ def normalize_reddit_url(value: str, registry_subreddit: Optional[str] = None) -
     if not value or not value.strip():
         raise ValueError("Reddit URL is required")
     text = value.strip()
-    if text.startswith("/"):
+    is_relative = text.startswith("/")
+    if is_relative:
         text = "https://www.reddit.com" + text
     if text.startswith("http://"):
         text = "https://" + text[7:]
@@ -40,12 +41,15 @@ def normalize_reddit_url(value: str, registry_subreddit: Optional[str] = None) -
     if host not in REDDIT_HOSTS:
         raise ValueError(f"Unsupported Reddit host: {parsed.netloc}")
     parts = [p for p in parsed.path.split("/") if p]
+    if is_relative and len(parts) >= 2 and parts[0].lower() == "comments":
+        if not registry_subreddit:
+            raise ValueError(f"Subreddit is required for relative Reddit permalink: {value}")
+        parts = ["r", registry_subreddit, *parts]
     if len(parts) < 4 or parts[0].lower() != "r" or parts[2].lower() != "comments":
         if len(parts) == 2 and parts[0].lower() == "r":
-            subreddit = registry_subreddit or parts[1]
-            return f"https://www.reddit.com/r/{subreddit}/"
+            return f"https://www.reddit.com/r/{parts[1]}/"
         raise ValueError(f"Not a Reddit post or subreddit URL: {value}")
-    subreddit = registry_subreddit or parts[1]
+    subreddit = parts[1]
     post_id = parts[3]
     slug = parts[4] if len(parts) > 4 else ""
     path = f"/r/{subreddit}/comments/{post_id}/"

@@ -21,7 +21,8 @@ def record_from_api_payload(source: RedditSource, payload: Dict[str, Any], inges
     external_url = payload.get("url") or None
     if external_url:
         try:
-            external_url = None if normalize_reddit_url(external_url, source.subreddit) == canonical_url else external_url
+            canonical_external_url = normalize_reddit_url(external_url, source.subreddit)
+            external_url = None if canonical_external_url == canonical_url else canonical_external_url
         except ValueError:
             pass
     title = (payload.get("title") or "").strip()

@@ -14,6 +14,19 @@ class RedditBridgeCanonicalizeTests(unittest.TestCase):
             "https://www.reddit.com/r/microdosing/comments/plrxca/faq/",
         )
 
+    def test_full_url_subreddit_is_not_overridden_by_registry(self):
+        url = "https://old.reddit.com/r/TribalGathering/comments/abc123/example/?utm_source=test"
+        self.assertEqual(
+            normalize_reddit_url(url, "NeuronsToNirvana"),
+            "https://www.reddit.com/r/TribalGathering/comments/abc123/example/",
+        )
+
+    def test_registry_resolves_relative_permalink_without_subreddit(self):
+        self.assertEqual(
+            normalize_reddit_url("/comments/abc123/example/", "NeuronsToNirvana"),
+            "https://www.reddit.com/r/NeuronsToNirvana/comments/abc123/example/",
+        )
+
     def test_post_identity_requires_post_url(self):
         with self.assertRaises(ValueError):
             post_identity("https://www.reddit.com/r/microdosing/", "microdosing")
