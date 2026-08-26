@@ -1,0 +1,55 @@
+{
+  "NeuronsToNirvana": [
+    {
+      "id": "abc123",
+      "permalink": "/r/NeuronsToNirvana/comments/abc123/example_n2n_post/?utm_source=chatgpt.com",
+      "title": "Example N2N post",
+      "author": "n2n_author",
+      "created_utc": 1780000000,
+      "url": "https://example.org/source"
+    },
+    {
+      "id": "abc123",
+      "permalink": "https://old.reddit.com/r/NeuronsToNirvana/comments/abc123/example_n2n_post/",
+      "title": "Example N2N post",
+      "author": "n2n_author",
+      "created_utc": 1780000000,
+      "url": "https://example.org/source"
+    }
+  ],
+  "TribalGathering": [
+    {
+      "id": "tg456",
+      "permalink": "/r/TribalGathering/comments/tg456/example_crosspost/",
+      "title": "Example crosspost",
+      "author": "tg_author",
+      "created_utc": 1780000100,
+      "crosspost_parent": "t3_abc123",
+      "crosspost_parent_list": [
+        {
+          "id": "abc123",
+          "subreddit": "NeuronsToNirvana",
+          "permalink": "/r/NeuronsToNirvana/comments/abc123/example_n2n_post/"
+        }
+      ]
+    }
+  ],
+  "microdosing": [
+    {
+      "id": "md789",
+      "permalink": "https://m.reddit.com/r/microdosing/comments/md789/example_microdosing_post/?share_id=ignored",
+      "title": "Example microdosing post",
+      "author": "md_author",
+      "created_utc": 1780000200
+    }
+  ],
+  "microDJPanPSYchic": [
+    {
+      "id": "dj999",
+      "permalink": "/r/microDJPanPSYchic/comments/dj999/example_music_post/",
+      "title": "Example music post",
+      "author": "dj_author",
+      "created_utc": 1780000300
+    }
+  ]
+}

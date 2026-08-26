@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "source_id": "reddit_neurons_to_nirvana",
+      "platform": "reddit",
+      "kind": "subreddit",
+      "subreddit": "NeuronsToNirvana",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/",
+      "enabled": true,
+      "access_mode": "read_only",
+      "default_listing": "new",
+      "classification_profile": "n2n_general",
+      "evidence_default": "community_observation",
+      "provenance_default": "link_only"
+    },
+    {
+      "source_id": "reddit_tribal_gathering",
+      "platform": "reddit",
+      "kind": "subreddit",
+      "subreddit": "TribalGathering",
+      "canonical_url": "https://www.reddit.com/r/TribalGathering/",
+      "enabled": true,
+      "access_mode": "read_only",
+      "default_listing": "new",
+      "classification_profile": "community_cultural",
+      "evidence_default": "community_observation",
+      "provenance_default": "link_only"
+    },
+    {
+      "source_id": "reddit_microdosing",
+      "platform": "reddit",
+      "kind": "subreddit",
+      "subreddit": "microdosing",
+      "canonical_url": "https://www.reddit.com/r/microdosing/",
+      "enabled": true,
+      "access_mode": "read_only",
+      "default_listing": "new",
+      "classification_profile": "psychedelics_harm_reduction",
+      "evidence_default": "community_observation",
+      "provenance_default": "link_only",
+      "safety_note": "Community reports are not medical advice or scientific evidence by default."
+    },
+    {
+      "source_id": "reddit_microdjpanpsychic",
+      "platform": "reddit",
+      "kind": "subreddit",
+      "subreddit": "microDJPanPSYchic",
+      "canonical_url": "https://www.reddit.com/r/microDJPanPSYchic/",
+      "enabled": true,
+      "access_mode": "read_only",
+      "default_listing": "new",
+      "classification_profile": "art_music_consciousness",
+      "evidence_default": "creative_cultural_material",
+      "provenance_default": "link_only"
+    }
+  ]
+}
