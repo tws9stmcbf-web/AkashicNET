@@ -15,7 +15,7 @@ The search tool is read-only: it searches the local public archive and does not 
 
 # 🕸️ AkashicNET
 
-## Noetic Sciences Toolkit · PRE-ALPHA v0.3.0
+## Noetic Sciences Toolkit · PRE-ALPHA v0.4.0
 
 AkashicNET is an open, provenance-first knowledge network for building an auditable living commons around consciousness, psychedelics, interdisciplinary research, and community knowledge.
 
@@ -48,6 +48,18 @@ Current capabilities include:
 - Unified Akashic search indexing
 - Research evidence layers
 - Google Drive inventory and audit workflows
+- A validated, provenance-aware multidimensional framework registry
+
+### Framework Registry
+
+The first curated framework-registry seed is available at
+`data/framework-registry.json`, with its data model and curation rules documented
+in `data/framework-registry.md`. It represents six established names only and is
+not an archive-wide discovery result or verification of a provisional count.
+
+Validate it with:
+
+    python -m tools.framework_registry.validate
 
 ### Data Sources
 
@@ -77,7 +89,7 @@ The goal is not to present the archive as complete or definitive, but to make th
 
 ### Publication Snapshot
 
-- Version: **PRE-ALPHA v0.3.0**
+- Version: **PRE-ALPHA v0.4.0**
 - Canonical Reddit URLs: **9,401**
 - Unified Akashic search index: **12,058 records**
 - Validation/tests: **Passed**

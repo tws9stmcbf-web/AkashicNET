@@ -1,0 +1,168 @@
+{
+  "registry_version": "0.4.0",
+  "generated_count": 6,
+  "count_status": "curated_seed_only",
+  "source_records": [
+    {
+      "source_id": "src-research-publication-001",
+      "source_type": "research_evidence_layer",
+      "locator": "research/publication-001-library-of-alexandria.md",
+      "title": "Publication 001: Noetic Sciences Toolkit — Library of Alexandria Edition",
+      "notes": "Repository research publication; it describes framework proposals and their epistemic limits."
+    },
+    {
+      "source_id": "src-n2n-ingestion-architecture",
+      "source_type": "manual_akashicnet_record",
+      "locator": "references/community/N2N_INGESTION_ARCHITECTURE.md",
+      "title": "N2N Community Archive Ingestion Architecture",
+      "notes": "Repository architecture record for the N2N signal-to-synthesis workflow."
+    },
+    {
+      "source_id": "src-project-readme",
+      "source_type": "manual_akashicnet_record",
+      "locator": "README.md",
+      "title": "AkashicNET README",
+      "notes": "Canonical repository overview."
+    }
+  ],
+  "frameworks": [
+    {
+      "framework_id": "fw-umasc",
+      "name": "UMASC",
+      "short_name": "UMASC",
+      "entity_type": "framework",
+      "family": "akashicnet-conceptual",
+      "description": "A proposed framework for organising cross-disciplinary relationships among awareness, meaning, systems and inquiry.",
+      "status": "conceptual",
+      "maturity": "exploratory",
+      "first_seen_date": null,
+      "latest_version": null,
+      "versions": [],
+      "aliases": [],
+      "domains": ["consciousness", "systems thinking", "philosophy"],
+      "tags": ["meaning", "cross-disciplinary"],
+      "source_refs": ["src-research-publication-001"],
+      "evidence_confidence": "speculative",
+      "claims": [],
+      "notes": "Conceptual proposal; no scientific validation is asserted."
+    },
+    {
+      "framework_id": "fw-metad",
+      "name": "METAD",
+      "short_name": "METAD",
+      "entity_type": "framework",
+      "family": "akashicnet-conceptual",
+      "description": "A conceptual proposal for pattern description, symbolic framing and exploratory interpretation.",
+      "status": "conceptual",
+      "maturity": "exploratory",
+      "first_seen_date": null,
+      "latest_version": null,
+      "versions": [],
+      "aliases": [],
+      "domains": ["consciousness", "philosophy"],
+      "tags": ["patterns", "meaning"],
+      "source_refs": ["src-research-publication-001"],
+      "evidence_confidence": "speculative",
+      "claims": [],
+      "notes": "Conceptual proposal; no scientific validation is asserted."
+    },
+    {
+      "framework_id": "fw-actc",
+      "name": "ACTC",
+      "short_name": "ACTC",
+      "entity_type": "framework",
+      "family": "akashicnet-conceptual",
+      "description": "A conceptual proposal concerning agency, cognition, transformation and explanatory structure.",
+      "status": "conceptual",
+      "maturity": "exploratory",
+      "first_seen_date": null,
+      "latest_version": null,
+      "versions": [],
+      "aliases": [],
+      "domains": ["consciousness", "philosophy"],
+      "tags": ["agency", "cognition", "transformation"],
+      "source_refs": ["src-research-publication-001"],
+      "evidence_confidence": "speculative",
+      "claims": [],
+      "notes": "Conceptual proposal; no scientific validation is asserted."
+    },
+    {
+      "framework_id": "fw-n2n-signal-synthesis",
+      "name": "N2N Signal & Synthesis",
+      "short_name": "N2N Signal & Synthesis",
+      "entity_type": "methodology",
+      "family": "akashicnet-community-knowledge",
+      "description": "A provenance-aware workflow that turns community archive records into reviewable signals and candidate research questions.",
+      "status": "active",
+      "maturity": "early",
+      "first_seen_date": null,
+      "latest_version": null,
+      "versions": [],
+      "aliases": [],
+      "domains": ["collective intelligence", "systems thinking"],
+      "tags": ["community archive", "signal synthesis", "provenance"],
+      "source_refs": ["src-n2n-ingestion-architecture"],
+      "evidence_confidence": "emerging",
+      "claims": [],
+      "notes": "Community signals support hypothesis generation and are not scientific evidence by themselves."
+    },
+    {
+      "framework_id": "fw-homesense",
+      "name": "HOMESENSE",
+      "short_name": "HOMESENSE",
+      "entity_type": "framework",
+      "family": "akashicnet-applied",
+      "description": "A lived-environment application framework for context-aware human design and practice.",
+      "status": "conceptual",
+      "maturity": "exploratory",
+      "first_seen_date": null,
+      "latest_version": null,
+      "versions": [],
+      "aliases": [],
+      "domains": ["consciousness", "ecology", "Pachamama / planetary systems"],
+      "tags": ["lived environment", "human-environment"],
+      "source_refs": ["src-research-publication-001"],
+      "evidence_confidence": "speculative",
+      "claims": [],
+      "notes": "Candidate applications require testing; the framework is not validated scientific theory by default."
+    },
+    {
+      "framework_id": "fw-akashicnet",
+      "name": "AkashicNET",
+      "short_name": "AkashicNET",
+      "entity_type": "meta-framework",
+      "family": "akashicnet",
+      "description": "A provenance-first knowledge network for an auditable living commons spanning research, archives and community knowledge.",
+      "status": "active",
+      "maturity": "pre-alpha",
+      "first_seen_date": null,
+      "latest_version": "0.3.0",
+      "versions": [
+        {
+          "version": "0.3.0",
+          "date": "2026-08-25",
+          "source_refs": ["src-project-readme"],
+          "notes": "Version and snapshot date documented in the repository overview."
+        }
+      ],
+      "aliases": [],
+      "domains": ["consciousness", "collective intelligence", "technology", "AI", "society"],
+      "tags": ["knowledge network", "provenance", "open knowledge"],
+      "source_refs": ["src-project-readme"],
+      "evidence_confidence": "strong",
+      "claims": [],
+      "notes": "Confidence describes the documented existence and purpose of the project, not the truth of every concept catalogued by it."
+    }
+  ],
+  "relationships": [
+    {
+      "relationship_id": "rel-n2n-part-of-akashicnet",
+      "source_framework_id": "fw-n2n-signal-synthesis",
+      "relationship_type": "part_of",
+      "target_framework_id": "fw-akashicnet",
+      "evidence_confidence": "strong",
+      "source_refs": ["src-n2n-ingestion-architecture"],
+      "notes": "The N2N workflow is documented as an AkashicNET archive component."
+    }
+  ]
+}

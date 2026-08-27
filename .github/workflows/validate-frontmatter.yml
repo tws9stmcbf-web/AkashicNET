@@ -22,3 +22,6 @@ jobs:
       - name: Run metadata validator
         run: |
           python scripts/validate_metadata.py
+      - name: Validate framework registry
+        run: |
+          python -m tools.framework_registry.validate
