@@ -10,36 +10,41 @@ Philosophy, Psychology, Buddhism, Hinduism, Yoga and Metaphysics descendant vali
 
 ## Validation batch 0007 — 125-node milestone
 
-Twenty-five additional descendant nodes independently matched the frozen census. Ancient Religions/Gnosis was deliberately not credited because its frozen census state remains PARTIAL / ACCESS_UNRESOLVED.
+Twenty-five additional descendant nodes independently matched the frozen census. Ancient Religions/Gnosis was deliberately not credited because its frozen census state remained PARTIAL / ACCESS_UNRESOLVED.
 
 ## Validation batch 0008 — 150-node milestone
 
-Twenty-five further nodes independently matched the frozen census using separate metadata-only document and child-folder queries. The batch includes remaining selected Ancient Religions collections, PDF collections, Biography and Bizzare collections, Literature and Logic collections, Christianity/Religion nodes, The Law of One and Dzogchen/Four introductory texts.
+Twenty-five further nodes independently matched the frozen census using separate metadata-only document and child-folder queries.
 
 ## Validation batch 0009 — 175-node milestone
 
 Twenty-five further descendant nodes independently matched the frozen census using separate metadata-only document and child-folder queries.
 
-Notable reconfirmations include:
+## Validation batch 0010 — final descendant sweep
 
-- Literature/Fjodor Dostojevskij – complete works: 29 / 0.
-- Literature/Complete Works of H. G. Wells: 50 / 0.
-- Logic/Selected works by Bertrand Russell: 10 / 0.
-- Catholocism/Ante-Nicene Fathers: 9 / 0.
-- Catholocism/Nicene and post-Nicene fathers: 14 / 0.
-- Law/Blacks Law Dictionary: 4 / 0 document objects; one remains the known .crdownload technical artifact and is not promoted to a usable canonical work.
-- Islam/In The Shade Of The Qur’an: 14 / 0 physical PDFs; logical-volume reconciliation remains a separate canonicalisation task.
-- Judaism/The Talmud – Complete: 10 / 0.
-- Magick and Alchemy Abramelin copies matched their respective folder censuses; cross-list/copy relationships remain unresolved canonicalisation questions.
-- Secret Societies/Forbbiden History of Europe: 12 / 0; duplicate/alternate-copy relationship remains unresolved.
+Eighteen additional known folder nodes are now credited after fresh independent metadata-only re-query.
+
+Important reconciliations:
+
+- Ancient Religions/Gnosis now closes cleanly at 6 direct documents / 0 child folders. Its earlier ACCESS_UNRESOLVED state is resolved.
+- PDF/Montalk reconfirms the authoritative v0.4.8 correction: 5 direct documents / 1 child folder. The stale descendant-census value of 13 direct documents was the earlier double-counting error and is not used.
+- Apocrypha/Gospels is now independently reconciled at 30 direct documents + 7 direct child folders. Those seven terminal children contain 16 documents total, reproducing the known 46-object subtree exactly.
+- Alchemy/Jean Dubuis reconfirms 2 direct documents / 3 child folders.
+- All four Theosophy descendants independently match their recorded document/folder counts.
+
+One live mismatch remains:
+
+- Magick/Ceremonial Beginners: frozen descendant census = 22 direct documents / 2 child folders; current independent live query = 19 direct documents / 2 child folders. This node is deliberately NOT credited pending census reconciliation.
+
+There is also a denominator-ledger reconciliation issue to resolve before claiming 195 / 195: the frozen 195-node model is defined as 66 roots + 115 immediate child folders + 14 deeper folders. The persisted descendant census contains 121 rows, including seven of the fourteen deeper nodes; the seven Gospels children are represented by the final reconciliation checkpoint rather than individual census rows. The validation ledger therefore requires one final node-identity reconciliation in addition to the Ceremonial Beginners mismatch before a 195 / 195 claim is defensible.
 
 ## Updated validation score
 
 - Validated root nodes: 66
-- Validated descendant nodes: 109
-- Validated nodes: 175 / 195
-- Validation coverage: 89.743590%
-- Validation points: 8.974359 / 10
+- Validated descendant/deeper nodes credited: 127
+- Validated nodes: 193 / 195
+- Validation coverage: 98.974359%
+- Validation points: 9.897436 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -47,11 +52,11 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 8.974359 / 10
+- validation: 9.897436 / 10
 
-Verified completion floor after batch 0009 = **88.974359%**.
+Verified completion floor after batch 0010 = **89.897436%**.
 
-The v0.4.9 / 90% gate remains unearned. The conservative validation denominator remains frozen at 195 known folder nodes. Twenty nodes remain uncredited.
+The v0.4.9 / 90% gate remains narrowly unearned under the conservative scoring model. Two validation-node credits remain unresolved. No projected credit is awarded for either.
 
 ## Privacy boundary
 
