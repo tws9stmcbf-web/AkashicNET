@@ -20,8 +20,8 @@ def searchable_text(node: dict) -> str:
     parts=[
         node.get('node_id',''), node.get('label',''), node.get('family_id',''),
         node.get('collection_path',''), node.get('parent_root',''),
-        node.get('authoritative_disposition',''), node.get('basis',''),
-        node.get('notes',''), node.get('reconciled_status',''),
+        node.get('authoritative_disposition',''), node.get('stage_b_disposition',''),
+        node.get('basis',''), node.get('notes',''), node.get('reconciled_status',''),
     ]
     return norm(' '.join(str(x) for x in parts if x is not None))
 
@@ -42,10 +42,10 @@ def provenance_path(node: dict) -> list[dict]:
         obs=node.get('provenance_observations') or []
         for o in obs:
             path.append({'kind':'census_observation','source_file':o.get('source_file'),'count_status':o.get('count_status')})
-    elif node.get('node_type')=='canonical_work_family':
+    elif node.get('node_type')=='canonical_family':
         path.append({'kind':'stage_b_family','id':node.get('family_id'),'label':node.get('label')})
         path.append({'kind':'relationship_disposition','value':node.get('stage_b_disposition')})
-        path.append({'kind':'evidence_basis','value':node.get('evidence_basis')})
+        path.append({'kind':'provenance','value':node.get('provenance')})
     else:
         path.append({'kind':node.get('node_type','node'),'id':node.get('node_id'),'label':node.get('label')})
     return path
