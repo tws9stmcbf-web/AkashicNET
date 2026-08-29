@@ -1,0 +1,31 @@
+name: Validate P0 hash evidence v0.6.3
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p0-hash-results-v0.6.3.csv'
+      - 'references/community/drive-p0-hash-summary-v0.6.3.json'
+      - 'scripts/validate_p0_hash_evidence_v063.py'
+      - '.github/workflows/validate-p0-hash-evidence-v063.yml'
+  pull_request:
+    paths:
+      - 'references/community/drive-p0-hash-results-v0.6.3.csv'
+      - 'references/community/drive-p0-hash-summary-v0.6.3.json'
+      - 'scripts/validate_p0_hash_evidence_v063.py'
+      - '.github/workflows/validate-p0-hash-evidence-v063.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate committed P0 evidence
+        run: python scripts/validate_p0_hash_evidence_v063.py

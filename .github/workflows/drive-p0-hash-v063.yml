@@ -1,0 +1,29 @@
+name: Drive P0 hash adjudication v0.6.3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hash-p0:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Hash P0 Drive objects
+        env:
+          GOOGLE_DRIVE_ACCESS_TOKEN: ${{ secrets.GOOGLE_DRIVE_ACCESS_TOKEN }}
+        run: python scripts/hash_drive_p0_v063.py
+      - name: Upload P0 hash evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drive-p0-hash-v0.6.3
+          path: |
+            references/community/drive-p0-hash-results-v0.6.3.csv
+            references/community/drive-p0-hash-summary-v0.6.3.json
+          if-no-files-found: warn
