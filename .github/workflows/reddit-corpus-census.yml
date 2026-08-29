@@ -1,0 +1,37 @@
+name: Historical Reddit corpus census
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/reddit-corpus-census
+    paths:
+      - scripts/reddit_corpus_census.py
+      - tests/test_reddit_corpus_census.py
+      - .github/workflows/reddit-corpus-census.yml
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run census unit tests
+        run: python -m unittest tests.test_reddit_corpus_census -v
+      - name: Recover historical 9,401-row source from Git history
+        run: |
+          mkdir -p artifacts/reddit-census
+          curl --fail --location --silent --show-error \
+            https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
+            --output artifacts/reddit-census/reddit-uri-index.csv
+      - name: Build Historical Corpus Audit v0.1
+        run: |
+          python scripts/reddit_corpus_census.py \
+            artifacts/reddit-census/reddit-uri-index.csv \
+            --json-out artifacts/reddit-census/census-v0.1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reddit-corpus-census-v0.1
+          path: artifacts/reddit-census/
