@@ -1,0 +1,51 @@
+name: Reddit pilot crawl
+
+on:
+  push:
+    branches: [ main, feature/reddit-crawler ]
+    paths:
+      - '.github/workflows/reddit-pilot.yml'
+      - 'scripts/reddit_crawler.py'
+      - 'tests/test_reddit_crawler.py'
+  workflow_dispatch:
+    inputs:
+      subreddit:
+        description: Subreddit name without r/
+        required: true
+        default: NeuronsToNirvana
+      max_posts:
+        description: Maximum posts to inspect
+        required: true
+        default: '25'
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run crawler pilot
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: AkashicNET-reddit-crawler/0.1 (research metadata indexer)
+          SUBREDDIT: ${{ github.event.inputs.subreddit || 'NeuronsToNirvana' }}
+          MAX_POSTS: ${{ github.event.inputs.max_posts || '25' }}
+        run: |
+          mkdir -p artifacts/reddit
+          python scripts/reddit_crawler.py "$SUBREDDIT" \
+            --max-posts "$MAX_POSTS" \
+            --output artifacts/reddit/posts.jsonl \
+            --checkpoint artifacts/reddit/checkpoint.json
+      - name: Upload pilot artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reddit-pilot
+          path: artifacts/reddit/
+          if-no-files-found: warn
