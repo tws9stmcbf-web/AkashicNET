@@ -16,7 +16,7 @@ class RedditCorpusCorroborationTests(unittest.TestCase):
             "https://www.reddit.com/r/x/comments/zzzzz/e/",
         ]) + "\n"
         seed = {
-            "schema": "test",
+            "schema": "akashicnet.reddit.corroboration-seed.v0.6",
             "source_type": "public_web_discovery",
             "records": [
                 {"subreddit": "x", "post_id": "zzzzz"},
@@ -29,6 +29,7 @@ class RedditCorpusCorroborationTests(unittest.TestCase):
             corpus_path.write_text(corpus, encoding="utf-8")
             seed_path.write_text(json.dumps(seed), encoding="utf-8")
             report = audit(corpus_path, seed_path, min_run=4)
+        self.assertEqual(report["schema"], "akashicnet.reddit.corpus-corroboration.v0.6")
         self.assertEqual(report["historical_unique_structural_candidates"], 5)
         self.assertEqual(report["suspected_generated_by_sequence_filter"], 4)
         self.assertEqual(report["candidate_pool_after_sequence_filter"], 1)
