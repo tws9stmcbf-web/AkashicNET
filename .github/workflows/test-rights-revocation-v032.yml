@@ -1,0 +1,50 @@
+name: Test rights downgrade and revocation v0.32
+
+on:
+  push:
+    branches:
+      - akashicnet-validation-descendants
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rights-revocation-v032-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run revocation regression scenarios
+        run: python scripts/test_rights_revocation_v032.py
+      - name: Assert revocation semantics and production isolation
+        run: |
+          python - <<'PY'
+          import json
+          data=json.load(open('data/rights-revocation-regression-v0.32.json',encoding='utf-8'))
+          assert data['version']=='0.32'
+          assert data['counts']['scenarios']==6
+          assert data['counts']['baseline_public']==1
+          assert data['counts']['downgrade_scenarios']==5
+          assert data['counts']['downgraded_public_results']==0
+          assert data['policy']['rights_status_recomputed_from_current_evidence'] is True
+          assert data['policy']['public_visibility_revocable'] is True
+          assert data['policy']['semantic_status_independent_of_rights'] is True
+          assert data['policy']['provenance_strength_independent_of_rights'] is True
+          assert data['policy']['real_corpus_promotions']==0
+          assert data['policy']['truth_inference_allowed'] is False
+          assert data['policy']['scientific_evidence_promotion_allowed'] is False
+          downgraded=[r for r in data['results'] if r['scenario_id']!='REV-032-BASELINE']
+          assert all(r['public_status']=='UNKNOWN_UNVERIFIED' for r in downgraded)
+          assert all(r['public_gate_results']==0 for r in downgraded)
+          assert all(r['semantic_decision_preserved'] for r in downgraded)
+          assert all(r['provenance_tier_preserved'] for r in downgraded)
+          print('AKASHICNET v0.32 REVOCATION PASS',{
+              'scenarios':6,
+              'baseline_public':1,
+              'downgrades_blocked':5,
+              'real_corpus_promotions':0,
+              'truth_inference':False,
+              'scientific_evidence_promotion':False,
+          })
+          PY
