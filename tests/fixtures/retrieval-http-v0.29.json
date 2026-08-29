@@ -1,0 +1,50 @@
+{
+  "service_version": "0.29",
+  "upstream_api": "AKASHICNET_RETRIEVAL_API",
+  "upstream_api_version": "0.25",
+  "upstream_schema": "akashicnet://schemas/retrieval/v0.25",
+  "cases": [
+    {
+      "id": "internal-golden",
+      "path": "/v1/retrieve?q=Golden%20Book%20of%20Wisdom&state=accepted&limit=5&visibility=internal",
+      "status": 200,
+      "assert": {
+        "visibility": "internal",
+        "upstream.summary.visibility": "internal",
+        "upstream.summary.public_gate_suppressed_count": 0
+      },
+      "expect_results_min": 1,
+      "assert_first_result": {
+        "semantic_decision": "DIRECT_METADATA_LOOKUP",
+        "evidence_profile.provenance_tier": "P3_SHA256_IDENTITY_PROVENANCE"
+      }
+    },
+    {
+      "id": "public-golden-blocked",
+      "path": "/v1/retrieve?q=Golden%20Book%20of%20Wisdom&state=accepted&limit=5&visibility=public",
+      "status": 200,
+      "assert": {
+        "visibility": "public",
+        "upstream.summary.visibility": "public",
+        "upstream.summary.results_after_public_gate": 0,
+        "upstream.public_retrieval_gate.required_status": "PUBLIC_VERIFIED",
+        "upstream.public_retrieval_gate.default_missing_status": "UNKNOWN_UNVERIFIED"
+      },
+      "expect_results": 0,
+      "expect_suppressed_min": 1
+    },
+    {
+      "id": "public-reddit-blocked",
+      "path": "/v1/retrieve?q=Psychedelics&domain=reddit&state=accepted&limit=5&visibility=public",
+      "status": 200,
+      "expect_results": 0,
+      "expect_suppressed_min": 1
+    },
+    {
+      "id": "invalid-visibility",
+      "path": "/v1/retrieve?q=test&visibility=external",
+      "status": 400,
+      "assert": {"error": "invalid_request"}
+    }
+  ]
+}
