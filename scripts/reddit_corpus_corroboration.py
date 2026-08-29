@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AkashicNET Reddit Corpus Corroboration Audit v0.3.
+"""AkashicNET Reddit Corpus Corroboration Audit.
 
 Cross-matches sequence-filtered historical Reddit candidates against an explicit
 corroboration manifest. It does not perform network requests and does not promote
@@ -16,6 +16,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 POST_RE = re.compile(r"^/r/([^/]+)/comments/([0-9A-Za-z]+)/?(?:[^/]*)/?$", re.I)
+SEED_SCHEMA_RE = re.compile(r"^akashicnet\.reddit\.corroboration-seed\.(v[0-9]+(?:\.[0-9]+)*)$")
 
 
 def parse_candidate(raw: str):
@@ -69,6 +70,14 @@ def load_seed(path: Path):
     return data, result
 
 
+def report_schema(seed_doc):
+    seed_schema = str(seed_doc.get("schema", ""))
+    match = SEED_SCHEMA_RE.match(seed_schema)
+    if not match:
+        raise ValueError(f"unsupported corroboration seed schema: {seed_schema!r}")
+    return f"akashicnet.reddit.corpus-corroboration.{match.group(1)}"
+
+
 def audit(corpus_path: Path, seed_path: Path, min_run=4):
     records = load_unique_candidates(corpus_path)
     suspects = sequence_suspects(records, min_run=min_run)
@@ -89,7 +98,7 @@ def audit(corpus_path: Path, seed_path: Path, min_run=4):
             seed_not_in_corpus.append(evidence)
 
     return {
-        "schema": "akashicnet.reddit.corpus-corroboration.v0.3",
+        "schema": report_schema(seed_doc),
         "historical_unique_structural_candidates": len(records),
         "suspected_generated_by_sequence_filter": len(suspects),
         "candidate_pool_after_sequence_filter": len(filtered),

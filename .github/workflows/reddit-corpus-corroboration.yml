@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - feature/reddit-corpus-corroboration
+      - feature/reddit-corroboration-v06
     paths:
       - scripts/reddit_corpus_corroboration.py
       - tests/test_reddit_corpus_corroboration.py
-      - references/community/reddit-corroboration-seed-v0.3.json
+      - references/community/reddit-corroboration-seed-v0.6.json
       - .github/workflows/reddit-corpus-corroboration.yml
 
 permissions:
@@ -30,13 +30,13 @@ jobs:
           curl --fail --location --silent --show-error \
             https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
             --output artifacts/reddit-corroboration/reddit-uri-index.csv
-      - name: Build Corroboration Audit v0.3
+      - name: Build Corroboration Audit v0.6
         run: |
           python scripts/reddit_corpus_corroboration.py \
             artifacts/reddit-corroboration/reddit-uri-index.csv \
-            references/community/reddit-corroboration-seed-v0.3.json \
-            --json-out artifacts/reddit-corroboration/corroboration-v0.3.json
+            references/community/reddit-corroboration-seed-v0.6.json \
+            --json-out artifacts/reddit-corroboration/corroboration-v0.6.json
       - uses: actions/upload-artifact@v4
         with:
-          name: reddit-corpus-corroboration-v0.3
+          name: reddit-corpus-corroboration-v0.6
           path: artifacts/reddit-corroboration/
