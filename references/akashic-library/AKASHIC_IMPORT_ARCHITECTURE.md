@@ -272,7 +272,7 @@ The importer should resume from the latest valid checkpoint and avoid reprocessi
 ```json
 {
   "run_id": "2026-08-12-akashic-batch-004",
-  "source_url": "https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ",
+  "source_url": "<private Drive source URL>",
   "last_folder_id": "abc123",
   "last_cursor": "page_token_17",
   "processed_count": 320,

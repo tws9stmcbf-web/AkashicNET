@@ -192,7 +192,7 @@ class RemoteCodespacesOAuthSession:
 def parse_args() -> argparse.Namespace:
     default_credentials, default_token = resolve_runtime_auth_paths()
     parser = argparse.ArgumentParser(description="Akashic Library batch importer")
-    parser.add_argument("--source-url", default="https://drive.google.com/drive/folders/1TPFgWXNA1FfL0SzJh9Y0bBoLd0eb1ffQ", help="Canonical source URL for the archive.")
+    parser.add_argument("--source-url", default=os.environ.get("AKASHIC_DRIVE_SOURCE_URL", ""), help="Private canonical source URL for the archive. Prefer the AKASHIC_DRIVE_SOURCE_URL environment variable.")
     parser.add_argument("--root-folder-id", default=os.environ.get("AKASHIC_DRIVE_FOLDER_ID", ""), help="Google Drive folder ID to traverse. Required for authenticated API mode.")
     parser.add_argument("--auth-mode", choices=["mock", "service-account", "oauth", "oauth-remote"], default=os.environ.get("AKASHIC_AUTH_MODE", "mock"), help="Authentication mode for the Drive API.")
     parser.add_argument("--credentials-file", default=os.environ.get("GOOGLE_APPLICATION_CREDENTIALS") or default_credentials, help="Path to a service-account JSON file or OAuth client secrets file.")

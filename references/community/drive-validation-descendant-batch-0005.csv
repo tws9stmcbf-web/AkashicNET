@@ -1,8 +1,0 @@
-validation_batch,collection_path,drive_id,expected_direct_documents,observed_direct_documents,expected_child_folders,observed_child_folders,validation_status,method,notes
-DESC-VAL-0005,Buddhism/Bardo Teachings,1H9TEiVLI5Us6r01aAU92vc_7Vo5LnKhE,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0005,Buddhism/Songs of Milarepa,1j3vx9tUr9H3bMxvrvo7DBjkP8rUFJWEb,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0005,Buddhism/Ramayana,1EkGkt7we-mnMOmXiuBl-WJOe7zkgh7KC,4,4,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","Cross-collection candidate with Hinduism; no body fetch; no privacy/public-status inference"
-DESC-VAL-0005,Buddhism/The Buddhist Monastic Code,13K7eQvLdT39aB1KpZsjaQFbSyDsNRkXM,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0005,Buddhism/The Complete Works of Sister Nivedita,1o6VOAvtTcz9TylchObAemJa_FWfveGyb,5,5,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","Five file objects observed; collection-title note retained; no body fetch"
-DESC-VAL-0005,Buddhism/Meditations VOL I–V,1UM1iRxoG04JJ2I647hJT6KPhyIPe4V4K,5,5,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0005,Buddhism/Buddhist Legends,167o_MJPk1uI3wqqySNI3CrFQRRKtie0j,3,3,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"

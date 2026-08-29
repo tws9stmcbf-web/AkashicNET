@@ -18,7 +18,9 @@ Search by title, topic, category, author, framework, summary, evidence classific
     python tools/search_reddit.py Akashic
     python tools/search_reddit.py HOMESENSE
 
-The canonical Reddit archive currently contains **9,401 unique Reddit URLs**, with richer metadata available through the community index. A broader unified Akashic search index contains **12,058 records** across wider research and archival layers.
+The public canonical archive currently contains **9,401 unique Reddit URLs**.
+Private Drive-derived records are intentionally excluded from the public index;
+cross-source builds that use them must run inside the private data boundary.
 
 The search tool is read-only: it searches the local public archive and does not make requests to Reddit.
 
@@ -96,7 +98,11 @@ These gates are deliberate. AkashicNET is designed to distinguish discovery, int
 
 ## Google Drive Corpus
 
-Google Drive inventory and audit infrastructure is part of the project, and the live corpus is moving through canonicalisation-oriented processing.
+Google Drive inventory and audit infrastructure is part of the project. The public
+repository contains reusable code, schemas and aggregate validation reports only.
+Provider IDs, filenames, paths, timestamps, file-linked hashes and raw census
+outputs belong to a separate private audit layer and must not be committed or
+uploaded as public workflow artefacts.
 
 The project keeps these stages deliberately distinct:
 
@@ -108,6 +114,9 @@ The project keeps these stages deliberately distinct:
 6. publication
 
 **A Drive file being discovered or inventoried does not automatically make it a canonical public knowledge node.** The same provenance and evidence rules apply before records are promoted into later layers.
+
+See [Data security boundary](docs/DATA_SECURITY_BOUNDARY.md) and
+[Security policy](SECURITY.md).
 
 ## Current Capabilities
 

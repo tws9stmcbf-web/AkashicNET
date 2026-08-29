@@ -22,3 +22,18 @@ __pycache__/
 # Akashic Library runtime state
 /tools/akashic-library/state/*.jsonl
 /tools/akashic-library/state/checkpoint.json
+
+# Private corpus data: never commit provider identifiers or object metadata
+/private/
+/references/private/
+/references/akashic-library/*.csv
+/references/akashic-library/AKASHIC_LIBRARY_INDEX.md
+/references/community/drive-*.csv
+/references/community/hash-verification-*.csv
+/references/community/canonical-graph-promotions-*.csv
+/references/community/canonical-promotion-decisions-*.csv
+/references/community/canonical-work-registry-*.csv
+/references/community/canonical-review-queue-*.csv
+/references/community/canonical-review-plan-*.md
+/references/community/*manifestation*review*.csv
+/artifacts/drive/

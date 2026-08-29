@@ -1,2 +1,0 @@
-collection_path,previous_direct_documents,corrected_direct_documents,child_documents,previous_subtree_interpretation,corrected_subtree_documents,reason
-PDF/Montalk,13,5,8,"13 direct + 8 child = 21 (double-counted)",13,"Fresh metadata-only parent search returned exactly 5 direct documents; child Not Important independently returned 8. Earlier 13 figure described the subtree total, not parent-direct count."
