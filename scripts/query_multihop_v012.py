@@ -20,10 +20,17 @@ def main():
     q=a.query.lower()
     matched={cid for cid,c in concepts.items() if q in c['label'].lower() or q in c['definition'].lower() or q==cid.lower()}
 
+    # Prefer Stage-B canonical_family nodes when a family_id is represented both
+    # as a Stage-B node and as a later reconciliation-only candidate node. The
+    # Stage-B nodes carry explicit collection/Drive provenance edges.
     family_by_ref={}
     for n in graph['nodes']:
-        if n.get('node_type') in {'canonical_family','canonical_candidate_family'}:
+        if n.get('node_type')=='canonical_family':
             family_by_ref[n.get('family_id') or n.get('node_id')]=n
+            family_by_ref[n.get('node_id')]=n
+    for n in graph['nodes']:
+        if n.get('node_type')=='canonical_candidate_family':
+            family_by_ref.setdefault(n.get('family_id') or n.get('node_id'),n)
             family_by_ref[n.get('node_id')]=n
 
     incoming={}
@@ -49,7 +56,7 @@ def main():
                 if fam:
                     for ce in incoming.get(fam['node_id'],[]):
                         drive=nodes.get(ce['source'])
-                        if not drive: continue
+                        if not drive or drive.get('node_type')!='drive_object': continue
                         path['hops'].append({
                             'from':fam['node_id'],'relationship':'HAS_PROVENANCE_MEMBER', 'to':drive['node_id'],
                             'inverse_of':ce['relationship'],'confidence':ce.get('confidence'),'review_state':ce.get('review_state'),
