@@ -11,6 +11,7 @@ on:
       - 'references/community/drive-metadata-final-reconciliation.csv'
   workflow_dispatch:
 
+# Credential-backed audit of the frozen 195-node Drive denominator.
 jobs:
   audit:
     runs-on: ubuntu-latest
