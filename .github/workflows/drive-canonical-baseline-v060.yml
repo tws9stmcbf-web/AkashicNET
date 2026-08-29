@@ -1,0 +1,55 @@
+name: Drive canonical baseline v0.6.0
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/drive_canonicalise_snapshot.py
+      - .github/workflows/drive-canonical-baseline-v060.yml
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  canonicalise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download frozen successful Drive census artefact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/drive-census
+          gh api repos/${{ github.repository }}/actions/artifacts/9713170876/zip > /tmp/drive-census.zip
+          unzip -q /tmp/drive-census.zip -d /tmp/drive-census
+          test -f /tmp/drive-census/drive-live-full-object-census.csv
+
+      - name: Generate conservative 2,459-object baseline
+        run: |
+          python scripts/drive_canonicalise_snapshot.py /tmp/drive-census/drive-live-full-object-census.csv
+
+      - name: Verify frozen-source artefact digest
+        run: |
+          echo 'd0a1c3d0a83a6367f086097c5bdab9880c990754a3f1226e6714b141b7f4717b  /tmp/drive-census.zip' | sha256sum -c -
+
+      - name: Persist generated canonical ledgers
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add references/community/drive-canonical-object-ledger-v0.6.0.csv \
+                  references/community/drive-canonical-family-review-v0.6.0.csv \
+                  references/community/drive-canonical-baseline-v0.6.0.json
+          if git diff --cached --quiet; then
+            echo 'Canonical baseline already current.'
+          else
+            git commit -m 'Persist Drive canonical baseline v0.6.0'
+            git push
+          fi

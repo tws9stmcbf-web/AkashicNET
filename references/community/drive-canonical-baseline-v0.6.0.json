@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.6.0",
+  "source_snapshot_objects": 2459,
+  "unique_drive_ids": 2459,
+  "dispositions": {
+    "UNIQUE_CANDIDATE": 2173,
+    "TECHNICAL_EXCLUSION": 28,
+    "REVIEW_REQUIRED": 258
+  },
+  "technical_reasons": {
+    "DS_STORE": 11,
+    "ZERO_BYTE": 16,
+    "CRDOWNLOAD": 1
+  },
+  "exact_name_size_families": 127,
+  "objects_in_exact_name_size_families": 269,
+  "nontechnical_review_families": 126,
+  "canonical_work_ids_promoted": 0,
+  "edition_ids_promoted": 0,
+  "guardrail": "Metadata similarity is a review signal, not proof of byte identity or canonical-work identity."
+}
