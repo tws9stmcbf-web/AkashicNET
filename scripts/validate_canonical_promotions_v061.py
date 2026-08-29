@@ -18,6 +18,7 @@ edges = rows('canonical-graph-promotions-v0.6.1.csv')
 
 hash_by_id = {r['hash_record_id']: r for r in hashes}
 manifest_ids = {'manifestation:' + r['manifestation_id'] for r in manifests}
+manifest_by_id = {'manifestation:' + r['manifestation_id']: r for r in manifests}
 decision_by_id = {r['decision_id']: r for r in decisions}
 work_ids = {r['work_id'] for r in works}
 
@@ -39,7 +40,15 @@ for decision in accepted:
     assert h['comparison_result'] == 'MATCH', f'{evidence} is not MATCH'
     assert h['byte_identity_status'] == 'BYTE_IDENTICAL_VERIFIED', f'{evidence} lacks verified byte identity'
     assert h['sha256_a'] == h['sha256_b'], f'{evidence} hash mismatch'
+    assert len(bytes.fromhex(h['sha256_a'])) == 32, f'{evidence} is not a valid SHA-256 digest'
     assert decision['work_id'] in work_ids, f"missing work {decision['work_id']}"
+    for suffix in ('a', 'b'):
+        manifest_id = h[f'manifestation_{suffix}']
+        assert manifest_id in manifest_by_id, f'{evidence} references unknown manifestation {manifest_id}'
+        manifest = manifest_by_id[manifest_id]
+        assert h[f'drive_id_{suffix}'] == manifest['drive_object_id'], f'{evidence} Drive ID does not match {manifest_id}'
+        assert h[f'size_{suffix}'] == manifest['size_bytes'], f'{evidence} size does not match {manifest_id}'
+        assert manifest['family_id'] == decision['family_id'], f'{evidence} family does not match {manifest_id}'
 
 for edge in edges:
     assert edge['status'] == 'ACCEPT', f"non-accepted edge {edge['edge_id']}"
