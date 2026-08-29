@@ -1,0 +1,75 @@
+{
+  "fixture_version": "0.28",
+  "service": "AKASHICNET_RETRIEVAL_HTTP",
+  "upstream_api": "AKASHICNET_RETRIEVAL_API",
+  "upstream_api_version": "0.25",
+  "upstream_schema": "akashicnet://schemas/retrieval/v0.25",
+  "policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "ranking_changes_semantic_decision": false
+  },
+  "cases": [
+    {
+      "id": "health",
+      "path": "/health",
+      "status": 200,
+      "assert": {
+        "service_version": "0.28",
+        "status": "ok",
+        "openapi": "/openapi.json"
+      }
+    },
+    {
+      "id": "openapi",
+      "path": "/openapi.json",
+      "status": 200,
+      "assert": {
+        "openapi": "3.1.0",
+        "info.version": "0.28"
+      }
+    },
+    {
+      "id": "verified-byte-provenance",
+      "path": "/v1/retrieve?q=Golden+Book+of+Wisdom&state=accepted&limit=5",
+      "status": 200,
+      "assert_first_result": {
+        "semantic_decision": "DIRECT_METADATA_LOOKUP",
+        "evidence_profile.provenance_tier": "P3_SHA256_IDENTITY_PROVENANCE",
+        "contract_guards.not_truth_claim": true,
+        "contract_guards.not_rights_clearance_claim": true,
+        "contract_guards.not_scientific_evidence_claim": true
+      }
+    },
+    {
+      "id": "hold-preservation",
+      "path": "/v1/retrieve?q=Consciousness&state=hold&limit=5",
+      "status": 200,
+      "assert_all_results": {
+        "semantic_decision": "HOLD"
+      }
+    },
+    {
+      "id": "reddit-accepted",
+      "path": "/v1/retrieve?q=Psychedelics&domain=reddit&state=accepted&limit=5",
+      "status": 200,
+      "assert_all_results": {
+        "domain": "reddit",
+        "semantic_decision": "ACCEPT"
+      }
+    },
+    {
+      "id": "missing-query",
+      "path": "/v1/retrieve",
+      "status": 400,
+      "assert": {"error": "invalid_request"}
+    },
+    {
+      "id": "invalid-domain",
+      "path": "/v1/retrieve?q=test&domain=invalid",
+      "status": 400,
+      "assert": {"error": "invalid_request"}
+    }
+  ]
+}
