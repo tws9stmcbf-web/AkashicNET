@@ -1,0 +1,37 @@
+collection_path,documents_screened,screening_basis,screening_disposition,notes
+Golden Dawn,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Palmistry,7,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Astral Projection,6,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Aura + Astral Bodies,5,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Grimoire,18,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Abramelin descendants remain separate manifestations
+The Law of One,7,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Books I-V plus study guides
+The Law of Time,8,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Education,1,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Apocrypha,8,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Gospels and Enoch descendants separate
+Bible,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Yoga,13,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Vivekananda and Ramacharaka descendants separate
+Voudon,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Textbooks,2,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Ancient Civillizations,26,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Three descendants separate
+Founding Fathers,6,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Fiction,14,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Known Lovecraft and Art Planet cross-collection families retained
+Physics,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Politics,7,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Claims in titles are not evidence
+Native America,5,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Native Races descendant separate
+Language,5,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Slavery + Racism,10,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Numerology,7,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Sufism,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Ibn Arabi and Masnavi cross-collection families retained
+Science,0,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,No direct documents; Bohr descendant separate
+Theosophy,2,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Author descendants and DS_Store technical artefacts separate
+Reference,1,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Radical Liberations,5,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Sikh,1,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Poison Path,5,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Uncategorized,10,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Logic,11,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Heidegger Marx Russell descendants separate
+Non-duality,10,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Metadata-only root screening
+Judaism,2,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Talmud descendant separate
+Dzogchen,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Four introductory texts descendant separate
+Shamanism,14,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Techniques of Modern Shamanism descendant separate
+Taoism,3,EXACT_ROOT_METADATA_CENSUS,SCREENED_OR_REVIEW_REQUIRED,Lao-tse and Psychedelic Prayers cross-collection families retained
