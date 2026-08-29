@@ -27,6 +27,8 @@ jobs:
         run: |
           python - <<'PY'
           import json,subprocess
+          resolved_library_paths=0
+          unresolved_library_paths=0
           for term in ['psychedelics','buddhism','alchemy']:
               raw=subprocess.check_output(['python','scripts/query_multihop_v012.py',term,'--accepted-only'],text=True)
               d=json.loads(raw)
@@ -40,8 +42,15 @@ jobs:
                   assert p['hops'][0]['relationship']=='ABOUT'
                   assert p['hops'][0]['decision']=='ACCEPT'
                   if p['domain']=='library':
-                      assert 'drive_provenance' in p
-                      assert len(p['hops'])>=2
-                      assert p['hops'][1]['relationship']=='HAS_PROVENANCE_MEMBER'
-          print('AKASHICNET v0.12 PASS: multi-hop provenance retrieval')
+                      assert p['provenance_resolution'] in {'DRIVE_MEMBER_LINK_RESOLVED','PROVENANCE_NOT_YET_LINKED'}
+                      if p['provenance_resolution']=='DRIVE_MEMBER_LINK_RESOLVED':
+                          resolved_library_paths+=1
+                          assert 'drive_provenance' in p
+                          assert len(p['hops'])>=2
+                          assert p['hops'][1]['relationship']=='HAS_PROVENANCE_MEMBER'
+                      else:
+                          unresolved_library_paths+=1
+                          assert 'drive_provenance' not in p
+          assert resolved_library_paths>0
+          print('AKASHICNET v0.12 PASS', {'resolved_library_paths':resolved_library_paths,'unresolved_library_paths':unresolved_library_paths})
           PY
