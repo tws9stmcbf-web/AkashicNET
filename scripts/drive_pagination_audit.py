@@ -11,6 +11,7 @@ import csv
 import json
 import os
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
@@ -50,16 +51,14 @@ def load_nodes():
                 "expected_child_folders": row["direct_folders"],
             })
 
-    # The historical descendant census contains 121 rows. The final reconciliation
-    # is an authoritative overlay: it replaces corrected existing nodes (Gnosis)
-    # and adds the eight omitted Apocrypha/Gospels subtree nodes. Key by Drive ID
-    # so the overlay cannot silently duplicate a physical folder node.
     descendants_by_id = {}
     with DESC_CENSUS.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             node = normalise_descendant(row)
             descendants_by_id[node["drive_id"]] = node
 
+    # Authoritative correction overlay: replaces corrected existing rows and adds
+    # descendant nodes that were omitted from the historical base census.
     with DESC_RECONCILIATION.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             node = normalise_descendant(row)
@@ -83,6 +82,32 @@ def load_nodes():
     if len(set(ids)) != EXPECTED_NODE_COUNT:
         raise RuntimeError(f"duplicate Drive IDs in audit denominator: {duplicates}")
     return nodes
+
+
+def validate_token_shape(token: str) -> None:
+    """Reject obvious non-token input without ever echoing the credential."""
+    if any(ch in token for ch in ("\r", "\n")):
+        raise RuntimeError("GOOGLE_DRIVE_ACCESS_TOKEN contains line breaks; paste only the access-token value")
+    if token.startswith(("HTTP/", "Location:", "GET ")) or "oauthplayground" in token.lower():
+        raise RuntimeError("GOOGLE_DRIVE_ACCESS_TOKEN is not an access-token value")
+    if len(token.strip()) < 20:
+        raise RuntimeError("GOOGLE_DRIVE_ACCESS_TOKEN is unexpectedly short")
+
+
+def safe_error(exc: Exception) -> str:
+    """Return a bounded credential-safe error class/message for persisted ledgers."""
+    if isinstance(exc, urllib.error.HTTPError):
+        return f"HTTPError(status={exc.code})"
+    if isinstance(exc, urllib.error.URLError):
+        return f"URLError(reason_type={type(exc.reason).__name__})"
+    # urllib/http.client may include a malformed Authorization header in ValueError.
+    if isinstance(exc, ValueError):
+        return "ValueError(redacted)"
+    text = str(exc)
+    lowered = text.lower()
+    if any(marker in lowered for marker in ("bearer ", "authorization", "oauth", "access_token", "code=")):
+        return f"{type(exc).__name__}(redacted)"
+    return f"{type(exc).__name__}({text[:240]})"
 
 
 def list_all(token: str, parent_id: str):
@@ -129,9 +154,15 @@ def main():
         return 2
 
     try:
+        validate_token_shape(token)
+    except Exception as exc:
+        print(f"credential_error={safe_error(exc)}", file=sys.stderr)
+        return 2
+
+    try:
         nodes = load_nodes()
     except Exception as exc:
-        print(f"denominator_error={exc!r}", file=sys.stderr)
+        print(f"denominator_error={safe_error(exc)}", file=sys.stderr)
         return 2
 
     rows = []
@@ -175,7 +206,7 @@ def main():
                 "counts_match": False,
                 "state_ok": False,
                 "status": "ERROR",
-                "error": repr(exc),
+                "error": safe_error(exc),
             })
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
