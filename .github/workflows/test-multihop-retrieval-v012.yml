@@ -31,7 +31,9 @@ jobs:
           unresolved_library_paths=0
           total_paths=0
           per_term={}
-          for term in ['psychedelics','buddhism','alchemy']:
+          # Psychedelics proves accepted Reddit-side retrieval; Shamanism and
+          # Hinduism exercise Stage-B families with explicit Drive provenance.
+          for term in ['psychedelics','shamanism','hinduism','alchemy']:
               raw=subprocess.check_output(['python','scripts/query_multihop_v012.py',term,'--accepted-only'],text=True)
               d=json.loads(raw)
               assert d['version']=='0.12'
