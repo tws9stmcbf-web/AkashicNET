@@ -1,4 +1,4 @@
-name: Test multi-hop retrieval + provenance v0.16
+name: Test multi-hop retrieval + provenance v0.17
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Build graph through v0.16
+      - name: Build graph through v0.17
         run: |
           python scripts/build_knowledge_graph_v02.py
           python scripts/build_knowledge_graph_v03.py
@@ -27,7 +27,8 @@ jobs:
           python scripts/overlay_manifestation_provenance_v014.py
           python scripts/overlay_hash_evidence_v015.py
           python scripts/apply_hash_results_v016.py
-      - name: Assert provenance chain v0.13-v0.15
+          python scripts/build_dedup_retrieval_view_v017.py
+      - name: Assert provenance chain v0.13-v0.16
         run: |
           python - <<'PY'
           import json
@@ -54,29 +55,47 @@ jobs:
           assert p15['execution_policy']=='NOT_AUTHORISED'
           assert len(hs)==3 and all(n['hash_execution_state']=='NOT_AUTHORISED' for n in hs)
           assert all(n['comparison_state']=='NOT_COMPARED' and n['hashes']==[] for n in hs)
-          print('AKASHICNET provenance chain v0.13-v0.15 PASS')
+
+          d16=json.load(open('data/knowledge-graph-v0.16.json',encoding='utf-8'))
+          p16=d16['hash_evidence_v016']
+          assert p16['authorised_raw_files_hashed']==6
+          assert p16['verification_pairs']==3 and p16['matching_pairs']==3 and p16['mismatching_pairs']==0
+          assert p16['byte_identity_assertions']==3
+          assert p16['raw_content_retained_in_graph'] is False and p16['digest_only_persistence'] is True
+          print('AKASHICNET provenance chain v0.13-v0.16 PASS')
           PY
-      - name: Assert authorised SHA-256 verification v0.16
+      - name: Assert deduplication-aware retrieval v0.17
         run: |
           python - <<'PY'
-          import json
-          d=json.load(open('data/knowledge-graph-v0.16.json',encoding='utf-8'))
-          p=d['hash_evidence_v016']
-          hs=[n for n in d['nodes'] if n.get('node_type')=='hash_evidence']
-          verified=[n for n in d['nodes'] if n.get('node_type')=='manifestation' and n.get('identity_status')=='SHA256_MATCH_VERIFIED']
-          byte_edges=[e for e in d['edges'] if e.get('relationship')=='BYTE_IDENTICAL_TO']
-          assert d['schema_version']=='0.16'
-          assert p['authorised_raw_files_hashed']==6
-          assert p['verification_pairs']==3 and p['matching_pairs']==3 and p['mismatching_pairs']==0
-          assert p['byte_identity_assertions']==3 and p['hash_algorithm']=='SHA-256'
-          assert p['raw_content_retained_in_graph'] is False and p['digest_only_persistence'] is True
+          import json,subprocess
+          d=json.load(open('data/dedup-retrieval-view-v0.17.json',encoding='utf-8'))
+          p=d['metadata']
+          assert d['schema_version']=='0.17'
+          assert p['physical_manifestations']==13
+          assert p['logical_retrieval_units']==10
+          assert p['sha256_verified_dedup_groups']==3
+          assert p['physical_manifestations_in_dedup_groups']==6
+          assert p['uncollapsed_units']==7
+          assert p['collapse_policy']=='matching SHA-256 only'
+          assert p['raw_content_retained'] is False
           assert p['truth_inference_allowed'] is False and p['rights_promotion_allowed'] is False
           assert p['scientific_evidence_promotion_allowed'] is False and p['integrity_pass'] is True
-          assert len(hs)==3 and all(n['hash_execution_state']=='COMPLETED' and n['comparison_state']=='MATCH' for n in hs)
-          assert all(len(n['hashes'])==2 and n['byte_identity_status']=='BYTE_IDENTICAL_VERIFIED' for n in hs)
-          assert len(verified)==6 and all(len(n['sha256'])==64 for n in verified)
-          assert len(byte_edges)==3
-          assert all(e['not_truth_claim'] is True and e['rights_promotion_allowed'] is False and e['scientific_evidence_promotion_allowed'] is False for e in byte_edges)
-          assert d['integrity']['release_integrity_pass'] is True
-          print('AKASHICNET v0.16 PASS', {'hashed_files':p['authorised_raw_files_hashed'],'matching_pairs':p['matching_pairs'],'byte_identity_edges':len(byte_edges)})
+          assert sum(u['physical_manifestation_count'] for u in d['retrieval_units'])==13
+          assert all(u['physical_manifestation_count']==2 for u in d['retrieval_units'] if u['deduplicated'])
+
+          def query(term):
+              return json.loads(subprocess.check_output(['python','scripts/query_dedup_v017.py',term],text=True))
+          vol1=query('Discipleship in the New Age Vol 1')
+          golden=query('Golden Book of Wisdom')
+          iih=query('Initiation Into Hermetics')
+          assert vol1['result_count']==1 and vol1['physical_manifestation_count']==2
+          assert vol1['results'][0]['deduplicated'] is True
+          assert golden['result_count']==1 and golden['physical_manifestation_count']==2
+          assert golden['results'][0]['deduplicated'] is True
+          assert iih['result_count']==3 and iih['physical_manifestation_count']==3
+          assert all(r['deduplicated'] is False for r in iih['results'])
+          print('AKASHICNET v0.17 PASS', {
+              'physical_manifestations':p['physical_manifestations'],
+              'logical_retrieval_units':p['logical_retrieval_units'],
+              'verified_dedup_groups':p['sha256_verified_dedup_groups']})
           PY
