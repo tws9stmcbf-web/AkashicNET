@@ -27,6 +27,8 @@ Within one API version, AkashicNET must not silently:
 - promote inaccessible/unverified Drive material into a public redistribution manifest;
 - collapse physical manifestations without verified byte identity where byte identity is the stated collapse basis.
 
+`DIRECT_METADATA_LOOKUP is not semantic acceptance`.
+
 ## Breaking changes
 
 A breaking change requires:
