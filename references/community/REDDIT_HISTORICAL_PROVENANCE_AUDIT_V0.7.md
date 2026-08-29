@@ -13,8 +13,8 @@ The purpose is narrow: determine whether repository evidence proves that the 972
 - `references/community/n2n-pilot-index.csv`
 - `tools/n2n/dryrun/25_post_test.jsonl`
 - `references/community/reddit-semantic-index.csv` (path/blob identified; content was not usable through the repository connector during this audit)
-
-All sources were inspected at historical commit `5dc2700c182a489a8488414d863b69ee142178f2`.
+- commit history immediately preceding and including `af0555d26abcd90d1dac685f67290cfdd772d1f9`
+- repository searches for early suspicious IDs and generation-related terms
 
 ## Findings
 
@@ -54,6 +54,14 @@ No inspected source contains a generator that produces the historical `1000...` 
 
 The appropriate classification remains `suspicious_pattern` / sequential-ID provenance anomaly until a generating source, commit, script or other direct provenance evidence is found.
 
+### 6. The 9,401-row URI archive entered GitHub as a single externally assembled artefact
+
+Commit `af0555d26abcd90d1dac685f67290cfdd772d1f9` added `references/community/reddit-uri-index.csv` in one operation: 9,402 lines were added and none deleted. Its immediate parent does not contain an earlier version of this dataset. Repository and commit searches did not locate an earlier generator, fixture, placeholder script, or staged expansion explaining the `1000...` sequences.
+
+**Conclusion:** the construction method of the 9,401-row historical URI archive is undocumented in the repository. Its corpus-level provenance state is therefore `origin_unresolved`.
+
+`origin_unresolved` is not a claim that records are false. It means the repository does not currently contain sufficient evidence to reconstruct how the bulk artefact was assembled.
+
 ## Evidence-state decision
 
 Do **not** promote the 972 sequence anomalies to proven generated placeholders.
@@ -62,29 +70,25 @@ Current defensible ladder remains:
 
 `9,401 historical URI rows -> 7,356 structurally unique candidates -> 972 suspicious sequential-ID provenance anomalies -> 6,384 candidates after the sequence filter -> 32 independently corroborated by the v0.6 public-web seed -> 6,352 not yet corroborated by that seed.`
 
-`uncorroborated` does not mean nonexistent. `suspicious_pattern` does not mean fabricated.
+The historical bulk artefact as a whole carries `origin_unresolved` until its pre-Git construction provenance is recovered.
 
-## New provenance concern
+`uncorroborated` does not mean nonexistent. `suspicious_pattern` does not mean fabricated. `origin_unresolved` does not mean synthetic.
+
+## Provenance-state model
 
 The historical ingestion prototype can transform pre-existing curated CSV rows into `dry_run_processed` records while live Reddit access is blocked. Consequently, `dry_run_processed` must never be interpreted as `source_verified` or `reddit_verified`.
 
 Recommended state separation:
 
+- `origin_unresolved`: construction provenance of the source artefact cannot currently be reconstructed from repository evidence.
 - `structural_candidate`: syntactically valid Reddit post URL/ID.
 - `suspicious_pattern`: structural candidate carrying a provenance anomaly.
 - `corroborated`: matched to independent public-web evidence.
 - `api_verified`: reserved for a successful authorised Reddit API retrieval.
 - `generated_placeholder`: reserved for records whose generation is directly demonstrated by provenance evidence.
 
-## Next audit
+## Next phase
 
-Trace the creation history upstream of `n2n-pilot-index.csv` and `reddit-uri-index.csv`, especially commits immediately preceding and including `af0555d26abcd90d1dac685f67290cfdd772d1f9`. Search commit diffs and scripts for:
+Because repository history does not currently expose the pre-Git construction source, further historical classification should remain conservative. The productive next phase is to expand independent public-web corroboration of the filtered candidate corpus while retaining the unresolved-origin flag, and later use authorised Reddit API retrieval to promote accessible records to `api_verified`.
 
-- sequential/base-36 ID construction;
-- generated/mock/synthetic/placeholder fixtures;
-- loops producing `1000...` IDs;
-- formulaic title templates;
-- bulk expansion of the URI archive;
-- provenance metadata describing where candidate URLs originated.
-
-Only direct evidence of generation should trigger reclassification to `generated_placeholder`.
+If an external/local generation source is recovered later, it can be audited separately and exact proven ranges can then be reclassified without rewriting the current evidence history.
