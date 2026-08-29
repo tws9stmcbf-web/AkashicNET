@@ -1,0 +1,2 @@
+validation_scope,validated_nodes,total_validation_nodes,coverage_percent,component_weight,verified_points,method
+Top-level root direct-document inventories,66,195,33.846154,10,3.384615,"Independent metadata-only re-runs of the 66 top-level root inventories against the earlier exact census. Root counts and zero-document Science root were rechecked during Stage-A screening. Descendant-node validation is not credited here."
