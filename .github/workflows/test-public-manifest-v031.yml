@@ -1,0 +1,44 @@
+name: Test production public manifest v0.31
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  public-manifest-v031-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build production public manifest
+        run: python scripts/build_public_manifest_v031.py
+      - name: Assert empty production manifest and fixture exclusion
+        run: |
+          python - <<'PY'
+          import json
+          data=json.load(open('data/public-manifest-v0.31.json',encoding='utf-8'))
+          assert data['manifest']=='AKASHICNET_PUBLIC_MANIFEST'
+          assert data['version']=='0.31'
+          assert data['policy']['required_public_status']=='PUBLIC_VERIFIED'
+          assert data['policy']['requires_manifest_eligible'] is True
+          assert data['policy']['fixtures_allowed'] is False
+          assert data['policy']['unknown_unverified_allowed'] is False
+          assert data['counts']['production_rights_records_examined']==5
+          assert data['counts']['fixture_records_examined_for_exclusion']==5
+          assert data['counts']['public_manifest_entries']==0
+          assert data['entries']==[]
+          assert any(x['record_id']=='RIGHTS-FIX-030-R4' and x['source']=='fixture_only' for x in data['excluded_audit'])
+          assert data['policy']['truth_inference_allowed'] is False
+          assert data['policy']['scientific_evidence_promotion_allowed'] is False
+          print('AKASHICNET v0.31 PUBLIC MANIFEST PASS',{
+              'production_entries':0,
+              'production_rights_records_examined':5,
+              'fixtures_excluded':5,
+              'synthetic_r4_excluded':True,
+              'required_status':'PUBLIC_VERIFIED',
+              'truth_inference':False,
+              'scientific_evidence_promotion':False,
+          })
+          PY
