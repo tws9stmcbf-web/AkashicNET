@@ -1,0 +1,78 @@
+name: Test rights verification workflow v0.30
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  rights-verification-v030-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate R0-R4 evidence ladder
+        run: |
+          python scripts/validate_rights_v030.py
+      - name: Assert controlled PUBLIC_VERIFIED fixture crosses gate only in test
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          sys.path.insert(0,'scripts')
+          from public_retrieval_gate_v029 import apply_public_gate
+
+          data=json.load(open('data/rights-verification-v0.30.json',encoding='utf-8'))
+          records=data['records']
+          r4=[r for r in records if r['computed_rung']=='R4']
+          assert len(r4)==1
+          fixture=r4[0]
+          assert fixture['computed_public_status']=='PUBLIC_VERIFIED'
+          assert fixture['fixture_only'] is True
+          assert fixture['production_manifest_eligible'] is False
+
+          synthetic_payload={
+              'results':[
+                  {
+                      'result_id':fixture['manifestation_id'],
+                      'public_status':'PUBLIC_VERIFIED',
+                      'semantic_decision':'DIRECT_METADATA_LOOKUP',
+                      'contract_guards':{
+                          'not_truth_claim':True,
+                          'not_rights_clearance_claim':False,
+                          'not_scientific_evidence_claim':True,
+                      },
+                  },
+                  {
+                      'result_id':'fixture:rights-v030-r3',
+                      'public_status':'UNKNOWN_UNVERIFIED',
+                      'semantic_decision':'DIRECT_METADATA_LOOKUP',
+                  },
+              ],
+              'summary':{},
+          }
+          gated=apply_public_gate(synthetic_payload,'public')
+          assert [r['result_id'] for r in gated['results']]==[fixture['manifestation_id']]
+          assert gated['summary']['public_gate_suppressed_count']==1
+          assert gated['public_retrieval_gate']['required_status']=='PUBLIC_VERIFIED'
+
+          # Production corpus baseline remains unchanged: no fixture is production-manifest eligible.
+          assert data['counts']['production_manifest_eligible']==0
+          assert data['policy']['fixture_r4_may_enter_production_manifest'] is False
+          assert data['policy']['truth_inference_allowed'] is False
+          assert data['policy']['scientific_evidence_promotion_allowed'] is False
+
+          print('AKASHICNET v0.30 RIGHTS WORKFLOW PASS',{
+              'fixtures':data['counts']['fixtures'],
+              'r4':data['counts']['r4'],
+              'public_verified_fixture':fixture['manifestation_id'],
+              'test_gate_results':len(gated['results']),
+              'production_manifest_eligible':0,
+              'real_corpus_promotions':0,
+              'truth_inference':False,
+              'scientific_evidence_promotion':False,
+          })
+          PY
