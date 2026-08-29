@@ -1,0 +1,137 @@
+name: Test retrieval HTTP public-rights gate v0.29
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  retrieval-http-v029-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build prerequisite layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+          python scripts/index_expanded_concepts_v021.py
+          python scripts/normalise_semantic_representations_v022.py
+      - name: Assert executable public-rights gate
+        run: |
+          python - <<'PY'
+          import json,subprocess,time,urllib.error,urllib.request
+
+          fixture=json.load(open('tests/fixtures/retrieval-http-v0.29.json',encoding='utf-8'))
+          spec=json.load(open('api/openapi-retrieval-v0.29.json',encoding='utf-8'))
+          assert spec['openapi']=='3.1.0'
+          assert spec['info']['version']=='0.29'
+          policy=spec['x-akashicnet-policy']
+          assert policy['public_retrieval_requires_public_verified'] is True
+          assert policy['missing_rights_default']=='UNKNOWN_UNVERIFIED'
+          assert policy['rights_promotion_allowed'] is False
+          assert policy['source_accessibility_implies_public_permission'] is False
+          assert policy['provenance_strength_implies_public_permission'] is False
+          assert policy['sha256_identity_implies_public_permission'] is False
+
+          BASE='http://127.0.0.1:8787'
+          proc=subprocess.Popen(['python','scripts/retrieval_http_v029.py','--host','127.0.0.1','--port','8787'])
+          try:
+              for _ in range(50):
+                  try:
+                      with urllib.request.urlopen(BASE+'/health',timeout=1) as r:
+                          if r.status==200: break
+                  except Exception: time.sleep(0.1)
+              else: raise AssertionError('HTTP service did not become ready')
+
+              def request(path):
+                  try:
+                      with urllib.request.urlopen(BASE+path,timeout=10) as r:
+                          return r.status,json.load(r)
+                  except urllib.error.HTTPError as e:
+                      return e.code,json.load(e)
+              def lookup(obj,dotted):
+                  for part in dotted.split('.'): obj=obj[part]
+                  return obj
+
+              observations={}
+              for case in fixture['cases']:
+                  status,payload=request(case['path'])
+                  assert status==case['status'],(case['id'],status,payload)
+                  for key,value in case.get('assert',{}).items():
+                      assert lookup(payload,key)==value,(case['id'],key)
+                  upstream=payload.get('upstream') if isinstance(payload,dict) else None
+                  if upstream:
+                      assert upstream['api']==fixture['upstream_api']
+                      assert upstream['api_version']==fixture['upstream_api_version']
+                      assert upstream['schema_id']==fixture['upstream_schema']
+                      if 'expect_results' in case:
+                          assert len(upstream['results'])==case['expect_results']
+                      if 'expect_results_min' in case:
+                          assert len(upstream['results'])>=case['expect_results_min']
+                      if 'expect_suppressed_min' in case:
+                          assert upstream['summary']['public_gate_suppressed_count']>=case['expect_suppressed_min']
+                      if 'assert_first_result' in case:
+                          row=upstream['results'][0]
+                          for key,value in case['assert_first_result'].items():
+                              assert lookup(row,key)==value,(case['id'],key)
+                      observations[case['id']]={
+                          'results':len(upstream['results']),
+                          'suppressed':upstream['summary']['public_gate_suppressed_count'],
+                      }
+
+              status,runtime_spec=request('/openapi.json')
+              assert status==200 and runtime_spec==spec
+              assert observations['internal-golden']['results']>=1
+              assert observations['public-golden-blocked']['results']==0
+              assert observations['public-reddit-blocked']['results']==0
+              print('AKASHICNET v0.29 RIGHTS GATE PASS',{
+                  'internal_golden_results':observations['internal-golden']['results'],
+                  'public_golden_results':0,
+                  'public_reddit_results':0,
+                  'required_status':'PUBLIC_VERIFIED',
+                  'missing_rights_default':'UNKNOWN_UNVERIFIED',
+                  'truth_inference':False,
+                  'rights_promotion':False,
+                  'scientific_evidence_promotion':False,
+              })
+          finally:
+              proc.terminate(); proc.wait(timeout=5)
+          PY
+      - name: Build deployable container
+        run: docker build -f deploy/retrieval-v0.29/Containerfile -t akashicnet-retrieval:v0.29 .
+      - name: Smoke-test packaged public gate
+        run: |
+          docker run -d --rm --name akashicnet-retrieval-v029 -p 8788:8787 akashicnet-retrieval:v0.29
+          python - <<'PY'
+          import json,time,urllib.parse,urllib.request
+          base='http://127.0.0.1:8788'
+          for _ in range(60):
+              try:
+                  with urllib.request.urlopen(base+'/health',timeout=1) as r:
+                      h=json.load(r)
+                      if h['service_version']=='0.29': break
+              except Exception: time.sleep(0.25)
+          else: raise AssertionError('packaged service did not become healthy')
+          path='/v1/retrieve?'+urllib.parse.urlencode({'q':'Golden Book of Wisdom','state':'accepted','visibility':'public','limit':5})
+          with urllib.request.urlopen(base+path,timeout=10) as r:
+              p=json.load(r)
+          assert p['upstream']['results']==[]
+          assert p['upstream']['public_retrieval_gate']['required_status']=='PUBLIC_VERIFIED'
+          print('AKASHICNET v0.29 PACKAGE PASS',{'container_health':'ok','public_gate':'enforced'})
+          PY
+          docker stop akashicnet-retrieval-v029
