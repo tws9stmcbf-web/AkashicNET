@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.6.1",
+  "baseline_objects": 2459,
+  "baseline_review_required_objects": 258,
+  "baseline_nontechnical_candidate_families": 126,
+  "stage_b_family_classifications_translated": 14,
+  "hash_pairs_reconciled": 3,
+  "byte_identical_pairs_verified": 3,
+  "duplicate_copy_pair_promotions": 3,
+  "canonical_work_ids_promoted": 0,
+  "edition_ids_promoted": 0,
+  "unresolved_policy": "HOLD_OR_REVIEW_REQUIRED",
+  "truth_promotion": false,
+  "rights_promotion": false,
+  "scientific_evidence_promotion": false,
+  "note": "Duplicate-copy promotion is pair-scoped. It does not by itself establish canonical work, edition, rights, truth, or scientific support."
+}
