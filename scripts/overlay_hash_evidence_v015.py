@@ -7,7 +7,7 @@ QUEUE=Path('references/community/hash-verification-queue-v0.15.csv')
 OUT=Path('data/knowledge-graph-v0.15.json')
 
 g=json.load(IN.open(encoding='utf-8'))
-existing={n['id'] for n in g['nodes']}
+existing={n.get('node_id') or n.get('id') for n in g['nodes'] if (n.get('node_id') or n.get('id'))}
 records=list(csv.DictReader(QUEUE.open(encoding='utf-8')))
 added=0
 for r in records:
@@ -15,7 +15,7 @@ for r in records:
     manifests=[x.strip() for x in r['manifestation_node_ids'].split(';') if x.strip()]
     assert all(m in existing for m in manifests), (r['hash_record_id'], manifests)
     node={
-        'id':node_id,
+        'node_id':node_id,
         'node_type':'hash_evidence',
         'hash_record_id':r['hash_record_id'],
         'family_id':r['family_id'],
