@@ -16,25 +16,30 @@ Twenty-five additional descendant nodes independently matched the frozen census.
 
 Twenty-five further nodes independently matched the frozen census using separate metadata-only document and child-folder queries. The batch includes remaining selected Ancient Religions collections, PDF collections, Biography and Bizzare collections, Literature and Logic collections, Christianity/Religion nodes, The Law of One and Dzogchen/Four introductory texts.
 
-Notable reconfirmations:
+## Validation batch 0009 — 175-node milestone
 
-- Ancient Religions/Mahabharata: 12 / 0.
-- Ancient Religions/Tantric Texts Series: 20 / 0 despite the collection title referencing Series 1–22.
-- PDF/Manly P.Hall: 27 / 0.
-- PDF/Alice A. Bailey: 26 / 0; duplicate-copy candidates remain unresolved canonicalisation questions.
-- PDF/Author Avalon/Reference Material remains empty at 0 / 0.
-- PDF/Montalk/Not Important: 8 / 0.
-- Christianity/Christian Critiques and Christianity/Christian History remain empty at 0 / 0.
-- Extraterrestrials/The Law of One: 5 / 0; catalogue presence is provenance and does not validate document claims.
-- Dzogchen/Four introductory texts: 4 / 0.
+Twenty-five further descendant nodes independently matched the frozen census using separate metadata-only document and child-folder queries.
+
+Notable reconfirmations include:
+
+- Literature/Fjodor Dostojevskij – complete works: 29 / 0.
+- Literature/Complete Works of H. G. Wells: 50 / 0.
+- Logic/Selected works by Bertrand Russell: 10 / 0.
+- Catholocism/Ante-Nicene Fathers: 9 / 0.
+- Catholocism/Nicene and post-Nicene fathers: 14 / 0.
+- Law/Blacks Law Dictionary: 4 / 0 document objects; one remains the known .crdownload technical artifact and is not promoted to a usable canonical work.
+- Islam/In The Shade Of The Qur’an: 14 / 0 physical PDFs; logical-volume reconciliation remains a separate canonicalisation task.
+- Judaism/The Talmud – Complete: 10 / 0.
+- Magick and Alchemy Abramelin copies matched their respective folder censuses; cross-list/copy relationships remain unresolved canonicalisation questions.
+- Secret Societies/Forbbiden History of Europe: 12 / 0; duplicate/alternate-copy relationship remains unresolved.
 
 ## Updated validation score
 
 - Validated root nodes: 66
-- Validated descendant nodes: 84
-- Validated nodes: 150 / 195
-- Validation coverage: 76.923077%
-- Validation points: 7.692308 / 10
+- Validated descendant nodes: 109
+- Validated nodes: 175 / 195
+- Validation coverage: 89.743590%
+- Validation points: 8.974359 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -42,11 +47,11 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 7.692308 / 10
+- validation: 8.974359 / 10
 
-Verified completion floor after batch 0008 = **87.692308%**.
+Verified completion floor after batch 0009 = **88.974359%**.
 
-The v0.4.9 / 90% gate remains unearned. The conservative validation denominator remains frozen at 195 known folder nodes. Forty-five nodes remain uncredited.
+The v0.4.9 / 90% gate remains unearned. The conservative validation denominator remains frozen at 195 known folder nodes. Twenty nodes remain uncredited.
 
 ## Privacy boundary
 
