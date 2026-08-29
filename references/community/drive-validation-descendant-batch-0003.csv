@@ -1,0 +1,3 @@
+validation_batch,collection_path,drive_id,expected_direct_documents,observed_direct_documents,expected_child_folders,observed_child_folders,validation_status,method,notes
+DESC-VAL-0003,Psychology/Psychic Development,17eO5tDXT8qAnuIoMPCPeR6g8JPPqI8AK,0,0,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","Empty collection reconfirmed; no body fetch; no privacy/public-status inference"
+DESC-VAL-0003,Psychology/Complete works of John Locke,1fE8HK-vh1tVIi2ZtlOSGuh0rpI3avpmP,8,8,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","Volumes I–VII and IX observed; VIII remains absent; no body fetch; no privacy/public-status inference"
