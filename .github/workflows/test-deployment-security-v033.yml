@@ -48,6 +48,23 @@ jobs:
               'max_result_limit':100,
           })
           PY
+      - name: Build prerequisite retrieval layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+          python scripts/index_expanded_concepts_v021.py
+          python scripts/normalise_semantic_representations_v022.py
       - name: Exercise public HTTP diagnostics and redaction
         run: |
           python - <<'PY'
