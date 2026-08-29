@@ -1,0 +1,4 @@
+work_id,canonical_title,family_id,promotion_decision_id,identity_basis,edition_status,rights_state,scientific_evidence_state
+work:alice-a-bailey-discipleship-new-age-vol-1,Discipleship in the New Age Vol 1,BAILEY-DISCIPLESHIP-001,PROMO-0001,Stage-B volume identity plus HASH-0001 matching SHA-256,NOT_ASSIGNED,UNKNOWN_UNVERIFIED,NOT_EVALUATED
+work:alice-a-bailey-discipleship-new-age-vol-2,Discipleship in the New Age Vol 2,BAILEY-DISCIPLESHIP-001,PROMO-0002,Stage-B volume identity plus HASH-0002 matching SHA-256,NOT_ASSIGNED,UNKNOWN_UNVERIFIED,NOT_EVALUATED
+work:franz-bardon-golden-book-of-wisdom,Franz Bardon Golden Book of Wisdom,BARDON-GOLDEN-001,PROMO-0003,Stage-B logical-work identity plus HASH-0003 matching SHA-256,NOT_ASSIGNED,UNKNOWN_UNVERIFIED,NOT_EVALUATED
