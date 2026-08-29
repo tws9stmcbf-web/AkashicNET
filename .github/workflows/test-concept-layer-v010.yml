@@ -1,0 +1,50 @@
+name: Test concept layer v0.10
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+    paths:
+      - 'references/community/concept-seed-v0.10.csv'
+      - 'scripts/build_concept_layer_v010.py'
+      - '.github/workflows/test-concept-layer-v010.yml'
+  workflow_dispatch:
+
+jobs:
+  concept-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build graph through v0.7
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+      - name: Build concept layer
+        run: python scripts/build_concept_layer_v010.py
+      - name: Assert concept safety boundary
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/concept-layer-v0.10.json',encoding='utf-8'))
+          assert d['concept_count']==10
+          assert d['reddit_records_examined']==1000
+          assert d['accepted_edge_count']==0
+          assert d['truth_inference_allowed'] is False
+          assert d['rights_promotion_allowed'] is False
+          assert d['scientific_evidence_promotion_allowed'] is False
+          assert all(n['review_state']=='REVIEWED' for n in d['concept_nodes'])
+          edges=d['reddit_edges']+d['library_edges']
+          assert all(e['review_state']=='PROVISIONAL' for e in edges)
+          assert all(e['accepted_edge'] is False for e in edges)
+          print('AKASHICNET v0.10 PASS', {'concepts':d['concept_count'],'reddit_candidates':d['reddit_concept_candidates'],'library_candidates':d['library_concept_candidates'],'accepted':d['accepted_edge_count']})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-layer-v0.10
+          path: data/concept-layer-v0.10.json
+          if-no-files-found: error
