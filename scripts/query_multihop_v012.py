@@ -20,9 +20,6 @@ def main():
     q=a.query.lower()
     matched={cid for cid,c in concepts.items() if q in c['label'].lower() or q in c['definition'].lower() or q==cid.lower()}
 
-    # Prefer Stage-B canonical_family nodes when a family_id is represented both
-    # as a Stage-B node and as a later reconciliation-only candidate node. The
-    # Stage-B nodes carry explicit collection/Drive provenance edges.
     family_by_ref={}
     for n in graph['nodes']:
         if n.get('node_type')=='canonical_family':
@@ -50,15 +47,17 @@ def main():
             path={'domain':domain,'concept':concepts[e['target_concept']]['label'],'hops':[concept_hop]}
             if domain=='reddit':
                 path['source']={'type':'reddit_record','ref':e['source_ref'],'rights_status':'LINK_ONLY_METADATA','scientific_evidence_default':False}
+                path['provenance_resolution']='REDDIT_CANONICAL_URL'
             else:
                 fam=family_by_ref.get(e['source_ref'])
                 path['source']={'type':'canonical_family','ref':e['source_ref'],'label':fam.get('label') if fam else None}
+                path['provenance_resolution']='PROVENANCE_NOT_YET_LINKED'
                 if fam:
                     for ce in incoming.get(fam['node_id'],[]):
                         drive=nodes.get(ce['source'])
                         if not drive or drive.get('node_type')!='drive_object': continue
                         path['hops'].append({
-                            'from':fam['node_id'],'relationship':'HAS_PROVENANCE_MEMBER', 'to':drive['node_id'],
+                            'from':fam['node_id'],'relationship':'HAS_PROVENANCE_MEMBER','to':drive['node_id'],
                             'inverse_of':ce['relationship'],'confidence':ce.get('confidence'),'review_state':ce.get('review_state'),
                             'basis':ce.get('basis'),'not_truth_claim':True
                         })
@@ -67,6 +66,7 @@ def main():
                             'drive_object_kind':drive.get('drive_object_kind','folder'),
                             'rights_status':drive.get('rights_status','UNKNOWN_UNVERIFIED')
                         }
+                        path['provenance_resolution']='DRIVE_MEMBER_LINK_RESOLVED'
                         break
             paths.append(path)
 
