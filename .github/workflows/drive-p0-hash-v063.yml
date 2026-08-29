@@ -1,14 +1,6 @@
 name: Drive P0 hash adjudication v0.6.3
 
 on:
-  push:
-    branches:
-      - 'feat/p0-drive-hash-pass-v063'
-    paths:
-      - '.github/workflows/drive-p0-hash-v063.yml'
-      - 'scripts/hash_drive_p0_v063.py'
-      - 'references/community/drive-canonical-family-review-v0.6.0.csv'
-      - 'references/community/drive-canonical-object-ledger-v0.6.0.csv'
   workflow_dispatch:
 
 jobs:
