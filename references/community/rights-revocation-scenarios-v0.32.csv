@@ -1,0 +1,7 @@
+scenario_id,base_fixture,authoritative_evidence_state,corroborating_evidence_state,scope_state,review_state,expected_effective_rung,expected_public_status,expected_public_gate_results,notes
+REV-032-BASELINE,RIGHTS-FIX-030-R4,ACTIVE,ACTIVE,VALID,APPROVED,R4,PUBLIC_VERIFIED,1,Control: complete R4 remains public in test-only gate
+REV-032-AUTH-WITHDRAWN,RIGHTS-FIX-030-R4,WITHDRAWN,ACTIVE,VALID,APPROVED,R2,UNKNOWN_UNVERIFIED,0,Authoritative rights evidence withdrawn
+REV-032-CORROBORATION-WITHDRAWN,RIGHTS-FIX-030-R4,ACTIVE,WITHDRAWN,VALID,APPROVED,R3,UNKNOWN_UNVERIFIED,0,Independent corroboration withdrawn
+REV-032-SCOPE-EXPIRED,RIGHTS-FIX-030-R4,ACTIVE,ACTIVE,EXPIRED,APPROVED,R2,UNKNOWN_UNVERIFIED,0,Jurisdiction or licence scope no longer valid
+REV-032-REVIEW-REVOKED,RIGHTS-FIX-030-R4,ACTIVE,ACTIVE,VALID,REVOKED,R3,UNKNOWN_UNVERIFIED,0,Reviewer approval revoked pending re-review
+REV-032-EVIDENCE-CONTRADICTED,RIGHTS-FIX-030-R4,CONTRADICTED,ACTIVE,VALID,APPROVED,R2,UNKNOWN_UNVERIFIED,0,Authoritative evidence contradicted by later information
