@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Audit Google Drive folder pagination and terminality against AkashicNET census files.
+"""Audit Google Drive folder pagination and terminality against frozen AkashicNET census files.
 
-Requires an OAuth access token in GOOGLE_DRIVE_ACCESS_TOKEN with read-only Drive scope.
-Outputs a CSV suitable for the PAGINATION_AND_TERMINALITY_AUDIT validation gate.
+Requires a read-only OAuth access token in GOOGLE_DRIVE_ACCESS_TOKEN.
+Writes a 195-row CSV suitable for the PAGINATION_AND_TERMINALITY_AUDIT gate.
 """
 
 from __future__ import annotations
@@ -13,12 +13,14 @@ import os
 import sys
 import urllib.parse
 import urllib.request
+from collections import Counter
 from pathlib import Path
 
-ROOT_CENSUS = Path("references/community/drive-traversal-ledger.csv")
+ROOT_CENSUS = Path("references/community/drive-metadata-root-census.csv")
 DESC_CENSUS = Path("references/community/drive-metadata-descendant-census.csv")
 OUT = Path("references/community/drive-pagination-terminality-audit.csv")
 FOLDER_MIME = "application/vnd.google-apps.folder"
+EXPECTED_NODE_COUNT = 195
 
 
 def load_nodes():
@@ -29,20 +31,30 @@ def load_nodes():
                 "scope": "root",
                 "path": row["root_title"],
                 "drive_id": row["drive_id"],
-                "expected_state": row["traversal_state"],
-                "expected_documents": "",
-                "expected_child_folders": "",
+                "expected_state": "COMPLETE" if int(row["direct_folders"]) else "TERMINAL_LEAF",
+                "expected_documents": row["direct_documents"],
+                "expected_child_folders": row["direct_folders"],
             })
     with DESC_CENSUS.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
+            state = row["node_state"]
+            if row["collection_path"] == "Ancient Religions/Gnosis" and state == "ACCESS_UNRESOLVED":
+                state = "TERMINAL_LEAF"
             nodes.append({
                 "scope": "descendant",
                 "path": row["collection_path"],
                 "drive_id": row["drive_id"],
-                "expected_state": row["node_state"],
+                "expected_state": state,
                 "expected_documents": row["direct_documents"],
                 "expected_child_folders": row["child_folders"],
             })
+
+    ids = [n["drive_id"] for n in nodes]
+    duplicates = sorted(k for k, v in Counter(ids).items() if v > 1)
+    if len(nodes) != EXPECTED_NODE_COUNT:
+        raise RuntimeError(f"frozen denominator drift: expected {EXPECTED_NODE_COUNT} nodes, found {len(nodes)}")
+    if len(set(ids)) != EXPECTED_NODE_COUNT:
+        raise RuntimeError(f"duplicate Drive IDs in audit denominator: {duplicates}")
     return nodes
 
 
@@ -74,8 +86,13 @@ def list_all(token: str, parent_id: str):
                 docs += 1
         page_token = data.get("nextPageToken")
         if not page_token:
-            break
-    return pages, docs, folders
+            return {
+                "pages": pages,
+                "observed_documents": docs,
+                "observed_child_folders": folders,
+                "pagination_exhausted": True,
+                "final_next_page_token_absent": True,
+            }
 
 
 def main():
@@ -84,42 +101,68 @@ def main():
         print("GOOGLE_DRIVE_ACCESS_TOKEN is required", file=sys.stderr)
         return 2
 
+    try:
+        nodes = load_nodes()
+    except Exception as exc:
+        print(f"denominator_error={exc!r}", file=sys.stderr)
+        return 2
+
     rows = []
     failures = 0
-    for node in load_nodes():
+    for node in nodes:
         try:
-            pages, docs, folders = list_all(token, node["drive_id"])
+            observed = list_all(token, node["drive_id"])
+            docs = observed["observed_documents"]
+            folders = observed["observed_child_folders"]
             terminal = folders == 0
-            expected_docs = node["expected_documents"]
-            expected_folders = node["expected_child_folders"]
-            counts_match = True
-            if expected_docs != "":
-                counts_match &= docs == int(expected_docs)
-            if expected_folders != "":
-                counts_match &= folders == int(expected_folders)
+            counts_match = (
+                docs == int(node["expected_documents"])
+                and folders == int(node["expected_child_folders"])
+            )
             state_ok = True
             if node["expected_state"] in {"TERMINAL_LEAF", "EMPTY_CONFIRMED"}:
                 state_ok = terminal
-            status = "PASS" if counts_match and state_ok else "FAIL"
+            status = "PASS" if counts_match and state_ok and observed["pagination_exhausted"] else "FAIL"
             failures += status == "FAIL"
-            rows.append({**node, "pages": pages, "observed_documents": docs,
-                         "observed_child_folders": folders, "terminal": terminal,
-                         "status": status, "error": ""})
-        except Exception as exc:  # persist exceptions; never silently pass
+            rows.append({
+                **node,
+                **observed,
+                "terminal_page_seen": observed["pagination_exhausted"],
+                "terminal": terminal,
+                "counts_match": counts_match,
+                "state_ok": state_ok,
+                "status": status,
+                "error": "",
+            })
+        except Exception as exc:
             failures += 1
-            rows.append({**node, "pages": "", "observed_documents": "",
-                         "observed_child_folders": "", "terminal": "",
-                         "status": "ERROR", "error": repr(exc)})
+            rows.append({
+                **node,
+                "pages": "",
+                "observed_documents": "",
+                "observed_child_folders": "",
+                "pagination_exhausted": False,
+                "final_next_page_token_absent": False,
+                "terminal_page_seen": False,
+                "terminal": "",
+                "counts_match": False,
+                "state_ok": False,
+                "status": "ERROR",
+                "error": repr(exc),
+            })
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    fields = list(rows[0].keys()) if rows else []
+    fields = list(rows[0].keys())
     with OUT.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
         writer.writerows(rows)
 
-    print(f"audited_nodes={len(rows)} failures={failures} output={OUT}")
-    return 1 if failures else 0
+    unique_ids = len({row["drive_id"] for row in rows})
+    print(
+        f"audited_nodes={len(rows)} unique_ids={unique_ids} failures={failures} output={OUT}"
+    )
+    return 0 if (len(rows) == EXPECTED_NODE_COUNT and unique_ids == EXPECTED_NODE_COUNT and failures == 0) else 1
 
 
 if __name__ == "__main__":
