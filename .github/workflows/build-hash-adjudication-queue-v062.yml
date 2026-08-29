@@ -1,0 +1,33 @@
+name: Build hash adjudication queue v0.6.2
+
+on:
+  push:
+    paths:
+      - 'references/community/drive-canonical-family-review-v0.6.0.csv'
+      - 'references/community/drive-canonical-object-ledger-v0.6.0.csv'
+      - 'scripts/build_hash_adjudication_queue_v062.py'
+      - '.github/workflows/build-hash-adjudication-queue-v062.yml'
+  pull_request:
+    paths:
+      - 'references/community/drive-canonical-family-review-v0.6.0.csv'
+      - 'references/community/drive-canonical-object-ledger-v0.6.0.csv'
+      - 'scripts/build_hash_adjudication_queue_v062.py'
+      - '.github/workflows/build-hash-adjudication-queue-v062.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build deterministic queue
+        run: python scripts/build_hash_adjudication_queue_v062.py
+      - name: Upload queue
+        uses: actions/upload-artifact@v4
+        with:
+          name: hash-adjudication-queue-v0.6.2
+          path: references/community/hash-adjudication-queue-v0.6.2.csv
+          if-no-files-found: error
