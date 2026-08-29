@@ -12,39 +12,36 @@ All eight known Philosophy descendant folder nodes independently matched the fro
 
 Both known Psychology descendant nodes independently matched the frozen census exactly.
 
-## Validation batch 0004 — Buddhism I
+## Validation batches 0004–0005 — Buddhism I–II
 
-The first five Buddhism descendant nodes independently matched the frozen census exactly:
+Twelve Buddhism descendant nodes independently matched the frozen census exactly through Buddhist Legends.
 
-- Buddhism/Modern Buddhism – the Path of Compassion and Wisdom: 3 documents / 0 child folders
-- Buddhism/Buddhist Suttas A-Z: 15 / 0
-- Buddhism/Rude Awakenings and Great Patient One: 2 / 0
-- Buddhism/Teaching From The Vajrasattva Retreat: 4 / 0
-- Buddhism/The Zen of Advaita: 2 / 0
+## Validation batch 0006 — 100-node milestone
 
-Buddhist Suttas A-Z remains treated as a curated compilation collection; its 15-object count is not interpreted as 15 independently canonical works.
+Twelve further descendant nodes were independently re-queried with separate metadata-only document and child-folder searches. All matched exactly:
 
-## Validation batch 0005 — Buddhism II
+- Buddhism/Seeing The Way: 2 documents / 0 child folders
+- Buddhism/Handful of Leaves VOL I–IV: 4 / 0
+- Buddhism/Books by Luang Ta Maha Boowa: 8 / 0
+- Hinduism/Complete works of Swami Vivekananda: 9 / 0
+- Hinduism/Atharva Veda Samhita: 2 / 0
+- Hinduism/Nisargadatta Maharaj: 25 / 0
+- Hinduism/Supermundane – The Inner Life: 0 / 0
+- Hinduism/Sri Aurobindo: 0 / 0
+- Yoga/Swami Vivekananda: 4 / 0
+- Yoga/Yogi Ramacharaka: 13 / 0
+- Metaphysics/Knowledge Lecture: 5 / 0
+- Metaphysics/Encyclopedia of Occultism and Parapsychology: 2 / 0
 
-Seven additional Buddhism descendant nodes were independently re-queried using separate metadata-only document and child-folder searches. All matched exactly:
-
-- Buddhism/Bardo Teachings: 2 documents / 0 child folders
-- Buddhism/Songs of Milarepa: 2 / 0
-- Buddhism/Ramayana: 4 / 0
-- Buddhism/The Buddhist Monastic Code: 2 / 0
-- Buddhism/The Complete Works of Sister Nivedita: 5 / 0
-- Buddhism/Meditations VOL I–V: 5 / 0
-- Buddhism/Buddhist Legends: 3 / 0
-
-The Ramayana entry remains a cross-collection candidate with Hinduism; folder membership is provenance only, not a canonicalisation decision. Sister Nivedita retains the census note that the observed five file objects do not map cleanly to the nominal volume numbering.
+This completes the known Buddhism descendant set in the frozen census and validates all currently listed Hinduism, Yoga and Metaphysics descendant nodes.
 
 ## Updated validation score
 
-- Previously validated root nodes: 66
-- Validated descendant nodes: 22
-- Validated nodes: 88 / 195
-- Validation coverage: 45.128205%
-- Validation points: 4.512821 / 10
+- Validated root nodes: 66
+- Validated descendant nodes: 34
+- Validated nodes: 100 / 195
+- Validation coverage: 51.282051%
+- Validation points: 5.128205 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -52,12 +49,12 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 4.512821 / 10
+- validation: 5.128205 / 10
 
-Verified completion floor after batch 0005 = **84.512821%**.
+Verified completion floor after batch 0006 = **85.128205%**.
 
-This does not earn the v0.4.9 / 90% gate. Further descendant validation and/or independently justified privacy/public-status classification is required.
+The 100-node milestone does not earn the v0.4.9 / 90% gate. The conservative validation denominator remains frozen at 195 known folder nodes.
 
 ## Privacy boundary
 
-Validation remained metadata-only. No document bodies were fetched, no embeddings were generated, and shared/access-visible material was not treated as PUBLIC_VERIFIED.
+Validation remained metadata-only. No document bodies were fetched, no embeddings were generated, and shared/access-visible material was not treated as PUBLIC_VERIFIED. Folder membership remains provenance rather than endorsement or canonical truth.
