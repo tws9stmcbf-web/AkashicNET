@@ -1,0 +1,40 @@
+name: Historical Reddit corpus authenticity
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/reddit-corpus-authenticity
+    paths:
+      - scripts/reddit_corpus_authenticity.py
+      - tests/test_reddit_corpus_authenticity.py
+      - .github/workflows/reddit-corpus-authenticity.yml
+
+permissions:
+  contents: read
+
+jobs:
+  authenticity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run authenticity unit tests
+        run: python -m unittest tests.test_reddit_corpus_authenticity -v
+      - name: Recover historical source
+        run: |
+          mkdir -p artifacts/reddit-authenticity
+          curl --fail --location --silent --show-error \
+            https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
+            --output artifacts/reddit-authenticity/reddit-uri-index.csv
+      - name: Build Corpus Authenticity Audit v0.2
+        run: |
+          python scripts/reddit_corpus_authenticity.py \
+            artifacts/reddit-authenticity/reddit-uri-index.csv \
+            --json-out artifacts/reddit-authenticity/authenticity-v0.2.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reddit-corpus-authenticity-v0.2
+          path: artifacts/reddit-authenticity/
