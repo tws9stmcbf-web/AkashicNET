@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-29",
+  "status": "PRE-ALPHA",
+  "nodes": [
+    {"id":"work:abramelin","type":"work","label":"The Sacred Magic of Abramelin the Mage","confidence":"high","basis":"collection_alignment","review_state":"accepted"},
+    {"id":"work:forbidden-history-europe","type":"work","label":"Forbidden History of Europe","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:mushrooms-russia-history","type":"work","label":"Mushrooms Russia and History","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:techniques-modern-shamanism","type":"work","label":"Techniques of Modern Shamanism / Walking Between The Worlds","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:lovecraft-complete","type":"work","label":"Complete Works of H. P. Lovecraft","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:necronomicon-john-dee","type":"work","label":"John Dee Necronomicon","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:necronomicon-simon","type":"work","label":"Simon Necronomicon","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:necronomicon-spellbook","type":"work","label":"Necronomicon Spellbook","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:al-azif","type":"work","label":"Al-Azif Necronomicon","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:agrippa-occult-philosophy","type":"work","label":"Agrippa Occult Philosophy","confidence":"high","basis":"collection_alignment","review_state":"accepted"},
+    {"id":"work:echoes-gnosis","type":"work","label":"Echoes From the Gnosis","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:discipleship-new-age","type":"work","label":"Discipleship in the New Age","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:initiation-hermetics","type":"work","label":"Initiation Into Hermetics","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:golden-book-wisdom","type":"work","label":"Golden Book of Wisdom","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:practice-magical-evocation","type":"work","label":"Practice of Magical Evocation","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:key-true-qabbalah","type":"work","label":"Key to the True Qabbalah","confidence":"high","basis":"title_normalisation","review_state":"accepted"},
+    {"id":"work:ramayana","type":"work","label":"Ramayana","confidence":"medium","basis":"exact_metadata","review_state":"provisional"},
+    {"id":"author:swami-vivekananda","type":"author","label":"Swami Vivekananda","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"id":"work:complete-vivekananda","type":"work","label":"Complete Works of Swami Vivekananda","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"id":"work:raja-yoga","type":"work","label":"Raja Yoga","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"id":"work:bhakti-yoga","type":"work","label":"Bhakti Yoga","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"id":"work:karma-yoga","type":"work","label":"Karma Yoga","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"id":"work:jnana-yoga","type":"work","label":"Jnana Yoga","confidence":"high","basis":"exact_metadata","review_state":"accepted"}
+  ],
+  "edges": [
+    {"from":"author:swami-vivekananda","to":"work:complete-vivekananda","type":"CREATED","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"from":"author:swami-vivekananda","to":"work:raja-yoga","type":"CREATED","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"from":"author:swami-vivekananda","to":"work:bhakti-yoga","type":"CREATED","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"from":"author:swami-vivekananda","to":"work:karma-yoga","type":"CREATED","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"from":"author:swami-vivekananda","to":"work:jnana-yoga","type":"CREATED","confidence":"high","basis":"exact_metadata","review_state":"accepted"},
+    {"from":"work:raja-yoga","to":"work:complete-vivekananda","type":"RELATED_TO","confidence":"medium","basis":"collection_alignment","review_state":"provisional"},
+    {"from":"work:bhakti-yoga","to":"work:complete-vivekananda","type":"RELATED_TO","confidence":"medium","basis":"collection_alignment","review_state":"provisional"},
+    {"from":"work:karma-yoga","to":"work:complete-vivekananda","type":"RELATED_TO","confidence":"medium","basis":"collection_alignment","review_state":"provisional"},
+    {"from":"work:jnana-yoga","to":"work:complete-vivekananda","type":"RELATED_TO","confidence":"medium","basis":"collection_alignment","review_state":"provisional"},
+    {"from":"work:ramayana","to":"collection:hinduism","type":"CROSS_COLLECTION_CANDIDATE","confidence":"medium","basis":"collection_alignment","review_state":"unresolved"}
+  ],
+  "rights_policy": {"public_manifest_requires":"PUBLIC_VERIFIED","unknown_status":"UNKNOWN_UNVERIFIED"}
+}
