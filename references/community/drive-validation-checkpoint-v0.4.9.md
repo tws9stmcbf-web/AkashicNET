@@ -43,9 +43,22 @@ Result:
 - discrepancy: 0
 - gate result: PASS
 
-## Gate 3 — PAGINATION_AND_TERMINALITY_AUDIT — PENDING (0/2)
+## Gate 3 — PAGINATION_AND_TERMINALITY_AUDIT — BLOCKED AFTER FIRST CI EXECUTION (0/2)
 
-The metadata census records exact counts and terminal states, but this gate specifically requires an explicit provider-pagination audit for all counted nodes. Historical exact-count evidence is not retroactively promoted into this validation gate without a persisted audit procedure.
+The executable audit is implemented by `scripts/drive_pagination_audit.py` and `.github/workflows/drive-pagination-audit.yml` against the frozen 195-node denominator.
+
+First CI execution:
+
+- workflow: `Drive pagination audit`
+- run ID: `33243706508`
+- trigger commit: `7fda3e8354e6ecdcf20b734bdd64c0ffb107e2e5`
+- result: FAILURE before any folder-node audit began
+- cause: GitHub Actions environment contained an empty `GOOGLE_DRIVE_ACCESS_TOKEN`
+- script exit: code 2 with `GOOGLE_DRIVE_ACCESS_TOKEN is required`
+- audit CSV: not produced
+- validation credit: 0 / 2
+
+This is an execution-environment blocker, not a corpus failure. The gate remains uncredited until a GitHub Actions secret named `GOOGLE_DRIVE_ACCESS_TOKEN` with read-only Drive scope is configured and a complete 195-node run produces a ledger satisfying the frozen PASS criteria.
 
 ## Gate 4 — TECHNICAL_AND_DUPLICATE_INTEGRITY — PENDING (0/2)
 
@@ -77,6 +90,6 @@ Project status remains **AkashicNET PRE-ALPHA v0.4.8-dev** because the 90% v0.4.
 
 ## Next highest-leverage validation work
 
-1. Execute `PAGINATION_AND_TERMINALITY_AUDIT` across the 195 counted folder nodes with explicit next-page-token/terminal evidence.
+1. Configure the GitHub Actions `GOOGLE_DRIVE_ACCESS_TOKEN` secret and rerun the 195-node pagination audit.
 2. Execute `TECHNICAL_AND_DUPLICATE_INTEGRITY` against technical exclusions and high-confidence duplicate-copy families.
 3. Build the corrected 2,144-object privacy ledger without treating shared access as public permission.
