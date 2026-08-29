@@ -4,33 +4,28 @@ Date: 2026-08-29
 
 Baseline checkpoint: PRE-ALPHA v0.4.8-dev
 
-## Validation batch 0001
+## Validation batches 0001–0002 — Philosophy
 
-Three Philosophy descendant folder nodes independently matched the frozen census exactly:
+All eight known Philosophy descendant folder nodes independently matched the frozen census exactly. These checks used separate metadata-only Google Drive document and child-folder queries.
 
-- Philosophy/Agrippa - Occult Philosophy: 5 documents / 0 child folders
-- Philosophy/Søren Kierkegaard: 7 / 0
-- Philosophy/The Mother – Collected Works Volume 1–17: 17 / 0
+## Validation batch 0003 — Psychology
 
-## Validation batch 0002
+Both known Psychology descendant nodes independently matched the frozen census exactly:
 
-The remaining five Philosophy descendant nodes were independently re-queried with separate metadata-only document and folder searches. All matched exactly:
+- Psychology/Psychic Development: expected 0 documents / 0 child folders; observed 0 / 0; MATCH_EXACT
+- Psychology/Complete works of John Locke: expected 8 documents / 0 child folders; observed 8 / 0; MATCH_EXACT
 
-- Philosophy/Commentaries on Living I–III: 3 documents / 0 child folders
-- Philosophy/Ouspensky Record of Meetings: 2 / 0
-- Philosophy/Selected works by Albert Einstein: 4 / 0
-- Philosophy/Leaves of Morya’s Garden: 2 / 0
-- Philosophy/Frankfurt School – Karl Mannheim: 3 / 0
+The Locke inventory again contains Volumes I–VII and IX; Volume VIII remains unobserved, consistent with the frozen census.
 
-The full set of eight known Philosophy descendant nodes is therefore independently validated against the frozen census.
+The full known Psychology descendant set is therefore independently validated.
 
 ## Updated validation score
 
 - Previously validated root nodes: 66
-- Validated descendant nodes: 8
-- Validated nodes: 74 / 195
-- Validation coverage: 37.948718%
-- Validation points: 3.794872 / 10
+- Validated descendant nodes: 10
+- Validated nodes: 76 / 195
+- Validation coverage: 38.974359%
+- Validation points: 3.897436 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -38,9 +33,9 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 3.794872 / 10
+- validation: 3.897436 / 10
 
-Verified completion floor after batch 0002 = **83.794872%**.
+Verified completion floor after batch 0003 = **83.897436%**.
 
 This does not earn the v0.4.9 / 90% gate. Further descendant validation and/or independently justified privacy/public-status classification is required.
 
