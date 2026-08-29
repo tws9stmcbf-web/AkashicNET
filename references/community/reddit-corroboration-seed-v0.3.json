@@ -1,0 +1,31 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.3",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Seed contains canonical post IDs independently observed in public web discovery prior to authorised Reddit API access.",
+    "Presence in this file is corroboration evidence, not a guarantee that a post remains publicly accessible.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"1qll7jj"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1vztbnl"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1r82bgv"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1dw34q4"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1u521t5"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1u5ur7c"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1vzfhwd"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1myisof"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1vpnqzu"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1vxmjoc"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1vok3wu"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1sfoe3t"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1w1fcdx"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1s774h0"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1s76bsg"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1strtv0"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1vrwp5r"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1uikrfj"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1r6dbic"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1lxl08t"}
+  ]
+}
