@@ -8,7 +8,7 @@ on:
     paths:
       - scripts/reddit_corpus_corroboration.py
       - tests/test_reddit_corpus_corroboration.py
-      - references/community/reddit-corroboration-seed-v0.9.json
+      - references/community/reddit-corroboration-seed-v0.10.json
       - .github/workflows/reddit-corpus-corroboration.yml
 
 permissions:
@@ -30,13 +30,13 @@ jobs:
           curl --fail --location --silent --show-error \
             https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
             --output artifacts/reddit-corroboration/reddit-uri-index.csv
-      - name: Build Corroboration Audit v0.9
+      - name: Build Corroboration Audit v0.10
         run: |
           python scripts/reddit_corpus_corroboration.py \
             artifacts/reddit-corroboration/reddit-uri-index.csv \
-            references/community/reddit-corroboration-seed-v0.9.json \
-            --json-out artifacts/reddit-corroboration/corroboration-v0.9.json
+            references/community/reddit-corroboration-seed-v0.10.json \
+            --json-out artifacts/reddit-corroboration/corroboration-v0.10.json
       - uses: actions/upload-artifact@v4
         with:
-          name: reddit-corpus-corroboration-v0.9
+          name: reddit-corpus-corroboration-v0.10
           path: artifacts/reddit-corroboration/
