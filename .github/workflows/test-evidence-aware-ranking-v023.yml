@@ -1,0 +1,80 @@
+name: Test evidence-aware retrieval ranking v0.23
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  evidence-ranking-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build prerequisite layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+          python scripts/index_expanded_concepts_v021.py
+          python scripts/normalise_semantic_representations_v022.py
+      - name: Assert evidence-aware ranking boundaries
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          def q(term,*extra):
+              return json.loads(subprocess.check_output(['python','scripts/query_ranked_v023.py',term,*extra],text=True))
+
+          golden=q('Golden Book of Wisdom','--accepted-only')
+          herm=q('Hermeticism','--accepted-only')
+          psy=q('Psychedelics','--accepted-only')
+
+          assert golden['version']=='0.23'
+          assert golden['semantic_decisions_changed_by_ranking'] is False
+          assert golden['ranking_must_not_be_interpreted_as_truth_evidence_safety_efficacy_or_rights'] is True
+          assert golden['results']
+          assert golden['results'][0]['evidence_profile']['provenance_tier']=='P3_SHA256_IDENTITY_PROVENANCE'
+          assert golden['results'][0]['evidence_profile']['sha256_verified_logical_units']==1
+          assert golden['results'][0]['query_path']=='canonical_family_label'
+          assert golden['results'][0]['not_semantic_inference'] is True
+
+          assert herm['results']
+          htiers=[r['evidence_profile']['provenance_tier'] for r in herm['results']]
+          assert 'P2_MANIFESTATION_PROVENANCE' in htiers
+          assert 'P3_SHA256_IDENTITY_PROVENANCE' not in htiers
+
+          assert psy['results']
+          ptiers=[r['evidence_profile']['provenance_tier'] for r in psy['results']]
+          assert 'P1_REVIEWED_TOPICAL' in ptiers
+
+          for d in [golden,herm,psy]:
+              assert d['truth_inference_allowed'] is False
+              assert d['rights_promotion_allowed'] is False
+              assert d['scientific_evidence_promotion_allowed'] is False
+              ranks=[r['evidence_profile']['provenance_rank'] for r in d['results']]
+              assert ranks==sorted(ranks,reverse=True)
+              for r in d['results']:
+                  ep=r['evidence_profile']
+                  assert ep['not_truth_score'] is True
+                  assert ep['not_scientific_evidence_score'] is True
+                  assert ep['not_rights_score'] is True
+                  assert ep['not_safety_or_efficacy_score'] is True
+
+          print('AKASHICNET v0.23 PASS', {
+              'golden_top_tier':golden['results'][0]['evidence_profile']['provenance_tier'],
+              'hermeticism_tiers':sorted(set(htiers)),
+              'psychedelics_tiers':sorted(set(ptiers))})
+          PY
