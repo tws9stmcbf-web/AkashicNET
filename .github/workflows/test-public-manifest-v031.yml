@@ -1,6 +1,9 @@
 name: Test production public manifest v0.31
 
 on:
+  push:
+    branches:
+      - akashicnet-validation-descendants
   pull_request:
   workflow_dispatch:
 
