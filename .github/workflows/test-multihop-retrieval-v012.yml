@@ -1,0 +1,47 @@
+name: Test multi-hop retrieval v0.12
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  multihop-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build graph through v0.11
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+      - name: Assert multi-hop retrieval safety and provenance
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          for term in ['psychedelics','buddhism','alchemy']:
+              raw=subprocess.check_output(['python','scripts/query_multihop_v012.py',term,'--accepted-only'],text=True)
+              d=json.loads(raw)
+              assert d['version']=='0.12'
+              assert d['path_count']>0
+              assert d['truth_inference_allowed'] is False
+              assert d['rights_promotion_allowed'] is False
+              assert d['scientific_evidence_promotion_allowed'] is False
+              for p in d['paths']:
+                  assert p['hops']
+                  assert p['hops'][0]['relationship']=='ABOUT'
+                  assert p['hops'][0]['decision']=='ACCEPT'
+                  if p['domain']=='library':
+                      assert 'drive_provenance' in p
+                      assert len(p['hops'])>=2
+                      assert p['hops'][1]['relationship']=='HAS_PROVENANCE_MEMBER'
+          print('AKASHICNET v0.12 PASS: multi-hop provenance retrieval')
+          PY
