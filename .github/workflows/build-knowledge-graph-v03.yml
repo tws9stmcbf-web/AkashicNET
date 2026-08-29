@@ -1,0 +1,47 @@
+name: Build knowledge graph v0.3
+
+on:
+  push:
+    branches:
+      - akashicnet-validation-descendants
+    paths:
+      - 'scripts/build_knowledge_graph_v02.py'
+      - 'scripts/build_knowledge_graph_v03.py'
+      - 'references/community/drive-metadata-root-census.csv'
+      - 'references/community/drive-metadata-descendant-census.csv'
+      - 'references/community/drive-validation-descendant-batch-0010.csv'
+      - 'references/community/drive-validation-descendant-batch-0011.csv'
+      - 'references/community/drive-canonical-resolution-stage-b-graph-overlay.csv'
+      - '.github/workflows/build-knowledge-graph-v03.yml'
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build structural graph v0.2
+        run: python scripts/build_knowledge_graph_v02.py
+      - name: Overlay Stage-B canonical families
+        run: python scripts/build_knowledge_graph_v03.py
+      - name: Assert semantic integrity
+        run: |
+          python - <<'PY'
+          import json
+          p='data/knowledge-graph-v0.3.json'
+          g=json.load(open(p, encoding='utf-8'))
+          assert g['integrity']['release_integrity_pass'] is True
+          assert g['integrity']['stage_b_semantic_integrity_pass'] is True
+          assert g['canonical_stage_b']['family_nodes'] == 14
+          assert g['canonical_stage_b']['advanced_families'] == 13
+          assert g['canonical_stage_b']['unresolved_families'] == 1
+          assert g['canonical_stage_b']['missing_collection_paths'] == []
+          print('AKASHICNET KG v0.3 PASS: 195 structural nodes + 14 Stage-B families (13 advanced, 1 unresolved)')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-graph-v0.3
+          path: data/knowledge-graph-v0.3.json
+          if-no-files-found: error
