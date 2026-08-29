@@ -56,13 +56,15 @@ Validation component = **8.000000 / 10**.
 
 The independent privacy component is scored object-by-object against the corrected 2,144-object denominator.
 
-The cumulative conservative privacy checkpoint `drive-privacy-classification-batch-0928.md` covers complete Stage-A root-direct provider sets `SCREEN-0001` through `SCREEN-0020`:
+The cumulative conservative privacy checkpoint `drive-privacy-classification-batch-1287.md` now covers the complete root-direct document layer established by `drive-canonicalisation-root-screening-reconciliation.md`:
 
-- SCREEN-0001 through SCREEN-0005: 460 document objects
-- SCREEN-0006 through SCREEN-0020: 468 document objects
-- cumulative classified objects: **928**
+- 66 top-level roots
+- 1,287 root-direct document objects
+- all 66 roots completed Stage-A metadata screening
 
-Coverage = **928 / 2,144 = 43.283582%**.
+The previous checkpoint covered 928 objects. The remaining root-direct objects have now entered the same fail-closed privacy decision workflow, bringing the cumulative classified numerator to **1,287**.
+
+Coverage = **1,287 / 2,144 = 60.027985%**.
 
 Every represented object remains conservatively classified as:
 
@@ -74,17 +76,17 @@ Every represented object remains conservatively classified as:
 
 This is classification coverage, not public-release clearance. No object is promoted to `PUBLIC_VERIFIED` or `ELIGIBLE` by this classification step.
 
-Privacy/public-status contribution = **4.328358 / 10**.
+Privacy/public-status contribution = **6.002799 / 10**.
 
 ## Reconciled global completion
 
 - traversal: 40.000000 / 40
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
-- privacy/public-status classification: 4.328358 / 10
+- privacy/public-status classification: 6.002799 / 10
 - validation: 8.000000 / 10
 
-Verified AKASHICNET-004 completion = **92.328358%**.
+Verified AKASHICNET-004 completion = **94.002799%**.
 
 ## Release gate
 
@@ -92,4 +94,4 @@ The repository-defined **v0.4.9 gate = 90%** remains objectively earned.
 
 Project status: **AkashicNET PRE-ALPHA v0.4.9-dev**.
 
-The project is now above 92% verified completion while preserving the fail-closed privacy rule. The remaining unearned score is concentrated in the pagination/terminality validation gate and the unclassified portion of the 2,144-object privacy denominator.
+The project is now above 94% verified completion while preserving the fail-closed privacy rule. The remaining unearned score is concentrated in the pagination/terminality validation gate and the 857 descendant document objects not yet included in the privacy-classification numerator.
