@@ -1,4 +1,4 @@
-name: Test multi-hop retrieval + provenance v0.17
+name: Test multi-hop retrieval + provenance v0.18
 
 on:
   push:
@@ -94,8 +94,36 @@ jobs:
           assert golden['results'][0]['deduplicated'] is True
           assert iih['result_count']==3 and iih['physical_manifestation_count']==3
           assert all(r['deduplicated'] is False for r in iih['results'])
-          print('AKASHICNET v0.17 PASS', {
-              'physical_manifestations':p['physical_manifestations'],
-              'logical_retrieval_units':p['logical_retrieval_units'],
-              'verified_dedup_groups':p['sha256_verified_dedup_groups']})
+          print('AKASHICNET v0.17 PASS', {'physical_manifestations':p['physical_manifestations'],'logical_retrieval_units':p['logical_retrieval_units'],'verified_dedup_groups':p['sha256_verified_dedup_groups']})
+          PY
+      - name: Assert canonical dedup integration v0.18
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          def q(term,*extra):
+              return json.loads(subprocess.check_output(['python','scripts/query_multihop_v018.py',term,*extra],text=True))
+
+          golden=q('Golden Book of Wisdom','--accepted-only')
+          assert golden['version']=='0.18'
+          assert golden['truth_inference_allowed'] is False
+          assert golden['rights_promotion_allowed'] is False
+          assert golden['scientific_evidence_promotion_allowed'] is False
+          assert golden['logical_units_returned']==1
+          assert golden['physical_manifestations_returned']==2
+          assert golden['deduplicated_units_returned']==1
+          lib=[r for r in golden['results'] if r.get('query_path')=='canonical_family_label']
+          assert len(lib)==1
+          u=lib[0]['logical_retrieval_units'][0]
+          assert u['deduplicated'] is True and u['collapse_basis']=='SHA256_MATCH_VERIFIED'
+          assert u['physical_manifestation_count']==2 and len(u['manifestations'])==2
+
+          iih=q('Initiation Into Hermetics','--accepted-only')
+          assert iih['logical_units_returned']==3
+          assert iih['physical_manifestations_returned']==3
+          assert iih['deduplicated_units_returned']==0
+
+          alchemy=q('alchemy','--accepted-only')
+          assert alchemy['matched_concepts']
+          assert all(r.get('query_path')!='canonical_family_label' or r.get('not_semantic_inference') is True for r in alchemy['results'])
+          print('AKASHICNET v0.18 PASS', {'golden_logical':golden['logical_units_returned'],'golden_physical':golden['physical_manifestations_returned'],'iih_logical':iih['logical_units_returned'],'alchemy_results':alchemy['result_count']})
           PY
