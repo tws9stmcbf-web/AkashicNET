@@ -14,7 +14,7 @@ Both known Psychology descendant nodes independently matched the frozen census e
 
 ## Validation batch 0004 — Buddhism I
 
-The first five Buddhism descendant nodes were independently re-queried with separate metadata-only document and folder searches. All matched exactly:
+The first five Buddhism descendant nodes independently matched the frozen census exactly:
 
 - Buddhism/Modern Buddhism – the Path of Compassion and Wisdom: 3 documents / 0 child folders
 - Buddhism/Buddhist Suttas A-Z: 15 / 0
@@ -24,13 +24,27 @@ The first five Buddhism descendant nodes were independently re-queried with sepa
 
 Buddhist Suttas A-Z remains treated as a curated compilation collection; its 15-object count is not interpreted as 15 independently canonical works.
 
+## Validation batch 0005 — Buddhism II
+
+Seven additional Buddhism descendant nodes were independently re-queried using separate metadata-only document and child-folder searches. All matched exactly:
+
+- Buddhism/Bardo Teachings: 2 documents / 0 child folders
+- Buddhism/Songs of Milarepa: 2 / 0
+- Buddhism/Ramayana: 4 / 0
+- Buddhism/The Buddhist Monastic Code: 2 / 0
+- Buddhism/The Complete Works of Sister Nivedita: 5 / 0
+- Buddhism/Meditations VOL I–V: 5 / 0
+- Buddhism/Buddhist Legends: 3 / 0
+
+The Ramayana entry remains a cross-collection candidate with Hinduism; folder membership is provenance only, not a canonicalisation decision. Sister Nivedita retains the census note that the observed five file objects do not map cleanly to the nominal volume numbering.
+
 ## Updated validation score
 
 - Previously validated root nodes: 66
-- Validated descendant nodes: 15
-- Validated nodes: 81 / 195
-- Validation coverage: 41.538462%
-- Validation points: 4.153846 / 10
+- Validated descendant nodes: 22
+- Validated nodes: 88 / 195
+- Validation coverage: 45.128205%
+- Validation points: 4.512821 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -38,9 +52,9 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 4.153846 / 10
+- validation: 4.512821 / 10
 
-Verified completion floor after batch 0004 = **84.153846%**.
+Verified completion floor after batch 0005 = **84.512821%**.
 
 This does not earn the v0.4.9 / 90% gate. Further descendant validation and/or independently justified privacy/public-status classification is required.
 
