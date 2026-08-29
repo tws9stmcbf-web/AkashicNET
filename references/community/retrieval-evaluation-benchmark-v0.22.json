@@ -1,0 +1,71 @@
+{
+  "version": "0.22",
+  "status": "SCAFFOLD",
+  "baseline_merge_commit": "31a37b2575bef9b4b19b1abe9aa1087eb0edc9ea",
+  "policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "ranking_changes_semantic_decision": false
+  },
+  "target_query_count": {
+    "minimum": 25,
+    "maximum": 50
+  },
+  "dimensions": [
+    "direct_metadata_lookup",
+    "concept_retrieval",
+    "cross_source_retrieval",
+    "multi_hop_provenance",
+    "deduplication",
+    "hold_preservation",
+    "weak_match_rejection",
+    "deterministic_ordering",
+    "consumer_contract"
+  ],
+  "seed_queries": [
+    {
+      "id": "Q001",
+      "query": "Golden Book of Wisdom",
+      "intent": "direct_metadata_lookup",
+      "expected_semantic_behaviour": "DIRECT_METADATA_LOOKUP",
+      "must_preserve": ["provenance", "not_truth_claim", "not_rights_clearance_claim"]
+    },
+    {
+      "id": "Q002",
+      "query": "Consciousness",
+      "intent": "hold_preservation",
+      "expected_semantic_behaviour": "HOLD_RESULTS_REMAIN_HOLD",
+      "must_preserve": ["semantic_decision", "provenance"]
+    },
+    {
+      "id": "Q003",
+      "query": "Psychedelics",
+      "intent": "reddit_concept_retrieval",
+      "expected_semantic_behaviour": "ACCEPT_ONLY_WHERE_REVIEWED",
+      "must_preserve": ["domain", "semantic_decision", "provenance"]
+    },
+    {
+      "id": "Q004",
+      "query": "Alchemy Ancient and Modern",
+      "intent": "canonical_retrieval",
+      "expected_semantic_behaviour": "NO_UNREVIEWED_PROMOTION",
+      "must_preserve": ["semantic_decision", "provenance"]
+    },
+    {
+      "id": "Q005",
+      "query": "life source paths witnessing",
+      "intent": "weak_match_rejection",
+      "expected_semantic_behaviour": "NO_PROMOTION_FROM_GENERIC_LEXICAL_OVERLAP",
+      "must_preserve": ["semantic_decision"]
+    }
+  ],
+  "review_requirements": {
+    "freeze_before_scoring": true,
+    "record_expected_path_or_reason_for_none": true,
+    "record_false_positive": true,
+    "record_false_negative": true,
+    "record_provenance_failure": true,
+    "record_nondeterminism": true
+  }
+}
