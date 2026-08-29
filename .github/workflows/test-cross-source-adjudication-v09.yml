@@ -1,0 +1,46 @@
+name: Test cross-source adjudication v0.9
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  workflow_dispatch:
+
+jobs:
+  adjudication-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build graph through v0.8
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/cross_source_candidates_v08.py
+      - name: Adjudicate nine candidates
+        run: python scripts/adjudicate_cross_source_candidates_v09.py
+      - name: Assert adjudication safety boundary
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/cross-source-adjudication-v0.9.json',encoding='utf-8'))
+          assert d['candidate_count']==9
+          assert sum(d['decision_counts'].values())==9
+          assert set(d['decision_counts'])=={'ACCEPT','REJECT','HOLD'}
+          assert d['accepted_edge_count']==d['decision_counts']['ACCEPT']
+          assert d['truth_inference_allowed'] is False
+          assert d['rights_promotion_allowed'] is False
+          assert d['scientific_evidence_promotion_allowed'] is False
+          assert all(r['v09_decision'] in {'ACCEPT','REJECT','HOLD'} for r in d['adjudications'])
+          assert all(r['accepted_edge']==(r['v09_decision']=='ACCEPT') for r in d['adjudications'])
+          print('AKASHICNET v0.9 PASS',d['decision_counts'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cross-source-adjudication-v0.9
+          path: data/cross-source-adjudication-v0.9.json
+          if-no-files-found: error

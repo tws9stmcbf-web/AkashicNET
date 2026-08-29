@@ -1,0 +1,147 @@
+name: Test multi-hop retrieval + provenance v0.19
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  multihop-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build graph through v0.17
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+      - name: Assert provenance chain v0.13-v0.16
+        run: |
+          python - <<'PY'
+          import json
+          d13=json.load(open('data/knowledge-graph-v0.13.json',encoding='utf-8'))
+          p13=d13['provenance_completion_v013']
+          assert sum(1 for n in d13['nodes'] if n.get('node_type')=='drive_object')==195
+          assert p13['candidate_families_examined']==29 and p13['exact_collection_edges_added']==53
+          assert p13['truth_inference_allowed'] is False and p13['rights_promotion_allowed'] is False
+          assert p13['scientific_evidence_promotion_allowed'] is False and p13['integrity_pass'] is True
+
+          d14=json.load(open('data/knowledge-graph-v0.14.json',encoding='utf-8'))
+          p14=d14['manifestation_provenance_v014']
+          manifests=[n for n in d14['nodes'] if n.get('node_type')=='manifestation']
+          assert p14['manifestations_added']==13 and p14['unique_drive_document_ids']==13
+          assert p14['families_refined']==5 and p14['duplicate_candidate_groups']==3
+          assert p14['hashes_computed']==0 and p14['byte_identity_assertions']==0
+          assert len(manifests)==13 and all(n['identity_status']=='HASH_NOT_COMPUTED' for n in manifests)
+
+          d15=json.load(open('data/knowledge-graph-v0.15.json',encoding='utf-8'))
+          p15=d15['hash_evidence_v015']
+          hs=[n for n in d15['nodes'] if n.get('node_type')=='hash_evidence']
+          assert p15['queue_records']==3 and p15['hash_evidence_nodes_added']==3
+          assert p15['hashes_computed']==0 and p15['byte_identity_assertions']==0
+          assert p15['execution_policy']=='NOT_AUTHORISED'
+          assert len(hs)==3 and all(n['hash_execution_state']=='NOT_AUTHORISED' for n in hs)
+          assert all(n['comparison_state']=='NOT_COMPARED' and n['hashes']==[] for n in hs)
+
+          d16=json.load(open('data/knowledge-graph-v0.16.json',encoding='utf-8'))
+          p16=d16['hash_evidence_v016']
+          assert p16['authorised_raw_files_hashed']==6
+          assert p16['verification_pairs']==3 and p16['matching_pairs']==3 and p16['mismatching_pairs']==0
+          assert p16['byte_identity_assertions']==3
+          assert p16['raw_content_retained_in_graph'] is False and p16['digest_only_persistence'] is True
+          print('AKASHICNET provenance chain v0.13-v0.16 PASS')
+          PY
+      - name: Assert deduplication-aware retrieval v0.17
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          d=json.load(open('data/dedup-retrieval-view-v0.17.json',encoding='utf-8'))
+          p=d['metadata']
+          assert d['schema_version']=='0.17'
+          assert p['physical_manifestations']==13
+          assert p['logical_retrieval_units']==10
+          assert p['sha256_verified_dedup_groups']==3
+          assert p['physical_manifestations_in_dedup_groups']==6
+          assert p['uncollapsed_units']==7
+          assert p['collapse_policy']=='matching SHA-256 only'
+          assert p['raw_content_retained'] is False
+          assert p['truth_inference_allowed'] is False and p['rights_promotion_allowed'] is False
+          assert p['scientific_evidence_promotion_allowed'] is False and p['integrity_pass'] is True
+          assert sum(u['physical_manifestation_count'] for u in d['retrieval_units'])==13
+          assert all(u['physical_manifestation_count']==2 for u in d['retrieval_units'] if u['deduplicated'])
+
+          def query(term):
+              return json.loads(subprocess.check_output(['python','scripts/query_dedup_v017.py',term],text=True))
+          vol1=query('Discipleship in the New Age Vol 1')
+          golden=query('Golden Book of Wisdom')
+          iih=query('Initiation Into Hermetics')
+          assert vol1['result_count']==1 and vol1['physical_manifestation_count']==2
+          assert vol1['results'][0]['deduplicated'] is True
+          assert golden['result_count']==1 and golden['physical_manifestation_count']==2
+          assert golden['results'][0]['deduplicated'] is True
+          assert iih['result_count']==3 and iih['physical_manifestation_count']==3
+          assert all(r['deduplicated'] is False for r in iih['results'])
+          print('AKASHICNET v0.17 PASS', {'physical_manifestations':p['physical_manifestations'],'logical_retrieval_units':p['logical_retrieval_units'],'verified_dedup_groups':p['sha256_verified_dedup_groups']})
+          PY
+      - name: Assert canonical dedup integration v0.18
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          def q(term,*extra):
+              return json.loads(subprocess.check_output(['python','scripts/query_multihop_v018.py',term,*extra],text=True))
+
+          golden=q('Golden Book of Wisdom','--accepted-only')
+          assert golden['version']=='0.18'
+          assert golden['truth_inference_allowed'] is False
+          assert golden['rights_promotion_allowed'] is False
+          assert golden['scientific_evidence_promotion_allowed'] is False
+          assert golden['logical_units_returned']==1
+          assert golden['physical_manifestations_returned']==2
+          assert golden['deduplicated_units_returned']==1
+          lib=[r for r in golden['results'] if r.get('query_path')=='canonical_family_label']
+          assert len(lib)==1
+          u=lib[0]['logical_retrieval_units'][0]
+          assert u['deduplicated'] is True and u['collapse_basis']=='SHA256_MATCH_VERIFIED'
+          assert u['physical_manifestation_count']==2 and len(u['manifestations'])==2
+
+          iih=q('Initiation Into Hermetics','--accepted-only')
+          assert iih['logical_units_returned']==3
+          assert iih['physical_manifestations_returned']==3
+          assert iih['deduplicated_units_returned']==0
+
+          alchemy=q('alchemy','--accepted-only')
+          assert alchemy['matched_concepts']
+          assert all(r.get('query_path')!='canonical_family_label' or r.get('not_semantic_inference') is True for r in alchemy['results'])
+          print('AKASHICNET v0.18 PASS', {'golden_logical':golden['logical_units_returned'],'golden_physical':golden['physical_manifestations_returned'],'iih_logical':iih['logical_units_returned'],'alchemy_results':alchemy['result_count']})
+          PY
+      - name: Assert reviewed family concept expansion v0.19
+        run: |
+          python scripts/review_manifestation_family_concepts_v019.py
+          python - <<'PY'
+          import json
+          d=json.load(open('data/manifestation-family-concept-review-v0.19.json',encoding='utf-8'))
+          assert d['version']=='0.19'
+          assert d['families_reviewed']==5
+          assert d['decision_counts']=={'ACCEPT':0,'HOLD':5,'REJECT':0}
+          assert d['accepted_about_edges_added']==0
+          assert d['metadata_only'] is True and d['document_bodies_read'] is False
+          assert d['truth_inference_allowed'] is False
+          assert d['rights_promotion_allowed'] is False
+          assert d['scientific_evidence_promotion_allowed'] is False
+          assert d['integrity_pass'] is True
+          assert all(r['decision']=='HOLD' for r in d['review_records'])
+          print('AKASHICNET v0.19 PASS', {'families_reviewed':d['families_reviewed'],'decisions':d['decision_counts']})
+          PY

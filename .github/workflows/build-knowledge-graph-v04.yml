@@ -1,0 +1,52 @@
+name: Build knowledge graph v0.4
+
+on:
+  push:
+    branches:
+      - akashicnet-validation-descendants
+    paths:
+      - 'scripts/build_knowledge_graph_v02.py'
+      - 'scripts/build_knowledge_graph_v03.py'
+      - 'scripts/overlay_canonical_reconciliation_v04.py'
+      - 'references/community/drive-metadata-root-census.csv'
+      - 'references/community/drive-metadata-descendant-census.csv'
+      - 'references/community/drive-validation-descendant-batch-0010.csv'
+      - 'references/community/drive-validation-descendant-batch-0011.csv'
+      - 'references/community/drive-canonical-resolution-stage-b-graph-overlay.csv'
+      - 'references/community/drive-canonicalisation-reconciliation-v0.1.csv'
+      - '.github/workflows/build-knowledge-graph-v04.yml'
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build structural graph v0.2
+        run: python scripts/build_knowledge_graph_v02.py
+      - name: Overlay Stage-B canonical families v0.3
+        run: python scripts/build_knowledge_graph_v03.py
+      - name: Overlay full 29-family reconciliation v0.4
+        run: python scripts/overlay_canonical_reconciliation_v04.py
+      - name: Assert canonical integrity
+        run: |
+          python - <<'PY'
+          import json
+          p='data/knowledge-graph-v0.4.json'
+          g=json.load(open(p, encoding='utf-8'))
+          c=g['canonical_reconciliation']
+          assert g['integrity']['release_integrity_pass'] is True
+          assert c['integrity_pass'] is True
+          assert c['candidate_families'] == 29
+          assert c['accepted_or_advanced'] == 27
+          assert c['unresolved_provenance'] == 1
+          assert c['review_required'] == 1
+          print('AKASHICNET KG v0.4 PASS: 29 canonical candidates reconciled; 27 accepted/advanced, 1 unresolved provenance, 1 review-required')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-graph-v0.4
+          path: data/knowledge-graph-v0.4.json
+          if-no-files-found: error

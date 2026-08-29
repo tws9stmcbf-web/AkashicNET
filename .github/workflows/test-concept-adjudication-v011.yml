@@ -1,0 +1,53 @@
+name: Test concept adjudication v0.11
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  concept-adjudication-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build graph through v0.10
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+      - name: Adjudicate concept candidates
+        run: python scripts/adjudicate_concept_edges_v011.py
+      - name: Assert v0.11 safety boundary
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          d=json.load(open('data/concept-layer-v0.11.json',encoding='utf-8'))
+          assert d['concept_count']==10
+          assert d['reddit_records_examined']==1000
+          assert d['candidate_count']==d['decision_counts']['ACCEPT']+d['decision_counts']['HOLD']+d['decision_counts']['REJECT']
+          assert d['accepted_edge_count']==d['decision_counts']['ACCEPT']
+          assert d['accepted_edge_count']>0
+          assert d['truth_inference_allowed'] is False
+          assert d['rights_promotion_allowed'] is False
+          assert d['scientific_evidence_promotion_allowed'] is False
+          edges=d['reddit_edges']+d['library_edges']
+          assert all(e['relationship']=='ABOUT' for e in edges if e['accepted_edge'])
+          assert all(e['target_concept'] not in {'CONCEPT-0001','CONCEPT-0002'} for e in edges if e['accepted_edge'])
+          out=subprocess.check_output(['python','scripts/query_concepts_v011.py','psychedelics','--accepted-only'],text=True)
+          q=json.loads(out)
+          assert q['matched_concepts']==['CONCEPT-0004']
+          assert q['result_count']>0
+          print('AKASHICNET v0.11 PASS', {'decisions':d['decision_counts'],'accepted':d['accepted_edge_count'],'psychedelics_results':q['result_count']})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-adjudication-v0.11
+          path: data/concept-layer-v0.11.json
+          if-no-files-found: error

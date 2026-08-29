@@ -1,0 +1,98 @@
+name: Test ontology expansion v0.20
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ontology-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build prerequisite layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+      - name: Assert reviewed ontology expansion
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/concept-layer-v0.20.json',encoding='utf-8'))
+          assert d['version']=='0.20'
+          assert d['base_concept_count']==10
+          assert d['concept_count']==15
+          assert d['new_concept_count']==5
+          assert d['review_decision_counts']=={'ACCEPT':2,'HOLD':3,'REJECT':0}
+          assert d['new_accepted_family_edges']==2
+          assert d['accepted_edge_count']==29
+          assert d['truth_inference_allowed'] is False
+          assert d['rights_promotion_allowed'] is False
+          assert d['scientific_evidence_promotion_allowed'] is False
+          added=[e for e in d['library_edges'] if e.get('v020_decision')=='ACCEPT']
+          assert {(e['source_ref'],e['target_concept']) for e in added}=={
+              ('BARDON-IIH-001','CONCEPT-0011'),
+              ('BARDON-QABBALAH-001','CONCEPT-0012')
+          }
+          assert all(e['relationship']=='ABOUT' and e['accepted_edge'] is True for e in added)
+          assert all(e['not_truth_claim'] is True for e in added)
+          assert all(e['rights_promotion_allowed'] is False for e in added)
+          assert all(e['scientific_evidence_promotion_allowed'] is False for e in added)
+          print('AKASHICNET v0.20 ONTOLOGY PASS', {'concepts':d['concept_count'],'accepted':2,'holds':3})
+          PY
+      - name: Assert full concept to dedup provenance retrieval
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          def q(term):
+              return json.loads(subprocess.check_output(['python','scripts/query_multihop_v020.py',term,'--accepted-only'],text=True))
+
+          herm=q('Hermeticism')
+          assert herm['version']=='0.20'
+          assert 'CONCEPT-0011' in herm['matched_concepts']
+          hlib=[r for r in herm['results'] if r.get('query_path')=='reviewed_concept' and r.get('domain')=='library']
+          assert len(hlib)==1
+          assert hlib[0]['source']['ref']=='BARDON-IIH-001'
+          assert hlib[0]['retrieval_resolution']=='DEDUP_LOGICAL_UNITS_RESOLVED'
+          assert len(hlib[0]['logical_retrieval_units'])==3
+          assert sum(u['physical_manifestation_count'] for u in hlib[0]['logical_retrieval_units'])==3
+          assert all(u['deduplicated'] is False for u in hlib[0]['logical_retrieval_units'])
+
+          qab=q('Qabbalah')
+          assert 'CONCEPT-0012' in qab['matched_concepts']
+          qlib=[r for r in qab['results'] if r.get('query_path')=='reviewed_concept' and r.get('domain')=='library']
+          assert len(qlib)==1
+          assert qlib[0]['source']['ref']=='BARDON-QABBALAH-001'
+          assert len(qlib[0]['logical_retrieval_units'])==2
+          assert sum(u['physical_manifestation_count'] for u in qlib[0]['logical_retrieval_units'])==2
+          assert all(u['deduplicated'] is False for u in qlib[0]['logical_retrieval_units'])
+
+          ceremonial=q('Ceremonial Magic')
+          assert 'CONCEPT-0013' in ceremonial['matched_concepts']
+          assert not [r for r in ceremonial['results'] if r.get('query_path')=='reviewed_concept' and r.get('domain')=='library']
+
+          theo=q('Theosophy')
+          assert 'CONCEPT-0015' in theo['matched_concepts']
+          assert not [r for r in theo['results'] if r.get('query_path')=='reviewed_concept' and r.get('domain')=='library']
+
+          for x in [herm,qab,ceremonial,theo]:
+              assert x['truth_inference_allowed'] is False
+              assert x['rights_promotion_allowed'] is False
+              assert x['scientific_evidence_promotion_allowed'] is False
+          print('AKASHICNET v0.20 RETRIEVAL PASS', {'hermeticism_logical':herm['logical_units_returned'],'qabbalah_logical':qab['logical_units_returned']})
+          PY

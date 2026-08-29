@@ -1,0 +1,6 @@
+review_id,family_id,family_label,concept_id,concept_label,decision,basis,review_state,not_truth_claim,rights_promotion_allowed,scientific_evidence_promotion_allowed
+FCR20-001,BARDON-IIH-001,Franz Bardon Initiation Into Hermetics,CONCEPT-0011,Hermeticism,ACCEPT,"explicit term Hermetics in canonical family/manifestation metadata",REVIEWED,true,false,false
+FCR20-002,BARDON-QABBALAH-001,Franz Bardon Key to the True Qabbalah,CONCEPT-0012,Qabbalah,ACCEPT,"explicit term Qabbalah/Quabbalah in canonical family/manifestation metadata",REVIEWED,true,false,false
+FCR20-003,BARDON-EVOCATION-001,Franz Bardon Practice of Magical Evocation,CONCEPT-0013,Ceremonial Magic,HOLD,"magical evocation is explicit but ceremonial is not; avoid category expansion by association",REVIEWED,true,false,false
+FCR20-004,BARDON-GOLDEN-001,Franz Bardon Golden Book of Wisdom,CONCEPT-0014,Esotericism,HOLD,"title metadata does not explicitly identify the work as esoteric or occult",REVIEWED,true,false,false
+FCR20-005,BAILEY-DISCIPLESHIP-001,Alice A. Bailey Discipleship in the New Age,CONCEPT-0015,Theosophy,HOLD,"author/title metadata alone does not explicitly identify Theosophy; author association is insufficient for automatic topical promotion",REVIEWED,true,false,false
