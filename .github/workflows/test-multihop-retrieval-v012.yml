@@ -1,4 +1,4 @@
-name: Test multi-hop retrieval v0.12 + provenance v0.14
+name: Test multi-hop retrieval v0.12 + provenance v0.15
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Build graph through v0.14
+      - name: Build graph through v0.15
         run: |
           python scripts/build_knowledge_graph_v02.py
           python scripts/build_knowledge_graph_v03.py
@@ -25,6 +25,7 @@ jobs:
           python scripts/adjudicate_concept_edges_v011.py
           python scripts/complete_collection_provenance_v013.py
           python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
       - name: Assert v0.13 provenance-aware retrieval
         run: |
           python - <<'PY'
@@ -104,4 +105,30 @@ jobs:
           assert all(n['not_byte_identity_claim'] is True for n in manifests)
           assert d['integrity']['release_integrity_pass'] is True
           print('AKASHICNET v0.14 PASS', {'manifestations':len(manifests),'families_refined':p['families_refined'],'duplicate_candidate_groups':p['duplicate_candidate_groups'],'hashes_computed':p['hashes_computed']})
+          PY
+      - name: Assert v0.15 hash-ready identity boundaries
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/knowledge-graph-v0.15.json',encoding='utf-8'))
+          p=d['hash_evidence_v015']
+          hs=[n for n in d['nodes'] if n.get('node_type')=='hash_evidence']
+          assert d['schema_version']=='0.15'
+          assert p['queue_records']==3
+          assert p['hash_evidence_nodes_added']==3
+          assert p['hashes_computed']==0
+          assert p['byte_identity_assertions']==0
+          assert p['execution_policy']=='NOT_AUTHORISED'
+          assert p['truth_inference_allowed'] is False
+          assert p['rights_promotion_allowed'] is False
+          assert p['scientific_evidence_promotion_allowed'] is False
+          assert p['integrity_pass'] is True
+          assert len(hs)==3
+          assert all(n['algorithm']=='SHA-256' for n in hs)
+          assert all(n['hash_execution_state']=='NOT_AUTHORISED' for n in hs)
+          assert all(n['comparison_state']=='NOT_COMPARED' for n in hs)
+          assert all(n['hashes']==[] for n in hs)
+          assert all(n['not_byte_identity_claim'] is True for n in hs)
+          assert d['integrity']['release_integrity_pass'] is True
+          print('AKASHICNET v0.15 PASS', {'queue_records':p['queue_records'],'hashes_computed':p['hashes_computed'],'byte_identity_assertions':p['byte_identity_assertions'],'execution_policy':p['execution_policy']})
           PY
