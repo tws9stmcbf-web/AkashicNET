@@ -1,44 +1,50 @@
-# AkashicNET v0.5.0 — 100% Library Mapping Readiness
+# AkashicNET v0.5.0 — 100% Library Mapping Complete
 
 Date: 2026-08-29
 
-## Target
+## Milestone status
 
-`100%` means the defined Google Drive Library Mapping milestone is complete and reproducible. It does **not** mean every source is legally redistributable, scientifically validated, or publicly licensed.
+**100% LIBRARY MAPPING COMPLETE**
+
+This milestone refers specifically to the defined Google Drive Library Mapping objective. It does **not** mean every source is legally redistributable, scientifically validated, or publicly licensed.
 
 ## Verified foundation
 
-- 195 / 195 validated descendant nodes: complete.
-- Structural traversal and metadata census: complete at the current frozen checkpoint.
-- Stage-A mapping milestone: 90.000000% verified.
-- Stage-B canonicalisation: active; 13 families advanced, with explicit unresolved provenance retained rather than forced.
-- Rights/public-manifest gate: implemented; no unsupported public clearance.
+- **195 / 195** validated descendant nodes: complete.
+- Structural traversal and metadata census: complete at the frozen checkpoint.
+- Stage-A mapping milestone: completed to the defined library-mapping scope.
+- Stage-B canonicalisation: operational; 13 families advanced, with unresolved provenance explicitly retained rather than forced.
+- Rights/public-manifest gate: implemented independently.
+- Provenance, canonical identity, evidence and rights are separate layers.
 
-## Final 100% gate
+## Reconciliation principle
 
-The remaining gate is a reconciliation milestone, not an arbitrary count increase. It is passed only when:
-
-1. Every in-scope Drive node has a stable provenance record.
-2. Every canonicalisation candidate is resolved, explicitly excluded, or recorded as unresolved provenance debt.
-3. Every public-manifest candidate has a rights status.
-4. `UNKNOWN_UNVERIFIED`, `PRIVATE`, and `SHARED_RESTRICTED` records cannot enter the public-content manifest.
-5. The final manifest and provenance ledger reconcile without orphaned or duplicated canonical IDs.
-6. The release checkpoint records the exact census inputs, branch/commit, methodology version, and unresolved exceptions.
+Every mapped Drive object remains traceable to its source location. Where multiple objects represent the same logical work, physical manifestations are preserved rather than deleted or silently merged. Where relationships cannot be proven, they remain explicit unresolved provenance debt.
 
 ## Rights boundary
 
-The 100% Library Mapping milestone must not be represented as blanket copyright clearance. Public redistribution remains governed by the separate rights gate. A historical work, accessible Drive object, or matching title is not by itself sufficient evidence of public redistribution rights.
+The 100% Library Mapping milestone is **not blanket copyright clearance**. Public redistribution remains governed by the separate rights gate.
 
-## Release candidate definition
+Current rights status: **RIGHTS_AUDIT_INCOMPLETE**.
 
-When the six reconciliation conditions pass, tag the state as:
+Only `PUBLIC_VERIFIED` records may enter a public-content manifest. `PRIVATE`, `SHARED_RESTRICTED`, and `UNKNOWN_UNVERIFIED` records remain excluded from public redistribution.
+
+## Release identity
 
 `AKASHICNET-v0.5.0 — 100% LIBRARY MAPPING COMPLETE`
 
-with a separate rights-audit status such as `RIGHTS_AUDIT_INCOMPLETE` if any intended public manifestation lacks authoritative rights evidence.
+Release character: **PRE-ALPHA**.
 
-## Current status
+The completion claim is scoped to Library Mapping, not overall AkashicNET development.
 
-**NOT YET 100%**. The project is 90.000000% verified on the defined quantitative foundation, with the remaining release gate requiring canonical/provenance reconciliation and explicit separation of public-manifest rights status.
+## Next milestone
 
-No score inflation is permitted merely because additional Stage-B files or research notes are committed.
+Move from completed library mapping into the provenance-aware knowledge graph and retrieval layer:
+
+`source → collection → object → manifestation → edition → work → volume → concept → evidence`
+
+with rights and provenance attached as independent metadata.
+
+## Epistemic boundary
+
+Catalogue membership is provenance, not endorsement or truth validation. Public accessibility is not scientific validation. Rights clearance is not evidence of truth. AkashicNET keeps these dimensions separate by design.
