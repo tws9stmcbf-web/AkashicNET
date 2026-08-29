@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tws9stmcbf-web/AkashicNET/blob/main/data/canonical_resolution_v01.schema.json",
+  "title": "AkashicNET Canonical Resolution v0.1",
+  "type": "object",
+  "required": ["resolution_version", "records"],
+  "properties": {
+    "resolution_version": {"const": "0.1"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "drive_object_id", "disposition", "decision_basis", "review_state"],
+        "properties": {
+          "record_id": {"type": "string"},
+          "drive_object_id": {"type": "string"},
+          "candidate_work_id": {"type": ["string", "null"]},
+          "candidate_edition_id": {"type": ["string", "null"]},
+          "disposition": {
+            "enum": [
+              "UNIQUE_CANDIDATE",
+              "DUPLICATE_COPY",
+              "SAME_DRIVE_OBJECT_MULTICOLLECTION",
+              "DUPLICATE_WORK",
+              "EDITION_VARIANT",
+              "TRANSLATION_VARIANT",
+              "MULTI_VOLUME_MEMBER",
+              "AGGREGATE_COLLECTION",
+              "TECHNICAL_EXCLUSION",
+              "REVIEW_REQUIRED"
+            ]
+          },
+          "decision_basis": {
+            "type": "array",
+            "items": {"enum": ["DRIVE_ID", "BYTE_HASH", "TITLE", "AUTHOR", "SIZE", "ISBN", "EDITION_METADATA", "LANGUAGE", "VOLUME_METADATA", "MANUAL_REVIEW", "OTHER"]},
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "review_state": {"enum": ["UNREVIEWED", "CANDIDATE", "CONFIRMED", "REJECTED", "HOLD"]},
+          "notes": {"type": "string"},
+          "provenance": {"type": "object", "additionalProperties": true}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
