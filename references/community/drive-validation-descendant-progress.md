@@ -4,44 +4,29 @@ Date: 2026-08-29
 
 Baseline checkpoint: PRE-ALPHA v0.4.8-dev
 
-## Validation batches 0001–0002 — Philosophy
+## Validation batches 0001–0006
 
-All eight known Philosophy descendant folder nodes independently matched the frozen census exactly.
+Philosophy, Psychology, Buddhism, Hinduism, Yoga and Metaphysics descendant validation progressed through the 100-node milestone. All credited nodes matched the frozen census exactly.
 
-## Validation batch 0003 — Psychology
+## Validation batch 0007 — 125-node milestone
 
-Both known Psychology descendant nodes independently matched the frozen census exactly.
+Twenty-five additional descendant nodes independently matched the frozen census. The sweep covered Grimoire, World History, Native America, selected Ancient Religions nodes, and selected PDF nodes. Ancient Religions/Gnosis was deliberately not credited because its frozen census state remains PARTIAL / ACCESS_UNRESOLVED.
 
-## Validation batches 0004–0005 — Buddhism I–II
+Notable reconfirmations:
 
-Twelve Buddhism descendant nodes independently matched the frozen census exactly through Buddhist Legends.
-
-## Validation batch 0006 — 100-node milestone
-
-Twelve further descendant nodes were independently re-queried with separate metadata-only document and child-folder searches. All matched exactly:
-
-- Buddhism/Seeing The Way: 2 documents / 0 child folders
-- Buddhism/Handful of Leaves VOL I–IV: 4 / 0
-- Buddhism/Books by Luang Ta Maha Boowa: 8 / 0
-- Hinduism/Complete works of Swami Vivekananda: 9 / 0
-- Hinduism/Atharva Veda Samhita: 2 / 0
-- Hinduism/Nisargadatta Maharaj: 25 / 0
-- Hinduism/Supermundane – The Inner Life: 0 / 0
-- Hinduism/Sri Aurobindo: 0 / 0
-- Yoga/Swami Vivekananda: 4 / 0
-- Yoga/Yogi Ramacharaka: 13 / 0
-- Metaphysics/Knowledge Lecture: 5 / 0
-- Metaphysics/Encyclopedia of Occultism and Parapsychology: 2 / 0
-
-This completes the known Buddhism descendant set in the frozen census and validates all currently listed Hinduism, Yoga and Metaphysics descendant nodes.
+- World History/Anaclypsis remains empty (0 / 0).
+- Native America/The Native Races Wild Tribes remains four objects with Volumes I, III, IV and V observed; II remains absent.
+- Ancient Religions/The Sacred Books of the East remains 49 observed document objects despite the nominal 50-volume collection title.
+- PDF/Author Avalon remains 6 direct documents plus the Reference Material child folder.
+- Cross-list, duplicate-family and provenance-anomaly notes remain unresolved canonicalisation questions and were not converted into truth claims.
 
 ## Updated validation score
 
 - Validated root nodes: 66
-- Validated descendant nodes: 34
-- Validated nodes: 100 / 195
-- Validation coverage: 51.282051%
-- Validation points: 5.128205 / 10
+- Validated descendant nodes: 59
+- Validated nodes: 125 / 195
+- Validation coverage: 64.102564%
+- Validation points: 6.410256 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -49,11 +34,11 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 5.128205 / 10
+- validation: 6.410256 / 10
 
-Verified completion floor after batch 0006 = **85.128205%**.
+Verified completion floor after batch 0007 = **86.410256%**.
 
-The 100-node milestone does not earn the v0.4.9 / 90% gate. The conservative validation denominator remains frozen at 195 known folder nodes.
+The v0.4.9 / 90% gate remains unearned. The conservative validation denominator remains frozen at 195 known folder nodes.
 
 ## Privacy boundary
 
