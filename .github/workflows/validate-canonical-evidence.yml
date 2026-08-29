@@ -1,0 +1,41 @@
+name: Validate canonical evidence contracts
+
+on:
+  push:
+    paths:
+      - 'data/corpus_manifest_v01.schema.json'
+      - 'data/corpus_manifest_v01.example.json'
+      - 'data/canonical_resolution_v01.schema.json'
+      - 'data/evidence_claim_v01.schema.json'
+      - 'data/canonical_evidence_v01.example.json'
+      - 'tools/canonical_evidence/**'
+      - 'docs/canonical-evidence-v01.md'
+      - '.github/workflows/validate-canonical-evidence.yml'
+  pull_request:
+    paths:
+      - 'data/corpus_manifest_v01.schema.json'
+      - 'data/corpus_manifest_v01.example.json'
+      - 'data/canonical_resolution_v01.schema.json'
+      - 'data/evidence_claim_v01.schema.json'
+      - 'data/canonical_evidence_v01.example.json'
+      - 'tools/canonical_evidence/**'
+      - 'docs/canonical-evidence-v01.md'
+      - '.github/workflows/validate-canonical-evidence.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate JSON syntax
+        run: |
+          python -m json.tool data/corpus_manifest_v01.schema.json >/dev/null
+          python -m json.tool data/corpus_manifest_v01.example.json >/dev/null
+          python -m json.tool data/canonical_resolution_v01.schema.json >/dev/null
+          python -m json.tool data/evidence_claim_v01.schema.json >/dev/null
+          python -m json.tool data/canonical_evidence_v01.example.json >/dev/null
+      - name: Validate semantic guardrails
+        run: python tools/canonical_evidence/validate.py
