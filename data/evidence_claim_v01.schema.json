@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tws9stmcbf-web/AkashicNET/blob/main/data/evidence_claim_v01.schema.json",
+  "title": "AkashicNET Evidence Claim v0.1",
+  "type": "object",
+  "required": ["evidence_model_version", "claims", "evidence_links"],
+  "properties": {
+    "evidence_model_version": {"const": "0.1"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "statement", "claim_class", "status", "provenance"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "statement": {"type": "string", "minLength": 1},
+          "claim_class": {"enum": ["EMPIRICAL", "HISTORICAL", "PHILOSOPHICAL", "CONTEMPLATIVE", "EXPERIENTIAL", "ESOTERIC", "MIXED"]},
+          "status": {"enum": ["UNASSESSED", "SUPPORTED", "PARTIALLY_SUPPORTED", "CONTESTED", "CONTRADICTED", "INSUFFICIENT_EVIDENCE"]},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "provenance": {"type": "object", "additionalProperties": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "source_id", "relation", "evidence_tier", "assessment_state"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "source_id": {"type": "string"},
+          "relation": {"enum": ["SUPPORTS", "CONTRADICTS", "CONTEXTUALISES", "REPORTS_EXPERIENCE", "HISTORICAL_ATTESTATION"]},
+          "evidence_tier": {"enum": ["EMPIRICAL_REFERENCE", "HISTORICAL", "CONTEMPLATIVE_PHILOSOPHICAL", "EXPERIENTIAL_ESOTERIC"]},
+          "assessment_state": {"enum": ["UNREVIEWED", "REVIEWED", "HOLD", "REJECTED"]},
+          "strength": {"type": "number", "minimum": 0, "maximum": 1},
+          "notes": {"type": "string"},
+          "provenance": {"type": "object", "additionalProperties": true}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
