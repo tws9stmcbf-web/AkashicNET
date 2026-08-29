@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit Google Drive folder pagination and terminality against frozen AkashicNET census files.
+"""Audit Google Drive folder pagination and terminality against the authoritative AkashicNET census files.
 
 Requires a read-only OAuth access token in GOOGLE_DRIVE_ACCESS_TOKEN.
 Writes a 195-row CSV suitable for the PAGINATION_AND_TERMINALITY_AUDIT gate.
