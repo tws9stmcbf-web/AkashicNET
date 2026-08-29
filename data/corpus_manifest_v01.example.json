@@ -1,0 +1,33 @@
+{
+  "manifest_version": "0.1",
+  "generated_at": "2026-08-29T00:00:00Z",
+  "crawl_id": "example-drive-crawl",
+  "source": "google-drive",
+  "records": [
+    {
+      "id": "drive:file:example-001",
+      "kind": "file",
+      "name": "Example Work.pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 123456,
+      "parent_id": "drive:folder:example-root",
+      "provenance": {
+        "drive_id": "example-001",
+        "path": "/Akashic Library/Example Work.pdf",
+        "filename": "Example Work.pdf",
+        "created_at": null,
+        "modified_at": null
+      },
+      "fingerprints": {},
+      "canonicalisation": {
+        "canonical_work_id": null,
+        "edition_id": null,
+        "status": "unresolved"
+      },
+      "validation": {
+        "status": "unverified",
+        "notes": "Example only; no equivalence inferred from filename."
+      }
+    }
+  ]
+}
