@@ -1,0 +1,62 @@
+name: Build knowledge graph v0.5
+
+on:
+  push:
+    branches:
+      - akashicnet-validation-descendants
+    paths:
+      - 'scripts/build_knowledge_graph_v02.py'
+      - 'scripts/build_knowledge_graph_v03.py'
+      - 'scripts/overlay_canonical_reconciliation_v04.py'
+      - 'scripts/overlay_evidence_provenance_v05.py'
+      - 'references/community/drive-metadata-root-census.csv'
+      - 'references/community/drive-metadata-descendant-census.csv'
+      - 'references/community/drive-validation-descendant-batch-0010.csv'
+      - 'references/community/drive-validation-descendant-batch-0011.csv'
+      - 'references/community/drive-canonical-resolution-stage-b-graph-overlay.csv'
+      - 'references/community/drive-canonicalisation-reconciliation-v0.1.csv'
+      - 'references/community/evidence-provenance-scoring-v0.1.md'
+      - '.github/workflows/build-knowledge-graph-v05.yml'
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build structural graph v0.2
+        run: python scripts/build_knowledge_graph_v02.py
+      - name: Overlay Stage-B canonical families v0.3
+        run: python scripts/build_knowledge_graph_v03.py
+      - name: Overlay full canonical reconciliation v0.4
+        run: python scripts/overlay_canonical_reconciliation_v04.py
+      - name: Overlay evidence provenance scoring v0.5
+        run: python scripts/overlay_evidence_provenance_v05.py
+      - name: Assert evidence integrity
+        run: |
+          python - <<'PY'
+          import json
+          g=json.load(open('data/knowledge-graph-v0.5.json',encoding='utf-8'))
+          s=g['evidence_provenance_scoring']
+          assert g['integrity']['release_integrity_pass'] is True
+          assert s['integrity_pass'] is True
+          assert s['scored_canonical_families']==29
+          assert s['truth_inference_allowed'] is False
+          assert s['rights_promotion_allowed'] is False
+          canonical=[n for n in g['nodes'] if n.get('node_type')=='canonical_candidate_family']
+          assert len(canonical)==29
+          assert all('evidence_provenance' in n for n in canonical)
+          assert all(n['rights_status']=='UNKNOWN_UNVERIFIED' for n in canonical)
+          ram=[n for n in canonical if n['family_id']=='CANON-0010'][0]
+          vim=[n for n in canonical if n['family_id']=='CANON-0025'][0]
+          assert ram['evidence_provenance']['score']<=45
+          assert vim['evidence_provenance']['score']<=55
+          print('AKASHICNET KG v0.5 PASS: 29/29 canonical families evidence-scored; uncertainty caps and rights boundary preserved')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-graph-v0.5
+          path: data/knowledge-graph-v0.5.json
+          if-no-files-found: error
