@@ -1,0 +1,41 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AkashicNET Retrieval HTTP API",
+    "version": "0.29",
+    "description": "HTTP retrieval with executable public/private rights enforcement over the stable v0.25 retrieval contract."
+  },
+  "servers": [{"url": "http://127.0.0.1:8787"}],
+  "paths": {
+    "/health": {"get": {"summary": "Service health and epistemic policy", "responses": {"200": {"description": "Healthy service"}}}},
+    "/openapi.json": {"get": {"summary": "Machine-readable OpenAPI contract", "responses": {"200": {"description": "OpenAPI 3.1 document"}}}},
+    "/v1/retrieve": {
+      "get": {
+        "summary": "Retrieve AkashicNET records with optional hard public-rights gate",
+        "parameters": [
+          {"name": "q", "in": "query", "required": true, "schema": {"type": "string", "minLength": 1}},
+          {"name": "domain", "in": "query", "schema": {"type": "string", "enum": ["all", "reddit", "library"], "default": "all"}},
+          {"name": "state", "in": "query", "schema": {"type": "string", "enum": ["all", "accepted", "hold"], "default": "all"}},
+          {"name": "visibility", "in": "query", "description": "internal preserves metadata retrieval; public returns only explicit PUBLIC_VERIFIED results", "schema": {"type": "string", "enum": ["internal", "public"], "default": "internal"}},
+          {"name": "limit", "in": "query", "schema": {"type": "integer", "minimum": 1, "maximum": 1000, "default": 100}}
+        ],
+        "responses": {
+          "200": {"description": "Retrieval response with explicit public gate metadata"},
+          "400": {"description": "Invalid request"},
+          "500": {"description": "Upstream or internal failure"}
+        }
+      }
+    }
+  },
+  "x-akashicnet-policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "ranking_changes_semantic_decision": false,
+    "public_retrieval_requires_public_verified": true,
+    "missing_rights_default": "UNKNOWN_UNVERIFIED",
+    "source_accessibility_implies_public_permission": false,
+    "provenance_strength_implies_public_permission": false,
+    "sha256_identity_implies_public_permission": false
+  }
+}
