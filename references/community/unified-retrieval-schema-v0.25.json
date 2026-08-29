@@ -1,0 +1,62 @@
+{
+  "$id": "akashicnet://schemas/retrieval/v0.25",
+  "title": "AkashicNET Retrieval API v0.25",
+  "type": "object",
+  "required": ["api", "api_version", "schema_id", "request", "policy", "summary", "results", "compatibility"],
+  "properties": {
+    "api": {"const": "AKASHICNET_RETRIEVAL_API"},
+    "api_version": {"const": "0.25"},
+    "schema_id": {"const": "akashicnet://schemas/retrieval/v0.25"},
+    "request": {
+      "type": "object",
+      "required": ["query", "domain", "state", "limit"],
+      "properties": {
+        "query": {"type": "string"},
+        "domain": {"enum": ["all", "reddit", "library"]},
+        "state": {"enum": ["all", "accepted", "hold"]},
+        "limit": {"type": "integer", "minimum": 1}
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": ["archive_mode", "truth_inference_allowed", "rights_promotion_allowed", "scientific_evidence_promotion_allowed", "ranking_changes_semantic_decision", "direct_metadata_lookup_is_not_semantic_acceptance", "hold_results_are_explicitly_addressable"]
+    },
+    "summary": {
+      "type": "object",
+      "required": ["matched_concepts", "results_before_limit", "results_returned", "semantic_decision_counts", "provenance_tier_counts", "domain_counts"]
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["semantic_decision", "evidence_profile", "contract_guards"],
+        "properties": {
+          "semantic_decision": {"enum": ["ACCEPT", "HOLD", "REJECT", "DIRECT_METADATA_LOOKUP", "UNSPECIFIED"]},
+          "evidence_profile": {
+            "type": "object",
+            "required": ["provenance_tier", "provenance_rank"],
+            "properties": {
+              "provenance_tier": {"enum": ["P3_SHA256_IDENTITY_PROVENANCE", "P2_MANIFESTATION_PROVENANCE", "P1_REVIEWED_TOPICAL", "P0_TOPICAL_CANDIDATE"]},
+              "provenance_rank": {"type": "integer"}
+            }
+          },
+          "contract_guards": {
+            "type": "object",
+            "required": ["ranking_changes_semantic_decision", "not_truth_claim", "not_scientific_evidence_claim", "not_rights_clearance_claim", "not_safety_or_efficacy_claim"]
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "required": ["source_contract", "source_contract_version", "semantic_decisions_preserved", "provenance_ranking_preserved", "consumer_contract_is_versioned"],
+      "properties": {
+        "source_contract": {"const": "AKASHICNET_UNIFIED_RETRIEVAL"},
+        "source_contract_version": {"const": "0.24"},
+        "semantic_decisions_preserved": {"const": true},
+        "provenance_ranking_preserved": {"const": true},
+        "consumer_contract_is_versioned": {"const": true}
+      }
+    }
+  }
+}
