@@ -1,0 +1,93 @@
+name: Test deployment security v0.33
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  deployment-security-v033-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assert hardened service boundaries
+        run: |
+          python - <<'PY'
+          import importlib.util, os
+          os.environ['AKASHICNET_DEPLOYMENT_MODE']='public'
+          os.environ['AKASHICNET_ALLOW_INTERNAL_VISIBILITY']='true'
+          spec=importlib.util.spec_from_file_location('svc','scripts/retrieval_http_v033.py')
+          svc=importlib.util.module_from_spec(spec); spec.loader.exec_module(svc)
+          assert svc.DEPLOYMENT_MODE=='public'
+          assert svc.ALLOW_INTERNAL_VISIBILITY is False
+          assert svc.MAX_QUERY_CHARS==512
+          assert svc.MAX_REQUEST_TARGET_CHARS==2048
+          try:
+              svc.retrieve('x','all','all',1,'internal')
+              raise AssertionError('internal visibility should be forbidden in public mode')
+          except PermissionError:
+              pass
+          try:
+              svc.retrieve('x'*513,'all','all',1,'public')
+              raise AssertionError('long query should be rejected')
+          except ValueError:
+              pass
+          try:
+              svc.retrieve('x','all','all',101,'public')
+              raise AssertionError('limit >100 should be rejected')
+          except ValueError:
+              pass
+          print('AKASHICNET v0.33 CONFIG PASS',{
+              'deployment_mode':svc.DEPLOYMENT_MODE,
+              'internal_visibility_enabled':svc.ALLOW_INTERNAL_VISIBILITY,
+              'max_query_chars':svc.MAX_QUERY_CHARS,
+              'max_result_limit':100,
+          })
+          PY
+      - name: Exercise public HTTP diagnostics and redaction
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, time, urllib.error, urllib.request
+          env=os.environ.copy()
+          env['AKASHICNET_DEPLOYMENT_MODE']='public'
+          env['AKASHICNET_ALLOW_INTERNAL_VISIBILITY']='true'
+          env['AKASHICNET_RATE_LIMIT_REQUESTS']='100'
+          proc=subprocess.Popen(['python','scripts/retrieval_http_v033.py','--host','127.0.0.1','--port','8793'],env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+          try:
+              for _ in range(50):
+                  try:
+                      urllib.request.urlopen('http://127.0.0.1:8793/livez',timeout=.3).read(); break
+                  except Exception: time.sleep(.1)
+              def get(path):
+                  try:
+                      r=urllib.request.urlopen('http://127.0.0.1:8793'+path,timeout=10)
+                      return r.status,json.loads(r.read())
+                  except urllib.error.HTTPError as e:
+                      return e.code,json.loads(e.read())
+              s,live=get('/livez'); assert s==200 and live=={'status':'alive','service_version':'0.33'}
+              s,ready=get('/readyz'); assert s==200 and ready['status']=='ready'
+              s,health=get('/health'); assert s==200 and health['deployment_mode']=='public' and health['internal_visibility_enabled'] is False
+              s,forbidden=get('/v1/retrieve?q=secret-marker&visibility=internal'); assert s==403 and forbidden=={'error':'visibility_forbidden','message':'requested visibility is unavailable'}
+              s,bad=get('/v1/retrieve?q=x&limit=999'); assert s==400 and bad=={'error':'invalid_request','message':'request parameters are invalid'}
+              s,missing=get('/nope?secret=do-not-log'); assert s==404 and missing=={'error':'not_found','message':'endpoint not found'}
+              s,public=get('/v1/retrieve?q=Golden%20Book%20of%20Wisdom&visibility=public&limit=1'); assert s==200
+              assert public['visibility']=='public'
+              assert public['upstream']['summary']['results_after_public_gate']==0
+              print('AKASHICNET v0.33 HTTP PASS',{
+                  'livez':'alive','readyz':'ready','public_internal_forbidden':True,
+                  'public_golden_results':0,'safe_error_messages':True,
+              })
+          finally:
+              proc.terminate()
+              try: out=proc.communicate(timeout=5)[0]
+              except subprocess.TimeoutExpired:
+                  proc.kill(); out=proc.communicate()[0]
+              assert 'secret-marker' not in out
+              assert 'do-not-log' not in out
+              assert 'Golden%20Book%20of%20Wisdom' not in out
+              print('AKASHICNET v0.33 LOG REDACTION PASS',{'query_strings_logged':False})
+          PY
