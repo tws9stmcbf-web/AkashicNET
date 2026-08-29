@@ -1,0 +1,2 @@
+batch_id,collection_path,drive_id,documents_screened,screening_stage,scope,screening_disposition,notes
+SCREEN-0066,Golden Dawn,1r_k3VvyzYuvD6D8nWq5tdDxAyZA5K0O-,3,TITLE_SIZE_METADATA_PASS,root direct documents,SCREENED_OR_REVIEW_REQUIRED,"Complete provider page; generic t.pdf remains REVIEW_REQUIRED; Golden Dawn Schem ha-Mephoresh and Westcott Numbers work retained for cross-root matching"
