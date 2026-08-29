@@ -1,0 +1,28 @@
+name: Drive pagination audit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run 195-node pagination audit
+        env:
+          GOOGLE_DRIVE_ACCESS_TOKEN: ${{ secrets.GOOGLE_DRIVE_ACCESS_TOKEN }}
+        run: |
+          python scripts/drive_pagination_audit.py
+      - name: Upload audit ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drive-pagination-terminality-audit
+          path: references/community/drive-pagination-terminality-audit.csv
+          if-no-files-found: warn
