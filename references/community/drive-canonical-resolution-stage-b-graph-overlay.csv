@@ -1,0 +1,24 @@
+family_id,logical_work,collection_path,stage_b_disposition,confidence,review_state,evidence_basis
+ABRAMELIN-001,The Sacred Magic of Abramelin the Mage,Grimoire/Abramelin,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0001 metadata-only title and collection provenance
+ABRAMELIN-001,The Sacred Magic of Abramelin the Mage,Alchemy/The Sacred Magic of Abramelin the Mage,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0001 metadata-only title and collection provenance
+ABRAMELIN-001,The Sacred Magic of Abramelin the Mage,Magick/Ceremonial Beginners/The Sacred Magi of Abramelin the Mage,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0001 metadata-only title and collection provenance
+FORBIDDEN-HISTORY-001,Forbidden History of Europe,World History/Forbbiden History of Europe,EDITION_OR_COPY_VARIANT_SET,HIGH,accepted,Stage-B batch 0001 twelve-volume title and size comparison
+FORBIDDEN-HISTORY-001,Forbidden History of Europe,Secret Societies/Forbbiden History of Europe,EDITION_OR_COPY_VARIANT_SET,HIGH,accepted,Stage-B batch 0001 twelve-volume title and size comparison
+MUSHROOMS-RUSSIA-HISTORY-001,Mushrooms Russia and History,Ancient Religions/Mushrooms Russia and History,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0002 normalized two-volume title alignment
+MUSHROOMS-RUSSIA-HISTORY-001,Mushrooms Russia and History,Bizzare/Mushrooms Russia and History,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0002 normalized two-volume title alignment
+MODERN-SHAMANISM-001,Techniques of Modern Shamanism,Ancient Religions/Techniques of Modern Shamanism,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0002 normalized three-volume title alignment
+MODERN-SHAMANISM-001,Techniques of Modern Shamanism,Shamanism/Techniques of modern shamanism,SAME_LOGICAL_WORK_FAMILY,HIGH,accepted,Stage-B batch 0002 normalized three-volume title alignment
+LOVECRAFT-NECRONOMICON-001,Necronomicon and complete works H. P. Lovecraft,Bizzare/Necronomicon and complete works H. P. Lovecraft,PARALLEL_COLLECTION_MANIFESTATION_SET,HIGH,accepted,Stage-B batch 0002 five normalized title-level units
+LOVECRAFT-NECRONOMICON-001,Necronomicon and complete works H. P. Lovecraft,Literature/Necronomicon and complete works H. P. Lovecraft,PARALLEL_COLLECTION_MANIFESTATION_SET,HIGH,accepted,Stage-B batch 0002 five normalized title-level units
+AGRIPPA-001,Agrippa Occult Philosophy,Philosophy/Agrippa - Occult Philosophy,OVERLAPPING_WORK_FAMILY,HIGH,accepted,Stage-B batch 0002 numbered books 1-4 plus aggregate manifestation
+AGRIPPA-001,Agrippa Occult Philosophy,Magick/Agrippa,OVERLAPPING_WORK_FAMILY,HIGH,accepted,Stage-B batch 0002 numbered books 1-4 plus aggregate manifestation
+ECHOES-GNOSIS-001,Echoes From the Gnosis,Ancient Religions/Echoes From the Gnosis,PARALLEL_COLLECTION_MANIFESTATION_SET,HIGH,accepted,Stage-B batch 0003 six exact title-volume identities
+ECHOES-GNOSIS-001,Echoes From the Gnosis,Ancient Religions/Gnosis,PARALLEL_COLLECTION_MANIFESTATION_SET,HIGH,accepted,Stage-B batch 0003 six exact title-volume identities
+BAILEY-DISCIPLESHIP-001,Alice A. Bailey Discipleship in the New Age,PDF/Alice A. Bailey,INTRA_COLLECTION_DUPLICATE_COPY_CANDIDATES,HIGH,accepted,Stage-B batch 0003 normalized titles and equal sizes for paired volumes
+BARDON-IIH-001,Franz Bardon Initiation Into Hermetics,PDF/F Bardon,EDITION_OR_COPY_VARIANT_SET,HIGH,accepted,Stage-B batch 0003 edition labels and differing sizes
+BARDON-GOLDEN-001,Franz Bardon Golden Book of Wisdom,PDF/F Bardon,INTRA_COLLECTION_DUPLICATE_COPY_CANDIDATE,HIGH,accepted,Stage-B batch 0003 normalized title and equal size evidence
+BARDON-EVOCATION-001,Franz Bardon Practice of Magical Evocation,PDF/F Bardon,EDITION_OR_COPY_VARIANT_SET,HIGH,accepted,Stage-B batch 0003 normalized titles and differing sizes
+BARDON-QABBALAH-001,Franz Bardon Key to the True Qabbalah,PDF/F Bardon,EDITION_OR_COPY_VARIANT_SET,HIGH,accepted,Stage-B batch 0003 spelling-normalized titles and differing sizes
+RAMAYANA-001,Ramayana,Buddhism/Ramayana,CROSS_COLLECTION_RELATION_UNRESOLVED,MEDIUM,provisional,Stage-B batch 0004 four-volume Buddhism sequence; Hinduism counterpart unresolved
+VIVEKANANDA-001,Swami Vivekananda works,Hinduism/Complete works of Swami Vivekananda,RELATED_AUTHOR_COLLECTIONS_NOT_DUPLICATES,HIGH,accepted,Stage-B batch 0004 author relationship classification
+VIVEKANANDA-001,Swami Vivekananda works,Yoga/Swami Vivekananda,RELATED_AUTHOR_COLLECTIONS_NOT_DUPLICATES,HIGH,accepted,Stage-B batch 0004 author relationship classification
