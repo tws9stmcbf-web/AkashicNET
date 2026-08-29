@@ -1,8 +1,0 @@
-batch_id,work_family,drive_manifestation_status,rights_evidence_status,public_manifest_status,next_required_evidence,decision
-RIGHTS-MATCH-0003,Dostoevsky complete works,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify exact translator/editor/publisher/year for each Drive volume; then compare with jurisdiction-specific rights records",HOLD
-RIGHTS-MATCH-0003,H. G. Wells complete works,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify exact edition/publication year and translation status; then compare with authoritative rights records",HOLD
-RIGHTS-MATCH-0003,Ante-Nicene Fathers,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify edition/editor/translator and publication details; ancient source text alone is insufficient",HOLD
-RIGHTS-MATCH-0003,Nicene and Post-Nicene Fathers,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify series/edition, editors/translators and publication dates",HOLD
-RIGHTS-MATCH-0003,Book of Enoch,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify exact translation/edition and rights basis",HOLD
-RIGHTS-MATCH-0003,Blacks Law Dictionary,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify exact edition/year; later editions may remain protected",HOLD
-RIGHTS-MATCH-0003,Talmud Complete,EXACT_DRIVE_EDITION_NOT_IDENTIFIED,NO_AUTHORITATIVE_MANIFESTATION_MATCH,UNKNOWN_UNVERIFIED,"Identify exact translation/edition and jurisdiction-specific rights basis",HOLD

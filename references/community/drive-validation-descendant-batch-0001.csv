@@ -1,4 +1,0 @@
-validation_batch,collection_path,drive_id,expected_direct_documents,observed_direct_documents,expected_child_folders,observed_child_folders,validation_status,method,notes
-DESC-VAL-0001,Philosophy/Agrippa - Occult Philosophy,1J0BXNpYGOMrTc-Odnh6uSwvMO7KvIv-Q,5,5,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0001,Philosophy/Søren Kierkegaard,1hGCngTgGkoMePeLD8mS8gALVcWNbWDc8,7,7,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0001,Philosophy/The Mother – Collected Works Volume 1–17,1AkWWmkY3_gPnA9G3J1RoxD8aH2icthW3,17,17,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"

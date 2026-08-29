@@ -1,8 +1,0 @@
-scope,screened_documents,screening_state,notes
-ALL_TOP_LEVEL_ROOTS,1287,STAGE_A_SCREENED,"All 66 top-level roots have now received metadata-only title/size/provenance screening; Science has 0 direct documents."
-Ancient Religions descendants,131,STAGE_A_SCREENED,"All 13 known immediate descendant collections freshly screened metadata-only in this pass."
-PDF descendants,135,STAGE_A_SCREENED,"Corrected subtree count after Montalk parent/child reconciliation; 135 document objects across PDF descendant branches, not 143."
-Literature descendants,98,STAGE_A_SCREENED,"Six Literature descendant collections freshly screened metadata-only."
-Biographies/David Hume,4,STAGE_A_SCREENED,"Volumes I-IV freshly screened metadata-only."
-Biographies/Hermann Hesse,8,STAGE_A_SCREENED,"Eight works freshly screened metadata-only."
-TOTAL_UNIQUE_STAGE_A_SCREENED,1663,STAGE_A_SCREENED,"1287 root documents plus 376 freshly screened descendant documents against corrected 2144-object denominator."

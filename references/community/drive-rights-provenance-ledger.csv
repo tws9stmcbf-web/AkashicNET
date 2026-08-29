@@ -1,6 +1,0 @@
-audit_id,scope,status,public_status,rights_basis,licence_evidence,provenance_evidence,public_manifest_eligible,notes
-RIGHTS-0001,Google Drive imported corpus,NOT_YET_VERIFIED,UNKNOWN_UNVERIFIED,NONE,NONE,Drive object provenance only,NO,"Drive accessibility is not treated as public permission or licence"
-RIGHTS-0002,r/NeuronsToNirvana pilot Reddit archive,SCHEMA_READY,UNKNOWN_UNVERIFIED,ORIGINAL_SOURCE_LINK_ONLY,NONE,Original Reddit URL plus attribution fields,NO,"Archive schema explicitly distinguishes provenance from evidence and does not infer rights from inclusion"
-RIGHTS-0003,Public-domain candidate works,REVIEW_REQUIRED,UNKNOWN_UNVERIFIED,CANDIDATE_ONLY,NONE,Source/title metadata,NO,"Requires work-specific public-domain determination before promotion"
-RIGHTS-0004,Explicitly licensed material,REVIEW_REQUIRED,UNKNOWN_UNVERIFIED,CANDIDATE_ONLY,NONE,Source metadata,NO,"Requires licence statement or equivalent evidence"
-RIGHTS-0005,User-owned/original material,REVIEW_REQUIRED,UNKNOWN_UNVERIFIED,CANDIDATE_ONLY,NONE,Uploader provenance,NO,"Ownership may be sufficient for ingestion rights but must be explicitly recorded"

@@ -1,6 +1,0 @@
-validation_batch,collection_path,drive_id,expected_direct_documents,observed_direct_documents,expected_child_folders,observed_child_folders,validation_status,method,notes
-DESC-VAL-0002,Philosophy/Commentaries on Living I–III,1_-3d9hjlWDoagRmJeqHXy5VhYTIuBJNh,3,3,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0002,Philosophy/Ouspensky Record of Meetings,1_8wqugAe_exJVXHIoKb7uvN59U20mlKL,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0002,Philosophy/Selected works by Albert Einstein,1sYDZmAHLsZyTDVvKBfhRP_Ucf0Wpjseu,4,4,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0002,Philosophy/Leaves of Morya’s Garden,1iLM6-Dra-9hmXDr74GtCbhyA9QuKd_WX,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
-DESC-VAL-0002,Philosophy/Frankfurt School – Karl Mannheim,1rYxVplZQ1D236eaTr0jF14XU-UpPlAs1,3,3,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
