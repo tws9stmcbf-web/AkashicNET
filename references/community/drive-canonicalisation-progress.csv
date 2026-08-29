@@ -11,14 +11,14 @@ candidate_families,2,families,VERIFIED,Require further metadata/hash resolution
 reconciled_physical_manifestations,130,objects,VERIFIED,Objects represented inside current canonicalisation families
 logical_units_in_reconciled_families,61,logical_units,VERIFIED,Work/volume-level units represented by current families
 redundant_or_alternate_manifestations_exposed,69,objects,DERIVED,130 physical manifestations minus 61 logical units; includes duplicates/editions/translations/alternate copies and is not a byte-duplicate count
-stage_a_screened_objects,1050,objects,VERIFIED,Thirty root-level metadata screening batches completed; each object entered canonicalisation workflow
-canonicalisation_screening_coverage,48.7918,percent,DERIVED,1050 / 2152
-canonicalisation_component_points,7.3188,points_of_15,DERIVED,48.7918 percent of 15-point canonicalisation component
+stage_a_screened_objects,1167,objects,VERIFIED,Forty-seven root-level metadata screening batches completed; each object entered canonicalisation workflow
+canonicalisation_screening_coverage,54.2286,percent,DERIVED,1167 / 2152
+canonicalisation_component_points,8.1343,points_of_15,DERIVED,54.2286 percent of 15-point canonicalisation component
 traversal_component_points,40.0000,points_of_40,VERIFIED,66 / 66 roots structurally closed
 metadata_component_points,25.0000,points_of_25,VERIFIED,195 / 195 known folder nodes exact
 privacy_component_points,0.0000,points_of_10,CONSERVATIVE_ZERO,No independent corpus-wide public-status denominator yet
 validation_component_points,0.0000,points_of_10,CONSERVATIVE_ZERO,No independent corpus-wide validation denominator yet
-overall_verified_lower_bound,72.3188,percent,DERIVED,40 + 25 + 7.3188
+overall_verified_lower_bound,73.1343,percent,DERIVED,40 + 25 + 8.1343
 current_release_gate,70.0000,percent,EARNED,v0.4.7
 next_release_gate,80.0000,percent,TARGET,v0.4.8
-gap_to_v0.4.8,7.6812,percentage_points,DERIVED,80 - 72.3188
+gap_to_v0.4.8,6.8657,percentage_points,DERIVED,80 - 73.1343
