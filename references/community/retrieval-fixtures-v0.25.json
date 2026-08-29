@@ -1,0 +1,58 @@
+{
+  "version": "0.25",
+  "schema_id": "akashicnet://schemas/retrieval/v0.25",
+  "fixtures": [
+    {
+      "id": "FIXTURE-0001",
+      "query": "Golden Book of Wisdom",
+      "domain": "all",
+      "state": "accepted",
+      "expect": {
+        "non_empty": true,
+        "top_semantic_decision": "DIRECT_METADATA_LOOKUP",
+        "top_provenance_tier": "P3_SHA256_IDENTITY_PROVENANCE"
+      }
+    },
+    {
+      "id": "FIXTURE-0002",
+      "query": "Psychedelics",
+      "domain": "all",
+      "state": "accepted",
+      "expect": {
+        "minimum_results": 8,
+        "allowed_semantic_decisions": ["ACCEPT", "DIRECT_METADATA_LOOKUP"]
+      }
+    },
+    {
+      "id": "FIXTURE-0003",
+      "query": "Consciousness",
+      "domain": "all",
+      "state": "hold",
+      "expect": {
+        "minimum_results": 1,
+        "all_semantic_decisions": "HOLD"
+      }
+    },
+    {
+      "id": "FIXTURE-0004",
+      "query": "Psychedelics",
+      "domain": "reddit",
+      "state": "accepted",
+      "expect": {
+        "minimum_results": 7,
+        "all_domains": "reddit",
+        "all_semantic_decisions": "ACCEPT"
+      }
+    }
+  ],
+  "invariants": {
+    "archive_mode": "metadata_and_links_only",
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "ranking_changes_semantic_decision": false,
+    "direct_metadata_lookup_is_not_semantic_acceptance": true,
+    "hold_results_are_explicitly_addressable": true,
+    "result_order": "descending provenance_rank"
+  }
+}
