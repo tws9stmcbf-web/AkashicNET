@@ -46,14 +46,23 @@ for edge in edges:
     assert edge['promotion_decision_id'] in decision_by_id, f"unknown decision {edge['promotion_decision_id']}"
     decision = decision_by_id[edge['promotion_decision_id']]
     assert decision['decision'] == 'ACCEPT', f"edge from HOLD {edge['edge_id']}"
+    assert edge['evidence_id'] == decision['evidence_ids'], f"edge evidence does not match decision {edge['edge_id']}"
     assert edge['evidence_id'] in hash_by_id, f"unknown evidence {edge['evidence_id']}"
+    hash_record = hash_by_id[edge['evidence_id']]
+    expected_manifests = {hash_record['manifestation_a'], hash_record['manifestation_b']}
     assert edge['source_id'] in manifest_ids, f"unknown source manifestation {edge['source_id']}"
     if edge['relation'] == 'REPRESENTS':
-        assert edge['target_id'] in work_ids, f"unknown target work {edge['target_id']}"
+        assert edge['source_id'] in expected_manifests, f"source not covered by hash evidence {edge['edge_id']}"
+        assert edge['target_id'] == decision['work_id'], f"target does not match decision work {edge['edge_id']}"
     elif edge['relation'] == 'DUPLICATE_OF':
-        assert edge['target_id'] in manifest_ids, f"unknown target manifestation {edge['target_id']}"
+        assert {edge['source_id'], edge['target_id']} == expected_manifests, f"duplicate pair not covered by hash evidence {edge['edge_id']}"
     else:
         raise AssertionError(f"unsupported relation {edge['relation']}")
+
+for decision in accepted:
+    decision_edges = [edge for edge in edges if edge['promotion_decision_id'] == decision['decision_id']]
+    assert sum(edge['relation'] == 'REPRESENTS' for edge in decision_edges) == 2, f"expected two REPRESENTS edges for {decision['decision_id']}"
+    assert sum(edge['relation'] == 'DUPLICATE_OF' for edge in decision_edges) == 1, f"expected one DUPLICATE_OF edge for {decision['decision_id']}"
 
 for work in works:
     assert work['rights_state'] == 'UNKNOWN_UNVERIFIED', 'canonical promotion must not promote rights state'

@@ -1,0 +1,38 @@
+name: Validate Drive canonical completion v0.6.2
+
+on:
+  push:
+    paths:
+      - 'references/community/drive-canonical-family-review-v0.6.0.csv'
+      - 'references/community/drive-canonical-object-ledger-v0.6.0.csv'
+      - 'references/community/drive-canonical-family-decisions-v0.6.2.csv'
+      - 'references/community/drive-canonical-completion-v0.6.2.json'
+      - 'scripts/build_drive_family_adjudication_queue_v062.py'
+      - 'scripts/validate_canonical_promotions_v061.py'
+      - '.github/workflows/validate-drive-canonical-completion-v062.yml'
+  pull_request:
+    paths:
+      - 'references/community/drive-canonical-family-review-v0.6.0.csv'
+      - 'references/community/drive-canonical-object-ledger-v0.6.0.csv'
+      - 'references/community/drive-canonical-family-decisions-v0.6.2.csv'
+      - 'references/community/drive-canonical-completion-v0.6.2.json'
+      - 'scripts/build_drive_family_adjudication_queue_v062.py'
+      - 'scripts/validate_canonical_promotions_v061.py'
+      - '.github/workflows/validate-drive-canonical-completion-v062.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regenerate family decisions
+        run: python scripts/build_drive_family_adjudication_queue_v062.py --queue /tmp/family-decisions.csv --summary /tmp/completion.json
+      - name: Verify deterministic outputs
+        run: |
+          diff -u references/community/drive-canonical-family-decisions-v0.6.2.csv /tmp/family-decisions.csv
+          diff -u references/community/drive-canonical-completion-v0.6.2.json /tmp/completion.json
+      - name: Validate accepted promotions and evidence bindings
+        run: python scripts/validate_canonical_promotions_v061.py

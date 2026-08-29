@@ -1,0 +1,27 @@
+{
+  "accepted_graph_edges": 9,
+  "baseline_dispositions": {
+    "REVIEW_REQUIRED": 258,
+    "TECHNICAL_EXCLUSION": 28,
+    "UNIQUE_CANDIDATE": 2173
+  },
+  "candidate_families_total": 127,
+  "confirmed_editions": 0,
+  "confirmed_translations": 0,
+  "confirmed_works": 3,
+  "contract_version": "0.1",
+  "integrity_pass": true,
+  "live_objects": 2459,
+  "object_disposition_coverage": 2459,
+  "reddit_bridge_enabled": false,
+  "rights_promotion_allowed": false,
+  "scientific_evidence_promotion_allowed": false,
+  "technical_candidate_families": 1,
+  "technical_exclusions": 28,
+  "truth_inference_allowed": false,
+  "unresolved_family_decisions": 126,
+  "unresolved_objects": 258,
+  "verified_duplicate_objects": 6,
+  "verified_duplicate_pairs": 3,
+  "version": "0.6.2"
+}
