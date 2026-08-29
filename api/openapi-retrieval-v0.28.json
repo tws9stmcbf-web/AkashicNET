@@ -1,0 +1,106 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AkashicNET Retrieval HTTP API",
+    "version": "0.28",
+    "description": "Application-facing HTTP adapter over the stable AkashicNET retrieval API v0.25. Topical, provenance, ranking, identity, rights, truth, and scientific-evidence semantics remain explicitly separated."
+  },
+  "servers": [{"url": "http://127.0.0.1:8787"}],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Service health and epistemic policy",
+        "responses": {
+          "200": {
+            "description": "Healthy service",
+            "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Health"}}}
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "summary": "Machine-readable OpenAPI contract",
+        "responses": {
+          "200": {"description": "OpenAPI 3.1 document"}
+        }
+      }
+    },
+    "/v1/retrieve": {
+      "get": {
+        "summary": "Retrieve AkashicNET records",
+        "parameters": [
+          {"name": "q", "in": "query", "required": true, "schema": {"type": "string", "minLength": 1}},
+          {"name": "domain", "in": "query", "required": false, "schema": {"type": "string", "enum": ["all", "reddit", "library"], "default": "all"}},
+          {"name": "state", "in": "query", "required": false, "schema": {"type": "string", "enum": ["all", "accepted", "hold"], "default": "all"}},
+          {"name": "limit", "in": "query", "required": false, "schema": {"type": "integer", "minimum": 1, "maximum": 1000, "default": 100}}
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieval response preserving upstream v0.25 contract",
+            "content": {"application/json": {"schema": {"$ref": "#/components/schemas/RetrievalEnvelope"}}}
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Error"}}}
+          },
+          "500": {
+            "description": "Upstream or internal failure",
+            "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Error"}}}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Policy": {
+        "type": "object",
+        "required": ["truth_inference_allowed", "rights_promotion_allowed", "scientific_evidence_promotion_allowed"],
+        "properties": {
+          "truth_inference_allowed": {"const": false},
+          "rights_promotion_allowed": {"const": false},
+          "scientific_evidence_promotion_allowed": {"const": false}
+        }
+      },
+      "Health": {
+        "type": "object",
+        "required": ["service", "service_version", "status", "upstream_api", "upstream_schema", "openapi", "epistemic_policy"],
+        "properties": {
+          "service": {"const": "AKASHICNET_RETRIEVAL_HTTP"},
+          "service_version": {"const": "0.28"},
+          "status": {"const": "ok"},
+          "upstream_api": {"const": "AKASHICNET_RETRIEVAL_API"},
+          "upstream_schema": {"const": "akashicnet://schemas/retrieval/v0.25"},
+          "openapi": {"const": "/openapi.json"},
+          "epistemic_policy": {"$ref": "#/components/schemas/Policy"}
+        }
+      },
+      "RetrievalEnvelope": {
+        "type": "object",
+        "required": ["service", "service_version", "transport", "upstream"],
+        "properties": {
+          "service": {"const": "AKASHICNET_RETRIEVAL_HTTP"},
+          "service_version": {"const": "0.28"},
+          "transport": {"const": "http-json"},
+          "upstream": {"type": "object", "description": "Stable AkashicNET retrieval API v0.25 payload."}
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": ["error", "message"],
+        "properties": {
+          "error": {"type": "string"},
+          "message": {"type": "string"}
+        }
+      }
+    }
+  },
+  "x-akashicnet-policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "ranking_changes_semantic_decision": false,
+    "public_retrieval_requires_public_verified": true
+  }
+}
