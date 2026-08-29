@@ -1,6 +1,13 @@
 name: Drive pagination audit
 
 on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/drive-pagination-audit.yml'
+      - 'scripts/drive_pagination_audit.py'
+      - 'references/community/drive-traversal-ledger.csv'
+      - 'references/community/drive-metadata-descendant-census.csv'
   workflow_dispatch:
 
 jobs:
