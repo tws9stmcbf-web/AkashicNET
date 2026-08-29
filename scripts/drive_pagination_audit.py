@@ -18,16 +18,30 @@ from pathlib import Path
 
 ROOT_CENSUS = Path("references/community/drive-metadata-root-census.csv")
 DESC_CENSUS = Path("references/community/drive-metadata-descendant-census.csv")
+DESC_RECONCILIATION = Path("references/community/drive-metadata-final-reconciliation.csv")
 OUT = Path("references/community/drive-pagination-terminality-audit.csv")
 FOLDER_MIME = "application/vnd.google-apps.folder"
 EXPECTED_NODE_COUNT = 195
+EXPECTED_ROOT_COUNT = 66
+EXPECTED_DESCENDANT_COUNT = 129
+
+
+def normalise_descendant(row):
+    return {
+        "scope": "descendant",
+        "path": row["collection_path"],
+        "drive_id": row["drive_id"],
+        "expected_state": row["node_state"],
+        "expected_documents": row["direct_documents"],
+        "expected_child_folders": row["child_folders"],
+    }
 
 
 def load_nodes():
-    nodes = []
+    roots = []
     with ROOT_CENSUS.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            nodes.append({
+            roots.append({
                 "scope": "root",
                 "path": row["root_title"],
                 "drive_id": row["drive_id"],
@@ -35,20 +49,33 @@ def load_nodes():
                 "expected_documents": row["direct_documents"],
                 "expected_child_folders": row["direct_folders"],
             })
+
+    # The historical descendant census contains 121 rows. The final reconciliation
+    # is an authoritative overlay: it replaces corrected existing nodes (Gnosis)
+    # and adds the eight omitted Apocrypha/Gospels subtree nodes. Key by Drive ID
+    # so the overlay cannot silently duplicate a physical folder node.
+    descendants_by_id = {}
     with DESC_CENSUS.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            state = row["node_state"]
-            if row["collection_path"] == "Ancient Religions/Gnosis" and state == "ACCESS_UNRESOLVED":
-                state = "TERMINAL_LEAF"
-            nodes.append({
-                "scope": "descendant",
-                "path": row["collection_path"],
-                "drive_id": row["drive_id"],
-                "expected_state": state,
-                "expected_documents": row["direct_documents"],
-                "expected_child_folders": row["child_folders"],
-            })
+            node = normalise_descendant(row)
+            descendants_by_id[node["drive_id"]] = node
 
+    with DESC_RECONCILIATION.open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            node = normalise_descendant(row)
+            descendants_by_id[node["drive_id"]] = node
+
+    descendants = list(descendants_by_id.values())
+    if len(roots) != EXPECTED_ROOT_COUNT:
+        raise RuntimeError(
+            f"root denominator drift: expected {EXPECTED_ROOT_COUNT}, found {len(roots)}"
+        )
+    if len(descendants) != EXPECTED_DESCENDANT_COUNT:
+        raise RuntimeError(
+            f"descendant denominator drift after reconciliation: expected {EXPECTED_DESCENDANT_COUNT}, found {len(descendants)}"
+        )
+
+    nodes = roots + descendants
     ids = [n["drive_id"] for n in nodes]
     duplicates = sorted(k for k, v in Counter(ids).items() if v > 1)
     if len(nodes) != EXPECTED_NODE_COUNT:
