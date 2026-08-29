@@ -1,0 +1,44 @@
+{
+  "canonical_resolution": {
+    "resolution_version": "0.1",
+    "records": [
+      {
+        "record_id": "resolution:example-001",
+        "drive_object_id": "drive:file:example-001",
+        "candidate_work_id": null,
+        "candidate_edition_id": null,
+        "disposition": "REVIEW_REQUIRED",
+        "decision_basis": ["TITLE", "SIZE"],
+        "confidence": 0.35,
+        "review_state": "CANDIDATE",
+        "notes": "Title and size are candidate signals only; no identity claim is made.",
+        "provenance": {"source": "google-drive"}
+      }
+    ]
+  },
+  "evidence": {
+    "evidence_model_version": "0.1",
+    "claims": [
+      {
+        "claim_id": "claim:example-001",
+        "statement": "Example claim requiring assessment.",
+        "claim_class": "MIXED",
+        "status": "UNASSESSED",
+        "confidence": 0.0,
+        "provenance": {"source_id": "drive:file:example-001"}
+      }
+    ],
+    "evidence_links": [
+      {
+        "claim_id": "claim:example-001",
+        "source_id": "drive:file:example-001",
+        "relation": "CONTEXTUALISES",
+        "evidence_tier": "CONTEMPLATIVE_PHILOSOPHICAL",
+        "assessment_state": "UNREVIEWED",
+        "strength": 0.0,
+        "notes": "Presence in the archive does not establish support.",
+        "provenance": {"source": "google-drive"}
+      }
+    ]
+  }
+}
