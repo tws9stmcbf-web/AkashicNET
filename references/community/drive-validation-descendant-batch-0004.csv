@@ -1,0 +1,6 @@
+validation_batch,collection_path,drive_id,expected_direct_documents,observed_direct_documents,expected_child_folders,observed_child_folders,validation_status,method,notes
+DESC-VAL-0004,Buddhism/Modern Buddhism – the Path of Compassion and Wisdom,1xZ-Z1S0nYSzg7ftGvVUUuUxs-dDgf_ci,3,3,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
+DESC-VAL-0004,Buddhism/Buddhist Suttas A-Z,1aSYN2HQz5WEUL-YOcV9wpnnAgCMAnzlZ,15,15,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","Curated compilation; count match does not imply 15 independent canonical works"
+DESC-VAL-0004,Buddhism/Rude Awakenings and Great Patient One,1uHOZkWQWbplJOZFkSERJM9TA17yTxrKI,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
+DESC-VAL-0004,Buddhism/Teaching From The Vajrasattva Retreat,1V9jduIr09VMJSjmfnBf-R33Tr_m1kSJE,4,4,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
+DESC-VAL-0004,Buddhism/The Zen of Advaita,1aL-CctcU9vcJrd97pEFNWyptPJUiXCC7,2,2,0,0,MATCH_EXACT,"Independent metadata-only Google Drive document and folder re-query","No body fetch; no privacy/public-status inference"
