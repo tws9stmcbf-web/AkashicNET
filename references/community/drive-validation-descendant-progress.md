@@ -6,19 +6,31 @@ Baseline checkpoint: PRE-ALPHA v0.4.8-dev
 
 ## Validation batch 0001
 
-Three descendant folder nodes were independently re-queried using metadata-only Google Drive searches, separately checking direct documents and child folders against the frozen descendant census.
+Three Philosophy descendant folder nodes independently matched the frozen census exactly:
 
-- Philosophy/Agrippa - Occult Philosophy: expected 5 documents / 0 child folders; observed 5 / 0; MATCH_EXACT
-- Philosophy/Søren Kierkegaard: expected 7 documents / 0 child folders; observed 7 / 0; MATCH_EXACT
-- Philosophy/The Mother – Collected Works Volume 1–17: expected 17 documents / 0 child folders; observed 17 / 0; MATCH_EXACT
+- Philosophy/Agrippa - Occult Philosophy: 5 documents / 0 child folders
+- Philosophy/Søren Kierkegaard: 7 / 0
+- Philosophy/The Mother – Collected Works Volume 1–17: 17 / 0
+
+## Validation batch 0002
+
+The remaining five Philosophy descendant nodes were independently re-queried with separate metadata-only document and folder searches. All matched exactly:
+
+- Philosophy/Commentaries on Living I–III: 3 documents / 0 child folders
+- Philosophy/Ouspensky Record of Meetings: 2 / 0
+- Philosophy/Selected works by Albert Einstein: 4 / 0
+- Philosophy/Leaves of Morya’s Garden: 2 / 0
+- Philosophy/Frankfurt School – Karl Mannheim: 3 / 0
+
+The full set of eight known Philosophy descendant nodes is therefore independently validated against the frozen census.
 
 ## Updated validation score
 
 - Previously validated root nodes: 66
-- Newly validated descendant nodes: 3
-- Validated nodes: 69 / 195
-- Validation coverage: 35.384615%
-- Validation points: 3.538462 / 10
+- Validated descendant nodes: 8
+- Validated nodes: 74 / 195
+- Validation coverage: 37.948718%
+- Validation points: 3.794872 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -26,9 +38,9 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 3.538462 / 10
+- validation: 3.794872 / 10
 
-Verified completion floor after this batch = **83.538462%**.
+Verified completion floor after batch 0002 = **83.794872%**.
 
 This does not earn the v0.4.9 / 90% gate. Further descendant validation and/or independently justified privacy/public-status classification is required.
 
