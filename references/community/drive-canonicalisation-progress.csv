@@ -1,0 +1,23 @@
+metric,value,unit,status,notes
+root_document_objects,1287,objects,VERIFIED,Sum of direct document counts across 66 top-level roots
+descendant_document_objects,865,objects,VERIFIED,Sum of document counts represented by descendant census; Gospels structural decomposition preserves the 46-document subtree total
+total_document_object_denominator,2152,objects,VERIFIED,Canonicalisation physical-object denominator
+known_document_level_technical_exclusions,8,objects,VERIFIED_MINIMUM,One Magick zero-byte PDF; one Buddhism zero-byte PDF; five PDF/Bookz zero-byte objects; one Black's Law Dictionary .crdownload
+candidate_usable_documents_after_known_exclusions,2144,objects,LOWER_QUALITY_DENOMINATOR,Does not assume all technical exclusions have been found
+non_document_system_artifacts_tracked,3,objects,VERIFIED_MINIMUM,Three .DS_Store artifacts in Theosophy author folders; outside document-only denominator
+canonicalisation_families,29,families,VERIFIED,27 REVIEWED and 2 CANDIDATE
+reviewed_families,27,families,VERIFIED,Explicitly reconciled candidate ledger rows
+candidate_families,2,families,VERIFIED,Require further metadata/hash resolution
+reconciled_physical_manifestations,130,objects,VERIFIED,Objects represented inside current canonicalisation families
+logical_units_in_reconciled_families,61,logical_units,VERIFIED,Work/volume-level units represented by current families
+redundant_or_alternate_manifestations_exposed,69,objects,DERIVED,130 physical manifestations minus 61 logical units; includes duplicates/editions/translations/alternate copies and is not a byte-duplicate count
+canonicalisation_object_coverage,6.0409,percent,DERIVED,130 / 2152
+canonicalisation_component_points,0.9061,points_of_15,DERIVED,6.0409 percent of 15-point canonicalisation component
+traversal_component_points,40.0000,points_of_40,VERIFIED,66 / 66 roots structurally closed
+metadata_component_points,25.0000,points_of_25,VERIFIED,195 / 195 known folder nodes exact
+privacy_component_points,0.0000,points_of_10,CONSERVATIVE_ZERO,No independent corpus-wide public-status denominator yet
+validation_component_points,0.0000,points_of_10,CONSERVATIVE_ZERO,No independent corpus-wide validation denominator yet
+overall_verified_lower_bound,65.9061,percent,DERIVED,40 + 25 + 0.9061
+next_release_gate,70.0000,percent,TARGET,v0.4.7
+gap_to_v0.4.7,4.0939,percentage_points,DERIVED,70 - 65.9061
+canonicalisation_objects_needed_for_5_points,718,objects,DERIVED,Ceiling of one-third of 2152; sufficient for five canonicalisation points if privacy and validation remain zero
