@@ -56,17 +56,15 @@ Validation component = **8.000000 / 10**.
 
 The independent privacy component is scored object-by-object against the corrected 2,144-object denominator.
 
-`drive-privacy-classification-batch-v0.4.9.csv` applies explicit conservative states to five exact complete Stage-A root-direct provider sets:
+The cumulative conservative privacy checkpoint `drive-privacy-classification-batch-0928.md` covers complete Stage-A root-direct provider sets `SCREEN-0001` through `SCREEN-0020`:
 
-- Buddhism: 100
-- Hinduism: 96
-- Metaphysics: 100
-- Philosophy: 86
-- PDF: 78
+- SCREEN-0001 through SCREEN-0005: 460 document objects
+- SCREEN-0006 through SCREEN-0020: 468 document objects
+- cumulative classified objects: **928**
 
-Total classified objects = **460 / 2,144 = 21.455224%**.
+Coverage = **928 / 2,144 = 43.283582%**.
 
-Every object in these sets remains:
+Every represented object remains conservatively classified as:
 
 - `scope_status = IN_SCOPE`
 - `privacy_risk = UNKNOWN`
@@ -74,24 +72,24 @@ Every object in these sets remains:
 - `public_manifest_status = REVIEW_REQUIRED`
 - `pii_scan_status = NOT_RUN`
 
-This is classification coverage, not public-release clearance.
+This is classification coverage, not public-release clearance. No object is promoted to `PUBLIC_VERIFIED` or `ELIGIBLE` by this classification step.
 
-Privacy/public-status contribution = **2.145522 / 10**.
+Privacy/public-status contribution = **4.328358 / 10**.
 
 ## Reconciled global completion
 
 - traversal: 40.000000 / 40
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
-- privacy/public-status classification: 2.145522 / 10
+- privacy/public-status classification: 4.328358 / 10
 - validation: 8.000000 / 10
 
-Verified AKASHICNET-004 completion = **90.145522%**.
+Verified AKASHICNET-004 completion = **92.328358%**.
 
 ## Release gate
 
-The repository-defined **v0.4.9 gate = 90%** is now objectively earned.
+The repository-defined **v0.4.9 gate = 90%** remains objectively earned.
 
 Project status: **AkashicNET PRE-ALPHA v0.4.9-dev**.
 
-No Drive document body was fetched for this privacy batch, no object was promoted to PUBLIC_VERIFIED, and no public-manifest eligibility was inferred from shared access.
+The project is now above 92% verified completion while preserving the fail-closed privacy rule. The remaining unearned score is concentrated in the pagination/terminality validation gate and the unclassified portion of the 2,144-object privacy denominator.
