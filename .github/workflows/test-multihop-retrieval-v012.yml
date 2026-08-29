@@ -1,4 +1,4 @@
-name: Test multi-hop retrieval v0.12
+name: Test multi-hop retrieval v0.12 + provenance v0.13
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Build graph through v0.11
+      - name: Build graph through v0.13
         run: |
           python scripts/build_knowledge_graph_v02.py
           python scripts/build_knowledge_graph_v03.py
@@ -23,6 +23,7 @@ jobs:
           python scripts/build_cross_source_graph_v07.py
           python scripts/build_concept_layer_v010.py
           python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
       - name: Assert multi-hop retrieval safety and provenance
         run: |
           python - <<'PY'
@@ -31,8 +32,6 @@ jobs:
           unresolved_library_paths=0
           total_paths=0
           per_term={}
-          # Psychedelics proves accepted Reddit-side retrieval; Shamanism and
-          # Hinduism exercise Stage-B families with explicit Drive provenance.
           for term in ['psychedelics','shamanism','hinduism','alchemy']:
               raw=subprocess.check_output(['python','scripts/query_multihop_v012.py',term,'--accepted-only'],text=True)
               d=json.loads(raw)
@@ -60,4 +59,31 @@ jobs:
           assert total_paths>0
           assert resolved_library_paths>0
           print('AKASHICNET v0.12 PASS', {'per_term':per_term,'resolved_library_paths':resolved_library_paths,'unresolved_library_paths':unresolved_library_paths})
+          PY
+      - name: Assert v0.13 collection provenance boundaries
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/knowledge-graph-v0.13.json',encoding='utf-8'))
+          p=d['provenance_completion_v013']
+          assert d['schema_version']=='0.13'
+          assert sum(1 for n in d['nodes'] if n.get('node_type')=='drive_object')==195
+          assert p['candidate_families_examined']==29
+          assert p['exact_collection_edges_added']>0
+          assert p['truth_inference_allowed'] is False
+          assert p['rights_promotion_allowed'] is False
+          assert p['scientific_evidence_promotion_allowed'] is False
+          assert p['integrity_pass'] is True
+          assert d['integrity']['release_integrity_pass'] is True
+          for e in d['edges']:
+              if e.get('relationship')=='PROVENANCE_RECORDED_IN_COLLECTION':
+                  assert e['provenance_level']=='collection_only'
+                  assert e['not_document_identity'] is True
+                  assert e['not_truth_claim'] is True
+          print('AKASHICNET v0.13 PASS', {
+              'edges_added':p['exact_collection_edges_added'],
+              'fully_resolved':p['fully_resolved_collection_provenance'],
+              'partial':p['partial_collection_provenance'],
+              'holds':p['holds'],
+              'unresolved':p['unresolved']})
           PY
