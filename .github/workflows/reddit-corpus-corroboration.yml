@@ -1,0 +1,42 @@
+name: Historical Reddit corpus corroboration
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/reddit-corpus-corroboration
+    paths:
+      - scripts/reddit_corpus_corroboration.py
+      - tests/test_reddit_corpus_corroboration.py
+      - references/community/reddit-corroboration-seed-v0.3.json
+      - .github/workflows/reddit-corpus-corroboration.yml
+
+permissions:
+  contents: read
+
+jobs:
+  corroboration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run corroboration unit tests
+        run: python -m unittest tests.test_reddit_corpus_corroboration -v
+      - name: Recover historical source
+        run: |
+          mkdir -p artifacts/reddit-corroboration
+          curl --fail --location --silent --show-error \
+            https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
+            --output artifacts/reddit-corroboration/reddit-uri-index.csv
+      - name: Build Corroboration Audit v0.3
+        run: |
+          python scripts/reddit_corpus_corroboration.py \
+            artifacts/reddit-corroboration/reddit-uri-index.csv \
+            references/community/reddit-corroboration-seed-v0.3.json \
+            --json-out artifacts/reddit-corroboration/corroboration-v0.3.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reddit-corpus-corroboration-v0.3
+          path: artifacts/reddit-corroboration/
