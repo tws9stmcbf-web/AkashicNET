@@ -24,41 +24,37 @@ jobs:
           python scripts/build_concept_layer_v010.py
           python scripts/adjudicate_concept_edges_v011.py
           python scripts/complete_collection_provenance_v013.py
-      - name: Assert multi-hop retrieval safety and provenance
+      - name: Assert v0.13 provenance-aware retrieval
         run: |
           python - <<'PY'
           import json,subprocess
-          resolved_library_paths=0
-          unresolved_library_paths=0
-          total_paths=0
+          counts={'DRIVE_MEMBER_LINK_RESOLVED':0,'COLLECTION_PROVENANCE_RESOLVED':0,'PROVENANCE_NOT_YET_LINKED':0}
           per_term={}
           for term in ['psychedelics','shamanism','hinduism','alchemy']:
-              raw=subprocess.check_output(['python','scripts/query_multihop_v012.py',term,'--accepted-only'],text=True)
+              raw=subprocess.check_output(['python','scripts/query_multihop_v013.py',term,'--accepted-only'],text=True)
               d=json.loads(raw)
-              assert d['version']=='0.12'
+              assert d['version']=='0.13'
               assert d['truth_inference_allowed'] is False
               assert d['rights_promotion_allowed'] is False
               assert d['scientific_evidence_promotion_allowed'] is False
               per_term[term]=d['path_count']
-              total_paths+=d['path_count']
               for p in d['paths']:
-                  assert p['hops']
-                  assert p['hops'][0]['relationship']=='ABOUT'
-                  assert p['hops'][0]['decision']=='ACCEPT'
-                  if p['domain']=='library':
-                      assert p['provenance_resolution'] in {'DRIVE_MEMBER_LINK_RESOLVED','PROVENANCE_NOT_YET_LINKED'}
-                      if p['provenance_resolution']=='DRIVE_MEMBER_LINK_RESOLVED':
-                          resolved_library_paths+=1
-                          assert 'drive_provenance' in p
-                          assert len(p['hops'])>=2
-                          assert p['hops'][1]['relationship']=='HAS_PROVENANCE_MEMBER'
-                      else:
-                          unresolved_library_paths+=1
-                          assert 'drive_provenance' not in p
+                  assert p['hops'] and p['hops'][0]['relationship']=='ABOUT' and p['hops'][0]['decision']=='ACCEPT'
+                  if p['domain']!='library':
+                      continue
+                  state=p['provenance_resolution']; counts[state]+=1
+                  if state=='DRIVE_MEMBER_LINK_RESOLVED':
+                      assert p['drive_provenance'][0]['provenance_level']=='stage_b_member'
+                  elif state=='COLLECTION_PROVENANCE_RESOLVED':
+                      assert p['drive_provenance']
+                      assert all(x['provenance_level']=='collection_only' and x['not_document_identity'] is True for x in p['drive_provenance'])
+                  else:
+                      assert state=='PROVENANCE_NOT_YET_LINKED'
           assert per_term['psychedelics']>0
-          assert total_paths>0
-          assert resolved_library_paths>0
-          print('AKASHICNET v0.12 PASS', {'per_term':per_term,'resolved_library_paths':resolved_library_paths,'unresolved_library_paths':unresolved_library_paths})
+          assert counts['DRIVE_MEMBER_LINK_RESOLVED']>0
+          assert counts['COLLECTION_PROVENANCE_RESOLVED']>0
+          assert counts['PROVENANCE_NOT_YET_LINKED']==0
+          print('AKASHICNET v0.13 RETRIEVAL PASS', {'per_term':per_term,'provenance_counts':counts})
           PY
       - name: Assert v0.13 collection provenance boundaries
         run: |
@@ -80,10 +76,5 @@ jobs:
                   assert e['provenance_level']=='collection_only'
                   assert e['not_document_identity'] is True
                   assert e['not_truth_claim'] is True
-          print('AKASHICNET v0.13 PASS', {
-              'edges_added':p['exact_collection_edges_added'],
-              'fully_resolved':p['fully_resolved_collection_provenance'],
-              'partial':p['partial_collection_provenance'],
-              'holds':p['holds'],
-              'unresolved':p['unresolved']})
+          print('AKASHICNET v0.13 PASS', {'edges_added':p['exact_collection_edges_added'],'fully_resolved':p['fully_resolved_collection_provenance'],'partial':p['partial_collection_provenance'],'holds':p['holds'],'unresolved':p['unresolved']})
           PY
