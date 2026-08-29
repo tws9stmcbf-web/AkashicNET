@@ -6,8 +6,9 @@ on:
     paths:
       - '.github/workflows/drive-pagination-audit.yml'
       - 'scripts/drive_pagination_audit.py'
-      - 'references/community/drive-traversal-ledger.csv'
+      - 'references/community/drive-metadata-root-census.csv'
       - 'references/community/drive-metadata-descendant-census.csv'
+      - 'references/community/drive-metadata-final-reconciliation.csv'
   workflow_dispatch:
 
 jobs:
