@@ -1,0 +1,28 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY . /app
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+RUN python scripts/build_knowledge_graph_v02.py \
+ && python scripts/build_knowledge_graph_v03.py \
+ && python scripts/overlay_canonical_reconciliation_v04.py \
+ && python scripts/overlay_evidence_provenance_v05.py \
+ && python scripts/build_cross_source_graph_v07.py \
+ && python scripts/build_concept_layer_v010.py \
+ && python scripts/adjudicate_concept_edges_v011.py \
+ && python scripts/complete_collection_provenance_v013.py \
+ && python scripts/overlay_manifestation_provenance_v014.py \
+ && python scripts/overlay_hash_evidence_v015.py \
+ && python scripts/apply_hash_results_v016.py \
+ && python scripts/build_dedup_retrieval_view_v017.py \
+ && python scripts/extend_concept_layer_v020.py \
+ && python scripts/index_expanded_concepts_v021.py \
+ && python scripts/normalise_semantic_representations_v022.py
+
+EXPOSE 8787
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8787/health', timeout=2).read()"
+
+CMD ["python", "scripts/retrieval_http_v029.py", "--host", "0.0.0.0", "--port", "8787"]
