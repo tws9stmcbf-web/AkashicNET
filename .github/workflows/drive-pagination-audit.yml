@@ -12,6 +12,7 @@ on:
   workflow_dispatch:
 
 # Credential-backed audit of the frozen 195-node Drive denominator.
+# Manual credential recheck: 2026-08-29.
 jobs:
   audit:
     runs-on: ubuntu-latest
