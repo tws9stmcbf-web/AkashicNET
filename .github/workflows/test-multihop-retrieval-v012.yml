@@ -1,4 +1,4 @@
-name: Test multi-hop retrieval + provenance v0.18
+name: Test multi-hop retrieval + provenance v0.19
 
 on:
   push:
@@ -126,4 +126,22 @@ jobs:
           assert alchemy['matched_concepts']
           assert all(r.get('query_path')!='canonical_family_label' or r.get('not_semantic_inference') is True for r in alchemy['results'])
           print('AKASHICNET v0.18 PASS', {'golden_logical':golden['logical_units_returned'],'golden_physical':golden['physical_manifestations_returned'],'iih_logical':iih['logical_units_returned'],'alchemy_results':alchemy['result_count']})
+          PY
+      - name: Assert reviewed family concept expansion v0.19
+        run: |
+          python scripts/review_manifestation_family_concepts_v019.py
+          python - <<'PY'
+          import json
+          d=json.load(open('data/manifestation-family-concept-review-v0.19.json',encoding='utf-8'))
+          assert d['version']=='0.19'
+          assert d['families_reviewed']==5
+          assert d['decision_counts']=={'ACCEPT':0,'HOLD':5,'REJECT':0}
+          assert d['accepted_about_edges_added']==0
+          assert d['metadata_only'] is True and d['document_bodies_read'] is False
+          assert d['truth_inference_allowed'] is False
+          assert d['rights_promotion_allowed'] is False
+          assert d['scientific_evidence_promotion_allowed'] is False
+          assert d['integrity_pass'] is True
+          assert all(r['decision']=='HOLD' for r in d['review_records'])
+          print('AKASHICNET v0.19 PASS', {'families_reviewed':d['families_reviewed'],'decisions':d['decision_counts']})
           PY
