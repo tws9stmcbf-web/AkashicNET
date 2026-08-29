@@ -8,6 +8,12 @@ tools/akasic-library/client_secret_*.json
 token*.json
 credentials*.json
 
+# Reddit OAuth/runtime state
+.env
+.env.*
+data/reddit/*.jsonl
+data/reddit/checkpoint*.json
+
 # Python cache
 __pycache__/
 *.py[cod]
