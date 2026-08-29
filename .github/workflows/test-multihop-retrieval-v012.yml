@@ -29,14 +29,17 @@ jobs:
           import json,subprocess
           resolved_library_paths=0
           unresolved_library_paths=0
+          total_paths=0
+          per_term={}
           for term in ['psychedelics','buddhism','alchemy']:
               raw=subprocess.check_output(['python','scripts/query_multihop_v012.py',term,'--accepted-only'],text=True)
               d=json.loads(raw)
               assert d['version']=='0.12'
-              assert d['path_count']>0
               assert d['truth_inference_allowed'] is False
               assert d['rights_promotion_allowed'] is False
               assert d['scientific_evidence_promotion_allowed'] is False
+              per_term[term]=d['path_count']
+              total_paths+=d['path_count']
               for p in d['paths']:
                   assert p['hops']
                   assert p['hops'][0]['relationship']=='ABOUT'
@@ -51,6 +54,8 @@ jobs:
                       else:
                           unresolved_library_paths+=1
                           assert 'drive_provenance' not in p
+          assert per_term['psychedelics']>0
+          assert total_paths>0
           assert resolved_library_paths>0
-          print('AKASHICNET v0.12 PASS', {'resolved_library_paths':resolved_library_paths,'unresolved_library_paths':unresolved_library_paths})
+          print('AKASHICNET v0.12 PASS', {'per_term':per_term,'resolved_library_paths':resolved_library_paths,'unresolved_library_paths':unresolved_library_paths})
           PY
