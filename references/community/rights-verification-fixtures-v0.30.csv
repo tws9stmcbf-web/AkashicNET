@@ -1,5 +1,5 @@
 fixture_id,manifestation_id,fixture_only,corpus_item,source_provenance,manifestation_description,rights_basis,authoritative_evidence,corroborating_evidence,jurisdiction_or_scope,review_decision,reviewed_at,declared_rung,declared_public_status,production_manifest_eligible,notes
-RIGHTS-FIX-030-R0,fixture:rights-v030-r0,YES,NO,fixture://source/r0,,,,,,,HOLD_R0,2026-08-29,R0,UNKNOWN_UNVERIFIED,NO,Provenance only control
+RIGHTS-FIX-030-R0,fixture:rights-v030-r0,YES,NO,fixture://source/r0,,,,,,HOLD_R0,2026-08-29,R0,UNKNOWN_UNVERIFIED,NO,Provenance only control
 RIGHTS-FIX-030-R1,fixture:rights-v030-r1,YES,NO,fixture://source/r1,,PUBLIC_DOMAIN,,,,HOLD_R1,2026-08-29,R1,UNKNOWN_UNVERIFIED,NO,Candidate rights basis identified but exact manifestation not yet resolved
 RIGHTS-FIX-030-R2,fixture:rights-v030-r2,YES,NO,fixture://source/r2,Synthetic exact manifestation R2,PUBLIC_DOMAIN,,,,HOLD_R2,2026-08-29,R2,UNKNOWN_UNVERIFIED,NO,Exact manifestation identified but no authoritative rights evidence
 RIGHTS-FIX-030-R3,fixture:rights-v030-r3,YES,NO,fixture://source/r3,Synthetic exact manifestation R3,EXPLICIT_LICENCE,fixture://authority/licence-r3,,GLOBAL,APPROVE_R3,2026-08-29,R3,UNKNOWN_UNVERIFIED,NO,Authoritative evidence present but independent corroboration missing
