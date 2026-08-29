@@ -6,7 +6,9 @@ on:
     paths:
       - '.github/workflows/drive-full-census.yml'
       - 'scripts/drive_full_census.py'
+      - 'scripts/drive_canonical_resolution_stage1.py'
       - 'references/community/drive-metadata-root-census.csv'
+      - 'references/community/canonical-corpus-resolution-spec-v0.5.1.md'
   workflow_dispatch:
 
 jobs:
@@ -25,7 +27,10 @@ jobs:
           GOOGLE_DRIVE_ACCESS_TOKEN: ${{ secrets.GOOGLE_DRIVE_ACCESS_TOKEN }}
         run: |
           python scripts/drive_full_census.py
-      - name: Upload census artefacts
+      - name: Run conservative canonical resolution stage 1
+        run: |
+          python scripts/drive_canonical_resolution_stage1.py
+      - name: Upload census and canonical-resolution artefacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -34,4 +39,7 @@ jobs:
             references/community/drive-live-full-folder-census.csv
             references/community/drive-live-full-object-census.csv
             references/community/drive-live-full-census-summary.json
+            references/community/drive-canonical-resolution-ledger-v0.5.1.csv
+            references/community/drive-canonical-candidate-families-v0.5.1.csv
+            references/community/drive-canonical-resolution-summary-v0.5.1.json
           if-no-files-found: warn
