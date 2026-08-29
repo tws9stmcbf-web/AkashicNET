@@ -10,23 +10,31 @@ Philosophy, Psychology, Buddhism, Hinduism, Yoga and Metaphysics descendant vali
 
 ## Validation batch 0007 — 125-node milestone
 
-Twenty-five additional descendant nodes independently matched the frozen census. The sweep covered Grimoire, World History, Native America, selected Ancient Religions nodes, and selected PDF nodes. Ancient Religions/Gnosis was deliberately not credited because its frozen census state remains PARTIAL / ACCESS_UNRESOLVED.
+Twenty-five additional descendant nodes independently matched the frozen census. Ancient Religions/Gnosis was deliberately not credited because its frozen census state remains PARTIAL / ACCESS_UNRESOLVED.
+
+## Validation batch 0008 — 150-node milestone
+
+Twenty-five further nodes independently matched the frozen census using separate metadata-only document and child-folder queries. The batch includes remaining selected Ancient Religions collections, PDF collections, Biography and Bizzare collections, Literature and Logic collections, Christianity/Religion nodes, The Law of One and Dzogchen/Four introductory texts.
 
 Notable reconfirmations:
 
-- World History/Anaclypsis remains empty (0 / 0).
-- Native America/The Native Races Wild Tribes remains four objects with Volumes I, III, IV and V observed; II remains absent.
-- Ancient Religions/The Sacred Books of the East remains 49 observed document objects despite the nominal 50-volume collection title.
-- PDF/Author Avalon remains 6 direct documents plus the Reference Material child folder.
-- Cross-list, duplicate-family and provenance-anomaly notes remain unresolved canonicalisation questions and were not converted into truth claims.
+- Ancient Religions/Mahabharata: 12 / 0.
+- Ancient Religions/Tantric Texts Series: 20 / 0 despite the collection title referencing Series 1–22.
+- PDF/Manly P.Hall: 27 / 0.
+- PDF/Alice A. Bailey: 26 / 0; duplicate-copy candidates remain unresolved canonicalisation questions.
+- PDF/Author Avalon/Reference Material remains empty at 0 / 0.
+- PDF/Montalk/Not Important: 8 / 0.
+- Christianity/Christian Critiques and Christianity/Christian History remain empty at 0 / 0.
+- Extraterrestrials/The Law of One: 5 / 0; catalogue presence is provenance and does not validate document claims.
+- Dzogchen/Four introductory texts: 4 / 0.
 
 ## Updated validation score
 
 - Validated root nodes: 66
-- Validated descendant nodes: 59
-- Validated nodes: 125 / 195
-- Validation coverage: 64.102564%
-- Validation points: 6.410256 / 10
+- Validated descendant nodes: 84
+- Validated nodes: 150 / 195
+- Validation coverage: 76.923077%
+- Validation points: 7.692308 / 10
 
 Other scoring components remain unchanged from v0.4.8-dev:
 
@@ -34,12 +42,12 @@ Other scoring components remain unchanged from v0.4.8-dev:
 - metadata inventory: 25.000000 / 25
 - canonicalisation Stage-A: 15.000000 / 15
 - privacy/public-status: 0.000000 / 10
-- validation: 6.410256 / 10
+- validation: 7.692308 / 10
 
-Verified completion floor after batch 0007 = **86.410256%**.
+Verified completion floor after batch 0008 = **87.692308%**.
 
-The v0.4.9 / 90% gate remains unearned. The conservative validation denominator remains frozen at 195 known folder nodes.
+The v0.4.9 / 90% gate remains unearned. The conservative validation denominator remains frozen at 195 known folder nodes. Forty-five nodes remain uncredited.
 
 ## Privacy boundary
 
-Validation remained metadata-only. No document bodies were fetched, no embeddings were generated, and shared/access-visible material was not treated as PUBLIC_VERIFIED. Folder membership remains provenance rather than endorsement or canonical truth.
+Validation remained metadata-only. No document bodies were fetched, no embeddings were generated, and shared/access-visible material was not treated as PUBLIC_VERIFIED. Folder membership remains provenance rather than endorsement or canonical truth. Stage-A canonicalisation remains distinct from final canonical resolution.
