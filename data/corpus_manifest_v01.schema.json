@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tws9stmcbf-web/AkashicNET/blob/main/data/corpus_manifest_v01.schema.json",
+  "title": "AkashicNET Corpus Manifest v0.1",
+  "type": "object",
+  "required": ["manifest_version", "generated_at", "records"],
+  "properties": {
+    "manifest_version": {"const": "0.1"},
+    "generated_at": {"type": "string"},
+    "crawl_id": {"type": "string"},
+    "source": {"type": "string"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "name", "provenance"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"enum": ["folder", "file"]},
+          "name": {"type": "string"},
+          "mime_type": {"type": ["string", "null"]},
+          "size_bytes": {"type": ["integer", "null"], "minimum": 0},
+          "parent_id": {"type": ["string", "null"]},
+          "provenance": {
+            "type": "object",
+            "required": ["drive_id", "path", "filename"],
+            "properties": {
+              "drive_id": {"type": "string"},
+              "path": {"type": "string"},
+              "filename": {"type": "string"},
+              "created_at": {"type": ["string", "null"]},
+              "modified_at": {"type": ["string", "null"]}
+            },
+            "additionalProperties": true
+          },
+          "fingerprints": {"type": "object", "additionalProperties": true},
+          "canonicalisation": {
+            "type": "object",
+            "properties": {
+              "canonical_work_id": {"type": ["string", "null"]},
+              "edition_id": {"type": ["string", "null"]},
+              "status": {"enum": ["unresolved", "candidate", "confirmed"]}
+            },
+            "additionalProperties": true
+          },
+          "validation": {
+            "type": "object",
+            "properties": {
+              "status": {"enum": ["unverified", "valid", "warning", "error"]},
+              "notes": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
