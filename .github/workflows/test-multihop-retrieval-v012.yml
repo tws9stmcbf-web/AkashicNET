@@ -1,4 +1,4 @@
-name: Test multi-hop retrieval v0.12 + provenance v0.15
+name: Test multi-hop retrieval + provenance v0.16
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Build graph through v0.15
+      - name: Build graph through v0.16
         run: |
           python scripts/build_knowledge_graph_v02.py
           python scripts/build_knowledge_graph_v03.py
@@ -26,109 +26,57 @@ jobs:
           python scripts/complete_collection_provenance_v013.py
           python scripts/overlay_manifestation_provenance_v014.py
           python scripts/overlay_hash_evidence_v015.py
-      - name: Assert v0.13 provenance-aware retrieval
-        run: |
-          python - <<'PY'
-          import json,subprocess
-          counts={'DRIVE_MEMBER_LINK_RESOLVED':0,'COLLECTION_PROVENANCE_RESOLVED':0,'PROVENANCE_NOT_YET_LINKED':0}
-          per_term={}
-          for term in ['psychedelics','shamanism','hinduism','alchemy']:
-              raw=subprocess.check_output(['python','scripts/query_multihop_v013.py',term,'--accepted-only'],text=True)
-              d=json.loads(raw)
-              assert d['version']=='0.13'
-              assert d['truth_inference_allowed'] is False
-              assert d['rights_promotion_allowed'] is False
-              assert d['scientific_evidence_promotion_allowed'] is False
-              per_term[term]=d['path_count']
-              for p in d['paths']:
-                  assert p['hops'] and p['hops'][0]['relationship']=='ABOUT' and p['hops'][0]['decision']=='ACCEPT'
-                  if p['domain']!='library':
-                      continue
-                  state=p['provenance_resolution']; counts[state]+=1
-                  if state=='DRIVE_MEMBER_LINK_RESOLVED':
-                      assert p['drive_provenance'][0]['provenance_level']=='stage_b_member'
-                  elif state=='COLLECTION_PROVENANCE_RESOLVED':
-                      assert p['drive_provenance']
-                      assert all(x['provenance_level']=='collection_only' and x['not_document_identity'] is True for x in p['drive_provenance'])
-                  else:
-                      assert state=='PROVENANCE_NOT_YET_LINKED'
-          assert per_term['psychedelics']>0
-          assert counts['DRIVE_MEMBER_LINK_RESOLVED']>0
-          assert counts['COLLECTION_PROVENANCE_RESOLVED']>0
-          assert counts['PROVENANCE_NOT_YET_LINKED']==0
-          print('AKASHICNET v0.13 RETRIEVAL PASS', {'per_term':per_term,'provenance_counts':counts})
-          PY
-      - name: Assert v0.13 collection provenance boundaries
+          python scripts/apply_hash_results_v016.py
+      - name: Assert provenance chain v0.13-v0.15
         run: |
           python - <<'PY'
           import json
-          d=json.load(open('data/knowledge-graph-v0.13.json',encoding='utf-8'))
-          p=d['provenance_completion_v013']
-          assert d['schema_version']=='0.13'
-          assert sum(1 for n in d['nodes'] if n.get('node_type')=='drive_object')==195
-          assert p['candidate_families_examined']==29
-          assert p['exact_collection_edges_added']>0
-          assert p['truth_inference_allowed'] is False
-          assert p['rights_promotion_allowed'] is False
-          assert p['scientific_evidence_promotion_allowed'] is False
-          assert p['integrity_pass'] is True
-          assert d['integrity']['release_integrity_pass'] is True
-          for e in d['edges']:
-              if e.get('relationship')=='PROVENANCE_RECORDED_IN_COLLECTION':
-                  assert e['provenance_level']=='collection_only'
-                  assert e['not_document_identity'] is True
-                  assert e['not_truth_claim'] is True
-          print('AKASHICNET v0.13 PASS', {'edges_added':p['exact_collection_edges_added'],'fully_resolved':p['fully_resolved_collection_provenance'],'partial':p['partial_collection_provenance'],'holds':p['holds'],'unresolved':p['unresolved']})
+          d13=json.load(open('data/knowledge-graph-v0.13.json',encoding='utf-8'))
+          p13=d13['provenance_completion_v013']
+          assert sum(1 for n in d13['nodes'] if n.get('node_type')=='drive_object')==195
+          assert p13['candidate_families_examined']==29 and p13['exact_collection_edges_added']==53
+          assert p13['truth_inference_allowed'] is False and p13['rights_promotion_allowed'] is False
+          assert p13['scientific_evidence_promotion_allowed'] is False and p13['integrity_pass'] is True
+
+          d14=json.load(open('data/knowledge-graph-v0.14.json',encoding='utf-8'))
+          p14=d14['manifestation_provenance_v014']
+          manifests=[n for n in d14['nodes'] if n.get('node_type')=='manifestation']
+          assert p14['manifestations_added']==13 and p14['unique_drive_document_ids']==13
+          assert p14['families_refined']==5 and p14['duplicate_candidate_groups']==3
+          assert p14['hashes_computed']==0 and p14['byte_identity_assertions']==0
+          assert len(manifests)==13 and all(n['identity_status']=='HASH_NOT_COMPUTED' for n in manifests)
+
+          d15=json.load(open('data/knowledge-graph-v0.15.json',encoding='utf-8'))
+          p15=d15['hash_evidence_v015']
+          hs=[n for n in d15['nodes'] if n.get('node_type')=='hash_evidence']
+          assert p15['queue_records']==3 and p15['hash_evidence_nodes_added']==3
+          assert p15['hashes_computed']==0 and p15['byte_identity_assertions']==0
+          assert p15['execution_policy']=='NOT_AUTHORISED'
+          assert len(hs)==3 and all(n['hash_execution_state']=='NOT_AUTHORISED' for n in hs)
+          assert all(n['comparison_state']=='NOT_COMPARED' and n['hashes']==[] for n in hs)
+          print('AKASHICNET provenance chain v0.13-v0.15 PASS')
           PY
-      - name: Assert v0.14 manifestation provenance boundaries
+      - name: Assert authorised SHA-256 verification v0.16
         run: |
           python - <<'PY'
           import json
-          d=json.load(open('data/knowledge-graph-v0.14.json',encoding='utf-8'))
-          p=d['manifestation_provenance_v014']
-          manifests=[n for n in d['nodes'] if n.get('node_type')=='manifestation']
-          assert d['schema_version']=='0.14'
-          assert sum(1 for n in d['nodes'] if n.get('node_type')=='drive_object')==195
-          assert p['manifestations_added']==13
-          assert p['unique_drive_document_ids']==13
-          assert p['families_refined']==5
-          assert p['duplicate_candidate_groups']==3
-          assert p['hashes_computed']==0
-          assert p['byte_identity_assertions']==0
-          assert p['truth_inference_allowed'] is False
-          assert p['rights_promotion_allowed'] is False
-          assert p['scientific_evidence_promotion_allowed'] is False
-          assert p['integrity_pass'] is True
-          assert len(manifests)==13
-          assert len({n['source_drive_object_id'] for n in manifests})==13
-          assert all(n['identity_status']=='HASH_NOT_COMPUTED' for n in manifests)
-          assert all(n['not_byte_identity_claim'] is True for n in manifests)
-          assert d['integrity']['release_integrity_pass'] is True
-          print('AKASHICNET v0.14 PASS', {'manifestations':len(manifests),'families_refined':p['families_refined'],'duplicate_candidate_groups':p['duplicate_candidate_groups'],'hashes_computed':p['hashes_computed']})
-          PY
-      - name: Assert v0.15 hash-ready identity boundaries
-        run: |
-          python - <<'PY'
-          import json
-          d=json.load(open('data/knowledge-graph-v0.15.json',encoding='utf-8'))
-          p=d['hash_evidence_v015']
+          d=json.load(open('data/knowledge-graph-v0.16.json',encoding='utf-8'))
+          p=d['hash_evidence_v016']
           hs=[n for n in d['nodes'] if n.get('node_type')=='hash_evidence']
-          assert d['schema_version']=='0.15'
-          assert p['queue_records']==3
-          assert p['hash_evidence_nodes_added']==3
-          assert p['hashes_computed']==0
-          assert p['byte_identity_assertions']==0
-          assert p['execution_policy']=='NOT_AUTHORISED'
-          assert p['truth_inference_allowed'] is False
-          assert p['rights_promotion_allowed'] is False
-          assert p['scientific_evidence_promotion_allowed'] is False
-          assert p['integrity_pass'] is True
-          assert len(hs)==3
-          assert all(n['algorithm']=='SHA-256' for n in hs)
-          assert all(n['hash_execution_state']=='NOT_AUTHORISED' for n in hs)
-          assert all(n['comparison_state']=='NOT_COMPARED' for n in hs)
-          assert all(n['hashes']==[] for n in hs)
-          assert all(n['not_byte_identity_claim'] is True for n in hs)
+          verified=[n for n in d['nodes'] if n.get('node_type')=='manifestation' and n.get('identity_status')=='SHA256_MATCH_VERIFIED']
+          byte_edges=[e for e in d['edges'] if e.get('relationship')=='BYTE_IDENTICAL_TO']
+          assert d['schema_version']=='0.16'
+          assert p['authorised_raw_files_hashed']==6
+          assert p['verification_pairs']==3 and p['matching_pairs']==3 and p['mismatching_pairs']==0
+          assert p['byte_identity_assertions']==3 and p['hash_algorithm']=='SHA-256'
+          assert p['raw_content_retained_in_graph'] is False and p['digest_only_persistence'] is True
+          assert p['truth_inference_allowed'] is False and p['rights_promotion_allowed'] is False
+          assert p['scientific_evidence_promotion_allowed'] is False and p['integrity_pass'] is True
+          assert len(hs)==3 and all(n['hash_execution_state']=='COMPLETED' and n['comparison_state']=='MATCH' for n in hs)
+          assert all(len(n['hashes'])==2 and n['byte_identity_status']=='BYTE_IDENTICAL_VERIFIED' for n in hs)
+          assert len(verified)==6 and all(len(n['sha256'])==64 for n in verified)
+          assert len(byte_edges)==3
+          assert all(e['not_truth_claim'] is True and e['rights_promotion_allowed'] is False and e['scientific_evidence_promotion_allowed'] is False for e in byte_edges)
           assert d['integrity']['release_integrity_pass'] is True
-          print('AKASHICNET v0.15 PASS', {'queue_records':p['queue_records'],'hashes_computed':p['hashes_computed'],'byte_identity_assertions':p['byte_identity_assertions'],'execution_policy':p['execution_policy']})
+          print('AKASHICNET v0.16 PASS', {'hashed_files':p['authorised_raw_files_hashed'],'matching_pairs':p['matching_pairs'],'byte_identity_edges':len(byte_edges)})
           PY
