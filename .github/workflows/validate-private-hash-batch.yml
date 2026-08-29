@@ -1,0 +1,26 @@
+name: Validate private hash batch contract
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/validate_private_hash_batch.py'
+      - '.github/workflows/validate-private-hash-batch.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/validate_private_hash_batch.py'
+      - '.github/workflows/validate-private-hash-batch.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run privacy-safe validator self-test
+        run: python scripts/validate_private_hash_batch.py --self-test
