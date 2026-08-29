@@ -4,52 +4,60 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - scripts/drive_canonicalise_snapshot.py
-      - .github/workflows/drive-canonical-baseline-v060.yml
+      - 'references/community/drive-canonical-object-ledger-v0.6.0.csv'
+      - 'references/community/drive-canonical-family-review-v0.6.0.csv'
+      - 'references/community/drive-canonical-baseline-v0.6.0.json'
+      - 'references/community/drive-canonical-evidence-overlay-v0.6.1.csv'
+      - 'references/community/drive-canonical-evidence-summary-v0.6.1.json'
+      - '.github/workflows/drive-canonical-baseline-v060.yml'
 
 permissions:
-  contents: write
-  actions: read
+  contents: read
 
 jobs:
-  canonicalise:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Download frozen successful Drive census artefact
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Validate durable checked-in canonical baseline
         run: |
-          mkdir -p /tmp/drive-census
-          gh api repos/${{ github.repository }}/actions/artifacts/9713170876/zip > /tmp/drive-census.zip
-          unzip -q /tmp/drive-census.zip -d /tmp/drive-census
-          test -f /tmp/drive-census/drive-live-full-object-census.csv
+          python - <<'PY'
+          import csv, json
+          from collections import Counter
+          from pathlib import Path
 
-      - name: Generate conservative 2,459-object baseline
-        run: |
-          python scripts/drive_canonicalise_snapshot.py /tmp/drive-census/drive-live-full-object-census.csv
+          root = Path('references/community')
+          ledger = list(csv.DictReader((root/'drive-canonical-object-ledger-v0.6.0.csv').open(encoding='utf-8-sig')))
+          families = list(csv.DictReader((root/'drive-canonical-family-review-v0.6.0.csv').open(encoding='utf-8-sig')))
+          summary = json.loads((root/'drive-canonical-baseline-v0.6.0.json').read_text())
+          overlay = list(csv.DictReader((root/'drive-canonical-evidence-overlay-v0.6.1.csv').open(encoding='utf-8-sig')))
+          evidence = json.loads((root/'drive-canonical-evidence-summary-v0.6.1.json').read_text())
 
-      - name: Verify frozen-source artefact digest
-        run: |
-          echo 'd0a1c3d0a83a6367f086097c5bdab9880c990754a3f1226e6714b141b7f4717b  /tmp/drive-census.zip' | sha256sum -c -
+          assert len(ledger) == 2459
+          assert len({r['drive_id'] for r in ledger}) == 2459
+          assert Counter(r['disposition'] for r in ledger) == Counter({'UNIQUE_CANDIDATE':2173,'REVIEW_REQUIRED':258,'TECHNICAL_EXCLUSION':28})
+          assert len(families) == 127
+          assert sum(r['review_state']=='REVIEW_REQUIRED' for r in families) == 126
+          assert summary['source_snapshot_objects'] == 2459
+          assert evidence['baseline_objects'] == 2459
+          assert evidence['hash_pairs_reconciled'] == 3
+          assert evidence['byte_identical_pairs_verified'] == 3
+          assert evidence['canonical_work_ids_promoted'] == 0
+          assert evidence['edition_ids_promoted'] == 0
+          assert len(overlay) == 17
+          assert sum(r['promotion_status']=='ACCEPT_DUPLICATE_COPY' for r in overlay) == 4
+          # Four overlay rows encode three unique verified pairs because Golden Book
+          # appears once as Stage-B reconciliation and once as its hash record.
+          assert all(r['canonical_work_id']=='' and r['edition_id']=='' for r in overlay)
+          print('PASS: durable v0.6.0 baseline + v0.6.1 evidence overlay validated')
+          PY
 
-      - name: Persist generated canonical ledgers
+      - name: Explain frozen-source provenance
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add references/community/drive-canonical-object-ledger-v0.6.0.csv \
-                  references/community/drive-canonical-family-review-v0.6.0.csv \
-                  references/community/drive-canonical-baseline-v0.6.0.json
-          if git diff --cached --quiet; then
-            echo 'Canonical baseline already current.'
-          else
-            git commit -m 'Persist Drive canonical baseline v0.6.0'
-            git push
-          fi
+          echo 'The checked-in 2,459-row canonical ledger is now the durable canonical baseline.'
+          echo 'Historical census artifact 9713170876 remains provenance evidence, not a CI dependency.'
