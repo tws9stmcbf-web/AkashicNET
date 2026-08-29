@@ -2,7 +2,7 @@ name: Reddit pilot crawl
 
 on:
   push:
-    branches: [ feature/reddit-crawler ]
+    branches: [ main, feature/reddit-crawler ]
     paths:
       - '.github/workflows/reddit-pilot.yml'
       - 'scripts/reddit_crawler.py'
