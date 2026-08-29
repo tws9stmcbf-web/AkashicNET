@@ -1,35 +1,40 @@
-# AKASHICNET-004 validation checkpoint — v0.4.9 preparation
+# AKASHICNET-004 validation checkpoint — v0.4.9 workstream
 
 Date: 2026-08-29
 Scope: nominated Akashic Library Google Drive tree only
 
 ## Validation model
 
-The validation denominator defines five gates worth 2 points each. This checkpoint executes only gates for which the repository already contains an explicit denominator, procedure, exceptions and reconcilable result. No privacy/public-status credit is inferred from shared Drive access.
+This checkpoint reconciles the project onto the predeclared five-gate validation model in `drive-validation-denominator.md`. Each gate is worth 2 points. A gate is credited only when its denominator, exceptions, procedure and result are persisted.
 
-## Gate 1 — TOPOLOGY_RECONCILIATION
+## Gate 1 — TOPOLOGY_RECONCILIATION — PASS (2/2)
 
-Status: NOT YET CREDITED
+Denominator:
 
-The traversal layer reports all 66 top-level roots closed in the v0.4.8 checkpoint, but this validation gate also requires all known descendant folder nodes to reconcile with no unresolved access/error states and an explicit persisted test procedure. That full descendant-level audit is not established by this checkpoint, so no 2-point credit is awarded here.
+- 66 top-level roots
+- 115 immediate child folders
+- 14 deeper descendant folders
+- 195 known folder nodes total
 
-## Gate 2 — OBJECT_COUNT_RECONCILIATION
+Evidence:
 
-Status: PASS
-Credit: 2.000000 / 2
+- `drive-metadata-checkpoint-v0.4.6-final.md` records 66/66 structurally closed roots and exact direct-document/direct-child-folder counts for all 195 known folder nodes.
+- `drive-traversal-ledger-corrections.csv` resolves the former Ancient Religions `ACCESS_UNRESOLVED` state to `COMPLETE` after a fresh metadata-only retry of `Ancient Religions/Gnosis` returned six direct documents and zero child folders.
+- A fresh 2026-08-29 provider recheck of Drive folder `1KI6_vTeuNGSD4cs8mYrW_v8F4YOPUgYd` again returned exactly six PDF documents and zero child folders.
+
+Exceptions:
+
+- None remain in the corrected topology overlay.
+
+Result: PASS.
+
+## Gate 2 — OBJECT_COUNT_RECONCILIATION — PASS (2/2)
 
 Procedure:
 
-1. Use the authoritative top-level direct-document total recorded by the corrected v0.4.8 checkpoint: 1,287.
-2. Use the corrected descendant-document total: 857.
-3. Confirm the physical/document-object denominator: 1,287 + 857 = 2,144.
-4. Independently reconcile against the cumulative Stage-A screening ledgers:
-   - initial Stage-A root batches: 750
-   - remaining 51 root batches: 537
-   - non-PDF descendant expansion: 722
-   - corrected PDF descendant batch: 135
-5. Confirm 750 + 537 + 722 + 135 = 2,144.
-6. Preserve the documented Montalk correction: the previous 2,152 denominator double-counted eight documents in `PDF/Montalk/Not Important`; those eight are represented once in the corrected 2,144 denominator.
+1. Use the corrected v0.4.8 totals: 1,287 top-level direct documents plus 857 descendant documents = 2,144 physical document objects.
+2. Independently reconcile against cumulative Stage-A screening ledgers: 750 + 537 + 722 + 135 = 2,144.
+3. Preserve the Montalk correction: the previous 2,152 denominator double-counted eight documents in `PDF/Montalk/Not Important`.
 
 Result:
 
@@ -38,37 +43,40 @@ Result:
 - discrepancy: 0
 - gate result: PASS
 
-This validates object-count consistency only. It does not assert byte-level identity, public visibility, canonical-work completeness or descendant pagination integrity.
+## Gate 3 — PAGINATION_AND_TERMINALITY_AUDIT — PENDING (0/2)
 
-## Gate 3 — PAGINATION_AND_TERMINALITY_AUDIT
+The metadata census records exact counts and terminal states, but this gate specifically requires an explicit provider-pagination audit for all counted nodes. Historical exact-count evidence is not retroactively promoted into this validation gate without a persisted audit procedure.
 
-Status: NOT YET CREDITED
+## Gate 4 — TECHNICAL_AND_DUPLICATE_INTEGRITY — PENDING (0/2)
 
-No new credit is awarded until provider pagination state and terminal-folder claims are explicitly audited across the counted nodes.
+Stage-A canonicalisation is complete, but hash/byte verification and technical-exclusion integrity are not yet globally proven under this gate.
 
-## Gate 4 — TECHNICAL_AND_DUPLICATE_INTEGRITY
+## Gate 5 — PROVENANCE_AND_PRIVACY_INTEGRITY — PENDING (0/2)
 
-Status: NOT YET CREDITED
+Shared/access-visible Drive state remains distinct from `PUBLIC_VERIFIED`. No global privacy/public-status credit is inferred.
 
-Stage-A dispositions exist, but byte-level hashing and technical-exclusion integrity are not complete enough to pass this gate.
+## Reconciled validation score
 
-## Gate 5 — PROVENANCE_AND_PRIVACY_INTEGRITY
+Passed gates: 2 / 5
 
-Status: NOT YET CREDITED
+Validation component = **4.000000 / 10**.
 
-Public-manifest eligibility still requires independent public verification. `ACCESS_NOT_VERIFIED` is not treated as `PUBLIC_VERIFIED`.
+This supersedes the older proportional root-node validation convention for current scoring. The older 3.384615 points are not added to these gate points; doing so would double-count validation work under incompatible models.
 
-## Validation score
+## Reconciled global completion
 
-- OBJECT_COUNT_RECONCILIATION: 2.000000 points
-- all other validation gates: 0.000000 points
+- traversal: 40.000000 / 40
+- metadata inventory: 25.000000 / 25
+- canonicalisation Stage-A: 15.000000 / 15
+- privacy/public-status: 0.000000 / 10
+- validation: 4.000000 / 10
 
-Validation component = **2.000000 / 10** under the five-gate validation model.
+Verified AKASHICNET-004 completion = **84.000000%**.
 
-## Global scoring note
+Project status remains **AkashicNET PRE-ALPHA v0.4.8-dev** because the 90% v0.4.9 gate is not yet earned.
 
-The v0.4.8 checkpoint separately recorded 3.384615 validation points under an earlier node-coverage convention. This file does not add the two schemes together. To avoid double counting, a future global checkpoint must choose one validation convention as authoritative and reconcile the historical score before changing the overall project percentage.
+## Next highest-leverage validation work
 
-## Next action
-
-Execute `TOPOLOGY_RECONCILIATION` or `PAGINATION_AND_TERMINALITY_AUDIT` against all known folder nodes, then replace the historical node-coverage validation score with the five-gate score only when that convention is explicitly adopted for global milestone scoring.
+1. Execute `PAGINATION_AND_TERMINALITY_AUDIT` across the 195 counted folder nodes with explicit next-page-token/terminal evidence.
+2. Execute `TECHNICAL_AND_DUPLICATE_INTEGRITY` against technical exclusions and high-confidence duplicate-copy families.
+3. Build the corrected 2,144-object privacy ledger without treating shared access as public permission.
