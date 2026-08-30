@@ -21,25 +21,19 @@ for record in BATCH['records']:
     assert record['truth_inference'] is False
     assert record['scientific_evidence'] is False
 
-# Contract bridge: WikiSpine concept/reference identity is intentionally weaker than
-# canonical work identity, edition identity, rights/public status, scientific-evidence
-# status, or truth. Those claims require independent adjudication and must never be
-# inferred from a Wikidata QID, reference-class match, or REFERENCE_IDENTITY_ONLY.
 contract_text = (ROOT / 'docs' / 'CANONICAL_ADJUDICATION_CONTRACT_V070.md').read_text(encoding='utf-8')
-required_phrases = [
-    'work identity',
-    'edition identity',
-    'rights',
-    'scientific',
-    'truth',
-]
+required_phrases = ['work identity', 'edition identity', 'rights', 'scientific', 'truth']
 for phrase in required_phrases:
     assert phrase.lower() in contract_text.lower(), f'missing canonical contract boundary: {phrase}'
 
-# The canonical example must remain a separate adjudication artifact. Presence of
-# WikiSpine reference identity cannot mutate or satisfy its adjudication fields.
 assert isinstance(CANON, dict)
-assert 'version' in CANON
+assert CANON.get('contract_version') == '0.7.0'
+assert isinstance(CANON.get('records'), list) and CANON['records']
+for record in CANON['records']:
+    assert record['rights_promoted'] is False
+    assert record['public_release_promoted'] is False
+    assert record['scientific_evidence_promoted'] is False
+    assert record['safety_or_efficacy_promoted'] is False
 
 print('AKASHICNET v0.7.7 WIKISPINE CANONICAL BRIDGE PASS', {
     'wikispine_records_checked': len(BATCH['records']),
