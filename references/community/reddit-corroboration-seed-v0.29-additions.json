@@ -1,0 +1,15 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed-additions.v0.29",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Independent public-web discoveries from search-engine indexed r/NeuronsToNirvana pages on 2026-08-30.",
+    "This tranche continues older 2022-2023 neuroscience and psychedelic-imaging discovery and excludes IDs already present in the v0.15 base and v0.28 additions.",
+    "Records are discovery evidence only until historical-corpus intersection is evaluated by CI.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"wtik0r","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/wtik0r","source_reported_title":"PET and fMRI: cortical serotonin 2A receptor occupancy by psilocybin","source_reported_date":"2022-08-20","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"12wf6pz","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/12wf6pz","source_reported_title":"Increased low-frequency brain responses to music after psilocybin therapy for depression","source_reported_date":"2023-04-23","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"17rzy8w","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/17rzy8w","source_reported_title":"LSD-induced changes in the functional connectivity of distinct thalamic nuclei","source_reported_date":"2023-11-10","evidence_type":"public_web_search","discovered_at":"2026-08-30"}
+  ]
+}
