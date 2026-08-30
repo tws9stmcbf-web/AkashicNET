@@ -1,0 +1,26 @@
+name: Validate WikiSpine brain cognition biology v0.7.4
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-f-v0.7.4.json'
+      - 'references/community/wikispine-checkpoint-v0.7.4.json'
+      - 'scripts/validate_wikispine_v074.py'
+      - '.github/workflows/validate-wikispine-v074.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/wikispine-batch-f-v0.7.4.json'
+      - 'references/community/wikispine-checkpoint-v0.7.4.json'
+      - 'scripts/validate_wikispine_v074.py'
+      - '.github/workflows/validate-wikispine-v074.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_wikispine_v074.py

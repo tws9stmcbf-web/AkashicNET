@@ -1,0 +1,26 @@
+{
+  "version": "0.7.4",
+  "batch": "F_BRAIN_COGNITION_BIOLOGY",
+  "records": [
+    {"akashic_concept":"Brain","wikidata_qid":"Q1073","wikipedia_title":"Brain","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Neuron","wikidata_qid":"Q43054","wikipedia_title":"Neuron","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Nervous system","wikidata_qid":"Q9404","wikipedia_title":"Nervous system","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Mitochondrion","wikidata_qid":"Q39572","wikipedia_title":"Mitochondrion","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"DNA","wikidata_qid":"Q7430","wikipedia_title":"DNA","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Gene","wikidata_qid":"Q7187","wikipedia_title":"Gene","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Cell","wikidata_qid":"Q7868","wikipedia_title":"Cell (biology)","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Cognition","wikidata_qid":"Q2200417","wikipedia_title":"Cognition","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Perception","wikidata_qid":"Q160402","wikipedia_title":"Perception","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_concept":"Intelligence","wikidata_qid":"Q83500","wikipedia_title":"Intelligence","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
