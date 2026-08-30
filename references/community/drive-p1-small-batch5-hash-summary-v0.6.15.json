@@ -1,0 +1,24 @@
+{
+  "version": "0.6.15",
+  "tranche": "P1_SMALL_BATCH5_OVERALL_ROWS_77_81",
+  "acquisition_route": "CONNECTED_GOOGLE_DRIVE_RAW_DOWNLOAD",
+  "families": 5,
+  "objects": 10,
+  "bytes_hashed": 38013254,
+  "family_results": {
+    "BYTE_IDENTICAL_VERIFIED": 5,
+    "NOT_BYTE_IDENTICAL": 0
+  },
+  "hash_failures": 0,
+  "private_batch_sha256": "d50bd894adbfd72e04e085ab3e85e80fabec1ceabe8e6fd21f902f2388560f92",
+  "private_rows_tracked_in_public_repo": false,
+  "authoritative_unique_families_before": 76,
+  "authoritative_unique_families_after": 81,
+  "unresolved_before": 50,
+  "unresolved_after": 45,
+  "work_ids_promoted": 0,
+  "edition_ids_promoted": 0,
+  "rights_promoted": 0,
+  "scientific_evidence_promoted": 0,
+  "guardrail": "SHA-256 equality establishes physical byte identity only; canonical work identity, edition identity, rights/public status, truth, and scientific-evidence status remain separately adjudicated."
+}
