@@ -1,0 +1,53 @@
+{
+  "version": "0.10.0-prealpha",
+  "milestone": "REPOSITORY_RELEASE_AUDIT",
+  "audited_main_sha": "f61b2a30d18617b523c4f55f84e650832254a240",
+  "repository_release_audit_passed": true,
+  "release_ready": false,
+  "release_name": "Evidence-Governed Knowledge Pipeline",
+  "verified_gates": {
+    "integration_gate_merged": true,
+    "evidence_taxonomy_consistent": true,
+    "canonical_contract_fail_closed": true,
+    "wikispine_reference_boundary_present": true,
+    "retrieval_evidence_boundary_present": true,
+    "ontology_boundary_present": true,
+    "public_data_boundary_green": true,
+    "canonical_batch3_reconciled": true
+  },
+  "verified_state": {
+    "canonical_duplicate_review_denominator": 126,
+    "canonical_families_adjudicated": 81,
+    "canonical_families_unresolved": 45,
+    "canonical_next_private_mapping": "rows 82-86",
+    "canonical_mapping_blocked_fail_closed": true,
+    "wikispine_unique_seeds": 53,
+    "wikispine_resolved_high_precision": 50,
+    "wikispine_pending": 3,
+    "audited_public_metadata_topics": 68,
+    "broader_300_plus_topic_claim": "ESTIMATE_NOT_AUDITED",
+    "public_epistemic_labels": 5,
+    "open_pull_requests_at_audit": 0,
+    "open_engineering_issues_at_audit": 1
+  },
+  "nonblocking_known_debt": [
+    "Drive rows 82-86 cannot be hashed until an authoritative private mapping is available; no mapping is guessed.",
+    "Canonical duplicate review therefore remains 81/126 with 45 unresolved.",
+    "Issue #66 remains open as the fail-closed continuation point for Drive hashing."
+  ],
+  "current_public_version_metadata": "PRE-ALPHA v0.9",
+  "remaining_release_gates": [
+    "readme_changelog_version_metadata_update",
+    "tag_and_release_creation"
+  ],
+  "release_invariants": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "hash_identity_promotes_work_identity": false,
+    "reference_identity_promotes_canonical_identity": false,
+    "retrieval_rank_upgrades_epistemic_label": false,
+    "privacy_posture_changed": false
+  },
+  "drive_access_performed": false
+}
