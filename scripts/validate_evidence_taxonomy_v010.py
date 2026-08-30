@@ -21,6 +21,12 @@ LEGACY_TIERS = {
     'CONTEMPLATIVE_PHILOSOPHICAL',
     'EXPERIENTIAL_ESOTERIC',
 }
+LEGACY_HOMEPAGE_LABELS = [
+    'Supported evidence',
+    'Interpretive framework',
+    'Lived experience',
+    'Speculative possibility',
+]
 
 
 def main() -> None:
@@ -60,22 +66,24 @@ def main() -> None:
     assert guards['scientific_evidence_promotion_allowed'] is False
 
     audit = tax['public_surface_audit']
-    detected = [
-        label for label in audit['homepage_current_labels'] if label in home
-    ]
-    assert detected == audit['homepage_current_labels']
-    assert audit['homepage_missing_canonical_label'] == 'Hypothesis'
-    assert 'Hypothesis' not in detected
-    assert audit['homepage_exact_taxonomy_consistent'] is False
-    assert audit['release_gate_passed'] is False
+    assert audit['homepage_current_labels'] == CANONICAL
+    assert audit['homepage_missing_canonical_label'] is None
+    assert audit['homepage_exact_taxonomy_consistent'] is True
+    assert audit['release_gate_passed'] is True
+    assert audit['remediation'] is None
+
+    for label in CANONICAL:
+        assert f'<h3>{label}</h3>' in home, f'missing canonical homepage label: {label}'
+    for label in LEGACY_HOMEPAGE_LABELS:
+        assert f'<h3>{label}</h3>' not in home, f'legacy homepage label still present: {label}'
+
     assert tax['privacy_posture_changed'] is False
     assert tax['drive_access_performed'] is False
 
-    print('AKASHICNET PRE-ALPHA v0.10 EVIDENCE TAXONOMY AUDIT PASS', {
+    print('AKASHICNET PRE-ALPHA v0.10 EVIDENCE TAXONOMY PASS', {
         'canonical_labels': len(CANONICAL),
-        'homepage_legacy_labels_detected': len(detected),
-        'homepage_exact_taxonomy_consistent': False,
-        'release_gate_passed': False,
+        'homepage_exact_taxonomy_consistent': True,
+        'release_gate_passed': True,
         'privacy_posture_changed': False,
     })
 
