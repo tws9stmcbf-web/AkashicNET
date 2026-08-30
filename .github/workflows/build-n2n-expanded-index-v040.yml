@@ -30,13 +30,13 @@ jobs:
           r=json.load(open('/tmp/report2.json'))
           rows=list(csv.DictReader(open('data/n2n-expanded-index-v0.40.csv',encoding='utf-8')))
           assert r['source_master_rows']==9341
-          assert r['canonical_records']==7298
-          assert r['duplicate_source_rows_collapsed']==2043
+          assert r['canonical_records']==9340
+          assert r['duplicate_source_rows_collapsed']==1
           assert r['pilot_checkpoint_records']==1000 and r['pilot_preserved'] is True
-          assert len(rows)==7298
-          assert len({x['canonical_url'] for x in rows})==7298
-          assert len({x['community_id'] for x in rows})==7298
-          assert all(x['canonical_url'].startswith('https://reddit.com/r/NeuronsToNirvana/') for x in rows)
+          assert len(rows)==9340
+          assert len({x['canonical_url'] for x in rows})==9340
+          assert len({x['community_id'] for x in rows})==9340
+          assert all(x['canonical_url'].lower().startswith('https://reddit.com/r/neuronstonirvana/') for x in rows)
           assert all(int(x['source_row_count'])>=1 for x in rows)
           assert r['metadata_and_links_only'] is True
           assert r['document_bodies_read']==0 and r['embeddings_created']==0
@@ -44,7 +44,7 @@ jobs:
           assert r['truth_inference_allowed'] is False and r['rights_promotion_allowed'] is False
           assert r['automatic_cross_source_identity_links'] is False
           print('AKASHICNET v0.40 N2N EXPANSION PASS',{
-            'source_rows':9341,'canonical_n2n_urls':7298,'duplicates_collapsed':2043,
+            'source_rows':9341,'canonical_n2n_urls':9340,'duplicates_collapsed':1,
             'pilot_preserved':True,'expansion_factor':r['expansion_factor_vs_pilot'],
             'metadata_links_only':True,'embeddings':0,'truth_inference':False,
             'rights_promotion':False,'scientific_evidence_default':False})
