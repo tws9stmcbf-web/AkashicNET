@@ -12,19 +12,33 @@ EXPECTED_COMPLETED = [
     "evidence_taxonomy_consistency_audit",
     "repository_release_audit",
     "readme_changelog_version_metadata_update",
+    "tag_and_release_creation",
 ]
+EXPECTED_TAG = "v0.10.0-prealpha"
+EXPECTED_TARGET = "5dc9a6ccf872e57a98bb3b6d999b5e32f841f0c9"
+EXPECTED_RELEASE_ID = 379436525
+
+
+def assert_verified_release(record: dict) -> None:
+    assert record["tag"] == EXPECTED_TAG
+    assert record["target_commit"] == EXPECTED_TARGET
+    assert record["github_release_id"] == EXPECTED_RELEASE_ID
+    assert record["prerelease"] is True
+    assert record["draft"] is False
+    assert record["verified_by_readback"] is True
 
 
 def validate(checkpoint: dict, audit: dict) -> bool:
     assert checkpoint["version"] == "0.10.0-prealpha"
     assert checkpoint["release_name"] == "Evidence-Governed Knowledge Pipeline"
-    assert checkpoint["release_ready"] is False
+    assert checkpoint["release_ready"] is True
     assert checkpoint["integration_gate_present"] is True
     assert checkpoint["repository_release_audit_passed"] is True
     assert checkpoint["version_metadata_gate_complete"] is True
-    assert checkpoint["tag_and_release_created"] is False
+    assert checkpoint["tag_and_release_created"] is True
     assert checkpoint["completed_release_gates"] == EXPECTED_COMPLETED
-    assert checkpoint["remaining_release_gates"] == ["tag_and_release_creation"]
+    assert checkpoint["remaining_release_gates"] == []
+    assert_verified_release(checkpoint["release_verification"])
 
     canonical = checkpoint["canonicalisation"]
     assert canonical["duplicate_review_denominator"] == 126
@@ -38,9 +52,12 @@ def validate(checkpoint: dict, audit: dict) -> bool:
     assert all(value is False for value in invariants.values())
 
     assert audit["repository_release_audit_passed"] is True
-    assert audit["release_ready"] is False
-    assert audit["remaining_release_gates"] == ["tag_and_release_creation"]
+    assert audit["release_ready"] is True
+    assert audit["remaining_release_gates"] == []
     assert audit["current_version_metadata"] == "PRE-ALPHA v0.10"
+    assert audit["verified_gates"]["tag_and_release_created"] is True
+    assert_verified_release(audit["verified_release"])
+    assert audit["verified_release"] == checkpoint["release_verification"]
     return True
 
 
@@ -50,8 +67,9 @@ def main() -> int:
     validate(checkpoint, audit)
     print("AKASHICNET PRE-ALPHA v0.10 RELEASE CHECKPOINT PASS", {
         "completed_gates": len(EXPECTED_COMPLETED),
-        "remaining_gate": "tag_and_release_creation",
-        "release_ready": False,
+        "remaining_gates": 0,
+        "release_ready": True,
+        "tag": EXPECTED_TAG,
         "canonical_review": "81/126",
         "unresolved": 45,
     })

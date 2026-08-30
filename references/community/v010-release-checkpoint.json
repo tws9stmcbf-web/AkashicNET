@@ -1,11 +1,19 @@
 {
   "version": "0.10.0-prealpha",
   "release_name": "Evidence-Governed Knowledge Pipeline",
-  "release_ready": false,
+  "release_ready": true,
   "integration_gate_present": true,
   "repository_release_audit_passed": true,
   "version_metadata_gate_complete": true,
-  "tag_and_release_created": false,
+  "tag_and_release_created": true,
+  "release_verification": {
+    "tag": "v0.10.0-prealpha",
+    "target_commit": "5dc9a6ccf872e57a98bb3b6d999b5e32f841f0c9",
+    "github_release_id": 379436525,
+    "prerelease": true,
+    "draft": false,
+    "verified_by_readback": true
+  },
   "release_audit_ref": "references/community/v010-repository-release-audit.json",
   "contract_chain": {
     "canonical_adjudication": "0.7.0",
@@ -18,7 +26,8 @@
     "integration_gate_ci_green_and_merged",
     "evidence_taxonomy_consistency_audit",
     "repository_release_audit",
-    "readme_changelog_version_metadata_update"
+    "readme_changelog_version_metadata_update",
+    "tag_and_release_creation"
   ],
   "canonicalisation": {
     "duplicate_review_denominator": 126,
@@ -36,7 +45,5 @@
     "ambiguous_graph_edges_auto_promoted": false,
     "privacy_posture_changed": false
   },
-  "remaining_release_gates": [
-    "tag_and_release_creation"
-  ]
+  "remaining_release_gates": []
 }
