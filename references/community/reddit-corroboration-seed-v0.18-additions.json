@@ -1,0 +1,16 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.18-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Five additional independently indexed r/NeuronsToNirvana records discovered via public web search toward the 125-corroborated milestone.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"192azca","source_reported_date":"2024-01-09","title":"Neural Mechanisms of Resting-State Networks and the Amygdala underlying the Cognitive and Emotional Effects of Psilocybin"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1cj2eya","source_reported_date":"2024-05-03","title":"Psilocybin induces acute anxiety and changes in amygdalar phosphopeptides independently from the 5-HT2A receptor"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1cxx9g1","source_reported_date":"2024-05-22","title":"Ketamine's Effect on Brain Activity Revealed"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1dv1zch","source_reported_date":"2024-07-04","title":"Naturalism and the hard problem of mysticism in psychedelic science"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1ez9twk","source_reported_date":"2024-08-23","title":"Psilocybin-assisted psychotherapy for existential distress: practical considerations for therapeutic application—a review"}
+  ]
+}
