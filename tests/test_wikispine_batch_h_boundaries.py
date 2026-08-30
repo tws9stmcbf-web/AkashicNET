@@ -12,7 +12,7 @@ spec.loader.exec_module(wikispine_h)
 PAYLOAD = json.loads((ROOT / 'references' / 'community' / 'wikispine-batch-h-works-v0.7.7.json').read_text(encoding='utf-8'))
 
 
-def test_current_batch_passes():
+def test_current_batch_passes_even_with_no_pending_records():
     assert wikispine_h.validate(PAYLOAD)
 
 
@@ -32,15 +32,30 @@ def test_guardrail_mutations_fail_closed(key, value):
         wikispine_h.validate(payload)
 
 
-def test_pending_qid_cannot_be_invented():
+def pending_payload():
     payload = copy.deepcopy(PAYLOAD)
+    payload['pending_records'] = [{
+        'akashic_entity': 'Unverified Work',
+        'entity_type': 'WORK',
+        'resolution_state': 'PENDING_VERIFIED_QID',
+        'reason': 'No independently verified QID yet',
+    }]
+    return payload
+
+
+def test_explicit_pending_record_is_allowed_without_qid():
+    assert wikispine_h.validate(pending_payload())
+
+
+def test_pending_qid_cannot_be_invented():
+    payload = pending_payload()
     payload['pending_records'][0]['wikidata_qid'] = 'Q999999999'
     with pytest.raises(AssertionError):
         wikispine_h.validate(payload)
 
 
 def test_pending_work_cannot_be_silently_promoted():
-    payload = copy.deepcopy(PAYLOAD)
+    payload = pending_payload()
     payload['pending_records'][0]['resolution_state'] = 'RESOLVED_HIGH_PRECISION'
     with pytest.raises(AssertionError):
         wikispine_h.validate(payload)
