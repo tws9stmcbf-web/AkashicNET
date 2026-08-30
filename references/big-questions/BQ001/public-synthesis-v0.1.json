@@ -1,0 +1,164 @@
+{
+  "synthesis_id": "BQ001-PUBLIC-SYNTHESIS-0.1",
+  "version": "0.1.0",
+  "question_id": "BQ001",
+  "status": "UNRESOLVED",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "evidence_batches": [
+    "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch4-v0.1.json"
+  ],
+  "sections": [
+    {
+      "section_id": "CURRENT_STATUS",
+      "title": "Current status",
+      "summary": "AkashicNET currently treats BQ001 as unresolved. The validated evidence constrains competing explanations but does not establish either post-mortem continuity or its impossibility.",
+      "claim_ids": [
+        "CLAIM-BQ001-MASCHKE-2024-OBS-01",
+        "CLAIM-BQ001-AWARE-2014-OBS-02",
+        "CLAIM-BQ001-PHYSICALISM-INTERP-01",
+        "CLAIM-BQ001-DUALISM-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-MASCHKE-2024",
+        "SRC-BQ001-AWARE-2014",
+        "SRC-BQ001-SEP-PHYSICALISM",
+        "SRC-BQ001-SEP-DUALISM"
+      ]
+    },
+    {
+      "section_id": "WHAT_WE_KNOW",
+      "title": "What we know",
+      "summary": "Under studied conditions, conscious state is measurably related to brain state; autobiographical memory is associated with subjective self-continuity; some cardiac-arrest survivors report memories linked to resuscitation; and a peer-reviewed observational literature exists around claimed past-life memories.",
+      "claim_ids": [
+        "CLAIM-BQ001-MASCHKE-2024-OBS-01",
+        "CLAIM-BQ001-ELHAJ-2019-OBS-01",
+        "CLAIM-BQ001-AWARE-2014-OBS-02",
+        "CLAIM-BQ001-SCOPING-2021-OBS-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-MASCHKE-2024",
+        "SRC-BQ001-ELHAJ-2019",
+        "SRC-BQ001-AWARE-2014",
+        "SRC-BQ001-SCOPING-2021"
+      ]
+    },
+    {
+      "section_id": "COMPETING_MODELS",
+      "title": "Competing models",
+      "summary": "Physicalist, dualist and panpsychist positions provide different conceptual frameworks for mind and matter. The present evidence batches also contain observations that may be discussed under biological-dependence or continuity models, but model-support links are not votes and do not upgrade evidence labels.",
+      "claim_ids": [
+        "CLAIM-BQ001-PHYSICALISM-INTERP-01",
+        "CLAIM-BQ001-DUALISM-INTERP-01",
+        "CLAIM-BQ001-PANPSYCHISM-INTERP-01",
+        "CLAIM-BQ001-KOCH-2016-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-SEP-PHYSICALISM",
+        "SRC-BQ001-SEP-DUALISM",
+        "SRC-BQ001-SEP-PANPSYCHISM",
+        "SRC-BQ001-KOCH-2016"
+      ]
+    },
+    {
+      "section_id": "EVIDENCE_BY_DOMAIN",
+      "title": "Evidence by domain",
+      "summary": "The current evidence map covers neuroscience and cardiac arrest, memory and self-continuity, reincarnation-type case research, contemplative models of self, and philosophy of mind. Evidence classes remain distinct rather than being collapsed into a single certainty score.",
+      "claim_ids": [
+        "CLAIM-BQ001-AWARE2-2023-OBS-01",
+        "CLAIM-BQ001-SEDIKIDES-2023-INTERP-01",
+        "CLAIM-BQ001-MORAES-2024-OBS-01",
+        "CLAIM-BQ001-DAHL-2015-INTERP-01",
+        "CLAIM-BQ001-PANPSYCHISM-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-AWARE2-2023",
+        "SRC-BQ001-SEDIKIDES-2023",
+        "SRC-BQ001-MORAES-2024",
+        "SRC-BQ001-DAHL-2015",
+        "SRC-BQ001-SEP-PANPSYCHISM"
+      ]
+    },
+    {
+      "section_id": "CONTRADICTIONS_AND_LIMITS",
+      "title": "Contradictions and limits",
+      "summary": "Cardiac arrest is not equivalent to irreversible biological death; recall after recovery does not uniquely establish when an experience occurred; psychological self-continuity is not metaphysical identity; anomalous case correspondences do not identify a unique causal mechanism; and philosophical or contemplative coherence is not empirical proof.",
+      "claim_ids": [
+        "CLAIM-BQ001-MARTIAL-2022-INTERP-01",
+        "CLAIM-BQ001-SEDIKIDES-2023-INTERP-01",
+        "CLAIM-BQ001-MORAES-2024-OBS-01",
+        "CLAIM-BQ001-SIDERITS-2011-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-MARTIAL-2022",
+        "SRC-BQ001-SEDIKIDES-2023",
+        "SRC-BQ001-MORAES-2024",
+        "SRC-BQ001-SIDERITS-2011"
+      ]
+    },
+    {
+      "section_id": "WHAT_THIS_DOES_NOT_SHOW",
+      "title": "What this does not show",
+      "summary": "Brain dependence under tested conditions does not prove that consciousness cannot continue after irreversible death. Reports and case anomalies do not prove that consciousness survives death or that reincarnation is established. Meditation-related changes in self-processing and philosophical positions likewise do not settle the question.",
+      "claim_ids": [
+        "CLAIM-BQ001-MASCHKE-2024-OBS-01",
+        "CLAIM-BQ001-AWARE-2014-OBS-02",
+        "CLAIM-BQ001-TUCKER-2025-INTERP-01",
+        "CLAIM-BQ001-VAGO-2012-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-MASCHKE-2024",
+        "SRC-BQ001-AWARE-2014",
+        "SRC-BQ001-TUCKER-2025",
+        "SRC-BQ001-VAGO-2012"
+      ]
+    },
+    {
+      "section_id": "OPEN_QUESTIONS",
+      "title": "Open questions",
+      "summary": "Key unresolved questions include the exact timing and neurophysiological substrate of reported resuscitation experiences, the limits of current neuroscientific NDE models, whether stronger prospective methods can reduce information-leakage and reconstruction risks in reincarnation-type cases, and how competing philosophies of mind relate to empirical findings.",
+      "claim_ids": [
+        "CLAIM-BQ001-AWARE-2014-OBS-02",
+        "CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+        "CLAIM-BQ001-METHODS-INTERP-01",
+        "CLAIM-BQ001-DUALISM-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-AWARE-2014",
+        "SRC-BQ001-MARTIAL-2025",
+        "SRC-BQ001-SCOPING-2021",
+        "SRC-BQ001-ALLAN-2025",
+        "SRC-BQ001-SEP-DUALISM"
+      ]
+    },
+    {
+      "section_id": "CURRENT_CONCLUSION",
+      "title": "Current conclusion",
+      "summary": "UNRESOLVED. The current evidence is sufficient to reject simplistic claims of proof on either side, but not sufficient to select a final metaphysical answer.",
+      "claim_ids": [
+        "CLAIM-BQ001-KOCH-2016-INTERP-01",
+        "CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+        "CLAIM-BQ001-TUCKER-2025-INTERP-01",
+        "CLAIM-BQ001-PANPSYCHISM-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-KOCH-2016",
+        "SRC-BQ001-MARTIAL-2025",
+        "SRC-BQ001-TUCKER-2025",
+        "SRC-BQ001-SEP-PANPSYCHISM"
+      ]
+    }
+  ],
+  "guards": {
+    "new_substantive_claims_without_validated_traceability": false,
+    "evidence_classes_collapsed_to_single_score": false,
+    "model_support_edges_counted_as_votes": false,
+    "cardiac_arrest_equated_with_irreversible_death": false,
+    "psychological_self_continuity_equated_with_metaphysical_identity": false,
+    "reincarnation_type_case_evidence_equated_with_proof": false,
+    "contemplative_or_philosophical_material_equated_with_empirical_proof": false,
+    "question_resolved": false
+  }
+}
