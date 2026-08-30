@@ -1,0 +1,32 @@
+name: Validate cumulative P1 hash checkpoint v0.6.8
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/drive-p1-cumulative-hash-checkpoint-v0.6.8.json'
+      - 'references/community/drive-p1-tranche1-hash-summary-v0.6.4.json'
+      - 'references/community/drive-p1-tranche2a-hash-summary-v0.6.5.json'
+      - 'references/community/drive-p1-tranche2b-hash-summary-v0.6.6.json'
+      - 'references/community/drive-p1-tranche3a-hash-summary-v0.6.7.json'
+      - 'scripts/validate_p1_cumulative_hash_v068.py'
+      - '.github/workflows/validate-p1-cumulative-hash-v068.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p1-cumulative-hash-checkpoint-v0.6.8.json'
+      - 'references/community/drive-p1-tranche1-hash-summary-v0.6.4.json'
+      - 'references/community/drive-p1-tranche2a-hash-summary-v0.6.5.json'
+      - 'references/community/drive-p1-tranche2b-hash-summary-v0.6.6.json'
+      - 'references/community/drive-p1-tranche3a-hash-summary-v0.6.7.json'
+      - 'scripts/validate_p1_cumulative_hash_v068.py'
+      - '.github/workflows/validate-p1-cumulative-hash-v068.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_p1_cumulative_hash_v068.py
