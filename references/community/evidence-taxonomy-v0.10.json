@@ -39,15 +39,16 @@
   },
   "public_surface_audit": {
     "homepage_current_labels": [
-      "Supported evidence",
-      "Interpretive framework",
-      "Lived experience",
-      "Speculative possibility"
+      "Established Evidence",
+      "Interpretation",
+      "Lived Experience/Testimony",
+      "Hypothesis",
+      "Speculation"
     ],
-    "homepage_missing_canonical_label": "Hypothesis",
-    "homepage_exact_taxonomy_consistent": false,
-    "release_gate_passed": false,
-    "remediation": "Replace the four legacy homepage display labels with the five canonical public epistemic labels before v0.10 release."
+    "homepage_missing_canonical_label": null,
+    "homepage_exact_taxonomy_consistent": true,
+    "release_gate_passed": true,
+    "remediation": null
   },
   "privacy_posture_changed": false,
   "drive_access_performed": false
