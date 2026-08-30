@@ -1,0 +1,31 @@
+name: Test provenance gaps v0.39
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  provenance-gaps-v039-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify unresolved provenance stays explicit
+        run: |
+          python scripts/validate_provenance_gaps_v039.py | tee /tmp/gaps.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/gaps.json'))
+          assert x['open_gaps']==2
+          assert x['families']==['CANON-0010','CANON-0029']
+          assert x['fabricated_identifiers_allowed'] is False
+          assert x['lexical_inference_can_close_gap'] is False
+          assert x['semantic_inference_can_close_gap'] is False
+          print('AKASHICNET v0.39 PROVENANCE GAPS PASS',{
+            'open_gaps':2,'ramayana':'OPEN','kahlil_gibran':'OPEN',
+            'fabricated_ids':False,'semantic_auto_resolution':False,'rights_promotion':False,'truth_inference':False})
+          PY
