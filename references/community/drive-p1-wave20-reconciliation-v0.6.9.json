@@ -1,0 +1,30 @@
+{
+  "version": "0.6.9",
+  "queue_slice": "rows_31_50",
+  "families": 20,
+  "objects": 40,
+  "deterministic_queue_bytes": 33041612,
+  "authoritative_source": {
+    "pr": 40,
+    "summary": "references/community/drive-p1-large-wave20-hash-summary-v0.6.8.json",
+    "bytes_hashed": 33041612,
+    "byte_identical_verified_families": 20,
+    "status": "AUTHORITATIVE_FOR_BYTE_IDENTITY"
+  },
+  "invalidated_overlap": {
+    "pr": 44,
+    "summary": "references/community/drive-p1-wave20-hash-summary-v0.6.8.json",
+    "bytes_hashed": 33504806,
+    "byte_total_delta": 463194,
+    "status": "INVALIDATED_ACQUISITION_INTEGRITY_FAILURE",
+    "reason": "Observed bytes do not equal the deterministic queue total for rows_31_50; overlapping results must not alter the authoritative byte-identity dispositions or denominator."
+  },
+  "incremental_families_resolved_by_pr44": 0,
+  "unresolved_surface_after_authoritative_wave": 75,
+  "guardrails": [
+    "Metadata similarity is not byte identity.",
+    "A hash pass is valid only when acquired object sizes reconcile to the deterministic queue expectations.",
+    "SHA-256 equality proves physical byte identity only.",
+    "No work, edition, rights, public-release or scientific-evidence promotion follows automatically from byte identity."
+  ]
+}
