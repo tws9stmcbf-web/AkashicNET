@@ -37,7 +37,7 @@ export default function CommunityPage() {
     <main className="community-page">
       <header className="nav-shell community-nav">
         <a className="wordmark" href="/" aria-label="Return to AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
-        <nav aria-label="Community navigation"><a href="/">Home</a><a href="https://www.reddit.com/r/NeuronsToNirvana/" target="_blank" rel="noreferrer">All Reddit posts ↗</a></nav>
+        <nav aria-label="Community navigation"><a href="/">Home</a><a href="/about">About Jatinder</a><a href="https://www.reddit.com/r/NeuronsToNirvana/" target="_blank" rel="noreferrer">All Reddit posts ↗</a></nav>
       </header>
 
       <section className="community-hero">
