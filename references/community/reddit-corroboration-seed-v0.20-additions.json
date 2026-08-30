@@ -1,0 +1,21 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.20-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Ten additional independently indexed r/NeuronsToNirvana records discovered via public web search toward the 125-corroborated milestone.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"1dplbs3","source_reported_date":"2024-06-27","title":"This is your brain on ketamine"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1fzndo4","source_reported_date":"2024-10-09","title":"Neuroprotective effects of psilocybin in a rat model of stroke"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1c68703","source_reported_date":"2024-04-17","title":"Consciousness and the Dying Brain"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1cjtx10","source_reported_date":"2024-05-04","title":"Content analysis of Reddit posts about coadministration of selective serotonin reuptake inhibitors and psilocybin mushrooms"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1fzn7r7","source_reported_date":"2024-10-09","title":"Mechanisms of psilocybin on the treatment of posttraumatic stress disorder"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1gku8yy","source_reported_date":"2024-11-06","title":"The mushroom was more alive and vibrant: Patient reports of synthetic versus organic forms of psilocybin"},
+    {"subreddit":"NeuronsToNirvana","post_id":"18cru9k","source_reported_date":"2023-12-07","title":"Greater subjective effects of a low dose of LSD in participants with depressed mood"},
+    {"subreddit":"NeuronsToNirvana","post_id":"13nrl18","source_reported_date":"2023-05-21","title":"The Evolution and Ecology of Psilocybin in Nature"},
+    {"subreddit":"NeuronsToNirvana","post_id":"14lmgal","source_reported_date":"2023-06-28","title":"Psilocybin decelerates cellular senescence"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1936ehm","source_reported_date":"2024-01-10","title":"Investigating functional brain connectivity patterns associated with two hypnotic states"}
+  ]
+}
