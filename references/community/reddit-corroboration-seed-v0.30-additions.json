@@ -1,0 +1,17 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed-additions.v0.30",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Batch public-web discoveries from search-engine indexed r/NeuronsToNirvana pages on 2026-08-30.",
+    "Diversified across 2022-2024 DMT, microdosing, ketamine, psilocybin, MDMA and neuroplasticity topics.",
+    "Records are discovery evidence only until historical-corpus intersection is evaluated by CI.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"wtivzv","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/wtivzv","source_reported_title":"DMT, active component in ayahuasca, aids in the growth of new neurons","source_reported_date":"2022-08-20","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"13jsgbz","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/13jsgbz","source_reported_title":"Psychedelic Microdosing: A Panel Discussion on Science and Stories","source_reported_date":"2023-05-17","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"15l9ccp","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/15l9ccp","source_reported_title":"A Brief Review on the Potential of Psychedelics for Treating Alzheimer's Disease and Related Depression","source_reported_date":"2023-08-08","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1eyfyve","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1eyfyve","source_reported_title":"Brain region-specific action of ketamine as a rapid antidepressant","source_reported_date":"2024-08-22","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1e65sq6","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1e65sq6","source_reported_title":"Psilocybin in patients with fibromyalgia: brain biomarkers of action","source_reported_date":"2024-07-18","evidence_type":"public_web_search","discovered_at":"2026-08-30"}
+  ]
+}
