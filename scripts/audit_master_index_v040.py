@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import csv,json,re
+import csv,json
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlsplit,urlunsplit
 
 PATH=Path('references/community/akashic-master-index.csv')
-REDDIT_RE=re.compile(r'https?://(?:www\.|old\.)?reddit\.com/[^\s,;"<>]+',re.I)
-N2N_MARK='/r/NeuronsToNirvana/'
+N2N_PREFIX='/r/neuronstonirvana/'
 
 
 def canonical_url(url:str)->str:
     try:
-        p=urlsplit(url.strip())
-        host=p.netloc.lower().removeprefix('www.').removeprefix('old.')
+        p=urlsplit((url or '').strip())
+        host=p.netloc.lower()
+        if host.startswith('www.'): host=host[4:]
+        if host.startswith('old.'): host=host[4:]
         path=p.path.rstrip('/') or '/'
         return urlunsplit(('https',host,path,'',''))
     except Exception:
-        return url.strip()
+        return (url or '').strip()
 
 
 def main():
@@ -30,20 +31,21 @@ def main():
         source_fields=[x for x in fields if any(k in x.lower() for k in ('source','subreddit','community','type'))]
         for row in reader:
             total+=1
-            values=[v for v in row.values() if isinstance(v,str) and v]
-            joined=' '.join(values)
-            urls=REDDIT_RE.findall(joined)
-            if urls:
+            source=(row.get('source') or '').strip()
+            url=canonical_url(row.get('url') or '')
+            parts=urlsplit(url) if url else None
+            if source.lower()=='reddit' and parts and parts.netloc=='reddit.com':
                 reddit_rows+=1
-                reddit_urls.update(canonical_url(u) for u in urls)
-            if N2N_MARK.lower() in joined.lower():
-                n2n_rows+=1
-                n2n_urls.update(canonical_url(u) for u in urls if N2N_MARK.lower() in u.lower())
+                reddit_urls.add(url)
+                if N2N_PREFIX in parts.path.lower():
+                    n2n_rows+=1
+                    n2n_urls.add(url)
             for k in source_fields:
                 v=(row.get(k) or '').strip()
                 if v: source_values[(k,v)]+=1
     out={
         'audit':'AKASHICNET_MASTER_INDEX_AUDIT','version':'0.40',
+        'count_basis':'explicit tracked source + url columns; canonical URL strips host variants, query, fragment and trailing slash',
         'columns':fields,'explicit_url_fields':explicit_url_fields,'source_like_fields':source_fields,
         'total_rows':total,'reddit_rows':reddit_rows,'unique_reddit_urls':len(reddit_urls),
         'n2n_rows':n2n_rows,'unique_n2n_urls':len(n2n_urls),
