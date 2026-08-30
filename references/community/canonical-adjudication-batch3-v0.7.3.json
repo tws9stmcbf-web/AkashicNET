@@ -1,10 +1,12 @@
 {
   "contract_version": "0.7.0",
   "batch_version": "0.7.3",
-  "description": "Public bibliographic re-adjudication of selected batch-2 HOLD candidates. Promotion is limited to narrow work identity where independent authority records are reproducible; edition/translation/rights/science/safety remain unpromoted.",
+  "supersedes_checkpoint": "canonical-adjudication-public-bibliography-v0.10.1.json",
+  "description": "Public bibliographic re-adjudication of selected prior HOLD candidates. For the explicitly mapped candidates below, this batch supersedes the older checkpoint decision only at REPRESENTS_WORK level. Edition/translation/rights/science/safety remain unpromoted.",
   "records": [
     {
       "logical_id": "CANON-B3-ABRAMELIN",
+      "supersedes_candidate_id": "CANON-B2-ABRAMELIN",
       "candidate_label": "The Book of the Sacred Magic of Abramelin the Mage",
       "relationship": "REPRESENTS_WORK",
       "decision": "ACCEPT",
@@ -23,6 +25,7 @@
     },
     {
       "logical_id": "CANON-B3-AGRIPPA",
+      "supersedes_candidate_id": "CANON-B2-AGRIPPA",
       "candidate_label": "Three Books of Occult Philosophy",
       "relationship": "REPRESENTS_WORK",
       "decision": "ACCEPT",
@@ -42,6 +45,7 @@
     },
     {
       "logical_id": "CANON-B3-VIVEKANANDA",
+      "supersedes_candidate_id": "CANON-B2-VIVEKANANDA",
       "candidate_label": "The Complete Works of Swami Vivekananda",
       "relationship": "REPRESENTS_WORK",
       "decision": "ACCEPT",
