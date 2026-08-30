@@ -1,0 +1,24 @@
+name: Validate P1 tranche 3a hash evidence v0.6.7
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/drive-p1-tranche3a-hash-summary-v0.6.7.json'
+      - 'scripts/validate_p1_tranche3a_hash_v067.py'
+      - '.github/workflows/validate-p1-tranche3a-hash-v067.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p1-tranche3a-hash-summary-v0.6.7.json'
+      - 'scripts/validate_p1_tranche3a_hash_v067.py'
+      - '.github/workflows/validate-p1-tranche3a-hash-v067.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_p1_tranche3a_hash_v067.py

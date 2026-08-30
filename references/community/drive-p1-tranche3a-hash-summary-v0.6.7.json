@@ -1,0 +1,16 @@
+{
+  "version": "0.6.7",
+  "tranche": "P1_T3A_NEXT_5_LOW_COST_FAMILIES",
+  "families": 5,
+  "objects": 10,
+  "bytes_hashed": 4407566,
+  "family_results": {
+    "BYTE_IDENTICAL_VERIFIED": 5
+  },
+  "private_batch_sha256": "2c7a1d3cc369ede9e30f9bc101fa61f9ecd88b887c649e9c96f465d8152e917a",
+  "work_ids_promoted": 0,
+  "edition_ids_promoted": 0,
+  "rights_promoted": 0,
+  "scientific_evidence_promoted": 0,
+  "guardrail": "SHA-256 equality proves byte identity for compared objects only; canonical work identity remains separately adjudicated."
+}
