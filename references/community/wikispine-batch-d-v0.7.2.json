@@ -1,0 +1,16 @@
+{
+  "version":"0.7.2",
+  "batch":"WIKISPINE_BATCH_D_PSYCH_DEFINITIONS",
+  "retrieved_on":"2026-08-30",
+  "records":[
+    {"akashic_concept":"Ayahuasca","wikidata_qid":"Q380436","wikipedia_title":"Ayahuasca","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Dimethyltryptamine","wikidata_qid":"Q407217","wikipedia_title":"N,N-Dimethyltryptamine","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Psilocybin","wikidata_qid":"Q208118","wikipedia_title":"Psilocybin","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Ibogaine","wikidata_qid":"Q409455","wikipedia_title":"Ibogaine","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Mescaline","wikidata_qid":"Q193140","wikipedia_title":"Mescaline","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"5-MeO-DMT","wikidata_qid":null,"wikipedia_title":"5-MeO-DMT","resolution_state":"PENDING_API_RESOLUTION"},
+    {"akashic_concept":"LSD","wikidata_qid":null,"wikipedia_title":"LSD","resolution_state":"PENDING_API_RESOLUTION"},
+    {"akashic_concept":"Animism","wikidata_qid":null,"wikipedia_title":"Animism","resolution_state":"PENDING_DISAMBIGUATION"}
+  ],
+  "defaults":{"reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","candidate_edges_default":"HOLD","truth_inference":false,"scientific_evidence":false,"rights_promotion":false,"full_article_body_ingestion":false}
+}
