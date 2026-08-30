@@ -11,15 +11,19 @@ MAX_SCAN=1000
 
 
 def logical_identity(row:dict)->dict:
+    source=row.get('source') or {}
+    units=row.get('logical_retrieval_units') or []
+    unit_ids=sorted(str(u.get('retrieval_unit_id')) for u in units if u.get('retrieval_unit_id'))
     return {
         'domain':row.get('domain'),
-        'canonical_family_id':row.get('canonical_family_id'),
-        'logical_unit_id':row.get('logical_unit_id'),
-        'source_ref':row.get('source_ref'),
-        'concept_id':row.get('concept_id'),
+        'source_type':source.get('type'),
+        'source_ref':source.get('ref'),
+        'source_url':source.get('url'),
+        'source_family_id':source.get('family_id'),
+        'source_label':source.get('label'),
+        'concept':row.get('concept'),
         'query_path':row.get('query_path'),
-        'title':row.get('title'),
-        'label':row.get('label'),
+        'logical_retrieval_unit_ids':unit_ids,
     }
 
 
@@ -97,7 +101,7 @@ def main():
             'next_cursor':next_cursor,
         },
         'result_identity':{
-            'basis':'logical result identity fields; independent of current rank and list position',
+            'basis':'logical source/concept/unit identity fields; independent of current rank and list position',
             'not_content_hash':True,
             'not_rights_claim':True,
             'not_truth_claim':True,
