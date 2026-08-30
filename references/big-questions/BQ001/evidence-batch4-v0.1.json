@@ -1,0 +1,167 @@
+{
+  "batch_id": "BQ001-BATCH4-CONTEMPLATIVE-PHILOSOPHY",
+  "version": "0.1.0",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "scope": "contemplative_traditions_and_philosophy_of_mind",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-SIDERITS-2011",
+      "source_type": "SCHOLARLY_PHILOSOPHY_CHAPTER",
+      "title": "Buddhist Non-Self: The No-Owner's Manual",
+      "authors_short": "Siderits",
+      "year": 2011,
+      "publisher": "Oxford University Press",
+      "doi": "10.1093/oxfordhb/9780199548019.003.0013",
+      "url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "limitations": [
+        "Scholarly philosophical analysis, not an empirical experiment.",
+        "Buddhist non-self doctrines are not evidence of post-mortem survival by themselves."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-DAHL-2015",
+      "source_type": "PEER_REVIEWED_REVIEW_FRAMEWORK",
+      "title": "Reconstructing and deconstructing the self: cognitive mechanisms in meditation practice",
+      "authors_short": "Dahl, Lutz and Davidson",
+      "year": 2015,
+      "journal": "Trends in Cognitive Sciences",
+      "doi": "10.1016/j.tics.2015.07.001",
+      "pmid": "26231761",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "limitations": [
+        "Framework/review article rather than a single decisive primary experiment.",
+        "Changes in self-processing during meditation do not establish metaphysical non-self or survival after death."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-VAGO-2012",
+      "source_type": "PEER_REVIEWED_THEORETICAL_FRAMEWORK",
+      "title": "Self-awareness, self-regulation, and self-transcendence (S-ART): a framework for understanding the neurobiological mechanisms of mindfulness",
+      "authors_short": "Vago and Silbersweig",
+      "year": 2012,
+      "journal": "Frontiers in Human Neuroscience",
+      "doi": "10.3389/fnhum.2012.00296",
+      "pmid": "23112770",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "limitations": [
+        "Integrative theoretical framework, not direct proof of an ontological claim.",
+        "The term self-transcendence here concerns psychological/neurobiological processes, not evidence of consciousness existing independently of the brain."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PHYSICALISM",
+      "source_type": "SCHOLARLY_REFERENCE_ENTRY",
+      "title": "Physicalism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/physicalism/",
+      "limitations": ["Reference work summarising philosophical positions and arguments; not an empirical adjudication of BQ001."]
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-DUALISM",
+      "source_type": "SCHOLARLY_REFERENCE_ENTRY",
+      "title": "Dualism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/dualism/",
+      "limitations": ["Reference work summarising philosophical positions and arguments; philosophical defensibility does not demonstrate post-mortem survival."]
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PANPSYCHISM",
+      "source_type": "SCHOLARLY_REFERENCE_ENTRY",
+      "title": "Panpsychism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/panpsychism/",
+      "limitations": ["Reference work summarising philosophical positions and objections; panpsychism does not entail persistence of an individual person after death."]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-SIDERITS-2011-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Buddhist philosophical traditions include reductionist or anti-realist accounts in which a permanent independent self is denied while persons may be treated as conventional constructions from psychophysical processes.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SIDERITS-2011"],
+      "provenance": ["Oxford scholarly philosophy chapter"],
+      "limitations": ["A philosophical doctrine is not empirical proof that no self exists or that consciousness survives death."],
+      "uncertainty": "Buddhist schools differ in analysis of personhood and continuity; this claim does not adjudicate their metaphysical truth.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-DAHL-2015-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Dahl, Lutz and Davidson propose that meditation practices can be grouped into attentional, constructive and deconstructive families involving mechanisms such as meta-awareness, perspective taking, reappraisal and self-inquiry.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-DAHL-2015"],
+      "provenance": ["peer-reviewed review/framework"],
+      "limitations": ["The framework concerns trainable cognitive processes and does not establish a metaphysical account of consciousness."],
+      "uncertainty": "Specific mechanisms and generalisability vary by practice, population and measurement method.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-VAGO-2012-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "The S-ART framework models mindfulness using self-awareness, self-regulation and self-transcendence as interacting psychological and neurobiological processes.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-VAGO-2012"],
+      "provenance": ["peer-reviewed theoretical framework"],
+      "limitations": ["Psychological self-transcendence is not equivalent to consciousness existing independently of a biological organism."],
+      "uncertainty": "The framework integrates evidence and hypotheses but is not a complete mechanistic account of consciousness.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-PHYSICALISM-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Physicalism holds, in broad form, that everything is physical or importantly dependent on the physical; its implications for consciousness depend on the specific version defended.",
+      "domain": "alternative_hypotheses_and_unresolved_models",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SEP-PHYSICALISM"],
+      "provenance": ["Stanford Encyclopedia of Philosophy reference synthesis"],
+      "limitations": ["A philosophical position is not itself an experimental result."],
+      "uncertainty": "Multiple forms of physicalism exist and the philosophy of consciousness remains contested.",
+      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-DUALISM-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Dualist positions treat mind and body, or mental and physical properties, as fundamentally distinct in some sense, providing conceptual space for models not reducible to standard physicalism.",
+      "domain": "alternative_hypotheses_and_unresolved_models",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SEP-DUALISM"],
+      "provenance": ["Stanford Encyclopedia of Philosophy reference synthesis"],
+      "limitations": ["Conceptual space for survival is not empirical evidence that survival occurs."],
+      "uncertainty": "Dualist views face unresolved causal, unity and interaction problems and do not by themselves specify a survival mechanism.",
+      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-PANPSYCHISM-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Contemporary panpsychism treats mentality or experience as fundamental and ubiquitous in nature, but this thesis does not by itself imply persistence of an individual's memories, identity or subjectivity after death.",
+      "domain": "alternative_hypotheses_and_unresolved_models",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SEP-PANPSYCHISM"],
+      "provenance": ["Stanford Encyclopedia of Philosophy reference synthesis"],
+      "limitations": ["Panpsychism is a family of metaphysical views and faces problems including how micro-level mentality relates to unified subjects."],
+      "uncertainty": "Even if some form of panpsychism were true, BQ001 would require additional evidence about personal continuity.",
+      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+    }
+  ],
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "Batch 4 broadens BQ001 by representing contemplative models of selfhood and major philosophical options without treating tradition, phenomenology or philosophical coherence as empirical proof. These materials clarify concepts and competing ontologies but do not resolve post-mortem continuity."
+  },
+  "promotion_guards": {
+    "tradition_longevity_upgrades_evidence": false,
+    "spiritual_authority_upgrades_evidence": false,
+    "cross_tradition_similarity_upgrades_evidence": false,
+    "meditation_self_change_proves_metaphysical_nonself": false,
+    "philosophical_coherence_proves_survival": false,
+    "physicalism_as_philosophy_proves_non_survival": false,
+    "dualism_as_philosophy_proves_survival": false,
+    "panpsychism_entails_personal_survival": false,
+    "model_support_edges_upgrade_evidence": false
+  }
+}
