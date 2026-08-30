@@ -11,6 +11,21 @@ BQ_ROOT = ROOT / "references" / "big-questions"
 COMMUNITY = ROOT / "references" / "community"
 BQ_NAME = re.compile(r"^BQ\d{3}$")
 COMMUNITY_BQ = re.compile(r"^bq\d{3}.*", re.IGNORECASE)
+CANONICAL_BATCH = re.compile(r"^evidence-batch.*\.json$", re.IGNORECASE)
+
+
+def assert_canonical_batch_registry(question_id: str, canonical: Path, batches: list[str], root: Path) -> None:
+    registered = {str((root / batch).resolve()) for batch in batches}
+    discovered = {
+        str(path.resolve())
+        for path in canonical.iterdir()
+        if path.is_file() and CANONICAL_BATCH.fullmatch(path.name)
+    }
+    assert discovered == registered, (
+        f"{question_id}: canonical evidence-batch registry drift; "
+        f"unregistered={sorted(discovered - registered)}; "
+        f"missing={sorted(registered - discovered)}"
+    )
 
 
 def main() -> int:
@@ -46,6 +61,7 @@ def main() -> int:
             assert path.parent == canonical, f"{question_id}: batch escaped canonical tree"
             payload = json.loads(path.read_text(encoding="utf-8"))
             assert payload.get("question_id") == question_id
+        assert_canonical_batch_registry(question_id, canonical, batches, ROOT)
 
         for legacy in record.get("legacy_parallel_records", []):
             path = legacy["path"]
