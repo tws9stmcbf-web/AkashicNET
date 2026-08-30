@@ -1,0 +1,28 @@
+{
+  "version": "0.7.9",
+  "batch": "J_CANONICAL_WORKS",
+  "records": [
+    {"akashic_entity":"The Doors of Perception","entity_type":"WORK","wikidata_qid":"Q1215450","wikipedia_title":"The Doors of Perception","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"The Varieties of Religious Experience","entity_type":"WORK","wikidata_qid":"Q2605035","wikipedia_title":"The Varieties of Religious Experience","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Tao Te Ching","entity_type":"WORK","wikidata_qid":"Q134425","wikipedia_title":"Tao Te Ching","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Bhagavad Gita","entity_type":"WORK","wikidata_qid":"Q46802","wikipedia_title":"Bhagavad Gita","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Dhammapada","entity_type":"WORK","wikidata_qid":"Q748878","wikipedia_title":"Dhammapada","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Upanishads","entity_type":"WORK","wikidata_qid":"Q6113985","wikipedia_title":"Upanishads","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Bardo Thodol","entity_type":"WORK","wikidata_qid":"Q597697","wikipedia_title":"Bardo Thodol","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Yoga Sutras of Patanjali","entity_type":"WORK","wikidata_qid":"Q1068646","wikipedia_title":"Yoga Sutras of Patanjali","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "pending_records_preserved": [
+    {"akashic_entity":"The Psychedelic Experience","entity_type":"WORK","resolution_state":"PENDING_VERIFIED_QID"},
+    {"akashic_entity":"Wholeness and the Implicate Order","entity_type":"WORK","resolution_state":"PENDING_VERIFIED_QID"}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
