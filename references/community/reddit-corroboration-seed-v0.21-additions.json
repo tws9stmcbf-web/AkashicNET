@@ -1,0 +1,18 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.21-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Seven additional independently indexed r/NeuronsToNirvana records discovered via public web search to complete the 25-record challenge batch toward the 125-corroborated milestone.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"12ejqpu","source_reported_date":"2023-04-07","title":"Psychedelic-induced mystical experiences: An interdisciplinary discussion and critique"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1f8q4qf","source_reported_date":"2024-09-04","title":"Psilocin fosters neuroplasticity in iPSC-derived human cortical neurons"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1d7p97y","source_reported_date":"2024-06-04","title":"Pharmacological and behavioural effects of tryptamines present in psilocybin-containing mushrooms"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1deyc7a","source_reported_date":"2024-06-13","title":"Newer insights on the pharmacology of classical psychedelics and ketamine"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1fzndo4","source_reported_date":"2024-10-09","title":"Neuroprotective effects of psilocybin in a rat model of stroke"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1czhl28","source_reported_date":"2024-05-24","title":"The flattening of spacetime hierarchy of the DMT brain state is characterized by harmonic decomposition of spacetime"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1cbbyym","source_reported_date":"2024-04-23","title":"Neurochemical and Neurophysiological Effects of Intravenous Administration of N,N-dimethyltryptamine in Rats"}
+  ]
+}
