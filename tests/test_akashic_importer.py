@@ -83,7 +83,8 @@ class AkashicImporterLocalMockTests(unittest.TestCase):
             self.assertEqual(result["index_only_count"], 3)
             self.assertTrue(os.path.exists(result["output_csv"]))
             self.assertTrue(os.path.exists(result["output_md"]))
-            self.assertTrue(any("Consciousness" in line for line in open(result["output_csv"], encoding="utf-8")))
+            with open(result["output_csv"], encoding="utf-8") as output_handle:
+                self.assertTrue(any("Consciousness" in line for line in output_handle))
 
 
 class AkashicImporterRemoteOAuthTests(unittest.TestCase):
@@ -124,7 +125,8 @@ class AkashicImporterRemoteOAuthTests(unittest.TestCase):
                 def authorization_url(self, **kwargs):
                     return "https://example.com/auth?state=abc123", "abc123"
 
-            with patch.object(module.Flow, "from_client_config", return_value=FakeFlow()):
+            with patch.object(module, "Flow") as mock_flow:
+                mock_flow.from_client_config.return_value = FakeFlow()
                 session = module.RemoteCodespacesOAuthSession(client_path, token_path, module.SCOPES)
                 auth_url, state, redirect_uri = session.build_authorization_url(port=8128)
 
@@ -152,14 +154,16 @@ class AkashicImporterRemoteOAuthTests(unittest.TestCase):
                 def fetch_token(self, **kwargs):
                     return {"access_token": "abc"}
 
-            with patch.object(module.Flow, "from_client_config", return_value=FakeFlow()):
+            with patch.object(module, "Flow") as mock_flow:
+                mock_flow.from_client_config.return_value = FakeFlow()
                 session = module.RemoteCodespacesOAuthSession(client_path, token_path, module.SCOPES)
                 auth_url, state, redirect_uri = session.build_authorization_url(port=8128)
                 result = session.consume_callback(f"{redirect_uri}?code=test-code&state={state}")
 
             self.assertTrue(result["token_written"])
             self.assertTrue(os.path.exists(token_path))
-            payload = json.loads(open(token_path, "r", encoding="utf-8").read())
+            with open(token_path, "r", encoding="utf-8") as token_handle:
+                payload = json.load(token_handle)
             self.assertIn("access_token", payload)
             self.assertIn("refresh_token", payload)
 
@@ -193,7 +197,9 @@ class AkashicImporterRemoteOAuthTests(unittest.TestCase):
                 def authorization_url(self, **kwargs):
                     return "https://example.com/auth?state=abc123", "abc123"
 
-            with patch.object(module.Flow, "from_client_config", return_value=FakeFlow()) as mock_from_config:
+            with patch.object(module, "Flow") as mock_flow:
+                mock_from_config = mock_flow.from_client_config
+                mock_from_config.return_value = FakeFlow()
                 module.RemoteCodespacesOAuthSession(client_path, os.path.join(tmpdir, "token.json"), module.SCOPES)
 
             selected = mock_from_config.call_args[0][0]
@@ -214,7 +220,8 @@ class AkashicImporterRemoteOAuthTests(unittest.TestCase):
                 def authorization_url(self, **kwargs):
                     return "https://example.com/auth?state=abc123", "abc123"
 
-            with patch.object(module.Flow, "from_client_config", return_value=FakeFlow()):
+            with patch.object(module, "Flow") as mock_flow:
+                mock_flow.from_client_config.return_value = FakeFlow()
                 session = module.RemoteCodespacesOAuthSession(client_path, token_path, module.SCOPES)
                 auth_url, state, redirect_uri = session.build_authorization_url(port=8128)
 
@@ -234,7 +241,8 @@ class AkashicImporterRemoteOAuthTests(unittest.TestCase):
                 def authorization_url(self, **kwargs):
                     return "https://example.com/auth?state=abc123", "abc123"
 
-            with patch.object(module.Flow, "from_client_config", return_value=FakeFlow()):
+            with patch.object(module, "Flow") as mock_flow:
+                mock_flow.from_client_config.return_value = FakeFlow()
                 session = module.RemoteCodespacesOAuthSession(client_path, token_path, module.SCOPES)
                 with patch("builtins.print") as mock_print:
                     session.write_token_file({"access_token": "very-secret-token", "refresh_token": "very-secret-refresh", "token_uri": "https://oauth2.googleapis.com/token", "expiry": "2026-01-01T00:00:00Z"})
