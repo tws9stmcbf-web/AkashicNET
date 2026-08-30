@@ -1,0 +1,47 @@
+{
+  "version": "0.6.14",
+  "milestone": "BYTE_IDENTITY_PROGRESS_CHECKPOINT",
+  "review_family_denominator": 126,
+  "authoritative_unique_families_adjudicated": 76,
+  "unresolved_families": 50,
+  "authoritative_objects_hashed": 158,
+  "authoritative_bytes_hashed": 156990596,
+  "family_results": {
+    "BYTE_IDENTICAL_VERIFIED": 76,
+    "BYTE_MISMATCH": 0
+  },
+  "hash_failures": 0,
+  "latest_queue_window": "overall_rows_72_76",
+  "overlap_reconciliation": {
+    "pr_40_authoritative": true,
+    "pr_44_incremental_families": 0,
+    "reconciliation_version": "0.6.9"
+  },
+  "source_summaries": [
+    "references/community/drive-p0-hash-summary-v0.6.3.json",
+    "references/community/drive-p1-cumulative-hash-checkpoint-v0.6.8.json",
+    "references/community/drive-p1-wave20-reconciliation-v0.6.9.json",
+    "references/community/drive-p1-small-batch5-hash-summary-v0.6.10.json",
+    "references/community/drive-p1-small-batch5-hash-summary-v0.6.11.json",
+    "references/community/drive-p1-small-batch5-hash-summary-v0.6.12.json",
+    "references/community/drive-p1-small-batch5-hash-summary-v0.6.13.json",
+    "references/community/drive-p1-small-batch5-hash-summary-v0.6.14.json"
+  ],
+  "privacy_boundary": {
+    "drive_ids_public": false,
+    "filenames_public": false,
+    "paths_public": false,
+    "per_object_sha256_public": false,
+    "private_batch_digests_may_be_public": true
+  },
+  "promotions": {
+    "work_identity": 0,
+    "edition_identity": 0,
+    "rights": 0,
+    "public_release": 0,
+    "scientific_evidence": 0,
+    "truth": 0
+  },
+  "execution_rule": "fetch object -> verify expected size -> hash immediately -> persist digest privately -> only then fetch another same-name object",
+  "guardrail": "SHA-256 equality establishes physical byte identity only. SHA-256 mismatch rejects byte-identical-copy identity only. Canonical work identity, edition identity, rights/public-release status, truth, and scientific-evidence status remain separately adjudicated."
+}
