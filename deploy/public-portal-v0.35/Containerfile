@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY . /app
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV AKASHICNET_DEPLOYMENT_MODE=public
+ENV AKASHICNET_ALLOW_INTERNAL_VISIBILITY=false
+EXPOSE 8787
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD python -c "import urllib.request,json; assert json.load(urllib.request.urlopen('http://127.0.0.1:8787/readyz',timeout=2))['status']=='ready'"
+CMD ["python","scripts/public_portal_v035.py","--host","0.0.0.0","--port","8787"]
