@@ -1,52 +1,34 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Jatinder — AKASHICNET.ORG",
-  description: "The personal mantra and nonlinear constellation of lived experiences behind AkashicNET.",
+  title: "About AkashicNET — AKASHICNET.ORG",
+  description: "The mission, human thread and evidence boundaries behind AkashicNET.",
 };
 
 const threads = [
   {
-    time: "An early marker",
-    place: "A full-moon birth",
-    title: "Born beneath a full moon",
-    text: "A birth shortly after humanity’s first Moon landing became the earliest point in a pattern recognised only much later.",
+    time: "A threshold",
+    place: "Held without private detail",
+    title: "A question becomes a practice",
+    text: "A profound lived experience opened questions about memory, awareness, identity and reality. It remains personal testimony rather than universal proof.",
   },
   {
-    time: "A life-changing threshold",
-    place: "Held without clinical detail",
-    title: "An encounter with Akasha",
-    text: "A profound threshold experience opened the image of Akasha: memory, awareness and reality as something larger than one life-story. Private health circumstances are intentionally omitted.",
+    time: "Across communities",
+    place: "Science · contemplation · culture",
+    title: "Many paths begin to connect",
+    text: "Encounters across research, contemplative traditions, community knowledge, art and lived experience gradually formed the interdisciplinary pattern that became AkashicNET.",
   },
   {
-    time: "Later gatherings",
-    place: "Music · community · altered perspective",
-    title: "The witness beyond the ordinary",
-    text: "Unusual states of awareness at community gatherings became inner landmarks—meaningful testimony, described without publishing intimate visionary detail or turning experience into universal proof.",
+    time: "A symbolic thread",
+    place: "TAM · Green Tara · Sarnath",
+    title: "Symbols become questions",
+    text: "A sequence involving a Tibetan TAM symbol, Green Tara and Sarnath became personally meaningful and helped sharpen questions about continuity, compassion and the Dharma without being treated as evidence of fate or causation.",
   },
   {
-    time: "June 2024 → April 2025",
-    place: "Haarlem → Bicycle Day",
-    title: "The symbol arrives before its meaning",
-    text: "A human connection begun around ICPR in Haarlem was followed by the gift of a Tibetan TAM necklace. Its significance was not yet understood.",
-  },
-  {
-    time: "April 2026",
-    place: "India reflected through another journey",
-    title: "TAM becomes Green Tara",
-    text: "Green Tara entered the story after another person returned from India and Sarnath. Looking backward, the sequence appeared: TAM → Green Tara → Sarnath.",
-  },
-  {
-    time: "A later full-moon birthday",
-    place: "O.Z.O.R.A.",
-    title: "The lunar thread returns",
-    text: "A birthday returned beneath a full moon at O.Z.O.R.A., experienced alongside the contemplative resonance of Āsāḷha Puja and Guru Purnima.",
-  },
-  {
-    time: "Now → what comes next",
-    place: "Encounters · festivals · online crossings",
-    title: "Varanasi keeps appearing",
-    text: "Repeated encounters with people connected to Varanasi—offline, online and at gatherings—have strengthened the felt invitation toward the city and nearby Sarnath.",
+    time: "A recurring destination",
+    place: "Varanasi · Sarnath",
+    title: "The journey remains open",
+    text: "Repeated connections with Varanasi and Sarnath have become part of the project’s human thread: places associated with death, impermanence, transformation, teaching and inquiry. The meaning remains open to revision.",
   },
 ];
 
@@ -55,42 +37,42 @@ export default function AboutPage() {
     <main className="about-page">
       <header className="nav-shell about-nav">
         <a className="wordmark" href="/" aria-label="Return to AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
-        <nav aria-label="About navigation"><a href="/">Home</a><a href="/community">Community</a><a href="#constellation">The constellation</a></nav>
+        <nav aria-label="About navigation"><a href="/">Home</a><a href="/community">Community</a><a href="#mission">Mission</a><a href="#constellation">Human thread</a></nav>
       </header>
 
       <section className="about-hero">
         <div className="about-hero-copy">
-          <p className="section-label">About Jatinder</p>
-          <h1>Following the pattern<br/><em>without mistaking it for proof.</em></h1>
-          <p>AkashicNET grew from years of curiosity across consciousness, science, contemplative traditions, community knowledge and lived experience. This page describes the personal constellation behind the project—not a fixed identity, doctrine or claim of destiny.</p>
+          <p className="section-label">About AkashicNET</p>
+          <h1>A living library.<br/><em>A long-term human mission.</em></h1>
+          <p>AkashicNET is an independent knowledge-stewardship and citizen data-science project exploring difficult questions across consciousness, science, ecology, philosophy, contemplative traditions and human–AI collaboration.</p>
+          <p>The public identity remains intentionally anonymous. The work should be judged by its sources, methods, provenance and willingness to remain uncertain—not by the biography of one person.</p>
         </div>
         <figure className="author-seal">
-          <img src="/images/akashicnet-toroidal-love-logo.png" alt="The Sacred Toroidal Love emblem of AkashicNET"/>
+          <img src="/images/akashicnet-toroidal-love-logo.png" alt=""/>
           <figcaption>Sacred Toroidal Love · compassionate intelligence in relationship</figcaption>
         </figure>
       </section>
 
-      <section className="author-mantra" aria-label="Jatinder's mantra">
-        <p className="section-label">Jatinder’s mantra</p>
+      <section className="author-mantra" aria-label="Personal compass">
+        <p className="section-label">Personal compass</p>
         <blockquote>“Silence your mind.<br/>Open your heart.<br/><em>Follow your gut.</em>”</blockquote>
-        <p>A compass for listening inwardly while remaining accountable to evidence, other people and the living world.</p>
+        <p>A private compass made public only as a principle: listen inwardly while remaining accountable to evidence, other people and the living world.</p>
       </section>
 
-      <section className="inner-cosmology">
-        <p className="section-label">A personal cosmology</p>
-        <h2>From the quantum<br/><em>to the cosmos.</em></h2>
-        <blockquote>“A quantum-enhanced panpsychic consciousness—meta-lucid, astrally aware and attentive to thought, energy, frequency and vibration; reaching from quantum possibility to the cosmos, and every conscious being in between.”</blockquote>
+      <section className="inner-cosmology" id="mission">
+        <p className="section-label">Mission</p>
+        <h2>Remember without flattening.<br/><em>Connect without collapsing.</em></h2>
         <div>
-          <h3>Panpsychic animism · A living field</h3>
-          <p>This is Jatinder’s poetic and philosophical language for felt interconnection: consciousness and aliveness woven through reality rather than confined to one isolated self. “Quantum” is used here as metaphysical imagery and an open question—not as evidence that quantum physics proves panpsychism, astral perception or a universal field of consciousness.</p>
+          <h3>Correct without erasing · Serve rather than persuade</h3>
+          <p>AkashicNET is designed as a living, revisable knowledge system. It can hold scientific evidence, interpretation, testimony, hypothesis and speculation together while keeping their differences visible.</p>
         </div>
       </section>
 
       <section className="constellation" id="constellation">
         <div className="constellation-intro">
-          <p className="section-label">Across space and time</p>
+          <p className="section-label">The human thread</p>
           <h2>A nonlinear constellation.</h2>
-          <p>The meaning is not located in any single event. It emerges retrospectively through places, symbols, encounters and lunar returns—threads that appear to bend toward Varanasi and Sarnath when viewed together.</p>
+          <p>The project has a human story behind it, but the story is not a credential and not a proof. The public version preserves only the parts needed to explain why certain questions became important.</p>
         </div>
         <div className="constellation-grid">
           {threads.map((thread, index) => (
@@ -107,34 +89,42 @@ export default function AboutPage() {
       <section className="destination-pair">
         <article>
           <p className="section-label">Varanasi</p>
-          <h2>Death, transformation<br/>and radical presence.</h2>
-          <p>The city represents an encounter with impermanence, Shiva, the Ganges and living traditions—including curiosity about Aghori paths—without romanticising or claiming authority over them.</p>
+          <h2>Impermanence,<br/>transformation and presence.</h2>
+          <p>Varanasi is approached as a living cultural and spiritual context associated with death, continuity and radical presence. AkashicNET does not claim authority over its traditions or reduce them to aesthetic symbols.</p>
         </article>
         <article>
           <p className="section-label">Sarnath</p>
           <h2>The first turning<br/>of the Dharma wheel.</h2>
-          <p>Sarnath represents the Buddha’s first teaching, the Middle Way and a return to practice: wisdom expressed through ethical conduct, attention and compassion.</p>
+          <p>Sarnath represents a return to first principles: the Middle Way, disciplined inquiry, ethical conduct, attention and compassion. These traditions are represented with provenance and context rather than treated as scientific evidence by default.</p>
         </article>
       </section>
 
       <section className="flying-tension">
-        <p className="section-label">The unresolved edge</p>
-        <h2>The pull toward the journey<br/><em>and unease about flying.</em></h2>
-        <p>Both are true. Jatinder feels drawn toward Varanasi and Sarnath while holding cognitive dissonance about reaching them by air. The tension remains open rather than being hidden or forced into a tidy answer; dates and itinerary details remain private.</p>
+        <p className="section-label">Possible outcomes</p>
+        <h2>A public knowledge commons<br/><em>that improves through use.</em></h2>
+        <p>Possible outcomes include better research questions, evidence stewardship, interdisciplinary bridges, provenance-aware tools, a self-correcting public record and more transparent human–AI collaboration.</p>
       </section>
 
-      <aside className="meaning-boundary" aria-label="How to interpret this account">
-        <span>How to read this page</span>
-        <div><strong>Personally meaningful</strong><p>These experiences and patterns can guide reflection, creativity and personal choices.</p></div>
-        <div><strong>Not proof of fate</strong><p>Synchronicity is presented as lived interpretation—not evidence of cosmic causation, privileged access or a guaranteed destination.</p></div>
-        <div><strong>Open to revision</strong><p>Memory, meaning and theory may deepen, change or dissolve as new context appears.</p></div>
-        <div><strong>Privacy retained</strong><p>Health records, intimate visions, family and relationship details, and travel logistics are deliberately excluded.</p></div>
+      <aside className="meaning-boundary" aria-label="How AkashicNET knows">
+        <span>How AkashicNET knows</span>
+        <div><strong>Established Evidence</strong><p>Empirical findings and well-supported claims are kept traceable to public sources and methodological context.</p></div>
+        <div><strong>Interpretation</strong><p>Explanatory framing is separated from observation and remains open to competing readings.</p></div>
+        <div><strong>Lived Experience / Testimony</strong><p>Human experience can be meaningful phenomenological data without automatically becoming evidence of external ontology.</p></div>
+        <div><strong>Hypothesis · Speculation</strong><p>Exploratory ideas may be mapped, but they remain explicitly labelled and reversible.</p></div>
+      </aside>
+
+      <aside className="meaning-boundary" aria-label="Project principles">
+        <span>Project principles</span>
+        <div><strong>Provenance first</strong><p>Sources, uncertainty, corrections and version history should remain visible wherever practical.</p></div>
+        <div><strong>Human-governed AI</strong><p>AI can assist retrieval, mapping and synthesis; consequential judgement remains accountable to human review.</p></div>
+        <div><strong>Privacy retained</strong><p>Personal names, health details, family information, intimate visionary material and travel logistics are deliberately excluded from the public About page.</p></div>
+        <div><strong>Meaning is allowed. Overclaiming is not.</strong><p>AkashicNET can explore extraordinary questions without pretending uncertainty has disappeared.</p></div>
       </aside>
 
       <aside className="page-provenance" aria-label="Page version and update date">
-        <span>About page · Iteration 01</span><span>AkashicNET v0.9 · Pre-alpha</span><span>Updated 30 August 2026</span>
+        <span>About page · Anonymous public edition</span><span>AkashicNET · Pre-alpha</span><span>Updated 30 August 2026</span>
       </aside>
-      <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Boundless awareness is infinite love.</p><p>Awaken within · Serve without · 2026</p></footer>
+      <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Unity through neurodiversity.</p><p>Awaken within · Serve without · 2026</p></footer>
     </main>
   );
 }
