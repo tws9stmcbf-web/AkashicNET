@@ -18,10 +18,11 @@ def load(path: Path):
 
 def main() -> int:
     resolved = []
-    pending = []
     for path in FILES:
         obj = load(path)
         assert obj['version'] == '0.7.7'
+        assert obj['entity_type'] in ALLOWED_TYPES
+        assert obj['verification_date'] == '2026-08-30'
         g = obj['guardrails']
         assert g['candidate_edges_default'] == 'HOLD'
         assert g['max_hops'] == 2
@@ -31,8 +32,9 @@ def main() -> int:
         assert g['scientific_evidence_promotion_allowed'] is False
         assert g['truth_inference_allowed'] is False
         assert g['drive_access_performed'] is False
-        for r in obj.get('records', []):
-            assert r['entity_type'] in ALLOWED_TYPES
+        assert 'pending_records' not in obj
+        for r in obj['records']:
+            assert r['entity_type'] == obj['entity_type']
             assert r['resolution_state'] == 'RESOLVED_HIGH_PRECISION'
             assert r['wikidata_qid'].startswith('Q') and r['wikidata_qid'][1:].isdigit()
             assert r['reference_class'] == 'REFERENCE_ENCYCLOPEDIA'
@@ -40,25 +42,19 @@ def main() -> int:
             assert r['truth_inference'] is False
             assert r['scientific_evidence'] is False
             resolved.append(r)
-        for r in obj.get('pending_records', []):
-            assert r['entity_type'] in ALLOWED_TYPES
-            assert r['resolution_state'].startswith('PENDING_')
-            assert 'wikidata_qid' not in r
-            pending.append(r)
 
     labels = [r['akashic_entity'].casefold() for r in resolved]
     qids = [r['wikidata_qid'] for r in resolved]
     assert len(labels) == len(set(labels)), 'duplicate resolved entity labels'
     assert len(qids) == len(set(qids)), 'duplicate resolved QIDs'
-    assert len(resolved) == 13
-    assert len(pending) == 2
+    assert len(resolved) == 15
     assert sum(r['entity_type'] == 'PERSON' for r in resolved) == 10
-    assert sum(r['entity_type'] == 'WORK' for r in resolved) == 3
-    print('AKASHICNET v0.7.7 WIKISPINE ENTITY BATCH PASS', {
-        'resolved_high_precision': len(resolved),
+    assert sum(r['entity_type'] == 'WORK' for r in resolved) == 5
+    print('AKASHICNET v0.7.7 WIKISPINE TYPED ENTITY PASS', {
+        'resolved_high_precision': 15,
         'persons': 10,
-        'works': 3,
-        'pending': len(pending),
+        'works': 5,
+        'pending': 0,
         'truth_inference': False,
         'rights_promotion': False,
         'scientific_evidence_promotion': False,
