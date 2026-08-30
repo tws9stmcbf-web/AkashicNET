@@ -11,6 +11,7 @@ TOPICS = REF / "topic-census-checkpoint-v0.7.5.json"
 TAXONOMY = REF / "evidence-taxonomy-v0.10.json"
 BATCH3 = REF / "canonical-adjudication-batch3-v0.7.3.json"
 README = ROOT / "README.md"
+CHANGELOG = ROOT / "CHANGELOG.md"
 
 
 def load(path):
@@ -25,6 +26,7 @@ def main() -> int:
     taxonomy = load(TAXONOMY)
     batch3 = load(BATCH3)
     readme = README.read_text(encoding="utf-8")
+    changelog = CHANGELOG.read_text(encoding="utf-8")
 
     assert audit["version"] == "0.10.0-prealpha"
     assert audit["repository_release_audit_passed"] is True
@@ -58,19 +60,24 @@ def main() -> int:
         assert record["scientific_evidence_promoted"] is False
         assert record["safety_or_efficacy_promoted"] is False
 
-    assert "PRE-ALPHA v0.9" in readme
-    assert audit["current_public_version_metadata"] == "PRE-ALPHA v0.9"
-    assert audit["remaining_release_gates"] == [
-        "readme_changelog_version_metadata_update",
-        "tag_and_release_creation",
-    ]
+    assert "PRE-ALPHA v0.10" in readme
+    assert "PRE-ALPHA v0.10" in changelog
+    assert audit["current_version_metadata"] == "PRE-ALPHA v0.10"
+    assert audit["verified_gates"]["readme_version_metadata_updated"] is True
+    assert audit["verified_gates"]["release_notes_present"] is True
+    assert audit["remaining_release_gates"] == ["tag_and_release_creation"]
+
+    # The live repository is a private engineering workspace at this release point.
+    # This assertion prevents stale README text from claiming public GitHub visibility.
+    assert "Repository visibility: **Private engineering workspace**" in readme
+    assert "Repository: **Public**" not in readme
 
     invariants = audit["release_invariants"]
     for key, value in invariants.items():
         assert value is False, f"release invariant must remain false: {key}"
     assert audit["drive_access_performed"] is False
 
-    print("AKASHICNET PRE-ALPHA v0.10 REPOSITORY RELEASE AUDIT PASS: metadata/tag gates remain")
+    print("AKASHICNET PRE-ALPHA v0.10 REPOSITORY RELEASE AUDIT PASS: tag/release gate remains")
     return 0
 
 
