@@ -101,12 +101,15 @@ def test_even_accepted_content_edge_cannot_auto_promote(promotion_key):
     ('evidence', 'provenance is not evidence'),
 ])
 def test_boundary_language_cannot_disappear(doc_name, phrase):
-    graph, canon, evidence = GRAPH, CANON, EVIDENCE
+    graph, canon, evidence = GRAPH.lower(), CANON.lower(), EVIDENCE.lower()
     if doc_name == 'graph':
-        graph = graph.replace(phrase, 'removed boundary')
+        assert phrase in graph
+        graph = graph.replace(phrase, 'removed boundary', 1)
     elif doc_name == 'canon':
-        canon = canon.replace(phrase, 'removed boundary')
+        assert phrase in canon
+        canon = canon.replace(phrase, 'removed boundary', 1)
     else:
-        evidence = evidence.replace(phrase, 'removed boundary')
+        assert phrase in evidence
+        evidence = evidence.replace(phrase, 'removed boundary', 1)
     with pytest.raises(AssertionError):
         mod.validate(DATA, graph, canon, evidence)
