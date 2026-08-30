@@ -1,0 +1,39 @@
+name: Test rights candidate triage v0.37
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rights-candidate-triage-v037-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assert no rights overpromotion
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          rows=list(csv.DictReader(open('references/community/rights-candidate-triage-v0.37.csv',encoding='utf-8')))
+          assert len(rows)==3
+          assert all(r['provisional_ladder_state']=='R1_WORK_LEVEL_CANDIDATE' for r in rows)
+          assert all(r['manifestation_identified']=='NO' for r in rows)
+          assert all(r['public_status']=='UNKNOWN_UNVERIFIED' for r in rows)
+          assert all(r['public_manifest_eligible']=='NO' for r in rows)
+          assert all(r['blocker']=='EXACT_DRIVE_MANIFESTATION_NOT_IDENTIFIED' for r in rows)
+          policy=Path('references/community/rights-candidate-triage-policy-v0.37.md').read_text(encoding='utf-8')
+          for phrase in ['real corpus promotions to `PUBLIC_VERIFIED`: 0','raw Drive document bodies read: 0','new Drive hashes computed: 0','Jurisdiction caution']:
+              assert phrase in policy
+          production=list(csv.DictReader(open('references/community/drive-rights-provenance-ledger.csv',encoding='utf-8')))
+          assert all(r['public_status']!='PUBLIC_VERIFIED' for r in production)
+          assert all(r['public_manifest_eligible']=='NO' for r in production)
+          print('AKASHICNET v0.37 RIGHTS TRIAGE PASS',{
+            'candidates':len(rows),'highest_real_state':'R1_WORK_LEVEL_CANDIDATE',
+            'r2_manifestations':0,'public_verified':0,'production_manifest_additions':0,
+            'raw_drive_reads':0,'new_hashes':0,'truth_inference':False,'scientific_evidence_promotion':False})
+          PY
