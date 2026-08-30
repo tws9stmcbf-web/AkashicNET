@@ -1,0 +1,23 @@
+name: N2N Semantic Expansion v0.1
+on:
+  push:
+    paths:
+      - 'scripts/n2n_semantic_expansion_v01.py'
+      - 'references/community/n2n-pilot-index.csv'
+      - 'references/community/reddit-uri-index.csv'
+      - '.github/workflows/n2n-semantic-expansion-v01.yml'
+  workflow_dispatch:
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extract all tracked N2N and measure semantic coverage
+        run: python scripts/n2n_semantic_expansion_v01.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: n2n-semantic-expansion-v0.1
+          path: artifacts/n2n-semantic-expansion-v0.1.json
