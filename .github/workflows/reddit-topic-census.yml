@@ -1,0 +1,35 @@
+name: Reddit metadata topic census
+
+on:
+  push:
+    branches:
+      - feature/reddit-corroboration-v08
+    paths:
+      - 'scripts/reddit_topic_census.py'
+      - 'references/community/n2n-pilot-index.csv'
+      - 'references/community/concept-seed-v0.20.csv'
+      - '.github/workflows/reddit-topic-census.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  topic-census:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run topic census
+        run: |
+          mkdir -p artifacts/topic-census
+          python scripts/reddit_topic_census.py \
+            references/community/n2n-pilot-index.csv \
+            --concept-seed references/community/concept-seed-v0.20.csv \
+            --json-out artifacts/topic-census/reddit-topic-census-v0.1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reddit-topic-census-v0.1
+          path: artifacts/topic-census/
