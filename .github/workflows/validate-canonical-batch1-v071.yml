@@ -1,0 +1,32 @@
+name: Validate canonical batch 1 v0.7.1
+
+on:
+  pull_request:
+    paths:
+      - "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      - "references/community/canonical-adjudication-checkpoint-v0.7.1.md"
+      - "scripts/validate_canonical_batch1_v071.py"
+      - ".github/workflows/validate-canonical-batch1-v071.yml"
+  push:
+    branches: [main]
+    paths:
+      - "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      - "references/community/canonical-adjudication-checkpoint-v0.7.1.md"
+      - "scripts/validate_canonical_batch1_v071.py"
+      - ".github/workflows/validate-canonical-batch1-v071.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: "3.12"
+      - name: Validate v0.7.0 contract
+        run: python scripts/validate_canonical_adjudication_v070.py references/community/canonical-adjudication-batch1-v0.7.1.json
+      - name: Validate batch-specific invariants
+        run: python scripts/validate_canonical_batch1_v071.py references/community/canonical-adjudication-batch1-v0.7.1.json
