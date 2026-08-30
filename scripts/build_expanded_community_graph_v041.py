@@ -7,7 +7,7 @@ from pathlib import Path
 BASE=Path('data/knowledge-graph-v0.5.json')
 INDEX=Path('data/n2n-expanded-index-v0.40.csv')
 OUT=Path('data/knowledge-graph-v0.41.json')
-EXPECTED=7298
+EXPECTED=9340
 
 
 def post_id(url:str)->str|None:
