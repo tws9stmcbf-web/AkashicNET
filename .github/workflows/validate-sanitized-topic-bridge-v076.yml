@@ -1,0 +1,26 @@
+name: Validate sanitized topic bridge v0.7.6
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/sanitized-topic-label-schema-v0.7.6.json'
+      - 'tests/fixtures/sanitized-topic-label-v0.7.6.json'
+      - 'scripts/validate_sanitized_topic_bridge_v076.py'
+      - '.github/workflows/validate-sanitized-topic-bridge-v076.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/sanitized-topic-label-schema-v0.7.6.json'
+      - 'tests/fixtures/sanitized-topic-label-v0.7.6.json'
+      - 'scripts/validate_sanitized_topic_bridge_v076.py'
+      - '.github/workflows/validate-sanitized-topic-bridge-v076.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_sanitized_topic_bridge_v076.py
