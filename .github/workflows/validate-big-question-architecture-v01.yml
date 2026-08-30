@@ -1,0 +1,30 @@
+name: Validate big-question architecture v0.1
+
+on:
+  pull_request:
+    paths:
+      - 'references/big-questions/**'
+      - 'references/community/bq*.json'
+      - 'scripts/validate_big_question_architecture_v01.py'
+      - '.github/workflows/validate-big-question-architecture-v01.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/big-questions/**'
+      - 'references/community/bq*.json'
+      - 'scripts/validate_big_question_architecture_v01.py'
+      - '.github/workflows/validate-big-question-architecture-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: '3.12'
+      - name: Enforce one canonical tree per bounded question
+        run: python scripts/validate_big_question_architecture_v01.py
