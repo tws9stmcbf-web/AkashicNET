@@ -6,8 +6,10 @@ on:
       - "references/big-questions/BQ001/**"
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
+      - "scripts/validate_bq001_batch2_v01.py"
       - "tests/test_bq001_v01.py"
       - "tests/test_bq001_batch1_v01.py"
+      - "tests/test_bq001_batch2_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
   push:
     branches: [main]
@@ -15,8 +17,10 @@ on:
       - "references/big-questions/BQ001/**"
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
+      - "scripts/validate_bq001_batch2_v01.py"
       - "tests/test_bq001_v01.py"
       - "tests/test_bq001_batch1_v01.py"
+      - "tests/test_bq001_batch2_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
 
 permissions:
@@ -38,3 +42,7 @@ jobs:
         run: python scripts/validate_bq001_batch1_v01.py references/big-questions/BQ001/evidence-batch1-v0.1.json
       - name: Run BQ001 scientific baseline negative tests
         run: python tests/test_bq001_batch1_v01.py
+      - name: Validate BQ001 memory identity and NDE methods batch
+        run: python scripts/validate_bq001_batch2_v01.py references/big-questions/BQ001/evidence-batch2-v0.1.json
+      - name: Run BQ001 Batch 2 negative tests
+        run: python tests/test_bq001_batch2_v01.py
