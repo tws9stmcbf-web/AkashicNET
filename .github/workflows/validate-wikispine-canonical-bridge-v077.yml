@@ -1,0 +1,31 @@
+name: Validate WikiSpine canonical bridge v0.7.7
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-*.json'
+      - 'docs/CANONICAL_ADJUDICATION_CONTRACT_V070.md'
+      - 'references/community/canonical-adjudication-example-v0.7.0.json'
+      - 'scripts/validate_wikispine_canonical_bridge_v077.py'
+      - 'tests/test_wikispine_canonical_bridge_v077.py'
+      - '.github/workflows/validate-wikispine-canonical-bridge-v077.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/wikispine-*.json'
+      - 'docs/CANONICAL_ADJUDICATION_CONTRACT_V070.md'
+      - 'references/community/canonical-adjudication-example-v0.7.0.json'
+      - 'scripts/validate_wikispine_canonical_bridge_v077.py'
+      - 'tests/test_wikispine_canonical_bridge_v077.py'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_wikispine_canonical_bridge_v077.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_wikispine_canonical_bridge_v077.py

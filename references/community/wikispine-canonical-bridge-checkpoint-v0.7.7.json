@@ -1,0 +1,15 @@
+{
+  "version": "0.7.7",
+  "milestone": "WIKISPINE_CANONICAL_CONTRACT_BRIDGE",
+  "wikispine_source_version": "0.7.4",
+  "canonical_contract_version": "0.7.0",
+  "reference_identity_only": true,
+  "canonical_work_identity_inferred": false,
+  "edition_identity_inferred": false,
+  "rights_status_inferred": false,
+  "scientific_evidence_inferred": false,
+  "truth_inferred": false,
+  "reference_data_changed": false,
+  "privacy_posture_changed": false,
+  "drive_access_performed": false
+}
