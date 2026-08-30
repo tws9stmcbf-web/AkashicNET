@@ -1,0 +1,27 @@
+name: AkashicNET Topic Census v0.2
+
+on:
+  push:
+    paths:
+      - 'scripts/akashicnet_topic_census_v02.py'
+      - 'references/topics/**'
+      - 'references/community/n2n-pilot-index.csv'
+      - 'references/community/drive-metadata-root-census.csv'
+      - '.github/workflows/akashicnet-topic-census-v02.yml'
+  workflow_dispatch:
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run deterministic topic census
+        run: python scripts/akashicnet_topic_census_v02.py
+      - name: Upload census artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: akashicnet-topic-census-v0.2
+          path: artifacts/akashicnet-topic-census-v0.2.json
