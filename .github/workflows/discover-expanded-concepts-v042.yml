@@ -1,0 +1,48 @@
+name: Discover expanded concept candidates v0.42
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  expanded-concept-candidates-v042-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build expanded N2N index
+        run: python scripts/build_n2n_expanded_index_v040.py
+      - name: Discover candidates
+        run: python scripts/discover_expanded_concept_candidates_v042.py | tee /tmp/v042.json
+      - name: Assert review-first semantics
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/v042.json'))
+          assert x['community_records_examined']==9340
+          assert x['concept_count']==15
+          assert x['candidate_count']>0
+          assert x['decision_counts']['ACCEPT']==0
+          assert x['decision_counts']['HOLD']==x['candidate_count']
+          assert x['automatic_acceptance_allowed'] is False
+          assert x['truth_inference_allowed'] is False
+          assert x['scientific_evidence_promotion_allowed'] is False
+          assert x['rights_promotion_allowed'] is False
+          assert x['embeddings_created']==0 and x['reddit_body_hydration'] is False
+          full=json.load(open('data/expanded-concept-candidates-v0.42.json'))
+          assert len(full['candidates'])==x['candidate_count']
+          assert all(c['decision']=='HOLD' and c['accepted_edge'] is False for c in full['candidates'])
+          assert all(c['not_truth_claim'] and c['not_scientific_evidence_claim'] for c in full['candidates'])
+          print('AKASHICNET v0.42 EXPANDED CONCEPT CANDIDATES PASS',{
+            'records_examined':9340,'concepts':15,'candidates':x['candidate_count'],
+            'accept':0,'hold':x['candidate_count'],'automatic_acceptance':False,
+            'embeddings':0,'truth_inference':False,'rights_promotion':False,'scientific_evidence_promotion':False})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: expanded-concept-candidates-v0.42
+          path: data/expanded-concept-candidates-v0.42.json
