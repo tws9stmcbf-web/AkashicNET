@@ -1,11 +1,16 @@
 {
   "version": "0.7.7",
-  "batch": "G_PEOPLE_SMALL_BATCH",
+  "batch": "G_MAJOR_THINKERS_RESEARCHERS",
   "records": [
+    {"akashic_entity":"Albert Einstein","entity_type":"PERSON","wikidata_qid":"Q937","wikipedia_title":"Albert Einstein","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
     {"akashic_entity":"William James","entity_type":"PERSON","wikidata_qid":"Q125249","wikipedia_title":"William James","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
     {"akashic_entity":"Carl Jung","entity_type":"PERSON","wikidata_qid":"Q41532","wikipedia_title":"Carl Jung","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
     {"akashic_entity":"Aldous Huxley","entity_type":"PERSON","wikidata_qid":"Q81447","wikipedia_title":"Aldous Huxley","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Alan Watts","entity_type":"PERSON","wikidata_qid":"Q354867","wikipedia_title":"Alan Watts","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
     {"akashic_entity":"Terence McKenna","entity_type":"PERSON","wikidata_qid":"Q380558","wikipedia_title":"Terence McKenna","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Ram Dass","entity_type":"PERSON","wikidata_qid":"Q290536","wikipedia_title":"Ram Dass","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Francisco Varela","entity_type":"PERSON","wikidata_qid":"Q923582","wikipedia_title":"Francisco Varela","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"David Bohm","entity_type":"PERSON","wikidata_qid":"Q310765","wikipedia_title":"David Bohm","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
     {"akashic_entity":"Stanislav Grof","entity_type":"PERSON","wikidata_qid":"Q508620","wikipedia_title":"Stanislav Grof","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
   ],
   "guardrails": {
