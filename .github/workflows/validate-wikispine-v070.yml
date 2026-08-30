@@ -1,0 +1,26 @@
+name: Validate WikiSpine pilot v0.7.0
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-seed-v0.7.0.json'
+      - 'references/community/wikispine-policy-v0.7.0.md'
+      - 'scripts/validate_wikispine_v070.py'
+      - '.github/workflows/validate-wikispine-v070.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/wikispine-seed-v0.7.0.json'
+      - 'references/community/wikispine-policy-v0.7.0.md'
+      - 'scripts/validate_wikispine_v070.py'
+      - '.github/workflows/validate-wikispine-v070.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_wikispine_v070.py
