@@ -1,0 +1,43 @@
+name: Test expanded community search v0.44
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  expanded-community-search-v044-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build expanded index
+        run: python scripts/build_n2n_expanded_index_v040.py
+      - name: Exercise deterministic internal metadata search
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          def q(*args): return json.loads(subprocess.check_output(['python','scripts/query_expanded_community_v044.py',*args],text=True))
+          d=q('DMT','--page-size','5')
+          assert d['version']=='0.44' and d['visibility']=='internal_metadata_research'
+          assert d['pagination']['total_matches']>0 and len(d['results'])==5
+          assert all(r['review_state']=='unreviewed' and r['semantic_status']=='UNADJUDICATED' for r in d['results'])
+          assert all(r['rights_status']=='UNKNOWN_UNVERIFIED' and r['scientific_evidence_status']=='NOT_EVALUATED' for r in d['results'])
+          assert d['ranking_policy']['ranking_is_truth_score'] is False and d['ranking_policy']['ranking_is_evidence_score'] is False
+          first=[r['result_id'] for r in d['results']]
+          repeat=q('DMT','--page-size','5')
+          assert [r['result_id'] for r in repeat['results']]==first
+          if d['pagination']['next_cursor']:
+              p2=q('DMT','--page-size','5','--cursor',d['pagination']['next_cursor'])
+              assert not set(first)&{r['result_id'] for r in p2['results']}
+          bad=subprocess.run(['python','scripts/query_expanded_community_v044.py','Consciousness','--cursor',d['pagination']['next_cursor'] or 'bad'],text=True,capture_output=True)
+          assert bad.returncode!=0
+          assert d['guardrails']=={'body_reads':0,'embeddings':0,'semantic_auto_acceptance':False,'truth_inference':False,'rights_promotion':False,'scientific_evidence_promotion':False}
+          print('AKASHICNET v0.44 EXPANDED SEARCH PASS',{
+            'n2n_records':9340,'dmt_matches':d['pagination']['total_matches'],
+            'stable_order':True,'cursor_bound_to_query':True,'internal_only':True,
+            'semantic_auto_acceptance':False,'truth_inference':False,'rights_promotion':False,'scientific_evidence_promotion':False})
+          PY
