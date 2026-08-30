@@ -1,0 +1,66 @@
+{
+  "contract_version": "0.7.0",
+  "batch_version": "0.7.1",
+  "records": [
+    {
+      "candidate_id": "work:alice-a-bailey-discipleship-new-age-vol-1",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "ACCEPT",
+      "signals": ["PUBLIC_BIBLIOGRAPHIC_IDENTITY"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
+      "rationale": "A public publisher reference explicitly identifies Discipleship in the New Age, Volume I as a work by Alice A. Bailey. This supports the canonical work identity independently of private corpus filenames or byte hashes.",
+      "provenance": [
+        {
+          "source_class": "PUBLIC_PUBLISHER_REFERENCE",
+          "reference": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks"
+        }
+      ],
+      "contradictory_evidence_checked": true,
+      "uncertainty_note": "This decision establishes work identity only; it does not identify a particular edition, translation, rights state, or scientific status.",
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "work:alice-a-bailey-discipleship-new-age-vol-2",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "ACCEPT",
+      "signals": ["PUBLIC_BIBLIOGRAPHIC_IDENTITY"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
+      "rationale": "A public publisher reference explicitly identifies Discipleship in the New Age, Volume II as a work by Alice A. Bailey. This supports the canonical work identity independently of private corpus filenames or byte hashes.",
+      "provenance": [
+        {
+          "source_class": "PUBLIC_PUBLISHER_REFERENCE",
+          "reference": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks"
+        }
+      ],
+      "contradictory_evidence_checked": true,
+      "uncertainty_note": "This decision establishes work identity only; it does not identify a particular edition, translation, rights state, or scientific status.",
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "work:franz-bardon-golden-book-of-wisdom",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "ACCEPT",
+      "signals": ["PUBLIC_BIBLIOGRAPHIC_IDENTITY"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
+      "rationale": "A public library catalogue record identifies The Golden Book of Wisdom as a work by Franz Bardon contained with Frabato the Magician. This supports the canonical work identity independently of private corpus filenames or byte hashes.",
+      "provenance": [
+        {
+          "source_class": "PUBLIC_LIBRARY_CATALOGUE",
+          "reference": "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358"
+        }
+      ],
+      "contradictory_evidence_checked": true,
+      "uncertainty_note": "The catalogue evidence supports work identity, not a standalone edition assertion; edition identity and rights remain unresolved.",
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    }
+  ]
+}
