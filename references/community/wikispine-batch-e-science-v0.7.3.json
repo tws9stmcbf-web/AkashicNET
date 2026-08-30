@@ -1,0 +1,33 @@
+{
+  "version": "0.7.3",
+  "batch": "E_SCIENCE_CONSCIOUSNESS_COSMOLOGY",
+  "records": [
+    {"akashic_concept":"Physics","wikidata_qid":"Q413","wikipedia_title":"Physics"},
+    {"akashic_concept":"Quantum mechanics","wikidata_qid":"Q944","wikipedia_title":"Quantum mechanics"},
+    {"akashic_concept":"Cosmology","wikidata_qid":"Q338","wikipedia_title":"Cosmology"},
+    {"akashic_concept":"Astronomy","wikidata_qid":"Q333","wikipedia_title":"Astronomy"},
+    {"akashic_concept":"Astrophysics","wikidata_qid":"Q37547","wikipedia_title":"Astrophysics"},
+    {"akashic_concept":"Biology","wikidata_qid":"Q420","wikipedia_title":"Biology"},
+    {"akashic_concept":"Evolution","wikidata_qid":"Q1063","wikipedia_title":"Evolution"},
+    {"akashic_concept":"Dark matter","wikidata_qid":"Q79925","wikipedia_title":"Dark matter"},
+    {"akashic_concept":"Dark energy","wikidata_qid":"Q18343","wikipedia_title":"Dark energy"},
+    {"akashic_concept":"Universe","wikidata_qid":"Q1","wikipedia_title":"Universe"}
+  ],
+  "record_defaults": {
+    "resolution_state":"RESOLVED_HIGH_PRECISION",
+    "reference_class":"REFERENCE_ENCYCLOPEDIA",
+    "semantic_decision":"REFERENCE_IDENTITY_ONLY",
+    "truth_inference":false,
+    "scientific_evidence":false
+  },
+  "guardrails": {
+    "candidate_edges_default":"HOLD",
+    "max_hops":2,
+    "arbitrary_recursive_crawl":false,
+    "full_article_body_ingestion_default":false,
+    "rights_promotion_allowed":false,
+    "scientific_evidence_promotion_allowed":false,
+    "truth_inference_allowed":false,
+    "drive_access_performed":false
+  }
+}
