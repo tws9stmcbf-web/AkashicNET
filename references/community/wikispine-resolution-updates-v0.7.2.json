@@ -1,0 +1,11 @@
+{
+  "version":"0.7.2",
+  "type":"RESOLUTION_UPDATE",
+  "retrieved_on":"2026-08-30",
+  "records":[
+    {"akashic_concept":"Meditation","wikidata_qid":"Q108458","wikipedia_title":"Meditation","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Neuroscience","wikidata_qid":"Q207011","wikipedia_title":"Neuroscience","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Psychology","wikidata_qid":"Q9418","wikipedia_title":"Psychology","resolution_state":"RESOLVED_HIGH_PRECISION"}
+  ],
+  "guardrails":{"truth_inference":false,"scientific_evidence":false,"rights_promotion":false}
+}

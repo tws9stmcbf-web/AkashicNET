@@ -1,0 +1,13 @@
+{
+  "version":"0.7.2",
+  "batch":"WIKISPINE_BATCH_C_TRADITIONS",
+  "retrieved_on":"2026-08-30",
+  "records":[
+    {"akashic_concept":"Sikhism","wikidata_qid":"Q9316","wikipedia_title":"Sikhism","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Taoism","wikidata_qid":"Q9598","wikipedia_title":"Taoism","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Sufism","wikidata_qid":"Q9603","wikipedia_title":"Sufism","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Dzogchen","wikidata_qid":"Q849734","wikipedia_title":"Dzogchen","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Yoga","wikidata_qid":"Q9350","wikipedia_title":"Yoga","resolution_state":"RESOLVED_HIGH_PRECISION"}
+  ],
+  "defaults":{"reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","candidate_edges_default":"HOLD","truth_inference":false,"scientific_evidence":false,"rights_promotion":false,"full_article_body_ingestion":false}
+}
