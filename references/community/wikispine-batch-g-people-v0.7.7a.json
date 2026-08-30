@@ -1,0 +1,38 @@
+{
+  "version": "0.7.7a",
+  "batch": "G_PEOPLE_1",
+  "records": [
+    {
+      "label": "William James",
+      "entity_type": "PERSON",
+      "wikidata_qid": "Q125249",
+      "wikipedia_title": "William James",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    },
+    {
+      "label": "Carl Jung",
+      "entity_type": "PERSON",
+      "wikidata_qid": "Q41532",
+      "wikipedia_title": "Carl Jung",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    }
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
