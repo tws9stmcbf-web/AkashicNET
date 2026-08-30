@@ -1,0 +1,85 @@
+{
+  "id": "BQ001",
+  "version": "0.1.0",
+  "title": "Does consciousness continue beyond the individual?",
+  "status": "UNRESOLVED",
+  "public_beta_gate": true,
+  "conclusion_policy": "UNDETERMINED_AT_INGESTION",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "canonical_evidence_labels": [
+    "Established Evidence",
+    "Interpretation",
+    "Lived Experience/Testimony",
+    "Hypothesis",
+    "Speculation"
+  ],
+  "domains": [
+    "neuroscience_and_consciousness_models",
+    "cardiac_arrest_and_nde_research",
+    "memory_identity_and_self_continuity",
+    "reincarnation_case_research_and_critiques",
+    "contemplative_philosophical_and_wisdom_traditions",
+    "alternative_hypotheses_and_unresolved_models"
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-SEED-001",
+      "source_type": "FRAMEWORK_PLACEHOLDER",
+      "citation": "Seed placeholder only; replace with a reproducible primary or secondary source before supporting a substantive claim.",
+      "publication_date": null,
+      "url": null,
+      "limitations": ["Not evidence", "Cannot support Established Evidence"]
+    }
+  ],
+  "models": [
+    {
+      "model_id": "MODEL-BQ001-CONTINUITY",
+      "name": "continuity_or_survival_model",
+      "position": "Some aspect of consciousness may continue beyond individual biological functioning.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "name": "biological_dependence_model",
+      "position": "Individual consciousness depends on functioning biological systems and does not continue as an individual subject after irreversible biological death.",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-FRAMEWORK-001",
+      "text": "BQ001 currently has no adjudicated substantive answer.",
+      "domain": "alternative_hypotheses_and_unresolved_models",
+      "evidence_label": "Established Evidence",
+      "provenance": ["references/big-questions/BQ001/spec-v0.1.json"],
+      "source_ids": [],
+      "reviewed_support": true,
+      "scope": "project_state_only",
+      "uncertainty": "No empirical conclusion is implied by this project-state statement.",
+      "contradicts": [],
+      "supports_models": []
+    }
+  ],
+  "open_questions": [
+    "Which observations would discriminate between competing models?",
+    "Which reported phenomena survive prospective controls and independent replication?",
+    "How should personal identity be operationalised when evaluating continuity?",
+    "Which claims are empirical, philosophical, interpretive, testimonial or speculative?"
+  ],
+  "graph": {
+    "node_types": ["QUESTION", "SOURCE", "CLAIM", "MODEL", "UNCERTAINTY", "OPEN_QUESTION"],
+    "edge_types": ["SUPPORTED_BY", "INTERPRETS", "SUPPORTS_MODEL", "CONTRADICTS", "QUALIFIED_BY", "RAISES"],
+    "truth_inference_allowed": false,
+    "edge_state_may_upgrade_evidence": false
+  },
+  "promotion_guards": {
+    "testimony_may_not_auto_promote_to_established_evidence": true,
+    "source_count_may_not_upgrade_evidence": true,
+    "retrieval_rank_may_not_upgrade_evidence": true,
+    "semantic_similarity_may_not_upgrade_evidence": true,
+    "tradition_longevity_may_not_upgrade_evidence": true,
+    "ai_synthesis_may_not_be_primary_source": true,
+    "rights_promotion_allowed": false,
+    "scientific_truth_inference_allowed": false
+  }
+}
