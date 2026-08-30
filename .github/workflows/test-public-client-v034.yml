@@ -1,0 +1,94 @@
+name: Test public client v0.34
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  public-client-v034-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build prerequisite retrieval layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+          python scripts/index_expanded_concepts_v021.py
+          python scripts/normalise_semantic_representations_v022.py
+      - name: Assert browser client is public-only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path('web/public-v0.34/index.html').read_text(encoding='utf-8')
+          assert "visibility:'public'" in html
+          assert 'visibility=internal' not in html
+          assert 'PUBLIC_VERIFIED' in html
+          assert 'No PUBLIC_VERIFIED results are currently available' in html
+          assert 'document bodies' not in html.lower()
+          print('AKASHICNET v0.34 BROWSER CONTRACT PASS',{
+              'public_only':True,
+              'internal_visibility_control':False,
+              'rights_gate':'PUBLIC_VERIFIED',
+          })
+          PY
+      - name: Exercise public client against hardened service
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, time, urllib.request
+          env=os.environ.copy()
+          env['AKASHICNET_DEPLOYMENT_MODE']='public'
+          env['AKASHICNET_ALLOW_INTERNAL_VISIBILITY']='true'
+          env['AKASHICNET_RATE_LIMIT_REQUESTS']='100'
+          proc=subprocess.Popen(['python','scripts/retrieval_http_v033.py','--host','127.0.0.1','--port','8794'],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+          try:
+              for _ in range(60):
+                  try:
+                      with urllib.request.urlopen('http://127.0.0.1:8794/readyz',timeout=.5) as r:
+                          if json.load(r)['status']=='ready': break
+                  except Exception: time.sleep(.1)
+              else: raise AssertionError('hardened service did not become ready')
+              out=subprocess.check_output([
+                  'python','examples/public_client_v034.py','Golden Book of Wisdom',
+                  '--base-url','http://127.0.0.1:8794','--limit','1'
+              ],text=True)
+              payload=json.loads(out)
+              assert payload['client']=='AKASHICNET_PUBLIC_CLIENT'
+              assert payload['client_version']=='0.34'
+              assert payload['visibility']=='public'
+              assert payload['required_public_status']=='PUBLIC_VERIFIED'
+              assert payload['result_count']==0
+              assert payload['suppressed_count']>=1
+              assert all(set(r).issubset({
+                  'result_id','source_type','title','label','canonical_family_id','concept_id','concept_label',
+                  'semantic_decision','review_state','query_path','provenance_tier','provenance_rank',
+                  'logical_unit_count','physical_manifestation_count','sha256_verified_logical_units',
+                  'public_status','rights_state'
+              }) for r in payload['results'])
+              print('AKASHICNET v0.34 PUBLIC CLIENT PASS',{
+                  'visibility':'public',
+                  'required_status':'PUBLIC_VERIFIED',
+                  'public_results':payload['result_count'],
+                  'suppressed_nonpublic':payload['suppressed_count'],
+                  'internal_mode_exposed':False,
+                  'truth_inference':False,
+                  'scientific_evidence_promotion':False,
+              })
+          finally:
+              proc.terminate(); proc.wait(timeout=5)
+          PY
