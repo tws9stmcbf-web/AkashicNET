@@ -15,10 +15,7 @@ EXPECTED_COMPLETED = [
 ]
 
 
-def main() -> int:
-    checkpoint = json.loads(CHECKPOINT.read_text(encoding="utf-8"))
-    audit = json.loads(AUDIT.read_text(encoding="utf-8"))
-
+def validate(checkpoint: dict, audit: dict) -> bool:
     assert checkpoint["version"] == "0.10.0-prealpha"
     assert checkpoint["release_name"] == "Evidence-Governed Knowledge Pipeline"
     assert checkpoint["release_ready"] is False
@@ -44,7 +41,13 @@ def main() -> int:
     assert audit["release_ready"] is False
     assert audit["remaining_release_gates"] == ["tag_and_release_creation"]
     assert audit["current_version_metadata"] == "PRE-ALPHA v0.10"
+    return True
 
+
+def main() -> int:
+    checkpoint = json.loads(CHECKPOINT.read_text(encoding="utf-8"))
+    audit = json.loads(AUDIT.read_text(encoding="utf-8"))
+    validate(checkpoint, audit)
     print("AKASHICNET PRE-ALPHA v0.10 RELEASE CHECKPOINT PASS", {
         "completed_gates": len(EXPECTED_COMPLETED),
         "remaining_gate": "tag_and_release_creation",
