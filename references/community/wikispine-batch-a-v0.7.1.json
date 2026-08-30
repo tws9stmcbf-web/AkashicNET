@@ -1,0 +1,23 @@
+{
+  "version": "0.7.1",
+  "batch": "WIKISPINE_BATCH_A_ONTOLOGY",
+  "retrieved_on": "2026-08-30",
+  "records": [
+    {"akashic_concept":"Psychedelics","wikidata_qid":"Q2314176","wikipedia_title":"Psychedelic drug","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Shamanism","wikidata_qid":"Q42042","wikipedia_title":"Shamanism","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Hermeticism","wikidata_qid":"Q192933","wikipedia_title":"Hermeticism","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Qabbalah","wikidata_qid":"Q123006","wikipedia_title":"Kabbalah","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Theosophy","wikidata_qid":"Q178671","wikipedia_title":"Theosophy","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Non-duality","wikidata_qid":"Q2505322","wikipedia_title":"Nondualism","resolution_state":"RESOLVED_HIGH_PRECISION"},
+    {"akashic_concept":"Philosophy","wikidata_qid":"Q5891","wikipedia_title":"Philosophy","resolution_state":"RESOLVED_HIGH_PRECISION"}
+  ],
+  "defaults": {
+    "reference_class":"REFERENCE_ENCYCLOPEDIA",
+    "semantic_decision":"REFERENCE_IDENTITY_ONLY",
+    "candidate_edges_default":"HOLD",
+    "truth_inference":false,
+    "scientific_evidence":false,
+    "rights_promotion":false,
+    "full_article_body_ingestion":false
+  }
+}
