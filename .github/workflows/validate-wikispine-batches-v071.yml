@@ -1,0 +1,30 @@
+name: Validate WikiSpine batches v0.7.1
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-seed-v0.7.0.json'
+      - 'references/community/wikispine-batch-a-v0.7.1.json'
+      - 'references/community/wikispine-batch-b-v0.7.1.json'
+      - 'references/community/wikispine-expansion-checkpoint-v0.7.1.json'
+      - 'scripts/validate_wikispine_batches_v071.py'
+      - '.github/workflows/validate-wikispine-batches-v071.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/wikispine-seed-v0.7.0.json'
+      - 'references/community/wikispine-batch-a-v0.7.1.json'
+      - 'references/community/wikispine-batch-b-v0.7.1.json'
+      - 'references/community/wikispine-expansion-checkpoint-v0.7.1.json'
+      - 'scripts/validate_wikispine_batches_v071.py'
+      - '.github/workflows/validate-wikispine-batches-v071.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_wikispine_batches_v071.py
