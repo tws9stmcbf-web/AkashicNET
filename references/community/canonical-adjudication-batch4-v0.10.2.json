@@ -1,0 +1,75 @@
+{
+  "contract_version": "0.7.0",
+  "batch_version": "0.10.2",
+  "scope": "Strengthen public bibliographic provenance for the three remaining unresolved batch-2 families without inferring private-object identity.",
+  "records": [
+    {
+      "candidate_id": "CANON-B2-FORBIDDEN-HISTORY",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["MULTI_VOLUME_LABELS", "EDITION_OR_COPY_VARIATION"],
+      "evidence_class": "BIBLIOGRAPHIC_EVIDENCE_INCOMPLETE",
+      "rationale": "The candidate label remains insufficiently disambiguated to bind it reproducibly to one public bibliographic work without guessing author, volume, edition, or manifestation. Preserve HOLD until an independent public identifier and narrow tested relationship can be established.",
+      "contradiction_check": "Forbidden History is not treated as a unique work title because multiple works or manifestations may share or approximate that label.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-BARDON-VARIANTS",
+      "relationship": "REPRESENTS_EDITION",
+      "decision": "HOLD",
+      "signals": ["AUTHOR_TITLE_FAMILY", "COPY_VARIATION", "PUBLIC_EDITION_VARIATION_CONFIRMED"],
+      "evidence_class": "PUBLIC_BIBLIOGRAPHY_DOES_NOT_RESOLVE_PRIVATE_EDITION",
+      "rationale": "Public catalogues establish that Franz Bardon works such as Initiation into Hermetics exist in multiple distinguishable editions. That strengthens the need for edition-level discrimination but does not identify which private corpus variant corresponds to a particular public edition. No private filename, path, timestamp, size, provider ID, or digest is published or used as work identity.",
+      "contradiction_check": "Multiple public editions are evidence against collapsing variants into one REPRESENTS_EDITION assertion without edition-specific provenance.",
+      "provenance": [
+        {
+          "authority": "WorldCat",
+          "record_id": "OCLC 14174065",
+          "bibliographic_fact": "Public catalogue record for Franz Bardon's Initiation into Hermetics identifies an English edition/manifestation, demonstrating edition-specific bibliography for the work family."
+        },
+        {
+          "authority": "Open Library",
+          "bibliographic_fact": "Public work and edition records distinguish the underlying Bardon work from individual publication manifestations."
+        }
+      ],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-RAMAYANA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["CROSS_COLLECTION_ALIGNMENT", "TEXTUAL_TRADITION_VARIATION", "PUBLIC_CRITICAL_EDITION_CONFIRMED"],
+      "evidence_class": "PUBLIC_BIBLIOGRAPHY_DOES_NOT_RESOLVE_CROSS_COLLECTION_PROVENANCE",
+      "rationale": "Independent public bibliography establishes Ramayana textual and edition identities, including critical-edition cataloguing. The repository candidate remains a cross-collection alignment question, however, and public existence of the Ramayana does not prove that unresolved corpus representations denote the same work, recension, translation, edition, or manifestation. Preserve HOLD.",
+      "contradiction_check": "The Ramayana is a textual tradition with multiple recensions, translations and editions; generic title similarity must not collapse these distinctions.",
+      "provenance": [
+        {
+          "authority": "WorldCat",
+          "record_id": "OCLC 49480655",
+          "bibliographic_fact": "Public catalogue record identifies Srimad Valmiki Ramayana as a critical edition with commentary and variant readings, demonstrating that edition and textual-variant distinctions are bibliographically material."
+        }
+      ],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    }
+  ],
+  "summary": {
+    "records": 3,
+    "accept": 0,
+    "hold": 3,
+    "reject": 0,
+    "rights_promoted": 0,
+    "public_release_promoted": 0,
+    "scientific_evidence_promoted": 0,
+    "safety_or_efficacy_promoted": 0
+  }
+}
