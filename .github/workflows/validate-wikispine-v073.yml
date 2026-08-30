@@ -1,0 +1,26 @@
+name: Validate WikiSpine science expansion v0.7.3
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-e-science-v0.7.3.json'
+      - 'references/community/wikispine-aggregate-v0.7.3.json'
+      - 'scripts/validate_wikispine_v073.py'
+      - '.github/workflows/validate-wikispine-v073.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/wikispine-batch-e-science-v0.7.3.json'
+      - 'references/community/wikispine-aggregate-v0.7.3.json'
+      - 'scripts/validate_wikispine_v073.py'
+      - '.github/workflows/validate-wikispine-v073.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_wikispine_v073.py
