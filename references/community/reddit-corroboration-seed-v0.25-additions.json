@@ -1,0 +1,20 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed-additions.v0.25",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Independent public-web discoveries from search-engine indexed r/NeuronsToNirvana pages on 2026-08-30.",
+    "These records are discovery evidence only until historical-corpus intersection is evaluated by CI.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"1d7pvy2"},
+    {"subreddit":"NeuronsToNirvana","post_id":"178iwda"},
+    {"subreddit":"NeuronsToNirvana","post_id":"13bpste"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1d2yisg"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1d50iie"},
+    {"subreddit":"NeuronsToNirvana","post_id":"13qdsyf"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1198ikz"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1dw34q4"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1ai7ie1"}
+  ]
+}
