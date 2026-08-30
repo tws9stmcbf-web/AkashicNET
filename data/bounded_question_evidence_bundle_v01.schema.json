@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tws9stmcbf-web/AkashicNET/blob/main/data/bounded_question_evidence_bundle_v01.schema.json",
+  "title": "AkashicNET Bounded Question Evidence Bundle v0.1",
+  "type": "object",
+  "required": [
+    "version",
+    "question_id",
+    "question",
+    "question_status",
+    "public_epistemic_taxonomy",
+    "core_evidence_contract",
+    "sources",
+    "evidence_core",
+    "epistemic_annotations",
+    "material_limitations",
+    "model_implications",
+    "release_invariants"
+  ],
+  "properties": {
+    "version": {"type": "string", "minLength": 1},
+    "question_id": {"type": "string", "pattern": "^BQ[0-9]{3,}$"},
+    "question": {"type": "string", "minLength": 1},
+    "question_status": {"enum": ["UNRESOLVED", "PARTIALLY_RESOLVED", "RESOLVED"]},
+    "batch": {"type": "string"},
+    "public_epistemic_taxonomy": {"const": "references/community/evidence-taxonomy-v0.10.json"},
+    "core_evidence_contract": {"const": "data/evidence_claim_v01.schema.json"},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "type", "title", "year", "url"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "type": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "journal": {"type": "string"},
+          "year": {"type": "integer", "minimum": 1000, "maximum": 3000},
+          "pmid": {"type": "string"},
+          "doi": {"type": "string"},
+          "url": {"type": "string", "pattern": "^https://"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence_core": {
+      "type": "object",
+      "required": ["evidence_model_version", "claims", "evidence_links"],
+      "properties": {
+        "evidence_model_version": {"const": "0.1"},
+        "claims": {"type": "array", "minItems": 1},
+        "evidence_links": {"type": "array", "minItems": 1}
+      },
+      "additionalProperties": true
+    },
+    "epistemic_annotations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "label"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "label": {
+            "enum": [
+              "Established Evidence",
+              "Interpretation",
+              "Lived Experience/Testimony",
+              "Hypothesis",
+              "Speculation"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "material_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "model_implications": {
+      "type": "object",
+      "required": ["model_edges_upgrade_epistemic_label"],
+      "properties": {
+        "model_edges_upgrade_epistemic_label": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "release_invariants": {
+      "type": "object",
+      "required": [
+        "truth_inference_allowed",
+        "scientific_evidence_promotion_allowed",
+        "rights_promotion_allowed",
+        "privacy_posture_changed"
+      ],
+      "properties": {
+        "truth_inference_allowed": {"const": false},
+        "scientific_evidence_promotion_allowed": {"const": false},
+        "rights_promotion_allowed": {"const": false},
+        "privacy_posture_changed": {"const": false}
+      },
+      "additionalProperties": {"type": "boolean"}
+    }
+  },
+  "additionalProperties": true
+}
