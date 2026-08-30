@@ -1,0 +1,169 @@
+{
+  "batch_id": "BQ001-BATCH2-MEMORY-IDENTITY-NDE-METHODS",
+  "version": "0.1.0",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "scope": "memory_identity_self_continuity_and_nde_methodological_constraints",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-ELHAJ-2019",
+      "source_type": "PRIMARY_PEER_REVIEWED_STUDY",
+      "title": "Memories Supporting Myself: Autobiographical Memory Supports Self-Continuity in Alzheimer's Disease",
+      "authors_short": "El Haj et al.",
+      "year": 2019,
+      "journal": "Journal of Alzheimer's Disease",
+      "doi": "10.3233/JAD-190440",
+      "pmid": "31322576",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31322576/",
+      "study_design": "empirical study of autobiographical memory and subjective self-continuity in people with mild Alzheimer's disease",
+      "limitations": [
+        "Clinical population and cross-sectional associations limit generalisation.",
+        "Subjective self-continuity is a psychological construct and is not equivalent to metaphysical persistence of an individual subject.",
+        "Associations between autobiographical memory and self-continuity do not establish that memory is necessary or sufficient for personal identity."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-SOW-2022",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "Developments in the functions of autobiographical memory: An advanced review",
+      "authors_short": "Sow, Dijkstra and Janssen",
+      "year": 2022,
+      "journal": "WIREs Cognitive Science",
+      "doi": "10.1002/wcs.1625",
+      "pmid": "36165349",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36165349/",
+      "study_design": "advanced review of autobiographical-memory functions including self-continuity",
+      "limitations": [
+        "Much supporting literature is correlational and uses self-report measures.",
+        "Review-level synthesis does not identify a single necessary neural mechanism for identity.",
+        "Psychological self-continuity should not be conflated with post-mortem continuity."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-SEDIKIDES-2023",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "Self-Continuity",
+      "authors_short": "Sedikides et al.",
+      "year": 2023,
+      "journal": "Annual Review of Psychology",
+      "doi": "10.1146/annurev-psych-032420-032236",
+      "pmid": "35961040",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35961040/",
+      "study_design": "review of past-present, present-future and global self-continuity, including psychological, behavioral and neural correlates",
+      "limitations": [
+        "Self-continuity is operationalised as a subjective and psychological relation across temporal selves.",
+        "Neural correlates of self-continuity do not settle the ontology of personal identity.",
+        "The review does not test consciousness after biological death."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-MARTIAL-2022",
+      "source_type": "PEER_REVIEWED_COMMENTARY",
+      "title": "Studying death and near-death experiences requires neuroscientific expertise",
+      "authors_short": "Martial et al.",
+      "year": 2022,
+      "journal": "Annals of the New York Academy of Sciences",
+      "doi": "10.1111/nyas.14888",
+      "pmid": "36017883",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36017883/",
+      "study_design": "peer-reviewed methodological commentary on terminology and neurological assumptions in death and near-death research",
+      "limitations": [
+        "Commentary rather than a new prospective experiment.",
+        "Critique of specific claims does not by itself establish a complete neural explanation of NDEs.",
+        "Methodological disagreement must not be converted into proof of either survival or non-survival."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-MARTIAL-2025",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "A neuroscientific model of near-death experiences",
+      "authors_short": "Martial et al.",
+      "year": 2025,
+      "journal": "Nature Reviews Neurology",
+      "doi": "10.1038/s41582-025-01072-z",
+      "pmid": "40159547",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40159547/",
+      "study_design": "review and integrative neuroscientific model of near-death experiences",
+      "limitations": [
+        "Integrative model and review rather than direct proof of a single mechanism.",
+        "Near-death-like phenomena can arise in heterogeneous physiological contexts.",
+        "A plausible neuroscientific model does not logically exclude every alternative ontology."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-ELHAJ-2019-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "In a clinical study of mild Alzheimer's disease, autobiographical-memory performance was associated with participants' reported sense of self-continuity.",
+      "domain": "memory_identity_and_self_continuity",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ001-ELHAJ-2019"],
+      "provenance": ["peer-reviewed primary study"],
+      "limitations": ["The result concerns a psychological measure of self-continuity in a clinical population."],
+      "uncertainty": "The study does not determine whether autobiographical memory is necessary or sufficient for personal identity, nor whether identity can continue after death.",
+      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-SOW-2022-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Autobiographical memory is widely studied as serving self-continuity alongside directive and social functions, but much of the supporting literature is correlational or self-report based.",
+      "domain": "memory_identity_and_self_continuity",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SOW-2022"],
+      "provenance": ["peer-reviewed review"],
+      "limitations": ["The review explicitly notes limitations of correlational and self-report evidence."],
+      "uncertainty": "A functional link between memory and self-continuity does not settle what constitutes metaphysical identity.",
+      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-SEDIKIDES-2023-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Self-continuity is operationalised in contemporary psychology as a subjective connection among past, present and future selves, with identifiable psychological and neural correlates.",
+      "domain": "memory_identity_and_self_continuity",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SEDIKIDES-2023"],
+      "provenance": ["peer-reviewed review"],
+      "limitations": ["Subjective self-continuity is not synonymous with numerical identity or post-mortem survival."],
+      "uncertainty": "Multiple philosophical accounts of personal identity remain compatible with the psychological findings.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-MARTIAL-2022-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Near-death research requires careful separation of cardiac arrest, brain death, unresponsiveness and consciousness terminology; imprecise neurological assumptions can invalidate stronger inferences.",
+      "domain": "cardiac_arrest_and_nde_research",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-MARTIAL-2022"],
+      "provenance": ["peer-reviewed methodological commentary"],
+      "limitations": ["This is methodological criticism, not a prospective test of NDE timing or ontology."],
+      "uncertainty": "Correcting terminology narrows what can be inferred but does not decide whether consciousness can continue beyond irreversible biological death.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "A 2025 neuroscientific review proposes that converging neurophysiological processes can account for major features of near-death experiences without treating NDE phenomenology as direct evidence of consciousness outside brain function.",
+      "domain": "cardiac_arrest_and_nde_research",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-MARTIAL-2025"],
+      "provenance": ["peer-reviewed review and integrative model"],
+      "limitations": ["A proposed model is not equivalent to complete mechanistic proof and does not test every conceivable alternative explanation."],
+      "uncertainty": "The explanatory adequacy and boundary conditions of the model remain empirical questions.",
+      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+    }
+  ],
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "Batch 2 strengthens the distinction between psychological self-continuity, autobiographical memory and metaphysical persistence, while adding methodological constraints on NDE inference. The evidence supports strong links between brain-based memory/self processes and experienced continuity under studied conditions, but does not by itself establish either post-mortem survival or its impossibility."
+  },
+  "promotion_guards": {
+    "psychological_self_continuity_equals_metaphysical_identity": false,
+    "memory_dependence_proves_non_survival": false,
+    "methodological_critique_proves_non_survival": false,
+    "neuroscientific_model_proves_complete_explanation": false,
+    "review_article_counts_as_primary_experiment": false,
+    "model_support_edges_upgrade_evidence": false
+  }
+}
