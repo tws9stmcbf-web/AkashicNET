@@ -21,12 +21,18 @@ def canonical_url(url:str)->str:
         return (url or '').strip()
 
 
+def present(row:dict, field:str)->bool:
+    return bool((row.get(field) or '').strip())
+
+
 def main():
     with PATH.open(encoding='utf-8-sig',newline='') as f:
         reader=csv.DictReader(f)
         fields=list(reader.fieldnames or [])
         total=0; reddit_rows=0; n2n_rows=0
         reddit_urls=set(); n2n_urls=set(); source_values=Counter()
+        reddit_nonempty=Counter(); n2n_nonempty=Counter()
+        measured_fields=['title','author','topics','licence_status','reuse_decision','provenance_status','source_type','record_id']
         explicit_url_fields=[x for x in fields if 'url' in x.lower() or 'link' in x.lower()]
         source_fields=[x for x in fields if any(k in x.lower() for k in ('source','subreddit','community','type'))]
         for row in reader:
@@ -37,9 +43,13 @@ def main():
             if source.lower()=='reddit' and parts and parts.netloc=='reddit.com':
                 reddit_rows+=1
                 reddit_urls.add(url)
+                for field in measured_fields:
+                    if present(row,field): reddit_nonempty[field]+=1
                 if N2N_PREFIX in parts.path.lower():
                     n2n_rows+=1
                     n2n_urls.add(url)
+                    for field in measured_fields:
+                        if present(row,field): n2n_nonempty[field]+=1
             for k in source_fields:
                 v=(row.get(k) or '').strip()
                 if v: source_values[(k,v)]+=1
@@ -49,6 +59,9 @@ def main():
         'columns':fields,'explicit_url_fields':explicit_url_fields,'source_like_fields':source_fields,
         'total_rows':total,'reddit_rows':reddit_rows,'unique_reddit_urls':len(reddit_urls),
         'n2n_rows':n2n_rows,'unique_n2n_urls':len(n2n_urls),
+        'reddit_nonempty_fields':dict(reddit_nonempty),'n2n_nonempty_fields':dict(n2n_nonempty),
+        'n2n_title_coverage':round(n2n_nonempty['title']/n2n_rows,6) if n2n_rows else 0,
+        'n2n_topics_coverage':round(n2n_nonempty['topics']/n2n_rows,6) if n2n_rows else 0,
         'n2n_expansion_over_1000':len(n2n_urls)>1000,
         'top_source_values':[{'field':k[0],'value':k[1],'count':v} for k,v in source_values.most_common(12)],
         'content_mode':'metadata_and_links_only','drive_body_reads':0,'embeddings_created':0,
