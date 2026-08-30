@@ -1,0 +1,182 @@
+{
+  "batch_id": "BQ001-BATCH3-REINCARNATION-METHODS",
+  "version": "0.1.0",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "scope": "claimed_past_life_memories_and_methodological_constraints",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-TUCKER-2008",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "Children's reports of past-life memories: a review",
+      "authors_short": "Tucker",
+      "year": 2008,
+      "journal": "Explore",
+      "doi": "10.1016/j.explore.2008.04.001",
+      "pmid": "18602617",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18602617/",
+      "limitations": [
+        "Review by an investigator active in the field; not independent replication.",
+        "Summarizes observational case literature rather than controlled prospective proof of reincarnation."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-SCOPING-2021",
+      "source_type": "PEER_REVIEWED_SCOPING_REVIEW",
+      "title": "Academic studies on claimed past-life memories: A scoping review",
+      "authors_short": "Moraes et al.",
+      "year": 2021,
+      "journal": "Explore",
+      "pmid": "34147343",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+      "limitations": [
+        "Scoping reviews characterize a literature base; they do not establish the truth of the underlying ontology.",
+        "The reviewed field is dominated by observational studies, case reports, interviews and documentary analysis."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-HARALDSSON-2003",
+      "source_type": "PRIMARY_COMPARATIVE_STUDY",
+      "title": "Children who speak of past-life experiences: is there a psychological explanation?",
+      "authors_short": "Haraldsson et al.",
+      "year": 2003,
+      "journal": "British Journal of Health Psychology",
+      "doi": "10.1348/14760830260569256",
+      "pmid": "12689435",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "study_design": "comparison of 30 Lebanese children reporting past-life memories with 30 comparison children using psychological tests and questionnaires",
+      "limitations": [
+        "Small sample.",
+        "Psychological correlates do not determine the source or veracity of reported memories.",
+        "Failure of one psychological variable to explain cases is not evidence that reincarnation is true."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-MORAES-2024",
+      "source_type": "CASE_REPORT_AND_LITERATURE_REVIEW",
+      "title": "Children who claim previous life memories: A case report and literature review",
+      "authors_short": "Moraes et al.",
+      "year": 2024,
+      "journal": "Explore",
+      "doi": "10.1016/j.explore.2024.103063",
+      "pmid": "39341119",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39341119/",
+      "limitations": [
+        "Single-case design cannot establish reincarnation as a general causal mechanism.",
+        "Retrospective witness reports and family relationships can create information-leakage and reconstruction risks.",
+        "Anatomical compatibility is not unique causal identification."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-TUCKER-2025",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "What do the cases of the reincarnation type tell us about the mind beyond the brain?",
+      "authors_short": "Tucker",
+      "year": 2025,
+      "journal": "International Review of Psychiatry",
+      "doi": "10.1080/09540261.2025.2466484",
+      "pmid": "40627512",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40627512/",
+      "limitations": [
+        "Review and interpretation by a prominent investigator in the field; not independent confirmation.",
+        "Case accuracy and anomaly do not by themselves identify reincarnation as the unique explanation."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-ALLAN-2025",
+      "source_type": "METHODOLOGICAL_ARTICLE",
+      "title": "New methodological directions for involving children in past life memories research",
+      "authors_short": "Allan et al.",
+      "year": 2025,
+      "journal": "Explore",
+      "doi": "10.1016/j.explore.2025.103283",
+      "pmid": "41265055",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "limitations": [
+        "Methodological proposal rather than evidence for reincarnation.",
+        "Child-centred qualitative methods can improve phenomenological data but do not by themselves resolve causal ontology."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-SCOPING-2021-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "The 2021 scoping review included 78 scientific studies of alleged past-life memories; 84% concerned children, 60% used case-report designs, 73% used interviews and 50% used documentary analysis.",
+      "domain": "reincarnation_case_research_and_critiques",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ001-SCOPING-2021"],
+      "provenance": ["peer-reviewed scoping review abstract and bibliographic record"],
+      "limitations": ["These are characteristics of the published literature, not evidence that reincarnation itself is established."],
+      "uncertainty": "Publication and indexing choices may affect the represented literature base.",
+      "methodological_risks": ["publication_bias", "case_selection", "retrospective_reporting"],
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-HARALDSSON-2003-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "In a 30-versus-30 Lebanese comparison study, children reporting past-life memories scored higher on daydreaming, attention-seeking and dissociation, but not on social isolation or suggestibility; dissociation scores were reported as non-clinical.",
+      "domain": "reincarnation_case_research_and_critiques",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ001-HARALDSSON-2003"],
+      "provenance": ["peer-reviewed comparative study abstract"],
+      "limitations": ["Small sample and observational design cannot establish cause.", "The measured variables do not exhaust psychological or social explanations."],
+      "uncertainty": "The study constrains some simple psychological explanations but does not identify the origin of the reported memories.",
+      "methodological_risks": ["small_sample", "observational_design", "unmeasured_confounding"],
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-MORAES-2024-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A 2024 case report described a child who made 13 statements about a deceased granduncle; investigators classified nine as correct and four as undetermined, and reported behavioral and anatomical correspondences.",
+      "domain": "reincarnation_case_research_and_critiques",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ001-MORAES-2024"],
+      "provenance": ["peer-reviewed case report abstract"],
+      "limitations": ["Single retrospective family-linked case.", "Correct matches do not uniquely establish the causal mechanism.", "Information transfer, selective reporting and reconstruction must remain live alternatives unless independently excluded."],
+      "uncertainty": "The case is anomalous only to the extent that ordinary information pathways and reconstruction can be excluded; the abstract alone does not establish such exclusion completely.",
+      "methodological_risks": ["family_information_leakage", "retrospective_recall", "selective_reporting", "non_unique_matching"],
+      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-TUCKER-2025-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Reincarnation-type case literature contains reports with accurate biographical correspondences that some investigators interpret as potentially anomalous and relevant to mind-brain models.",
+      "domain": "reincarnation_case_research_and_critiques",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-TUCKER-2025", "SRC-BQ001-TUCKER-2008"],
+      "provenance": ["peer-reviewed reviews by a field investigator"],
+      "limitations": ["Anomalous correspondence is not equivalent to proof of reincarnation.", "Field-investigator reviews are not independent replication."],
+      "uncertainty": "Multiple causal explanations can fit at least some reported cases; their relative adequacy varies case by case.",
+      "methodological_risks": ["investigator_dependence", "case_selection", "publication_bias"],
+      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-METHODS-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "For claimed past-life-memory cases, stronger inference requires early documentation of statements, separation of witnesses, explicit accounting of prior contacts and information pathways, prospective or blinded verification where feasible, and transparent reporting of both matches and misses.",
+      "domain": "reincarnation_case_research_and_critiques",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SCOPING-2021", "SRC-BQ001-ALLAN-2025"],
+      "provenance": ["peer-reviewed methodological literature"],
+      "limitations": ["Improved methodology can raise evidential quality but cannot guarantee a specific metaphysical conclusion."],
+      "uncertainty": "Some historical cases cannot be retrospectively upgraded to these standards because original documentation constraints are irreversible.",
+      "methodological_risks": ["documentation_timing", "witness_dependence", "information_leakage", "selection_bias", "missing_negative_data"],
+      "supports_models": []
+    }
+  ],
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "Batch 3 establishes that a peer-reviewed observational literature exists around children reporting previous-life memories, including some documented biographical correspondences and psychological comparisons. The literature is methodologically heterogeneous and dominated by case reports, interviews and documentary analysis. It does not establish reincarnation as a proven mechanism, while simple psychological explanations assessed in some studies also do not explain every reported feature."
+  },
+  "promotion_guards": {
+    "case_match_proves_reincarnation": false,
+    "retrospective_case_equals_prospective_controlled_test": false,
+    "cultural_belief_proves_or_disproves_reincarnation": false,
+    "failure_of_psychological_explanation_proves_reincarnation": false,
+    "psychological_correlates_disprove_reincarnation": false,
+    "field_investigator_review_counts_as_independent_replication": false,
+    "model_support_edges_upgrade_evidence": false
+  }
+}
