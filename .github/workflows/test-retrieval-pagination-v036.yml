@@ -1,0 +1,62 @@
+name: Test retrieval pagination v0.36
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  retrieval-pagination-v036-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build prerequisite retrieval layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+          python scripts/index_expanded_concepts_v021.py
+          python scripts/normalise_semantic_representations_v022.py
+      - name: Verify stable IDs and cursor pagination
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          def q(*args): return json.loads(subprocess.check_output(['python','scripts/query_api_v036.py',*args],text=True))
+          full=q('Consciousness','--state','hold','--page-size','100')
+          assert full['api_version']=='0.36'
+          assert full['compatibility']['truth_inference_allowed'] is False
+          assert full['compatibility']['rights_promotion_allowed'] is False
+          ids=[r['result_id'] for r in full['results']]
+          assert len(ids)==len(set(ids)) and len(ids)>1
+          p1=q('Consciousness','--state','hold','--page-size','1')
+          assert p1['results'][0]['result_id']==ids[0]
+          assert p1['pagination']['next_cursor']
+          p2=q('Consciousness','--state','hold','--page-size','1','--cursor',p1['pagination']['next_cursor'])
+          assert p2['results'][0]['result_id']==ids[1]
+          repeat=q('Consciousness','--state','hold','--page-size','100')
+          assert [r['result_id'] for r in repeat['results']]==ids
+          golden1=q('Golden Book of Wisdom','--state','accepted','--page-size','10')
+          golden2=q('Golden Book of Wisdom','--state','accepted','--page-size','1')
+          assert golden1['results'][0]['result_id']==golden2['results'][0]['result_id']
+          assert golden1['results'][0]['semantic_decision']=='DIRECT_METADATA_LOOKUP'
+          bad=subprocess.run(['python','scripts/query_api_v036.py','Psychedelics','--cursor',p1['pagination']['next_cursor']],text=True,capture_output=True)
+          assert bad.returncode!=0 and 'invalid cursor for this query' in bad.stderr
+          print('AKASHICNET v0.36 PAGINATION PASS',{
+            'stable_ids':True,'deterministic_order':True,'cursor_bound_to_query':True,
+            'hold_results':len(ids),'golden_decision':'DIRECT_METADATA_LOOKUP',
+            'truth_inference':False,'rights_promotion':False,'scientific_evidence_promotion':False})
+          PY
