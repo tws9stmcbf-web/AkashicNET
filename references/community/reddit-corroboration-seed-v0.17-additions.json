@@ -1,0 +1,22 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.17-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Ten additional independently indexed r/NeuronsToNirvana records discovered via public web search for the 100-corroborated milestone.",
+    "These records are a delta to be merged with the 97-record v0.16 combined seed in CI.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"1ao44d7","source_reported_date":"2024-02-11","title":"Psilocybin-induced changes in neural reactivity to alcohol and emotional cues in patients with alcohol use disorder"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1aow98y","source_reported_date":"2024-02-12","title":"Bridging the gap: (a)typical psychedelic and near-death experience insights"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1b1yq77","source_reported_date":"2024-02-28","title":"Interactions between classic psychedelics and serotonergic antidepressants"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1c65308","source_reported_date":"2024-04-17","title":"Spectral signatures of psilocybin, LSD and ketamine"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1ezals7","source_reported_date":"2024-08-23","title":"Validation of the Swiss Psychedelic Side Effects Inventory"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1fm5pn1","source_reported_date":"2024-09-21","title":"Psilocybin reduces low frequency oscillatory power and neuronal phase-locking"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1geqst3","source_reported_date":"2024-10-29","title":"Preclinical models for evaluating psychedelics in major depressive disorder"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1gk5iee","source_reported_date":"2024-11-05","title":"Pyramidal cell types and 5-HT2A receptors are essential for psilocybin's lasting drug action"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1hg4u9z","source_reported_date":"2024-12-17","title":"Psychedelic use and bipolar disorder"},
+    {"subreddit":"NeuronsToNirvana","post_id":"119rff9","source_reported_date":"2023-02-23","title":"Awe as a pathway to mental and physical health"}
+  ]
+}
