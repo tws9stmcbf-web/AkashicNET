@@ -8,7 +8,7 @@
       "candidate_label": "The Book of the Sacred Magic of Abramelin the Mage",
       "relationship": "REPRESENTS_WORK",
       "decision": "ACCEPT",
-      "evidence_class": ["PUBLIC_LIBRARY_CATALOGUE", "PUBLIC_BIBLIOGRAPHIC_IDENTIFIER"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
       "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY"],
       "provenance": [
         "WorldCat OCLC 868276719: Abraham ben Simeon; S. L. MacGregor Mathers (translator); The Book of the Sacred Magic of Abramelin the Mage",
@@ -26,7 +26,7 @@
       "candidate_label": "Three Books of Occult Philosophy",
       "relationship": "REPRESENTS_WORK",
       "decision": "ACCEPT",
-      "evidence_class": ["PUBLIC_LIBRARY_CATALOGUE", "PUBLIC_BIBLIOGRAPHIC_IDENTIFIER"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
       "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY"],
       "provenance": [
         "WorldCat OCLC 26634250: Heinrich Cornelius Agrippa von Nettesheim; Three Books of Occult Philosophy",
@@ -45,7 +45,7 @@
       "candidate_label": "The Complete Works of Swami Vivekananda",
       "relationship": "REPRESENTS_WORK",
       "decision": "ACCEPT",
-      "evidence_class": ["PUBLIC_LIBRARY_CATALOGUE", "PUBLIC_BIBLIOGRAPHIC_IDENTIFIER"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
       "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY"],
       "provenance": [
         "WorldCat OCLC 39211846: Vivekananda; The Complete Works of Swami Vivekananda; Mayavati memorial edition; Advaita Ashrama",
