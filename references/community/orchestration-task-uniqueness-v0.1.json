@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "purpose": "Prevent parallel AkashicNET engineering tasks from silently duplicating or competing with an existing implementation path.",
+  "classifications": ["NEW", "EXTENDS", "SUPERSEDES", "DUPLICATE"],
+  "rules": {
+    "inspect_open_prs_before_new_pr": true,
+    "inspect_recent_merged_prs_before_new_pr": true,
+    "inspect_open_issues_before_new_pr": true,
+    "one_active_implementation_per_subsystem": true,
+    "duplicate_work_may_open_pr": false,
+    "superseding_work_must_name_predecessor": true,
+    "extending_work_must_name_canonical_path": true,
+    "blocked_branch_may_switch_to_other_subsystem": true,
+    "private_or_destructive_work_requires_separate_authorisation": true
+  },
+  "subsystems": [
+    "drive_hashing",
+    "canonicalisation",
+    "wikispine",
+    "retrieval",
+    "ontology",
+    "evidence",
+    "bounded_questions",
+    "release",
+    "website_metrics",
+    "privacy_security"
+  ],
+  "known_reconciled_overlap": [
+    {
+      "scope": "drive_hashing",
+      "records": ["PR-40", "PR-44", "PR-47", "PR-48"],
+      "resolution": "PR-40 authoritative for overlapping rows 31-50; PR-44 contributes zero incremental families; later reconciliation preserves corrected byte-identity state."
+    },
+    {
+      "scope": "bounded_questions",
+      "records": ["PR-83", "PR-84", "PR-86", "PR-93"],
+      "resolution": "references/big-questions/<BQID>/ is canonical; PR-83 representation is legacy/read-only and PR-86 was closed unmerged."
+    }
+  ],
+  "pre_pr_decision_template": {
+    "subsystem": "REQUIRED",
+    "objective": "REQUIRED",
+    "classification": "NEW|EXTENDS|SUPERSEDES|DUPLICATE",
+    "canonical_path_or_predecessor": "REQUIRED_FOR_EXTENDS_OR_SUPERSEDES",
+    "incremental_value": "REQUIRED_FOR_NEW_OR_EXTENDS",
+    "safe_to_open_pr": "BOOLEAN"
+  },
+  "release_invariants": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_auto_promotion_allowed": false,
+    "privacy_posture_changed": false
+  }
+}
