@@ -1,0 +1,14 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.19-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Additional independently indexed r/NeuronsToNirvana records discovered via public web search while progressing toward the 125-corroborated milestone.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"1g8z738","source_reported_date":"2024-10-21","title":"Effects of a Serotonergic Psychedelic on the Lipid Bilayer"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1g5u7kb","source_reported_date":"2024-10-17","title":"Psilocybin and the glutamatergic pathway: implications for the treatment of neuropsychiatric diseases"},
+    {"subreddit":"NeuronsToNirvana","post_id":"18kc9du","source_reported_date":"2023-12-17","title":"Into the Void: The Meditative Journey Beyond Consciousness"}
+  ]
+}
