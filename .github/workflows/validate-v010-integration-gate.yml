@@ -1,0 +1,44 @@
+name: Validate PRE-ALPHA v0.10 integration gate
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/v010-integration-fixture.json'
+      - 'references/community/v010-release-checkpoint.json'
+      - 'references/community/wikispine-canonical-bridge-checkpoint-v0.7.7.json'
+      - 'references/community/unified-retrieval-schema-v0.25.json'
+      - 'references/community/retrieval-fixtures-v0.25.json'
+      - 'references/community/ontology-boundary-fixtures-v0.7.9.json'
+      - 'docs/CANONICAL_ADJUDICATION_CONTRACT_V070.md'
+      - 'docs/canonical-evidence-v01.md'
+      - 'docs/DATA_SECURITY_BOUNDARY.md'
+      - 'scripts/validate_v010_integration_gate.py'
+      - 'tests/test_v010_integration_gate.py'
+      - '.github/workflows/validate-v010-integration-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/v010-integration-fixture.json'
+      - 'references/community/v010-release-checkpoint.json'
+      - 'references/community/wikispine-canonical-bridge-checkpoint-v0.7.7.json'
+      - 'references/community/unified-retrieval-schema-v0.25.json'
+      - 'references/community/retrieval-fixtures-v0.25.json'
+      - 'references/community/ontology-boundary-fixtures-v0.7.9.json'
+      - 'docs/CANONICAL_ADJUDICATION_CONTRACT_V070.md'
+      - 'docs/canonical-evidence-v01.md'
+      - 'docs/DATA_SECURITY_BOUNDARY.md'
+      - 'scripts/validate_v010_integration_gate.py'
+      - 'tests/test_v010_integration_gate.py'
+      - '.github/workflows/validate-v010-integration-gate.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_v010_integration_gate.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_v010_integration_gate.py

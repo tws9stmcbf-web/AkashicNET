@@ -1,0 +1,24 @@
+{
+  "version": "0.10.0-prealpha",
+  "milestone": "EVIDENCE_GOVERNED_PIPELINE_INTEGRATION",
+  "record_id": "SYNTHETIC-PUBLIC-SAFE-001",
+  "synthetic_public_safe": true,
+  "stages": [
+    {"stage": "ingestion", "provenance_present": true, "semantic_state": "UNSPECIFIED", "evidence_state": "UNCLASSIFIED", "rights_state": "UNRESOLVED"},
+    {"stage": "canonical_resolution", "provenance_present": true, "semantic_state": "HOLD", "evidence_state": "UNCLASSIFIED", "rights_state": "UNRESOLVED"},
+    {"stage": "reference_resolution", "provenance_present": true, "semantic_state": "HOLD", "reference_identity_only": true, "evidence_state": "UNCLASSIFIED", "rights_state": "UNRESOLVED"},
+    {"stage": "retrieval", "provenance_present": true, "semantic_state": "HOLD", "retrieval_rank": 1, "evidence_state": "UNCLASSIFIED", "rights_state": "UNRESOLVED"},
+    {"stage": "graph_candidate", "provenance_present": true, "semantic_state": "HOLD", "edge_state": "unresolved", "evidence_state": "UNCLASSIFIED", "rights_state": "UNRESOLVED"},
+    {"stage": "evidence_classification", "provenance_present": true, "semantic_state": "HOLD", "edge_state": "unresolved", "evidence_state": "HYPOTHESIS", "rights_state": "UNRESOLVED"}
+  ],
+  "release_guards": {
+    "hold_may_not_auto_promote": true,
+    "ranking_may_not_change_semantic_state": true,
+    "reference_identity_may_not_create_work_identity": true,
+    "graph_candidate_may_not_create_truth": true,
+    "provenance_may_not_create_scientific_evidence": true,
+    "rights_may_not_be_inferred": true,
+    "privacy_posture_changed": false,
+    "drive_access_performed": false
+  }
+}
