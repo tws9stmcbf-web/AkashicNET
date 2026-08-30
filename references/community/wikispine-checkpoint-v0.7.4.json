@@ -1,0 +1,20 @@
+{
+  "version": "0.7.4",
+  "milestone": "WIKISPINE_BRAIN_COGNITION_BIOLOGY_EXPANSION",
+  "previous_unique_seeds": 43,
+  "new_batch_records": 10,
+  "unique_seeds": 53,
+  "resolved_high_precision": 50,
+  "pending": 3,
+  "new_duplicate_concepts": 0,
+  "new_duplicate_resolved_qids": 0,
+  "reference_class": "REFERENCE_ENCYCLOPEDIA",
+  "candidate_edges_default": "HOLD",
+  "max_hops": 2,
+  "arbitrary_recursive_crawl": false,
+  "full_article_body_ingestion_default": false,
+  "truth_inference_allowed": false,
+  "rights_promotion_allowed": false,
+  "scientific_evidence_promotion_allowed": false,
+  "drive_access_performed": false
+}
