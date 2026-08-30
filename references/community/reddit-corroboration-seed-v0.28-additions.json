@@ -1,0 +1,19 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed-additions.v0.28",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Independent public-web discoveries from search-engine indexed r/NeuronsToNirvana pages on 2026-08-30.",
+    "Search diversification targeted older 2022-2024 topic/date windows and excluded records already visible in the v0.15 base seed.",
+    "Records are discovery evidence only until historical-corpus intersection is evaluated by CI.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"12ig2rd","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/12ig2rd","source_reported_title":"Classical and non-classical psychedelic drugs induce common network changes in human cortex","source_reported_date":"2023-04-11","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"yarguu","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/yarguu","source_reported_title":"The difference between LSD and psilocybin: Survey Result","source_reported_date":"2022-10-22","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"12w05cu","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/12w05cu","source_reported_title":"Pharmacokinetics of N,N-dimethyltryptamine (DMT) in Humans","source_reported_date":"2023-04-23","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"11wvaek","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/11wvaek","source_reported_title":"Human brain effects of DMT assessed via EEG-fMRI","source_reported_date":"2023-03-20","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"xajfq3","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/xajfq3","source_reported_title":"Exercise on the Brain induces Neuroplasticity by increasing production of BDNF in the Hippocampus","source_reported_date":"2022-09-10","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"y6ynra","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/y6ynra","source_reported_title":"Psychedelics: A New Fountain of Youth?","source_reported_date":"2022-10-18","evidence_type":"public_web_search","discovered_at":"2026-08-30"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1gjnuky","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1gjnuky","source_reported_title":"NewProfilePic based on a vision during my first breakthrough Changa (smokable DMT) Trip","source_reported_date":"2024-11-04","evidence_type":"public_web_search","discovered_at":"2026-08-30"}
+  ]
+}
