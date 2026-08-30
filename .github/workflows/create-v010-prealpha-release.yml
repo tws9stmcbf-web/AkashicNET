@@ -1,0 +1,54 @@
+name: Create PRE-ALPHA v0.10 release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/create-v010-prealpha-release.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          fetch-depth: 0
+      - name: Verify release is not already present
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v0.10.0-prealpha --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'v0.10.0-prealpha already exists; refusing duplicate creation.'
+            exit 1
+          fi
+      - name: Create PRE-ALPHA tag and release at this main commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v0.10.0-prealpha \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title 'Evidence-Governed Knowledge Pipeline — PRE-ALPHA v0.10' \
+            --prerelease \
+            --notes-file - <<'EOF'
+          # AkashicNET PRE-ALPHA v0.10
+
+          **Evidence-Governed Knowledge Pipeline**
+
+          This is a PRE-ALPHA research-engineering checkpoint, not a stable or production release.
+
+          Core boundaries remain unchanged: provenance is not evidence; semantic connection is not scientific evidence; archive inclusion is not endorsement; truth inference, rights promotion and scientific-evidence auto-promotion remain disabled. BQ001 remains UNRESOLVED.
+
+          Canonical duplicate review remains 81/126 uniquely adjudicated with 45 unresolved. The blocked rows 82–86 mapping is not inferred or bypassed by this release.
+          EOF
+      - name: Verify created release target and prerelease status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view v0.10.0-prealpha --repo "$GITHUB_REPOSITORY" --json tagName,isPrerelease,targetCommitish --jq '.tagName == "v0.10.0-prealpha" and .isPrerelease == true and .targetCommitish == env.GITHUB_SHA' | grep -qx true
