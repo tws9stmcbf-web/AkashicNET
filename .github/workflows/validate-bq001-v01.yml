@@ -5,14 +5,18 @@ on:
     paths:
       - "references/big-questions/BQ001/**"
       - "scripts/validate_bq001_v01.py"
+      - "scripts/validate_bq001_batch1_v01.py"
       - "tests/test_bq001_v01.py"
+      - "tests/test_bq001_batch1_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
   push:
     branches: [main]
     paths:
       - "references/big-questions/BQ001/**"
       - "scripts/validate_bq001_v01.py"
+      - "scripts/validate_bq001_batch1_v01.py"
       - "tests/test_bq001_v01.py"
+      - "tests/test_bq001_batch1_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
 
 permissions:
@@ -28,5 +32,9 @@ jobs:
           python-version: "3.12"
       - name: Validate BQ001 seed contract
         run: python scripts/validate_bq001_v01.py references/big-questions/BQ001/spec-v0.1.json
-      - name: Run BQ001 fail-closed tests
+      - name: Run BQ001 seed fail-closed tests
         run: python tests/test_bq001_v01.py
+      - name: Validate BQ001 scientific baseline batch
+        run: python scripts/validate_bq001_batch1_v01.py references/big-questions/BQ001/evidence-batch1-v0.1.json
+      - name: Run BQ001 scientific baseline negative tests
+        run: python tests/test_bq001_batch1_v01.py
