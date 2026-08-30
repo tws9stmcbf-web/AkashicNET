@@ -1,0 +1,54 @@
+{
+  "version": "0.10.0-prealpha",
+  "milestone": "PUBLIC_EPISTEMIC_TAXONOMY",
+  "canonical_labels": [
+    "Established Evidence",
+    "Interpretation",
+    "Lived Experience/Testimony",
+    "Hypothesis",
+    "Speculation"
+  ],
+  "definitions": {
+    "Established Evidence": "A claim supported by appropriately reviewed evidence and explicit provenance; source type or retrieval rank alone is insufficient.",
+    "Interpretation": "A reasoned reading, synthesis or framework that is presented as interpretation rather than established fact.",
+    "Lived Experience/Testimony": "A first-person or reported experience preserved as testimony without universalising it into a general factual claim.",
+    "Hypothesis": "A specific, testable or investigable proposition that remains unconfirmed.",
+    "Speculation": "A possibility or conjecture with insufficient support for hypothesis or established-evidence status."
+  },
+  "legacy_contract_boundary": {
+    "evidence_claim_schema": "data/evidence_claim_v01.schema.json",
+    "legacy_evidence_tiers_are_source_support_types_not_public_certainty_labels": true,
+    "EMPIRICAL_REFERENCE_does_not_auto_map_to_Established_Evidence": true,
+    "HISTORICAL_does_not_auto_map_to_Established_Evidence": true,
+    "CONTEMPLATIVE_PHILOSOPHICAL_does_not_auto_map_to_Established_Evidence": true,
+    "EXPERIENTIAL_ESOTERIC_does_not_auto_map_to_Established_Evidence": true
+  },
+  "promotion_guards": {
+    "retrieval_rank_may_not_upgrade_label": true,
+    "reference_identity_may_not_upgrade_label": true,
+    "graph_edge_state_may_not_upgrade_label": true,
+    "hash_identity_may_not_upgrade_label": true,
+    "archive_inclusion_may_not_upgrade_label": true,
+    "Established_Evidence_requires_reviewed_support_and_provenance": true,
+    "Lived_Experience_Testimony_may_not_be_universalised": true,
+    "Hypothesis_may_not_be_presented_as_Established_Evidence": true,
+    "Speculation_may_not_be_presented_as_Hypothesis_or_Established_Evidence": true,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false
+  },
+  "public_surface_audit": {
+    "homepage_current_labels": [
+      "Supported evidence",
+      "Interpretive framework",
+      "Lived experience",
+      "Speculative possibility"
+    ],
+    "homepage_missing_canonical_label": "Hypothesis",
+    "homepage_exact_taxonomy_consistent": false,
+    "release_gate_passed": false,
+    "remediation": "Replace the four legacy homepage display labels with the five canonical public epistemic labels before v0.10 release."
+  },
+  "privacy_posture_changed": false,
+  "drive_access_performed": false
+}
