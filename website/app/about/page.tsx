@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "About AkashicNET: its human mission, meaning, ethical compass, boundaries and possible outcomes.",
 };
 
-// Public identity is intentionally anonymous: no personal name is published on this page.
+// Public identity remains intentionally anonymous: no personal name is published on this page.
 export default function AboutPage() {
   return (
     <main className="community-page">
