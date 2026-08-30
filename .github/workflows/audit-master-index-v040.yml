@@ -1,0 +1,34 @@
+name: Audit master index v0.40
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  master-index-v040-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit tracked master index
+        run: |
+          python scripts/audit_master_index_v040.py | tee /tmp/master-index-v040.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/master-index-v040.json'))
+          assert x['audit']=='AKASHICNET_MASTER_INDEX_AUDIT'
+          assert x['total_rows']>0
+          assert x['drive_body_reads']==0
+          assert x['embeddings_created']==0
+          assert x['truth_inference_allowed'] is False
+          assert x['rights_promotion_allowed'] is False
+          assert x['scientific_evidence_promotion_allowed'] is False
+          print('AKASHICNET v0.40 MASTER INDEX AUDIT PASS',{
+            'total_rows':x['total_rows'],'unique_reddit_urls':x['unique_reddit_urls'],
+            'unique_n2n_urls':x['unique_n2n_urls'],'n2n_expansion_over_1000':x['n2n_expansion_over_1000'],
+            'columns':x['columns'],'url_fields':x['explicit_url_fields'],'source_fields':x['source_like_fields']})
+          PY
