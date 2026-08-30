@@ -1,0 +1,33 @@
+name: Validate ontology boundary v0.7.9
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/ontology-boundary-fixtures-v0.7.9.json'
+      - 'references/community/knowledge-graph-schema-v0.1.md'
+      - 'docs/CANONICAL_ADJUDICATION_CONTRACT_V070.md'
+      - 'docs/canonical-evidence-v01.md'
+      - 'scripts/validate_ontology_boundary_v079.py'
+      - 'tests/test_ontology_boundary_v079.py'
+      - '.github/workflows/validate-ontology-boundary-v079.yml'
+  push:
+    paths:
+      - 'references/community/ontology-boundary-fixtures-v0.7.9.json'
+      - 'references/community/knowledge-graph-schema-v0.1.md'
+      - 'docs/CANONICAL_ADJUDICATION_CONTRACT_V070.md'
+      - 'docs/canonical-evidence-v01.md'
+      - 'scripts/validate_ontology_boundary_v079.py'
+      - 'tests/test_ontology_boundary_v079.py'
+      - '.github/workflows/validate-ontology-boundary-v079.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_ontology_boundary_v079.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_ontology_boundary_v079.py
