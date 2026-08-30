@@ -35,7 +35,7 @@ def main() -> int:
         spec = ROOT / record["spec"]
         assert spec.is_file(), f"missing question spec: {spec}"
         spec_payload = json.loads(spec.read_text(encoding="utf-8"))
-        assert spec_payload.get("question_id") == question_id
+        assert spec_payload.get("id", spec_payload.get("question_id")) == question_id
 
         batches = record.get("evidence_batches", [])
         assert batches, f"{question_id}: at least one canonical evidence batch required"
