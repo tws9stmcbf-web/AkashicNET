@@ -9,6 +9,7 @@ on:
       - scripts/reddit_corpus_corroboration.py
       - tests/test_reddit_corpus_corroboration.py
       - references/community/reddit-corroboration-seed-v0.15.json
+      - references/community/reddit-corroboration-seed-v0.16-additions.json
       - .github/workflows/reddit-corpus-corroboration.yml
 
 permissions:
@@ -30,13 +31,42 @@ jobs:
           curl --fail --location --silent --show-error \
             https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
             --output artifacts/reddit-corroboration/reddit-uri-index.csv
-      - name: Build Corroboration Audit v0.15
+      - name: Build combined v0.16 seed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base = json.loads(Path('references/community/reddit-corroboration-seed-v0.15.json').read_text())
+          delta = json.loads(Path('references/community/reddit-corroboration-seed-v0.16-additions.json').read_text())
+          seen = {(r['subreddit'], r['post_id']) for r in base['records']}
+          records = list(base['records'])
+          for r in delta['records']:
+              key = (r['subreddit'], r['post_id'])
+              if key not in seen:
+                  records.append(r)
+                  seen.add(key)
+          combined = {
+              'schema': 'akashicnet.reddit.corroboration-seed.v0.16',
+              'source_type': 'public_web_discovery',
+              'notes': [
+                  'Combined from the 96-record v0.15 seed plus the v0.16 additions delta.',
+                  f'v0.16 contains {len(records)} unique records.',
+                  'Presence is corroboration evidence, not current live/API verification.',
+                  'No usernames, post bodies, or comments are stored.'
+              ],
+              'records': records,
+          }
+          out = Path('artifacts/reddit-corroboration/reddit-corroboration-seed-v0.16.json')
+          out.write_text(json.dumps(combined, indent=2) + '\n')
+          print(f'combined_seed_records: {len(records)}')
+          PY
+      - name: Build Corroboration Audit v0.16
         run: |
           python scripts/reddit_corpus_corroboration.py \
             artifacts/reddit-corroboration/reddit-uri-index.csv \
-            references/community/reddit-corroboration-seed-v0.15.json \
-            --json-out artifacts/reddit-corroboration/corroboration-v0.15.json
+            artifacts/reddit-corroboration/reddit-corroboration-seed-v0.16.json \
+            --json-out artifacts/reddit-corroboration/corroboration-v0.16.json
       - uses: actions/upload-artifact@v4
         with:
-          name: reddit-corpus-corroboration-v0.15
+          name: reddit-corpus-corroboration-v0.16
           path: artifacts/reddit-corroboration/
