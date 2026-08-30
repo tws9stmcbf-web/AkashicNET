@@ -1,0 +1,55 @@
+name: Build expanded community graph v0.41
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  expanded-community-v041-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build library provenance base
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+      - name: Build expanded community source index
+        run: python scripts/build_n2n_expanded_index_v040.py
+      - name: Build expanded community graph
+        run: python scripts/build_expanded_community_graph_v041.py | tee /tmp/v041.json
+      - name: Assert unreviewed scale boundary
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/v041.json'))
+          assert x['canonical_records']==7298
+          assert x['historical_curated_pilot_records']==1000 and x['historical_pilot_preserved'] is True
+          assert x['review_state']=='unreviewed'
+          assert x['automatic_cross_source_identity_links']==0
+          assert x['automatic_semantic_edges']==0
+          assert x['reddit_body_hydration'] is False and x['embeddings_created']==0
+          assert x['scientific_evidence_default'] is False
+          assert x['truth_inference_allowed'] is False and x['rights_promotion_allowed'] is False
+          graph=json.load(open('data/knowledge-graph-v0.41.json'))
+          nodes=[n for n in graph['nodes'] if n.get('node_type')=='community_post']
+          assert len(nodes)==7298
+          assert all(n['review_state']=='unreviewed' for n in nodes)
+          assert all(n['semantic_status']=='UNADJUDICATED' for n in nodes)
+          assert all(n['rights_status']=='UNKNOWN_UNVERIFIED' for n in nodes)
+          assert all(n['not_scientific_evidence_by_default'] is True for n in nodes)
+          print('AKASHICNET v0.41 EXPANDED COMMUNITY GRAPH PASS',{
+            'community_nodes':7298,'pilot_preserved':True,'review_state':'unreviewed',
+            'automatic_semantic_edges':0,'automatic_identity_links':0,
+            'reddit_body_reads':0,'embeddings':0,'truth_inference':False,'rights_promotion':False})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: expanded-community-graph-v0.41
+          path: data/knowledge-graph-v0.41.json
