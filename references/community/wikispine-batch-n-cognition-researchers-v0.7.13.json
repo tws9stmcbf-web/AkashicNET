@@ -1,0 +1,22 @@
+{
+  "version": "0.7.13",
+  "batch": "N_COGNITION_RESEARCHERS",
+  "records": [
+    {"akashic_entity":"António Damásio","entity_type":"PERSON","wikidata_qid":"Q380207","wikipedia_title":"Antonio Damasio","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Vilayanur S. Ramachandran","entity_type":"PERSON","wikidata_qid":"Q380221","wikipedia_title":"V. S. Ramachandran","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Evan Thompson","entity_type":"PERSON","wikidata_qid":"Q329249","wikipedia_title":"Evan Thompson","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Susan Blackmore","entity_type":"PERSON","wikidata_qid":"Q155199","wikipedia_title":"Susan Blackmore","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Bernard Baars","entity_type":"PERSON","wikidata_qid":"Q822277","wikipedia_title":"Bernard Baars","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "entity_count_is_topic_count": false,
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
