@@ -1,0 +1,31 @@
+canonical_topic,decision,topic_class,reason
+Vajrasattva,ACCEPT,practice_tradition,Distinct Vajrayana topic supported by descendant metadata
+Bardo teachings,ACCEPT,doctrine_practice,Distinct Tibetan Buddhist topic
+Buddhist monasticism,ACCEPT,religious_practice,Distinct Vinaya/monastic topic
+Milarepa,HOLD,person,Person identity should not inflate topic census without person-topic policy
+Theravada forest tradition,ACCEPT,tradition,Distinct Buddhist tradition represented by teaching corpus
+Advaita Vedanta,ACCEPT,philosophical_tradition,Distinct philosophical tradition and cross-source bridge
+Atharva Veda,ACCEPT,textual_tradition,Distinct Vedic textual/religious topic
+Nisargadatta Maharaj,HOLD,person,Person identity; retain provenance but exclude from topic count pending policy
+Sri Aurobindo,HOLD,person,Person identity; associated systems should be counted instead where supported
+Integral Yoga,ACCEPT,philosophical_tradition,Distinct philosophical and contemplative system
+Parapsychology,ACCEPT,research_domain,Distinct interdisciplinary research field
+Abramelin,ACCEPT,esoteric_tradition,Distinct Western esoteric magical tradition/text complex
+Gnosis,ACCEPT,religious_concept,Distinct concept/tradition; canonicalise separately from broad Gnosticism only if ontology permits narrower node
+Book of Enoch,ACCEPT,textual_tradition,Distinct ancient religious/apocalyptic literature topic
+Shamanic techniques,ACCEPT,practice,Distinct practice-level node subordinate to Shamanism
+Demotic magic,ACCEPT,historical_practice,Distinct ancient Egyptian magical practice/textual topic
+Ethnomycology,ACCEPT,research_domain,Distinct anthropology-mycology-cultural studies topic
+Mahabharata,ACCEPT,textual_tradition,Major Indian epic and philosophical/religious corpus
+Tantra,ACCEPT,tradition,Distinct cross-tradition religious/philosophical topic
+Greek philosophy,ACCEPT,philosophical_tradition,Distinct historical philosophical domain
+Maya codices,ACCEPT,historical_knowledge,Distinct Mesoamerican textual/knowledge topic
+Jainism,ACCEPT,religious_tradition,Distinct religion represented by source corpus
+Frankfurt School,ACCEPT,philosophical_tradition,Distinct critical-theory tradition
+Occult philosophy,ACCEPT,philosophical_tradition,Distinct Western esoteric philosophical topic
+Kierkegaardian philosophy,ACCEPT,philosophical_tradition,Topic framed as philosophical corpus rather than person
+Einstein and philosophy of science,HOLD,author_derived,Needs evidence that collection supports philosophy-of-science topic rather than author-only node
+Psychic development,ACCEPT,practice_concept,Explicit collection-level subject
+John Locke and empiricism,ACCEPT,philosophical_tradition,Topic framed as empiricism/Lockean philosophy rather than person identity
+Sacred texts,HOLD,umbrella_category,Too broad and potentially collection-like; retain as navigation label pending hierarchy policy
+Sacred Books of the East,HOLD,collection,Named publication collection rather than independent subject domain
