@@ -1,0 +1,34 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.23-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "First accelerated post-125 discovery batch.",
+    "Candidates were independently surfaced through public-web search before historical-corpus intersection testing.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"1d0m5le","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1d0m5le/","source_date":"2024-05-25","title":"Psychedelics in New Zealand with Dr Suresh Muthukumaraswamy","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"15itgt7","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/15itgt7/","title":"What is Consciousness? | Inner Cosmos With David Eagleman","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1dsw385","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1dsw385/","title":"Mother Earth / otherworldly Consciousness","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1cu2gb4","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1cu2gb4/","title":"In vitro and in vivo metabolism of psilocybin's active metabolite psilocin","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"14pjv0a","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/14pjv0a/","title":"Psilocybin's effects on cognition and creativity: A scoping review","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1bzrtjv","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1bzrtjv/","title":"Psilocybin enhances insightfulness in meditation","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1ac5r2z","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1ac5r2z/","title":"In vivo validation of psilacetin (4-AcO-DMT) as a prodrug","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"111y4jq","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/111y4jq/","title":"Could consciousness all come down to the way things vibrate? Resonance Theory","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"10y3u8w","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/10y3u8w/","title":"Navigating intensive altered states of consciousness: set and setting","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"118yq4s","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/118yq4s/","title":"LSD analogue structures and forensic toxicology","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"15y6ywi","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/15y6ywi/","title":"1T-LSD blotter characterisation","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"17vuuzj","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/17vuuzj/","title":"Mislabelled 1T-LSD in 1D-LSD blotters","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"15y6nxs","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/15y6nxs/","title":"LSD pharmacokinetics, pharmacodynamics and urinary recovery","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"15jizk3","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/15jizk3/","title":"LSD Educational Review","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1hg56s2","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1hg56s2/","title":"Immunomodulatory effects of psychedelics in Alzheimer's-related dementia","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"174vhru","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/174vhru/","title":"RIP","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1hvkasb","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1hvkasb/","title":"HPPD neuropsychological profiles paper","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1f7qetd","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1f7qetd/","title":"Within-subject comparison of near-death and psychedelic experiences: acute and enduring effects","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1axv04u","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1axv04u/","title":"DMT therapeutic potential in psychiatric and neurodegenerative disorders","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1fm54if","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1fm54if/","title":"Autonomic nervous system activity and DMT peak experiences","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1cmelsf","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1cmelsf/","title":"God encounter experiences comparison and psychedelics","evidence_type":"public_web_search"},
+    {"subreddit":"NeuronsToNirvana","post_id":"1gthdbo","canonical_url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1gthdbo/","title":"Structural insights into tryptamine psychedelics","evidence_type":"public_web_search"}
+  ]
+}
