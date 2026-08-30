@@ -13,7 +13,9 @@
     "retrieval_evidence_boundary_present": true,
     "ontology_boundary_present": true,
     "public_data_boundary_green": true,
-    "canonical_batch3_reconciled": true
+    "canonical_batch3_reconciled": true,
+    "readme_version_metadata_updated": true,
+    "release_notes_present": true
   },
   "verified_state": {
     "canonical_duplicate_review_denominator": 126,
@@ -27,7 +29,6 @@
     "audited_public_metadata_topics": 68,
     "broader_300_plus_topic_claim": "ESTIMATE_NOT_AUDITED",
     "public_epistemic_labels": 5,
-    "open_pull_requests_at_audit": 0,
     "open_engineering_issues_at_audit": 1
   },
   "nonblocking_known_debt": [
@@ -35,9 +36,8 @@
     "Canonical duplicate review therefore remains 81/126 with 45 unresolved.",
     "Issue #66 remains open as the fail-closed continuation point for Drive hashing."
   ],
-  "current_public_version_metadata": "PRE-ALPHA v0.9",
+  "current_version_metadata": "PRE-ALPHA v0.10",
   "remaining_release_gates": [
-    "readme_changelog_version_metadata_update",
     "tag_and_release_creation"
   ],
   "release_invariants": {
