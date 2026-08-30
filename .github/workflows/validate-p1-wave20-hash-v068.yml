@@ -1,0 +1,24 @@
+name: Validate P1 wave20 hash evidence v0.6.8
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/drive-p1-wave20-hash-summary-v0.6.8.json'
+      - 'scripts/validate_p1_wave20_hash_v068.py'
+      - '.github/workflows/validate-p1-wave20-hash-v068.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p1-wave20-hash-summary-v0.6.8.json'
+      - 'scripts/validate_p1_wave20_hash_v068.py'
+      - '.github/workflows/validate-p1-wave20-hash-v068.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_p1_wave20_hash_v068.py
