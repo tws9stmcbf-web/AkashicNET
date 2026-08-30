@@ -1,0 +1,48 @@
+name: Classify evidence/source form v0.43
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  evidence-classification-v043-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build classification
+        run: python scripts/classify_master_evidence_v043.py | tee /tmp/v043.json
+      - name: Assert conservative source-form semantics
+        run: |
+          python - <<'PY'
+          import csv,json
+          x=json.load(open('/tmp/v043.json'))
+          assert x['records']==12058
+          assert x['counts']=={
+            'ARTICLE_UNRESOLVED':2447,
+            'BOOK_OR_LONGFORM_METADATA':10,
+            'COMMUNITY_COLLECTION':1,
+            'COMMUNITY_POST':9400,
+            'UNKNOWN':200}
+          assert x['article_is_scientific_evidence'] is False
+          assert x['scientific_evidence_evaluated']==0
+          assert x['body_reads']==0 and x['embeddings_created']==0
+          assert x['truth_inference_allowed'] is False and x['rights_promotion_allowed'] is False
+          rows=list(csv.DictReader(open('data/evidence-classification-v0.43.csv',encoding='utf-8')))
+          assert len(rows)==12058
+          assert len({r['evidence_record_id'] for r in rows})==12058
+          assert all(r['scientific_evidence_status']=='NOT_EVALUATED' for r in rows)
+          assert all(r['classification_basis']=='explicit source_type metadata only' for r in rows)
+          print('AKASHICNET v0.43 EVIDENCE CLASSIFICATION PASS',{
+            'records':12058,'community_posts':9400,'articles_unresolved':2447,
+            'books_longform':10,'unknown':200,'scientific_evidence_evaluated':0,
+            'body_reads':0,'truth_inference':False,'rights_promotion':False})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidence-classification-v0.43
+          path: data/evidence-classification-v0.43.csv
