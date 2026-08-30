@@ -1,0 +1,27 @@
+name: validate-drive-byte-identity-progress-v0614
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/drive-byte-identity-progress-checkpoint-v0.6.14.json'
+      - 'scripts/validate_drive_byte_identity_progress_v0614.py'
+      - '.github/workflows/validate-drive-byte-identity-progress-v0614.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/drive-byte-identity-progress-checkpoint-v0.6.14.json'
+      - 'scripts/validate_drive_byte_identity_progress_v0614.py'
+      - '.github/workflows/validate-drive-byte-identity-progress-v0614.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_drive_byte_identity_progress_v0614.py
