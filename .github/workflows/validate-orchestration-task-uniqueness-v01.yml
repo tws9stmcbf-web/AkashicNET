@@ -1,0 +1,28 @@
+name: Validate orchestration task uniqueness v0.1
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/orchestration-task-uniqueness-v0.1.json'
+      - 'scripts/validate_orchestration_task_uniqueness_v01.py'
+      - '.github/workflows/validate-orchestration-task-uniqueness-v01.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/orchestration-task-uniqueness-v0.1.json'
+      - 'scripts/validate_orchestration_task_uniqueness_v01.py'
+      - '.github/workflows/validate-orchestration-task-uniqueness-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: '3.12'
+      - name: Validate orchestration uniqueness contract
+        run: python scripts/validate_orchestration_task_uniqueness_v01.py
