@@ -1,0 +1,40 @@
+name: Test rights review console v0.38
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rights-review-console-v038-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify read-only rights queue
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          out=json.loads(subprocess.check_output(['python','scripts/rights_review_console_v038.py'],text=True))
+          assert out['console']=='AKASHICNET_RIGHTS_REVIEW'
+          assert out['version']=='0.38' and out['read_only'] is True
+          assert out['automatic_rights_promotion'] is False
+          assert out['summary']['records']==8
+          assert out['summary']['public_verified']==0
+          assert out['summary']['r1_candidates']==3
+          assert out['summary']['manifest_eligible']==0
+          assert all(x['can_auto_promote'] is False for x in out['review_queue'])
+          candidates=[x for x in out['review_queue'] if x['record_type']=='real_candidate']
+          assert all(x['next_action']=='ESTABLISH_EXACT_MANIFESTATION_R2' for x in candidates)
+          filtered=json.loads(subprocess.check_output(['python','scripts/rights_review_console_v038.py','--status','PUBLIC_VERIFIED'],text=True))
+          assert filtered['review_queue']==[]
+          assert out['guardrails']=={
+              'truth_inference':False,'scientific_evidence_promotion':False,
+              'rights_from_accessibility':False,'rights_from_provenance_strength':False}
+          print('AKASHICNET v0.38 RIGHTS CONSOLE PASS',{
+            'records':8,'r1_candidates':3,'public_verified':0,'manifest_eligible':0,
+            'read_only':True,'automatic_promotion':False,'truth_inference':False,'scientific_evidence_promotion':False})
+          PY
