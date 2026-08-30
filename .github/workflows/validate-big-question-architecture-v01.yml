@@ -6,6 +6,7 @@ on:
       - 'references/big-questions/**'
       - 'references/community/bq*.json'
       - 'scripts/validate_big_question_architecture_v01.py'
+      - 'tests/test_big_question_architecture_v01.py'
       - '.github/workflows/validate-big-question-architecture-v01.yml'
   push:
     branches: [main]
@@ -13,6 +14,7 @@ on:
       - 'references/big-questions/**'
       - 'references/community/bq*.json'
       - 'scripts/validate_big_question_architecture_v01.py'
+      - 'tests/test_big_question_architecture_v01.py'
       - '.github/workflows/validate-big-question-architecture-v01.yml'
 
 permissions:
@@ -28,3 +30,5 @@ jobs:
           python-version: '3.12'
       - name: Enforce one canonical tree per bounded question
         run: python scripts/validate_big_question_architecture_v01.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_big_question_architecture_v01.py
