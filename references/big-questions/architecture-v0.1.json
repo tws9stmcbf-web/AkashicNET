@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "status": "PRE_ALPHA",
+  "canonical_root": "references/big-questions",
+  "rules": {
+    "one_canonical_tree_per_question": true,
+    "new_question_evidence_outside_canonical_root_allowed": false,
+    "legacy_parallel_records_are_read_only": true,
+    "legacy_records_count_as_incremental_evidence": false,
+    "legacy_records_may_upgrade_epistemic_state": false
+  },
+  "questions": {
+    "BQ001": {
+      "canonical_path": "references/big-questions/BQ001",
+      "spec": "references/big-questions/BQ001/spec-v0.1.json",
+      "evidence_batches": [
+        "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+        "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+        "references/big-questions/BQ001/evidence-batch3-v0.1.json"
+      ],
+      "legacy_parallel_records": [
+        {
+          "path": "references/community/bq001-scientific-baseline-batch1.json",
+          "status": "LEGACY_PARALLEL_READ_ONLY",
+          "origin_pr": 83,
+          "canonical_replacement": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+          "replacement_origin_pr": 84,
+          "notes": "Retained for Git history and reproducibility. Do not extend, count as a separate evidence batch, or use as the base for new bounded-question contracts."
+        }
+      ]
+    }
+  },
+  "release_invariants": {
+    "parallel_question_architectures_allowed": false,
+    "duplicate_evidence_counting_allowed": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_auto_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "privacy_posture_changed": false
+  }
+}
