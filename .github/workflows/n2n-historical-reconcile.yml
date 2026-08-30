@@ -1,0 +1,25 @@
+name: N2N Historical Reconciliation
+on:
+  push:
+    paths:
+      - 'scripts/n2n_historical_reconcile.py'
+      - 'references/community/reddit-uri-index.csv'
+      - 'references/community/reddit-corroboration-seed-v0.*.json'
+      - '.github/workflows/n2n-historical-reconcile.yml'
+  workflow_dispatch:
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconcile full historical archive
+        run: python scripts/n2n_historical_reconcile.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: n2n-historical-reconciliation
+          path: |
+            artifacts/n2n-historical-reconciled.csv
+            artifacts/n2n-historical-reconciliation-summary.json
