@@ -15,6 +15,7 @@ on:
       - references/community/reddit-corroboration-seed-v0.19-additions.json
       - references/community/reddit-corroboration-seed-v0.20-additions.json
       - references/community/reddit-corroboration-seed-v0.21-additions.json
+      - references/community/reddit-corroboration-seed-v0.22-additions.json
       - .github/workflows/reddit-corpus-corroboration.yml
 
 permissions:
@@ -36,51 +37,44 @@ jobs:
           curl --fail --location --silent --show-error \
             https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
             --output artifacts/reddit-corroboration/reddit-uri-index.csv
-      - name: Build combined v0.21 seed
+      - name: Build combined v0.22 seed
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           base = json.loads(Path('references/community/reddit-corroboration-seed-v0.15.json').read_text())
-          delta_paths = [
-              'references/community/reddit-corroboration-seed-v0.16-additions.json',
-              'references/community/reddit-corroboration-seed-v0.17-additions.json',
-              'references/community/reddit-corroboration-seed-v0.18-additions.json',
-              'references/community/reddit-corroboration-seed-v0.19-additions.json',
-              'references/community/reddit-corroboration-seed-v0.20-additions.json',
-              'references/community/reddit-corroboration-seed-v0.21-additions.json',
-          ]
-          deltas = [json.loads(Path(p).read_text()) for p in delta_paths]
+          delta_paths = [f'references/community/reddit-corroboration-seed-v0.{n}-additions.json' for n in range(16,23)]
           seen = {(r['subreddit'], r['post_id']) for r in base['records']}
           records = list(base['records'])
-          for delta in deltas:
+          for p in delta_paths:
+              delta = json.loads(Path(p).read_text())
               for r in delta['records']:
                   key = (r['subreddit'], r['post_id'])
                   if key not in seen:
                       records.append(r)
                       seen.add(key)
           combined = {
-              'schema': 'akashicnet.reddit.corroboration-seed.v0.21',
+              'schema': 'akashicnet.reddit.corroboration-seed.v0.22',
               'source_type': 'public_web_discovery',
               'notes': [
-                  'Combined from the 96-record v0.15 seed plus v0.16 through v0.21 additions deltas.',
-                  f'v0.21 contains {len(records)} unique records.',
+                  'Combined from v0.15 base plus v0.16 through v0.22 additions with exact subreddit/post_id deduplication.',
+                  f'v0.22 contains {len(records)} unique records.',
                   'Presence is corroboration evidence, not current live/API verification.',
                   'No usernames, post bodies, or comments are stored.'
               ],
               'records': records,
           }
-          out = Path('artifacts/reddit-corroboration/reddit-corroboration-seed-v0.21.json')
+          out = Path('artifacts/reddit-corroboration/reddit-corroboration-seed-v0.22.json')
           out.write_text(json.dumps(combined, indent=2) + '\n')
           print(f'combined_seed_records: {len(records)}')
           PY
-      - name: Build Corroboration Audit v0.21
+      - name: Build Corroboration Audit v0.22
         run: |
           python scripts/reddit_corpus_corroboration.py \
             artifacts/reddit-corroboration/reddit-uri-index.csv \
-            artifacts/reddit-corroboration/reddit-corroboration-seed-v0.21.json \
-            --json-out artifacts/reddit-corroboration/corroboration-v0.21.json
+            artifacts/reddit-corroboration/reddit-corroboration-seed-v0.22.json \
+            --json-out artifacts/reddit-corroboration/corroboration-v0.22.json
       - uses: actions/upload-artifact@v4
         with:
-          name: reddit-corpus-corroboration-v0.21
+          name: reddit-corpus-corroboration-v0.22
           path: artifacts/reddit-corroboration/
