@@ -1,0 +1,39 @@
+name: Validate PRE-ALPHA v0.10 repository release audit
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/v010-repository-release-audit.json'
+      - 'references/community/drive-p1-small-batch5-hash-summary-v0.6.15.json'
+      - 'references/community/wikispine-checkpoint-v0.7.4.json'
+      - 'references/community/topic-census-checkpoint-v0.7.5.json'
+      - 'references/community/evidence-taxonomy-v0.10.json'
+      - 'references/community/canonical-adjudication-batch3-v0.7.3.json'
+      - 'README.md'
+      - 'scripts/validate_v010_repository_release_audit.py'
+      - '.github/workflows/validate-v010-repository-release-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/v010-repository-release-audit.json'
+      - 'references/community/drive-p1-small-batch5-hash-summary-v0.6.15.json'
+      - 'references/community/wikispine-checkpoint-v0.7.4.json'
+      - 'references/community/topic-census-checkpoint-v0.7.5.json'
+      - 'references/community/evidence-taxonomy-v0.10.json'
+      - 'references/community/canonical-adjudication-batch3-v0.7.3.json'
+      - 'README.md'
+      - 'scripts/validate_v010_repository_release_audit.py'
+      - '.github/workflows/validate-v010-repository-release-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_v010_repository_release_audit.py
