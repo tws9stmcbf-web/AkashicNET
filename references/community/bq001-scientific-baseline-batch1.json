@@ -1,0 +1,126 @@
+{
+  "version": "0.10.1-prealpha",
+  "question_id": "BQ001",
+  "question": "Does consciousness continue beyond irreversible biological death?",
+  "question_status": "UNRESOLVED",
+  "batch": "SCIENTIFIC_BASELINE_1",
+  "public_epistemic_taxonomy": "references/community/evidence-taxonomy-v0.10.json",
+  "core_evidence_contract": "data/evidence_claim_v01.schema.json",
+  "sources": [
+    {
+      "source_id": "BQ001-SRC-AWARE-2014",
+      "type": "PEER_REVIEWED_PROSPECTIVE_OBSERVATIONAL_STUDY",
+      "title": "AWARE-AWAreness during REsuscitation-a prospective study",
+      "journal": "Resuscitation",
+      "year": 2014,
+      "pmid": "25301715",
+      "doi": "10.1016/j.resuscitation.2014.09.004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25301715/"
+    },
+    {
+      "source_id": "BQ001-SRC-AWARE2-2023",
+      "type": "PEER_REVIEWED_PROSPECTIVE_OBSERVATIONAL_STUDY",
+      "title": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+      "journal": "Resuscitation",
+      "year": 2023,
+      "pmid": "37423492",
+      "doi": "10.1016/j.resuscitation.2023.109903",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37423492/"
+    },
+    {
+      "source_id": "BQ001-SRC-MASCHKE-2024",
+      "type": "PEER_REVIEWED_EMPIRICAL_STUDY",
+      "title": "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity",
+      "journal": "Communications Biology",
+      "year": 2024,
+      "doi": "10.1038/s42003-024-06613-8",
+      "url": "https://www.nature.com/articles/s42003-024-06613-8"
+    },
+    {
+      "source_id": "BQ001-SRC-KOCH-2016",
+      "type": "PEER_REVIEWED_REVIEW",
+      "title": "Neural correlates of consciousness: progress and problems",
+      "journal": "Nature Reviews Neuroscience",
+      "year": 2016,
+      "doi": "10.1038/nrn.2016.22",
+      "url": "https://www.nature.com/articles/nrn.2016.22"
+    }
+  ],
+  "evidence_core": {
+    "evidence_model_version": "0.1",
+    "claims": [
+      {
+        "claim_id": "BQ001-C1",
+        "statement": "In AWARE (2014), a subset of interviewed cardiac-arrest survivors reported memories or perceptions associated with the resuscitation period; this observational finding does not establish consciousness after irreversible death or independence from brain function.",
+        "claim_class": "EMPIRICAL",
+        "status": "SUPPORTED",
+        "provenance": {"source_ids": ["BQ001-SRC-AWARE-2014"]}
+      },
+      {
+        "claim_id": "BQ001-C2",
+        "statement": "AWARE II (2023) prospectively studied 567 in-hospital cardiac arrests; 53 survived and 28 completed interviews, with some interviewed survivors reporting memories or perceptions suggestive of consciousness.",
+        "claim_class": "EMPIRICAL",
+        "status": "SUPPORTED",
+        "provenance": {"source_ids": ["BQ001-SRC-AWARE2-2023"]}
+      },
+      {
+        "claim_id": "BQ001-C3",
+        "statement": "AWARE II reported organized EEG activity during CPR in some monitored cases, including activity occurring during prolonged resuscitation; the study does not establish that these EEG observations and explicit recalled experiences occurred in the same individuals or that consciousness persisted after irreversible biological death.",
+        "claim_class": "EMPIRICAL",
+        "status": "SUPPORTED",
+        "provenance": {"source_ids": ["BQ001-SRC-AWARE2-2023"]}
+      },
+      {
+        "claim_id": "BQ001-C4",
+        "statement": "In healthy participants under general anesthesia, Maschke et al. (2024) found systematic relationships between conscious state and EEG dynamical properties across tested anesthetic conditions, supporting brain-state dependence of consciousness under those experimental conditions.",
+        "claim_class": "EMPIRICAL",
+        "status": "SUPPORTED",
+        "provenance": {"source_ids": ["BQ001-SRC-MASCHKE-2024"]}
+      },
+      {
+        "claim_id": "BQ001-C5",
+        "statement": "Neural-correlate research provides reproducible methods for relating neural activity to conscious experience, while methodological confounds and scope limits prevent neural correlation alone from resolving whether consciousness can continue after irreversible biological death.",
+        "claim_class": "EMPIRICAL",
+        "status": "PARTIALLY_SUPPORTED",
+        "provenance": {"source_ids": ["BQ001-SRC-KOCH-2016"]}
+      }
+    ],
+    "evidence_links": [
+      {"claim_id": "BQ001-C1", "source_id": "BQ001-SRC-AWARE-2014", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Prospective observational evidence; survivor/interview selection and temporal attribution limit inference."},
+      {"claim_id": "BQ001-C2", "source_id": "BQ001-SRC-AWARE2-2023", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Denominators must be preserved: 567 arrests, 53 survivors, 28 interviewed."},
+      {"claim_id": "BQ001-C3", "source_id": "BQ001-SRC-AWARE2-2023", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "EEG during CPR is not equivalent to demonstrated awareness, and does not establish survival after irreversible death."},
+      {"claim_id": "BQ001-C4", "source_id": "BQ001-SRC-MASCHKE-2024", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Experimental manipulation supports dependence under tested anesthetic states; it cannot prove non-survival after death."},
+      {"claim_id": "BQ001-C5", "source_id": "BQ001-SRC-KOCH-2016", "relation": "CONTEXTUALISES", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Review used for methodological framing rather than as primary experimental proof."}
+    ]
+  },
+  "epistemic_annotations": [
+    {"claim_id": "BQ001-C1", "label": "Established Evidence"},
+    {"claim_id": "BQ001-C2", "label": "Established Evidence"},
+    {"claim_id": "BQ001-C3", "label": "Established Evidence"},
+    {"claim_id": "BQ001-C4", "label": "Established Evidence"},
+    {"claim_id": "BQ001-C5", "label": "Interpretation"}
+  ],
+  "material_limitations": [
+    "Cardiac-arrest studies condition experiential results on survival and availability for interview.",
+    "Retrospective report after resuscitation does not by itself establish the exact time at which an experience occurred.",
+    "EEG recorded during CPR is vulnerable to sampling limitations and physiological or movement artefact and is not itself a direct report of experience.",
+    "The AWARE/AWARE II audiovisual target tests did not provide reproducible positive visual-target verification sufficient to establish perception independent of ordinary sensory pathways.",
+    "Anesthesia and neural-correlate studies test reversible biological states, not irreversible biological death.",
+    "Evidence that conscious state depends on brain state under tested conditions does not logically prove that postmortem continuation is impossible.",
+    "Reports surrounding cardiac arrest do not by themselves prove postmortem continuation or consciousness independent of brain function."
+  ],
+  "model_implications": {
+    "brain_state_dependence_under_tested_conditions": "SUPPORTED",
+    "consciousness_after_irreversible_biological_death": "UNRESOLVED",
+    "consciousness_independent_of_brain_function": "UNRESOLVED",
+    "model_edges_upgrade_epistemic_label": false
+  },
+  "release_invariants": {
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "survival_claim_auto_promoted": false,
+    "non_survival_claim_auto_promoted": false,
+    "privacy_posture_changed": false
+  }
+}
