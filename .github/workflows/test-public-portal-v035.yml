@@ -1,0 +1,78 @@
+name: Test public portal v0.35
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  public-portal-v035-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build prerequisite retrieval layers
+        run: |
+          python scripts/build_knowledge_graph_v02.py
+          python scripts/build_knowledge_graph_v03.py
+          python scripts/overlay_canonical_reconciliation_v04.py
+          python scripts/overlay_evidence_provenance_v05.py
+          python scripts/build_cross_source_graph_v07.py
+          python scripts/build_concept_layer_v010.py
+          python scripts/adjudicate_concept_edges_v011.py
+          python scripts/complete_collection_provenance_v013.py
+          python scripts/overlay_manifestation_provenance_v014.py
+          python scripts/overlay_hash_evidence_v015.py
+          python scripts/apply_hash_results_v016.py
+          python scripts/build_dedup_retrieval_view_v017.py
+          python scripts/extend_concept_layer_v020.py
+          python scripts/index_expanded_concepts_v021.py
+          python scripts/normalise_semantic_representations_v022.py
+      - name: Assert same-origin browser contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path('web/public-v0.35/index.html').read_text(encoding='utf-8')
+          assert "fetch(`/v1/retrieve?${params}`" in html
+          assert '?api=' not in html
+          assert 'visibility=internal' not in html
+          assert "visibility:'public'" in html
+          assert "connect-src 'self'" in Path('scripts/public_portal_v035.py').read_text(encoding='utf-8')
+          print('AKASHICNET v0.35 BROWSER PASS',{'same_origin':True,'configurable_api_endpoint':False,'internal_mode_exposed':False})
+          PY
+      - name: Exercise portal and public API
+        run: |
+          python - <<'PY'
+          import json,os,subprocess,time,urllib.error,urllib.request
+          env=os.environ.copy(); env['AKASHICNET_DEPLOYMENT_MODE']='public'; env['AKASHICNET_ALLOW_INTERNAL_VISIBILITY']='true'; env['AKASHICNET_RATE_LIMIT_REQUESTS']='100'
+          proc=subprocess.Popen(['python','scripts/public_portal_v035.py','--host','127.0.0.1','--port','8795'],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+          try:
+              for _ in range(60):
+                  try:
+                      with urllib.request.urlopen('http://127.0.0.1:8795/readyz',timeout=.5) as r:
+                          if json.load(r)['status']=='ready': break
+                  except Exception: time.sleep(.1)
+              else: raise AssertionError('portal not ready')
+              with urllib.request.urlopen('http://127.0.0.1:8795/',timeout=3) as r:
+                  html=r.read().decode(); headers=dict(r.headers)
+              assert 'AkashicNET Public Portal' in html
+              assert headers['X-Content-Type-Options']=='nosniff'
+              assert "connect-src 'self'" in headers['Content-Security-Policy']
+              url='http://127.0.0.1:8795/v1/retrieve?q=Golden%20Book%20of%20Wisdom&visibility=public&limit=1'
+              with urllib.request.urlopen(url,timeout=10) as r: p=json.load(r)
+              assert p['visibility']=='public'
+              assert p['upstream']['summary']['results_after_public_gate']==0
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:8795/v1/retrieve?q=x&visibility=internal',timeout=3)
+                  raise AssertionError('internal request unexpectedly allowed')
+              except urllib.error.HTTPError as e:
+                  assert e.code==403
+              print('AKASHICNET v0.35 PORTAL PASS',{'portal':'same-origin','public_results':0,'internal_visibility_blocked':True,'csp_same_origin':True})
+          finally:
+              proc.terminate(); proc.wait(timeout=5)
+          PY
+      - name: Build public portal container
+        run: docker build -f deploy/public-portal-v0.35/Containerfile -t akashicnet-public-portal:v0.35 .
