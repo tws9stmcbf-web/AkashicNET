@@ -1,0 +1,26 @@
+name: Validate canonical dedup integration v0.6.9
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/drive-p1-cumulative-hash-checkpoint-v0.6.8.json'
+      - 'references/community/dedup-integration-checkpoint-v0.6.9.json'
+      - 'scripts/validate_dedup_integration_v069.py'
+      - '.github/workflows/validate-dedup-integration-v069.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p1-cumulative-hash-checkpoint-v0.6.8.json'
+      - 'references/community/dedup-integration-checkpoint-v0.6.9.json'
+      - 'scripts/validate_dedup_integration_v069.py'
+      - '.github/workflows/validate-dedup-integration-v069.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_dedup_integration_v069.py
