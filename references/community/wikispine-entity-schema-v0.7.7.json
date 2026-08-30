@@ -1,0 +1,36 @@
+{
+  "version": "0.7.7",
+  "schema": "AKASHICNET_WIKISPINE_TYPED_ENTITY",
+  "allowed_entity_types": [
+    "CONCEPT",
+    "TRADITION",
+    "PERSON",
+    "WORK",
+    "ORGANIZATION",
+    "PLACE",
+    "SUBSTANCE",
+    "SCIENTIFIC_FIELD"
+  ],
+  "required_fields": [
+    "label",
+    "entity_type",
+    "wikidata_qid",
+    "wikipedia_title",
+    "resolution_state",
+    "reference_class",
+    "semantic_decision"
+  ],
+  "resolution_states": ["RESOLVED_HIGH_PRECISION", "PENDING_RESOLUTION"],
+  "reference_class": "REFERENCE_ENCYCLOPEDIA",
+  "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
