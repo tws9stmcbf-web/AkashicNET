@@ -1,0 +1,83 @@
+{
+  "contract_version": "0.7.0",
+  "records": [
+    {
+      "candidate_id": "CANON-B2-ABRAMELIN",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["COLLECTION_ALIGNMENT", "TITLE_FAMILY"],
+      "evidence_class": "BIBLIOGRAPHIC_EVIDENCE_INCOMPLETE",
+      "rationale": "The public checkpoint identifies a same-logical-work family, but manifestation-level and edition-specific distinctions remain unresolved. Independent bibliographic evidence sufficient for promotion has not yet been recorded in the adjudication layer.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-FORBIDDEN-HISTORY",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["MULTI_VOLUME_LABELS", "EDITION_OR_COPY_VARIATION"],
+      "evidence_class": "BIBLIOGRAPHIC_EVIDENCE_INCOMPLETE",
+      "rationale": "The public checkpoint preserves multi-volume and edition-or-copy distinctions. The evidence currently recorded does not justify collapsing those distinctions into a single canonical work assertion.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-AGRIPPA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["NUMBERED_WORK_VS_AGGREGATE"],
+      "evidence_class": "BIBLIOGRAPHIC_EVIDENCE_INCOMPLETE",
+      "rationale": "Numbered-work versus aggregate distinctions remain unresolved. No canonical work identity is promoted until independent bibliography explicitly resolves the relationship.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-BARDON-VARIANTS",
+      "relationship": "REPRESENTS_EDITION",
+      "decision": "HOLD",
+      "signals": ["AUTHOR_TITLE_FAMILY", "COPY_VARIATION"],
+      "evidence_class": "EDITION_EVIDENCE_INCOMPLETE",
+      "rationale": "Bardon edition and copy variants remain unresolved apart from the separately adjudicated Golden Book work identity. Publisher, year, edition statement or equivalent edition-specific evidence is not yet recorded here.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-RAMAYANA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["CROSS_COLLECTION_ALIGNMENT"],
+      "evidence_class": "PROVENANCE_DEBT",
+      "rationale": "Cross-collection provenance remains unresolved. The adjudication layer does not infer work, edition or translation identity from collection alignment alone.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-VIVEKANANDA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["SHARED_AUTHOR"],
+      "evidence_class": "RELATIONSHIP_UNDERDETERMINED",
+      "rationale": "Shared authorship is a classification signal rather than duplicate or canonical work identity. Independent title-level bibliographic evidence is required before promotion.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    }
+  ]
+}
