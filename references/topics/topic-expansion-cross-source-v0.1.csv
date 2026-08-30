@@ -1,0 +1,25 @@
+canonical_topic,adjudication,cross_source_status,known_overlap,provisional_additive,notes
+Vajrasattva,ACCEPT,NO_EXACT_MATCH_FOUND,,YES,Descendant-backed narrower Vajrayana topic
+Bardo teachings,ACCEPT,NO_EXACT_MATCH_FOUND,,YES,Descendant-backed Tibetan Buddhist topic
+Buddhist monasticism,ACCEPT,NO_EXACT_MATCH_FOUND,Buddhism,YES,Narrower than broad Buddhism
+Theravada forest tradition,ACCEPT,NO_EXACT_MATCH_FOUND,Buddhism,YES,Narrower tradition node
+Advaita Vedanta,ACCEPT,POSSIBLE_SEMANTIC_OVERLAP,Non-duality,YES,Keep distinct from generic non-duality unless identity evidence says otherwise
+Atharva Veda,ACCEPT,NO_EXACT_MATCH_FOUND,Hinduism,YES,Distinct Vedic corpus/topic
+Integral Yoga,ACCEPT,NO_EXACT_MATCH_FOUND,Yoga;Hinduism,YES,Distinct named philosophical/contemplative system
+Parapsychology,ACCEPT,NO_EXACT_MATCH_FOUND,Metaphysics,YES,Distinct research field
+Abramelin,ACCEPT,NO_EXACT_MATCH_FOUND,Grimoire;Magick,YES,Distinct esoteric tradition/text complex
+Gnosis,ACCEPT,POSSIBLE_SEMANTIC_OVERLAP,Gnosticism,YES,Narrower concept; do not merge automatically
+Book of Enoch,ACCEPT,NO_EXACT_MATCH_FOUND,Ancient Religions,YES,Distinct apocalyptic literature topic
+Shamanic techniques,ACCEPT,POSSIBLE_HIERARCHY_OVERLAP,Shamanism,YES,Narrower practice node
+Demotic magic,ACCEPT,NO_EXACT_MATCH_FOUND,Magick;Ancient Religions,YES,Distinct historical practice/textual domain
+Ethnomycology,ACCEPT,NO_EXACT_MATCH_FOUND,Psychedelics;Shamanism,YES,Distinct interdisciplinary research domain
+Mahabharata,ACCEPT,NO_EXACT_MATCH_FOUND,Hinduism,YES,Distinct epic/philosophical corpus
+Tantra,ACCEPT,NO_EXACT_MATCH_FOUND,Hinduism;Buddhism,YES,Cross-tradition system
+Greek philosophy,ACCEPT,NO_EXACT_MATCH_FOUND,Philosophy,YES,Distinct historical philosophical domain
+Maya codices,ACCEPT,NO_EXACT_MATCH_FOUND,Ancient Civilizations,YES,Distinct Mesoamerican textual knowledge domain
+Jainism,ACCEPT,NO_EXACT_MATCH_FOUND,Religion;Ancient Religions,YES,Distinct religious tradition
+Frankfurt School,ACCEPT,NO_EXACT_MATCH_FOUND,Philosophy,YES,Distinct critical-theory tradition
+Occult philosophy,ACCEPT,POSSIBLE_HIERARCHY_OVERLAP,Occultism;Hermeticism,YES,Distinct philosophical domain
+Kierkegaardian philosophy,ACCEPT,NO_EXACT_MATCH_FOUND,Philosophy,YES,Author-derived but topic-framed philosophical corpus
+Psychic development,ACCEPT,NO_EXACT_MATCH_FOUND,Psychology,YES,Explicit subject label
+John Locke and empiricism,ACCEPT,NO_EXACT_MATCH_FOUND,Philosophy;Psychology,YES,Topic-framed empiricism/Lockean philosophy
