@@ -3,6 +3,10 @@
   "release_name": "Evidence-Governed Knowledge Pipeline",
   "release_ready": false,
   "integration_gate_present": true,
+  "repository_release_audit_passed": true,
+  "version_metadata_gate_complete": true,
+  "tag_and_release_created": false,
+  "release_audit_ref": "references/community/v010-repository-release-audit.json",
   "contract_chain": {
     "canonical_adjudication": "0.7.0",
     "wikispine_canonical_bridge": "0.7.7",
@@ -10,6 +14,12 @@
     "ontology_boundary": "0.7.9",
     "evidence_contract": "0.1"
   },
+  "completed_release_gates": [
+    "integration_gate_ci_green_and_merged",
+    "evidence_taxonomy_consistency_audit",
+    "repository_release_audit",
+    "readme_changelog_version_metadata_update"
+  ],
   "canonicalisation": {
     "duplicate_review_denominator": 126,
     "families_adjudicated": 81,
@@ -27,10 +37,6 @@
     "privacy_posture_changed": false
   },
   "remaining_release_gates": [
-    "integration_gate_ci_green_and_merged",
-    "evidence_taxonomy_consistency_audit",
-    "repository_release_audit",
-    "readme_changelog_version_metadata_update",
     "tag_and_release_creation"
   ]
 }
