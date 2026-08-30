@@ -1,0 +1,78 @@
+{
+  "version": "0.7.0",
+  "milestone": "WIKISPINE_REFERENCE_BACKBONE_PILOT",
+  "scope": "Five high-value AkashicNET concept seeds resolved to stable Wikidata entity identifiers and English Wikipedia reference targets.",
+  "records": [
+    {
+      "akashic_concept": "Consciousness",
+      "wikidata_qid": "Q7087",
+      "wikidata_url": "https://www.wikidata.org/wiki/Q7087",
+      "wikipedia_title": "Consciousness",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Consciousness",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    },
+    {
+      "akashic_concept": "Buddhism",
+      "wikidata_qid": "Q748",
+      "wikidata_url": "https://www.wikidata.org/wiki/Q748",
+      "wikipedia_title": "Buddhism",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Buddhism",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    },
+    {
+      "akashic_concept": "Hinduism",
+      "wikidata_qid": "Q9089",
+      "wikidata_url": "https://www.wikidata.org/wiki/Q9089",
+      "wikipedia_title": "Hinduism",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Hinduism",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    },
+    {
+      "akashic_concept": "Alchemy",
+      "wikidata_qid": "Q39689",
+      "wikidata_url": "https://www.wikidata.org/wiki/Q39689",
+      "wikipedia_title": "Alchemy",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Alchemy",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    },
+    {
+      "akashic_concept": "Mysticism",
+      "wikidata_qid": "Q45996",
+      "wikidata_url": "https://www.wikidata.org/wiki/Q45996",
+      "wikipedia_title": "Mysticism",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mysticism",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    }
+  ],
+  "expansion_policy": {
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "wikidata_first": true,
+    "candidate_edges_default": "HOLD",
+    "revision_provenance_required_for_article_snapshots": true,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false
+  }
+}
