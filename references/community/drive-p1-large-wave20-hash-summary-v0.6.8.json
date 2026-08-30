@@ -1,0 +1,16 @@
+{
+  "version": "0.6.8",
+  "tranche": "P1_LARGE_WAVE_20_FAMILIES",
+  "families": 20,
+  "objects": 40,
+  "bytes_hashed": 33041612,
+  "family_results": {
+    "BYTE_IDENTICAL_VERIFIED": 20
+  },
+  "private_batch_sha256": "5923c587fa2cff248cafc35f8c0ae543a56c183a6ad5c0b73cdc011c72e6830a",
+  "work_ids_promoted": 0,
+  "edition_ids_promoted": 0,
+  "rights_promoted": 0,
+  "scientific_evidence_promoted": 0,
+  "guardrail": "SHA-256 equality proves byte identity for compared objects only; canonical work identity remains separately adjudicated."
+}
