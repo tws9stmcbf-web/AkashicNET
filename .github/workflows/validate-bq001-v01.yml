@@ -7,9 +7,11 @@ on:
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
       - "scripts/validate_bq001_batch2_v01.py"
+      - "scripts/validate_bq001_batch3_v01.py"
       - "tests/test_bq001_v01.py"
       - "tests/test_bq001_batch1_v01.py"
       - "tests/test_bq001_batch2_v01.py"
+      - "tests/test_bq001_batch3_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
   push:
     branches: [main]
@@ -18,9 +20,11 @@ on:
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
       - "scripts/validate_bq001_batch2_v01.py"
+      - "scripts/validate_bq001_batch3_v01.py"
       - "tests/test_bq001_v01.py"
       - "tests/test_bq001_batch1_v01.py"
       - "tests/test_bq001_batch2_v01.py"
+      - "tests/test_bq001_batch3_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
 
 permissions:
@@ -46,3 +50,7 @@ jobs:
         run: python scripts/validate_bq001_batch2_v01.py references/big-questions/BQ001/evidence-batch2-v0.1.json
       - name: Run BQ001 Batch 2 negative tests
         run: python tests/test_bq001_batch2_v01.py
+      - name: Validate BQ001 reincarnation methods batch
+        run: python scripts/validate_bq001_batch3_v01.py references/big-questions/BQ001/evidence-batch3-v0.1.json
+      - name: Run BQ001 Batch 3 negative tests
+        run: python tests/test_bq001_batch3_v01.py
