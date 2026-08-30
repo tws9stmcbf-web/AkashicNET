@@ -12,6 +12,9 @@ TAXONOMY = REF / "evidence-taxonomy-v0.10.json"
 BATCH3 = REF / "canonical-adjudication-batch3-v0.7.3.json"
 README = ROOT / "README.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
+EXPECTED_TAG = "v0.10.0-prealpha"
+EXPECTED_TARGET = "5dc9a6ccf872e57a98bb3b6d999b5e32f841f0c9"
+EXPECTED_RELEASE_ID = 379436525
 
 
 def load(path):
@@ -30,7 +33,16 @@ def main() -> int:
 
     assert audit["version"] == "0.10.0-prealpha"
     assert audit["repository_release_audit_passed"] is True
-    assert audit["release_ready"] is False
+    assert audit["release_ready"] is True
+
+    release = audit["verified_release"]
+    assert release["tag"] == EXPECTED_TAG
+    assert release["target_commit"] == EXPECTED_TARGET
+    assert release["github_release_id"] == EXPECTED_RELEASE_ID
+    assert release["prerelease"] is True
+    assert release["draft"] is False
+    assert release["verified_by_readback"] is True
+    assert audit["verified_gates"]["tag_and_release_created"] is True
 
     state = audit["verified_state"]
     assert drive["authoritative_unique_families_after"] == state["canonical_families_adjudicated"] == 81
@@ -65,10 +77,8 @@ def main() -> int:
     assert audit["current_version_metadata"] == "PRE-ALPHA v0.10"
     assert audit["verified_gates"]["readme_version_metadata_updated"] is True
     assert audit["verified_gates"]["release_notes_present"] is True
-    assert audit["remaining_release_gates"] == ["tag_and_release_creation"]
+    assert audit["remaining_release_gates"] == []
 
-    # The live repository is a private engineering workspace at this release point.
-    # This assertion prevents stale README text from claiming public GitHub visibility.
     assert "Repository visibility: **Private engineering workspace**" in readme
     assert "Repository: **Public**" not in readme
 
@@ -77,7 +87,7 @@ def main() -> int:
         assert value is False, f"release invariant must remain false: {key}"
     assert audit["drive_access_performed"] is False
 
-    print("AKASHICNET PRE-ALPHA v0.10 REPOSITORY RELEASE AUDIT PASS: tag/release gate remains")
+    print("AKASHICNET PRE-ALPHA v0.10 REPOSITORY RELEASE AUDIT PASS: verified prerelease gate complete")
     return 0
 
 
