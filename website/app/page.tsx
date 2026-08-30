@@ -110,10 +110,11 @@ export default function Home() {
       <section className="epistemics">
         <div className="epistemics-copy"><p className="section-label">04 · Epistemic integrity</p><h2>Wonder and discernment belong together.</h2><p>AkashicNET can hold a scientific result, a philosophical proposition, a spiritual tradition and a personal experience in the same map without pretending they have the same evidential status.</p></div>
         <div className="evidence-stack">
-          <div className="evidence supported"><span>01</span><h3>Supported evidence</h3><p>Traceable research with methods, limits and source context.</p></div>
-          <div className="evidence interpretive"><span>02</span><h3>Interpretive framework</h3><p>A useful lens, explicitly presented as interpretation.</p></div>
-          <div className="evidence experiential"><span>03</span><h3>Lived experience</h3><p>Meaningful testimony that is neither dismissed nor universalised.</p></div>
-          <div className="evidence speculative"><span>04</span><h3>Speculative possibility</h3><p>An open question kept separate from established fact.</p></div>
+          <div className="evidence supported"><span>01</span><h3>Established Evidence</h3><p>Appropriately reviewed support with explicit provenance, methods, limits and source context.</p></div>
+          <div className="evidence interpretive"><span>02</span><h3>Interpretation</h3><p>A reasoned reading, synthesis or framework presented as interpretation rather than established fact.</p></div>
+          <div className="evidence experiential"><span>03</span><h3>Lived Experience/Testimony</h3><p>First-person or reported experience preserved as testimony without universalising it.</p></div>
+          <div className="evidence hypothesis"><span>04</span><h3>Hypothesis</h3><p>A specific, testable or investigable proposition that remains unconfirmed.</p></div>
+          <div className="evidence speculative"><span>05</span><h3>Speculation</h3><p>A possibility or conjecture with insufficient support for hypothesis or established-evidence status.</p></div>
         </div>
       </section>
 
