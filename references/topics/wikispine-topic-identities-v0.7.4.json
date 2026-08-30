@@ -1,0 +1,16 @@
+{
+  "version": "0.7.4-materialised-v0.1",
+  "source_commit": "818036904e8caeec8ef7b3ce4f957bf98e633ef9",
+  "provenance": "Reconstructed exactly from tracked WikiSpine seed/batch/resolution files at source_commit; no external crawl performed.",
+  "records": [
+    ["Consciousness","Q7087","RESOLVED_HIGH_PRECISION"],["Buddhism","Q748","RESOLVED_HIGH_PRECISION"],["Hinduism","Q9089","RESOLVED_HIGH_PRECISION"],["Alchemy","Q39689","RESOLVED_HIGH_PRECISION"],["Mysticism","Q45996","RESOLVED_HIGH_PRECISION"],
+    ["Psychedelics","Q2314176","RESOLVED_HIGH_PRECISION"],["Shamanism","Q42042","RESOLVED_HIGH_PRECISION"],["Hermeticism","Q192933","RESOLVED_HIGH_PRECISION"],["Qabbalah","Q123006","RESOLVED_HIGH_PRECISION"],["Theosophy","Q178671","RESOLVED_HIGH_PRECISION"],["Non-duality","Q2505322","RESOLVED_HIGH_PRECISION"],["Philosophy","Q5891","RESOLVED_HIGH_PRECISION"],
+    ["Philosophy of mind","Q23407","RESOLVED_HIGH_PRECISION"],["Entheogen","Q310491","RESOLVED_HIGH_PRECISION"],["Panpsychism","Q661384","RESOLVED_HIGH_PRECISION"],["Reincarnation","Q128593","RESOLVED_HIGH_PRECISION"],["Near-death experience","Q219566","RESOLVED_HIGH_PRECISION"],["Meditation","Q108458","RESOLVED_HIGH_PRECISION"],["Neuroscience","Q207011","RESOLVED_HIGH_PRECISION"],["Psychology","Q9418","RESOLVED_HIGH_PRECISION"],
+    ["Sikhism","Q9316","RESOLVED_HIGH_PRECISION"],["Taoism","Q9598","RESOLVED_HIGH_PRECISION"],["Sufism","Q9603","RESOLVED_HIGH_PRECISION"],["Dzogchen","Q849734","RESOLVED_HIGH_PRECISION"],["Yoga","Q9350","RESOLVED_HIGH_PRECISION"],
+    ["Ayahuasca","Q380436","RESOLVED_HIGH_PRECISION"],["Dimethyltryptamine","Q407217","RESOLVED_HIGH_PRECISION"],["Psilocybin","Q208118","RESOLVED_HIGH_PRECISION"],["Ibogaine","Q409455","RESOLVED_HIGH_PRECISION"],["Mescaline","Q193140","RESOLVED_HIGH_PRECISION"],["5-MeO-DMT",null,"PENDING_API_RESOLUTION"],["LSD",null,"PENDING_API_RESOLUTION"],["Animism",null,"PENDING_DISAMBIGUATION"],
+    ["Physics","Q413","RESOLVED_HIGH_PRECISION"],["Quantum mechanics","Q944","RESOLVED_HIGH_PRECISION"],["Cosmology","Q338","RESOLVED_HIGH_PRECISION"],["Astronomy","Q333","RESOLVED_HIGH_PRECISION"],["Astrophysics","Q37547","RESOLVED_HIGH_PRECISION"],["Biology","Q420","RESOLVED_HIGH_PRECISION"],["Evolution","Q1063","RESOLVED_HIGH_PRECISION"],["Dark matter","Q79925","RESOLVED_HIGH_PRECISION"],["Dark energy","Q18343","RESOLVED_HIGH_PRECISION"],["Universe","Q1","RESOLVED_HIGH_PRECISION"],
+    ["Brain","Q1073","RESOLVED_HIGH_PRECISION"],["Neuron","Q43054","RESOLVED_HIGH_PRECISION"],["Nervous system","Q9404","RESOLVED_HIGH_PRECISION"],["Mitochondrion","Q39572","RESOLVED_HIGH_PRECISION"],["DNA","Q7430","RESOLVED_HIGH_PRECISION"],["Gene","Q7187","RESOLVED_HIGH_PRECISION"],["Cell","Q7868","RESOLVED_HIGH_PRECISION"],["Cognition","Q2200417","RESOLVED_HIGH_PRECISION"],["Perception","Q160402","RESOLVED_HIGH_PRECISION"],["Intelligence","Q83500","RESOLVED_HIGH_PRECISION"]
+  ],
+  "counts": {"total_unique_seeds":53,"resolved_high_precision":50,"pending":3},
+  "guardrails": {"identity_only":true,"truth_inference":false,"scientific_evidence_promotion":false,"drive_crawl_performed":false}
+}
