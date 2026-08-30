@@ -1,0 +1,33 @@
+name: Validate WikiSpine v0.7.15
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-p-philosophers-v0.7.15.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.15.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.14.json'
+      - 'scripts/validate_wikispine_v0715.py'
+      - '.github/workflows/validate-wikispine-v0715.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/wikispine-batch-p-philosophers-v0.7.15.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.15.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.14.json'
+      - 'scripts/validate_wikispine_v0715.py'
+      - '.github/workflows/validate-wikispine-v0715.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate WikiSpine v0.7.15
+        run: python scripts/validate_wikispine_v0715.py
