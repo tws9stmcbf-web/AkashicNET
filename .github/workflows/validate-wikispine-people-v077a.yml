@@ -1,0 +1,22 @@
+name: Validate WikiSpine people v0.7.7a
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-g-people-v0.7.7a.json'
+      - 'scripts/validate_wikispine_people_v077a.py'
+      - '.github/workflows/validate-wikispine-people-v077a.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/wikispine-batch-g-people-v0.7.7a.json'
+      - 'scripts/validate_wikispine_people_v077a.py'
+      - '.github/workflows/validate-wikispine-people-v077a.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_wikispine_people_v077a.py
