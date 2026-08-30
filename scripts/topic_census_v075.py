@@ -8,7 +8,6 @@ folder-label CSV, so Drive contributes provenance coverage but not unreviewed la
 from __future__ import annotations
 
 import csv
-import io
 import json
 import re
 from pathlib import Path
@@ -79,6 +78,11 @@ def load_n2n_categories() -> list[str]:
         return sorted({r.get("category", "").strip() for r in rows if r.get("category", "").strip()})
 
 
+def checkpoint_int(text: str, label: str) -> int | None:
+    match = re.search(rf"{re.escape(label)}:\s*\*\*([\d,]+)\*\*", text)
+    return int(match.group(1).replace(",", "")) if match else None
+
+
 def main() -> int:
     ontology = load_ontology()
     wiki = load_wikispine()
@@ -92,18 +96,17 @@ def main() -> int:
     union = set().union(*source_sets.values())
 
     drive_text = (COMMUNITY / DRIVE_CHECKPOINT).read_text(encoding="utf-8")
-    m_folders = re.search(r"unique folder IDs:\s*\*\*(\d+)\*\*", drive_text)
-    m_objects = re.search(r"unique non-folder object IDs:\s*\*\*(\d+)\*\*", drive_text)
-    drive_folder_count = int(m_folders.group(1)) if m_folders else None
-    drive_object_count = int(m_objects.group(1)) if m_objects else None
+    drive_folder_count = checkpoint_int(drive_text, "unique folder IDs")
+    drive_object_count = checkpoint_int(drive_text, "unique non-folder object IDs")
 
-    # Stable display list: choose title-cased source spellings where possible.
+    # Stable display list: preserve the first source spelling while normalising identity.
     display = {}
     for source, labels in (("ontology", ontology), ("wikispine", wiki), ("n2n", n2n)):
         for label in labels:
-            display.setdefault(norm(label), {"label": label, "sources": []})
-            if source not in display[norm(label)]["sources"]:
-                display[norm(label)]["sources"].append(source)
+            key = norm(label)
+            display.setdefault(key, {"label": label, "sources": []})
+            if source not in display[key]["sources"]:
+                display[key]["sources"].append(source)
 
     result = {
         "version": "0.7.5",
