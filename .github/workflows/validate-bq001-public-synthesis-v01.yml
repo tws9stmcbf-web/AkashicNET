@@ -1,0 +1,40 @@
+name: Validate BQ001 public synthesis v0.1
+
+on:
+  pull_request:
+    paths:
+      - 'references/big-questions/BQ001/PUBLIC_SYNTHESIS.md'
+      - 'references/big-questions/BQ001/public-synthesis-v0.1.json'
+      - 'references/big-questions/BQ001/evidence-batch*-v0.1.json'
+      - 'references/community/evidence-taxonomy-v0.10.json'
+      - 'scripts/validate_bq001_public_synthesis_v01.py'
+      - 'tests/test_bq001_public_synthesis_v01.py'
+      - '.github/workflows/validate-bq001-public-synthesis-v01.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/big-questions/BQ001/PUBLIC_SYNTHESIS.md'
+      - 'references/big-questions/BQ001/public-synthesis-v0.1.json'
+      - 'references/big-questions/BQ001/evidence-batch*-v0.1.json'
+      - 'references/community/evidence-taxonomy-v0.10.json'
+      - 'scripts/validate_bq001_public_synthesis_v01.py'
+      - 'tests/test_bq001_public_synthesis_v01.py'
+      - '.github/workflows/validate-bq001-public-synthesis-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install --disable-pip-version-check pytest
+      - name: Validate synthesis traceability
+        run: python scripts/validate_bq001_public_synthesis_v01.py
+      - name: Run negative tests
+        run: python -m pytest -q tests/test_bq001_public_synthesis_v01.py
