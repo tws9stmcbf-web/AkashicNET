@@ -5,6 +5,7 @@ on:
     paths:
       - 'references/community/v010-integration-fixture.json'
       - 'references/community/v010-release-checkpoint.json'
+      - 'references/community/v010-repository-release-audit.json'
       - 'references/community/wikispine-canonical-bridge-checkpoint-v0.7.7.json'
       - 'references/community/unified-retrieval-schema-v0.25.json'
       - 'references/community/retrieval-fixtures-v0.25.json'
@@ -13,6 +14,7 @@ on:
       - 'docs/canonical-evidence-v01.md'
       - 'docs/DATA_SECURITY_BOUNDARY.md'
       - 'scripts/validate_v010_integration_gate.py'
+      - 'scripts/validate_v010_release_checkpoint.py'
       - 'tests/test_v010_integration_gate.py'
       - '.github/workflows/validate-v010-integration-gate.yml'
   push:
@@ -20,6 +22,7 @@ on:
     paths:
       - 'references/community/v010-integration-fixture.json'
       - 'references/community/v010-release-checkpoint.json'
+      - 'references/community/v010-repository-release-audit.json'
       - 'references/community/wikispine-canonical-bridge-checkpoint-v0.7.7.json'
       - 'references/community/unified-retrieval-schema-v0.25.json'
       - 'references/community/retrieval-fixtures-v0.25.json'
@@ -28,6 +31,7 @@ on:
       - 'docs/canonical-evidence-v01.md'
       - 'docs/DATA_SECURITY_BOUNDARY.md'
       - 'scripts/validate_v010_integration_gate.py'
+      - 'scripts/validate_v010_release_checkpoint.py'
       - 'tests/test_v010_integration_gate.py'
       - '.github/workflows/validate-v010-integration-gate.yml'
 
@@ -40,5 +44,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/validate_v010_integration_gate.py
+      - run: python scripts/validate_v010_release_checkpoint.py
       - run: python -m pip install pytest
       - run: pytest -q tests/test_v010_integration_gate.py
