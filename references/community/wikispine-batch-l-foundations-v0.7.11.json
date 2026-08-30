@@ -1,0 +1,21 @@
+{
+  "version": "0.7.11",
+  "batch": "L_CONSCIOUSNESS_PHILOSOPHY_PHYSICS_FIGURES",
+  "records": [
+    {"akashic_entity":"David Bohm","entity_type":"PERSON","wikidata_qid":"Q310765","wikipedia_title":"David Bohm","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Henri Bergson","entity_type":"PERSON","wikidata_qid":"Q42156","wikipedia_title":"Henri Bergson","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Thomas Nagel","entity_type":"PERSON","wikidata_qid":"Q350239","wikipedia_title":"Thomas Nagel","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Daniel Dennett","entity_type":"PERSON","wikidata_qid":"Q215263","wikipedia_title":"Daniel Dennett","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Roger Penrose","entity_type":"PERSON","wikidata_qid":"Q193803","wikipedia_title":"Roger Penrose","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
