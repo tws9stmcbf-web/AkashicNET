@@ -1,0 +1,190 @@
+{
+  "batch_id": "BQ001-BATCH4-CONTEMPLATIVE-PHILOSOPHY",
+  "version": "0.1.0",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "scope": "contemplative_self_models_and_philosophy_of_mind",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-SIDERITS-2011",
+      "source_type": "SCHOLARLY_PHILOSOPHY_CHAPTER",
+      "title": "Buddhist Non-Self: The No-Owner's Manual",
+      "authors_short": "Siderits",
+      "year": 2011,
+      "publisher": "Oxford University Press",
+      "doi": "10.1093/oxfordhb/9780199548019.003.0013",
+      "url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "limitations": [
+        "Philosophical reconstruction of Buddhist positions is not empirical proof that non-self is ontologically true.",
+        "Buddhist traditions contain multiple interpretations of personhood and selfhood."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-DAHL-2015",
+      "source_type": "PEER_REVIEWED_THEORETICAL_REVIEW",
+      "title": "Reconstructing and deconstructing the self: cognitive mechanisms in meditation practice",
+      "authors_short": "Dahl, Lutz and Davidson",
+      "year": 2015,
+      "journal": "Trends in Cognitive Sciences",
+      "doi": "10.1016/j.tics.2015.07.001",
+      "pmid": "26231761",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "limitations": [
+        "The article proposes a cognitive framework and synthesizes evidence rather than constituting a single decisive experiment.",
+        "Changes in self-related processing do not establish the metaphysical non-existence of a self."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-VAGO-2012",
+      "source_type": "PEER_REVIEWED_THEORETICAL_FRAMEWORK",
+      "title": "Self-awareness, self-regulation, and self-transcendence (S-ART): a framework for understanding the neurobiological mechanisms of mindfulness",
+      "authors_short": "Vago and Silbersweig",
+      "year": 2012,
+      "journal": "Frontiers in Human Neuroscience",
+      "doi": "10.3389/fnhum.2012.00296",
+      "pmid": "23112770",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "limitations": [
+        "S-ART is an integrative framework, not direct proof of a particular ontology of mind.",
+        "Self-transcendence as a psychological construct must not be equated with post-mortem survival or a nonlocal mind."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-BREWER-2011",
+      "source_type": "PRIMARY_PEER_REVIEWED_NEUROIMAGING_STUDY",
+      "title": "Meditation experience is associated with differences in default mode network activity and connectivity",
+      "authors_short": "Brewer et al.",
+      "year": 2011,
+      "journal": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.1112029108",
+      "pmid": "22114193",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22114193/",
+      "limitations": [
+        "Group differences and task-related neuroimaging associations do not establish causation for all observed traits.",
+        "Default-mode-network activity is not a direct measure of an enduring metaphysical self.",
+        "Meditation-related neural differences do not establish consciousness independent of brain function."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PHYSICALISM",
+      "source_type": "SCHOLARLY_REFERENCE_ENTRY",
+      "title": "Physicalism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/physicalism/",
+      "limitations": ["Reference synthesis of philosophical arguments; not an experimental verdict that physicalism is true."]
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-DUALISM",
+      "source_type": "SCHOLARLY_REFERENCE_ENTRY",
+      "title": "Dualism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/dualism/",
+      "limitations": ["Reference synthesis of philosophical positions; possibility and argumentative coherence are not empirical confirmation."]
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PANPSYCHISM",
+      "source_type": "SCHOLARLY_REFERENCE_ENTRY",
+      "title": "Panpsychism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/panpsychism/",
+      "limitations": ["Reference synthesis of a family of metaphysical positions; philosophical motivation is not empirical confirmation of ubiquitous mentality."]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-BREWER-2011-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A 2011 fMRI study reported differences in default-mode-network activity and connectivity between experienced meditators and meditation-naive controls during several meditation conditions.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ001-BREWER-2011"],
+      "provenance": ["peer-reviewed primary neuroimaging study"],
+      "limitations": ["The observation concerns measured neural activity under studied conditions, not the existence or non-existence of a metaphysical self."],
+      "uncertainty": "The extent to which training, selection effects, task strategy and other factors explain group differences remains bounded by the study design.",
+      "methodological_risks": ["group_selection", "neuroimaging_inference", "construct_validity"],
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-DAHL-VAGO-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Contemplative-science frameworks describe meditation as capable of modifying attention, self-related processing, self-regulation and experiences described as self-transcendence.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-DAHL-2015", "SRC-BQ001-VAGO-2012"],
+      "provenance": ["peer-reviewed theoretical and review literature"],
+      "limitations": ["Framework constructs summarize proposed mechanisms and evidence; they are not direct measurements of metaphysical reality."],
+      "uncertainty": "Different meditation practices, populations and operational definitions of self-processing may yield different effects.",
+      "methodological_risks": ["construct_heterogeneity", "practice_heterogeneity", "framework_dependence"],
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-SIDERITS-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "A major Buddhist philosophical strand can be reconstructed as denying an independently existing owner-self while treating the person in reductionist or conventional terms.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ001-SIDERITS-2011"],
+      "provenance": ["scholarly philosophical analysis of Buddhist non-self positions"],
+      "limitations": ["This records a philosophical interpretation and tradition-level position, not an experimentally established ontology."],
+      "uncertainty": "Buddhist schools and scholars differ in how non-self, personhood and conventional reality are interpreted.",
+      "methodological_risks": ["historical_interpretation", "tradition_heterogeneity"],
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-PHYSICALISM-HYP-01",
+      "claim_type": "HYPOTHESIS",
+      "text": "Physicalist approaches hold, in differing formulations, that mental facts depend on or are wholly grounded in the physical; if such a view is correct, post-mortem continuation would require an account consistent with that dependence.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Hypothesis",
+      "source_ids": ["SRC-BQ001-SEP-PHYSICALISM"],
+      "provenance": ["scholarly philosophy reference synthesis"],
+      "limitations": ["Physicalism is a philosophical position with multiple formulations and active objections; this record does not treat it as an empirical verdict."],
+      "uncertainty": "No formulation in this batch independently resolves the metaphysics of consciousness or post-mortem continuation.",
+      "methodological_risks": ["metaphysical_underdetermination"],
+      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-DUALISM-HYP-01",
+      "claim_type": "HYPOTHESIS",
+      "text": "Dualist approaches hold that the mental and physical are fundamentally distinct in some respect, leaving conceptual room for forms of mind-body independence while facing questions about interaction, causal closure and evidence.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Hypothesis",
+      "source_ids": ["SRC-BQ001-SEP-DUALISM"],
+      "provenance": ["scholarly philosophy reference synthesis"],
+      "limitations": ["Conceptual room for independence does not establish that consciousness actually survives irreversible biological death."],
+      "uncertainty": "Competing varieties of dualism make different ontological and causal commitments.",
+      "methodological_risks": ["metaphysical_underdetermination", "causal_explanatory_gap"],
+      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-PANPSYCHISM-HYP-01",
+      "claim_type": "HYPOTHESIS",
+      "text": "Panpsychist approaches treat mentality as fundamental and widespread in nature, offering an alternative to standard physicalism and dualism but not by themselves specifying whether an individual person's consciousness survives death.",
+      "domain": "contemplative_philosophical_and_wisdom_traditions",
+      "evidence_label": "Hypothesis",
+      "source_ids": ["SRC-BQ001-SEP-PANPSYCHISM"],
+      "provenance": ["scholarly philosophy reference synthesis"],
+      "limitations": ["Fundamental or ubiquitous mentality does not entail persistence of autobiographical identity, memory or an individual stream of consciousness."],
+      "uncertainty": "Panpsychism is a family of philosophical positions with unresolved combination and individuation problems.",
+      "methodological_risks": ["metaphysical_underdetermination", "identity_non_sequitur"],
+      "supports_models": []
+    }
+  ],
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "Batch 4 separates three layers that are often conflated: empirical observations of meditation-associated self-processing and neural activity, contemplative or Buddhist interpretations of selfhood, and competing metaphysical positions in philosophy of mind. None of these layers independently establishes either post-mortem continuation or its impossibility."
+  },
+  "promotion_guards": {
+    "contemplative_tradition_proves_metaphysical_claim": false,
+    "historical_longevity_upgrades_evidence": false,
+    "cross_tradition_similarity_upgrades_evidence": false,
+    "meditation_self_processing_proves_ontological_nonself": false,
+    "self_transcendence_proves_nonlocal_consciousness": false,
+    "physicalism_counts_as_empirical_verdict": false,
+    "dualism_counts_as_empirical_verdict": false,
+    "panpsychism_counts_as_empirical_verdict": false,
+    "philosophical_coherence_proves_postmortem_survival": false,
+    "model_support_edges_upgrade_evidence": false
+  }
+}
