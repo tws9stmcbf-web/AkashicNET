@@ -29,8 +29,7 @@ def edge_is_safe(edge: dict) -> bool:
     return False
 
 
-def main() -> None:
-    data = json.loads(FIXTURES.read_text(encoding='utf-8'))
+def validate(data: dict, graph: str, canon: str, evidence: str) -> bool:
     assert data['version'] == '0.7.9'
     guards = data['guardrails']
     assert guards['ambiguous_edges_default_unresolved'] is True
@@ -46,9 +45,9 @@ def main() -> None:
     for edge in data['forbidden_examples']:
         assert not edge_is_safe(edge), f"forbidden promotion accepted: {edge['id']}"
 
-    graph = SCHEMA_DOC.read_text(encoding='utf-8').lower()
-    canon = CANON_DOC.read_text(encoding='utf-8').lower()
-    evidence = EVIDENCE_DOC.read_text(encoding='utf-8').lower()
+    graph = graph.lower()
+    canon = canon.lower()
+    evidence = evidence.lower()
 
     for phrase in ['ambiguous relationships remain explicit `unresolved` edges', 'rights state is independent', 'scientific evidence']:
         assert phrase in graph, f'missing ontology boundary phrase: {phrase}'
@@ -56,6 +55,16 @@ def main() -> None:
         assert phrase in canon, f'missing canonical boundary phrase: {phrase}'
     for phrase in ['provenance is not evidence', 'semantic connection is not scientific evidence']:
         assert phrase in evidence, f'missing evidence boundary phrase: {phrase}'
+
+    return True
+
+
+def main() -> None:
+    data = json.loads(FIXTURES.read_text(encoding='utf-8'))
+    graph = SCHEMA_DOC.read_text(encoding='utf-8')
+    canon = CANON_DOC.read_text(encoding='utf-8')
+    evidence = EVIDENCE_DOC.read_text(encoding='utf-8')
+    validate(data, graph, canon, evidence)
 
     print('AKASHICNET v0.7.9 ONTOLOGY BOUNDARY PASS', {
         'allowed_examples': len(data['allowed_examples']),
