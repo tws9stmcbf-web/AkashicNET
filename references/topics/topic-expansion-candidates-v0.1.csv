@@ -1,0 +1,31 @@
+canonical_topic,source_root,source_label,evidence_type,status,notes
+Vajrasattva,Buddhism,Teaching From The Vajrasattva Retreat,drive_metadata_descendant,candidate_topic,Distinct Vajrayana practice/deity topic
+Bardo teachings,Buddhism,Bardo Teachings,drive_metadata_descendant,candidate_topic,Tibetan Buddhist intermediate-state teachings
+Buddhist monasticism,Buddhism,The Buddhist Monastic Code,drive_metadata_descendant,candidate_topic,Vinaya and monastic discipline
+Milarepa,Buddhism,Songs of Milarepa,drive_metadata_descendant,candidate_topic,Tibetan Buddhist teacher/tradition node; review person-vs-topic policy
+Theravada forest tradition,Buddhism,Books by Luang Ta Maha Boowa,drive_metadata_descendant,candidate_topic,Tradition-level topic inferred conservatively from collection
+Advaita Vedanta,Buddhism,The Zen of Advaita,drive_metadata_descendant,candidate_topic,Cross-tradition philosophical topic
+Atharva Veda,Hinduism,Atharva Veda Samhita,drive_metadata_descendant,candidate_topic,Vedic corpus/topic
+Nisargadatta Maharaj,Hinduism,Nisargadatta Maharaj,drive_metadata_descendant,candidate_topic,Review person-vs-topic policy; collection represents Advaita teaching corpus
+Sri Aurobindo,Hinduism,Sri Aurobindo,drive_metadata_descendant,candidate_topic,Review person-vs-topic policy; integral yoga/philosophy corpus
+Integral Yoga,Hinduism,Sri Aurobindo,drive_metadata_descendant,candidate_topic,Tradition/philosophical system candidate
+Parapsychology,Metaphysics,Encyclopedia of Occultism and Parapsychology,drive_metadata_descendant,candidate_topic,Distinct interdisciplinary research topic
+Abramelin,Grimoire,Abramelin,drive_metadata_descendant,candidate_topic,Western esoteric magical tradition/text complex
+Gnosis,Ancient Religions,Gnosis,drive_metadata_descendant,candidate_topic,Distinct religious/esoteric concept
+Book of Enoch,Ancient Religions,Enoch,drive_metadata_descendant,candidate_topic,Ancient Jewish apocalyptic literature topic
+Shamanic techniques,Ancient Religions,Techniques of Modern Shamanism,drive_metadata_descendant,candidate_topic,Narrower practice topic under Shamanism
+Demotic magic,Ancient Religions,The Demotic Magical Papyrus,drive_metadata_descendant,candidate_topic,Ancient Egyptian magical practice/text tradition
+Ethnomycology,Ancient Religions,Mushrooms Russia and History,drive_metadata_descendant,candidate_topic,Cross anthropology/mycology/religion topic
+Mahabharata,Ancient Religions,Mahabharata,drive_metadata_descendant,candidate_topic,Indian epic/religious-philosophical corpus
+Tantra,Ancient Religions,Tantric Texts Series,drive_metadata_descendant,candidate_topic,Cross Hindu/Buddhist esoteric tradition
+Greek philosophy,Ancient Religions,History of Greek Philosophy,drive_metadata_descendant,candidate_topic,Historical philosophical tradition
+Maya codices,Ancient Religions,The Dresden Codex,drive_metadata_descendant,candidate_topic,Mesoamerican manuscript/knowledge tradition
+Jainism,Ancient Religions,Trishasti Shalaka Purusa Caritr,drive_metadata_descendant,candidate_topic,Religious tradition represented by canonical Jain work
+Frankfurt School,Philosophy,Frankfurt School – Karl Mannheim,drive_metadata_descendant,candidate_topic,Critical theory/social philosophy tradition
+Occult philosophy,Philosophy,Agrippa - Occult Philosophy,drive_metadata_descendant,candidate_topic,Western esoteric philosophical tradition
+Kierkegaardian philosophy,Philosophy,Søren Kierkegaard,drive_metadata_descendant,candidate_topic,Review author-derived topic naming
+Einstein and philosophy of science,Philosophy,Selected works by Albert Einstein,drive_metadata_descendant,candidate_topic,Review whether corpus supports distinct topic rather than author node
+Psychic development,Psychology,Psychic Development,drive_metadata_descendant,candidate_topic,Explicit collection label; evidence exists despite empty collection state
+John Locke and empiricism,Psychology,Complete works of John Locke,drive_metadata_descendant,candidate_topic,Author-derived philosophical topic; review canonicalisation
+Sacred texts,Ancient Religions,Sacred Texts,drive_metadata_descendant,candidate_topic,Cross-tradition textual studies
+Sacred Books of the East,Ancient Religions,The Sacred Books of the East,drive_metadata_descendant,candidate_topic,Comparative religion/source corpus
