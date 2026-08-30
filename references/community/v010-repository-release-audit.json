@@ -3,8 +3,16 @@
   "milestone": "REPOSITORY_RELEASE_AUDIT",
   "audited_main_sha": "f61b2a30d18617b523c4f55f84e650832254a240",
   "repository_release_audit_passed": true,
-  "release_ready": false,
+  "release_ready": true,
   "release_name": "Evidence-Governed Knowledge Pipeline",
+  "verified_release": {
+    "tag": "v0.10.0-prealpha",
+    "target_commit": "5dc9a6ccf872e57a98bb3b6d999b5e32f841f0c9",
+    "github_release_id": 379436525,
+    "prerelease": true,
+    "draft": false,
+    "verified_by_readback": true
+  },
   "verified_gates": {
     "integration_gate_merged": true,
     "evidence_taxonomy_consistent": true,
@@ -15,7 +23,8 @@
     "public_data_boundary_green": true,
     "canonical_batch3_reconciled": true,
     "readme_version_metadata_updated": true,
-    "release_notes_present": true
+    "release_notes_present": true,
+    "tag_and_release_created": true
   },
   "verified_state": {
     "canonical_duplicate_review_denominator": 126,
@@ -37,9 +46,7 @@
     "Issue #66 remains open as the fail-closed continuation point for Drive hashing."
   ],
   "current_version_metadata": "PRE-ALPHA v0.10",
-  "remaining_release_gates": [
-    "tag_and_release_creation"
-  ],
+  "remaining_release_gates": [],
   "release_invariants": {
     "truth_inference_allowed": false,
     "rights_promotion_allowed": false,
