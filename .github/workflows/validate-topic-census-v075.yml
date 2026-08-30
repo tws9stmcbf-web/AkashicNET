@@ -1,0 +1,53 @@
+name: Validate topic census v0.7.5
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/topic_census_v075.py'
+      - 'references/community/concept-seed-v0.20.csv'
+      - 'references/community/n2n-pilot-index.csv'
+      - 'references/community/wikispine-*.json'
+      - 'references/community/drive-live-full-census-checkpoint-v0.5.0.md'
+      - '.github/workflows/validate-topic-census-v075.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/topic_census_v075.py'
+      - 'references/community/concept-seed-v0.20.csv'
+      - 'references/community/n2n-pilot-index.csv'
+      - 'references/community/wikispine-*.json'
+      - 'references/community/drive-live-full-census-checkpoint-v0.5.0.md'
+      - '.github/workflows/validate-topic-census-v075.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run deterministic topic census
+        run: python scripts/topic_census_v075.py | tee /tmp/topic-census.json
+      - name: Validate fail-closed census contract
+        run: |
+          python - <<'PY'
+          import json
+          p='/tmp/topic-census.json'
+          d=json.load(open(p))
+          assert d['audited_unique_topics'] > 0
+          assert d['drive_context']['unique_folder_ids'] == 199
+          assert d['drive_context']['unique_non_folder_object_ids'] == 2459
+          assert d['drive_context']['included_in_topic_union'] is False
+          assert d['full_cross_source_total_status'] == 'INCOMPLETE_PENDING_SANITIZED_DRIVE_TOPIC_LABELS'
+          assert d['guardrails']['truth_inference'] is False
+          assert d['guardrails']['rights_promotion'] is False
+          assert d['guardrails']['scientific_evidence_promotion'] is False
+          assert d['guardrails']['drive_access_performed'] is False
+          print('AKASHICNET v0.7.5 TOPIC CENSUS PASS', {
+              'audited_public_metadata_topics': d['audited_unique_topics'],
+              'source_counts': d['source_counts'],
+              'drive_folder_labels_in_union': False,
+              'full_cross_source_total_status': d['full_cross_source_total_status'],
+          })
+          PY

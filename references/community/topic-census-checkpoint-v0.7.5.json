@@ -1,0 +1,31 @@
+{
+  "version": "0.7.5",
+  "milestone": "AUDITED_PUBLIC_METADATA_TOPIC_CENSUS",
+  "audited_unique_topics": 68,
+  "source_counts": {
+    "wikispine": 53,
+    "reviewed_ontology": 15,
+    "n2n_metadata_categories": 15
+  },
+  "drive_context": {
+    "unique_folder_ids": 199,
+    "unique_non_folder_object_ids": 2459,
+    "folder_labels_in_public_repo": false,
+    "included_in_topic_union": false
+  },
+  "full_cross_source_total_status": "INCOMPLETE_PENDING_SANITIZED_DRIVE_TOPIC_LABELS",
+  "interpretation": {
+    "audited_public_metadata_lower_bound": 68,
+    "broader_300_plus_claim_status": "ESTIMATE_NOT_AUDITED",
+    "exact_310_333_347_claim_status": "NOT_SUPPORTED_BY_CURRENT_REPRODUCIBLE_CENSUS"
+  },
+  "guardrails": {
+    "drive_access_performed": false,
+    "semantic_similarity_auto_merge": false,
+    "document_count_is_topic_count": false,
+    "folder_node_count_is_topic_count": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
