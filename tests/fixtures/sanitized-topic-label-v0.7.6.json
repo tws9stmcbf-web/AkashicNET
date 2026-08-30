@@ -1,0 +1,8 @@
+{
+  "schema_version": "0.7.6",
+  "fixture_only": true,
+  "records": [
+    {"topic_label": "Synthetic Contemplative Studies", "source_class": "DRIVE_COLLECTION_LABEL", "review_state": "REVIEWED"},
+    {"topic_label": "Synthetic Comparative Mysticism", "source_class": "DRIVE_COLLECTION_LABEL", "review_state": "HOLD"}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akashicnet://schemas/sanitized-topic-label/v0.7.6",
+  "title": "AkashicNET sanitized topic label snapshot",
+  "type": "object",
+  "required": ["schema_version", "fixture_only", "records"],
+  "properties": {
+    "schema_version": {"const": "0.7.6"},
+    "fixture_only": {"type": "boolean"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic_label", "source_class", "review_state"],
+        "additionalProperties": false,
+        "properties": {
+          "topic_label": {"type": "string", "minLength": 1, "maxLength": 160},
+          "source_class": {"enum": ["DRIVE_COLLECTION_LABEL", "OTHER_SANITIZED_METADATA"]},
+          "review_state": {"enum": ["REVIEWED", "HOLD"]}
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-privacy-policy": {
+    "forbidden_fields": ["drive_id", "parent_drive_id", "collection_path", "filename", "object_name", "document_body", "email", "user_name", "private_url"],
+    "rule": "Only topic labels and coarse source/review class may cross the bridge. No provider identifiers, private paths, filenames, document bodies, or personal identifiers."
+  }
+}
