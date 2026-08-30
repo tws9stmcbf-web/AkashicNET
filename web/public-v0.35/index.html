@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AkashicNET Public Portal</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:920px;margin:40px auto;padding:0 18px;line-height:1.45}header{margin-bottom:24px}form{display:grid;grid-template-columns:1fr auto;gap:10px}input,button,select{font:inherit;padding:10px}.filters{display:flex;gap:10px;margin:10px 0 18px}.notice{padding:12px;border:1px solid #999;border-radius:8px}.result{padding:14px 0;border-bottom:1px solid #ddd}.meta{font-size:.9rem;opacity:.8}.empty{padding:20px 0}code{font-size:.9em}
+</style>
+</head>
+<body>
+<header>
+<h1>AkashicNET Public Portal</h1>
+<p>Public results only. Every returned record must pass the executable <code>PUBLIC_VERIFIED</code> rights gate.</p>
+</header>
+<form id="searchForm">
+<input id="q" maxlength="512" required placeholder="Search the public knowledge layer">
+<button type="submit">Search</button>
+</form>
+<div class="filters">
+<select id="domain"><option value="all">All sources</option><option value="reddit">Reddit</option><option value="library">Library</option></select>
+<select id="state"><option value="all">All review states</option><option value="accepted">Accepted topical links</option><option value="hold">Holds</option></select>
+</div>
+<div class="notice">Topical relevance, review state, provenance strength and SHA-256 identity do not imply truth, scientific validation, safety, efficacy, or public rights. Rights visibility is controlled separately.</div>
+<p id="status"></p><main id="results"></main>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(rows){const root=$('results');root.innerHTML='';if(!rows.length){root.innerHTML='<div class="empty">No PUBLIC_VERIFIED results are currently available for this query.</div>';return;}for(const r of rows){const title=r.title||r.label||r.canonical_family_id||r.result_id||'Result';const meta=[r.semantic_decision&&`semantic: ${r.semantic_decision}`,r.review_state&&`review: ${r.review_state}`,r.provenance_tier&&`provenance: ${r.provenance_tier}`,'rights: PUBLIC_VERIFIED'].filter(Boolean).join(' · ');root.insertAdjacentHTML('beforeend',`<article class="result"><h2>${esc(title)}</h2><div class="meta">${esc(meta)}</div></article>`);}}
+$('searchForm').addEventListener('submit',async e=>{e.preventDefault();const params=new URLSearchParams({q:$('q').value,domain:$('domain').value,state:$('state').value,limit:'20',visibility:'public'});$('status').textContent='Searching public index…';$('results').innerHTML='';try{const res=await fetch(`/v1/retrieve?${params}`,{credentials:'same-origin'});const data=await res.json();if(!res.ok)throw new Error('Request failed');if(data.visibility!=='public')throw new Error('Public visibility was not enforced');const up=data.upstream||{};if((up.public_retrieval_gate||{}).required_status!=='PUBLIC_VERIFIED')throw new Error('PUBLIC_VERIFIED gate missing');render(up.results||[]);$('status').textContent=`${(up.results||[]).length} public result(s). ${up.summary?.public_gate_suppressed_count||0} non-public candidate(s) suppressed.`;}catch(err){$('status').textContent='Public search unavailable.';console.error('AkashicNET public portal error');}});
+</script>
+</body>
+</html>
