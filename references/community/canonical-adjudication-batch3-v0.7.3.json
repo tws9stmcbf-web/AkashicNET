@@ -2,7 +2,7 @@
   "contract_version": "0.7.0",
   "batch_version": "0.7.3",
   "supersedes_checkpoint": "canonical-adjudication-public-bibliography-v0.10.1.json",
-  "description": "Public bibliographic re-adjudication of selected prior HOLD candidates. For the explicitly mapped candidates below, this batch supersedes the older checkpoint decision only at REPRESENTS_WORK level. Edition/translation/rights/science/safety remain unpromoted.",
+  "description": "Public bibliographic re-adjudication of selected prior HOLD candidates. For the explicitly mapped candidates below, this batch supersedes the older checkpoint decision only at REPRESENTS_WORK level. Edition/translation/rights/science/safety remain unpromoted. evidence_class is intentionally a scalar string as required by the v0.7.0 validator.",
   "records": [
     {
       "logical_id": "CANON-B3-ABRAMELIN",
@@ -12,10 +12,7 @@
       "decision": "ACCEPT",
       "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
       "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY"],
-      "provenance": [
-        "WorldCat OCLC 868276719: Abraham ben Simeon; S. L. MacGregor Mathers (translator); The Book of the Sacred Magic of Abramelin the Mage",
-        "Open Library work OL4366244W; edition OL2372767M; OCLC 15108766"
-      ],
+      "provenance": ["WorldCat OCLC 868276719: Abraham ben Simeon; S. L. MacGregor Mathers (translator); The Book of the Sacred Magic of Abramelin the Mage", "Open Library work OL4366244W; edition OL2372767M; OCLC 15108766"],
       "rationale": "Independent public catalogue records consistently identify the named Abramelin work and distinguish work identity from particular editions. This ACCEPT is work identity only.",
       "contradiction_check": "No contradictory authorship/title evidence found in the cited authority records; edition dates and publishers vary and are intentionally not collapsed.",
       "rights_promoted": false,
@@ -31,11 +28,7 @@
       "decision": "ACCEPT",
       "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
       "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY"],
-      "provenance": [
-        "WorldCat OCLC 26634250: Heinrich Cornelius Agrippa von Nettesheim; Three Books of Occult Philosophy",
-        "Open Library work OL1114830W; edition OL1728852M; OCLC 26634250; ISBN 0875428320",
-        "Folger Shakespeare Library catalogue: 1651 English Three Books of Occult Philosophy, Agrippa, translated by J.F."
-      ],
+      "provenance": ["WorldCat OCLC 26634250: Heinrich Cornelius Agrippa von Nettesheim; Three Books of Occult Philosophy", "Open Library work OL1114830W; edition OL1728852M; OCLC 26634250; ISBN 0875428320", "Folger Shakespeare Library catalogue: 1651 English Three Books of Occult Philosophy, Agrippa, translated by J.F."],
       "rationale": "Multiple independent public bibliographic authorities establish the named Agrippa work across historical and modern manifestations. This does not identify a private copy with a specific edition.",
       "contradiction_check": "Authority records show multiple translations/editions; those differences are preserved rather than treated as contradictions to work identity.",
       "rights_promoted": false,
@@ -51,10 +44,7 @@
       "decision": "ACCEPT",
       "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
       "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY"],
-      "provenance": [
-        "WorldCat OCLC 39211846: Vivekananda; The Complete Works of Swami Vivekananda; Mayavati memorial edition; Advaita Ashrama",
-        "Open Library work OL311928W; edition OL15570189M; OCLC 39211846; ISBN 8185301751"
-      ],
+      "provenance": ["WorldCat OCLC 39211846: Vivekananda; The Complete Works of Swami Vivekananda; Mayavati memorial edition; Advaita Ashrama", "Open Library work OL311928W; edition OL15570189M; OCLC 39211846; ISBN 8185301751"],
       "rationale": "Independent public catalogue records establish the collected work title and author. Edition-specific identity remains outside this ACCEPT.",
       "contradiction_check": "Public records contain multiple publication years and editions; no edition is inferred for the private corpus candidate.",
       "rights_promoted": false,
