@@ -1,0 +1,28 @@
+name: Validate WikiSpine batch H boundaries
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-h-works-v0.7.7.json'
+      - 'scripts/validate_wikispine_batch_h_boundaries.py'
+      - 'tests/test_wikispine_batch_h_boundaries.py'
+      - '.github/workflows/validate-wikispine-batch-h-boundaries.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/wikispine-batch-h-works-v0.7.7.json'
+      - 'scripts/validate_wikispine_batch_h_boundaries.py'
+      - 'tests/test_wikispine_batch_h_boundaries.py'
+      - '.github/workflows/validate-wikispine-batch-h-boundaries.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_wikispine_batch_h_boundaries.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_wikispine_batch_h_boundaries.py
