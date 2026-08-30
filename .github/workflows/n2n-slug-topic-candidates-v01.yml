@@ -1,0 +1,24 @@
+name: N2N Slug Topic Candidates v0.1
+on:
+  push:
+    paths:
+      - 'scripts/n2n_slug_topic_candidates_v01.py'
+      - 'references/community/reddit-uri-index.csv'
+      - '.github/workflows/n2n-slug-topic-candidates-v01.yml'
+  workflow_dispatch:
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extract lexical topic candidates
+        run: python scripts/n2n_slug_topic_candidates_v01.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: n2n-slug-topic-candidates-v0.1
+          path: |
+            artifacts/n2n-slug-topic-candidates-v0.1.csv
+            artifacts/n2n-slug-topic-candidates-v0.1.json
