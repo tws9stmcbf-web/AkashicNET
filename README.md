@@ -1,6 +1,6 @@
 # 🕸️ AkashicNET
 
-## Provenance-first living knowledge network · PRE-ALPHA v0.9
+## Provenance-first living knowledge network · PRE-ALPHA v0.10
 
 AkashicNET is an open, provenance-first knowledge network for building an auditable living commons around consciousness, psychedelics, interdisciplinary research, community knowledge, and related cultural archives.
 
@@ -18,11 +18,11 @@ Search by title, topic, category, author, framework, summary, evidence classific
     python tools/search_reddit.py Akashic
     python tools/search_reddit.py HOMESENSE
 
-The public canonical archive currently contains **9,401 unique Reddit URLs**.
+The public-safe canonical archive currently contains **9,401 unique Reddit URLs**.
 Private Drive-derived records are intentionally excluded from the public index;
 cross-source builds that use them must run inside the private data boundary.
 
-The search tool is read-only: it searches the local public archive and does not make requests to Reddit.
+The search tool is read-only: it searches the local public-safe archive and does not make requests to Reddit.
 
 ## Current Archive
 
@@ -86,6 +86,20 @@ The remaining candidates were rejected as weak lexical coincidences. Generic ove
 
 This checkpoint is intentionally conservative: **no Reddit ↔ canonical relationship was promoted from generic lexical overlap alone**.
 
+### v0.10 Integration Milestone
+
+PRE-ALPHA v0.10 is the **Evidence-Governed Knowledge Pipeline** milestone. It joins the canonical adjudication, WikiSpine/reference, retrieval, ontology and evidence boundaries under an end-to-end integration gate while preserving fail-closed promotion rules.
+
+Verified release-state checkpoints include:
+
+- **Canonical duplicate review:** 81 / 126 families adjudicated; 45 unresolved
+- **WikiSpine:** 53 unique seeds; 50 high-precision resolutions; 3 pending
+- **Audited public-metadata topic census:** 68 unique normalized topics
+- **Public epistemic taxonomy:** Established Evidence · Interpretation · Lived Experience/Testimony · Hypothesis · Speculation
+- **Broader 300+ topic figure:** estimate only; not an audited exact count
+
+Drive rows 82–86 remain blocked until an authoritative private mapping is available. This is nonblocking release debt: no mapping is guessed and no private identifiers or per-object digests are published.
+
 ## Safety and Promotion Gates
 
 The following automated promotions remain disabled:
@@ -98,7 +112,7 @@ These gates are deliberate. AkashicNET is designed to distinguish discovery, int
 
 ## Google Drive Corpus
 
-Google Drive inventory and audit infrastructure is part of the project. The public
+Google Drive inventory and audit infrastructure is part of the project. The
 repository contains reusable code, schemas and aggregate validation reports only.
 Provider IDs, filenames, paths, timestamps, file-linked hashes and raw census
 outputs belong to a separate private audit layer and must not be committed or
@@ -134,18 +148,19 @@ See [Data security boundary](docs/DATA_SECURITY_BOUNDARY.md) and
 - Relationship scoring
 - ACCEPT / HOLD / REJECT adjudication
 - Conservative evidence-gated promotion logic
+- End-to-end canonical → reference → retrieval → ontology/evidence integration validation
+- Five-label public epistemic taxonomy with promotion guards
 
 ## For Normal Users
 
-You do not need to be a developer to explore the project.
+You do not need to be a developer to explore AkashicNET's public-facing work.
 
-- **Browse the toolkit:** open the public GitHub repository.
-- **Explore the archive:** open `references/community/reddit-uri-index.csv`.
-- **Follow source URLs:** use the indexed Reddit URLs to explore the original community material.
-- **Explore the project:** read the README and documentation to understand the provenance, validation, and adjudication approach.
-- **Run the toolkit:** technical users can clone the repository and use the documented tools locally.
+- **Explore the public portal:** visit AkashicNET.org.
+- **Follow public source URLs:** use published source links to explore original community material.
+- **Understand the method:** provenance, validation, evidence boundaries and uncertainty are documented as part of the project.
+- **Engineering workspace:** the GitHub repository is currently private; public-facing material is released separately through approved public surfaces.
 
-The current release remains a **public PRE-ALPHA research archive and knowledge-engineering project**, not yet a standalone consumer application.
+The current release remains a **PRE-ALPHA research archive and knowledge-engineering project**, not yet a standalone consumer application.
 
 ## Principles
 
@@ -174,21 +189,26 @@ This is a **conceptual and artistic design horizon**, not a claim that AkashicNE
 
 ## Publication Snapshot
 
-- Version: **PRE-ALPHA v0.9**
+- Version: **PRE-ALPHA v0.10**
+- Release milestone: **Evidence-Governed Knowledge Pipeline**
 - Canonical Reddit URLs: **9,401**
 - Unified Akashic search index: **12,058 records**
-- Relationship adjudication: **0 ACCEPT · 1 HOLD · 8 REJECT**
+- v0.9 relationship checkpoint: **0 ACCEPT · 1 HOLD · 8 REJECT**
+- Canonical duplicate review: **81 / 126 adjudicated · 45 unresolved**
+- WikiSpine: **53 seeds · 50 resolved · 3 pending**
+- Audited public-metadata topics: **68**
+- Public epistemic labels: **5**
 - Automated truth inference: **OFF**
 - Rights promotion: **OFF**
 - Scientific-evidence promotion: **OFF**
 - Validation/tests: **Passed**
-- Repository: **Public**
+- Repository visibility: **Private engineering workspace**
 - Primary branch: `main`
-- Snapshot date: **2026-08-29**
+- Snapshot date: **2026-08-30**
 
 ## Contributing
 
-The project is under active development. Near-term work includes live Drive corpus canonicalisation, stronger cross-source provenance, evidence-aware graph construction, relationship review tooling, and multidimensional exploration interfaces.
+The project is under active development. Near-term work includes continued fail-closed Drive corpus canonicalisation, stronger cross-source provenance, evidence-aware graph construction, relationship review tooling, and multidimensional exploration interfaces.
 
 ---
 
