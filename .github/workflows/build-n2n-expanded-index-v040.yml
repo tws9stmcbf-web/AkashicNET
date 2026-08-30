@@ -1,0 +1,55 @@
+name: Build N2N expanded index v0.40
+
+on:
+  push:
+    branches: [akashicnet-validation-descendants]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  n2n-expanded-index-v040-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build expanded index twice and verify determinism
+        run: |
+          python scripts/build_n2n_expanded_index_v040.py | tee /tmp/report1.json
+          sha256sum data/n2n-expanded-index-v0.40.csv | cut -d' ' -f1 > /tmp/sha1
+          cp data/n2n-expanded-index-v0.40.csv /tmp/index1.csv
+          python scripts/build_n2n_expanded_index_v040.py | tee /tmp/report2.json
+          sha256sum data/n2n-expanded-index-v0.40.csv | cut -d' ' -f1 > /tmp/sha2
+          diff /tmp/sha1 /tmp/sha2
+          cmp /tmp/index1.csv data/n2n-expanded-index-v0.40.csv
+      - name: Assert expansion counts and guardrails
+        run: |
+          python - <<'PY'
+          import csv,json
+          r=json.load(open('/tmp/report2.json'))
+          rows=list(csv.DictReader(open('data/n2n-expanded-index-v0.40.csv',encoding='utf-8')))
+          assert r['source_master_rows']==9341
+          assert r['canonical_records']==7298
+          assert r['duplicate_source_rows_collapsed']==2043
+          assert r['pilot_checkpoint_records']==1000 and r['pilot_preserved'] is True
+          assert len(rows)==7298
+          assert len({x['canonical_url'] for x in rows})==7298
+          assert len({x['community_id'] for x in rows})==7298
+          assert all(x['canonical_url'].startswith('https://reddit.com/r/NeuronsToNirvana/') for x in rows)
+          assert all(int(x['source_row_count'])>=1 for x in rows)
+          assert r['metadata_and_links_only'] is True
+          assert r['document_bodies_read']==0 and r['embeddings_created']==0
+          assert r['scientific_evidence_default'] is False
+          assert r['truth_inference_allowed'] is False and r['rights_promotion_allowed'] is False
+          assert r['automatic_cross_source_identity_links'] is False
+          print('AKASHICNET v0.40 N2N EXPANSION PASS',{
+            'source_rows':9341,'canonical_n2n_urls':7298,'duplicates_collapsed':2043,
+            'pilot_preserved':True,'expansion_factor':r['expansion_factor_vs_pilot'],
+            'metadata_links_only':True,'embeddings':0,'truth_inference':False,
+            'rights_promotion':False,'scientific_evidence_default':False})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: n2n-expanded-index-v0.40
+          path: data/n2n-expanded-index-v0.40.csv
