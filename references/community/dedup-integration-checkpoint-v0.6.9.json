@@ -1,0 +1,23 @@
+{
+  "version": "0.6.9",
+  "milestone": "CANONICAL_DEDUP_INTEGRATION_READY",
+  "source_checkpoint": "references/community/drive-p1-cumulative-hash-checkpoint-v0.6.8.json",
+  "verified_duplicate_families": 25,
+  "verified_physical_objects": 50,
+  "dedup_logical_slots": 25,
+  "potential_redundant_physical_copies": 25,
+  "collapse_basis": "BYTE_IDENTICAL_VERIFIED_SHA256",
+  "integration_mode": "AGGREGATE_CAPACITY_ONLY",
+  "object_level_mapping_available_publicly": false,
+  "object_level_collapse_performed": false,
+  "existing_v0_17_dedup_semantics_preserved": true,
+  "private_mapping_required_for_object_level_collapse": true,
+  "drive_access_performed": false,
+  "new_hashes_computed": false,
+  "work_identity_promoted": false,
+  "edition_identity_promoted": false,
+  "rights_promoted": false,
+  "scientific_evidence_promoted": false,
+  "truth_inference": false,
+  "guardrail": "Verified byte identity may reduce retrieval duplication, but aggregate evidence alone cannot identify which public graph objects should be collapsed. Meaning, canonical work identity, rights, and scientific evidential status remain independent dimensions."
+}
