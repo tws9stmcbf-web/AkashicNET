@@ -37,7 +37,7 @@ export default function CommunityPage() {
     <main className="community-page">
       <header className="nav-shell community-nav">
         <a className="wordmark" href="/" aria-label="Return to AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
-        <nav aria-label="Community navigation"><a href="/">Home</a><a href="/about">About Jatinder</a><a href="https://www.reddit.com/r/NeuronsToNirvana/" target="_blank" rel="noreferrer">All Reddit posts ↗</a></nav>
+        <nav aria-label="Community navigation"><a href="/">Home</a><a href="/about">About</a><a href="https://www.reddit.com/r/NeuronsToNirvana/" target="_blank" rel="noreferrer">All Reddit posts ↗</a></nav>
       </header>
 
       <section className="community-hero">
@@ -94,7 +94,7 @@ export default function CommunityPage() {
         <span>Community compass</span><blockquote>“Curiosity over certainty. Dialogue over polarisation. Stewardship over extraction.”</blockquote>
       </aside>
       <aside className="page-provenance" aria-label="Page version and update date">
-        <span>Community page · Iteration 04</span><span>AkashicNET v0.9 · Pre-alpha</span><span>Updated 30 August 2026</span>
+        <span>Community page · Iteration 04</span><span>AkashicNET v0.10 · Pre-alpha</span><span>Updated 30 August 2026</span>
       </aside>
       <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Unity through neurodiversity.</p><p>Awaken within · Serve without · 2026</p></footer>
     </main>
