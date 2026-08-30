@@ -1,0 +1,32 @@
+name: Validate retrieval evidence bridge v0.7.8
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/validate_retrieval_evidence_bridge_v078.py'
+      - 'tests/test_retrieval_evidence_bridge_v078.py'
+      - 'references/community/unified-retrieval-schema-v0.25.json'
+      - 'references/community/retrieval-fixtures-v0.25.json'
+      - 'docs/canonical-evidence-v01.md'
+      - '.github/workflows/validate-retrieval-evidence-bridge-v078.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/validate_retrieval_evidence_bridge_v078.py'
+      - 'tests/test_retrieval_evidence_bridge_v078.py'
+      - 'references/community/unified-retrieval-schema-v0.25.json'
+      - 'references/community/retrieval-fixtures-v0.25.json'
+      - 'docs/canonical-evidence-v01.md'
+      - '.github/workflows/validate-retrieval-evidence-bridge-v078.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_retrieval_evidence_bridge_v078.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_retrieval_evidence_bridge_v078.py
