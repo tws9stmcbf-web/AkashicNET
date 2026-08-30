@@ -1,0 +1,16 @@
+{
+  "version": "0.6.8",
+  "stage": "P1_LOW_COST",
+  "wave": "rows_31_50",
+  "families": 20,
+  "objects": 40,
+  "bytes_hashed": 33504806,
+  "byte_identical_verified_families": 15,
+  "byte_mismatch_families": 5,
+  "hash_failures": 0,
+  "work_id_promotions": 0,
+  "edition_id_promotions": 0,
+  "rights_promotions": 0,
+  "scientific_evidence_promotions": 0,
+  "guardrail": "SHA-256 equality proves byte identity only; mismatches reject duplicate-copy identity but do not determine work/edition relationships."
+}
