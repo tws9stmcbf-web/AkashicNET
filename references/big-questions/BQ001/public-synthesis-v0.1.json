@@ -1,0 +1,146 @@
+{
+  "synthesis_id": "BQ001-PUBLIC-SYNTHESIS",
+  "version": "0.1.0",
+  "question_id": "BQ001",
+  "question": "Does consciousness continue beyond the individual?",
+  "status": "UNRESOLVED",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "source_batches": [
+    "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch4-v0.1.json"
+  ],
+  "sections": [
+    {
+      "id": "what-we-know-neuroscience",
+      "heading": "Brain states and conscious states are strongly related under studied conditions",
+      "evidence_label": "Established Evidence",
+      "claim_ids": [
+        "CLAIM-BQ001-MASCHKE-2024-OBS-01",
+        "CLAIM-BQ001-ELHAJ-2019-OBS-01"
+      ],
+      "source_ids": ["SRC-BQ001-MASCHKE-2024", "SRC-BQ001-ELHAJ-2019"],
+      "boundary": "Evidence for brain/conscious-state dependence under studied conditions does not by itself prove that post-mortem continuation is impossible."
+    },
+    {
+      "id": "cardiac-arrest-and-nde",
+      "heading": "Some resuscitated patients report experiences associated with cardiac arrest",
+      "evidence_label": "Established Evidence",
+      "claim_ids": [
+        "CLAIM-BQ001-AWARE-2014-OBS-01",
+        "CLAIM-BQ001-AWARE-2014-OBS-02",
+        "CLAIM-BQ001-AWARE2-2023-OBS-01"
+      ],
+      "source_ids": ["SRC-BQ001-AWARE-2014", "SRC-BQ001-AWARE2-2023"],
+      "boundary": "Cardiac arrest during attempted resuscitation is not equivalent to irreversible biological death; retrospective recall does not uniquely determine the neurophysiological timing of an experience."
+    },
+    {
+      "id": "nde-methods",
+      "heading": "Near-death inference is limited by terminology, timing and mechanism uncertainty",
+      "evidence_label": "Interpretation",
+      "claim_ids": [
+        "CLAIM-BQ001-MARTIAL-2022-INTERP-01",
+        "CLAIM-BQ001-MARTIAL-2025-INTERP-01"
+      ],
+      "source_ids": ["SRC-BQ001-MARTIAL-2022", "SRC-BQ001-MARTIAL-2025"],
+      "boundary": "A plausible neuroscientific model is not complete proof that every NDE is fully explained, and methodological critique is not proof of non-survival."
+    },
+    {
+      "id": "memory-and-identity",
+      "heading": "Autobiographical memory contributes to experienced self-continuity",
+      "evidence_label": "Interpretation",
+      "claim_ids": [
+        "CLAIM-BQ001-SOW-2022-INTERP-01",
+        "CLAIM-BQ001-SEDIKIDES-2023-INTERP-01"
+      ],
+      "source_ids": ["SRC-BQ001-SOW-2022", "SRC-BQ001-SEDIKIDES-2023"],
+      "boundary": "Psychological self-continuity is not identical to metaphysical personal identity or post-mortem persistence."
+    },
+    {
+      "id": "reincarnation-literature",
+      "heading": "A peer-reviewed literature exists on children reporting previous-life memories",
+      "evidence_label": "Established Evidence",
+      "claim_ids": [
+        "CLAIM-BQ001-SCOPING-2021-OBS-01",
+        "CLAIM-BQ001-HARALDSSON-2003-OBS-01",
+        "CLAIM-BQ001-MORAES-2024-OBS-01"
+      ],
+      "source_ids": ["SRC-BQ001-SCOPING-2021", "SRC-BQ001-HARALDSSON-2003", "SRC-BQ001-MORAES-2024"],
+      "boundary": "A reported match or unexplained case is not proof of reincarnation; information leakage, retrospective reconstruction, selection effects and alternative explanations remain live methodological concerns."
+    },
+    {
+      "id": "reincarnation-methods",
+      "heading": "Stronger reincarnation-type inference requires stronger prospective controls",
+      "evidence_label": "Interpretation",
+      "claim_ids": ["CLAIM-BQ001-METHODS-INTERP-01", "CLAIM-BQ001-TUCKER-2025-INTERP-01"],
+      "source_ids": ["SRC-BQ001-SCOPING-2021", "SRC-BQ001-ALLAN-2025", "SRC-BQ001-TUCKER-2025", "SRC-BQ001-TUCKER-2008"],
+      "boundary": "Failure of simple psychological explanations does not establish reincarnation; psychological correlates do not establish that reincarnation is impossible."
+    },
+    {
+      "id": "contemplative-selfhood",
+      "heading": "Contemplative traditions and meditation frameworks offer non-ordinary models of selfhood",
+      "evidence_label": "Interpretation",
+      "claim_ids": [
+        "CLAIM-BQ001-SIDERITS-2011-INTERP-01",
+        "CLAIM-BQ001-DAHL-2015-INTERP-01",
+        "CLAIM-BQ001-VAGO-2012-INTERP-01"
+      ],
+      "source_ids": ["SRC-BQ001-SIDERITS-2011", "SRC-BQ001-DAHL-2015", "SRC-BQ001-VAGO-2012"],
+      "boundary": "Contemplative phenomenology, tradition and meditation-related self-processing do not establish external ontology or survival after death."
+    },
+    {
+      "id": "philosophy-of-mind",
+      "heading": "Physicalism, dualism and panpsychism remain competing philosophical frameworks",
+      "evidence_label": "Interpretation",
+      "claim_ids": [
+        "CLAIM-BQ001-PHYSICALISM-INTERP-01",
+        "CLAIM-BQ001-DUALISM-INTERP-01",
+        "CLAIM-BQ001-PANPSYCHISM-INTERP-01"
+      ],
+      "source_ids": ["SRC-BQ001-SEP-PHYSICALISM", "SRC-BQ001-SEP-DUALISM", "SRC-BQ001-SEP-PANPSYCHISM"],
+      "boundary": "Philosophical coherence or possibility is not empirical evidence that personal consciousness survives death; physicalism as a philosophy is not itself empirical proof of non-survival."
+    }
+  ],
+  "competing_models": [
+    {
+      "model_id": "MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "status": "UNRESOLVED",
+      "summary": "Individual conscious experience appears strongly dependent on biological brain function under observed conditions."
+    },
+    {
+      "model_id": "MODEL-BQ001-CONTINUITY",
+      "status": "UNRESOLVED",
+      "summary": "Some anomalous reports and non-reductive philosophical positions leave open the possibility that some aspect of consciousness could continue beyond individual biological functioning."
+    }
+  ],
+  "counter_inferences": [
+    "Brain dependence under studied conditions does not prove non-survival.",
+    "Cardiac-arrest reports do not prove consciousness existed during irreversible brain failure.",
+    "A matching past-life case does not prove reincarnation.",
+    "Failure to explain a case with one psychological hypothesis does not prove reincarnation.",
+    "Contemplative experience does not prove a metaphysical ontology.",
+    "Philosophical possibility does not establish empirical actuality.",
+    "Model-support edges are not votes and do not upgrade evidence class."
+  ],
+  "open_questions": [
+    "Which observations could discriminate biological-dependence models from continuity models?",
+    "Can prospective cardiac-arrest studies establish tighter temporal links between reported experience and measurable brain state?",
+    "Can reincarnation-type research produce prospectively documented, independently verified cases with information pathways tightly controlled?",
+    "What would count as continuity of an individual rather than continuity of information, resemblance or influence?",
+    "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?"
+  ],
+  "conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "The current evidence supports strong relationships between biological brain states, memory and conscious experience, while also documenting anomalous reports and contested case literatures that are not fully settled by the present evidence base. None of the validated batches establishes either personal consciousness surviving irreversible death or the impossibility of such survival."
+  },
+  "promotion_guards": {
+    "single_score_allowed": false,
+    "model_vote_counting_allowed": false,
+    "unsupported_claims_allowed": false,
+    "resolved_metaphysical_conclusion_allowed": false,
+    "testimony_or_anomaly_proves_survival": false,
+    "brain_dependence_proves_non_survival": false,
+    "philosophical_position_counts_as_empirical_verdict": false
+  }
+}
