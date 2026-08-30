@@ -1,0 +1,26 @@
+name: Validate WikiSpine entity batches v0.7.7
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-g-people-v0.7.7.json'
+      - 'references/community/wikispine-batch-h-works-v0.7.7.json'
+      - 'scripts/validate_wikispine_v077.py'
+      - '.github/workflows/validate-wikispine-v077.yml'
+  push:
+    paths:
+      - 'references/community/wikispine-batch-g-people-v0.7.7.json'
+      - 'references/community/wikispine-batch-h-works-v0.7.7.json'
+      - 'scripts/validate_wikispine_v077.py'
+      - '.github/workflows/validate-wikispine-v077.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate WikiSpine entity batches
+        run: python scripts/validate_wikispine_v077.py
