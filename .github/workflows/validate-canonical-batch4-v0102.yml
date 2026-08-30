@@ -1,0 +1,22 @@
+name: Validate canonical batch 4 v0.10.2
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/canonical-adjudication-batch4-v0.10.2.json'
+      - 'scripts/validate_canonical_batch4_v0102.py'
+      - '.github/workflows/validate-canonical-batch4-v0102.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_canonical_batch4_v0102.py
