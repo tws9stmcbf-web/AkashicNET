@@ -1,0 +1,21 @@
+{
+  "version": "0.7.12",
+  "batch": "M_CONSCIOUSNESS_RESEARCHERS",
+  "records": [
+    {"akashic_entity":"Anil Seth","entity_type":"PERSON","wikidata_qid":"Q22087352","wikipedia_title":"Anil Seth","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Christof Koch","entity_type":"PERSON","wikidata_qid":"Q1084303","wikipedia_title":"Christof Koch","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Giulio Tononi","entity_type":"PERSON","wikidata_qid":"Q1080557","wikipedia_title":"Giulio Tononi","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Michael Pollan","entity_type":"PERSON","wikidata_qid":"Q1138996","wikipedia_title":"Michael Pollan","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Rick Strassman","entity_type":"PERSON","wikidata_qid":"Q4354666","wikipedia_title":"Rick Strassman","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "entity_count_is_topic_count": false,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
