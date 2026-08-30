@@ -1,15 +1,15 @@
 {
   "version": "0.7.7",
   "batch": "H_CANONICAL_WORKS",
+  "entity_type": "WORK",
   "records": [
     {"akashic_entity":"The Varieties of Religious Experience","entity_type":"WORK","wikidata_qid":"Q2605035","wikipedia_title":"The Varieties of Religious Experience","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
     {"akashic_entity":"The Doors of Perception","entity_type":"WORK","wikidata_qid":"Q1215450","wikipedia_title":"The Doors of Perception","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
-    {"akashic_entity":"The Red Book","entity_type":"WORK","wikidata_qid":"Q2307843","wikipedia_title":"The Red Book (Jung)","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+    {"akashic_entity":"The Red Book","entity_type":"WORK","wikidata_qid":"Q2307843","wikipedia_title":"The Red Book (Jung)","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"The Perennial Philosophy","entity_type":"WORK","wikidata_qid":"Q1447521","wikipedia_title":"The Perennial Philosophy","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"The Hero with a Thousand Faces","entity_type":"WORK","wikidata_qid":"Q176734","wikipedia_title":"The Hero with a Thousand Faces","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
   ],
-  "pending_records": [
-    {"akashic_entity":"The Psychedelic Experience","entity_type":"WORK","resolution_state":"PENDING_VERIFIED_QID","reason":"No high-confidence Wikidata identity verified in this batch."},
-    {"akashic_entity":"Wholeness and the Implicate Order","entity_type":"WORK","resolution_state":"PENDING_VERIFIED_QID","reason":"No high-confidence Wikidata identity verified in this batch."}
-  ],
+  "verification_date": "2026-08-30",
   "guardrails": {
     "candidate_edges_default": "HOLD",
     "max_hops": 2,
