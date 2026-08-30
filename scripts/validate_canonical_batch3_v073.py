@@ -23,7 +23,8 @@ def main() -> int:
     for record in records:
         assert record["relationship"] == "REPRESENTS_WORK"
         assert record["decision"] == "ACCEPT"
-        assert "PUBLIC_LIBRARY_CATALOGUE" in record["evidence_class"]
+        assert record["evidence_class"] == "INDEPENDENT_PUBLIC_BIBLIOGRAPHY"
+        assert "PUBLIC_BIBLIOGRAPHIC_AUTHORITY" in record["signals"]
         assert record["provenance"] and len(record["provenance"]) >= 2
         assert record["rationale"].strip()
         assert record["contradiction_check"].strip()
