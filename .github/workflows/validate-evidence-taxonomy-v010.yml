@@ -1,0 +1,32 @@
+name: Validate PRE-ALPHA v0.10 evidence taxonomy
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/evidence-taxonomy-v0.10.json'
+      - 'data/evidence_claim_v01.schema.json'
+      - 'website/app/page.tsx'
+      - 'scripts/validate_evidence_taxonomy_v010.py'
+      - 'tests/test_evidence_taxonomy_v010.py'
+      - '.github/workflows/validate-evidence-taxonomy-v010.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/evidence-taxonomy-v0.10.json'
+      - 'data/evidence_claim_v01.schema.json'
+      - 'website/app/page.tsx'
+      - 'scripts/validate_evidence_taxonomy_v010.py'
+      - 'tests/test_evidence_taxonomy_v010.py'
+      - '.github/workflows/validate-evidence-taxonomy-v010.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_evidence_taxonomy_v010.py
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_evidence_taxonomy_v010.py
