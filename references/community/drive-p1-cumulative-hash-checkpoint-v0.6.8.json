@@ -1,0 +1,27 @@
+{
+  "version": "0.6.8",
+  "milestone": "CUMULATIVE_P1_VERIFIED_DEDUP_CHECKPOINT",
+  "source_summaries": [
+    "references/community/drive-p1-tranche1-hash-summary-v0.6.4.json",
+    "references/community/drive-p1-tranche2a-hash-summary-v0.6.5.json",
+    "references/community/drive-p1-tranche2b-hash-summary-v0.6.6.json",
+    "references/community/drive-p1-tranche3a-hash-summary-v0.6.7.json"
+  ],
+  "tranches": 4,
+  "families": 25,
+  "objects": 50,
+  "bytes_hashed": 13520744,
+  "family_results": {
+    "BYTE_IDENTICAL_VERIFIED": 25
+  },
+  "unique_private_batch_sha256": 4,
+  "public_private_rows_tracked": false,
+  "object_overlap_check": "NOT_POSSIBLE_FROM_PUBLIC_AGGREGATES",
+  "work_ids_promoted": 0,
+  "edition_ids_promoted": 0,
+  "rights_promoted": 0,
+  "scientific_evidence_promoted": 0,
+  "drive_access_performed": false,
+  "new_hashes_computed": false,
+  "guardrail": "This checkpoint consolidates already-recorded aggregate hash evidence only. Unique tranche and private-batch identities are checked, but object-level overlap cannot be proven from privacy-safe public aggregates. SHA-256 equality proves byte identity for compared objects only; canonical work identity, rights, and scientific evidential status remain separately adjudicated."
+}
