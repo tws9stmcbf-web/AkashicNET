@@ -1,0 +1,28 @@
+name: Validate P1 small batch5 hash evidence v0.6.12
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/drive-p1-small-batch5-hash-summary-v0.6.12.json'
+      - 'scripts/validate_p1_small_batch5_v0612.py'
+      - '.github/workflows/validate-p1-small-batch5-v0612.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p1-small-batch5-hash-summary-v0.6.12.json'
+      - 'scripts/validate_p1_small_batch5_v0612.py'
+      - '.github/workflows/validate-p1-small-batch5-v0612.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_p1_small_batch5_v0612.py
+      - run: python scripts/check_public_data_boundary.py
