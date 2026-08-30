@@ -1,0 +1,24 @@
+name: Validate P1 tranche 2b hash evidence v0.6.6
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'references/community/drive-p1-tranche2b-hash-summary-v0.6.6.json'
+      - 'scripts/validate_p1_tranche2b_hash_v066.py'
+      - '.github/workflows/validate-p1-tranche2b-hash-v066.yml'
+  pull_request:
+    paths:
+      - 'references/community/drive-p1-tranche2b-hash-summary-v0.6.6.json'
+      - 'scripts/validate_p1_tranche2b_hash_v066.py'
+      - '.github/workflows/validate-p1-tranche2b-hash-v066.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/validate_p1_tranche2b_hash_v066.py
