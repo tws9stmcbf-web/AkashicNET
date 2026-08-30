@@ -1,0 +1,21 @@
+{
+  "version": "0.6.12",
+  "stage": "P1_LOW_COST",
+  "queue_window": "overall_rows_62_66",
+  "families": 5,
+  "objects": 10,
+  "bytes_hashed": 16912514,
+  "byte_identical_verified_families": 5,
+  "byte_mismatch_families": 0,
+  "hash_failures": 0,
+  "private_batch_sha256": "6db9d21f0848a6cb9b1f63bf99196f90e8f50198f155fa5edfbde46b7c1a69da",
+  "unresolved_families_before": 65,
+  "unresolved_families_after": 60,
+  "work_id_promotions": 0,
+  "edition_id_promotions": 0,
+  "rights_promotions": 0,
+  "public_release_promotions": 0,
+  "scientific_evidence_promotions": 0,
+  "execution_rule": "fetch object -> verify expected size -> hash immediately -> persist digest privately -> only then fetch another same-name object",
+  "guardrail": "SHA-256 equality proves physical byte identity only; canonical work identity, edition identity, rights, public-release status, and scientific-evidence status remain separately adjudicated."
+}
