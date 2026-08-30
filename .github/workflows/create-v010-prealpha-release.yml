@@ -1,5 +1,6 @@
 name: Create PRE-ALPHA v0.10 release
 
+# One-shot release gate for issue #123. Remove or disable after verified creation.
 on:
   push:
     branches: [main]
