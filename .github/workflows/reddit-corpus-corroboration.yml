@@ -20,17 +20,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - name: Run corroboration unit tests
         run: python -m unittest tests.test_reddit_corpus_corroboration -v
-      - name: Recover historical source
+      - name: Recover historical source from immutable Git commit
         run: |
           mkdir -p artifacts/reddit-corroboration
-          curl --fail --location --silent --show-error \
-            https://raw.githubusercontent.com/tws9stmcbf-web/AkashicNET/af0555d26abcd90d1dac685f67290cfdd772d1f9/references/community/reddit-uri-index.csv \
-            --output artifacts/reddit-corroboration/reddit-uri-index.csv
+          git show af0555d26abcd90d1dac685f67290cfdd772d1f9:references/community/reddit-uri-index.csv \
+            > artifacts/reddit-corroboration/reddit-uri-index.csv
+          test -s artifacts/reddit-corroboration/reddit-uri-index.csv
+          test "$(wc -l < artifacts/reddit-corroboration/reddit-uri-index.csv)" -eq 9402
+          printf 'historical_source_sha256: '
+          sha256sum artifacts/reddit-corroboration/reddit-uri-index.csv
       - name: Build combined v0.23 seed
         run: |
           python - <<'PY'
