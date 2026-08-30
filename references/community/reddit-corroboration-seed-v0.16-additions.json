@@ -1,0 +1,13 @@
+{
+  "schema": "akashicnet.reddit.corroboration-seed.v0.16-additions",
+  "source_type": "public_web_discovery",
+  "notes": [
+    "Single-record delta to extend the 96-record v0.15 seed to a 97-record v0.16 combined seed.",
+    "The record was independently indexed on the public web before being tested against the historical corpus.",
+    "Presence is corroboration evidence, not current live/API verification.",
+    "No usernames, post bodies, or comments are stored."
+  ],
+  "records": [
+    {"subreddit":"NeuronsToNirvana","post_id":"17ly05r","source_reported_date":"2023-11-02","title":"What is Buddhism? | Learn Buddhism with Alan Peto: Episode 1"}
+  ]
+}
