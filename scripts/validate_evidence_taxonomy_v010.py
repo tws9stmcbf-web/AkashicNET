@@ -29,11 +29,7 @@ LEGACY_HOMEPAGE_LABELS = [
 ]
 
 
-def main() -> None:
-    tax = json.loads(TAXONOMY.read_text(encoding='utf-8'))
-    legacy = json.loads(LEGACY_SCHEMA.read_text(encoding='utf-8'))
-    home = HOME.read_text(encoding='utf-8')
-
+def validate(tax: dict, legacy: dict, home: str) -> bool:
     assert tax['version'] == '0.10.0-prealpha'
     assert tax['canonical_labels'] == CANONICAL
     assert set(tax['definitions']) == set(CANONICAL)
@@ -79,6 +75,14 @@ def main() -> None:
 
     assert tax['privacy_posture_changed'] is False
     assert tax['drive_access_performed'] is False
+    return True
+
+
+def main() -> None:
+    tax = json.loads(TAXONOMY.read_text(encoding='utf-8'))
+    legacy = json.loads(LEGACY_SCHEMA.read_text(encoding='utf-8'))
+    home = HOME.read_text(encoding='utf-8')
+    validate(tax, legacy, home)
 
     print('AKASHICNET PRE-ALPHA v0.10 EVIDENCE TAXONOMY PASS', {
         'canonical_labels': len(CANONICAL),
