@@ -1,0 +1,36 @@
+{
+  "contract_version": "0.7.0",
+  "records": [
+    {
+      "candidate_id": "EXAMPLE-HOLD-0001",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["SHA256_EQUAL"],
+      "evidence_class": "BYTE_IDENTITY_ONLY",
+      "rationale": "Byte identity is insufficient to promote canonical work identity without independent bibliographic evidence.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "EXAMPLE-ACCEPT-0001",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "ACCEPT",
+      "signals": ["PUBLIC_BIBLIOGRAPHIC_IDENTITY"],
+      "evidence_class": "INDEPENDENT_PUBLIC_BIBLIOGRAPHY",
+      "rationale": "Independent public bibliographic evidence explicitly identifies the represented work.",
+      "provenance": [
+        {
+          "source_class": "PUBLIC_BIBLIOGRAPHIC_REFERENCE",
+          "reference": "example-only"
+        }
+      ],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    }
+  ]
+}
