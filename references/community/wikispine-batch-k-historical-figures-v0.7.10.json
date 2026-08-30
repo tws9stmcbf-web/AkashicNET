@@ -1,0 +1,26 @@
+{
+  "version": "0.7.10",
+  "batch": "K_HISTORICAL_CONTEMPLATIVE_PHILOSOPHICAL_FIGURES",
+  "records": [
+    {"akashic_entity":"The Buddha","entity_type":"PERSON","wikidata_qid":"Q9441","wikipedia_title":"The Buddha","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Nagarjuna","entity_type":"PERSON","wikidata_qid":"Q171195","wikipedia_title":"Nagarjuna","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Adi Shankara","entity_type":"PERSON","wikidata_qid":"Q180967","wikipedia_title":"Adi Shankara","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Guru Nanak","entity_type":"PERSON","wikidata_qid":"Q83322","wikipedia_title":"Guru Nanak","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Laozi","entity_type":"PERSON","wikidata_qid":"Q9333","wikipedia_title":"Laozi","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Rumi","entity_type":"PERSON","wikidata_qid":"Q43347","wikipedia_title":"Rumi","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Ramana Maharshi","entity_type":"PERSON","wikidata_qid":"Q288441","wikipedia_title":"Ramana Maharshi","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Nisargadatta Maharaj","entity_type":"PERSON","wikidata_qid":"Q175532","wikipedia_title":"Nisargadatta Maharaj","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Swami Vivekananda","entity_type":"PERSON","wikidata_qid":"Q47478","wikipedia_title":"Swami Vivekananda","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Patanjali","entity_type":"PERSON","wikidata_qid":"Q231680","wikipedia_title":"Patanjali","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
