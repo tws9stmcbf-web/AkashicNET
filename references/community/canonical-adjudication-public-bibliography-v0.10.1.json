@@ -1,0 +1,99 @@
+{
+  "contract_version": "0.7.0",
+  "checkpoint_version": "0.10.1",
+  "selection_rule": "Select the first candidate in canonical-adjudication-batch2-v0.7.2.json whose decision is HOLD; this deterministically selects CANON-B2-ABRAMELIN.",
+  "records": [
+    {
+      "candidate_id": "CANON-B2-ABRAMELIN",
+      "relationship": "REPRESENTS_WORK",
+      "tested_relationship": "The S. L. MacGregor Mathers English translation titled The Book of the Sacred Magic of Abramelin the Mage and the Georg Dehn/Steven Guth 2006 English translation titled The Book of Abramelin: A New Translation represent the same underlying Abramelin work family, while remaining distinct translations/editions/manifestations.",
+      "decision": "ACCEPT",
+      "signals": ["PUBLIC_BIBLIOGRAPHIC_AUTHORITY", "TITLE_RELATION", "TRANSLATION_HISTORY"],
+      "evidence_class": "REPRODUCIBLE_PUBLIC_BIBLIOGRAPHY",
+      "rationale": "Independent public library bibliography supports work-family identity without collapsing manifestation, edition, or translation distinctions. WorldCat identifies the Mathers-translated English title as an Abramelin work. CiNii identifies the 2006 Dehn/Guth translation as The book of Abramelin, records The Book of the Sacred Magic of Abramelin the Mage as an alternative title, and explicitly describes the 2006 publication as a modern translation following Mathers's earlier translation. This is sufficient only for REPRESENTS_WORK. It does not establish edition identity, translation identity, byte identity, rights/public-release status, scientific evidence, truth, safety, or efficacy.",
+      "provenance": [
+        {
+          "authority": "WorldCat",
+          "record_id": "OCLC 1990985",
+          "url": "https://search.worldcat.org/title/1990985",
+          "bibliographic_fact": "The book of the sacred magic of Abramelin the mage; Abraham ben Simeon and S. L. MacGregor Mathers; English print book; Dover Publications, 1975."
+        },
+        {
+          "authority": "CiNii Books",
+          "record_id": "BB06860691",
+          "url": "https://ci.nii.ac.jp/ncid/BB06860691",
+          "bibliographic_fact": "The book of Abramelin: a new translation; Abraham von Worms; compiled and edited by Georg Dehn; translated by Steven Guth; Ibis Press, 2006; ISBN 9780892541270; alternative title The Book of the Sacred Magic of Abramelin the Mage; note relates the edition to Mathers's earlier translation."
+        }
+      ],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-FORBIDDEN-HISTORY",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["MULTI_VOLUME_LABELS", "EDITION_OR_COPY_VARIATION"],
+      "evidence_class": "BIBLIOGRAPHIC_EVIDENCE_INCOMPLETE",
+      "rationale": "Unchanged from v0.7.2. Multi-volume and edition-or-copy distinctions remain unresolved.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-AGRIPPA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["NUMBERED_WORK_VS_AGGREGATE"],
+      "evidence_class": "BIBLIOGRAPHIC_EVIDENCE_INCOMPLETE",
+      "rationale": "Unchanged from v0.7.2. Numbered-work versus aggregate distinctions remain unresolved.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-BARDON-VARIANTS",
+      "relationship": "REPRESENTS_EDITION",
+      "decision": "HOLD",
+      "signals": ["AUTHOR_TITLE_FAMILY", "COPY_VARIATION"],
+      "evidence_class": "EDITION_EVIDENCE_INCOMPLETE",
+      "rationale": "Unchanged from v0.7.2. Bardon edition and copy variants remain unresolved apart from the separately adjudicated Golden Book work identity.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-RAMAYANA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["CROSS_COLLECTION_ALIGNMENT"],
+      "evidence_class": "PROVENANCE_DEBT",
+      "rationale": "Unchanged from v0.7.2. Cross-collection provenance remains unresolved.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    },
+    {
+      "candidate_id": "CANON-B2-VIVEKANANDA",
+      "relationship": "REPRESENTS_WORK",
+      "decision": "HOLD",
+      "signals": ["SHARED_AUTHOR"],
+      "evidence_class": "RELATIONSHIP_UNDERDETERMINED",
+      "rationale": "Unchanged from v0.7.2. Shared authorship remains a classification signal rather than canonical work identity.",
+      "provenance": [],
+      "rights_promoted": false,
+      "public_release_promoted": false,
+      "scientific_evidence_promoted": false,
+      "safety_or_efficacy_promoted": false
+    }
+  ]
+}
