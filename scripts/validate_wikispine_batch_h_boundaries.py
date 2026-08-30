@@ -25,13 +25,14 @@ def validate(payload):
         qid = record.get('wikidata_qid', '')
         assert qid.startswith('Q') and qid[1:].isdigit(), f'invalid verified QID: {qid}'
 
-    for record in payload['pending_records']:
+    pending_records = payload.get('pending_records', [])
+    for record in pending_records:
         assert record['resolution_state'] == 'PENDING_VERIFIED_QID'
         assert 'wikidata_qid' not in record, 'pending record must not carry an unverified QID'
         assert record.get('reason'), 'pending record requires an explicit reason'
 
     resolved_names = {r['akashic_entity'] for r in payload['records']}
-    pending_names = {r['akashic_entity'] for r in payload['pending_records']}
+    pending_names = {r['akashic_entity'] for r in pending_records}
     assert resolved_names.isdisjoint(pending_names), 'work cannot be both resolved and pending'
     return True
 
@@ -39,7 +40,7 @@ def validate(payload):
 def main():
     payload = json.loads(DATA.read_text(encoding='utf-8'))
     validate(payload)
-    print('AKASHICNET WIKISPINE BATCH H BOUNDARY PASS', {'resolved': len(payload['records']), 'pending': len(payload['pending_records']), 'truth_inference': False, 'drive_access': False})
+    print('AKASHICNET WIKISPINE BATCH H BOUNDARY PASS', {'resolved': len(payload['records']), 'pending': len(payload.get('pending_records', [])), 'truth_inference': False, 'drive_access': False})
 
 
 if __name__ == '__main__':
