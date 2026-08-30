@@ -153,7 +153,7 @@ export default function BQ001Page() {
       </header>
 
       <section style={{ ...shell, paddingTop: 72, paddingBottom: 54, textAlign: "center" }}>
-        <p style={{ color: "#d8b95c", letterSpacing: ".18em", fontWeight: 800, fontSize: 13 }}>BIG QUESTION 001 · PUBLIC BETA INVESTIGATION</p>
+        <p style={{ color: "#d8b95c", letterSpacing: ".18em", fontWeight: 800, fontSize: 13 }}>BIG QUESTION 001 · PUBLIC INVESTIGATION</p>
         <h1 style={{ margin: "16px auto", maxWidth: 900, fontSize: "clamp(2.7rem, 8vw, 6.6rem)", lineHeight: .96, letterSpacing: "-.045em" }}>Does consciousness continue beyond the individual?</h1>
         <p style={{ maxWidth: 760, margin: "26px auto", color: "#c8c4bb", fontSize: "clamp(1.05rem, 2vw, 1.3rem)", lineHeight: 1.7 }}>AkashicNET maps the evidence without purchasing a conclusion. Neuroscience, cardiac-arrest research, memory and identity, reincarnation-type cases, contemplative traditions and philosophy of mind are kept visible together without flattening their evidential differences.</p>
         <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED</div>
