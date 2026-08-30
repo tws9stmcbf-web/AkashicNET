@@ -1,0 +1,22 @@
+{
+  "version": "0.7.15",
+  "batch": "P_CLASSICAL_AND_MODERN_PHILOSOPHERS",
+  "records": [
+    {"akashic_entity":"Plato","entity_type":"PERSON","wikidata_qid":"Q859","wikipedia_title":"Plato","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Aristotle","entity_type":"PERSON","wikidata_qid":"Q868","wikipedia_title":"Aristotle","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Baruch Spinoza","entity_type":"PERSON","wikidata_qid":"Q35802","wikipedia_title":"Baruch Spinoza","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Immanuel Kant","entity_type":"PERSON","wikidata_qid":"Q9312","wikipedia_title":"Immanuel Kant","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false},
+    {"akashic_entity":"Friedrich Nietzsche","entity_type":"PERSON","wikidata_qid":"Q9358","wikipedia_title":"Friedrich Nietzsche","resolution_state":"RESOLVED_HIGH_PRECISION","reference_class":"REFERENCE_ENCYCLOPEDIA","semantic_decision":"REFERENCE_IDENTITY_ONLY","truth_inference":false,"scientific_evidence":false}
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "entity_count_is_topic_count": false,
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
