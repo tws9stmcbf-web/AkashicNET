@@ -1,0 +1,25 @@
+name: AkashicNET Topic Census v0.3
+on:
+  push:
+    paths:
+      - 'scripts/akashicnet_topic_census_v03.py'
+      - 'references/topics/wikispine-topic-identities-v0.7.4.json'
+      - 'references/topics/topic-expansion-cross-source-v0.1.csv'
+      - 'references/community/n2n-pilot-index.csv'
+      - 'references/community/drive-metadata-root-census.csv'
+      - '.github/workflows/akashicnet-topic-census-v03.yml'
+  workflow_dispatch:
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run topic census v0.3
+        run: python scripts/akashicnet_topic_census_v03.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: akashicnet-topic-census-v0.3
+          path: artifacts/akashicnet-topic-census-v0.3.json
