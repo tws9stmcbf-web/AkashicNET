@@ -1,0 +1,32 @@
+name: Validate canonical batch 2 v0.7.2
+
+on:
+  pull_request:
+    paths:
+      - "references/community/canonical-adjudication-batch2-v0.7.2.json"
+      - "references/community/canonical-adjudication-batch2-checkpoint-v0.7.2.md"
+      - "scripts/validate_canonical_batch2_v072.py"
+      - ".github/workflows/validate-canonical-batch2-v072.yml"
+  push:
+    branches: [main]
+    paths:
+      - "references/community/canonical-adjudication-batch2-v0.7.2.json"
+      - "references/community/canonical-adjudication-batch2-checkpoint-v0.7.2.md"
+      - "scripts/validate_canonical_batch2_v072.py"
+      - ".github/workflows/validate-canonical-batch2-v072.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: "3.12"
+      - name: Validate generic canonical contract
+        run: python scripts/validate_canonical_adjudication_v070.py references/community/canonical-adjudication-batch2-v0.7.2.json
+      - name: Validate batch 2 fail-closed state
+        run: python scripts/validate_canonical_batch2_v072.py references/community/canonical-adjudication-batch2-v0.7.2.json
