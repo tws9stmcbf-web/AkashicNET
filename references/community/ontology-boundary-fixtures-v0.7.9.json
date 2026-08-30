@@ -1,0 +1,94 @@
+{
+  "version": "0.7.9",
+  "milestone": "ONTOLOGY_CANONICAL_EVIDENCE_BOUNDARY",
+  "allowed_examples": [
+    {
+      "id": "ONTO-ALLOW-001",
+      "relationship": "WORK_RELATED_TO_WORK",
+      "basis": "content_evidence",
+      "review_state": "provisional",
+      "promotes_work_identity": false,
+      "promotes_edition_identity": false,
+      "promotes_rights": false,
+      "promotes_scientific_evidence": false,
+      "promotes_truth": false
+    },
+    {
+      "id": "ONTO-ALLOW-002",
+      "relationship": "DRIVE_OBJECT_REALIZES_MANIFESTATION",
+      "basis": "hash",
+      "review_state": "unresolved",
+      "promotes_work_identity": false,
+      "promotes_edition_identity": false,
+      "promotes_rights": false,
+      "promotes_scientific_evidence": false,
+      "promotes_truth": false
+    }
+  ],
+  "forbidden_examples": [
+    {
+      "id": "ONTO-DENY-001",
+      "relationship": "EDITION_MANIFESTS_WORK",
+      "basis": "hash",
+      "review_state": "accepted",
+      "promotes_work_identity": true,
+      "promotes_edition_identity": false,
+      "promotes_rights": false,
+      "promotes_scientific_evidence": false,
+      "promotes_truth": false
+    },
+    {
+      "id": "ONTO-DENY-002",
+      "relationship": "MANIFESTATION_INSTANCE_OF_EDITION",
+      "basis": "collection_alignment",
+      "review_state": "accepted",
+      "promotes_work_identity": false,
+      "promotes_edition_identity": true,
+      "promotes_rights": false,
+      "promotes_scientific_evidence": false,
+      "promotes_truth": false
+    },
+    {
+      "id": "ONTO-DENY-003",
+      "relationship": "RIGHTS_RECORD_QUALIFIES_MANIFESTATION",
+      "basis": "title_normalisation",
+      "review_state": "accepted",
+      "promotes_work_identity": false,
+      "promotes_edition_identity": false,
+      "promotes_rights": true,
+      "promotes_scientific_evidence": false,
+      "promotes_truth": false
+    },
+    {
+      "id": "ONTO-DENY-004",
+      "relationship": "EVIDENCE_SUPPORTS_RELATIONSHIP",
+      "basis": "collection_alignment",
+      "review_state": "accepted",
+      "promotes_work_identity": false,
+      "promotes_edition_identity": false,
+      "promotes_rights": false,
+      "promotes_scientific_evidence": true,
+      "promotes_truth": false
+    },
+    {
+      "id": "ONTO-DENY-005",
+      "relationship": "WORK_ABOUT_CONCEPT",
+      "basis": "title_normalisation",
+      "review_state": "accepted",
+      "promotes_work_identity": false,
+      "promotes_edition_identity": false,
+      "promotes_rights": false,
+      "promotes_scientific_evidence": false,
+      "promotes_truth": true
+    }
+  ],
+  "guardrails": {
+    "ambiguous_edges_default_unresolved": true,
+    "hash_is_byte_identity_signal_only": true,
+    "rights_independent_of_canonical_identity": true,
+    "scientific_evidence_independent_of_provenance": true,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false,
+    "privacy_posture_changed": false
+  }
+}
