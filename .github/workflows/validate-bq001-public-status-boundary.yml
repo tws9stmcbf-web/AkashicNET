@@ -3,6 +3,7 @@ name: Validate BQ001 public status boundary
 on:
   pull_request:
     paths:
+      - 'references/big-questions/BQ001/public-synthesis-v0.1.json'
       - 'website/app/big-questions/bq001/page.tsx'
       - 'scripts/validate_bq001_public_status_boundary.py'
       - 'tests/test_bq001_public_status_boundary.py'
@@ -10,6 +11,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'references/big-questions/BQ001/public-synthesis-v0.1.json'
       - 'website/app/big-questions/bq001/page.tsx'
       - 'scripts/validate_bq001_public_status_boundary.py'
       - 'tests/test_bq001_public_status_boundary.py'
