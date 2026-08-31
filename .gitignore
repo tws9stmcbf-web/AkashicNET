@@ -37,3 +37,6 @@ __pycache__/
 /references/community/canonical-review-plan-*.md
 /references/community/*manifestation*review*.csv
 /artifacts/drive/
+
+# Generated knowledge graphs inherit private Drive provenance and stay local/private.
+/data/knowledge-graph-v0.*.json
