@@ -95,7 +95,7 @@ PRE-ALPHA v0.10 is the sealed **Evidence-Governed Knowledge Pipeline** milestone
 Verified release-state checkpoints include:
 
 - **Canonical duplicate review:** 81 / 126 families adjudicated; 45 unresolved
-- **WikiSpine:** 72 resolved high-precision typed reference identities (PERSON 60, WORK 12); 1 WORK identity pending
+- **WikiSpine:** 73 resolved high-precision typed reference identities (PERSON 60, WORK 13); 0 WORK identities pending
 - **Audited public-metadata topic census:** 68 unique normalized topics
 - **Public epistemic taxonomy:** Established Evidence · Interpretation · Lived Experience/Testimony · Hypothesis · Speculation
 - **Broader 300+ topic figure:** estimate only; not an audited exact count
@@ -199,7 +199,7 @@ This is a **conceptual and artistic design horizon**, not a claim that AkashicNE
 - Unified Akashic search index: **12,058 records**
 - v0.9 relationship checkpoint: **0 ACCEPT · 1 HOLD · 8 REJECT**
 - Canonical duplicate review: **81 / 126 adjudicated · 45 unresolved**
-- WikiSpine: **72 resolved (PERSON 60 · WORK 12) · 1 WORK pending**
+- WikiSpine: **73 resolved (PERSON 60 · WORK 13) · 0 WORK pending**
 - Audited public-metadata topics: **68**
 - Public epistemic labels: **5**
 - Automated truth inference: **OFF**
