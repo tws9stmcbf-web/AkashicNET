@@ -1,0 +1,134 @@
+{
+  "batch_id": "BQ001-BATCH5-ADJUDICATED-SUPPLEMENTAL-SCIENCE",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-08-31",
+  "scope": "dying_brain_neurophysiology_consciousness_theory_testing_and_death_research_methodology",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-XU-PNAS-2023",
+      "source_type": "PRIMARY_PEER_REVIEWED_OBSERVATIONAL_STUDY",
+      "title": "Surge of neurophysiological coupling and connectivity of gamma oscillations in the dying human brain",
+      "authors_short": "Xu et al.",
+      "year": 2023,
+      "journal": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.2216268120",
+      "pmid": "37126719",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
+      "link_check": {
+        "checked_at": "2026-08-31",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Observational analysis of four comatose dying patients after withdrawal of ventilatory support.",
+        "Gamma surges occurred in two patients and are not direct reports of conscious experience.",
+        "Neural signatures associated with conscious processing are not proof of consciousness or post-mortem survival."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-COGITATE-2025",
+      "source_type": "PRIMARY_PEER_REVIEWED_ADVERSARIAL_COLLABORATION",
+      "title": "Adversarial testing of global neuronal workspace and integrated information theories of consciousness",
+      "authors_short": "Cogitate Consortium et al.",
+      "year": 2025,
+      "journal": "Nature",
+      "doi": "10.1038/s41586-025-08888-1",
+      "url": "https://www.nature.com/articles/s41586-025-08888-1",
+      "link_check": {
+        "checked_at": "2026-08-31",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Tests selected predictions of IIT and GNWT under conscious visual-perception conditions.",
+        "Challenges to theory predictions do not establish that either theory is wholly false.",
+        "The study does not test consciousness after irreversible biological death."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-PARNIA-GUIDELINES-2022",
+      "source_type": "PEER_REVIEWED_MULTIDISCIPLINARY_CONSENSUS_AND_METHODS",
+      "title": "Guidelines and standards for the study of death and recalled experiences of death—a multidisciplinary consensus statement and proposed future directions",
+      "authors_short": "Parnia et al.",
+      "year": 2022,
+      "journal": "Annals of the New York Academy of Sciences",
+      "doi": "10.1111/nyas.14740",
+      "pmid": "35181885",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35181885/",
+      "link_check": {
+        "checked_at": "2026-08-31",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Consensus and methodological proposal rather than a prospective empirical test.",
+        "Terminology and interpretations in this paper are contested in the literature.",
+        "Must be presented alongside the existing Martial et al. 2022 methodological critique.",
+        "Consensus language does not prove survival or non-survival."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-XU-PNAS-2023-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "In an observational analysis of four comatose dying patients, two exhibited surges of gamma power, cross-frequency coupling and connectivity after withdrawal of ventilatory support.",
+      "domain": "dying_brain_neurophysiology",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-XU-PNAS-2023"
+      ],
+      "limitations": [
+        "Small observational sample; neural activity is not a direct measure or report of experience."
+      ],
+      "uncertainty": "The findings show that selected neurophysiological activity can occur during the dying process but do not establish consciousness or post-mortem continuation.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-COGITATE-2025-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A preregistered adversarial collaboration found results that challenged specific predictions of both integrated information theory and global neuronal workspace theory.",
+      "domain": "neuroscience_and_consciousness_models",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-COGITATE-2025"
+      ],
+      "limitations": [
+        "The experiments addressed selected theory predictions in visual consciousness, not every claim of either theory."
+      ],
+      "uncertainty": "The results constrain theory development but do not resolve the ontology of consciousness or survival after death.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ001-PARNIA-GUIDELINES-2022-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "A multidisciplinary group proposed terminology and methodological standards for studying death and recalled experiences associated with cardiac arrest and other life-threatening events.",
+      "domain": "cardiac_arrest_and_nde_research",
+      "evidence_label": "Interpretation",
+      "source_ids": [
+        "SRC-BQ001-PARNIA-GUIDELINES-2022",
+        "SRC-BQ001-MARTIAL-2022"
+      ],
+      "limitations": [
+        "Consensus terminology is a proposal and has received peer-reviewed methodological criticism."
+      ],
+      "uncertainty": "The proposal may improve standardisation but does not determine the timing, mechanism or ontology of reported experiences.",
+      "supports_models": []
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATE",
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "model_edges_upgrade_evidence": false
+  }
+}
