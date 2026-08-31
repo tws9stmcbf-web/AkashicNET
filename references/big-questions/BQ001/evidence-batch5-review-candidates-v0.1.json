@@ -88,7 +88,10 @@
         "Small observational sample; neural activity is not a direct measure or report of experience."
       ],
       "uncertainty": "The findings show that selected neurophysiological activity can occur during the dying process but do not establish consciousness or post-mortem continuation.",
-      "supports_models": []
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed primary observational study and indexed bibliographic record"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-COGITATE-2025-OBS-01",
@@ -103,7 +106,10 @@
         "The experiments addressed selected theory predictions in visual consciousness, not every claim of either theory."
       ],
       "uncertainty": "The results constrain theory development but do not resolve the ontology of consciousness or survival after death.",
-      "supports_models": []
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed preregistered adversarial collaboration and publisher version of record"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-PARNIA-GUIDELINES-2022-INTERP-01",
@@ -119,7 +125,10 @@
         "Consensus terminology is a proposal and has received peer-reviewed methodological criticism."
       ],
       "uncertainty": "The proposal may improve standardisation but does not determine the timing, mechanism or ontology of reported experiences.",
-      "supports_models": []
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed consensus/methods paper paired with existing peer-reviewed methodological critique"
+      ]
     }
   ],
   "adjudication": {
@@ -130,5 +139,24 @@
     "truth_inference_allowed": false,
     "scientific_evidence_promotion_allowed": false,
     "model_edges_upgrade_evidence": false
+  },
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "external_source_ids": [
+    "SRC-BQ001-MARTIAL-2022"
+  ],
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "The three candidates add observations and methodological context relevant to dying-brain neurophysiology and theories of consciousness. They do not establish conscious experience during irreversible brain failure, post-mortem continuity, or its impossibility."
+  },
+  "promotion_guards": {
+    "neural_activity_proves_conscious_experience": false,
+    "dying_process_equals_post_mortem_survival": false,
+    "theory_challenge_resolves_consciousness": false,
+    "consensus_language_counts_as_primary_evidence": false,
+    "methodological_consensus_proves_survival_or_non_survival": false,
+    "model_support_edges_upgrade_evidence": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false
   }
 }
