@@ -45,12 +45,14 @@ class RedditCorpusCensusTests(unittest.TestCase):
                 writer.writerow(["https://old.reddit.com/r/Test/comments/def/other?utm_source=x"])
                 writer.writerow(["not-a-url"])
             report = audit(path)
+        self.assertEqual(report["schema"], "akashicnet.reddit.corpus-census.v0.2")
         self.assertEqual(report["total_rows"], 4)
         self.assertEqual(report["post_rows"], 3)
         self.assertEqual(report["unique_post_ids"], 2)
         self.assertEqual(report["duplicate_post_id_rows"], 1)
         self.assertEqual(report["status_counts"]["annotation_derived"], 1)
         self.assertEqual(report["status_counts"]["malformed"], 1)
+        self.assertEqual(report["unique_post_ids_by_subreddit"], {"Test": 2})
 
     def test_historical_archive_exact_structural_denominators(self):
         report = audit(HISTORICAL_REDDIT)
@@ -66,6 +68,10 @@ class RedditCorpusCensusTests(unittest.TestCase):
         self.assertEqual(report["subreddits"]["NeuronsToNirvana"], 9341)
         self.assertEqual(report["subreddits"]["TribalGathering"], 57)
         self.assertEqual(report["subreddits"]["microdosing"], 2)
+        self.assertEqual(
+            report["unique_post_ids_by_subreddit"],
+            {"microdosing": 1, "NeuronsToNirvana": 7298, "TribalGathering": 57},
+        )
 
 
 if __name__ == "__main__":
