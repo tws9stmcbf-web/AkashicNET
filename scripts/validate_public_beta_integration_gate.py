@@ -24,7 +24,7 @@ CHECKS = [
         ),
     ),
     ("evidence/provenance scoring contract", ("scripts/validate_evidence_provenance_contract_v05.py",)),
-    ("current WikiSpine v0.7.17", ("scripts/validate_wikispine_v0717.py",)),
+    ("current WikiSpine v0.7.18", ("scripts/validate_wikispine_v0718.py",)),
     ("ontology boundary", ("scripts/validate_ontology_boundary_v079.py",)),
     ("Wikipedia pilot integrity/privacy", ("tools/validate_wikipedia_pilot.py",)),
     ("retrieval/evidence bridge", ("scripts/validate_retrieval_evidence_bridge_v078.py",)),
