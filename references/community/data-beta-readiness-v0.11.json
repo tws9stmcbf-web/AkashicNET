@@ -3,7 +3,7 @@
   "target_name": "Data Beta Candidate",
   "current_public_phase": "PUBLIC BETA",
   "sealed_engineering_baseline": "0.10.0-prealpha",
-  "knowledge_data_beta_declared": false,
+  "knowledge_data_beta_declared": true,
   "readiness_policy": "fail_closed",
   "required_gates": {
     "sealed_v010_release_verified": true,
@@ -15,12 +15,10 @@
     "stable_provenance_contract_present": true,
     "historical_reddit_reconciliation_integrated": true,
     "historical_reddit_annotation_parser_regression_resolved": true,
-    "historical_reddit_denominator_documented": false,
+    "historical_reddit_denominator_documented": true,
     "data_beta_regression_suite_present": true
   },
-  "release_blockers": [
-    "historical_reddit_denominator_documented"
-  ],
+  "release_blockers": [],
   "nonblocking_debt": [
     "Universal Reddit API verification is not required for beta when verification states remain explicit and fail-closed.",
     "Private Drive rows without authoritative mapping may remain quarantined and non-public.",
