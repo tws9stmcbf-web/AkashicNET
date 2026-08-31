@@ -64,15 +64,22 @@ def test_object_linked_filename_and_digest_fail_closed():
     digest = "d" * 64
     assert_rejected(
         "data/synthetic-object-record.json",
-        '{"manifestation_id":"synthetic-manifestation","filename":"private.pdf","sha256":"' + digest + '"}',
+        '{"manifestation_id":"private-record-001","filename":"private.pdf","sha256":"' + digest + '"}',
     )
 
 
-def test_object_linked_timestamp_fails_closed_even_with_short_synthetic_id():
+def test_object_linked_timestamp_fails_closed_with_short_realish_id():
     assert_rejected(
         "data/synthetic-object-record.json",
-        '{"source_drive_object_id":"example-001","timestamp":"2026-08-31T00:00:00Z"}',
+        '{"source_drive_object_id":"private-record-002","timestamp":"2026-08-31T00:00:00Z"}',
     )
+
+
+def test_explicit_example_object_metadata_fixture_remains_allowed():
+    assert mod.validate_entry(
+        "data/corpus_manifest_v01.example.json",
+        '{"provenance":{"drive_id":"example-001","path":"/Akashic Library/Example Work.pdf","filename":"Example Work.pdf"}}',
+    ) == []
 
 
 def test_public_artifact_digest_without_object_link_remains_allowed():
