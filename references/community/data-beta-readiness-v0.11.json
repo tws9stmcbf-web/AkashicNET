@@ -13,16 +13,13 @@
     "ontology_boundary_present": true,
     "topic_census_present": true,
     "stable_provenance_contract_present": true,
-    "historical_reddit_reconciliation_integrated": false,
-    "historical_reddit_annotation_parser_regression_resolved": false,
+    "historical_reddit_reconciliation_integrated": true,
+    "historical_reddit_annotation_parser_regression_resolved": true,
     "historical_reddit_denominator_documented": false,
-    "data_beta_regression_suite_present": false
+    "data_beta_regression_suite_present": true
   },
   "release_blockers": [
-    "historical_reddit_reconciliation_integrated",
-    "historical_reddit_annotation_parser_regression_resolved",
-    "historical_reddit_denominator_documented",
-    "data_beta_regression_suite_present"
+    "historical_reddit_denominator_documented"
   ],
   "nonblocking_debt": [
     "Universal Reddit API verification is not required for beta when verification states remain explicit and fail-closed.",
