@@ -1,0 +1,39 @@
+name: Validate current WikiSpine
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-entity-aggregate-v*.json'
+      - 'scripts/validate_wikispine_v*.py'
+      - 'scripts/validate_current_wikispine.py'
+      - 'tests/test_current_wikispine.py'
+      - 'scripts/validate_public_beta_integration_gate.py'
+      - '.github/workflows/validate-current-wikispine.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/wikispine-entity-aggregate-v*.json'
+      - 'scripts/validate_wikispine_v*.py'
+      - 'scripts/validate_current_wikispine.py'
+      - 'tests/test_current_wikispine.py'
+      - 'scripts/validate_public_beta_integration_gate.py'
+      - '.github/workflows/validate-current-wikispine.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate latest WikiSpine aggregate with matching validator
+        run: python scripts/validate_current_wikispine.py
+      - name: Run selector regression tests
+        run: |
+          python -m pip install --disable-pip-version-check pytest
+          python -m pytest -q tests/test_current_wikispine.py
