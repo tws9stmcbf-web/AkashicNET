@@ -33,4 +33,6 @@ jobs:
       - name: Run readiness auditor
         run: python scripts/audit_data_beta_readiness_v011.py
       - name: Run regression tests
-        run: python -m pytest -q tests/test_data_beta_readiness_v011.py
+        run: |
+          python -m pip install --disable-pip-version-check pytest
+          python -m pytest -q tests/test_data_beta_readiness_v011.py
