@@ -1,0 +1,29 @@
+name: Validate Wikipedia pilot
+
+on:
+  push:
+    paths:
+      - "references/community/wikipedia-akashic-pilot.csv"
+      - "tools/akashic-library/wikipedia_pilot.py"
+      - "tools/validate_wikipedia_pilot.py"
+      - ".github/workflows/validate-wikipedia-pilot.yml"
+  pull_request:
+    paths:
+      - "references/community/wikipedia-akashic-pilot.csv"
+      - "tools/akashic-library/wikipedia_pilot.py"
+      - "tools/validate_wikipedia_pilot.py"
+      - ".github/workflows/validate-wikipedia-pilot.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate public Wikipedia pilot metadata
+        run: python tools/validate_wikipedia_pilot.py
