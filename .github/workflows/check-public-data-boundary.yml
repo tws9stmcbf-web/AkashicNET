@@ -19,3 +19,7 @@ jobs:
           python-version: "3.11"
       - name: Check public/private corpus boundary
         run: python scripts/check_public_data_boundary.py
+      - name: Run public-data boundary regression tests
+        run: |
+          python -m pip install pytest
+          pytest -q tests/test_public_data_boundary.py
