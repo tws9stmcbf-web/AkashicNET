@@ -13,27 +13,34 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 CHECKS = [
-    ("sealed v0.10 integration", "scripts/validate_v010_integration_gate.py"),
-    ("Public Beta status", "tools/validate_public_beta_status.py"),
-    ("public data boundary", "scripts/check_public_data_boundary.py"),
-    ("canonical adjudication contract", "scripts/validate_canonical_adjudication_v070.py"),
-    ("current WikiSpine v0.7.16", "scripts/validate_wikispine_v0716.py"),
-    ("ontology boundary", "scripts/validate_ontology_boundary_v079.py"),
-    ("Wikipedia pilot integrity/privacy", "tools/validate_wikipedia_pilot.py"),
-    ("retrieval/evidence bridge", "scripts/validate_retrieval_evidence_bridge_v078.py"),
-    ("BQ001 public status boundary", "scripts/validate_bq001_public_status_boundary.py"),
+    ("sealed v0.10 integration", ("scripts/validate_v010_integration_gate.py",)),
+    ("Public Beta status", ("tools/validate_public_beta_status.py",)),
+    ("public data boundary", ("scripts/check_public_data_boundary.py",)),
+    (
+        "canonical adjudication contract",
+        (
+            "scripts/validate_canonical_adjudication_v070.py",
+            "references/community/canonical-adjudication-example-v0.7.0.json",
+        ),
+    ),
+    ("current WikiSpine v0.7.16", ("scripts/validate_wikispine_v0716.py",)),
+    ("ontology boundary", ("scripts/validate_ontology_boundary_v079.py",)),
+    ("Wikipedia pilot integrity/privacy", ("tools/validate_wikipedia_pilot.py",)),
+    ("retrieval/evidence bridge", ("scripts/validate_retrieval_evidence_bridge_v078.py",)),
+    ("BQ001 public status boundary", ("scripts/validate_bq001_public_status_boundary.py",)),
 ]
 
 
 def main() -> int:
     failures: list[str] = []
-    for label, relative in CHECKS:
+    for label, command in CHECKS:
+        relative, *args = command
         path = ROOT / relative
         if not path.is_file():
             failures.append(f"{label}: missing validator {relative}")
             continue
         result = subprocess.run(
-            [sys.executable, str(path)],
+            [sys.executable, str(path), *args],
             cwd=ROOT,
             text=True,
             capture_output=True,
