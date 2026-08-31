@@ -1,0 +1,36 @@
+name: Audit Data Beta Readiness v0.11
+
+on:
+  push:
+    paths:
+      - 'references/community/data-beta-readiness-v0.11.json'
+      - 'references/community/v010-release-checkpoint.json'
+      - 'scripts/audit_data_beta_readiness_v011.py'
+      - 'tests/test_data_beta_readiness_v011.py'
+      - 'README.md'
+      - '.github/workflows/audit-data-beta-readiness-v011.yml'
+  pull_request:
+    paths:
+      - 'references/community/data-beta-readiness-v0.11.json'
+      - 'references/community/v010-release-checkpoint.json'
+      - 'scripts/audit_data_beta_readiness_v011.py'
+      - 'tests/test_data_beta_readiness_v011.py'
+      - 'README.md'
+      - '.github/workflows/audit-data-beta-readiness-v011.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run readiness auditor
+        run: python scripts/audit_data_beta_readiness_v011.py
+      - name: Run regression tests
+        run: python -m pytest -q tests/test_data_beta_readiness_v011.py
