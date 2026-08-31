@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import fnmatch
+import json
 import re
 import subprocess
 from pathlib import Path
@@ -35,17 +36,48 @@ SENSITIVE_CSV_COLUMNS = {
     "drive_url",
     "drive_folder_url",
 }
+SENSITIVE_JSON_ID_KEYS = {
+    "drive_id",
+    "drive_ids",
+    "parent_drive_id",
+    "drive_object_id",
+    "source_drive_id",
+    "target_drive_id",
+}
 
 LIVE_DRIVE_URL = re.compile(
     r"https://(?:drive\.google\.com/(?:drive/(?:u/\d+/)?folders|file/d)|"
     r"docs\.google\.com/[^/]+/d)/[A-Za-z0-9_-]{20,}"
 )
 EMBEDDED_DRIVE_ID = re.compile(r"drive:(?:file|folder):[A-Za-z0-9_-]{20,}")
+OPAQUE_PROVIDER_ID = re.compile(r"^[A-Za-z0-9_-]{20,}$")
 
 
 def tracked_files() -> list[Path]:
     output = subprocess.check_output(["git", "ls-files", "-z"])
     return [Path(item) for item in output.decode().split("\0") if item and Path(item).is_file()]
+
+
+def _contains_opaque_provider_id(value: object) -> bool:
+    if isinstance(value, str):
+        return bool(OPAQUE_PROVIDER_ID.fullmatch(value.strip()))
+    if isinstance(value, list):
+        return any(_contains_opaque_provider_id(item) for item in value)
+    return False
+
+
+def _find_sensitive_json_ids(value: object, path: str = "$") -> list[str]:
+    findings: list[str] = []
+    if isinstance(value, dict):
+        for key, item in value.items():
+            child = f"{path}.{key}"
+            if key in SENSITIVE_JSON_ID_KEYS and _contains_opaque_provider_id(item):
+                findings.append(child)
+            findings.extend(_find_sensitive_json_ids(item, child))
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            findings.extend(_find_sensitive_json_ids(item, f"{path}[{index}]"))
+    return findings
 
 
 def validate_entry(name: str, text: str | None) -> list[str]:
@@ -67,6 +99,16 @@ def validate_entry(name: str, text: str | None) -> list[str]:
         violations.append(f"live Drive URL found: {name}")
     if EMBEDDED_DRIVE_ID.search(text):
         violations.append(f"embedded Drive ID found: {name}")
+
+    if name.lower().endswith(".json"):
+        try:
+            payload = json.loads(text)
+        except json.JSONDecodeError:
+            payload = None
+        if payload is not None:
+            findings = _find_sensitive_json_ids(payload)
+            if findings:
+                violations.append(f"opaque Drive object ID found in JSON fields {findings}: {name}")
 
     if name.lower().endswith(".csv"):
         try:
