@@ -6,9 +6,12 @@ import json
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from scripts.reddit_corpus_census import audit
 
-ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "references" / "community" / "reddit-uri-index.csv"
 CHECKPOINT = ROOT / "references" / "community" / "reddit-corpus-structural-checkpoint-v0.2.json"
 
