@@ -4,13 +4,17 @@ on:
   pull_request:
     paths:
       - README.md
+      - 'references/community/wikispine-entity-aggregate-v*.json'
       - tools/validate_public_beta_status.py
+      - tests/test_public_beta_status.py
       - .github/workflows/validate-public-beta-status.yml
   push:
     branches: [main]
     paths:
       - README.md
+      - 'references/community/wikispine-entity-aggregate-v*.json'
       - tools/validate_public_beta_status.py
+      - tests/test_public_beta_status.py
       - .github/workflows/validate-public-beta-status.yml
 
 permissions:
@@ -24,4 +28,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python tools/validate_public_beta_status.py
+      - name: Validate current Public Beta status
+        run: python tools/validate_public_beta_status.py
+      - name: Run status regression tests
+        run: |
+          python -m pip install --disable-pip-version-check pytest
+          python -m pytest -q tests/test_public_beta_status.py
