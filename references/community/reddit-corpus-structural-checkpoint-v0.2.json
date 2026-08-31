@@ -1,0 +1,37 @@
+{
+  "schema": "akashicnet.reddit.corpus-structural-checkpoint.v0.2",
+  "source": "references/community/reddit-uri-index.csv",
+  "source_blob_sha": "6b6184b0f981928abb34f4b7d8bd262f3b5b48ca",
+  "network_access_performed": false,
+  "reddit_api_verification_performed": false,
+  "source_rows": 9401,
+  "post_rows": 9400,
+  "annotation_derived_rows": 2042,
+  "candidate_rows": 7358,
+  "non_post_subreddit_rows": 1,
+  "unique_post_ids_all_subreddits": 7356,
+  "unique_canonical_post_urls_all_subreddits": 7356,
+  "duplicate_post_id_rows": 2044,
+  "duplicate_canonical_url_rows": 2044,
+  "source_rows_by_subreddit": {
+    "NeuronsToNirvana": 9341,
+    "TribalGathering": 57,
+    "microdosing": 2
+  },
+  "unique_post_ids_by_subreddit": {
+    "NeuronsToNirvana": 7298,
+    "TribalGathering": 57,
+    "microdosing": 1
+  },
+  "evidence_boundary": {
+    "structurally_valid_means_api_verified": false,
+    "annotation_rows_are_independent_posts": false,
+    "source_row_count_may_be_presented_as_unique_post_count": false
+  },
+  "notes": [
+    "9,401 is the number of historical source rows, not the number of unique Reddit posts.",
+    "7,356 is the structural all-subreddit unique post-ID/canonical-post-URL count after annotation-aware deduplication.",
+    "7,298 is the structural unique r/NeuronsToNirvana post-ID count.",
+    "Structural validity is not independent existence verification and is not Reddit API verification."
+  ]
+}

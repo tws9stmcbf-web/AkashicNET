@@ -20,7 +20,8 @@ Search by title, topic, category, author, framework, summary, evidence classific
     python tools/search_reddit.py Akashic
     python tools/search_reddit.py HOMESENSE
 
-The public-safe canonical archive currently contains **9,401 unique Reddit URLs**.
+The historical Reddit URI archive contains **9,401 source rows**. An annotation-aware structural census resolves those rows to **7,356 unique Reddit post IDs / canonical post URLs across all archived subreddits**, including **7,298 unique r/NeuronsToNirvana post IDs**. These are structural archive counts, not Reddit API verification or independent proof that every historical post remains available.
+
 Private Drive-derived records are intentionally excluded from the public index;
 cross-source builds that use them must run inside the private data boundary.
 
@@ -28,15 +29,15 @@ The search tool is read-only: it searches the local public-safe archive and does
 
 ## Current Archive
 
-**9,401 unique canonical Reddit URLs indexed**
+**9,401 historical Reddit source rows · 7,356 structurally unique post IDs / canonical post URLs**
 
 Sources currently include:
 
 - `r/NeuronsToNirvana`
-- `u/NeuronsToNirvana`
 - `r/TribalGathering`
+- `r/microdosing`
 
-The Reddit URL index is designed to preserve canonical source locations while supporting metadata collection, validation, deduplication, canonicalisation, relationship discovery, and future enrichment.
+The Reddit URL index is designed to preserve canonical source locations while supporting metadata collection, validation, deduplication, canonicalisation, relationship discovery, and future enrichment. Structural validity is deliberately kept separate from API verification.
 
 ## Architecture
 
@@ -97,8 +98,11 @@ Verified release-state checkpoints include:
 - **Canonical duplicate review:** 81 / 126 families adjudicated; 45 unresolved
 - **WikiSpine:** 73 resolved high-precision typed reference identities (PERSON 60, WORK 13); 0 WORK identities pending
 - **Audited public-metadata topic census:** 68 unique normalized topics
+- **Historical Reddit structural denominator:** 9,401 source rows → 7,356 unique post IDs / canonical post URLs across archived subreddits; 7,298 unique r/NeuronsToNirvana post IDs
 - **Public epistemic taxonomy:** Established Evidence · Interpretation · Lived Experience/Testimony · Hypothesis · Speculation
 - **Broader 300+ topic figure:** estimate only; not an audited exact count
+
+The historical Reddit denominator above is derived locally without network access. It does not imply Reddit API verification, current availability, authorship verification, or evidence promotion.
 
 Drive rows 82–86 remain blocked until an authoritative private mapping is available. This is nonblocking release debt: no mapping is guessed and no private identifiers or per-object digests are published.
 
@@ -195,7 +199,10 @@ This is a **conceptual and artistic design horizon**, not a claim that AkashicNE
 - Current phase: **PUBLIC BETA**
 - Sealed engineering release: **PRE-ALPHA v0.10** (`v0.10.0-prealpha`)
 - Release milestone: **Evidence-Governed Knowledge Pipeline**
-- Canonical Reddit URLs: **9,401**
+- Historical Reddit source rows: **9,401**
+- Structural unique Reddit post IDs / canonical post URLs: **7,356**
+- Structural unique r/NeuronsToNirvana post IDs: **7,298**
+- Reddit API verification of historical denominator: **Not performed**
 - Unified Akashic search index: **12,058 records**
 - v0.9 relationship checkpoint: **0 ACCEPT · 1 HOLD · 8 REJECT**
 - Canonical duplicate review: **81 / 126 adjudicated · 45 unresolved**
@@ -205,7 +212,7 @@ This is a **conceptual and artistic design horizon**, not a claim that AkashicNE
 - Automated truth inference: **OFF**
 - Rights promotion: **OFF**
 - Scientific-evidence promotion: **OFF**
-- Validation/tests: **Passed**
+- Validation/tests: **CI execution currently runner-blocked; merge requires green execution**
 - Repository visibility: **Private engineering workspace**
 - Primary branch: `main`
 - Snapshot date: **2026-08-31**
