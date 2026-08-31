@@ -22,6 +22,7 @@ PRIVATE_PATH_PATTERNS = (
     "references/community/canonical-review-plan-*.md",
     "references/community/*manifestation*review*.csv",
     "data/knowledge-graph-v0.*.json",
+    "data/dedup-retrieval-view-v0.*.json",
 )
 
 SENSITIVE_CSV_COLUMNS = {
