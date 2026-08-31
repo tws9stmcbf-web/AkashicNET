@@ -28,6 +28,13 @@ CHECKS = [
     ("ontology boundary", ("scripts/validate_ontology_boundary_v079.py",)),
     ("Wikipedia pilot integrity/privacy", ("tools/validate_wikipedia_pilot.py",)),
     ("retrieval/evidence bridge", ("scripts/validate_retrieval_evidence_bridge_v078.py",)),
+    (
+        "BQ001 public synthesis",
+        (
+            "scripts/validate_bq001_public_synthesis_v01.py",
+            "references/big-questions/BQ001/public-synthesis-v0.1.json",
+        ),
+    ),
     ("BQ001 public status boundary", ("scripts/validate_bq001_public_status_boundary.py",)),
 ]
 
@@ -61,7 +68,7 @@ def main() -> int:
         "PUBLIC BETA INTEGRATION GATE PASS",
         {
             "checks": len(CHECKS),
-            "live_governance_checks": 5,
+            "live_governance_checks": 6,
             "privacy_posture_changed": False,
         },
     )
