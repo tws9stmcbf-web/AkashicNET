@@ -1,0 +1,33 @@
+name: Validate WikiSpine v0.7.18
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/wikispine-batch-s-works-v0.7.18.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.18.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.17.json'
+      - 'scripts/validate_wikispine_v0718.py'
+      - '.github/workflows/validate-wikispine-v0718.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/wikispine-batch-s-works-v0.7.18.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.18.json'
+      - 'references/community/wikispine-entity-aggregate-v0.7.17.json'
+      - 'scripts/validate_wikispine_v0718.py'
+      - '.github/workflows/validate-wikispine-v0718.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate WikiSpine v0.7.18
+        run: python scripts/validate_wikispine_v0718.py
