@@ -42,7 +42,24 @@ SENSITIVE_JSON_ID_KEYS = {
     "parent_drive_id",
     "drive_object_id",
     "source_drive_id",
+    "source_drive_object_id",
     "target_drive_id",
+}
+OBJECT_LINK_KEYS = SENSITIVE_JSON_ID_KEYS | {
+    "manifestation_id",
+    "manifestation_node_id",
+}
+OBJECT_PRIVATE_METADATA_KEYS = {
+    "filename",
+    "private_filename",
+    "path",
+    "private_path",
+    "timestamp",
+    "private_timestamp",
+    "modified_time",
+    "modifiedTime",
+    "sha256",
+    "object_hash",
 }
 
 LIVE_DRIVE_URL = re.compile(
@@ -80,6 +97,39 @@ def _find_sensitive_json_ids(value: object, path: str = "$") -> list[str]:
     return findings
 
 
+def _is_json_data_value(value: object) -> bool:
+    """Distinguish instance values from JSON-schema property descriptors."""
+    return not isinstance(value, dict)
+
+
+def _find_object_linked_private_metadata(value: object, path: str = "$") -> list[str]:
+    """Find per-object private metadata while allowing aggregate/public artifact digests.
+
+    A record is object-linked only when the same JSON object contains an actual
+    Drive/manifestation reference plus an actual filename/path/timestamp/digest
+    value. JSON-schema ``properties`` dictionaries remain allowed because their
+    property values are descriptor objects, not instance values.
+    """
+    findings: list[str] = []
+    if isinstance(value, dict):
+        linked = [
+            key for key, item in value.items()
+            if key in OBJECT_LINK_KEYS and _is_json_data_value(item)
+        ]
+        private = [
+            key for key, item in value.items()
+            if key in OBJECT_PRIVATE_METADATA_KEYS and _is_json_data_value(item)
+        ]
+        if linked and private:
+            findings.append(f"{path} links {sorted(linked)} to {sorted(private)}")
+        for key, item in value.items():
+            findings.extend(_find_object_linked_private_metadata(item, f"{path}.{key}"))
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            findings.extend(_find_object_linked_private_metadata(item, f"{path}[{index}]"))
+    return findings
+
+
 def validate_entry(name: str, text: str | None) -> list[str]:
     """Return privacy-boundary violations for one tracked repository entry.
 
@@ -109,6 +159,11 @@ def validate_entry(name: str, text: str | None) -> list[str]:
             findings = _find_sensitive_json_ids(payload)
             if findings:
                 violations.append(f"opaque Drive object ID found in JSON fields {findings}: {name}")
+            object_metadata = _find_object_linked_private_metadata(payload)
+            if object_metadata:
+                violations.append(
+                    f"object-linked filename/path/timestamp/digest metadata found in JSON {object_metadata}: {name}"
+                )
 
     if name.lower().endswith(".csv"):
         try:
