@@ -24,7 +24,8 @@ def test_readiness_audit_is_internally_consistent_and_blocked():
     assert summary["audit_state"] == "BLOCKED"
     assert summary["knowledge_data_beta_ready"] is False
     assert summary["required_gate_count"] == 11
-    assert summary["completed_required_gates"] == 7
+    assert summary["completed_required_gates"] == 10
+    assert summary["release_blockers"] == ["historical_reddit_denominator_documented"]
 
 
 def test_beta_is_not_declared_while_release_blockers_remain():
