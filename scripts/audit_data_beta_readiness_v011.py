@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Audit readiness for the AkashicNET knowledge/data Beta candidate.
 
-This is a readiness auditor, not a release promotion script. It exits non-zero only
-when the readiness fixture is internally inconsistent or a supposedly completed
-foundation is missing. A correctly detected BLOCKED state is a successful audit.
+This is a readiness auditor, not a release promotion script. It fails closed when a
+completed readiness gate cannot be independently reconstructed from repository state.
 """
 from __future__ import annotations
 
@@ -15,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 COMMUNITY = ROOT / "references" / "community"
 READINESS = COMMUNITY / "data-beta-readiness-v0.11.json"
 V010 = COMMUNITY / "v010-release-checkpoint.json"
+REDDIT_CHECKPOINT = COMMUNITY / "reddit-corpus-structural-checkpoint-v0.2.json"
 README = ROOT / "README.md"
 
 FOUNDATION_PATHS = {
@@ -35,6 +35,7 @@ def audit() -> tuple[list[str], dict]:
     errors: list[str] = []
     readiness = load_json(READINESS)
     v010 = load_json(V010)
+    checkpoint = load_json(REDDIT_CHECKPOINT)
     gates = readiness["required_gates"]
 
     if readiness.get("target_version") != "0.11.0-beta.1":
@@ -57,6 +58,30 @@ def audit() -> tuple[list[str], dict]:
         if value is not False:
             errors.append(f"fail-closed invariant must remain false: {invariant}")
 
+    readme_text = README.read_text(encoding="utf-8")
+    denominator_markers = (
+        f"**{checkpoint['source_rows']:,} source rows**",
+        f"**{checkpoint['unique_post_ids_all_subreddits']:,} unique Reddit post IDs / canonical post URLs across all archived subreddits**",
+        f"**{checkpoint['unique_post_ids_by_subreddit']['NeuronsToNirvana']:,} unique r/NeuronsToNirvana post IDs**",
+        "not Reddit API verification",
+    )
+    denominator_documented = all(marker in readme_text for marker in denominator_markers)
+    if gates.get("historical_reddit_denominator_documented") is not denominator_documented:
+        errors.append(
+            "historical_reddit_denominator_documented does not match README/checkpoint evidence; "
+            f"fixture={gates.get('historical_reddit_denominator_documented')!r} reconstructed={denominator_documented!r}"
+        )
+
+    boundary = checkpoint.get("evidence_boundary", {})
+    if checkpoint.get("network_access_performed") is not False or checkpoint.get("reddit_api_verification_performed") is not False:
+        errors.append("Reddit structural checkpoint must remain explicitly offline/API-unverified")
+    if any(boundary.get(key) is not False for key in (
+        "structurally_valid_means_api_verified",
+        "annotation_rows_are_independent_posts",
+        "source_row_count_may_be_presented_as_unique_post_count",
+    )):
+        errors.append("Reddit structural checkpoint evidence boundary was weakened")
+
     blockers = readiness.get("release_blockers", [])
     for blocker in blockers:
         if blocker not in gates:
@@ -72,11 +97,7 @@ def audit() -> tuple[list[str], dict]:
             f"declared={declared} derived={derived_ready}"
         )
 
-    readme_text = README.read_text(encoding="utf-8")
-    denominator_risk = (
-        "9,401 unique canonical Reddit URLs" in readme_text
-        and not gates.get("historical_reddit_reconciliation_integrated")
-    )
+    denominator_risk = not denominator_documented or "9,401 unique canonical Reddit URLs" in readme_text
 
     summary = {
         "target_version": readiness["target_version"],
@@ -86,6 +107,9 @@ def audit() -> tuple[list[str], dict]:
         "required_gate_count": len(gates),
         "release_blockers": blockers,
         "critical_denominator_risk_detected": denominator_risk,
+        "reddit_source_rows": checkpoint["source_rows"],
+        "reddit_structural_unique_posts": checkpoint["unique_post_ids_all_subreddits"],
+        "reddit_api_verified": checkpoint["reddit_api_verification_performed"],
         "sealed_engineering_baseline": v010["version"],
         "public_experience_phase": readiness["current_public_phase"],
     }
