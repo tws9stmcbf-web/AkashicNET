@@ -23,6 +23,7 @@ CHECKS = [
             "references/community/canonical-adjudication-example-v0.7.0.json",
         ),
     ),
+    ("evidence/provenance scoring contract", ("scripts/validate_evidence_provenance_contract_v05.py",)),
     ("current WikiSpine v0.7.16", ("scripts/validate_wikispine_v0716.py",)),
     ("ontology boundary", ("scripts/validate_ontology_boundary_v079.py",)),
     ("Wikipedia pilot integrity/privacy", ("tools/validate_wikipedia_pilot.py",)),
@@ -60,7 +61,7 @@ def main() -> int:
         "PUBLIC BETA INTEGRATION GATE PASS",
         {
             "checks": len(CHECKS),
-            "live_governance_checks": 4,
+            "live_governance_checks": 5,
             "privacy_posture_changed": False,
         },
     )

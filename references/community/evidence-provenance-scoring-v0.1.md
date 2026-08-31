@@ -6,7 +6,7 @@ Status: PRE-ALPHA scoring specification
 ## Scope
 This score measures confidence in a canonical/provenance relationship derived from the existing metadata-only reconciliation layer. It does **not** measure whether a work's claims are true, scientifically valid, spiritually valid, safe, or legally redistributable.
 
-Rights remain independent. No score in this layer may promote an object to `PUBLIC_VERIFIED`.
+Rights remain independent. No score in this layer may promote an object to `PUBLIC_VERIFIED`. No score in this layer may promote a claim or source to scientific-evidence status.
 
 ## Score components
 Maximum raw score: 100.
@@ -48,4 +48,5 @@ Even E3 is still metadata-level evidence unless stronger evidence such as hashes
 2. Hash identity is never inferred from equal filename/title/size alone.
 3. Rights status remains independent and unchanged.
 4. Scientific/epistemic truth is not inferred from catalogue membership or canonical confidence.
-5. Unresolved and review-required states remain visible in machine-readable output.
+5. Scientific-evidence status is never promoted from provenance or canonical-confidence scoring alone.
+6. Unresolved and review-required states remain visible in machine-readable output.

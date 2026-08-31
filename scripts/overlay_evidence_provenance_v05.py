@@ -67,6 +67,7 @@ for node in graph['nodes']:
         'source_ledger':str(LEDGER),
         'not_truth_score':True,
         'not_rights_score':True,
+        'not_scientific_evidence_score':True,
     }
     node['evidence_provenance']=record
     scored.append((fid,r['reconciled_status'],score,record['tier']))
@@ -86,10 +87,12 @@ graph['evidence_provenance_scoring']={
     'score_scope':'canonical/provenance relationship confidence only',
     'truth_inference_allowed':False,
     'rights_promotion_allowed':False,
+    'scientific_evidence_promotion_allowed':False,
     'integrity_pass':len(scored)==29,
 }
 graph['policy']['evidence_score_is_not_truth_score']=True
 graph['policy']['evidence_score_does_not_change_rights']=True
+graph['policy']['evidence_score_is_not_scientific_evidence_score']=True
 graph['integrity']['release_integrity_pass']=bool(graph['integrity'].get('release_integrity_pass')) and graph['evidence_provenance_scoring']['integrity_pass']
 OUT.write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(graph['evidence_provenance_scoring'],sort_keys=True))
