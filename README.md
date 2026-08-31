@@ -1,8 +1,10 @@
 # 🕸️ AkashicNET
 
-## Provenance-first living knowledge network · PRE-ALPHA v0.10
+## Provenance-first living knowledge network · PUBLIC BETA
 
 AkashicNET is an open, provenance-first knowledge network for building an auditable living commons around consciousness, psychedelics, interdisciplinary research, community knowledge, and related cultural archives.
+
+**Current phase: PUBLIC BETA.** The immutable engineering checkpoint immediately preceding this phase is **PRE-ALPHA v0.10 — Evidence-Governed Knowledge Pipeline** (`v0.10.0-prealpha`). Public Beta is a project/deployment phase, not a retroactive rename of that sealed release.
 
 The project now extends beyond collection and search into an **evidence-governed knowledge architecture**. Sources are canonicalised into inspectable records, candidate relationships are scored and adjudicated, and weak similarity is prevented from becoming graph truth by default.
 
@@ -88,12 +90,12 @@ This checkpoint is intentionally conservative: **no Reddit ↔ canonical relatio
 
 ### v0.10 Integration Milestone
 
-PRE-ALPHA v0.10 is the **Evidence-Governed Knowledge Pipeline** milestone. It joins the canonical adjudication, WikiSpine/reference, retrieval, ontology and evidence boundaries under an end-to-end integration gate while preserving fail-closed promotion rules.
+PRE-ALPHA v0.10 is the sealed **Evidence-Governed Knowledge Pipeline** milestone that precedes the current Public Beta phase. It joins the canonical adjudication, WikiSpine/reference, retrieval, ontology and evidence boundaries under an end-to-end integration gate while preserving fail-closed promotion rules.
 
 Verified release-state checkpoints include:
 
 - **Canonical duplicate review:** 81 / 126 families adjudicated; 45 unresolved
-- **WikiSpine:** 53 unique seeds; 50 high-precision resolutions; 3 pending
+- **WikiSpine:** 71 resolved high-precision typed reference identities (PERSON 60, WORK 11); 2 WORK identities pending
 - **Audited public-metadata topic census:** 68 unique normalized topics
 - **Public epistemic taxonomy:** Established Evidence · Interpretation · Lived Experience/Testimony · Hypothesis · Speculation
 - **Broader 300+ topic figure:** estimate only; not an audited exact count
@@ -143,6 +145,7 @@ See [Data security boundary](docs/DATA_SECURITY_BOUNDARY.md) and
 - Unified Akashic search indexing
 - Research evidence layers
 - Google Drive inventory and audit workflows
+- Public Wikipedia metadata pilot for discovery/reference use
 - Canonical node generation
 - Candidate relationship generation
 - Relationship scoring
@@ -160,7 +163,7 @@ You do not need to be a developer to explore AkashicNET's public-facing work.
 - **Understand the method:** provenance, validation, evidence boundaries and uncertainty are documented as part of the project.
 - **Engineering workspace:** the GitHub repository is currently private; public-facing material is released separately through approved public surfaces.
 
-The current release remains a **PRE-ALPHA research archive and knowledge-engineering project**, not yet a standalone consumer application.
+AkashicNET is now in **PUBLIC BETA**. Features, interfaces and knowledge structures remain under active development; evidence, provenance, privacy and fail-closed promotion boundaries remain in force.
 
 ## Principles
 
@@ -189,13 +192,14 @@ This is a **conceptual and artistic design horizon**, not a claim that AkashicNE
 
 ## Publication Snapshot
 
-- Version: **PRE-ALPHA v0.10**
+- Current phase: **PUBLIC BETA**
+- Sealed engineering release: **PRE-ALPHA v0.10** (`v0.10.0-prealpha`)
 - Release milestone: **Evidence-Governed Knowledge Pipeline**
 - Canonical Reddit URLs: **9,401**
 - Unified Akashic search index: **12,058 records**
 - v0.9 relationship checkpoint: **0 ACCEPT · 1 HOLD · 8 REJECT**
 - Canonical duplicate review: **81 / 126 adjudicated · 45 unresolved**
-- WikiSpine: **53 seeds · 50 resolved · 3 pending**
+- WikiSpine: **71 resolved (PERSON 60 · WORK 11) · 2 WORK pending**
 - Audited public-metadata topics: **68**
 - Public epistemic labels: **5**
 - Automated truth inference: **OFF**
@@ -204,7 +208,7 @@ This is a **conceptual and artistic design horizon**, not a claim that AkashicNE
 - Validation/tests: **Passed**
 - Repository visibility: **Private engineering workspace**
 - Primary branch: `main`
-- Snapshot date: **2026-08-30**
+- Snapshot date: **2026-08-31**
 
 ## Contributing
 
