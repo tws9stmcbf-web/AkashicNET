@@ -46,43 +46,62 @@ def tracked_files() -> list[Path]:
     return [Path(item) for item in output.decode().split("\0") if item and Path(item).is_file()]
 
 
-def main() -> int:
+def validate_entry(name: str, text: str | None) -> list[str]:
+    """Return privacy-boundary violations for one tracked repository entry.
+
+    `text=None` is allowed so path-level rules can still fail closed for binary or
+    unreadable files. Tests use this callable surface with synthetic, non-secret
+    fixtures rather than private corpus material.
+    """
     violations: list[str] = []
+
+    if any(fnmatch.fnmatch(name, pattern) for pattern in PRIVATE_PATH_PATTERNS):
+        return [f"private data path is tracked: {name}"]
+
+    if text is None:
+        return violations
+
+    if LIVE_DRIVE_URL.search(text):
+        violations.append(f"live Drive URL found: {name}")
+    if EMBEDDED_DRIVE_ID.search(text):
+        violations.append(f"embedded Drive ID found: {name}")
+
+    if name.lower().endswith(".csv"):
+        try:
+            header = next(csv.reader(text.splitlines()), [])
+        except csv.Error:
+            header = []
+        exposed = SENSITIVE_CSV_COLUMNS.intersection(cell.strip() for cell in header)
+        if exposed:
+            violations.append(f"sensitive CSV columns {sorted(exposed)} found: {name}")
+        if name == "references/community/akashic-master-index.csv":
+            for line_number, row in enumerate(csv.DictReader(text.splitlines()), 2):
+                if row.get("source", "").strip().lower() == "google drive":
+                    violations.append(f"Drive-derived master-index row found: {name}:{line_number}")
+                    break
+
+    return violations
+
+
+def validate_entries(entries: list[tuple[str, str | None]]) -> list[str]:
+    violations: list[str] = []
+    for name, text in entries:
+        violations.extend(validate_entry(name, text))
+    return violations
+
+
+def main() -> int:
+    entries: list[tuple[str, str | None]] = []
 
     for path in tracked_files():
         name = path.as_posix()
-        if any(fnmatch.fnmatch(name, pattern) for pattern in PRIVATE_PATH_PATTERNS):
-            violations.append(f"private data path is tracked: {name}")
-            continue
-
         try:
             text = path.read_text(encoding="utf-8")
         except (UnicodeDecodeError, OSError):
-            continue
+            text = None
+        entries.append((name, text))
 
-        if LIVE_DRIVE_URL.search(text):
-            violations.append(f"live Drive URL found: {name}")
-        if EMBEDDED_DRIVE_ID.search(text):
-            violations.append(f"embedded Drive ID found: {name}")
-
-        if path.suffix.lower() == ".csv":
-            try:
-                header = next(csv.reader(text.splitlines()), [])
-            except csv.Error:
-                header = []
-            exposed = SENSITIVE_CSV_COLUMNS.intersection(cell.strip() for cell in header)
-            if exposed:
-                violations.append(
-                    f"sensitive CSV columns {sorted(exposed)} found: {name}"
-                )
-            if name == "references/community/akashic-master-index.csv":
-                for line_number, row in enumerate(csv.DictReader(text.splitlines()), 2):
-                    if row.get("source", "").strip().lower() == "google drive":
-                        violations.append(
-                            f"Drive-derived master-index row found: {name}:{line_number}"
-                        )
-                        break
-
+    violations = validate_entries(entries)
     if violations:
         print("PUBLIC DATA BOUNDARY: FAIL")
         for violation in violations:
