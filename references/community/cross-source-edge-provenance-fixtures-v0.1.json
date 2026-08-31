@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1",
+  "policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "confidence_from_representation_count_allowed": false,
+    "circular_confidence_allowed": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "artifact:reddit-pilot:0.1",
+      "version": "0.1",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "source_domain": "reddit",
+      "independence_key": "source:reddit-post:synthetic-a",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:canonical-families:0.1",
+      "version": "0.1",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "source_domain": "library-public-fixture",
+      "independence_key": "source:synthetic-canonical-ledger",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:adjudication:0.1",
+      "version": "0.1",
+      "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "source_domain": "human-review",
+      "independence_key": "review:synthetic-panel-a",
+      "public_safe": true
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge:direct:0001",
+      "source": {"artifact_id": "artifact:reddit-pilot:0.1", "record_id": "reddit:synthetic-a"},
+      "target": {"artifact_id": "artifact:canonical-families:0.1", "record_id": "family:synthetic-a"},
+      "relationship": "CURATED_METADATA_MENTIONS_CANONICAL_FAMILY",
+      "assertion_class": "DIRECT_METADATA",
+      "observed_at": "2026-08-31T00:00:00Z",
+      "review_state": "PROVISIONAL",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": ["artifact:reddit-pilot:0.1", "artifact:canonical-families:0.1"],
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:candidate:0001",
+      "source": {"artifact_id": "artifact:reddit-pilot:0.1", "record_id": "reddit:synthetic-a"},
+      "target": {"artifact_id": "artifact:canonical-families:0.1", "record_id": "family:synthetic-b"},
+      "relationship": "ABOUT_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-08-31T00:00:00Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": ["artifact:reddit-pilot:0.1", "artifact:canonical-families:0.1"],
+      "generator": {
+        "name": "cross_source_candidates",
+        "version": "0.1-synthetic",
+        "parameters_digest": "4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:hold:0001",
+      "source": {"artifact_id": "artifact:reddit-pilot:0.1", "record_id": "reddit:synthetic-a"},
+      "target": {"artifact_id": "artifact:canonical-families:0.1", "record_id": "family:synthetic-b"},
+      "relationship": "ABOUT_CANDIDATE",
+      "assertion_class": "REJECTED_HOLD",
+      "observed_at": "2026-08-31T00:05:00Z",
+      "review_state": "HOLD",
+      "accepted_edge": false,
+      "parent_edge_ids": ["edge:candidate:0001"],
+      "confidence_source_artifact_ids": ["artifact:adjudication:0.1"],
+      "adjudication_ref": {"artifact_id": "artifact:adjudication:0.1", "record_id": "decision:synthetic-0001"},
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    }
+  ]
+}
