@@ -1,0 +1,28 @@
+{
+  "version": "0.7.17",
+  "batch": "R_WORKS",
+  "records": [
+    {
+      "akashic_entity": "Wholeness and the Implicate Order",
+      "entity_type": "WORK",
+      "wikidata_qid": "Q17094352",
+      "wikipedia_title": "Wholeness and the Implicate Order",
+      "resolution_state": "RESOLVED_HIGH_PRECISION",
+      "reference_class": "REFERENCE_ENCYCLOPEDIA",
+      "semantic_decision": "REFERENCE_IDENTITY_ONLY",
+      "truth_inference": false,
+      "scientific_evidence": false
+    }
+  ],
+  "guardrails": {
+    "candidate_edges_default": "HOLD",
+    "entity_count_is_topic_count": false,
+    "max_hops": 2,
+    "arbitrary_recursive_crawl": false,
+    "full_article_body_ingestion_default": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "drive_access_performed": false
+  }
+}
