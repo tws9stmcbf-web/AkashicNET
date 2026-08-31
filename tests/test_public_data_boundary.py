@@ -60,6 +60,36 @@ def test_short_synthetic_drive_example_id_remains_allowed():
     ) == []
 
 
+def test_object_linked_filename_and_digest_fail_closed():
+    digest = "d" * 64
+    assert_rejected(
+        "data/synthetic-object-record.json",
+        '{"manifestation_id":"synthetic-manifestation","filename":"private.pdf","sha256":"' + digest + '"}',
+    )
+
+
+def test_object_linked_timestamp_fails_closed_even_with_short_synthetic_id():
+    assert_rejected(
+        "data/synthetic-object-record.json",
+        '{"source_drive_object_id":"example-001","timestamp":"2026-08-31T00:00:00Z"}',
+    )
+
+
+def test_public_artifact_digest_without_object_link_remains_allowed():
+    digest = "e" * 64
+    assert mod.validate_entry(
+        "references/community/synthetic-release-manifest.json",
+        '{"artifact":{"filename":"release.json","sha256":"' + digest + '"}}',
+    ) == []
+
+
+def test_json_schema_property_descriptors_remain_allowed():
+    assert mod.validate_entry(
+        "data/synthetic-schema.json",
+        '{"type":"object","properties":{"drive_object_id":{"type":"string"},"sha256":{"type":"string"}}}',
+    ) == []
+
+
 def test_sensitive_csv_column_fails_closed():
     assert_rejected(
         "references/community/synthetic.csv",
