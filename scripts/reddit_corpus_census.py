@@ -7,7 +7,7 @@ import argparse
 import csv
 import json
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -79,13 +79,25 @@ def audit(path: Path) -> dict:
 
     status_counts = Counter(r["status"] for r in records)
     post_records = [r for r in records if r["status"] in {"candidate", "annotation_derived"}]
-    id_counts = Counter((r["subreddit"].lower(), r["post_id"]) for r in post_records)
+    id_counts = Counter((r["subreddit"].casefold(), r["post_id"]) for r in post_records)
     url_counts = Counter(r["canonical_url"] for r in post_records)
     unique_ids = len(id_counts)
     unique_urls = len(url_counts)
 
+    display_names: dict[str, str] = {}
+    unique_ids_by_subreddit: dict[str, set[str]] = defaultdict(set)
+    for record in post_records:
+        folded = record["subreddit"].casefold()
+        display_names.setdefault(folded, record["subreddit"])
+        unique_ids_by_subreddit[folded].add(record["post_id"])
+
+    unique_post_ids_by_subreddit = {
+        display_names[key]: len(values)
+        for key, values in sorted(unique_ids_by_subreddit.items(), key=lambda item: display_names[item[0]].casefold())
+    }
+
     return {
-        "schema": "akashicnet.reddit.corpus-census.v0.1",
+        "schema": "akashicnet.reddit.corpus-census.v0.2",
         "input": str(path),
         "header": header,
         "total_rows": len(records),
@@ -96,9 +108,11 @@ def audit(path: Path) -> dict:
         "duplicate_post_id_rows": sum(count - 1 for count in id_counts.values() if count > 1),
         "duplicate_canonical_url_rows": sum(count - 1 for count in url_counts.values() if count > 1),
         "subreddits": dict(sorted(Counter(r["subreddit"] for r in post_records).items())),
+        "unique_post_ids_by_subreddit": unique_post_ids_by_subreddit,
         "notes": [
             "candidate means structurally valid only; it is not proof that the Reddit post exists",
             "annotation_derived rows contain comma-suffixed historical labels and are not independent Reddit posts",
+            "unique counts are structural archive counts, not Reddit API verification",
             "no usernames, post bodies, or comments are fetched or stored",
         ],
     }
