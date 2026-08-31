@@ -45,6 +45,21 @@ def test_embedded_drive_object_id_fails_closed():
     )
 
 
+def test_bare_opaque_drive_object_id_in_json_fails_closed():
+    synthetic_id = "C" * 24
+    assert_rejected(
+        "references/community/synthetic.json",
+        f'{{"drive_object_id":"{synthetic_id}"}}',
+    )
+
+
+def test_short_synthetic_drive_example_id_remains_allowed():
+    assert mod.validate_entry(
+        "data/synthetic-example.json",
+        '{"drive_object_id":"drive:file:example-001"}',
+    ) == []
+
+
 def test_sensitive_csv_column_fails_closed():
     assert_rejected(
         "references/community/synthetic.csv",
