@@ -1,0 +1,36 @@
+{
+  "record_id": "BQ001-INSTITUTIONAL-CONTEXT-UVA-DOPS",
+  "version": "0.1.0",
+  "status": "SUPPLEMENTAL_CONTEXT_ONLY",
+  "assessed_on": "2026-08-31",
+  "institution": {
+    "name": "Division of Perceptual Studies",
+    "parent_institution": "University of Virginia School of Medicine",
+    "homepage": "https://med.virginia.edu/perceptual-studies/",
+    "research_index": "https://med.virginia.edu/perceptual-studies/our-research/",
+    "publications_index": "https://med.virginia.edu/perceptual-studies/publications/academic-publications/"
+  },
+  "provenance": {
+    "source_type": "OFFICIAL_INSTITUTIONAL_WEBSITE",
+    "link_check": {
+      "checked_at": "2026-08-31",
+      "status": "AVAILABLE",
+      "title_match": true
+    },
+    "role": "Provides institutional and programme context and routes readers to research areas and publications."
+  },
+  "boundaries": [
+    "An institutional programme page is not itself peer-reviewed evidence for any scientific or metaphysical claim.",
+    "Institutional affiliation does not upgrade the evidence class of linked research.",
+    "Claims must cite the underlying publication rather than this programme page.",
+    "The institution's stated mission does not establish consciousness survival, reincarnation or any other disputed conclusion."
+  ],
+  "integration": {
+    "canonical_claim_source": false,
+    "supplemental_context": true,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false
+  }
+}
