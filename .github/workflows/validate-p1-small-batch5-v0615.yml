@@ -14,3 +14,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: python scripts/validate_p1_small_batch5_v0615.py
+      - run: python scripts/test_validate_p1_small_batch5_v0615.py
