@@ -21,6 +21,10 @@ def test_private_tracked_path_fails_closed_even_without_text():
     assert_rejected("references/community/canonical-review-queue-private.csv", None)
 
 
+def test_generated_drive_graph_path_fails_closed_even_without_text():
+    assert_rejected("data/knowledge-graph-v0.7.json", None)
+
+
 def test_live_drive_url_fails_closed():
     synthetic_id = "A" * 24
     assert_rejected(
