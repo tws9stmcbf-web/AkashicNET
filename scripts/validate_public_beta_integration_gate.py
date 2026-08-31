@@ -16,8 +16,12 @@ CHECKS = [
     ("sealed v0.10 integration", "scripts/validate_v010_integration_gate.py"),
     ("Public Beta status", "tools/validate_public_beta_status.py"),
     ("public data boundary", "scripts/check_public_data_boundary.py"),
+    ("canonical adjudication contract", "scripts/validate_canonical_adjudication_v070.py"),
+    ("current WikiSpine v0.7.16", "scripts/validate_wikispine_v0716.py"),
+    ("ontology boundary", "scripts/validate_ontology_boundary_v079.py"),
     ("Wikipedia pilot integrity/privacy", "tools/validate_wikipedia_pilot.py"),
     ("retrieval/evidence bridge", "scripts/validate_retrieval_evidence_bridge_v078.py"),
+    ("BQ001 public status boundary", "scripts/validate_bq001_public_status_boundary.py"),
 ]
 
 
@@ -45,7 +49,14 @@ def main() -> int:
             print(f"- {failure}")
         return 1
 
-    print("PUBLIC BETA INTEGRATION GATE PASS", {"checks": len(CHECKS), "privacy_posture_changed": False})
+    print(
+        "PUBLIC BETA INTEGRATION GATE PASS",
+        {
+            "checks": len(CHECKS),
+            "live_governance_checks": 4,
+            "privacy_posture_changed": False,
+        },
+    )
     return 0
 
 
