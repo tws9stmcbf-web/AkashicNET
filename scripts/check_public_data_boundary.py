@@ -61,6 +61,7 @@ OBJECT_PRIVATE_METADATA_KEYS = {
     "sha256",
     "object_hash",
 }
+SYNTHETIC_MARKERS = ("example", "synthetic", "placeholder")
 
 LIVE_DRIVE_URL = re.compile(
     r"https://(?:drive\.google\.com/(?:drive/(?:u/\d+/)?folders|file/d)|"
@@ -102,19 +103,32 @@ def _is_json_data_value(value: object) -> bool:
     return not isinstance(value, dict)
 
 
+def _is_explicit_synthetic_reference(value: object) -> bool:
+    if isinstance(value, str):
+        lowered = value.strip().lower()
+        return any(marker in lowered for marker in SYNTHETIC_MARKERS)
+    if isinstance(value, list):
+        return bool(value) and all(_is_explicit_synthetic_reference(item) for item in value)
+    return False
+
+
 def _find_object_linked_private_metadata(value: object, path: str = "$") -> list[str]:
-    """Find per-object private metadata while allowing aggregate/public artifact digests.
+    """Find per-object private metadata while allowing aggregate/public fixtures.
 
     A record is object-linked only when the same JSON object contains an actual
     Drive/manifestation reference plus an actual filename/path/timestamp/digest
     value. JSON-schema ``properties`` dictionaries remain allowed because their
-    property values are descriptor objects, not instance values.
+    property values are descriptor objects. Explicit fixture references containing
+    ``example``, ``synthetic`` or ``placeholder`` are also excluded from this
+    structural leak rule; opaque real-looking IDs are still caught independently.
     """
     findings: list[str] = []
     if isinstance(value, dict):
         linked = [
             key for key, item in value.items()
-            if key in OBJECT_LINK_KEYS and _is_json_data_value(item)
+            if key in OBJECT_LINK_KEYS
+            and _is_json_data_value(item)
+            and not _is_explicit_synthetic_reference(item)
         ]
         private = [
             key for key, item in value.items()
