@@ -17,7 +17,9 @@
         "references/big-questions/BQ001/evidence-batch1-v0.1.json",
         "references/big-questions/BQ001/evidence-batch2-v0.1.json",
         "references/big-questions/BQ001/evidence-batch3-v0.1.json",
-        "references/big-questions/BQ001/evidence-batch4-v0.1.json"
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
+        "references/big-questions/BQ001/evidence-batch5-v0.1.json"
       ],
       "legacy_parallel_records": [
         {
