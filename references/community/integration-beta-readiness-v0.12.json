@@ -3,23 +3,21 @@
   "target_name": "Integration Beta Candidate",
   "current_public_phase": "PUBLIC BETA",
   "readiness_policy": "fail_closed",
-  "integration_beta_declared": false,
+  "integration_beta_declared": true,
   "required_gates": {
     "data_beta_readiness_preserved": true,
     "public_beta_integration_gate_present": true,
     "immutable_actions_gate_present": true,
     "bq001_canonical_status_unresolved": true,
     "bq001_website_status_unresolved": true,
-    "bq001_website_provenance_version_synchronized": false,
+    "bq001_website_provenance_version_synchronized": true,
     "public_data_boundary_present": true,
     "evidence_taxonomy_present": true,
     "stable_provenance_contract_present": true,
     "knowledge_graph_non_truth_crosslink_policy_present": true,
     "integration_beta_ci_gate_present": true
   },
-  "release_blockers": [
-    "bq001_website_provenance_version_synchronized"
-  ],
+  "release_blockers": [],
   "nonblocking_debt": [
     "Universal Reddit API verification may remain incomplete when verification state remains explicit and fail-closed.",
     "Private Drive rows 82-86 remain quarantined until authoritative private mapping exists.",

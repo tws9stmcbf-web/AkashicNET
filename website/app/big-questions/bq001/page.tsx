@@ -221,7 +221,7 @@ export default function BQ001Page() {
       <section id="sources" style={{ ...shell, paddingBottom: 72 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PROVENANCE</p>
         <p style={{ color: "#c8c4bb", lineHeight: 1.7 }}>This page is a public adaptation of the validated BQ001 synthesis in the AkashicNET repository. Every evidence card above is constrained by the underlying claim/source records; uncertainty and evidence class are preserved rather than converted into a confidence score.</p>
-        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1 · AkashicNET PRE-ALPHA v0.10.x engine</p>
+        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.1 · AkashicNET PRE-ALPHA v0.10.x engine</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
