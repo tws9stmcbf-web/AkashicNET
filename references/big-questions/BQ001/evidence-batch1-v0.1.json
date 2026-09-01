@@ -1,6 +1,6 @@
 {
   "batch_id": "BQ001-BATCH1-SCIENTIFIC-BASELINE",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
   "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
@@ -27,7 +27,16 @@
         "Retrospective verbal report cannot by itself establish the exact neurophysiological timing of an experience.",
         "The study's objective-target design produced very limited opportunities for target verification.",
         "The study concerns cardiac arrest and resuscitation, not irreversible biological death."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+        "title_match": true,
+        "redirect_observed": false,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "Canonical PubMed page remained indexed with matching PMID, DOI and title.",
+        "note": "Direct automated retrieval encountered a browser challenge; this is not classified as a broken source."
+      }
     },
     {
       "source_id": "SRC-BQ001-AWARE2-2023",
@@ -50,7 +59,14 @@
         "Physiological monitoring was not complete or continuous for every arrest and every interval.",
         "Recall after recovery does not uniquely determine when the remembered experience occurred.",
         "Cardiac arrest under attempted resuscitation is not equivalent to irreversible biological death."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      }
     },
     {
       "source_id": "SRC-BQ001-MASCHKE-2024",
@@ -74,7 +90,16 @@
         "Consciousness classification depended partly on post-recovery reports of subjective experience.",
         "Anesthetic perturbation is a model of altered consciousness, not a test of post-mortem consciousness.",
         "Associations between EEG criticality measures and consciousness do not establish metaphysical necessity or sufficiency."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+        "title_match": true,
+        "redirect_observed": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "observed_destination_pattern": "Original article URL plus a transient cookies_not_supported query string.",
+        "note": "The canonical URL remains unchanged."
+      }
     },
     {
       "source_id": "SRC-BQ001-KOCH-2016",
@@ -91,7 +116,16 @@
         "Review article rather than a single primary experiment.",
         "Neural correlates identify relationships between neural mechanisms and conscious experience; correlation alone does not settle ontology.",
         "Competing theories and methodological confounds remain active areas of research."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+        "title_match": true,
+        "redirect_observed": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "observed_destination_pattern": "Original article URL plus a transient cookies_not_supported query string.",
+        "note": "The canonical URL remains unchanged."
+      }
     }
   ],
   "claims": [
@@ -101,9 +135,15 @@
       "text": "In AWARE 2014, 140 survivors completed stage-1 interviews after 2,060 cardiac-arrest events, and 101 completed stage-2 interviews.",
       "domain": "cardiac_arrest_and_nde_research",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-AWARE-2014"],
-      "provenance": ["peer-reviewed article abstract and bibliographic record"],
-      "limitations": ["These denominators constrain generalisation from interviewed survivors to all cardiac-arrest events."],
+      "source_ids": [
+        "SRC-BQ001-AWARE-2014"
+      ],
+      "provenance": [
+        "peer-reviewed article abstract and bibliographic record"
+      ],
+      "limitations": [
+        "These denominators constrain generalisation from interviewed survivors to all cardiac-arrest events."
+      ],
       "uncertainty": "No inference about post-mortem survival follows from these denominators alone.",
       "supports_models": []
     },
@@ -113,11 +153,20 @@
       "text": "AWARE 2014 reported that 2% of interviewed participants described explicit recall of seeing or hearing events related to resuscitation, with one case reported as containing verifiable event details.",
       "domain": "cardiac_arrest_and_nde_research",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-AWARE-2014"],
-      "provenance": ["peer-reviewed article abstract and results"],
-      "limitations": ["Reported recall is not equivalent to proof that experience occurred during a period of absent brain function.", "Objective visual-target verification was extremely limited."],
+      "source_ids": [
+        "SRC-BQ001-AWARE-2014"
+      ],
+      "provenance": [
+        "peer-reviewed article abstract and results"
+      ],
+      "limitations": [
+        "Reported recall is not equivalent to proof that experience occurred during a period of absent brain function.",
+        "Objective visual-target verification was extremely limited."
+      ],
       "uncertainty": "The exact timing and neurophysiological substrate of the reported experience remain uncertain.",
-      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+      "supports_models": [
+        "MODEL-BQ001-CONTINUITY"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-AWARE2-2023-OBS-01",
@@ -125,9 +174,15 @@
       "text": "AWARE II enrolled 567 in-hospital cardiac arrests; 53 people survived and 28 survivors were interviewed.",
       "domain": "cardiac_arrest_and_nde_research",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-AWARE2-2023"],
-      "provenance": ["peer-reviewed article and indexed bibliographic record"],
-      "limitations": ["The interview sample was a small survivor subset of the enrolled population."],
+      "source_ids": [
+        "SRC-BQ001-AWARE2-2023"
+      ],
+      "provenance": [
+        "peer-reviewed article and indexed bibliographic record"
+      ],
+      "limitations": [
+        "The interview sample was a small survivor subset of the enrolled population."
+      ],
       "uncertainty": "The survivor and interview selection process limits population-wide inference.",
       "supports_models": []
     },
@@ -137,11 +192,20 @@
       "text": "In a 15-participant anesthetic dataset, propofol and xenon conditions classified as unconscious differed in EEG criticality measures from wakefulness, while ketamine produced behavioral unresponsiveness with reported conscious dream-like experience and more wakefulness-like critical dynamics.",
       "domain": "neuroscience_and_consciousness_models",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-MASCHKE-2024"],
-      "provenance": ["peer-reviewed primary study"],
-      "limitations": ["Five participants were studied per anesthetic group.", "The work tests pharmacologically altered consciousness, not biological death."],
+      "source_ids": [
+        "SRC-BQ001-MASCHKE-2024"
+      ],
+      "provenance": [
+        "peer-reviewed primary study"
+      ],
+      "limitations": [
+        "Five participants were studied per anesthetic group.",
+        "The work tests pharmacologically altered consciousness, not biological death."
+      ],
       "uncertainty": "The findings support brain-state/conscious-state relationships under the tested conditions but do not determine whether consciousness could ever continue outside those conditions.",
-      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+      "supports_models": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-KOCH-2016-INTERP-01",
@@ -149,11 +213,19 @@
       "text": "The neural-correlates research programme provides a disciplined framework for identifying neural mechanisms associated with conscious experience while distinguishing correlates, enabling conditions and report-related activity.",
       "domain": "neuroscience_and_consciousness_models",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-KOCH-2016"],
-      "provenance": ["peer-reviewed review article"],
-      "limitations": ["A neural correlate is not automatically a complete causal or ontological explanation of consciousness."],
+      "source_ids": [
+        "SRC-BQ001-KOCH-2016"
+      ],
+      "provenance": [
+        "peer-reviewed review article"
+      ],
+      "limitations": [
+        "A neural correlate is not automatically a complete causal or ontological explanation of consciousness."
+      ],
       "uncertainty": "The relationship between neural correlates and the ultimate metaphysics of consciousness remains unresolved.",
-      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+      "supports_models": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ]
     }
   ],
   "batch_conclusion": {
@@ -166,5 +238,17 @@
     "reported_recall_proves_brain_independent_consciousness": false,
     "brain_dependence_under_tested_conditions_proves_non_survival": false,
     "review_article_counts_as_primary_experiment": false
+  },
+  "integrity_checkpoint": {
+    "applied_on": "2026-09-01",
+    "review_artifact": "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+    "repair_candidate": "BQ001-B6-R1",
+    "change_scope": "Retrieval and link-check metadata only.",
+    "original_urls_preserved": true,
+    "identifiers_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
   }
 }
