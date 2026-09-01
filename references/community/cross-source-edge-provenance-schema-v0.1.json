@@ -9,13 +9,7 @@
     "schema_version": {"const": "0.1"},
     "policy": {
       "type": "object",
-      "required": [
-        "truth_inference_allowed",
-        "rights_promotion_allowed",
-        "scientific_evidence_promotion_allowed",
-        "confidence_from_representation_count_allowed",
-        "circular_confidence_allowed"
-      ],
+      "required": ["truth_inference_allowed", "rights_promotion_allowed", "scientific_evidence_promotion_allowed", "confidence_from_representation_count_allowed", "circular_confidence_allowed"],
       "additionalProperties": false,
       "properties": {
         "truth_inference_allowed": {"const": false},
@@ -25,14 +19,8 @@
         "circular_confidence_allowed": {"const": false}
       }
     },
-    "artifacts": {
-      "type": "array",
-      "items": {"$ref": "#/$defs/artifact"}
-    },
-    "edges": {
-      "type": "array",
-      "items": {"$ref": "#/$defs/edge"}
-    }
+    "artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}},
+    "edges": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/edge"}}
   },
   "$defs": {
     "artifact": {
@@ -69,32 +57,46 @@
     },
     "edge": {
       "type": "object",
-      "required": [
-        "edge_id", "source", "target", "relationship", "assertion_class",
-        "observed_at", "review_state", "accepted_edge", "parent_edge_ids",
-        "confidence_source_artifact_ids", "not_truth_claim",
-        "not_scientific_evidence", "not_rights_clearance"
-      ],
+      "required": ["edge_id", "source", "target", "relationship", "assertion_class", "observed_at", "review_state", "accepted_edge", "parent_edge_ids", "confidence_source_artifact_ids", "not_truth_claim", "not_scientific_evidence", "not_rights_clearance"],
       "additionalProperties": false,
       "properties": {
         "edge_id": {"type": "string", "minLength": 1},
         "source": {"$ref": "#/$defs/record_ref"},
         "target": {"$ref": "#/$defs/record_ref"},
         "relationship": {"type": "string", "minLength": 1},
-        "assertion_class": {
-          "enum": ["ASSERTED", "DIRECT_METADATA", "INFERRED_CANDIDATE", "HUMAN_ADJUDICATED", "REJECTED_HOLD"]
-        },
+        "assertion_class": {"enum": ["ASSERTED", "DIRECT_METADATA", "INFERRED_CANDIDATE", "HUMAN_ADJUDICATED", "REJECTED_HOLD"]},
         "observed_at": {"type": "string", "format": "date-time"},
         "review_state": {"enum": ["PROVISIONAL", "REVIEW_REQUIRED", "HOLD", "REJECTED", "ACCEPTED"]},
         "accepted_edge": {"type": "boolean"},
         "parent_edge_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-        "confidence_source_artifact_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "confidence_source_artifact_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
         "generator": {"$ref": "#/$defs/generator"},
         "adjudication_ref": {"$ref": "#/$defs/record_ref"},
         "not_truth_claim": {"const": true},
         "not_scientific_evidence": {"const": true},
         "not_rights_clearance": {"const": true}
-      }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"assertion_class": {"const": "INFERRED_CANDIDATE"}}},
+          "then": {"required": ["generator"]}
+        },
+        {
+          "if": {"properties": {"assertion_class": {"enum": ["HUMAN_ADJUDICATED", "REJECTED_HOLD"]}}},
+          "then": {"required": ["adjudication_ref"], "properties": {"parent_edge_ids": {"minItems": 1}}}
+        },
+        {
+          "if": {"properties": {"accepted_edge": {"const": true}}},
+          "then": {
+            "required": ["adjudication_ref"],
+            "properties": {
+              "assertion_class": {"const": "HUMAN_ADJUDICATED"},
+              "review_state": {"const": "ACCEPTED"},
+              "parent_edge_ids": {"minItems": 1}
+            }
+          }
+        }
+      ]
     }
   }
 }
