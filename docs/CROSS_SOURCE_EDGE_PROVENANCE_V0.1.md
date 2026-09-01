@@ -22,6 +22,8 @@ Every edge records exact source and target record references, immutable artifact
 
 Confidence must not be increased by the same edge, its reverse, any descendant derived from it, duplicate manifestations of one underlying source, or representation count alone. Independence must be established from provenance lineage rather than assumed from record count.
 
+Each artifact therefore carries an `independence_key`. An edge may cite multiple confidence artifacts only when those keys are unique within that edge. Two files, exports, or records derived from the same underlying source must reuse the same key and cannot be counted as independent support.
+
 Missing, ambiguous or cyclic lineage fails closed. Candidate generation does not infer truth, establish scientific evidence, clear rights, or change safety or efficacy claims.
 
 ## Privacy boundary
