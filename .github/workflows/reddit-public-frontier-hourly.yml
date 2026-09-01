@@ -1,0 +1,55 @@
+name: Reddit public frontier hourly
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main, feature/reddit-hourly-frontier]
+    paths:
+      - '.github/workflows/reddit-public-frontier-hourly.yml'
+      - 'scripts/reddit_public_frontier.py'
+      - 'tests/test_reddit_public_frontier.py'
+      - 'references/community/reddit-manual-delta-batch-*.csv'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reddit-public-frontier-hourly
+  cancel-in-progress: true
+
+jobs:
+  frontier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Test public frontier checker
+        run: python -m unittest tests.test_reddit_public_frontier -v
+      - name: Scan public Reddit frontier
+        run: |
+          mkdir -p artifacts/reddit-public-frontier
+          python scripts/reddit_public_frontier.py \
+            --known references/community/reddit-uri-index.csv \
+            --known-glob 'references/community/reddit-manual-delta-batch-*.csv' \
+            --min-boundary 5 \
+            --json-out artifacts/reddit-public-frontier/checkpoint.json \
+            --summary-out artifacts/reddit-public-frontier/summary.md
+      - name: Add checkpoint to job summary
+        if: always()
+        run: |
+          if [ -f artifacts/reddit-public-frontier/summary.md ]; then
+            cat artifacts/reddit-public-frontier/summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload checkpoint artifact
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: reddit-public-frontier-${{ github.run_id }}
+          path: artifacts/reddit-public-frontier/
+          if-no-files-found: warn
+          retention-days: 14

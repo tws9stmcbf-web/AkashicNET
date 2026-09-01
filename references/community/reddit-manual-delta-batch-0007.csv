@@ -1,0 +1,5 @@
+feed_rank,subreddit,reddit_post_id,canonical_url,observed_at,discovery_source,live_verification_status,historical_index_match,prior_manual_batch_match,disposition,import_status,pagination_page
+1,NeuronsToNirvana,1w46an0,https://www.reddit.com/r/NeuronsToNirvana/comments/1w46an0/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,1
+2,NeuronsToNirvana,1w45ekl,https://www.reddit.com/r/NeuronsToNirvana/comments/1w45ekl/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,1
+3,NeuronsToNirvana,1w44ups,https://www.reddit.com/r/NeuronsToNirvana/comments/1w44ups/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,1
+4,NeuronsToNirvana,1w3ys07,https://www.reddit.com/r/NeuronsToNirvana/comments/1w3ys07/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,1
