@@ -1,0 +1,36 @@
+{
+  "target_version": "0.13.0-beta.1",
+  "target_name": "Public Knowledge Beta",
+  "release_policy": "exact_commit_fail_closed",
+  "validated_integration_baseline": "c986cf14d91edf2274cfd9351a7d330edcff620c",
+  "validated_release_commit": null,
+  "public_safe_counts": {
+    "audited_topics": 68,
+    "reddit_source_rows": 9401,
+    "reddit_structurally_unique_posts": 7356,
+    "n2n_structurally_unique_posts": 7298,
+    "wikispine_resolved_identities": 73
+  },
+  "required_artifacts": [
+    "references/community/public-knowledge-beta-readiness-v0.13.json",
+    "references/community/integration-beta-readiness-v0.12.json",
+    "references/big-questions/architecture-v0.1.json",
+    "scripts/validate_big_question_architecture_v01.py",
+    "scripts/validate_public_knowledge_link_integrity_v013.py",
+    "scripts/validate_public_knowledge_batch3_v013.py",
+    "scripts/validate_actions_immutable_refs.py"
+  ],
+  "privacy": {
+    "private_drive_identifiers_public": false,
+    "private_drive_paths_public": false,
+    "private_drive_timestamps_public": false,
+    "file_linked_private_hashes_public": false
+  },
+  "nonblocking_debt": [
+    "Manual visual responsive QA is not represented as automated verification.",
+    "Reddit developer/API verification may remain incomplete when verification state is explicit and fail-closed.",
+    "Private Drive rows 82-86 remain quarantined until authoritative private mapping exists.",
+    "Formal GitHub tag/release publication is a separate mechanical step."
+  ],
+  "seal_rule": "Populate validated_release_commit only after the end-to-end v0.13 readiness gate passes on main; do not silently retarget."
+}
