@@ -1,0 +1,38 @@
+{
+  "target_version": "0.12.0-beta.1",
+  "target_name": "Integration Beta Candidate",
+  "current_public_phase": "PUBLIC BETA",
+  "readiness_policy": "fail_closed",
+  "integration_beta_declared": false,
+  "required_gates": {
+    "data_beta_readiness_preserved": true,
+    "public_beta_integration_gate_present": true,
+    "immutable_actions_gate_present": true,
+    "bq001_canonical_status_unresolved": true,
+    "bq001_website_status_unresolved": true,
+    "bq001_website_provenance_version_synchronized": false,
+    "public_data_boundary_present": true,
+    "evidence_taxonomy_present": true,
+    "stable_provenance_contract_present": true,
+    "knowledge_graph_non_truth_crosslink_policy_present": true,
+    "integration_beta_ci_gate_present": true
+  },
+  "release_blockers": [
+    "bq001_website_provenance_version_synchronized"
+  ],
+  "nonblocking_debt": [
+    "Universal Reddit API verification may remain incomplete when verification state remains explicit and fail-closed.",
+    "Private Drive rows 82-86 remain quarantined until authoritative private mapping exists.",
+    "Unresolved canonical families may remain under review and cannot enter promoted graph truth or public evidence claims.",
+    "Formal 0.11.0-beta.1 GitHub Release/tag hygiene remains separate and must retain its validated historical target."
+  ],
+  "invariants": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "private_drive_promotion_allowed": false,
+    "api_unverified_reddit_may_be_labelled_api_verified": false,
+    "cross_source_links_may_be_treated_as_truth_claims": false,
+    "circular_confidence_amplification_allowed": false
+  }
+}
