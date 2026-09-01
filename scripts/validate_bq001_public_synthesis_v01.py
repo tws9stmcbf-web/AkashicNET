@@ -9,6 +9,7 @@ EXPECTED_BATCHES = [
     "references/big-questions/BQ001/evidence-batch2-v0.1.json",
     "references/big-questions/BQ001/evidence-batch3-v0.1.json",
     "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch5-v0.1.json",
 ]
 EXPECTED_MODELS = {"MODEL-BQ001-BIOLOGICAL-DEPENDENCE", "MODEL-BQ001-CONTINUITY"}
 EXPECTED_LABELS = {
@@ -45,7 +46,7 @@ def validate(payload, repo_root=Path(".")):
     if payload.get("status") != "UNRESOLVED":
         fail("public synthesis must remain UNRESOLVED")
     if payload.get("source_batches") != EXPECTED_BATCHES:
-        fail("public synthesis must reference exactly the four validated BQ001 batches")
+        fail("public synthesis must reference exactly the validated BQ001 batches in canonical order")
 
     claims = {}
     sources = {}
