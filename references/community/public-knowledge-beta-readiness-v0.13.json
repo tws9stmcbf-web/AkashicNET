@@ -3,7 +3,7 @@
   "target_name": "Public Knowledge Beta Candidate",
   "baseline_commit": "c986cf14d91edf2274cfd9351a7d330edcff620c",
   "readiness_policy": "fail_closed",
-  "public_knowledge_beta_declared": false,
+  "public_knowledge_beta_declared": true,
   "audit": {
     "v012_integration_beta_readiness_preserved": "PASS",
     "no_release_critical_public_privacy_or_provenance_defect": "PASS",
@@ -14,20 +14,19 @@
     "reproducible_public_knowledge_release_manifest": "PASS",
     "deterministic_public_route_responsive_accessibility_gate": "PASS",
     "support_funding_separated_from_evidence_conclusions": "PASS",
-    "end_to_end_public_knowledge_beta_release_gate": "NOT_YET_IMPLEMENTED"
+    "end_to_end_public_knowledge_beta_release_gate": "PASS"
   },
-  "release_blockers": [
-    "end_to_end_public_knowledge_beta_release_gate"
-  ],
+  "release_blockers": [],
   "evidence_notes": {
     "v012": "Integration Beta readiness is declared true with no release blockers at the validated baseline.",
     "privacy_provenance": "Existing fail-closed public-data boundary and provenance gates remain part of the validated v0.12 baseline; this audit found no repository evidence requiring a release-critical regression classification.",
     "knowledge_graph": "Existing cross-source graph policy marks cross-links provisional/not-truth-claims and scientific evidence false by default.",
-    "big_questions": "The existing canonical Big Questions architecture already defines one canonical tree per question and a generic questions registry. BQ001 is the only currently registered product; no fabricated BQ002 is required to demonstrate extensibility.",
-    "link_integrity": "A v0.13 repository validator and immutable-pinned CI workflow audit public Big Questions evidence source records, require original URLs, and validate stored link-check metadata without treating unavailable sources as false.",
-    "release_manifest": "A candidate manifest now records the target version, validated Integration Beta baseline, public-safe counts, required artifacts, privacy rule and exact-commit seal rule. The validated release commit remains null until the final end-to-end gate passes.",
-    "responsive_accessibility": "A deterministic source-level route QA gate verifies repository routes, responsive CSS and reduced-motion contracts. It explicitly does not claim manual visual breakpoint QA has been performed.",
-    "support_boundary": "A deterministic policy artifact and validator prohibit support from purchasing scientific certainty, privileged conclusions, evidence classification, confidence or provenance overrides."
+    "big_questions": "The existing canonical Big Questions architecture defines one canonical tree per question and a generic questions registry. BQ001 is the only currently registered product; no fabricated BQ002 is required to demonstrate extensibility.",
+    "link_integrity": "The v0.13 repository validator and immutable-pinned CI workflow audit public Big Questions evidence source records, require original URLs, and validate stored link-check metadata without treating unavailable sources as false.",
+    "release_manifest": "The candidate manifest records target version, validated Integration Beta baseline, public-safe counts, required artifacts, privacy rule and exact-commit seal rule. The validated release commit remains null until the final gate passes on main.",
+    "responsive_accessibility": "The deterministic source-level route QA gate verifies repository routes, responsive CSS and reduced-motion contracts. It explicitly does not claim manual visual breakpoint QA has been performed.",
+    "support_boundary": "The deterministic policy artifact and validator prohibit support from purchasing scientific certainty, privileged conclusions, evidence classification, confidence or provenance overrides.",
+    "end_to_end": "The final v0.13 auditor requires all ten deterministic gates PASS, preserves the v0.12 baseline, rechecks release-manifest privacy invariants, and fails closed on any semantic promotion flag."
   },
   "nonblocking_debt": [
     "Manual visual responsive QA remains distinct from repository-testable source checks and must not be represented as automatically verified.",
