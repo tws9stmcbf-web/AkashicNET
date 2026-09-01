@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +22,8 @@ REQUIRED = [
     "support_funding_separated_from_evidence_conclusions",
     "end_to_end_public_knowledge_beta_release_gate",
 ]
+
+SHA40 = re.compile(r"^[0-9a-f]{40}$")
 
 
 def main() -> int:
@@ -42,9 +45,20 @@ def main() -> int:
 
     assert manifest["target_version"] == "0.13.0-beta.1"
     assert manifest["release_policy"] == "exact_commit_fail_closed"
-    assert manifest["validated_release_commit"] is None, (
-        "manifest commit seal is populated only after this gate passes on main"
-    )
+    state = manifest.get("state", "CANDIDATE")
+    validated = manifest["validated_release_commit"]
+    if state == "CANDIDATE":
+        assert validated is None, "candidate manifest must not pre-populate validated release commit"
+    elif state == "SEALED":
+        assert isinstance(validated, str) and SHA40.fullmatch(validated), (
+            "sealed manifest must preserve an exact lowercase 40-character validated commit SHA"
+        )
+        assert "does not retarget" in manifest["seal_rule"], (
+            "sealed metadata must state that the later seal commit does not retarget the release"
+        )
+    else:
+        raise AssertionError(f"unsupported manifest state: {state}")
+
     assert manifest["privacy"]["private_drive_identifiers_public"] is False
     assert manifest["privacy"]["private_drive_paths_public"] is False
     assert manifest["privacy"]["private_drive_timestamps_public"] is False
@@ -60,6 +74,7 @@ def main() -> int:
     assert inv["public_visual_design_is_evidence"] is False
 
     print("PUBLIC KNOWLEDGE BETA v0.13 READY: 10/10 deterministic gates PASS")
+    print(f"manifest_state={state} validated_release_commit={validated}")
     return 0
 
 
