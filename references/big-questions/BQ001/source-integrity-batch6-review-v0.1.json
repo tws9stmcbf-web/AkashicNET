@@ -1,0 +1,133 @@
+{
+  "audit_id": "BQ001-SOURCE-INTEGRITY-BATCH6",
+  "version": "0.1.0",
+  "status": "REVIEW_ONLY",
+  "assessed_on": "2026-09-01",
+  "scope": "BQ001 Batch 1 scientific-baseline sources and their repository website mirrors",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+    "canonical_batch_blob_sha": "8dedf1e21b98603acced7e8e307fb15d38f6ba2d",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "78713f4eba51f345eabe2e365d4ab9a70049a795",
+    "live_site_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "audit_policy": {
+    "preserve_original_urls": true,
+    "silent_replacement_allowed": false,
+    "unavailable_source_implies_false": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "retraction_absence_is_time_scoped": true
+  },
+  "source_checks": [
+    {
+      "source_id": "SRC-BQ001-AWARE-2014",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/25301715/",
+      "doi": "10.1016/j.resuscitation.2014.09.004",
+      "expected_title": "AWARE-AWAreness during REsuscitation-a prospective study",
+      "observed_status": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+      "title_match": "CONFIRMED_BY_CURRENT_SEARCH_INDEX",
+      "redirect_observed": false,
+      "retraction_status": "NO_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "note": "Direct automated retrieval encountered a PubMed browser challenge. The indexed canonical page, PMID and DOI remained discoverable; this is not classified as a broken source."
+    },
+    {
+      "source_id": "SRC-BQ001-AWARE2-2023",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/37423492/",
+      "doi": "10.1016/j.resuscitation.2023.109903",
+      "expected_title": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "retraction_status": "NO_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-MASCHKE-2024",
+      "original_url": "https://www.nature.com/articles/s42003-024-06613-8",
+      "doi": "10.1038/s42003-024-06613-8",
+      "expected_title": "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity",
+      "observed_status": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+      "title_match": true,
+      "redirect_observed": true,
+      "observed_destination_pattern": "Original article URL plus a transient cookies_not_supported query string",
+      "retraction_status": "NO_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "note": "The canonical URL remains correct. The observed query-string redirect appears client/cookie specific and is not a repair candidate."
+    },
+    {
+      "source_id": "SRC-BQ001-KOCH-2016",
+      "original_url": "https://www.nature.com/articles/nrn.2016.22",
+      "doi": "10.1038/nrn.2016.22",
+      "expected_title": "Neural correlates of consciousness: progress and problems",
+      "observed_status": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+      "title_match": true,
+      "redirect_observed": true,
+      "observed_destination_pattern": "Original article URL plus a transient cookies_not_supported query string",
+      "retraction_status": "NO_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": false,
+      "note": "The source remains canonical in Batch 1 but is not directly surfaced in the repository website page or its current public-synthesis section. This is a coverage difference, not evidence that the source vanished."
+    }
+  ],
+  "duplicate_assessment": {
+    "exact_duplicate_source_ids_within_batch": [],
+    "exact_duplicate_urls_within_batch": [],
+    "cross_surface_mirrors": [
+      "SRC-BQ001-AWARE-2014",
+      "SRC-BQ001-AWARE2-2023",
+      "SRC-BQ001-MASCHKE-2024"
+    ],
+    "classification": "EXPECTED_GITHUB_TO_WEBSITE_MIRRORING",
+    "action_required": false
+  },
+  "live_site_check": {
+    "status": "NOT_DIRECTLY_RETRIEVABLE_IN_THIS_AUDIT_RUN",
+    "reason": "The public URL was rejected by the available web retriever and had no indexed search result.",
+    "inference": "NONE",
+    "note": "This does not classify the page or any source as unavailable. Live rendering should be checked during the website preview pass."
+  },
+  "findings_summary": {
+    "sources_checked": 4,
+    "broken_links": 0,
+    "permanent_redirects_requiring_repair": 0,
+    "changed_titles": 0,
+    "retraction_notices_observed": 0,
+    "vanished_sources": 0,
+    "duplicate_records_within_batch": 0,
+    "missing_source_level_retrieval_metadata": 4,
+    "provenance_version_drift_candidates": 1
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "BQ001-B6-R1",
+      "priority": "MEDIUM",
+      "target": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+      "proposal": "Add non-destructive link_check metadata to all four source records while retaining every original URL, DOI and PMID.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B6-R2",
+      "priority": "MEDIUM",
+      "target": "website/app/big-questions/bq001/page.tsx",
+      "proposal": "During preview-only website sync, reconcile the displayed provenance version with canonical public synthesis v0.1.1 and verify whether the Koch 2016 review should remain canonical-only or be visibly linked.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B6-R3",
+      "priority": "LOW",
+      "target": "https://akashicnet.org/big-questions/bq001",
+      "proposal": "Perform a rendered live-page link check in the website QA environment because this audit run could not retrieve the live route directly.",
+      "automatic_application_allowed": false
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATES_PREPARED",
+    "source_urls_replaced": false,
+    "canonical_evidence_changed": false,
+    "public_synthesis_changed": false,
+    "website_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  }
+}
