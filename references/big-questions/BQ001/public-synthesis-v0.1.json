@@ -1,6 +1,6 @@
 {
   "synthesis_id": "BQ001-PUBLIC-SYNTHESIS",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "question_id": "BQ001",
   "question": "Does consciousness continue beyond the individual?",
   "status": "UNRESOLVED",
@@ -9,7 +9,8 @@
     "references/big-questions/BQ001/evidence-batch1-v0.1.json",
     "references/big-questions/BQ001/evidence-batch2-v0.1.json",
     "references/big-questions/BQ001/evidence-batch3-v0.1.json",
-    "references/big-questions/BQ001/evidence-batch4-v0.1.json"
+    "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch5-v0.1.json"
   ],
   "sections": [
     {
@@ -18,9 +19,14 @@
       "evidence_label": "Established Evidence",
       "claim_ids": [
         "CLAIM-BQ001-MASCHKE-2024-OBS-01",
-        "CLAIM-BQ001-ELHAJ-2019-OBS-01"
+        "CLAIM-BQ001-ELHAJ-2019-OBS-01",
+        "CLAIM-BQ001-COGITATE-2025-OBS-01"
       ],
-      "source_ids": ["SRC-BQ001-MASCHKE-2024", "SRC-BQ001-ELHAJ-2019"],
+      "source_ids": [
+        "SRC-BQ001-MASCHKE-2024",
+        "SRC-BQ001-ELHAJ-2019",
+        "SRC-BQ001-COGITATE-2025"
+      ],
       "boundary": "Evidence for brain/conscious-state dependence under studied conditions does not by itself prove that post-mortem continuation is impossible."
     },
     {
@@ -30,9 +36,14 @@
       "claim_ids": [
         "CLAIM-BQ001-AWARE-2014-OBS-01",
         "CLAIM-BQ001-AWARE-2014-OBS-02",
-        "CLAIM-BQ001-AWARE2-2023-OBS-01"
+        "CLAIM-BQ001-AWARE2-2023-OBS-01",
+        "CLAIM-BQ001-XU-PNAS-2023-OBS-01"
       ],
-      "source_ids": ["SRC-BQ001-AWARE-2014", "SRC-BQ001-AWARE2-2023"],
+      "source_ids": [
+        "SRC-BQ001-AWARE-2014",
+        "SRC-BQ001-AWARE2-2023",
+        "SRC-BQ001-XU-PNAS-2023"
+      ],
       "boundary": "Cardiac arrest during attempted resuscitation is not equivalent to irreversible biological death; retrospective recall does not uniquely determine the neurophysiological timing of an experience."
     },
     {
@@ -41,9 +52,14 @@
       "evidence_label": "Interpretation",
       "claim_ids": [
         "CLAIM-BQ001-MARTIAL-2022-INTERP-01",
-        "CLAIM-BQ001-MARTIAL-2025-INTERP-01"
+        "CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+        "CLAIM-BQ001-PARNIA-GUIDELINES-2022-INTERP-01"
       ],
-      "source_ids": ["SRC-BQ001-MARTIAL-2022", "SRC-BQ001-MARTIAL-2025"],
+      "source_ids": [
+        "SRC-BQ001-MARTIAL-2022",
+        "SRC-BQ001-MARTIAL-2025",
+        "SRC-BQ001-PARNIA-GUIDELINES-2022"
+      ],
       "boundary": "A plausible neuroscientific model is not complete proof that every NDE is fully explained, and methodological critique is not proof of non-survival."
     },
     {
@@ -54,7 +70,10 @@
         "CLAIM-BQ001-SOW-2022-INTERP-01",
         "CLAIM-BQ001-SEDIKIDES-2023-INTERP-01"
       ],
-      "source_ids": ["SRC-BQ001-SOW-2022", "SRC-BQ001-SEDIKIDES-2023"],
+      "source_ids": [
+        "SRC-BQ001-SOW-2022",
+        "SRC-BQ001-SEDIKIDES-2023"
+      ],
       "boundary": "Psychological self-continuity is not identical to metaphysical personal identity or post-mortem persistence."
     },
     {
@@ -66,15 +85,27 @@
         "CLAIM-BQ001-HARALDSSON-2003-OBS-01",
         "CLAIM-BQ001-MORAES-2024-OBS-01"
       ],
-      "source_ids": ["SRC-BQ001-SCOPING-2021", "SRC-BQ001-HARALDSSON-2003", "SRC-BQ001-MORAES-2024"],
+      "source_ids": [
+        "SRC-BQ001-SCOPING-2021",
+        "SRC-BQ001-HARALDSSON-2003",
+        "SRC-BQ001-MORAES-2024"
+      ],
       "boundary": "A reported match or unexplained case is not proof of reincarnation; information leakage, retrospective reconstruction, selection effects and alternative explanations remain live methodological concerns."
     },
     {
       "id": "reincarnation-methods",
       "heading": "Stronger reincarnation-type inference requires stronger prospective controls",
       "evidence_label": "Interpretation",
-      "claim_ids": ["CLAIM-BQ001-METHODS-INTERP-01", "CLAIM-BQ001-TUCKER-2025-INTERP-01"],
-      "source_ids": ["SRC-BQ001-SCOPING-2021", "SRC-BQ001-ALLAN-2025", "SRC-BQ001-TUCKER-2025", "SRC-BQ001-TUCKER-2008"],
+      "claim_ids": [
+        "CLAIM-BQ001-METHODS-INTERP-01",
+        "CLAIM-BQ001-TUCKER-2025-INTERP-01"
+      ],
+      "source_ids": [
+        "SRC-BQ001-SCOPING-2021",
+        "SRC-BQ001-ALLAN-2025",
+        "SRC-BQ001-TUCKER-2025",
+        "SRC-BQ001-TUCKER-2008"
+      ],
       "boundary": "Failure of simple psychological explanations does not establish reincarnation; psychological correlates do not establish that reincarnation is impossible."
     },
     {
@@ -86,7 +117,11 @@
         "CLAIM-BQ001-DAHL-2015-INTERP-01",
         "CLAIM-BQ001-VAGO-2012-INTERP-01"
       ],
-      "source_ids": ["SRC-BQ001-SIDERITS-2011", "SRC-BQ001-DAHL-2015", "SRC-BQ001-VAGO-2012"],
+      "source_ids": [
+        "SRC-BQ001-SIDERITS-2011",
+        "SRC-BQ001-DAHL-2015",
+        "SRC-BQ001-VAGO-2012"
+      ],
       "boundary": "Contemplative phenomenology, tradition and meditation-related self-processing do not establish external ontology or survival after death."
     },
     {
@@ -98,7 +133,11 @@
         "CLAIM-BQ001-DUALISM-INTERP-01",
         "CLAIM-BQ001-PANPSYCHISM-INTERP-01"
       ],
-      "source_ids": ["SRC-BQ001-SEP-PHYSICALISM", "SRC-BQ001-SEP-DUALISM", "SRC-BQ001-SEP-PANPSYCHISM"],
+      "source_ids": [
+        "SRC-BQ001-SEP-PHYSICALISM",
+        "SRC-BQ001-SEP-DUALISM",
+        "SRC-BQ001-SEP-PANPSYCHISM"
+      ],
       "boundary": "Philosophical coherence or possibility is not empirical evidence that personal consciousness survives death; physicalism as a philosophy is not itself empirical proof of non-survival."
     }
   ],
@@ -142,5 +181,14 @@
     "testimony_or_anomaly_proves_survival": false,
     "brain_dependence_proves_non_survival": false,
     "philosophical_position_counts_as_empirical_verdict": false
+  },
+  "last_updated": "2026-09-01",
+  "change_record": {
+    "change": "Promoted reviewed Batch 5 sources and claims into the canonical evidence set after explicit user approval.",
+    "source_review_artifact": "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "automatic_scientific_evidence_promotion_allowed": false
   }
 }
