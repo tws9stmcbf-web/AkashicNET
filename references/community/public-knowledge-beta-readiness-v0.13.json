@@ -11,15 +11,12 @@
     "big_questions_architecture_supports_multiple_products": "PASS",
     "public_evidence_and_provenance_synchronized": "PASS",
     "automated_public_source_link_integrity_gate": "PASS",
-    "reproducible_public_knowledge_release_manifest": "NOT_YET_IMPLEMENTED",
-    "deterministic_public_route_responsive_accessibility_gate": "NOT_YET_IMPLEMENTED",
-    "support_funding_separated_from_evidence_conclusions": "NOT_YET_IMPLEMENTED",
+    "reproducible_public_knowledge_release_manifest": "PASS",
+    "deterministic_public_route_responsive_accessibility_gate": "PASS",
+    "support_funding_separated_from_evidence_conclusions": "PASS",
     "end_to_end_public_knowledge_beta_release_gate": "NOT_YET_IMPLEMENTED"
   },
   "release_blockers": [
-    "reproducible_public_knowledge_release_manifest",
-    "deterministic_public_route_responsive_accessibility_gate",
-    "support_funding_separated_from_evidence_conclusions",
     "end_to_end_public_knowledge_beta_release_gate"
   ],
   "evidence_notes": {
@@ -27,11 +24,13 @@
     "privacy_provenance": "Existing fail-closed public-data boundary and provenance gates remain part of the validated v0.12 baseline; this audit found no repository evidence requiring a release-critical regression classification.",
     "knowledge_graph": "Existing cross-source graph policy marks cross-links provisional/not-truth-claims and scientific evidence false by default.",
     "big_questions": "The existing canonical Big Questions architecture already defines one canonical tree per question and a generic questions registry. BQ001 is the only currently registered product; no fabricated BQ002 is required to demonstrate extensibility.",
-    "link_integrity": "A v0.13 repository validator and immutable-pinned CI workflow now audit public Big Questions evidence source records, require original URLs, and validate any stored link-check metadata without treating unavailable sources as false.",
-    "responsive_accessibility": "Visual/manual responsive QA cannot be inferred from source code. Only repository-testable checks may become deterministic; manual visual checks must remain explicitly manual.",
-    "support_boundary": "Public support messaging exists, but a deterministic repository gate proving funding cannot influence evidence/conclusions was not established by the baseline audit."
+    "link_integrity": "A v0.13 repository validator and immutable-pinned CI workflow audit public Big Questions evidence source records, require original URLs, and validate stored link-check metadata without treating unavailable sources as false.",
+    "release_manifest": "A candidate manifest now records the target version, validated Integration Beta baseline, public-safe counts, required artifacts, privacy rule and exact-commit seal rule. The validated release commit remains null until the final end-to-end gate passes.",
+    "responsive_accessibility": "A deterministic source-level route QA gate verifies repository routes, responsive CSS and reduced-motion contracts. It explicitly does not claim manual visual breakpoint QA has been performed.",
+    "support_boundary": "A deterministic policy artifact and validator prohibit support from purchasing scientific certainty, privileged conclusions, evidence classification, confidence or provenance overrides."
   },
   "nonblocking_debt": [
+    "Manual visual responsive QA remains distinct from repository-testable source checks and must not be represented as automatically verified.",
     "Reddit developer/API verification remains optional while verification state is explicit and fail-closed.",
     "Private Drive rows 82-86 remain quarantined without authoritative private mapping.",
     "Unresolved duplicate/canonical families remain non-promotable.",
