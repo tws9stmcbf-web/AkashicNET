@@ -1,0 +1,178 @@
+{
+  "audit_id": "BQ001-SOURCE-INTEGRITY-BATCH7",
+  "version": "0.1.0",
+  "status": "REVIEW_ONLY",
+  "assessed_on": "2026-09-01",
+  "scope": "BQ001 Batch 2 memory, identity and NDE-methods sources and their repository website mirrors",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+    "canonical_batch_blob_sha": "fdd4a685c41cb36c92ca5beb8cce7f36f80c57bc",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "78713f4eba51f345eabe2e365d4ab9a70049a795",
+    "live_site_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "audit_policy": {
+    "preserve_original_urls": true,
+    "silent_replacement_allowed": false,
+    "unavailable_source_implies_false": false,
+    "correction_notice_implies_retraction": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "notice_absence_is_time_scoped": true
+  },
+  "source_checks": [
+    {
+      "source_id": "SRC-BQ001-ELHAJ-2019",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/31322576/",
+      "doi": "10.3233/JAD-190440",
+      "pmid": "31322576",
+      "expected_title": "Memories Supporting Myself: Autobiographical Memory Supports Self-Continuity in Alzheimer's Disease",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-SOW-2022",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/36165349/",
+      "doi": "10.1002/wcs.1625",
+      "pmid": "36165349",
+      "expected_title": "Developments in the functions of autobiographical memory: An advanced review",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "bibliographic_note": "PubMed lists the journal issue as 2023 and electronic publication as 27 September 2022. The canonical year field uses 2022; preserve it pending an explicit year-convention decision."
+    },
+    {
+      "source_id": "SRC-BQ001-SEDIKIDES-2023",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/35961040/",
+      "doi": "10.1146/annurev-psych-032420-032236",
+      "pmid": "35961040",
+      "expected_title": "Self-Continuity",
+      "observed_status": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "verification_basis": "The DOI resolved to the Annual Reviews version of record with matching title, volume, year and DOI.",
+      "note": "Direct PubMed retrieval encountered a browser challenge; this is not classified as a broken source."
+    },
+    {
+      "source_id": "SRC-BQ001-MARTIAL-2022",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/36017883/",
+      "doi": "10.1111/nyas.14888",
+      "pmid": "36017883",
+      "expected_title": "Studying death and near-death experiences requires neuroscientific expertise",
+      "observed_status": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "verification_basis": "The DOI, PubMed search result and Wiley version matched the canonical title and identifiers.",
+      "note": "Direct PubMed retrieval encountered a browser challenge; this is not classified as a broken source."
+    },
+    {
+      "source_id": "SRC-BQ001-MARTIAL-2025",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/40159547/",
+      "doi": "10.1038/s41582-025-01072-z",
+      "pmid": "40159547",
+      "expected_title": "A neuroscientific model of near-death experiences",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "AUTHOR_CORRECTION_PUBLISHED",
+      "related_notice": {
+        "notice_type": "AUTHOR_CORRECTION",
+        "title": "Author Correction: A neuroscientific model of near-death experiences",
+        "doi": "10.1038/s41582-025-01111-9",
+        "url": "https://www.nature.com/articles/s41582-025-01111-9",
+        "publication_year": 2025,
+        "summary": "The correction states that a Box 2 reference to the precursor molecule tyrosine should read tryptophan; the HTML and PDF were corrected."
+      },
+      "retraction_status": "NOT_RETRACTED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "claim_impact_note": "No Batch 2 claim quotes the corrected precursor wording. Formal review should confirm that the correction does not affect the mapped high-level interpretation before marking impact as none."
+    }
+  ],
+  "duplicate_assessment": {
+    "exact_duplicate_source_ids_within_batch": [],
+    "exact_duplicate_urls_within_batch": [],
+    "cross_surface_mirrors": [
+      "SRC-BQ001-ELHAJ-2019",
+      "SRC-BQ001-SOW-2022",
+      "SRC-BQ001-SEDIKIDES-2023",
+      "SRC-BQ001-MARTIAL-2022",
+      "SRC-BQ001-MARTIAL-2025"
+    ],
+    "classification": "EXPECTED_GITHUB_TO_WEBSITE_MIRRORING",
+    "action_required": false
+  },
+  "live_site_check": {
+    "status": "NOT_DIRECTLY_RETRIEVABLE_IN_THIS_AUDIT_RUN",
+    "inference": "NONE",
+    "note": "The repository website implementation was inspected. Rendered live-page verification remains part of the website QA pass and no source is classified as unavailable from this limitation."
+  },
+  "findings_summary": {
+    "sources_checked": 5,
+    "broken_links": 0,
+    "permanent_redirects_requiring_repair": 0,
+    "changed_titles": 0,
+    "retraction_notices_observed": 0,
+    "correction_notices_observed": 1,
+    "vanished_sources": 0,
+    "duplicate_records_within_batch": 0,
+    "missing_source_level_retrieval_metadata": 5,
+    "bibliographic_year_convention_candidates": 1,
+    "website_provenance_version_drift_candidates": 1
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "BQ001-B7-R1",
+      "priority": "MEDIUM",
+      "target": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "proposal": "Add non-destructive link_check metadata to all five source records while retaining every original URL, DOI and PMID.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B7-R2",
+      "priority": "HIGH",
+      "target": "SRC-BQ001-MARTIAL-2025",
+      "proposal": "Attach the published author-correction DOI and URL as related-notice provenance; preserve the original article URL and do not classify the paper as retracted.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B7-R3",
+      "priority": "MEDIUM",
+      "target": "CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+      "proposal": "Review whether the Box 2 precursor correction affects the mapped high-level interpretation; record an explicit impact assessment without changing the evidence label automatically.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B7-R4",
+      "priority": "LOW",
+      "target": "SRC-BQ001-SOW-2022",
+      "proposal": "Record separate electronic-publication year 2022 and issue-publication year 2023 metadata instead of silently replacing the existing year field.",
+      "automatic_application_allowed": false
+    }
+  ],
+  "carried_forward_findings": [
+    {
+      "from_audit": "BQ001-SOURCE-INTEGRITY-BATCH6",
+      "candidate_id": "BQ001-B6-R2",
+      "status": "OPEN",
+      "note": "The repository website provenance label still states public synthesis v0.1 while the canonical synthesis is v0.1.1. This is not duplicated as a new Batch 7 repair candidate."
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATES_PREPARED",
+    "source_urls_replaced": false,
+    "canonical_evidence_changed": false,
+    "public_synthesis_changed": false,
+    "website_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  }
+}
