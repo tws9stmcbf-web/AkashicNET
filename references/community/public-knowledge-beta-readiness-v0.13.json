@@ -1,0 +1,51 @@
+{
+  "target_version": "0.13.0-beta.1",
+  "target_name": "Public Knowledge Beta Candidate",
+  "baseline_commit": "c986cf14d91edf2274cfd9351a7d330edcff620c",
+  "readiness_policy": "fail_closed",
+  "public_knowledge_beta_declared": false,
+  "audit": {
+    "v012_integration_beta_readiness_preserved": "PASS",
+    "no_release_critical_public_privacy_or_provenance_defect": "PASS",
+    "knowledge_graph_asserted_vs_candidate_separation": "PASS",
+    "big_questions_architecture_supports_multiple_products": "NOT_YET_IMPLEMENTED",
+    "public_evidence_and_provenance_synchronized": "PASS",
+    "automated_public_source_link_integrity_gate": "NOT_YET_IMPLEMENTED",
+    "reproducible_public_knowledge_release_manifest": "NOT_YET_IMPLEMENTED",
+    "deterministic_public_route_responsive_accessibility_gate": "NOT_YET_IMPLEMENTED",
+    "support_funding_separated_from_evidence_conclusions": "NOT_YET_IMPLEMENTED",
+    "end_to_end_public_knowledge_beta_release_gate": "NOT_YET_IMPLEMENTED"
+  },
+  "release_blockers": [
+    "big_questions_architecture_supports_multiple_products",
+    "automated_public_source_link_integrity_gate",
+    "reproducible_public_knowledge_release_manifest",
+    "deterministic_public_route_responsive_accessibility_gate",
+    "support_funding_separated_from_evidence_conclusions",
+    "end_to_end_public_knowledge_beta_release_gate"
+  ],
+  "evidence_notes": {
+    "v012": "Integration Beta readiness is declared true with no release blockers at the validated baseline.",
+    "privacy_provenance": "Existing fail-closed public-data boundary and provenance gates remain part of the validated v0.12 baseline; this audit found no repository evidence requiring a release-critical regression classification.",
+    "knowledge_graph": "Existing cross-source graph policy marks cross-links provisional/not-truth-claims and scientific evidence false by default.",
+    "big_questions": "BQ001 is implemented, but no repository evidence of a generic multi-question registry/product architecture was found in the baseline audit. Do not fabricate BQ002 merely to satisfy this gate.",
+    "link_integrity": "BQ001 has reviewed non-destructive link-check metadata, but a general automated public-knowledge link-integrity CI gate was not established by the baseline audit.",
+    "responsive_accessibility": "Visual/manual responsive QA cannot be inferred from source code. Only repository-testable checks may become deterministic; manual visual checks must remain explicitly manual.",
+    "support_boundary": "Public support messaging exists, but a deterministic repository gate proving funding cannot influence evidence/conclusions was not established by the baseline audit."
+  },
+  "nonblocking_debt": [
+    "Reddit developer/API verification remains optional while verification state is explicit and fail-closed.",
+    "Private Drive rows 82-86 remain quarantined without authoritative private mapping.",
+    "Unresolved duplicate/canonical families remain non-promotable.",
+    "Formal v0.11/v0.12 GitHub Release/tag publication remains mechanical debt with validated targets preserved."
+  ],
+  "invariants": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "private_drive_promotion_allowed": false,
+    "api_unverified_reddit_may_be_labelled_api_verified": false,
+    "cross_source_candidate_links_are_truth_claims": false,
+    "public_visual_design_is_evidence": false
+  }
+}
