@@ -22,6 +22,28 @@ class BQ001PublicSynthesisTests(unittest.TestCase):
     def test_valid_synthesis_passes(self):
         module.validate(payload(), ROOT)
 
+    def test_canonical_batch_registry_includes_promoted_batch5(self):
+        self.assertEqual(
+            payload()["source_batches"],
+            module.EXPECTED_BATCHES,
+        )
+        self.assertEqual(
+            module.EXPECTED_BATCHES[-1],
+            "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+        )
+
+    def test_missing_promoted_batch_fails(self):
+        p = payload()
+        p["source_batches"].pop()
+        with self.assertRaises(ValueError):
+            module.validate(p, ROOT)
+
+    def test_unregistered_extra_batch_fails(self):
+        p = payload()
+        p["source_batches"].append("references/big-questions/BQ001/evidence-batch6-v0.1.json")
+        with self.assertRaises(ValueError):
+            module.validate(p, ROOT)
+
     def test_resolved_conclusion_fails(self):
         p = payload()
         p["status"] = "RESOLVED"
