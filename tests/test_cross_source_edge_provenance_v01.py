@@ -21,10 +21,25 @@ class CrossSourceEdgeProvenanceTests(unittest.TestCase):
         self.assertEqual(validate(data), [])
         self.assertEqual(sum(edge["accepted_edge"] is True for edge in data["edges"]), 0)
 
+    def test_wrong_schema_version_fails_closed(self) -> None:
+        data = load()
+        data["schema_version"] = "0.2"
+        self.assertTrue(any("schema_version must equal 0.1" in error for error in validate(data)))
+
     def test_missing_generator_fails_closed(self) -> None:
         data = load()
         del data["edges"][1]["generator"]
         self.assertTrue(any("lacks generator provenance" in error for error in validate(data)))
+
+    def test_invalid_generator_digest_fails_closed(self) -> None:
+        data = load()
+        data["edges"][1]["generator"]["parameters_digest"] = "not-a-digest"
+        self.assertTrue(any("invalid generator parameters_digest" in error for error in validate(data)))
+
+    def test_invalid_timestamp_fails_closed(self) -> None:
+        data = load()
+        data["edges"][0]["observed_at"] = "yesterday"
+        self.assertTrue(any("invalid observed_at timestamp" in error for error in validate(data)))
 
     def test_self_cycle_fails_closed(self) -> None:
         data = load()
@@ -51,10 +66,20 @@ class CrossSourceEdgeProvenanceTests(unittest.TestCase):
         data["edges"][1]["review_state"] = "ACCEPTED"
         self.assertTrue(any("promoted without explicit accepted adjudication" in error for error in validate(data)))
 
+    def test_unresolvable_adjudication_ref_fails_closed(self) -> None:
+        data = load()
+        data["edges"][2]["adjudication_ref"]["artifact_id"] = "artifact:missing"
+        self.assertTrue(any("unresolvable adjudication reference" in error for error in validate(data)))
+
     def test_representation_count_cannot_increase_strength(self) -> None:
         data = load()
         data["edges"][1]["representation_count"] = 20
         self.assertTrue(any("representation_count cannot contribute" in error for error in validate(data)))
+
+    def test_duplicate_source_independence_cannot_amplify_confidence(self) -> None:
+        data = load()
+        data["artifacts"][1]["independence_key"] = data["artifacts"][0]["independence_key"]
+        self.assertTrue(any("duplicate independence_key" in error for error in validate(data)))
 
     def test_unknown_source_artifact_fails_closed(self) -> None:
         data = load()
