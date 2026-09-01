@@ -1,6 +1,6 @@
 {
   "batch_id": "BQ001-BATCH2-MEMORY-IDENTITY-NDE-METHODS",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
   "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
@@ -21,7 +21,14 @@
         "Clinical population and cross-sectional associations limit generalisation.",
         "Subjective self-continuity is a psychological construct and is not equivalent to metaphysical persistence of an individual subject.",
         "Associations between autobiographical memory and self-continuity do not establish that memory is necessary or sufficient for personal identity."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME"
+      }
     },
     {
       "source_id": "SRC-BQ001-SOW-2022",
@@ -38,7 +45,20 @@
         "Much supporting literature is correlational and uses self-report measures.",
         "Review-level synthesis does not identify a single necessary neural mechanism for identity.",
         "Psychological self-continuity should not be conflated with post-mortem continuity."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "publication_dates": {
+        "canonical_year_preserved": 2022,
+        "electronic_publication_date": "2022-09-27",
+        "issue_publication_year": 2023,
+        "year_convention_note": "The existing year field follows electronic publication. The issue citation is 2023; neither value silently replaces the other."
+      }
     },
     {
       "source_id": "SRC-BQ001-SEDIKIDES-2023",
@@ -55,7 +75,16 @@
         "Self-continuity is operationalised as a subjective and psychological relation across temporal selves.",
         "Neural correlates of self-continuity do not settle the ontology of personal identity.",
         "The review does not test consciousness after biological death."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "DOI resolved to the Annual Reviews version of record with matching title, volume, year and DOI.",
+        "note": "Direct PubMed retrieval encountered a browser challenge; this is not classified as a broken source."
+      }
     },
     {
       "source_id": "SRC-BQ001-MARTIAL-2022",
@@ -72,7 +101,16 @@
         "Commentary rather than a new prospective experiment.",
         "Critique of specific claims does not by itself establish a complete neural explanation of NDEs.",
         "Methodological disagreement must not be converted into proof of either survival or non-survival."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "DOI, PubMed search result and Wiley version matched the canonical title and identifiers.",
+        "note": "Direct PubMed retrieval encountered a browser challenge; this is not classified as a broken source."
+      }
     },
     {
       "source_id": "SRC-BQ001-MARTIAL-2025",
@@ -89,6 +127,25 @@
         "Integrative model and review rather than direct proof of a single mechanism.",
         "Near-death-like phenomena can arise in heterogeneous physiological contexts.",
         "A plausible neuroscientific model does not logically exclude every alternative ontology."
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "AUTHOR_CORRECTION_PUBLISHED",
+        "retraction_status": "NOT_RETRACTED_AT_CHECK_TIME"
+      },
+      "related_notices": [
+        {
+          "notice_type": "AUTHOR_CORRECTION",
+          "title": "Author Correction: A neuroscientific model of near-death experiences",
+          "doi": "10.1038/s41582-025-01111-9",
+          "url": "https://www.nature.com/articles/s41582-025-01111-9",
+          "publication_year": 2025,
+          "summary": "In Box 2, the precursor molecule stated as tyrosine should read tryptophan; the publisher reports that the HTML and PDF were corrected.",
+          "source_status_effect": "CORRECTED_NOT_RETRACTED"
+        }
       ]
     }
   ],
@@ -99,11 +156,19 @@
       "text": "In a clinical study of mild Alzheimer's disease, autobiographical-memory performance was associated with participants' reported sense of self-continuity.",
       "domain": "memory_identity_and_self_continuity",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-ELHAJ-2019"],
-      "provenance": ["peer-reviewed primary study"],
-      "limitations": ["The result concerns a psychological measure of self-continuity in a clinical population."],
+      "source_ids": [
+        "SRC-BQ001-ELHAJ-2019"
+      ],
+      "provenance": [
+        "peer-reviewed primary study"
+      ],
+      "limitations": [
+        "The result concerns a psychological measure of self-continuity in a clinical population."
+      ],
       "uncertainty": "The study does not determine whether autobiographical memory is necessary or sufficient for personal identity, nor whether identity can continue after death.",
-      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+      "supports_models": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-SOW-2022-INTERP-01",
@@ -111,11 +176,19 @@
       "text": "Autobiographical memory is widely studied as serving self-continuity alongside directive and social functions, but much of the supporting literature is correlational or self-report based.",
       "domain": "memory_identity_and_self_continuity",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SOW-2022"],
-      "provenance": ["peer-reviewed review"],
-      "limitations": ["The review explicitly notes limitations of correlational and self-report evidence."],
+      "source_ids": [
+        "SRC-BQ001-SOW-2022"
+      ],
+      "provenance": [
+        "peer-reviewed review"
+      ],
+      "limitations": [
+        "The review explicitly notes limitations of correlational and self-report evidence."
+      ],
       "uncertainty": "A functional link between memory and self-continuity does not settle what constitutes metaphysical identity.",
-      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+      "supports_models": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-SEDIKIDES-2023-INTERP-01",
@@ -123,9 +196,15 @@
       "text": "Self-continuity is operationalised in contemporary psychology as a subjective connection among past, present and future selves, with identifiable psychological and neural correlates.",
       "domain": "memory_identity_and_self_continuity",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SEDIKIDES-2023"],
-      "provenance": ["peer-reviewed review"],
-      "limitations": ["Subjective self-continuity is not synonymous with numerical identity or post-mortem survival."],
+      "source_ids": [
+        "SRC-BQ001-SEDIKIDES-2023"
+      ],
+      "provenance": [
+        "peer-reviewed review"
+      ],
+      "limitations": [
+        "Subjective self-continuity is not synonymous with numerical identity or post-mortem survival."
+      ],
       "uncertainty": "Multiple philosophical accounts of personal identity remain compatible with the psychological findings.",
       "supports_models": []
     },
@@ -135,9 +214,15 @@
       "text": "Near-death research requires careful separation of cardiac arrest, brain death, unresponsiveness and consciousness terminology; imprecise neurological assumptions can invalidate stronger inferences.",
       "domain": "cardiac_arrest_and_nde_research",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-MARTIAL-2022"],
-      "provenance": ["peer-reviewed methodological commentary"],
-      "limitations": ["This is methodological criticism, not a prospective test of NDE timing or ontology."],
+      "source_ids": [
+        "SRC-BQ001-MARTIAL-2022"
+      ],
+      "provenance": [
+        "peer-reviewed methodological commentary"
+      ],
+      "limitations": [
+        "This is methodological criticism, not a prospective test of NDE timing or ontology."
+      ],
       "uncertainty": "Correcting terminology narrows what can be inferred but does not decide whether consciousness can continue beyond irreversible biological death.",
       "supports_models": []
     },
@@ -147,11 +232,28 @@
       "text": "A 2025 neuroscientific review proposes that converging neurophysiological processes can account for major features of near-death experiences without treating NDE phenomenology as direct evidence of consciousness outside brain function.",
       "domain": "cardiac_arrest_and_nde_research",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-MARTIAL-2025"],
-      "provenance": ["peer-reviewed review and integrative model"],
-      "limitations": ["A proposed model is not equivalent to complete mechanistic proof and does not test every conceivable alternative explanation."],
+      "source_ids": [
+        "SRC-BQ001-MARTIAL-2025"
+      ],
+      "provenance": [
+        "peer-reviewed review and integrative model"
+      ],
+      "limitations": [
+        "A proposed model is not equivalent to complete mechanistic proof and does not test every conceivable alternative explanation."
+      ],
       "uncertainty": "The explanatory adequacy and boundary conditions of the model remain empirical questions.",
-      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+      "supports_models": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ],
+      "correction_impact_assessment": {
+        "assessed_on": "2026-09-01",
+        "related_notice_doi": "10.1038/s41582-025-01111-9",
+        "result": "NO_MATERIAL_IMPACT_ON_MAPPED_HIGH_LEVEL_INTERPRETATION_IDENTIFIED",
+        "basis": "The mapped claim concerns the review's broad converging-process model and does not quote or depend on the corrected Box 2 precursor term.",
+        "claim_text_changed": false,
+        "evidence_label_changed": false,
+        "truth_inference_applied": false
+      }
     }
   ],
   "batch_conclusion": {
@@ -165,5 +267,22 @@
     "neuroscientific_model_proves_complete_explanation": false,
     "review_article_counts_as_primary_experiment": false,
     "model_support_edges_upgrade_evidence": false
+  },
+  "integrity_checkpoint": {
+    "applied_on": "2026-09-01",
+    "review_artifact": "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json",
+    "repair_candidates_applied": [
+      "BQ001-B7-R1",
+      "BQ001-B7-R2",
+      "BQ001-B7-R3",
+      "BQ001-B7-R4"
+    ],
+    "change_scope": "Retrieval metadata, correction provenance, correction-impact assessment and publication-date disambiguation only.",
+    "original_urls_preserved": true,
+    "identifiers_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
   }
 }
