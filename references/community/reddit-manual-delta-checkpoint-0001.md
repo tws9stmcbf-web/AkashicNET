@@ -16,6 +16,7 @@ Review-only holding queue for public Reddit post IDs already present in the inde
 - Live/API verification: **not completed**
 - Pagination completeness: **unresolved**
 - Canonical corpus modification: **none**
+- Provenance review: **corrected and verified against seed v0.3**
 
 ## Guardrails
 
