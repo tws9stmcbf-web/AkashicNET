@@ -32,4 +32,4 @@ jobs:
       - name: Re-run immutable Actions gate
         run: python scripts/validate_actions_immutable_refs.py
       - name: Re-run public data boundary
-        run: python scripts/validate_public_data_boundary.py
+        run: python scripts/check_public_data_boundary.py
