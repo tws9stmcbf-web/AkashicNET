@@ -1,0 +1,16 @@
+{
+  "version": "0.13.0",
+  "scope": "public support and funding boundary",
+  "policy": {
+    "public_knowledge_remains_freely_accessible": true,
+    "support_is_voluntary": true,
+    "support_purchases_scientific_certainty": false,
+    "support_purchases_privileged_conclusions": false,
+    "support_may_influence_evidence_classification": false,
+    "support_may_influence_confidence": false,
+    "support_may_override_provenance": false,
+    "fund_the_question_not_the_answer": true
+  },
+  "evidence_boundary": "Funding and support are operational resources, not evidence for scientific, noetic, paranormal or consciousness-field claims.",
+  "release_invariant": "No payment route or donor status may promote a claim, source, model or conclusion."
+}
