@@ -1,9 +1,10 @@
 {
   "target_version": "0.13.0-beta.1",
   "target_name": "Public Knowledge Beta",
+  "state": "SEALED",
   "release_policy": "exact_commit_fail_closed",
   "validated_integration_baseline": "c986cf14d91edf2274cfd9351a7d330edcff620c",
-  "validated_release_commit": null,
+  "validated_release_commit": "fbb7b6f539947f528383ca13a01639a04471b594",
   "public_safe_counts": {
     "audited_topics": 68,
     "reddit_source_rows": 9401,
@@ -32,5 +33,5 @@
     "Private Drive rows 82-86 remain quarantined until authoritative private mapping exists.",
     "Formal GitHub tag/release publication is a separate mechanical step."
   ],
-  "seal_rule": "Populate validated_release_commit only after the end-to-end v0.13 readiness gate passes on main; do not silently retarget."
+  "seal_rule": "SEALED records the exact already-validated main commit. The later metadata seal commit does not retarget the release."
 }
