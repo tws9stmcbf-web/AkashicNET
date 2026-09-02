@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_scope_selection",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 12,
+  "selected_on": "2026-09-02",
+  "status": "READY_FOR_REVIEW",
+  "selection_rule": "Choose the next bounded, unaudited source-bearing record after completing Batch 11.",
+  "target": {
+    "path": "references/community/one-source-many-paths.md",
+    "blob_sha": "14e2c0eda51b01df6761e9fdfd4ac26c0c998545",
+    "topic": "community and experiential framing of unity, multiplicity and paths beyond the ego"
+  },
+  "preliminary_inventory": {
+    "distinct_external_source_works_observed": 1,
+    "external_url_occurrences": 2,
+    "distinct_url_forms_observed": 1,
+    "source": {
+      "domain": "reddit.com",
+      "community": "r/NeuronsToNirvana",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/"
+    },
+    "existing_strengths": [
+      "Original source URL is explicitly recorded.",
+      "Attribution uncertainty is stated.",
+      "Reuse rights are handled conservatively.",
+      "Community material is explicitly separated from scientific evidence.",
+      "Metaphysical claims are not asserted as established fact."
+    ],
+    "issues_to_review": [
+      "Verify that the Reddit post remains available and has not been deleted.",
+      "Compare the live post title with the repository title and link label.",
+      "Check redirect behavior and whether the two identical URL occurrences should remain as intentional provenance plus rendered link.",
+      "Add publication, source-update and retrieval metadata where observable.",
+      "Check for duplicate references elsewhere without collapsing distinct contextual records.",
+      "Cross-check whether AkashicNET.org references this work, without assuming website promotion."
+    ]
+  },
+  "audit_scope": [
+    "link availability and redirects",
+    "live title and deletion-status comparison",
+    "duplicate-reference detection",
+    "publication and retrieval metadata completeness",
+    "attribution and provenance integrity",
+    "website reference cross-check"
+  ],
+  "guards": {
+    "review_only": true,
+    "preserve_original_url": true,
+    "no_silent_replacement": true,
+    "unavailable_or_changed_does_not_mean_false": true,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_action": "Audit the single Batch 12 source and produce review-only repair candidates."
+}
