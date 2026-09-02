@@ -1,0 +1,142 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_review",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 13,
+  "reviewed_on": "2026-09-02",
+  "status": "REVIEW_COMPLETE_AWAITING_REPAIR_APPROVAL",
+  "target": {
+    "path": "references/community/akashic-library-codex-nexus.md",
+    "blob_sha_reviewed": "d949f2d85fd306534aec8017d360a8cd8c4adacb"
+  },
+  "source": {
+    "source_id": "B13-S1",
+    "type": "Reddit community / conceptual image post",
+    "reddit_post_id": "1l26ks1",
+    "community": "r/NeuronsToNirvana",
+    "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/",
+    "live_status": "AVAILABLE",
+    "deleted": false,
+    "redirect_observed": false,
+    "published_on": "2025-06-03",
+    "retrieved_on": "2026-09-02",
+    "live_title": "💡Project Akashic Library framework 📖 Codex Nexus | Atlantean 🔷 + Alexandrian 🏛️ + Da Vinci ⚙️",
+    "repository_heading": "Project Akashic Library / Codex Nexus",
+    "title_assessment": "SHORT_LABEL_NOT_CONTRADICTORY",
+    "flair_observed": "🌍 🏛️ Atlantean • Project #NewEarth 📜🌀📐🧬",
+    "visual_material_observed": true,
+    "visual_observation": "The live Reddit record is an image post and displays an image. A comment identifies a '2D Flatscreen Version'. No image is reproduced in the canonical GitHub provenance record.",
+    "evidence_boundary_assessment": "PASS",
+    "rights_boundary_assessment": "PASS",
+    "access_note": "A direct open attempt returned Reddit HTTP 429, but a fresh indexed Reddit result fetched the live post title, date, flair and image-post state. Rate limiting is not classified as a broken source.",
+    "notice": "A future change, rate limit or unavailability would not establish falsity."
+  },
+  "summary": {
+    "broken_links": 0,
+    "rate_limited_direct_open_attempts": 1,
+    "redirects": 0,
+    "deleted_posts": 0,
+    "changed_titles": 0,
+    "shortened_title_labels": 1,
+    "exact_url_occurrences_in_target": 2,
+    "distinct_url_forms_in_target": 1,
+    "cross_repository_records_found": 7,
+    "erroneous_duplicate_works_confirmed": 0,
+    "records_with_unknown_or_missing_publication_date_observed": 5,
+    "active_records_with_unknown_visual_status_observed": 2,
+    "website_exact_source_link_matches_found_by_public_search": 0
+  },
+  "cross_repository_occurrences": [
+    {
+      "path": "references/community/akashic-library-codex-nexus.md",
+      "role": "canonical detailed provenance record",
+      "date_state": "missing",
+      "visual_state": "image-post status not explicitly recorded"
+    },
+    {
+      "path": "references/community/n2n-index.md",
+      "role": "human-readable index",
+      "date_state": "not displayed"
+    },
+    {
+      "path": "references/community/n2n-pilot-index.md",
+      "role": "active pilot index",
+      "date_state": "unknown"
+    },
+    {
+      "path": "references/community/n2n-index.csv",
+      "role": "active structured index",
+      "date_state": "unknown",
+      "visual_state": "Unknown"
+    },
+    {
+      "path": "references/community/n2n-test-batch-25.md",
+      "role": "test-batch view",
+      "date_state": "unknown"
+    },
+    {
+      "path": "references/community/n2n-test-batch-25.csv",
+      "role": "test-batch structured record",
+      "date_state": "unknown",
+      "visual_state": "Unknown"
+    },
+    {
+      "path": "tools/n2n/dryrun/25_post_test.jsonl",
+      "role": "historical dry-run artifact",
+      "date_state": "unknown",
+      "visual_state": "Unknown",
+      "preservation_note": "Preserve as historical output; do not silently rewrite it as if later metadata had been present during the dry run."
+    }
+  ],
+  "duplicate_assessment": {
+    "normalized_work_count": 1,
+    "repository_occurrence_count": 7,
+    "classification": "INTENTIONAL_MULTI_RECORD_REFERENCE_WITH_PROVENANCE_DRIFT",
+    "reason": "Canonical, index, pilot, test and historical records refer to the same Reddit work. They should be linked by post ID rather than blindly deleted or collapsed."
+  },
+  "website_cross_check": {
+    "method": "Public search for the exact source title, short title and Reddit source on site:akashicnet.org.",
+    "exact_source_link_found": false,
+    "related_concept_found": "AkashicNET.org describes its public architecture and AkashicNET frameworks, but conceptual overlap is not treated as a citation to this source.",
+    "limitation": "Search-index absence does not prove total live-site absence.",
+    "website_promotion_authorized": false
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "B13-R1",
+      "action": "Add Reddit post ID 1l26ks1, full observed title, publication date 3 June 2025, retrieval date 2 September 2026 and observed flair to the canonical record while preserving its shorter heading and original URL.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B13-R2",
+      "action": "Record that the source is an image post, while retaining the no-reproduction and permission-unconfirmed rights boundary.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B13-R3",
+      "action": "Refresh active pilot and structured-index date/visual metadata to 2025-06-03 and Yes; preserve historical dry-run output unchanged and treat test-batch artifacts as historical unless separately regenerated.",
+      "risk": "MEDIUM",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B13-R4",
+      "action": "Add a normalized-work linkage keyed by Reddit post ID 1l26ks1 so repeated repository contexts are recognized as one source work without collapsing their distinct roles.",
+      "risk": "LOW",
+      "requires_approval": true
+    }
+  ],
+  "guards": {
+    "review_only": true,
+    "preserve_original_url": true,
+    "no_silent_replacement": true,
+    "rate_limit_does_not_mean_broken": true,
+    "unavailable_or_changed_does_not_mean_false": true,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_action": "Obtain explicit approval for B13-R1 through B13-R4 before changing canonical or active index records."
+}
