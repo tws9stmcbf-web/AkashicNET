@@ -1,0 +1,139 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_review",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 10,
+  "question_id": "BQ001",
+  "canonical_input": "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+  "reviewed_at": "2026-09-02",
+  "mode": "REVIEW_ONLY",
+  "guards": {
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "silent_source_replacement": false
+  },
+  "scope": {
+    "github_sources": 3,
+    "website_route": "https://akashicnet.org/big-questions/bq001"
+  },
+  "summary": {
+    "sources_checked": 3,
+    "broken_links": 0,
+    "unavailable_at_authoritative_index": 0,
+    "publisher_access_constraints": 2,
+    "redirects_observed": 1,
+    "changed_titles": 0,
+    "retraction_or_correction_notices_observed": 0,
+    "deleted_posts": 0,
+    "duplicate_references": 0,
+    "missing_or_incomplete_provenance": 3,
+    "repair_candidates": 4
+  },
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-XU-PNAS-2023",
+      "original_url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
+      "status": "AVAILABLE_VIA_PUBLISHER_SEARCH_AND_PUBMED_INDEX",
+      "publisher_direct_check": "HTTP_403_ACCESS_CONTROL",
+      "title_match": true,
+      "identifiers": {
+        "doi": "10.1073/pnas.2216268120",
+        "pmid": "37126719",
+        "pmcid_observed": "PMC10175832"
+      },
+      "bibliographic_metadata_observed": {
+        "published": "2023-05-09",
+        "epublished": "2023-05-01",
+        "volume": "120",
+        "issue": "19",
+        "pages": "e2216268120"
+      },
+      "notice_check": "NO_RETRACTION_OR_CORRECTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "note": "Publisher access control is not classified as a broken or false source."
+    },
+    {
+      "source_id": "SRC-BQ001-COGITATE-2025",
+      "original_url": "https://www.nature.com/articles/s41586-025-08888-1",
+      "status": "AVAILABLE_VIA_PUBLISHER_SEARCH_AND_PUBMED_INDEX",
+      "publisher_direct_check": "REDIRECT_TO_IDENTITY_COOKIE_GATE",
+      "title_match": true,
+      "identifiers": {
+        "doi": "10.1038/s41586-025-08888-1",
+        "pmid_observed": "40307561",
+        "pmcid_observed": "PMC12137136"
+      },
+      "bibliographic_metadata_observed": {
+        "published": "2025-06",
+        "epublished": "2025-04-30",
+        "volume": "642",
+        "issue": "8066",
+        "pages": "133-142"
+      },
+      "notice_check": "NO_RETRACTION_OR_CORRECTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "note": "Publisher identity-cookie redirect is documented; the original URL remains canonical and is not replaced."
+    },
+    {
+      "source_id": "SRC-BQ001-PARNIA-GUIDELINES-2022",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/35181885/",
+      "status": "AVAILABLE",
+      "title_match": true,
+      "identifiers": {
+        "doi": "10.1111/nyas.14740",
+        "pmid": "35181885"
+      },
+      "bibliographic_metadata_observed": {
+        "published": "2022-05",
+        "epublished": "2022-02-18",
+        "volume": "1511",
+        "issue": "1",
+        "pages": "5-21"
+      },
+      "notice_check": "NO_RETRACTION_OR_CORRECTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "related_commentaries_observed": [
+        {
+          "title": "Sawing the branch of near-death experience research: A critical analysis of Parnia et al.'s paper",
+          "doi": "10.1111/nyas.14846",
+          "pmid": "35729792"
+        },
+        {
+          "title": "Studying death and near-death experiences requires neuroscientific expertise",
+          "doi": "10.1111/nyas.14888",
+          "pmid": "36017883"
+        }
+      ],
+      "note": "The canonical batch already references the Martial et al. critique but does not record the additional Evrard et al. commentary."
+    }
+  ],
+  "website_cross_check": {
+    "status": "ALIGNED",
+    "source_links_present": 3,
+    "original_urls_preserved": true,
+    "duplicate_links_in_rendered_source_list": 0,
+    "display_labels_are_editorial_summaries_not_bibliographic_title_replacements": true,
+    "question_status": "UNRESOLVED"
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "B10-R1",
+      "action": "Refresh link_check dates and add retrieval method/status metadata for all three sources.",
+      "preserves_original_urls": true
+    },
+    {
+      "candidate_id": "B10-R2",
+      "action": "Add PMCID PMC10175832 and complete volume, issue, pages and electronic-publication metadata for Xu et al.",
+      "preserves_original_urls": true
+    },
+    {
+      "candidate_id": "B10-R3",
+      "action": "Add PMID 40307561, PMCID PMC12137136 and complete volume, issue, pages and electronic-publication metadata for the Cogitate study.",
+      "preserves_original_urls": true
+    },
+    {
+      "candidate_id": "B10-R4",
+      "action": "Record both PubMed-linked critical commentaries for Parnia et al. as related provenance; retain the existing Martial pairing and do not promote either commentary into claim evidence automatically.",
+      "preserves_original_urls": true
+    }
+  ],
+  "decision": "AWAITING_USER_APPROVAL",
+  "caveat": "Changed or unavailable access state is not evidence that a source or its claims are false."
+}
