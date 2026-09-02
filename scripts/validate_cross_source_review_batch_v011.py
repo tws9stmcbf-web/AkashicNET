@@ -4,12 +4,16 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from scripts.validate_cross_source_edge_provenance_v01 import validate as validate_contract
 
-ROOT = Path(__file__).resolve().parents[1]
 BATCH = ROOT / "references/community/cross-source-review-batch-v0.1.1.json"
 REDDIT = ROOT / "references/community/n2n-test-batch-25.csv"
 DRIVE_SEED = ROOT / "references/community/knowledge-graph-seed-v0.1.md"
