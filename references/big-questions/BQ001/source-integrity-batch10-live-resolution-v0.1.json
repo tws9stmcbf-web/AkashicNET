@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_live_resolution",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 10,
+  "question_id": "BQ001",
+  "verified_at": "2026-09-02T10:48:40Z",
+  "status": "RESOLVED_VERIFIED_LIVE",
+  "target": {
+    "custom_domain_url": "https://akashicnet.org/big-questions/bq001",
+    "effective_url": "https://akashicnet.org/big-questions/bq001",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "sites_version": 86,
+    "deployment_id": "appgdep_6a97fdd70b7c8191b7fa91a2062f2586",
+    "source_commit": "ddc3ffb38a30ff3f9850325dc5f65016b51f5c6f",
+    "repair_commit": "fcf512f088c288e92f877c602809a868516ef979"
+  },
+  "verification": {
+    "corrected_provenance_text": "source links checked 2 September 2026.",
+    "corrected_provenance_text_present": true,
+    "prior_provenance_text_absent": true,
+    "external_source_links_total": 13,
+    "batch5_original_urls": [
+      {
+        "url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
+        "occurrences": 1
+      },
+      {
+        "url": "https://www.nature.com/articles/s41586-025-08888-1",
+        "occurrences": 1
+      },
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35181885/",
+        "occurrences": 1
+      }
+    ],
+    "duplicate_batch5_links": false,
+    "current_status_unresolved": true
+  },
+  "guards": {
+    "original_urls_preserved": true,
+    "source_cards_changed": false,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "conclusion_changed": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "silent_source_replacement": false
+  },
+  "caveat": "Availability, access controls or later source changes are not treated as evidence that a source or its claims are false."
+}
