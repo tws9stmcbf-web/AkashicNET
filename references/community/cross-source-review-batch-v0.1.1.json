@@ -1,0 +1,117 @@
+{
+  "schema_version": "0.1",
+  "policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "confidence_from_representation_count_allowed": false,
+    "circular_confidence_allowed": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "artifact:reddit-n2n-test-batch-25:2026-09-02",
+      "version": "git:a004ccae3a1e650313eea682ac03185f18387012",
+      "sha256": "9e7f1b1036bee1f48e399ba5f9bec0a9b509626602b6ebc09de5eb8b6b7b514c",
+      "source_domain": "reddit-public-metadata",
+      "independence_key": "source:reddit-index:n2n-test-batch-25",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+      "version": "git:4c71acc4c10ff7fae61023dfcdba973ff9fa1b7b",
+      "sha256": "2ff59b08c528c92f4161ddb153f990ed56486c2a9cf8c475fe9351cc65e596ab",
+      "source_domain": "drive-public-safe-seed",
+      "independence_key": "source:drive-public-seed:stage-b-v0.1",
+      "public_safe": true
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge:review-batch-0001",
+      "source": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:2026-09-02",
+        "record_id": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps/"
+      },
+      "target": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "VIVEKANANDA-001"
+      },
+      "relationship": "THEMATIC_OVERLAP_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-02T08:20:00Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:reddit-n2n-test-batch-25:2026-09-02",
+        "artifact:drive-knowledge-graph-seed:0.1"
+      ],
+      "generator": {
+        "name": "cross_source_review_batch",
+        "version": "0.1.1",
+        "parameters_digest": "b53e811ccce4452f88c86e8a043fe657582b1a97ef70a9c2dffe84e2207ccdbd"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:review-batch-0002",
+      "source": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:2026-09-02",
+        "record_id": "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred/"
+      },
+      "target": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "ABRAMELIN-001"
+      },
+      "relationship": "LEXICAL_OVERLAP_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-02T08:20:00Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:reddit-n2n-test-batch-25:2026-09-02",
+        "artifact:drive-knowledge-graph-seed:0.1"
+      ],
+      "generator": {
+        "name": "cross_source_review_batch",
+        "version": "0.1.1",
+        "parameters_digest": "b53e811ccce4452f88c86e8a043fe657582b1a97ef70a9c2dffe84e2207ccdbd"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:review-batch-0003",
+      "source": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:2026-09-02",
+        "record_id": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding/"
+      },
+      "target": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "GNOSIS-ECHOES-001"
+      },
+      "relationship": "INTERPRETIVE_CONTEXT_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-02T08:20:00Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:reddit-n2n-test-batch-25:2026-09-02",
+        "artifact:drive-knowledge-graph-seed:0.1"
+      ],
+      "generator": {
+        "name": "cross_source_review_batch",
+        "version": "0.1.1",
+        "parameters_digest": "b53e811ccce4452f88c86e8a043fe657582b1a97ef70a9c2dffe84e2207ccdbd"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    }
+  ]
+}
