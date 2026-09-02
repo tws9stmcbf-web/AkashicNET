@@ -7,7 +7,7 @@ feed_rank,subreddit,reddit_post_id,canonical_url,observed_at,discovery_source,li
 6,NeuronsToNirvana,1vssvtl,https://www.reddit.com/r/NeuronsToNirvana/comments/1vssvtl/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
 7,NeuronsToNirvana,1vsohu0,https://www.reddit.com/r/NeuronsToNirvana/comments/1vsohu0/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
 8,NeuronsToNirvana,1vs71u5,https://www.reddit.com/r/NeuronsToNirvana/comments/1vs71u5/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
-9,NeuronsToNirvana,1vrwp5r,https://www.reddit.com/r/NeuronsToNirvana/comments/1vrwp5r/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
+9,NeuronsToNirvana,1vrwp5r,https://www.reddit.com/r/NeuronsToNirvana/comments/1vrwp5r/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,true,duplicate_existing_hold,HOLD,3
 10,NeuronsToNirvana,1vrt80y,https://www.reddit.com/r/NeuronsToNirvana/comments/1vrt80y/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
 11,NeuronsToNirvana,1vrpywj,https://www.reddit.com/r/NeuronsToNirvana/comments/1vrpywj/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
 12,NeuronsToNirvana,1vrnx4i,https://www.reddit.com/r/NeuronsToNirvana/comments/1vrnx4i/,2026-09-01,public_subreddit_new_feed,publicly_accessible,false,false,new_manual_candidate,HOLD,3
