@@ -1,0 +1,44 @@
+{
+  "target_version": "0.14.0-beta.1",
+  "target_name": "Provenance Integrity Beta",
+  "status": "CANDIDATE_BLOCKED",
+  "approved_on": "2026-09-02",
+  "readiness_policy": "exact_commit_fail_closed",
+  "v014_declared": false,
+  "immutable_baseline": {
+    "version": "0.13.0-beta.1",
+    "state": "SEALED",
+    "validated_release_commit": "fbb7b6f539947f528383ca13a01639a04471b594",
+    "retargetable": false
+  },
+  "criteria": {
+    "V014-C1_release_scoped_url_inventory_complete": "BLOCKED",
+    "V014-C2_retrieval_metadata_complete": "BLOCKED",
+    "V014-C3_no_silent_url_or_title_replacement": "PARTIAL",
+    "V014-C4_duplicate_linkage_preserves_context": "PARTIAL",
+    "V014-C5_retraction_metadata_explicit_where_applicable": "BLOCKED",
+    "V014-C6_github_website_source_sync": "PARTIAL",
+    "V014-C7_edge_level_provenance_and_candidate_separation": "PARTIAL",
+    "V014-C8_fail_closed_promotion_and_privacy_controls": "REVALIDATION_REQUIRED",
+    "V014-C9_exact_candidate_commit_ci_green": "PENDING",
+    "V014-C10_candidate_manifest_and_ledger_append_reviewed": "PENDING"
+  },
+  "required_inventory": "references/community/public-source-url-inventory-v0.14.json",
+  "inventory_generator": "scripts/build_public_source_url_inventory_v014.py",
+  "release_blockers": [
+    "Generate and commit the release-scoped external URL inventory.",
+    "Review every inventory entry and add retrieval, redirect, title and retraction metadata without inferring truth.",
+    "Validate GitHub/website synchronization, duplicate linkage, edge provenance, privacy and promotion controls.",
+    "Run the complete required CI set at one exact candidate commit.",
+    "Create a review-only v0.14 release manifest before any ledger append or release seal."
+  ],
+  "fixed_invariants": {
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "private_drive_promotion": false,
+    "circular_confidence_amplification": false,
+    "silent_source_replacement": false,
+    "unavailable_source_is_false": false
+  }
+}
