@@ -3,17 +3,29 @@ name: Validate v0.14 source coverage
 on:
   pull_request:
     paths:
-      - 'references/community/source-coverage-v0.14.json'
-      - 'references/source-integrity-batch12-review-v0.1.json'
-      - 'references/source-integrity-batch13-review-v0.1.json'
+      - 'references/**'
+      - 'data/**'
+      - 'docs/**'
+      - 'modules/**'
+      - 'README.md'
+      - 'ROADMAP.md'
+      - 'CHANGELOG.md'
+      - 'SECURITY.md'
+      - 'CONTRIBUTING.md'
       - 'scripts/validate_source_coverage_v014.py'
       - '.github/workflows/validate-source-coverage-v014.yml'
   push:
     branches: [main]
     paths:
-      - 'references/community/source-coverage-v0.14.json'
-      - 'references/source-integrity-batch12-review-v0.1.json'
-      - 'references/source-integrity-batch13-review-v0.1.json'
+      - 'references/**'
+      - 'data/**'
+      - 'docs/**'
+      - 'modules/**'
+      - 'README.md'
+      - 'ROADMAP.md'
+      - 'CHANGELOG.md'
+      - 'SECURITY.md'
+      - 'CONTRIBUTING.md'
       - 'scripts/validate_source_coverage_v014.py'
       - '.github/workflows/validate-source-coverage-v014.yml'
 
@@ -30,7 +42,9 @@ jobs:
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.x'
-      - name: Validate source coverage contract
+      - name: Generate and validate complete source denominator
         run: python scripts/validate_source_coverage_v014.py
+      - name: Require generated machine-readable inventory
+        run: test -s artifacts/source-coverage-v0.14.generated.json
       - name: Re-run immutable Actions gate
         run: python scripts/validate_actions_immutable_refs.py
