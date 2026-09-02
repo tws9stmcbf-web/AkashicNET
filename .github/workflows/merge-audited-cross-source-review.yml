@@ -1,0 +1,55 @@
+name: Merge human-reviewed cross-source packet
+
+on:
+  pull_request_target:
+    types: [labeled]
+
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  pull-requests: write
+
+jobs:
+  exact-head-merge:
+    if: >-
+      github.event.label.name == 'human-reviewed' &&
+      github.event.sender.login == github.repository_owner &&
+      startsWith(github.event.pull_request.head.ref, 'automation/audited-cross-source-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Verify packet-only diff, exact head, and validation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          EXPECTED_FILE: references/community/cross-source-orchestrator-review-v0.1.8.json
+        run: |
+          current_head="$(gh pr view "$PR_NUMBER" --repo "$REPOSITORY" --json headRefOid --jq .headRefOid)"
+          test "$current_head" = "$HEAD_SHA"
+
+          mapfile -t changed_files < <(gh api --paginate "repos/$REPOSITORY/pulls/$PR_NUMBER/files" --jq '.[].filename')
+          test "${#changed_files[@]}" -eq 1
+          test "${changed_files[0]}" = "$EXPECTED_FILE"
+
+          conclusion=""
+          for attempt in $(seq 1 60); do
+            conclusion="$(gh api "repos/$REPOSITORY/commits/$HEAD_SHA/check-runs" \
+              --jq '[.check_runs[] | select(.name == "validate-orchestrator")][0].conclusion // empty')"
+            if [ "$conclusion" = "success" ]; then
+              break
+            fi
+            if [ -n "$conclusion" ] && [ "$conclusion" != "null" ]; then
+              echo "Exact-head validation concluded: $conclusion"
+              exit 1
+            fi
+            sleep 10
+          done
+          test "$conclusion" = "success"
+
+          current_head="$(gh pr view "$PR_NUMBER" --repo "$REPOSITORY" --json headRefOid --jq .headRefOid)"
+          test "$current_head" = "$HEAD_SHA"
+          gh pr ready "$PR_NUMBER" --repo "$REPOSITORY"
+          gh pr merge "$PR_NUMBER" --repo "$REPOSITORY" --squash --delete-branch --match-head-commit "$HEAD_SHA"

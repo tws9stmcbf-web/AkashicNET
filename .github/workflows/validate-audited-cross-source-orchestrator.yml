@@ -1,0 +1,46 @@
+name: Validate audited cross-source orchestrator
+
+on:
+  pull_request:
+    paths:
+      - "scripts/prepare_audited_cross_source_review.py"
+      - "tests/test_prepare_audited_cross_source_review.py"
+      - "references/community/cross-source-orchestrator-review-v0.1.8.json"
+      - ".github/workflows/audited-cross-source-orchestrator.yml"
+      - ".github/workflows/merge-audited-cross-source-review.yml"
+      - ".github/workflows/validate-audited-cross-source-orchestrator.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/prepare_audited_cross_source_review.py"
+      - "tests/test_prepare_audited_cross_source_review.py"
+      - "references/community/cross-source-orchestrator-review-v0.1.8.json"
+      - ".github/workflows/audited-cross-source-orchestrator.yml"
+      - ".github/workflows/merge-audited-cross-source-review.yml"
+      - ".github/workflows/validate-audited-cross-source-orchestrator.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-orchestrator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Confirm deterministic review packet
+        run: python scripts/prepare_audited_cross_source_review.py --check
+      - name: Run fail-closed tests
+        run: python -m unittest -v tests/test_prepare_audited_cross_source_review.py
+      - name: Compile generator and tests
+        run: python -m py_compile scripts/prepare_audited_cross_source_review.py tests/test_prepare_audited_cross_source_review.py
+      - name: Confirm merge gate invariants
+        run: |
+          grep -F 'github.event.sender.login == github.repository_owner' .github/workflows/merge-audited-cross-source-review.yml
+          grep -F -- '--match-head-commit "$HEAD_SHA"' .github/workflows/merge-audited-cross-source-review.yml
+          grep -F 'references/community/cross-source-orchestrator-review-v0.1.8.json' .github/workflows/merge-audited-cross-source-review.yml
+          grep -F 'human-reviewed' .github/workflows/merge-audited-cross-source-review.yml
