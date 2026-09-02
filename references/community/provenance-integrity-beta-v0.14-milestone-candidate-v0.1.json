@@ -1,0 +1,113 @@
+{
+  "proposal_id": "AKASHICNET-V014-MILESTONE-CANDIDATE",
+  "artifact_version": "0.1.0",
+  "proposed_on": "2026-09-02",
+  "status": "REVIEW_ONLY_NOT_RELEASED",
+  "target_version": "0.14.0-beta.1",
+  "proposed_name": "Provenance Integrity Beta",
+  "proposed_public_label": "v0.14.0-beta.1 · PROVENANCE INTEGRITY BETA · CANDIDATE",
+  "rationale": "The next bounded milestone should convert post-v0.13 source audits, link repair records, and cross-source provenance controls into a release-wide, reproducible integrity layer. The name does not claim source truth or comprehensive scientific validation.",
+  "immutable_baseline": {
+    "version": "0.13.0-beta.1",
+    "name": "Public Knowledge Beta",
+    "state": "SEALED",
+    "validated_release_commit": "fbb7b6f539947f528383ca13a01639a04471b594",
+    "must_not_retarget": true
+  },
+  "observed_post_v013_work": {
+    "observation_commit": "66ba1daff92d14595f42cde970b6bcb14e72a08c",
+    "source_integrity_batches_completed_through": 13,
+    "source_integrity_batch13_application": "references/source-integrity-batch13-repair-application-v0.1.json",
+    "anchor_evidence_contract_commit": "bd1de5fb1cfc99d95faad17d16a06c32e1c2a0ef",
+    "cross_source_qualification_batch4_commit": "66ba1daff92d14595f42cde970b6bcb14e72a08c",
+    "note": "These are candidate inputs, not by themselves proof of v0.14 readiness."
+  },
+  "readiness_policy": "exact_commit_fail_closed",
+  "proposed_required_criteria": [
+    {
+      "id": "V014-C1",
+      "criterion": "Release-scoped external URL inventory exists and deterministically enumerates every source included in the v0.14 public release boundary.",
+      "pass_condition": "Inventory validator reports complete coverage with stable source IDs and preserved original URLs.",
+      "current_status": "MISSING"
+    },
+    {
+      "id": "V014-C2",
+      "criterion": "Every inventoried URL has retrieval metadata and a machine-readable status that distinguishes available, redirected, unavailable, rate-limited, and unchecked.",
+      "pass_condition": "No missing status; unavailable or changed sources are not classified as false.",
+      "current_status": "PARTIAL"
+    },
+    {
+      "id": "V014-C3",
+      "criterion": "Redirects and changed titles retain original values alongside observed values; replacements are explicit repair candidates with approval records.",
+      "pass_condition": "Validator finds no silent URL or title replacement.",
+      "current_status": "PARTIAL"
+    },
+    {
+      "id": "V014-C4",
+      "criterion": "Duplicate references are linked by normalized work keys without collapsing distinct provenance contexts.",
+      "pass_condition": "Duplicate/linkage validator passes and produces no provenance-loss error.",
+      "current_status": "PARTIAL"
+    },
+    {
+      "id": "V014-C5",
+      "criterion": "Retraction and withdrawal metadata is recorded where applicable without automatically changing claim truth status.",
+      "pass_condition": "Applicable scholarly records are checked or explicitly marked unchecked; no automatic truth inference occurs.",
+      "current_status": "NOT_RELEASE_SCOPED"
+    },
+    {
+      "id": "V014-C6",
+      "criterion": "GitHub canonical records and AkashicNET.org release-scoped source displays are synchronized.",
+      "pass_condition": "Deterministic comparison passes, or every difference is explicitly approved and documented.",
+      "current_status": "PARTIAL"
+    },
+    {
+      "id": "V014-C7",
+      "criterion": "Cross-source graph relationships preserve edge-level provenance and separate asserted links from inferred candidates.",
+      "pass_condition": "Anchor-evidence and qualification validators pass with no circular confidence amplification.",
+      "current_status": "PARTIAL"
+    },
+    {
+      "id": "V014-C8",
+      "criterion": "Privacy, rights, evidence, and promotion controls remain fail-closed.",
+      "pass_condition": "Truth inference, scientific-evidence promotion, rights promotion, and private-Drive promotion are all false; privacy tests pass.",
+      "current_status": "GUARD_DEFINED_REVALIDATION_REQUIRED"
+    },
+    {
+      "id": "V014-C9",
+      "criterion": "All required validators execute successfully at one exact candidate commit.",
+      "pass_condition": "Required CI checks are green at the candidate SHA; skipped required checks fail readiness.",
+      "current_status": "PENDING"
+    },
+    {
+      "id": "V014-C10",
+      "criterion": "A reproducible v0.14 release manifest and an append-only release-ledger entry are reviewed before sealing.",
+      "pass_condition": "Manifest is CANDIDATE first; ledger append occurs only after explicit approval and validation.",
+      "current_status": "PENDING"
+    }
+  ],
+  "release_blockers": [
+    "No release-wide external URL coverage manifest currently proves the audit denominator.",
+    "No exact v0.14 candidate commit has passed the complete proposed validator set.",
+    "No v0.14 release manifest or approved append-only release-ledger entry exists."
+  ],
+  "exclusions": [
+    "This proposal does not declare or seal v0.14.",
+    "It does not imply that unavailable or changed sources are false.",
+    "It does not promote community material or speculative content to scientific evidence.",
+    "It does not grant reuse rights.",
+    "It does not publish private Drive identifiers, paths, timestamps, or file-linked hashes."
+  ],
+  "fixed_guards": {
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "private_drive_promotion": false,
+    "circular_confidence_amplification": false,
+    "silent_source_replacement": false
+  },
+  "decision_required": {
+    "candidate_id": "V014-D1",
+    "question": "Approve the milestone name 'Provenance Integrity Beta' and criteria V014-C1 through V014-C10 as the v0.14 readiness contract?",
+    "effect_of_approval": "Authorizes creation of the readiness schema/validator and coverage inventory; does not authorize release promotion or sealing."
+  }
+}
