@@ -1,0 +1,753 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH1-REVIEW",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-02",
+  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "scope_artifact": "references/source-integrity-v014-assessment-batch1-scope-v0.1.json",
+  "assessed_source_count": 25,
+  "methodology": {
+    "direct_url_probe": true,
+    "authoritative_metadata_sources": [
+      "NCBI PubMed EFetch XML",
+      "Crossref Works API",
+      "publisher pages"
+    ],
+    "repository_comparison_paths": [
+      "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+      "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+      "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+      "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+      "research/microdosing-research-2026.md",
+      "research/consciousness-processing-under-anaesthesia-2026.md"
+    ],
+    "interpretation_note": "HTTP 203, anti-bot challenges, cookie-query redirects and timeouts are access observations, not broken-link or truth determinations."
+  },
+  "summary": {
+    "broken_links": 0,
+    "deleted_or_vanished_sources": 0,
+    "substantive_title_drift": 0,
+    "retractions_identified": 0,
+    "corrections_identified": 1,
+    "erratum_relations_identified": 1,
+    "same_work_equivalence_groups": 2,
+    "unique_urls_in_equivalence_groups": 5,
+    "direct_timeout_with_authoritative_metadata_resolution": 2,
+    "all_sources_resolved_to_authoritative_metadata": true
+  },
+  "equivalence_groups": [
+    {
+      "group_id": "EQ-MICRODOSING-2026",
+      "classification": "SAME_SCHOLARLY_WORK_DIFFERENT_URL_FORMS",
+      "source_ids": [
+        "URL-061e39e7ec474496",
+        "URL-2a0ed05c12b37277",
+        "URL-81c6321f81e46c1c"
+      ],
+      "identifiers": {
+        "doi": "10.1016/j.drugpo.2026.105459",
+        "pmid": "42566966",
+        "pii": "S0955395926003129"
+      },
+      "action": "PRESERVE_ALL_URLS_AND_ADD_EXPLICIT_EQUIVALENCE_METADATA"
+    },
+    {
+      "group_id": "EQ-SART-2012",
+      "classification": "SAME_SCHOLARLY_WORK_DIFFERENT_URL_FORMS",
+      "source_ids": [
+        "URL-1e6c5b1a69952f13",
+        "URL-6962bd5db659bb3d"
+      ],
+      "identifiers": {
+        "doi": "10.3389/fnhum.2012.00296",
+        "pmid": "23112770"
+      },
+      "action": "PRESERVE_ALL_URLS_AND_ADD_EXPLICIT_EQUIVALENCE_METADATA"
+    }
+  ],
+  "repair_candidates": [
+    {
+      "candidate_id": "V014-B1-R1",
+      "priority": "HIGH",
+      "type": "ADD_ERRATUM_PROVENANCE",
+      "targets": [
+        "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+        "references/community/bq001-scientific-baseline-batch1.json"
+      ],
+      "source_id": "URL-7243f68759578898",
+      "proposed_change": "Append the Crossref-reported erratum relation DOI 10.1038/nrn.2016.61 to retrieval/provenance metadata.",
+      "preserve_original_url": true,
+      "replace_source": false,
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B1-R2",
+      "priority": "MEDIUM",
+      "type": "ADD_MACHINE_READABLE_EQUIVALENCE",
+      "targets": [
+        "research/microdosing-research-2026.md",
+        "v0.14 inventory assessment metadata"
+      ],
+      "equivalence_group": "EQ-MICRODOSING-2026",
+      "proposed_change": "Record DOI, ScienceDirect PII and PubMed URLs as three preserved identifiers/routes for one work; do not deduplicate by deletion.",
+      "preserve_original_urls": true,
+      "replace_source": false,
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B1-R3",
+      "priority": "MEDIUM",
+      "type": "ADD_MACHINE_READABLE_EQUIVALENCE",
+      "targets": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "v0.14 inventory assessment metadata"
+      ],
+      "equivalence_group": "EQ-SART-2012",
+      "proposed_change": "Record the PubMed and Frontiers URLs as two preserved routes for one work.",
+      "preserve_original_urls": true,
+      "replace_source": false,
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B1-R4",
+      "priority": "LOW",
+      "type": "APPEND_ACCESS_OBSERVATIONS",
+      "targets": [
+        "affected canonical link_check metadata"
+      ],
+      "source_ids": [
+        "URL-061e39e7ec474496",
+        "URL-2a0ed05c12b37277"
+      ],
+      "proposed_change": "Append the 2026-09-02 direct timeouts and successful authoritative metadata resolution without changing canonical URLs.",
+      "preserve_original_urls": true,
+      "replace_source": false,
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    }
+  ],
+  "assessments": [
+    {
+      "source_id": "URL-014a8d26480578c1",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/35181885/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/35181885/",
+      "observed_title": "Guidelines and standards for the study of death and recalled experiences of death--a multidisciplinary consensus statement and proposed future directions.",
+      "persistent_identifiers": {
+        "pmid": "35181885",
+        "doi": "10.1111/nyas.14740"
+      },
+      "title_drift": "ORTHOGRAPHIC_PUNCTUATION_ONLY",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "COMMENTED_ON_BY_PMID_35729792",
+        "COMMENTED_ON_BY_PMID_36017883"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-026bc93668bb6030",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+      "observed_title": "Academic studies on claimed past-life memories: A scoping review.",
+      "persistent_identifiers": {
+        "pmid": "34147343",
+        "doi": "10.1016/j.explore.2021.05.006"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-061e39e7ec474496",
+      "original_url": "https://doi.org/10.1016/j.drugpo.2026.105459",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA_WITH_DIRECT_TIMEOUT",
+      "http_status_or_access_result": "DIRECT_PROBE_TIMEOUT; DOI_REDIRECT_OBSERVED_BY_WEB_RETRIEVAL",
+      "redirect_chain": [
+        "https://doi.org/10.1016/j.drugpo.2026.105459",
+        "https://linkinghub.elsevier.com/retrieve/pii/S0955395926003129"
+      ],
+      "final_observed_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955395926003129",
+      "observed_title": "Microdosing psychedelics: What, why, when, and how often? Insights from an international survey of people who use psychedelics",
+      "persistent_identifiers": {
+        "doi": "10.1016/j.drugpo.2026.105459",
+        "pmid": "42566966",
+        "pii": "S0955395926003129"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-MICRODOSING-2026"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "WEB_REDIRECT_OBSERVATION",
+        "CROSSREF_WORKS_API",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-08879a4baf1fa0a1",
+      "original_url": "https://www.nature.com/articles/s42003-024-06613-8",
+      "availability": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [
+        "CANONICAL_URL",
+        "SAME_URL_WITH_TRANSIENT_error=cookies_not_supported_QUERY"
+      ],
+      "final_observed_url": "https://www.nature.com/articles/s42003-024-06613-8?error=cookies_not_supported&code=<transient>",
+      "observed_title": "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity",
+      "persistent_identifiers": {
+        "doi": "10.1038/s42003-024-06613-8"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-0c9b1cfb4a6b5003",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/40159547/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/40159547/",
+      "observed_title": "A neuroscientific model of near-death experiences.",
+      "persistent_identifiers": {
+        "pmid": "40159547",
+        "doi": "10.1038/s41582-025-01072-z"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "AUTHOR_CORRECTION_PMID_40506563",
+        "AUTHOR_CORRECTION_DOI_10.1038/s41582-025-01111-9"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-1ac3b008f7810ce2",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/36165349/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/36165349/",
+      "observed_title": "Developments in the functions of autobiographical memory: An advanced review.",
+      "persistent_identifiers": {
+        "pmid": "36165349",
+        "doi": "10.1002/wcs.1625"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-1e6c5b1a69952f13",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "observed_title": "Self-awareness, self-regulation, and self-transcendence (S-ART): a framework for understanding the neurobiological mechanisms of mindfulness.",
+      "persistent_identifiers": {
+        "pmid": "23112770",
+        "doi": "10.3389/fnhum.2012.00296"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-SART-2012"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-215ce0460d6daaef",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "observed_title": "Children who speak of past-life experiences: is there a psychological explanation?",
+      "persistent_identifiers": {
+        "pmid": "12689435",
+        "doi": "10.1348/14760830260569256"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-26bbe6dc2ce3eab5",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/39341119/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/39341119/",
+      "observed_title": "Children who claim previous life memories: A case report and literature review.",
+      "persistent_identifiers": {
+        "pmid": "39341119",
+        "doi": "10.1016/j.explore.2024.103063"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-2a0ed05c12b37277",
+      "original_url": "https://www.sciencedirect.com/science/article/pii/S0955395926003129",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA_WITH_DIRECT_TIMEOUT",
+      "http_status_or_access_result": "DIRECT_PROBE_TIMEOUT",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": "Microdosing psychedelics: What, why, when, and how often? Insights from an international survey of people who use psychedelics",
+      "persistent_identifiers": {
+        "doi": "10.1016/j.drugpo.2026.105459",
+        "pmid": "42566966",
+        "pii": "S0955395926003129"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-MICRODOSING-2026"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "CROSSREF_WORKS_API",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-523ed463a92bbb6f",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/40627512/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_200_OK; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/40627512/",
+      "observed_title": "What do the cases of the reincarnation type tell us about the mind beyond the brain?",
+      "persistent_identifiers": {
+        "pmid": "40627512",
+        "doi": "10.1080/09540261.2025.2466484"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-5d9867b13d825598",
+      "original_url": "https://www.nature.com/articles/s41586-025-08888-1",
+      "availability": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [
+        "CANONICAL_URL",
+        "SAME_URL_WITH_TRANSIENT_error=cookies_not_supported_QUERY"
+      ],
+      "final_observed_url": "https://www.nature.com/articles/s41586-025-08888-1?error=cookies_not_supported&code=<transient>",
+      "observed_title": "Adversarial testing of global neuronal workspace and integrated information theories of consciousness",
+      "persistent_identifiers": {
+        "doi": "10.1038/s41586-025-08888-1",
+        "pmid": "40307561"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-6962bd5db659bb3d",
+      "original_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full",
+      "observed_title": "Self-awareness, self-regulation, and self-transcendence (S-ART): a framework for understanding the neurobiological mechanisms of mindfulness",
+      "persistent_identifiers": {
+        "doi": "10.3389/fnhum.2012.00296",
+        "pmid": "23112770"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-SART-2012"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-6c3ce84b3b9ba913",
+      "original_url": "https://www.nature.com/articles/s41582-025-01111-9",
+      "availability": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [
+        "CANONICAL_URL",
+        "SAME_URL_WITH_TRANSIENT_error=cookies_not_supported_QUERY"
+      ],
+      "final_observed_url": "https://www.nature.com/articles/s41582-025-01111-9?error=cookies_not_supported&code=<transient>",
+      "observed_title": "Author Correction: A neuroscientific model of near-death experiences",
+      "persistent_identifiers": {
+        "doi": "10.1038/s41582-025-01111-9",
+        "pmid": "40506563"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "AUTHOR_CORRECTION_NOT_RETRACTION",
+      "related_record_notes": [
+        "CORRECTS_DOI_10.1038/s41582-025-01072-z",
+        "CORRECTS_PMID_40159547"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE",
+        "CROSSREF_WORKS_API",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-7243f68759578898",
+      "original_url": "https://www.nature.com/articles/nrn.2016.22",
+      "availability": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [
+        "CANONICAL_URL",
+        "SAME_URL_WITH_TRANSIENT_error=cookies_not_supported_QUERY"
+      ],
+      "final_observed_url": "https://www.nature.com/articles/nrn.2016.22?error=cookies_not_supported&code=<transient>",
+      "observed_title": "Neural correlates of consciousness: progress and problems",
+      "persistent_identifiers": {
+        "doi": "10.1038/nrn.2016.22"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "ERRATUM_RELATION_PRESENT_NOT_RETRACTION",
+      "related_record_notes": [
+        "ERRATUM_DOI_10.1038/nrn.2016.61"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-72fd2fd29b47c900",
+      "original_url": "https://doi.org/10.1038/s41586-026-10448-0",
+      "availability": "AVAILABLE_WITH_DOI_AND_COOKIE_QUERY_REDIRECT",
+      "http_status_or_access_result": "HTTP_200_AFTER_REDIRECT",
+      "redirect_chain": [
+        "https://doi.org/10.1038/s41586-026-10448-0",
+        "https://www.nature.com/articles/s41586-026-10448-0",
+        "SAME_NATURE_URL_WITH_TRANSIENT_error=cookies_not_supported_QUERY"
+      ],
+      "final_observed_url": "https://www.nature.com/articles/s41586-026-10448-0?error=cookies_not_supported&code=<transient>",
+      "observed_title": "Plasticity and language in the anaesthetized human hippocampus",
+      "persistent_identifiers": {
+        "doi": "10.1038/s41586-026-10448-0"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-81c6321f81e46c1c",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/42566966/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/42566966/",
+      "observed_title": "Microdosing psychedelics: What, why, when, and how often? Insights from an international survey of people who use psychedelics.",
+      "persistent_identifiers": {
+        "pmid": "42566966",
+        "doi": "10.1016/j.drugpo.2026.105459"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-MICRODOSING-2026"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-839bb64803b2647c",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/31322576/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/31322576/",
+      "observed_title": "Memories Supporting Myself: Autobiographical Memory Supports Self-Continuity in Alzheimer's Disease.",
+      "persistent_identifiers": {
+        "pmid": "31322576",
+        "doi": "10.3233/JAD-190440"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-ac806337dd652dc4",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/25301715/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/25301715/",
+      "observed_title": "AWARE-AWAreness during REsuscitation-a prospective study.",
+      "persistent_identifiers": {
+        "pmid": "25301715",
+        "doi": "10.1016/j.resuscitation.2014.09.004"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "COMMENTED_ON_BY_MULTIPLE_RECORDS"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-ad03ee59cfac654c",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/35961040/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/35961040/",
+      "observed_title": "Self-Continuity.",
+      "persistent_identifiers": {
+        "pmid": "35961040",
+        "doi": "10.1146/annurev-psych-032420-032236"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-b1f1aa958e192e5d",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/36017883/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/36017883/",
+      "observed_title": "Studying death and near-death experiences requires neuroscientific expertise.",
+      "persistent_identifiers": {
+        "pmid": "36017883",
+        "doi": "10.1111/nyas.14888"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "COMMENT_ON_PMID_35181885"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-bbe98925af8858af",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "observed_title": "New methodological directions for involving children in past life memories research.",
+      "persistent_identifiers": {
+        "pmid": "41265055",
+        "doi": "10.1016/j.explore.2025.103283"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-bf86bd10b36801a7",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "observed_title": "Reconstructing and deconstructing the self: cognitive mechanisms in meditation practice.",
+      "persistent_identifiers": {
+        "pmid": "26231761",
+        "doi": "10.1016/j.tics.2015.07.001"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "COMMENTED_ON_BY_PMID_26686556",
+        "COMMENTED_ON_BY_PMID_26762882"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-d3943f60dd900ac0",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/18602617/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/18602617/",
+      "observed_title": "Children's reports of past-life memories: a review.",
+      "persistent_identifiers": {
+        "pmid": "18602617",
+        "doi": "10.1016/j.explore.2008.04.001"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    },
+    {
+      "source_id": "URL-df27d075c6b974c0",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/37423492/",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/37423492/",
+      "observed_title": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest.",
+      "persistent_identifiers": {
+        "pmid": "37423492",
+        "doi": "10.1016/j.resuscitation.2023.109903"
+      },
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "COMMENTED_ON_BY_PMID_38097107"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_url_preserved": true
+    }
+  ],
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+}
