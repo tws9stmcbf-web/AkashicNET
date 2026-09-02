@@ -1,13 +1,17 @@
 import copy
 import unittest
 
-from scripts.build_public_safe_semantic_endpoint_registry_v019 import build_registry, validate_registry
+from scripts.build_public_safe_semantic_endpoint_registry_v019 import build_registry, parse_drive, validate_registry
 
 
 ARTIFACTS = [{"artifact_id": "artifact:test", "repository_record": "fixture", "sha256": "1" * 64, "public_safe": True}]
 
 
 class TestSemanticEndpointRegistry(unittest.TestCase):
+    def test_drive_parser_excludes_markdown_separator(self):
+        table = """| family_id | title | status | provenance |\n| --- | --- | --- | --- |\n| BARDON-001 | A real publication | merged | public |\n"""
+        self.assertEqual(parse_drive(table), [("BARDON-001", "A real publication")])
+
     def registry(self):
         return build_registry(
             {"topic alpha": "Topic Alpha"}, {"Framework Alpha"}, [("PUB-001", "Publication Alpha")],
