@@ -66,7 +66,8 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"REDDIT STRUCTURAL CHECKPOINT VALIDATION PASS: {expected['source_rows']:,} rows -> {expected['unique_post_ids_all_subreddits']:,} structural unique posts; N2N {expected['unique_post_ids_by_subreddit']['NeuronsToNirvana']:,}")
+    checkpoint = json.loads(CHECKPOINT.read_text(encoding="utf-8"))
+    print(f"REDDIT STRUCTURAL CHECKPOINT VALIDATION PASS: {checkpoint['source_rows']:,} rows -> {checkpoint['unique_post_ids_all_subreddits']:,} structural unique posts; N2N {checkpoint['unique_post_ids_by_subreddit']['NeuronsToNirvana']:,}")
     return 0
 
 
