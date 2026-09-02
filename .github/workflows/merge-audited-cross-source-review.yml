@@ -15,7 +15,8 @@ jobs:
     if: >-
       github.event.label.name == 'human-reviewed' &&
       github.event.sender.login == github.repository_owner &&
-      startsWith(github.event.pull_request.head.ref, 'automation/audited-cross-source-')
+      (startsWith(github.event.pull_request.head.ref, 'automation/audited-cross-source-') ||
+       startsWith(github.event.pull_request.head.ref, 'automation/public-safe-endpoints-'))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -25,19 +26,30 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          EXPECTED_FILE: references/community/cross-source-orchestrator-review-v0.1.8.json
+          HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
+          case "$HEAD_BRANCH" in
+            automation/audited-cross-source-*)
+              expected_file="references/community/cross-source-orchestrator-review-v0.1.8.json"
+              expected_check="validate-orchestrator"
+              ;;
+            automation/public-safe-endpoints-*)
+              expected_file="references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
+              expected_check="validate-semantic-endpoints"
+              ;;
+            *) exit 1 ;;
+          esac
           current_head="$(gh pr view "$PR_NUMBER" --repo "$REPOSITORY" --json headRefOid --jq .headRefOid)"
           test "$current_head" = "$HEAD_SHA"
 
           mapfile -t changed_files < <(gh api --paginate "repos/$REPOSITORY/pulls/$PR_NUMBER/files" --jq '.[].filename')
           test "${#changed_files[@]}" -eq 1
-          test "${changed_files[0]}" = "$EXPECTED_FILE"
+          test "${changed_files[0]}" = "$expected_file"
 
           conclusion=""
           for attempt in $(seq 1 60); do
             conclusion="$(gh api "repos/$REPOSITORY/commits/$HEAD_SHA/check-runs" \
-              --jq '[.check_runs[] | select(.name == "validate-orchestrator")][0].conclusion // empty')"
+              --jq "[.check_runs[] | select(.name == \"$expected_check\")][0].conclusion // empty")"
             if [ "$conclusion" = "success" ]; then
               break
             fi
