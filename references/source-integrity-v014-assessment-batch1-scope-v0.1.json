@@ -1,0 +1,435 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH1",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-02",
+  "status": "SCOPE_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "inventory": {
+    "manifest": "references/community/public-source-url-inventory-v0.14.json",
+    "source_snapshot_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
+    "unique_external_urls": 7665
+  },
+  "cohort": {
+    "size": 25,
+    "selection_policy": [
+      "Non-Reddit scholarly or primary research source.",
+      "Prioritize URLs used by BQ001 public evidence records and website mirrors.",
+      "Include 2026 research records and a DOI/publisher duplicate pair for provenance-drift testing.",
+      "Exclude malformed extraction candidates, login/authorization endpoints, and general institutional landing pages from this cohort."
+    ],
+    "sources": [
+      {
+        "source_id": "URL-014a8d26480578c1",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/35181885/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/35181885",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 4,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
+          "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch10-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch10-review-v0.1.json"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-026bc93668bb6030",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/34147343/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/34147343",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-061e39e7ec474496",
+        "original_urls": [
+          "https://doi.org/10.1016/j.drugpo.2026.105459"
+        ],
+        "normalized_url": "https://doi.org/10.1016/j.drugpo.2026.105459",
+        "host": "doi.org",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "research/microdosing-research-2026.md"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-08879a4baf1fa0a1",
+        "original_urls": [
+          "https://www.nature.com/articles/s42003-024-06613-8"
+        ],
+        "normalized_url": "https://www.nature.com/articles/s42003-024-06613-8",
+        "host": "www.nature.com",
+        "occurrence_count": 4,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+          "references/community/bq001-scientific-baseline-batch1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-0c9b1cfb4a6b5003",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/40159547/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/40159547",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-1ac3b008f7810ce2",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/36165349/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/36165349",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-1e6c5b1a69952f13",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/23112770/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/23112770",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 8,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-215ce0460d6daaef",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/12689435/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/12689435",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 7,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-26bbe6dc2ce3eab5",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/39341119/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/39341119",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-2a0ed05c12b37277",
+        "original_urls": [
+          "https://www.sciencedirect.com/science/article/pii/S0955395926003129"
+        ],
+        "normalized_url": "https://www.sciencedirect.com/science/article/pii/S0955395926003129",
+        "host": "www.sciencedirect.com",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "research/microdosing-research-2026.md"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-523ed463a92bbb6f",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/40627512/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/40627512",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-5d9867b13d825598",
+        "original_urls": [
+          "https://www.nature.com/articles/s41586-025-08888-1"
+        ],
+        "normalized_url": "https://www.nature.com/articles/s41586-025-08888-1",
+        "host": "www.nature.com",
+        "occurrence_count": 4,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
+          "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch10-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch10-review-v0.1.json"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-6962bd5db659bb3d",
+        "original_urls": [
+          "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full"
+        ],
+        "normalized_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full",
+        "host": "www.frontiersin.org",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-6c3ce84b3b9ba913",
+        "original_urls": [
+          "https://www.nature.com/articles/s41582-025-01111-9"
+        ],
+        "normalized_url": "https://www.nature.com/articles/s41582-025-01111-9",
+        "host": "www.nature.com",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-7243f68759578898",
+        "original_urls": [
+          "https://www.nature.com/articles/nrn.2016.22"
+        ],
+        "normalized_url": "https://www.nature.com/articles/nrn.2016.22",
+        "host": "www.nature.com",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+          "references/community/bq001-scientific-baseline-batch1.json"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-72fd2fd29b47c900",
+        "original_urls": [
+          "https://doi.org/10.1038/s41586-026-10448-0"
+        ],
+        "normalized_url": "https://doi.org/10.1038/s41586-026-10448-0",
+        "host": "doi.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "research/consciousness-processing-under-anaesthesia-2026.md"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-81c6321f81e46c1c",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/42566966/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/42566966",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "research/microdosing-research-2026.md"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-839bb64803b2647c",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/31322576/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/31322576",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-ac806337dd652dc4",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/25301715/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/25301715",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 4,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+          "references/community/bq001-scientific-baseline-batch1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-ad03ee59cfac654c",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/35961040/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/35961040",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-b1f1aa958e192e5d",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/36017883/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/36017883",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 3,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch7-review-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-bbe98925af8858af",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/41265055/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/41265055",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 7,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-bf86bd10b36801a7",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/26231761/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/26231761",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 8,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d3943f60dd900ac0",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/18602617/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/18602617",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-df27d075c6b974c0",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/37423492/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/37423492",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 4,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+          "references/community/bq001-scientific-baseline-batch1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_status": "SELECTED_UNASSESSED"
+      }
+    ]
+  },
+  "assessment_fields": [
+    "availability",
+    "http_status_or_access_result",
+    "redirect_chain",
+    "final_observed_url",
+    "observed_title",
+    "title_drift",
+    "retraction_or_withdrawal_status",
+    "retrieved_on",
+    "duplicate_or_equivalent_reference_candidate",
+    "repair_candidate"
+  ],
+  "classification_rules": {
+    "rate_limit_is_broken_link": false,
+    "access_denial_is_broken_link": false,
+    "changed_or_unavailable_source_is_false": false,
+    "redirect_means_replace_original": false,
+    "retraction_changes_truth_automatically": false
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT_PENDING"
+}
