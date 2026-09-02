@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_publication",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 10,
+  "question_id": "BQ001",
+  "published_at": "2026-09-02T10:43:47.580633Z",
+  "status": "PUBLISHED",
+  "site": {
+    "project_slug": "akashicnet-public",
+    "project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+    "version_number": 86,
+    "version_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1~appgver_db6d14911a7c8191b2eaae7c0baced00",
+    "deployment_id": "appgdep_6a97fdd70b7c8191b7fa91a2062f2586",
+    "deployment_status": "succeeded",
+    "production_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site",
+    "custom_domain_url": "https://akashicnet.org",
+    "source_commit": "ddc3ffb38a30ff3f9850325dc5f65016b51f5c6f",
+    "repair_commit": "fcf512f088c288e92f877c602809a868516ef979",
+    "note": "Version 86 includes the approved Batch 10 BQ001 provenance-date repair and subsequent approved site work; no redundant version was created."
+  },
+  "published_change": {
+    "route": "/big-questions/bq001",
+    "action": "Visible source-check date updated from 30 August 2026 to 2 September 2026.",
+    "original_urls_preserved": true,
+    "source_cards_changed": false,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "conclusion_changed": false,
+    "question_status": "UNRESOLVED"
+  },
+  "guards": {
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "silent_source_replacement": false
+  }
+}
