@@ -1,0 +1,178 @@
+{
+  "checkpoint_id": "AKASHICNET-V014-URL-INVENTORY-GENERATION",
+  "version": "0.1.0",
+  "completed_on": "2026-09-02",
+  "status": "GENERATED_UNASSESSED",
+  "target_release": "0.14.0-beta.1",
+  "source_snapshot_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
+  "scope": {
+    "files": 244,
+    "roots": [
+      "references/big-questions",
+      "references/community",
+      "research",
+      "website/app"
+    ]
+  },
+  "result": {
+    "external_url_occurrences": 21589,
+    "unique_normalized_external_urls": 7665,
+    "assessed_unique_urls": 0,
+    "unassessed_unique_urls": 7665,
+    "shard_count": 16
+  },
+  "dominant_domain_observation": {
+    "host": "www.reddit.com",
+    "unique_urls": 7493,
+    "note": "Domain count is structural inventory metadata, not live availability verification."
+  },
+  "artifacts": {
+    "manifest": {
+      "path": "references/community/public-source-url-inventory-v0.14.json",
+      "content_sha": "1878fd855474e453692e8d21a83fcd8aa2aaaf2e"
+    },
+    "shards": [
+      {
+        "content_sha": "ce9b2ecd23340c49311ec69105c60a1988db754c",
+        "entry_count": 479,
+        "occurrence_count": 1297,
+        "path": "references/community/source-url-inventory-v0.14/shard-0.json",
+        "shard": "0"
+      },
+      {
+        "content_sha": "10dfe0c59ed40ca70b9d5b3237e173e9536974f3",
+        "entry_count": 497,
+        "occurrence_count": 1529,
+        "path": "references/community/source-url-inventory-v0.14/shard-1.json",
+        "shard": "1"
+      },
+      {
+        "content_sha": "f1affe055dc4c57ac1ab5f98c2aa8f0850f2eefc",
+        "entry_count": 477,
+        "occurrence_count": 1353,
+        "path": "references/community/source-url-inventory-v0.14/shard-2.json",
+        "shard": "2"
+      },
+      {
+        "content_sha": "06e140fabe2332fae45f853e8665ff4e5dc9a743",
+        "entry_count": 484,
+        "occurrence_count": 1376,
+        "path": "references/community/source-url-inventory-v0.14/shard-3.json",
+        "shard": "3"
+      },
+      {
+        "content_sha": "233008a241b6ae4b0e214799fd8919445ae2eb10",
+        "entry_count": 474,
+        "occurrence_count": 1326,
+        "path": "references/community/source-url-inventory-v0.14/shard-4.json",
+        "shard": "4"
+      },
+      {
+        "content_sha": "e0ac1d386ef4c92f57681d0c8d6dd30f68c7ec4c",
+        "entry_count": 488,
+        "occurrence_count": 1492,
+        "path": "references/community/source-url-inventory-v0.14/shard-5.json",
+        "shard": "5"
+      },
+      {
+        "content_sha": "ad8ccb52c21012ee2bca3c61d132c3fbff7cec01",
+        "entry_count": 457,
+        "occurrence_count": 1252,
+        "path": "references/community/source-url-inventory-v0.14/shard-6.json",
+        "shard": "6"
+      },
+      {
+        "content_sha": "5dd3e6ddf2bee82bad2c3d45ef210ec17cc58072",
+        "entry_count": 514,
+        "occurrence_count": 1391,
+        "path": "references/community/source-url-inventory-v0.14/shard-7.json",
+        "shard": "7"
+      },
+      {
+        "content_sha": "476cccd1dfc5009ef77409d06e7c758d48de42a6",
+        "entry_count": 493,
+        "occurrence_count": 1360,
+        "path": "references/community/source-url-inventory-v0.14/shard-8.json",
+        "shard": "8"
+      },
+      {
+        "content_sha": "53bb3c916538203c0156a15409fdc3db5ffe7f9d",
+        "entry_count": 444,
+        "occurrence_count": 1231,
+        "path": "references/community/source-url-inventory-v0.14/shard-9.json",
+        "shard": "9"
+      },
+      {
+        "content_sha": "39130153016ed4b8aa4a7f1677b8d52187ec534f",
+        "entry_count": 485,
+        "occurrence_count": 1313,
+        "path": "references/community/source-url-inventory-v0.14/shard-a.json",
+        "shard": "a"
+      },
+      {
+        "content_sha": "56bd5825f1ee3dd47e5de1ee919736535db38bf0",
+        "entry_count": 459,
+        "occurrence_count": 1292,
+        "path": "references/community/source-url-inventory-v0.14/shard-b.json",
+        "shard": "b"
+      },
+      {
+        "content_sha": "bb2f240669c9894aaa45f42fed3a6d1f4dd6f1f0",
+        "entry_count": 492,
+        "occurrence_count": 1394,
+        "path": "references/community/source-url-inventory-v0.14/shard-c.json",
+        "shard": "c"
+      },
+      {
+        "content_sha": "b9b5e320f8e257d41bdb1d08a71b6364601583ac",
+        "entry_count": 505,
+        "occurrence_count": 1386,
+        "path": "references/community/source-url-inventory-v0.14/shard-d.json",
+        "shard": "d"
+      },
+      {
+        "content_sha": "3766ed89d1a372390dea2c2196a8f44ff7cf4dd0",
+        "entry_count": 449,
+        "occurrence_count": 1273,
+        "path": "references/community/source-url-inventory-v0.14/shard-e.json",
+        "shard": "e"
+      },
+      {
+        "content_sha": "a343bde60cfd5252d62bffb5a6fe1591f8a128f8",
+        "entry_count": 468,
+        "occurrence_count": 1324,
+        "path": "references/community/source-url-inventory-v0.14/shard-f.json",
+        "shard": "f"
+      }
+    ],
+    "builder": {
+      "path": "scripts/build_public_source_url_inventory_v014.py",
+      "content_sha": "ff1945944cf822b81e8989183063e0275f8ef3ae",
+      "commit_sha": "ba14dce3ca86758bd1e9a4571c6928ea8cf7b665"
+    },
+    "validator": {
+      "path": "scripts/validate_provenance_integrity_beta_readiness_v014.py",
+      "content_sha": "2635602c06fc6f6147c66a2a0459e4e4f9b97131",
+      "commit_sha": "c3c0cc5964713c34006f2927b2c2c76fd11faf5a"
+    },
+    "readiness": {
+      "path": "references/community/provenance-integrity-beta-readiness-v0.14.json",
+      "content_sha": "676c7f8561fcc57d88b8487a5abe15e8fb375d0f",
+      "criterion_V014_C1": "PASS"
+    }
+  },
+  "interpretation_limits": [
+    "No URL was contacted during inventory generation.",
+    "All 7,665 unique URLs remain UNASSESSED.",
+    "Inventory presence does not imply availability, correctness, truth, evidence quality, authorship verification, or reuse rights."
+  ],
+  "guards": {
+    "original_urls_preserved": true,
+    "unavailable_source_is_false": false,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "private_drive_promotion": false
+  }
+}
