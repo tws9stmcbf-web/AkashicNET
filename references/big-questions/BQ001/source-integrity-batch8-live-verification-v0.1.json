@@ -1,0 +1,54 @@
+{
+  "verification_id": "BQ001-SOURCE-INTEGRITY-BATCH8-LIVE-VERIFICATION",
+  "version": "0.1.0",
+  "status": "DRIFT_DETECTED_REVIEW_ONLY",
+  "verified_on": "2026-09-02",
+  "live_url": "https://akashicnet.org/big-questions/bq001",
+  "repository_page": {
+    "path": "website/app/big-questions/bq001/page.tsx",
+    "commit": "2a39fb74b0d08c3f0acd92831e03ff5a39553a66",
+    "blob_sha": "331f709624075b517bb071b2b2f53de9049df66f",
+    "expected_labels": [
+      "Haraldsson 2003",
+      "Thomas et al. 2025 (2026 issue)"
+    ]
+  },
+  "live_observation": {
+    "route_available": true,
+    "observed_title": "BQ001 — Does consciousness continue beyond the individual? | AkashicNET",
+    "corrected_labels_present": false,
+    "legacy_labels_present": false,
+    "expected_source_urls_present": false,
+    "visible_source_links_count": 5,
+    "classification": "REPOSITORY_TO_LIVE_CONTENT_DRIFT",
+    "note": "The live route serves a different BQ001 source-and-provenance presentation from the repository page. This is not evidence that either external source is broken or false."
+  },
+  "expected_sources": [
+    {
+      "source_id": "SRC-BQ001-HARALDSSON-2003",
+      "preserved_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "expected_live_label": "Haraldsson 2003",
+      "live_present": false
+    },
+    {
+      "source_id": "SRC-BQ001-ALLAN-2025",
+      "preserved_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "expected_live_label": "Thomas et al. 2025 (2026 issue)",
+      "live_present": false
+    }
+  ],
+  "repair_candidate": {
+    "candidate_id": "BQ001-B8-LIVE-R1",
+    "proposal": "Synchronize the current live BQ001 implementation with the two approved canonical citation labels and preserved PubMed URLs, then re-run rendered-route verification.",
+    "automatic_application_allowed": false,
+    "source_replacement_allowed": false,
+    "unrelated_redesign_allowed": false
+  },
+  "safeguards": {
+    "unavailable_source_implies_false": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false,
+    "source_urls_replaced": false,
+    "live_site_changed": false
+  }
+}
