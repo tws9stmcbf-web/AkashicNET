@@ -56,21 +56,21 @@ class RedditCorpusCensusTests(unittest.TestCase):
 
     def test_historical_archive_exact_structural_denominators(self):
         report = audit(HISTORICAL_REDDIT)
-        self.assertEqual(report["total_rows"], 9401)
-        self.assertEqual(report["post_rows"], 9400)
+        self.assertEqual(report["total_rows"], 9502)
+        self.assertEqual(report["post_rows"], 9501)
         self.assertEqual(report["status_counts"]["annotation_derived"], 2042)
-        self.assertEqual(report["status_counts"]["candidate"], 7358)
+        self.assertEqual(report["status_counts"]["candidate"], 7459)
         self.assertEqual(report["status_counts"]["non_post_subreddit"], 1)
-        self.assertEqual(report["unique_post_ids"], 7356)
-        self.assertEqual(report["unique_canonical_urls"], 7356)
+        self.assertEqual(report["unique_post_ids"], 7457)
+        self.assertEqual(report["unique_canonical_urls"], 7457)
         self.assertEqual(report["duplicate_post_id_rows"], 2044)
         self.assertEqual(report["duplicate_canonical_url_rows"], 2044)
-        self.assertEqual(report["subreddits"]["NeuronsToNirvana"], 9341)
+        self.assertEqual(report["subreddits"]["NeuronsToNirvana"], 9442)
         self.assertEqual(report["subreddits"]["TribalGathering"], 57)
         self.assertEqual(report["subreddits"]["microdosing"], 2)
         self.assertEqual(
             report["unique_post_ids_by_subreddit"],
-            {"microdosing": 1, "NeuronsToNirvana": 7298, "TribalGathering": 57},
+            {"microdosing": 1, "NeuronsToNirvana": 7399, "TribalGathering": 57},
         )
 
 
