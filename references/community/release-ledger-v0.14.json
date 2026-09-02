@@ -33,6 +33,15 @@
       "state": "SEALED",
       "retargetable": false,
       "manifest": "references/community/public-knowledge-beta-release-manifest-v0.13.json"
+    },
+    {
+      "version": "0.14.0-beta.1",
+      "name": "Automation & Reproducibility Beta",
+      "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
+      "seal_metadata_commit": "24c7d3d214e31a8de1357edaf02fe191b12872f5",
+      "state": "SEALED",
+      "retargetable": false,
+      "manifest": "references/community/automation-reproducibility-beta-release-manifest-v0.14.json"
     }
   ],
   "invariants": {

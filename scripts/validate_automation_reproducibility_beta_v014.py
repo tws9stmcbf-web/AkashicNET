@@ -7,6 +7,7 @@ MANIFEST = ROOT / "references/community/automation-reproducibility-beta-release-
 V013 = "fbb7b6f539947f528383ca13a01639a04471b594"
 V013_SEAL = "98e551d5fe257c6e7aa991812b0d56f0dc0bf0a7"
 V014 = "7b6cfd89de570c4b945d574dad570c37825645fe"
+V014_SEAL = "24c7d3d214e31a8de1357edaf02fe191b12872f5"
 REQUIRED_GATES = {
     "historical_release_ledger",
     "repository_state_readiness_reconstruction",
@@ -79,8 +80,7 @@ elif state == "READY":
 else:
     if m.get("validated_release_commit") != V014:
         fail("SEALED state retargeted v0.14")
-    s = m.get("seal_metadata_commit")
-    if not isinstance(s, str) or len(s) != 40:
-        fail("SEALED release must record exact seal metadata commit")
+    if m.get("seal_metadata_commit") != V014_SEAL:
+        fail("SEALED state does not preserve exact v0.14 seal metadata provenance")
 
 print(f"PASS: v0.14 Automation & Reproducibility Beta manifest validates in state {state}")
