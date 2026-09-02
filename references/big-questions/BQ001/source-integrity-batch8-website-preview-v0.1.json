@@ -1,0 +1,68 @@
+{
+  "preview_id": "BQ001-SOURCE-INTEGRITY-BATCH8-WEBSITE-PREVIEW",
+  "version": "0.1.0",
+  "status": "PREVIEW_ONLY",
+  "prepared_on": "2026-09-02",
+  "scope": "BQ001 website citation-label alignment with approved canonical Batch 3 v0.1.1 provenance repairs",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+    "canonical_batch_version": "0.1.1",
+    "canonical_batch_blob_sha": "44ab4a1bb7dc941a52c9d7529e719ed7e91cc3f5",
+    "source_integrity_review": "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "e355c6b67ad3527e3e12cf7b3cde363a5f1cee16",
+    "live_site_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "preview_policy": {
+    "apply_changes": false,
+    "publish_changes": false,
+    "preserve_source_urls": true,
+    "preserve_source_ids": true,
+    "preserve_claim_text": true,
+    "preserve_evidence_labels": true,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false
+  },
+  "proposed_changes": [
+    {
+      "change_id": "BQ001-B8-WEB-P1",
+      "source_id": "SRC-BQ001-HARALDSSON-2003",
+      "current_label": "Haraldsson et al. 2003",
+      "proposed_label": "Haraldsson 2003",
+      "href_before": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "href_after": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "rationale": "The indexed record lists Erlendur Haraldsson as the sole author."
+    },
+    {
+      "change_id": "BQ001-B8-WEB-P2",
+      "source_id": "SRC-BQ001-ALLAN-2025",
+      "current_label": "Allan et al. 2025",
+      "proposed_label": "Thomas et al. 2025 (2026 issue)",
+      "href_before": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "href_after": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "rationale": "Donna M Thomas is the indexed first author. The article was published electronically in 2025 and appears in the 2026 journal issue; the stable legacy source_id remains unchanged."
+    }
+  ],
+  "patch_preview": [
+    "- { label: \"Haraldsson et al. 2003\", href: \"https://pubmed.ncbi.nlm.nih.gov/12689435/\" },",
+    "+ { label: \"Haraldsson 2003\", href: \"https://pubmed.ncbi.nlm.nih.gov/12689435/\" },",
+    "- { label: \"Allan et al. 2025\", href: \"https://pubmed.ncbi.nlm.nih.gov/41265055/\" },",
+    "+ { label: \"Thomas et al. 2025 (2026 issue)\", href: \"https://pubmed.ncbi.nlm.nih.gov/41265055/\" },"
+  ],
+  "impact_assessment": {
+    "citation_labels_changed_in_preview": 2,
+    "source_urls_changed": 0,
+    "source_ids_changed": 0,
+    "claims_changed": 0,
+    "evidence_labels_changed": 0,
+    "page_layout_redesign": false,
+    "live_site_changed": false,
+    "repository_website_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  },
+  "adjudication": {
+    "decision": "AWAITING_EXPLICIT_WEBSITE_APPLICATION_APPROVAL",
+    "repair_candidate_reference": "BQ001-B8-R5"
+  }
+}
