@@ -1,0 +1,1742 @@
+{
+  "schema_version": "0.1.9",
+  "mode": "ENDPOINT_REGISTRY_ONLY",
+  "boundaries": {
+    "automated_truth_inference_allowed": false,
+    "automated_acceptance_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "circular_confidence_allowed": false,
+    "private_drive_metadata_allowed": false
+  },
+  "source_artifacts": [
+    {
+      "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+      "repository_record": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+      "sha256": "973f92c532441e9d48d4faeaceec51b40e884fa3a11d5586c08788b55eb01bf1",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch2-memory-identity-nde-methods",
+      "repository_record": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+      "repository_record": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+      "sha256": "6bad05da5b4ee8b7a633fa730cc19a8646ccbd203bb7cfe390af029605ef1e0b",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+      "repository_record": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+      "sha256": "222f8443a85bb1a96c1398887680ac04b63d4df16537fade1897ac2b2a1e2e54",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch5-supplemental-science",
+      "repository_record": "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+      "sha256": "9f9b3f10a1029771e845e488a02f2941562651f4293b395878ea21e74b72d351",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:big-question:bq001:public-synthesis",
+      "repository_record": "references/big-questions/BQ001/public-synthesis-v0.1.json",
+      "sha256": "af907250c2b62a43d97600cafc0f4ef7770d6003abd6ed9402af1d2222031bbd",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:big-questions:architecture:0.1",
+      "repository_record": "references/big-questions/architecture-v0.1.json",
+      "sha256": "ad71d7a370ab1f57944bd5f1bffe9567685d7de067824c2da171dc9ca6388740",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+      "repository_record": "references/community/knowledge-graph-seed-v0.1.md",
+      "sha256": "2ff59b08c528c92f4161ddb153f990ed56486c2a9cf8c475fe9351cc65e596ab",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+      "repository_record": "references/community/n2n-test-batch-25.csv",
+      "sha256": "9e7f1b1036bee1f48e399ba5f9bec0a9b509626602b6ebc09de5eb8b6b7b514c",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:topic-census:0.7.5",
+      "repository_record": "scripts/topic_census_v075.py",
+      "sha256": "7dbdb185d79ea47bd237f10c0e5808d921eca55c5248ec400a3fb2f5696cb8da",
+      "public_safe": true
+    }
+  ],
+  "endpoints": [
+    {
+      "endpoint_id": "endpoint:drive-publication:abramelin-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "The Sacred Magic of Abramelin the Mage",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "ABRAMELIN-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:agrippa-occult-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Agrippa Occult Philosophy",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "AGRIPPA-OCCULT-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:bailey-discipleship-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Discipleship in the New Age",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "BAILEY-DISCIPLESHIP-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:bardon-evocation-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Practice of Magical Evocation",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "BARDON-EVOCATION-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:bardon-golden-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Golden Book of Wisdom",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "BARDON-GOLDEN-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:bardon-initiation-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Initiation Into Hermetics",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "BARDON-INITIATION-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:bardon-qabbalah-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Key to the True Qabbalah",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "BARDON-QABBALAH-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:forbidden-history-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Forbidden History of Europe",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "FORBIDDEN-HISTORY-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:gnosis-echoes-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Echoes From the Gnosis",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "GNOSIS-ECHOES-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:modern-shamanism-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Techniques of Modern Shamanism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "MODERN-SHAMANISM-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:mushrooms-russia-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Mushrooms Russia and History",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "MUSHROOMS-RUSSIA-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:necromonicon-lg-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Necronomicon / H. P. Lovecraft parallel collection",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "NECROMONICON-LG-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:drive-publication:vivekananda-001",
+      "endpoint_type": "PUBLICATION",
+      "label": "Swami Vivekananda works",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "UNASSESSED",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+        "record_id": "VIVEKANANDA-001",
+        "independence_key": "source:drive-public-seed:stage-b-v0.1",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-allan-2025",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "New methodological directions for involving children in past life memories research",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+        "record_id": "SRC-BQ001-ALLAN-2025",
+        "independence_key": "source:evidence:src-bq001-allan-2025",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-aware-2014",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "AWARE-AWAreness during REsuscitation-a prospective study",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+        "record_id": "SRC-BQ001-AWARE-2014",
+        "independence_key": "source:evidence:src-bq001-aware-2014",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-aware2-2023",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+        "record_id": "SRC-BQ001-AWARE2-2023",
+        "independence_key": "source:evidence:src-bq001-aware2-2023",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-cogitate-2025",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Adversarial testing of global neuronal workspace and integrated information theories of consciousness",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch5-supplemental-science",
+        "record_id": "SRC-BQ001-COGITATE-2025",
+        "independence_key": "source:evidence:src-bq001-cogitate-2025",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-dahl-2015",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Reconstructing and deconstructing the self: cognitive mechanisms in meditation practice",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+        "record_id": "SRC-BQ001-DAHL-2015",
+        "independence_key": "source:evidence:src-bq001-dahl-2015",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-elhaj-2019",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Memories Supporting Myself: Autobiographical Memory Supports Self-Continuity in Alzheimer's Disease",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch2-memory-identity-nde-methods",
+        "record_id": "SRC-BQ001-ELHAJ-2019",
+        "independence_key": "source:evidence:src-bq001-elhaj-2019",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-haraldsson-2003",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Children who speak of past-life experiences: is there a psychological explanation?",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+        "record_id": "SRC-BQ001-HARALDSSON-2003",
+        "independence_key": "source:evidence:src-bq001-haraldsson-2003",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-koch-2016",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Neural correlates of consciousness: progress and problems",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+        "record_id": "SRC-BQ001-KOCH-2016",
+        "independence_key": "source:evidence:src-bq001-koch-2016",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-martial-2022",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Studying death and near-death experiences requires neuroscientific expertise",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch2-memory-identity-nde-methods",
+        "record_id": "SRC-BQ001-MARTIAL-2022",
+        "independence_key": "source:evidence:src-bq001-martial-2022",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-martial-2025",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "A neuroscientific model of near-death experiences",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch2-memory-identity-nde-methods",
+        "record_id": "SRC-BQ001-MARTIAL-2025",
+        "independence_key": "source:evidence:src-bq001-martial-2025",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-maschke-2024",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+        "record_id": "SRC-BQ001-MASCHKE-2024",
+        "independence_key": "source:evidence:src-bq001-maschke-2024",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-moraes-2024",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Children who claim previous life memories: A case report and literature review",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+        "record_id": "SRC-BQ001-MORAES-2024",
+        "independence_key": "source:evidence:src-bq001-moraes-2024",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-parnia-guidelines-2022",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Guidelines and standards for the study of death and recalled experiences of death—a multidisciplinary consensus statement and proposed future directions",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch5-supplemental-science",
+        "record_id": "SRC-BQ001-PARNIA-GUIDELINES-2022",
+        "independence_key": "source:evidence:src-bq001-parnia-guidelines-2022",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-scoping-2021",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Academic studies on claimed past-life memories: A scoping review",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+        "record_id": "SRC-BQ001-SCOPING-2021",
+        "independence_key": "source:evidence:src-bq001-scoping-2021",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-sedikides-2023",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Self-Continuity",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch2-memory-identity-nde-methods",
+        "record_id": "SRC-BQ001-SEDIKIDES-2023",
+        "independence_key": "source:evidence:src-bq001-sedikides-2023",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-sep-dualism",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Dualism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+        "record_id": "SRC-BQ001-SEP-DUALISM",
+        "independence_key": "source:evidence:src-bq001-sep-dualism",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-sep-panpsychism",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Panpsychism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+        "record_id": "SRC-BQ001-SEP-PANPSYCHISM",
+        "independence_key": "source:evidence:src-bq001-sep-panpsychism",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-sep-physicalism",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Physicalism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+        "record_id": "SRC-BQ001-SEP-PHYSICALISM",
+        "independence_key": "source:evidence:src-bq001-sep-physicalism",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-siderits-2011",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Buddhist Non-Self: The No-Owner's Manual",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+        "record_id": "SRC-BQ001-SIDERITS-2011",
+        "independence_key": "source:evidence:src-bq001-siderits-2011",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-sow-2022",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Developments in the functions of autobiographical memory: An advanced review",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch2-memory-identity-nde-methods",
+        "record_id": "SRC-BQ001-SOW-2022",
+        "independence_key": "source:evidence:src-bq001-sow-2022",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-tucker-2008",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Children's reports of past-life memories: a review",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+        "record_id": "SRC-BQ001-TUCKER-2008",
+        "independence_key": "source:evidence:src-bq001-tucker-2008",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-tucker-2025",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "What do the cases of the reincarnation type tell us about the mind beyond the brain?",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+        "record_id": "SRC-BQ001-TUCKER-2025",
+        "independence_key": "source:evidence:src-bq001-tucker-2025",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-vago-2012",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Self-awareness, self-regulation, and self-transcendence (S-ART): a framework for understanding the neurobiological mechanisms of mindfulness",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+        "record_id": "SRC-BQ001-VAGO-2012",
+        "independence_key": "source:evidence:src-bq001-vago-2012",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:evidence:src-bq001-xu-pnas-2023",
+      "endpoint_type": "EVIDENCE_RECORD",
+      "label": "Surge of neurophysiological coupling and connectivity of gamma oscillations in the dying human brain",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "SOURCE_CLASSIFICATION_ONLY",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch5-supplemental-science",
+        "record_id": "SRC-BQ001-XU-PNAS-2023",
+        "independence_key": "source:evidence:src-bq001-xu-pnas-2023",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:actc",
+      "endpoint_type": "FRAMEWORK",
+      "label": "ACTC",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:ACTC",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:community-inquiry",
+      "endpoint_type": "FRAMEWORK",
+      "label": "Community Inquiry",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:Community Inquiry",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:cut",
+      "endpoint_type": "FRAMEWORK",
+      "label": "CUT",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:CUT",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:futures-speculation",
+      "endpoint_type": "FRAMEWORK",
+      "label": "Futures / Speculation",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:Futures / Speculation",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:hieratic",
+      "endpoint_type": "FRAMEWORK",
+      "label": "HIERATIC",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:HIERATIC",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:homesense",
+      "endpoint_type": "FRAMEWORK",
+      "label": "HOMESENSE",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:HOMESENSE",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:knowledge-commons",
+      "endpoint_type": "FRAMEWORK",
+      "label": "Knowledge Commons",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:Knowledge Commons",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:library-of-alexandria",
+      "endpoint_type": "FRAMEWORK",
+      "label": "Library of Alexandria",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:Library of Alexandria",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:meaning-making",
+      "endpoint_type": "FRAMEWORK",
+      "label": "Meaning-making",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:Meaning-making",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:metad",
+      "endpoint_type": "FRAMEWORK",
+      "label": "METAD",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:METAD",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:qmm",
+      "endpoint_type": "FRAMEWORK",
+      "label": "QMM",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:QMM",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:framework:umasc",
+      "endpoint_type": "FRAMEWORK",
+      "label": "UMASC",
+      "assertion_class": "ASSERTED_SOURCE_METADATA",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+        "record_id": "framework:UMASC",
+        "independence_key": "source:reddit-index:n2n-test-batch-25",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:question:bq001",
+      "endpoint_type": "QUESTION",
+      "label": "Does consciousness continue beyond the individual?",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:big-question:bq001:public-synthesis",
+        "record_id": "references/big-questions/BQ001/public-synthesis-v0.1.json",
+        "independence_key": "source:big-question:bq001",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:5-meo-dmt",
+      "endpoint_type": "TOPIC",
+      "label": "5-MeO-DMT",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "5 meo dmt",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:alchemy",
+      "endpoint_type": "TOPIC",
+      "label": "Alchemy",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "alchemy",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:animism",
+      "endpoint_type": "TOPIC",
+      "label": "Animism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "animism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:art",
+      "endpoint_type": "TOPIC",
+      "label": "Art",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "art",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:astronomy",
+      "endpoint_type": "TOPIC",
+      "label": "Astronomy",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "astronomy",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:astrophysics",
+      "endpoint_type": "TOPIC",
+      "label": "Astrophysics",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "astrophysics",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:ayahuasca",
+      "endpoint_type": "TOPIC",
+      "label": "Ayahuasca",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "ayahuasca",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:biology",
+      "endpoint_type": "TOPIC",
+      "label": "Biology",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "biology",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:brain",
+      "endpoint_type": "TOPIC",
+      "label": "Brain",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "brain",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:buddhism",
+      "endpoint_type": "TOPIC",
+      "label": "Buddhism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "buddhism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:cell",
+      "endpoint_type": "TOPIC",
+      "label": "Cell",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "cell",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:ceremonial-magic",
+      "endpoint_type": "TOPIC",
+      "label": "Ceremonial Magic",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "ceremonial magic",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:cognition",
+      "endpoint_type": "TOPIC",
+      "label": "Cognition",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "cognition",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:community",
+      "endpoint_type": "TOPIC",
+      "label": "Community",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "community",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:consciousness",
+      "endpoint_type": "TOPIC",
+      "label": "Consciousness",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "consciousness",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:cosmology",
+      "endpoint_type": "TOPIC",
+      "label": "Cosmology",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "cosmology",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:dark-energy",
+      "endpoint_type": "TOPIC",
+      "label": "Dark energy",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "dark energy",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:dark-matter",
+      "endpoint_type": "TOPIC",
+      "label": "Dark matter",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "dark matter",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:dimethyltryptamine",
+      "endpoint_type": "TOPIC",
+      "label": "Dimethyltryptamine",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "dimethyltryptamine",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:dna",
+      "endpoint_type": "TOPIC",
+      "label": "DNA",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "dna",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:dzogchen",
+      "endpoint_type": "TOPIC",
+      "label": "Dzogchen",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "dzogchen",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:entheogen",
+      "endpoint_type": "TOPIC",
+      "label": "Entheogen",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "entheogen",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:esotericism",
+      "endpoint_type": "TOPIC",
+      "label": "Esotericism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "esotericism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:evolution",
+      "endpoint_type": "TOPIC",
+      "label": "Evolution",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "evolution",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:frameworks",
+      "endpoint_type": "TOPIC",
+      "label": "Frameworks",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "frameworks",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:future-speculation",
+      "endpoint_type": "TOPIC",
+      "label": "Future / Speculation",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "future speculation",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:gene",
+      "endpoint_type": "TOPIC",
+      "label": "Gene",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "gene",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:hermeticism",
+      "endpoint_type": "TOPIC",
+      "label": "Hermeticism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "hermeticism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:hinduism",
+      "endpoint_type": "TOPIC",
+      "label": "Hinduism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "hinduism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:humour",
+      "endpoint_type": "TOPIC",
+      "label": "Humour",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "humour",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:ibogaine",
+      "endpoint_type": "TOPIC",
+      "label": "Ibogaine",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "ibogaine",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:indigenous-cultural-knowledge",
+      "endpoint_type": "TOPIC",
+      "label": "Indigenous / Cultural Knowledge",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "indigenous cultural knowledge",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:intelligence",
+      "endpoint_type": "TOPIC",
+      "label": "Intelligence",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "intelligence",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:kabbalah",
+      "endpoint_type": "TOPIC",
+      "label": "Qabbalah",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "kabbalah",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:lsd",
+      "endpoint_type": "TOPIC",
+      "label": "LSD",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "lsd",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:meditation",
+      "endpoint_type": "TOPIC",
+      "label": "Contemplative practice",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "meditation",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:mescaline",
+      "endpoint_type": "TOPIC",
+      "label": "Mescaline",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "mescaline",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:mitochondrion",
+      "endpoint_type": "TOPIC",
+      "label": "Mitochondrion",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "mitochondrion",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:music",
+      "endpoint_type": "TOPIC",
+      "label": "Music",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "music",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:mysticism",
+      "endpoint_type": "TOPIC",
+      "label": "Mysticism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "mysticism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:nature-ecology",
+      "endpoint_type": "TOPIC",
+      "label": "Nature / Ecology",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "nature ecology",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:near-death-experience",
+      "endpoint_type": "TOPIC",
+      "label": "Near-death experience",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "near death experience",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:nervous-system",
+      "endpoint_type": "TOPIC",
+      "label": "Nervous system",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "nervous system",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:neuron",
+      "endpoint_type": "TOPIC",
+      "label": "Neuron",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "neuron",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:neuroscience",
+      "endpoint_type": "TOPIC",
+      "label": "Neuroscience",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "neuroscience",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:non-duality",
+      "endpoint_type": "TOPIC",
+      "label": "Non-duality",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "non duality",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:panpsychism",
+      "endpoint_type": "TOPIC",
+      "label": "Panpsychism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "panpsychism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:perception",
+      "endpoint_type": "TOPIC",
+      "label": "Perception",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "perception",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:personal-experience",
+      "endpoint_type": "TOPIC",
+      "label": "Personal Experience",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "personal experience",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:philosophy",
+      "endpoint_type": "TOPIC",
+      "label": "Philosophy",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "philosophy",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:philosophy-of-mind",
+      "endpoint_type": "TOPIC",
+      "label": "Philosophy of mind",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "philosophy of mind",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:physics",
+      "endpoint_type": "TOPIC",
+      "label": "Physics",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "physics",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:psilocybin",
+      "endpoint_type": "TOPIC",
+      "label": "Psilocybin",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "psilocybin",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:psychedelics",
+      "endpoint_type": "TOPIC",
+      "label": "Psychedelics",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "psychedelics",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:psychology",
+      "endpoint_type": "TOPIC",
+      "label": "Psychology",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "psychology",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:quantum-mechanics",
+      "endpoint_type": "TOPIC",
+      "label": "Quantum mechanics",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "quantum mechanics",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:reincarnation",
+      "endpoint_type": "TOPIC",
+      "label": "Reincarnation",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "reincarnation",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:research",
+      "endpoint_type": "TOPIC",
+      "label": "Research",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "research",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:selfhood",
+      "endpoint_type": "TOPIC",
+      "label": "Selfhood",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "selfhood",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:shamanism",
+      "endpoint_type": "TOPIC",
+      "label": "Shamanism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "shamanism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:sikhism",
+      "endpoint_type": "TOPIC",
+      "label": "Sikhism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "sikhism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:stories",
+      "endpoint_type": "TOPIC",
+      "label": "Stories",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "stories",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:sufism",
+      "endpoint_type": "TOPIC",
+      "label": "Sufism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "sufism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:taoism",
+      "endpoint_type": "TOPIC",
+      "label": "Taoism",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "taoism",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:theosophy",
+      "endpoint_type": "TOPIC",
+      "label": "Theosophy",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "theosophy",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:universe",
+      "endpoint_type": "TOPIC",
+      "label": "Universe",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "universe",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:wisdom-traditions",
+      "endpoint_type": "TOPIC",
+      "label": "Wisdom Traditions",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "wisdom traditions",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    },
+    {
+      "endpoint_id": "endpoint:topic:yoga",
+      "endpoint_type": "TOPIC",
+      "label": "Yoga",
+      "assertion_class": "CURATED_PUBLIC_LABEL",
+      "evidence_status": "NOT_APPLICABLE",
+      "identity_state": "DISTINCT",
+      "provenance": {
+        "artifact_id": "artifact:topic-census:0.7.5",
+        "record_id": "yoga",
+        "independence_key": "source:topic-census:public-metadata-v0.7.5",
+        "public_safe": true
+      }
+    }
+  ],
+  "edges": [],
+  "summary": {
+    "endpoint_count": 118,
+    "counts_by_type": {
+      "EVIDENCE_RECORD": 24,
+      "FRAMEWORK": 12,
+      "PUBLICATION": 13,
+      "QUESTION": 1,
+      "SOURCE_RECORD": 0,
+      "TOPIC": 68
+    },
+    "accepted_edges": 0
+  }
+}
