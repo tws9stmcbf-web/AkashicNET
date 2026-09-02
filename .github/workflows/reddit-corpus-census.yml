@@ -7,6 +7,9 @@ on:
       - feature/reddit-corpus-census
     paths:
       - scripts/reddit_corpus_census.py
+      - scripts/validate_reddit_structural_checkpoint_v02.py
+      - references/community/reddit-uri-index.csv
+      - references/community/reddit-corpus-structural-checkpoint-v0.2.json
       - tests/test_reddit_corpus_census.py
       - .github/workflows/reddit-corpus-census.yml
 
