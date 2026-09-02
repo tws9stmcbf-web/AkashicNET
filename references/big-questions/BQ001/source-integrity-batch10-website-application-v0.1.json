@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_website_application",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 10,
+  "question_id": "BQ001",
+  "applied_at": "2026-09-02",
+  "approval": "EXPLICIT_USER_APPROVAL",
+  "preview_artifact": "references/big-questions/BQ001/source-integrity-batch10-website-preview-v0.1.json",
+  "repair_applied": {
+    "candidate_id": "B10-W1",
+    "route": "/big-questions/bq001",
+    "source_file": "app/big-questions/bq001/page.tsx",
+    "before": "source links checked 30 August 2026",
+    "after": "source links checked 2 September 2026"
+  },
+  "site_source_commit": "fcf512f088c288e92f877c602809a868516ef979",
+  "validation": {
+    "production_build": "PASSED",
+    "source_diff_files": 1
+  },
+  "guards": {
+    "original_urls_preserved": true,
+    "source_cards_changed": false,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "conclusion_changed": false,
+    "question_status": "UNRESOLVED",
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "redesign": false,
+    "published": false
+  },
+  "status": "APPLIED_NOT_PUBLISHED"
+}
