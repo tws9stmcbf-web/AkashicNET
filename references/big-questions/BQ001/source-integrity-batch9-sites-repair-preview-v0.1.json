@@ -1,0 +1,133 @@
+{
+  "preview_id": "BQ001-SOURCE-INTEGRITY-BATCH9-SITES-REPAIR-PREVIEW",
+  "version": "0.1.0",
+  "status": "PREVIEW_ONLY_AWAITING_APPROVAL",
+  "prepared_on": "2026-09-02",
+  "scope": "Restore Batch 4 contemplative and philosophy-of-mind coverage in the active AkashicNET Sites implementation",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "canonical_batch_version": "0.1.1",
+    "canonical_batch_blob_sha": "037ecb89183c9eb8de90112bc8cb4a71813ba049",
+    "integrity_review": "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+    "repository_preview": "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+    "live_verification": "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+    "sites_project_slug": "akashicnet-public",
+    "sites_project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+    "sites_version_inspected": 79,
+    "sites_source_commit": "7d05ed9beefce7d1964b3d0a9d252b132beb2bb3",
+    "target_file": "app/big-questions/bq001/page.tsx",
+    "live_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "preview_policy": {
+    "apply_changes": false,
+    "build": false,
+    "save_version": false,
+    "publish": false,
+    "preserve_existing_sources": true,
+    "preserve_original_batch4_urls": true,
+    "preserve_source_ids": true,
+    "preserve_claim_meaning": true,
+    "evidence_label_for_both_cards": "Interpretation",
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false
+  },
+  "proposed_section": {
+    "placement": "After the Evidence Map and before the Possible Futures / Thought Experiments bridge",
+    "section_label": "Interpretive lenses · Contemplative traditions & philosophy of mind",
+    "heading": "Ways of describing self and consciousness are not verdicts.",
+    "cards": [
+      {
+        "card_id": "BQ001-B9-SITES-CARD-1",
+        "title": "Contemplative traditions offer non-ordinary models of selfhood",
+        "evidence_label": "Interpretation",
+        "text": "Buddhist non-self analysis and meditation frameworks examine how the sense of self can be constructed, deconstructed and transformed.",
+        "boundary": "Contemplative phenomenology, tradition and meditation-related changes in self-processing do not establish external ontology or survival after death.",
+        "source_ids": [
+          "SRC-BQ001-SIDERITS-2011",
+          "SRC-BQ001-DAHL-2015",
+          "SRC-BQ001-VAGO-2012"
+        ]
+      },
+      {
+        "card_id": "BQ001-B9-SITES-CARD-2",
+        "title": "Physicalism, dualism and panpsychism remain competing philosophical frameworks",
+        "evidence_label": "Interpretation",
+        "text": "These positions offer different accounts of how mind relates to the physical world, but none functions as an empirical verdict on BQ001.",
+        "boundary": "Philosophical coherence or possibility is not empirical evidence that personal consciousness survives death; physicalism as philosophy is not itself proof of non-survival.",
+        "source_ids": [
+          "SRC-BQ001-SEP-PHYSICALISM",
+          "SRC-BQ001-SEP-DUALISM",
+          "SRC-BQ001-SEP-PANPSYCHISM"
+        ]
+      }
+    ]
+  },
+  "proposed_source_entries": [
+    [
+      "Siderits 2011",
+      "Oxford philosophy chapter on Buddhist non-self; philosophical analysis, not empirical evidence of post-mortem survival.",
+      "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685"
+    ],
+    [
+      "Dahl et al. 2015",
+      "Peer-reviewed meditation framework concerning cognitive mechanisms of self-processing; not a metaphysical verdict.",
+      "https://pubmed.ncbi.nlm.nih.gov/26231761/"
+    ],
+    [
+      "Vago & Silbersweig 2012",
+      "Theoretical S-ART framework for mindfulness; psychological self-transcendence does not establish brain-independent consciousness.",
+      "https://pubmed.ncbi.nlm.nih.gov/23112770/"
+    ],
+    [
+      "SEP: Physicalism",
+      "Scholarly reference synthesis of physicalist positions; philosophy is not itself proof of non-survival.",
+      "https://plato.stanford.edu/entries/physicalism/"
+    ],
+    [
+      "SEP: Dualism",
+      "Scholarly reference synthesis of dualist positions; conceptual possibility is not evidence that survival occurs.",
+      "https://plato.stanford.edu/entries/dualism/"
+    ],
+    [
+      "SEP: Panpsychism",
+      "Scholarly reference synthesis of panpsychist positions; panpsychism does not entail personal survival.",
+      "https://plato.stanford.edu/entries/panpsychism/"
+    ]
+  ],
+  "implementation_constraints": {
+    "retain_current_seven_sources": true,
+    "resulting_source_count": 13,
+    "page_redesign": false,
+    "navigation_change": false,
+    "imagery_change": false,
+    "version_status_change": false,
+    "evidence_taxonomy_change": false,
+    "model_support_change": false,
+    "responsive_behavior_to_preserve": true,
+    "accessibility_to_preserve": true
+  },
+  "patch_outline": [
+    "Add a typed two-card data structure containing the exact canonical Interpretation text and boundaries.",
+    "Render one compact two-column section after the existing Evidence Map, collapsing to one column at the existing mobile breakpoint.",
+    "Append six Batch 4 records to the existing sources array using their original canonical URLs.",
+    "Keep every existing source, model statement, counter-inference, open test and UNRESOLVED status unchanged."
+  ],
+  "impact_assessment": {
+    "new_interpretation_cards": 2,
+    "new_source_links": 6,
+    "existing_source_links_removed": 0,
+    "existing_source_links_replaced": 0,
+    "total_source_links_after_application": 13,
+    "claims_reclassified": 0,
+    "evidence_labels_promoted": 0,
+    "conclusion_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false,
+    "website_changed": false,
+    "published": false
+  },
+  "adjudication": {
+    "decision": "AWAITING_EXPLICIT_SITES_APPLICATION_APPROVAL",
+    "repair_candidate_reference": "BQ001-B9-LIVE-R1"
+  }
+}
