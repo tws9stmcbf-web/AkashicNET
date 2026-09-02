@@ -1,0 +1,52 @@
+name: Validate public-safe semantic endpoint registry
+
+on:
+  pull_request:
+    paths:
+      - "scripts/build_public_safe_semantic_endpoint_registry_v019.py"
+      - "tests/test_public_safe_semantic_endpoint_registry_v019.py"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
+      - ".github/workflows/prepare-public-safe-semantic-endpoint-registry.yml"
+      - ".github/workflows/validate-public-safe-semantic-endpoint-registry.yml"
+      - ".github/workflows/merge-audited-cross-source-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_public_safe_semantic_endpoint_registry_v019.py"
+      - "tests/test_public_safe_semantic_endpoint_registry_v019.py"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
+      - ".github/workflows/prepare-public-safe-semantic-endpoint-registry.yml"
+      - ".github/workflows/validate-public-safe-semantic-endpoint-registry.yml"
+      - ".github/workflows/merge-audited-cross-source-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-semantic-endpoints:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Build or confirm deterministic registry
+        run: |
+          if [ -f references/community/public-safe-semantic-endpoint-registry-v0.1.9.json ]; then
+            python scripts/build_public_safe_semantic_endpoint_registry_v019.py --check
+          else
+            output="$(mktemp)"
+            python scripts/build_public_safe_semantic_endpoint_registry_v019.py --output "$output"
+            python -m json.tool "$output" >/dev/null
+          fi
+      - name: Run fail-closed tests
+        run: python -m unittest -v tests/test_public_safe_semantic_endpoint_registry_v019.py
+      - name: Compile builder and tests
+        run: python -m py_compile scripts/build_public_safe_semantic_endpoint_registry_v019.py tests/test_public_safe_semantic_endpoint_registry_v019.py
+      - name: Confirm registry merge gate
+        run: |
+          grep -F "automation/public-safe-endpoints-" .github/workflows/merge-audited-cross-source-review.yml
+          grep -F "validate-semantic-endpoints" .github/workflows/merge-audited-cross-source-review.yml
+          grep -F "public-safe-semantic-endpoint-registry-v0.1.9.json" .github/workflows/merge-audited-cross-source-review.yml
