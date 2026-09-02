@@ -1,0 +1,177 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_review",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 11,
+  "reviewed_on": "2026-09-02",
+  "status": "REVIEW_COMPLETE_AWAITING_REPAIR_APPROVAL",
+  "target": {
+    "path": "research/microdosing-research-2026.md",
+    "blob_sha_reviewed": "4e8d5baa28371baf4b568ac350314997d9cb78cc",
+    "distinct_source_works": 2
+  },
+  "method": {
+    "checks": [
+      "live availability",
+      "redirect behavior",
+      "title comparison",
+      "retraction/correction notice search",
+      "deleted-post status",
+      "normalized duplicate detection",
+      "bibliographic and retrieval metadata completeness",
+      "claim-level provenance sampling",
+      "public website search-index cross-check"
+    ],
+    "classification_rule": "A changed, redirected, access-controlled, unindexed, or unavailable source is not inferred to be false.",
+    "review_only": true
+  },
+  "summary": {
+    "broken_links": 0,
+    "redirected_sources": 1,
+    "changed_titles": 0,
+    "retraction_or_correction_notices_observed": 0,
+    "deleted_source_posts": 0,
+    "normalized_duplicate_reference_groups": 1,
+    "legacy_citation_placeholders": 4,
+    "source_records_missing_retrieval_metadata": 2,
+    "works_with_incomplete_provenance": 2,
+    "website_matches_found_by_public_search_index": 0
+  },
+  "sources": [
+    {
+      "source_id": "B11-S1",
+      "source_type": "community_post",
+      "work": "r/microdosing FAQ/Tip 101",
+      "original_urls_observed": [
+        "https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/",
+        "https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/?utm_source=chatgpt.com"
+      ],
+      "normalized_work_url": "https://www.reddit.com/r/microdosing/comments/plrxca/faqtip_101_what_is_the_subthreshold_dose/",
+      "live_status": "AVAILABLE",
+      "deleted": false,
+      "redirect_observation": "The tracking-parameter form is a duplicate reference to the same Reddit post; the original URL form is preserved in this review.",
+      "title_observed": "FAQ/Tip 101: What is the sub-threshold dose? Suggested method for finding your sweet spot (YMMV): Start Low, Go Slow; Methodology; Help.",
+      "title_comparison": "MATCH",
+      "publication_date_observed": "2021-09-10",
+      "source_update_date_observed": "2023-07-12",
+      "retrieved_on": "2026-09-02",
+      "provenance_findings": [
+        "The source remains publicly readable and is not a deleted post.",
+        "Its statement that the guide draws on more than one hundred thousand anecdotal reports remains present.",
+        "The source distinguishes the post as a collaborative community synthesis, not a controlled clinical dataset.",
+        "Four repository links to this work retain legacy oai_citation placeholder labels."
+      ]
+    },
+    {
+      "source_id": "B11-S2",
+      "source_type": "journal_article",
+      "work": "Petranker et al. (2026)",
+      "original_identifier_observed": "10.1016/j.drugpo.2026.105459",
+      "resolver_url": "https://doi.org/10.1016/j.drugpo.2026.105459",
+      "publisher_url_observed": "https://www.sciencedirect.com/science/article/pii/S0955395926003129",
+      "pubmed_url_observed": "https://pubmed.ncbi.nlm.nih.gov/42566966/",
+      "pmid": "42566966",
+      "live_status": "AVAILABLE",
+      "redirect_observation": "The DOI resolves to the publisher record; the DOI-only repository entry does not expose that link.",
+      "title_observed": "Microdosing psychedelics: What, why, when, and how often? Insights from an international survey of people who use psychedelics",
+      "title_comparison": "MATCH",
+      "authors_observed": [
+        "Rotem Petranker",
+        "Omer A. Syed",
+        "Valentyn Sobolenko",
+        "Peter Giacobbe",
+        "Daniel J. Kruger",
+        "Jacob S. Aday",
+        "Stephanie Lake",
+        "Philippe Lucas"
+      ],
+      "journal": "International Journal of Drug Policy",
+      "volume": "156",
+      "article_number": "105459",
+      "available_online": "2026-08-07",
+      "retrieved_on": "2026-09-02",
+      "notice_check": {
+        "retraction_observed": false,
+        "correction_or_erratum_observed": false,
+        "scope_note": "No notice was observed in the publisher/PubMed records or exact-DOI notice search at review time; this is not a permanent guarantee."
+      },
+      "claim_provenance_sampling": {
+        "directly_confirmed_from_indexed_abstract_or_publisher_record": [
+          "5,399 lifetime microdosers",
+          "3,768 past-year microdosers (69.8% of lifetime microdosers)",
+          "psilocybin 81.1%",
+          "LSD 39.6%",
+          "one-day-on/two-days-off was the most reported regular regimen",
+          "nature 58.9%",
+          "inward focus 56.8%",
+          "leisure 43.0%"
+        ],
+        "present_in_repository_but_needing_pinpoint_location_metadata": [
+          "9,087 psychedelic users",
+          "90 countries",
+          "MDMA 14.7%",
+          "socialising 39.8%",
+          "the exact location supporting the metabolism-variability paraphrase"
+        ],
+        "interpretation": "These entries are repairable provenance gaps, not findings that the figures or source are false."
+      }
+    }
+  ],
+  "duplicate_groups": [
+    {
+      "group_id": "B11-D1",
+      "work_source_id": "B11-S1",
+      "occurrences": 4,
+      "distinct_url_forms": 2,
+      "difference": "utm_source=chatgpt.com tracking parameter",
+      "silent_replacement_permitted": false
+    }
+  ],
+  "website_cross_check": {
+    "method": "Public web search limited to site:akashicnet.org for the topic, DOI, and author name.",
+    "matching_indexed_page_found": false,
+    "limitations": "Search-index absence does not prove that content is absent from the live website.",
+    "website_promotion_authorized": false
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "B11-R1",
+      "action": "Replace the four legacy oai_citation display labels with explicit Markdown source labels while retaining the original Reddit destination URL in provenance metadata.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B11-R2",
+      "action": "Consolidate the Reddit citations onto the clean URL for rendered links, while recording both originally observed URL forms and the tracking-parameter duplicate in source metadata.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B11-R3",
+      "action": "Add an explicit DOI resolver link, publisher URL, PubMed URL, PMID 42566966, full author list, online-publication date, and retrieval date to the journal source record without changing the DOI or title.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B11-R4",
+      "action": "Add claim-level or page/table provenance for 9,087 participants, 90 countries, MDMA 14.7%, socialising 39.8%, and the metabolism-variability paraphrase; if a pinpoint cannot be verified, mark that item as awaiting source pinpoint rather than deleting or rewriting it.",
+      "risk": "MEDIUM",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B11-R5",
+      "action": "Add retrieval metadata for both works and record the 2023-07-12 Reddit update date.",
+      "risk": "LOW",
+      "requires_approval": true
+    }
+  ],
+  "guards": {
+    "preserve_original_urls_and_identifiers": true,
+    "no_silent_source_replacement": true,
+    "unavailable_or_changed_does_not_mean_false": true,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "website_promotion": false
+  },
+  "next_action": "Obtain explicit approval for Batch 11 repair candidates before changing the research record."
+}
