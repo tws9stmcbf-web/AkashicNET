@@ -12,7 +12,7 @@
     "retargetable": false
   },
   "criteria": {
-    "V014-C1_release_scoped_url_inventory_complete": "BLOCKED",
+    "V014-C1_release_scoped_url_inventory_complete": "PASS",
     "V014-C2_retrieval_metadata_complete": "BLOCKED",
     "V014-C3_no_silent_url_or_title_replacement": "PARTIAL",
     "V014-C4_duplicate_linkage_preserves_context": "PARTIAL",
@@ -26,7 +26,6 @@
   "required_inventory": "references/community/public-source-url-inventory-v0.14.json",
   "inventory_generator": "scripts/build_public_source_url_inventory_v014.py",
   "release_blockers": [
-    "Generate and commit the release-scoped external URL inventory.",
     "Review every inventory entry and add retrieval, redirect, title and retraction metadata without inferring truth.",
     "Validate GitHub/website synchronization, duplicate linkage, edge provenance, privacy and promotion controls.",
     "Run the complete required CI set at one exact candidate commit.",
@@ -40,5 +39,8 @@
     "circular_confidence_amplification": false,
     "silent_source_replacement": false,
     "unavailable_source_is_false": false
+  },
+  "evidence": {
+    "V014_C1": "Inventory generated from exact main snapshot c890f73c0d30606df658e33bc9219e300e13fbe4: 244 scoped files, 21,589 URL occurrences, 7,665 unique normalized external URLs, stored in 16 content-addressed shards. Retrieval state remains UNASSESSED."
   }
 }
