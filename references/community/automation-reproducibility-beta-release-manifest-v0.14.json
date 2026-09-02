@@ -1,10 +1,10 @@
 {
   "target_version": "0.14.0-beta.1",
   "target_name": "Automation & Reproducibility Beta",
-  "state": "READY",
+  "state": "SEALED",
   "release_policy": "exact_commit_fail_closed",
   "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
-  "seal_metadata_commit": null,
+  "seal_metadata_commit": "24c7d3d214e31a8de1357edaf02fe191b12872f5",
   "historical_baseline": {
     "v0.13_validated_release_commit": "fbb7b6f539947f528383ca13a01639a04471b594",
     "v0.13_seal_metadata_commit": "98e551d5fe257c6e7aa991812b0d56f0dc0bf0a7",
@@ -14,7 +14,7 @@
     "status": "COMPLETE_FAIL_CLOSED",
     "derived_external_url_count": 18490,
     "derived_inventory_sha256_at_source_coverage_candidate": "6ea009b4534595f3f486a93fee4c17f23023e941e8faf47bb5c73edde19f9605",
-    "note": "The final readiness workflow re-derives the inventory; this count/digest is an audit checkpoint, not a truth or availability claim."
+    "note": "The end-to-end readiness workflow re-derives the inventory; this count/digest is an audit checkpoint, not a truth or availability claim."
   },
   "required_gates": [
     "historical_release_ledger",
@@ -51,5 +51,5 @@
     "unavailable_or_changed_means_false": false,
     "bq001_forced_resolution": false
   },
-  "seal_rule": "The validated v0.14 release target is the exact main commit whose end-to-end v0.14 readiness workflow passed. A later metadata-only seal commit may append the ledger and set state SEALED but must not retarget this validated release commit."
+  "seal_rule": "v0.14 remains anchored to the exact validated release commit 7b6cfd89de570c4b945d574dad570c37825645fe. The READY metadata commit 24c7d3d214e31a8de1357edaf02fe191b12872f5 is recorded as seal metadata provenance; this final ledger/seal bookkeeping must not retarget the validated release commit."
 }
