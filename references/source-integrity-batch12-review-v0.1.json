@@ -1,0 +1,139 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_review",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 12,
+  "reviewed_on": "2026-09-02",
+  "status": "REVIEW_COMPLETE_AWAITING_REPAIR_APPROVAL",
+  "target": {
+    "path": "references/community/one-source-many-paths.md",
+    "blob_sha_reviewed": "14e2c0eda51b01df6761e9fdfd4ac26c0c998545"
+  },
+  "source": {
+    "source_id": "B12-S1",
+    "type": "Reddit community / experiential post",
+    "reddit_post_id": "1uoneax",
+    "community": "r/NeuronsToNirvana",
+    "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/",
+    "live_status": "AVAILABLE",
+    "deleted": false,
+    "redirect_observed": false,
+    "published_on": "2026-07-06",
+    "retrieved_on": "2026-09-02",
+    "live_title": "🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — \"Different names. Different maps. One mystery.\" [July 2026]",
+    "repository_heading": "One Source, Many Paths",
+    "title_assessment": "SHORT_LABEL_NOT_CONTRADICTORY",
+    "flair_observed": "🦯 tame Your EGO 🦁",
+    "visual_material_observed": true,
+    "visual_observation": "The live post begins with Figure 1 and a caption. The detailed repository record does not reproduce it and correctly keeps reuse permission unconfirmed.",
+    "evidence_boundary_assessment": "PASS",
+    "rights_boundary_assessment": "PASS",
+    "notice": "Availability, title, authorship presentation and content state were observed at retrieval time only. A future change or unavailability would not establish falsity."
+  },
+  "summary": {
+    "broken_links": 0,
+    "redirects": 0,
+    "deleted_posts": 0,
+    "changed_titles": 0,
+    "shortened_title_labels": 1,
+    "exact_url_occurrences_in_target": 2,
+    "distinct_url_forms_in_target": 1,
+    "cross_repository_records_found": 7,
+    "erroneous_duplicate_works_confirmed": 0,
+    "records_with_unknown_or_missing_publication_date_observed": 5,
+    "historical_or_test_records_with_stale_visual_flag_observed": 2,
+    "website_exact_source_matches_found_by_public_search": 0
+  },
+  "cross_repository_occurrences": [
+    {
+      "path": "references/community/one-source-many-paths.md",
+      "role": "canonical detailed provenance record",
+      "date_state": "missing",
+      "visual_state": "visual existence not explicitly recorded"
+    },
+    {
+      "path": "references/community/n2n-index.md",
+      "role": "human-readable index",
+      "date_state": "not displayed"
+    },
+    {
+      "path": "references/community/n2n-pilot-index.md",
+      "role": "pilot index",
+      "date_state": "unknown"
+    },
+    {
+      "path": "references/community/n2n-index.csv",
+      "role": "structured index",
+      "date_state": "unknown",
+      "visual_state": "Unknown"
+    },
+    {
+      "path": "references/community/n2n-test-batch-25.md",
+      "role": "test-batch view",
+      "date_state": "unknown"
+    },
+    {
+      "path": "references/community/n2n-test-batch-25.csv",
+      "role": "test-batch structured record",
+      "date_state": "unknown",
+      "visual_state": "No"
+    },
+    {
+      "path": "tools/n2n/dryrun/25_post_test.jsonl",
+      "role": "historical dry-run artifact",
+      "date_state": "unknown",
+      "visual_state": "No",
+      "preservation_note": "Treat as historical execution output; do not silently rewrite it as if it had originally contained later metadata."
+    }
+  ],
+  "duplicate_assessment": {
+    "normalized_work_count": 1,
+    "repository_occurrence_count": 7,
+    "classification": "INTENTIONAL_MULTI_RECORD_REFERENCE_WITH_PROVENANCE_DRIFT",
+    "reason": "The same work appears in canonical, index, pilot, test and historical dry-run contexts. These are not seven distinct works and should be linked by Reddit post ID rather than blindly deleted or collapsed."
+  },
+  "website_cross_check": {
+    "method": "Public search for the exact title on site:akashicnet.org plus inspection of indexed AkashicNET results.",
+    "exact_source_reference_found": false,
+    "related_theme_found": "The public site contains the related HIERATIC015 'Unity of Wisdom' pathway, but that thematic overlap is not treated as a citation to this Reddit work.",
+    "limitation": "Search-index absence does not prove total live-site absence.",
+    "website_promotion_authorized": false
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "B12-R1",
+      "action": "Add Reddit post ID 1uoneax, the full observed live title, publication date 6 July 2026, retrieval date 2 September 2026 and observed flair to the detailed provenance record while preserving its shorter heading and original URL.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B12-R2",
+      "action": "Explicitly record that the live post contains Figure 1 while retaining the existing no-reproduction and permission-unconfirmed rights boundary.",
+      "risk": "LOW",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B12-R3",
+      "action": "Refresh active index metadata that currently says the publication date is unknown and set the active visual/art flag to Yes; preserve historical dry-run output and annotate its stale metadata rather than silently rewriting history.",
+      "risk": "MEDIUM",
+      "requires_approval": true
+    },
+    {
+      "candidate_id": "B12-R4",
+      "action": "Add a normalized-work linkage note keyed by Reddit post ID 1uoneax so canonical, index, pilot, test and historical occurrences are recognized as references to one work without deleting their distinct record contexts.",
+      "risk": "LOW",
+      "requires_approval": true
+    }
+  ],
+  "guards": {
+    "review_only": true,
+    "preserve_original_url": true,
+    "no_silent_replacement": true,
+    "unavailable_or_changed_does_not_mean_false": true,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_action": "Obtain explicit approval for B12-R1 through B12-R4 before changing source or index records."
+}
