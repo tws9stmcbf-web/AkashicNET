@@ -1,0 +1,45 @@
+{
+  "resolution_id": "BQ001-SOURCE-INTEGRITY-BATCH8-LIVE-RESOLUTION",
+  "version": "0.1.0",
+  "status": "RESOLVED",
+  "verified_on": "2026-09-02",
+  "live_url": "https://akashicnet.org/big-questions/bq001",
+  "resolves": {
+    "verification_artifact": "references/big-questions/BQ001/source-integrity-batch8-live-verification-v0.1.json",
+    "repair_candidate": "BQ001-B8-LIVE-R1"
+  },
+  "deployment": {
+    "platform": "OpenAI Sites",
+    "site_slug": "akashicnet-public",
+    "site_version": 79,
+    "source_commit": "7d05ed9beefce7d1964b3d0a9d252b132beb2bb3"
+  },
+  "rendered_verification": {
+    "route_available": true,
+    "source_cards_observed": 7,
+    "citations": [
+      {
+        "source_id": "SRC-BQ001-HARALDSSON-2003",
+        "rendered_label": "Haraldsson 2003",
+        "rendered_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+        "evidence_boundary_present": true
+      },
+      {
+        "source_id": "SRC-BQ001-ALLAN-2025",
+        "rendered_label": "Thomas et al. 2025 (2026 issue)",
+        "rendered_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+        "evidence_boundary_present": true,
+        "note": "Stable legacy source_id retained for referential integrity."
+      }
+    ]
+  },
+  "integrity_result": {
+    "repository_to_live_drift_resolved": true,
+    "original_urls_preserved": true,
+    "source_ids_preserved": true,
+    "unrelated_content_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  }
+}
