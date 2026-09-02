@@ -64,15 +64,19 @@
 - Provenance status: Link-only; attribution preserved; no content reproduction without confirmed rights.
 
 ### Project Akashic Library / Codex Nexus
+- Full title observed: 💡Project Akashic Library framework 📖 Codex Nexus | Atlantean 🔷 + Alexandrian 🏛️ + Da Vinci ⚙️
+- Reddit post ID / normalized work key: `1l26ks1`
 - Reddit URL: https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/
 - Author: Original poster as listed on Reddit
-- Date: unknown
+- Date: 2025-06-03
+- Retrieved: 2026-09-02
 - Source type: concept_post
 - Category: Frameworks
 - Evidence status: speculation
+- Visual/audio/art flag: Yes — image post is present at source and is not reproduced here.
 - Toolkit framework: Library of Alexandria
 - Summary: A conceptual archive model intended to organize symbols, memory, meaning, and wisdom across collective inquiry.
-- Provenance status: Link-only; attribution preserved; no image or text reuse without confirmed rights.
+- Provenance status: Link-only; attribution preserved; no image or text reuse without confirmed rights. Records keyed by `1l26ks1` refer to one normalized work while retaining their distinct index contexts.
 
 ### One Source, Many Paths
 - Full title observed: 🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — “Different names. Different maps. One mystery.” [July 2026]
