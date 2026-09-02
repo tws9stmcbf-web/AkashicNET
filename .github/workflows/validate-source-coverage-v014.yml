@@ -1,0 +1,36 @@
+name: Validate v0.14 source coverage
+
+on:
+  pull_request:
+    paths:
+      - 'references/community/source-coverage-v0.14.json'
+      - 'references/source-integrity-batch12-review-v0.1.json'
+      - 'references/source-integrity-batch13-review-v0.1.json'
+      - 'scripts/validate_source_coverage_v014.py'
+      - '.github/workflows/validate-source-coverage-v014.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/community/source-coverage-v0.14.json'
+      - 'references/source-integrity-batch12-review-v0.1.json'
+      - 'references/source-integrity-batch13-review-v0.1.json'
+      - 'scripts/validate_source_coverage_v014.py'
+      - '.github/workflows/validate-source-coverage-v014.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.x'
+      - name: Validate source coverage contract
+        run: python scripts/validate_source_coverage_v014.py
+      - name: Re-run immutable Actions gate
+        run: python scripts/validate_actions_immutable_refs.py

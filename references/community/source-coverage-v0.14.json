@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "target_version": "0.14.0-beta.1",
+  "status": "PARTIAL_FAIL_CLOSED",
+  "purpose": "Machine-readable source coverage contract for the v0.14 public release boundary.",
+  "coverage_complete": false,
+  "release_ready": false,
+  "scope_note": "This initial manifest records source-integrity review records already present in the repository. It does not claim that the release-wide external URL denominator is complete.",
+  "records": [
+    {
+      "source_id": "B12-S1",
+      "review_record": "references/source-integrity-batch12-review-v0.1.json",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/",
+      "status": "AVAILABLE"
+    },
+    {
+      "source_id": "B13-S1",
+      "review_record": "references/source-integrity-batch13-review-v0.1.json",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/",
+      "status": "AVAILABLE"
+    }
+  ],
+  "allowed_statuses": [
+    "AVAILABLE",
+    "REDIRECTED",
+    "UNAVAILABLE",
+    "RATE_LIMITED",
+    "UNCHECKED"
+  ],
+  "invariants": {
+    "original_url_preserved": true,
+    "silent_replacement": false,
+    "unavailable_or_changed_means_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "private_drive_promotion": false
+  },
+  "completion_rule": "coverage_complete may become true only when a deterministic repository-derived denominator proves that every external URL in the v0.14 public release boundary is represented exactly once or explicitly linked as a duplicate provenance context."
+}
