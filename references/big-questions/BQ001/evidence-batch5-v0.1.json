@@ -1,6 +1,6 @@
 {
   "batch_id": "BQ001-BATCH5-SUPPLEMENTAL-SCIENCE",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "CANONICAL_APPROVED",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
@@ -18,16 +18,30 @@
       "pmid": "37126719",
       "url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
       "link_check": {
-        "checked_at": "2026-08-31",
-        "status": "AVAILABLE",
+        "previous_checked_at": "2026-08-31",
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE_VIA_PUBLISHER_SEARCH_AND_PUBMED_INDEX",
         "title_match": true,
-        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "retrieval_methods": [
+          "publisher_search_result",
+          "NCBI_PUBMED_EUTILS"
+        ],
+        "publisher_direct_check": "HTTP_403_ACCESS_CONTROL",
+        "access_note": "Publisher access control was observed and is not classified as a broken or false source.",
+        "original_url_preserved": true
       },
       "limitations": [
         "Observational analysis of four comatose dying patients after withdrawal of ventilatory support.",
         "Gamma surges occurred in two patients and are not direct reports of conscious experience.",
         "Neural signatures associated with conscious processing are not proof of consciousness or post-mortem survival."
-      ]
+      ],
+      "pmcid": "PMC10175832",
+      "volume": "120",
+      "issue": "19",
+      "pages": "e2216268120",
+      "epublished_on": "2023-05-01",
+      "published_on": "2023-05-09"
     },
     {
       "source_id": "SRC-BQ001-COGITATE-2025",
@@ -39,16 +53,33 @@
       "doi": "10.1038/s41586-025-08888-1",
       "url": "https://www.nature.com/articles/s41586-025-08888-1",
       "link_check": {
-        "checked_at": "2026-08-31",
-        "status": "AVAILABLE",
+        "previous_checked_at": "2026-08-31",
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE_VIA_PUBLISHER_SEARCH_AND_PUBMED_INDEX",
         "title_match": true,
-        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "retrieval_methods": [
+          "publisher_search_result",
+          "NCBI_PUBMED",
+          "NCBI_PUBMED_EUTILS"
+        ],
+        "publisher_direct_check": "REDIRECT_TO_IDENTITY_COOKIE_GATE",
+        "effective_redirect_observed": "https://idp.nature.com/authorize",
+        "access_note": "Publisher identity-cookie redirect was observed; the original canonical URL is retained.",
+        "original_url_preserved": true
       },
       "limitations": [
         "Tests selected predictions of IIT and GNWT under conscious visual-perception conditions.",
         "Challenges to theory predictions do not establish that either theory is wholly false.",
         "The study does not test consciousness after irreversible biological death."
-      ]
+      ],
+      "pmid": "40307561",
+      "pmcid": "PMC12137136",
+      "volume": "642",
+      "issue": "8066",
+      "pages": "133-142",
+      "epublished_on": "2025-04-30",
+      "published_on": "2025-06"
     },
     {
       "source_id": "SRC-BQ001-PARNIA-GUIDELINES-2022",
@@ -61,16 +92,43 @@
       "pmid": "35181885",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35181885/",
       "link_check": {
-        "checked_at": "2026-08-31",
+        "previous_checked_at": "2026-08-31",
+        "checked_at": "2026-09-02",
         "status": "AVAILABLE",
         "title_match": true,
-        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "retrieval_methods": [
+          "NCBI_PUBMED",
+          "NCBI_PUBMED_EUTILS"
+        ],
+        "original_url_preserved": true
       },
       "limitations": [
         "Consensus and methodological proposal rather than a prospective empirical test.",
         "Terminology and interpretations in this paper are contested in the literature.",
         "Must be presented alongside the existing Martial et al. 2022 methodological critique.",
         "Consensus language does not prove survival or non-survival."
+      ],
+      "volume": "1511",
+      "issue": "1",
+      "pages": "5-21",
+      "epublished_on": "2022-02-18",
+      "published_on": "2022-05",
+      "related_commentaries": [
+        {
+          "title": "Sawing the branch of near-death experience research: A critical analysis of Parnia et al.'s paper",
+          "doi": "10.1111/nyas.14846",
+          "pmid": "35729792",
+          "relationship": "PUBMED_COMMENT_IN",
+          "evidence_promotion_applied": false
+        },
+        {
+          "title": "Studying death and near-death experiences requires neuroscientific expertise",
+          "doi": "10.1111/nyas.14888",
+          "pmid": "36017883",
+          "relationship": "PUBMED_COMMENT_IN",
+          "evidence_promotion_applied": false
+        }
       ]
     }
   ],
@@ -168,5 +226,25 @@
     "source_review_artifact": "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
     "preserves_original_source_urls_and_retrieval_metadata": true,
     "canonical_promotion_applied": true
+  },
+  "integrity_checkpoint": {
+    "batch": 10,
+    "applied_on": "2026-09-02",
+    "decision": "APPROVED",
+    "approved_repairs": [
+      "B10-R1",
+      "B10-R2",
+      "B10-R3",
+      "B10-R4"
+    ],
+    "review_artifact": "references/big-questions/BQ001/source-integrity-batch10-review-v0.1.json",
+    "original_urls_preserved": true,
+    "source_ids_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "question_status_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promotion_applied": false,
+    "silent_source_replacement": false
   }
 }
