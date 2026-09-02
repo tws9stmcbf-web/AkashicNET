@@ -93,6 +93,8 @@ Use a conservative classification scheme for archive entries:
 | Project Akashic Library / Codex Nexus | [link](https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/) | Frameworks | Akashic archive / codex / Library of Alexandria direction | Community / conceptual / exploratory | Link-only record; original post preserved; no copying or reproduction without confirmed rights |
 | One Source, Many Paths | [link](https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/) | Consciousness | Unity, multiple paths, ego, meaning-making | Community / experiential / conceptual | Link-only record; original post preserved; no copying or reproduction without confirmed rights |
 
+Integrity metadata for this entry: normalized work key `1uoneax`; full live title observed as “🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — ‘Different names. Different maps. One mystery.’ [July 2026]”; published 6 July 2026; retrieved 2 September 2026; visual/audio/art flag: Yes (Figure 1 present, not reproduced).
+
 ## Detailed record template
 
 ```markdown
