@@ -1,0 +1,95 @@
+{
+  "preview_id": "BQ001-SOURCE-INTEGRITY-BATCH9-WEBSITE-PREVIEW",
+  "version": "0.1.0",
+  "status": "PREVIEW_ONLY_NO_VISIBLE_CHANGE_REQUIRED",
+  "prepared_on": "2026-09-02",
+  "scope": "BQ001 website alignment with approved canonical Batch 4 v0.1.1 provenance repairs",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "canonical_batch_version": "0.1.1",
+    "canonical_batch_blob_sha": "037ecb89183c9eb8de90112bc8cb4a71813ba049",
+    "source_integrity_review": "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "331f709624075b517bb071b2b2f53de9049df66f",
+    "live_site_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "preview_policy": {
+    "apply_changes": false,
+    "publish_changes": false,
+    "preserve_source_urls": true,
+    "preserve_source_ids": true,
+    "preserve_claim_text": true,
+    "preserve_evidence_labels": true,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false
+  },
+  "source_alignment": [
+    {
+      "source_id": "SRC-BQ001-SIDERITS-2011",
+      "website_label": "Siderits 2011",
+      "canonical_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "website_href": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "status": "ALIGNED_ORIGINAL_URL_PRESERVED",
+      "note": "The documented publisher redirect and current route remain repository provenance; no silent URL replacement is proposed."
+    },
+    {
+      "source_id": "SRC-BQ001-DAHL-2015",
+      "website_label": "Dahl et al. 2015",
+      "canonical_url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "website_href": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "status": "ALIGNED"
+    },
+    {
+      "source_id": "SRC-BQ001-VAGO-2012",
+      "website_label": "Vago & Silbersweig 2012",
+      "canonical_url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "website_href": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "status": "ALIGNED"
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PHYSICALISM",
+      "website_label": "SEP: Physicalism",
+      "canonical_url": "https://plato.stanford.edu/entries/physicalism/",
+      "website_href": "https://plato.stanford.edu/entries/physicalism/",
+      "status": "ALIGNED"
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-DUALISM",
+      "website_label": "SEP: Dualism",
+      "canonical_url": "https://plato.stanford.edu/entries/dualism/",
+      "website_href": "https://plato.stanford.edu/entries/dualism/",
+      "status": "ALIGNED",
+      "note": "The 2025 substantive revision is recorded canonically as edition provenance; the compact topic label remains accurate."
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PANPSYCHISM",
+      "website_label": "SEP: Panpsychism",
+      "canonical_url": "https://plato.stanford.edu/entries/panpsychism/",
+      "website_href": "https://plato.stanford.edu/entries/panpsychism/",
+      "status": "ALIGNED"
+    }
+  ],
+  "proposed_changes": [],
+  "patch_preview": [],
+  "rationale": "The approved Batch 9 changes are source-level retrieval and provenance metadata. Existing website labels, URLs, Interpretation classifications and evidence boundaries remain accurate and do not require a visible patch.",
+  "impact_assessment": {
+    "sources_compared": 6,
+    "aligned_labels": 6,
+    "aligned_original_urls": 6,
+    "citation_labels_changed_in_preview": 0,
+    "source_urls_changed": 0,
+    "source_ids_changed": 0,
+    "claims_changed": 0,
+    "evidence_labels_changed": 0,
+    "page_layout_redesign": false,
+    "live_site_changed": false,
+    "repository_website_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  },
+  "adjudication": {
+    "decision": "NO_WEBSITE_PATCH_RECOMMENDED",
+    "website_application_approval_required": false,
+    "next_stage": "LIVE_ROUTE_ALIGNMENT_VERIFICATION_ONLY"
+  }
+}
