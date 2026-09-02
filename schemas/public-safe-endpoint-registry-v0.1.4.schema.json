@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/public-safe-endpoint-registry-v0.1.4.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "policy", "endpoints", "edges"],
+  "properties": {
+    "schema_version": {"const": "0.1.4"},
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["automated_truth_inference_allowed", "automated_acceptance_allowed", "canonical_identity_promotion_allowed", "circular_confidence_allowed", "private_drive_metadata_allowed"],
+      "properties": {
+        "automated_truth_inference_allowed": {"const": false},
+        "automated_acceptance_allowed": {"const": false},
+        "canonical_identity_promotion_allowed": {"const": false},
+        "circular_confidence_allowed": {"const": false},
+        "private_drive_metadata_allowed": {"const": false}
+      }
+    },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["endpoint_id", "endpoint_type", "label", "assertion_class", "evidence_status", "identity_state", "provenance"],
+        "properties": {
+          "endpoint_id": {"type": "string", "pattern": "^endpoint:[a-z0-9][a-z0-9:-]+$"},
+          "endpoint_type": {"enum": ["TOPIC", "PUBLICATION", "FRAMEWORK", "QUESTION", "SOURCE_RECORD", "EVIDENCE_RECORD"]},
+          "label": {"type": "string", "minLength": 1},
+          "assertion_class": {"enum": ["ASSERTED_SOURCE_METADATA", "CURATED_PUBLIC_LABEL", "SYNTHETIC_FIXTURE"]},
+          "evidence_status": {"enum": ["NOT_APPLICABLE", "UNASSESSED", "SOURCE_CLASSIFICATION_ONLY"]},
+          "identity_state": {"enum": ["DISTINCT", "UNRESOLVED"]},
+          "provenance": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["artifact_id", "record_id", "independence_key", "public_safe"],
+            "properties": {
+              "artifact_id": {"type": "string", "minLength": 1},
+              "record_id": {"type": "string", "minLength": 1},
+              "independence_key": {"type": "string", "minLength": 1},
+              "public_safe": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "edges": {"type": "array", "maxItems": 0}
+  }
+}
