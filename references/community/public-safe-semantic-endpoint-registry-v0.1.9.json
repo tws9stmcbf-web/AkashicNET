@@ -14,7 +14,7 @@
     {
       "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
       "repository_record": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
-      "sha256": "973f92c532441e9d48d4faeaceec51b40e884fa3a11d5586c08788b55eb01bf1",
+      "sha256": "c062ec2b0a1cf6873b07cfc33470ccb70430560d046915acbc4670f09c8789fd",
       "public_safe": true
     },
     {
@@ -32,7 +32,7 @@
     {
       "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
       "repository_record": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
-      "sha256": "222f8443a85bb1a96c1398887680ac04b63d4df16537fade1897ac2b2a1e2e54",
+      "sha256": "9e02440e944cbd188f16e6e8fecf534026ff7438438126d5ac1bfc5c0b48c963",
       "public_safe": true
     },
     {
