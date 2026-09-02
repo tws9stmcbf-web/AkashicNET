@@ -20,7 +20,7 @@ Search by title, topic, category, author, framework, summary, evidence classific
     python tools/search_reddit.py Akashic
     python tools/search_reddit.py HOMESENSE
 
-The historical Reddit URI archive contains **9,401 source rows**. An annotation-aware structural census resolves those rows to **7,356 unique Reddit post IDs / canonical post URLs across all archived subreddits**, including **7,298 unique r/NeuronsToNirvana post IDs**. These are structural archive counts, not Reddit API verification or independent proof that every historical post remains available.
+The current Reddit URI archive contains **9,502 source rows**. An annotation-aware structural census resolves those rows to **7,457 unique Reddit post IDs / canonical post URLs across all archived subreddits**, including **7,399 unique r/NeuronsToNirvana post IDs**. These are structural archive counts, not Reddit API verification or independent proof that every historical post remains available.
 
 Private Drive-derived records are intentionally excluded from the public index;
 cross-source builds that use them must run inside the private data boundary.
@@ -29,7 +29,7 @@ The search tool is read-only: it searches the local public-safe archive and does
 
 ## Current Archive
 
-**9,401 historical Reddit source rows · 7,356 structurally unique post IDs / canonical post URLs**
+**9,502 Reddit source rows · 7,457 structurally unique post IDs / canonical post URLs**
 
 Sources currently include:
 
