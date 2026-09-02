@@ -1,0 +1,936 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH2-REVIEW",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-02",
+  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "scope_artifact": "references/source-integrity-v014-assessment-batch2-scope-v0.1.json",
+  "assessed_source_count": 25,
+  "methodology": {
+    "direct_url_probe": true,
+    "authoritative_metadata_sources": [
+      "NCBI PubMed EFetch XML",
+      "Crossref Works API",
+      "publisher and institutional pages",
+      "public bibliography records"
+    ],
+    "repository_origin_inspection": true,
+    "interpretation_note": "403/400/203 responses and bot challenges are access or endpoint observations; they are not automatically broken links or truth determinations."
+  },
+  "summary": {
+    "confirmed_broken_links": 0,
+    "confirmed_deleted_or_vanished_sources": 0,
+    "retractions_identified": 0,
+    "substantive_metadata_title_drift": 2,
+    "malformed_extraction_artifacts": 2,
+    "direct_access_control_responses": 6,
+    "derivative_or_deployment_endpoints": 2,
+    "same_work_route_groups": 1,
+    "related_work_family_not_duplicate_groups": 1,
+    "all_sources_resolved_or_classified": true
+  },
+  "equivalence_and_relationship_groups": [
+    {
+      "group_id": "EQ-BUDDHIST-NONSELF-2011",
+      "classification": "SAME_SCHOLARLY_WORK_THREE_PRESERVED_PUBLISHER_ROUTES",
+      "source_ids": [
+        "URL-b799c92a4762a0cc",
+        "URL-b3de45558307b8e0",
+        "URL-2b387dca1280e6ad"
+      ],
+      "identifiers": {
+        "doi": "10.1093/oxfordhb/9780199548019.003.0013"
+      },
+      "action": "PRESERVE_ALL_ROUTES_AND_RECORD_EQUIVALENCE"
+    },
+    {
+      "group_id": "REL-ABRAMELIN-WORK-FAMILY",
+      "classification": "RELATED_WORK_FAMILY_DISTINCT_TRANSLATIONS_AND_MANIFESTATIONS_NOT_DUPLICATES",
+      "source_ids": [
+        "URL-05563478a50a187d",
+        "URL-c38cf9a4b73995a8"
+      ],
+      "action": "PRESERVE_SEPARATELY"
+    }
+  ],
+  "repair_candidates": [
+    {
+      "candidate_id": "V014-B2-R1",
+      "priority": "HIGH",
+      "type": "FIX_URL_EXTRACTION_BOUNDARY",
+      "targets": [
+        "scripts/build_public_source_url_inventory_v014.py",
+        "v0.14 inventory shards and manifest"
+      ],
+      "source_ids": [
+        "URL-a67a32c505e3f0b9",
+        "URL-aeb32f562d7d212b"
+      ],
+      "proposed_change": "Stop JSON escape backslashes from being captured as terminal URL characters, then regenerate the inventory. Preserve the valid underlying PubMed URLs and the original repository artifacts.",
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B2-R2",
+      "priority": "MEDIUM",
+      "type": "CLASSIFY_DERIVATIVE_ENDPOINTS",
+      "targets": [
+        "scripts/build_public_source_url_inventory_v014.py",
+        "v0.14 inventory assessment metadata"
+      ],
+      "source_ids": [
+        "URL-3679b700a4958709",
+        "URL-eb1aaef0085f9e78"
+      ],
+      "proposed_change": "Classify the Nature authorization URL as a transient access endpoint and the ChatGPT Site URL as a deployment alias, not independent evidence sources; retain both as provenance.",
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B2-R3",
+      "priority": "MEDIUM",
+      "type": "ADD_MACHINE_READABLE_EQUIVALENCE",
+      "targets": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "v0.14 inventory assessment metadata"
+      ],
+      "equivalence_group": "EQ-BUDDHIST-NONSELF-2011",
+      "proposed_change": "Record the OUP abstract, full chapter and Silverchair minimal routes as three preserved routes for DOI 10.1093/oxfordhb/9780199548019.003.0013.",
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B2-R4",
+      "priority": "HIGH",
+      "type": "REPAIR_RECORDED_TITLES_WITH_AUDIT_HISTORY",
+      "targets": [
+        "references/community/varanasi-detective-seeds.csv",
+        "companion provenance record"
+      ],
+      "source_ids": [
+        "URL-f8293604635d704f",
+        "URL-d983d5f302ee4841"
+      ],
+      "proposed_change": "Represent the OUP record as chapter 'Dying' in the book 'A Time of Novelty', and restore the complete PubMed title 'Medicine Versus Religion: A Religio-Cultural Study of Death and Dying in Contemporary Kashian Society.' Preserve the prior strings in repair history.",
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B2-R5",
+      "priority": "MEDIUM",
+      "type": "ADD_SEED_RETRIEVAL_PROVENANCE",
+      "targets": [
+        "new companion JSON for references/community/varanasi-detective-seeds.csv"
+      ],
+      "source_ids": [
+        "URL-f8293604635d704f",
+        "URL-182d8720ac009747",
+        "URL-637a370ae7b1db1a",
+        "URL-f94500ff3d86c374",
+        "URL-6af2e56d17513d39",
+        "URL-dbeae7b5c41c377d",
+        "URL-d9f1c7ce1653c679",
+        "URL-0a6609ace9a6d8bf",
+        "URL-d983d5f302ee4841"
+      ],
+      "proposed_change": "Add retrieval dates, observed access states, persistent identifiers and title-verification status in a companion provenance file without expanding or silently rewriting the seed CSV schema.",
+      "claim_or_evidence_change": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    }
+  ],
+  "assessments": [
+    {
+      "source_id": "URL-b799c92a4762a0cc",
+      "original_urls": [
+        "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685"
+      ],
+      "normalized_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "host": "academic.oup.com",
+      "occurrence_count": 8,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+        "website/app/big-questions/bq001/page.tsx"
+      ],
+      "selection_category": "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_VIA_PUBLISHER_ALTERNATE_ROUTE_AND_DOI_METADATA",
+      "http_status_or_access_result": "HTTP_403_ACCESS_CONTROL_ON_DIRECT_ROUTE",
+      "redirect_chain": [],
+      "final_observed_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "observed_title": "Buddhist Non‐Self: The No‐Owner's Manual",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_OR_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-BUDDHIST-NONSELF-2011"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_MINIMAL_ROUTE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-b3de45558307b8e0",
+      "original_urls": [
+        "https://academic.oup.com/edited-volume/38581/chapter/334605685"
+      ],
+      "normalized_url": "https://academic.oup.com/edited-volume/38581/chapter/334605685",
+      "host": "academic.oup.com",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json"
+      ],
+      "selection_category": "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_VIA_PUBLISHER_ALTERNATE_ROUTE_AND_DOI_METADATA",
+      "http_status_or_access_result": "HTTP_403_ACCESS_CONTROL_ON_DIRECT_ROUTE",
+      "redirect_chain": [],
+      "final_observed_url": "https://academic.oup.com/edited-volume/38581/chapter/334605685",
+      "observed_title": "Buddhist Non‐Self: The No‐Owner's Manual",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_OR_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-BUDDHIST-NONSELF-2011"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_MINIMAL_ROUTE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-eb1aaef0085f9e78",
+      "original_urls": [
+        "https://akashicnet-public.vocal-crow-3599.chatgpt.site"
+      ],
+      "normalized_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site/",
+      "host": "akashicnet-public.vocal-crow-3599.chatgpt.site",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/big-questions/BQ001/source-integrity-batch10-publication-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-publication-v0.1.json"
+      ],
+      "selection_category": "DERIVATIVE_OR_ACCESS_ENDPOINT_DRIFT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_DEPLOYMENT_ALIAS",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site",
+      "observed_title": "AkashicNET — A Living Knowledge Network",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "related_record_notes": [
+        "DEPLOYMENT_ALIAS_FOR_AKASHICNET_PUBLIC_SITE",
+        "CUSTOM_DOMAIN_HTTPS_AKASHICNET.ORG_RECORDED_SEPARATELY"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "REPOSITORY_PUBLICATION_RECORDS"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-c38cf9a4b73995a8",
+      "original_urls": [
+        "https://ci.nii.ac.jp/ncid/BB06860691"
+      ],
+      "normalized_url": "https://ci.nii.ac.jp/ncid/BB06860691",
+      "host": "ci.nii.ac.jp",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/community/canonical-adjudication-public-bibliography-checkpoint-v0.10.1.md",
+        "references/community/canonical-adjudication-public-bibliography-v0.10.1.json"
+      ],
+      "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://ci.nii.ac.jp/ncid/BB06860691",
+      "observed_title": "CiNii 図書 - The book of Abramelin : a new translation",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_BIBLIOGRAPHIC_RECORD",
+      "related_record_notes": [
+        "RELATED_WORK_FAMILY_ABRAMELIN_NOT_DUPLICATE_MANIFESTATION"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "CINII_BIBLIOGRAPHIC_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-2b387dca1280e6ad",
+      "original_urls": [
+        "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685"
+      ],
+      "normalized_url": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685",
+      "host": "oup.silverchair-cdn.com",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json"
+      ],
+      "selection_category": "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_PUBLISHER_MINIMAL_ROUTE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685",
+      "observed_title": "Buddhist Non‐Self: The No‐Owner's Manual",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_OR_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "SAME_WORK_GROUP_EQ-BUDDHIST-NONSELF-2011",
+        "DERIVATIVE_PUBLISHER_ROUTE"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_MINIMAL_ROUTE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-dbbc26ff6e66adaf",
+      "original_urls": [
+        "https://plato.stanford.edu/entries/dualism/"
+      ],
+      "normalized_url": "https://plato.stanford.edu/entries/dualism",
+      "host": "plato.stanford.edu",
+      "occurrence_count": 8,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+        "website/app/big-questions/bq001/page.tsx"
+      ],
+      "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://plato.stanford.edu/entries/dualism/",
+      "observed_title": "Dualism",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-acf81754c2a4d9aa",
+      "original_urls": [
+        "https://plato.stanford.edu/entries/panpsychism/"
+      ],
+      "normalized_url": "https://plato.stanford.edu/entries/panpsychism",
+      "host": "plato.stanford.edu",
+      "occurrence_count": 8,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+        "website/app/big-questions/bq001/page.tsx"
+      ],
+      "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://plato.stanford.edu/entries/panpsychism/",
+      "observed_title": "Panpsychism",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-321582686742ef76",
+      "original_urls": [
+        "https://plato.stanford.edu/entries/physicalism/"
+      ],
+      "normalized_url": "https://plato.stanford.edu/entries/physicalism",
+      "host": "plato.stanford.edu",
+      "occurrence_count": 8,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+        "website/app/big-questions/bq001/page.tsx"
+      ],
+      "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://plato.stanford.edu/entries/physicalism/",
+      "observed_title": "Physicalism",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-a67a32c505e3f0b9",
+      "original_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/12689435/\\"
+      ],
+      "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/\\",
+      "host": "pubmed.ncbi.nlm.nih.gov",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
+      ],
+      "selection_category": "MALFORMED_ESCAPED_URL_CANDIDATE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "UNDERLYING_SOURCE_AVAILABLE_REPOSITORY_URL_IS_EXTRACTION_ARTIFACT",
+      "http_status_or_access_result": "HTTP_203_ON_TRAILING_BACKSLASH_FORM; NCBI_EFETCH_RESOLVED_PMID_12689435",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/\\",
+      "observed_title": "Children who speak of past-life experiences: is there a psychological explanation?",
+      "title_drift": "EXTRACTOR_APPENDED_JSON_ESCAPE_BACKSLASH",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "EQUIVALENT_UNDERLYING_SOURCE_URL-215ce0460d6daaef",
+        "NOT_AN_INDEPENDENT_SOURCE"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-aeb32f562d7d212b",
+      "original_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41265055/\\"
+      ],
+      "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/\\",
+      "host": "pubmed.ncbi.nlm.nih.gov",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
+      ],
+      "selection_category": "MALFORMED_ESCAPED_URL_CANDIDATE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "UNDERLYING_SOURCE_AVAILABLE_REPOSITORY_URL_IS_EXTRACTION_ARTIFACT",
+      "http_status_or_access_result": "HTTP_203_ON_TRAILING_BACKSLASH_FORM; NCBI_EFETCH_RESOLVED_PMID_41265055",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/\\",
+      "observed_title": "New methodological directions for involving children in past life memories research",
+      "title_drift": "EXTRACTOR_APPENDED_JSON_ESCAPE_BACKSLASH",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "EQUIVALENT_UNDERLYING_SOURCE_URL-bbe98925af8858af",
+        "NOT_AN_INDEPENDENT_SOURCE"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-05563478a50a187d",
+      "original_urls": [
+        "https://search.worldcat.org/title/1990985"
+      ],
+      "normalized_url": "https://search.worldcat.org/title/1990985",
+      "host": "search.worldcat.org",
+      "occurrence_count": 2,
+      "repository_paths": [
+        "references/community/canonical-adjudication-public-bibliography-checkpoint-v0.10.1.md",
+        "references/community/canonical-adjudication-public-bibliography-v0.10.1.json"
+      ],
+      "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "INDEXED_BIBLIOGRAPHIC_RECORD_WITH_DIRECT_ACCESS_CONTROL",
+      "http_status_or_access_result": "HTTP_403_ACCESS_CONTROL",
+      "redirect_chain": [],
+      "final_observed_url": "https://search.worldcat.org/title/1990985",
+      "observed_title": "The book of the sacred magic of Abramelin the mage",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_BIBLIOGRAPHIC_RECORD",
+      "related_record_notes": [
+        "RELATED_WORK_FAMILY_ABRAMELIN_NOT_DUPLICATE_MANIFESTATION"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "REPOSITORY_BIBLIOGRAPHIC_RECORD"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-110fa2f8acb1c6c6",
+      "original_urls": [
+        "https://www.pnas.org/doi/10.1073/pnas.2216268120"
+      ],
+      "normalized_url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
+      "host": "www.pnas.org",
+      "occurrence_count": 4,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
+        "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch10-live-resolution-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch10-review-v0.1.json"
+      ],
+      "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA_WITH_PUBLISHER_ACCESS_CONTROL",
+      "http_status_or_access_result": "HTTP_403_ACCESS_CONTROL",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
+      "observed_title": "Surge of neurophysiological coupling and connectivity of gamma oscillations in the dying human brain",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "DOI_10.1073/pnas.2216268120",
+        "PMID_37126719"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "CROSSREF_WORKS_API",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-0bf4657141a6f6a2",
+      "original_urls": [
+        "https://med.virginia.edu/perceptual-studies/"
+      ],
+      "normalized_url": "https://med.virginia.edu/perceptual-studies",
+      "host": "med.virginia.edu",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/big-questions/BQ001/institutional-context-uva-dops-v0.1.json"
+      ],
+      "selection_category": "INSTITUTIONAL_CONTEXT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://med.virginia.edu/perceptual-studies/",
+      "observed_title": "Division of Perceptual Studies - University of Virginia School of Medicine",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_INSTITUTIONAL_PAGE",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "OFFICIAL_INSTITUTIONAL_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-8fe3d441e8950786",
+      "original_urls": [
+        "https://med.virginia.edu/perceptual-studies/our-research/"
+      ],
+      "normalized_url": "https://med.virginia.edu/perceptual-studies/our-research",
+      "host": "med.virginia.edu",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/big-questions/BQ001/institutional-context-uva-dops-v0.1.json"
+      ],
+      "selection_category": "INSTITUTIONAL_CONTEXT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://med.virginia.edu/perceptual-studies/our-research/",
+      "observed_title": "DOPS Research - Division of Perceptual Studies",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_INSTITUTIONAL_PAGE",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "OFFICIAL_INSTITUTIONAL_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-d8fd936f9be14f88",
+      "original_urls": [
+        "https://med.virginia.edu/perceptual-studies/publications/academic-publications/"
+      ],
+      "normalized_url": "https://med.virginia.edu/perceptual-studies/publications/academic-publications",
+      "host": "med.virginia.edu",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/big-questions/BQ001/institutional-context-uva-dops-v0.1.json"
+      ],
+      "selection_category": "INSTITUTIONAL_CONTEXT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://med.virginia.edu/perceptual-studies/publications/academic-publications/",
+      "observed_title": "Academic Publications - Division of Perceptual Studies",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_INSTITUTIONAL_PAGE",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "OFFICIAL_INSTITUTIONAL_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-f8293604635d704f",
+      "original_urls": [
+        "https://academic.oup.com/book/39302/chapter-abstract/338895800"
+      ],
+      "normalized_url": "https://academic.oup.com/book/39302/chapter-abstract/338895800",
+      "host": "academic.oup.com",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_VIA_PUBLISHER_MINIMAL_ROUTE",
+      "http_status_or_access_result": "HTTP_403_DIRECT_ROUTE; PUBLISHER_MINIMAL_ROUTE_HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://academic.oup.com/book/39302/chapter-abstract/338895800",
+      "observed_title": "Dying",
+      "title_drift": "REPOSITORY_TITLE_CONFLATES_CHAPTER_AND_CONTAINER_TITLE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "CHAPTER_IN_BOOK_A_TIME_OF_NOVELTY",
+        "PUBLISHER_MINIMAL_ROUTE_39302_338895800"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_MINIMAL_ROUTE",
+        "CROSSREF_BOOK_METADATA"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-182d8720ac009747",
+      "original_urls": [
+        "https://architexturez.net/doc/10-1177/006996678101500118"
+      ],
+      "normalized_url": "https://architexturez.net/doc/10-1177/006996678101500118",
+      "host": "architexturez.net",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://architexturez.net/doc/10-1177/006996678101500118",
+      "observed_title": "Death and cosmogony in Kashi",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "DOI_10.1177/006996678101500118"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "HOST_PAGE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-637a370ae7b1db1a",
+      "original_urls": [
+        "https://architexturez.net/doc/b1994a"
+      ],
+      "normalized_url": "https://architexturez.net/doc/b1994a",
+      "host": "architexturez.net",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://architexturez.net/doc/b1994a",
+      "observed_title": "Sacred Geometry of India's Holy City Varanasi-Kashi as Cosmogram",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_RETRIEVAL",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "HOST_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-f94500ff3d86c374",
+      "original_urls": [
+        "https://cup.columbia.edu/book/banaras/9780231114479"
+      ],
+      "normalized_url": "https://cup.columbia.edu/book/banaras/9780231114479",
+      "host": "cup.columbia.edu",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_WITH_TRAILING_SLASH_REDIRECT",
+      "http_status_or_access_result": "HTTP_301_TO_TRAILING_SLASH_THEN_HTTP_200",
+      "redirect_chain": [
+        "https://cup.columbia.edu/book/banaras/9780231114479",
+        "https://cup.columbia.edu/book/banaras/9780231114479/"
+      ],
+      "final_observed_url": "https://cup.columbia.edu/book/banaras/9780231114479/",
+      "observed_title": "Banaras",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "ISBN_9780231114479"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "PUBLISHER_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-6af2e56d17513d39",
+      "original_urls": [
+        "https://digi.ub.uni-heidelberg.de/diglit/gutschow2006a/0040"
+      ],
+      "normalized_url": "https://digi.ub.uni-heidelberg.de/diglit/gutschow2006a/0040",
+      "host": "digi.ub.uni-heidelberg.de",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_WITH_AUTOMATED_ACCESS_CHALLENGE",
+      "http_status_or_access_result": "HTTP_200_BOT_CHALLENGE_PAGE",
+      "redirect_chain": [],
+      "final_observed_url": "https://digi.ub.uni-heidelberg.de/diglit/gutschow2006a/0040",
+      "observed_title": null,
+      "title_drift": "TITLE_NOT_LIVE_VERIFIED_DUE_TO_ACCESS_CHALLENGE",
+      "retraction_or_withdrawal_status": "NOT_ASSESSED_BEYOND_ACCESS_CHALLENGE",
+      "related_record_notes": [
+        "RECORDED_TITLE_SHIVAS_PLACES_SHIVAS_ORTE"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "REPOSITORY_SEED_RECORD"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-dbeae7b5c41c377d",
+      "original_urls": [
+        "https://www.aghorpeeth.org/about-abbots.html"
+      ],
+      "normalized_url": "https://www.aghorpeeth.org/about-abbots.html",
+      "host": "www.aghorpeeth.org",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.aghorpeeth.org/about-abbots.html",
+      "observed_title": "ABKASESS | About Abbots",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_INSTITUTIONAL_PAGE",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "INSTITUTIONAL_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-d9f1c7ce1653c679",
+      "original_urls": [
+        "https://www.aghorpeeth.org/baba-kinaram-ji.html"
+      ],
+      "normalized_url": "https://www.aghorpeeth.org/baba-kinaram-ji.html",
+      "host": "www.aghorpeeth.org",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "HTTP_200",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.aghorpeeth.org/baba-kinaram-ji.html",
+      "observed_title": "ABKASESS | Baba Kinaram Ji",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE_INSTITUTIONAL_PAGE",
+      "related_record_notes": [],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "INSTITUTIONAL_PAGE"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-0a6609ace9a6d8bf",
+      "original_urls": [
+        "https://www.tandfonline.com/doi/abs/10.1111/j.1931-0846.2000.tb00332.x"
+      ],
+      "normalized_url": "https://www.tandfonline.com/doi/abs/10.1111/j.1931-0846.2000.tb00332.x",
+      "host": "www.tandfonline.com",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA_WITH_PUBLISHER_ACCESS_CONTROL",
+      "http_status_or_access_result": "HTTP_403_ACCESS_CONTROL",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.tandfonline.com/doi/abs/10.1111/j.1931-0846.2000.tb00332.x",
+      "observed_title": "Hindu Varanasi",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "DOI_10.1111/j.1931-0846.2000.tb00332.x"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "CROSSREF_WORKS_API"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-d983d5f302ee4841",
+      "original_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/33386570/"
+      ],
+      "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/33386570",
+      "host": "pubmed.ncbi.nlm.nih.gov",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/community/varanasi-detective-seeds.csv"
+      ],
+      "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "AVAILABLE_VIA_AUTHORITATIVE_METADATA",
+      "http_status_or_access_result": "HTTP_203_NON_AUTHORITATIVE_RESPONSE; NCBI_EFETCH_METADATA_RESOLVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://pubmed.ncbi.nlm.nih.gov/33386570/",
+      "observed_title": "Medicine Versus Religion: A Religio-Cultural Study of Death and Dying in Contemporary Kashian Society.",
+      "title_drift": "REPOSITORY_TITLE_INCOMPLETE",
+      "retraction_or_withdrawal_status": "NO_RETRACTION_INDICATED_AT_RETRIEVAL",
+      "related_record_notes": [
+        "DOI_10.1007/s10943-020-01136-y",
+        "PMID_33386570"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "NCBI_PUBMED_EFETCH_XML"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "source_id": "URL-3679b700a4958709",
+      "original_urls": [
+        "https://idp.nature.com/authorize"
+      ],
+      "normalized_url": "https://idp.nature.com/authorize",
+      "host": "idp.nature.com",
+      "occurrence_count": 1,
+      "repository_paths": [
+        "references/big-questions/BQ001/evidence-batch5-v0.1.json"
+      ],
+      "selection_category": "DERIVATIVE_OR_ACCESS_ENDPOINT_DRIFT",
+      "selection_status": "SELECTED_UNASSESSED",
+      "availability": "DERIVATIVE_AUTHORIZATION_ENDPOINT_NOT_STANDALONE_SOURCE",
+      "http_status_or_access_result": "HTTP_400_WITHOUT_REQUIRED_AUTHORIZATION_PARAMETERS",
+      "redirect_chain": [],
+      "final_observed_url": "https://idp.nature.com/authorize",
+      "observed_title": null,
+      "title_drift": "NOT_APPLICABLE_DERIVATIVE_ENDPOINT",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "related_record_notes": [
+        "TRANSIENT_ACCESS_ROUTE_RECORDED_FOR_NATURE_ARTICLE",
+        "NOT_AN_INDEPENDENT_SOURCE"
+      ],
+      "retrieved_on": "2026-09-02",
+      "retrieval_methods": [
+        "DIRECT_HTTP_PROBE",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    }
+  ],
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+}
