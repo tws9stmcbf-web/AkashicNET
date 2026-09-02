@@ -92,7 +92,7 @@ def build_registry(topics, frameworks, publications, questions, evidence_records
 
 
 def load_real_inputs():
-    from scripts import topic_census_v075 as census
+    import topic_census_v075 as census
 
     topic_sources = census.load_ontology() + census.load_wikispine() + census.load_n2n_categories()
     topics = {}
