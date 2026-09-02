@@ -1,0 +1,54 @@
+name: Validate v0.14 Automation & Reproducibility Beta readiness
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - name: Validate v0.14 release manifest
+        run: python scripts/validate_automation_reproducibility_beta_v014.py
+      - name: Validate historical release ledger
+        run: python scripts/validate_release_ledger_v014.py
+      - name: Validate repository-state reconstruction
+        run: python scripts/validate_release_readiness_reconstruction_v014.py
+      - name: Generate and validate complete source denominator
+        run: python scripts/validate_source_coverage_v014.py
+      - name: Validate source-integrity provenance guards
+        run: python scripts/validate_source_integrity_release_v014.py
+      - name: Validate cross-source qualification and anchor evidence
+        run: |
+          python scripts/validate_cross_source_candidate_qualification_v012.py
+          python scripts/validate_cross_source_qualification_batch_v013.py
+          python scripts/validate_cross_source_qualification_batch_v015.py
+          python scripts/validate_cross_source_qualification_batch_v017.py
+          python scripts/validate_public_safe_endpoint_registry_v014.py
+          python scripts/validate_anchor_evidence_v016.py
+      - name: Validate Big Questions registry and architecture
+        run: |
+          python scripts/validate_big_questions_registry_v013.py
+          python scripts/validate_big_question_architecture_v01.py
+      - name: Validate public-data privacy boundary
+        run: python scripts/check_public_data_boundary.py
+      - name: Validate immutable Actions refs
+        run: python scripts/validate_actions_immutable_refs.py
+      - name: Re-run v0.13 Public Knowledge Beta readiness
+        run: python scripts/audit_public_knowledge_beta_readiness_v013.py
+      - name: Re-run v0.12 Integration Beta readiness
+        run: python scripts/audit_integration_beta_readiness_v012.py
+      - name: Require generated source inventory
+        run: test -s artifacts/source-coverage-v0.14.generated.json
