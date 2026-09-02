@@ -1,6 +1,6 @@
 {
   "batch_id": "BQ001-BATCH3-REINCARNATION-METHODS",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
   "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
@@ -19,7 +19,16 @@
       "limitations": [
         "Review by an investigator active in the field; not independent replication.",
         "Summarizes observational case literature rather than controlled prospective proof of reincarnation."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PMID, DOI and indexed bibliographic references match the canonical record.",
+        "note": "A limited automated response is not classified as a broken or unavailable source."
+      }
     },
     {
       "source_id": "SRC-BQ001-SCOPING-2021",
@@ -33,15 +42,31 @@
       "limitations": [
         "Scoping reviews characterize a literature base; they do not establish the truth of the underlying ontology.",
         "The reviewed field is dominated by observational studies, case reports, interviews and documentary analysis."
-      ]
+      ],
+      "doi": "10.1016/j.explore.2021.05.006",
+      "publication_dates": {
+        "canonical_year_preserved": 2021,
+        "online_publication_year": 2021,
+        "issue_publication_year": 2022,
+        "year_convention_note": "The existing year field follows the online/DOI record. The journal issue is Explore 18(3), 2022; neither value silently replaces the other."
+      },
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PMID, DOI and indexed bibliographic references match the canonical record.",
+        "note": "A limited automated response is not classified as a broken or unavailable source."
+      }
     },
     {
       "source_id": "SRC-BQ001-HARALDSSON-2003",
       "source_type": "PRIMARY_COMPARATIVE_STUDY",
       "title": "Children who speak of past-life experiences: is there a psychological explanation?",
-      "authors_short": "Haraldsson et al.",
+      "authors_short": "Haraldsson",
       "year": 2003,
-      "journal": "British Journal of Health Psychology",
+      "journal": "Psychology and Psychotherapy: Theory, Research and Practice",
       "doi": "10.1348/14760830260569256",
       "pmid": "12689435",
       "url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
@@ -50,7 +75,15 @@
         "Small sample.",
         "Psychological correlates do not determine the source or veracity of reported memories.",
         "Failure of one psychological variable to explain cases is not evidence that reincarnation is true."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PubMed record matches the title, DOI and PMID and identifies Erlendur Haraldsson as sole author."
+      }
     },
     {
       "source_id": "SRC-BQ001-MORAES-2024",
@@ -66,7 +99,16 @@
         "Single-case design cannot establish reincarnation as a general causal mechanism.",
         "Retrospective witness reports and family relationships can create information-leakage and reconstruction risks.",
         "Anatomical compatibility is not unique causal identification."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PubMed search index matches the title, DOI, PMID and 2024 issue citation.",
+        "note": "A limited automated response is not classified as a broken or unavailable source."
+      }
     },
     {
       "source_id": "SRC-BQ001-TUCKER-2025",
@@ -81,13 +123,22 @@
       "limitations": [
         "Review and interpretation by a prominent investigator in the field; not independent confirmation.",
         "Case accuracy and anomaly do not by themselves identify reincarnation as the unique explanation."
-      ]
+      ],
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PubMed and DOI-indexed records match the canonical title and identifiers.",
+        "note": "A limited automated response is not classified as a broken or unavailable source."
+      }
     },
     {
       "source_id": "SRC-BQ001-ALLAN-2025",
       "source_type": "METHODOLOGICAL_ARTICLE",
       "title": "New methodological directions for involving children in past life memories research",
-      "authors_short": "Allan et al.",
+      "authors_short": "Thomas et al.",
       "year": 2025,
       "journal": "Explore",
       "doi": "10.1016/j.explore.2025.103283",
@@ -96,7 +147,21 @@
       "limitations": [
         "Methodological proposal rather than evidence for reincarnation.",
         "Child-centred qualitative methods can improve phenomenological data but do not by themselves resolve causal ontology."
-      ]
+      ],
+      "publication_dates": {
+        "canonical_year_preserved": 2025,
+        "electronic_publication_date": "2025-11-10",
+        "issue_publication_year": 2026,
+        "year_convention_note": "The existing year field follows electronic publication and the DOI record. The journal issue is Explore 22(1), 2026; neither value silently replaces the other."
+      },
+      "link_check": {
+        "checked_at": "2026-09-01",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PubMed record matches the title, DOI and PMID and lists Donna M Thomas as first author."
+      }
     }
   ],
   "claims": [
@@ -106,11 +171,21 @@
       "text": "The 2021 scoping review included 78 scientific studies of alleged past-life memories; 84% concerned children, 60% used case-report designs, 73% used interviews and 50% used documentary analysis.",
       "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-SCOPING-2021"],
-      "provenance": ["peer-reviewed scoping review abstract and bibliographic record"],
-      "limitations": ["These are characteristics of the published literature, not evidence that reincarnation itself is established."],
+      "source_ids": [
+        "SRC-BQ001-SCOPING-2021"
+      ],
+      "provenance": [
+        "peer-reviewed scoping review abstract and bibliographic record"
+      ],
+      "limitations": [
+        "These are characteristics of the published literature, not evidence that reincarnation itself is established."
+      ],
       "uncertainty": "Publication and indexing choices may affect the represented literature base.",
-      "methodological_risks": ["publication_bias", "case_selection", "retrospective_reporting"],
+      "methodological_risks": [
+        "publication_bias",
+        "case_selection",
+        "retrospective_reporting"
+      ],
       "supports_models": []
     },
     {
@@ -119,11 +194,22 @@
       "text": "In a 30-versus-30 Lebanese comparison study, children reporting past-life memories scored higher on daydreaming, attention-seeking and dissociation, but not on social isolation or suggestibility; dissociation scores were reported as non-clinical.",
       "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-HARALDSSON-2003"],
-      "provenance": ["peer-reviewed comparative study abstract"],
-      "limitations": ["Small sample and observational design cannot establish cause.", "The measured variables do not exhaust psychological or social explanations."],
+      "source_ids": [
+        "SRC-BQ001-HARALDSSON-2003"
+      ],
+      "provenance": [
+        "peer-reviewed comparative study abstract"
+      ],
+      "limitations": [
+        "Small sample and observational design cannot establish cause.",
+        "The measured variables do not exhaust psychological or social explanations."
+      ],
       "uncertainty": "The study constrains some simple psychological explanations but does not identify the origin of the reported memories.",
-      "methodological_risks": ["small_sample", "observational_design", "unmeasured_confounding"],
+      "methodological_risks": [
+        "small_sample",
+        "observational_design",
+        "unmeasured_confounding"
+      ],
       "supports_models": []
     },
     {
@@ -132,12 +218,27 @@
       "text": "A 2024 case report described a child who made 13 statements about a deceased granduncle; investigators classified nine as correct and four as undetermined, and reported behavioral and anatomical correspondences.",
       "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-BQ001-MORAES-2024"],
-      "provenance": ["peer-reviewed case report abstract"],
-      "limitations": ["Single retrospective family-linked case.", "Correct matches do not uniquely establish the causal mechanism.", "Information transfer, selective reporting and reconstruction must remain live alternatives unless independently excluded."],
+      "source_ids": [
+        "SRC-BQ001-MORAES-2024"
+      ],
+      "provenance": [
+        "peer-reviewed case report abstract"
+      ],
+      "limitations": [
+        "Single retrospective family-linked case.",
+        "Correct matches do not uniquely establish the causal mechanism.",
+        "Information transfer, selective reporting and reconstruction must remain live alternatives unless independently excluded."
+      ],
       "uncertainty": "The case is anomalous only to the extent that ordinary information pathways and reconstruction can be excluded; the abstract alone does not establish such exclusion completely.",
-      "methodological_risks": ["family_information_leakage", "retrospective_recall", "selective_reporting", "non_unique_matching"],
-      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+      "methodological_risks": [
+        "family_information_leakage",
+        "retrospective_recall",
+        "selective_reporting",
+        "non_unique_matching"
+      ],
+      "supports_models": [
+        "MODEL-BQ001-CONTINUITY"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-TUCKER-2025-INTERP-01",
@@ -145,12 +246,26 @@
       "text": "Reincarnation-type case literature contains reports with accurate biographical correspondences that some investigators interpret as potentially anomalous and relevant to mind-brain models.",
       "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-TUCKER-2025", "SRC-BQ001-TUCKER-2008"],
-      "provenance": ["peer-reviewed reviews by a field investigator"],
-      "limitations": ["Anomalous correspondence is not equivalent to proof of reincarnation.", "Field-investigator reviews are not independent replication."],
+      "source_ids": [
+        "SRC-BQ001-TUCKER-2025",
+        "SRC-BQ001-TUCKER-2008"
+      ],
+      "provenance": [
+        "peer-reviewed reviews by a field investigator"
+      ],
+      "limitations": [
+        "Anomalous correspondence is not equivalent to proof of reincarnation.",
+        "Field-investigator reviews are not independent replication."
+      ],
       "uncertainty": "Multiple causal explanations can fit at least some reported cases; their relative adequacy varies case by case.",
-      "methodological_risks": ["investigator_dependence", "case_selection", "publication_bias"],
-      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+      "methodological_risks": [
+        "investigator_dependence",
+        "case_selection",
+        "publication_bias"
+      ],
+      "supports_models": [
+        "MODEL-BQ001-CONTINUITY"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-METHODS-INTERP-01",
@@ -158,11 +273,24 @@
       "text": "For claimed past-life-memory cases, stronger inference requires early documentation of statements, separation of witnesses, explicit accounting of prior contacts and information pathways, prospective or blinded verification where feasible, and transparent reporting of both matches and misses.",
       "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SCOPING-2021", "SRC-BQ001-ALLAN-2025"],
-      "provenance": ["peer-reviewed methodological literature"],
-      "limitations": ["Improved methodology can raise evidential quality but cannot guarantee a specific metaphysical conclusion."],
+      "source_ids": [
+        "SRC-BQ001-SCOPING-2021",
+        "SRC-BQ001-ALLAN-2025"
+      ],
+      "provenance": [
+        "peer-reviewed methodological literature"
+      ],
+      "limitations": [
+        "Improved methodology can raise evidential quality but cannot guarantee a specific metaphysical conclusion."
+      ],
       "uncertainty": "Some historical cases cannot be retrospectively upgraded to these standards because original documentation constraints are irreversible.",
-      "methodological_risks": ["documentation_timing", "witness_dependence", "information_leakage", "selection_bias", "missing_negative_data"],
+      "methodological_risks": [
+        "documentation_timing",
+        "witness_dependence",
+        "information_leakage",
+        "selection_bias",
+        "missing_negative_data"
+      ],
       "supports_models": []
     }
   ],
@@ -178,5 +306,25 @@
     "psychological_correlates_disprove_reincarnation": false,
     "field_investigator_review_counts_as_independent_replication": false,
     "model_support_edges_upgrade_evidence": false
+  },
+  "integrity_checkpoint": {
+    "applied_on": "2026-09-02",
+    "review_artifact": "references/big-questions/BQ001/source-integrity-batch8-review-v0.1.json",
+    "repair_candidates_applied": [
+      "BQ001-B8-R1",
+      "BQ001-B8-R2",
+      "BQ001-B8-R3",
+      "BQ001-B8-R4"
+    ],
+    "change_scope": "Retrieval metadata, DOI completion, bibliographic author/journal correction and publication-date disambiguation only.",
+    "original_urls_preserved": true,
+    "source_ids_preserved": true,
+    "identifiers_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "website_changed": false,
+    "website_repairs_status": "PREVIEW_ONLY_NOT_APPLIED",
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
   }
 }
