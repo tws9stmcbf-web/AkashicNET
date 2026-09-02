@@ -15,8 +15,12 @@ REQUIRED_INPUTS = [
 ]
 REQUIRED_VALIDATORS = [
     "scripts/validate_release_ledger_v014.py",
-    "scripts/validate_public_knowledge_v013.py",
-    "scripts/validate_integration_beta_v012.py",
+    "scripts/audit_public_knowledge_beta_readiness_v013.py",
+    "scripts/validate_public_knowledge_release_manifest_v013.py",
+    "scripts/validate_public_route_qa_v013.py",
+    "scripts/validate_public_knowledge_link_integrity_v013.py",
+    "scripts/validate_public_knowledge_batch3_v013.py",
+    "scripts/audit_integration_beta_readiness_v012.py",
     "scripts/validate_big_question_architecture_v01.py",
     "scripts/validate_actions_immutable_refs.py",
     "scripts/check_public_data_boundary.py",
