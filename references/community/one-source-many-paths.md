@@ -4,10 +4,18 @@
 
 - Type: Community / experiential material
 - Source domain: Reddit — r/NeuronsToNirvana
+- Reddit post ID / normalized work key: `1uoneax`
+- Full title observed: 🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — “Different names. Different maps. One mystery.” [July 2026]
+- Short record label: One Source, Many Paths
+- Published: 6 July 2026
+- Retrieved: 2 September 2026
+- Flair observed: 🦯 tame Your EGO 🦁
 - Original URL: https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/
 - Source link: [One Source, Many Paths](https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/)
 - Attribution: Community post in r/NeuronsToNirvana; attributed to the original poster as presented on Reddit. The Toolkit does not claim to verify or confirm the author identity beyond the post itself.
+- Visual-material note: The live post contains Figure 1 and its caption; this record records that presence but does not reproduce the image.
 - Reuse note: This record does not reproduce any artwork, diagrams, or screenshots from the original post unless explicit reuse rights are confirmed. The Toolkit links to the original source instead.
+- Cross-record linkage: Canonical, index, pilot, test and historical dry-run occurrences carrying Reddit post ID `1uoneax` refer to this single normalized work. Their distinct record contexts are retained.
 
 ## Scope and status
 
