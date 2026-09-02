@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_scope_selection",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 13,
+  "selected_on": "2026-09-02",
+  "status": "READY_FOR_REVIEW",
+  "selection_rule": "Continue through bounded, unaudited canonical community provenance records after completing Batch 12.",
+  "target": {
+    "path": "references/community/akashic-library-codex-nexus.md",
+    "blob_sha": "d949f2d85fd306534aec8017d360a8cd8c4adacb",
+    "topic": "Project Akashic Library / Codex Nexus as a community conceptual precursor"
+  },
+  "preliminary_inventory": {
+    "distinct_external_source_works_observed": 1,
+    "external_url_occurrences_in_target": 2,
+    "distinct_url_forms_in_target": 1,
+    "source": {
+      "domain": "reddit.com",
+      "community": "r/NeuronsToNirvana",
+      "reddit_post_id": "1l26ks1",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/"
+    },
+    "existing_strengths": [
+      "Original URL and source domain are explicit.",
+      "Attribution uncertainty is stated.",
+      "Reuse rights are handled conservatively.",
+      "Community conceptual material is separated from scientific evidence.",
+      "The source is described as lineage/context rather than proof."
+    ],
+    "issues_to_review": [
+      "Verify live availability, redirects and deletion status.",
+      "Compare the live title against the repository heading and link label.",
+      "Establish publication, update and retrieval metadata where observable.",
+      "Verify whether the live post contains visual, audio or artwork material.",
+      "Map repeated references across canonical, index, pilot, test and historical records without blind deduplication.",
+      "Cross-check public website references without assuming website promotion."
+    ]
+  },
+  "audit_scope": [
+    "link availability and redirect behavior",
+    "live title and deleted-post status",
+    "publication and retrieval metadata",
+    "visual/audio/art presence and rights boundary",
+    "cross-record duplicate and provenance drift detection",
+    "website source-link cross-check"
+  ],
+  "guards": {
+    "review_only": true,
+    "preserve_original_url": true,
+    "no_silent_replacement": true,
+    "unavailable_or_changed_does_not_mean_false": true,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_action": "Audit the single Batch 13 source and produce review-only repair candidates."
+}
