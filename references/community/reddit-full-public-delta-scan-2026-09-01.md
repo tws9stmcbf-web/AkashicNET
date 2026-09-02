@@ -7,8 +7,8 @@ The public `new` feed for `r/NeuronsToNirvana` was followed from the newest page
 - Pages scanned: **5**
 - Feed rows checked: **125**
 - Directly accessible public post URLs: **125**
-- New review-only candidates: **95**
-- Prior manual HOLD matches: **6**
+- New review-only candidates: **94**
+- Prior manual HOLD matches: **7**
 - Historical canonical-index matches: **24**
 - Deleted/private/unavailable records observed: **0**
 - Provenance failures in captured metadata: **0**
@@ -24,7 +24,7 @@ Pagination stopped at that boundary. No older page was required.
 
 - Batch 0002 / page 1: 23 new HOLD, 2 prior-held duplicates
 - Batch 0003 / page 2: 23 new HOLD, 2 prior-held duplicates
-- Batch 0004 / page 3: 25 new HOLD, 0 duplicates
+- Batch 0004 / page 3: 24 new HOLD, 1 prior-held duplicate
 - Batch 0005 / page 4: 23 new HOLD, 2 prior-held duplicates
 - Batch 0006 / page 5: 1 new HOLD, 24 historical matches
 
