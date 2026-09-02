@@ -1,0 +1,46 @@
+{
+  "inventory_version": "0.1.0",
+  "target_release": "0.14.0-beta.1",
+  "state": "GENERATION_REQUIRED",
+  "generated_at": null,
+  "source_commit": null,
+  "generator": "scripts/build_public_source_url_inventory_v014.py",
+  "scope": {
+    "include_roots": [
+      "references/big-questions",
+      "references/community",
+      "research",
+      "website/app"
+    ],
+    "included_suffixes": [
+      ".csv",
+      ".json",
+      ".jsonl",
+      ".md",
+      ".tsx"
+    ],
+    "first_party_hosts": [
+      "akashicnet.org",
+      "www.akashicnet.org"
+    ],
+    "internal_github_prefixes": [
+      "https://github.com/tws9stmcbf-web/AkashicNET"
+    ],
+    "excluded_paths": [
+      "references/community/public-source-url-inventory-v0.14.json"
+    ]
+  },
+  "summary": {
+    "external_url_occurrences": 0,
+    "unique_normalized_external_urls": 0,
+    "assessed_unique_urls": 0,
+    "unassessed_unique_urls": 0
+  },
+  "entries": [],
+  "guards": {
+    "original_urls_preserved": true,
+    "unavailability_changes_truth_status": false,
+    "automatic_source_replacement": false,
+    "automatic_evidence_promotion": false
+  }
+}
