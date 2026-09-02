@@ -1,0 +1,45 @@
+{
+  "application_id": "BQ001-SOURCE-INTEGRITY-BATCH9-SITES-APPLICATION",
+  "version": "0.1.0",
+  "status": "APPLIED_LOCALLY_BUILD_PASSED_NOT_PUBLISHED",
+  "applied_on": "2026-09-02",
+  "approval_basis": "User approved the Batch 9 Sites repair preview.",
+  "inputs": {
+    "preview": "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+    "live_verification": "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "canonical_batch_version": "0.1.1"
+  },
+  "sites_project": {
+    "slug": "akashicnet-public",
+    "project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+    "prior_public_version": 79,
+    "source_commit": "6f2333d",
+    "changed_files": [
+      "app/big-questions/bq001/page.tsx",
+      "app/globals.css"
+    ]
+  },
+  "applied_changes": {
+    "interpretation_cards_added": 2,
+    "batch4_sources_added": 6,
+    "preexisting_sources_retained": 7,
+    "expected_total_sources": 13,
+    "original_urls_preserved": true,
+    "responsive_styles_added": true,
+    "claims_reclassified": 0,
+    "evidence_labels_promoted": 0,
+    "conclusion_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  },
+  "validation": {
+    "production_build": "PASS",
+    "whitespace_check": "PASS",
+    "route_compiled": "/big-questions/bq001",
+    "publish_performed": false,
+    "saved_site_version_created": false,
+    "live_site_changed": false
+  },
+  "next_gate": "EXPLICIT_PUBLICATION_APPROVAL"
+}
