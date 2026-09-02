@@ -1,0 +1,106 @@
+{
+  "verification_id": "BQ001-SOURCE-INTEGRITY-BATCH9-LIVE-VERIFICATION",
+  "version": "0.1.0",
+  "status": "DRIFT_DETECTED_REVIEW_ONLY",
+  "verified_on": "2026-09-02",
+  "live_url": "https://akashicnet.org/big-questions/bq001",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "canonical_batch_version": "0.1.1",
+    "canonical_batch_blob_sha": "037ecb89183c9eb8de90112bc8cb4a71813ba049",
+    "website_preview": "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "331f709624075b517bb071b2b2f53de9049df66f"
+  },
+  "verification_policy": {
+    "apply_changes": false,
+    "publish_changes": false,
+    "unavailable_or_unmirrored_source_implies_false": false,
+    "preserve_original_urls": true,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false
+  },
+  "live_route_health": {
+    "route_available": true,
+    "observed_title": "BQ001 — Does consciousness continue beyond the individual? | AkashicNET",
+    "current_status_unresolved": true,
+    "source_section_present": true
+  },
+  "expected_batch4_citations": [
+    {
+      "source_id": "SRC-BQ001-SIDERITS-2011",
+      "label": "Siderits 2011",
+      "url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "live_present": false
+    },
+    {
+      "source_id": "SRC-BQ001-DAHL-2015",
+      "label": "Dahl et al. 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "live_present": false
+    },
+    {
+      "source_id": "SRC-BQ001-VAGO-2012",
+      "label": "Vago & Silbersweig 2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "live_present": false
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PHYSICALISM",
+      "label": "SEP: Physicalism",
+      "url": "https://plato.stanford.edu/entries/physicalism/",
+      "live_present": false
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-DUALISM",
+      "label": "SEP: Dualism",
+      "url": "https://plato.stanford.edu/entries/dualism/",
+      "live_present": false
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PANPSYCHISM",
+      "label": "SEP: Panpsychism",
+      "url": "https://plato.stanford.edu/entries/panpsychism/",
+      "live_present": false
+    }
+  ],
+  "expected_evidence_cards": [
+    {
+      "title": "Contemplative traditions offer non-ordinary models of selfhood",
+      "evidence_label": "Interpretation",
+      "boundary": "Contemplative phenomenology, tradition and meditation-related changes in self-processing do not establish external ontology or survival after death.",
+      "live_present": false
+    },
+    {
+      "title": "Physicalism, dualism and panpsychism remain competing philosophical frameworks",
+      "evidence_label": "Interpretation",
+      "boundary": "Philosophical coherence or possibility is not empirical evidence that personal consciousness survives death; physicalism as philosophy is not itself proof of non-survival.",
+      "live_present": false
+    }
+  ],
+  "observed_live_source_count": 7,
+  "observed_live_batch4_source_count": 0,
+  "drift_assessment": {
+    "classification": "REPOSITORY_TO_LIVE_IMPLEMENTATION_COVERAGE_DRIFT",
+    "source_truth_inference": "NONE",
+    "canonical_evidence_impact": "NONE",
+    "live_status_impact": "NONE",
+    "note": "The live route uses a separate seven-source provenance implementation. Absence of Batch 4 mirrors is a deployment/content-sync condition, not evidence against the sources or their claims."
+  },
+  "repair_candidate": {
+    "candidate_id": "BQ001-B9-LIVE-R1",
+    "priority": "MEDIUM",
+    "target": "AkashicNET Sites project BQ001 route",
+    "proposal": "Prepare a separate preview adding the two Batch 4 Interpretation cards and all six preserved source URLs to the active Sites implementation, then seek explicit approval before editing or publishing.",
+    "automatic_application_allowed": false
+  },
+  "adjudication": {
+    "decision": "LIVE_DRIFT_REPAIR_CANDIDATE_PREPARED",
+    "website_changed": false,
+    "publication_performed": false,
+    "source_urls_replaced": false,
+    "canonical_evidence_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  }
+}
