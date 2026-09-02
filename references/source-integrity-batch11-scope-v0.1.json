@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_scope_selection",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 11,
+  "selected_on": "2026-09-02",
+  "status": "READY_FOR_REVIEW",
+  "rationale": {
+    "bq001_canonical_batches_total": 5,
+    "bq001_canonical_batches_audited": 5,
+    "next_group_selection_rule": "Move to the next bounded, source-bearing GitHub research record rather than re-auditing completed BQ001 batches."
+  },
+  "target": {
+    "path": "research/microdosing-research-2026.md",
+    "blob_sha": "4e8d5baa28371baf4b568ac350314997d9cb78cc",
+    "topic": "microdosing research and naturalistic citizen-science context"
+  },
+  "preliminary_inventory": {
+    "distinct_source_works_observed": 2,
+    "reddit_faq_url_forms_observed": 2,
+    "doi_only_records_observed": 1,
+    "issues_to_review": [
+      "The same r/microdosing FAQ is cited through both its original URL and a tracking-parameter variant.",
+      "Legacy oai_citation placeholders remain embedded in the Markdown.",
+      "DOI 10.1016/j.drugpo.2026.105459 lacks a linked resolver URL and retrieval metadata.",
+      "The record contains detailed survey figures whose source provenance and current bibliographic metadata require verification.",
+      "Website presence or absence must be checked without assuming that GitHub material should automatically be promoted publicly."
+    ]
+  },
+  "audit_scope": [
+    "link availability and redirects",
+    "normalized duplicate detection while preserving original URL forms",
+    "title and bibliographic metadata comparison",
+    "retraction or correction notice check",
+    "retrieval metadata completeness",
+    "website reference and provenance cross-check"
+  ],
+  "guards": {
+    "review_only": true,
+    "preserve_original_urls": true,
+    "no_silent_replacement": true,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "website_promotion": false
+  },
+  "next_action": "Audit the two distinct source works and produce repair candidates for explicit approval."
+}
