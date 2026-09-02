@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_repair_application",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 12,
+  "applied_on": "2026-09-02",
+  "status": "REPAIRS_APPLIED",
+  "approval": {
+    "user_approved": true,
+    "candidates": ["B12-R1", "B12-R2", "B12-R3", "B12-R4"]
+  },
+  "source_work": {
+    "reddit_post_id": "1uoneax",
+    "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/",
+    "published_on": "2026-07-06",
+    "retrieved_on": "2026-09-02"
+  },
+  "updated_records": [
+    {
+      "path": "references/community/one-source-many-paths.md",
+      "commit_sha": "a32cbf3f318667c4c1ebd04c7aad36aa74e2f1e1",
+      "result_blob_sha": "f821a9e91ae48a4898f93248f81bde3201341357"
+    },
+    {
+      "path": "references/community/n2n-index.md",
+      "commit_sha": "2a7a4bde80474c69f83a9daf3dd89869bee89016",
+      "result_blob_sha": "70d7cfa01b1bafa7385b4c7a1000b417be466704"
+    },
+    {
+      "path": "references/community/n2n-pilot-index.md",
+      "commit_sha": "a34125ea5bbddc6eca7148e954b0a34b660619ad",
+      "result_blob_sha": "3a3570fca26bc7943443e7ae13b43f16d89f2ab8"
+    },
+    {
+      "path": "references/community/n2n-index.csv",
+      "commit_sha": "f819782ec95c6130810c7ac89123b25b9f25d65e",
+      "result_blob_sha": "f2d8663f96cdadd1f118e58a4c68cd6999a0538f"
+    }
+  ],
+  "repair_results": [
+    {
+      "candidate_id": "B12-R1",
+      "result": "Full observed title, post ID, publication date, retrieval date, flair and short-label distinction added while preserving the original URL."
+    },
+    {
+      "candidate_id": "B12-R2",
+      "result": "Figure 1 presence recorded; image remains unreproduced and reuse permission remains unconfirmed."
+    },
+    {
+      "candidate_id": "B12-R3",
+      "result": "Active pilot and structured index date/visual metadata refreshed; the historical dry-run artifact was not rewritten."
+    },
+    {
+      "candidate_id": "B12-R4",
+      "result": "Normalized-work linkage keyed by Reddit post ID 1uoneax added without collapsing distinct record contexts."
+    }
+  ],
+  "validation": {
+    "active_records_refetched": true,
+    "original_url_preserved": true,
+    "active_publication_date": "2026-07-06",
+    "active_visual_flag": "Yes",
+    "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+    "historical_dry_run_blob_sha_unchanged": "55c1492a2cc619b945293e8c27e980289f0f5493",
+    "historical_dry_run_date_state": "unknown",
+    "historical_dry_run_visual_state": "No"
+  },
+  "guards": {
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false,
+    "silent_source_replacement": false
+  },
+  "next_action": "Select the next bounded source-bearing record for Batch 13 review."
+}
