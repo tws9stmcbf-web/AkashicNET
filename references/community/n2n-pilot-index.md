@@ -75,15 +75,19 @@
 - Provenance status: Link-only; attribution preserved; no image or text reuse without confirmed rights.
 
 ### One Source, Many Paths
+- Full title observed: 🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — “Different names. Different maps. One mystery.” [July 2026]
+- Reddit post ID / normalized work key: `1uoneax`
 - Reddit URL: https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/
 - Author: Original poster as listed on Reddit
-- Date: unknown
+- Date: 2026-07-06
+- Retrieved: 2026-09-02
 - Source type: discussion
 - Category: Consciousness
 - Evidence status: community_observation
+- Visual/audio/art flag: Yes — Figure 1 is present at source and is not reproduced here.
 - Toolkit framework: HIERATIC
 - Summary: A community discussion of unity, multiplicity, identity, and the idea that different paths may converge around a deeper source or continuity.
-- Provenance status: Link-only; attribution preserved; no content reproduction without confirmed rights.
+- Provenance status: Link-only; attribution preserved; no content reproduction without confirmed rights. Records keyed by `1uoneax` refer to one normalized work while retaining their distinct index contexts.
 
 ### The self as a temporary interface
 - Reddit URL: https://www.reddit.com/r/NeuronsToNirvana/comments/1s1t8r8/the_self_as_a_temporary_interface/
