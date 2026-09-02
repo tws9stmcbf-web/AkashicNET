@@ -1,0 +1,217 @@
+{
+  "audit_id": "BQ001-SOURCE-INTEGRITY-BATCH9",
+  "version": "0.1.0",
+  "status": "REVIEW_ONLY",
+  "assessed_on": "2026-09-02",
+  "scope": "BQ001 Batch 4 contemplative-tradition and philosophy-of-mind sources plus repository website mirrors",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+    "canonical_batch_blob_sha": "5fb910520b2ac72d725e80bc3093876473f7b102",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "331f709624075b517bb071b2b2f53de9049df66f",
+    "live_site_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "audit_policy": {
+    "preserve_original_urls": true,
+    "silent_replacement_allowed": false,
+    "unavailable_source_implies_false": false,
+    "bibliographic_correction_changes_evidence_class": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "notice_absence_is_time_scoped": true
+  },
+  "source_checks": [
+    {
+      "source_id": "SRC-BQ001-SIDERITS-2011",
+      "original_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "doi": "10.1093/oxfordhb/9780199548019.003.0013",
+      "expected_title": "Buddhist Non-Self: The No-Owner's Manual",
+      "observed_title": "Buddhist Non‐Self: The No‐Owner's Manual",
+      "observed_status": "AVAILABLE_WITH_PUBLISHER_REDIRECT",
+      "title_match": true,
+      "title_note": "Hyphen typography differs, but the wording and DOI match.",
+      "redirect_observed": true,
+      "observed_redirect_target": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685",
+      "current_publisher_route_observed": "https://academic.oup.com/edited-volume/38581/chapter/334605685",
+      "observed_authors": [
+        "Mark Siderits"
+      ],
+      "observed_publication_date": "2011-05-02",
+      "observed_pages": "297-315",
+      "notice_status": "NO_WITHDRAWAL_OR_CORRECTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-DAHL-2015",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+      "doi": "10.1016/j.tics.2015.07.001",
+      "pmid": "26231761",
+      "expected_title": "Reconstructing and deconstructing the self: cognitive mechanisms in meditation practice",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "observed_authors": [
+        "Cortland J Dahl",
+        "Antoine Lutz",
+        "Richard J Davidson"
+      ],
+      "observed_issue_citation": "Trends in Cognitive Sciences 19(9):515-523 (2015 Sep)",
+      "observed_electronic_publication_date": "2015-07-28",
+      "observed_pmcid": "PMC4595910",
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-VAGO-2012",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+      "doi": "10.3389/fnhum.2012.00296",
+      "pmid": "23112770",
+      "expected_title": "Self-awareness, self-regulation, and self-transcendence (S-ART): a framework for understanding the neurobiological mechanisms of mindfulness",
+      "observed_status": "AVAILABLE_WITH_EMPTY_PUBMED_AUTOMATED_RESPONSE",
+      "title_match": true,
+      "redirect_observed": false,
+      "observed_authors": [
+        "David R Vago",
+        "David A Silbersweig"
+      ],
+      "observed_pmcid": "PMC3480633",
+      "publisher_full_text_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full",
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "verification_basis": "PMID and DOI-indexed publisher record match the canonical title, authors and year.",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PHYSICALISM",
+      "original_url": "https://plato.stanford.edu/entries/physicalism/",
+      "expected_title": "Physicalism",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "observed_authors": [
+        "Daniel Stoljar"
+      ],
+      "first_published": "2001-02-13",
+      "substantive_revision": "2021-05-25",
+      "notice_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "provenance_note": "Canonical record identifies the publisher but omits entry author and edition/revision dates."
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-DUALISM",
+      "original_url": "https://plato.stanford.edu/entries/dualism/",
+      "expected_title": "Dualism",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "observed_authors": [
+        "Howard Robinson",
+        "Ralph Weir"
+      ],
+      "first_published": "2003-08-19",
+      "substantive_revision": "2025-10-17",
+      "notice_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "provenance_note": "Canonical record identifies the publisher but omits entry authors and edition/revision dates; the live SEP entry records a 2025 substantive revision."
+    },
+    {
+      "source_id": "SRC-BQ001-SEP-PANPSYCHISM",
+      "original_url": "https://plato.stanford.edu/entries/panpsychism/",
+      "expected_title": "Panpsychism",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "observed_authors": [
+        "Philip Goff",
+        "William Seager",
+        "Sean Allen-Hermanson"
+      ],
+      "first_published": "2001-05-23",
+      "substantive_revision": "2022-05-13",
+      "notice_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "provenance_note": "Canonical record identifies the publisher but omits entry authors and edition/revision dates."
+    }
+  ],
+  "duplicate_assessment": {
+    "exact_duplicate_source_ids_within_batch": [],
+    "exact_duplicate_urls_within_batch": [],
+    "exact_duplicate_dois_within_batch": [],
+    "cross_surface_mirrors": [
+      "SRC-BQ001-SIDERITS-2011",
+      "SRC-BQ001-DAHL-2015",
+      "SRC-BQ001-VAGO-2012",
+      "SRC-BQ001-SEP-PHYSICALISM",
+      "SRC-BQ001-SEP-DUALISM",
+      "SRC-BQ001-SEP-PANPSYCHISM"
+    ],
+    "classification": "EXPECTED_GITHUB_TO_WEBSITE_MIRRORING",
+    "action_required": false
+  },
+  "live_site_check": {
+    "status": "REPOSITORY_IMPLEMENTATION_INSPECTED_LIVE_RENDER_NOT_REQUIRED_FOR_REVIEW_CANDIDATES",
+    "inference": "NONE",
+    "note": "The repository page mirrors all six Batch 4 URLs and keeps both evidence cards classified as Interpretation. Rendered live-route verification belongs to any later approved website-sync step."
+  },
+  "findings_summary": {
+    "sources_checked": 6,
+    "broken_links": 0,
+    "permanent_redirects_requiring_repair": 0,
+    "publisher_redirects_to_record": 1,
+    "changed_titles": 0,
+    "retraction_notices_observed": 0,
+    "correction_notices_observed": 0,
+    "vanished_sources": 0,
+    "duplicate_records_within_batch": 0,
+    "missing_source_level_retrieval_metadata": 6,
+    "missing_sep_author_metadata_records": 3,
+    "missing_sep_edition_metadata_records": 3,
+    "additional_stable_full_text_identifiers_observed": 2,
+    "website_source_label_repair_candidates": 0
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "BQ001-B9-R1",
+      "priority": "MEDIUM",
+      "target": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+      "proposal": "Add non-destructive link_check and retrieval metadata to all six source records while retaining every original URL, source ID and existing identifier.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B9-R2",
+      "priority": "MEDIUM",
+      "target": "SRC-BQ001-SIDERITS-2011",
+      "proposal": "Record the observed publisher redirect, current Oxford Academic route, publication date and pages as provenance metadata; preserve the original URL and DOI rather than replacing either.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B9-R3",
+      "priority": "MEDIUM",
+      "target": [
+        "SRC-BQ001-DAHL-2015",
+        "SRC-BQ001-VAGO-2012"
+      ],
+      "proposal": "Add the observed PMCIDs and publication metadata as stable supplementary provenance without replacing the original PubMed URLs.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B9-R4",
+      "priority": "HIGH",
+      "target": [
+        "SRC-BQ001-SEP-PHYSICALISM",
+        "SRC-BQ001-SEP-DUALISM",
+        "SRC-BQ001-SEP-PANPSYCHISM"
+      ],
+      "proposal": "Add entry-author, first-publication and substantive-revision metadata so later audits can distinguish content revision from citation drift; preserve the existing SEP URLs, claims and evidence labels.",
+      "automatic_application_allowed": false
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATES_PREPARED",
+    "source_urls_replaced": false,
+    "canonical_evidence_changed": false,
+    "public_synthesis_changed": false,
+    "website_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  }
+}
