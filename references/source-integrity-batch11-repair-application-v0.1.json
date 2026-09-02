@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_repair_application",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 11,
+  "applied_on": "2026-09-02",
+  "status": "REPAIRS_APPLIED",
+  "approval": {
+    "scope": ["B11-R1", "B11-R2", "B11-R3", "B11-R4", "B11-R5"],
+    "user_approved": true
+  },
+  "target": {
+    "path": "research/microdosing-research-2026.md",
+    "previous_blob_sha": "4e8d5baa28371baf4b568ac350314997d9cb78cc",
+    "result_blob_sha": "b04624334d6fbed939432f251dc4e359bf63fc43",
+    "commit_sha": "e49cfcd5ec0c114d025e636d801731662af14f23"
+  },
+  "repairs": [
+    {
+      "candidate_id": "B11-R1",
+      "result": "Four legacy oai_citation labels replaced with explicit Markdown source labels."
+    },
+    {
+      "candidate_id": "B11-R2",
+      "result": "Rendered Reddit citations consolidated on the clean source URL; both originally observed URL forms preserved in provenance, including the tracking variant."
+    },
+    {
+      "candidate_id": "B11-R3",
+      "result": "DOI resolver, publisher record, PubMed record, PMID 42566966, full authorship, volume, online date and retrieval date added."
+    },
+    {
+      "candidate_id": "B11-R4",
+      "result": "All five previously pending claim groups received article page, section or figure-level provenance; no claim required deletion or inference."
+    },
+    {
+      "candidate_id": "B11-R5",
+      "result": "Retrieval metadata added for both works and the Reddit source update date recorded."
+    }
+  ],
+  "validation": {
+    "legacy_oai_citation_placeholders_remaining": 0,
+    "tracking_parameter_occurrences_outside_provenance": 0,
+    "original_url_forms_preserved": true,
+    "doi_unchanged": true,
+    "title_unchanged": true,
+    "claims_or_evidence_classification_changed": false
+  },
+  "guards": {
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "website_promotion": false,
+    "silent_source_replacement": false
+  },
+  "next_action": "Select the next bounded source-bearing record for Batch 12 review."
+}
