@@ -67,7 +67,7 @@ const evidence: EvidenceCard[] = [
       "A reported match or unexplained case is not proof of reincarnation. Information leakage, retrospective reconstruction, selection effects and alternative explanations remain live concerns.",
     sources: [
       { label: "Scoping review 2021", href: "https://pubmed.ncbi.nlm.nih.gov/34147343/" },
-      { label: "Haraldsson et al. 2003", href: "https://pubmed.ncbi.nlm.nih.gov/12689435/" },
+      { label: "Haraldsson 2003", href: "https://pubmed.ncbi.nlm.nih.gov/12689435/" },
       { label: "Moraes et al. 2024", href: "https://pubmed.ncbi.nlm.nih.gov/39341119/" },
     ],
   },
@@ -79,7 +79,7 @@ const evidence: EvidenceCard[] = [
       "Failure of one psychological explanation does not establish reincarnation; psychological correlates do not establish that reincarnation is impossible.",
     sources: [
       { label: "Tucker 2025", href: "https://pubmed.ncbi.nlm.nih.gov/40627512/" },
-      { label: "Allan et al. 2025", href: "https://pubmed.ncbi.nlm.nih.gov/41265055/" },
+      { label: "Thomas et al. 2025 (2026 issue)", href: "https://pubmed.ncbi.nlm.nih.gov/41265055/" },
     ],
   },
   {
