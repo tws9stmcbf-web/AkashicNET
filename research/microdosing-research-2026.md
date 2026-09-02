@@ -220,6 +220,8 @@ The study is therefore valuable primarily for mapping **real-world microdosing p
 - **Publisher record:** https://www.sciencedirect.com/science/article/pii/S0955395926003129
 - **PubMed:** https://pubmed.ncbi.nlm.nih.gov/42566966/ — PMID 42566966
 - **Retrieved:** 2 September 2026
+- **Equivalence group:** `EQ-MICRODOSING-2026` — the DOI, ScienceDirect PII and PubMed links are preserved routes to the same scholarly work; none replaces another.
+- **Direct access observation:** automated probes of the DOI and ScienceDirect routes timed out on 2 September 2026. Matching title and identifiers were resolved through Crossref and NCBI PubMed EFetch; the timeouts are not classified as broken links or evidence that the work is false.
 - **Notice check:** no retraction, correction or erratum notice was observed at review time. This is retrieval metadata, not a permanent guarantee.
 
 ### Claim-level locations

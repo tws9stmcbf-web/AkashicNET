@@ -1,0 +1,63 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH1-REPAIR-APPLICATION",
+  "artifact_version": "0.1.0",
+  "applied_on": "2026-09-02",
+  "status": "APPROVED_REPAIRS_APPLIED",
+  "approval_basis": "Explicit user approval of V014-B1-R1 through V014-B1-R4.",
+  "review_artifact": "references/source-integrity-v014-assessment-batch1-review-v0.1.json",
+  "applied_repairs": [
+    {
+      "candidate_id": "V014-B1-R1",
+      "result": "APPLIED",
+      "files": [
+        "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+        "references/community/bq001-scientific-baseline-batch1.json"
+      ],
+      "change": "Recorded erratum DOI 10.1038/nrn.2016.61 as related provenance for DOI 10.1038/nrn.2016.22."
+    },
+    {
+      "candidate_id": "V014-B1-R2",
+      "result": "APPLIED",
+      "files": [
+        "research/microdosing-research-2026.md",
+        "references/source-integrity-v014-assessment-batch1-review-v0.1.json"
+      ],
+      "change": "Recorded DOI, ScienceDirect PII and PubMed routes as one preserved same-work group EQ-MICRODOSING-2026."
+    },
+    {
+      "candidate_id": "V014-B1-R3",
+      "result": "APPLIED",
+      "files": [
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+        "references/source-integrity-v014-assessment-batch1-review-v0.1.json"
+      ],
+      "change": "Recorded PubMed and Frontiers routes as one preserved same-work group EQ-SART-2012."
+    },
+    {
+      "candidate_id": "V014-B1-R4",
+      "result": "APPLIED",
+      "files": [
+        "research/microdosing-research-2026.md",
+        "references/source-integrity-v014-assessment-batch1-review-v0.1.json"
+      ],
+      "change": "Appended direct timeout observations and successful Crossref/NCBI metadata resolution."
+    }
+  ],
+  "validation": {
+    "json_files_parsed": true,
+    "canonical_source_urls_unchanged": true,
+    "persistent_identifiers_unchanged": true,
+    "claims_unchanged": true,
+    "evidence_labels_unchanged": true,
+    "question_status_unchanged": true,
+    "truth_inference_applied": false,
+    "scientific_evidence_promotion_applied": false,
+    "silent_source_replacement": false,
+    "website_changed": false
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "changed_or_unavailable_implies_false": false
+  }
+}

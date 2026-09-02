@@ -2,7 +2,7 @@
   "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH1-REVIEW",
   "artifact_version": "0.1.0",
   "retrieved_on": "2026-09-02",
-  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "status": "APPROVED_REPAIRS_APPLIED",
   "target_release": "0.14.0-beta.1",
   "scope_artifact": "references/source-integrity-v014-assessment-batch1-scope-v0.1.json",
   "assessed_source_count": 25,
@@ -80,7 +80,9 @@
       "preserve_original_url": true,
       "replace_source": false,
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED",
+      "approved_on": "2026-09-02",
+      "applied_on": "2026-09-02"
     },
     {
       "candidate_id": "V014-B1-R2",
@@ -95,7 +97,9 @@
       "preserve_original_urls": true,
       "replace_source": false,
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED",
+      "approved_on": "2026-09-02",
+      "applied_on": "2026-09-02"
     },
     {
       "candidate_id": "V014-B1-R3",
@@ -110,7 +114,9 @@
       "preserve_original_urls": true,
       "replace_source": false,
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED",
+      "approved_on": "2026-09-02",
+      "applied_on": "2026-09-02"
     },
     {
       "candidate_id": "V014-B1-R4",
@@ -127,7 +133,9 @@
       "preserve_original_urls": true,
       "replace_source": false,
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED",
+      "approved_on": "2026-09-02",
+      "applied_on": "2026-09-02"
     }
   ],
   "assessments": [
@@ -749,5 +757,8 @@
     "rights_promotion": false,
     "website_promotion": false
   },
-  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+  "next_state": "BATCH1_REPAIRS_COMPLETE",
+  "approved_on": "2026-09-02",
+  "approval_basis": "Explicit user approval of V014-B1-R1 through V014-B1-R4.",
+  "repair_application": "references/source-integrity-v014-assessment-batch1-repair-application-v0.1.json"
 }

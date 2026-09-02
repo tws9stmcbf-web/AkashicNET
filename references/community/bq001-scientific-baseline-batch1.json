@@ -43,7 +43,16 @@
       "journal": "Nature Reviews Neuroscience",
       "year": 2016,
       "doi": "10.1038/nrn.2016.22",
-      "url": "https://www.nature.com/articles/nrn.2016.22"
+      "url": "https://www.nature.com/articles/nrn.2016.22",
+      "related_records": [
+        {
+          "relation": "HAS_ERRATUM",
+          "doi": "10.1038/nrn.2016.61",
+          "observed_on": "2026-09-02",
+          "relation_source": "CROSSREF_WORKS_API",
+          "note": "Provenance metadata only; not a retraction or truth determination."
+        }
+      ]
     }
   ],
   "evidence_core": {
@@ -54,51 +63,121 @@
         "statement": "In AWARE (2014), a subset of interviewed cardiac-arrest survivors reported memories or perceptions associated with the resuscitation period; this observational finding does not establish consciousness after irreversible death or independence from brain function.",
         "claim_class": "EMPIRICAL",
         "status": "SUPPORTED",
-        "provenance": {"source_ids": ["BQ001-SRC-AWARE-2014"]}
+        "provenance": {
+          "source_ids": [
+            "BQ001-SRC-AWARE-2014"
+          ]
+        }
       },
       {
         "claim_id": "BQ001-C2",
         "statement": "AWARE II (2023) prospectively studied 567 in-hospital cardiac arrests; 53 survived and 28 completed interviews, with some interviewed survivors reporting memories or perceptions suggestive of consciousness.",
         "claim_class": "EMPIRICAL",
         "status": "SUPPORTED",
-        "provenance": {"source_ids": ["BQ001-SRC-AWARE2-2023"]}
+        "provenance": {
+          "source_ids": [
+            "BQ001-SRC-AWARE2-2023"
+          ]
+        }
       },
       {
         "claim_id": "BQ001-C3",
         "statement": "AWARE II reported organized EEG activity during CPR in some monitored cases, including activity occurring during prolonged resuscitation; the study does not establish that these EEG observations and explicit recalled experiences occurred in the same individuals or that consciousness persisted after irreversible biological death.",
         "claim_class": "EMPIRICAL",
         "status": "SUPPORTED",
-        "provenance": {"source_ids": ["BQ001-SRC-AWARE2-2023"]}
+        "provenance": {
+          "source_ids": [
+            "BQ001-SRC-AWARE2-2023"
+          ]
+        }
       },
       {
         "claim_id": "BQ001-C4",
         "statement": "In healthy participants under general anesthesia, Maschke et al. (2024) found systematic relationships between conscious state and EEG dynamical properties across tested anesthetic conditions, supporting brain-state dependence of consciousness under those experimental conditions.",
         "claim_class": "EMPIRICAL",
         "status": "SUPPORTED",
-        "provenance": {"source_ids": ["BQ001-SRC-MASCHKE-2024"]}
+        "provenance": {
+          "source_ids": [
+            "BQ001-SRC-MASCHKE-2024"
+          ]
+        }
       },
       {
         "claim_id": "BQ001-C5",
         "statement": "Neural-correlate research provides reproducible methods for relating neural activity to conscious experience, while methodological confounds and scope limits prevent neural correlation alone from resolving whether consciousness can continue after irreversible biological death.",
         "claim_class": "EMPIRICAL",
         "status": "PARTIALLY_SUPPORTED",
-        "provenance": {"source_ids": ["BQ001-SRC-KOCH-2016"]}
+        "provenance": {
+          "source_ids": [
+            "BQ001-SRC-KOCH-2016"
+          ]
+        }
       }
     ],
     "evidence_links": [
-      {"claim_id": "BQ001-C1", "source_id": "BQ001-SRC-AWARE-2014", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Prospective observational evidence; survivor/interview selection and temporal attribution limit inference."},
-      {"claim_id": "BQ001-C2", "source_id": "BQ001-SRC-AWARE2-2023", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Denominators must be preserved: 567 arrests, 53 survivors, 28 interviewed."},
-      {"claim_id": "BQ001-C3", "source_id": "BQ001-SRC-AWARE2-2023", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "EEG during CPR is not equivalent to demonstrated awareness, and does not establish survival after irreversible death."},
-      {"claim_id": "BQ001-C4", "source_id": "BQ001-SRC-MASCHKE-2024", "relation": "SUPPORTS", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Experimental manipulation supports dependence under tested anesthetic states; it cannot prove non-survival after death."},
-      {"claim_id": "BQ001-C5", "source_id": "BQ001-SRC-KOCH-2016", "relation": "CONTEXTUALISES", "evidence_tier": "EMPIRICAL_REFERENCE", "assessment_state": "REVIEWED", "notes": "Review used for methodological framing rather than as primary experimental proof."}
+      {
+        "claim_id": "BQ001-C1",
+        "source_id": "BQ001-SRC-AWARE-2014",
+        "relation": "SUPPORTS",
+        "evidence_tier": "EMPIRICAL_REFERENCE",
+        "assessment_state": "REVIEWED",
+        "notes": "Prospective observational evidence; survivor/interview selection and temporal attribution limit inference."
+      },
+      {
+        "claim_id": "BQ001-C2",
+        "source_id": "BQ001-SRC-AWARE2-2023",
+        "relation": "SUPPORTS",
+        "evidence_tier": "EMPIRICAL_REFERENCE",
+        "assessment_state": "REVIEWED",
+        "notes": "Denominators must be preserved: 567 arrests, 53 survivors, 28 interviewed."
+      },
+      {
+        "claim_id": "BQ001-C3",
+        "source_id": "BQ001-SRC-AWARE2-2023",
+        "relation": "SUPPORTS",
+        "evidence_tier": "EMPIRICAL_REFERENCE",
+        "assessment_state": "REVIEWED",
+        "notes": "EEG during CPR is not equivalent to demonstrated awareness, and does not establish survival after irreversible death."
+      },
+      {
+        "claim_id": "BQ001-C4",
+        "source_id": "BQ001-SRC-MASCHKE-2024",
+        "relation": "SUPPORTS",
+        "evidence_tier": "EMPIRICAL_REFERENCE",
+        "assessment_state": "REVIEWED",
+        "notes": "Experimental manipulation supports dependence under tested anesthetic states; it cannot prove non-survival after death."
+      },
+      {
+        "claim_id": "BQ001-C5",
+        "source_id": "BQ001-SRC-KOCH-2016",
+        "relation": "CONTEXTUALISES",
+        "evidence_tier": "EMPIRICAL_REFERENCE",
+        "assessment_state": "REVIEWED",
+        "notes": "Review used for methodological framing rather than as primary experimental proof."
+      }
     ]
   },
   "epistemic_annotations": [
-    {"claim_id": "BQ001-C1", "label": "Established Evidence"},
-    {"claim_id": "BQ001-C2", "label": "Established Evidence"},
-    {"claim_id": "BQ001-C3", "label": "Established Evidence"},
-    {"claim_id": "BQ001-C4", "label": "Established Evidence"},
-    {"claim_id": "BQ001-C5", "label": "Interpretation"}
+    {
+      "claim_id": "BQ001-C1",
+      "label": "Established Evidence"
+    },
+    {
+      "claim_id": "BQ001-C2",
+      "label": "Established Evidence"
+    },
+    {
+      "claim_id": "BQ001-C3",
+      "label": "Established Evidence"
+    },
+    {
+      "claim_id": "BQ001-C4",
+      "label": "Established Evidence"
+    },
+    {
+      "claim_id": "BQ001-C5",
+      "label": "Interpretation"
+    }
   ],
   "material_limitations": [
     "Cardiac-arrest studies condition experiential results on survival and availability for interview.",
@@ -122,5 +201,18 @@
     "survival_claim_auto_promoted": false,
     "non_survival_claim_auto_promoted": false,
     "privacy_posture_changed": false
+  },
+  "provenance_integrity_v014_checkpoint": {
+    "applied_on": "2026-09-02",
+    "review_artifact": "references/source-integrity-v014-assessment-batch1-review-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch1-repair-application-v0.1.json",
+    "approved_repairs": [
+      "V014-B1-R1"
+    ],
+    "original_urls_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
   }
 }

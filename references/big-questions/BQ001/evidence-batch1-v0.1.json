@@ -118,13 +118,20 @@
         "Competing theories and methodological confounds remain active areas of research."
       ],
       "link_check": {
-        "checked_at": "2026-09-01",
+        "checked_at": "2026-09-02",
         "status": "AVAILABLE_WITH_COOKIE_QUERY_REDIRECT",
         "title_match": true,
         "redirect_observed": true,
         "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME",
         "observed_destination_pattern": "Original article URL plus a transient cookies_not_supported query string.",
-        "note": "The canonical URL remains unchanged."
+        "note": "The canonical URL remains unchanged.",
+        "erratum_relation": {
+          "status": "ERRATUM_RECORDED",
+          "doi": "10.1038/nrn.2016.61",
+          "relation_source": "CROSSREF_WORKS_API",
+          "observed_on": "2026-09-02",
+          "note": "This erratum relation is provenance metadata; it is not a retraction or truth determination."
+        }
       }
     }
   ],
@@ -246,6 +253,20 @@
     "change_scope": "Retrieval and link-check metadata only.",
     "original_urls_preserved": true,
     "identifiers_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  },
+  "provenance_integrity_v014_checkpoint": {
+    "applied_on": "2026-09-02",
+    "review_artifact": "references/source-integrity-v014-assessment-batch1-review-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch1-repair-application-v0.1.json",
+    "approved_repairs": [
+      "V014-B1-R1"
+    ],
+    "change_scope": "Erratum provenance only.",
+    "original_urls_preserved": true,
     "claims_changed": false,
     "evidence_labels_changed": false,
     "truth_inference_applied": false,

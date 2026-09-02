@@ -86,6 +86,19 @@
         "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
         "verification_basis": "PMID and DOI-indexed Frontiers record match the canonical title, authors and year.",
         "note": "A limited automated PubMed response is not classified as a broken or unavailable source."
+      },
+      "equivalence_group": {
+        "group_id": "EQ-SART-2012",
+        "classification": "SAME_SCHOLARLY_WORK_DIFFERENT_URL_FORMS",
+        "preserved_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+          "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full"
+        ],
+        "identifiers": {
+          "doi": "10.3389/fnhum.2012.00296",
+          "pmid": "23112770"
+        },
+        "note": "Both routes are retained; neither silently replaces the other."
       }
     },
     {
@@ -307,5 +320,18 @@
     "truth_inference_applied": false,
     "scientific_evidence_promoted": false,
     "approval_basis": "Explicit user approval after review-only candidate preparation."
+  },
+  "provenance_integrity_v014_checkpoint": {
+    "applied_on": "2026-09-02",
+    "review_artifact": "references/source-integrity-v014-assessment-batch1-review-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch1-repair-application-v0.1.json",
+    "approved_repairs": [
+      "V014-B1-R3"
+    ],
+    "original_urls_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
   }
 }
