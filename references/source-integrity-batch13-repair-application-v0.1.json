@@ -1,0 +1,88 @@
+{
+  "audit": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 13,
+  "artifact_version": "0.1",
+  "applied_at": "2026-09-02",
+  "approval": "User explicitly approved B13-R1 through B13-R4.",
+  "source": {
+    "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/",
+    "reddit_post_id": "1l26ks1",
+    "normalized_work_key": "1l26ks1",
+    "publication_date": "2025-06-03",
+    "retrieval_date": "2026-09-02",
+    "availability": "available",
+    "redirect": false,
+    "title_status": "SHORT_LABEL_NOT_CONTRADICTORY",
+    "full_title_observed": "💡Project Akashic Library framework 📖 Codex Nexus | Atlantean 🔷 + Alexandrian 🏛️ + Da Vinci ⚙️",
+    "content_form": "image post",
+    "retraction_status": "not applicable / none observed"
+  },
+  "repairs": [
+    {
+      "id": "B13-R1",
+      "status": "applied",
+      "description": "Added post ID, full observed title, publication and retrieval dates, and observed flair while preserving the original URL and short label."
+    },
+    {
+      "id": "B13-R2",
+      "status": "applied",
+      "description": "Recorded image-post presence while retaining link-only, no-reproduction, permission-unconfirmed rights boundaries."
+    },
+    {
+      "id": "B13-R3",
+      "status": "applied",
+      "description": "Updated active pilot and structured-index date and visual metadata; historical/test artifacts were not regenerated."
+    },
+    {
+      "id": "B13-R4",
+      "status": "applied",
+      "description": "Added normalized-work linkage keyed by Reddit post ID without collapsing distinct record contexts."
+    }
+  ],
+  "files": [
+    {
+      "path": "references/community/akashic-library-codex-nexus.md",
+      "commit_sha": "306c5519401b0861c18871515017c95f3289eba2",
+      "content_sha": "ed60fbeb1f321e461a329f4a4c932321b286c5b5"
+    },
+    {
+      "path": "references/community/n2n-index.md",
+      "commit_sha": "38d494f58df87e31f8e98cb22c34e4219831599f",
+      "content_sha": "fe2fb837a7741f2db46a5b32c48c6ad057bfb2ba"
+    },
+    {
+      "path": "references/community/n2n-pilot-index.md",
+      "commit_sha": "51d18e79c2108b6b1876c3efa4417b8b8b83aae8",
+      "content_sha": "8b3da9025a5e52338bbd1eea9dd8e02b16fb1ad4"
+    },
+    {
+      "path": "references/community/n2n-index.csv",
+      "commit_sha": "467c4741f6952ec8bb3d8bb90efffa024b2d84d9",
+      "content_sha": "0d8d3275b82c8ce1d3afca3d13a389e5069ad99f"
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "references/community/n2n-test-batch-25.md",
+      "status": "unchanged historical/test artifact"
+    },
+    {
+      "path": "references/community/n2n-test-batch-25.csv",
+      "status": "unchanged historical/test artifact"
+    },
+    {
+      "path": "tools/n2n/dryrun/25_post_test.jsonl",
+      "content_sha": "55c1492a2cc619b945293e8c27e980289f0f5493",
+      "status": "verified unchanged; retains date unknown and visual Unknown"
+    }
+  ],
+  "guards": {
+    "original_url_preserved": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false,
+    "unavailable_source_treated_as_false": false
+  }
+}
