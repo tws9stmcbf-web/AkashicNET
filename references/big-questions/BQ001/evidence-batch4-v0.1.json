@@ -1,6 +1,6 @@
 {
   "batch_id": "BQ001-BATCH4-CONTEMPLATIVE-PHILOSOPHY",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
   "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
@@ -18,7 +18,20 @@
       "limitations": [
         "Scholarly philosophical analysis, not an empirical experiment.",
         "Buddhist non-self doctrines are not evidence of post-mortem survival by themselves."
-      ]
+      ],
+      "publication_date": "2011-05-02",
+      "pages": "297-315",
+      "current_publisher_route": "https://academic.oup.com/edited-volume/38581/chapter/334605685",
+      "link_check": {
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE_WITH_PUBLISHER_REDIRECT",
+        "title_match": true,
+        "redirect_observed": true,
+        "observed_redirect_target": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685",
+        "notice_status": "NO_WITHDRAWAL_OR_CORRECTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "Oxford Academic record matches the canonical title, author, DOI, year and pages.",
+        "note": "The original URL is preserved. The current publisher route and redirect target are supplementary provenance only."
+      }
     },
     {
       "source_id": "SRC-BQ001-DAHL-2015",
@@ -33,7 +46,21 @@
       "limitations": [
         "Framework/review article rather than a single decisive primary experiment.",
         "Changes in self-processing during meditation do not establish metaphysical non-self or survival after death."
-      ]
+      ],
+      "pmcid": "PMC4595910",
+      "publication_dates": {
+        "electronic_publication_date": "2015-07-28",
+        "issue_publication": "2015-09",
+        "issue_citation": "Trends in Cognitive Sciences 19(9):515-523"
+      },
+      "link_check": {
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PubMed record matches the canonical title, authors, DOI, PMID, journal and year."
+      }
     },
     {
       "source_id": "SRC-BQ001-VAGO-2012",
@@ -48,7 +75,18 @@
       "limitations": [
         "Integrative theoretical framework, not direct proof of an ontological claim.",
         "The term self-transcendence here concerns psychological/neurobiological processes, not evidence of consciousness existing independently of the brain."
-      ]
+      ],
+      "pmcid": "PMC3480633",
+      "publisher_full_text_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00296/full",
+      "link_check": {
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE_WITH_EMPTY_PUBMED_AUTOMATED_RESPONSE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "PMID and DOI-indexed Frontiers record match the canonical title, authors and year.",
+        "note": "A limited automated PubMed response is not classified as a broken or unavailable source."
+      }
     },
     {
       "source_id": "SRC-BQ001-SEP-PHYSICALISM",
@@ -56,7 +94,22 @@
       "title": "Physicalism",
       "publisher": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/physicalism/",
-      "limitations": ["Reference work summarising philosophical positions and arguments; not an empirical adjudication of BQ001."]
+      "limitations": [
+        "Reference work summarising philosophical positions and arguments; not an empirical adjudication of BQ001."
+      ],
+      "authors_short": "Stoljar",
+      "entry_dates": {
+        "first_published": "2001-02-13",
+        "substantive_revision": "2021-05-25"
+      },
+      "link_check": {
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "Live Stanford Encyclopedia of Philosophy entry matches the canonical title and records Daniel Stoljar as author."
+      }
     },
     {
       "source_id": "SRC-BQ001-SEP-DUALISM",
@@ -64,7 +117,23 @@
       "title": "Dualism",
       "publisher": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/dualism/",
-      "limitations": ["Reference work summarising philosophical positions and arguments; philosophical defensibility does not demonstrate post-mortem survival."]
+      "limitations": [
+        "Reference work summarising philosophical positions and arguments; philosophical defensibility does not demonstrate post-mortem survival."
+      ],
+      "authors_short": "Robinson and Weir",
+      "entry_dates": {
+        "first_published": "2003-08-19",
+        "substantive_revision": "2025-10-17"
+      },
+      "link_check": {
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "Live Stanford Encyclopedia of Philosophy entry matches the canonical title and records Howard Robinson and Ralph Weir as authors.",
+        "note": "The 2025 substantive revision is recorded as edition provenance and does not imply a truth or evidence-class change."
+      }
     },
     {
       "source_id": "SRC-BQ001-SEP-PANPSYCHISM",
@@ -72,7 +141,22 @@
       "title": "Panpsychism",
       "publisher": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/panpsychism/",
-      "limitations": ["Reference work summarising philosophical positions and objections; panpsychism does not entail persistence of an individual person after death."]
+      "limitations": [
+        "Reference work summarising philosophical positions and objections; panpsychism does not entail persistence of an individual person after death."
+      ],
+      "authors_short": "Goff, Seager and Allen-Hermanson",
+      "entry_dates": {
+        "first_published": "2001-05-23",
+        "substantive_revision": "2022-05-13"
+      },
+      "link_check": {
+        "checked_at": "2026-09-02",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "redirect_observed": false,
+        "notice_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+        "verification_basis": "Live Stanford Encyclopedia of Philosophy entry matches the canonical title and credits Philip Goff, William Seager and Sean Allen-Hermanson."
+      }
     }
   ],
   "claims": [
@@ -82,9 +166,15 @@
       "text": "Buddhist philosophical traditions include reductionist or anti-realist accounts in which a permanent independent self is denied while persons may be treated as conventional constructions from psychophysical processes.",
       "domain": "contemplative_philosophical_and_wisdom_traditions",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SIDERITS-2011"],
-      "provenance": ["Oxford scholarly philosophy chapter"],
-      "limitations": ["A philosophical doctrine is not empirical proof that no self exists or that consciousness survives death."],
+      "source_ids": [
+        "SRC-BQ001-SIDERITS-2011"
+      ],
+      "provenance": [
+        "Oxford scholarly philosophy chapter"
+      ],
+      "limitations": [
+        "A philosophical doctrine is not empirical proof that no self exists or that consciousness survives death."
+      ],
       "uncertainty": "Buddhist schools differ in analysis of personhood and continuity; this claim does not adjudicate their metaphysical truth.",
       "supports_models": []
     },
@@ -94,9 +184,15 @@
       "text": "Dahl, Lutz and Davidson propose that meditation practices can be grouped into attentional, constructive and deconstructive families involving mechanisms such as meta-awareness, perspective taking, reappraisal and self-inquiry.",
       "domain": "contemplative_philosophical_and_wisdom_traditions",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-DAHL-2015"],
-      "provenance": ["peer-reviewed review/framework"],
-      "limitations": ["The framework concerns trainable cognitive processes and does not establish a metaphysical account of consciousness."],
+      "source_ids": [
+        "SRC-BQ001-DAHL-2015"
+      ],
+      "provenance": [
+        "peer-reviewed review/framework"
+      ],
+      "limitations": [
+        "The framework concerns trainable cognitive processes and does not establish a metaphysical account of consciousness."
+      ],
       "uncertainty": "Specific mechanisms and generalisability vary by practice, population and measurement method.",
       "supports_models": []
     },
@@ -106,9 +202,15 @@
       "text": "The S-ART framework models mindfulness using self-awareness, self-regulation and self-transcendence as interacting psychological and neurobiological processes.",
       "domain": "contemplative_philosophical_and_wisdom_traditions",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-VAGO-2012"],
-      "provenance": ["peer-reviewed theoretical framework"],
-      "limitations": ["Psychological self-transcendence is not equivalent to consciousness existing independently of a biological organism."],
+      "source_ids": [
+        "SRC-BQ001-VAGO-2012"
+      ],
+      "provenance": [
+        "peer-reviewed theoretical framework"
+      ],
+      "limitations": [
+        "Psychological self-transcendence is not equivalent to consciousness existing independently of a biological organism."
+      ],
       "uncertainty": "The framework integrates evidence and hypotheses but is not a complete mechanistic account of consciousness.",
       "supports_models": []
     },
@@ -118,11 +220,19 @@
       "text": "Physicalism holds, in broad form, that everything is physical or importantly dependent on the physical; its implications for consciousness depend on the specific version defended.",
       "domain": "alternative_hypotheses_and_unresolved_models",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SEP-PHYSICALISM"],
-      "provenance": ["Stanford Encyclopedia of Philosophy reference synthesis"],
-      "limitations": ["A philosophical position is not itself an experimental result."],
+      "source_ids": [
+        "SRC-BQ001-SEP-PHYSICALISM"
+      ],
+      "provenance": [
+        "Stanford Encyclopedia of Philosophy reference synthesis"
+      ],
+      "limitations": [
+        "A philosophical position is not itself an experimental result."
+      ],
       "uncertainty": "Multiple forms of physicalism exist and the philosophy of consciousness remains contested.",
-      "supports_models": ["MODEL-BQ001-BIOLOGICAL-DEPENDENCE"]
+      "supports_models": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-DUALISM-INTERP-01",
@@ -130,11 +240,19 @@
       "text": "Dualist positions treat mind and body, or mental and physical properties, as fundamentally distinct in some sense, providing conceptual space for models not reducible to standard physicalism.",
       "domain": "alternative_hypotheses_and_unresolved_models",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SEP-DUALISM"],
-      "provenance": ["Stanford Encyclopedia of Philosophy reference synthesis"],
-      "limitations": ["Conceptual space for survival is not empirical evidence that survival occurs."],
+      "source_ids": [
+        "SRC-BQ001-SEP-DUALISM"
+      ],
+      "provenance": [
+        "Stanford Encyclopedia of Philosophy reference synthesis"
+      ],
+      "limitations": [
+        "Conceptual space for survival is not empirical evidence that survival occurs."
+      ],
       "uncertainty": "Dualist views face unresolved causal, unity and interaction problems and do not by themselves specify a survival mechanism.",
-      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+      "supports_models": [
+        "MODEL-BQ001-CONTINUITY"
+      ]
     },
     {
       "claim_id": "CLAIM-BQ001-PANPSYCHISM-INTERP-01",
@@ -142,11 +260,19 @@
       "text": "Contemporary panpsychism treats mentality or experience as fundamental and ubiquitous in nature, but this thesis does not by itself imply persistence of an individual's memories, identity or subjectivity after death.",
       "domain": "alternative_hypotheses_and_unresolved_models",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-BQ001-SEP-PANPSYCHISM"],
-      "provenance": ["Stanford Encyclopedia of Philosophy reference synthesis"],
-      "limitations": ["Panpsychism is a family of metaphysical views and faces problems including how micro-level mentality relates to unified subjects."],
+      "source_ids": [
+        "SRC-BQ001-SEP-PANPSYCHISM"
+      ],
+      "provenance": [
+        "Stanford Encyclopedia of Philosophy reference synthesis"
+      ],
+      "limitations": [
+        "Panpsychism is a family of metaphysical views and faces problems including how micro-level mentality relates to unified subjects."
+      ],
       "uncertainty": "Even if some form of panpsychism were true, BQ001 would require additional evidence about personal continuity.",
-      "supports_models": ["MODEL-BQ001-CONTINUITY"]
+      "supports_models": [
+        "MODEL-BQ001-CONTINUITY"
+      ]
     }
   ],
   "batch_conclusion": {
@@ -163,5 +289,23 @@
     "dualism_as_philosophy_proves_survival": false,
     "panpsychism_entails_personal_survival": false,
     "model_support_edges_upgrade_evidence": false
+  },
+  "integrity_checkpoint": {
+    "applied_on": "2026-09-02",
+    "review_artifact": "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+    "repair_candidates_applied": [
+      "BQ001-B9-R1",
+      "BQ001-B9-R2",
+      "BQ001-B9-R3",
+      "BQ001-B9-R4"
+    ],
+    "change_scope": "Retrieval, redirect, stable-identifier, author and edition metadata only.",
+    "original_urls_preserved": true,
+    "source_ids_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false,
+    "approval_basis": "Explicit user approval after review-only candidate preparation."
   }
 }
