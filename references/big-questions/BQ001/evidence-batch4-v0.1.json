@@ -31,6 +31,19 @@
         "notice_status": "NO_WITHDRAWAL_OR_CORRECTION_NOTICE_OBSERVED_AT_CHECK_TIME",
         "verification_basis": "Oxford Academic record matches the canonical title, author, DOI, year and pages.",
         "note": "The original URL is preserved. The current publisher route and redirect target are supplementary provenance only."
+      },
+      "equivalence_group": {
+        "group_id": "EQ-BUDDHIST-NONSELF-2011",
+        "classification": "SAME_SCHOLARLY_WORK_DIFFERENT_PUBLISHER_URL_FORMS",
+        "preserved_urls": [
+          "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+          "https://academic.oup.com/edited-volume/38581/chapter/334605685",
+          "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685"
+        ],
+        "identifiers": {
+          "doi": "10.1093/oxfordhb/9780199548019.003.0013"
+        },
+        "note": "All routes are retained as provenance for the same chapter; none silently replaces another."
       }
     },
     {
@@ -327,6 +340,19 @@
     "repair_application": "references/source-integrity-v014-assessment-batch1-repair-application-v0.1.json",
     "approved_repairs": [
       "V014-B1-R3"
+    ],
+    "original_urls_preserved": true,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  },
+  "source_integrity_v014_batch2_checkpoint": {
+    "applied_on": "2026-09-02",
+    "review_artifact": "references/source-integrity-v014-assessment-batch2-review-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch2-repair-application-v0.1.json",
+    "approved_repairs": [
+      "V014-B2-R3"
     ],
     "original_urls_preserved": true,
     "claims_changed": false,

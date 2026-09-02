@@ -3,8 +3,8 @@
   "target_release": "0.14.0-beta.1",
   "source_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
   "shard": "a",
-  "entry_count": 485,
-  "occurrence_count": 1313,
+  "entry_count": 483,
+  "occurrence_count": 1309,
   "entries": [
     {
       "host": "www.reddit.com",
@@ -6106,31 +6106,6 @@
       "retrieval_status": "UNASSESSED",
       "retrieved_on": null,
       "source_id": "URL-a65d1e398d38bdb9",
-      "truth_status_changed": false
-    },
-    {
-      "host": "pubmed.ncbi.nlm.nih.gov",
-      "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/\\",
-      "observed_title": null,
-      "occurrence_count": 2,
-      "occurrences": [
-        {
-          "lines": [
-            47,
-            48
-          ],
-          "repository_path": "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
-        }
-      ],
-      "original_urls": [
-        "https://pubmed.ncbi.nlm.nih.gov/12689435/\\"
-      ],
-      "redirect_target": null,
-      "repair_candidate": null,
-      "retraction_status": "UNCHECKED",
-      "retrieval_status": "UNASSESSED",
-      "retrieved_on": null,
-      "source_id": "URL-a67a32c505e3f0b9",
       "truth_status_changed": false
     },
     {
@@ -14064,31 +14039,6 @@
       "retrieval_status": "UNASSESSED",
       "retrieved_on": null,
       "source_id": "URL-aeb10317c8edecc2",
-      "truth_status_changed": false
-    },
-    {
-      "host": "pubmed.ncbi.nlm.nih.gov",
-      "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/\\",
-      "observed_title": null,
-      "occurrence_count": 2,
-      "occurrences": [
-        {
-          "lines": [
-            49,
-            50
-          ],
-          "repository_path": "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
-        }
-      ],
-      "original_urls": [
-        "https://pubmed.ncbi.nlm.nih.gov/41265055/\\"
-      ],
-      "redirect_target": null,
-      "repair_candidate": null,
-      "retraction_status": "UNCHECKED",
-      "retrieval_status": "UNASSESSED",
-      "retrieved_on": null,
-      "source_id": "URL-aeb32f562d7d212b",
       "truth_status_changed": false
     },
     {

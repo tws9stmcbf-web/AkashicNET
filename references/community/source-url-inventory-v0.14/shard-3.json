@@ -6337,11 +6337,12 @@
       ],
       "redirect_target": null,
       "repair_candidate": null,
-      "retraction_status": "UNCHECKED",
-      "retrieval_status": "UNASSESSED",
-      "retrieved_on": null,
+      "retraction_status": "NOT_APPLICABLE",
+      "retrieval_status": "DERIVATIVE_AUTHORIZATION_ENDPOINT_NOT_STANDALONE_SOURCE",
+      "retrieved_on": "2026-09-02",
       "source_id": "URL-3679b700a4958709",
-      "truth_status_changed": false
+      "truth_status_changed": false,
+      "source_role": "DERIVATIVE_ACCESS_ENDPOINT"
     },
     {
       "host": "www.reddit.com",

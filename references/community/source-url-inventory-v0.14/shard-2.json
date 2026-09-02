@@ -4,7 +4,7 @@
   "source_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
   "shard": "2",
   "entry_count": 477,
-  "occurrence_count": 1353,
+  "occurrence_count": 1355,
   "entries": [
     {
       "host": "www.reddit.com",
@@ -1240,7 +1240,7 @@
       "host": "pubmed.ncbi.nlm.nih.gov",
       "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/12689435",
       "observed_title": null,
-      "occurrence_count": 7,
+      "occurrence_count": 9,
       "occurrences": [
         {
           "lines": [
@@ -1269,7 +1269,9 @@
         {
           "lines": [
             32,
-            33
+            33,
+            47,
+            48
           ],
           "repository_path": "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
         },

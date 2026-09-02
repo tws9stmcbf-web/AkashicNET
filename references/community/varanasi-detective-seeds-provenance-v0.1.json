@@ -1,0 +1,150 @@
+{
+  "artifact_id": "VARANASI-DETECTIVE-SEEDS-PROVENANCE-V0.1",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-02",
+  "source_file": "references/community/varanasi-detective-seeds.csv",
+  "record_count": 9,
+  "records": [
+    {
+      "source_id": "URL-f8293604635d704f",
+      "source": "Oxford Academic",
+      "original_url": "https://academic.oup.com/book/39302/chapter-abstract/338895800",
+      "retrieval_status": "DIRECT_ROUTE_ACCESS_CONTROLLED; PUBLISHER_MINIMAL_ROUTE_AVAILABLE",
+      "http_observation": "HTTP_403_DIRECT; HTTP_200_MINIMAL_ROUTE",
+      "final_observed_url": "https://oup.silverchair-cdn.com/book-minimal/39302/chapter-minimal/338895800",
+      "recorded_title": "Dying",
+      "observed_title": "Dying",
+      "parent_container_title": "A Time of Novelty: Logic, Emotion, and Intellectual Life in Early Modern India, 1500–1700 C.E.",
+      "persistent_ids": {
+        "parent_book_doi": "10.1093/oso/9780197568163.001.0001"
+      },
+      "title_verification": "VERIFIED_WITH_PUBLISHER_ROUTE",
+      "repair_history": [
+        {
+          "field": "title",
+          "prior_value": "Dying — A Time of Novelty",
+          "current_value": "Dying",
+          "reason": "PRIOR_VALUE_CONFLATED_CHAPTER_AND_PARENT_BOOK_TITLES"
+        }
+      ]
+    },
+    {
+      "source_id": "URL-0a6609ace9a6d8bf",
+      "source": "Geographical Review",
+      "original_url": "https://www.tandfonline.com/doi/abs/10.1111/j.1931-0846.2000.tb00332.x",
+      "retrieval_status": "DIRECT_ROUTE_ACCESS_CONTROLLED; CROSSREF_METADATA_AVAILABLE",
+      "http_observation": "HTTP_403_DIRECT",
+      "recorded_title": "Hindu Varanasi",
+      "observed_title": "Hindu Varanasi",
+      "persistent_ids": {
+        "doi": "10.1111/j.1931-0846.2000.tb00332.x"
+      },
+      "title_verification": "VERIFIED_WITH_CROSSREF"
+    },
+    {
+      "source_id": "URL-6af2e56d17513d39",
+      "source": "Heidelberg University",
+      "original_url": "https://digi.ub.uni-heidelberg.de/diglit/gutschow2006a/0040",
+      "retrieval_status": "ROUTE_REACHED_WITH_AUTOMATED_ACCESS_CHALLENGE",
+      "http_observation": "HTTP_200_CHALLENGE_PAGE",
+      "recorded_title": "Shiva's Places — Shiva's Orte",
+      "observed_title": null,
+      "persistent_ids": {
+        "repository_record": "gutschow2006a",
+        "page": "0040"
+      },
+      "title_verification": "NOT_VERIFIED_DUE_ACCESS_CHALLENGE"
+    },
+    {
+      "source_id": "URL-f94500ff3d86c374",
+      "source": "Columbia University Press",
+      "original_url": "https://cup.columbia.edu/book/banaras/9780231114479",
+      "retrieval_status": "AVAILABLE_WITH_TRAILING_SLASH_REDIRECT",
+      "http_observation": "HTTP_301_THEN_HTTP_200",
+      "recorded_title": "Banaras",
+      "observed_title": "Banaras | Columbia University Press",
+      "persistent_ids": {
+        "isbn": "9780231114479"
+      },
+      "title_verification": "VERIFIED_WITH_PUBLISHER_PAGE"
+    },
+    {
+      "source_id": "URL-d9f1c7ce1653c679",
+      "source": "Aghor Peeth",
+      "original_url": "https://www.aghorpeeth.org/baba-kinaram-ji.html",
+      "retrieval_status": "AVAILABLE",
+      "http_observation": "HTTP_200",
+      "recorded_title": "Baba Kinaram Ji",
+      "observed_title": "ABKASESS | Baba Kinaram Ji",
+      "persistent_ids": {},
+      "title_verification": "VERIFIED_WITH_INSTITUTIONAL_PAGE"
+    },
+    {
+      "source_id": "URL-dbeae7b5c41c377d",
+      "source": "Aghor Peeth",
+      "original_url": "https://www.aghorpeeth.org/about-abbots.html",
+      "retrieval_status": "AVAILABLE",
+      "http_observation": "HTTP_200",
+      "recorded_title": "About Abbots",
+      "observed_title": "ABKASESS | About Abbots",
+      "persistent_ids": {},
+      "title_verification": "VERIFIED_WITH_INSTITUTIONAL_PAGE"
+    },
+    {
+      "source_id": "URL-d983d5f302ee4841",
+      "source": "PubMed",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/33386570/",
+      "retrieval_status": "AVAILABLE_THROUGH_NCBI_EFETCH; LIMITED_DIRECT_RESPONSE",
+      "http_observation": "HTTP_203_DIRECT",
+      "recorded_title": "Medicine Versus Religion: A Religio-Cultural Study of Death and Dying in Contemporary Kashian Society.",
+      "observed_title": "Medicine Versus Religion: A Religio-Cultural Study of Death and Dying in Contemporary Kashian Society.",
+      "persistent_ids": {
+        "pmid": "33386570",
+        "doi": "10.1007/s10943-020-01136-y"
+      },
+      "title_verification": "VERIFIED_WITH_NCBI_EFETCH",
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_RELATION_RECORDED_AT_CHECK_TIME",
+      "repair_history": [
+        {
+          "field": "title",
+          "prior_value": "Medicine Versus Religion — Death and Dying in Contemporary Kashian Society",
+          "current_value": "Medicine Versus Religion: A Religio-Cultural Study of Death and Dying in Contemporary Kashian Society.",
+          "reason": "PRIOR_VALUE_WAS_INCOMPLETE"
+        }
+      ]
+    },
+    {
+      "source_id": "URL-182d8720ac009747",
+      "source": "Aζ South Asia",
+      "original_url": "https://architexturez.net/doc/10-1177/006996678101500118",
+      "retrieval_status": "AVAILABLE",
+      "http_observation": "HTTP_200",
+      "recorded_title": "Death and cosmogony in Kashi",
+      "observed_title": "Death and cosmogony in Kashi | Aζ South Asia",
+      "persistent_ids": {
+        "doi": "10.1177/006996678101500118"
+      },
+      "title_verification": "VERIFIED_WITH_ROUTE_AND_CROSSREF"
+    },
+    {
+      "source_id": "URL-637a370ae7b1db1a",
+      "source": "Aζ South Asia",
+      "original_url": "https://architexturez.net/doc/b1994a",
+      "retrieval_status": "AVAILABLE",
+      "http_observation": "HTTP_200",
+      "recorded_title": "Sacred Geometry of India's Holy City Varanasi-Kashi as Cosmogram",
+      "observed_title": "Sacred Geometry of India's Holy City Varanasi-Kashi as Cosmogram | Aζ South Asia",
+      "persistent_ids": {
+        "repository_record": "b1994a"
+      },
+      "title_verification": "VERIFIED_WITH_ROUTE"
+    }
+  ],
+  "guards": {
+    "original_urls_preserved": true,
+    "unavailability_changes_truth_status": false,
+    "automatic_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false
+  }
+}

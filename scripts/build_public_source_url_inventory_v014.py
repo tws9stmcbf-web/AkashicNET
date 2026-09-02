@@ -10,7 +10,7 @@ from urllib.parse import urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "references/community/public-source-url-inventory-v0.14.json"
 SHARD_DIR = ROOT / "references/community/source-url-inventory-v0.14"
-URL_RE = re.compile(r"https?://[^\s<>'\"\x60]+")
+URL_RE = re.compile(r"https?://[^\s<>'\"\x60\\]+")
 SHARDS = "0123456789abcdef"
 
 def canonical(data): return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
@@ -20,7 +20,7 @@ def git_head():
     try: value=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True,stderr=subprocess.DEVNULL).strip()
     except (OSError,subprocess.CalledProcessError): return None
     return value if re.fullmatch(r"[0-9a-f]{40}",value) else None
-def clean(value): return value.split(",",1)[0].rstrip(".,;:!?)]}")
+def clean(value): return value.split(",",1)[0].rstrip(".,;:!?)]}\\")
 def normalize(url):
     p=urlsplit(url); scheme=p.scheme.lower(); host=(p.hostname or "").lower(); port=p.port
     netloc=host if not port or (scheme,port) in {("http",80),("https",443)} else f"{host}:{port}"
@@ -30,6 +30,11 @@ def normalize(url):
 def external(url,scope):
     host=(urlsplit(url).hostname or "").lower()
     return host not in set(scope["first_party_hosts"]) and not any(url.startswith(x) for x in scope["internal_github_prefixes"])
+def source_role(url,scope):
+    host=(urlsplit(url).hostname or "").lower()
+    if url in set(scope.get("derivative_endpoint_urls", [])): return "DERIVATIVE_ACCESS_ENDPOINT"
+    if host in set(scope.get("deployment_alias_hosts", [])): return "DEPLOYMENT_ALIAS"
+    return None
 def files(scope):
     suffixes=set(scope["included_suffixes"]); excluded=set(scope["excluded_paths"]); prefixes=tuple(scope.get("excluded_path_prefixes",[]))
     for root_name in scope["include_roots"]:
@@ -57,7 +62,10 @@ def build_entries(scope):
     for item in grouped.values():
         previous=old.get(item["source_id"],{})
         occurrences=[{"repository_path":p,"lines":lines} for p,lines in sorted(item["occurrences"].items())]
-        result.append({"source_id":item["source_id"],"normalized_url":item["normalized_url"],"host":item["host"],"original_urls":sorted(item["original_urls"]),"occurrence_count":sum(len(x["lines"]) for x in occurrences),"occurrences":occurrences,"retrieval_status":previous.get("retrieval_status","UNASSESSED"),"retrieved_on":previous.get("retrieved_on"),"redirect_target":previous.get("redirect_target"),"observed_title":previous.get("observed_title"),"retraction_status":previous.get("retraction_status","UNCHECKED"),"truth_status_changed":False,"repair_candidate":previous.get("repair_candidate")})
+        entry={"source_id":item["source_id"],"normalized_url":item["normalized_url"],"host":item["host"],"original_urls":sorted(item["original_urls"]),"occurrence_count":sum(len(x["lines"]) for x in occurrences),"occurrences":occurrences,"retrieval_status":previous.get("retrieval_status","UNASSESSED"),"retrieved_on":previous.get("retrieved_on"),"redirect_target":previous.get("redirect_target"),"observed_title":previous.get("observed_title"),"retraction_status":previous.get("retraction_status","UNCHECKED"),"truth_status_changed":False,"repair_candidate":previous.get("repair_candidate")}
+        role=previous.get("source_role") or source_role(item["normalized_url"],scope)
+        if role: entry["source_role"]=role
+        result.append(entry)
     return sorted(result,key=lambda x:x["source_id"])
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument("--check",action="store_true"); args=parser.parse_args()

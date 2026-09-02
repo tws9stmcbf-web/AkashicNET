@@ -10005,7 +10005,7 @@
     {
       "host": "akashicnet-public.vocal-crow-3599.chatgpt.site",
       "normalized_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site/",
-      "observed_title": null,
+      "observed_title": "AkashicNET — A Living Knowledge Network",
       "occurrence_count": 2,
       "occurrences": [
         {
@@ -10026,11 +10026,12 @@
       ],
       "redirect_target": null,
       "repair_candidate": null,
-      "retraction_status": "UNCHECKED",
-      "retrieval_status": "UNASSESSED",
-      "retrieved_on": null,
+      "retraction_status": "NOT_APPLICABLE",
+      "retrieval_status": "AVAILABLE_DEPLOYMENT_ALIAS",
+      "retrieved_on": "2026-09-02",
       "source_id": "URL-eb1aaef0085f9e78",
-      "truth_status_changed": false
+      "truth_status_changed": false,
+      "source_role": "DEPLOYMENT_ALIAS"
     },
     {
       "host": "www.reddit.com",

@@ -1,11 +1,53 @@
 {
-  "inventory_version": "0.1.0",
-  "target_release": "0.14.0-beta.1",
-  "state": "GENERATED_UNASSESSED",
   "generated_at": "2026-09-02",
-  "source_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
   "generator": "scripts/build_public_source_url_inventory_v014.py",
+  "guards": {
+    "automatic_evidence_promotion": false,
+    "automatic_source_replacement": false,
+    "original_urls_preserved": true,
+    "unavailability_changes_truth_status": false
+  },
+  "integrity_repairs": [
+    {
+      "application_artifact": "references/source-integrity-v014-assessment-batch2-repair-application-v0.1.json",
+      "applied_on": "2026-09-02",
+      "derivative_records_classified": [
+        "URL-3679b700a4958709",
+        "URL-eb1aaef0085f9e78"
+      ],
+      "extraction_artifacts_removed": [
+        "URL-a67a32c505e3f0b9",
+        "URL-aeb32f562d7d212b"
+      ],
+      "occurrences_reassigned_to": [
+        "URL-215ce0460d6daaef",
+        "URL-bbe98925af8858af"
+      ],
+      "original_urls_preserved_in_audit_history": true,
+      "repair_id": "V014-B2-R1-R2",
+      "review_artifact": "references/source-integrity-v014-assessment-batch2-review-v0.1.json",
+      "snapshot_policy": "TARGETED_DETERMINISTIC_REPAIR_AGAINST_PRESERVED_SOURCE_COMMIT",
+      "source_commit_preserved": true
+    }
+  ],
+  "inventory_version": "0.1.0",
   "scope": {
+    "deployment_alias_hosts": [
+      "akashicnet-public.vocal-crow-3599.chatgpt.site"
+    ],
+    "derivative_endpoint_urls": [
+      "https://idp.nature.com/authorize"
+    ],
+    "excluded_path_prefixes": [
+      "references/community/source-url-inventory-v0.14/"
+    ],
+    "excluded_paths": [
+      "references/community/public-source-url-inventory-v0.14.json"
+    ],
+    "first_party_hosts": [
+      "akashicnet.org",
+      "www.akashicnet.org"
+    ],
     "include_roots": [
       "references/big-questions",
       "references/community",
@@ -19,32 +61,9 @@
       ".md",
       ".tsx"
     ],
-    "first_party_hosts": [
-      "akashicnet.org",
-      "www.akashicnet.org"
-    ],
     "internal_github_prefixes": [
       "https://github.com/tws9stmcbf-web/AkashicNET"
-    ],
-    "excluded_paths": [
-      "references/community/public-source-url-inventory-v0.14.json"
-    ],
-    "excluded_path_prefixes": [
-      "references/community/source-url-inventory-v0.14/"
     ]
-  },
-  "summary": {
-    "external_url_occurrences": 21589,
-    "unique_normalized_external_urls": 7665,
-    "assessed_unique_urls": 0,
-    "unassessed_unique_urls": 7665,
-    "shard_count": 16
-  },
-  "guards": {
-    "original_urls_preserved": true,
-    "unavailability_changes_truth_status": false,
-    "automatic_source_replacement": false,
-    "automatic_evidence_promotion": false
   },
   "shards": [
     {
@@ -62,14 +81,14 @@
       "shard": "1"
     },
     {
-      "content_sha": "f1affe055dc4c57ac1ab5f98c2aa8f0850f2eefc",
+      "content_sha": "4ede6ed61d6b5620e9c09fa0155fa8a12ee79212",
       "entry_count": 477,
       "occurrence_count": 1353,
       "path": "references/community/source-url-inventory-v0.14/shard-2.json",
       "shard": "2"
     },
     {
-      "content_sha": "06e140fabe2332fae45f853e8665ff4e5dc9a743",
+      "content_sha": "82bab7c9af19020fec8a79d0c703e54e3d983d82",
       "entry_count": 484,
       "occurrence_count": 1376,
       "path": "references/community/source-url-inventory-v0.14/shard-3.json",
@@ -118,14 +137,14 @@
       "shard": "9"
     },
     {
-      "content_sha": "39130153016ed4b8aa4a7f1677b8d52187ec534f",
+      "content_sha": "9b644756e8ac74f2565e2499d3704a198c08358b",
       "entry_count": 485,
       "occurrence_count": 1313,
       "path": "references/community/source-url-inventory-v0.14/shard-a.json",
       "shard": "a"
     },
     {
-      "content_sha": "56bd5825f1ee3dd47e5de1ee919736535db38bf0",
+      "content_sha": "d30d51b4dd0087782392d5fff4bffe70fcfe2d6e",
       "entry_count": 459,
       "occurrence_count": 1292,
       "path": "references/community/source-url-inventory-v0.14/shard-b.json",
@@ -146,7 +165,7 @@
       "shard": "d"
     },
     {
-      "content_sha": "3766ed89d1a372390dea2c2196a8f44ff7cf4dd0",
+      "content_sha": "ee492b6003b138c6de3095eb0089efa6e114c9c0",
       "entry_count": 449,
       "occurrence_count": 1273,
       "path": "references/community/source-url-inventory-v0.14/shard-e.json",
@@ -159,5 +178,15 @@
       "path": "references/community/source-url-inventory-v0.14/shard-f.json",
       "shard": "f"
     }
-  ]
+  ],
+  "source_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
+  "state": "GENERATED_UNASSESSED",
+  "summary": {
+    "assessed_unique_urls": 2,
+    "external_url_occurrences": 21589,
+    "shard_count": 16,
+    "unassessed_unique_urls": 7661,
+    "unique_normalized_external_urls": 7663
+  },
+  "target_release": "0.14.0-beta.1"
 }

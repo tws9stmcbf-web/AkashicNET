@@ -2,7 +2,7 @@
   "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH2-REVIEW",
   "artifact_version": "0.1.0",
   "retrieved_on": "2026-09-02",
-  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "status": "APPROVED_REPAIRS_APPLIED",
   "target_release": "0.14.0-beta.1",
   "scope_artifact": "references/source-integrity-v014-assessment-batch2-scope-v0.1.json",
   "assessed_source_count": 25,
@@ -68,7 +68,7 @@
       ],
       "proposed_change": "Stop JSON escape backslashes from being captured as terminal URL characters, then regenerate the inventory. Preserve the valid underlying PubMed URLs and the original repository artifacts.",
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     },
     {
       "candidate_id": "V014-B2-R2",
@@ -84,7 +84,7 @@
       ],
       "proposed_change": "Classify the Nature authorization URL as a transient access endpoint and the ChatGPT Site URL as a deployment alias, not independent evidence sources; retain both as provenance.",
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     },
     {
       "candidate_id": "V014-B2-R3",
@@ -97,7 +97,7 @@
       "equivalence_group": "EQ-BUDDHIST-NONSELF-2011",
       "proposed_change": "Record the OUP abstract, full chapter and Silverchair minimal routes as three preserved routes for DOI 10.1093/oxfordhb/9780199548019.003.0013.",
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     },
     {
       "candidate_id": "V014-B2-R4",
@@ -113,7 +113,7 @@
       ],
       "proposed_change": "Represent the OUP record as chapter 'Dying' in the book 'A Time of Novelty', and restore the complete PubMed title 'Medicine Versus Religion: A Religio-Cultural Study of Death and Dying in Contemporary Kashian Society.' Preserve the prior strings in repair history.",
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     },
     {
       "candidate_id": "V014-B2-R5",
@@ -135,7 +135,7 @@
       ],
       "proposed_change": "Add retrieval dates, observed access states, persistent identifiers and title-verification status in a companion provenance file without expanding or silently rewriting the seed CSV schema.",
       "claim_or_evidence_change": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     }
   ],
   "assessments": [
@@ -932,5 +932,8 @@
     "rights_promotion": false,
     "website_promotion": false
   },
-  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+  "next_state": "BATCH2_REPAIRS_COMPLETE",
+  "approved_on": "2026-09-02",
+  "approval_basis": "Explicit user approval after review-only candidate preparation.",
+  "repair_application": "references/source-integrity-v014-assessment-batch2-repair-application-v0.1.json"
 }
