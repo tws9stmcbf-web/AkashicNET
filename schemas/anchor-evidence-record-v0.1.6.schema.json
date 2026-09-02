@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://akashicnet.org/schemas/anchor-evidence-record-v0.1.6.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","policy","anchors","candidates","edges"],
+  "properties":{
+    "schema_version":{"const":"0.1.6"},
+    "policy":{"type":"object","additionalProperties":false,"required":["automated_truth_inference_allowed","automated_acceptance_allowed","rights_promotion_allowed","scientific_evidence_promotion_allowed","canonical_identity_promotion_allowed","circular_confidence_allowed","private_drive_metadata_allowed"],"properties":{"automated_truth_inference_allowed":{"const":false},"automated_acceptance_allowed":{"const":false},"rights_promotion_allowed":{"const":false},"scientific_evidence_promotion_allowed":{"const":false},"canonical_identity_promotion_allowed":{"const":false},"circular_confidence_allowed":{"const":false},"private_drive_metadata_allowed":{"const":false}}},
+    "anchors":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["anchor_id","anchor_type","normalized_value","source_endpoint_id","target_endpoint_id","provenance","extraction","independence_key","graph_derived","representation_only","review_explanation","input_digest"],"properties":{
+      "anchor_id":{"type":"string","pattern":"^anchor:[a-z0-9][a-z0-9:-]+$"},
+      "anchor_type":{"enum":["EXPLICIT_IDENTIFIER","EXACT_FULL_TITLE","EXPLICIT_CITATION","DISTINCTIVE_NAMED_ENTITY","DISTINCTIVE_MULTI_TOKEN_PHRASE","EXPLICIT_FRAMEWORK_REFERENCE","EXPLICIT_QUESTION_REFERENCE"]},
+      "normalized_value":{"type":"string","minLength":1},
+      "source_endpoint_id":{"type":"string","pattern":"^endpoint:"},"target_endpoint_id":{"type":"string","pattern":"^endpoint:"},
+      "provenance":{"type":"object","additionalProperties":false,"required":["artifact_id","record_id","public_safe"],"properties":{"artifact_id":{"type":"string","minLength":1},"record_id":{"type":"string","minLength":1},"public_safe":{"const":true}}},
+      "extraction":{"type":"object","additionalProperties":false,"required":["method","extractor_version","public_metadata_field"],"properties":{"method":{"enum":["EXACT_MATCH","EXPLICIT_REFERENCE"]},"extractor_version":{"type":"string","minLength":1},"public_metadata_field":{"enum":["title","identifier","citation","framework_reference","question_reference","summary"]}}},
+      "independence_key":{"type":"string","minLength":1},"graph_derived":{"const":false},"representation_only":{"const":false},
+      "review_explanation":{"type":"string","minLength":10},"input_digest":{"type":"string","pattern":"^[a-f0-9]{64}$"}
+    }}},
+    "candidates":{"type":"array","maxItems":0},"edges":{"type":"array","maxItems":0}
+  }
+}
