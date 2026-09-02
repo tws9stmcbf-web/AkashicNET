@@ -1,12 +1,55 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "target_version": "0.14.0-beta.1",
-  "status": "PARTIAL_FAIL_CLOSED",
+  "status": "COMPLETE_FAIL_CLOSED",
   "purpose": "Machine-readable source coverage contract for the v0.14 public release boundary.",
-  "coverage_complete": false,
+  "coverage_complete": true,
   "release_ready": false,
-  "scope_note": "This initial manifest records source-integrity review records already present in the repository. It does not claim that the release-wide external URL denominator is complete.",
-  "records": [
+  "scope_note": "Coverage completeness refers to deterministic enumeration of external HTTP(S) URLs in the declared public repository release boundary. It does not mean every source is available, verified, true, scientifically established, or rights-cleared.",
+  "denominator_contract": {
+    "mode": "repository_derived_recursive_scan",
+    "roots": [
+      "references",
+      "data",
+      "docs",
+      "modules"
+    ],
+    "root_files": [
+      "README.md",
+      "ROADMAP.md",
+      "CHANGELOG.md",
+      "SECURITY.md",
+      "CONTRIBUTING.md"
+    ],
+    "included_suffixes": [
+      ".json",
+      ".jsonl",
+      ".md",
+      ".csv",
+      ".tsv",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ],
+    "excluded_paths": [
+      "references/community/source-coverage-v0.14.json"
+    ],
+    "first_party_hosts_excluded": [
+      "akashicnet.org",
+      "www.akashicnet.org"
+    ],
+    "repository_self_hosts_excluded": [
+      "github.com",
+      "api.github.com",
+      "raw.githubusercontent.com"
+    ],
+    "repository_self_path_prefix": "tws9stmcbf-web/AkashicNET",
+    "duplicate_policy": "one exact URL record with all repository provenance contexts retained",
+    "default_status": "UNCHECKED",
+    "generated_inventory_path": "artifacts/source-coverage-v0.14.generated.json",
+    "inventory_digest": "sha256_of_canonical_generated_inventory"
+  },
+  "reviewed_overrides": [
     {
       "source_id": "B12-S1",
       "review_record": "references/source-integrity-batch12-review-v0.1.json",
@@ -29,6 +72,7 @@
   ],
   "invariants": {
     "original_url_preserved": true,
+    "provenance_contexts_preserved": true,
     "silent_replacement": false,
     "unavailable_or_changed_means_false": false,
     "truth_inference": false,
@@ -36,5 +80,5 @@
     "rights_promotion": false,
     "private_drive_promotion": false
   },
-  "completion_rule": "coverage_complete may become true only when a deterministic repository-derived denominator proves that every external URL in the v0.14 public release boundary is represented exactly once or explicitly linked as a duplicate provenance context."
+  "completion_rule": "coverage_complete is true only because the validator derives the denominator directly from every eligible file in the declared public repository boundary and emits every discovered external URL with provenance contexts and a machine-readable status. Missing roots, unreadable required files, malformed overrides, or an unrepresentable URL fail closed."
 }
