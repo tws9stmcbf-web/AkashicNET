@@ -1,0 +1,63 @@
+name: Prepare semantic link candidate packet
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/prepare_semantic_link_candidates_v020.py"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: semantic-link-candidates
+  cancel-in-progress: false
+
+jobs:
+  prepare-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Build and validate candidates
+        run: |
+          python scripts/prepare_semantic_link_candidates_v020.py
+          python -m unittest -v tests/test_prepare_semantic_link_candidates_v020.py
+          python -m py_compile scripts/prepare_semantic_link_candidates_v020.py tests/test_prepare_semantic_link_candidates_v020.py
+      - name: Open governed candidate pull request when changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          OUTPUT: references/community/semantic-link-candidates-v0.2.0.json
+        run: |
+          if [ -z "$(git status --porcelain -- "$OUTPUT")" ]; then
+            echo "Semantic link candidate packet is current; no pull request required."
+            exit 0
+          fi
+          packet_digest="$(sha256sum "$OUTPUT" | cut -d' ' -f1)"
+          branch="automation/semantic-link-candidates-${packet_digest:0:12}"
+          existing="$(gh pr list --repo "$REPOSITORY" --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            echo "Candidate packet already has pull request #$existing."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add "$OUTPUT"
+          git commit -m "Prepare semantic link candidate packet"
+          git push origin "$branch"
+          gh label create human-reviewed --repo "$REPOSITORY" --color 0E8A16 --description "Human reviewed the governed packet; permits exact-head mechanical merge only" --force
+          pr_url="$(gh pr create --repo "$REPOSITORY" --base main --head "$branch" --draft \
+            --title "Prepare review-only semantic link candidates" \
+            --body $'Generated deterministically from the approved public-safe endpoint registry. Every record remains an `INFERRED_CANDIDATE`, requires human review, and is not an accepted graph edge, truth claim, evidence promotion, rights clearance, or canonical identity decision.\n\nAfter reviewing every literal label-to-topic proposal, add the `human-reviewed` label. The owner-only exact-head gate will squash-merge the proposal packet mechanically.')"
+          echo "Opened $pr_url"
+          gh workflow run validate-semantic-link-candidates.yml --repo "$REPOSITORY" --ref "$branch"
