@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_live_resolution",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 9,
+  "target": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "question_id": "BQ001",
+    "custom_domain_url": "https://akashicnet.org/big-questions/bq001",
+    "effective_url": "https://akashicnet.org/big-questions/bq001",
+    "sites_project_slug": "akashicnet-public",
+    "published_version": 80,
+    "sites_source_commit": "6f2333ded4aa530754b1b94b62546a5094460d64",
+    "deployment_id": "appgdep_6a97eb51c780819194518ded00f26443"
+  },
+  "retrieval": {
+    "retrieved_at": "2026-09-02T09:32:31Z",
+    "method": "HTTPS GET with redirects enabled",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "note": "Search indexing returned no result and the web reader could not open the route; direct HTTPS retrieval succeeded. Tooling access failures were not classified as site failures."
+  },
+  "verification": {
+    "status": "RESOLVED_VERIFIED_LIVE",
+    "current_status_unresolved": true,
+    "interpretation_cards": [
+      {
+        "title": "Contemplative traditions offer non-ordinary models of selfhood",
+        "label": "Interpretation",
+        "evidence_boundary": "Contemplative phenomenology, tradition and meditation-related changes in self-processing do not establish external ontology or survival after death.",
+        "present": true
+      },
+      {
+        "title": "Physicalism, dualism and panpsychism remain competing philosophical frameworks",
+        "label": "Interpretation",
+        "evidence_boundary": "Philosophical coherence or possibility is not empirical evidence that personal consciousness survives death; physicalism as philosophy is not itself proof of non-survival.",
+        "present": true
+      }
+    ],
+    "sources_and_provenance": {
+      "external_source_links_total": 13,
+      "required_batch4_sources": [
+        {
+          "label": "Siderits 2011",
+          "original_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+          "present": true
+        },
+        {
+          "label": "Dahl et al. 2015",
+          "original_url": "https://pubmed.ncbi.nlm.nih.gov/26231761/",
+          "present": true
+        },
+        {
+          "label": "Vago & Silbersweig 2012",
+          "original_url": "https://pubmed.ncbi.nlm.nih.gov/23112770/",
+          "present": true
+        },
+        {
+          "label": "SEP: Physicalism",
+          "original_url": "https://plato.stanford.edu/entries/physicalism/",
+          "present": true
+        },
+        {
+          "label": "SEP: Dualism",
+          "original_url": "https://plato.stanford.edu/entries/dualism/",
+          "present": true
+        },
+        {
+          "label": "SEP: Panpsychism",
+          "original_url": "https://plato.stanford.edu/entries/panpsychism/",
+          "present": true
+        }
+      ]
+    }
+  },
+  "integrity_controls": {
+    "original_urls_preserved": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "question_status_changed": false
+  },
+  "conclusion": "Batch 9 website provenance drift is resolved and verified on the AkashicNET custom domain. This verifies publication integrity only and does not alter truth or scientific-evidence judgments."
+}
