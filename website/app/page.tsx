@@ -55,15 +55,16 @@ export default function Home() {
       </section>
 
       <section className="snapshot" aria-label="Public project snapshot">
-        <div><strong>9,401</strong><span>unique canonical Reddit URLs indexed</span></div>
-        <div><strong>12,058</strong><span>records in the unified search index</span></div>
+        <div><strong>9,502</strong><span>current Reddit source rows preserved</span></div>
+        <div><strong>7,457</strong><span>structurally unique Reddit post URLs</span></div>
+        <div><strong>12,058</strong><span>records in the previous unified-index snapshot</span></div>
         <div><strong>2,459</strong><span>live Drive objects held inside the private boundary</span></div>
         <div><strong>127</strong><span>candidate canonical families reviewed</span></div>
         <div><strong>3</strong><span>SHA-256-verified duplicate pairs</span></div>
         <div><strong>9</strong><span>evidence-backed graph edges accepted</span></div>
         <div><strong>23</strong><span>nodes in the current knowledge-graph seed</span></div>
         <div><strong>v0.9</strong><span>current pre-alpha publication snapshot</span></div>
-        <p>Audited project snapshot · 29 August 2026 · Counts describe scope and pipeline state, not validated truth claims.</p>
+        <p>Audited Reddit delta checkpoint · 2 September 2026 · Counts describe scope and pipeline state, not validated truth claims.</p>
       </section>
 
       <section className="plain-language" id="start-here">

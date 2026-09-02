@@ -9,14 +9,17 @@ Metadata-only capture of public `new` feed page 3 for `r/NeuronsToNirvana`, obse
 - Feed rows observed: **25**
 - Directly accessible public post URLs: **25**
 - Historical `reddit-uri-index.csv` matches: **0**
-- Prior manual batch matches: **0**
-- New manual candidates: **25**
+- Prior manual batch matches: **1**
+- New manual candidates: **24**
 - Deleted/private/unavailable records observed: **0**
 - Import status for new candidates: **HOLD**
 - Canonical corpus modification: **none**
 - Usernames, bodies and comments stored: **none**
 
-## Deduplication and provenance
+## Deduplication
+
+Post `1vrwp5r` was already present in Manual Delta Batch 0001 and receives no new candidate identity.
+ and provenance
 
 All post IDs were checked against `references/community/reddit-uri-index.csv` at blob `6b6184b0f981928abb34f4b7d8bd262f3b5b48ca` and against prior manual delta batches.
 
