@@ -1,0 +1,28 @@
+{
+  "resolution_id": "BQ001-SOURCE-INTEGRITY-BATCH9-PUBLICATION",
+  "version": "0.1.0",
+  "status": "PUBLISHED_AWAITING_CUSTOM_DOMAIN_VERIFICATION",
+  "published_on": "2026-09-02",
+  "sites_project": {
+    "slug": "akashicnet-public",
+    "version_number": 80,
+    "source_commit": "6f2333ded4aa530754b1b94b62546a5094460d64",
+    "deployment_status": "succeeded",
+    "production_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site",
+    "custom_domain": "https://akashicnet.org"
+  },
+  "expected_public_changes": {
+    "interpretation_cards_added": 2,
+    "batch4_citations_added": 6,
+    "total_source_links": 13
+  },
+  "safeguards": {
+    "original_urls_preserved": true,
+    "existing_sources_removed": 0,
+    "claims_reclassified": 0,
+    "conclusion_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  },
+  "next_gate": "CUSTOM_DOMAIN_LIVE_VERIFICATION"
+}
