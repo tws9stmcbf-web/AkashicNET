@@ -1,0 +1,204 @@
+{
+  "audit_id": "BQ001-SOURCE-INTEGRITY-BATCH8",
+  "version": "0.1.0",
+  "status": "REVIEW_ONLY",
+  "assessed_on": "2026-09-01",
+  "scope": "BQ001 Batch 3 reincarnation-case research and methodological sources plus repository website mirrors",
+  "inputs": {
+    "canonical_batch": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+    "canonical_batch_blob_sha": "a94fbe863c36c1d45036bda730ff3969406f8af5",
+    "repository_website_page": "website/app/big-questions/bq001/page.tsx",
+    "repository_website_page_blob_sha": "e355c6b67ad3527e3e12cf7b3cde363a5f1cee16",
+    "live_site_url": "https://akashicnet.org/big-questions/bq001"
+  },
+  "audit_policy": {
+    "preserve_original_urls": true,
+    "silent_replacement_allowed": false,
+    "unavailable_source_implies_false": false,
+    "bibliographic_correction_changes_evidence_class": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "notice_absence_is_time_scoped": true
+  },
+  "source_checks": [
+    {
+      "source_id": "SRC-BQ001-TUCKER-2008",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/18602617/",
+      "doi": "10.1016/j.explore.2008.04.001",
+      "pmid": "18602617",
+      "expected_title": "Children's reports of past-life memories: a review",
+      "observed_status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "verification_basis": "PMID, DOI and indexed bibliographic references match the canonical record.",
+      "repository_website_mirror": false,
+      "note": "The source is used by the canonical interpretation claim but is not directly linked on the repository website page; this is a coverage difference, not a vanished source."
+    },
+    {
+      "source_id": "SRC-BQ001-SCOPING-2021",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+      "canonical_doi": null,
+      "observed_doi": "10.1016/j.explore.2021.05.006",
+      "pmid": "34147343",
+      "expected_title": "Academic studies on claimed past-life memories: A scoping review",
+      "observed_status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "bibliographic_note": "The DOI and online record date to 2021, while the journal issue is Explore 18(3), 2022. The canonical year is retained pending explicit repair approval."
+    },
+    {
+      "source_id": "SRC-BQ001-HARALDSSON-2003",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/",
+      "doi": "10.1348/14760830260569256",
+      "pmid": "12689435",
+      "expected_title": "Children who speak of past-life experiences: is there a psychological explanation?",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "provenance_mismatches": {
+        "canonical_journal": "British Journal of Health Psychology",
+        "observed_journal": "Psychology and Psychotherapy: Theory, Research and Practice",
+        "canonical_authors_short": "Haraldsson et al.",
+        "observed_authors_short": "Haraldsson",
+        "note": "The indexed article lists Erlendur Haraldsson as the sole author."
+      }
+    },
+    {
+      "source_id": "SRC-BQ001-MORAES-2024",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/39341119/",
+      "doi": "10.1016/j.explore.2024.103063",
+      "pmid": "39341119",
+      "expected_title": "Children who claim previous life memories: A case report and literature review",
+      "observed_status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "verification_basis": "Current PubMed search index matches the title, DOI, PMID and 2024 issue citation.",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-TUCKER-2025",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/40627512/",
+      "doi": "10.1080/09540261.2025.2466484",
+      "pmid": "40627512",
+      "expected_title": "What do the cases of the reincarnation type tell us about the mind beyond the brain?",
+      "observed_status": "AVAILABLE_WITH_EMPTY_AUTOMATED_RESPONSE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "verification_basis": "Current PubMed and DOI-indexed records match the canonical title and identifiers.",
+      "repository_website_mirror": true
+    },
+    {
+      "source_id": "SRC-BQ001-ALLAN-2025",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/",
+      "doi": "10.1016/j.explore.2025.103283",
+      "pmid": "41265055",
+      "expected_title": "New methodological directions for involving children in past life memories research",
+      "observed_status": "AVAILABLE",
+      "title_match": true,
+      "redirect_observed": false,
+      "notice_status": "NO_CORRECTION_OR_RETRACTION_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "repository_website_mirror": true,
+      "provenance_mismatches": {
+        "canonical_authors_short": "Allan et al.",
+        "observed_authors_short": "Thomas et al.",
+        "observed_author_order": [
+          "Donna M Thomas",
+          "Elaine Rycroft",
+          "Kirsty Allan",
+          "Saima Sharif"
+        ],
+        "canonical_year": 2025,
+        "electronic_publication_date": "2025-11-10",
+        "issue_publication_year": 2026,
+        "note": "The DOI contains 2025 and the article was published online in 2025, but the journal issue is Explore 22(1), 2026. The lead-author label should be Thomas et al."
+      }
+    }
+  ],
+  "duplicate_assessment": {
+    "exact_duplicate_source_ids_within_batch": [],
+    "exact_duplicate_urls_within_batch": [],
+    "cross_surface_mirrors": [
+      "SRC-BQ001-SCOPING-2021",
+      "SRC-BQ001-HARALDSSON-2003",
+      "SRC-BQ001-MORAES-2024",
+      "SRC-BQ001-TUCKER-2025",
+      "SRC-BQ001-ALLAN-2025"
+    ],
+    "classification": "EXPECTED_GITHUB_TO_WEBSITE_MIRRORING",
+    "action_required": false
+  },
+  "live_site_check": {
+    "status": "REPOSITORY_IMPLEMENTATION_INSPECTED_LIVE_RENDER_PENDING",
+    "inference": "NONE",
+    "note": "The repository website implementation now displays public synthesis v0.1.1. Rendered live-route verification remains part of website QA."
+  },
+  "findings_summary": {
+    "sources_checked": 6,
+    "broken_links": 0,
+    "permanent_redirects_requiring_repair": 0,
+    "changed_titles": 0,
+    "retraction_notices_observed": 0,
+    "correction_notices_observed": 0,
+    "vanished_sources": 0,
+    "duplicate_records_within_batch": 0,
+    "missing_source_level_retrieval_metadata": 6,
+    "missing_doi_records": 1,
+    "author_display_mismatches": 2,
+    "journal_title_mismatches": 1,
+    "bibliographic_year_convention_candidates": 2,
+    "website_source_label_repair_candidates": 2
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "BQ001-B8-R1",
+      "priority": "MEDIUM",
+      "target": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+      "proposal": "Add non-destructive link_check metadata to all six source records while retaining every original URL and existing identifier.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B8-R2",
+      "priority": "HIGH",
+      "target": "SRC-BQ001-SCOPING-2021",
+      "proposal": "Add DOI 10.1016/j.explore.2021.05.006 and record separate 2021 online and 2022 issue years without silently replacing the existing canonical year.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B8-R3",
+      "priority": "HIGH",
+      "target": "SRC-BQ001-HARALDSSON-2003",
+      "proposal": "Correct the journal to Psychology and Psychotherapy: Theory, Research and Practice and the short author display to Haraldsson; preserve the original URL, DOI, PMID, claims and evidence label.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B8-R4",
+      "priority": "HIGH",
+      "target": "SRC-BQ001-ALLAN-2025",
+      "proposal": "Correct the short author display to Thomas et al. and record the 2025 online and 2026 issue dates separately; retain the stable source_id for referential integrity.",
+      "automatic_application_allowed": false
+    },
+    {
+      "candidate_id": "BQ001-B8-R5",
+      "priority": "MEDIUM",
+      "target": "website/app/big-questions/bq001/page.tsx",
+      "proposal": "During preview-only website sync, change Haraldsson et al. 2003 to Haraldsson 2003 and Allan et al. 2025 to Thomas et al. 2025/2026, using a date label consistent with the approved site citation convention.",
+      "automatic_application_allowed": false
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATES_PREPARED",
+    "source_urls_replaced": false,
+    "canonical_evidence_changed": false,
+    "public_synthesis_changed": false,
+    "website_changed": false,
+    "truth_inference_applied": false,
+    "scientific_evidence_promoted": false
+  }
+}
