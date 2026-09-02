@@ -66,7 +66,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("REDDIT STRUCTURAL CHECKPOINT VALIDATION PASS: 9,401 rows -> 7,356 structural unique posts; N2N 7,298")
+    print(f"REDDIT STRUCTURAL CHECKPOINT VALIDATION PASS: {expected['source_rows']:,} rows -> {expected['unique_post_ids_all_subreddits']:,} structural unique posts; N2N {expected['unique_post_ids_by_subreddit']['NeuronsToNirvana']:,}")
     return 0
 
 
