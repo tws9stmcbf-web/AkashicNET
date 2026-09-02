@@ -1,0 +1,54 @@
+name: Validate semantic link candidates
+
+on:
+  pull_request:
+    paths:
+      - "scripts/prepare_semantic_link_candidates_v020.py"
+      - "tests/test_prepare_semantic_link_candidates_v020.py"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
+      - "references/community/semantic-link-candidates-v0.2.0.json"
+      - ".github/workflows/prepare-semantic-link-candidates.yml"
+      - ".github/workflows/validate-semantic-link-candidates.yml"
+      - ".github/workflows/merge-audited-cross-source-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/prepare_semantic_link_candidates_v020.py"
+      - "tests/test_prepare_semantic_link_candidates_v020.py"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
+      - "references/community/semantic-link-candidates-v0.2.0.json"
+      - ".github/workflows/prepare-semantic-link-candidates.yml"
+      - ".github/workflows/validate-semantic-link-candidates.yml"
+      - ".github/workflows/merge-audited-cross-source-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-semantic-link-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Build or confirm deterministic candidate packet
+        run: |
+          if [ -f references/community/semantic-link-candidates-v0.2.0.json ]; then
+            python scripts/prepare_semantic_link_candidates_v020.py --check
+          else
+            output="$(mktemp)"
+            python scripts/prepare_semantic_link_candidates_v020.py --output "$output"
+            python -m json.tool "$output" >/dev/null
+          fi
+      - name: Run fail-closed tests
+        run: python -m unittest -v tests/test_prepare_semantic_link_candidates_v020.py
+      - name: Compile generator and tests
+        run: python -m py_compile scripts/prepare_semantic_link_candidates_v020.py tests/test_prepare_semantic_link_candidates_v020.py
+      - name: Confirm candidate merge gate
+        run: |
+          grep -F "automation/semantic-link-candidates-" .github/workflows/merge-audited-cross-source-review.yml
+          grep -F "validate-semantic-link-candidates" .github/workflows/merge-audited-cross-source-review.yml
+          grep -F "semantic-link-candidates-v0.2.0.json" .github/workflows/merge-audited-cross-source-review.yml
