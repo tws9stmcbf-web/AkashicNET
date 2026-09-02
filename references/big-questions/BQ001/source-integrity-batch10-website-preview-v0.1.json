@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "record_type": "source_integrity_website_sync_preview",
+  "monitor": "AkashicNET Source & Link Integrity Monitor",
+  "batch": 10,
+  "question_id": "BQ001",
+  "created_at": "2026-09-02",
+  "mode": "PREVIEW_ONLY",
+  "canonical_input": {
+    "path": "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+    "version": "0.1.1",
+    "integrity_commit": "3d10f6aea56ea761a21dfd294b1677b5ff0224f2"
+  },
+  "site_snapshot": {
+    "project_slug": "akashicnet-public",
+    "project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+    "latest_version_observed": 83,
+    "current_live_url": "https://akashicnet.org",
+    "checkout_commit": "74db94c",
+    "route": "/big-questions/bq001",
+    "source_file": "app/big-questions/bq001/page.tsx"
+  },
+  "comparison": {
+    "status": "ALIGNED_WITH_ONE_STALE_RETRIEVAL_LABEL",
+    "canonical_sources_checked": 3,
+    "source_cards_present": 3,
+    "original_urls_match": 3,
+    "missing_source_cards": 0,
+    "replaced_urls": 0,
+    "duplicate_references_in_rendered_source_list": 0,
+    "bibliographic_title_conflicts": 0,
+    "question_status": "UNRESOLVED",
+    "claim_or_evidence_label_changes_required": 0,
+    "notes": [
+      "All three Batch 5 source cards and original URLs are already present.",
+      "Public card labels are concise editorial descriptions, not replacements for canonical bibliographic titles.",
+      "Publisher access controls observed during the audit are not classified as broken sources.",
+      "The visible provenance statement still says source links were checked 30 August 2026."
+    ]
+  },
+  "proposed_repairs": [
+    {
+      "candidate_id": "B10-W1",
+      "action": "Update only the BQ001 visible provenance retrieval date from 30 August 2026 to 2 September 2026.",
+      "rationale": "The three Batch 5 sources were rechecked during Source Integrity Batch 10.",
+      "visible_content_change": true,
+      "source_urls_changed": false,
+      "source_cards_changed": false,
+      "claims_changed": false,
+      "evidence_labels_changed": false,
+      "conclusion_changed": false
+    }
+  ],
+  "no_sync_required_for": [
+    "PMID, PMCID, volume, issue, pages and electronic-publication metadata remain canonical repository provenance and need not be added to the public cards.",
+    "The two PubMed-linked critical commentaries remain related provenance and are not promoted into public claim evidence automatically."
+  ],
+  "guards": {
+    "original_urls_preserved": true,
+    "silent_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "redesign": false,
+    "publication": false
+  },
+  "decision": "AWAITING_USER_APPROVAL"
+}
