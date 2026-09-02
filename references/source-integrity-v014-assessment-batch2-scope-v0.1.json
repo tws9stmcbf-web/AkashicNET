@@ -1,0 +1,453 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH2",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-02",
+  "status": "SCOPE_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "inventory": {
+    "manifest": "references/community/public-source-url-inventory-v0.14.json",
+    "source_snapshot_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
+    "unique_external_urls": 7665
+  },
+  "prior_batch": {
+    "scope": "references/source-integrity-v014-assessment-batch1-scope-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch1-repair-application-v0.1.json",
+    "excluded_source_count": 25
+  },
+  "cohort": {
+    "size": 25,
+    "focus": "High-use canonical sources, derivative/access endpoints, malformed URL candidates, institutional context, public bibliography and Varanasi seed provenance.",
+    "selection_policy": [
+      "Exclude all v0.14 Batch 1 source IDs.",
+      "Prioritize public sources used repeatedly by BQ001 canonical data and website mirrors.",
+      "Include canonical/alternate route clusters to test duplicate and redirect classification.",
+      "Include malformed escaped URL candidates without treating them as false sources.",
+      "Include public institutional, bibliographic and Varanasi seed anchors with explicit provenance.",
+      "Defer Wikipedia/Wikidata bulk records, rights-policy pages and lower-priority book routes to later cohorts."
+    ],
+    "category_counts": {
+      "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT": 3,
+      "DERIVATIVE_OR_ACCESS_ENDPOINT_DRIFT": 2,
+      "PUBLIC_BIBLIOGRAPHIC_RECORD": 2,
+      "HIGH_USE_CANONICAL_PUBLIC_SOURCE": 4,
+      "MALFORMED_ESCAPED_URL_CANDIDATE": 2,
+      "INSTITUTIONAL_CONTEXT": 3,
+      "VARANASI_PUBLIC_SEED_PROVENANCE": 9
+    },
+    "sources": [
+      {
+        "source_id": "URL-b799c92a4762a0cc",
+        "original_urls": [
+          "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685"
+        ],
+        "normalized_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+        "host": "academic.oup.com",
+        "occurrence_count": 8,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_category": "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-b3de45558307b8e0",
+        "original_urls": [
+          "https://academic.oup.com/edited-volume/38581/chapter/334605685"
+        ],
+        "normalized_url": "https://academic.oup.com/edited-volume/38581/chapter/334605685",
+        "host": "academic.oup.com",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json"
+        ],
+        "selection_category": "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-eb1aaef0085f9e78",
+        "original_urls": [
+          "https://akashicnet-public.vocal-crow-3599.chatgpt.site"
+        ],
+        "normalized_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site/",
+        "host": "akashicnet-public.vocal-crow-3599.chatgpt.site",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/source-integrity-batch10-publication-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-publication-v0.1.json"
+        ],
+        "selection_category": "DERIVATIVE_OR_ACCESS_ENDPOINT_DRIFT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-c38cf9a4b73995a8",
+        "original_urls": [
+          "https://ci.nii.ac.jp/ncid/BB06860691"
+        ],
+        "normalized_url": "https://ci.nii.ac.jp/ncid/BB06860691",
+        "host": "ci.nii.ac.jp",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/community/canonical-adjudication-public-bibliography-checkpoint-v0.10.1.md",
+          "references/community/canonical-adjudication-public-bibliography-v0.10.1.json"
+        ],
+        "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-2b387dca1280e6ad",
+        "original_urls": [
+          "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685"
+        ],
+        "normalized_url": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685",
+        "host": "oup.silverchair-cdn.com",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json"
+        ],
+        "selection_category": "SAME_WORK_AND_PUBLISHER_REDIRECT_COHORT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-dbbc26ff6e66adaf",
+        "original_urls": [
+          "https://plato.stanford.edu/entries/dualism/"
+        ],
+        "normalized_url": "https://plato.stanford.edu/entries/dualism",
+        "host": "plato.stanford.edu",
+        "occurrence_count": 8,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-acf81754c2a4d9aa",
+        "original_urls": [
+          "https://plato.stanford.edu/entries/panpsychism/"
+        ],
+        "normalized_url": "https://plato.stanford.edu/entries/panpsychism",
+        "host": "plato.stanford.edu",
+        "occurrence_count": 8,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-321582686742ef76",
+        "original_urls": [
+          "https://plato.stanford.edu/entries/physicalism/"
+        ],
+        "normalized_url": "https://plato.stanford.edu/entries/physicalism",
+        "host": "plato.stanford.edu",
+        "occurrence_count": 8,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-live-verification-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-review-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-sites-repair-preview-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch9-website-preview-v0.1.json",
+          "website/app/big-questions/bq001/page.tsx"
+        ],
+        "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-a67a32c505e3f0b9",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/12689435/\\"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/12689435/\\",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
+        ],
+        "selection_category": "MALFORMED_ESCAPED_URL_CANDIDATE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-aeb32f562d7d212b",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/41265055/\\"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/41265055/\\",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/big-questions/BQ001/source-integrity-batch8-website-preview-v0.1.json"
+        ],
+        "selection_category": "MALFORMED_ESCAPED_URL_CANDIDATE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-05563478a50a187d",
+        "original_urls": [
+          "https://search.worldcat.org/title/1990985"
+        ],
+        "normalized_url": "https://search.worldcat.org/title/1990985",
+        "host": "search.worldcat.org",
+        "occurrence_count": 2,
+        "repository_paths": [
+          "references/community/canonical-adjudication-public-bibliography-checkpoint-v0.10.1.md",
+          "references/community/canonical-adjudication-public-bibliography-v0.10.1.json"
+        ],
+        "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-110fa2f8acb1c6c6",
+        "original_urls": [
+          "https://www.pnas.org/doi/10.1073/pnas.2216268120"
+        ],
+        "normalized_url": "https://www.pnas.org/doi/10.1073/pnas.2216268120",
+        "host": "www.pnas.org",
+        "occurrence_count": 4,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
+          "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch10-live-resolution-v0.1.json",
+          "references/big-questions/BQ001/source-integrity-batch10-review-v0.1.json"
+        ],
+        "selection_category": "HIGH_USE_CANONICAL_PUBLIC_SOURCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-0bf4657141a6f6a2",
+        "original_urls": [
+          "https://med.virginia.edu/perceptual-studies/"
+        ],
+        "normalized_url": "https://med.virginia.edu/perceptual-studies",
+        "host": "med.virginia.edu",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/big-questions/BQ001/institutional-context-uva-dops-v0.1.json"
+        ],
+        "selection_category": "INSTITUTIONAL_CONTEXT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-8fe3d441e8950786",
+        "original_urls": [
+          "https://med.virginia.edu/perceptual-studies/our-research/"
+        ],
+        "normalized_url": "https://med.virginia.edu/perceptual-studies/our-research",
+        "host": "med.virginia.edu",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/big-questions/BQ001/institutional-context-uva-dops-v0.1.json"
+        ],
+        "selection_category": "INSTITUTIONAL_CONTEXT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d8fd936f9be14f88",
+        "original_urls": [
+          "https://med.virginia.edu/perceptual-studies/publications/academic-publications/"
+        ],
+        "normalized_url": "https://med.virginia.edu/perceptual-studies/publications/academic-publications",
+        "host": "med.virginia.edu",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/big-questions/BQ001/institutional-context-uva-dops-v0.1.json"
+        ],
+        "selection_category": "INSTITUTIONAL_CONTEXT",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-f8293604635d704f",
+        "original_urls": [
+          "https://academic.oup.com/book/39302/chapter-abstract/338895800"
+        ],
+        "normalized_url": "https://academic.oup.com/book/39302/chapter-abstract/338895800",
+        "host": "academic.oup.com",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-182d8720ac009747",
+        "original_urls": [
+          "https://architexturez.net/doc/10-1177/006996678101500118"
+        ],
+        "normalized_url": "https://architexturez.net/doc/10-1177/006996678101500118",
+        "host": "architexturez.net",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-637a370ae7b1db1a",
+        "original_urls": [
+          "https://architexturez.net/doc/b1994a"
+        ],
+        "normalized_url": "https://architexturez.net/doc/b1994a",
+        "host": "architexturez.net",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-f94500ff3d86c374",
+        "original_urls": [
+          "https://cup.columbia.edu/book/banaras/9780231114479"
+        ],
+        "normalized_url": "https://cup.columbia.edu/book/banaras/9780231114479",
+        "host": "cup.columbia.edu",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-6af2e56d17513d39",
+        "original_urls": [
+          "https://digi.ub.uni-heidelberg.de/diglit/gutschow2006a/0040"
+        ],
+        "normalized_url": "https://digi.ub.uni-heidelberg.de/diglit/gutschow2006a/0040",
+        "host": "digi.ub.uni-heidelberg.de",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-dbeae7b5c41c377d",
+        "original_urls": [
+          "https://www.aghorpeeth.org/about-abbots.html"
+        ],
+        "normalized_url": "https://www.aghorpeeth.org/about-abbots.html",
+        "host": "www.aghorpeeth.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d9f1c7ce1653c679",
+        "original_urls": [
+          "https://www.aghorpeeth.org/baba-kinaram-ji.html"
+        ],
+        "normalized_url": "https://www.aghorpeeth.org/baba-kinaram-ji.html",
+        "host": "www.aghorpeeth.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-0a6609ace9a6d8bf",
+        "original_urls": [
+          "https://www.tandfonline.com/doi/abs/10.1111/j.1931-0846.2000.tb00332.x"
+        ],
+        "normalized_url": "https://www.tandfonline.com/doi/abs/10.1111/j.1931-0846.2000.tb00332.x",
+        "host": "www.tandfonline.com",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d983d5f302ee4841",
+        "original_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/33386570/"
+        ],
+        "normalized_url": "https://pubmed.ncbi.nlm.nih.gov/33386570",
+        "host": "pubmed.ncbi.nlm.nih.gov",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/varanasi-detective-seeds.csv"
+        ],
+        "selection_category": "VARANASI_PUBLIC_SEED_PROVENANCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-3679b700a4958709",
+        "original_urls": [
+          "https://idp.nature.com/authorize"
+        ],
+        "normalized_url": "https://idp.nature.com/authorize",
+        "host": "idp.nature.com",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/big-questions/BQ001/evidence-batch5-v0.1.json"
+        ],
+        "selection_category": "DERIVATIVE_OR_ACCESS_ENDPOINT_DRIFT",
+        "selection_status": "SELECTED_UNASSESSED"
+      }
+    ]
+  },
+  "assessment_fields": [
+    "availability",
+    "http_status_or_access_result",
+    "redirect_chain",
+    "final_observed_url",
+    "observed_title",
+    "title_drift",
+    "retraction_or_withdrawal_status",
+    "retrieved_on",
+    "duplicate_or_equivalent_reference_candidate",
+    "missing_provenance",
+    "repair_candidate"
+  ],
+  "classification_rules": {
+    "rate_limit_is_broken_link": false,
+    "access_denial_is_broken_link": false,
+    "malformed_repository_url_means_underlying_work_is_false": false,
+    "changed_or_unavailable_source_is_false": false,
+    "redirect_means_replace_original": false,
+    "retraction_changes_truth_automatically": false
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT_PENDING"
+}
