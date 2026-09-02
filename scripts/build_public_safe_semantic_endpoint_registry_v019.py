@@ -61,7 +61,7 @@ def parse_drive(text: str):
         if not line.startswith("|"):
             continue
         cells = [cell.strip() for cell in line.strip("|").split("|")]
-        if len(cells) == 4 and re.fullmatch(r"[A-Z0-9-]+", cells[0]) and cells[0] != "family_id":
+        if len(cells) == 4 and re.fullmatch(r"[A-Z0-9]+(?:-[A-Z0-9]+)+", cells[0]):
             rows.append((cells[0], cells[1]))
     return rows
 
@@ -109,6 +109,8 @@ def load_real_inputs():
     drive_path = COMMUNITY / "knowledge-graph-seed-v0.1.md"
     drive_raw = drive_path.read_bytes()
     publications = parse_drive(drive_raw.decode())
+    if len(publications) != 13:
+        raise ValueError(f"Drive publication census drift: expected 13, got {len(publications)}")
 
     architecture_path = ROOT / "references/big-questions/architecture-v0.1.json"
     architecture_raw = architecture_path.read_bytes()
