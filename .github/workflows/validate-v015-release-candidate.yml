@@ -7,6 +7,8 @@ on:
       - 'scripts/validate_v015_release_candidate.py'
       - 'scripts/validate_v015_readiness.py'
       - '.github/workflows/validate-v015-release-candidate.yml'
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
