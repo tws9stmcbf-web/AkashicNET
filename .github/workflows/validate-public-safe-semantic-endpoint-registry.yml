@@ -35,10 +35,7 @@ jobs:
       - name: Build or confirm deterministic registry
         run: |
           if [ -f references/community/public-safe-semantic-endpoint-registry-v0.1.9.json ]; then
-            output="$(mktemp)"
-          python scripts/build_public_safe_semantic_endpoint_registry_v019.py --output "$output"
-          diff -u references/community/public-safe-semantic-endpoint-registry-v0.1.9.json "$output"
-          python scripts/build_public_safe_semantic_endpoint_registry_v019.py --check
+            python scripts/build_public_safe_semantic_endpoint_registry_v019.py --check
           else
             output="$(mktemp)"
             python scripts/build_public_safe_semantic_endpoint_registry_v019.py --output "$output"
