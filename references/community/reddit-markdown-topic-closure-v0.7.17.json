@@ -28,6 +28,8 @@
     "prose_inference": false,
     "url_inference": false,
     "method_document_is_source_evidence": false,
+    "unknown_reddit_markdown_fails_closed": true,
+    "markdown_formatting_normalized": true,
     "truth_inference": false,
     "rights_promotion": false,
     "scientific_evidence_promotion": false
