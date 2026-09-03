@@ -25,4 +25,4 @@ def test_reddit_csv_topic_closure_v0711():
 
 if __name__ == "__main__":
     test_reddit_csv_topic_closure_v0711()
-    print("reddit CSV topic-topic closure v0.7.11 contract: PASS")
+    print("reddit CSV topic closure v0.7.11 contract: PASS")
