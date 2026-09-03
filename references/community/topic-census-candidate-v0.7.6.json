@@ -1,0 +1,29 @@
+{
+  "version": "0.7.6",
+  "status": "CANDIDATE_REVIEW_CHECKPOINT",
+  "sealed_public_count": 68,
+  "candidate_reproducible_lower_bound": 72,
+  "new_candidate_topics": [
+    "anthropology",
+    "archaeology",
+    "mycology",
+    "quantum physics"
+  ],
+  "source_addition": {
+    "file": "references/community/wikipedia-akashic-pilot.csv",
+    "field": "topic_seed",
+    "public_reproducible": true
+  },
+  "promotion_state": "NOT_PROMOTED",
+  "required_next_gate": "canonical topic review and explicit approval",
+  "normalization_note": "Quantum physics remains distinct from quantum mechanics in this candidate checkpoint because no semantic auto-merge is permitted.",
+  "guardrails": {
+    "people_are_topics": false,
+    "works_are_topics": false,
+    "private_drive_labels_included": false,
+    "semantic_similarity_auto_merge": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
