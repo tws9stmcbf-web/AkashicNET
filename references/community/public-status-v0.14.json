@@ -1,0 +1,25 @@
+{
+  "version": "0.14.0-beta.1",
+  "name": "Automation & Reproducibility Beta",
+  "state": "SEALED",
+  "public_label": "v0.14.0-beta.1 · AUTOMATION & REPRODUCIBILITY BETA · READY / SEALED",
+  "sealed_on": "2026-09-02",
+  "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
+  "ready_metadata_provenance": "24c7d3d214e31a8de1357edaf02fe191b12872f5",
+  "seal_bookkeeping_merge": "eea1904f86d3ac5e8aec6a67c9a22c30abdb467f",
+  "source_coverage": {
+    "external_url_denominator": 18490,
+    "inventory_sha256": "6ea009b4534595f3f486a93fee4c17f23023e941e8faf47bb5c73edde19f9605",
+    "meaning": "repository-derived coverage denominator; not a count of independently verified, available, true, scientific or rights-cleared sources"
+  },
+  "invariants": {
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "private_drive_promotion": false,
+    "api_unverified_reddit_as_verified": false,
+    "circular_confidence_amplification": false,
+    "bq001_forced_resolution": false,
+    "unavailable_or_changed_means_false": false
+  }
+}
