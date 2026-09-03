@@ -1,0 +1,45 @@
+{
+  "target_version": "0.15.0-beta.1",
+  "target_name": "Public Sync & Observability Beta",
+  "state": "READY_CANDIDATE",
+  "release_policy": "exact_commit_fail_closed",
+  "baseline": {
+    "version": "0.14.0-beta.1",
+    "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
+    "retarget_allowed": false
+  },
+  "repository_readiness_merge": "3537d5725b45c8ff856a3aa0897d10245812aa72",
+  "live_site_verification_issue": 242,
+  "live_site_verification_state": "COMPLETED",
+  "observed_live_surfaces": [
+    "canonical HTTPS apex",
+    "www to apex canonicalization",
+    "Cloudflare DNS and proxying",
+    "TLS Full",
+    "active universal edge certificate",
+    "robots.txt",
+    "sitemap.xml",
+    "sealed v0.14 status surface"
+  ],
+  "required_validators": [
+    "scripts/validate_v015_readiness.py",
+    "scripts/validate_public_observability_contract_v015.py",
+    "scripts/validate_public_infrastructure_observability_v015.py",
+    "scripts/validate_public_status_consistency_v015.py"
+  ],
+  "promotion": {
+    "ready": false,
+    "sealed": false,
+    "validated_release_commit": null,
+    "seal_metadata_commit": null
+  },
+  "invariants": {
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "private_drive_promotion": false,
+    "api_unverified_reddit_as_verified": false,
+    "circular_confidence_amplification": false,
+    "bq001_forced_resolution": false
+  }
+}
