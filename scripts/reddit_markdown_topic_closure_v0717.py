@@ -25,6 +25,7 @@ DERIVATIVE_DOCUMENTS = [
     "references/community/reddit-source-registry-topic-audit-method-v0.7.13.md",
     "references/community/reddit-structural-unified-topic-audit-method-v0.7.16.md",
     "references/community/reddit-topic-canonical-review-method-v0.7.9.md",
+    "references/community/reddit-topic-census-seal-method-v0.7.18.md",
     "references/community/reddit-topic-promotion-method-v0.7.10.md",
     "references/community/reddit-topic-source-audit-method-v0.7.8.md",
 ]
