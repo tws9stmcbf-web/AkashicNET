@@ -19,7 +19,7 @@
       "tools/reddit_bridge/README.md"
     ],
     "explicit_topic_category_or_flair_declarations": {},
-    "prior_census_method_documents_excluded_as_derivative": 10,
+    "prior_census_method_documents_excluded_as_derivative": 11,
     "markdown_explicit_topic_audit": "complete"
   },
   "decision": "The remaining source-bearing Reddit Markdown contains operational, provenance, and structural reporting only. Prior topic-audit methods are derivative governance records, not independent topic evidence.",
