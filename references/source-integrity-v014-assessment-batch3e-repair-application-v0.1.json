@@ -1,0 +1,41 @@
+{
+  "repair_application_id": "V014-SOURCE-INTEGRITY-BATCH3E-REPAIR-APPLICATION",
+  "artifact_version": "0.1.0",
+  "applied_on": "2026-09-03",
+  "target_release": "0.14.0-beta.1",
+  "review_artifact": "references/source-integrity-v014-assessment-batch3e-review-v0.1.json",
+  "approval_basis": "Explicit user instruction “Go” after the review presented approval as the single next action.",
+  "applied_repairs": [
+    {
+      "candidate_id": "V014-B3E-R1",
+      "status": "APPLIED",
+      "target": "references/community/source-integrity-v014-batch3e-reddit-retrieval-attempts-v0.1.json",
+      "changes": [
+        "Recorded five blocked/indeterminate retrieval attempts separately from historical crawler output.",
+        "Preserved original URLs and repository-recorded titles as non-live metadata; made no availability, deletion, claim, evidence, rights, or truth change."
+      ]
+    }
+  ],
+  "validation": {
+    "json_documents_parse": true,
+    "original_urls_preserved": true,
+    "reddit_attempt_records": 5,
+    "historical_dry_run_changed": false,
+    "claims_changed": false,
+    "evidence_labels_changed": false,
+    "rights_state_changed": false,
+    "rights_promoted": false,
+    "public_release_promoted": false,
+    "scientific_evidence_promoted": false,
+    "truth_inference_applied": false,
+    "website_content_changed": false,
+    "batch3_reddit_sources_assessed": 19,
+    "batch3_reddit_sources_remaining": 0
+  },
+  "guards": {
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false
+  }
+}

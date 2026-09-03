@@ -2,7 +2,7 @@
   "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3E",
   "artifact_version": "0.1.0",
   "retrieved_on": "2026-09-03",
-  "status": "REVIEW_COMPLETE_REPAIRS_AWAITING_APPROVAL",
+  "status": "APPROVED_REPAIRS_APPLIED",
   "target_release": "0.14.0-beta.1",
   "scope_artifact": "references/source-integrity-v014-assessment-batch3e-scope-v0.1.json",
   "assessed_source_count": 5,
@@ -41,7 +41,7 @@
       "proposed_change": "Record the 2026-09-03 blocked/indeterminate retrieval attempts without changing historical dry-run artifacts, recorded titles, source availability, claims, evidence labels, or original URLs.",
       "claim_or_evidence_change": false,
       "rights_promotion": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     }
   ],
   "assessments": [
@@ -298,5 +298,8 @@
     "rights_promotion": false,
     "website_promotion": false
   },
-  "next_state": "AWAIT_EXPLICIT_REPAIR_APPROVAL"
+  "next_state": "BATCH3E_REPAIRS_COMPLETE",
+  "approved_on": "2026-09-03",
+  "approval_basis": "Explicit user instruction “Go” after the review presented approval as the single next action.",
+  "repair_application": "references/source-integrity-v014-assessment-batch3e-repair-application-v0.1.json"
 }

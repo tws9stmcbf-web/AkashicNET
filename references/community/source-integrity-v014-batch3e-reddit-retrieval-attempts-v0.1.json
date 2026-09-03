@@ -1,0 +1,96 @@
+{
+  "artifact_id": "V014-BATCH3E-REDDIT-RETRIEVAL-ATTEMPTS",
+  "artifact_version": "0.1.0",
+  "attempted_on": "2026-09-03",
+  "review_artifact": "references/source-integrity-v014-assessment-batch3e-review-v0.1.json",
+  "records": [
+    {
+      "source_id": "URL-7c1763d99c9cd02e",
+      "reddit_post_id": "1ue6u0b",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ue6u0b/humour_as_a_mode_of_reflection",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ue6u0b/humour_as_a_mode_of_reflection/"
+      ],
+      "repository_recorded_title": "Humour as a mode of reflection",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-807e6311e4bd1ff2",
+      "reddit_post_id": "1s1t8r8",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1s1t8r8/the_self_as_a_temporary_interface",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1s1t8r8/the_self_as_a_temporary_interface/"
+      ],
+      "repository_recorded_title": "The self as a temporary interface",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-f3e2c25004e2f557",
+      "reddit_post_id": "1t3zw4o",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t3zw4o/a_personal_shift_in_the_sense_of_self",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t3zw4o/a_personal_shift_in_the_sense_of_self/"
+      ],
+      "repository_recorded_title": "A personal shift in the sense of self",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-18b6c3810a726959",
+      "reddit_post_id": "1ud0d1w",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ud0d1w/sound_resonance_and_altered_states",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ud0d1w/sound_resonance_and_altered_states/"
+      ],
+      "repository_recorded_title": "Sound, resonance, and altered states",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-1fb58432686a5549",
+      "reddit_post_id": "1u9z1o5",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9z1o5/qmm_and_the_making_of_questions",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9z1o5/qmm_and_the_making_of_questions/"
+      ],
+      "repository_recorded_title": "QMM and the making of questions",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    }
+  ],
+  "attempt_methods": [
+    "DIRECT_WEB_OPEN_ATTEMPT",
+    "EXACT_PUBLIC_WEB_SEARCH",
+    "REPOSITORY_ORIGIN_INSPECTION"
+  ],
+  "historical_context": {
+    "path": "tools/n2n/dryrun/25_post_test.jsonl",
+    "preservation_policy": "HISTORICAL_OUTPUT_NOT_REWRITTEN",
+    "recorded_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+  },
+  "classification": {
+    "availability_undetermined_records": 5,
+    "confirmed_broken": false,
+    "confirmed_deleted_or_removed": false,
+    "title_drift": "UNDETERMINED",
+    "truth_status_changed": false
+  },
+  "guards": {
+    "original_urls_preserved": true,
+    "historical_records_changed": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false,
+    "changed_or_unavailable_implies_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  }
+}
