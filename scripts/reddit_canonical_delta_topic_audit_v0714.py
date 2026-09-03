@@ -34,6 +34,9 @@ def main() -> int:
         raise SystemExit("canonical delta post-ID uniqueness drift")
     if len({r["canonical_url"] for r in records}) != 101:
         raise SystemExit("canonical delta URL uniqueness drift")
+    invalid_schema_rows = [i for i, record in enumerate(records) if set(record) != EXPECTED_FIELDS]
+    if invalid_schema_rows:
+        raise SystemExit(f"canonical delta per-record field drift at rows: {invalid_schema_rows}")
     if observed_fields != EXPECTED_FIELDS:
         raise SystemExit(f"canonical delta record-field drift: {sorted(observed_fields)}")
     batches = dict(sorted(Counter(r["source_batch"] for r in records).items()))
