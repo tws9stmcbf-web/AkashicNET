@@ -22,11 +22,12 @@ def test_reddit_markdown_topic_closure_v0717():
     assert coverage["explicit_topic_category_or_flair_declarations"] == {}
     assert coverage["markdown_explicit_topic_audit"] == "complete"
     assert result["guardrails"]["method_document_is_source_evidence"] is False
-
+    assert result["guardrails"]["unknown_reddit_markdown_fails_closed"] is True
 
 
 def test_markdown_field_formatting_is_detected():
-    sample = "| topic | value |\n**Category:** Science\n\`link_flair_text\`: Mind"
+    code_label = chr(96) + "link_flair_text" + chr(96) + ": Mind"
+    sample = "| topic | value |\n**Category:** Science\n" + code_label
     assert explicit_fields(sample) == ["topic", "category", "link_flair_text"]
 
 
