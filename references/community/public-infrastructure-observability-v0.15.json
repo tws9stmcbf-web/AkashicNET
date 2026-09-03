@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1",
+  "target_version": "0.15.0-beta.1",
+  "target_name": "Public Sync & Observability Beta",
+  "status": "IN_DEVELOPMENT",
+  "site": {
+    "canonical_origin": "https://akashicnet.org",
+    "alternate_origin": "https://www.akashicnet.org",
+    "http_origin": "http://akashicnet.org",
+    "http_www_origin": "http://www.akashicnet.org"
+  },
+  "required_live_checks": {
+    "canonical_https_reachable": true,
+    "http_redirects_to_https": true,
+    "alternate_host_converges_to_canonical_origin": true,
+    "redirect_chain_has_no_loop": true,
+    "robots_txt_reachable": true,
+    "robots_txt_does_not_globally_disallow_indexing": true,
+    "sitemap_reachable": true,
+    "public_status_surface_reachable": true
+  },
+  "paths": {
+    "robots": "/robots.txt",
+    "sitemap": "/sitemap.xml",
+    "public_status_surface": "/"
+  },
+  "uptime_semantics": {
+    "probe_is_operational_telemetry_not_evidence": true,
+    "single_probe_failure_means_source_is_false": false,
+    "single_probe_failure_means_site_is_permanently_down": false,
+    "release_readiness_requires_successful_live_probe": true,
+    "retry_count": 3,
+    "timeout_seconds": 15
+  },
+  "public_manifest_semantics": {
+    "robots_and_sitemap_are_public_indexing_manifests": true,
+    "release_status_truth_source_remains_repository": true,
+    "live_site_may_mirror_but_must_not_retarget_release_history": true
+  },
+  "baseline": {
+    "sealed_version": "0.14.0-beta.1",
+    "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
+    "retarget_allowed": false
+  },
+  "invariants": {
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "private_drive_promotion": false,
+    "api_unverified_reddit_as_verified": false,
+    "public_analytics_are_evidence": false,
+    "unavailable_or_changed_means_false": false
+  }
+}
