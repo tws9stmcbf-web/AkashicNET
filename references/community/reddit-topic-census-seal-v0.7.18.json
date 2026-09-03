@@ -1,0 +1,100 @@
+{
+  "version": "0.7.18",
+  "status": "REDDIT_TOPIC_CENSUS_SEALED",
+  "previous_sealed_public_top_level_topic_count": 71,
+  "audited_public_top_level_topic_count": 73,
+  "promotion_checkpoint": "0.7.10",
+  "promoted_top_level_topics": [
+    "meaning-making",
+    "unity"
+  ],
+  "subsequent_no_change_checkpoints": [
+    "0.7.11",
+    "0.7.12",
+    "0.7.13",
+    "0.7.14",
+    "0.7.15",
+    "0.7.16",
+    "0.7.17"
+  ],
+  "checkpoint_chain": [
+    {
+      "version": "0.7.8",
+      "path": "references/community/reddit-topic-source-audit-v0.7.8.json",
+      "status": "REDDIT_TOPIC_SOURCE_AUDIT"
+    },
+    {
+      "version": "0.7.9",
+      "path": "references/community/reddit-topic-canonical-review-v0.7.9.json",
+      "status": "CANONICAL_REVIEW_ONLY"
+    },
+    {
+      "version": "0.7.10",
+      "path": "references/community/reddit-topic-promotion-v0.7.10.json",
+      "status": "PROMOTED_PUBLIC_CHECKPOINT"
+    },
+    {
+      "version": "0.7.11",
+      "path": "references/community/reddit-csv-topic-closure-v0.7.11.json",
+      "status": "REDDIT_CSV_TOPIC_COVERAGE_CLOSED"
+    },
+    {
+      "version": "0.7.12",
+      "path": "references/community/reddit-jsonl-metadata-audit-v0.7.12.json",
+      "status": "REDDIT_JSONL_METADATA_BATCH_1_AUDITED"
+    },
+    {
+      "version": "0.7.13",
+      "path": "references/community/reddit-source-registry-topic-audit-v0.7.13.json",
+      "status": "REDDIT_SOURCE_REGISTRY_TOPIC_AUDITED"
+    },
+    {
+      "version": "0.7.14",
+      "path": "references/community/reddit-canonical-delta-topic-audit-v0.7.14.json",
+      "status": "REDDIT_CANONICAL_DELTA_TOPIC_AUDITED"
+    },
+    {
+      "version": "0.7.15",
+      "path": "references/community/reddit-corroboration-topic-audit-v0.7.15.json",
+      "status": "REDDIT_CORROBORATION_TOPIC_AUDITED"
+    },
+    {
+      "version": "0.7.16",
+      "path": "references/community/reddit-structural-unified-topic-audit-v0.7.16.json",
+      "status": "REDDIT_STRUCTURAL_UNIFIED_TOPIC_AUDITED"
+    },
+    {
+      "version": "0.7.17",
+      "path": "references/community/reddit-markdown-topic-closure-v0.7.17.json",
+      "status": "REDDIT_MARKDOWN_TOPIC_COVERAGE_CLOSED"
+    }
+  ],
+  "coverage": {
+    "checkpoint_count": 10,
+    "first_checkpoint": "0.7.8",
+    "last_checkpoint": "0.7.17",
+    "explicit_topic_coverage": "complete_for_current_governed_reddit_sources",
+    "surfaces": [
+      "URI and semantic indexes",
+      "canonical review and explicit promotion",
+      "CSV",
+      "JSONL",
+      "source registry",
+      "canonical delta JSON",
+      "corroboration JSON",
+      "structural and unified index",
+      "source-bearing Markdown"
+    ]
+  },
+  "decision": "The current governed Reddit source surfaces are reconciled. Only meaning-making and unity were explicitly approved for promotion; every later checkpoint preserves the public-safe count of 73.",
+  "guardrails": {
+    "new_source_requires_reaudit": true,
+    "title_inference": false,
+    "url_inference": false,
+    "subreddit_name_inference": false,
+    "semantic_similarity_auto_merge": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
