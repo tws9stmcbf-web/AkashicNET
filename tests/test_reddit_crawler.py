@@ -3,7 +3,16 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.reddit_crawler import canonical_post_url, load_seen_ids, normalize_post, read_checkpoint, write_checkpoint
+from scripts.reddit_crawler import (
+    RedditAPIError,
+    canonical_post_url,
+    fetch_post,
+    load_seen_ids,
+    normalize_post,
+    normalize_post_id,
+    read_checkpoint,
+    write_checkpoint,
+)
 
 
 class RedditCrawlerTests(unittest.TestCase):
@@ -40,6 +49,46 @@ class RedditCrawlerTests(unittest.TestCase):
         self.assertTrue(record['provenance']['metadata_only'])
         self.assertNotIn('author', record)
         self.assertNotIn('selftext', record)
+
+    def test_normalize_post_id_accepts_fullname_prefix(self):
+        self.assertEqual(normalize_post_id('t3_1UEPVP1'), '1uepvp1')
+        with self.assertRaises(ValueError):
+            normalize_post_id('not/a/post')
+
+    def test_fetch_post_uses_exact_info_endpoint(self):
+        class FakeClient:
+            def get_json(self, path, params=None):
+                self.path = path
+                self.params = params
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {
+                                'id': '1uepvp1',
+                                'name': 't3_1uepvp1',
+                                'subreddit': 'NeuronsToNirvana',
+                                'title': 'Storytelling as an epistemic tool',
+                                'permalink': '/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool/',
+                            }
+                        }]
+                    }
+                }, {}
+
+        client = FakeClient()
+        record = fetch_post(client, 't3_1UEPVP1')
+        self.assertEqual(client.path, '/api/info')
+        self.assertEqual(client.params['id'], 't3_1uepvp1')
+        self.assertEqual(record['reddit_id'], '1uepvp1')
+        self.assertEqual(record['provenance']['endpoint'], 'post_info')
+        self.assertTrue(record['provenance']['metadata_only'])
+
+    def test_fetch_post_keeps_absence_indeterminate(self):
+        class EmptyClient:
+            def get_json(self, path, params=None):
+                return {'data': {'children': []}}, {}
+
+        with self.assertRaisesRegex(RedditAPIError, 'availability remains indeterminate'):
+            fetch_post(EmptyClient(), '1uepvp1')
 
     def test_seen_ids_and_checkpoint_roundtrip(self):
         with tempfile.TemporaryDirectory() as tmpdir:
