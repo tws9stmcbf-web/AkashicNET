@@ -1,0 +1,38 @@
+{
+  "version": "0.7.8",
+  "status": "REDDIT_TOPIC_SOURCE_AUDIT",
+  "sealed_public_top_level_topic_count": 71,
+  "automatically_promotable_topics_from_uri_and_semantic_indexes": 0,
+  "source_counts": {
+    "reddit_uri_rows": 9502,
+    "reddit_uri_unique_values": 9502,
+    "reddit_semantic_rows": 9401,
+    "reddit_semantic_unique_urls": 9401,
+    "reddit_semantic_unique_post_ids": 7356,
+    "reddit_semantic_subreddits": [
+      "NeuronsToNirvana",
+      "TribalGathering",
+      "microdosing"
+    ],
+    "n2n_pilot_rows": 1000,
+    "n2n_pilot_categories": 15
+  },
+  "held_explicit_topic_cells": [
+    "Consciousness discourse mapping",
+    "Akashic archive, codex, symbolic memory",
+    "Unity, ego, multiple paths, meaning-making"
+  ],
+  "hold_reason": "Free-text multi-concept cells require canonical review; URL slugs are not topic labels.",
+  "promotion_state": "NO_COUNT_CHANGE",
+  "guardrails": {
+    "url_is_topic": false,
+    "url_slug_inference": false,
+    "title_inference": false,
+    "free_text_token_auto_promotion": false,
+    "semantic_similarity_auto_merge": false,
+    "private_data_included": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}

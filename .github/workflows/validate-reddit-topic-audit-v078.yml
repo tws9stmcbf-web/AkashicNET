@@ -1,0 +1,31 @@
+name: Validate Reddit topic-source audit v0.7.8
+
+on:
+  pull_request:
+    paths:
+      - "scripts/reddit_topic_audit_v078.py"
+      - "tests/test_reddit_topic_audit_v078.py"
+      - "references/community/reddit-topic-source-audit-v0.7.8.json"
+      - "references/community/reddit-topic-source-audit-method-v0.7.8.md"
+      - "references/community/reddit-uri-index.csv"
+      - "references/community/reddit-semantic-index.csv"
+      - "references/community/n2n-pilot-index.csv"
+      - "references/community/n2n-index.csv"
+      - ".github/workflows/validate-reddit-topic-audit-v078.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Run Reddit topic-source audit
+        run: python scripts/reddit_topic_audit_v078.py
+      - name: Validate audit contract
+        run: python tests/test_reddit_topic_audit_v078.py
