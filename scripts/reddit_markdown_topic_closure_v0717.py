@@ -43,7 +43,7 @@ def main() -> int:
     )
     prior_census_methods = [
         path for path in all_reddit_markdown
-        if "topic" in Path(path).name.lower() and path not in SOURCE_DOCUMENTS
+        if path not in SOURCE_DOCUMENTS
     ]
 
     result = {
