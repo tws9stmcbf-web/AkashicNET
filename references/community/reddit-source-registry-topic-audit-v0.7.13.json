@@ -1,0 +1,36 @@
+{
+  "version": "0.7.13",
+  "status": "REDDIT_SOURCE_REGISTRY_TOPIC_AUDITED",
+  "audited_public_top_level_topic_count": 73,
+  "new_top_level_topics": [],
+  "promotion_state": "NO_COUNT_CHANGE",
+  "registry": {
+    "source_count": 4,
+    "subreddits": [
+      "microDJPanPSYchic",
+      "microdosing",
+      "NeuronsToNirvana",
+      "TribalGathering"
+    ],
+    "enabled_sources": 4,
+    "access_modes": [
+      "read_only"
+    ],
+    "classification_profiles": [
+      "art_music_consciousness",
+      "community_cultural",
+      "n2n_general",
+      "psychedelics_harm_reduction"
+    ],
+    "post_level_topic_or_flair_fields": []
+  },
+  "decision": "Classification profiles configure source handling; they are not post-level Reddit topics or flairs and cannot change the topic census.",
+  "guardrails": {
+    "classification_profile_is_topic": false,
+    "subreddit_name_is_topic": false,
+    "url_inference": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
