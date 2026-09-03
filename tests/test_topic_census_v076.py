@@ -27,3 +27,8 @@ def test_topic_census_candidate_v076():
     ]
     assert result["guardrails"]["private_drive_labels_included"] is False
     assert result["guardrails"]["semantic_similarity_auto_merge"] is False
+
+
+if __name__ == "__main__":
+    test_topic_census_candidate_v076()
+    print("topic census candidate v0.7.6 contract: PASS")
