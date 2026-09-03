@@ -1,7 +1,7 @@
 {
   "target_version": "0.15.0-beta.1",
   "target_name": "Public Sync & Observability Beta",
-  "state": "READY_CANDIDATE",
+  "state": "READY",
   "release_policy": "exact_commit_fail_closed",
   "baseline": {
     "version": "0.14.0-beta.1",
@@ -28,9 +28,9 @@
     "scripts/validate_public_status_consistency_v015.py"
   ],
   "promotion": {
-    "ready": false,
+    "ready": true,
     "sealed": false,
-    "validated_release_commit": null,
+    "validated_release_commit": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
     "seal_metadata_commit": null
   },
   "invariants": {
