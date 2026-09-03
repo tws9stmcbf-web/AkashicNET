@@ -1,0 +1,45 @@
+{
+  "version": "0.7.12",
+  "status": "REDDIT_JSONL_METADATA_BATCH_1_AUDITED",
+  "audited_public_top_level_topic_count": 73,
+  "new_top_level_topics": [],
+  "promotion_state": "NO_COUNT_CHANGE",
+  "batch": {
+    "path": "tools/n2n/dryrun/25_post_test.jsonl",
+    "records": 25,
+    "unique_reddit_post_ids": 25,
+    "distinct_normalized_categories": 12,
+    "normalized_category_counts": {
+      "art": 1,
+      "community": 1,
+      "consciousness": 2,
+      "frameworks": 10,
+      "humour": 1,
+      "lived experience": 2,
+      "music": 1,
+      "nature": 1,
+      "philosophy": 2,
+      "psychedelics": 1,
+      "stories": 1,
+      "wisdom": 2
+    },
+    "reddit_native_topic_or_flair_fields": []
+  },
+  "lineage": {
+    "source_csv": "references/community/n2n-test-batch-25.csv",
+    "same_reddit_url_set": true,
+    "import_mode": "dry_run",
+    "independent_topic_evidence": false
+  },
+  "decision": "The category field is normalized project metadata from an already-audited CSV lineage, not a Reddit-native flair. It adds no independent top-level topic evidence.",
+  "guardrails": {
+    "url_slug_inference": false,
+    "title_inference": false,
+    "summary_inference": false,
+    "framework_is_topic": false,
+    "normalized_category_auto_promotion": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}

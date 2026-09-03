@@ -1,0 +1,29 @@
+name: Validate Reddit JSONL metadata audit v0.7.12
+
+on:
+  pull_request:
+    paths:
+      - "scripts/reddit_jsonl_metadata_audit_v0712.py"
+      - "tests/test_reddit_jsonl_metadata_audit_v0712.py"
+      - "references/community/reddit-jsonl-metadata-audit-v0.7.12.json"
+      - "references/community/reddit-jsonl-metadata-audit-method-v0.7.12.md"
+      - "references/community/n2n-test-batch-25.csv"
+      - "tools/n2n/dryrun/25_post_test.jsonl"
+      - ".github/workflows/validate-reddit-jsonl-metadata-audit-v0712.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Run Reddit JSONL metadata audit
+        run: python scripts/reddit_jsonl_metadata_audit_v0712.py
+      - name: Validate audit contract
+        run: python tests/test_reddit_jsonl_metadata_audit_v0712.py
