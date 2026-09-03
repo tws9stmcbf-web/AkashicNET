@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "target_version": "0.15.0-beta.1",
+  "target_name": "Public Sync & Observability Beta",
+  "status": "IN_DEVELOPMENT",
+  "baseline": {
+    "version": "0.14.0-beta.1",
+    "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
+    "retarget_allowed": false
+  },
+  "telemetry_policy": {
+    "privacy_first": true,
+    "invasive_tracking_required": false,
+    "cross_site_tracking_allowed": false,
+    "fingerprinting_allowed": false,
+    "duplicate_beacons_allowed": false,
+    "analytics_are_evidence": false,
+    "analytics_are_operational_telemetry_only": true
+  },
+  "statistic_classes": {
+    "measured_analytics": "Observed operational telemetry from a configured analytics provider; must include provider/context and observation window.",
+    "repository_derived": "Deterministically derived from repository state; must include snapshot or release provenance.",
+    "structural": "Counts identifiers, URLs or records structurally; does not imply API verification, availability, truth, authorship, rights or scientific validity.",
+    "verified": "Requires an explicit verification method appropriate to the claim; structural presence alone is insufficient.",
+    "estimate": "Approximate figure; must be visibly labelled as an estimate and must not be silently promoted to an audited exact count."
+  },
+  "publication_requirements": {
+    "every_public_stat_has_class": true,
+    "repository_counts_have_snapshot_provenance": true,
+    "measured_analytics_have_observation_window": true,
+    "estimates_are_labelled": true,
+    "structural_counts_do_not_imply_verification": true,
+    "unavailable_or_changed_means_false": false
+  },
+  "canonical_release_status_source": "references/community/public-status-v0.14.json",
+  "canonical_release_ledger": "references/community/release-ledger-v0.14.json",
+  "live_site_sync_issue": 242,
+  "invariants": {
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "private_drive_promotion": false,
+    "api_unverified_reddit_as_verified": false,
+    "circular_confidence_amplification": false,
+    "bq001_forced_resolution": false
+  }
+}
