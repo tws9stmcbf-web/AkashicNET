@@ -1,9 +1,9 @@
-name: Validate Reddit CSV topic-topic closure v0.7.11
+name: Validate Reddit CSV topic closure v0.7.11
 
 on:
   pull_request:
     paths:
-      - "scripts/reddit_csv_topic_topic_closure_v0711.py"
+      - "scripts/reddit_csv_topic_closure_v0711.py"
       - "tests/test_reddit_csv_topic_closure_v0711.py"
       - "references/community/reddit-csv-topic-closure-v0.7.11.json"
       - "references/community/reddit-csv-topic-closure-method-v0.7.11.md"
