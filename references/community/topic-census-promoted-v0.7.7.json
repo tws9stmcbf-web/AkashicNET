@@ -1,0 +1,34 @@
+{
+  "version": "0.7.7",
+  "status": "PROMOTED_PUBLIC_CHECKPOINT",
+  "previous_sealed_public_count": 68,
+  "audited_public_top_level_topic_count": 71,
+  "new_top_level_topics": [
+    "anthropology",
+    "archaeology",
+    "mycology"
+  ],
+  "canonical_relationships": {
+    "quantum physics": {
+      "relationship": "canonical_top_level_topic",
+      "narrower_child_concepts": [
+        "quantum mechanics"
+      ]
+    }
+  },
+  "promotion_state": "PROMOTED",
+  "decision_basis": [
+    "Cambridge Dictionary defines quantum physics as the study of atoms and subatomic particles.",
+    "Oxford Reference describes quantum mechanics as a system of mechanics based on quantum theory.",
+    "Explicit human approval received 2026-09-03; this is not a semantic-similarity auto-merge."
+  ],
+  "guardrails": {
+    "people_are_topics": false,
+    "works_are_topics": false,
+    "private_drive_labels_included": false,
+    "semantic_similarity_auto_merge": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
