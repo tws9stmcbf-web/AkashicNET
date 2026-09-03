@@ -74,7 +74,21 @@
       "provenance": [
         {
           "source_class": "PUBLIC_LIBRARY_CATALOGUE",
-          "reference": "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358"
+          "reference": "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358",
+          "retrieved_on": "2026-09-03",
+          "retrieval_status": "AVAILABLE_WITH_JAVASCRIPT_NOTICE",
+          "http_status_or_access_result": "LIVE_HTML_RECORD_RETRIEVED",
+          "observed_title": "Frabato the magician : an occult novel | WorldCat.org",
+          "observed_redirect_target": "https://search.worldcat.org/title/Frabato-the-magician-:-an-occult-novel/oclc/31223358",
+          "oclc": "31223358",
+          "bibliographic_observation": {
+            "author": "Franz Bardon",
+            "format": "Print Book",
+            "language": "English",
+            "year": 1982,
+            "publisher": "D. Rüggeberg, Wuppertal, West Germany"
+          },
+          "original_url_preserved": true
         }
       ],
       "contradictory_evidence_checked": true,
@@ -91,6 +105,20 @@
     "repair_application": "references/source-integrity-v014-assessment-batch3a-repair-application-v0.1.json",
     "approved_repairs": [
       "V014-B3A-R2"
+    ],
+    "original_urls_preserved": true,
+    "adjudication_decisions_changed": false,
+    "rights_promoted": false,
+    "public_release_promoted": false,
+    "scientific_evidence_promoted": false,
+    "truth_inference_applied": false
+  },
+  "source_integrity_v014_batch3b_checkpoint": {
+    "applied_on": "2026-09-03",
+    "review_artifact": "references/source-integrity-v014-assessment-batch3b-review-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch3b-repair-application-v0.1.json",
+    "approved_repairs": [
+      "V014-B3B-R1"
     ],
     "original_urls_preserved": true,
     "adjudication_decisions_changed": false,

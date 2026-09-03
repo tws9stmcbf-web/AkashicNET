@@ -2,7 +2,7 @@
   "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3B",
   "artifact_version": "0.1.0",
   "retrieved_on": "2026-09-03",
-  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "status": "APPROVED_REPAIRS_APPLIED",
   "target_release": "0.14.0-beta.1",
   "scope_artifact": "references/source-integrity-v014-assessment-batch3b-scope-v0.1.json",
   "assessed_source_count": 5,
@@ -37,7 +37,7 @@
       "proposed_change": "Add retrieval date, observed title, OCLC identifier, bibliographic fields and observed encoded-colon redirect target to the existing WorldCat provenance record while preserving the original URL and adjudication decision.",
       "claim_or_evidence_change": false,
       "rights_promotion": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     },
     {
       "candidate_id": "V014-B3B-R2",
@@ -54,7 +54,7 @@
       "proposed_change": "Record the 2026-09-03 blocked/indeterminate retrieval attempts without changing historical dry-run artifacts, recorded titles, source availability, claims, or evidence labels.",
       "claim_or_evidence_change": false,
       "rights_promotion": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     }
   ],
   "assessments": [
@@ -311,5 +311,8 @@
     "rights_promotion": false,
     "website_promotion": false
   },
-  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+  "next_state": "BATCH3B_REPAIRS_COMPLETE",
+  "approved_on": "2026-09-03",
+  "approval_basis": "Explicit user approval after review-only candidate preparation.",
+  "repair_application": "references/source-integrity-v014-assessment-batch3b-repair-application-v0.1.json"
 }

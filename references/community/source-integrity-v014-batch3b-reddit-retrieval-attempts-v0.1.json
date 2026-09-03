@@ -1,0 +1,68 @@
+{
+  "artifact_id": "V014-BATCH3B-REDDIT-RETRIEVAL-ATTEMPTS",
+  "artifact_version": "0.1.0",
+  "attempted_on": "2026-09-03",
+  "review_artifact": "references/source-integrity-v014-assessment-batch3b-review-v0.1.json",
+  "records": [
+    {
+      "source_id": "URL-b69117e950a3ad18",
+      "reddit_post_id": "1t4mza9",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps/"
+      ],
+      "repository_recorded_title": "Wisdom traditions as cognitive maps",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED"
+    },
+    {
+      "source_id": "URL-0dbfdb2fcb8f0952",
+      "reddit_post_id": "1u6dq0s",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding/"
+      ],
+      "repository_recorded_title": "HIERATIC as interpretive scaffolding",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED"
+    },
+    {
+      "source_id": "URL-d742a0b72f96a0df",
+      "reddit_post_id": "1udv3su",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred/"
+      ],
+      "repository_recorded_title": "Visual symbolism and the sacred",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED"
+    }
+  ],
+  "attempt_methods": [
+    "DIRECT_WEB_OPEN_ATTEMPT",
+    "EXACT_PUBLIC_WEB_SEARCH",
+    "REPOSITORY_ORIGIN_INSPECTION"
+  ],
+  "historical_context": {
+    "path": "tools/n2n/dryrun/25_post_test.jsonl",
+    "preservation_policy": "HISTORICAL_OUTPUT_NOT_REWRITTEN",
+    "recorded_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+  },
+  "classification": {
+    "confirmed_broken": false,
+    "confirmed_deleted_or_removed": false,
+    "title_drift": "UNDETERMINED",
+    "truth_status_changed": false
+  },
+  "guards": {
+    "original_urls_preserved": true,
+    "historical_records_changed": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false,
+    "changed_or_unavailable_implies_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  }
+}
