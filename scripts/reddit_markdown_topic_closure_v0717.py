@@ -30,7 +30,7 @@ DERIVATIVE_DOCUMENTS = [
 ]
 FIELD_PATTERN = re.compile(
     r"(?i)^(link_flair_template_id|link_flair_text|categories|category|"
-    r"topics|topic|flairs|flair)\\s*[:|=]"
+    r"topics|topic|flairs|flair)\s*[:|=]"
 )
 
 
@@ -38,7 +38,7 @@ def explicit_fields(text):
     hits = []
     for line in text.splitlines():
         normalized = line.replace("**", "").replace("__", "").replace(chr(96), "")
-        normalized = normalized.lstrip(" \\t-*|#")
+        normalized = normalized.lstrip(" \t-*|#")
         match = FIELD_PATTERN.search(normalized)
         if match:
             hits.append(match.group(1).lower())
