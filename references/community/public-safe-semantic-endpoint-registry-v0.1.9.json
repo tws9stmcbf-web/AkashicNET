@@ -62,7 +62,7 @@
     {
       "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
       "repository_record": "references/community/n2n-test-batch-25.csv",
-      "sha256": "cf577e8838142ac25025acb747c54320a38a3e93b2fc80b660aa184bd36c722d",
+      "sha256": "9e7f1b1036bee1f48e399ba5f9bec0a9b509626602b6ebc09de5eb8b6b7b514c",
       "public_safe": true
     },
     {
