@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "references/community/public-sync-observability-beta-release-manifest-v0.15.json"
 V014 = "7b6cfd89de570c4b945d574dad570c37825645fe"
 READINESS_MERGE = "3537d5725b45c8ff856a3aa0897d10245812aa72"
-V015 = "ea46629558ff57970f6efd2485a7e9a288dc55f2"  # exact candidate head with all required checks green
+V015 = "17eae854b3379de23cb15fc37d49ca6e1be12e54"  # exact main commit with all required post-merge checks green
 EXPECTED_RELEASE_POLICY = "exact_commit_fail_closed"
 EXPECTED_VALIDATORS = [
     "scripts/validate_v015_readiness.py",
