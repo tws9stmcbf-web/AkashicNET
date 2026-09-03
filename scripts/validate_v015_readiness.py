@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CHECKS = [
     ("v0.14 sealed readiness", ["python", "scripts/validate_automation_reproducibility_beta_v014.py"]),
+    ("release ledger through v0.15", ["python", "scripts/validate_release_ledger_v014.py"]),
     ("v0.14 release reconstruction", ["python", "scripts/validate_release_readiness_reconstruction_v014.py"]),
     ("v0.15 observability contract", ["python", "scripts/validate_public_observability_contract_v015.py"]),
     ("v0.15 infrastructure contract", ["python", "scripts/validate_public_infrastructure_observability_v015.py"]),
