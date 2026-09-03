@@ -17,4 +17,3 @@ The generator recognizes only one relationship: `LABEL_CONTAINS_EXACT_TOPIC_TERM
 - Private Drive metadata and circular confidence remain prohibited.
 
 The generated packet is committed only through a draft, packet-only pull request. The repository owner must review every proposal and apply `human-reviewed`; this approves only mechanical storage of the proposal packet and does not accept any graph edge.
-
