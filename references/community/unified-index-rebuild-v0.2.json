@@ -1,0 +1,42 @@
+{
+  "schema": "akashicnet.unified-index-rebuild.v0.2",
+  "rebuild_date": "2026-09-03",
+  "status": "INDEX_ONLY_REBUILD_VALIDATED",
+  "mode": "count_only_privacy_safe",
+  "network_access_performed": false,
+  "crawler_runs_performed": false,
+  "sources": {
+    "reddit": {
+      "path": "references/community/reddit-uri-index.csv",
+      "records": 9502,
+      "previous_records": 9401
+    },
+    "drive": {
+      "path": "tools/akashic-library/state/audit.jsonl",
+      "records": 2657,
+      "selection": "latest run_complete where dry_run is false"
+    }
+  },
+  "recount": {
+    "previous_unified_index_records": 12058,
+    "current_unified_index_records": 12159,
+    "net_change": 101
+  },
+  "gates": {
+    "reddit_source_count_matches": true,
+    "drive_source_count_matches": true,
+    "recount_arithmetic_matches": true,
+    "raw_drive_rows_materialized": false,
+    "usernames_stored": false,
+    "post_bodies_stored": false,
+    "comments_stored": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  },
+  "limitations": [
+    "This rebuild reconciles aggregate record counts; it does not expose private Drive rows.",
+    "Reddit API verification remains pending and is not implied by structural inclusion.",
+    "Structural inclusion does not establish authorship, permanence, reuse rights, or scientific validity."
+  ]
+}
