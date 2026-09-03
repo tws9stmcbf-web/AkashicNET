@@ -32,7 +32,7 @@
     {
       "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
       "repository_record": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
-      "sha256": "9e02440e944cbd188f16e6e8fecf534026ff7438438126d5ac1bfc5c0b48c963",
+      "sha256": "2d2eeb589661cc16029d939d0108004a123f47aef50bd0260047b1419584b940",
       "public_safe": true
     },
     {
@@ -62,7 +62,7 @@
     {
       "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
       "repository_record": "references/community/n2n-test-batch-25.csv",
-      "sha256": "9e7f1b1036bee1f48e399ba5f9bec0a9b509626602b6ebc09de5eb8b6b7b514c",
+      "sha256": "cf577e8838142ac25025acb747c54320a38a3e93b2fc80b660aa184bd36c722d",
       "public_safe": true
     },
     {
