@@ -2,7 +2,7 @@
   "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3A",
   "artifact_version": "0.1.0",
   "retrieved_on": "2026-09-03",
-  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "status": "APPROVED_REPAIRS_APPLIED",
   "target_release": "0.14.0-beta.1",
   "scope_artifact": "references/source-integrity-v014-assessment-batch3a-scope-v0.1.json",
   "assessed_source_count": 5,
@@ -61,7 +61,7 @@
       "proposed_change": "Add machine-readable retrieval dates, observed titles, access states and related-policy-page classification while preserving the Markdown policy conclusion and every original URL.",
       "claim_or_evidence_change": false,
       "rights_promotion": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     },
     {
       "candidate_id": "V014-B3A-R2",
@@ -77,7 +77,7 @@
       "proposed_change": "Add retrieval date, observed title, author/volume identity and access state to the two existing publisher provenance records; retain their independent-public-bibliography role and do not alter rights or evidence status.",
       "claim_or_evidence_change": false,
       "rights_promotion": false,
-      "status": "AWAITING_EXPLICIT_APPROVAL"
+      "status": "APPROVED_AND_APPLIED"
     }
   ],
   "assessments": [
@@ -279,5 +279,8 @@
     "rights_promotion": false,
     "website_promotion": false
   },
-  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+  "next_state": "BATCH3A_REPAIRS_COMPLETE",
+  "approved_on": "2026-09-03",
+  "approval_basis": "Explicit user approval after review-only candidate preparation.",
+  "repair_application": "references/source-integrity-v014-assessment-batch3a-repair-application-v0.1.json"
 }

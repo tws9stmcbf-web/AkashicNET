@@ -30,3 +30,8 @@ Project Gutenberg Permission How-To: https://www.gutenberg.org/policy/permission
 ## Gate impact
 
 Rights score remains 0 / 10. This is not a failure of the audit; it is the correct conservative state until manifestation-level evidence is available.
+## Source retrieval provenance checkpoint
+
+Machine-readable retrieval metadata for the three preserved Project Gutenberg policy URLs is recorded in `references/community/rights-audit-research-batch-0002-source-provenance-v0.1.json`.
+
+This checkpoint does not change the `UNKNOWN_UNVERIFIED` rights state, clear any Drive manifestation, or promote public release.

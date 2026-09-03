@@ -1,0 +1,51 @@
+{
+  "artifact_id": "RIGHTS-AUDIT-RESEARCH-BATCH-0002-SOURCE-PROVENANCE",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-03",
+  "source_document": "references/community/rights-audit-research-batch-0002.md",
+  "review_artifact": "references/source-integrity-v014-assessment-batch3a-review-v0.1.json",
+  "sources": [
+    {
+      "source_id": "URL-d26c2b08dd6cc749",
+      "original_url": "https://www.gutenberg.org/help/copyright",
+      "retrieval_status": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "observed_title": "Copyright How-To | Project Gutenberg",
+      "source_role": "COPYRIGHT_GUIDANCE",
+      "relationship_group": "REL-GUTENBERG-RIGHTS-POLICY"
+    },
+    {
+      "source_id": "URL-29116fa0e6e599d5",
+      "original_url": "https://www.gutenberg.org/policy/license",
+      "retrieval_status": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "observed_title": "License | Project Gutenberg",
+      "source_role": "LICENSE_TERMS",
+      "relationship_group": "REL-GUTENBERG-RIGHTS-POLICY"
+    },
+    {
+      "source_id": "URL-b3b8b69ec9b5e0cd",
+      "original_url": "https://www.gutenberg.org/policy/permission",
+      "retrieval_status": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "observed_title": "Permission How-to | Project Gutenberg",
+      "source_role": "PERMISSION_GUIDANCE",
+      "relationship_group": "REL-GUTENBERG-RIGHTS-POLICY"
+    }
+  ],
+  "relationship_groups": [
+    {
+      "group_id": "REL-GUTENBERG-RIGHTS-POLICY",
+      "classification": "RELATED_COMPLEMENTARY_POLICY_PAGES_NOT_DUPLICATES",
+      "note": "All three original URLs are preserved because the pages serve distinct policy functions."
+    }
+  ],
+  "guards": {
+    "original_urls_preserved": true,
+    "rights_state_changed": false,
+    "rights_promotion": false,
+    "public_release_promotion": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false
+  }
+}
