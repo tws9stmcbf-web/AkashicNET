@@ -1,0 +1,39 @@
+{
+  "version": "0.7.14",
+  "status": "REDDIT_CANONICAL_DELTA_TOPIC_AUDITED",
+  "audited_public_top_level_topic_count": 73,
+  "new_top_level_topics": [],
+  "promotion_state": "NO_COUNT_CHANGE",
+  "batch": {
+    "path": "references/community/reddit-canonical-delta-import-2026-09-02.json",
+    "records": 101,
+    "unique_reddit_post_ids": 101,
+    "unique_canonical_urls": 101,
+    "source_batch_counts": {
+      "reddit-manual-delta-batch-0002.csv": 25,
+      "reddit-manual-delta-batch-0003.csv": 25,
+      "reddit-manual-delta-batch-0004.csv": 25,
+      "reddit-manual-delta-batch-0005.csv": 25,
+      "reddit-manual-delta-batch-0006.csv": 1
+    },
+    "record_fields": [
+      "canonical_url",
+      "import_status",
+      "live_verification_status",
+      "observed_at",
+      "reddit_post_id",
+      "source_batch"
+    ],
+    "explicit_topic_category_or_flair_fields": []
+  },
+  "decision": "The canonical delta stores structural import and observation metadata only. It contains no explicit topic, category, or Reddit flair evidence.",
+  "guardrails": {
+    "title_inference": false,
+    "url_inference": false,
+    "post_id_inference": false,
+    "subreddit_is_topic": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
