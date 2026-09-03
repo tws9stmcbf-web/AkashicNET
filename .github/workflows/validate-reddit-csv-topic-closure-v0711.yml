@@ -1,0 +1,29 @@
+name: Validate Reddit CSV topic closure v0.7.11
+
+on:
+  pull_request:
+    paths:
+      - "scripts/reddit_csv_topic_closure_v0711.py"
+      - "tests/test_reddit_csv_topic_closure_v0711.py"
+      - "references/community/reddit-csv-topic-closure-v0.7.11.json"
+      - "references/community/reddit-csv-topic-closure-method-v0.7.11.md"
+      - "references/community/n2n-test-batch-25.csv"
+      - "references/community/reddit-manual-delta-batch-*.csv"
+      - ".github/workflows/validate-reddit-csv-topic-closure-v0711.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Run Reddit CSV topic closure
+        run: python scripts/reddit_csv_topic_closure_v0711.py
+      - name: Validate closure contract
+        run: python tests/test_reddit_csv_topic_closure_v0711.py
