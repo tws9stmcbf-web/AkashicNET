@@ -47,7 +47,10 @@
     },
     "unified_index_records": {
       "previous_snapshot": 12058,
-      "rebuild_status": "not rebuilt; public label preserved as previous snapshot"
+      "rebuilt_snapshot": 12159,
+      "net_change": 101,
+      "rebuild_status": "validated count-only privacy-safe checkpoint",
+      "checkpoint": "references/community/unified-index-rebuild-v0.2.json"
     }
   },
   "records": [
