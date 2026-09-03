@@ -1,7 +1,7 @@
 {
   "target_version": "0.15.0-beta.1",
   "target_name": "Public Sync & Observability Beta",
-  "state": "READY",
+  "state": "SEALED",
   "release_policy": "exact_commit_fail_closed",
   "baseline": {
     "version": "0.14.0-beta.1",
@@ -29,9 +29,9 @@
   ],
   "promotion": {
     "ready": true,
-    "sealed": false,
+    "sealed": true,
     "validated_release_commit": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
-    "seal_metadata_commit": null
+    "seal_metadata_commit": "392205a17f2d6187b91c1ee6524df00d829b468a"
   },
   "invariants": {
     "truth_inference": false,
@@ -41,5 +41,6 @@
     "api_unverified_reddit_as_verified": false,
     "circular_confidence_amplification": false,
     "bq001_forced_resolution": false
-  }
+  },
+  "seal_rule": "v0.15 remains anchored to exact validated release candidate commit ea46629558ff57970f6efd2485a7e9a288dc55f2. READY metadata provenance is recorded at 392205a17f2d6187b91c1ee6524df00d829b468a. This final seal bookkeeping must not retarget either v0.15 or the immutable v0.14 baseline."
 }
