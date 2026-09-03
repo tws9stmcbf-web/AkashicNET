@@ -1,0 +1,96 @@
+{
+  "artifact_id": "V014-BATCH3D-REDDIT-RETRIEVAL-ATTEMPTS",
+  "artifact_version": "0.1.0",
+  "attempted_on": "2026-09-03",
+  "review_artifact": "references/source-integrity-v014-assessment-batch3d-review-v0.1.json",
+  "records": [
+    {
+      "source_id": "URL-156870e7d4242fc6",
+      "reddit_post_id": "1ugzawh",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness/"
+      ],
+      "repository_recorded_title": "Technology and extended consciousness",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-1757108bddd5aad1",
+      "reddit_post_id": "1ucqwjw",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives/"
+      ],
+      "repository_recorded_title": "Karma and continuity across lives",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-1dc0e1c629548271",
+      "reddit_post_id": "1tx3m7w",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive/"
+      ],
+      "repository_recorded_title": "The world felt more alive",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-1ee71dd0ee38896f",
+      "reddit_post_id": "1sfg635",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness/"
+      ],
+      "repository_recorded_title": "Consciousness without a permanent witness",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    },
+    {
+      "source_id": "URL-2fc6a917bd6aac23",
+      "reddit_post_id": "1ufb2s0",
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing/"
+      ],
+      "repository_recorded_title": "Community care and mutual witnessing",
+      "live_observed_title": null,
+      "retrieval_state": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED"
+    }
+  ],
+  "attempt_methods": [
+    "DIRECT_WEB_OPEN_ATTEMPT",
+    "EXACT_PUBLIC_WEB_SEARCH",
+    "REPOSITORY_ORIGIN_INSPECTION"
+  ],
+  "historical_context": {
+    "path": "tools/n2n/dryrun/25_post_test.jsonl",
+    "preservation_policy": "HISTORICAL_OUTPUT_NOT_REWRITTEN",
+    "recorded_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+  },
+  "classification": {
+    "availability_undetermined_records": 5,
+    "confirmed_broken": false,
+    "confirmed_deleted_or_removed": false,
+    "title_drift": "UNDETERMINED",
+    "truth_status_changed": false
+  },
+  "guards": {
+    "original_urls_preserved": true,
+    "historical_records_changed": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false,
+    "changed_or_unavailable_implies_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  }
+}
