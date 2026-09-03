@@ -1,0 +1,59 @@
+{
+  "version": "0.7.15",
+  "status": "REDDIT_CORROBORATION_TOPIC_AUDITED",
+  "audited_public_top_level_topic_count": 73,
+  "new_top_level_topics": [],
+  "promotion_state": "NO_COUNT_CHANGE",
+  "series": {
+    "record_counts": {
+      "0.3": 20,
+      "0.4": 29,
+      "0.5": 38,
+      "0.6": 39
+    },
+    "record_fields": [
+      "post_id",
+      "subreddit"
+    ],
+    "explicit_topic_category_or_flair_fields": [],
+    "transitions": {
+      "v0.3_to_v0.4": {
+        "added": 9,
+        "removed": 0,
+        "cumulative": true
+      },
+      "v0.4_to_v0.5": {
+        "added": 9,
+        "removed": 0,
+        "cumulative": true
+      },
+      "v0.5_to_v0.6": {
+        "added": 5,
+        "removed": 4,
+        "cumulative": false,
+        "added_post_ids": [
+          "10a8yeh",
+          "11rok7i",
+          "12v43s7",
+          "1d50iie",
+          "1hij76m"
+        ],
+        "removed_post_ids": [
+          "1pczj8w",
+          "1proj4m",
+          "1r3tngh",
+          "1vn54g4"
+        ]
+      }
+    }
+  },
+  "decision": "Corroboration seeds contain public-presence identifiers only. They contain no explicit topic, category, or Reddit flair evidence.",
+  "guardrails": {
+    "post_id_inference": false,
+    "subreddit_is_topic": false,
+    "presence_is_topic_evidence": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
