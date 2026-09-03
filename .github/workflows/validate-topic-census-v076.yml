@@ -1,0 +1,26 @@
+name: Validate topic census candidate v0.7.6
+
+on:
+  pull_request:
+    paths:
+      - "scripts/topic_census_v076.py"
+      - "tests/test_topic_census_v076.py"
+      - "references/community/topic-census-candidate-v0.7.6.json"
+      - "references/community/topic-census-candidate-method-v0.7.6.md"
+      - "references/community/wikipedia-akashic-pilot.csv"
+      - ".github/workflows/validate-topic-census-v076.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/topic_census_v076.py
+      - run: python -m pytest tests/test_topic_census_v076.py
