@@ -39,7 +39,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">A living knowledge network · Pre-alpha</p>
+          <p className="eyebrow">A living knowledge network · Public Beta · v0.14 sealed</p>
           <h1>Awaken within.<br /><em>Serve without.</em></h1>
           <p className="lede">AkashicNET explores how consciousness research, lived experience, contemplative wisdom, creativity and planetary knowledge might connect—without confusing possibility with proof.</p>
           <div className="hero-actions">
@@ -63,8 +63,8 @@ export default function Home() {
         <div><strong>3</strong><span>SHA-256-verified duplicate pairs</span></div>
         <div><strong>9</strong><span>evidence-backed graph edges accepted</span></div>
         <div><strong>23</strong><span>nodes in the current knowledge-graph seed</span></div>
-        <div><strong>v0.9</strong><span>current pre-alpha publication snapshot</span></div>
-        <p>Audited Reddit delta checkpoint · 2 September 2026 · Counts describe scope and pipeline state, not validated truth claims.</p>
+        <div><strong>v0.14.0-beta.1</strong><span>Automation & Reproducibility Beta · READY / SEALED</span></div>
+        <p>Sealed release checkpoint · 2 September 2026 · Counts describe scope and pipeline state, not validated truth claims.</p>
       </section>
 
       <section className="plain-language" id="start-here">
@@ -150,7 +150,7 @@ export default function Home() {
       </section>
 
       <section className="roadmap" id="roadmap">
-        <div className="section-heading"><div><p className="section-label">07 · Public roadmap</p><h2>Build slowly enough to build wisely.</h2></div><span className="phase-pill">Current phase · Pre-alpha</span></div>
+        <div className="section-heading"><div><p className="section-label">07 · Public roadmap</p><h2>Build slowly enough to build wisely.</h2></div><span className="phase-pill">Current phase · Public Beta · v0.14 sealed</span></div>
         <div className="roadmap-grid">
           <article className="complete"><span>Foundation</span><h3>Public-source indexing</h3><p>Deduplication, basic provenance and initial evidence boundaries.</p><b>Established</b></article>
           <article className="active"><span>Now</span><h3>Corpus canonicalisation</h3><p>Resolve identity, structure and relationships without overclaiming.</p><b>In progress</b></article>

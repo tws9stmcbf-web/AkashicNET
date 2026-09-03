@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1",
+  "target_version": "0.15.0-beta.1",
+  "status": "IN_DEVELOPMENT",
+  "canonical_current_release": {
+    "version": "0.14.0-beta.1",
+    "name": "Automation & Reproducibility Beta",
+    "state": "SEALED",
+    "public_label": "v0.14.0-beta.1 · AUTOMATION & REPRODUCIBILITY BETA · READY / SEALED",
+    "sealed_on": "2026-09-02",
+    "validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe"
+  },
+  "repository_surfaces": [
+    {
+      "path": "references/community/public-status-v0.14.json",
+      "role": "canonical_machine_readable_status"
+    },
+    {
+      "path": "docs/V014_PUBLIC_SYNC.md",
+      "role": "canonical_public_handoff"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "role": "release_history"
+    },
+    {
+      "path": "website/app/page.tsx",
+      "role": "repository_website_home_snapshot"
+    }
+  ],
+  "homepage_requirements": {
+    "must_contain": [
+      "v0.14.0-beta.1",
+      "Automation & Reproducibility Beta",
+      "READY / SEALED",
+      "2 September 2026",
+      "Public Beta"
+    ],
+    "must_not_present_as_current": [
+      "A living knowledge network · Pre-alpha",
+      "Current phase · Pre-alpha",
+      "current pre-alpha publication snapshot"
+    ]
+  },
+  "live_surface_verification": {
+    "issue": 242,
+    "state": "REQUIRED_BEFORE_V015_SEAL",
+    "repository_snapshot_is_not_live_deployment_proof": true
+  },
+  "invariants": {
+    "v014_retarget_allowed": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "private_drive_promotion": false,
+    "api_unverified_reddit_as_verified": false,
+    "public_analytics_are_evidence": false,
+    "bq001_forced_resolution": false
+  }
+}
