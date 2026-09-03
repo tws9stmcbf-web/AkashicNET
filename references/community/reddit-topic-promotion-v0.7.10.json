@@ -1,0 +1,28 @@
+{
+  "version": "0.7.10",
+  "status": "PROMOTED_PUBLIC_CHECKPOINT",
+  "previous_public_top_level_topic_count": 71,
+  "audited_public_top_level_topic_count": 73,
+  "promoted_top_level_topics": [
+    "meaning-making",
+    "unity"
+  ],
+  "canonical_child_relationships": {
+    "selfhood": [
+      "ego"
+    ],
+    "cognition": [
+      "symbolic memory"
+    ]
+  },
+  "promotion_state": "PROMOTED",
+  "approval_date": "2026-09-03",
+  "guardrails": {
+    "comma_token_auto_promotion": false,
+    "semantic_similarity_auto_merge": false,
+    "url_slug_inference": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
