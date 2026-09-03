@@ -1,0 +1,28 @@
+name: Validate Reddit topic canonical review v0.7.9
+
+on:
+  pull_request:
+    paths:
+      - "scripts/reddit_topic_review_v079.py"
+      - "tests/test_reddit_topic_review_v079.py"
+      - "references/community/reddit-topic-canonical-review-v0.7.9.json"
+      - "references/community/reddit-topic-canonical-review-method-v0.7.9.md"
+      - "references/community/n2n-index.csv"
+      - ".github/workflows/validate-reddit-topic-review-v079.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Run canonical review checkpoint
+        run: python scripts/reddit_topic_review_v079.py
+      - name: Validate review contract
+        run: python tests/test_reddit_topic_review_v079.py
