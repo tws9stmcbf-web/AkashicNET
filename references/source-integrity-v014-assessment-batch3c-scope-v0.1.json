@@ -1,0 +1,145 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3C",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-03",
+  "status": "SUBCOHORT_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "parent_scope": "references/source-integrity-v014-assessment-batch3-scope-v0.1.json",
+  "prior_subcohort": {
+    "scope": "references/source-integrity-v014-assessment-batch3b-scope-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch3b-repair-application-v0.1.json"
+  },
+  "cohort": {
+    "size": 5,
+    "focus": "The next five highest-use Reddit community references after Batch 3B.",
+    "selection_policy": [
+      "Exclude the four Reddit records assessed in Batch 3B.",
+      "Select five remaining Reddit records by descending occurrence count with source_id as tie-breaker.",
+      "Treat blocked or absent automated retrieval as indeterminate rather than broken or deleted.",
+      "Preserve original URL forms and repository occurrences."
+    ],
+    "category_counts": {
+      "HIGH_USE_REDDIT_COMMUNITY_REFERENCE": 5
+    },
+    "sources": [
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus",
+        "occurrence_count": 19,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/"
+        ],
+        "repository_paths": [
+          "references/community/akashic-library-codex-nexus.md",
+          "references/community/n2n-index.csv",
+          "references/community/n2n-index.md",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-da3613ab77788217"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse",
+        "occurrence_count": 18,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-index.csv",
+          "references/community/n2n-index.md",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-b7675f6ec447f5aa"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool",
+        "occurrence_count": 17,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool/"
+        ],
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.7.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-4827037faaf93eb8"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry",
+        "occurrence_count": 17,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry/"
+        ],
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.7.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-dec80b4e109d2431"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking",
+        "occurrence_count": 17,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking/"
+        ],
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.7.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-f5c1688df3adb8cb"
+      }
+    ]
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT"
+}

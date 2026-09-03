@@ -1,0 +1,314 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3C",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-03",
+  "status": "REVIEW_COMPLETE_REPAIRS_AWAITING_APPROVAL",
+  "target_release": "0.14.0-beta.1",
+  "scope_artifact": "references/source-integrity-v014-assessment-batch3c-scope-v0.1.json",
+  "assessed_source_count": 5,
+  "methodology": [
+    "Attempt each preserved original URL through live web retrieval.",
+    "Use exact public search when direct Reddit retrieval is blocked.",
+    "Consult governed repository provenance without converting historical metadata into a live observation.",
+    "Classify unresolved retrieval separately from broken or deleted status."
+  ],
+  "summary": {
+    "confirmed_available": 2,
+    "availability_undetermined": 3,
+    "confirmed_broken": 0,
+    "confirmed_deleted_or_vanished": 0,
+    "redirects_observed": 0,
+    "substantive_title_drift": 0,
+    "title_drift_undetermined": 3,
+    "retractions_or_withdrawals": 0,
+    "repair_candidates": 2
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "V014-B3C-R1",
+      "priority": "LOW",
+      "type": "ADD_REDDIT_CONFIRMED_RETRIEVAL_PROVENANCE",
+      "targets": [
+        "new Batch 3C Reddit retrieval-provenance companion record"
+      ],
+      "source_ids": [
+        "URL-b7675f6ec447f5aa"
+      ],
+      "proposed_change": "Record the 2026-09-03 public-search confirmation, observed full title and publication date for post 1qll7jj while preserving the original URL, historical dry-run record and existing evidence label.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B3C-R2",
+      "priority": "LOW",
+      "type": "ADD_REDDIT_RETRIEVAL_ATTEMPT_PROVENANCE",
+      "targets": [
+        "new Batch 3C Reddit retrieval-provenance companion record"
+      ],
+      "source_ids": [
+        "URL-4827037faaf93eb8",
+        "URL-dec80b4e109d2431",
+        "URL-f5c1688df3adb8cb"
+      ],
+      "proposed_change": "Record the 2026-09-03 blocked/indeterminate retrieval attempts without changing historical dry-run artifacts, recorded titles, source availability, claims, or evidence labels.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    }
+  ],
+  "assessments": [
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus",
+      "occurrence_count": 19,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/"
+      ],
+      "repository_paths": [
+        "references/community/akashic-library-codex-nexus.md",
+        "references/community/n2n-index.csv",
+        "references/community/n2n-index.md",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-da3613ab77788217",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "PUBLIC_SEARCH_RESULT_RETRIEVED; DIRECT_AUTOMATED_OPEN_BLOCKED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/",
+      "observed_title": "💡Project Akashic Library framework 📖 Codex Nexus | Atlantean 🔷 + Alexandrian 🏛️ + Da Vinci ⚙️",
+      "publication_date_observed": "2025-06-03",
+      "title_drift": "SHORT_REPOSITORY_LABEL_NOT_CONTRADICTORY",
+      "deleted_or_removed_post_state": "NOT_DELETED_AT_CHECK_TIME",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [],
+      "repository_metadata_preserved": {
+        "recorded_title": "Project Akashic Library / Codex Nexus",
+        "recorded_slug": "project_akashic_library_framework_codex_nexus",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)",
+        "governed_provenance_record": "references/community/akashic-library-codex-nexus.md"
+      },
+      "retrieval_methods": [
+        "PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse",
+      "occurrence_count": 18,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-index.csv",
+        "references/community/n2n-index.md",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-b7675f6ec447f5aa",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "PUBLIC_SEARCH_RESULT_RETRIEVED; DIRECT_AUTOMATED_OPEN_BLOCKED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse/",
+      "observed_title": "💡r/NeuronsToNirvana: Mapping Consciousness Discourse — A Curated Evidence-Based Overview of Theories, Frameworks and Community Themes [March 2022 – January 2026]",
+      "publication_date_observed": "2026-01-24",
+      "title_drift": "CAPITALIZATION_AND_EXPANSION_NOT_CONTRADICTORY",
+      "deleted_or_removed_post_state": "NOT_DELETED_AT_CHECK_TIME",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_PRIMARY_INDEX",
+        "LIVE_TITLE_NOT_RECORDED_IN_PRIMARY_INDEX"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "r/NeuronsToNirvana mapping consciousness discourse",
+        "recorded_slug": "rneuronstonirvana_mapping_consciousness_discourse",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool",
+      "occurrence_count": 17,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool/"
+      ],
+      "repository_paths": [
+        "references/community/cross-source-qualification-batch-v0.1.7.json",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-4827037faaf93eb8",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Storytelling as an epistemic tool",
+        "recorded_slug": "storytelling_as_an_epistemic_tool",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry",
+      "occurrence_count": 17,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry/"
+      ],
+      "repository_paths": [
+        "references/community/cross-source-qualification-batch-v0.1.7.json",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-dec80b4e109d2431",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Indigenous knowledge and nondual inquiry",
+        "recorded_slug": "indigenous_knowledge_and_nondual_inquiry",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking",
+      "occurrence_count": 17,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking/"
+      ],
+      "repository_paths": [
+        "references/community/cross-source-qualification-batch-v0.1.7.json",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-f5c1688df3adb8cb",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Psychedelic integration and meaning-making",
+        "recorded_slug": "psychedelic_integration_and_meaningmaking",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    }
+  ],
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "AWAIT_EXPLICIT_REPAIR_APPROVAL"
+}
