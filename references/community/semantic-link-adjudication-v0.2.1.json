@@ -1,0 +1,828 @@
+{
+  "schema_version": "0.1",
+  "policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "confidence_from_representation_count_allowed": false,
+    "circular_confidence_allowed": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+      "version": "git:d3c2d42170d2ffa2d2c35fe60af302aa12604fb7",
+      "sha256": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28",
+      "source_domain": "github-public-review-packet",
+      "independence_key": "source:semantic-link-candidates:0.2.0",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+      "version": "0.2.1",
+      "sha256": "a8c6eed7d25d08759b68766652f6c5b1f642cf30fcc4dab0fef7a5eee4b06417",
+      "source_domain": "authorized-human-review",
+      "independence_key": "review:semantic-links:0.2.1",
+      "public_safe": true
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge:semantic-candidate:191f4ddea1a78d584166",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:191f4ddea1a78d584166:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:191f4ddea1a78d584166:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:191f4ddea1a78d584166",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:191f4ddea1a78d584166:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:191f4ddea1a78d584166:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:191f4ddea1a78d584166"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:191f4ddea1a78d584166"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:19c4d2c70c48b2d04cf2",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19c4d2c70c48b2d04cf2:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19c4d2c70c48b2d04cf2:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:19c4d2c70c48b2d04cf2",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19c4d2c70c48b2d04cf2:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19c4d2c70c48b2d04cf2:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:19c4d2c70c48b2d04cf2"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:19c4d2c70c48b2d04cf2"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:19ed7cfa6ce4b807d123",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19ed7cfa6ce4b807d123:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19ed7cfa6ce4b807d123:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:19ed7cfa6ce4b807d123",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19ed7cfa6ce4b807d123:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:19ed7cfa6ce4b807d123:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:19ed7cfa6ce4b807d123"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:19ed7cfa6ce4b807d123"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:2f8eb01ad4363504a3b6",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2f8eb01ad4363504a3b6:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2f8eb01ad4363504a3b6:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:2f8eb01ad4363504a3b6",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2f8eb01ad4363504a3b6:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2f8eb01ad4363504a3b6:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:2f8eb01ad4363504a3b6"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:2f8eb01ad4363504a3b6"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:2fcd56322574a00eaec0",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2fcd56322574a00eaec0:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2fcd56322574a00eaec0:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:2fcd56322574a00eaec0",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2fcd56322574a00eaec0:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:2fcd56322574a00eaec0:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:2fcd56322574a00eaec0"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:2fcd56322574a00eaec0"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:303a33d87f51450a3896",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:303a33d87f51450a3896:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:303a33d87f51450a3896:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:303a33d87f51450a3896",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:303a33d87f51450a3896:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:303a33d87f51450a3896:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:303a33d87f51450a3896"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:303a33d87f51450a3896"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:4e4c9bc1887135c87694",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:4e4c9bc1887135c87694:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:4e4c9bc1887135c87694:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:4e4c9bc1887135c87694",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:4e4c9bc1887135c87694:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:4e4c9bc1887135c87694:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:4e4c9bc1887135c87694"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:4e4c9bc1887135c87694"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:854b34c6a3d870962d68",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:854b34c6a3d870962d68:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:854b34c6a3d870962d68:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:854b34c6a3d870962d68",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:854b34c6a3d870962d68:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:854b34c6a3d870962d68:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:854b34c6a3d870962d68"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:854b34c6a3d870962d68"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:a5b341fbd98fa340e86e",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a5b341fbd98fa340e86e:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a5b341fbd98fa340e86e:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:a5b341fbd98fa340e86e",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a5b341fbd98fa340e86e:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a5b341fbd98fa340e86e:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:a5b341fbd98fa340e86e"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:a5b341fbd98fa340e86e"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:a81be86e8a6e9e54db71",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a81be86e8a6e9e54db71:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a81be86e8a6e9e54db71:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:a81be86e8a6e9e54db71",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a81be86e8a6e9e54db71:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:a81be86e8a6e9e54db71:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:a81be86e8a6e9e54db71"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:a81be86e8a6e9e54db71"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:aa46dbe9d8c846958d27",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:aa46dbe9d8c846958d27:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:aa46dbe9d8c846958d27:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:aa46dbe9d8c846958d27",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:aa46dbe9d8c846958d27:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:aa46dbe9d8c846958d27:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:aa46dbe9d8c846958d27"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:aa46dbe9d8c846958d27"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:c6743c1f49599d7a51d8",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:c6743c1f49599d7a51d8:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:c6743c1f49599d7a51d8:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:c6743c1f49599d7a51d8",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:c6743c1f49599d7a51d8:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:c6743c1f49599d7a51d8:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:c6743c1f49599d7a51d8"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:c6743c1f49599d7a51d8"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:f043c41f69968d5b6f41",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:f043c41f69968d5b6f41:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:f043c41f69968d5b6f41:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:f043c41f69968d5b6f41",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:f043c41f69968d5b6f41:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:f043c41f69968d5b6f41:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:f043c41f69968d5b6f41"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:f043c41f69968d5b6f41"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-candidate:fca9643adce7a4831b3b",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:fca9643adce7a4831b3b:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:fca9643adce7a4831b3b:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-candidates:0.2.0"
+      ],
+      "generator": {
+        "name": "semantic_link_candidates",
+        "version": "0.2.0",
+        "parameters_digest": "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:semantic-accepted:fca9643adce7a4831b3b",
+      "source": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:fca9643adce7a4831b3b:source"
+      },
+      "target": {
+        "artifact_id": "artifact:semantic-link-candidates:0.2.0",
+        "record_id": "candidate:semantic:fca9643adce7a4831b3b:target"
+      },
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "observed_at": "2026-09-03T22:37:58Z",
+      "review_state": "ACCEPTED",
+      "accepted_edge": true,
+      "parent_edge_ids": [
+        "edge:semantic-candidate:fca9643adce7a4831b3b"
+      ],
+      "confidence_source_artifact_ids": [
+        "artifact:semantic-link-adjudication:0.2.1"
+      ],
+      "adjudication_ref": {
+        "artifact_id": "artifact:semantic-link-adjudication:0.2.1",
+        "record_id": "decision:semantic:fca9643adce7a4831b3b"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    }
+  ]
+}
