@@ -13,10 +13,14 @@ on:
         description: Subreddit name without r/
         required: true
         default: NeuronsToNirvana
+      post_id:
+        description: Exact Reddit post ID for a one-post smoke test (without t3_)
+        required: false
+        default: ''
       max_posts:
-        description: Maximum posts to inspect
+        description: Maximum listing posts to inspect when post_id is empty
         required: true
-        default: '25'
+        default: '1'
 
 jobs:
   crawl:
@@ -30,21 +34,29 @@ jobs:
         with:
           python-version: '3.11'
       - name: Run crawler pilot
-        if: ${{ env.REDDIT_CLIENT_ID != '' && env.REDDIT_CLIENT_SECRET != '' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && env.REDDIT_CLIENT_ID != '' && env.REDDIT_CLIENT_SECRET != '' }}
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: AkashicNET-reddit-crawler/0.1 (research metadata indexer)
           SUBREDDIT: ${{ github.event.inputs.subreddit || 'NeuronsToNirvana' }}
-          MAX_POSTS: ${{ github.event.inputs.max_posts || '25' }}
+          POST_ID: ${{ github.event.inputs.post_id }}
+          MAX_POSTS: ${{ github.event.inputs.max_posts || '1' }}
         run: |
           mkdir -p artifacts/reddit
-          python scripts/reddit_crawler.py "$SUBREDDIT" \
-            --max-posts "$MAX_POSTS" \
-            --output artifacts/reddit/posts.jsonl \
-            --checkpoint artifacts/reddit/checkpoint.json
+          if [ -n "$POST_ID" ]; then
+            python scripts/reddit_crawler.py "$SUBREDDIT" \
+              --post-id "$POST_ID" \
+              --output artifacts/reddit/posts.jsonl \
+              --checkpoint artifacts/reddit/checkpoint.json
+          else
+            python scripts/reddit_crawler.py "$SUBREDDIT" \
+              --max-posts "$MAX_POSTS" \
+              --output artifacts/reddit/posts.jsonl \
+              --checkpoint artifacts/reddit/checkpoint.json
+          fi
       - name: Upload pilot artifact
-        if: always()
+        if: ${{ always() && github.event_name == 'workflow_dispatch' }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: reddit-pilot
