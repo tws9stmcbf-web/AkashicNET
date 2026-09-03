@@ -1,0 +1,103 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3A",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-03",
+  "status": "SUBCOHORT_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "parent_scope": "references/source-integrity-v014-assessment-batch3-scope-v0.1.json",
+  "cohort": {
+    "size": 5,
+    "focus": "Deferred rights-policy and lower-priority book routes.",
+    "selection_policy": [
+      "Select the three RIGHTS_POLICY_REFERENCE records and two LOWER_PRIORITY_BOOK_ROUTE records from Batch 3.",
+      "Preserve original URLs and repository provenance.",
+      "Perform no repair or evidence promotion during assessment."
+    ],
+    "category_counts": {
+      "RIGHTS_POLICY_REFERENCE": 3,
+      "LOWER_PRIORITY_BOOK_ROUTE": 2
+    },
+    "sources": [
+      {
+        "host": "www.gutenberg.org",
+        "normalized_url": "https://www.gutenberg.org/policy/license",
+        "occurrence_count": 1,
+        "original_urls": [
+          "https://www.gutenberg.org/policy/license"
+        ],
+        "repository_paths": [
+          "references/community/rights-audit-research-batch-0002.md"
+        ],
+        "selection_category": "RIGHTS_POLICY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-29116fa0e6e599d5"
+      },
+      {
+        "host": "www.lucistrust.org",
+        "normalized_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks",
+        "occurrence_count": 1,
+        "original_urls": [
+          "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks"
+        ],
+        "repository_paths": [
+          "references/community/canonical-adjudication-batch1-v0.7.1.json"
+        ],
+        "selection_category": "LOWER_PRIORITY_BOOK_ROUTE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-9f9b7fc2c9a90eb9"
+      },
+      {
+        "host": "www.gutenberg.org",
+        "normalized_url": "https://www.gutenberg.org/policy/permission",
+        "occurrence_count": 1,
+        "original_urls": [
+          "https://www.gutenberg.org/policy/permission"
+        ],
+        "repository_paths": [
+          "references/community/rights-audit-research-batch-0002.md"
+        ],
+        "selection_category": "RIGHTS_POLICY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-b3b8b69ec9b5e0cd"
+      },
+      {
+        "host": "www.lucistrust.org",
+        "normalized_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks",
+        "occurrence_count": 1,
+        "original_urls": [
+          "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks"
+        ],
+        "repository_paths": [
+          "references/community/canonical-adjudication-batch1-v0.7.1.json"
+        ],
+        "selection_category": "LOWER_PRIORITY_BOOK_ROUTE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-bd05d205da6c9d27"
+      },
+      {
+        "host": "www.gutenberg.org",
+        "normalized_url": "https://www.gutenberg.org/help/copyright",
+        "occurrence_count": 1,
+        "original_urls": [
+          "https://www.gutenberg.org/help/copyright"
+        ],
+        "repository_paths": [
+          "references/community/rights-audit-research-batch-0002.md"
+        ],
+        "selection_category": "RIGHTS_POLICY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-d26c2b08dd6cc749"
+      }
+    ]
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT"
+}

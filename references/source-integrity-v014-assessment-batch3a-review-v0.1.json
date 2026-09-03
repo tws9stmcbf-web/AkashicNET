@@ -1,0 +1,283 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3A",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-03",
+  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "scope_artifact": "references/source-integrity-v014-assessment-batch3a-scope-v0.1.json",
+  "assessed_source_count": 5,
+  "methodology": [
+    "Retrieve each preserved original URL without substituting a new canonical URL.",
+    "Compare observed page identity with repository usage.",
+    "Record related-page groups without collapsing distinct sources.",
+    "Treat page availability and metadata drift independently from truth, evidence and rights decisions."
+  ],
+  "summary": {
+    "available": 5,
+    "confirmed_broken": 0,
+    "confirmed_deleted_or_vanished": 0,
+    "redirects_observed": 0,
+    "substantive_title_drift": 0,
+    "retractions_or_withdrawals": 0,
+    "related_not_duplicate_groups": 2,
+    "missing_retrieval_provenance": 5,
+    "repair_candidates": 2
+  },
+  "relationship_groups": [
+    {
+      "group_id": "REL-GUTENBERG-RIGHTS-POLICY",
+      "classification": "RELATED_COMPLEMENTARY_POLICY_PAGES_NOT_DUPLICATES",
+      "source_ids": [
+        "URL-29116fa0e6e599d5",
+        "URL-b3b8b69ec9b5e0cd",
+        "URL-d26c2b08dd6cc749"
+      ],
+      "note": "License, permission and copyright guidance serve different policy functions; preserve all three."
+    },
+    {
+      "group_id": "REL-DISCIPLESHIP-NEW-AGE-VOLUMES",
+      "classification": "RELATED_TWO_VOLUME_SERIES_NOT_DUPLICATES",
+      "source_ids": [
+        "URL-bd05d205da6c9d27",
+        "URL-9f9b7fc2c9a90eb9"
+      ],
+      "note": "Volume I and Volume II are distinct works in the same series; preserve both."
+    }
+  ],
+  "repair_candidates": [
+    {
+      "candidate_id": "V014-B3A-R1",
+      "priority": "MEDIUM",
+      "type": "ADD_RIGHTS_SOURCE_RETRIEVAL_PROVENANCE",
+      "targets": [
+        "references/community/rights-audit-research-batch-0002.md",
+        "new companion provenance record"
+      ],
+      "source_ids": [
+        "URL-29116fa0e6e599d5",
+        "URL-b3b8b69ec9b5e0cd",
+        "URL-d26c2b08dd6cc749"
+      ],
+      "proposed_change": "Add machine-readable retrieval dates, observed titles, access states and related-policy-page classification while preserving the Markdown policy conclusion and every original URL.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B3A-R2",
+      "priority": "MEDIUM",
+      "type": "ADD_BOOK_ROUTE_RETRIEVAL_PROVENANCE",
+      "targets": [
+        "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      ],
+      "source_ids": [
+        "URL-bd05d205da6c9d27",
+        "URL-9f9b7fc2c9a90eb9"
+      ],
+      "proposed_change": "Add retrieval date, observed title, author/volume identity and access state to the two existing publisher provenance records; retain their independent-public-bibliography role and do not alter rights or evidence status.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    }
+  ],
+  "assessments": [
+    {
+      "host": "www.gutenberg.org",
+      "normalized_url": "https://www.gutenberg.org/policy/license",
+      "occurrence_count": 1,
+      "original_urls": [
+        "https://www.gutenberg.org/policy/license"
+      ],
+      "repository_paths": [
+        "references/community/rights-audit-research-batch-0002.md"
+      ],
+      "selection_category": "RIGHTS_POLICY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-29116fa0e6e599d5",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.gutenberg.org/policy/license",
+      "observed_title": "License | Project Gutenberg",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "deleted_or_removed_post_state": "NOT_APPLICABLE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "retrieved_on": "2026-09-03",
+      "duplicate_or_equivalent_reference_candidate": "RELATED_POLICY_PAGE_GROUP_NOT_DUPLICATE",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_ORIGIN",
+        "OBSERVED_TITLE_NOT_RECORDED_IN_ORIGIN"
+      ],
+      "related_record_notes": [
+        "PROJECT_GUTENBERG_LICENSE_PAGE",
+        "COMPLEMENTARY_TO_PERMISSION_AND_COPYRIGHT_PAGES"
+      ],
+      "retrieval_methods": [
+        "LIVE_WEB_RETRIEVAL",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "host": "www.lucistrust.org",
+      "normalized_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks",
+      "occurrence_count": 1,
+      "original_urls": [
+        "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks"
+      ],
+      "repository_paths": [
+        "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      ],
+      "selection_category": "LOWER_PRIORITY_BOOK_ROUTE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-9f9b7fc2c9a90eb9",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks",
+      "observed_title": "Discipleship in the New Age, Vol. II - Online Books • Lucis Trust",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "deleted_or_removed_post_state": "NOT_APPLICABLE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "retrieved_on": "2026-09-03",
+      "duplicate_or_equivalent_reference_candidate": "RELATED_TWO_VOLUME_SERIES_NOT_DUPLICATE",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_ORIGIN",
+        "OBSERVED_TITLE_NOT_RECORDED_IN_ORIGIN"
+      ],
+      "related_record_notes": [
+        "AUTHOR_DISPLAYED_AS_ALICE_A_BAILEY",
+        "COPYRIGHT_1955_RENEWED_1983",
+        "DISTINCT_VOLUME_NOT_DUPLICATE"
+      ],
+      "retrieval_methods": [
+        "LIVE_WEB_RETRIEVAL",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "host": "www.gutenberg.org",
+      "normalized_url": "https://www.gutenberg.org/policy/permission",
+      "occurrence_count": 1,
+      "original_urls": [
+        "https://www.gutenberg.org/policy/permission"
+      ],
+      "repository_paths": [
+        "references/community/rights-audit-research-batch-0002.md"
+      ],
+      "selection_category": "RIGHTS_POLICY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-b3b8b69ec9b5e0cd",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.gutenberg.org/policy/permission",
+      "observed_title": "Permission How-to | Project Gutenberg",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "deleted_or_removed_post_state": "NOT_APPLICABLE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "retrieved_on": "2026-09-03",
+      "duplicate_or_equivalent_reference_candidate": "RELATED_POLICY_PAGE_GROUP_NOT_DUPLICATE",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_ORIGIN",
+        "OBSERVED_TITLE_NOT_RECORDED_IN_ORIGIN"
+      ],
+      "related_record_notes": [
+        "PROJECT_GUTENBERG_PERMISSION_GUIDANCE",
+        "COMPLEMENTARY_TO_LICENSE_AND_COPYRIGHT_PAGES"
+      ],
+      "retrieval_methods": [
+        "LIVE_WEB_RETRIEVAL",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "host": "www.lucistrust.org",
+      "normalized_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks",
+      "occurrence_count": 1,
+      "original_urls": [
+        "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks"
+      ],
+      "repository_paths": [
+        "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      ],
+      "selection_category": "LOWER_PRIORITY_BOOK_ROUTE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-bd05d205da6c9d27",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks",
+      "observed_title": "Discipleship in the New Age, Vol. I - Online Books • Lucis Trust",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "deleted_or_removed_post_state": "NOT_APPLICABLE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "retrieved_on": "2026-09-03",
+      "duplicate_or_equivalent_reference_candidate": "RELATED_TWO_VOLUME_SERIES_NOT_DUPLICATE",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_ORIGIN",
+        "OBSERVED_TITLE_NOT_RECORDED_IN_ORIGIN"
+      ],
+      "related_record_notes": [
+        "AUTHOR_DISPLAYED_AS_ALICE_A_BAILEY",
+        "COPYRIGHT_1944_RENEWED_1972",
+        "DISTINCT_VOLUME_NOT_DUPLICATE"
+      ],
+      "retrieval_methods": [
+        "LIVE_WEB_RETRIEVAL",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    },
+    {
+      "host": "www.gutenberg.org",
+      "normalized_url": "https://www.gutenberg.org/help/copyright",
+      "occurrence_count": 1,
+      "original_urls": [
+        "https://www.gutenberg.org/help/copyright"
+      ],
+      "repository_paths": [
+        "references/community/rights-audit-research-batch-0002.md"
+      ],
+      "selection_category": "RIGHTS_POLICY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-d26c2b08dd6cc749",
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "LIVE_HTML_PAGE_RETRIEVED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.gutenberg.org/help/copyright",
+      "observed_title": "Copyright How-To | Project Gutenberg",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "deleted_or_removed_post_state": "NOT_APPLICABLE",
+      "retraction_or_withdrawal_status": "NO_WITHDRAWAL_NOTICE_OBSERVED_AT_CHECK_TIME",
+      "retrieved_on": "2026-09-03",
+      "duplicate_or_equivalent_reference_candidate": "RELATED_POLICY_PAGE_GROUP_NOT_DUPLICATE",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_ORIGIN",
+        "OBSERVED_TITLE_NOT_RECORDED_IN_ORIGIN"
+      ],
+      "related_record_notes": [
+        "PROJECT_GUTENBERG_COPYRIGHT_GUIDANCE",
+        "COMPLEMENTARY_TO_LICENSE_AND_PERMISSION_PAGES"
+      ],
+      "retrieval_methods": [
+        "LIVE_WEB_RETRIEVAL",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ],
+      "original_urls_preserved": true
+    }
+  ],
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+}
