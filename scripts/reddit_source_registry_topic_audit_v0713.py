@@ -16,7 +16,7 @@ def main() -> int:
         raise SystemExit("Reddit source registry drift")
     if any(s["platform"] != "reddit" or s["kind"] != "subreddit" for s in sources):
         raise SystemExit("Unexpected source type")
-    post_topic_fields = {"topic", "category", "flair", "link_flair_text"}
+    post_topic_fields = {"topic", "category", "flair", "link_flair_text", "link_flair_template_id"}
     observed = sorted(post_topic_fields.intersection({k for s in sources for k in s}))
     if observed:
         raise SystemExit(f"unexpected post topic fields: {observed}")
