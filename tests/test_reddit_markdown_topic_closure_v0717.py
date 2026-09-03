@@ -4,6 +4,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from scripts.reddit_markdown_topic_closure_v0717 import explicit_fields
 
 
 def test_reddit_markdown_topic_closure_v0717():
@@ -21,6 +24,13 @@ def test_reddit_markdown_topic_closure_v0717():
     assert result["guardrails"]["method_document_is_source_evidence"] is False
 
 
+
+def test_markdown_field_formatting_is_detected():
+    sample = "| topic | value |\n**Category:** Science\n\`link_flair_text\`: Mind"
+    assert explicit_fields(sample) == ["topic", "category", "link_flair_text"]
+
+
 if __name__ == "__main__":
     test_reddit_markdown_topic_closure_v0717()
+    test_markdown_field_formatting_is_detected()
     print("Reddit Markdown topic closure v0.7.17 contract: PASS")
