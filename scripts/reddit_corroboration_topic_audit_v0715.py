@@ -10,6 +10,7 @@ EXPECTED_COUNTS = {"0.3": 20, "0.4": 29, "0.5": 38, "0.6": 39}
 EXPECTED_ADDED_06 = ["10a8yeh", "11rok7i", "12v43s7", "1d50iie", "1hij76m"]
 EXPECTED_REMOVED_06 = ["1pczj8w", "1proj4m", "1r3tngh", "1vn54g4"]
 EXPECTED_FIELDS = {"post_id", "subreddit"}
+EXPECTED_DOCUMENT_FIELDS = {"notes", "records", "schema", "source_type"}
 TOPIC_FIELDS = {
     "topic", "topics", "category", "categories", "flair",
     "link_flair_text", "link_flair_template_id",
@@ -26,6 +27,8 @@ def main() -> int:
     for version in VERSIONS:
         path = COMMUNITY / f"reddit-corroboration-seed-v{version}.json"
         payload = json.loads(path.read_text(encoding="utf-8"))
+        if set(payload) != EXPECTED_DOCUMENT_FIELDS:
+            raise SystemExit(f"v{version} document-field drift: {sorted(payload)}")
         records = payload["records"]
         if len(records) != EXPECTED_COUNTS[version]:
             raise SystemExit(f"v{version} record-count drift")
@@ -33,8 +36,11 @@ def main() -> int:
         if invalid:
             raise SystemExit(f"v{version} per-record field drift at rows: {invalid}")
         pairs = {pair(record) for record in records}
+        normalized_post_ids = {record["post_id"].lower() for record in records}
         if len(pairs) != len(records):
             raise SystemExit(f"v{version} duplicate subreddit/post-ID pair")
+        if len(normalized_post_ids) != len(records):
+            raise SystemExit(f"v{version} duplicate normalized post ID")
         data[version] = records
         sets[version] = pairs
 
@@ -49,7 +55,10 @@ def main() -> int:
         raise SystemExit("v0.5 to v0.6 replacement lineage drift")
 
     observed_fields = {key for records in data.values() for record in records for key in record}
-    topic_fields = sorted(TOPIC_FIELDS.intersection(observed_fields))
+    document_fields = {key for version in VERSIONS for key in json.loads(
+        (COMMUNITY / f"reddit-corroboration-seed-v{version}.json").read_text(encoding="utf-8")
+    )}
+    topic_fields = sorted(TOPIC_FIELDS.intersection(observed_fields | document_fields))
     if topic_fields:
         raise SystemExit(f"unexpected topic-bearing fields: {topic_fields}")
 
