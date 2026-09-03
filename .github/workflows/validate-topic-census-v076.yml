@@ -25,4 +25,4 @@ jobs:
       - name: Run candidate topic census
         run: python scripts/topic_census_v076.py
       - name: Validate candidate census contract
-        run: python -m pytest tests/test_topic_census_v076.py
+        run: python tests/test_topic_census_v076.py
