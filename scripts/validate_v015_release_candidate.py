@@ -12,6 +12,7 @@ V015 = "ea46629558ff57970f6efd2485a7e9a288dc55f2"  # exact candidate head with a
 EXPECTED_RELEASE_POLICY = "exact_commit_fail_closed"
 EXPECTED_VALIDATORS = [
     "scripts/validate_v015_readiness.py",
+    "scripts/validate_release_ledger_v014.py",
     "scripts/validate_public_observability_contract_v015.py",
     "scripts/validate_public_infrastructure_observability_v015.py",
     "scripts/validate_public_status_consistency_v015.py",
@@ -31,11 +32,18 @@ EXPECTED_CANDIDATE_PROMOTION = {
     "validated_release_commit": None,
     "seal_metadata_commit": None,
 }
+READY_METADATA = "5ba6989aade68461c8f3953c4a82cc0e158b0730"
 EXPECTED_READY_PROMOTION = {
     "ready": True,
     "sealed": False,
     "validated_release_commit": V015,
     "seal_metadata_commit": None,
+}
+EXPECTED_SEALED_PROMOTION = {
+    "ready": True,
+    "sealed": True,
+    "validated_release_commit": V015,
+    "seal_metadata_commit": READY_METADATA,
 }
 
 if not MANIFEST.is_file():
@@ -46,8 +54,8 @@ if m.get("target_version") != "0.15.0-beta.1":
 if m.get("target_name") != "Public Sync & Observability Beta":
     raise SystemExit("FAIL: wrong target name")
 state = m.get("state")
-if state not in {"READY_CANDIDATE", "READY"}:
-    raise SystemExit("FAIL: v0.15 release state must be READY_CANDIDATE or READY")
+if state not in {"READY_CANDIDATE", "READY", "SEALED"}:
+    raise SystemExit("FAIL: v0.15 release state must be READY_CANDIDATE, READY or SEALED")
 if m.get("release_policy") != EXPECTED_RELEASE_POLICY:
     raise SystemExit("FAIL: release policy must remain exact_commit_fail_closed")
 if m.get("baseline", {}).get("validated_release_commit") != V014:
@@ -64,8 +72,11 @@ promotion = m.get("promotion")
 if state == "READY_CANDIDATE":
     if promotion != EXPECTED_CANDIDATE_PROMOTION:
         raise SystemExit("FAIL: candidate promotion metadata must remain entirely unset")
-elif promotion != EXPECTED_READY_PROMOTION:
-    raise SystemExit("FAIL: READY promotion must preserve the exact validated v0.15 target and defer sealing")
+elif state == "READY":
+    if promotion != EXPECTED_READY_PROMOTION:
+        raise SystemExit("FAIL: READY promotion must preserve the exact validated v0.15 target and defer sealing")
+elif promotion != EXPECTED_SEALED_PROMOTION:
+    raise SystemExit("FAIL: SEALED promotion must preserve the exact v0.15 target and READY metadata provenance")
 if m.get("invariants") != EXPECTED_INVARIANTS:
     raise SystemExit("FAIL: complete fail-closed invariant set must be preserved")
 
