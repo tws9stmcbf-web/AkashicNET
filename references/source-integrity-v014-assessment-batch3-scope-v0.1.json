@@ -1,0 +1,558 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-03",
+  "status": "SCOPE_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "inventory": {
+    "manifest": "references/community/public-source-url-inventory-v0.14.json",
+    "source_snapshot_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
+    "unique_external_urls": 7663,
+    "external_url_occurrences": 21589
+  },
+  "prior_batch": {
+    "scope": "references/source-integrity-v014-assessment-batch2-scope-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch2-repair-application-v0.1.json",
+    "excluded_historical_source_count": 50,
+    "excluded_current_inventory_source_count": 48,
+    "note": "Two Batch 2 malformed extraction artifacts remain preserved in audit history but were removed from the generated inventory after approved repair."
+  },
+  "cohort": {
+    "size": 25,
+    "focus": "Deferred rights-policy, book and bibliographic routes plus the highest-use Reddit community references, emphasizing deleted-post, title-drift, duplication and missing-provenance detection.",
+    "selection_policy": [
+      "Exclude every source ID selected in v0.14 Batches 1 and 2.",
+      "Include all six non-Wikipedia/Wikidata deferred policy, book and bibliographic records remaining in the snapshot.",
+      "Select nineteen Reddit URLs by descending occurrence count, using source_id as the deterministic tie-breaker.",
+      "Preserve original URLs and repository occurrence metadata.",
+      "Do not classify an unavailable or changed source as false."
+    ],
+    "category_counts": {
+      "RIGHTS_POLICY_REFERENCE": 3,
+      "LOWER_PRIORITY_BOOK_ROUTE": 2,
+      "PUBLIC_BIBLIOGRAPHIC_RECORD": 1,
+      "HIGH_USE_REDDIT_COMMUNITY_REFERENCE": 19
+    },
+    "sources": [
+      {
+        "source_id": "URL-0dbfdb2fcb8f0952",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+        "host": "www.reddit.com",
+        "occurrence_count": 19,
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.3.json",
+          "references/community/cross-source-qualification-batch-v0.1.5.json",
+          "references/community/cross-source-review-adjudication-v0.1.1.json",
+          "references/community/cross-source-review-batch-v0.1.1.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-156870e7d4242fc6",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-1757108bddd5aad1",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-18b6c3810a726959",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ud0d1w/sound_resonance_and_altered_states",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ud0d1w/sound_resonance_and_altered_states/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ud0d1w/sound_resonance_and_altered_states",
+        "host": "www.reddit.com",
+        "occurrence_count": 14,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-1dc0e1c629548271",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-1ee71dd0ee38896f",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-1fb58432686a5549",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9z1o5/qmm_and_the_making_of_questions",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9z1o5/qmm_and_the_making_of_questions/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9z1o5/qmm_and_the_making_of_questions",
+        "host": "www.reddit.com",
+        "occurrence_count": 14,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-29116fa0e6e599d5",
+        "original_urls": [
+          "https://www.gutenberg.org/policy/license"
+        ],
+        "normalized_url": "https://www.gutenberg.org/policy/license",
+        "host": "www.gutenberg.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/rights-audit-research-batch-0002.md"
+        ],
+        "selection_category": "RIGHTS_POLICY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-2fc6a917bd6aac23",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-4827037faaf93eb8",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uepvp1/storytelling_as_an_epistemic_tool",
+        "host": "www.reddit.com",
+        "occurrence_count": 17,
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.7.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-7c1763d99c9cd02e",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ue6u0b/humour_as_a_mode_of_reflection",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ue6u0b/humour_as_a_mode_of_reflection/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ue6u0b/humour_as_a_mode_of_reflection",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-807e6311e4bd1ff2",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1s1t8r8/the_self_as_a_temporary_interface",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1s1t8r8/the_self_as_a_temporary_interface/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1s1t8r8/the_self_as_a_temporary_interface",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-8cb1c0eaddf4e3e7",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into",
+        "host": "www.reddit.com",
+        "occurrence_count": 19,
+        "repository_paths": [
+          "references/community/n2n-index.csv",
+          "references/community/n2n-index.md",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/one-source-many-paths.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-9f9b7fc2c9a90eb9",
+        "original_urls": [
+          "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks"
+        ],
+        "normalized_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_ii_obooks",
+        "host": "www.lucistrust.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/canonical-adjudication-batch1-v0.7.1.json"
+        ],
+        "selection_category": "LOWER_PRIORITY_BOOK_ROUTE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-b3b8b69ec9b5e0cd",
+        "original_urls": [
+          "https://www.gutenberg.org/policy/permission"
+        ],
+        "normalized_url": "https://www.gutenberg.org/policy/permission",
+        "host": "www.gutenberg.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/rights-audit-research-batch-0002.md"
+        ],
+        "selection_category": "RIGHTS_POLICY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-b69117e950a3ad18",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+        "host": "www.reddit.com",
+        "occurrence_count": 21,
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.3.json",
+          "references/community/cross-source-qualification-batch-v0.1.5.json",
+          "references/community/cross-source-review-adjudication-v0.1.1.json",
+          "references/community/cross-source-review-batch-v0.1.1.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-b7675f6ec447f5aa",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1qll7jj/rneuronstonirvana_mapping_consciousness_discourse",
+        "host": "www.reddit.com",
+        "occurrence_count": 18,
+        "repository_paths": [
+          "references/community/n2n-index.csv",
+          "references/community/n2n-index.md",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-bd05d205da6c9d27",
+        "original_urls": [
+          "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks"
+        ],
+        "normalized_url": "https://www.lucistrust.org/online_books/discipleship_in_the_new_age_vol_i_obooks",
+        "host": "www.lucistrust.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/canonical-adjudication-batch1-v0.7.1.json"
+        ],
+        "selection_category": "LOWER_PRIORITY_BOOK_ROUTE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d26c2b08dd6cc749",
+        "original_urls": [
+          "https://www.gutenberg.org/help/copyright"
+        ],
+        "normalized_url": "https://www.gutenberg.org/help/copyright",
+        "host": "www.gutenberg.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/rights-audit-research-batch-0002.md"
+        ],
+        "selection_category": "RIGHTS_POLICY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d742a0b72f96a0df",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+        "host": "www.reddit.com",
+        "occurrence_count": 19,
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.3.json",
+          "references/community/cross-source-qualification-batch-v0.1.5.json",
+          "references/community/cross-source-review-adjudication-v0.1.1.json",
+          "references/community/cross-source-review-batch-v0.1.1.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-d7f2eb332413cf0a",
+        "original_urls": [
+          "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358"
+        ],
+        "normalized_url": "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358",
+        "host": "search.worldcat.org",
+        "occurrence_count": 1,
+        "repository_paths": [
+          "references/community/canonical-adjudication-batch1-v0.7.1.json"
+        ],
+        "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-da3613ab77788217",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l26ks1/project_akashic_library_framework_codex_nexus",
+        "host": "www.reddit.com",
+        "occurrence_count": 19,
+        "repository_paths": [
+          "references/community/akashic-library-codex-nexus.md",
+          "references/community/n2n-index.csv",
+          "references/community/n2n-index.md",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-dec80b4e109d2431",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t7jbxj/indigenous_knowledge_and_nondual_inquiry",
+        "host": "www.reddit.com",
+        "occurrence_count": 17,
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.7.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-f3e2c25004e2f557",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t3zw4o/a_personal_shift_in_the_sense_of_self",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t3zw4o/a_personal_shift_in_the_sense_of_self/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t3zw4o/a_personal_shift_in_the_sense_of_self",
+        "host": "www.reddit.com",
+        "occurrence_count": 16,
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      },
+      {
+        "source_id": "URL-f5c1688df3adb8cb",
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking/"
+        ],
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t9d2qg/psychedelic_integration_and_meaningmaking",
+        "host": "www.reddit.com",
+        "occurrence_count": 17,
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.7.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED"
+      }
+    ]
+  },
+  "assessment_fields": [
+    "availability",
+    "http_status_or_access_result",
+    "redirect_chain",
+    "final_observed_url",
+    "observed_title",
+    "title_drift",
+    "deleted_or_removed_post_state",
+    "retraction_or_withdrawal_status",
+    "retrieved_on",
+    "duplicate_or_equivalent_reference_candidate",
+    "missing_provenance",
+    "repair_candidate"
+  ],
+  "classification_rules": {
+    "rate_limit_is_broken_link": false,
+    "access_denial_is_broken_link": false,
+    "deleted_or_removed_post_means_claim_is_false": false,
+    "changed_or_unavailable_source_is_false": false,
+    "redirect_means_replace_original": false,
+    "retraction_changes_truth_automatically": false
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT_PENDING"
+}
