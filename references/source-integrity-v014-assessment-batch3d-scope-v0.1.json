@@ -1,0 +1,137 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3D",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-03",
+  "status": "SUBCOHORT_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "parent_scope": "references/source-integrity-v014-assessment-batch3-scope-v0.1.json",
+  "prior_subcohort": {
+    "scope": "references/source-integrity-v014-assessment-batch3c-scope-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch3c-repair-application-v0.1.json"
+  },
+  "cohort": {
+    "size": 5,
+    "focus": "The next five highest-use Reddit community references after Batch 3C.",
+    "selection_policy": [
+      "Exclude Reddit records assessed in Batches 3B and 3C.",
+      "Select five remaining Reddit records by descending occurrence count with source_id as tie-breaker.",
+      "Treat blocked or absent automated retrieval as indeterminate rather than broken or deleted.",
+      "Preserve original URL forms and repository occurrences."
+    ],
+    "category_counts": {
+      "HIGH_USE_REDDIT_COMMUNITY_REFERENCE": 5
+    },
+    "sources": [
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+        "occurrence_count": 16,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-156870e7d4242fc6"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+        "occurrence_count": 16,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-1757108bddd5aad1"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+        "occurrence_count": 16,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-1dc0e1c629548271"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+        "occurrence_count": 16,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-1ee71dd0ee38896f"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+        "occurrence_count": 16,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-2fc6a917bd6aac23"
+      }
+    ]
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT"
+}

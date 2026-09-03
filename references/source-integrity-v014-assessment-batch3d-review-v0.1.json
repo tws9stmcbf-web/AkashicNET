@@ -1,0 +1,302 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3D",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-03",
+  "status": "REVIEW_COMPLETE_REPAIRS_AWAITING_APPROVAL",
+  "target_release": "0.14.0-beta.1",
+  "scope_artifact": "references/source-integrity-v014-assessment-batch3d-scope-v0.1.json",
+  "assessed_source_count": 5,
+  "methodology": [
+    "Attempt each preserved original URL through live web retrieval.",
+    "Use exact public search when direct Reddit retrieval is blocked.",
+    "Consult governed repository provenance without converting historical metadata into a live observation.",
+    "Classify unresolved retrieval separately from broken or deleted status."
+  ],
+  "summary": {
+    "confirmed_available": 0,
+    "availability_undetermined": 5,
+    "confirmed_broken": 0,
+    "confirmed_deleted_or_vanished": 0,
+    "redirects_observed": 0,
+    "substantive_title_drift": 0,
+    "title_drift_undetermined": 5,
+    "retractions_or_withdrawals": 0,
+    "repair_candidates": 1
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "V014-B3D-R1",
+      "priority": "LOW",
+      "type": "ADD_REDDIT_RETRIEVAL_ATTEMPT_PROVENANCE",
+      "targets": [
+        "new Batch 3D Reddit retrieval-attempt companion record"
+      ],
+      "source_ids": [
+        "URL-156870e7d4242fc6",
+        "URL-1757108bddd5aad1",
+        "URL-1dc0e1c629548271",
+        "URL-1ee71dd0ee38896f",
+        "URL-2fc6a917bd6aac23"
+      ],
+      "proposed_change": "Record the 2026-09-03 blocked/indeterminate retrieval attempts without changing historical dry-run artifacts, recorded titles, source availability, claims, evidence labels, or original URLs.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    }
+  ],
+  "assessments": [
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+      "occurrence_count": 16,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-156870e7d4242fc6",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Technology and extended consciousness",
+        "recorded_slug": "technology_and_extended_consciousness",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)",
+        "evidence_status_preserved": "speculation"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+      "occurrence_count": 16,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-1757108bddd5aad1",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Karma and continuity across lives",
+        "recorded_slug": "karma_and_continuity_across_lives",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)",
+        "evidence_status_preserved": "speculation"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+      "occurrence_count": 16,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-1dc0e1c629548271",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "The world felt more alive",
+        "recorded_slug": "the_world_felt_more_alive",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)",
+        "evidence_status_preserved": "lived_experience"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+      "occurrence_count": 16,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1sfg635/consciousness_without_a_permanent_witness/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-1ee71dd0ee38896f",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Consciousness without a permanent witness",
+        "recorded_slug": "consciousness_without_a_permanent_witness",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)",
+        "evidence_status_preserved": "speculation"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+      "occurrence_count": 16,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1ufb2s0/community_care_and_mutual_witnessing/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-2fc6a917bd6aac23",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_title": "Community care and mutual witnessing",
+        "recorded_slug": "community_care_and_mutual_witnessing",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)",
+        "evidence_status_preserved": "community_observation"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    }
+  ],
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "AWAIT_EXPLICIT_REPAIR_APPROVAL"
+}
