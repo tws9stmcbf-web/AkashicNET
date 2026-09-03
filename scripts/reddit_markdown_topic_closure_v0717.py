@@ -29,9 +29,8 @@ DERIVATIVE_DOCUMENTS = [
     "references/community/reddit-topic-source-audit-method-v0.7.8.md",
 ]
 FIELD_PATTERN = re.compile(
-    r"(?i)^\s*(?:[-*]\s*)?(?:\|\s*)?"
-    r"(topic|topics|category|categories|flair|flairs|"
-    r"link_flair_text|link_flair_template_id)\s*[:|=]"
+    r"(?i)^(link_flair_template_id|link_flair_text|categories|category|"
+    r"topics|topic|flairs|flair)\\s*[:|=]"
 )
 
 
@@ -39,6 +38,7 @@ def explicit_fields(text):
     hits = []
     for line in text.splitlines():
         normalized = line.replace("**", "").replace("__", "").replace(chr(96), "")
+        normalized = normalized.lstrip(" \\t-*|#")
         match = FIELD_PATTERN.search(normalized)
         if match:
             hits.append(match.group(1).lower())
