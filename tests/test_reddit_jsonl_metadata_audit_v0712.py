@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+CHECKPOINT = ROOT / "references" / "community" / "reddit-jsonl-metadata-audit-v0.7.12.json"
 
 
 def test_reddit_jsonl_metadata_audit_v0712():
@@ -15,6 +16,10 @@ def test_reddit_jsonl_metadata_audit_v0712():
         text=True,
     )
     result = json.loads(completed.stdout)
+    with CHECKPOINT.open(encoding="utf-8") as handle:
+        checkpoint = json.load(handle)
+
+    assert result == checkpoint
     assert result["audited_public_top_level_topic_count"] == 73
     assert result["new_top_level_topics"] == []
     assert result["batch"]["records"] == 25
