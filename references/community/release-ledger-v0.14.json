@@ -42,6 +42,15 @@
       "state": "SEALED",
       "retargetable": false,
       "manifest": "references/community/automation-reproducibility-beta-release-manifest-v0.14.json"
+    },
+    {
+      "version": "0.15.0-beta.1",
+      "name": "Public Sync & Observability Beta",
+      "validated_release_commit": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
+      "seal_metadata_commit": "5ba6989aade68461c8f3953c4a82cc0e158b0730",
+      "state": "SEALED",
+      "retargetable": false,
+      "manifest": "references/community/public-sync-observability-beta-release-manifest-v0.15.json"
     }
   ],
   "invariants": {
