@@ -1,0 +1,92 @@
+{
+  "target_version": "0.15.0-beta.1",
+  "target_name": "Public Sync & Observability Beta",
+  "audit_state": "IN_DEVELOPMENT",
+  "baseline_release": "0.14.0-beta.1",
+  "baseline_validated_release_commit": "7b6cfd89de570c4b945d574dad570c37825645fe",
+  "readiness_policy": "fail_closed",
+  "gates": [
+    {
+      "id": 1,
+      "name": "live_site_release_alignment",
+      "status": "PARTIAL",
+      "reason": "Canonical v0.14 public status and website-sync handoff exist, but live-site completion remains open in issue #242 and has not been independently verified."
+    },
+    {
+      "id": 2,
+      "name": "public_surface_consistency",
+      "status": "BLOCKED",
+      "reason": "Homepage, data/status, release-history and support/status surfaces cannot yet be proven mutually consistent from repository state alone."
+    },
+    {
+      "id": 3,
+      "name": "privacy_safe_analytics_observability",
+      "status": "BLOCKED",
+      "reason": "No canonical repository record was found that defines privacy-safe analytics, duplicate-beacon prevention and telemetry boundaries for v0.15."
+    },
+    {
+      "id": 4,
+      "name": "uptime_https_redirects_indexing_manifests",
+      "status": "PARTIAL",
+      "reason": "Infrastructure concerns are tracked operationally, but v0.15 does not yet expose one deterministic repository gate covering uptime, HTTPS, apex/www redirects, indexing controls and public manifests."
+    },
+    {
+      "id": 5,
+      "name": "statistics_classification",
+      "status": "PARTIAL",
+      "reason": "Repository-derived counts already carry caveats, but measured analytics, repository-derived counts and estimates are not yet governed by one machine-readable public statistics contract."
+    },
+    {
+      "id": 6,
+      "name": "public_figures_provenance",
+      "status": "PASS",
+      "reason": "The sealed v0.14 public-status record labels the 18,490 external-URL denominator as repository-derived rather than independently verified and records release date/provenance anchors."
+    },
+    {
+      "id": 7,
+      "name": "source_link_integrity_fail_closed",
+      "status": "PASS",
+      "reason": "v0.14 source-coverage and source-integrity gates preserve original URLs and explicitly keep unavailable-or-changed != false."
+    },
+    {
+      "id": 8,
+      "name": "public_data_privacy_boundary",
+      "status": "PASS",
+      "reason": "The existing public-data boundary remains CI-enforced and private Drive identifiers, paths, timestamps and file-linked hashes remain excluded."
+    },
+    {
+      "id": 9,
+      "name": "repository_state_release_reconstruction",
+      "status": "PASS",
+      "reason": "v0.14 release readiness is reconstructable from repository state and CI through the sealed ledger and reconstruction validator."
+    },
+    {
+      "id": 10,
+      "name": "v015_end_to_end_readiness_workflow",
+      "status": "BLOCKED",
+      "reason": "No end-to-end v0.15 readiness workflow exists yet."
+    }
+  ],
+  "summary": {
+    "pass": 4,
+    "partial": 3,
+    "blocked": 3,
+    "ready": false
+  },
+  "next_smallest_batch": [
+    "define a machine-readable public statistics and telemetry contract",
+    "add deterministic public-status consistency checks using repository-addressable expectations",
+    "add vendor-neutral infrastructure check definitions for HTTPS redirects indexing and manifests",
+    "compose these with existing v0.14/privacy/source-integrity gates into one v0.15 readiness workflow"
+  ],
+  "invariants": {
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "private_drive_promotion": false,
+    "api_unverified_reddit_as_verified": false,
+    "cross_source_candidates_are_truth_claims": false,
+    "public_analytics_are_evidence": false,
+    "bq001_forced_resolution": false
+  }
+}
