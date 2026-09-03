@@ -1,0 +1,26 @@
+name: Validate Reddit source-registry topic audit v0.7.13
+
+on:
+  pull_request:
+    paths:
+      - "scripts/reddit_source_registry_topic_audit_v0713.py"
+      - "tests/test_reddit_source_registry_topic_audit_v0713.py"
+      - "references/community/reddit-source-registry.json"
+      - "references/community/reddit-source-registry-topic-audit-v0.7.13.json"
+      - "references/community/reddit-source-registry-topic-audit-method-v0.7.13.md"
+      - ".github/workflows/validate-reddit-source-registry-topic-audit-v0713.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - run: python scripts/reddit_source_registry_topic_audit_v0713.py
+      - run: python tests/test_reddit_source_registry_topic_audit_v0713.py
