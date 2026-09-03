@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "references/community/release-ledger-v0.14.json"
 V013_MANIFEST = ROOT / "references/community/public-knowledge-beta-release-manifest-v0.13.json"
 V014_MANIFEST = ROOT / "references/community/automation-reproducibility-beta-release-manifest-v0.14.json"
+V015_MANIFEST = ROOT / "references/community/public-sync-observability-beta-release-manifest-v0.15.json"
 
 EXPECTED = {
     "0.10.0-prealpha": "5dc9a6ccf872e57a98bb3b6d999b5e32f841f0c9",
@@ -13,9 +14,11 @@ EXPECTED = {
     "0.12.0-beta.1": "c986cf14d91edf2274cfd9351a7d330edcff620c",
     "0.13.0-beta.1": "fbb7b6f539947f528383ca13a01639a04471b594",
     "0.14.0-beta.1": "7b6cfd89de570c4b945d574dad570c37825645fe",
+    "0.15.0-beta.1": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
 }
 EXPECTED_V013_SEAL = "98e551d5fe257c6e7aa991812b0d56f0dc0bf0a7"
 EXPECTED_V014_SEAL = "24c7d3d214e31a8de1357edaf02fe191b12872f5"
+EXPECTED_V015_SEAL = "5ba6989aade68461c8f3953c4a82cc0e158b0730"
 
 
 def fail(msg: str) -> None:
@@ -35,7 +38,7 @@ def main() -> None:
     versions = [r.get("version") for r in releases]
     if len(versions) != len(set(versions)):
         fail("duplicate release versions")
-    if versions != ["0.10.0-prealpha", "0.11.0-beta.1", "0.12.0-beta.1", "0.13.0-beta.1", "0.14.0-beta.1"]:
+    if versions != ["0.10.0-prealpha", "0.11.0-beta.1", "0.12.0-beta.1", "0.13.0-beta.1", "0.14.0-beta.1", "0.15.0-beta.1"]:
         fail("release ledger order or append-only sequence changed")
 
     by_version = {r.get("version"): r for r in releases}
@@ -74,6 +77,25 @@ def main() -> None:
     if m14.get("state") != "SEALED":
         fail("v0.14 manifest is not SEALED")
 
+    v015 = by_version["0.15.0-beta.1"]
+    if v015.get("name") != "Public Sync & Observability Beta":
+        fail("v0.15 release name changed")
+    if v015.get("state") != "SEALED" or v015.get("seal_metadata_commit") != EXPECTED_V015_SEAL:
+        fail("v0.15 ledger seal metadata changed")
+    if v015.get("manifest") != "references/community/public-sync-observability-beta-release-manifest-v0.15.json":
+        fail("v0.15 manifest path changed")
+
+    m15 = json.loads(V015_MANIFEST.read_text())
+    promotion = m15.get("promotion", {})
+    if m15.get("state") != "SEALED":
+        fail("v0.15 manifest is not SEALED")
+    if promotion.get("validated_release_commit") != EXPECTED["0.15.0-beta.1"]:
+        fail("v0.15 manifest target differs from ledger")
+    if promotion.get("seal_metadata_commit") != EXPECTED_V015_SEAL:
+        fail("v0.15 manifest seal metadata differs from ledger")
+    if promotion.get("ready") is not True or promotion.get("sealed") is not True:
+        fail("v0.15 manifest promotion flags are not sealed")
+
     inv = data.get("invariants", {})
     for key in ["truth_inference", "rights_promotion", "scientific_evidence_promotion", "private_drive_promotion"]:
         if inv.get(key) is not False:
@@ -83,7 +105,7 @@ def main() -> None:
     if inv.get("later_seal_commits_do_not_retarget") is not True:
         fail("seal non-retargeting invariant not asserted")
 
-    print("PASS: release ledger preserves v0.10-v0.14 exact targets and sealed v0.14 metadata")
+    print("PASS: release ledger preserves v0.10-v0.15 exact targets and sealed v0.15 metadata")
 
 
 if __name__ == "__main__":

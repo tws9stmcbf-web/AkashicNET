@@ -1,7 +1,7 @@
 {
   "target_version": "0.15.0-beta.1",
   "target_name": "Public Sync & Observability Beta",
-  "state": "READY",
+  "state": "SEALED",
   "release_policy": "exact_commit_fail_closed",
   "baseline": {
     "version": "0.14.0-beta.1",
@@ -23,15 +23,16 @@
   ],
   "required_validators": [
     "scripts/validate_v015_readiness.py",
+    "scripts/validate_release_ledger_v014.py",
     "scripts/validate_public_observability_contract_v015.py",
     "scripts/validate_public_infrastructure_observability_v015.py",
     "scripts/validate_public_status_consistency_v015.py"
   ],
   "promotion": {
     "ready": true,
-    "sealed": false,
+    "sealed": true,
     "validated_release_commit": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
-    "seal_metadata_commit": null
+    "seal_metadata_commit": "5ba6989aade68461c8f3953c4a82cc0e158b0730"
   },
   "invariants": {
     "truth_inference": false,
