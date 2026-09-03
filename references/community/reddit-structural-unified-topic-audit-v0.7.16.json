@@ -1,0 +1,29 @@
+{
+  "version": "0.7.16",
+  "status": "REDDIT_STRUCTURAL_UNIFIED_TOPIC_AUDITED",
+  "audited_public_top_level_topic_count": 73,
+  "new_top_level_topics": [],
+  "promotion_state": "NO_COUNT_CHANGE",
+  "reconciliation": {
+    "reddit_source_rows": 9502,
+    "drive_source_rows": 2657,
+    "current_unified_index_records": 12159,
+    "previous_reddit_source_rows": 9401,
+    "previous_unified_index_records": 12058,
+    "net_change": 101,
+    "unique_reddit_post_ids_all_subreddits": 7457,
+    "unique_reddit_urls_all_subreddits": 7457,
+    "arithmetic_valid": true,
+    "explicit_topic_category_or_flair_fields": []
+  },
+  "decision": "The structural checkpoint and unified rebuild contain aggregate provenance and count metadata only; they contain no explicit topic, category, or Reddit flair evidence.",
+  "guardrails": {
+    "counts_are_topics": false,
+    "subreddit_is_topic": false,
+    "path_inference": false,
+    "note_text_inference": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
