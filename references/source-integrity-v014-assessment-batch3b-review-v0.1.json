@@ -1,0 +1,315 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3B",
+  "artifact_version": "0.1.0",
+  "retrieved_on": "2026-09-03",
+  "status": "LIVE_ASSESSMENT_COMPLETE_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "scope_artifact": "references/source-integrity-v014-assessment-batch3b-scope-v0.1.json",
+  "assessed_source_count": 5,
+  "methodology": [
+    "Attempt each preserved original URL through live web retrieval.",
+    "Use exact public search when direct Reddit retrieval is blocked.",
+    "Consult governed repository provenance without converting historical metadata into a live observation.",
+    "Classify unresolved retrieval separately from broken or deleted status."
+  ],
+  "summary": {
+    "confirmed_available": 2,
+    "availability_undetermined": 3,
+    "confirmed_broken": 0,
+    "confirmed_deleted_or_vanished": 0,
+    "redirects_observed": 1,
+    "substantive_title_drift": 0,
+    "title_drift_undetermined": 3,
+    "retractions_or_withdrawals": 0,
+    "repair_candidates": 2
+  },
+  "repair_candidates": [
+    {
+      "candidate_id": "V014-B3B-R1",
+      "priority": "MEDIUM",
+      "type": "ADD_WORLDCAT_RETRIEVAL_PROVENANCE",
+      "targets": [
+        "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      ],
+      "source_ids": [
+        "URL-d7f2eb332413cf0a"
+      ],
+      "proposed_change": "Add retrieval date, observed title, OCLC identifier, bibliographic fields and observed encoded-colon redirect target to the existing WorldCat provenance record while preserving the original URL and adjudication decision.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    },
+    {
+      "candidate_id": "V014-B3B-R2",
+      "priority": "LOW",
+      "type": "ADD_REDDIT_RETRIEVAL_ATTEMPT_PROVENANCE",
+      "targets": [
+        "new Batch 3B Reddit retrieval-attempt companion record"
+      ],
+      "source_ids": [
+        "URL-b69117e950a3ad18",
+        "URL-0dbfdb2fcb8f0952",
+        "URL-d742a0b72f96a0df"
+      ],
+      "proposed_change": "Record the 2026-09-03 blocked/indeterminate retrieval attempts without changing historical dry-run artifacts, recorded titles, source availability, claims, or evidence labels.",
+      "claim_or_evidence_change": false,
+      "rights_promotion": false,
+      "status": "AWAITING_EXPLICIT_APPROVAL"
+    }
+  ],
+  "assessments": [
+    {
+      "host": "search.worldcat.org",
+      "normalized_url": "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358",
+      "occurrence_count": 1,
+      "original_urls": [
+        "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358"
+      ],
+      "repository_paths": [
+        "references/community/canonical-adjudication-batch1-v0.7.1.json"
+      ],
+      "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-d7f2eb332413cf0a",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "AVAILABLE_WITH_JAVASCRIPT_NOTICE",
+      "http_status_or_access_result": "LIVE_HTML_RECORD_RETRIEVED",
+      "redirect_chain": [
+        "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358",
+        "https://search.worldcat.org/title/Frabato-the-magician-:-an-occult-novel/oclc/31223358"
+      ],
+      "final_observed_url": "https://search.worldcat.org/title/Frabato-the-magician-:-an-occult-novel/oclc/31223358",
+      "observed_title": "Frabato the magician : an occult novel | WorldCat.org",
+      "title_drift": "NONE_SUBSTANTIVE",
+      "deleted_or_removed_post_state": "NOT_APPLICABLE",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ENCODING_VARIANT_SAME_RECORD_NOT_DUPLICATE",
+      "missing_provenance": [
+        "RETRIEVAL_DATE_NOT_RECORDED_IN_ORIGIN",
+        "OBSERVED_TITLE_NOT_RECORDED_IN_ORIGIN",
+        "REDIRECT_TARGET_NOT_RECORDED_IN_ORIGIN"
+      ],
+      "bibliographic_observation": {
+        "author": "Franz Bardon",
+        "format": "Print Book",
+        "language": "English",
+        "year": 1982,
+        "publisher": "D. Rüggeberg, Wuppertal, West Germany",
+        "oclc": "31223358"
+      },
+      "retrieval_methods": [
+        "LIVE_WEB_RETRIEVAL",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into",
+      "occurrence_count": 19,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/"
+      ],
+      "repository_paths": [
+        "references/community/n2n-index.csv",
+        "references/community/n2n-index.md",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/one-source-many-paths.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-8cb1c0eaddf4e3e7",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "AVAILABLE",
+      "http_status_or_access_result": "PUBLIC_SEARCH_RESULT_RETRIEVED; DIRECT_AUTOMATED_OPEN_BLOCKED",
+      "redirect_chain": [],
+      "final_observed_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/",
+      "observed_title": "🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — \"Different names. Different maps. One mystery.\" [July 2026]",
+      "title_drift": "SHORT_REPOSITORY_LABEL_NOT_CONTRADICTORY",
+      "deleted_or_removed_post_state": "NOT_DELETED_AT_CHECK_TIME",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_WORK_MULTIPLE_REPOSITORY_CONTEXTS",
+      "missing_provenance": [],
+      "existing_provenance_resolution": {
+        "review": "references/source-integrity-batch12-review-v0.1.json",
+        "repair_application": "references/source-integrity-batch12-repair-application-v0.1.json",
+        "published_on": "2026-07-06"
+      },
+      "retrieval_methods": [
+        "PUBLIC_WEB_SEARCH",
+        "PRIOR_GOVERNED_REPOSITORY_ASSESSMENT",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+      "occurrence_count": 21,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps/"
+      ],
+      "repository_paths": [
+        "references/community/cross-source-qualification-batch-v0.1.3.json",
+        "references/community/cross-source-qualification-batch-v0.1.5.json",
+        "references/community/cross-source-review-adjudication-v0.1.1.json",
+        "references/community/cross-source-review-batch-v0.1.1.json",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-b69117e950a3ad18",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_slug": "wisdom_traditions_as_cognitive_maps",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+      "occurrence_count": 19,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding/"
+      ],
+      "repository_paths": [
+        "references/community/cross-source-qualification-batch-v0.1.3.json",
+        "references/community/cross-source-qualification-batch-v0.1.5.json",
+        "references/community/cross-source-review-adjudication-v0.1.1.json",
+        "references/community/cross-source-review-batch-v0.1.1.json",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-0dbfdb2fcb8f0952",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_slug": "hieratic_as_interpretive_scaffolding",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    },
+    {
+      "host": "www.reddit.com",
+      "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+      "occurrence_count": 19,
+      "original_urls": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred/"
+      ],
+      "repository_paths": [
+        "references/community/cross-source-qualification-batch-v0.1.3.json",
+        "references/community/cross-source-qualification-batch-v0.1.5.json",
+        "references/community/cross-source-review-adjudication-v0.1.1.json",
+        "references/community/cross-source-review-batch-v0.1.1.json",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/n2n-test-batch-25.csv",
+        "references/community/n2n-test-batch-25.md",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+      "selection_status": "ASSESSED",
+      "source_id": "URL-d742a0b72f96a0df",
+      "retrieved_on": "2026-09-03",
+      "original_urls_preserved": true,
+      "availability": "UNDETERMINED_AUTOMATED_RETRIEVAL_BLOCKED_OR_NOT_INDEXED",
+      "http_status_or_access_result": "DIRECT_AUTOMATED_OPEN_DISABLED; NO_EXACT_PUBLIC_SEARCH_RESULT_OBSERVED",
+      "redirect_chain": [],
+      "final_observed_url": null,
+      "observed_title": null,
+      "title_drift": "UNDETERMINED",
+      "deleted_or_removed_post_state": "UNDETERMINED",
+      "retraction_or_withdrawal_status": "NOT_APPLICABLE",
+      "duplicate_or_equivalent_reference_candidate": "ONE_NORMALIZED_URL_WITH_INTENTIONAL_MULTI_FILE_OCCURRENCES",
+      "missing_provenance": [
+        "CURRENT_LIVE_ACCESS_STATE_UNCONFIRMED",
+        "PUBLICATION_DATE_UNCONFIRMED",
+        "LIVE_TITLE_UNCONFIRMED"
+      ],
+      "repository_metadata_preserved": {
+        "recorded_slug": "visual_symbolism_and_the_sacred",
+        "historical_dry_run_path": "tools/n2n/dryrun/25_post_test.jsonl",
+        "historical_dry_run_access_state": "Public Reddit access blocked in this environment (HTTP 403)"
+      },
+      "retrieval_methods": [
+        "DIRECT_WEB_OPEN_ATTEMPT",
+        "EXACT_PUBLIC_WEB_SEARCH",
+        "REPOSITORY_ORIGIN_INSPECTION"
+      ]
+    }
+  ],
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "changed_or_unavailable_implies_false": false,
+    "blocked_retrieval_implies_broken": false,
+    "blocked_retrieval_implies_deleted": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "REPAIR_CANDIDATES_AWAITING_EXPLICIT_APPROVAL"
+}

@@ -1,0 +1,147 @@
+{
+  "audit_id": "AKASHICNET-V014-SOURCE-INTEGRITY-ASSESSMENT-BATCH3B",
+  "artifact_version": "0.1.0",
+  "selected_on": "2026-09-03",
+  "status": "SUBCOHORT_SELECTED_REVIEW_ONLY",
+  "target_release": "0.14.0-beta.1",
+  "parent_scope": "references/source-integrity-v014-assessment-batch3-scope-v0.1.json",
+  "prior_subcohort": {
+    "scope": "references/source-integrity-v014-assessment-batch3a-scope-v0.1.json",
+    "repair_application": "references/source-integrity-v014-assessment-batch3a-repair-application-v0.1.json"
+  },
+  "cohort": {
+    "size": 5,
+    "focus": "WorldCat bibliographic provenance and the four highest-use Reddit community references.",
+    "selection_policy": [
+      "Select the sole PUBLIC_BIBLIOGRAPHIC_RECORD in Batch 3.",
+      "Select four Reddit records by descending occurrence count with source_id as tie-breaker.",
+      "Treat blocked or absent automated retrieval as indeterminate rather than broken or deleted.",
+      "Preserve original URL forms and repository occurrences."
+    ],
+    "category_counts": {
+      "PUBLIC_BIBLIOGRAPHIC_RECORD": 1,
+      "HIGH_USE_REDDIT_COMMUNITY_REFERENCE": 4
+    },
+    "sources": [
+      {
+        "host": "search.worldcat.org",
+        "normalized_url": "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358",
+        "occurrence_count": 1,
+        "original_urls": [
+          "https://search.worldcat.org/title/Frabato-the-magician-%3A-an-occult-novel/oclc/31223358"
+        ],
+        "repository_paths": [
+          "references/community/canonical-adjudication-batch1-v0.7.1.json"
+        ],
+        "selection_category": "PUBLIC_BIBLIOGRAPHIC_RECORD",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-d7f2eb332413cf0a"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+        "occurrence_count": 21,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditions_as_cognitive_maps/"
+        ],
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.3.json",
+          "references/community/cross-source-qualification-batch-v0.1.5.json",
+          "references/community/cross-source-review-adjudication-v0.1.1.json",
+          "references/community/cross-source-review-batch-v0.1.1.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-b69117e950a3ad18"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+        "occurrence_count": 19,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1u6dq0s/hieratic_as_interpretive_scaffolding/"
+        ],
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.3.json",
+          "references/community/cross-source-qualification-batch-v0.1.5.json",
+          "references/community/cross-source-review-adjudication-v0.1.1.json",
+          "references/community/cross-source-review-batch-v0.1.1.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-0dbfdb2fcb8f0952"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into",
+        "occurrence_count": 19,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1uoneax/one_source_many_paths_beyond_the_ego_into/"
+        ],
+        "repository_paths": [
+          "references/community/n2n-index.csv",
+          "references/community/n2n-index.md",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/one-source-many-paths.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-8cb1c0eaddf4e3e7"
+      },
+      {
+        "host": "www.reddit.com",
+        "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+        "occurrence_count": 19,
+        "original_urls": [
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred",
+          "https://www.reddit.com/r/NeuronsToNirvana/comments/1udv3su/visual_symbolism_and_the_sacred/"
+        ],
+        "repository_paths": [
+          "references/community/cross-source-qualification-batch-v0.1.3.json",
+          "references/community/cross-source-qualification-batch-v0.1.5.json",
+          "references/community/cross-source-review-adjudication-v0.1.1.json",
+          "references/community/cross-source-review-batch-v0.1.1.json",
+          "references/community/n2n-pilot-index.csv",
+          "references/community/n2n-pilot-index.md",
+          "references/community/n2n-test-batch-25.csv",
+          "references/community/n2n-test-batch-25.md",
+          "references/community/reddit-semantic-index.csv",
+          "references/community/reddit-uri-index.csv"
+        ],
+        "selection_category": "HIGH_USE_REDDIT_COMMUNITY_REFERENCE",
+        "selection_status": "SELECTED_UNASSESSED",
+        "source_id": "URL-d742a0b72f96a0df"
+      }
+    ]
+  },
+  "guards": {
+    "preserve_original_urls": true,
+    "preserve_retrieval_metadata": true,
+    "silent_source_replacement": false,
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "website_promotion": false
+  },
+  "next_state": "LIVE_RETRIEVAL_ASSESSMENT"
+}
