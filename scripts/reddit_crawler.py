@@ -39,7 +39,12 @@ def canonical_post_url(permalink: str) -> str:
     return "https://www.reddit.com" + path
 
 
-def normalize_post(child: dict[str, Any], retrieved_at: str) -> dict[str, Any]:
+def normalize_post(
+    child: dict[str, Any],
+    retrieved_at: str,
+    *,
+    endpoint: str = "subreddit_listing",
+) -> dict[str, Any]:
     data = child.get("data", child)
     permalink = str(data.get("permalink") or "")
     return {
@@ -63,7 +68,7 @@ def normalize_post(child: dict[str, Any], retrieved_at: str) -> dict[str, Any]:
         "retrieved_at": retrieved_at,
         "provenance": {
             "api": "reddit-data-api",
-            "endpoint": "subreddit_listing",
+            "endpoint": endpoint,
             "metadata_only": True,
         },
     }
@@ -128,6 +133,32 @@ class OAuthClient:
             },
         )
         return self._request(request)
+
+
+def normalize_post_id(value: str) -> str:
+    post_id = value.strip().lower()
+    if post_id.startswith("t3_"):
+        post_id = post_id[3:]
+    if not post_id or any(ch not in "0123456789abcdefghijklmnopqrstuvwxyz" for ch in post_id):
+        raise ValueError("Reddit post ID must contain only base-36 characters")
+    return post_id
+
+
+def fetch_post(client: OAuthClient, post_id: str) -> dict[str, Any]:
+    normalized_id = normalize_post_id(post_id)
+    payload, _ = client.get_json(
+        "/api/info",
+        params={"id": f"t3_{normalized_id}", "raw_json": 1},
+    )
+    children = payload.get("data", {}).get("children", [])
+    retrieved_at = utc_now_iso()
+    for child in children:
+        data = child.get("data", child)
+        if str(data.get("id") or "").lower() == normalized_id:
+            return normalize_post(child, retrieved_at, endpoint="post_info")
+    raise RedditAPIError(
+        f"Reddit API did not return post {normalized_id}; availability remains indeterminate"
+    )
 
 
 def obey_rate_limit(headers: dict[str, str], minimum_delay: float) -> None:
@@ -256,6 +287,23 @@ def crawl_subreddit(
     return written, skipped
 
 
+def crawl_post(
+    client: OAuthClient,
+    post_id: str,
+    output_path: Path,
+) -> tuple[int, int]:
+    record = fetch_post(client, post_id)
+    reddit_id = str(record.get("reddit_id") or "")
+    seen = load_seen_ids(output_path)
+    if reddit_id and reddit_id in seen:
+        return 0, 1
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+    return 1, 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("subreddit", help="Subreddit name without r/")
@@ -263,6 +311,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--checkpoint", type=Path, default=Path("data/reddit/checkpoint.json"), help="Pagination checkpoint path")
     parser.add_argument("--listing", choices=("new", "hot", "top", "controversial"), default="new")
     parser.add_argument("--max-posts", type=int, default=None, help="Maximum posts to inspect this run")
+    parser.add_argument("--post-id", help="Fetch exactly one Reddit post ID through /api/info (accepts optional t3_ prefix)")
     parser.add_argument("--delay", type=float, default=1.1, help="Minimum seconds between listing requests")
     parser.add_argument("--user-agent", default=os.getenv("REDDIT_USER_AGENT", DEFAULT_USER_AGENT), help="Descriptive Reddit API User-Agent")
     return parser
@@ -282,22 +331,34 @@ def main(argv: Iterable[str] | None = None) -> int:
         print("--delay must be non-negative", file=sys.stderr)
         return 2
 
+    if args.post_id:
+        try:
+            normalize_post_id(args.post_id)
+        except ValueError as exc:
+            print(str(exc), file=sys.stderr)
+            return 2
+
     client = OAuthClient(client_id, client_secret, user_agent=args.user_agent)
     try:
-        written, skipped = crawl_subreddit(
-            client,
-            args.subreddit,
-            args.output,
-            args.checkpoint,
-            listing=args.listing,
-            max_posts=args.max_posts,
-            minimum_delay=args.delay,
-        )
-    except RedditAPIError as exc:
+        if args.post_id:
+            written, skipped = crawl_post(client, args.post_id, args.output)
+            operation = "exact-post fetch"
+        else:
+            written, skipped = crawl_subreddit(
+                client,
+                args.subreddit,
+                args.output,
+                args.checkpoint,
+                listing=args.listing,
+                max_posts=args.max_posts,
+                minimum_delay=args.delay,
+            )
+            operation = "crawl"
+    except (RedditAPIError, ValueError) as exc:
         print(str(exc), file=sys.stderr)
         return 1
 
-    print(f"Reddit crawl complete: wrote={written} duplicate_skips={skipped} output={args.output}")
+    print(f"Reddit {operation} complete: wrote={written} duplicate_skips={skipped} output={args.output}")
     return 0
 
 
