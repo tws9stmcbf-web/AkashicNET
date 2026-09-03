@@ -30,7 +30,7 @@
   "promotion": {
     "ready": true,
     "sealed": false,
-    "validated_release_commit": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
+    "validated_release_commit": "17eae854b3379de23cb15fc37d49ca6e1be12e54",
     "seal_metadata_commit": null
   },
   "invariants": {
