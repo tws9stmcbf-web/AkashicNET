@@ -57,7 +57,7 @@ export default function Home() {
       <section className="snapshot" aria-label="Public project snapshot">
         <div><strong>9,502</strong><span>current Reddit source rows preserved</span></div>
         <div><strong>7,457</strong><span>structurally unique Reddit post URLs</span></div>
-        <div><strong>12,058</strong><span>records in the previous unified-index snapshot</span></div>
+        <div><strong>12,159</strong><span>records in the validated unified-index checkpoint</span></div>
         <div><strong>2,459</strong><span>live Drive objects held inside the private boundary</span></div>
         <div><strong>127</strong><span>candidate canonical families reviewed</span></div>
         <div><strong>3</strong><span>SHA-256-verified duplicate pairs</span></div>
