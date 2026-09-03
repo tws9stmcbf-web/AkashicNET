@@ -1,0 +1,35 @@
+{
+  "version": "0.7.17",
+  "status": "REDDIT_MARKDOWN_TOPIC_COVERAGE_CLOSED",
+  "audited_public_top_level_topic_count": 73,
+  "new_top_level_topics": [],
+  "promotion_state": "NO_COUNT_CHANGE",
+  "coverage": {
+    "source_bearing_markdown_documents": 10,
+    "source_documents": [
+      "data/reddit/README.md",
+      "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md",
+      "references/community/reddit-full-public-delta-scan-2026-09-01.md",
+      "references/community/reddit-manual-delta-checkpoint-0001.md",
+      "references/community/reddit-manual-delta-checkpoint-0002.md",
+      "references/community/reddit-manual-delta-checkpoint-0003.md",
+      "references/community/reddit-manual-delta-checkpoint-0004.md",
+      "references/community/reddit-manual-delta-checkpoint-0005.md",
+      "references/community/reddit-manual-delta-checkpoint-0006.md",
+      "tools/reddit_bridge/README.md"
+    ],
+    "explicit_topic_category_or_flair_declarations": {},
+    "prior_census_method_documents_excluded_as_derivative": 10,
+    "markdown_explicit_topic_audit": "complete"
+  },
+  "decision": "The remaining source-bearing Reddit Markdown contains operational, provenance, and structural reporting only. Prior topic-audit methods are derivative governance records, not independent topic evidence.",
+  "guardrails": {
+    "heading_inference": false,
+    "prose_inference": false,
+    "url_inference": false,
+    "method_document_is_source_evidence": false,
+    "truth_inference": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false
+  }
+}
