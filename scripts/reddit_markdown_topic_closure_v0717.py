@@ -16,35 +16,57 @@ SOURCE_DOCUMENTS = [
     ],
     "tools/reddit_bridge/README.md",
 ]
+DERIVATIVE_DOCUMENTS = [
+    "references/community/reddit-canonical-delta-topic-audit-method-v0.7.14.md",
+    "references/community/reddit-corroboration-topic-audit-method-v0.7.15.md",
+    "references/community/reddit-csv-topic-closure-method-v0.7.11.md",
+    "references/community/reddit-jsonl-metadata-audit-method-v0.7.12.md",
+    "references/community/reddit-markdown-topic-closure-method-v0.7.17.md",
+    "references/community/reddit-source-registry-topic-audit-method-v0.7.13.md",
+    "references/community/reddit-structural-unified-topic-audit-method-v0.7.16.md",
+    "references/community/reddit-topic-canonical-review-method-v0.7.9.md",
+    "references/community/reddit-topic-promotion-method-v0.7.10.md",
+    "references/community/reddit-topic-source-audit-method-v0.7.8.md",
+]
 FIELD_PATTERN = re.compile(
-    r"(?im)^\s*(?:[-*]\s*)?(?:topic|topics|category|categories|flair|flairs|"
+    r"(?i)^\s*(?:[-*]\s*)?(?:\|\s*)?"
+    r"(topic|topics|category|categories|flair|flairs|"
     r"link_flair_text|link_flair_template_id)\s*[:|=]"
 )
 
 
-def main() -> int:
-    missing = [path for path in SOURCE_DOCUMENTS if not (ROOT / path).is_file()]
-    if missing:
-        raise SystemExit(f"missing Reddit Markdown sources: {missing}")
+def explicit_fields(text):
+    hits = []
+    for line in text.splitlines():
+        normalized = line.replace("**", "").replace("__", "").replace(chr(96), "")
+        match = FIELD_PATTERN.search(normalized)
+        if match:
+            hits.append(match.group(1).lower())
+    return hits
 
-    hits = {}
-    for path in SOURCE_DOCUMENTS:
-        text = (ROOT / path).read_text(encoding="utf-8")
-        matches = FIELD_PATTERN.findall(text)
-        if matches:
-            hits[path] = matches
-    if hits:
-        raise SystemExit(f"explicit topic-bearing Markdown fields found: {hits}")
+
+def main() -> int:
+    classified = SOURCE_DOCUMENTS + DERIVATIVE_DOCUMENTS
+    missing = [path for path in classified if not (ROOT / path).is_file()]
+    if missing:
+        raise SystemExit(f"missing classified Reddit Markdown: {missing}")
 
     all_reddit_markdown = sorted(
         str(path.relative_to(ROOT))
         for path in ROOT.rglob("*.md")
         if "reddit" in str(path.relative_to(ROOT)).lower()
     )
-    prior_census_methods = [
-        path for path in all_reddit_markdown
-        if path not in SOURCE_DOCUMENTS
-    ]
+    unknown = sorted(set(all_reddit_markdown) - set(classified))
+    if unknown:
+        raise SystemExit(f"unclassified Reddit Markdown: {unknown}")
+
+    hits = {}
+    for path in SOURCE_DOCUMENTS:
+        matches = explicit_fields((ROOT / path).read_text(encoding="utf-8"))
+        if matches:
+            hits[path] = matches
+    if hits:
+        raise SystemExit(f"explicit topic-bearing Markdown fields found: {hits}")
 
     result = {
         "version": "0.7.17",
@@ -56,7 +78,7 @@ def main() -> int:
             "source_bearing_markdown_documents": len(SOURCE_DOCUMENTS),
             "source_documents": SOURCE_DOCUMENTS,
             "explicit_topic_category_or_flair_declarations": hits,
-            "prior_census_method_documents_excluded_as_derivative": len(prior_census_methods),
+            "prior_census_method_documents_excluded_as_derivative": len(DERIVATIVE_DOCUMENTS),
             "markdown_explicit_topic_audit": "complete",
         },
         "decision": "The remaining source-bearing Reddit Markdown contains operational, provenance, and structural reporting only. Prior topic-audit methods are derivative governance records, not independent topic evidence.",
@@ -65,6 +87,8 @@ def main() -> int:
             "prose_inference": False,
             "url_inference": False,
             "method_document_is_source_evidence": False,
+            "unknown_reddit_markdown_fails_closed": True,
+            "markdown_formatting_normalized": True,
             "truth_inference": False,
             "rights_promotion": False,
             "scientific_evidence_promotion": False,
