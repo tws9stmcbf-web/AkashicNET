@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Require Reddit OAuth credentials
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[reddit-smoke]') }}
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
@@ -46,13 +46,13 @@ jobs:
       - name: Test Reddit crawler
         run: python -m unittest tests.test_reddit_crawler -v
       - name: Run crawler pilot
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[reddit-smoke]') }}
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: AkashicNET-reddit-crawler/0.1 (research metadata indexer)
           SUBREDDIT: ${{ github.event.inputs.subreddit || 'NeuronsToNirvana' }}
-          POST_ID: ${{ github.event.inputs.post_id }}
+          POST_ID: ${{ github.event.inputs.post_id || '1uepvp1' }}
           MAX_POSTS: ${{ github.event.inputs.max_posts || '1' }}
         run: |
           mkdir -p artifacts/reddit
@@ -68,7 +68,7 @@ jobs:
               --checkpoint artifacts/reddit/checkpoint.json
           fi
       - name: Upload pilot artifact
-        if: ${{ always() && github.event_name == 'workflow_dispatch' }}
+        if: ${{ always() && (github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[reddit-smoke]')) }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: reddit-pilot
