@@ -1,0 +1,31 @@
+name: Validate semantic-link adjudication
+
+on:
+  pull_request:
+    paths:
+      - "references/community/semantic-link-adjudication-v0.2.1.json"
+      - "references/community/semantic-link-adjudication-v0.2.1.md"
+      - "references/community/semantic-link-candidates-v0.2.0.json"
+      - "scripts/validate_semantic_link_adjudication_v021.py"
+      - "scripts/validate_cross_source_edge_provenance_v01.py"
+      - "tests/test_semantic_link_adjudication_v021.py"
+      - ".github/workflows/validate-semantic-link-adjudication.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-semantic-link-adjudication:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Validate adjudication artifact
+        run: python scripts/validate_semantic_link_adjudication_v021.py
+      - name: Run fail-closed tests
+        run: python -m unittest tests/test_semantic_link_adjudication_v021.py
+      - name: Compile validators
+        run: python -m py_compile scripts/validate_semantic_link_adjudication_v021.py scripts/validate_cross_source_edge_provenance_v01.py
