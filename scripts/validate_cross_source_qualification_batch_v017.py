@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fail-closed validator for audited cross-source qualification Batch 4 v0.1.7."""
-import json,re
+import csv,json,re
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -16,6 +16,17 @@ SOURCE_ARTIFACTS={
 }
 FORBIDDEN_KEYS={"drive_id","drive_file_id","drive_object_id","file_id","filename","file_name","path","parent_id","parent_path","parents","private_path","object_hash"}
 FORBIDDEN_VALUES=("/My Drive/","drive.google.com/open?id=")
+REDDIT_ARTIFACT="artifact:reddit-n2n-test-batch-25:2026-09-02"
+DRIVE_ARTIFACT="artifact:drive-knowledge-graph-seed:0.1"
+
+def source_records():
+ with (ROOT/"references/community/n2n-test-batch-25.csv").open(newline="") as f:
+  reddit={row["reddit_url"] for row in csv.DictReader(f)}
+ drive_text=(ROOT/"references/community/knowledge-graph-seed-v0.1.md").read_text()
+ drive=set(re.findall(r"^\| ([A-Z0-9-]+) \|",drive_text,re.MULTILINE))
+ return reddit,drive
+
+REDDIT_RECORDS,DRIVE_RECORDS=source_records()
 
 def walk(v):
  if isinstance(v,dict):
@@ -63,6 +74,16 @@ def validate(d):
    else:
     source=declared.get(p["artifact_id"])
     if source is None or p["independence_key"]!=source.get("independence_key"): e.append("provenance")
+  source_endpoint=c.get("source_endpoint",{})
+  target_endpoint=c.get("target_endpoint",{})
+  source_provenance=source_endpoint.get("provenance",{})
+  target_provenance=target_endpoint.get("provenance",{})
+  if source_endpoint.get("endpoint_type")!="SOURCE_RECORD" or source_provenance.get("artifact_id")!=REDDIT_ARTIFACT or source_provenance.get("record_id") not in REDDIT_RECORDS:
+   e.append("source record")
+  if target_endpoint.get("endpoint_type")!="PUBLICATION" or target_provenance.get("artifact_id")!=DRIVE_ARTIFACT or target_provenance.get("record_id") not in DRIVE_RECORDS:
+   e.append("target record")
+  if source_provenance.get("independence_key")==target_provenance.get("independence_key"):
+   e.append("cross-source independence")
   if c.get("anchor_evidence")!=[]: e.append("unvalidated anchor")
   if not c.get("observed_nonqualifying_signals"): e.append("signal explanation")
   if c.get("decision")!="REJECTED_QUALIFICATION": e.append("decision")
@@ -71,7 +92,7 @@ def validate(d):
  if d.get("summary")!={"screened":len(allc),"qualified":len(q),"rejected":len(r),"accepted_edges":0}: e.append("summary")
  if d.get("rejection_is_not_negative_evidence") is not True: e.append("disclaimer")
  for k,v in walk(d):
-  if str(k).lower() in FORBIDDEN_KEYS or isinstance(v,str) and any(marker in v for marker in FORBIDDEN_VALUES): e.append("private metadata")
+  if str(k).lower() in FORBIDDEN_KEYS or isinstance(v,str) and (any(marker in v for marker in FORBIDDEN_VALUES) or re.search(r"\bAKM-[A-Za-z0-9-]+\b",v)): e.append("private metadata")
  return sorted(set(e))
 
 def main():
