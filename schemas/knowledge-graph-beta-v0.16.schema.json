@@ -55,9 +55,38 @@
     },
     "boundaries": {
       "type": "object",
-      "minProperties": 7,
-      "additionalProperties": {
-        "const": false
+      "additionalProperties": false,
+      "required": [
+        "automated_truth_inference_allowed",
+        "automated_acceptance_allowed",
+        "scientific_evidence_promotion_allowed",
+        "rights_promotion_allowed",
+        "canonical_identity_promotion_allowed",
+        "circular_confidence_allowed",
+        "private_drive_metadata_allowed"
+      ],
+      "properties": {
+        "automated_truth_inference_allowed": {
+          "const": false
+        },
+        "automated_acceptance_allowed": {
+          "const": false
+        },
+        "scientific_evidence_promotion_allowed": {
+          "const": false
+        },
+        "rights_promotion_allowed": {
+          "const": false
+        },
+        "canonical_identity_promotion_allowed": {
+          "const": false
+        },
+        "circular_confidence_allowed": {
+          "const": false
+        },
+        "private_drive_metadata_allowed": {
+          "const": false
+        }
       }
     },
     "source_artifacts": {
@@ -230,7 +259,8 @@
         "provenance": {
           "$ref": "#/$defs/provenance"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "edge": {
       "type": "object",
@@ -312,7 +342,67 @@
         "provenance": {
           "$ref": "#/$defs/provenance"
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "assertion_class": {
+                "const": "INFERRED_CANDIDATE"
+              }
+            },
+            "required": [
+              "assertion_class"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review_state": {
+                "const": "REVIEW_REQUIRED"
+              },
+              "edge_state": {
+                "enum": [
+                  "REVIEW_ONLY",
+                  "REVIEW_ONLY_CONTRADICTION"
+                ]
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "HUMAN_REVIEW_CANDIDATE"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "assertion_class": {
+                "const": "DIRECT_SOURCE_METADATA"
+              }
+            },
+            "required": [
+              "assertion_class"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review_state": {
+                "const": "SOURCE_ASSERTED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "DIRECT_RECORD"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
