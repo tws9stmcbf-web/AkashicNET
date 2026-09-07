@@ -19,6 +19,14 @@ class TestBatch4(unittest.TestCase):
  def test_blank_provenance(self): self.m(lambda d:d["rejected_candidates"][0]["target_endpoint"]["provenance"].__setitem__("record_id",""))
  def test_unknown_artifact(self): self.m(lambda d:d["rejected_candidates"][0]["target_endpoint"]["provenance"].__setitem__("artifact_id","artifact:unknown"))
  def test_independence_mismatch(self): self.m(lambda d:d["rejected_candidates"][0]["target_endpoint"]["provenance"].__setitem__("independence_key","source:other"))
+ def test_unknown_source_record(self): self.m(lambda d:d["rejected_candidates"][0]["source_endpoint"]["provenance"].__setitem__("record_id","https://www.reddit.com/r/NeuronsToNirvana/comments/fabricated/"))
+ def test_unknown_target_record(self): self.m(lambda d:d["rejected_candidates"][0]["target_endpoint"]["provenance"].__setitem__("record_id","FABRICATED-001"))
+ def test_same_artifact_pair(self):
+  def mutate(d):
+   target=d["rejected_candidates"][0]["target_endpoint"]
+   target["provenance"]["artifact_id"]=d["source_artifacts"][0]["artifact_id"]
+   target["provenance"]["independence_key"]=d["source_artifacts"][0]["independence_key"]
+  self.m(mutate)
  def test_empty_sources(self): self.m(lambda d:d.__setitem__("source_artifacts",[]))
  def test_source_hash(self): self.m(lambda d:d["source_artifacts"][0].__setitem__("sha256","0"*64))
  def test_duplicate_source(self): self.m(lambda d:d["source_artifacts"].append(copy.deepcopy(d["source_artifacts"][0])))
@@ -32,4 +40,5 @@ class TestBatch4(unittest.TestCase):
   for key in ("drive_id","drive_file_id","drive_object_id","file_id","filename","file_name","path","parent_id","parent_path","parents","private_path","object_hash"):
    with self.subTest(key=key): self.m(lambda d,k=key:d["rejected_candidates"][0].__setitem__(k,"secret"))
  def test_private_value(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("note","/My Drive/private.pdf"))
+ def test_private_manifestation_id(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("note","AKM-001234"))
 if __name__=="__main__": unittest.main()
