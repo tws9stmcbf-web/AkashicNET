@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/ci-provenance-envelope-v0.1.json",
+  "title": "AkashicNET CI Provenance Envelope v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "scope", "generated_at", "run", "workflow", "artifacts", "governance"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "record_type": {"const": "CI_PROVENANCE_ENVELOPE"},
+    "scope": {"const": "v0.15-readiness"},
+    "generated_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "attempt", "event", "repository", "commit_sha", "conclusion", "url"],
+      "properties": {
+        "id": {"type": "integer", "minimum": 1},
+        "attempt": {"type": "integer", "minimum": 1},
+        "event": {"type": "string", "minLength": 1},
+        "repository": {"type": "string", "minLength": 1},
+        "commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "conclusion": {"enum": ["success", "failure", "cancelled", "skipped"]},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://github\\.com/"}
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "file_path", "ref", "sha"],
+      "properties": {
+        "repository": {"type": "string", "minLength": 1},
+        "file_path": {"const": ".github/workflows/validate-v015-readiness.yml"},
+        "ref": {"type": "string", "minLength": 1},
+        "sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs", "output"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "path", "sha256"],
+            "properties": {
+              "role": {"enum": ["release_manifest", "readiness_validator"]},
+              "path": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "payload_sha256"],
+          "properties": {
+            "path": {"const": "artifacts/ci-provenance/v015-readiness-envelope.json"},
+            "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["non_blocking", "evidence_only", "automatic_promotion", "truth_inference", "rights_promotion", "scientific_evidence_promotion", "private_drive_promotion"],
+      "properties": {
+        "non_blocking": {"const": true},
+        "evidence_only": {"const": true},
+        "automatic_promotion": {"const": false},
+        "truth_inference": {"const": false},
+        "rights_promotion": {"const": false},
+        "scientific_evidence_promotion": {"const": false},
+        "private_drive_promotion": {"const": false}
+      }
+    }
+  }
+}

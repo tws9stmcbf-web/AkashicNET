@@ -18,4 +18,25 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate v0.15 repository-side readiness
+        id: readiness_validation
         run: python scripts/validate_v015_readiness.py
+      - name: Generate non-blocking CI provenance envelope
+        if: ${{ always() }}
+        continue-on-error: true
+        env:
+          AKASHIC_READINESS_CONCLUSION: ${{ steps.readiness_validation.outcome }}
+          AKASHIC_WORKFLOW_REPOSITORY: ${{ job.workflow_repository }}
+          AKASHIC_WORKFLOW_FILE_PATH: ${{ job.workflow_file_path }}
+          AKASHIC_WORKFLOW_REF: ${{ job.workflow_ref }}
+          AKASHIC_WORKFLOW_SHA: ${{ job.workflow_sha }}
+        run: |
+          python scripts/generate_ci_provenance_envelope_v015.py
+          python scripts/validate_ci_provenance_envelope_v015.py artifacts/ci-provenance/v015-readiness-envelope.json
+      - name: Upload non-blocking CI provenance envelope
+        if: ${{ always() && hashFiles('artifacts/ci-provenance/v015-readiness-envelope.json') != '' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v015-readiness-ci-provenance
+          path: artifacts/ci-provenance/v015-readiness-envelope.json
+          retention-days: 90
