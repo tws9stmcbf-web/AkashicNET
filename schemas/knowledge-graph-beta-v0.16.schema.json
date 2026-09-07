@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akashicnet://schemas/knowledge-graph-beta/v0.16.0-beta.1",
+  "title": "AkashicNET Knowledge Graph Beta review fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "mode",
+    "issue",
+    "baseline_locks",
+    "question_id",
+    "question_status",
+    "boundaries",
+    "source_artifacts",
+    "nodes",
+    "edges",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.16.0-beta.1"
+    },
+    "mode": {
+      "const": "REVIEW_FIXTURE_ONLY"
+    },
+    "issue": {
+      "const": 277
+    },
+    "baseline_locks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v0.14",
+        "v0.15_release",
+        "v0.15_seal"
+      ],
+      "properties": {
+        "v0.14": {
+          "$ref": "#/$defs/sha"
+        },
+        "v0.15_release": {
+          "$ref": "#/$defs/sha"
+        },
+        "v0.15_seal": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    },
+    "question_id": {
+      "const": "BQ001"
+    },
+    "question_status": {
+      "const": "UNRESOLVED"
+    },
+    "boundaries": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sourceArtifact"
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node_count",
+        "edge_count",
+        "accepted_edge_count",
+        "inferred_candidate_count",
+        "unresolved_question_count"
+      ],
+      "properties": {
+        "node_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "edge_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "accepted_edge_count": {
+          "const": 0
+        },
+        "inferred_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_question_count": {
+          "const": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "repository_path",
+        "sha256",
+        "record_locator",
+        "independence_key",
+        "derivation_method",
+        "public_safe"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "record_locator": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "independence_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "derivation_method": {
+          "enum": [
+            "DIRECT_RECORD",
+            "HUMAN_REVIEW_CANDIDATE"
+          ]
+        },
+        "public_safe": {
+          "const": true
+        }
+      }
+    },
+    "sourceArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "repository_path",
+        "sha256",
+        "independence_key",
+        "public_safe"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "independence_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_safe": {
+          "const": true
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "node_type",
+        "label",
+        "provenance"
+      ],
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "pattern": "^node:"
+        },
+        "node_type": {
+          "enum": [
+            "QUESTION",
+            "MODEL",
+            "SOURCE",
+            "CLAIM",
+            "NOTICE"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_status": {
+          "enum": [
+            "UNRESOLVED"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_id",
+        "source_node_id",
+        "target_node_id",
+        "relationship_type",
+        "assertion_class",
+        "review_state",
+        "edge_state",
+        "accepted_edge",
+        "evidence_independence_keys",
+        "parent_edge_ids",
+        "provenance"
+      ],
+      "properties": {
+        "edge_id": {
+          "type": "string",
+          "pattern": "^edge:"
+        },
+        "source_node_id": {
+          "type": "string",
+          "pattern": "^node:"
+        },
+        "target_node_id": {
+          "type": "string",
+          "pattern": "^node:"
+        },
+        "relationship_type": {
+          "enum": [
+            "HAS_MODEL",
+            "SUPPORTS_MODEL_CANDIDATE",
+            "COMPETES_WITH_CANDIDATE",
+            "CORRECTS"
+          ]
+        },
+        "assertion_class": {
+          "enum": [
+            "DIRECT_SOURCE_METADATA",
+            "INFERRED_CANDIDATE"
+          ]
+        },
+        "review_state": {
+          "enum": [
+            "SOURCE_ASSERTED",
+            "REVIEW_REQUIRED"
+          ]
+        },
+        "edge_state": {
+          "enum": [
+            "ACTIVE",
+            "REVIEW_ONLY",
+            "REVIEW_ONLY_CONTRADICTION",
+            "CORRECTED_NOT_RETRACTED"
+          ]
+        },
+        "accepted_edge": {
+          "const": false
+        },
+        "evidence_independence_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "parent_edge_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^edge:"
+          }
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      }
+    }
+  }
+}
