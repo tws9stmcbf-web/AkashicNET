@@ -81,6 +81,42 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
             )
         self.assertEqual(actual, expected)
 
+    def test_schema_relationships_bind_endpoint_namespaces(self):
+        expected = {
+            "HAS_MODEL": ("^node:question:", "^node:model:"),
+            "SUPPORTS_MODEL_CANDIDATE": ("^node:claim:", "^node:model:"),
+            "COMPETES_WITH_CANDIDATE": ("^node:model:", "^node:model:"),
+            "CORRECTS": ("^node:notice:", "^node:source:"),
+        }
+        actual = {}
+        for condition in SCHEMA["$defs"]["edge"]["allOf"]:
+            relationship = condition["if"]["properties"].get("relationship_type", {}).get("const")
+            if relationship not in expected:
+                continue
+            properties = condition["then"]["properties"]
+            actual[relationship] = (
+                properties["source_node_id"]["pattern"],
+                properties["target_node_id"]["pattern"],
+            )
+        self.assertEqual(actual, expected)
+
+    def test_schema_nodes_bind_type_to_id_namespace(self):
+        variants = SCHEMA["$defs"]["node"]["allOf"][0]["oneOf"]
+        actual = {
+            variant["properties"]["node_type"]["const"]: variant["properties"]["node_id"]["pattern"]
+            for variant in variants
+        }
+        self.assertEqual(
+            actual,
+            {
+                "QUESTION": "^node:question:",
+                "MODEL": "^node:model:",
+                "SOURCE": "^node:source:",
+                "CLAIM": "^node:claim:",
+                "NOTICE": "^node:notice:",
+            },
+        )
+
     def test_question_remains_unresolved(self):
         self.mutate(lambda d: d.__setitem__("question_status", "RESOLVED"), "question status")
 
@@ -165,6 +201,12 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
 
     def test_missing_record_locator(self):
         self.mutate(lambda d: d["nodes"][0]["provenance"].__setitem__("record_locator", "/missing"), "record locator")
+
+    def test_negative_list_index_is_rejected(self):
+        self.mutate(
+            lambda d: d["nodes"][1]["provenance"].__setitem__("record_locator", "/models/-1/model_id"),
+            "record locator",
+        )
 
     def test_existing_locator_must_identify_the_node_record(self):
         self.mutate(lambda d: d["nodes"][1]["provenance"].__setitem__("record_locator", "/models/1/model_id"), "record identity")
