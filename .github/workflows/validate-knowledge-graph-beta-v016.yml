@@ -1,0 +1,56 @@
+name: Validate v0.16 Knowledge Graph Beta slice 1
+
+on:
+  pull_request:
+    paths:
+      - "references/big-questions/BQ001/spec-v0.1.json"
+      - "references/big-questions/BQ001/evidence-batch2-v0.1.json"
+      - "references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json"
+      - "schemas/knowledge-graph-beta-v0.16.schema.json"
+      - "scripts/build_knowledge_graph_beta_fixture_v016.py"
+      - "scripts/validate_knowledge_graph_beta_v016.py"
+      - "tests/test_knowledge_graph_beta_v016.py"
+      - ".github/workflows/validate-knowledge-graph-beta-v016.yml"
+  push:
+    branches: [main]
+    paths:
+      - "references/big-questions/BQ001/spec-v0.1.json"
+      - "references/big-questions/BQ001/evidence-batch2-v0.1.json"
+      - "references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json"
+      - "schemas/knowledge-graph-beta-v0.16.schema.json"
+      - "scripts/build_knowledge_graph_beta_fixture_v016.py"
+      - "scripts/validate_knowledge_graph_beta_v016.py"
+      - "tests/test_knowledge_graph_beta_v016.py"
+      - ".github/workflows/validate-knowledge-graph-beta-v016.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Reproduce committed review fixture
+        run: |
+          python scripts/build_knowledge_graph_beta_fixture_v016.py
+          git diff --exit-code -- references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json
+      - name: Validate graph and provenance boundaries
+        run: python scripts/validate_knowledge_graph_beta_v016.py
+      - name: Run fail-closed mutation tests
+        run: python -m unittest -v tests/test_knowledge_graph_beta_v016.py
+      - name: Compile governed code
+        run: |
+          python -m py_compile \
+            scripts/build_knowledge_graph_beta_fixture_v016.py \
+            scripts/validate_knowledge_graph_beta_v016.py \
+            tests/test_knowledge_graph_beta_v016.py
+      - name: Parse governed JSON
+        run: |
+          python -m json.tool schemas/knowledge-graph-beta-v0.16.schema.json >/dev/null
+          python -m json.tool references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json >/dev/null
