@@ -94,6 +94,8 @@ def resolve_pointer(document, pointer):
     for raw_part in pointer[1:].split("/"):
         part = raw_part.replace("~1", "/").replace("~0", "~")
         if isinstance(current, list):
+            if not re.fullmatch(r"(?:0|[1-9][0-9]*)", part):
+                raise ValueError("invalid array index in record locator")
             current = current[int(part)]
         elif isinstance(current, dict):
             current = current[part]
