@@ -54,6 +54,7 @@ EXPECTED_INPUTS = {
     "readiness_validator": "scripts/validate_v015_readiness.py",
 }
 EXPECTED_OUTPUT = "artifacts/ci-provenance/v015-readiness-envelope.json"
+EXPECTED_WORKFLOW_FILE_PATH = ".github/workflows/validate-v015-readiness.yml"
 
 
 def canonical_payload_sha256(data: dict) -> str:
@@ -117,8 +118,8 @@ def validate(data: object) -> list[str]:
     workflow = data["workflow"]
     _exact_keys(workflow, WORKFLOW_KEYS, "workflow", errors)
     if isinstance(workflow, dict) and set(workflow) == WORKFLOW_KEYS:
-        if not _safe_repo_path(workflow["file_path"]):
-            errors.append("workflow.file_path must be repository-relative")
+        if workflow["file_path"] != EXPECTED_WORKFLOW_FILE_PATH:
+            errors.append(f"workflow.file_path must be {EXPECTED_WORKFLOW_FILE_PATH}")
         if not SHA1_RE.fullmatch(str(workflow["sha"])):
             errors.append("workflow.sha must be a full commit SHA")
 
@@ -138,6 +139,14 @@ def validate(data: object) -> list[str]:
                         errors.append("input artifact path must be repository-relative")
                     if not SHA256_RE.fullmatch(str(item["sha256"])):
                         errors.append("input artifact sha256 is invalid")
+                    elif EXPECTED_INPUTS.get(item["role"]) == item["path"]:
+                        try:
+                            actual_sha256 = hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest()
+                        except OSError as exc:
+                            errors.append(f"cannot hash governed input {item['path']}: {exc}")
+                        else:
+                            if item["sha256"] != actual_sha256:
+                                errors.append(f"governed input digest mismatch: {item['path']}")
             if observed != EXPECTED_INPUTS:
                 errors.append("governed input roles or paths changed")
         output = artifacts["output"]
