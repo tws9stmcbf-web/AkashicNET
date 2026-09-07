@@ -30,6 +30,7 @@ jobs:
           AKASHIC_WORKFLOW_REF: ${{ job.workflow_ref }}
           AKASHIC_WORKFLOW_SHA: ${{ job.workflow_sha }}
         run: |
+          python -m unittest tests/test_ci_provenance_envelope_v015.py
           python scripts/generate_ci_provenance_envelope_v015.py
           python scripts/validate_ci_provenance_envelope_v015.py artifacts/ci-provenance/v015-readiness-envelope.json
       - name: Upload non-blocking CI provenance envelope
