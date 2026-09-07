@@ -9,6 +9,7 @@ CHECKS = [
     ("release ledger through v0.15", ["python", "scripts/validate_release_ledger_v014.py"]),
     ("v0.14 release reconstruction", ["python", "scripts/validate_release_readiness_reconstruction_v014.py"]),
     ("v0.15 observability contract", ["python", "scripts/validate_public_observability_contract_v015.py"]),
+    ("v0.15 Sites analytics provenance", ["python", "scripts/validate_sites_analytics_provenance_v015.py"]),
     ("v0.15 infrastructure contract", ["python", "scripts/validate_public_infrastructure_observability_v015.py"]),
     ("v0.15 public status consistency", ["python", "scripts/validate_public_status_consistency_v015.py"]),
     ("public data boundary", ["python", "scripts/check_public_data_boundary.py"]),
