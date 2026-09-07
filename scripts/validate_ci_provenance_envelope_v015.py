@@ -11,6 +11,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+
 SCHEMA_VERSION = "0.1"
 RECORD_TYPE = "CI_PROVENANCE_ENVELOPE"
 SHA1_RE = re.compile(r"[0-9a-f]{40}")
