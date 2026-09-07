@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate governed, opt-in analytics provenance without claiming deployment."""
+"""Validate governed, opt-in analytics provenance for the dormant deployment."""
 
 import json
 import re
@@ -83,8 +83,14 @@ if integration.get("single_beacon_guard") is not True:
     fail("single-beacon ownership guard is required")
 if integration.get("fail_closed") is not True:
     fail("analytics integration must fail closed")
-if deployment.get("source_commit_deployed") is not False:
-    fail("provenance must not claim an unperformed deployment")
+if deployment.get("source_commit_deployed") is not True:
+    fail("provenance must record deployment of the reviewed Sites source")
+if deployment.get("latest_observed_version") != 125:
+    fail("analytics provenance must pin deployed Sites version 125")
+if deployment.get("deployment_status") != "SUCCEEDED":
+    fail("analytics provenance must record a successful deployment")
+if deployment.get("environment_revision") != 0:
+    fail("deployed environment revision must remain the verified empty revision")
 if deployment.get("live_beacon_state") != "UNVERIFIED":
     fail("unverified live-beacon state must not be promoted to a claim")
 if governance.get("classification") != "aggregate operational telemetry only":
@@ -163,5 +169,5 @@ if violations:
 
 print(
     "PASS: canonical Sites analytics provenance is fail-closed, "
-    "unpromoted and free of tracked token values"
+    "deployed dormant and free of tracked token values"
 )
