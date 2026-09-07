@@ -76,6 +76,9 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
     def test_invalid_node_type(self):
         self.mutate(lambda d: d["nodes"][0].__setitem__("node_type", "TRUTH"), "nodes")
 
+    def test_node_id_cannot_use_edge_namespace(self):
+        self.mutate(lambda d: d["nodes"][0].__setitem__("node_id", "edge:question:BQ001"), "nodes")
+
     def test_missing_endpoint(self):
         self.mutate(lambda d: d["edges"][0].__setitem__("target_node_id", "node:missing"), "edge endpoints")
 
@@ -84,6 +87,9 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
 
     def test_unknown_relationship(self):
         self.mutate(lambda d: d["edges"][0].__setitem__("relationship_type", "PROVES"), "edges")
+
+    def test_edge_id_cannot_use_node_namespace(self):
+        self.mutate(lambda d: d["edges"][0].__setitem__("edge_id", "node:not-an-edge"), "edges")
 
     def test_no_edge_is_accepted(self):
         self.mutate(lambda d: d["edges"][0].__setitem__("accepted_edge", True), "accepted edges prohibited")
