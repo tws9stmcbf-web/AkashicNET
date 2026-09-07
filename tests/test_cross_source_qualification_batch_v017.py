@@ -53,5 +53,5 @@ class TestBatch4(unittest.TestCase):
  def test_private_manifestation_embedded(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("note","copy_AKM-001234.pdf"))
  def test_private_manifestation_key(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("AKM-001234","private"))
  def test_private_manifestation_in_array(self): self.m(lambda d:d["rejected_candidates"][0]["observed_nonqualifying_signals"].append("copy_AKM-001234.pdf"))
- def test_private_path_in_array(self): self.m(lambda d:d["rejected_candidates"][0]["observed_nonqualifying_signals"].append("/My Drive/private.pdf"))
+ def test_private_path_in_array(self): self.m(lambda d:d["rejected_candidates"][0]["observed_nonqualifying_signals"].append("/My Drive/private.pdf"))\n def test_private_path_key(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("/My Drive/private.pdf","private"))\n def test_private_link_key(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("drive.google.com/open?id=private","private"))
 if __name__=="__main__": unittest.main()
