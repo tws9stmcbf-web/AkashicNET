@@ -9,6 +9,9 @@ from scripts.build_knowledge_graph_beta_fixture_v016 import OUTPUT, SOURCE_SPECS
 from scripts.validate_knowledge_graph_beta_v016 import validate
 
 DATA = json.loads(OUTPUT.read_text())
+SCHEMA = json.loads(
+    (Path(__file__).resolve().parents[1] / "schemas/knowledge-graph-beta-v0.16.schema.json").read_text()
+)
 
 
 class TestKnowledgeGraphBetaV016(unittest.TestCase):
@@ -46,6 +49,37 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
 
     def test_sealed_baseline_lock(self):
         self.mutate(lambda d: d["baseline_locks"].__setitem__("v0.14", "0" * 40), "sealed baseline locks")
+
+    def test_schema_pins_sealed_baselines(self):
+        properties = SCHEMA["properties"]["baseline_locks"]["properties"]
+        self.assertEqual(
+            {name: definition.get("const") for name, definition in properties.items()},
+            {
+                "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
+                "v0.15_release": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
+                "v0.15_seal": "5ba6989aade68461c8f3953c4a82cc0e158b0730",
+            },
+        )
+
+    def test_schema_relationships_bind_governance(self):
+        expected = {
+            "HAS_MODEL": ("DIRECT_SOURCE_METADATA", "SOURCE_ASSERTED", "DIRECT_RECORD"),
+            "SUPPORTS_MODEL_CANDIDATE": ("INFERRED_CANDIDATE", "REVIEW_REQUIRED", "HUMAN_REVIEW_CANDIDATE"),
+            "COMPETES_WITH_CANDIDATE": ("INFERRED_CANDIDATE", "REVIEW_REQUIRED", "HUMAN_REVIEW_CANDIDATE"),
+            "CORRECTS": ("DIRECT_SOURCE_METADATA", "SOURCE_ASSERTED", "DIRECT_RECORD"),
+        }
+        actual = {}
+        for condition in SCHEMA["$defs"]["edge"]["allOf"]:
+            relationship = condition["if"]["properties"].get("relationship_type", {}).get("const")
+            if relationship not in expected:
+                continue
+            properties = condition["then"]["properties"]
+            actual[relationship] = (
+                properties["assertion_class"]["const"],
+                properties["review_state"]["const"],
+                properties["provenance"]["properties"]["derivation_method"]["const"],
+            )
+        self.assertEqual(actual, expected)
 
     def test_question_remains_unresolved(self):
         self.mutate(lambda d: d.__setitem__("question_status", "RESOLVED"), "question status")
@@ -97,6 +131,14 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
     def test_inferred_candidate_requires_review(self):
         self.mutate(lambda d: d["edges"][1].__setitem__("review_state", "SOURCE_ASSERTED"), "inferred review boundary")
 
+    def test_candidate_relationship_cannot_be_reclassified_as_direct(self):
+        def reclassify(data):
+            edge = data["edges"][1]
+            edge["assertion_class"] = "DIRECT_SOURCE_METADATA"
+            edge["review_state"] = "SOURCE_ASSERTED"
+            edge["provenance"]["derivation_method"] = "DIRECT_RECORD"
+        self.mutate(reclassify, "relationship assertion contract")
+
     def test_direct_metadata_requires_direct_provenance(self):
         self.mutate(lambda d: d["edges"][0]["provenance"].__setitem__("derivation_method", "HUMAN_REVIEW_CANDIDATE"), "direct metadata boundary")
 
@@ -111,6 +153,15 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
 
     def test_unknown_independence_key_rejected(self):
         self.mutate(lambda d: d["edges"][0].__setitem__("evidence_independence_keys", ["source:invented"]), "evidence independence")
+
+    def test_independence_key_must_be_traceable_to_edge_provenance(self):
+        self.mutate(
+            lambda d: d["edges"][0].__setitem__(
+                "evidence_independence_keys",
+                ["source:bq001:evidence-batch2-v0.1"],
+            ),
+            "evidence independence",
+        )
 
     def test_missing_record_locator(self):
         self.mutate(lambda d: d["nodes"][0]["provenance"].__setitem__("record_locator", "/missing"), "record locator")

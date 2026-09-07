@@ -37,13 +37,13 @@
       ],
       "properties": {
         "v0.14": {
-          "$ref": "#/$defs/sha"
+          "const": "7b6cfd89de570c4b945d574dad570c37825645fe"
         },
         "v0.15_release": {
-          "$ref": "#/$defs/sha"
+          "const": "ea46629558ff57970f6efd2485a7e9a288dc55f2"
         },
         "v0.15_seal": {
-          "$ref": "#/$defs/sha"
+          "const": "5ba6989aade68461c8f3953c4a82cc0e158b0730"
         }
       }
     },
@@ -422,6 +422,19 @@
             "properties": {
               "edge_state": {
                 "const": "ACTIVE"
+              },
+              "assertion_class": {
+                "const": "DIRECT_SOURCE_METADATA"
+              },
+              "review_state": {
+                "const": "SOURCE_ASSERTED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "DIRECT_RECORD"
+                  }
+                }
               }
             }
           }
@@ -441,6 +454,19 @@
             "properties": {
               "edge_state": {
                 "const": "REVIEW_ONLY"
+              },
+              "assertion_class": {
+                "const": "INFERRED_CANDIDATE"
+              },
+              "review_state": {
+                "const": "REVIEW_REQUIRED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "HUMAN_REVIEW_CANDIDATE"
+                  }
+                }
               }
             }
           }
@@ -460,6 +486,19 @@
             "properties": {
               "edge_state": {
                 "const": "REVIEW_ONLY_CONTRADICTION"
+              },
+              "assertion_class": {
+                "const": "INFERRED_CANDIDATE"
+              },
+              "review_state": {
+                "const": "REVIEW_REQUIRED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "HUMAN_REVIEW_CANDIDATE"
+                  }
+                }
               }
             }
           }
@@ -479,6 +518,19 @@
             "properties": {
               "edge_state": {
                 "const": "CORRECTED_NOT_RETRACTED"
+              },
+              "assertion_class": {
+                "const": "DIRECT_SOURCE_METADATA"
+              },
+              "review_state": {
+                "const": "SOURCE_ASSERTED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "DIRECT_RECORD"
+                  }
+                }
               }
             }
           }

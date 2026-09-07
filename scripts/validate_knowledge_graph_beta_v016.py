@@ -25,10 +25,38 @@ RELATIONSHIPS = {
     "CORRECTS",
 }
 RELATIONSHIP_CONTRACTS = {
-    "HAS_MODEL": ("QUESTION", "MODEL", "ACTIVE"),
-    "SUPPORTS_MODEL_CANDIDATE": ("CLAIM", "MODEL", "REVIEW_ONLY"),
-    "COMPETES_WITH_CANDIDATE": ("MODEL", "MODEL", "REVIEW_ONLY_CONTRADICTION"),
-    "CORRECTS": ("NOTICE", "SOURCE", "CORRECTED_NOT_RETRACTED"),
+    "HAS_MODEL": (
+        "QUESTION",
+        "MODEL",
+        "ACTIVE",
+        "DIRECT_SOURCE_METADATA",
+        "SOURCE_ASSERTED",
+        "DIRECT_RECORD",
+    ),
+    "SUPPORTS_MODEL_CANDIDATE": (
+        "CLAIM",
+        "MODEL",
+        "REVIEW_ONLY",
+        "INFERRED_CANDIDATE",
+        "REVIEW_REQUIRED",
+        "HUMAN_REVIEW_CANDIDATE",
+    ),
+    "COMPETES_WITH_CANDIDATE": (
+        "MODEL",
+        "MODEL",
+        "REVIEW_ONLY_CONTRADICTION",
+        "INFERRED_CANDIDATE",
+        "REVIEW_REQUIRED",
+        "HUMAN_REVIEW_CANDIDATE",
+    ),
+    "CORRECTS": (
+        "NOTICE",
+        "SOURCE",
+        "CORRECTED_NOT_RETRACTED",
+        "DIRECT_SOURCE_METADATA",
+        "SOURCE_ASSERTED",
+        "DIRECT_RECORD",
+    ),
 }
 PROVENANCE_KEYS = {
     "artifact_id",
@@ -221,6 +249,29 @@ def validate(data):
         errors.append("edges")
         edges = []
     edge_ids = []
+    edges_by_id = {
+        edge.get("edge_id"): edge
+        for edge in edges
+        if isinstance(edge, dict) and isinstance(edge.get("edge_id"), str)
+    }
+
+    def traceable_independence_keys(edge_id, visiting=None):
+        edge = edges_by_id.get(edge_id)
+        if edge is None:
+            return set()
+        visiting = set() if visiting is None else visiting
+        if edge_id in visiting:
+            return set()
+        visiting = visiting | {edge_id}
+        provenance = edge.get("provenance")
+        keys = {
+            provenance.get("independence_key")
+        } if isinstance(provenance, dict) and isinstance(provenance.get("independence_key"), str) else set()
+        for parent_id in edge.get("parent_edge_ids", []):
+            if isinstance(parent_id, str):
+                keys.update(traceable_independence_keys(parent_id, visiting))
+        return keys
+
     declared_independence = {spec["independence_key"] for spec in SOURCE_SPECS.values()}
     for edge in edges:
         if not isinstance(edge, dict):
@@ -254,14 +305,33 @@ def validate(data):
         if contract is None or source_node is None or target_node is None:
             errors.append("relationship contract")
         else:
-            source_type, target_type, edge_state = contract
+            (
+                source_type,
+                target_type,
+                edge_state,
+                assertion_class,
+                review_state,
+                derivation_method,
+            ) = contract
             if (source_node.get("node_type"), target_node.get("node_type")) != (source_type, target_type):
                 errors.append("relationship endpoint types")
             if edge.get("edge_state") != edge_state:
                 errors.append("relationship state")
+            if (
+                edge.get("assertion_class") != assertion_class
+                or edge.get("review_state") != review_state
+                or edge.get("provenance", {}).get("derivation_method") != derivation_method
+            ):
+                errors.append("relationship assertion contract")
 
         independence = edge.get("evidence_independence_keys")
-        if not isinstance(independence, list) or not independence or len(independence) != len(set(independence)) or not set(independence).issubset(declared_independence):
+        if (
+            not isinstance(independence, list)
+            or not independence
+            or len(independence) != len(set(independence))
+            or not set(independence).issubset(declared_independence)
+            or not set(independence).issubset(traceable_independence_keys(edge_id))
+        ):
             errors.append("evidence independence")
         parents = edge.get("parent_edge_ids")
         if not isinstance(parents, list) or len(parents) != len(set(parents)):
