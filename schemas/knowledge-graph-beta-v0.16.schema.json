@@ -265,7 +265,83 @@
           "minLength": 1
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:question:"
+                },
+                "node_type": {
+                  "const": "QUESTION"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:model:"
+                },
+                "node_type": {
+                  "const": "MODEL"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:source:"
+                },
+                "node_type": {
+                  "const": "SOURCE"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:claim:"
+                },
+                "node_type": {
+                  "const": "CLAIM"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:notice:"
+                },
+                "node_type": {
+                  "const": "NOTICE"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            }
+          ]
+        }
+      ]
     },
     "edge": {
       "type": "object",
@@ -435,6 +511,12 @@
                     "const": "DIRECT_RECORD"
                   }
                 }
+              },
+              "source_node_id": {
+                "pattern": "^node:question:"
+              },
+              "target_node_id": {
+                "pattern": "^node:model:"
               }
             }
           }
@@ -467,6 +549,12 @@
                     "const": "HUMAN_REVIEW_CANDIDATE"
                   }
                 }
+              },
+              "source_node_id": {
+                "pattern": "^node:claim:"
+              },
+              "target_node_id": {
+                "pattern": "^node:model:"
               }
             }
           }
@@ -499,6 +587,12 @@
                     "const": "HUMAN_REVIEW_CANDIDATE"
                   }
                 }
+              },
+              "source_node_id": {
+                "pattern": "^node:model:"
+              },
+              "target_node_id": {
+                "pattern": "^node:model:"
               }
             }
           }
@@ -531,6 +625,12 @@
                     "const": "DIRECT_RECORD"
                   }
                 }
+              },
+              "source_node_id": {
+                "pattern": "^node:notice:"
+              },
+              "target_node_id": {
+                "pattern": "^node:source:"
               }
             }
           }
