@@ -48,7 +48,8 @@
         "independence_key": "source:bq001:spec-v0.1",
         "derivation_method": "DIRECT_RECORD",
         "public_safe": true
-      }
+      },
+      "record_id": "BQ001"
     },
     {
       "node_id": "node:model:MODEL-BQ001-CONTINUITY",
@@ -62,7 +63,8 @@
         "independence_key": "source:bq001:spec-v0.1",
         "derivation_method": "DIRECT_RECORD",
         "public_safe": true
-      }
+      },
+      "record_id": "MODEL-BQ001-CONTINUITY"
     },
     {
       "node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
@@ -76,7 +78,8 @@
         "independence_key": "source:bq001:spec-v0.1",
         "derivation_method": "DIRECT_RECORD",
         "public_safe": true
-      }
+      },
+      "record_id": "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
     },
     {
       "node_id": "node:source:SRC-BQ001-MARTIAL-2025",
@@ -90,7 +93,8 @@
         "independence_key": "source:bq001:evidence-batch2-v0.1",
         "derivation_method": "DIRECT_RECORD",
         "public_safe": true
-      }
+      },
+      "record_id": "SRC-BQ001-MARTIAL-2025"
     },
     {
       "node_id": "node:claim:CLAIM-BQ001-MARTIAL-2025-INTERP-01",
@@ -104,7 +108,8 @@
         "independence_key": "source:bq001:evidence-batch2-v0.1",
         "derivation_method": "DIRECT_RECORD",
         "public_safe": true
-      }
+      },
+      "record_id": "CLAIM-BQ001-MARTIAL-2025-INTERP-01"
     },
     {
       "node_id": "node:notice:doi:10.1038-s41582-025-01111-9",
@@ -118,7 +123,8 @@
         "independence_key": "source:bq001:evidence-batch2-v0.1",
         "derivation_method": "DIRECT_RECORD",
         "public_safe": true
-      }
+      },
+      "record_id": "10.1038/s41582-025-01111-9"
     }
   ],
   "edges": [
