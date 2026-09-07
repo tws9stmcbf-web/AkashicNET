@@ -48,7 +48,8 @@ FORBIDDEN_KEYS = {
     "object_hash",
 }
 FORBIDDEN_MARKERS = ("AKM-", "/My Drive/", "drive.google.com/open?id=")
-ID = re.compile(r"^(node|edge):[A-Za-z0-9.:-]+$")
+NODE_ID = re.compile(r"^node:[A-Za-z0-9.:-]+$")
+EDGE_ID = re.compile(r"^edge:[A-Za-z0-9.:-]+$")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -191,7 +192,7 @@ def validate(data):
             continue
         node_id = node.get("node_id")
         node_ids.append(node_id)
-        if not isinstance(node_id, str) or not ID.fullmatch(node_id) or node.get("node_type") not in NODE_TYPES or not isinstance(node.get("label"), str) or not node["label"]:
+        if not isinstance(node_id, str) or not NODE_ID.fullmatch(node_id) or node.get("node_type") not in NODE_TYPES or not isinstance(node.get("label"), str) or not node["label"]:
             errors.append("nodes")
         if node.get("node_type") == "QUESTION" and node.get("question_status") != "UNRESOLVED":
             errors.append("question node")
@@ -213,7 +214,7 @@ def validate(data):
             continue
         edge_id = edge.get("edge_id")
         edge_ids.append(edge_id)
-        if not isinstance(edge_id, str) or not ID.fullmatch(edge_id) or edge.get("relationship_type") not in RELATIONSHIPS:
+        if not isinstance(edge_id, str) or not EDGE_ID.fullmatch(edge_id) or edge.get("relationship_type") not in RELATIONSHIPS:
             errors.append("edges")
         if edge.get("source_node_id") not in node_ids or edge.get("target_node_id") not in node_ids:
             errors.append("edge endpoints")
