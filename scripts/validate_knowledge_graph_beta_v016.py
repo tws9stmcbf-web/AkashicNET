@@ -24,6 +24,12 @@ RELATIONSHIPS = {
     "COMPETES_WITH_CANDIDATE",
     "CORRECTS",
 }
+RELATIONSHIP_CONTRACTS = {
+    "HAS_MODEL": ("QUESTION", "MODEL", "ACTIVE"),
+    "SUPPORTS_MODEL_CANDIDATE": ("CLAIM", "MODEL", "REVIEW_ONLY"),
+    "COMPETES_WITH_CANDIDATE": ("MODEL", "MODEL", "REVIEW_ONLY_CONTRADICTION"),
+    "CORRECTS": ("NOTICE", "SOURCE", "CORRECTED_NOT_RETRACTED"),
+}
 PROVENANCE_KEYS = {
     "artifact_id",
     "repository_path",
@@ -161,7 +167,7 @@ def validate(data):
     def check_provenance(provenance):
         if not isinstance(provenance, dict) or set(provenance) != PROVENANCE_KEYS:
             errors.append("provenance")
-            return
+            return None
         artifact_id = provenance.get("artifact_id")
         source = declared.get(artifact_id)
         spec = SOURCE_SPECS.get(artifact_id)
@@ -175,11 +181,12 @@ def validate(data):
             or provenance.get("public_safe") is not True
         ):
             errors.append("provenance")
-            return
+            return None
         try:
-            resolve_pointer(governed[artifact_id]["data"], provenance.get("record_locator"))
+            return resolve_pointer(governed[artifact_id]["data"], provenance.get("record_locator"))
         except (KeyError, IndexError, ValueError, TypeError):
             errors.append("record locator")
+            return None
 
     nodes = data.get("nodes")
     if not isinstance(nodes, list) or not nodes:
@@ -192,15 +199,22 @@ def validate(data):
             continue
         node_id = node.get("node_id")
         node_ids.append(node_id)
-        if not isinstance(node_id, str) or not NODE_ID.fullmatch(node_id) or node.get("node_type") not in NODE_TYPES or not isinstance(node.get("label"), str) or not node["label"]:
+        if not isinstance(node_id, str) or not NODE_ID.fullmatch(node_id) or node.get("node_type") not in NODE_TYPES or not isinstance(node.get("record_id"), str) or not node["record_id"] or not isinstance(node.get("label"), str) or not node["label"]:
             errors.append("nodes")
         if node.get("node_type") == "QUESTION" and node.get("question_status") != "UNRESOLVED":
             errors.append("question node")
         if node.get("node_type") != "QUESTION" and "question_status" in node:
             errors.append("question node")
-        check_provenance(node.get("provenance"))
+        resolved_record = check_provenance(node.get("provenance"))
+        if resolved_record is not None and resolved_record != node.get("record_id"):
+            errors.append("record identity")
     if None in node_ids or len(node_ids) != len(set(node_ids)):
         errors.append("node IDs")
+    nodes_by_id = {
+        node.get("node_id"): node
+        for node in nodes
+        if isinstance(node, dict) and isinstance(node.get("node_id"), str)
+    }
 
     edges = data.get("edges")
     if not isinstance(edges, list) or not edges:
@@ -233,10 +247,18 @@ def validate(data):
         else:
             errors.append("assertion class")
 
-        if edge.get("relationship_type") == "CORRECTS" and edge.get("edge_state") != "CORRECTED_NOT_RETRACTED":
-            errors.append("correction state")
-        if edge.get("relationship_type") == "COMPETES_WITH_CANDIDATE" and edge.get("edge_state") != "REVIEW_ONLY_CONTRADICTION":
-            errors.append("contradiction state")
+        relationship = edge.get("relationship_type")
+        contract = RELATIONSHIP_CONTRACTS.get(relationship)
+        source_node = nodes_by_id.get(edge.get("source_node_id"))
+        target_node = nodes_by_id.get(edge.get("target_node_id"))
+        if contract is None or source_node is None or target_node is None:
+            errors.append("relationship contract")
+        else:
+            source_type, target_type, edge_state = contract
+            if (source_node.get("node_type"), target_node.get("node_type")) != (source_type, target_type):
+                errors.append("relationship endpoint types")
+            if edge.get("edge_state") != edge_state:
+                errors.append("relationship state")
 
         independence = edge.get("evidence_independence_keys")
         if not isinstance(independence, list) or not independence or len(independence) != len(set(independence)) or not set(independence).issubset(declared_independence):
@@ -244,7 +266,22 @@ def validate(data):
         parents = edge.get("parent_edge_ids")
         if not isinstance(parents, list) or len(parents) != len(set(parents)):
             errors.append("edge ancestry")
-        check_provenance(edge.get("provenance"))
+        resolved_record = check_provenance(edge.get("provenance"))
+        if resolved_record is not None and source_node is not None and target_node is not None:
+            if relationship in {"HAS_MODEL", "SUPPORTS_MODEL_CANDIDATE"}:
+                if resolved_record != target_node.get("record_id"):
+                    errors.append("record identity")
+            elif relationship == "CORRECTS":
+                if resolved_record != source_node.get("record_id"):
+                    errors.append("record identity")
+            elif relationship == "COMPETES_WITH_CANDIDATE":
+                model_ids = {
+                    model.get("model_id")
+                    for model in resolved_record
+                    if isinstance(model, dict)
+                } if isinstance(resolved_record, list) else set()
+                if not {source_node.get("record_id"), target_node.get("record_id")}.issubset(model_ids):
+                    errors.append("record identity")
 
     if None in edge_ids or len(edge_ids) != len(set(edge_ids)):
         errors.append("edge IDs")
