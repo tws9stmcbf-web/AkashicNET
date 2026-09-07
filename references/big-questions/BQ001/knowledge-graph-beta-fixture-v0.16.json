@@ -1,0 +1,225 @@
+{
+  "schema_version": "0.16.0-beta.1",
+  "mode": "REVIEW_FIXTURE_ONLY",
+  "issue": 277,
+  "baseline_locks": {
+    "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
+    "v0.15_release": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
+    "v0.15_seal": "5ba6989aade68461c8f3953c4a82cc0e158b0730"
+  },
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "boundaries": {
+    "automated_truth_inference_allowed": false,
+    "automated_acceptance_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "circular_confidence_allowed": false,
+    "private_drive_metadata_allowed": false
+  },
+  "source_artifacts": [
+    {
+      "artifact_id": "artifact:bq001-spec:0.1",
+      "repository_path": "references/big-questions/BQ001/spec-v0.1.json",
+      "sha256": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+      "independence_key": "source:bq001:spec-v0.1",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:bq001-evidence-batch2:0.1",
+      "repository_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+      "independence_key": "source:bq001:evidence-batch2-v0.1",
+      "public_safe": true
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "node:question:BQ001",
+      "node_type": "QUESTION",
+      "label": "Does consciousness continue beyond the individual?",
+      "question_status": "UNRESOLVED",
+      "provenance": {
+        "artifact_id": "artifact:bq001-spec:0.1",
+        "repository_path": "references/big-questions/BQ001/spec-v0.1.json",
+        "sha256": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+        "record_locator": "/id",
+        "independence_key": "source:bq001:spec-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    },
+    {
+      "node_id": "node:model:MODEL-BQ001-CONTINUITY",
+      "node_type": "MODEL",
+      "label": "continuity_or_survival_model",
+      "provenance": {
+        "artifact_id": "artifact:bq001-spec:0.1",
+        "repository_path": "references/big-questions/BQ001/spec-v0.1.json",
+        "sha256": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+        "record_locator": "/models/0/model_id",
+        "independence_key": "source:bq001:spec-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    },
+    {
+      "node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "node_type": "MODEL",
+      "label": "biological_dependence_model",
+      "provenance": {
+        "artifact_id": "artifact:bq001-spec:0.1",
+        "repository_path": "references/big-questions/BQ001/spec-v0.1.json",
+        "sha256": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+        "record_locator": "/models/1/model_id",
+        "independence_key": "source:bq001:spec-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    },
+    {
+      "node_id": "node:source:SRC-BQ001-MARTIAL-2025",
+      "node_type": "SOURCE",
+      "label": "A neuroscientific model of near-death experiences",
+      "provenance": {
+        "artifact_id": "artifact:bq001-evidence-batch2:0.1",
+        "repository_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+        "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+        "record_locator": "/sources/4/source_id",
+        "independence_key": "source:bq001:evidence-batch2-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    },
+    {
+      "node_id": "node:claim:CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+      "node_type": "CLAIM",
+      "label": "A 2025 neuroscientific review proposes that converging neurophysiological processes can account for major features of near-death experiences without treating NDE phenomenology as direct evidence of consciousness outside brain function.",
+      "provenance": {
+        "artifact_id": "artifact:bq001-evidence-batch2:0.1",
+        "repository_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+        "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+        "record_locator": "/claims/4/claim_id",
+        "independence_key": "source:bq001:evidence-batch2-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    },
+    {
+      "node_id": "node:notice:10.1038/s41582-025-01111-9",
+      "node_type": "NOTICE",
+      "label": "Author Correction: A neuroscientific model of near-death experiences",
+      "provenance": {
+        "artifact_id": "artifact:bq001-evidence-batch2:0.1",
+        "repository_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+        "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+        "record_locator": "/sources/4/related_notices/0/doi",
+        "independence_key": "source:bq001:evidence-batch2-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge:bq001:has-model:biological-dependence",
+      "source_node_id": "node:question:BQ001",
+      "target_node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "relationship_type": "HAS_MODEL",
+      "assertion_class": "DIRECT_SOURCE_METADATA",
+      "review_state": "SOURCE_ASSERTED",
+      "edge_state": "ACTIVE",
+      "accepted_edge": false,
+      "evidence_independence_keys": [
+        "source:bq001:spec-v0.1"
+      ],
+      "parent_edge_ids": [],
+      "provenance": {
+        "artifact_id": "artifact:bq001-spec:0.1",
+        "repository_path": "references/big-questions/BQ001/spec-v0.1.json",
+        "sha256": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+        "record_locator": "/models/1/model_id",
+        "independence_key": "source:bq001:spec-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    },
+    {
+      "edge_id": "edge:bq001:claim-supports-biological-dependence:candidate",
+      "source_node_id": "node:claim:CLAIM-BQ001-MARTIAL-2025-INTERP-01",
+      "target_node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "relationship_type": "SUPPORTS_MODEL_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "edge_state": "REVIEW_ONLY",
+      "accepted_edge": false,
+      "evidence_independence_keys": [
+        "source:bq001:evidence-batch2-v0.1"
+      ],
+      "parent_edge_ids": [],
+      "provenance": {
+        "artifact_id": "artifact:bq001-evidence-batch2:0.1",
+        "repository_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+        "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+        "record_locator": "/claims/4/supports_models/0",
+        "independence_key": "source:bq001:evidence-batch2-v0.1",
+        "derivation_method": "HUMAN_REVIEW_CANDIDATE",
+        "public_safe": true
+      }
+    },
+    {
+      "edge_id": "edge:bq001:models-compete:candidate",
+      "source_node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "target_node_id": "node:model:MODEL-BQ001-CONTINUITY",
+      "relationship_type": "COMPETES_WITH_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "edge_state": "REVIEW_ONLY_CONTRADICTION",
+      "accepted_edge": false,
+      "evidence_independence_keys": [
+        "source:bq001:spec-v0.1"
+      ],
+      "parent_edge_ids": [],
+      "provenance": {
+        "artifact_id": "artifact:bq001-spec:0.1",
+        "repository_path": "references/big-questions/BQ001/spec-v0.1.json",
+        "sha256": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+        "record_locator": "/models",
+        "independence_key": "source:bq001:spec-v0.1",
+        "derivation_method": "HUMAN_REVIEW_CANDIDATE",
+        "public_safe": true
+      }
+    },
+    {
+      "edge_id": "edge:bq001:author-correction:martial-2025",
+      "source_node_id": "node:notice:10.1038/s41582-025-01111-9",
+      "target_node_id": "node:source:SRC-BQ001-MARTIAL-2025",
+      "relationship_type": "CORRECTS",
+      "assertion_class": "DIRECT_SOURCE_METADATA",
+      "review_state": "SOURCE_ASSERTED",
+      "edge_state": "CORRECTED_NOT_RETRACTED",
+      "accepted_edge": false,
+      "evidence_independence_keys": [
+        "source:bq001:evidence-batch2-v0.1"
+      ],
+      "parent_edge_ids": [],
+      "provenance": {
+        "artifact_id": "artifact:bq001-evidence-batch2:0.1",
+        "repository_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+        "sha256": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+        "record_locator": "/sources/4/related_notices/0/doi",
+        "independence_key": "source:bq001:evidence-batch2-v0.1",
+        "derivation_method": "DIRECT_RECORD",
+        "public_safe": true
+      }
+    }
+  ],
+  "summary": {
+    "node_count": 6,
+    "edge_count": 4,
+    "accepted_edge_count": 0,
+    "inferred_candidate_count": 2,
+    "unresolved_question_count": 1
+  }
+}
