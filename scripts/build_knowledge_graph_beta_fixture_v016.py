@@ -105,7 +105,7 @@ def build(sources=None):
             "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/claims/4/claim_id", "DIRECT_RECORD"),
         },
         {
-            "node_id": "node:notice:10.1038/s41582-025-01111-9",
+            "node_id": "node:notice:doi:10.1038-s41582-025-01111-9",
             "node_type": "NOTICE",
             "label": correction["title"],
             "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/sources/4/related_notices/0/doi", "DIRECT_RECORD"),
@@ -154,7 +154,7 @@ def build(sources=None):
         },
         {
             "edge_id": "edge:bq001:author-correction:martial-2025",
-            "source_node_id": "node:notice:10.1038/s41582-025-01111-9",
+            "source_node_id": "node:notice:doi:10.1038-s41582-025-01111-9",
             "target_node_id": "node:source:SRC-BQ001-MARTIAL-2025",
             "relationship_type": "CORRECTS",
             "assertion_class": "DIRECT_SOURCE_METADATA",
