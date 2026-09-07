@@ -230,6 +230,7 @@
       "required": [
         "node_id",
         "node_type",
+        "record_id",
         "label",
         "provenance"
       ],
@@ -258,6 +259,10 @@
         },
         "provenance": {
           "$ref": "#/$defs/provenance"
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
         }
       },
       "additionalProperties": false
@@ -398,6 +403,82 @@
                     "const": "DIRECT_RECORD"
                   }
                 }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "HAS_MODEL"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "ACTIVE"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "SUPPORTS_MODEL_CANDIDATE"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "REVIEW_ONLY"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "COMPETES_WITH_CANDIDATE"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "REVIEW_ONLY_CONTRADICTION"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "CORRECTS"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "CORRECTED_NOT_RETRACTED"
               }
             }
           }
