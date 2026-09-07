@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROVENANCE = ROOT / "references/community/sites-analytics-provenance-v0.15.json"
 TOKEN_NAME = "NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN"
-VALUE = r"""(?P<value>"[^"\r\n]*"|'[^'\r\n]*'|[^\s#,};]+)"""
+VALUE = r"""(?P<value>\$\{\{.*?\}\}|\$\{[^}\r\n]+\}|"[^"\r\n]*"|'[^'\r\n]*'|[^\s#,};]+)"""
 DIRECT_ASSIGNMENT = re.compile(
     rf"""(?ix)["']?{re.escape(TOKEN_NAME)}["']?\s*(?:=|:)\s*{VALUE}"""
 )
