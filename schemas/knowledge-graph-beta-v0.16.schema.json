@@ -91,24 +91,41 @@
     },
     "source_artifacts": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 2,
       "items": {
         "$ref": "#/$defs/sourceArtifact"
-      }
+      },
+      "maxItems": 2,
+      "uniqueItems": true
     },
     "nodes": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 6,
       "items": {
         "$ref": "#/$defs/node"
-      }
+      },
+      "maxItems": 6
     },
     "edges": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 4,
       "items": {
         "$ref": "#/$defs/edge"
-      }
+      },
+      "maxItems": 4,
+      "contains": {
+        "type": "object",
+        "properties": {
+          "assertion_class": {
+            "const": "INFERRED_CANDIDATE"
+          }
+        },
+        "required": [
+          "assertion_class"
+        ]
+      },
+      "minContains": 2,
+      "maxContains": 2
     },
     "summary": {
       "type": "object",
@@ -122,19 +139,16 @@
       ],
       "properties": {
         "node_count": {
-          "type": "integer",
-          "minimum": 1
+          "const": 6
         },
         "edge_count": {
-          "type": "integer",
-          "minimum": 1
+          "const": 4
         },
         "accepted_edge_count": {
           "const": 0
         },
         "inferred_candidate_count": {
-          "type": "integer",
-          "minimum": 0
+          "const": 2
         },
         "unresolved_question_count": {
           "const": 1
@@ -192,7 +206,57 @@
         "public_safe": {
           "const": true
         }
-      }
+      },
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "artifact_id": {
+                  "const": "artifact:bq001-spec:0.1"
+                },
+                "repository_path": {
+                  "const": "references/big-questions/BQ001/spec-v0.1.json"
+                },
+                "sha256": {
+                  "const": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819"
+                },
+                "independence_key": {
+                  "const": "source:bq001:spec-v0.1"
+                }
+              },
+              "required": [
+                "artifact_id",
+                "repository_path",
+                "sha256",
+                "independence_key"
+              ]
+            },
+            {
+              "properties": {
+                "artifact_id": {
+                  "const": "artifact:bq001-evidence-batch2:0.1"
+                },
+                "repository_path": {
+                  "const": "references/big-questions/BQ001/evidence-batch2-v0.1.json"
+                },
+                "sha256": {
+                  "const": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1"
+                },
+                "independence_key": {
+                  "const": "source:bq001:evidence-batch2-v0.1"
+                }
+              },
+              "required": [
+                "artifact_id",
+                "repository_path",
+                "sha256",
+                "independence_key"
+              ]
+            }
+          ]
+        }
+      ]
     },
     "sourceArtifact": {
       "type": "object",
@@ -223,7 +287,59 @@
         "public_safe": {
           "const": true
         }
-      }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "artifact_id": {
+              "const": "artifact:bq001-spec:0.1"
+            },
+            "repository_path": {
+              "const": "references/big-questions/BQ001/spec-v0.1.json"
+            },
+            "sha256": {
+              "const": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819"
+            },
+            "independence_key": {
+              "const": "source:bq001:spec-v0.1"
+            },
+            "public_safe": {
+              "const": true
+            }
+          },
+          "required": [
+            "artifact_id",
+            "repository_path",
+            "sha256",
+            "independence_key"
+          ]
+        },
+        {
+          "properties": {
+            "artifact_id": {
+              "const": "artifact:bq001-evidence-batch2:0.1"
+            },
+            "repository_path": {
+              "const": "references/big-questions/BQ001/evidence-batch2-v0.1.json"
+            },
+            "sha256": {
+              "const": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1"
+            },
+            "independence_key": {
+              "const": "source:bq001:evidence-batch2-v0.1"
+            },
+            "public_safe": {
+              "const": true
+            }
+          },
+          "required": [
+            "artifact_id",
+            "repository_path",
+            "sha256",
+            "independence_key"
+          ]
+        }
+      ]
     },
     "node": {
       "type": "object",
