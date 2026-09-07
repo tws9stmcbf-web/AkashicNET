@@ -11,8 +11,8 @@ OLD={"https://www.reddit.com/r/NeuronsToNirvana/comments/1t4mza9/wisdom_traditio
 ENDPOINT_ID=re.compile(r"endpoint:[a-z0-9][a-z0-9:-]+")
 SHA256=re.compile(r"[0-9a-f]{64}")
 SOURCE_ARTIFACTS={
- "artifact:reddit-n2n-test-batch-25:2026-09-02":{"path":"references/community/n2n-test-batch-25.csv","independence_key":"source:reddit-index:n2n-test-batch-25"},
- "artifact:drive-knowledge-graph-seed:0.1":{"path":"references/community/knowledge-graph-seed-v0.1.md","independence_key":"source:drive-public-seed:stage-b-v0.1"},
+ "artifact:reddit-n2n-test-batch-25:2026-09-02":{"path":"references/community/n2n-test-batch-25.csv","sha256":"9e7f1b1036bee1f48e399ba5f9bec0a9b509626602b6ebc09de5eb8b6b7b514c","independence_key":"source:reddit-index:n2n-test-batch-25"},
+ "artifact:drive-knowledge-graph-seed:0.1":{"path":"references/community/knowledge-graph-seed-v0.1.md","sha256":"2ff59b08c528c92f4161ddb153f990ed56486c2a9cf8c475fe9351cc65e596ab","independence_key":"source:drive-public-seed:stage-b-v0.1"},
 }
 FORBIDDEN_KEYS={"drive_id","drive_file_id","drive_object_id","file_id","filename","file_name","path","parent_id","parent_path","parents","private_path","object_hash"}
 FORBIDDEN_VALUES=("/My Drive/","drive.google.com/open?id=")
@@ -34,7 +34,9 @@ def walk(v):
    yield k,x
    yield from walk(x)
  elif isinstance(v,list):
-  for x in v: yield from walk(x)
+  for x in v:
+   yield None,x
+   yield from walk(x)
 
 def validate(d):
  e=[]
@@ -58,7 +60,7 @@ def validate(d):
    declared[artifact_id]=source
    expected=SOURCE_ARTIFACTS.get(artifact_id)
    actual_sha=hashlib.sha256((ROOT/expected["path"]).read_bytes()).hexdigest() if expected else None
-   if expected is None or source.get("sha256")!=actual_sha or source.get("independence_key")!=expected["independence_key"] or not SHA256.fullmatch(source.get("sha256","")):
+   if expected is None or source.get("sha256")!=expected["sha256"] or actual_sha!=expected["sha256"] or source.get("independence_key")!=expected["independence_key"] or not SHA256.fullmatch(source.get("sha256","")):
     e.append("source artifacts")
  if set(declared)!=set(SOURCE_ARTIFACTS): e.append("source artifacts")
  q=d.get("qualified_candidates",[]); r=d.get("rejected_candidates",[]); allc=q+r
