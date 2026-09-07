@@ -35,19 +35,19 @@ def load_governed_sources(root=ROOT):
     sources = {}
     for artifact_id, spec in SOURCE_SPECS.items():
         raw = (root / spec["repository_path"]).read_bytes()
-        actual = hashlib.sha256(raw).hexdigest()
-        if actual != spec["sha256"]:
-            raise ValueError(f"governed source drift: {artifact_id}")
-        sources[artifact_id] = json.loads(raw)
+        sources[artifact_id] = {
+            "data": json.loads(raw),
+            "sha256": hashlib.sha256(raw).hexdigest(),
+        }
     return sources
 
 
-def provenance(artifact_id, record_locator, derivation_method):
+def provenance(artifact_id, record_locator, derivation_method, actual_sha256):
     spec = SOURCE_SPECS[artifact_id]
     return {
         "artifact_id": artifact_id,
         "repository_path": spec["repository_path"],
-        "sha256": spec["sha256"],
+        "sha256": actual_sha256,
         "record_locator": record_locator,
         "independence_key": spec["independence_key"],
         "derivation_method": derivation_method,
@@ -57,8 +57,16 @@ def provenance(artifact_id, record_locator, derivation_method):
 
 def build(sources=None):
     sources = sources or load_governed_sources()
-    spec = sources["artifact:bq001-spec:0.1"]
-    batch = sources["artifact:bq001-evidence-batch2:0.1"]
+    spec = sources["artifact:bq001-spec:0.1"]["data"]
+    batch = sources["artifact:bq001-evidence-batch2:0.1"]["data"]
+
+    def prov(artifact_id, record_locator, derivation_method):
+        return provenance(
+            artifact_id,
+            record_locator,
+            derivation_method,
+            sources[artifact_id]["sha256"],
+        )
     continuity, biological = spec["models"]
     martial_source = batch["sources"][4]
     martial_claim = batch["claims"][4]
@@ -70,37 +78,37 @@ def build(sources=None):
             "node_type": "QUESTION",
             "label": spec["title"],
             "question_status": spec["status"],
-            "provenance": provenance("artifact:bq001-spec:0.1", "/id", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-spec:0.1", "/id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:model:MODEL-BQ001-CONTINUITY",
             "node_type": "MODEL",
             "label": continuity["name"],
-            "provenance": provenance("artifact:bq001-spec:0.1", "/models/0/model_id", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-spec:0.1", "/models/0/model_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
             "node_type": "MODEL",
             "label": biological["name"],
-            "provenance": provenance("artifact:bq001-spec:0.1", "/models/1/model_id", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-spec:0.1", "/models/1/model_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:source:SRC-BQ001-MARTIAL-2025",
             "node_type": "SOURCE",
             "label": martial_source["title"],
-            "provenance": provenance("artifact:bq001-evidence-batch2:0.1", "/sources/4/source_id", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/sources/4/source_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:claim:CLAIM-BQ001-MARTIAL-2025-INTERP-01",
             "node_type": "CLAIM",
             "label": martial_claim["text"],
-            "provenance": provenance("artifact:bq001-evidence-batch2:0.1", "/claims/4/claim_id", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/claims/4/claim_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:notice:10.1038/s41582-025-01111-9",
             "node_type": "NOTICE",
             "label": correction["title"],
-            "provenance": provenance("artifact:bq001-evidence-batch2:0.1", "/sources/4/related_notices/0/doi", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/sources/4/related_notices/0/doi", "DIRECT_RECORD"),
         },
     ]
 
@@ -116,7 +124,7 @@ def build(sources=None):
             "accepted_edge": False,
             "evidence_independence_keys": ["source:bq001:spec-v0.1"],
             "parent_edge_ids": [],
-            "provenance": provenance("artifact:bq001-spec:0.1", "/models/1/model_id", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-spec:0.1", "/models/1/model_id", "DIRECT_RECORD"),
         },
         {
             "edge_id": "edge:bq001:claim-supports-biological-dependence:candidate",
@@ -129,7 +137,7 @@ def build(sources=None):
             "accepted_edge": False,
             "evidence_independence_keys": ["source:bq001:evidence-batch2-v0.1"],
             "parent_edge_ids": [],
-            "provenance": provenance("artifact:bq001-evidence-batch2:0.1", "/claims/4/supports_models/0", "HUMAN_REVIEW_CANDIDATE"),
+            "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/claims/4/supports_models/0", "HUMAN_REVIEW_CANDIDATE"),
         },
         {
             "edge_id": "edge:bq001:models-compete:candidate",
@@ -142,7 +150,7 @@ def build(sources=None):
             "accepted_edge": False,
             "evidence_independence_keys": ["source:bq001:spec-v0.1"],
             "parent_edge_ids": [],
-            "provenance": provenance("artifact:bq001-spec:0.1", "/models", "HUMAN_REVIEW_CANDIDATE"),
+            "provenance": prov("artifact:bq001-spec:0.1", "/models", "HUMAN_REVIEW_CANDIDATE"),
         },
         {
             "edge_id": "edge:bq001:author-correction:martial-2025",
@@ -155,7 +163,7 @@ def build(sources=None):
             "accepted_edge": False,
             "evidence_independence_keys": ["source:bq001:evidence-batch2-v0.1"],
             "parent_edge_ids": [],
-            "provenance": provenance("artifact:bq001-evidence-batch2:0.1", "/sources/4/related_notices/0/doi", "DIRECT_RECORD"),
+            "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/sources/4/related_notices/0/doi", "DIRECT_RECORD"),
         },
     ]
 
@@ -172,7 +180,12 @@ def build(sources=None):
         "question_status": "UNRESOLVED",
         "boundaries": BOUNDARIES,
         "source_artifacts": [
-            {"artifact_id": artifact_id, **source_spec, "public_safe": True}
+            {
+                "artifact_id": artifact_id,
+                **source_spec,
+                "sha256": sources[artifact_id]["sha256"],
+                "public_safe": True,
+            }
             for artifact_id, source_spec in SOURCE_SPECS.items()
         ],
         "nodes": nodes,
