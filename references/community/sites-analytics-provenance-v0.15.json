@@ -1,6 +1,6 @@
 {
   "schema_version": "akashicnet.sites-analytics-provenance.v0.15",
-  "recorded_at": "2026-09-07T13:41:48Z",
+  "recorded_at": "2026-09-07T14:43:04.110697+00:00",
   "canonical_site": {
     "project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
     "title": "AkashicNET Public Portal",
@@ -17,10 +17,13 @@
     "runtime_environment_revision": 0
   },
   "deployment": {
-    "latest_observed_version": 124,
-    "source_commit_deployed": false,
+    "latest_observed_version": 125,
+    "source_commit_deployed": true,
+    "deployment_status": "SUCCEEDED",
+    "deployed_at": "2026-09-07T14:43:04.110697+00:00",
+    "environment_revision": 0,
     "live_beacon_state": "UNVERIFIED",
-    "verification_note": "The verification environment could not independently retrieve the live beacon. This is not evidence that a beacon is present or absent."
+    "verification_note": "The live beacon was not independently retrieved after deployment. This is not evidence that a beacon is present or absent."
   },
   "governance": {
     "classification": "aggregate operational telemetry only",
