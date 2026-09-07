@@ -18,9 +18,13 @@ DOCKER_ASSIGNMENT = re.compile(
     rf"""(?ix)^\s*(?:ENV|ARG)\s+{re.escape(TOKEN_NAME)}\s+{VALUE}"""
 )
 NAMED_TOKEN = re.compile(
-    rf"""(?ix)["']?name["']?\s*(?:=|:)\s*["']?{re.escape(TOKEN_NAME)}["']?"""
+    rf"""(?ix)^\s*["']?name["']?\s*(?:=|:)\s*["']?{re.escape(TOKEN_NAME)}["']?\s*,?\s*$"""
 )
 VALUE_FIELD = re.compile(rf"""(?ix)["']?value["']?\s*(?:=|:)\s*{VALUE}""")
+PENDING_ASSIGNMENT = re.compile(
+    rf"""(?ix)^(?P<indent>\s*)["']?{re.escape(TOKEN_NAME)}["']?\s*(?:=|:)\s*(?:\#.*)?$"""
+)
+SCALAR_VALUE = re.compile(rf"""(?ix)^\s*{VALUE}""")
 SAFE_INDIRECTION = re.compile(
     r"""(?x)^(?:
         null
@@ -118,7 +122,27 @@ for raw_path in tracked:
             if not is_safe_indirection(match.group("value")):
                 violations.add(f"{relative}:{index + 1}")
 
-        if NAMED_TOKEN.search(line):
+        pending = PENDING_ASSIGNMENT.match(line)
+        if pending:
+            base_indent = len(pending.group("indent").expandtabs())
+            for offset, candidate in enumerate(lines[index + 1:index + 5], start=1):
+                stripped = candidate.strip()
+                if not stripped or stripped.startswith("#"):
+                    continue
+                candidate_indent = len(candidate) - len(candidate.lstrip())
+                if (
+                    candidate_indent <= base_indent
+                    and re.match(r"""["']?[A-Za-z_][\w.-]*["']?\s*(?:=|:)""", stripped)
+                ):
+                    break
+                if "valueFrom" in candidate:
+                    break
+                match = SCALAR_VALUE.match(candidate)
+                if match and not is_safe_indirection(match.group("value")):
+                    violations.add(f"{relative}:{index + offset + 1}")
+                break
+
+        if NAMED_TOKEN.match(line):
             for offset, candidate in enumerate(lines[index:index + 5]):
                 if "valueFrom" in candidate:
                     break
