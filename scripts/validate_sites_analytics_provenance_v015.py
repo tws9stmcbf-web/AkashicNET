@@ -18,7 +18,7 @@ DOCKER_ASSIGNMENT = re.compile(
     rf"""(?ix)^\s*(?:ENV|ARG)\s+{re.escape(TOKEN_NAME)}\s+{VALUE}"""
 )
 NAMED_TOKEN = re.compile(
-    rf"""(?ix)^\s*["']?name["']?\s*(?:=|:)\s*["']?{re.escape(TOKEN_NAME)}["']?\s*,?\s*$"""
+    rf"""(?ix)^\s*(?:[-{]\s*)?["']?name["']?\s*(?:=|:)\s*["']?{re.escape(TOKEN_NAME)}["']?"""
 )
 VALUE_FIELD = re.compile(rf"""(?ix)["']?value["']?\s*(?:=|:)\s*{VALUE}""")
 PENDING_ASSIGNMENT = re.compile(
