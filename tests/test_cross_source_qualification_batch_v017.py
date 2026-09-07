@@ -1,5 +1,6 @@
 import copy,json,unittest
 from pathlib import Path
+from unittest.mock import patch
 from scripts.validate_cross_source_qualification_batch_v017 import validate
 D=json.loads((Path(__file__).parents[1]/"references/community/cross-source-qualification-batch-v0.1.7.json").read_text())
 class TestBatch4(unittest.TestCase):
@@ -29,6 +30,9 @@ class TestBatch4(unittest.TestCase):
   self.m(mutate)
  def test_empty_sources(self): self.m(lambda d:d.__setitem__("source_artifacts",[]))
  def test_source_hash(self): self.m(lambda d:d["source_artifacts"][0].__setitem__("sha256","0"*64))
+ def test_actual_source_hash(self):
+  with patch.object(Path,"read_bytes",return_value=b"tampered source"):
+   self.assertTrue(validate(copy.deepcopy(D)))
  def test_duplicate_source(self): self.m(lambda d:d["source_artifacts"].append(copy.deepcopy(d["source_artifacts"][0])))
  def test_signal(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("observed_nonqualifying_signals",[]))
  def test_decision(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("decision","ACCEPTED"))
@@ -41,4 +45,6 @@ class TestBatch4(unittest.TestCase):
    with self.subTest(key=key): self.m(lambda d,k=key:d["rejected_candidates"][0].__setitem__(k,"secret"))
  def test_private_value(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("note","/My Drive/private.pdf"))
  def test_private_manifestation_id(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("note","AKM-001234"))
+ def test_private_manifestation_embedded(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("note","copy_AKM-001234.pdf"))
+ def test_private_manifestation_key(self): self.m(lambda d:d["rejected_candidates"][0].__setitem__("AKM-001234","private"))
 if __name__=="__main__": unittest.main()
