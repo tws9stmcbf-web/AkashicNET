@@ -101,10 +101,10 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
         self.mutate(lambda d: d["edges"][0]["provenance"].__setitem__("derivation_method", "HUMAN_REVIEW_CANDIDATE"), "direct metadata boundary")
 
     def test_correction_not_mislabeled_retracted(self):
-        self.mutate(lambda d: d["edges"][3].__setitem__("edge_state", "RETRACTED"), "correction state")
+        self.mutate(lambda d: d["edges"][3].__setitem__("edge_state", "RETRACTED"), "relationship state")
 
     def test_competing_models_remain_review_only(self):
-        self.mutate(lambda d: d["edges"][2].__setitem__("edge_state", "ACTIVE"), "contradiction state")
+        self.mutate(lambda d: d["edges"][2].__setitem__("edge_state", "ACTIVE"), "relationship state")
 
     def test_duplicate_independence_key_rejected(self):
         self.mutate(lambda d: d["edges"][0].__setitem__("evidence_independence_keys", [d["edges"][0]["evidence_independence_keys"][0]] * 2), "evidence independence")
@@ -114,6 +114,15 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
 
     def test_missing_record_locator(self):
         self.mutate(lambda d: d["nodes"][0]["provenance"].__setitem__("record_locator", "/missing"), "record locator")
+
+    def test_existing_locator_must_identify_the_node_record(self):
+        self.mutate(lambda d: d["nodes"][1]["provenance"].__setitem__("record_locator", "/models/1/model_id"), "record identity")
+
+    def test_relationship_requires_typed_endpoints(self):
+        self.mutate(lambda d: d["edges"][0].__setitem__("source_node_id", "node:claim:CLAIM-BQ001-MARTIAL-2025-INTERP-01"), "relationship endpoint types")
+
+    def test_support_candidate_cannot_use_contradiction_state(self):
+        self.mutate(lambda d: d["edges"][1].__setitem__("edge_state", "REVIEW_ONLY_CONTRADICTION"), "relationship state")
 
     def test_unknown_parent_edge(self):
         self.mutate(lambda d: d["edges"][0]["parent_edge_ids"].append("edge:missing"), "edge ancestry")
