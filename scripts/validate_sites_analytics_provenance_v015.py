@@ -101,12 +101,18 @@ for raw_path in tracked:
     if b"\0" in data:
         continue
 
-    lines = data.decode("utf-8", errors="ignore").splitlines()
+    text = data.decode("utf-8", errors="ignore")
+    lines = text.splitlines()
+
+    for match in DIRECT_ASSIGNMENT.finditer(text):
+        if not is_safe_indirection(match.group("value")):
+            line_number = text.count("\\n", 0, match.start()) + 1
+            violations.add(f"{relative}:{line_number}")
+
     for index, line in enumerate(lines):
-        for pattern in (DIRECT_ASSIGNMENT, DOCKER_ASSIGNMENT):
-            for match in pattern.finditer(line):
-                if not is_safe_indirection(match.group("value")):
-                    violations.add(f"{relative}:{index + 1}")
+        for match in DOCKER_ASSIGNMENT.finditer(line):
+            if not is_safe_indirection(match.group("value")):
+                violations.add(f"{relative}:{index + 1}")
 
         if NAMED_TOKEN.search(line):
             for offset, candidate in enumerate(lines[index:index + 5]):
