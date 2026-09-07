@@ -107,7 +107,7 @@
       }
     },
     {
-      "node_id": "node:notice:10.1038/s41582-025-01111-9",
+      "node_id": "node:notice:doi:10.1038-s41582-025-01111-9",
       "node_type": "NOTICE",
       "label": "Author Correction: A neuroscientific model of near-death experiences",
       "provenance": {
@@ -193,7 +193,7 @@
     },
     {
       "edge_id": "edge:bq001:author-correction:martial-2025",
-      "source_node_id": "node:notice:10.1038/s41582-025-01111-9",
+      "source_node_id": "node:notice:doi:10.1038-s41582-025-01111-9",
       "target_node_id": "node:source:SRC-BQ001-MARTIAL-2025",
       "relationship_type": "CORRECTS",
       "assertion_class": "DIRECT_SOURCE_METADATA",
