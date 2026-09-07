@@ -95,7 +95,7 @@ def validate(d):
  if d.get("summary")!={"screened":len(allc),"qualified":len(q),"rejected":len(r),"accepted_edges":0}: e.append("summary")
  if d.get("rejection_is_not_negative_evidence") is not True: e.append("disclaimer")
  for k,v in walk(d):
-  if str(k).lower() in FORBIDDEN_KEYS or "AKM-" in str(k) or isinstance(v,str) and (any(marker in v for marker in FORBIDDEN_VALUES) or "AKM-" in v): e.append("private metadata")
+  if str(k).lower() in FORBIDDEN_KEYS or any(marker in str(k) for marker in FORBIDDEN_VALUES) or "AKM-" in str(k) or isinstance(v,str) and (any(marker in v for marker in FORBIDDEN_VALUES) or "AKM-" in v): e.append("private metadata")
  return sorted(set(e))
 
 def main():
