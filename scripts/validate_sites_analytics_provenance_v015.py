@@ -17,10 +17,16 @@ DIRECT_ASSIGNMENT = re.compile(
 DOCKER_ASSIGNMENT = re.compile(
     rf"""(?ix)^\s*(?:ENV|ARG)\s+{re.escape(TOKEN_NAME)}\s+{VALUE}"""
 )
-NAMED_TOKEN = re.compile(
-    rf"""(?ix)^\s*(?:[-{{]\s*)?["']?name["']?\s*(?:=|:)\s*["']?{re.escape(TOKEN_NAME)}["']?"""
+NAMED_VALUE_PAIR = re.compile(
+    rf"""(?isx)
+    (?<![A-Za-z0-9_])["']?name["']?\s*(?:=|:)\s*["']?{re.escape(TOKEN_NAME)}["']?
+    (?P<body>.{{0,500}}?)
+    (?<![A-Za-z0-9_])["']?value["']?\s*(?:=|:)\s*{VALUE}
+    """
 )
-VALUE_FIELD = re.compile(rf"""(?ix)["']?value["']?\s*(?:=|:)\s*{VALUE}""")
+ANY_NAMED_FIELD = re.compile(
+    r"""(?ix)(?<![A-Za-z0-9_])["']?name["']?\s*(?:=|:)"""
+)
 PENDING_ASSIGNMENT = re.compile(
     rf"""(?ix)^(?P<indent>\s*)["']?{re.escape(TOKEN_NAME)}["']?\s*(?:=|:)\s*(?:\#.*)?$"""
 )
@@ -117,6 +123,13 @@ for raw_path in tracked:
             line_number = text.count("\n", 0, match.start()) + 1
             violations.add(f"{relative}:{line_number}")
 
+    for match in NAMED_VALUE_PAIR.finditer(text):
+        if ANY_NAMED_FIELD.search(match.group("body")):
+            continue
+        if not is_safe_indirection(match.group("value")):
+            line_number = text.count("\n", 0, match.start()) + 1
+            violations.add(f"{relative}:{line_number}")
+
     for index, line in enumerate(lines):
         for match in DOCKER_ASSIGNMENT.finditer(line):
             if not is_safe_indirection(match.group("value")):
@@ -141,14 +154,6 @@ for raw_path in tracked:
                 if match and not is_safe_indirection(match.group("value")):
                     violations.add(f"{relative}:{index + offset + 1}")
                 break
-
-        if NAMED_TOKEN.match(line):
-            for offset, candidate in enumerate(lines[index:index + 5]):
-                if "valueFrom" in candidate:
-                    break
-                for match in VALUE_FIELD.finditer(candidate):
-                    if not is_safe_indirection(match.group("value")):
-                        violations.add(f"{relative}:{index + offset + 1}")
 
 if violations:
     fail(
