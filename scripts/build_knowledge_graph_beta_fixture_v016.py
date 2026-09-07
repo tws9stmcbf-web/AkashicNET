@@ -76,6 +76,7 @@ def build(sources=None):
         {
             "node_id": "node:question:BQ001",
             "node_type": "QUESTION",
+            "record_id": spec["id"],
             "label": spec["title"],
             "question_status": spec["status"],
             "provenance": prov("artifact:bq001-spec:0.1", "/id", "DIRECT_RECORD"),
@@ -83,30 +84,35 @@ def build(sources=None):
         {
             "node_id": "node:model:MODEL-BQ001-CONTINUITY",
             "node_type": "MODEL",
+            "record_id": continuity["model_id"],
             "label": continuity["name"],
             "provenance": prov("artifact:bq001-spec:0.1", "/models/0/model_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
             "node_type": "MODEL",
+            "record_id": biological["model_id"],
             "label": biological["name"],
             "provenance": prov("artifact:bq001-spec:0.1", "/models/1/model_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:source:SRC-BQ001-MARTIAL-2025",
             "node_type": "SOURCE",
+            "record_id": martial_source["source_id"],
             "label": martial_source["title"],
             "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/sources/4/source_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:claim:CLAIM-BQ001-MARTIAL-2025-INTERP-01",
             "node_type": "CLAIM",
+            "record_id": martial_claim["claim_id"],
             "label": martial_claim["text"],
             "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/claims/4/claim_id", "DIRECT_RECORD"),
         },
         {
             "node_id": "node:notice:doi:10.1038-s41582-025-01111-9",
             "node_type": "NOTICE",
+            "record_id": correction["doi"],
             "label": correction["title"],
             "provenance": prov("artifact:bq001-evidence-batch2:0.1", "/sources/4/related_notices/0/doi", "DIRECT_RECORD"),
         },
