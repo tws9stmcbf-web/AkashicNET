@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PrivacyAnalytics from "./components/PrivacyAnalytics";
 
 export const metadata: Metadata = {
   title: "AkashicNET — A Living Knowledge Network",
@@ -12,5 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <PrivacyAnalytics />
+      </body>
+    </html>
+  );
 }
