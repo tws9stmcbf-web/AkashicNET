@@ -9,23 +9,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROVENANCE = ROOT / "references/community/sites-analytics-provenance-v0.15.json"
 TOKEN_NAME = "NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN"
-ASSIGNMENT = re.compile(
-    rf"""(?ix)
-    ["']?{re.escape(TOKEN_NAME)}["']?
-    \s*(?:=|:)\s*
-    (?P<value>
-        "[^"\r\n]*"
-        |'[^'\r\n]*'
-        |[^\s#,}};]+
-    )
-    """
+VALUE = r"""(?P<value>"[^"\r\n]*"|'[^'\r\n]*'|[^\s#,};]+)"""
+DIRECT_ASSIGNMENT = re.compile(
+    rf"""(?ix)["']?{re.escape(TOKEN_NAME)}["']?\s*(?:=|:)\s*{VALUE}"""
 )
+DOCKER_ASSIGNMENT = re.compile(
+    rf"""(?ix)^\s*(?:ENV|ARG)\s+{re.escape(TOKEN_NAME)}\s+{VALUE}"""
+)
+NAMED_TOKEN = re.compile(
+    rf"""(?ix)["']?name["']?\s*:\s*["']?{re.escape(TOKEN_NAME)}["']?"""
+)
+VALUE_FIELD = re.compile(rf"""(?ix)["']?value["']?\s*:\s*{VALUE}""")
 SAFE_INDIRECTION = re.compile(
-    r"""(?ix)
-    ^(?:
-        ""
-        |''
-        |null
+    r"""(?ix)^(?:
+        null
         |none
         |<[^>]+>
         |\$\{[^}]+\}
@@ -34,13 +31,19 @@ SAFE_INDIRECTION = re.compile(
         |process\.env
         |os\.(?:environ|getenv)
         |vault:
-    )
-    """
+    )"""
 )
 
 
 def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
+
+
+def is_safe_indirection(raw_value: str) -> bool:
+    value = raw_value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+        value = value[1:-1].strip()
+    return not value or SAFE_INDIRECTION.match(value) is not None
 
 
 if not PROVENANCE.is_file():
@@ -85,7 +88,7 @@ for field in (
 tracked = subprocess.check_output(
     ["git", "-C", str(ROOT), "ls-files", "-z"],
 ).split(b"\0")
-violations = []
+violations = set()
 for raw_path in tracked:
     if not raw_path:
         continue
@@ -97,17 +100,26 @@ for raw_path in tracked:
         fail(f"cannot inspect tracked file {relative}: {exc}")
     if b"\0" in data:
         continue
-    text = data.decode("utf-8", errors="ignore")
-    for line_number, line in enumerate(text.splitlines(), start=1):
-        for match in ASSIGNMENT.finditer(line):
-            value = match.group("value").strip()
-            if not SAFE_INDIRECTION.match(value):
-                violations.append(f"{relative}:{line_number}")
+
+    lines = data.decode("utf-8", errors="ignore").splitlines()
+    for index, line in enumerate(lines):
+        for pattern in (DIRECT_ASSIGNMENT, DOCKER_ASSIGNMENT):
+            for match in pattern.finditer(line):
+                if not is_safe_indirection(match.group("value")):
+                    violations.add(f"{relative}:{index + 1}")
+
+        if NAMED_TOKEN.search(line):
+            for offset, candidate in enumerate(lines[index:index + 5]):
+                if "valueFrom" in candidate:
+                    break
+                for match in VALUE_FIELD.finditer(candidate):
+                    if not is_safe_indirection(match.group("value")):
+                        violations.add(f"{relative}:{index + offset + 1}")
 
 if violations:
     fail(
         "possible committed analytics token value in tracked configuration: "
-        + ", ".join(violations)
+        + ", ".join(sorted(violations))
     )
 
 print(
