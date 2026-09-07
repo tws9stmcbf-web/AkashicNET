@@ -1,0 +1,33 @@
+{
+  "schema_version": "akashicnet.sites-analytics-provenance.v0.15",
+  "recorded_at": "2026-09-07T13:41:48Z",
+  "canonical_site": {
+    "project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+    "title": "AkashicNET Public Portal",
+    "slug": "akashicnet-public",
+    "live_url": "https://akashicnet.org",
+    "source_commit_sha": "afa354735f42145e123a4e2469be6f70fd65b6a3"
+  },
+  "integration": {
+    "provider": "Cloudflare Web Analytics",
+    "activation_variable": "NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN",
+    "single_beacon_guard": true,
+    "fail_closed": true,
+    "runtime_configuration_state": "ABSENT",
+    "runtime_environment_revision": 0
+  },
+  "deployment": {
+    "latest_observed_version": 124,
+    "source_commit_deployed": false,
+    "live_beacon_state": "UNVERIFIED",
+    "verification_note": "The verification environment could not independently retrieve the live beacon. This is not evidence that a beacon is present or absent."
+  },
+  "governance": {
+    "classification": "aggregate operational telemetry only",
+    "scientific_evidence": false,
+    "truth_inference": false,
+    "visitor_level_public_logs": false,
+    "private_drive_promotion": false,
+    "sealed_v0_14_baseline_modified": false
+  }
+}
