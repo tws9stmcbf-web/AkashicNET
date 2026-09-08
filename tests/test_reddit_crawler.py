@@ -97,6 +97,28 @@ class RedditCrawlerTests(unittest.TestCase):
         self.assertNotIn('num_comments', record)
         self.assertNotIn('upvote_ratio', record)
 
+    def test_fetch_post_tombstones_removed_post_immediately(self):
+        class RemovedClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {
+                                'id': 'abc123',
+                                'title': '[removed]',
+                                'removed_by_category': 'moderator',
+                                'permalink': '/r/NeuronsToNirvana/comments/abc123/removed/',
+                            }
+                        }]
+                    }
+                }, {}
+
+        record = fetch_post(RemovedClient(), 'abc123')
+        self.assertEqual(record['record_type'], 'post_metadata_removed')
+        self.assertEqual(record['status'], 'removed')
+        for field in ('title', 'canonical_url', 'external_url', 'subreddit', 'created_utc', 'retrieved_at'):
+            self.assertNotIn(field, record)
+
     def test_fetch_post_keeps_absence_indeterminate(self):
         class EmptyClient:
             def get_json(self, path, params=None):
@@ -245,6 +267,21 @@ class RedditDeletionReconciliationTests(unittest.TestCase):
         self.assertEqual(record['status'], 'removed')
         self.assertNotIn('title', record)
         self.assertNotIn('canonical_url', record)
+
+    def test_reconcile_post_honors_rate_limit_headers(self):
+        class LimitedClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{'data': {'id': 'abc123', 'title': 'Still here'}}]
+                    }
+                }, {'x-ratelimit-remaining': '0', 'x-ratelimit-reset': '2'}
+
+        with patch('scripts.reddit_crawler.time.sleep') as sleep:
+            record = reconcile_post(LimitedClient(), 'abc123')
+
+        self.assertEqual(record['record_type'], 'post_metadata')
+        sleep.assert_called_once_with(3.0)
 
     def test_reconcile_post_tombstones_unavailable_post(self):
         class MissingClient:
