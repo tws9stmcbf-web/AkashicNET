@@ -142,6 +142,58 @@ class FrameworkInventoryTests(unittest.TestCase):
                             with self.assertRaisesRegex(ValueError, "private metadata rejected"):
                                 validator.validate(self.data)
 
+    def test_collection_locators_are_rejected(self):
+        def broaden(data):
+            item = data["inventory"][2]
+            item["pinned_locators"] = [p.rsplit("/", 1)[0] for p in item["pinned_locators"]]
+        self.mutate(broaden)
+
+    def test_terminal_identity_and_claim_relationship_are_required(self):
+        item = copy.deepcopy(self.data["inventory"][2])
+        documents = {Path(a["path"]).name: validator.load_json(
+            (validator.ROOT / a["path"]).read_bytes()) for a in self.data["governed_artifacts"]}
+        validator.validate_locators(item, documents)
+        # A represented ID hidden in prose must not substitute for a record identity.
+        source = documents["evidence-batch4-v0.1.json"]["sources"][3]
+        source["synthetic_note"] = source["source_id"]
+        source["source_id"] = "SRC-BQ001-SYNTHETIC"
+        with self.assertRaisesRegex(ValueError, "terminal record"):
+            validator.validate_locators(item, documents)
+        source["source_id"] = source.pop("synthetic_note")
+        documents["evidence-batch4-v0.1.json"]["claims"][3]["source_ids"] = ["SRC-BQ001-SYNTHETIC"]
+        with self.assertRaisesRegex(ValueError, "relationship drift"):
+            validator.validate_locators(item, documents)
+
+    def test_category_swaps_and_semantic_drift_are_rejected(self):
+        def swap_categories(data):
+            a, b = data["inventory"][2], data["inventory"][5]
+            a["category"], b["category"] = b["category"], a["category"]
+        self.mutate(swap_categories)
+        self.mutate(lambda d: d["inventory"][2].update(canonical_name="Unreviewed framework"))
+        self.mutate(lambda d: d["inventory"][2].update(status="EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001"))
+
+    def test_third_shared_source_owner_and_independence_drift_rejected(self):
+        def add_third_owner(data):
+            third = data["inventory"][2]
+            gnwt = data["inventory"][-2]
+            third["represented_by"] += gnwt["represented_by"]
+            third["pinned_locators"] += gnwt["pinned_locators"]
+        self.mutate(add_third_owner)
+        items = copy.deepcopy(self.data["inventory"])
+        items[2]["represented_by"] += items[-2]["represented_by"]
+        with self.assertRaisesRegex(ValueError, "membership requires review"):
+            validator.validate_shared_sources(items)
+        for index in (-2, -1):
+            items = copy.deepcopy(self.data["inventory"])
+            items[index]["independence_state"] = "UNASSESSED_REVIEW_REQUIRED"
+            with self.assertRaisesRegex(ValueError, "independence state drift"):
+                validator.validate_shared_sources(items)
+
+    def test_slice_cannot_claim_exhaustive_coverage(self):
+        self.assertFalse(self.data["scope"]["exhaustive_for_pinned_artifacts"])
+        self.assertIn("CLAIM-BQ001-KOCH-2016-INTERP-01", self.data["scope"]["description"])
+        self.mutate(lambda d: d["scope"].update(exhaustive_for_pinned_artifacts=True))
+
     def test_json_pointer_array_indices_are_canonical(self):
         document = {"items": list(range(11))}
         self.assertEqual(validator.resolve_pointer(document, "/items/0"), 0)

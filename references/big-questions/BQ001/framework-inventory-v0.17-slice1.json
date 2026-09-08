@@ -278,9 +278,9 @@
   "question_status": "UNRESOLVED",
   "release_track": "v0.17-evidence-intelligence-beta",
   "scope": {
-    "description": "Inventory of public-safe models, philosophical frameworks, contemplative selfhood frameworks, and consciousness theories explicitly represented in the five governed BQ001 evidence batches.",
+    "description": "Selected inventory of public-safe models, philosophical frameworks, contemplative selfhood frameworks, and consciousness theories represented in the governed BQ001 artifacts. This 11-item slice is not exhaustive: the neural-correlates research programme (CLAIM-BQ001-KOCH-2016-INTERP-01; SRC-BQ001-KOCH-2016) remains outside this slice and requires follow-up inventory review.",
     "exhaustive_beyond_pinned_artifacts": false,
-    "exhaustive_for_pinned_artifacts": true,
+    "exhaustive_for_pinned_artifacts": false,
     "synthesis_or_answer": false
   },
   "summary": {

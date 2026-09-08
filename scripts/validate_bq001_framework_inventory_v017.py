@@ -35,6 +35,22 @@ EXPECTED_IDS = {
     "FW-BQ001-CONSCIOUSNESS-GNWT",
     "FW-BQ001-CONSCIOUSNESS-IIT",
 }
+# Fixed semantics for this reviewed slice; changes require explicit review.
+SEMANTIC_FIELDS = ('canonical_name', 'category', 'evidence_role', 'status', 'independence_state', 'represented_by')
+EXPECTED_SEMANTICS = {
+    'FW-BQ001-UMBRELLA-BIOLOGICAL-DEPENDENCE': ('Biological-dependence model', 'UMBRELLA_MODEL', 'organising_model_only', 'UNRESOLVED', 'NOT_APPLICABLE_TO_MODEL', ('MODEL-BQ001-BIOLOGICAL-DEPENDENCE',)),
+    'FW-BQ001-UMBRELLA-CONTINUITY': ('Continuity or survival model', 'UMBRELLA_MODEL', 'organising_model_only', 'UNRESOLVED', 'NOT_APPLICABLE_TO_MODEL', ('MODEL-BQ001-CONTINUITY',)),
+    'FW-BQ001-PHILOSOPHY-PHYSICALISM': ('Physicalism', 'PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SEP-PHYSICALISM', 'CLAIM-BQ001-PHYSICALISM-INTERP-01')),
+    'FW-BQ001-PHILOSOPHY-DUALISM': ('Dualism', 'PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SEP-DUALISM', 'CLAIM-BQ001-DUALISM-INTERP-01')),
+    'FW-BQ001-PHILOSOPHY-PANPSYCHISM': ('Panpsychism', 'PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SEP-PANPSYCHISM', 'CLAIM-BQ001-PANPSYCHISM-INTERP-01')),
+    'FW-BQ001-CONTEMPLATIVE-BUDDHIST-NONSELF': ('Buddhist non-self accounts', 'CONTEMPLATIVE_PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SIDERITS-2011', 'CLAIM-BQ001-SIDERITS-2011-INTERP-01')),
+    'FW-BQ001-CONTEMPLATIVE-DAHL-PRACTICE-FAMILIES': ('Attentional, constructive, and deconstructive meditation families', 'PEER_REVIEWED_REVIEW_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-DAHL-2015', 'CLAIM-BQ001-DAHL-2015-INTERP-01')),
+    'FW-BQ001-CONTEMPLATIVE-SART': ('S-ART: self-awareness, self-regulation, and self-transcendence', 'PEER_REVIEWED_THEORETICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-VAGO-2012', 'CLAIM-BQ001-VAGO-2012-INTERP-01')),
+    'FW-BQ001-NDE-NEUROSCIENTIFIC-MODEL': ('Neuroscientific model of near-death experiences', 'NEUROSCIENTIFIC_EXPLANATORY_MODEL', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-MARTIAL-2025', 'CLAIM-BQ001-MARTIAL-2025-INTERP-01')),
+    'FW-BQ001-CONSCIOUSNESS-GNWT': ('Global Neuronal Workspace Theory', 'CONSCIOUSNESS_THEORY', 'Established Evidence', 'EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001', 'SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION', ('SRC-BQ001-COGITATE-2025', 'CLAIM-BQ001-COGITATE-2025-OBS-01')),
+    'FW-BQ001-CONSCIOUSNESS-IIT': ('Integrated Information Theory', 'CONSCIOUSNESS_THEORY', 'Established Evidence', 'EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001', 'SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT', ('SRC-BQ001-COGITATE-2025', 'CLAIM-BQ001-COGITATE-2025-OBS-01')),
+}
+
 FORBIDDEN_KEYS = {
     "driveid", "drivefileid", "driveobjectid", "fileid", "objectid",
     "filename", "filepath", "privatepath", "parentid", "objecthash",
@@ -119,12 +135,52 @@ def resolve_pointer(document, pointer):
     return current
 
 
-def collect_strings(value):
-    if isinstance(value, dict):
-        return {item for child in value.values() for item in collect_strings(child)}
-    if isinstance(value, list):
-        return {item for child in value for item in collect_strings(child)}
-    return {value} if isinstance(value, str) else set()
+def validate_locators(item, by_name):
+    records = []
+    observed = set()
+    identity_fields = {
+        "models": "model_id", "competing_models": "model_id",
+        "sources": "source_id", "claims": "claim_id",
+    }
+    for locator in item["pinned_locators"]:
+        filename, pointer = locator.split("#", 1)
+        match = re.fullmatch(r"/(models|competing_models|sources|claims)/(0|[1-9][0-9]*)", pointer)
+        if filename not in by_name or match is None:
+            raise ValueError("locator must identify an exact governed record")
+        record = resolve_pointer(by_name[filename], pointer)
+        field = identity_fields[match.group(1)]
+        if not isinstance(record, dict) or not isinstance(record.get(field), str):
+            raise ValueError("locator lacks terminal record identity")
+        observed.add(record[field])
+        records.append(record)
+    if set(item["represented_by"]) != observed:
+        raise ValueError("represented identity is not bound to terminal record")
+    sources = {record["source_id"] for record in records if "source_id" in record}
+    claims = [record for record in records if "claim_id" in record]
+    if sources or claims:
+        if not sources or not claims or any(
+            not record.get("source_ids") or not set(record["source_ids"]).issubset(sources)
+            for record in claims
+        ) or sources != {source for record in claims for source in record["source_ids"]}:
+            raise ValueError("source and claim relationship drift")
+
+
+def validate_shared_sources(items):
+    owners = {}
+    for item in items:
+        for identity in item["represented_by"]:
+            if identity.startswith(("SRC-", "CLAIM-")):
+                owners.setdefault(identity, set()).add(item["inventory_item_id"])
+    shared = {identity: users for identity, users in owners.items() if len(users) > 1}
+    pair = {"FW-BQ001-CONSCIOUSNESS-GNWT", "FW-BQ001-CONSCIOUSNESS-IIT"}
+    expected = {identity: pair for identity in (
+        "SRC-BQ001-COGITATE-2025", "CLAIM-BQ001-COGITATE-2025-OBS-01"
+    )}
+    if shared != expected:
+        raise ValueError("shared source membership requires review")
+    states = {item["inventory_item_id"]: item["independence_state"] for item in items}
+    if states.get("FW-BQ001-CONSCIOUSNESS-GNWT") != "SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION" or states.get("FW-BQ001-CONSCIOUSNESS-IIT") != "SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT":
+        raise ValueError("shared source independence state drift")
 
 
 def validate(data):
@@ -173,15 +229,13 @@ def validate(data):
     if len(names) != len(set(names)):
         raise ValueError("duplicate canonical framework name")
 
+    validate_shared_sources(items)
     for item in items:
-        observed = set()
-        for locator in item["pinned_locators"]:
-            filename, pointer = locator.split("#", 1)
-            if filename not in by_name:
-                raise ValueError("locator references ungoverned artifact")
-            observed |= collect_strings(resolve_pointer(by_name[filename], pointer))
-        if not set(item["represented_by"]).issubset(observed):
-            raise ValueError("represented identity is not bound to locator")
+        validate_locators(item, by_name)
+        semantics = tuple(tuple(item[field]) if isinstance(item[field], list) else item[field]
+                          for field in SEMANTIC_FIELDS)
+        if semantics != EXPECTED_SEMANTICS[item["inventory_item_id"]]:
+            raise ValueError("framework identity semantics drift")
         if item["evidence_role"] == "Established Evidence" and item["category"] != "CONSCIOUSNESS_THEORY":
             raise ValueError("empirical label applied outside bounded theory test")
         if item["evidence_role"] == "organising_model_only" and item["category"] != "UMBRELLA_MODEL":
@@ -191,15 +245,6 @@ def validate(data):
                 raise ValueError("model assigned evidence independence")
         elif item["independence_state"] == "NOT_APPLICABLE_TO_MODEL":
             raise ValueError("evidence-bearing item lacks review state")
-
-    indexed = {item["inventory_item_id"]: item for item in items}
-    gnwt = indexed["FW-BQ001-CONSCIOUSNESS-GNWT"]
-    iit = indexed["FW-BQ001-CONSCIOUSNESS-IIT"]
-    shared = set(gnwt["represented_by"]) & set(iit["represented_by"])
-    if shared != {"SRC-BQ001-COGITATE-2025", "CLAIM-BQ001-COGITATE-2025-OBS-01"}:
-        raise ValueError("shared GNWT/IIT provenance drift")
-    if iit["independence_state"] != "SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT":
-        raise ValueError("shared source double-counting guard missing")
 
     counts = {
         "governed_artifacts": len(artifacts),

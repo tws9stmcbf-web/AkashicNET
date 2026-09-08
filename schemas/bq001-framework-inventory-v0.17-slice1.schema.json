@@ -57,7 +57,7 @@
           "minLength": 1
         },
         "exhaustive_for_pinned_artifacts": {
-          "const": true
+          "const": false
         },
         "exhaustive_beyond_pinned_artifacts": {
           "const": false
