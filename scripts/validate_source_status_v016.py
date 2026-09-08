@@ -110,21 +110,22 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         "RETRACTED": r"retract(?:ion|ed|ing)",
         "DELETED": r"delet(?:ion|ed|ing)",
     }
-    negation = r"(?:no|not|never|without|failed to|failure to)"
+    without_denial = (
+        r"without(?:[\s,]+\w+){0,2}[\s,]+"
+        r"(?:confirmation|verification|evidence|observation|confirming|verifying|observing)\b"
+    )
+    negation = rf"(?:no|not|never|failed to|failure to|{without_denial})"
     concept = concept_patterns[status]
     separator = r"[\s,]+"
     negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,3}}{separator}(?:{concept})"
-    # Modifiers may intervene in the status predicate, but a later clause's
-    # no-promotion disclaimer must not negate an already affirmative status.
-    # 'without treating ... as false' is a no-promotion consequence, not a
-    # denial of deletion. Other supported negators remain symmetric.
-    post_negation = r"(?:no|not|never|failed to|failure to|without(?![\s,]+treating\b))"
-    concept_before_negation = rf"(?:{concept})(?:{separator}\w+){{0,4}}{separator}{post_negation}\b"
+    # Only 'without' clauses whose complement denotes missing evidence negate
+    # a status. Provenance and no-promotion consequences remain affirmative.
+    concept_before_negation = rf"(?:{concept})(?:{separator}\w+){{0,4}}{separator}{negation}\b"
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
         or (status == "TITLE_CHANGED" and re.search(
-            r"\btitle(?:[\s,]+\w+){0,4}[\s,]+(?:not|never)(?:[\s,]+\w+){0,3}[\s,]+chang(?:e|ed|ing)\b",
+            r"\btitle(?:[\s,]+\w+){0,4}[\s,]+(?:no|not|never|failed to|failure to)(?:[\s,]+\w+){0,3}[\s,]+chang(?:e|ed|ing)\b",
             observation,
         ))
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])

@@ -219,6 +219,8 @@ def test_same_clause_adverb_negation_still_rejected(status, concept, spacing):
     "A title-change check found the title did not actually change.",
     "A title-change check found the title had not actually changed.",
     "A title-change check found the title has never actually changed.",
+    "A title-change check found that the title failed to change.",
+    "A title-change check found that the title failure to change was recorded.",
 ])
 def test_split_title_change_denial_rejected(observation):
     data = copy.deepcopy(SYNTHETIC)
@@ -248,6 +250,31 @@ def test_all_post_concept_negators_and_comma_modifiers(status, concept, denial):
     event(data, status)["evidence"]["observation"] = f"A {concept} notice says the {concept} {denial}."
     with pytest.raises(AssertionError, match="evidence is negated"):
         validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        (
+            "TITLE_CHANGED",
+            "An explicit title-change was recorded without altering the original URL.",
+        ),
+        (
+            "RETRACTED",
+            "A retraction notice confirms the work was retracted without automatically deeming its claims false.",
+        ),
+        (
+            "DELETED",
+            "The source was deleted without removing its preserved provenance.",
+        ),
+    ],
+)
+def test_affirmative_status_allows_benign_without_consequences(
+    status: str, observation: str
+) -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
 
 
 def test_synthetic_retraction_cannot_infer_falsity() -> None:
