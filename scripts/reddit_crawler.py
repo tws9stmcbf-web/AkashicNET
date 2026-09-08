@@ -74,6 +74,114 @@ def normalize_post(
     }
 
 
+_REMOVED_MARKERS = {"[deleted]", "[removed]"}
+
+
+def normalize_post_v2(
+    child: dict[str, Any],
+    retrieved_at: str,
+    *,
+    endpoint: str = "subreddit_listing",
+) -> dict[str, Any]:
+    """Minimized schema for future API-derived records.
+
+    Deliberately narrower than ``akashicnet.reddit.post.v1``: excludes
+    engagement counters (score, num_comments, upvote_ratio) as well as post
+    bodies, comments and usernames. Only fields justified by source
+    identity, canonical linking, time, safety/routing, and provenance are
+    retained. This function must never mutate or replace ``normalize_post``.
+    """
+    data = child.get("data", child)
+    permalink = str(data.get("permalink") or "")
+    return {
+        "schema_version": "akashicnet.reddit.post.v2",
+        "source": "reddit",
+        "record_type": "post_metadata",
+        "reddit_id": data.get("id"),
+        "fullname": data.get("name"),
+        "subreddit": data.get("subreddit"),
+        "title": data.get("title"),
+        "canonical_url": canonical_post_url(permalink) if permalink else None,
+        "external_url": data.get("url_overridden_by_dest") or data.get("url"),
+        "created_utc": data.get("created_utc"),
+        "over_18": data.get("over_18"),
+        "retrieved_at": retrieved_at,
+        "provenance": {
+            "api": "reddit-data-api",
+            "endpoint": endpoint,
+            "metadata_only": True,
+        },
+    }
+
+
+def is_post_removed(data: dict[str, Any] | None) -> bool:
+    """Best-effort detection that a post is deleted/removed upstream."""
+    if not data:
+        return True
+    if data.get("removed_by_category"):
+        return True
+    if data.get("title") in _REMOVED_MARKERS:
+        return True
+    if data.get("is_self") and data.get("selftext") in _REMOVED_MARKERS:
+        return True
+    return False
+
+
+def tombstone_record(reddit_id: str, checked_at: str, *, status: str = "removed") -> dict[str, Any]:
+    """Minimal non-content audit record for a deleted/unavailable post.
+
+    Only reddit_id, status and checked_at are retained; every other content
+    field (title, canonical_url, external_url, etc.) is dropped so that
+    removed content is never retained after a validated refresh.
+    """
+    return {
+        "schema_version": "akashicnet.reddit.post.v2",
+        "record_type": "post_metadata_removed",
+        "reddit_id": reddit_id,
+        "status": status,
+        "checked_at": checked_at,
+    }
+
+
+def reconcile_post(client: Any, reddit_id: str) -> dict[str, Any]:
+    """Refresh a single post and reconcile deletion state.
+
+    If the API no longer returns the post, or marks it removed, the
+    returned record is a minimal tombstone (see ``tombstone_record``)
+    rather than a record retaining removed content.
+    """
+    normalized_id = normalize_post_id(reddit_id)
+    payload, _ = client.get_json(
+        "/api/info",
+        params={"id": f"t3_{normalized_id}", "raw_json": 1},
+    )
+    children = payload.get("data", {}).get("children", [])
+    checked_at = utc_now_iso()
+    for child in children:
+        data = child.get("data", child)
+        if str(data.get("id") or "").lower() == normalized_id:
+            if is_post_removed(data):
+                return tombstone_record(normalized_id, checked_at, status="removed")
+            return normalize_post_v2(child, checked_at, endpoint="reconcile")
+    return tombstone_record(normalized_id, checked_at, status="unavailable")
+
+
+def reconcile_records(client: Any, records: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Reconcile a batch of cached records, tombstoning deleted ones.
+
+    Records that are already tombstones (``post_metadata_removed``) or lack
+    a ``reddit_id`` are passed through unchanged rather than re-fetched.
+    """
+    reconciled: list[dict[str, Any]] = []
+    for record in records:
+        reddit_id = record.get("reddit_id")
+        if not reddit_id or record.get("record_type") == "post_metadata_removed":
+            reconciled.append(record)
+            continue
+        reconciled.append(reconcile_post(client, str(reddit_id)))
+    return reconciled
+
+
 @dataclass
 class OAuthClient:
     client_id: str
