@@ -375,6 +375,55 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
         self.assertNotIn("record identity", errors)
         self.assertNotIn("relationship endpoint types", errors)
 
+    def test_parented_competition_requires_distinct_model_records(self):
+        data = copy.deepcopy(DATA)
+        continuity_node = next(
+            node
+            for node in data["nodes"]
+            if node.get("record_id") == "MODEL-BQ001-CONTINUITY"
+        )
+        biological_node = next(
+            node
+            for node in data["nodes"]
+            if node.get("record_id") == "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+        )
+        model_membership_edge = data["edges"][0]
+        competing_edge = data["edges"][2]
+        continuity_node["record_id"] = biological_node["record_id"]
+        continuity_node["label"] = biological_node["label"]
+        continuity_node["provenance"] = copy.deepcopy(biological_node["provenance"])
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("semantic self edge", errors)
+        self.assertIn("edge ancestry policy", errors)
+        self.assertNotIn("self edge", errors)
+
+    def test_malformed_parent_source_provenance_fails_closed(self):
+        data = copy.deepcopy(DATA)
+        question_node = data["nodes"][0]
+        model_membership_edge = data["edges"][0]
+        competing_edge = data["edges"][2]
+        question_node["provenance"] = None
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("provenance", errors)
+        self.assertIn("edge ancestry policy", errors)
+
+    def test_malformed_parent_edge_provenance_fails_closed(self):
+        data = copy.deepcopy(DATA)
+        model_membership_edge = data["edges"][0]
+        competing_edge = data["edges"][2]
+        model_membership_edge["provenance"] = None
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("provenance", errors)
+        self.assertIn("direct metadata boundary", errors)
+        self.assertIn("relationship assertion contract", errors)
+        self.assertIn("edge ancestry policy", errors)
+
     def test_inferred_parent_cannot_amplify_inferred_child(self):
         data = copy.deepcopy(DATA)
         support_edge = data["edges"][1]

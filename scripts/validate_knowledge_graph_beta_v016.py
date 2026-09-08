@@ -306,12 +306,18 @@ def validate(data):
         if edge.get("accepted_edge") is not False:
             errors.append("accepted edges prohibited")
 
+        raw_edge_provenance = edge.get("provenance")
+        edge_provenance = (
+            raw_edge_provenance
+            if isinstance(raw_edge_provenance, dict)
+            else {}
+        )
         assertion = edge.get("assertion_class")
         if assertion == "INFERRED_CANDIDATE":
-            if edge.get("review_state") != "REVIEW_REQUIRED" or edge.get("edge_state") not in {"REVIEW_ONLY", "REVIEW_ONLY_CONTRADICTION"} or edge.get("provenance", {}).get("derivation_method") != "HUMAN_REVIEW_CANDIDATE":
+            if edge.get("review_state") != "REVIEW_REQUIRED" or edge.get("edge_state") not in {"REVIEW_ONLY", "REVIEW_ONLY_CONTRADICTION"} or edge_provenance.get("derivation_method") != "HUMAN_REVIEW_CANDIDATE":
                 errors.append("inferred review boundary")
         elif assertion == "DIRECT_SOURCE_METADATA":
-            if edge.get("review_state") != "SOURCE_ASSERTED" or edge.get("provenance", {}).get("derivation_method") != "DIRECT_RECORD":
+            if edge.get("review_state") != "SOURCE_ASSERTED" or edge_provenance.get("derivation_method") != "DIRECT_RECORD":
                 errors.append("direct metadata boundary")
         else:
             errors.append("assertion class")
@@ -320,6 +326,13 @@ def validate(data):
         contract = RELATIONSHIP_CONTRACTS.get(relationship)
         source_node = nodes_by_id.get(edge.get("source_node_id"))
         target_node = nodes_by_id.get(edge.get("target_node_id"))
+        if (
+            relationship == "COMPETES_WITH_CANDIDATE"
+            and isinstance(source_node, dict)
+            and isinstance(target_node, dict)
+            and source_node.get("record_id") == target_node.get("record_id")
+        ):
+            errors.append("semantic self edge")
         if contract is None or source_node is None or target_node is None:
             errors.append("relationship contract")
         else:
@@ -338,7 +351,7 @@ def validate(data):
             if (
                 edge.get("assertion_class") != assertion_class
                 or edge.get("review_state") != review_state
-                or edge.get("provenance", {}).get("derivation_method") != derivation_method
+                or edge_provenance.get("derivation_method") != derivation_method
             ):
                 errors.append("relationship assertion contract")
 
@@ -380,11 +393,21 @@ def validate(data):
                     (edge.get("relationship_type"), parent.get("relationship_type"))
                 )
                 allowed_child_endpoints = {edge.get(role) for role in child_roles}
-                parent_provenance = parent.get("provenance", {})
+                raw_parent_provenance = parent.get("provenance")
+                parent_provenance = (
+                    raw_parent_provenance
+                    if isinstance(raw_parent_provenance, dict)
+                    else {}
+                )
                 parent_source_node = nodes_by_id.get(parent.get("source_node_id"))
-                parent_source_provenance = (
-                    parent_source_node.get("provenance", {})
+                raw_parent_source_provenance = (
+                    parent_source_node.get("provenance")
                     if isinstance(parent_source_node, dict)
+                    else None
+                )
+                parent_source_provenance = (
+                    raw_parent_source_provenance
+                    if isinstance(raw_parent_source_provenance, dict)
                     else {}
                 )
                 if source_contract is None:
@@ -400,6 +423,12 @@ def validate(data):
                     parent.get("assertion_class") != "DIRECT_SOURCE_METADATA"
                     or child_endpoints.isdisjoint(parent_endpoints)
                     or parent.get(parent_role) not in allowed_child_endpoints
+                    or (
+                        edge.get("relationship_type") == "COMPETES_WITH_CANDIDATE"
+                        and isinstance(source_node, dict)
+                        and isinstance(target_node, dict)
+                        and source_node.get("record_id") == target_node.get("record_id")
+                    )
                     or parent_provenance.get("artifact_id") != required_artifact_id
                     or not re.fullmatch(
                         required_record_locator,
