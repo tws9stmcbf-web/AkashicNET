@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.16.0-beta.1",
+  "artifact_status": "REVIEW_FIXTURE_ONLY",
+  "issue": 282,
+  "source_nodes": [
+    {
+      "source_node_id": "URL-156870e7d4242fc6",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+      "input_path": "references/source-integrity-v014-assessment-batch3d-review-v0.1.json",
+      "input_blob_sha": "68a74ce903cadc6dd61ff8df41e8f2fe4bef0463"
+    },
+    {
+      "source_node_id": "URL-1757108bddd5aad1",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+      "input_path": "references/source-integrity-v014-assessment-batch3d-review-v0.1.json",
+      "input_blob_sha": "68a74ce903cadc6dd61ff8df41e8f2fe4bef0463"
+    },
+    {
+      "source_node_id": "URL-1dc0e1c629548271",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+      "input_path": "references/source-integrity-v014-assessment-batch3d-review-v0.1.json",
+      "input_blob_sha": "68a74ce903cadc6dd61ff8df41e8f2fe4bef0463"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "SSE-N2N-DUPLICATE-CANDIDATE-001",
+      "source_node_id": "URL-156870e7d4242fc6",
+      "status": "DUPLICATE_REFERENCE_CANDIDATE",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ugzawh/technology_and_extended_consciousness",
+      "retrieved_at": "2026-09-03",
+      "evidence": {
+        "kind": "REPOSITORY_REVIEW",
+        "observation": "One normalized URL has 16 intentional occurrences across repository surfaces; this is a candidate relationship, not an automatic merge."
+      },
+      "input_blob_sha": "68a74ce903cadc6dd61ff8df41e8f2fe4bef0463",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-N2N-DUPLICATE-CANDIDATE-002",
+      "source_node_id": "URL-1757108bddd5aad1",
+      "status": "DUPLICATE_REFERENCE_CANDIDATE",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ucqwjw/karma_and_continuity_across_lives",
+      "retrieved_at": "2026-09-03",
+      "evidence": {
+        "kind": "REPOSITORY_REVIEW",
+        "observation": "One normalized URL has 16 intentional occurrences across repository surfaces; no record is deleted or silently merged."
+      },
+      "input_blob_sha": "68a74ce903cadc6dd61ff8df41e8f2fe4bef0463",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-N2N-PROVENANCE-INCOMPLETE-001",
+      "source_node_id": "URL-1dc0e1c629548271",
+      "status": "PROVENANCE_INCOMPLETE",
+      "original_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tx3m7w/the_world_felt_more_alive",
+      "retrieved_at": "2026-09-03",
+      "evidence": {
+        "kind": "REPOSITORY_REVIEW",
+        "observation": "Current live access, publication date, and live title remain unconfirmed after blocked retrieval and exact-search attempts."
+      },
+      "input_blob_sha": "68a74ce903cadc6dd61ff8df41e8f2fe4bef0463",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    }
+  ],
+  "promotion_guards": {
+    "truth": false,
+    "evidence": false,
+    "rights": false,
+    "identity": false,
+    "edge_acceptance": false
+  },
+  "coverage": {
+    "implemented_statuses": ["DUPLICATE_REFERENCE_CANDIDATE", "PROVENANCE_INCOMPLETE"],
+    "verified_gaps": ["AVAILABLE", "REDIRECTED", "TITLE_CHANGED", "UNAVAILABLE_INDETERMINATE", "CORRECTED", "RETRACTED", "DELETED"]
+  }
+}

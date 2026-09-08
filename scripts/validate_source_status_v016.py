@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FIXTURE = ROOT / "references/source-status-fixture-v0.16.json"
+FIXTURES = sorted((ROOT / "references").glob("source-status-fixture-v0.16*.json"))
 SCHEMA = ROOT / "schemas/source-status-v0.16.schema.json"
 ALL_STATUSES = {
     "AVAILABLE", "REDIRECTED", "TITLE_CHANGED", "UNAVAILABLE_INDETERMINATE",
@@ -102,11 +102,17 @@ def validate(data: dict) -> None:
         if status in {"CORRECTED", "RETRACTED"}:
             if not event["evidence"].get("notice_url"):
                 fail(f"notice status lacks notice URL: {event_id}")
+        observation = event["evidence"]["observation"].lower()
         if status == "RETRACTED":
-            observation = event["evidence"]["observation"].lower()
             affirmative_markers = ("retraction notice", "has been retracted", "was retracted")
             if not any(marker in observation for marker in affirmative_markers):
                 fail(f"retraction evidence is not explicit: {event_id}")
+        if status == "DUPLICATE_REFERENCE_CANDIDATE":
+            candidate_guards = ("not an automatic merge", "no record is deleted or silently merged")
+            if not any(marker in observation for marker in candidate_guards):
+                fail(f"duplicate candidate lacks non-merge boundary: {event_id}")
+        if status == "PROVENANCE_INCOMPLETE" and "unconfirmed" not in observation:
+            fail(f"incomplete provenance is not explicit: {event_id}")
 
     guards = data.get("promotion_guards", {})
     expected_guards = {"truth", "evidence", "rights", "identity", "edge_acceptance"}
@@ -123,16 +129,19 @@ def validate(data: dict) -> None:
     if implemented | gaps != ALL_STATUSES:
         fail("coverage must account for every contract status")
     if "RETRACTED" not in gaps:
-        fail("slice 1 must not imply verified retraction coverage")
+        fail("fixture must not imply verified retraction coverage")
 
 
 def main() -> int:
     try:
-        validate(json.loads(FIXTURE.read_text(encoding="utf-8")))
+        if not FIXTURES:
+            fail("no source-status fixtures found")
+        for fixture in FIXTURES:
+            validate(json.loads(fixture.read_text(encoding="utf-8")))
     except (AssertionError, KeyError, json.JSONDecodeError, subprocess.CalledProcessError) as exc:
         print(f"source-status-v0.16: FAIL: {exc}", file=sys.stderr)
         return 1
-    print("source-status-v0.16: PASS (review-only; no promotions)")
+    print(f"source-status-v0.16: PASS ({len(FIXTURES)} review-only fixtures; no promotions)")
     return 0
 
 
