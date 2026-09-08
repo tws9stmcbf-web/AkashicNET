@@ -286,6 +286,55 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
             data["edges"][1]["parent_edge_ids"] = [data["edges"][0]["edge_id"]]
         self.mutate(cycle, "circular ancestry")
 
+    def test_valid_nonempty_ancestry_preserves_one_lineage(self):
+        data = copy.deepcopy(DATA)
+        direct_edge = data["edges"][0]
+        inferred_edge = data["edges"][2]
+        inferred_edge["parent_edge_ids"] = [direct_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertNotIn("edge ancestry", errors)
+        self.assertNotIn("edge ancestry policy", errors)
+        self.assertNotIn("circular ancestry", errors)
+        self.assertNotIn("evidence independence", errors)
+
+    def test_child_must_disclose_every_inherited_lineage(self):
+        data = copy.deepcopy(DATA)
+        inferred_edge = data["edges"][2]
+        correction_edge = data["edges"][3]
+        inferred_edge["parent_edge_ids"] = [correction_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("evidence independence", errors)
+
+    def test_unrelated_parent_cannot_launder_independence(self):
+        data = copy.deepcopy(DATA)
+        inferred_edge = data["edges"][2]
+        correction_edge = data["edges"][3]
+        inferred_edge["parent_edge_ids"] = [correction_edge["edge_id"]]
+        inferred_edge["evidence_independence_keys"] = [
+            "source:bq001:spec-v0.1",
+            "source:bq001:evidence-batch2-v0.1",
+        ]
+        self.assertIn("edge ancestry policy", validate(data))
+
+    def test_inferred_parent_cannot_amplify_inferred_child(self):
+        data = copy.deepcopy(DATA)
+        support_edge = data["edges"][1]
+        competing_edge = data["edges"][2]
+        competing_edge["parent_edge_ids"] = [support_edge["edge_id"]]
+        competing_edge["evidence_independence_keys"] = [
+            "source:bq001:spec-v0.1",
+            "source:bq001:evidence-batch2-v0.1",
+        ]
+        self.assertIn("edge ancestry policy", validate(data))
+
+    def test_direct_metadata_cannot_have_parent_edges(self):
+        data = copy.deepcopy(DATA)
+        correction_edge = data["edges"][3]
+        support_edge = data["edges"][1]
+        correction_edge["parent_edge_ids"] = [support_edge["edge_id"]]
+        self.assertIn("edge ancestry policy", validate(data))
+
     def test_private_key_rejected(self):
         self.mutate(lambda d: d.__setitem__("drive_id", "private"), "private metadata")
 
