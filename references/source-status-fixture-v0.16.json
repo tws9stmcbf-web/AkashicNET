@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.16.0-beta.1",
+  "artifact_status": "REVIEW_FIXTURE_ONLY",
+  "issue": 282,
+  "source_nodes": [
+    {
+      "source_node_id": "SRC-BQ001-ELHAJ-2019",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/31322576/",
+      "input_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "input_blob_sha": "894ee42a3a2c1b8cf09f8026fac9b03dc74bf5f9"
+    },
+    {
+      "source_node_id": "SRC-BQ001-SIDERITS-2011",
+      "original_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "input_path": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+      "input_blob_sha": "4d3f4bebc8605290abc62fa1eaa735912d44c60f"
+    },
+    {
+      "source_node_id": "SRC-BQ001-MARTIAL-2025",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/40159547/",
+      "input_path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "input_blob_sha": "894ee42a3a2c1b8cf09f8026fac9b03dc74bf5f9"
+    },
+    {
+      "source_node_id": "SRC-MICRODOSING-PETRANKER-2026",
+      "original_url": "https://doi.org/10.1016/j.drugpo.2026.105459",
+      "input_path": "research/microdosing-research-2026.md",
+      "input_blob_sha": "05b14477d17edafdfcb80481f134848066cd3a2a"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "SSE-BQ001-AVAILABLE-001",
+      "source_node_id": "SRC-BQ001-ELHAJ-2019",
+      "status": "AVAILABLE",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/31322576/",
+      "retrieved_at": "2026-09-01",
+      "evidence": {
+        "kind": "API",
+        "observation": "Repository checkpoint records a matching PubMed source and no redirect."
+      },
+      "input_blob_sha": "894ee42a3a2c1b8cf09f8026fac9b03dc74bf5f9",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-BQ001-REDIRECT-001",
+      "source_node_id": "SRC-BQ001-SIDERITS-2011",
+      "status": "REDIRECTED",
+      "original_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+      "retrieved_at": "2026-09-02",
+      "evidence": {
+        "kind": "HTTP",
+        "observation": "Publisher redirect was observed; matching title and DOI remained available.",
+        "observed_url": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685"
+      },
+      "transition": {
+        "from_url": "https://academic.oup.com/edited-volume/38581/chapter-abstract/334605685",
+        "to_url": "https://oup.silverchair-cdn.com/book-minimal/38581/chapter-minimal/334605685",
+        "replacement_applied": false
+      },
+      "input_blob_sha": "4d3f4bebc8605290abc62fa1eaa735912d44c60f",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-BQ001-CORRECTION-001",
+      "source_node_id": "SRC-BQ001-MARTIAL-2025",
+      "status": "CORRECTED",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/40159547/",
+      "retrieved_at": "2026-09-01",
+      "evidence": {
+        "kind": "PUBLISHER_RECORD",
+        "observation": "An author correction changes one precursor term; the source is explicitly not classified as retracted.",
+        "notice_url": "https://www.nature.com/articles/s41582-025-01111-9"
+      },
+      "input_blob_sha": "894ee42a3a2c1b8cf09f8026fac9b03dc74bf5f9",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-MICRODOSING-INDETERMINATE-001",
+      "source_node_id": "SRC-MICRODOSING-PETRANKER-2026",
+      "status": "UNAVAILABLE_INDETERMINATE",
+      "original_url": "https://doi.org/10.1016/j.drugpo.2026.105459",
+      "retrieved_at": "2026-09-02",
+      "evidence": {
+        "kind": "HTTP",
+        "observation": "Direct DOI and publisher probes timed out; matching identifiers were resolved through Crossref and PubMed, so no broken-link or truth conclusion is made."
+      },
+      "input_blob_sha": "05b14477d17edafdfcb80481f134848066cd3a2a",
+      "human_review_state": "REVIEWED_NO_PROMOTION",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    }
+  ],
+  "promotion_guards": {
+    "truth": false,
+    "evidence": false,
+    "rights": false,
+    "identity": false,
+    "edge_acceptance": false
+  },
+  "coverage": {
+    "implemented_statuses": ["AVAILABLE", "REDIRECTED", "CORRECTED", "UNAVAILABLE_INDETERMINATE"],
+    "verified_gaps": ["RETRACTED", "TITLE_CHANGED", "DELETED", "DUPLICATE_REFERENCE_CANDIDATE", "PROVENANCE_INCOMPLETE"]
+  }
+}
