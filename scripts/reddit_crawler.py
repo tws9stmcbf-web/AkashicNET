@@ -45,6 +45,13 @@ def normalize_post(
     *,
     endpoint: str = "subreddit_listing",
 ) -> dict[str, Any]:
+    """Historical ``akashicnet.reddit.post.v1`` schema — compatibility only.
+
+    Sealed for backward compatibility with already-promoted v1 artifacts.
+    No live crawl or reconciliation path calls this function; new API
+    output must go through ``normalize_post_v2`` instead. Do not modify
+    this function's output shape.
+    """
     data = child.get("data", child)
     permalink = str(data.get("permalink") or "")
     return {
@@ -130,16 +137,24 @@ def is_post_removed(data: dict[str, Any] | None) -> bool:
 def tombstone_record(reddit_id: str, checked_at: str, *, status: str = "removed") -> dict[str, Any]:
     """Minimal non-content audit record for a deleted/unavailable post.
 
-    Only reddit_id, status and checked_at are retained; every other content
-    field (title, canonical_url, external_url, etc.) is dropped so that
+    Only ``reddit_id``, ``status`` and ``checked_at`` describe the post
+    itself, plus ``source`` and a minimal reconciliation ``provenance``
+    event. Every content field (title, canonical_url, external_url,
+    subreddit, timestamps taken from the post, etc.) is dropped so that
     removed content is never retained after a validated refresh.
     """
     return {
         "schema_version": "akashicnet.reddit.post.v2",
+        "source": "reddit",
         "record_type": "post_metadata_removed",
         "reddit_id": reddit_id,
         "status": status,
         "checked_at": checked_at,
+        "provenance": {
+            "api": "reddit-data-api",
+            "endpoint": "reconcile",
+            "metadata_only": True,
+        },
     }
 
 
@@ -169,17 +184,56 @@ def reconcile_post(client: Any, reddit_id: str) -> dict[str, Any]:
 def reconcile_records(client: Any, records: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     """Reconcile a batch of cached records, tombstoning deleted ones.
 
-    Records that are already tombstones (``post_metadata_removed``) or lack
-    a ``reddit_id`` are passed through unchanged rather than re-fetched.
+    Records that lack a ``reddit_id`` are passed through unchanged. Among
+    existing tombstones (``post_metadata_removed``), only confirmed
+    ``status == "removed"`` records are passed through unchanged; records
+    left as ``status == "unavailable"`` are retried, since transient
+    unavailability must not be permanently frozen as if it were confirmed
+    removal.
     """
     reconciled: list[dict[str, Any]] = []
     for record in records:
         reddit_id = record.get("reddit_id")
-        if not reddit_id or record.get("record_type") == "post_metadata_removed":
+        if not reddit_id:
+            reconciled.append(record)
+            continue
+        if record.get("record_type") == "post_metadata_removed" and record.get("status") == "removed":
             reconciled.append(record)
             continue
         reconciled.append(reconcile_post(client, str(reddit_id)))
     return reconciled
+
+
+def reconcile_file(client: Any, path: Path) -> tuple[int, int]:
+    """Reconcile an existing JSONL artifact in place, atomically.
+
+    Reads every record from ``path``, refreshes it via ``reconcile_records``,
+    and only replaces the original file once reconciliation of the *entire*
+    batch has completed without error. If any record's refresh raises (for
+    example an API failure partway through), the exception propagates
+    before anything is written and the original file is left completely
+    untouched — there is no partial rewrite.
+    """
+    if not path.exists():
+        raise FileNotFoundError(f"Reconciliation input not found: {path}")
+
+    records: list[dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            records.append(json.loads(line))
+
+    reconciled = reconcile_records(client, records)
+
+    tmp = path.with_suffix(path.suffix + ".reconcile.tmp")
+    with tmp.open("w", encoding="utf-8") as handle:
+        for record in reconciled:
+            handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+    tmp.replace(path)
+
+    changed = sum(1 for record in reconciled if record.get("record_type") == "post_metadata_removed")
+    return len(reconciled), changed
 
 
 @dataclass
@@ -253,6 +307,13 @@ def normalize_post_id(value: str) -> str:
 
 
 def fetch_post(client: OAuthClient, post_id: str) -> dict[str, Any]:
+    """Fetch exactly one post through /api/info.
+
+    Emits the minimized ``akashicnet.reddit.post.v2`` schema so newly
+    fetched API artifacts never carry engagement counters. ``normalize_post``
+    (v1) is intentionally not called here; it is retained only as the
+    untouched historical compatibility function.
+    """
     normalized_id = normalize_post_id(post_id)
     payload, _ = client.get_json(
         "/api/info",
@@ -263,7 +324,7 @@ def fetch_post(client: OAuthClient, post_id: str) -> dict[str, Any]:
     for child in children:
         data = child.get("data", child)
         if str(data.get("id") or "").lower() == normalized_id:
-            return normalize_post(child, retrieved_at, endpoint="post_info")
+            return normalize_post_v2(child, retrieved_at, endpoint="post_info")
     raise RedditAPIError(
         f"Reddit API did not return post {normalized_id}; availability remains indeterminate"
     )
@@ -310,7 +371,7 @@ def iter_subreddit_posts(
         retrieved_at = utc_now_iso()
         next_cursor = data.get("after")
         for child in children:
-            yield normalize_post(child, retrieved_at), next_cursor
+            yield normalize_post_v2(child, retrieved_at), next_cursor
             emitted += 1
             if max_posts is not None and emitted >= max_posts:
                 return
@@ -414,7 +475,7 @@ def crawl_post(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("subreddit", help="Subreddit name without r/")
+    parser.add_argument("subreddit", nargs="?", default=None, help="Subreddit name without r/ (omit when using --reconcile)")
     parser.add_argument("--output", type=Path, default=Path("data/reddit/posts.jsonl"), help="Append-only JSONL output path")
     parser.add_argument("--checkpoint", type=Path, default=Path("data/reddit/checkpoint.json"), help="Pagination checkpoint path")
     parser.add_argument("--listing", choices=("new", "hot", "top", "controversial"), default="new")
@@ -422,31 +483,65 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--post-id", help="Fetch exactly one Reddit post ID through /api/info (accepts optional t3_ prefix)")
     parser.add_argument("--delay", type=float, default=1.1, help="Minimum seconds between listing requests")
     parser.add_argument("--user-agent", default=os.getenv("REDDIT_USER_AGENT", DEFAULT_USER_AGENT), help="Descriptive Reddit API User-Agent")
+    parser.add_argument(
+        "--reconcile",
+        type=Path,
+        default=None,
+        help="Path to an existing JSONL artifact to refresh/reconcile in place; atomically replaces the file only after a complete successful reconciliation",
+    )
     return parser
 
 
 def main(argv: Iterable[str] | None = None) -> int:
+    # Fail-closed approval gate: this must run before credentials are read
+    # and before any client/network path (crawl, exact-post fetch, or
+    # reconciliation) can execute. The comparison is an exact string match
+    # against "true"; repository secrets being configured is never
+    # sufficient by itself to enable access.
+    if os.getenv("REDDIT_API_APPROVED") != "true":
+        print(
+            "Reddit access is on HOLD: REDDIT_API_APPROVED must be set to the exact string "
+            "'true' (only after explicit approval) before this crawler will read credentials "
+            "or contact Reddit.",
+            file=sys.stderr,
+        )
+        return 3
+
     args = build_parser().parse_args(argv)
     client_id = os.getenv("REDDIT_CLIENT_ID")
     client_secret = os.getenv("REDDIT_CLIENT_SECRET")
     if not client_id or not client_secret:
         print("Missing REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET. Create an approved Reddit API application and export its OAuth credentials.", file=sys.stderr)
         return 2
-    if args.max_posts is not None and args.max_posts <= 0:
-        print("--max-posts must be positive", file=sys.stderr)
-        return 2
-    if args.delay < 0:
-        print("--delay must be non-negative", file=sys.stderr)
-        return 2
 
-    if args.post_id:
-        try:
-            normalize_post_id(args.post_id)
-        except ValueError as exc:
-            print(str(exc), file=sys.stderr)
+    if args.reconcile is None:
+        if not args.subreddit:
+            print("subreddit is required unless --reconcile is used", file=sys.stderr)
             return 2
+        if args.max_posts is not None and args.max_posts <= 0:
+            print("--max-posts must be positive", file=sys.stderr)
+            return 2
+        if args.delay < 0:
+            print("--delay must be non-negative", file=sys.stderr)
+            return 2
+        if args.post_id:
+            try:
+                normalize_post_id(args.post_id)
+            except ValueError as exc:
+                print(str(exc), file=sys.stderr)
+                return 2
 
     client = OAuthClient(client_id, client_secret, user_agent=args.user_agent)
+
+    if args.reconcile is not None:
+        try:
+            total, changed = reconcile_file(client, args.reconcile)
+        except (RedditAPIError, ValueError, FileNotFoundError) as exc:
+            print(str(exc), file=sys.stderr)
+            return 1
+        print(f"Reddit reconciliation complete: total={total} removed_or_unavailable={changed} output={args.reconcile}")
+        return 0
+
     try:
         if args.post_id:
             written, skipped = crawl_post(client, args.post_id, args.output)

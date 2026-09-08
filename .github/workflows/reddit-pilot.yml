@@ -37,8 +37,10 @@ jobs:
         run: python -m unittest tests.test_reddit_crawler -v
       - name: Reddit API approval gate
         id: gate
+        env:
+          REDDIT_API_APPROVED: ${{ vars.REDDIT_API_APPROVED }}
         run: |
-          if [ "${{ vars.REDDIT_API_APPROVED }}" = "true" ]; then
+          if [ "$REDDIT_API_APPROVED" = "true" ]; then
             echo "approved=true" >> "$GITHUB_OUTPUT"
           else
             echo "approved=false" >> "$GITHUB_OUTPUT"

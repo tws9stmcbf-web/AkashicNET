@@ -1,18 +1,23 @@
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.reddit_crawler import (
     RedditAPIError,
     canonical_post_url,
     fetch_post,
     is_post_removed,
+    iter_subreddit_posts,
     load_seen_ids,
+    main,
     normalize_post,
     normalize_post_id,
     normalize_post_v2,
     read_checkpoint,
+    reconcile_file,
     reconcile_post,
     reconcile_records,
     tombstone_record,
@@ -84,8 +89,12 @@ class RedditCrawlerTests(unittest.TestCase):
         self.assertEqual(client.path, '/api/info')
         self.assertEqual(client.params['id'], 't3_1uepvp1')
         self.assertEqual(record['reddit_id'], '1uepvp1')
+        self.assertEqual(record['schema_version'], 'akashicnet.reddit.post.v2')
         self.assertEqual(record['provenance']['endpoint'], 'post_info')
         self.assertTrue(record['provenance']['metadata_only'])
+        self.assertNotIn('score', record)
+        self.assertNotIn('num_comments', record)
+        self.assertNotIn('upvote_ratio', record)
 
     def test_fetch_post_keeps_absence_indeterminate(self):
         class EmptyClient:
@@ -164,6 +173,34 @@ class RedditMinimizedSchemaV2Tests(unittest.TestCase):
         self.assertIn('over_18', record)
         self.assertTrue(record['provenance']['metadata_only'])
 
+    def test_iter_subreddit_posts_emits_v2_without_engagement_fields(self):
+        class ListingClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {
+                                'id': 'abc123',
+                                'title': 'Example title',
+                                'permalink': '/r/NeuronsToNirvana/comments/abc123/example/',
+                                'score': 47,
+                                'num_comments': 7,
+                                'upvote_ratio': 0.93,
+                                'author': 'should_not_be_stored',
+                                'selftext': 'should_not_be_stored',
+                            }
+                        }],
+                        'after': None,
+                    }
+                }, {}
+
+        records = [record for record, _ in iter_subreddit_posts(ListingClient(), 'NeuronsToNirvana', max_posts=1)]
+        self.assertEqual(len(records), 1)
+        record = records[0]
+        self.assertEqual(record['schema_version'], 'akashicnet.reddit.post.v2')
+        for field in ('score', 'num_comments', 'upvote_ratio', 'author', 'selftext'):
+            self.assertNotIn(field, record)
+
 
 class RedditDeletionReconciliationTests(unittest.TestCase):
     def test_is_post_removed_detects_markers(self):
@@ -178,10 +215,14 @@ class RedditDeletionReconciliationTests(unittest.TestCase):
         record = tombstone_record('abc123', '2026-09-01T00:00:00Z', status='removed')
         self.assertEqual(
             set(record.keys()),
-            {'schema_version', 'record_type', 'reddit_id', 'status', 'checked_at'},
+            {'schema_version', 'source', 'record_type', 'reddit_id', 'status', 'checked_at', 'provenance'},
         )
         self.assertEqual(record['record_type'], 'post_metadata_removed')
         self.assertEqual(record['status'], 'removed')
+        self.assertEqual(record['source'], 'reddit')
+        self.assertTrue(record['provenance']['metadata_only'])
+        for content_field in ('title', 'canonical_url', 'external_url', 'subreddit', 'created_utc', 'retrieved_at'):
+            self.assertNotIn(content_field, record)
 
     def test_reconcile_post_tombstones_removed_post(self):
         class RemovedClient:
@@ -265,6 +306,145 @@ class RedditDeletionReconciliationTests(unittest.TestCase):
 
         reconciled = reconcile_records(UnusedClient(), cached)
         self.assertEqual(reconciled, cached)
+
+    def test_reconcile_records_retries_unavailable_tombstones(self):
+        class NowLiveClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {'id': 'wasgone', 'title': 'Back again'}
+                        }]
+                    }
+                }, {}
+
+        cached = [{
+            'reddit_id': 'wasgone',
+            'record_type': 'post_metadata_removed',
+            'status': 'unavailable',
+            'checked_at': '2026-09-01T00:00:00Z',
+        }]
+        reconciled = reconcile_records(NowLiveClient(), cached)
+        self.assertEqual(reconciled[0]['schema_version'], 'akashicnet.reddit.post.v2')
+        self.assertEqual(reconciled[0]['title'], 'Back again')
+
+    def test_reconcile_records_does_not_retry_confirmed_removed(self):
+        class ShouldNotBeCalledClient:
+            def get_json(self, path, params=None):
+                raise AssertionError('confirmed removed tombstones must not be retried')
+
+        cached = [{
+            'reddit_id': 'gone_forever',
+            'record_type': 'post_metadata_removed',
+            'status': 'removed',
+            'checked_at': '2026-09-01T00:00:00Z',
+        }]
+        reconciled = reconcile_records(ShouldNotBeCalledClient(), cached)
+        self.assertEqual(reconciled, cached)
+
+
+class RedditApprovalGateTests(unittest.TestCase):
+    def _run_main_without_network(self, env, argv=('NeuronsToNirvana',)):
+        with patch.dict(os.environ, env, clear=True):
+            return main(list(argv))
+
+    def test_unset_approval_blocks_before_credentials(self):
+        rc = self._run_main_without_network({})
+        self.assertEqual(rc, 3)
+
+    def test_false_approval_blocks(self):
+        rc = self._run_main_without_network({'REDDIT_API_APPROVED': 'false'})
+        self.assertEqual(rc, 3)
+
+    def test_mixed_case_approval_blocks(self):
+        for value in ('True', 'TRUE', 'tRuE', ' true', 'true '):
+            with self.subTest(value=value):
+                rc = self._run_main_without_network({'REDDIT_API_APPROVED': value})
+                self.assertEqual(rc, 3)
+
+    def test_approval_even_with_credentials_present_does_not_bypass_gate(self):
+        rc = self._run_main_without_network({
+            'REDDIT_API_APPROVED': 'false',
+            'REDDIT_CLIENT_ID': 'id',
+            'REDDIT_CLIENT_SECRET': 'secret',
+        })
+        self.assertEqual(rc, 3)
+
+    def test_exact_true_passes_gate_and_reaches_credential_check(self):
+        # No REDDIT_CLIENT_ID/SECRET set, so this proves the gate let
+        # execution proceed (rc=2 for missing credentials) without ever
+        # attempting a network call.
+        rc = self._run_main_without_network({'REDDIT_API_APPROVED': 'true'})
+        self.assertEqual(rc, 2)
+
+
+class RedditReconcileFileTests(unittest.TestCase):
+    def test_reconcile_file_atomically_rewrites_on_success(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / 'posts.jsonl'
+            path.write_text(
+                json.dumps({'reddit_id': 'gone1', 'title': 'Old cached title'}) + '\n' +
+                json.dumps({'reddit_id': 'live1', 'title': 'Old cached title'}) + '\n',
+                encoding='utf-8',
+            )
+
+            class MixedClient:
+                def get_json(self, path, params=None):
+                    post_id = params['id'].split('_', 1)[1]
+                    if post_id == 'gone1':
+                        return {'data': {'children': []}}, {}
+                    return {
+                        'data': {'children': [{'data': {'id': post_id, 'title': 'Refreshed title'}}]}
+                    }, {}
+
+            total, changed = reconcile_file(MixedClient(), path)
+            self.assertEqual(total, 2)
+            self.assertEqual(changed, 1)
+
+            lines = [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()]
+            by_id = {record['reddit_id']: record for record in lines}
+            self.assertEqual(by_id['gone1']['record_type'], 'post_metadata_removed')
+            self.assertNotIn('title', by_id['gone1'])
+            self.assertEqual(by_id['live1']['title'], 'Refreshed title')
+
+            # No stray temp file left behind after a successful atomic replace.
+            self.assertFalse((Path(tmpdir) / 'posts.jsonl.reconcile.tmp').exists())
+
+    def test_reconcile_file_leaves_original_untouched_on_partial_api_failure(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / 'posts.jsonl'
+            original_text = (
+                json.dumps({'reddit_id': 'live1', 'title': 'Old cached title'}) + '\n' +
+                json.dumps({'reddit_id': 'boom', 'title': 'Old cached title'}) + '\n'
+            )
+            path.write_text(original_text, encoding='utf-8')
+
+            class FailingClient:
+                def get_json(self, path, params=None):
+                    post_id = params['id'].split('_', 1)[1]
+                    if post_id == 'boom':
+                        raise RedditAPIError('simulated API failure')
+                    return {
+                        'data': {'children': [{'data': {'id': post_id, 'title': 'Refreshed title'}}]}
+                    }, {}
+
+            with self.assertRaises(RedditAPIError):
+                reconcile_file(FailingClient(), path)
+
+            self.assertEqual(path.read_text(encoding='utf-8'), original_text)
+            self.assertFalse((Path(tmpdir) / 'posts.jsonl.reconcile.tmp').exists())
+
+    def test_reconcile_file_missing_input_raises_without_writing(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / 'missing.jsonl'
+
+            class UnusedClient:
+                def get_json(self, path, params=None):
+                    raise AssertionError('should not be called when input file is missing')
+
+            with self.assertRaises(FileNotFoundError):
+                reconcile_file(UnusedClient(), path)
+            self.assertFalse(path.exists())
 
 
 if __name__ == '__main__':
