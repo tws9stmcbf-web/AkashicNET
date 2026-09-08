@@ -22,6 +22,9 @@ FIXTURE = json.loads(
 SLICE2 = json.loads(
     (ROOT / "references/source-status-fixture-v0.16-slice2.json").read_text(encoding="utf-8")
 )
+SYNTHETIC = json.loads(
+    (ROOT / "references/source-status-fixture-v0.16-synthetic.json").read_text(encoding="utf-8")
+)
 
 
 def mutated() -> dict:
@@ -105,4 +108,36 @@ def test_provenance_gap_must_remain_explicit() -> None:
     incomplete = event(data, "PROVENANCE_INCOMPLETE")
     incomplete["evidence"]["observation"] = "All provenance is complete."
     with pytest.raises(AssertionError, match="incomplete provenance"):
+        validator.validate(data)
+
+
+def test_synthetic_terminal_status_fixture_passes() -> None:
+    validator.validate(copy.deepcopy(SYNTHETIC))
+
+
+def test_synthetic_fixture_cannot_use_real_url() -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    data["source_nodes"][0]["original_url"] = "https://example.com/real"
+    with pytest.raises(AssertionError, match="reserved URL"):
+        validator.validate(data)
+
+
+def test_synthetic_fixture_cannot_appear_reviewed() -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    data["events"][0]["human_review_state"] = "REVIEWED_NO_PROMOTION"
+    with pytest.raises(AssertionError, match="cannot be marked reviewed"):
+        validator.validate(data)
+
+
+def test_synthetic_retraction_cannot_infer_falsity() -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "RETRACTED")["truth_inference"] = "FALSE"
+    with pytest.raises(AssertionError, match="automatic inference"):
+        validator.validate(data)
+
+
+def test_synthetic_disclaimer_is_required() -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    data["synthetic_disclaimer"] = "Test data."
+    with pytest.raises(AssertionError, match="non-observational disclaimer"):
         validator.validate(data)
