@@ -1,6 +1,9 @@
 import copy
 import json
 import unittest
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
 
 from scripts import validate_bq001_framework_inventory_v017 as validator
 
@@ -91,6 +94,53 @@ class FrameworkInventoryTests(unittest.TestCase):
         for index, change in enumerate(changes):
             with self.subTest(index=index):
                 self.mutate(change)
+
+    def test_coordinated_governed_file_and_hash_change_rejected(self):
+        artifact = self.data["governed_artifacts"][0]
+        document = validator.load_json((validator.ROOT / artifact["path"]).read_bytes())
+        document["synthetic_unreviewed_field"] = "changed"
+        raw = validator.canonical(document).encode()
+        candidate = copy.deepcopy(self.data)
+        candidate["governed_artifacts"][0]["git_blob_sha"] = validator.git_blob_sha(raw)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / artifact["path"]
+            target.parent.mkdir(parents=True)
+            target.write_bytes(raw)
+            with patch.object(validator, "ROOT", root):
+                with self.assertRaisesRegex(ValueError, "governed artifact pin drift"):
+                    validator.validate(candidate)
+
+    def test_governed_artifact_path_substitution_rejected(self):
+        self.mutate(lambda d: d["governed_artifacts"][0].update(
+            path="references/big-questions/BQ001/substitute.json"
+        ))
+
+    def test_each_governed_document_is_privacy_scanned(self):
+        mutations = (
+            {"drive%255fid": "synthetic"},
+            {"file%70ath": "synthetic"},
+            {"synthetic_note": "https%253A%252F%252Fdrive.google.com%252Ffile%252Fd%252Fsynthetic"},
+        )
+        for artifact in self.data["governed_artifacts"]:
+            for mutation in mutations:
+                with self.subTest(path=artifact["path"], mutation=mutation):
+                    document = validator.load_json((validator.ROOT / artifact["path"]).read_bytes())
+                    document.update(mutation)
+                    raw = validator.canonical(document).encode()
+                    read_bytes = Path.read_bytes
+                    def substituted_read(path):
+                        if path == validator.ROOT / artifact["path"]:
+                            return raw
+                        return read_bytes(path)
+                    hash_blob = validator.git_blob_sha
+                    def isolated_hash(value):
+                        # Isolate the scanner from the independently tested pin gate.
+                        return artifact["git_blob_sha"] if value == raw else hash_blob(value)
+                    with patch.object(Path, "read_bytes", substituted_read):
+                        with patch.object(validator, "git_blob_sha", isolated_hash):
+                            with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+                                validator.validate(self.data)
 
     def test_json_pointer_array_indices_are_canonical(self):
         document = {"items": list(range(11))}

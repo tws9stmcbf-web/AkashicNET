@@ -12,6 +12,16 @@ ROOT = Path(__file__).resolve().parents[1]
 INVENTORY = ROOT / "references/big-questions/BQ001/framework-inventory-v0.17-slice1.json"
 SCHEMA = ROOT / "schemas/bq001-framework-inventory-v0.17-slice1.schema.json"
 EXPECTED_PIN = "4867ca7c8c9a4e1bc139f630815ecf49c79a2ef7"
+# Public repository blobs verified against EXPECTED_PIN; never derive from the inventory.
+EXPECTED_BLOBS = {
+    "references/big-questions/BQ001/spec-v0.1.json": "b35b2397c8ab5341db313ec73c3e45b2bcdf4a5c",
+    "references/big-questions/BQ001/public-synthesis-v0.1.json": "b5e793a0ea7d8756f395b9bd49c50ad01a1c79d8",
+    "references/big-questions/BQ001/evidence-batch1-v0.1.json": "fc795ea3f224a33e969db6170c9a840dc03ef242",
+    "references/big-questions/BQ001/evidence-batch2-v0.1.json": "894ee42a3a2c1b8cf09f8026fac9b03dc74bf5f9",
+    "references/big-questions/BQ001/evidence-batch3-v0.1.json": "44ab4a1bb7dc941a52c9d7529e719ed7e91cc3f5",
+    "references/big-questions/BQ001/evidence-batch4-v0.1.json": "4d3f4bebc8605290abc62fa1eaa735912d44c60f",
+    "references/big-questions/BQ001/evidence-batch5-v0.1.json": "473a64435784412e783b4d6bf590f44859fca006"
+}
 EXPECTED_IDS = {
     "FW-BQ001-UMBRELLA-BIOLOGICAL-DEPENDENCE",
     "FW-BQ001-UMBRELLA-CONTINUITY",
@@ -136,14 +146,20 @@ def validate(data):
     if len(set(paths)) != len(paths) or len(set(roles)) != len(roles):
         raise ValueError("duplicate governed artifact or role")
 
+    if set(paths) != set(EXPECTED_BLOBS):
+        raise ValueError("governed artifact set drift")
+
     loaded = {}
     by_name = {}
     for artifact in artifacts:
+        if artifact["git_blob_sha"] != EXPECTED_BLOBS[artifact["path"]]:
+            raise ValueError("governed artifact pin drift")
         path = ROOT / artifact["path"]
         raw = path.read_bytes()
         if git_blob_sha(raw) != artifact["git_blob_sha"]:
             raise ValueError("governed artifact drift")
         document = load_json(raw)
+        privacy_check(document)
         loaded[artifact["path"]] = document
         if path.name in by_name:
             raise ValueError("ambiguous governed artifact name")
