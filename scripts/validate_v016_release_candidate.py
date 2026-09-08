@@ -81,6 +81,13 @@ def git_blob_sha(path: str) -> str:
     return result.stdout.strip()
 
 
+def discovered_source_status_fixture_paths() -> set[str]:
+    return {
+        str(path.relative_to(ROOT))
+        for path in (ROOT / "references").glob("source-status-fixture-v0.16*.json")
+    }
+
+
 def validate_repository_binding() -> list[str]:
     """Bind the declared base and exact CI head to the checked-out Git history."""
     errors: list[str] = []
@@ -169,6 +176,17 @@ def validate_manifest(data: dict) -> list[str]:
 
     if artifact_mapping != EXPECTED_ARTIFACTS:
         errors.append("governed artifact mapping")
+
+    expected_fixture_paths = {
+        path
+        for path, role in EXPECTED_ARTIFACTS.items()
+        if role in {
+            "OBSERVED_SOURCE_STATUS_FIXTURE",
+            "SYNTHETIC_VALIDATOR_ONLY_FIXTURE",
+        }
+    }
+    if discovered_source_status_fixture_paths() != expected_fixture_paths:
+        errors.append("ungoverned source-status fixture")
 
     summary = data.get("candidate_summary", {})
     expected_summary = {
