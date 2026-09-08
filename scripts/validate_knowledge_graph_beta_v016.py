@@ -66,6 +66,14 @@ PARENT_EDGE_CONTRACTS = {
         r"^/models/(?:0|[1-9][0-9]*)/model_id$",
     ),
 }
+PARENT_SOURCE_NODE_CONTRACTS = {
+    ("COMPETES_WITH_CANDIDATE", "HAS_MODEL"): (
+        "QUESTION",
+        "BQ001",
+        "artifact:bq001-spec:0.1",
+        "/id",
+    ),
+}
 PROVENANCE_KEYS = {
     "artifact_id",
     "repository_path",
@@ -368,8 +376,26 @@ def validate(data):
                     required_artifact_id,
                     required_record_locator,
                 ) = parent_contract
+                source_contract = PARENT_SOURCE_NODE_CONTRACTS.get(
+                    (edge.get("relationship_type"), parent.get("relationship_type"))
+                )
                 allowed_child_endpoints = {edge.get(role) for role in child_roles}
                 parent_provenance = parent.get("provenance", {})
+                parent_source_node = nodes_by_id.get(parent.get("source_node_id"))
+                parent_source_provenance = (
+                    parent_source_node.get("provenance", {})
+                    if isinstance(parent_source_node, dict)
+                    else {}
+                )
+                if source_contract is None:
+                    errors.append("edge ancestry policy")
+                    continue
+                (
+                    required_source_type,
+                    required_source_record_id,
+                    required_source_artifact_id,
+                    required_source_record_locator,
+                ) = source_contract
                 if (
                     parent.get("assertion_class") != "DIRECT_SOURCE_METADATA"
                     or child_endpoints.isdisjoint(parent_endpoints)
@@ -379,6 +405,11 @@ def validate(data):
                         required_record_locator,
                         str(parent_provenance.get("record_locator", "")),
                     )
+                    or parent_source_node is None
+                    or parent_source_node.get("node_type") != required_source_type
+                    or parent_source_node.get("record_id") != required_source_record_id
+                    or parent_source_provenance.get("artifact_id") != required_source_artifact_id
+                    or parent_source_provenance.get("record_locator") != required_source_record_locator
                 ):
                     errors.append("edge ancestry policy")
         resolved_record = check_provenance(edge.get("provenance"))
