@@ -1,0 +1,100 @@
+{
+  "schema_version": "0.16.0-beta.1",
+  "artifact_status": "UNRELEASED_REVIEW_CANDIDATE",
+  "issue": 277,
+  "candidate_base_commit": "99e584a13b24d707263cfed032af9acd5af08bfc",
+  "exact_head_ci_required": true,
+  "release_decision": "PENDING_EXACT_HEAD_CI_AND_REVIEW",
+  "baseline_locks": {
+    "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
+    "v0.15_release": "ea46629558ff57970f6efd2485a7e9a288dc55f2",
+    "v0.15_seal": "5ba6989aade68461c8f3953c4a82cc0e158b0730"
+  },
+  "required_gates": [
+    "typed_graph_contract",
+    "provenance_on_write",
+    "referential_integrity",
+    "epistemic_labels",
+    "review_only_inference",
+    "evidence_independence",
+    "claim_evidence_alignment",
+    "corrections_and_conflict",
+    "bq001_question_graph",
+    "fail_closed_verification"
+  ],
+  "governed_artifacts": [
+    {
+      "path": "references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json",
+      "git_blob_sha": "e8d2dd115a8a1d6612b1c913c3a718c7cd16d7f1",
+      "role": "GRAPH_FIXTURE"
+    },
+    {
+      "path": "schemas/knowledge-graph-beta-v0.16.schema.json",
+      "git_blob_sha": "6b13684f604d7e781e27a7be3f239e70ae8056ff",
+      "role": "GRAPH_SCHEMA"
+    },
+    {
+      "path": "scripts/validate_knowledge_graph_beta_v016.py",
+      "git_blob_sha": "081f4ea3384c3a9e9b6228d7f97a92a7431da40c",
+      "role": "GRAPH_VALIDATOR"
+    },
+    {
+      "path": "tests/test_knowledge_graph_beta_v016.py",
+      "git_blob_sha": "41ed8b13f17518d2f30ba2d7d1e58aeeb1f92b8a",
+      "role": "GRAPH_MUTATION_TESTS"
+    },
+    {
+      "path": "scripts/validate_v016_readiness.py",
+      "git_blob_sha": "9eff18e5a1f3c5d6b2ec19c07b27fee23ff2dd05",
+      "role": "GRAPH_READINESS_GATE"
+    },
+    {
+      "path": "schemas/source-status-v0.16.schema.json",
+      "git_blob_sha": "cfaac1688ec06819bc62b9ae0b5bfa5eb882ce21",
+      "role": "SOURCE_STATUS_SCHEMA"
+    },
+    {
+      "path": "references/source-status-fixture-v0.16.json",
+      "git_blob_sha": "1b19312035d6d9bc763c645d70139989fdd05c53",
+      "role": "OBSERVED_SOURCE_STATUS_FIXTURE"
+    },
+    {
+      "path": "references/source-status-fixture-v0.16-slice2.json",
+      "git_blob_sha": "47c15b47ba2aa79dae0b47431b72132d3f15a1c5",
+      "role": "OBSERVED_SOURCE_STATUS_FIXTURE"
+    },
+    {
+      "path": "references/source-status-fixture-v0.16-synthetic.json",
+      "git_blob_sha": "5192756e20bf2f7175a8ff88b89911743e217c66",
+      "role": "SYNTHETIC_VALIDATOR_ONLY_FIXTURE"
+    },
+    {
+      "path": "scripts/validate_source_status_v016.py",
+      "git_blob_sha": "8b009bea0e09068bd5e6d16a91e794598de832e7",
+      "role": "SOURCE_STATUS_VALIDATOR"
+    },
+    {
+      "path": "tests/test_source_status_v016.py",
+      "git_blob_sha": "aa0e92398e5a4b2c514d93adc4763cece5fe7598",
+      "role": "SOURCE_STATUS_MUTATION_TESTS"
+    }
+  ],
+  "candidate_summary": {
+    "question_id": "BQ001",
+    "question_status": "UNRESOLVED",
+    "accepted_edge_count": 0,
+    "source_status_fixture_count": 3,
+    "synthetic_fixture_count": 1,
+    "observed_retraction_claim_count": 0
+  },
+  "promotion_boundaries": {
+    "truth": false,
+    "scientific_evidence": false,
+    "rights": false,
+    "identity": false,
+    "safety_efficacy": false,
+    "private_data": false,
+    "edge_acceptance": false,
+    "website_publication": false
+  }
+}
