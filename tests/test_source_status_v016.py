@@ -207,11 +207,36 @@ def test_affirmative_status_preserves_separate_safety_disclaimer(status, affirma
 @pytest.mark.parametrize("status,concept", [
     ("TITLE_CHANGED", "title-change"), ("RETRACTED", "retraction"), ("DELETED", "deletion"),
 ])
-def test_same_clause_adverb_negation_still_rejected(status, concept):
+@pytest.mark.parametrize("spacing", [" ", "\n", "\t"])
+def test_same_clause_adverb_negation_still_rejected(status, concept, spacing):
     data = copy.deepcopy(SYNTHETIC)
-    event(data, status)["evidence"]["observation"] = f"The {concept} has explicitly not occurred."
+    event(data, status)["evidence"]["observation"] = f"The {concept} has{spacing}explicitly not occurred."
     with pytest.raises(AssertionError, match="evidence is negated"):
         validator.validate(data)
+
+
+@pytest.mark.parametrize("observation", [
+    "A title-change check found the title did not actually change.",
+    "A title-change check found the title had not actually changed.",
+    "A title-change check found the title has never actually changed.",
+])
+def test_split_title_change_denial_rejected(observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "TITLE_CHANGED")["evidence"]["observation"] = observation
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize("separator", [";", ".", ":"])
+@pytest.mark.parametrize("status,affirmative", [
+    ("TITLE_CHANGED", "title-change occurred"),
+    ("RETRACTED", "a retraction notice confirms the work was retracted"),
+    ("DELETED", "deletion occurred"),
+])
+def test_leading_safety_disclaimer_does_not_negate_status(status, affirmative, separator):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = f"Claims are not deemed false{separator} {affirmative}."
+    validator.validate(data)
 
 
 def test_synthetic_retraction_cannot_infer_falsity() -> None:
