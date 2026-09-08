@@ -19,6 +19,9 @@ SPEC.loader.exec_module(validator)
 FIXTURE = json.loads(
     (ROOT / "references/source-status-fixture-v0.16.json").read_text(encoding="utf-8")
 )
+SLICE2 = json.loads(
+    (ROOT / "references/source-status-fixture-v0.16-slice2.json").read_text(encoding="utf-8")
+)
 
 
 def mutated() -> dict:
@@ -82,4 +85,24 @@ def test_no_automatic_promotion(guard: str) -> None:
     data = mutated()
     data["promotion_guards"][guard] = True
     with pytest.raises(AssertionError, match="promotion guards"):
+        validator.validate(data)
+
+
+def test_slice2_fixture_passes() -> None:
+    validator.validate(copy.deepcopy(SLICE2))
+
+
+def test_duplicate_candidate_cannot_imply_merge() -> None:
+    data = copy.deepcopy(SLICE2)
+    duplicate = event(data, "DUPLICATE_REFERENCE_CANDIDATE")
+    duplicate["evidence"]["observation"] = "Records were merged automatically."
+    with pytest.raises(AssertionError, match="non-merge boundary"):
+        validator.validate(data)
+
+
+def test_provenance_gap_must_remain_explicit() -> None:
+    data = copy.deepcopy(SLICE2)
+    incomplete = event(data, "PROVENANCE_INCOMPLETE")
+    incomplete["evidence"]["observation"] = "All provenance is complete."
+    with pytest.raises(AssertionError, match="incomplete provenance"):
         validator.validate(data)
