@@ -411,6 +411,19 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
         self.assertIn("provenance", errors)
         self.assertIn("edge ancestry policy", errors)
 
+    def test_malformed_parent_edge_provenance_fails_closed(self):
+        data = copy.deepcopy(DATA)
+        model_membership_edge = data["edges"][0]
+        competing_edge = data["edges"][2]
+        model_membership_edge["provenance"] = None
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("provenance", errors)
+        self.assertIn("direct metadata boundary", errors)
+        self.assertIn("relationship assertion contract", errors)
+        self.assertIn("edge ancestry policy", errors)
+
     def test_inferred_parent_cannot_amplify_inferred_child(self):
         data = copy.deepcopy(DATA)
         support_edge = data["edges"][1]

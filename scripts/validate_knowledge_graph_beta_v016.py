@@ -306,12 +306,18 @@ def validate(data):
         if edge.get("accepted_edge") is not False:
             errors.append("accepted edges prohibited")
 
+        raw_edge_provenance = edge.get("provenance")
+        edge_provenance = (
+            raw_edge_provenance
+            if isinstance(raw_edge_provenance, dict)
+            else {}
+        )
         assertion = edge.get("assertion_class")
         if assertion == "INFERRED_CANDIDATE":
-            if edge.get("review_state") != "REVIEW_REQUIRED" or edge.get("edge_state") not in {"REVIEW_ONLY", "REVIEW_ONLY_CONTRADICTION"} or edge.get("provenance", {}).get("derivation_method") != "HUMAN_REVIEW_CANDIDATE":
+            if edge.get("review_state") != "REVIEW_REQUIRED" or edge.get("edge_state") not in {"REVIEW_ONLY", "REVIEW_ONLY_CONTRADICTION"} or edge_provenance.get("derivation_method") != "HUMAN_REVIEW_CANDIDATE":
                 errors.append("inferred review boundary")
         elif assertion == "DIRECT_SOURCE_METADATA":
-            if edge.get("review_state") != "SOURCE_ASSERTED" or edge.get("provenance", {}).get("derivation_method") != "DIRECT_RECORD":
+            if edge.get("review_state") != "SOURCE_ASSERTED" or edge_provenance.get("derivation_method") != "DIRECT_RECORD":
                 errors.append("direct metadata boundary")
         else:
             errors.append("assertion class")
@@ -345,7 +351,7 @@ def validate(data):
             if (
                 edge.get("assertion_class") != assertion_class
                 or edge.get("review_state") != review_state
-                or edge.get("provenance", {}).get("derivation_method") != derivation_method
+                or edge_provenance.get("derivation_method") != derivation_method
             ):
                 errors.append("relationship assertion contract")
 
