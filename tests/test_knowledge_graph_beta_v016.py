@@ -117,6 +117,66 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
             },
         )
 
+    def test_schema_pins_governed_sources(self):
+        expected = {
+            (
+                "artifact:bq001-spec:0.1",
+                "references/big-questions/BQ001/spec-v0.1.json",
+                "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819",
+                "source:bq001:spec-v0.1",
+            ),
+            (
+                "artifact:bq001-evidence-batch2:0.1",
+                "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+                "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1",
+                "source:bq001:evidence-batch2-v0.1",
+            ),
+        }
+
+        def pins(variants):
+            return {
+                (
+                    item["properties"]["artifact_id"]["const"],
+                    item["properties"]["repository_path"]["const"],
+                    item["properties"]["sha256"]["const"],
+                    item["properties"]["independence_key"]["const"],
+                )
+                for item in variants
+            }
+
+        self.assertEqual(pins(SCHEMA["$defs"]["sourceArtifact"]["oneOf"]), expected)
+        self.assertEqual(pins(SCHEMA["$defs"]["provenance"]["allOf"][0]["oneOf"]), expected)
+        source_array = SCHEMA["properties"]["source_artifacts"]
+        self.assertEqual((source_array["minItems"], source_array["maxItems"]), (2, 2))
+        self.assertTrue(source_array["uniqueItems"])
+
+    def test_schema_pins_fixed_fixture_cardinalities(self):
+        properties = SCHEMA["properties"]
+        self.assertEqual((properties["nodes"]["minItems"], properties["nodes"]["maxItems"]), (6, 6))
+        self.assertEqual((properties["edges"]["minItems"], properties["edges"]["maxItems"]), (4, 4))
+        self.assertEqual((properties["edges"]["minContains"], properties["edges"]["maxContains"]), (2, 2))
+        self.assertEqual(
+            properties["edges"]["contains"]["properties"]["assertion_class"]["const"],
+            "INFERRED_CANDIDATE",
+        )
+        summary = properties["summary"]["properties"]
+        self.assertEqual(
+            {
+                "node_count": summary["node_count"]["const"],
+                "edge_count": summary["edge_count"]["const"],
+                "accepted_edge_count": summary["accepted_edge_count"]["const"],
+                "inferred_candidate_count": summary["inferred_candidate_count"]["const"],
+                "unresolved_question_count": summary["unresolved_question_count"]["const"],
+            },
+            {
+                "node_count": 6,
+                "edge_count": 4,
+                "accepted_edge_count": 0,
+                "inferred_candidate_count": 2,
+                "unresolved_question_count": 1,
+            },
+        )
+
     def test_question_remains_unresolved(self):
         self.mutate(lambda d: d.__setitem__("question_status", "RESOLVED"), "question status")
 
