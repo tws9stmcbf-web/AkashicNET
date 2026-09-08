@@ -112,10 +112,12 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     }
     negation = r"(?:no|not|never|without|failed to|failure to)"
     concept = concept_patterns[status]
-    proximity = r"(?:\W+\w+){0,5}\W+"
+    negation_before_concept = rf"(?:{negation})(?:\W+\w+){{0,3}}\W+(?:{concept})"
+    auxiliary = r"(?:has|have|had|was|were|is|did|does|do|will|would|could|should)"
+    concept_before_negation = rf"(?:{concept})(?:\W+{auxiliary}){{0,3}}\W+not\b"
     return bool(
-        re.search(rf"(?:{negation}){proximity}(?:{concept})", observation)
-        or re.search(rf"(?:{concept}){proximity}(?:{negation})", observation)
+        re.search(negation_before_concept, observation)
+        or re.search(concept_before_negation, observation)
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
     )
 
