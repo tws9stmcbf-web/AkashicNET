@@ -134,7 +134,13 @@ def is_post_removed(data: dict[str, Any] | None) -> bool:
     return False
 
 
-def tombstone_record(reddit_id: str, checked_at: str, *, status: str = "removed") -> dict[str, Any]:
+def tombstone_record(
+    reddit_id: str,
+    checked_at: str,
+    *,
+    status: str = "removed",
+    endpoint: str = "reconcile",
+) -> dict[str, Any]:
     """Minimal non-content audit record for a deleted/unavailable post.
 
     Only ``reddit_id``, ``status`` and ``checked_at`` describe the post
@@ -152,7 +158,7 @@ def tombstone_record(reddit_id: str, checked_at: str, *, status: str = "removed"
         "checked_at": checked_at,
         "provenance": {
             "api": "reddit-data-api",
-            "endpoint": "reconcile",
+            "endpoint": endpoint,
             "metadata_only": True,
         },
     }
@@ -329,7 +335,7 @@ def fetch_post(client: OAuthClient, post_id: str) -> dict[str, Any]:
         data = child.get("data", child)
         if str(data.get("id") or "").lower() == normalized_id:
             if is_post_removed(data):
-                return tombstone_record(normalized_id, retrieved_at, status="removed")
+                return tombstone_record(normalized_id, retrieved_at, status="removed", endpoint="post_info")
             return normalize_post_v2(child, retrieved_at, endpoint="post_info")
     raise RedditAPIError(
         f"Reddit API did not return post {normalized_id}; availability remains indeterminate"
