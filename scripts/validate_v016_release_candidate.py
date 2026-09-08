@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import copy
 import json
 import re
 import subprocess
@@ -13,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests/v0.16-release-candidate.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
+EXPECTED_BASE_COMMIT = "99e584a13b24d707263cfed032af9acd5af08bfc"
 
 EXPECTED_BASELINES = {
     "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
@@ -75,7 +75,7 @@ def validate_manifest(data: dict) -> list[str]:
         errors.append("candidate status")
     if data.get("issue") != 277:
         errors.append("issue binding")
-    if not SHA40.fullmatch(str(data.get("candidate_base_commit", ""))):
+    if data.get("candidate_base_commit") != EXPECTED_BASE_COMMIT:
         errors.append("candidate base commit")
     if data.get("exact_head_ci_required") is not True:
         errors.append("exact-head requirement")
