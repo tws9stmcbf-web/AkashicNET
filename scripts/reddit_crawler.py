@@ -450,25 +450,30 @@ def crawl_subreddit(
     written = 0
     skipped = 0
 
-    with output_path.open("a", encoding="utf-8") as handle:
-        for record, next_cursor in iter_subreddit_posts(
-            client,
-            subreddit,
-            listing=listing,
-            max_posts=max_posts,
-            after=after,
-            minimum_delay=minimum_delay,
-        ):
-            reddit_id = str(record.get("reddit_id") or "")
-            if reddit_id and reddit_id in seen:
-                skipped += 1
-            else:
+    for record, next_cursor in iter_subreddit_posts(
+        client,
+        subreddit,
+        listing=listing,
+        max_posts=max_posts,
+        after=after,
+        minimum_delay=minimum_delay,
+    ):
+        reddit_id = str(record.get("reddit_id") or "")
+        if record.get("record_type") == "post_metadata_removed" and reddit_id:
+            # A removal refresh must supersede cached metadata instead of
+            # disappearing behind the generic duplicate filter.
+            replace_exact_post_record(record, output_path)
+            seen.add(reddit_id)
+            written += 1
+        elif reddit_id and reddit_id in seen:
+            skipped += 1
+        else:
+            with output_path.open("a", encoding="utf-8") as handle:
                 handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
-                handle.flush()
-                if reddit_id:
-                    seen.add(reddit_id)
-                written += 1
-            write_checkpoint(checkpoint_path, subreddit=subreddit, after=next_cursor)
+            if reddit_id:
+                seen.add(reddit_id)
+            written += 1
+        write_checkpoint(checkpoint_path, subreddit=subreddit, after=next_cursor)
 
     return written, skipped
 
