@@ -1,0 +1,785 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akashicnet://schemas/bq001-question-graph/v0.1",
+  "title": "BQ001 Question Graph v0.1 review projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "baseline_locks",
+    "source_artifacts",
+    "nodes",
+    "edges",
+    "schema_version",
+    "mode",
+    "question_id",
+    "question_status",
+    "finality",
+    "guards",
+    "input",
+    "curated_edge_ids",
+    "inferred_edge_ids",
+    "coverage"
+  ],
+  "properties": {
+    "baseline_locks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v0.14",
+        "v0.15_release",
+        "v0.15_seal"
+      ],
+      "properties": {
+        "v0.14": {
+          "const": "7b6cfd89de570c4b945d574dad570c37825645fe"
+        },
+        "v0.15_release": {
+          "const": "ea46629558ff57970f6efd2485a7e9a288dc55f2"
+        },
+        "v0.15_seal": {
+          "const": "5ba6989aade68461c8f3953c4a82cc0e158b0730"
+        }
+      }
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/sourceArtifact"
+      },
+      "maxItems": 2,
+      "uniqueItems": true
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "maxItems": 6
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "$ref": "#/$defs/edge"
+      },
+      "maxItems": 4,
+      "contains": {
+        "type": "object",
+        "properties": {
+          "assertion_class": {
+            "const": "INFERRED_CANDIDATE"
+          }
+        },
+        "required": [
+          "assertion_class"
+        ]
+      },
+      "minContains": 2,
+      "maxContains": 2
+    },
+    "schema_version": {
+      "const": "akashicnet.bq001.question-graph.v0.1"
+    },
+    "mode": {
+      "const": "REVIEW_ONLY"
+    },
+    "question_id": {
+      "const": "BQ001"
+    },
+    "question_status": {
+      "const": "UNRESOLVED"
+    },
+    "finality": {
+      "const": "NEVER_FINAL"
+    },
+    "guards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_inference",
+        "scientific_evidence_promotion",
+        "rights_inference",
+        "public_status_inference",
+        "identity_promotion",
+        "safety_efficacy_promotion",
+        "edge_acceptance",
+        "ranking_promotion",
+        "private_drive_data"
+      ],
+      "properties": {
+        "truth_inference": {
+          "const": false
+        },
+        "scientific_evidence_promotion": {
+          "const": false
+        },
+        "rights_inference": {
+          "const": false
+        },
+        "public_status_inference": {
+          "const": false
+        },
+        "identity_promotion": {
+          "const": false
+        },
+        "safety_efficacy_promotion": {
+          "const": false
+        },
+        "edge_acceptance": {
+          "const": false
+        },
+        "ranking_promotion": {
+          "const": false
+        },
+        "private_drive_data": {
+          "const": false
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository_path",
+        "sha256"
+      ],
+      "properties": {
+        "repository_path": {
+          "const": "references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json"
+        },
+        "sha256": {
+          "const": "bb501c962b54c88b581ca6911e6377cdd0e18e12c34d0bd04ffcaa0dcae5cca3"
+        }
+      }
+    },
+    "curated_edge_ids": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^edge:"
+      }
+    },
+    "inferred_edge_ids": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^edge:"
+      }
+    },
+    "coverage": {
+      "const": {
+        "scope": "EXISTING_SIX_NODE_FOUR_EDGE_REVIEW_FIXTURE",
+        "exhaustive": false,
+        "counter_evidence": "COMPETING_MODEL_CANDIDATE_ONLY",
+        "observed_retractions": 0,
+        "accepted_edges": 0
+      }
+    }
+  },
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "repository_path",
+        "sha256",
+        "record_locator",
+        "independence_key",
+        "derivation_method",
+        "public_safe"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "record_locator": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "independence_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "derivation_method": {
+          "enum": [
+            "DIRECT_RECORD",
+            "HUMAN_REVIEW_CANDIDATE"
+          ]
+        },
+        "public_safe": {
+          "const": true
+        }
+      },
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "artifact_id": {
+                  "const": "artifact:bq001-spec:0.1"
+                },
+                "repository_path": {
+                  "const": "references/big-questions/BQ001/spec-v0.1.json"
+                },
+                "sha256": {
+                  "const": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819"
+                },
+                "independence_key": {
+                  "const": "source:bq001:spec-v0.1"
+                }
+              },
+              "required": [
+                "artifact_id",
+                "repository_path",
+                "sha256",
+                "independence_key"
+              ]
+            },
+            {
+              "properties": {
+                "artifact_id": {
+                  "const": "artifact:bq001-evidence-batch2:0.1"
+                },
+                "repository_path": {
+                  "const": "references/big-questions/BQ001/evidence-batch2-v0.1.json"
+                },
+                "sha256": {
+                  "const": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1"
+                },
+                "independence_key": {
+                  "const": "source:bq001:evidence-batch2-v0.1"
+                }
+              },
+              "required": [
+                "artifact_id",
+                "repository_path",
+                "sha256",
+                "independence_key"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sourceArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "repository_path",
+        "sha256",
+        "independence_key",
+        "public_safe"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "independence_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_safe": {
+          "const": true
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "artifact_id": {
+              "const": "artifact:bq001-spec:0.1"
+            },
+            "repository_path": {
+              "const": "references/big-questions/BQ001/spec-v0.1.json"
+            },
+            "sha256": {
+              "const": "0a0f1fc57b55df100fb8583fc6e28cd38324737c460465ea2269a51f637d4819"
+            },
+            "independence_key": {
+              "const": "source:bq001:spec-v0.1"
+            },
+            "public_safe": {
+              "const": true
+            }
+          },
+          "required": [
+            "artifact_id",
+            "repository_path",
+            "sha256",
+            "independence_key"
+          ]
+        },
+        {
+          "properties": {
+            "artifact_id": {
+              "const": "artifact:bq001-evidence-batch2:0.1"
+            },
+            "repository_path": {
+              "const": "references/big-questions/BQ001/evidence-batch2-v0.1.json"
+            },
+            "sha256": {
+              "const": "ddcf9bf5f909a98f289b7ef816673f23cd0ec8ae26b8416c15d87b8690926cc1"
+            },
+            "independence_key": {
+              "const": "source:bq001:evidence-batch2-v0.1"
+            },
+            "public_safe": {
+              "const": true
+            }
+          },
+          "required": [
+            "artifact_id",
+            "repository_path",
+            "sha256",
+            "independence_key"
+          ]
+        }
+      ]
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "node_type",
+        "record_id",
+        "label",
+        "provenance"
+      ],
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "pattern": "^node:"
+        },
+        "node_type": {
+          "enum": [
+            "QUESTION",
+            "MODEL",
+            "SOURCE",
+            "CLAIM",
+            "NOTICE"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_status": {
+          "enum": [
+            "UNRESOLVED"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:question:"
+                },
+                "node_type": {
+                  "const": "QUESTION"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:model:"
+                },
+                "node_type": {
+                  "const": "MODEL"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:source:"
+                },
+                "node_type": {
+                  "const": "SOURCE"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:claim:"
+                },
+                "node_type": {
+                  "const": "CLAIM"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            },
+            {
+              "properties": {
+                "node_id": {
+                  "pattern": "^node:notice:"
+                },
+                "node_type": {
+                  "const": "NOTICE"
+                }
+              },
+              "required": [
+                "node_id",
+                "node_type"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_id",
+        "source_node_id",
+        "target_node_id",
+        "relationship_type",
+        "assertion_class",
+        "review_state",
+        "edge_state",
+        "accepted_edge",
+        "evidence_independence_keys",
+        "parent_edge_ids",
+        "provenance"
+      ],
+      "properties": {
+        "edge_id": {
+          "type": "string",
+          "pattern": "^edge:"
+        },
+        "source_node_id": {
+          "type": "string",
+          "pattern": "^node:"
+        },
+        "target_node_id": {
+          "type": "string",
+          "pattern": "^node:"
+        },
+        "relationship_type": {
+          "enum": [
+            "HAS_MODEL",
+            "SUPPORTS_MODEL_CANDIDATE",
+            "COMPETES_WITH_CANDIDATE",
+            "CORRECTS"
+          ]
+        },
+        "assertion_class": {
+          "enum": [
+            "DIRECT_SOURCE_METADATA",
+            "INFERRED_CANDIDATE"
+          ]
+        },
+        "review_state": {
+          "enum": [
+            "SOURCE_ASSERTED",
+            "REVIEW_REQUIRED"
+          ]
+        },
+        "edge_state": {
+          "enum": [
+            "ACTIVE",
+            "REVIEW_ONLY",
+            "REVIEW_ONLY_CONTRADICTION",
+            "CORRECTED_NOT_RETRACTED"
+          ]
+        },
+        "accepted_edge": {
+          "const": false
+        },
+        "evidence_independence_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "parent_edge_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^edge:"
+          }
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "assertion_class": {
+                "const": "INFERRED_CANDIDATE"
+              }
+            },
+            "required": [
+              "assertion_class"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review_state": {
+                "const": "REVIEW_REQUIRED"
+              },
+              "edge_state": {
+                "enum": [
+                  "REVIEW_ONLY",
+                  "REVIEW_ONLY_CONTRADICTION"
+                ]
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "HUMAN_REVIEW_CANDIDATE"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "assertion_class": {
+                "const": "DIRECT_SOURCE_METADATA"
+              }
+            },
+            "required": [
+              "assertion_class"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review_state": {
+                "const": "SOURCE_ASSERTED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "DIRECT_RECORD"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "HAS_MODEL"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "ACTIVE"
+              },
+              "assertion_class": {
+                "const": "DIRECT_SOURCE_METADATA"
+              },
+              "review_state": {
+                "const": "SOURCE_ASSERTED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "DIRECT_RECORD"
+                  }
+                }
+              },
+              "source_node_id": {
+                "pattern": "^node:question:"
+              },
+              "target_node_id": {
+                "pattern": "^node:model:"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "SUPPORTS_MODEL_CANDIDATE"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "REVIEW_ONLY"
+              },
+              "assertion_class": {
+                "const": "INFERRED_CANDIDATE"
+              },
+              "review_state": {
+                "const": "REVIEW_REQUIRED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "HUMAN_REVIEW_CANDIDATE"
+                  }
+                }
+              },
+              "source_node_id": {
+                "pattern": "^node:claim:"
+              },
+              "target_node_id": {
+                "pattern": "^node:model:"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "COMPETES_WITH_CANDIDATE"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "REVIEW_ONLY_CONTRADICTION"
+              },
+              "assertion_class": {
+                "const": "INFERRED_CANDIDATE"
+              },
+              "review_state": {
+                "const": "REVIEW_REQUIRED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "HUMAN_REVIEW_CANDIDATE"
+                  }
+                }
+              },
+              "source_node_id": {
+                "pattern": "^node:model:"
+              },
+              "target_node_id": {
+                "pattern": "^node:model:"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relationship_type": {
+                "const": "CORRECTS"
+              }
+            },
+            "required": [
+              "relationship_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "edge_state": {
+                "const": "CORRECTED_NOT_RETRACTED"
+              },
+              "assertion_class": {
+                "const": "DIRECT_SOURCE_METADATA"
+              },
+              "review_state": {
+                "const": "SOURCE_ASSERTED"
+              },
+              "provenance": {
+                "properties": {
+                  "derivation_method": {
+                    "const": "DIRECT_RECORD"
+                  }
+                }
+              },
+              "source_node_id": {
+                "pattern": "^node:notice:"
+              },
+              "target_node_id": {
+                "pattern": "^node:source:"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
