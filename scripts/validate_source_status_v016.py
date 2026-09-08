@@ -102,8 +102,11 @@ def validate(data: dict) -> None:
         if status in {"CORRECTED", "RETRACTED"}:
             if not event["evidence"].get("notice_url"):
                 fail(f"notice status lacks notice URL: {event_id}")
-        if status == "RETRACTED" and "retract" not in event["evidence"]["observation"].lower():
-            fail(f"retraction evidence is not explicit: {event_id}")
+        if status == "RETRACTED":
+            observation = event["evidence"]["observation"].lower()
+            affirmative_markers = ("retraction notice", "has been retracted", "was retracted")
+            if not any(marker in observation for marker in affirmative_markers):
+                fail(f"retraction evidence is not explicit: {event_id}")
 
     guards = data.get("promotion_guards", {})
     expected_guards = {"truth", "evidence", "rights", "identity", "edge_acceptance"}
