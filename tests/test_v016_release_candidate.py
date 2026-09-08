@@ -3,6 +3,7 @@
 import copy
 import json
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from scripts.validate_v016_release_candidate import validate_manifest
@@ -81,6 +82,15 @@ class ReleaseCandidateTests(unittest.TestCase):
 
         errors = self.errors_after(mutate)
         self.assertIn("governed artifact mapping", errors)
+
+    def test_extra_source_status_fixture_fails_closed(self):
+        extra = {"references/source-status-fixture-v0.16-extra.json"}
+        with mock.patch(
+            "scripts.validate_v016_release_candidate.discovered_source_status_fixture_paths",
+            return_value=extra,
+        ):
+            errors = validate_manifest(copy.deepcopy(DATA))
+        self.assertIn("ungoverned source-status fixture", errors)
 
     def test_observed_retraction_claim_cannot_be_fabricated(self):
         errors = self.errors_after(
