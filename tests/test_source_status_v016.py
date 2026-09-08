@@ -246,7 +246,7 @@ def test_leading_safety_disclaimer_does_not_negate_status(status, affirmative, s
 @pytest.mark.parametrize("status,concept", [
     ("TITLE_CHANGED", "title-change"), ("RETRACTED", "retraction"), ("DELETED", "deletion"),
 ])
-@pytest.mark.parametrize("denial", ["never occurred", "has, apparently, not occurred", "has, for now, not occurred", "has, so far, not occurred", "failed to occur", "failure to occur", "without confirmation", "has no confirmation"])
+@pytest.mark.parametrize("denial", ["never occurred", "has, apparently, not occurred", "has, for now, not occurred", "has, so far, not occurred", "has, for the moment, not occurred", "has, for a little while, not occurred", "failed to occur", "failure to occur", "without confirmation", "has no confirmation"])
 def test_all_post_concept_negators_and_comma_modifiers(status, concept, denial):
     data = copy.deepcopy(SYNTHETIC)
     event(data, status)["evidence"]["observation"] = f"A {concept} notice says the {concept} {denial}."
@@ -254,7 +254,7 @@ def test_all_post_concept_negators_and_comma_modifiers(status, concept, denial):
         validator.validate(data)
 
 
-@pytest.mark.parametrize("seeking", ["finding any evidence", "detecting independent evidence"])
+@pytest.mark.parametrize("seeking", ["finding any evidence", "finding credible evidence", "detecting independent evidence", "detecting unusually credible evidence"])
 def test_without_evidence_seeking_negates_terminal_status(seeking):
     data = copy.deepcopy(SYNTHETIC)
     event(data, "RETRACTED")["evidence"]["observation"] = (
@@ -299,12 +299,13 @@ def test_affirmative_status_allows_benign_without_consequences(
     ("DELETED", "The source was deleted"),
 ])
 @pytest.mark.parametrize("ordering", ["status_first", "disclaimer_first"])
-def test_coordinating_comma_starts_separate_clause(status, affirmative, ordering):
+@pytest.mark.parametrize("coordinator", ["but", "and"])
+def test_coordinating_comma_starts_separate_clause(status, affirmative, ordering, coordinator):
     data = copy.deepcopy(SYNTHETIC)
     if ordering == "status_first":
-        observation = f"{affirmative}, but its claims were not deemed false."
+        observation = f"{affirmative}, {coordinator} its claims were not deemed false."
     else:
-        observation = f"Claims were not deemed false, but {affirmative.lower()}."
+        observation = f"Claims were not deemed false, {coordinator} {affirmative.lower()}."
     event(data, status)["evidence"]["observation"] = observation
     validator.validate(data)
 

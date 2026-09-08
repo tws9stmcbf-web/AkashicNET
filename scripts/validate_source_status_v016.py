@@ -116,29 +116,31 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
         r"(?:confirming|verifying|observing)\b"
         r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
-        r"(?:finding|detecting|locating|discovering)(?:[\s,]+(?:any|sufficient|independent|direct|documented|published|supporting|corroborating)){0,2}[\s,]+"
+        r"(?:finding|detecting|locating|discovering)(?:[\s,]+[a-z-]+){0,3}[\s,]+"
         r"(?:confirmation|verification|evidence|observation)\b"
     )
     negation = rf"(?:no|not|never|failed to|failure to|{without_denial})"
     concept = concept_patterns[status]
-    # A comma starts a separate clause only when a coordinator introduces a
-    # plausible subject. Coordinator-shaped modifiers such as "for now" and
-    # "so far" therefore remain in the status predicate.
+    # A coordinating comma starts a separate clause only when a bounded
+    # finite predicate follows. Modifier phrases such as "for the moment"
+    # and "so far" therefore remain in the status predicate.
     coordinated_clause = (
         r"(?:but|yet|and|or|nor|so|for)(?=\s+"
-        r"(?:the|its|their|claims?|source|work|title|deletion|retraction|"
-        r"title-change|it|they|this|that)\b)"
+        r"(?:[^\s,;:.]+\s+){0,3}"
+        r"(?:is|are|was|were|has|have|had|does|do|did|will|would|can|could|"
+        r"may|might|must|shall|should|occurred|changed|retracted|deleted|"
+        r"remains?|became|becomes?)\b)"
     )
     separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
-    negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,3}}{separator}(?:{concept})"
+    negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,5}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
-    concept_before_negation = rf"(?:{concept})(?:{separator}\w+){{0,4}}{separator}{negation}\b"
+    concept_before_negation = rf"(?:{concept})(?:{separator}\w+){{0,6}}{separator}{negation}\b"
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
         or (status == "TITLE_CHANGED" and re.search(
-            rf"\btitle(?:['’]s)?(?:{separator}\w+){{0,4}}{separator}(?:no|not|never|failed to|failure to)(?:{separator}\w+){{0,3}}{separator}chang(?:e|ed|ing)\b",
+            rf"\btitle(?:['’]s)?(?:{separator}\w+){{0,6}}{separator}(?:no|not|never|failed to|failure to)(?:{separator}\w+){{0,5}}{separator}chang(?:e|ed|ing)\b",
             observation,
         ))
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
