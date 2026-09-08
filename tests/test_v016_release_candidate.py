@@ -84,10 +84,15 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.assertIn("governed artifact mapping", errors)
 
     def test_extra_source_status_fixture_fails_closed(self):
-        extra = {"references/source-status-fixture-v0.16-extra.json"}
+        governed = {
+            artifact["path"]
+            for artifact in DATA["governed_artifacts"]
+            if artifact["path"].startswith("references/source-status-fixture-v0.16")
+        }
+        discovered = governed | {"references/source-status-fixture-v0.16-extra.json"}
         with mock.patch(
             "scripts.validate_v016_release_candidate.discovered_source_status_fixture_paths",
-            return_value=extra,
+            return_value=discovered,
         ):
             errors = validate_manifest(copy.deepcopy(DATA))
         self.assertIn("ungoverned source-status fixture", errors)
