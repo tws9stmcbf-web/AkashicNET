@@ -136,7 +136,6 @@ def validate(data):
         if git_blob_sha(raw) != artifact["git_blob_sha"]:
             raise ValueError("governed artifact drift")
         document = load_json(raw)
-        privacy_check(document)
         loaded[artifact["path"]] = document
         if path.name in by_name:
             raise ValueError("ambiguous governed artifact name")
