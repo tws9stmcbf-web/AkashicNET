@@ -4,23 +4,55 @@
   "title": "AkashicNET source-status review fixture v0.16",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "artifact_status", "source_nodes", "events", "promotion_guards", "coverage"],
+  "required": [
+    "schema_version",
+    "artifact_status",
+    "fixture_kind",
+    "source_nodes",
+    "events",
+    "promotion_guards",
+    "coverage"
+  ],
   "properties": {
-    "schema_version": {"const": "0.16.0-beta.1"},
-    "artifact_status": {"const": "REVIEW_FIXTURE_ONLY"},
-    "issue": {"type": "integer", "const": 282},
+    "schema_version": {
+      "const": "0.16.0-beta.1"
+    },
+    "artifact_status": {
+      "const": "REVIEW_FIXTURE_ONLY"
+    },
+    "issue": {
+      "type": "integer",
+      "const": 282
+    },
     "source_nodes": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["source_node_id", "original_url", "input_path", "input_blob_sha"],
+        "required": [
+          "source_node_id",
+          "original_url",
+          "input_path",
+          "input_blob_sha"
+        ],
         "properties": {
-          "source_node_id": {"type": "string", "minLength": 1},
-          "original_url": {"type": "string", "pattern": "^https://"},
-          "input_path": {"type": "string", "minLength": 1},
-          "input_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+          "source_node_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "original_url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "input_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_blob_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          }
         }
       }
     },
@@ -31,68 +63,201 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["event_id", "source_node_id", "status", "original_url", "retrieved_at", "evidence", "input_blob_sha", "human_review_state", "truth_inference", "promotion_applied"],
+        "required": [
+          "event_id",
+          "source_node_id",
+          "status",
+          "original_url",
+          "retrieved_at",
+          "evidence",
+          "input_blob_sha",
+          "human_review_state",
+          "truth_inference",
+          "promotion_applied"
+        ],
         "properties": {
-          "event_id": {"type": "string", "minLength": 1},
-          "source_node_id": {"type": "string", "minLength": 1},
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_node_id": {
+            "type": "string",
+            "minLength": 1
+          },
           "status": {
             "enum": [
-              "AVAILABLE", "REDIRECTED", "TITLE_CHANGED", "UNAVAILABLE_INDETERMINATE",
-              "CORRECTED", "RETRACTED", "DELETED", "DUPLICATE_REFERENCE_CANDIDATE",
+              "AVAILABLE",
+              "REDIRECTED",
+              "TITLE_CHANGED",
+              "UNAVAILABLE_INDETERMINATE",
+              "CORRECTED",
+              "RETRACTED",
+              "DELETED",
+              "DUPLICATE_REFERENCE_CANDIDATE",
               "PROVENANCE_INCOMPLETE"
             ]
           },
-          "original_url": {"type": "string", "pattern": "^https://"},
-          "retrieved_at": {"type": "string", "format": "date"},
+          "original_url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date"
+          },
           "evidence": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["kind", "observation"],
+            "required": [
+              "kind",
+              "observation"
+            ],
             "properties": {
-              "kind": {"enum": ["HTTP", "API", "PUBLISHER_RECORD", "REPOSITORY_REVIEW"]},
-              "observation": {"type": "string", "minLength": 1},
-              "http_status": {"type": "integer", "minimum": 100, "maximum": 599},
-              "observed_url": {"type": "string", "pattern": "^https://"},
-              "notice_url": {"type": "string", "pattern": "^https://"}
+              "kind": {
+                "enum": [
+                  "HTTP",
+                  "API",
+                  "PUBLISHER_RECORD",
+                  "REPOSITORY_REVIEW"
+                ]
+              },
+              "observation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "http_status": {
+                "type": "integer",
+                "minimum": 100,
+                "maximum": 599
+              },
+              "observed_url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "notice_url": {
+                "type": "string",
+                "pattern": "^https://"
+              }
             }
           },
           "transition": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["from_url", "to_url", "replacement_applied"],
+            "required": [
+              "from_url",
+              "to_url",
+              "replacement_applied"
+            ],
             "properties": {
-              "from_url": {"type": "string", "pattern": "^https://"},
-              "to_url": {"type": "string", "pattern": "^https://"},
-              "replacement_applied": {"const": false}
+              "from_url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "to_url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "replacement_applied": {
+                "const": false
+              }
             }
           },
-          "input_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-          "human_review_state": {"enum": ["PENDING", "REVIEWED_NO_PROMOTION"]},
-          "truth_inference": {"const": "NONE"},
-          "promotion_applied": {"const": false}
+          "input_blob_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "human_review_state": {
+            "enum": [
+              "PENDING",
+              "REVIEWED_NO_PROMOTION"
+            ]
+          },
+          "truth_inference": {
+            "const": "NONE"
+          },
+          "promotion_applied": {
+            "const": false
+          }
         }
       }
     },
     "promotion_guards": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["truth", "evidence", "rights", "identity", "edge_acceptance"],
+      "required": [
+        "truth",
+        "evidence",
+        "rights",
+        "identity",
+        "edge_acceptance"
+      ],
       "properties": {
-        "truth": {"const": false},
-        "evidence": {"const": false},
-        "rights": {"const": false},
-        "identity": {"const": false},
-        "edge_acceptance": {"const": false}
+        "truth": {
+          "const": false
+        },
+        "evidence": {
+          "const": false
+        },
+        "rights": {
+          "const": false
+        },
+        "identity": {
+          "const": false
+        },
+        "edge_acceptance": {
+          "const": false
+        }
       }
     },
     "coverage": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["implemented_statuses", "verified_gaps"],
+      "required": [
+        "implemented_statuses",
+        "verified_gaps"
+      ],
       "properties": {
-        "implemented_statuses": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
-        "verified_gaps": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+        "implemented_statuses": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "verified_gaps": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fixture_kind": {
+      "enum": [
+        "OBSERVED_REPOSITORY_EVIDENCE",
+        "SYNTHETIC_VALIDATOR_SCENARIO"
+      ]
+    },
+    "synthetic_disclaimer": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "fixture_kind": {
+            "const": "SYNTHETIC_VALIDATOR_SCENARIO"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "synthetic_disclaimer"
+        ]
       }
     }
-  }
+  ]
 }
