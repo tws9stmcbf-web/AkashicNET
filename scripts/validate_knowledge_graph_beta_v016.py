@@ -327,17 +327,32 @@ def validate(data):
                 errors.append("relationship assertion contract")
 
         independence = edge.get("evidence_independence_keys")
+        traceable_independence = traceable_independence_keys(edge_id)
         if (
             not isinstance(independence, list)
             or not independence
             or len(independence) != len(set(independence))
             or not set(independence).issubset(declared_independence)
-            or not set(independence).issubset(traceable_independence_keys(edge_id))
+            or set(independence) != traceable_independence
         ):
             errors.append("evidence independence")
         parents = edge.get("parent_edge_ids")
         if not isinstance(parents, list) or len(parents) != len(set(parents)):
             errors.append("edge ancestry")
+        elif parents:
+            if edge.get("assertion_class") != "INFERRED_CANDIDATE":
+                errors.append("edge ancestry policy")
+            child_endpoints = {edge.get("source_node_id"), edge.get("target_node_id")}
+            for parent_id in parents:
+                parent = edges_by_id.get(parent_id)
+                if parent is None:
+                    continue
+                parent_endpoints = {parent.get("source_node_id"), parent.get("target_node_id")}
+                if (
+                    parent.get("assertion_class") != "DIRECT_SOURCE_METADATA"
+                    or child_endpoints.isdisjoint(parent_endpoints)
+                ):
+                    errors.append("edge ancestry policy")
         resolved_record = check_provenance(edge.get("provenance"))
         if resolved_record is not None and source_node is not None and target_node is not None:
             if relationship in {"HAS_MODEL", "SUPPORTS_MODEL_CANDIDATE"}:
