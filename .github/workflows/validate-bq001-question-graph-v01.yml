@@ -1,0 +1,60 @@
+name: Validate BQ001 Question Graph v0.1
+
+on:
+  pull_request:
+    paths:
+      - 'references/big-questions/BQ001/**'
+      - 'schemas/bq001-question-graph-v0.1.schema.json'
+      - 'schemas/knowledge-graph-beta-v0.16.schema.json'
+      - 'scripts/bq001_question_graph_v01.py'
+      - 'scripts/build_knowledge_graph_beta_fixture_v016.py'
+      - 'scripts/validate_knowledge_graph_beta_v016.py'
+      - 'tests/test_bq001_question_graph_v01.py'
+      - 'tests/test_knowledge_graph_beta_v016.py'
+      - '.github/workflows/validate-bq001-question-graph-v01.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/big-questions/BQ001/**'
+      - 'schemas/bq001-question-graph-v0.1.schema.json'
+      - 'schemas/knowledge-graph-beta-v0.16.schema.json'
+      - 'scripts/bq001_question_graph_v01.py'
+      - 'scripts/build_knowledge_graph_beta_fixture_v016.py'
+      - 'scripts/validate_knowledge_graph_beta_v016.py'
+      - 'tests/test_bq001_question_graph_v01.py'
+      - 'tests/test_knowledge_graph_beta_v016.py'
+      - '.github/workflows/validate-bq001-question-graph-v01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - name: Verify tested commit
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Install JSON Schema validator
+        run: python -m pip install jsonschema==4.25.1
+      - name: Validate committed graph before regeneration
+        run: python scripts/bq001_question_graph_v01.py validate
+      - name: Reproduce canonical artifact
+        run: |
+          python scripts/bq001_question_graph_v01.py build
+          git diff --exit-code -- references/big-questions/BQ001/question-graph-v0.1.json
+      - name: Verify privacy, provenance, retrieval and governance
+        run: python -m unittest tests.test_bq001_question_graph_v01 tests.test_knowledge_graph_beta_v016
+      - name: Exercise curated and inferred retrieval
+        run: |
+          python scripts/bq001_question_graph_v01.py query --view curated > /dev/null
+          python scripts/bq001_question_graph_v01.py query --node node:model:MODEL-BQ001-BIOLOGICAL-DEPENDENCE --view inferred > /dev/null
