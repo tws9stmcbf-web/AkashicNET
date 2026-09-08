@@ -81,6 +81,9 @@ class FrameworkInventoryTests(unittest.TestCase):
     def test_private_metadata_and_encoded_links_fail_closed(self):
         changes = [
             lambda d: d["inventory"][0].update(drive_id="synthetic"),
+            lambda d: d["inventory"][0].update({"drive%5fid": "synthetic"}),
+            lambda d: d["inventory"][0].update({"file%70ath": "synthetic"}),
+            lambda d: d["inventory"][0].update({"drive%255fid": "synthetic"}),
             lambda d: d["inventory"][0].update(boundary="https://drive.google.com/file/d/synthetic/view"),
             lambda d: d["inventory"][0].update(boundary="https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2Fsynthetic"),
             lambda d: d["inventory"][0].update(boundary="/My Drive/private.pdf"),
@@ -88,6 +91,14 @@ class FrameworkInventoryTests(unittest.TestCase):
         for index, change in enumerate(changes):
             with self.subTest(index=index):
                 self.mutate(change)
+
+    def test_json_pointer_array_indices_are_canonical(self):
+        document = {"items": list(range(11))}
+        self.assertEqual(validator.resolve_pointer(document, "/items/0"), 0)
+        self.assertEqual(validator.resolve_pointer(document, "/items/10"), 10)
+        for pointer in ("/items/-1", "/items/+1", "/items/", "/items/00", "/items/01"):
+            with self.subTest(pointer=pointer), self.assertRaises(ValueError):
+                validator.resolve_pointer(document, pointer)
 
     def test_duplicate_keys_and_nonfinite_json_fail_closed(self):
         for raw in (
