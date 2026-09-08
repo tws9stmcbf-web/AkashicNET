@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from urllib.parse import quote
 
 from scripts import bq001_question_graph_v01 as graph
 
@@ -137,6 +138,37 @@ class QuestionGraphTests(unittest.TestCase):
         with patch.object(graph, 'load_input_bytes', return_value=json.dumps(upstream).encode()):
             with self.assertRaises(ValueError):
                 graph.build()
+
+    def test_drift_generation_requires_transitive_provenance_and_integrity(self):
+        changes = [
+            lambda d: d['source_artifacts'][0].update(sha256='a' * 64),
+            lambda d: d['nodes'][0]['provenance'].update(sha256='b' * 64),
+            lambda d: d['nodes'][1].update(node_id=d['nodes'][2]['node_id']),
+            lambda d: d['edges'][0].update(target_node_id='node:missing'),
+            lambda d: d['nodes'][0]['provenance'].update(record_locator='/models/0/model_id'),
+            lambda d: d['edges'][0]['provenance'].update(record_locator='/missing'),
+        ]
+        for index, change in enumerate(changes):
+            upstream = graph.load_json(graph.INPUT.read_bytes())
+            change(upstream)
+            with self.subTest(index=index), patch.object(graph, 'load_input_bytes', return_value=json.dumps(upstream).encode()):
+                with self.assertRaises(ValueError):
+                    graph.build()
+
+    def test_nested_percent_encoding_never_emits_private_marker(self):
+        private = 'https://drive.google.com/file/d/synthetic/view'
+        for depth in (1, 5, 10, 40):
+            value = ''.join(f'%{ord(character):02x}' for character in private)
+            for _ in range(depth):
+                value = quote(value, safe='')
+            upstream = graph.load_json(graph.INPUT.read_bytes())
+            upstream['nodes'][0]['label'] = value
+            with self.subTest(depth=depth), patch.object(graph, 'load_input_bytes', return_value=json.dumps(upstream).encode()):
+                with self.assertRaises(ValueError):
+                    graph.build()
+
+    def test_bounded_public_percent_encoding_is_still_allowed(self):
+        graph.privacy_check({'label': 'Public%20review%20label'})
 
 
 if __name__ == '__main__':

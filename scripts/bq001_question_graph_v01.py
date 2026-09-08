@@ -59,11 +59,14 @@ def privacy_check(value):
     """Check keys and values; diagnostics never echo rejected private content."""
     def check_string(text, is_key=False):
         decoded = text
-        for _ in range(4):
+        for _ in range(32):
             new = unquote(decoded)
             if new == decoded:
                 break
             decoded = new
+        else:
+            raise ValueError('encoding did not stabilize')
+        unescaped = decoded
         decoded = decoded.casefold().replace('\\', '/')
         if any(marker in decoded for marker in (
             'drive.google.com', 'docs.google.com', '/my drive/', 'akm-',
@@ -74,7 +77,7 @@ def privacy_check(value):
         if not is_key and re.search(r'(?<![a-f0-9])[a-f0-9]{32,64}(?![a-f0-9])', decoded):
             raise ValueError('unscoped digest rejected')
         if not is_key:
-            for token in re.findall(r'(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{25,}(?![A-Za-z0-9_-])', text):
+            for token in re.findall(r'(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{25,}(?![A-Za-z0-9_-])', unescaped):
                 if re.search(r'[a-z]', token) and re.search(r'[A-Z]', token) and re.search(r'[0-9]', token):
                     raise ValueError('opaque identifier rejected')
     if isinstance(value, dict):
@@ -99,6 +102,12 @@ def privacy_check(value):
 
 def project(upstream, digest):
     privacy_check(upstream)
+    # A changed fixture can be reviewed, but its structure, transitive source
+    # pins and record identities must remain governed. Only byte reproduction
+    # against the existing fixture is deliberately non-blocking here.
+    errors = validate_upstream(upstream)
+    if any(error != 'deterministic artifact' for error in errors):
+        raise ValueError('upstream graph governance violation')
     # Runtime schema and deterministic validation reject unknown metadata.
     nodes = sorted(copy.deepcopy(upstream['nodes']), key=lambda n: n['node_id'])
     edges = sorted(copy.deepcopy(upstream['edges']), key=lambda e: e['edge_id'])
@@ -128,17 +137,9 @@ def project(upstream, digest):
     # still obey the closed schema, typed provenance and no-promotion fields.
     from jsonschema import Draft202012Validator
     schema = load_json(SCHEMA.read_bytes())
-    def permit_review_digests(value):
-        if isinstance(value, dict):
-            if isinstance(value.get('const'), str) and re.fullmatch(r'[a-f0-9]{64}', value['const']):
-                value.pop('const')
-                value.update(type='string', pattern='^[a-f0-9]{64}$')
-            for child in value.values():
-                permit_review_digests(child)
-        elif isinstance(value, list):
-            for child in value:
-                permit_review_digests(child)
-    permit_review_digests(schema)
+    schema['properties']['input']['properties']['sha256'] = {
+        'type': 'string', 'pattern': '^[a-f0-9]{64}$',
+    }
     if not Draft202012Validator(schema).is_valid(result):
         raise ValueError('unsafe review projection')
     return result
