@@ -383,7 +383,12 @@ def iter_subreddit_posts(
         retrieved_at = utc_now_iso()
         next_cursor = data.get("after")
         for child in children:
-            yield normalize_post_v2(child, retrieved_at), next_cursor
+            child_data = child.get("data", child)
+            if is_post_removed(child_data):
+                reddit_id = str(child_data.get("id") or "")
+                yield tombstone_record(reddit_id, retrieved_at, status="removed", endpoint="subreddit_listing"), next_cursor
+            else:
+                yield normalize_post_v2(child, retrieved_at), next_cursor
             emitted += 1
             if max_posts is not None and emitted >= max_posts:
                 return
@@ -468,6 +473,61 @@ def crawl_subreddit(
     return written, skipped
 
 
+def replace_exact_post_record(record: dict[str, Any], output_path: Path) -> str:
+    """Store a single exact-fetch record, replacing any prior entry for its id.
+
+    Used for exact ``--post-id`` fetches (as opposed to listing/reconcile
+    batch appends). If ``output_path`` does not exist, or contains no prior
+    record for this ``reddit_id``, the record is stored/appended normally
+    ("written"/"appended"). If a prior record for this ``reddit_id`` is
+    already present (content or an earlier tombstone), every such record is
+    dropped and replaced by exactly one copy of ``record`` — this is how an
+    exact removed-post refresh atomically supersedes stale cached content
+    rather than being discarded as a duplicate.
+
+    The whole file is parsed before anything is written; if any existing
+    line fails to parse, the exception propagates and the original file is
+    left completely untouched. The final replacement (when a prior record
+    existed) is written to a sibling temp file and atomically renamed over
+    the original, so a failure partway through writing never leaves a
+    partially-updated artifact.
+    """
+    reddit_id = str(record.get("reddit_id") or "")
+    if not reddit_id:
+        raise ValueError("record is missing reddit_id")
+
+    if not output_path.exists():
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open("w", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+        return "written"
+
+    existing_records: list[dict[str, Any]] = []
+    matched = False
+    with output_path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            parsed = json.loads(line)
+            if str(parsed.get("reddit_id") or "") == reddit_id:
+                matched = True
+                continue
+            existing_records.append(parsed)
+
+    if not matched:
+        with output_path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+        return "appended"
+
+    existing_records.append(record)
+    tmp = output_path.with_suffix(output_path.suffix + ".exactfetch.tmp")
+    with tmp.open("w", encoding="utf-8") as handle:
+        for existing_record in existing_records:
+            handle.write(json.dumps(existing_record, ensure_ascii=False, sort_keys=True) + "\n")
+    tmp.replace(output_path)
+    return "replaced"
+
+
 def crawl_post(
     client: OAuthClient,
     post_id: str,
@@ -475,6 +535,11 @@ def crawl_post(
 ) -> tuple[int, int]:
     record = fetch_post(client, post_id)
     reddit_id = str(record.get("reddit_id") or "")
+
+    if record.get("record_type") == "post_metadata_removed" and reddit_id:
+        replace_exact_post_record(record, output_path)
+        return 1, 0
+
     seen = load_seen_ids(output_path)
     if reddit_id and reddit_id in seen:
         return 0, 1

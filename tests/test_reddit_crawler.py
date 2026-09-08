@@ -9,6 +9,7 @@ from unittest.mock import patch
 from scripts.reddit_crawler import (
     RedditAPIError,
     canonical_post_url,
+    crawl_post,
     fetch_post,
     is_post_removed,
     iter_subreddit_posts,
@@ -21,6 +22,7 @@ from scripts.reddit_crawler import (
     reconcile_file,
     reconcile_post,
     reconcile_records,
+    replace_exact_post_record,
     tombstone_record,
     write_checkpoint,
 )
@@ -224,6 +226,49 @@ class RedditMinimizedSchemaV2Tests(unittest.TestCase):
         self.assertEqual(record['schema_version'], 'akashicnet.reddit.post.v2')
         for field in ('score', 'num_comments', 'upvote_ratio', 'author', 'selftext'):
             self.assertNotIn(field, record)
+
+    def test_iter_subreddit_posts_tombstones_removed_children_immediately(self):
+        class MixedListingClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [
+                            {
+                                'data': {
+                                    'id': 'gone1',
+                                    'title': '[removed]',
+                                    'removed_by_category': 'moderator',
+                                    'permalink': '/r/NeuronsToNirvana/comments/gone1/was_here/',
+                                }
+                            },
+                            {
+                                'data': {
+                                    'id': 'live1',
+                                    'title': 'Still here',
+                                    'permalink': '/r/NeuronsToNirvana/comments/live1/still_here/',
+                                    'score': 12,
+                                }
+                            },
+                        ],
+                        'after': None,
+                    }
+                }, {}
+
+        records = [record for record, _ in iter_subreddit_posts(MixedListingClient(), 'NeuronsToNirvana', max_posts=2)]
+        self.assertEqual(len(records), 2)
+        by_id = {record['reddit_id']: record for record in records}
+
+        removed = by_id['gone1']
+        self.assertEqual(removed['record_type'], 'post_metadata_removed')
+        self.assertEqual(removed['status'], 'removed')
+        self.assertEqual(removed['provenance']['endpoint'], 'subreddit_listing')
+        for content_field in ('title', 'canonical_url', 'external_url', 'subreddit', 'created_utc', 'score'):
+            self.assertNotIn(content_field, removed)
+
+        live = by_id['live1']
+        self.assertEqual(live['schema_version'], 'akashicnet.reddit.post.v2')
+        self.assertEqual(live['title'], 'Still here')
+        self.assertNotIn('score', live)
 
 
 class RedditDeletionReconciliationTests(unittest.TestCase):
@@ -581,6 +626,130 @@ def _workflow_step_run_text(block):
                 break
         out.append(line)
     return '\n'.join(out)
+
+
+class RedditExactFetchReplacementTests(unittest.TestCase):
+    """Exact --post-id refresh must replace, not merely append, on removal."""
+
+    @staticmethod
+    def _removed_client(reddit_id='abc123'):
+        class RemovedClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {
+                                'id': reddit_id,
+                                'title': '[removed]',
+                                'removed_by_category': 'moderator',
+                            }
+                        }]
+                    }
+                }, {}
+
+        return RemovedClient()
+
+    @staticmethod
+    def _live_client(reddit_id='abc123', title='Refreshed live title'):
+        class LiveClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {
+                                'id': reddit_id,
+                                'title': title,
+                                'permalink': f'/r/NeuronsToNirvana/comments/{reddit_id}/example/',
+                            }
+                        }]
+                    }
+                }, {}
+
+        return LiveClient()
+
+    def test_exact_removed_post_replaces_existing_cached_content_atomically(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / 'posts.jsonl'
+            stale = {
+                'schema_version': 'akashicnet.reddit.post.v2',
+                'source': 'reddit',
+                'record_type': 'post_metadata',
+                'reddit_id': 'abc123',
+                'subreddit': 'NeuronsToNirvana',
+                'title': 'Stale cached title',
+                'canonical_url': 'https://www.reddit.com/r/NeuronsToNirvana/comments/abc123/example/',
+                'external_url': 'https://example.org/source',
+                'created_utc': 123.0,
+                'retrieved_at': '2026-08-01T00:00:00Z',
+                'provenance': {'api': 'reddit-data-api', 'endpoint': 'subreddit_listing', 'metadata_only': True},
+            }
+            other = {'reddit_id': 'other1', 'title': 'Unrelated kept record'}
+            output.write_text(
+                json.dumps(stale) + '\n' + json.dumps(other) + '\n',
+                encoding='utf-8',
+            )
+
+            written, skipped = crawl_post(self._removed_client('abc123'), 'abc123', output)
+            self.assertEqual((written, skipped), (1, 0))
+
+            lines = [json.loads(line) for line in output.read_text(encoding='utf-8').splitlines()]
+            by_id = {record['reddit_id']: record for record in lines}
+            self.assertEqual(len(lines), 2)
+            self.assertEqual(by_id['other1'], other)
+
+            tombstone = by_id['abc123']
+            self.assertEqual(tombstone['record_type'], 'post_metadata_removed')
+            self.assertEqual(tombstone['status'], 'removed')
+            self.assertEqual(tombstone['provenance']['endpoint'], 'post_info')
+            for content_field in (
+                'title', 'canonical_url', 'external_url', 'subreddit',
+                'created_utc', 'retrieved_at', 'score', 'num_comments',
+                'upvote_ratio', 'author', 'selftext',
+            ):
+                self.assertNotIn(content_field, tombstone)
+
+            # Exactly one record survives for abc123 anywhere in the file.
+            self.assertEqual(sum(1 for r in lines if r.get('reddit_id') == 'abc123'), 1)
+            self.assertFalse((Path(tmpdir) / 'posts.jsonl.exactfetch.tmp').exists())
+
+    def test_exact_removed_post_with_no_prior_record_writes_one_tombstone(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / 'posts.jsonl'
+            written, skipped = crawl_post(self._removed_client('abc123'), 'abc123', output)
+            self.assertEqual((written, skipped), (1, 0))
+
+            lines = [json.loads(line) for line in output.read_text(encoding='utf-8').splitlines()]
+            self.assertEqual(len(lines), 1)
+            self.assertEqual(lines[0]['record_type'], 'post_metadata_removed')
+            self.assertEqual(lines[0]['reddit_id'], 'abc123')
+            self.assertEqual(lines[0]['provenance']['endpoint'], 'post_info')
+
+    def test_exact_live_refetch_of_existing_id_is_still_treated_as_duplicate(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / 'posts.jsonl'
+            output.write_text(json.dumps({'reddit_id': 'abc123', 'title': 'Old'}) + '\n', encoding='utf-8')
+
+            written, skipped = crawl_post(self._live_client('abc123'), 'abc123', output)
+            self.assertEqual((written, skipped), (0, 1))
+            lines = output.read_text(encoding='utf-8').splitlines()
+            self.assertEqual(len(lines), 1)
+            self.assertEqual(json.loads(lines[0])['title'], 'Old')
+
+    def test_replace_exact_post_record_failure_preserves_original_artifact(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / 'posts.jsonl'
+            original_text = (
+                json.dumps({'reddit_id': 'abc123', 'title': 'Stale cached title'}) + '\n' +
+                'not-valid-json\n'
+            )
+            output.write_text(original_text, encoding='utf-8')
+
+            tombstone = tombstone_record('abc123', '2026-09-08T00:00:00Z', status='removed', endpoint='post_info')
+            with self.assertRaises(json.JSONDecodeError):
+                replace_exact_post_record(tombstone, output)
+
+            self.assertEqual(output.read_text(encoding='utf-8'), original_text)
+            self.assertFalse((Path(tmpdir) / 'posts.jsonl.exactfetch.tmp').exists())
 
 
 class RedditPilotWorkflowGateWiringTests(unittest.TestCase):
