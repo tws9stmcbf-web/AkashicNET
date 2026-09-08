@@ -102,7 +102,7 @@ def project(upstream, digest):
     # Runtime schema and deterministic validation reject unknown metadata.
     nodes = sorted(copy.deepcopy(upstream['nodes']), key=lambda n: n['node_id'])
     edges = sorted(copy.deepcopy(upstream['edges']), key=lambda e: e['edge_id'])
-    return {
+    result = {
         'schema_version': 'akashicnet.bq001.question-graph.v0.1',
         'mode': 'REVIEW_ONLY',
         'question_id': 'BQ001',
@@ -124,10 +124,32 @@ def project(upstream, digest):
             'accepted_edges': 0,
         },
     }
+    # Review generation may carry a changed repository digest, but it must
+    # still obey the closed schema, typed provenance and no-promotion fields.
+    from jsonschema import Draft202012Validator
+    schema = load_json(SCHEMA.read_bytes())
+    def permit_review_digests(value):
+        if isinstance(value, dict):
+            if isinstance(value.get('const'), str) and re.fullmatch(r'[a-f0-9]{64}', value['const']):
+                value.pop('const')
+                value.update(type='string', pattern='^[a-f0-9]{64}$')
+            for child in value.values():
+                permit_review_digests(child)
+        elif isinstance(value, list):
+            for child in value:
+                permit_review_digests(child)
+    permit_review_digests(schema)
+    if not Draft202012Validator(schema).is_valid(result):
+        raise ValueError('unsafe review projection')
+    return result
+
+
+def load_input_bytes():
+    return INPUT.read_bytes()
 
 
 def build():
-    raw = INPUT.read_bytes()
+    raw = load_input_bytes()
     upstream = load_json(raw)
     return project(upstream, hashlib.sha256(raw).hexdigest())
 
@@ -139,7 +161,7 @@ def validate(data):
     Draft202012Validator.check_schema(schema)
     if not Draft202012Validator(schema).is_valid(data):
         raise ValueError('question graph schema violation')
-    raw = INPUT.read_bytes()
+    raw = load_input_bytes()
     if hashlib.sha256(raw).hexdigest() != INPUT_SHA256:
         raise ValueError('question graph input drift')
     upstream = load_json(raw)

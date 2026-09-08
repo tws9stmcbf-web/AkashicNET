@@ -118,7 +118,7 @@ class QuestionGraphTests(unittest.TestCase):
             target = Path(temp) / 'input.json'
             target.write_text(json.dumps(upstream))
             # Keep canonical repository path independent of temporary IO location.
-            with patch.object(Path, 'read_bytes', return_value=target.read_bytes()):
+            with patch.object(graph, 'load_input_bytes', return_value=target.read_bytes()):
                 candidate = graph.build()
             self.assertNotEqual(candidate['input']['sha256'], graph.INPUT_SHA256)
             with self.assertRaises(ValueError):
@@ -127,7 +127,14 @@ class QuestionGraphTests(unittest.TestCase):
     def test_private_source_drift_cannot_generate(self):
         upstream = graph.load_json(graph.INPUT.read_bytes())
         upstream['nodes'][0]['label'] = 'https://drive.google.com/file/d/synthetic/view'
-        with patch.object(Path, 'read_bytes', return_value=json.dumps(upstream).encode()):
+        with patch.object(graph, 'load_input_bytes', return_value=json.dumps(upstream).encode()):
+            with self.assertRaises(ValueError):
+                graph.build()
+
+    def test_unknown_source_metadata_cannot_be_written(self):
+        upstream = graph.load_json(graph.INPUT.read_bytes())
+        upstream['nodes'][0]['unreviewed_metadata'] = 'unknown content'
+        with patch.object(graph, 'load_input_bytes', return_value=json.dumps(upstream).encode()):
             with self.assertRaises(ValueError):
                 graph.build()
 
