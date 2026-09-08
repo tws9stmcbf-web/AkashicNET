@@ -104,6 +104,22 @@ def normalize_negation(text: str) -> str:
     return normalized
 
 
+def terminal_evidence_is_negated(status: str, observation: str) -> bool:
+    concept_patterns = {
+        "TITLE_CHANGED": r"title(?:[- ]chang(?:e|ed|ing))",
+        "RETRACTED": r"retract(?:ion|ed|ing)",
+        "DELETED": r"delet(?:ion|ed|ing)",
+    }
+    negation = r"(?:no|not|never|without|failed to|failure to)"
+    concept = concept_patterns[status]
+    proximity = r"(?:\W+\w+){0,5}\W+"
+    return bool(
+        re.search(rf"(?:{negation}){proximity}(?:{concept})", observation)
+        or re.search(rf"(?:{concept}){proximity}(?:{negation})", observation)
+        or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
+    )
+
+
 def validate(data: dict) -> None:
     if not SCHEMA.is_file():
         fail("schema missing")
@@ -192,7 +208,7 @@ def validate(data: dict) -> None:
         if synthetic and status in TERMINAL_STATUSES:
             if event["evidence"].get("observed_status") != status:
                 fail(f"synthetic terminal status lacks affirmative structured evidence: {event_id}")
-            if any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status]):
+            if terminal_evidence_is_negated(status, observation):
                 fail(f"synthetic terminal status evidence is negated: {event_id}")
         if status == "RETRACTED":
             affirmative_markers = ("retraction notice", "has been retracted", "was retracted")
