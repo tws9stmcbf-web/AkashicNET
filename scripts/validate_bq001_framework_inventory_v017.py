@@ -49,16 +49,19 @@ def load_json(raw):
     return json.loads(raw, object_pairs_hook=unique_pairs, parse_constant=reject_constant)
 
 
+def decode_percent(text):
+    decoded = text
+    for _ in range(32):
+        updated = unquote(decoded)
+        if updated == decoded:
+            return decoded
+        decoded = updated
+    raise ValueError("encoding did not stabilize")
+
+
 def privacy_check(value):
     def check(text, is_key=False):
-        decoded = text
-        for _ in range(32):
-            updated = unquote(decoded)
-            if updated == decoded:
-                break
-            decoded = updated
-        else:
-            raise ValueError("encoding did not stabilize")
+        decoded = decode_percent(text)
         folded = decoded.casefold().replace("\\", "/")
         if any(marker in folded for marker in (
             "drive.google.com", "docs.google.com", "/my drive/", "akm-",
@@ -70,7 +73,10 @@ def privacy_check(value):
     if isinstance(value, dict):
         for key, child in value.items():
             check(key, True)
-            if re.sub(r"[^a-z0-9]", "", key.casefold()) in FORBIDDEN_KEYS:
+            normalized_key = re.sub(
+                r"[^a-z0-9]", "", decode_percent(key).casefold()
+            )
+            if normalized_key in FORBIDDEN_KEYS:
                 raise ValueError("private metadata rejected")
             if key == "git_blob_sha" and isinstance(child, str) and re.fullmatch(r"[a-f0-9]{40}", child):
                 continue
@@ -93,6 +99,8 @@ def resolve_pointer(document, pointer):
     for token in pointer.split("/")[1:]:
         token = token.replace("~1", "/").replace("~0", "~")
         if isinstance(current, list):
+            if not re.fullmatch(r"(?:0|[1-9][0-9]*)", token):
+                raise ValueError("invalid governed locator")
             current = current[int(token)]
         elif isinstance(current, dict) and token in current:
             current = current[token]
