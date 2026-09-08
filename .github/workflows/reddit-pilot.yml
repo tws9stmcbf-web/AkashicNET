@@ -59,6 +59,7 @@ jobs:
       - name: Run crawler pilot
         if: ${{ steps.gate.outputs.approved == 'true' && (github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[reddit-smoke]')) }}
         env:
+          REDDIT_API_APPROVED: ${{ vars.REDDIT_API_APPROVED }}
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: AkashicNET-reddit-crawler/0.1 (research metadata indexer)

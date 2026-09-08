@@ -5,6 +5,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+import yaml
+
 from scripts.reddit_crawler import (
     RedditAPIError,
     canonical_post_url,
@@ -445,6 +447,80 @@ class RedditReconcileFileTests(unittest.TestCase):
             with self.assertRaises(FileNotFoundError):
                 reconcile_file(UnusedClient(), path)
             self.assertFalse(path.exists())
+
+
+class RedditPilotWorkflowGateWiringTests(unittest.TestCase):
+    """Deterministic validation of the reddit-pilot.yml approval wiring.
+
+    scripts/reddit_crawler.py's main() now enforces
+    ``os.getenv("REDDIT_API_APPROVED") == "true"`` as a fail-closed local
+    gate. Any workflow step that runs the crawler must therefore also
+    receive REDDIT_API_APPROVED in its step ``env``, or an otherwise
+    correctly-approved CI run would exit 3 before ever reaching Reddit.
+    """
+
+    WORKFLOW_PATH = Path(__file__).resolve().parents[1] / '.github' / 'workflows' / 'reddit-pilot.yml'
+
+    @classmethod
+    def setUpClass(cls):
+        cls.workflow = yaml.safe_load(cls.WORKFLOW_PATH.read_text(encoding='utf-8'))
+        cls.steps = cls.workflow['jobs']['crawl']['steps']
+
+    def _step(self, name):
+        for step in self.steps:
+            if step.get('name') == name:
+                return step
+        raise AssertionError(f'workflow step not found: {name}')
+
+    def test_gate_step_receives_repository_variable_via_env(self):
+        gate = self._step('Reddit API approval gate')
+        self.assertEqual(gate.get('env', {}).get('REDDIT_API_APPROVED'), "${{ vars.REDDIT_API_APPROVED }}")
+        # Exact-string comparison against a quoted shell variable, not an
+        # inline template interpolated directly into shell source.
+        self.assertIn('if [ "$REDDIT_API_APPROVED" = "true" ]', gate['run'])
+        self.assertNotIn('${{ vars.REDDIT_API_APPROVED }}', gate['run'])
+
+    def test_crawler_pilot_step_also_receives_repository_variable_via_env(self):
+        pilot = self._step('Run crawler pilot')
+        self.assertEqual(
+            pilot.get('env', {}).get('REDDIT_API_APPROVED'),
+            "${{ vars.REDDIT_API_APPROVED }}",
+            'Run crawler pilot step must forward REDDIT_API_APPROVED so scripts/reddit_crawler.py '
+            'main() does not exit 3 before an otherwise-approved pilot run reaches Reddit.',
+        )
+
+    def test_crawler_pilot_step_condition_and_credential_isolation_unchanged(self):
+        pilot = self._step('Run crawler pilot')
+        expected_condition = (
+            "${{ steps.gate.outputs.approved == 'true' && "
+            "(github.event_name == 'workflow_dispatch' || "
+            "contains(github.event.head_commit.message, '[reddit-smoke]')) }}"
+        )
+        self.assertEqual(pilot.get('if'), expected_condition)
+        env = pilot.get('env', {})
+        self.assertEqual(env.get('REDDIT_CLIENT_ID'), '${{ secrets.REDDIT_CLIENT_ID }}')
+        self.assertEqual(env.get('REDDIT_CLIENT_SECRET'), '${{ secrets.REDDIT_CLIENT_SECRET }}')
+
+    def test_simulated_env_resolution_when_repository_variable_is_exactly_true(self):
+        """Simulate GitHub Actions env resolution for the approved case.
+
+        Confirms that when the repository variable REDDIT_API_APPROVED is
+        exactly 'true', the templated env mapping for the crawler pilot
+        step resolves to a REDDIT_API_APPROVED value that satisfies
+        scripts/reddit_crawler.py's local gate, without invoking any
+        network access.
+        """
+        pilot = self._step('Run crawler pilot')
+        template = pilot['env']['REDDIT_API_APPROVED']
+        simulated_vars = {'REDDIT_API_APPROVED': 'true'}
+        resolved = template.replace('${{ vars.REDDIT_API_APPROVED }}', simulated_vars['REDDIT_API_APPROVED'])
+        self.assertEqual(resolved, 'true')
+
+        with patch.dict(os.environ, {'REDDIT_API_APPROVED': resolved}, clear=True):
+            # Gate check alone must pass; missing credentials should be the
+            # very next failure, proving the approval gate is satisfied.
+            rc = main(['NeuronsToNirvana'])
+            self.assertEqual(rc, 2)
 
 
 if __name__ == '__main__':
