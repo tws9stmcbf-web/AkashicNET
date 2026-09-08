@@ -166,6 +166,9 @@ def test_synthetic_terminal_status_rejects_negated_evidence(status: str, observa
         ("TITLE_CHANGED", "The title didn’t change."),
         ("RETRACTED", "The work hasn't been retracted."),
         ("DELETED", "The source wasn't deleted."),
+        ("TITLE_CHANGED", "The title-change hasn't occurred."),
+        ("RETRACTED", "A retraction notice says the work hasn't undergone retraction."),
+        ("DELETED", "Deletion hasn't occurred."),
     ],
 )
 def test_synthetic_terminal_status_rejects_negation_contractions(
