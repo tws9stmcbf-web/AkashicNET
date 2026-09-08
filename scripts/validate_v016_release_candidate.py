@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -43,6 +44,20 @@ EXPECTED_ROLES = {
     "SOURCE_STATUS_VALIDATOR": 1,
     "SOURCE_STATUS_MUTATION_TESTS": 1,
 }
+EXPECTED_ARTIFACTS = {
+    "references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json": "GRAPH_FIXTURE",
+    "schemas/knowledge-graph-beta-v0.16.schema.json": "GRAPH_SCHEMA",
+    "scripts/validate_knowledge_graph_beta_v016.py": "GRAPH_VALIDATOR",
+    "tests/test_knowledge_graph_beta_v016.py": "GRAPH_MUTATION_TESTS",
+    "scripts/validate_v016_readiness.py": "GRAPH_READINESS_GATE",
+    "schemas/source-status-v0.16.schema.json": "SOURCE_STATUS_SCHEMA",
+    "references/source-status-fixture-v0.16.json": "OBSERVED_SOURCE_STATUS_FIXTURE",
+    "references/source-status-fixture-v0.16-slice2.json": "OBSERVED_SOURCE_STATUS_FIXTURE",
+    "references/source-status-fixture-v0.16-synthetic.json": "SYNTHETIC_VALIDATOR_ONLY_FIXTURE",
+    "scripts/validate_source_status_v016.py": "SOURCE_STATUS_VALIDATOR",
+    "tests/test_source_status_v016.py": "SOURCE_STATUS_MUTATION_TESTS",
+}
+
 EXPECTED_BOUNDARIES = {
     "truth",
     "scientific_evidence",
@@ -64,6 +79,34 @@ def git_blob_sha(path: str) -> str:
         capture_output=True,
     )
     return result.stdout.strip()
+
+
+def validate_repository_binding() -> list[str]:
+    """Bind the declared base and exact CI head to the checked-out Git history."""
+    errors: list[str] = []
+    try:
+        head = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        ).stdout.strip()
+        expected_head = os.environ.get("CANDIDATE_HEAD_SHA", "").strip()
+        if expected_head and head != expected_head:
+            errors.append("exact candidate head checkout")
+        merge_base = subprocess.run(
+            ["git", "merge-base", "HEAD", "origin/main"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        ).stdout.strip()
+        if merge_base != EXPECTED_BASE_COMMIT:
+            errors.append("actual candidate base commit")
+    except subprocess.CalledProcessError:
+        errors.append("candidate repository binding")
+    return errors
 
 
 def validate_manifest(data: dict) -> list[str]:
@@ -100,7 +143,7 @@ def validate_manifest(data: dict) -> list[str]:
         artifacts = []
 
     paths: set[str] = set()
-    role_counts: dict[str, int] = {}
+    artifact_mapping: dict[str, str] = {}
     for artifact in artifacts:
         if not isinstance(artifact, dict):
             errors.append("artifact record")
@@ -114,7 +157,7 @@ def validate_manifest(data: dict) -> list[str]:
         if path in paths:
             errors.append("duplicate artifact path")
         paths.add(path)
-        role_counts[role] = role_counts.get(role, 0) + 1
+        artifact_mapping[path] = role
         if not isinstance(digest, str) or not SHA40.fullmatch(digest):
             errors.append("artifact pin")
             continue
@@ -124,8 +167,8 @@ def validate_manifest(data: dict) -> list[str]:
         except subprocess.CalledProcessError:
             errors.append("missing governed artifact")
 
-    if role_counts != EXPECTED_ROLES:
-        errors.append("governed role coverage")
+    if artifact_mapping != EXPECTED_ARTIFACTS:
+        errors.append("governed artifact mapping")
 
     summary = data.get("candidate_summary", {})
     expected_summary = {
@@ -159,7 +202,7 @@ def run_dependencies() -> None:
 def main() -> int:
     try:
         data = json.loads(MANIFEST.read_text(encoding="utf-8"))
-        errors = validate_manifest(data)
+        errors = validate_manifest(data) + validate_repository_binding()
         if errors:
             raise AssertionError(", ".join(errors))
         run_dependencies()
