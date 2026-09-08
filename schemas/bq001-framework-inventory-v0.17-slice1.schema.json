@@ -1,0 +1,342 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akashicnet://schemas/bq001-framework-inventory/v0.17-slice1",
+  "title": "BQ001 v0.17 review-only framework inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inventory_id",
+    "version",
+    "release_track",
+    "inherited_v016_readiness_pin",
+    "question_id",
+    "question_status",
+    "mode",
+    "scope",
+    "governed_artifacts",
+    "inventory",
+    "exclusions",
+    "summary",
+    "promotion_guards",
+    "operational_boundaries"
+  ],
+  "properties": {
+    "inventory_id": {
+      "const": "BQ001-FRAMEWORK-INVENTORY-V017-SLICE1"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "release_track": {
+      "const": "v0.17-evidence-intelligence-beta"
+    },
+    "inherited_v016_readiness_pin": {
+      "const": "4867ca7c8c9a4e1bc139f630815ecf49c79a2ef7"
+    },
+    "question_id": {
+      "const": "BQ001"
+    },
+    "question_status": {
+      "const": "UNRESOLVED"
+    },
+    "mode": {
+      "const": "REVIEW_ONLY"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "exhaustive_for_pinned_artifacts",
+        "exhaustive_beyond_pinned_artifacts",
+        "synthesis_or_answer"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exhaustive_for_pinned_artifacts": {
+          "const": true
+        },
+        "exhaustive_beyond_pinned_artifacts": {
+          "const": false
+        },
+        "synthesis_or_answer": {
+          "const": false
+        }
+      }
+    },
+    "governed_artifacts": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "git_blob_sha",
+          "role"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^references/big-questions/BQ001/[A-Za-z0-9._-]+\\.json$"
+          },
+          "git_blob_sha": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "role": {
+            "enum": [
+              "question_and_umbrella_model_contract",
+              "public_safe_synthesis",
+              "neuroscience_and_cardiac_arrest",
+              "memory_identity_and_nde_methods",
+              "reincarnation_reports_and_methods",
+              "contemplative_and_philosophy",
+              "supplemental_science_and_theory_testing"
+            ]
+          }
+        }
+      }
+    },
+    "inventory": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "inventory_item_id",
+          "category",
+          "canonical_name",
+          "represented_by",
+          "evidence_role",
+          "status",
+          "relation_to_bq001",
+          "pinned_locators",
+          "independence_state",
+          "boundary"
+        ],
+        "properties": {
+          "inventory_item_id": {
+            "type": "string",
+            "pattern": "^FW-BQ001-"
+          },
+          "category": {
+            "enum": [
+              "UMBRELLA_MODEL",
+              "PHILOSOPHICAL_FRAMEWORK",
+              "CONTEMPLATIVE_PHILOSOPHICAL_FRAMEWORK",
+              "PEER_REVIEWED_REVIEW_FRAMEWORK",
+              "PEER_REVIEWED_THEORETICAL_FRAMEWORK",
+              "NEUROSCIENTIFIC_EXPLANATORY_MODEL",
+              "CONSCIOUSNESS_THEORY"
+            ]
+          },
+          "canonical_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "represented_by": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^(MODEL|SRC|CLAIM)-BQ001-"
+            }
+          },
+          "evidence_role": {
+            "enum": [
+              "organising_model_only",
+              "INTERPRETATION",
+              "Established Evidence"
+            ]
+          },
+          "status": {
+            "enum": [
+              "UNRESOLVED",
+              "EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001"
+            ]
+          },
+          "relation_to_bq001": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pinned_locators": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+\\.json#/"
+            }
+          },
+          "independence_state": {
+            "enum": [
+              "NOT_APPLICABLE_TO_MODEL",
+              "UNASSESSED_REVIEW_REQUIRED",
+              "SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION",
+              "SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT"
+            ]
+          },
+          "boundary": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "reason"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "enum": [
+              "RESEARCH_DOMAIN_OR_OBSERVATION_NOT_A_FRAMEWORK",
+              "RESEARCH_DOMAIN_AND_CASE_LITERATURE_NOT_A_SINGLE_FRAMEWORK",
+              "EVIDENCE_DOMAIN_NOT_A_METAPHYSICAL_MODEL",
+              "PROVENANCE_TEST_MATERIAL_NOT_EVIDENCE_OR_FRAMEWORK"
+            ]
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "governed_artifacts",
+        "inventory_items",
+        "umbrella_models",
+        "philosophical_frameworks",
+        "contemplative_frameworks",
+        "neuroscientific_explanatory_models",
+        "consciousness_theories",
+        "resolved_items",
+        "accepted_edges"
+      ],
+      "properties": {
+        "governed_artifacts": {
+          "const": 7
+        },
+        "inventory_items": {
+          "const": 11
+        },
+        "umbrella_models": {
+          "const": 2
+        },
+        "philosophical_frameworks": {
+          "const": 3
+        },
+        "contemplative_frameworks": {
+          "const": 3
+        },
+        "neuroscientific_explanatory_models": {
+          "const": 1
+        },
+        "consciousness_theories": {
+          "const": 2
+        },
+        "resolved_items": {
+          "const": 0
+        },
+        "accepted_edges": {
+          "const": 0
+        }
+      }
+    },
+    "promotion_guards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_inference_allowed",
+        "framework_count_is_vote",
+        "source_count_upgrades_evidence",
+        "shared_source_counts_as_independent_confirmation",
+        "interpretation_upgrades_to_empirical_evidence",
+        "randomized_navigation_implies_probability",
+        "ranking_or_visualization_implies_endorsement",
+        "scientific_evidence_promotion_allowed",
+        "rights_or_public_release_promotion_allowed",
+        "accepted_edge_creation_allowed"
+      ],
+      "properties": {
+        "truth_inference_allowed": {
+          "const": false
+        },
+        "framework_count_is_vote": {
+          "const": false
+        },
+        "source_count_upgrades_evidence": {
+          "const": false
+        },
+        "shared_source_counts_as_independent_confirmation": {
+          "const": false
+        },
+        "interpretation_upgrades_to_empirical_evidence": {
+          "const": false
+        },
+        "randomized_navigation_implies_probability": {
+          "const": false
+        },
+        "ranking_or_visualization_implies_endorsement": {
+          "const": false
+        },
+        "scientific_evidence_promotion_allowed": {
+          "const": false
+        },
+        "rights_or_public_release_promotion_allowed": {
+          "const": false
+        },
+        "accepted_edge_creation_allowed": {
+          "const": false
+        }
+      }
+    },
+    "operational_boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reddit_live_access",
+        "private_drive_material_allowed",
+        "website_publication_allowed",
+        "analytics_activation_allowed",
+        "multimedia_generation_allowed"
+      ],
+      "properties": {
+        "reddit_live_access": {
+          "const": "HOLD"
+        },
+        "private_drive_material_allowed": {
+          "const": false
+        },
+        "website_publication_allowed": {
+          "const": false
+        },
+        "analytics_activation_allowed": {
+          "const": false
+        },
+        "multimedia_generation_allowed": {
+          "const": false
+        }
+      }
+    }
+  }
+}
