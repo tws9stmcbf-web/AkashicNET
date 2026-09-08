@@ -239,6 +239,17 @@ def test_leading_safety_disclaimer_does_not_negate_status(status, affirmative, s
     validator.validate(data)
 
 
+@pytest.mark.parametrize("status,concept", [
+    ("TITLE_CHANGED", "title-change"), ("RETRACTED", "retraction"), ("DELETED", "deletion"),
+])
+@pytest.mark.parametrize("denial", ["never occurred", "has, apparently, not occurred", "failed to occur", "failure to occur", "without confirmation", "has no confirmation"])
+def test_all_post_concept_negators_and_comma_modifiers(status, concept, denial):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = f"A {concept} notice says the {concept} {denial}."
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
 def test_synthetic_retraction_cannot_infer_falsity() -> None:
     data = copy.deepcopy(SYNTHETIC)
     event(data, "RETRACTED")["truth_inference"] = "FALSE"

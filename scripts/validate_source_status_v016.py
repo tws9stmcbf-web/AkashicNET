@@ -112,15 +112,19 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     }
     negation = r"(?:no|not|never|without|failed to|failure to)"
     concept = concept_patterns[status]
-    negation_before_concept = rf"(?:{negation})(?:\s+\w+){{0,3}}\s+(?:{concept})"
+    separator = r"[\s,]+"
+    negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,3}}{separator}(?:{concept})"
     # Modifiers may intervene in the status predicate, but a later clause's
     # no-promotion disclaimer must not negate an already affirmative status.
-    concept_before_negation = rf"(?:{concept})(?:\s+\w+){{0,4}}\s+not\b"
+    # 'without treating ... as false' is a no-promotion consequence, not a
+    # denial of deletion. Other supported negators remain symmetric.
+    post_negation = r"(?:no|not|never|failed to|failure to|without(?![\s,]+treating\b))"
+    concept_before_negation = rf"(?:{concept})(?:{separator}\w+){{0,4}}{separator}{post_negation}\b"
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
         or (status == "TITLE_CHANGED" and re.search(
-            r"\btitle(?:\s+\w+){0,4}\s+(?:not|never)(?:\s+\w+){0,3}\s+chang(?:e|ed|ing)\b",
+            r"\btitle(?:[\s,]+\w+){0,4}[\s,]+(?:not|never)(?:[\s,]+\w+){0,3}[\s,]+chang(?:e|ed|ing)\b",
             observation,
         ))
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
