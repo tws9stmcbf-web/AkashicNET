@@ -73,6 +73,15 @@ class ReleaseCandidateTests(unittest.TestCase):
         errors = self.errors_after(mutate)
         self.assertIn("duplicate artifact path", errors)
 
+    def test_role_cannot_be_reassigned_to_another_governed_path(self):
+        def mutate(data):
+            first = data["governed_artifacts"][0]
+            second = data["governed_artifacts"][1]
+            first["role"], second["role"] = second["role"], first["role"]
+
+        errors = self.errors_after(mutate)
+        self.assertIn("governed artifact mapping", errors)
+
     def test_observed_retraction_claim_cannot_be_fabricated(self):
         errors = self.errors_after(
             lambda data: data["candidate_summary"].__setitem__(
