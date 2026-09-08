@@ -118,7 +118,7 @@ def test_synthetic_terminal_status_fixture_passes() -> None:
 def test_synthetic_fixture_cannot_use_real_url() -> None:
     data = copy.deepcopy(SYNTHETIC)
     data["source_nodes"][0]["original_url"] = "https://example.com/real"
-    with pytest.raises(AssertionError, match="reserved URL"):
+    with pytest.raises(AssertionError, match="reserved hostname"):
         validator.validate(data)
 
 
