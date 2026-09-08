@@ -62,6 +62,8 @@ PARENT_EDGE_CONTRACTS = {
     ("COMPETES_WITH_CANDIDATE", "HAS_MODEL"): (
         "target_node_id",
         {"source_node_id", "target_node_id"},
+        "artifact:bq001-spec:0.1",
+        r"^/models/(?:0|[1-9][0-9]*)/model_id$",
     ),
 }
 PROVENANCE_KEYS = {
@@ -360,12 +362,23 @@ def validate(data):
                 if parent_contract is None:
                     errors.append("edge ancestry policy")
                     continue
-                parent_role, child_roles = parent_contract
+                (
+                    parent_role,
+                    child_roles,
+                    required_artifact_id,
+                    required_record_locator,
+                ) = parent_contract
                 allowed_child_endpoints = {edge.get(role) for role in child_roles}
+                parent_provenance = parent.get("provenance", {})
                 if (
                     parent.get("assertion_class") != "DIRECT_SOURCE_METADATA"
                     or child_endpoints.isdisjoint(parent_endpoints)
                     or parent.get(parent_role) not in allowed_child_endpoints
+                    or parent_provenance.get("artifact_id") != required_artifact_id
+                    or not re.fullmatch(
+                        required_record_locator,
+                        str(parent_provenance.get("record_locator", "")),
+                    )
                 ):
                     errors.append("edge ancestry policy")
         resolved_record = check_provenance(edge.get("provenance"))
