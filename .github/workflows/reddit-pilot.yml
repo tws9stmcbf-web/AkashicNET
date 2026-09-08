@@ -1,6 +1,11 @@
 name: Reddit pilot crawl
 
 on:
+  pull_request:
+    paths:
+      - '.github/workflows/reddit-pilot.yml'
+      - 'scripts/reddit_crawler.py'
+      - 'tests/test_reddit_crawler.py'
   push:
     branches: [ main, feature/reddit-crawler ]
     paths:
