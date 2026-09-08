@@ -1,11 +1,10 @@
 import json
 import os
+import re
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-
-import yaml
 
 from scripts.reddit_crawler import (
     RedditAPIError,
@@ -449,6 +448,103 @@ class RedditReconcileFileTests(unittest.TestCase):
             self.assertFalse(path.exists())
 
 
+_WORKFLOW_STEP_START_RE = re.compile(r'^      - ')
+
+
+def _load_workflow_step_blocks(text):
+    """Split a GitHub Actions workflow's job ``steps:`` list into blocks.
+
+    Dependency-free (stdlib ``re``/text only, no PyYAML): relies on this
+    repository's fixed 2-space-per-level indentation, where each step in
+    the (single) ``crawl`` job begins with a line matching exactly six
+    leading spaces followed by ``- `` and every following line belonging
+    to that step is indented further (or blank), until the next step
+    starts.
+    """
+    lines = text.splitlines()
+    start = None
+    for i, line in enumerate(lines):
+        if line.strip() == 'steps:':
+            start = i + 1
+            break
+    if start is None:
+        raise AssertionError("workflow has no 'steps:' key")
+
+    blocks = []
+    current = None
+    for line in lines[start:]:
+        if _WORKFLOW_STEP_START_RE.match(line):
+            if current is not None:
+                blocks.append(current)
+            current = [line]
+        elif current is not None and (line.strip() == '' or line.startswith(' ')):
+            current.append(line)
+        else:
+            break
+    if current is not None:
+        blocks.append(current)
+    return blocks
+
+
+def _workflow_step_name(block):
+    match = re.match(r'^\s*-\s*name:\s*(.*)$', block[0])
+    return match.group(1).strip() if match else None
+
+
+def _workflow_step_env(block):
+    """Extract the ``env:`` mapping scoped to a single step block only."""
+    env = {}
+    in_env = False
+    env_indent = None
+    for line in block[1:]:
+        if not in_env:
+            match = re.match(r'^(\s*)env:\s*$', line)
+            if match:
+                in_env = True
+                env_indent = len(match.group(1))
+            continue
+        if line.strip() == '':
+            continue
+        indent = len(line) - len(line.lstrip(' '))
+        if indent <= env_indent:
+            break
+        match = re.match(r'^\s*([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$', line)
+        if match:
+            env[match.group(1)] = match.group(2).strip()
+    return env
+
+
+def _workflow_step_if(block):
+    for line in block:
+        match = re.match(r'^\s*if:\s*(.*)$', line)
+        if match:
+            return match.group(1).strip()
+    return None
+
+
+def _workflow_step_run_text(block):
+    collecting = False
+    run_indent = None
+    out = []
+    for line in block:
+        if not collecting:
+            match = re.match(r'^(\s*)run:\s*\|\s*$', line)
+            if match:
+                collecting = True
+                run_indent = len(match.group(1))
+                continue
+            inline = re.match(r'^\s*run:\s*(.+)$', line)
+            if inline:
+                return inline.group(1).strip()
+            continue
+        if line.strip():
+            indent = len(line) - len(line.lstrip(' '))
+            if indent <= run_indent:
+                break
+        out.append(line)
+    return '\n'.join(out)
+
+
 class RedditPilotWorkflowGateWiringTests(unittest.TestCase):
     """Deterministic validation of the reddit-pilot.yml approval wiring.
 
@@ -457,37 +553,58 @@ class RedditPilotWorkflowGateWiringTests(unittest.TestCase):
     gate. Any workflow step that runs the crawler must therefore also
     receive REDDIT_API_APPROVED in its step ``env``, or an otherwise
     correctly-approved CI run would exit 3 before ever reaching Reddit.
+
+    This validation is intentionally dependency-free (stdlib ``re``/text
+    parsing only, no PyYAML): reddit-pilot.yml runs
+    ``python -m unittest tests.test_reddit_crawler -v`` without installing
+    PyYAML, so this test module must not require it.
     """
 
     WORKFLOW_PATH = Path(__file__).resolve().parents[1] / '.github' / 'workflows' / 'reddit-pilot.yml'
 
     @classmethod
     def setUpClass(cls):
-        cls.workflow = yaml.safe_load(cls.WORKFLOW_PATH.read_text(encoding='utf-8'))
-        cls.steps = cls.workflow['jobs']['crawl']['steps']
+        text = cls.WORKFLOW_PATH.read_text(encoding='utf-8')
+        cls.steps = _load_workflow_step_blocks(text)
 
     def _step(self, name):
-        for step in self.steps:
-            if step.get('name') == name:
-                return step
+        for block in self.steps:
+            if _workflow_step_name(block) == name:
+                return block
         raise AssertionError(f'workflow step not found: {name}')
 
     def test_gate_step_receives_repository_variable_via_env(self):
         gate = self._step('Reddit API approval gate')
-        self.assertEqual(gate.get('env', {}).get('REDDIT_API_APPROVED'), "${{ vars.REDDIT_API_APPROVED }}")
+        env = _workflow_step_env(gate)
+        self.assertEqual(env.get('REDDIT_API_APPROVED'), '${{ vars.REDDIT_API_APPROVED }}')
         # Exact-string comparison against a quoted shell variable, not an
         # inline template interpolated directly into shell source.
-        self.assertIn('if [ "$REDDIT_API_APPROVED" = "true" ]', gate['run'])
-        self.assertNotIn('${{ vars.REDDIT_API_APPROVED }}', gate['run'])
+        run_text = _workflow_step_run_text(gate)
+        self.assertIn('if [ "$REDDIT_API_APPROVED" = "true" ]', run_text)
+        self.assertNotIn('${{ vars.REDDIT_API_APPROVED }}', run_text)
 
     def test_crawler_pilot_step_also_receives_repository_variable_via_env(self):
         pilot = self._step('Run crawler pilot')
+        env = _workflow_step_env(pilot)
         self.assertEqual(
-            pilot.get('env', {}).get('REDDIT_API_APPROVED'),
-            "${{ vars.REDDIT_API_APPROVED }}",
+            env.get('REDDIT_API_APPROVED'),
+            '${{ vars.REDDIT_API_APPROVED }}',
             'Run crawler pilot step must forward REDDIT_API_APPROVED so scripts/reddit_crawler.py '
             'main() does not exit 3 before an otherwise-approved pilot run reaches Reddit.',
         )
+
+    def test_gate_step_env_is_distinct_from_crawler_step_env(self):
+        # Proves the parser (and the workflow) scope env per-step: the gate
+        # step's env must not be conflated with, or substitute for, the
+        # crawler pilot step's own env mapping. This fails if the
+        # crawler-step REDDIT_API_APPROVED mapping is removed while the
+        # gate step's mapping remains untouched.
+        gate_env = _workflow_step_env(self._step('Reddit API approval gate'))
+        pilot_env = _workflow_step_env(self._step('Run crawler pilot'))
+        self.assertEqual(set(gate_env), {'REDDIT_API_APPROVED'})
+        self.assertIn('REDDIT_API_APPROVED', pilot_env)
+        self.assertIn('REDDIT_CLIENT_ID', pilot_env)
+        self.assertNotIn('REDDIT_CLIENT_ID', gate_env)
 
     def test_crawler_pilot_step_condition_and_credential_isolation_unchanged(self):
         pilot = self._step('Run crawler pilot')
@@ -496,8 +613,8 @@ class RedditPilotWorkflowGateWiringTests(unittest.TestCase):
             "(github.event_name == 'workflow_dispatch' || "
             "contains(github.event.head_commit.message, '[reddit-smoke]')) }}"
         )
-        self.assertEqual(pilot.get('if'), expected_condition)
-        env = pilot.get('env', {})
+        self.assertEqual(_workflow_step_if(pilot), expected_condition)
+        env = _workflow_step_env(pilot)
         self.assertEqual(env.get('REDDIT_CLIENT_ID'), '${{ secrets.REDDIT_CLIENT_ID }}')
         self.assertEqual(env.get('REDDIT_CLIENT_SECRET'), '${{ secrets.REDDIT_CLIENT_SECRET }}')
 
@@ -511,7 +628,7 @@ class RedditPilotWorkflowGateWiringTests(unittest.TestCase):
         network access.
         """
         pilot = self._step('Run crawler pilot')
-        template = pilot['env']['REDDIT_API_APPROVED']
+        template = _workflow_step_env(pilot)['REDDIT_API_APPROVED']
         simulated_vars = {'REDDIT_API_APPROVED': 'true'}
         resolved = template.replace('${{ vars.REDDIT_API_APPROVED }}', simulated_vars['REDDIT_API_APPROVED'])
         self.assertEqual(resolved, 'true')
