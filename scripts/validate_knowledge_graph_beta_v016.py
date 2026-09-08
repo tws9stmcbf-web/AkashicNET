@@ -320,6 +320,13 @@ def validate(data):
         contract = RELATIONSHIP_CONTRACTS.get(relationship)
         source_node = nodes_by_id.get(edge.get("source_node_id"))
         target_node = nodes_by_id.get(edge.get("target_node_id"))
+        if (
+            relationship == "COMPETES_WITH_CANDIDATE"
+            and source_node is not None
+            and target_node is not None
+            and source_node.get("record_id") == target_node.get("record_id")
+        ):
+            errors.append("self competing model record")
         if contract is None or source_node is None or target_node is None:
             errors.append("relationship contract")
         else:
