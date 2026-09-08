@@ -70,7 +70,7 @@
     },
     {
       "path": "scripts/validate_source_status_v016.py",
-      "git_blob_sha": "659e7face6d7a228b95cb8f30f4d3d6dfd8f3a18",
+      "git_blob_sha": "36db6edf132862e44824917927fe56730dfe8e06",
       "role": "SOURCE_STATUS_VALIDATOR"
     },
     {

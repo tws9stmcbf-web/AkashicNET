@@ -129,7 +129,8 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"(?:[^\s,;:.]+\s+){0,3}"
         r"(?:is|are|was|were|has|have|had|does|do|did|will|would|can|could|"
         r"may|might|must|shall|should|occurred|changed|retracted|deleted|"
-        r"remains?|became|becomes?)\b)"
+        r"remains?|became|becomes?|confirms?|states?|reports?|records?|says|"
+        r"indicates?|shows?|notes?|documents?|affirms?|finds?|observes?|verifies?)\b)"
     )
     separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
     negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,5}}{separator}(?:{concept})"
