@@ -1,0 +1,48 @@
+{
+  "accepted": [
+    "1w73h3c",
+    "1w74zae",
+    "1w8660u",
+    "1w8qkcy",
+    "1w8v885",
+    "1w8w5y5",
+    "1w92g5v",
+    "1w9r4ck",
+    "1w9vyai",
+    "1wa2p67"
+  ],
+  "already_present": [],
+  "availability_status_counts": {
+    "publicly_accessible": 10
+  },
+  "candidates_reviewed": 10,
+  "coverage": "partial_manual",
+  "guardrails": {
+    "crawled_or_paginated": false,
+    "credentials_used": false,
+    "reddit_api_approved_enabled": false,
+    "reddit_api_called": false,
+    "rights_promotion": false,
+    "scientific_evidence_promotion": false,
+    "truth_inference": false
+  },
+  "held": [],
+  "public_count_promoted": false,
+  "record_fields": [
+    "availability_status",
+    "canonical_url",
+    "created_utc",
+    "import_status",
+    "provenance",
+    "reddit_post_id",
+    "retrieved_at_utc",
+    "subreddit",
+    "title"
+  ],
+  "rejected": [],
+  "schema": "akashicnet.reddit.canonical-delta-import-2026-09-08.audit.v0.1",
+  "source": "references/community/reddit-canonical-delta-import-2026-09-08.json",
+  "status": "REDDIT_MANUAL_DELTA_2026_09_08_AUDITED",
+  "unique_canonical_urls": 10,
+  "unique_reddit_post_ids": 10
+}
