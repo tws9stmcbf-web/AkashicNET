@@ -244,6 +244,25 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
     def test_competing_models_remain_review_only(self):
         self.mutate(lambda d: d["edges"][2].__setitem__("edge_state", "ACTIVE"), "relationship state")
 
+    def test_competing_models_must_resolve_to_distinct_records(self):
+        data = copy.deepcopy(DATA)
+        continuity_model = data["nodes"][1]
+        biological_model = data["nodes"][2]
+        model_membership_edge = data["edges"][0]
+        competing_edge = data["edges"][2]
+        continuity_model["record_id"] = biological_model["record_id"]
+        continuity_model["label"] = biological_model["label"]
+        continuity_model["provenance"] = copy.deepcopy(biological_model["provenance"])
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("self competing model record", errors)
+        self.assertNotIn("record identity", errors)
+        self.assertNotIn("relationship endpoint types", errors)
+        self.assertNotIn("edge ancestry", errors)
+        self.assertNotIn("edge ancestry policy", errors)
+        self.assertNotIn("evidence independence", errors)
+
     def test_duplicate_independence_key_rejected(self):
         self.mutate(lambda d: d["edges"][0].__setitem__("evidence_independence_keys", [d["edges"][0]["evidence_independence_keys"][0]] * 2), "evidence independence")
 
