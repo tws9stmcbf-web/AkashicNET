@@ -166,10 +166,14 @@ def reconcile_post(client: Any, reddit_id: str) -> dict[str, Any]:
     rather than a record retaining removed content.
     """
     normalized_id = normalize_post_id(reddit_id)
-    payload, _ = client.get_json(
+    payload, headers = client.get_json(
         "/api/info",
         params={"id": f"t3_{normalized_id}", "raw_json": 1},
     )
+    # Reconciliation can issue one request per cached record. Honor Reddit's
+    # response budget before the next record is requested. Offline tests
+    # return no rate-limit headers, so they incur no delay.
+    obey_rate_limit(headers, 0.0)
     children = payload.get("data", {}).get("children", [])
     checked_at = utc_now_iso()
     for child in children:
@@ -324,6 +328,8 @@ def fetch_post(client: OAuthClient, post_id: str) -> dict[str, Any]:
     for child in children:
         data = child.get("data", child)
         if str(data.get("id") or "").lower() == normalized_id:
+            if is_post_removed(data):
+                return tombstone_record(normalized_id, retrieved_at, status="removed")
             return normalize_post_v2(child, retrieved_at, endpoint="post_info")
     raise RedditAPIError(
         f"Reddit API did not return post {normalized_id}; availability remains indeterminate"
