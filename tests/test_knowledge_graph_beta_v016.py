@@ -317,6 +317,23 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
         ]
         self.assertIn("edge ancestry policy", validate(data))
 
+    def test_model_membership_cannot_support_a_claim_inference(self):
+        data = copy.deepcopy(DATA)
+        model_membership_edge = data["edges"][0]
+        support_edge = data["edges"][1]
+        support_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        support_edge["evidence_independence_keys"] = sorted(
+            set(
+                support_edge["evidence_independence_keys"]
+                + model_membership_edge["evidence_independence_keys"]
+            )
+        )
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("edge ancestry policy", errors)
+        self.assertNotIn("edge ancestry", errors)
+        self.assertNotIn("evidence independence", errors)
+
     def test_inferred_parent_cannot_amplify_inferred_child(self):
         data = copy.deepcopy(DATA)
         support_edge = data["edges"][1]
