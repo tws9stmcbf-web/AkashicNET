@@ -320,6 +320,13 @@ def validate(data):
         contract = RELATIONSHIP_CONTRACTS.get(relationship)
         source_node = nodes_by_id.get(edge.get("source_node_id"))
         target_node = nodes_by_id.get(edge.get("target_node_id"))
+        if (
+            relationship == "COMPETES_WITH_CANDIDATE"
+            and isinstance(source_node, dict)
+            and isinstance(target_node, dict)
+            and source_node.get("record_id") == target_node.get("record_id")
+        ):
+            errors.append("semantic self edge")
         if contract is None or source_node is None or target_node is None:
             errors.append("relationship contract")
         else:
@@ -380,11 +387,21 @@ def validate(data):
                     (edge.get("relationship_type"), parent.get("relationship_type"))
                 )
                 allowed_child_endpoints = {edge.get(role) for role in child_roles}
-                parent_provenance = parent.get("provenance", {})
+                raw_parent_provenance = parent.get("provenance")
+                parent_provenance = (
+                    raw_parent_provenance
+                    if isinstance(raw_parent_provenance, dict)
+                    else {}
+                )
                 parent_source_node = nodes_by_id.get(parent.get("source_node_id"))
-                parent_source_provenance = (
-                    parent_source_node.get("provenance", {})
+                raw_parent_source_provenance = (
+                    parent_source_node.get("provenance")
                     if isinstance(parent_source_node, dict)
+                    else None
+                )
+                parent_source_provenance = (
+                    raw_parent_source_provenance
+                    if isinstance(raw_parent_source_provenance, dict)
                     else {}
                 )
                 if source_contract is None:
@@ -400,6 +417,12 @@ def validate(data):
                     parent.get("assertion_class") != "DIRECT_SOURCE_METADATA"
                     or child_endpoints.isdisjoint(parent_endpoints)
                     or parent.get(parent_role) not in allowed_child_endpoints
+                    or (
+                        edge.get("relationship_type") == "COMPETES_WITH_CANDIDATE"
+                        and isinstance(source_node, dict)
+                        and isinstance(target_node, dict)
+                        and source_node.get("record_id") == target_node.get("record_id")
+                    )
                     or parent_provenance.get("artifact_id") != required_artifact_id
                     or not re.fullmatch(
                         required_record_locator,
