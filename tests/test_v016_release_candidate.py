@@ -22,6 +22,12 @@ class ReleaseCandidateTests(unittest.TestCase):
     def test_candidate_manifest_passes(self):
         self.assertEqual(validate_manifest(copy.deepcopy(DATA)), [])
 
+    def test_candidate_base_must_be_exact(self):
+        errors = self.errors_after(
+            lambda data: data.__setitem__("candidate_base_commit", "0" * 40)
+        )
+        self.assertIn("candidate base commit", errors)
+
     def test_sealed_baseline_drift_fails(self):
         errors = self.errors_after(
             lambda data: data["baseline_locks"].__setitem__("v0.15_seal", "0" * 40)
