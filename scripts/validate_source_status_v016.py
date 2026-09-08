@@ -115,12 +115,21 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"(?:confirmation|verification|evidence|observation)\b"
         r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
         r"(?:confirming|verifying|observing)\b"
+        r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
+        r"(?:finding|detecting|locating|discovering)(?:[\s,]+(?:any|sufficient|independent|direct|documented|published|supporting|corroborating)){0,2}[\s,]+"
+        r"(?:confirmation|verification|evidence|observation)\b"
     )
     negation = rf"(?:no|not|never|failed to|failure to|{without_denial})"
     concept = concept_patterns[status]
-    # Commas around modifiers remain within a clause, but comma-plus-coordinator
-    # starts a separate clause (for example, ", but its claims were not false").
-    separator = r"(?:\s+|,(?!\s*(?:but|and|or|yet|so|for|nor)\b)\s*)+"
+    # A comma starts a separate clause only when a coordinator introduces a
+    # plausible subject. Coordinator-shaped modifiers such as "for now" and
+    # "so far" therefore remain in the status predicate.
+    coordinated_clause = (
+        r"(?:but|yet|and|or|nor|so|for)(?=\s+"
+        r"(?:the|its|their|claims?|source|work|title|deletion|retraction|"
+        r"title-change|it|they|this|that)\b)"
+    )
+    separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
     negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,3}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
