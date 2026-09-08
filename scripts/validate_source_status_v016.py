@@ -45,6 +45,15 @@ def validate(data: dict) -> None:
     if data.get("issue") != 282:
         fail("fixture must bind to issue 282")
 
+    fixture_kind = data.get("fixture_kind")
+    if fixture_kind not in {"OBSERVED_REPOSITORY_EVIDENCE", "SYNTHETIC_VALIDATOR_SCENARIO"}:
+        fail("fixture kind must be explicit")
+    synthetic = fixture_kind == "SYNTHETIC_VALIDATOR_SCENARIO"
+    if synthetic and "not real observations" not in data.get("synthetic_disclaimer", "").lower():
+        fail("synthetic fixture lacks non-observational disclaimer")
+    if not synthetic and "synthetic_disclaimer" in data:
+        fail("observed fixture cannot carry a synthetic disclaimer")
+
     nodes = data.get("source_nodes", [])
     events = data.get("events", [])
     if not 3 <= len(events) <= 5:
@@ -57,6 +66,11 @@ def validate(data: dict) -> None:
             fail(f"duplicate source node: {node_id}")
         if not SHA40.fullmatch(node["input_blob_sha"]):
             fail(f"invalid input blob SHA: {node_id}")
+        if synthetic:
+            if not node_id.startswith("SYNTHETIC-"):
+                fail(f"synthetic node ID is not isolated: {node_id}")
+            if ".example.invalid/" not in node["original_url"]:
+                fail(f"synthetic node must use a reserved URL: {node_id}")
         if git_blob_sha(node["input_path"]) != node["input_blob_sha"]:
             fail(f"input digest drift: {node_id}")
         node_map[node_id] = node
@@ -83,6 +97,8 @@ def validate(data: dict) -> None:
             fail(f"locator digest mismatch: {event_id}")
         if event["human_review_state"] not in {"PENDING", "REVIEWED_NO_PROMOTION"}:
             fail(f"invalid review state: {event_id}")
+        if synthetic and event["human_review_state"] != "PENDING":
+            fail(f"synthetic event cannot be marked reviewed: {event_id}")
         if event["truth_inference"] != "NONE" or event["promotion_applied"] is not False:
             fail(f"automatic inference or promotion: {event_id}")
 
@@ -113,6 +129,10 @@ def validate(data: dict) -> None:
                 fail(f"duplicate candidate lacks non-merge boundary: {event_id}")
         if status == "PROVENANCE_INCOMPLETE" and "unconfirmed" not in observation:
             fail(f"incomplete provenance is not explicit: {event_id}")
+        if status == "TITLE_CHANGED" and "title-change" not in observation:
+            fail(f"title-change evidence is not explicit: {event_id}")
+        if status == "DELETED" and "delet" not in observation:
+            fail(f"deletion evidence is not explicit: {event_id}")
 
     guards = data.get("promotion_guards", {})
     expected_guards = {"truth", "evidence", "rights", "identity", "edge_acceptance"}
@@ -128,8 +148,10 @@ def validate(data: dict) -> None:
         fail("a status cannot be implemented and a verified gap")
     if implemented | gaps != ALL_STATUSES:
         fail("coverage must account for every contract status")
-    if "RETRACTED" not in gaps:
-        fail("fixture must not imply verified retraction coverage")
+    if not synthetic and "RETRACTED" not in gaps:
+        fail("observed fixture must not imply verified retraction coverage")
+    if synthetic and observed_statuses != {"TITLE_CHANGED", "RETRACTED", "DELETED"}:
+        fail("synthetic fixture scope must remain terminal-status validator coverage")
 
 
 def main() -> int:
