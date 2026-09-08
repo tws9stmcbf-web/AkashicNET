@@ -8,6 +8,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = sorted((ROOT / "references").glob("source-status-fixture-v0.16*.json"))
@@ -18,6 +19,12 @@ ALL_STATUSES = {
     "PROVENANCE_INCOMPLETE",
 }
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
+TERMINAL_STATUSES = {"TITLE_CHANGED", "RETRACTED", "DELETED"}
+NEGATED_TERMINAL_MARKERS = {
+    "TITLE_CHANGED": ("no title-change", "title did not change", "title was not changed"),
+    "RETRACTED": ("no retraction", "not retracted", "was not retracted"),
+    "DELETED": ("no deletion", "not deleted", "was not deleted"),
+}
 
 
 def fail(message: str) -> None:
@@ -35,6 +42,34 @@ def git_blob_sha(path: str) -> str:
     return result.stdout.strip()
 
 
+def iter_url_fields(value, path=""):
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}" if path else key
+            if key.endswith("_url"):
+                yield child_path, child
+            yield from iter_url_fields(child, child_path)
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            yield from iter_url_fields(child, f"{path}[{index}]")
+
+
+def require_reserved_url(value, field: str) -> None:
+    try:
+        parsed = urlparse(value)
+        hostname = parsed.hostname
+    except (AttributeError, TypeError, ValueError):
+        fail(f"synthetic URL is invalid: {field}")
+    if (
+        parsed.scheme != "https"
+        or hostname is None
+        or not hostname.endswith(".invalid")
+        or parsed.username is not None
+        or parsed.password is not None
+    ):
+        fail(f"synthetic URL must use a reserved hostname: {field}")
+
+
 def validate(data: dict) -> None:
     if not SCHEMA.is_file():
         fail("schema missing")
@@ -44,6 +79,18 @@ def validate(data: dict) -> None:
         fail("fixture must remain review-only")
     if data.get("issue") != 282:
         fail("fixture must bind to issue 282")
+
+    fixture_kind = data.get("fixture_kind")
+    if fixture_kind not in {"OBSERVED_REPOSITORY_EVIDENCE", "SYNTHETIC_VALIDATOR_SCENARIO"}:
+        fail("fixture kind must be explicit")
+    synthetic = fixture_kind == "SYNTHETIC_VALIDATOR_SCENARIO"
+    if synthetic and "not real observations" not in data.get("synthetic_disclaimer", "").lower():
+        fail("synthetic fixture lacks non-observational disclaimer")
+    if not synthetic and "synthetic_disclaimer" in data:
+        fail("observed fixture cannot carry a synthetic disclaimer")
+    if synthetic:
+        for field, value in iter_url_fields(data):
+            require_reserved_url(value, field)
 
     nodes = data.get("source_nodes", [])
     events = data.get("events", [])
@@ -57,6 +104,9 @@ def validate(data: dict) -> None:
             fail(f"duplicate source node: {node_id}")
         if not SHA40.fullmatch(node["input_blob_sha"]):
             fail(f"invalid input blob SHA: {node_id}")
+        if synthetic:
+            if not node_id.startswith("SYNTHETIC-"):
+                fail(f"synthetic node ID is not isolated: {node_id}")
         if git_blob_sha(node["input_path"]) != node["input_blob_sha"]:
             fail(f"input digest drift: {node_id}")
         node_map[node_id] = node
@@ -83,6 +133,8 @@ def validate(data: dict) -> None:
             fail(f"locator digest mismatch: {event_id}")
         if event["human_review_state"] not in {"PENDING", "REVIEWED_NO_PROMOTION"}:
             fail(f"invalid review state: {event_id}")
+        if synthetic and event["human_review_state"] != "PENDING":
+            fail(f"synthetic event cannot be marked reviewed: {event_id}")
         if event["truth_inference"] != "NONE" or event["promotion_applied"] is not False:
             fail(f"automatic inference or promotion: {event_id}")
 
@@ -103,6 +155,11 @@ def validate(data: dict) -> None:
             if not event["evidence"].get("notice_url"):
                 fail(f"notice status lacks notice URL: {event_id}")
         observation = event["evidence"]["observation"].lower()
+        if synthetic and status in TERMINAL_STATUSES:
+            if event["evidence"].get("observed_status") != status:
+                fail(f"synthetic terminal status lacks affirmative structured evidence: {event_id}")
+            if any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status]):
+                fail(f"synthetic terminal status evidence is negated: {event_id}")
         if status == "RETRACTED":
             affirmative_markers = ("retraction notice", "has been retracted", "was retracted")
             if not any(marker in observation for marker in affirmative_markers):
@@ -113,6 +170,10 @@ def validate(data: dict) -> None:
                 fail(f"duplicate candidate lacks non-merge boundary: {event_id}")
         if status == "PROVENANCE_INCOMPLETE" and "unconfirmed" not in observation:
             fail(f"incomplete provenance is not explicit: {event_id}")
+        if status == "TITLE_CHANGED" and "title-change" not in observation:
+            fail(f"title-change evidence is not explicit: {event_id}")
+        if status == "DELETED" and "delet" not in observation:
+            fail(f"deletion evidence is not explicit: {event_id}")
 
     guards = data.get("promotion_guards", {})
     expected_guards = {"truth", "evidence", "rights", "identity", "edge_acceptance"}
@@ -128,8 +189,10 @@ def validate(data: dict) -> None:
         fail("a status cannot be implemented and a verified gap")
     if implemented | gaps != ALL_STATUSES:
         fail("coverage must account for every contract status")
-    if "RETRACTED" not in gaps:
-        fail("fixture must not imply verified retraction coverage")
+    if not synthetic and "RETRACTED" not in gaps:
+        fail("observed fixture must not imply verified retraction coverage")
+    if synthetic and observed_statuses != {"TITLE_CHANGED", "RETRACTED", "DELETED"}:
+        fail("synthetic fixture scope must remain terminal-status validator coverage")
 
 
 def main() -> int:

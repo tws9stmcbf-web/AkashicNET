@@ -1,0 +1,100 @@
+{
+  "schema_version": "0.16.0-beta.1",
+  "artifact_status": "REVIEW_FIXTURE_ONLY",
+  "fixture_kind": "SYNTHETIC_VALIDATOR_SCENARIO",
+  "synthetic_disclaimer": "Validator-only scenarios using reserved .invalid URLs. These are not real observations, sources, claims, citations, or publication records.",
+  "issue": 282,
+  "source_nodes": [
+    {
+      "source_node_id": "SYNTHETIC-SOURCE-TITLE-CHANGED",
+      "original_url": "https://title-change.example.invalid/original",
+      "input_path": "references/fixtures/source-status-synthetic-scenarios-v0.16.md",
+      "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60"
+    },
+    {
+      "source_node_id": "SYNTHETIC-SOURCE-RETRACTED",
+      "original_url": "https://retraction.example.invalid/original",
+      "input_path": "references/fixtures/source-status-synthetic-scenarios-v0.16.md",
+      "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60"
+    },
+    {
+      "source_node_id": "SYNTHETIC-SOURCE-DELETED",
+      "original_url": "https://deleted.example.invalid/original",
+      "input_path": "references/fixtures/source-status-synthetic-scenarios-v0.16.md",
+      "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "SSE-SYNTHETIC-TITLE-CHANGED-001",
+      "source_node_id": "SYNTHETIC-SOURCE-TITLE-CHANGED",
+      "status": "TITLE_CHANGED",
+      "original_url": "https://title-change.example.invalid/original",
+      "retrieved_at": "2026-09-08",
+      "evidence": {
+        "kind": "REPOSITORY_REVIEW",
+        "observation": "Synthetic title-change scenario: observed title differs while the original URL and prior title provenance remain preserved.",
+        "observed_status": "TITLE_CHANGED"
+      },
+      "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60",
+      "human_review_state": "PENDING",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-SYNTHETIC-RETRACTED-001",
+      "source_node_id": "SYNTHETIC-SOURCE-RETRACTED",
+      "status": "RETRACTED",
+      "original_url": "https://retraction.example.invalid/original",
+      "retrieved_at": "2026-09-08",
+      "evidence": {
+        "kind": "PUBLISHER_RECORD",
+        "observation": "Synthetic retraction notice scenario: the work was retracted; this applies no automatic falsity or rejection inference.",
+        "notice_url": "https://retraction.example.invalid/notice",
+        "observed_status": "RETRACTED"
+      },
+      "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60",
+      "human_review_state": "PENDING",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    },
+    {
+      "event_id": "SSE-SYNTHETIC-DELETED-001",
+      "source_node_id": "SYNTHETIC-SOURCE-DELETED",
+      "status": "DELETED",
+      "original_url": "https://deleted.example.invalid/original",
+      "retrieved_at": "2026-09-08",
+      "evidence": {
+        "kind": "HTTP",
+        "observation": "Synthetic deleted-source scenario: an explicit deletion signal is recorded without treating the source or its claims as false.",
+        "observed_status": "DELETED"
+      },
+      "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60",
+      "human_review_state": "PENDING",
+      "truth_inference": "NONE",
+      "promotion_applied": false
+    }
+  ],
+  "promotion_guards": {
+    "truth": false,
+    "evidence": false,
+    "rights": false,
+    "identity": false,
+    "edge_acceptance": false
+  },
+  "coverage": {
+    "implemented_statuses": [
+      "TITLE_CHANGED",
+      "RETRACTED",
+      "DELETED"
+    ],
+    "verified_gaps": [
+      "AVAILABLE",
+      "REDIRECTED",
+      "UNAVAILABLE_INDETERMINATE",
+      "CORRECTED",
+      "DUPLICATE_REFERENCE_CANDIDATE",
+      "PROVENANCE_INCOMPLETE"
+    ]
+  }
+}
