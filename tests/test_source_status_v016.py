@@ -159,6 +159,24 @@ def test_synthetic_terminal_status_rejects_negated_evidence(status: str, observa
         validator.validate(data)
 
 
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "The title-change wasn't observed."),
+        ("TITLE_CHANGED", "The title didn’t change."),
+        ("RETRACTED", "The work hasn't been retracted."),
+        ("DELETED", "The source wasn't deleted."),
+    ],
+)
+def test_synthetic_terminal_status_rejects_negation_contractions(
+    status: str, observation: str
+) -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
 def test_synthetic_fixture_cannot_appear_reviewed() -> None:
     data = copy.deepcopy(SYNTHETIC)
     data["events"][0]["human_review_state"] = "REVIEWED_NO_PROMOTION"

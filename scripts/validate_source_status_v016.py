@@ -21,9 +21,36 @@ ALL_STATUSES = {
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 TERMINAL_STATUSES = {"TITLE_CHANGED", "RETRACTED", "DELETED"}
 NEGATED_TERMINAL_MARKERS = {
-    "TITLE_CHANGED": ("no title-change", "title did not change", "title was not changed"),
-    "RETRACTED": ("no retraction", "not retracted", "was not retracted"),
-    "DELETED": ("no deletion", "not deleted", "was not deleted"),
+    "TITLE_CHANGED": (
+        "no title-change",
+        "title did not change",
+        "title was not changed",
+        "title-change was not observed",
+    ),
+    "RETRACTED": (
+        "no retraction",
+        "not retracted",
+        "was not retracted",
+        "has not been retracted",
+        "retraction was not observed",
+    ),
+    "DELETED": (
+        "no deletion",
+        "not deleted",
+        "was not deleted",
+        "has not been deleted",
+        "deletion was not observed",
+    ),
+}
+NEGATION_CONTRACTIONS = {
+    "wasn't": "was not",
+    "wasn’t": "was not",
+    "isn't": "is not",
+    "isn’t": "is not",
+    "hasn't": "has not",
+    "hasn’t": "has not",
+    "didn't": "did not",
+    "didn’t": "did not",
 }
 
 
@@ -68,6 +95,13 @@ def require_reserved_url(value, field: str) -> None:
         or parsed.password is not None
     ):
         fail(f"synthetic URL must use a reserved hostname: {field}")
+
+
+def normalize_negation(text: str) -> str:
+    normalized = text.lower()
+    for contraction, expansion in NEGATION_CONTRACTIONS.items():
+        normalized = normalized.replace(contraction, expansion)
+    return normalized
 
 
 def validate(data: dict) -> None:
@@ -154,7 +188,7 @@ def validate(data: dict) -> None:
         if status in {"CORRECTED", "RETRACTED"}:
             if not event["evidence"].get("notice_url"):
                 fail(f"notice status lacks notice URL: {event_id}")
-        observation = event["evidence"]["observation"].lower()
+        observation = normalize_negation(event["evidence"]["observation"])
         if synthetic and status in TERMINAL_STATUSES:
             if event["evidence"].get("observed_status") != status:
                 fail(f"synthetic terminal status lacks affirmative structured evidence: {event_id}")
