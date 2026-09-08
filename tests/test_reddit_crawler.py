@@ -10,6 +10,7 @@ from scripts.reddit_crawler import (
     RedditAPIError,
     canonical_post_url,
     crawl_post,
+    crawl_subreddit,
     fetch_post,
     is_post_removed,
     iter_subreddit_posts,
@@ -426,6 +427,52 @@ class RedditDeletionReconciliationTests(unittest.TestCase):
         reconciled = reconcile_records(ShouldNotBeCalledClient(), cached)
         self.assertEqual(reconciled, cached)
 
+
+    def test_listing_tombstone_replaces_cached_content(self):
+        class RemovedListingClient:
+            def get_json(self, path, params=None):
+                return {
+                    'data': {
+                        'children': [{
+                            'data': {
+                                'id': 'gone1',
+                                'title': '[removed]',
+                                'removed_by_category': 'moderator',
+                                'permalink': '/r/NeuronsToNirvana/comments/gone1/was_here/',
+                            }
+                        }],
+                        'after': None,
+                    }
+                }, {}
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            output = root / 'posts.jsonl'
+            checkpoint = root / 'checkpoint.json'
+            output.write_text(
+                json.dumps({'reddit_id': 'gone1', 'title': 'Stale cached title'}) + '\n' +
+                json.dumps({'reddit_id': 'keep1', 'title': 'Unrelated record'}) + '\n',
+                encoding='utf-8',
+            )
+
+            written, skipped = crawl_subreddit(
+                RemovedListingClient(),
+                'NeuronsToNirvana',
+                output,
+                checkpoint,
+                listing='new',
+                max_posts=1,
+                minimum_delay=0.0,
+            )
+
+            self.assertEqual((written, skipped), (1, 0))
+            records = [json.loads(line) for line in output.read_text(encoding='utf-8').splitlines()]
+            by_id = {record['reddit_id']: record for record in records}
+            self.assertEqual(set(by_id), {'gone1', 'keep1'})
+            self.assertEqual(by_id['gone1']['record_type'], 'post_metadata_removed')
+            self.assertEqual(by_id['gone1']['provenance']['endpoint'], 'subreddit_listing')
+            self.assertNotIn('title', by_id['gone1'])
+            self.assertEqual(by_id['keep1']['title'], 'Unrelated record')
 
 class RedditApprovalGateTests(unittest.TestCase):
     def _run_main_without_network(self, env, argv=('NeuronsToNirvana',)):
