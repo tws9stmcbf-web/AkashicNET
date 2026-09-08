@@ -33,7 +33,8 @@
       "retrieved_at": "2026-09-08",
       "evidence": {
         "kind": "REPOSITORY_REVIEW",
-        "observation": "Synthetic title-change scenario: observed title differs while the original URL and prior title provenance remain preserved."
+        "observation": "Synthetic title-change scenario: observed title differs while the original URL and prior title provenance remain preserved.",
+        "observed_status": "TITLE_CHANGED"
       },
       "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60",
       "human_review_state": "PENDING",
@@ -49,7 +50,8 @@
       "evidence": {
         "kind": "PUBLISHER_RECORD",
         "observation": "Synthetic retraction notice scenario: the work was retracted; this applies no automatic falsity or rejection inference.",
-        "notice_url": "https://retraction.example.invalid/notice"
+        "notice_url": "https://retraction.example.invalid/notice",
+        "observed_status": "RETRACTED"
       },
       "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60",
       "human_review_state": "PENDING",
@@ -64,7 +66,8 @@
       "retrieved_at": "2026-09-08",
       "evidence": {
         "kind": "HTTP",
-        "observation": "Synthetic deleted-source scenario: an explicit deletion signal is recorded without treating the source or its claims as false."
+        "observation": "Synthetic deleted-source scenario: an explicit deletion signal is recorded without treating the source or its claims as false.",
+        "observed_status": "DELETED"
       },
       "input_blob_sha": "1f53bd08e9cc27e88558746eae5019bb2cc49a60",
       "human_review_state": "PENDING",
@@ -80,7 +83,18 @@
     "edge_acceptance": false
   },
   "coverage": {
-    "implemented_statuses": ["TITLE_CHANGED", "RETRACTED", "DELETED"],
-    "verified_gaps": ["AVAILABLE", "REDIRECTED", "UNAVAILABLE_INDETERMINATE", "CORRECTED", "DUPLICATE_REFERENCE_CANDIDATE", "PROVENANCE_INCOMPLETE"]
+    "implemented_statuses": [
+      "TITLE_CHANGED",
+      "RETRACTED",
+      "DELETED"
+    ],
+    "verified_gaps": [
+      "AVAILABLE",
+      "REDIRECTED",
+      "UNAVAILABLE_INDETERMINATE",
+      "CORRECTED",
+      "DUPLICATE_REFERENCE_CANDIDATE",
+      "PROVENANCE_INCOMPLETE"
+    ]
   }
 }

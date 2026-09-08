@@ -122,6 +122,43 @@ def test_synthetic_fixture_cannot_use_real_url() -> None:
         validator.validate(data)
 
 
+def test_synthetic_fixture_rejects_reserved_text_on_real_hostname() -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    data["source_nodes"][0]["original_url"] = "https://example.com/.example.invalid/real"
+    with pytest.raises(AssertionError, match="reserved hostname"):
+        validator.validate(data)
+
+
+def test_synthetic_evidence_url_must_be_reserved() -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "RETRACTED")["evidence"]["notice_url"] = "https://example.com/retraction"
+    with pytest.raises(AssertionError, match="reserved hostname"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize("status", ["TITLE_CHANGED", "RETRACTED", "DELETED"])
+def test_synthetic_terminal_status_requires_structured_confirmation(status: str) -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observed_status"] = "DELETED" if status != "DELETED" else "TITLE_CHANGED"
+    with pytest.raises(AssertionError, match="affirmative structured evidence"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "No title-change occurred."),
+        ("RETRACTED", "The work was not retracted."),
+        ("DELETED", "The source was not deleted."),
+    ],
+)
+def test_synthetic_terminal_status_rejects_negated_evidence(status: str, observation: str) -> None:
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
 def test_synthetic_fixture_cannot_appear_reviewed() -> None:
     data = copy.deepcopy(SYNTHETIC)
     data["events"][0]["human_review_state"] = "REVIEWED_NO_PROMOTION"

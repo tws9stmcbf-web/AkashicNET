@@ -5,6 +5,7 @@ on:
     paths:
       - "schemas/source-status-v0.16.schema.json"
       - "references/source-status-fixture-v0.16*.json"
+      - "references/fixtures/source-status-synthetic-scenarios-v0.16.md"
       - "scripts/validate_source_status_v016.py"
       - "tests/test_source_status_v016.py"
       - ".github/workflows/validate-source-status-v016.yml"

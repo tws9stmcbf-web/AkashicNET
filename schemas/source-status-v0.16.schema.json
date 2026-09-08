@@ -137,6 +137,13 @@
               "notice_url": {
                 "type": "string",
                 "pattern": "^https://"
+              },
+              "observed_status": {
+                "enum": [
+                  "TITLE_CHANGED",
+                  "RETRACTED",
+                  "DELETED"
+                ]
               }
             }
           },
