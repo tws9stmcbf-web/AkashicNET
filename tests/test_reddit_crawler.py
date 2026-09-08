@@ -116,6 +116,7 @@ class RedditCrawlerTests(unittest.TestCase):
         record = fetch_post(RemovedClient(), 'abc123')
         self.assertEqual(record['record_type'], 'post_metadata_removed')
         self.assertEqual(record['status'], 'removed')
+        self.assertEqual(record['provenance']['endpoint'], 'post_info')
         for field in ('title', 'canonical_url', 'external_url', 'subreddit', 'created_utc', 'retrieved_at'):
             self.assertNotIn(field, record)
 
