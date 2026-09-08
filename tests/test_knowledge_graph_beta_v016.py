@@ -358,6 +358,23 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
         self.assertNotIn("evidence independence", errors)
         self.assertNotIn("record identity", errors)
 
+    def test_parent_source_must_resolve_to_bq001_question_record(self):
+        data = copy.deepcopy(DATA)
+        question_node = data["nodes"][0]
+        continuity_model_node = data["nodes"][1]
+        model_membership_edge = data["edges"][0]
+        competing_edge = data["edges"][2]
+        question_node["record_id"] = continuity_model_node["record_id"]
+        question_node["provenance"] = copy.deepcopy(continuity_model_node["provenance"])
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("edge ancestry policy", errors)
+        self.assertNotIn("edge ancestry", errors)
+        self.assertNotIn("evidence independence", errors)
+        self.assertNotIn("record identity", errors)
+        self.assertNotIn("relationship endpoint types", errors)
+
     def test_inferred_parent_cannot_amplify_inferred_child(self):
         data = copy.deepcopy(DATA)
         support_edge = data["edges"][1]
