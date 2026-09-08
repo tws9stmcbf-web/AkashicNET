@@ -113,7 +113,9 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     negation = r"(?:no|not|never|without|failed to|failure to)"
     concept = concept_patterns[status]
     negation_before_concept = rf"(?:{negation})(?:\W+\w+){{0,3}}\W+(?:{concept})"
-    concept_before_negation = rf"(?:{concept})(?:\W+\w+){{0,4}}\W+not\b"
+    # Modifiers may intervene in the status predicate, but a later clause's
+    # no-promotion disclaimer must not negate an already affirmative status.
+    concept_before_negation = rf"(?:{concept})(?:[ \t]+\w+){{0,4}}[ \t]+not\b"
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)

@@ -190,6 +190,30 @@ def test_synthetic_fixture_cannot_appear_reviewed() -> None:
         validator.validate(data)
 
 
+@pytest.mark.parametrize("separator", [";", ".", ":"])
+@pytest.mark.parametrize("status,affirmative", [
+    ("TITLE_CHANGED", "An explicit title-change was recorded"),
+    ("RETRACTED", "A retraction notice confirms the work was retracted"),
+    ("DELETED", "The source was deleted"),
+])
+def test_affirmative_status_preserves_separate_safety_disclaimer(status, affirmative, separator):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = (
+        f"{affirmative}{separator} its claims were not automatically deemed false."
+    )
+    validator.validate(data)
+
+
+@pytest.mark.parametrize("status,concept", [
+    ("TITLE_CHANGED", "title-change"), ("RETRACTED", "retraction"), ("DELETED", "deletion"),
+])
+def test_same_clause_adverb_negation_still_rejected(status, concept):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = f"The {concept} has explicitly not occurred."
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
 def test_synthetic_retraction_cannot_infer_falsity() -> None:
     data = copy.deepcopy(SYNTHETIC)
     event(data, "RETRACTED")["truth_inference"] = "FALSE"
