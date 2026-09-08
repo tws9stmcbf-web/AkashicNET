@@ -334,6 +334,30 @@ class TestKnowledgeGraphBetaV016(unittest.TestCase):
         self.assertNotIn("edge ancestry", errors)
         self.assertNotIn("evidence independence", errors)
 
+    def test_parent_has_model_must_use_question_membership_provenance(self):
+        data = copy.deepcopy(DATA)
+        model_membership_edge = data["edges"][0]
+        support_edge = data["edges"][1]
+        competing_edge = data["edges"][2]
+        model_membership_edge["provenance"] = copy.deepcopy(support_edge["provenance"])
+        model_membership_edge["provenance"]["derivation_method"] = "DIRECT_RECORD"
+        model_membership_edge["evidence_independence_keys"] = [
+            model_membership_edge["provenance"]["independence_key"]
+        ]
+        competing_edge["parent_edge_ids"] = [model_membership_edge["edge_id"]]
+        competing_edge["evidence_independence_keys"] = sorted(
+            set(
+                competing_edge["evidence_independence_keys"]
+                + model_membership_edge["evidence_independence_keys"]
+            )
+        )
+        errors = validate(data)
+        self.assertIn("deterministic artifact", errors)
+        self.assertIn("edge ancestry policy", errors)
+        self.assertNotIn("edge ancestry", errors)
+        self.assertNotIn("evidence independence", errors)
+        self.assertNotIn("record identity", errors)
+
     def test_inferred_parent_cannot_amplify_inferred_child(self):
         data = copy.deepcopy(DATA)
         support_edge = data["edges"][1]
