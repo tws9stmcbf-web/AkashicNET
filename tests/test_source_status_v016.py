@@ -221,6 +221,8 @@ def test_same_clause_adverb_negation_still_rejected(status, concept, spacing):
     "A title-change check found the title has never actually changed.",
     "A title-change check found that the title failed to change.",
     "A title-change check found that the title failure to change was recorded.",
+    "A title-change check found the title's failure to change.",
+    "A title-change check found the title’s failure to change.",
 ])
 def test_split_title_change_denial_rejected(observation):
     data = copy.deepcopy(SYNTHETIC)
@@ -264,6 +266,10 @@ def test_all_post_concept_negators_and_comma_modifiers(status, concept, denial):
             "A retraction notice confirms the work was retracted without automatically deeming its claims false.",
         ),
         (
+            "RETRACTED",
+            "A retraction notice confirms the work was retracted without deleting supporting evidence.",
+        ),
+        (
             "DELETED",
             "The source was deleted without removing its preserved provenance.",
         ),
@@ -273,6 +279,22 @@ def test_affirmative_status_allows_benign_without_consequences(
     status: str, observation: str
 ) -> None:
     data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
+@pytest.mark.parametrize("status,affirmative", [
+    ("TITLE_CHANGED", "An explicit title-change was recorded"),
+    ("RETRACTED", "A retraction notice confirms the work was retracted"),
+    ("DELETED", "The source was deleted"),
+])
+@pytest.mark.parametrize("ordering", ["status_first", "disclaimer_first"])
+def test_coordinating_comma_starts_separate_clause(status, affirmative, ordering):
+    data = copy.deepcopy(SYNTHETIC)
+    if ordering == "status_first":
+        observation = f"{affirmative}, but its claims were not deemed false."
+    else:
+        observation = f"Claims were not deemed false, but {affirmative.lower()}."
     event(data, status)["evidence"]["observation"] = observation
     validator.validate(data)
 

@@ -111,12 +111,16 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         "DELETED": r"delet(?:ion|ed|ing)",
     }
     without_denial = (
-        r"without(?:[\s,]+\w+){0,2}[\s,]+"
-        r"(?:confirmation|verification|evidence|observation|confirming|verifying|observing)\b"
+        r"without(?:[\s,]+(?:any|sufficient|independent|direct|documented|published|supporting|corroborating)){0,2}[\s,]+"
+        r"(?:confirmation|verification|evidence|observation)\b"
+        r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
+        r"(?:confirming|verifying|observing)\b"
     )
     negation = rf"(?:no|not|never|failed to|failure to|{without_denial})"
     concept = concept_patterns[status]
-    separator = r"[\s,]+"
+    # Commas around modifiers remain within a clause, but comma-plus-coordinator
+    # starts a separate clause (for example, ", but its claims were not false").
+    separator = r"(?:\s+|,(?!\s*(?:but|and|or|yet|so|for|nor)\b)\s*)+"
     negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,3}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
@@ -125,7 +129,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
         or (status == "TITLE_CHANGED" and re.search(
-            r"\btitle(?:[\s,]+\w+){0,4}[\s,]+(?:no|not|never|failed to|failure to)(?:[\s,]+\w+){0,3}[\s,]+chang(?:e|ed|ing)\b",
+            rf"\btitle(?:['’]s)?(?:{separator}\w+){{0,4}}{separator}(?:no|not|never|failed to|failure to)(?:{separator}\w+){{0,3}}{separator}chang(?:e|ed|ing)\b",
             observation,
         ))
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
