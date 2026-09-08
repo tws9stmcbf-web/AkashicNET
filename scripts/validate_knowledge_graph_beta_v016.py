@@ -58,6 +58,12 @@ RELATIONSHIP_CONTRACTS = {
         "DIRECT_RECORD",
     ),
 }
+PARENT_EDGE_CONTRACTS = {
+    ("COMPETES_WITH_CANDIDATE", "HAS_MODEL"): (
+        "target_node_id",
+        {"source_node_id", "target_node_id"},
+    ),
+}
 PROVENANCE_KEYS = {
     "artifact_id",
     "repository_path",
@@ -348,9 +354,18 @@ def validate(data):
                 if parent is None:
                     continue
                 parent_endpoints = {parent.get("source_node_id"), parent.get("target_node_id")}
+                parent_contract = PARENT_EDGE_CONTRACTS.get(
+                    (edge.get("relationship_type"), parent.get("relationship_type"))
+                )
+                if parent_contract is None:
+                    errors.append("edge ancestry policy")
+                    continue
+                parent_role, child_roles = parent_contract
+                allowed_child_endpoints = {edge.get(role) for role in child_roles}
                 if (
                     parent.get("assertion_class") != "DIRECT_SOURCE_METADATA"
                     or child_endpoints.isdisjoint(parent_endpoints)
+                    or parent.get(parent_role) not in allowed_child_endpoints
                 ):
                     errors.append("edge ancestry policy")
         resolved_record = check_provenance(edge.get("provenance"))
