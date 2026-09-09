@@ -146,8 +146,16 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     # a status. Provenance and no-promotion consequences remain affirmative.
     # A generic post-concept "no" is excluded so promotion disclaimers such as
     # "deleted and no claims were promoted" remain affirmative.
-    post_negation = rf"(?:not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{without_denial})"
-    concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\b"
+    post_negation = rf"(?:never|failed to|failure to|yet to|{without_denial})"
+    concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\\b"
+    # A nearby "not" only negates the status when it leads to an event or
+    # evidence predicate—not an unrelated verb such as "disputed".
+    terminal_predicate = r"(?:occur(?:red)?|happen(?:ed)?|confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation)|retract(?:ed|ion)|delet(?:ed|ion)|chang(?:e|ed|ing))"
+    concept_before_not_terminal_predicate = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}"
+        rf"not(?!\\s+(?:only|merely|just)\\b)(?:{separator}{token}){{0,3}}{separator}"
+        rf"{terminal_predicate}\\b"
+    )
     concept_without_evidence = (
         rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}no"
         rf"(?:{separator}{token}){{0,2}}{separator}"
