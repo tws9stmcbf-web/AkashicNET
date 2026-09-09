@@ -211,6 +211,37 @@ class FrameworkInventoryTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "private metadata rejected"):
                     validator.validate(self.data)
 
+    def test_core_review_only_invariants_do_not_trust_mutable_schema(self):
+        schema = validator.load_json(validator.SCHEMA.read_bytes())
+        schema["properties"]["question_status"]["const"] = "RESOLVED"
+        schema["properties"]["mode"]["const"] = "PUBLIC_ANSWER"
+        schema["properties"]["scope"]["properties"]["synthesis_or_answer"]["const"] = True
+        candidate = copy.deepcopy(self.data)
+        candidate["question_status"] = "RESOLVED"
+        candidate["mode"] = "PUBLIC_ANSWER"
+        candidate["scope"]["synthesis_or_answer"] = True
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(validator.canonical(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "core invariant drift"):
+                    validator.validate(candidate)
+
+    def test_reviewed_exclusions_are_complete_and_unique(self):
+        def duplicate_exclusion(data):
+            data["exclusions"] = [copy.deepcopy(data["exclusions"][0]) for _ in range(4)]
+        self.mutate(duplicate_exclusion)
+
+    def test_schema_unscoped_git_blob_is_rejected(self):
+        schema = validator.load_json(validator.SCHEMA.read_bytes())
+        schema["git_blob_sha"] = "a" * 40
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(validator.canonical(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "unscoped git blob rejected"):
+                    validator.validate(self.data)
+
     def test_json_pointer_array_indices_are_canonical(self):
         document = {"items": list(range(11))}
         self.assertEqual(validator.resolve_pointer(document, "/items/0"), 0)
