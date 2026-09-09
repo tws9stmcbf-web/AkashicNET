@@ -203,7 +203,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         or re.search(neither_before_concept, observation)
         or re.search(concept_neither_nor, observation)
         or re.search(concept_comma_modifier_not, observation)
-        or (status == "TITLE_CHANGED" and re.search(r"\btitle(?:{separator}{token}){{0,3}}{separator}unchanged\b", observation))
+        or (status == "TITLE_CHANGED" and re.search(rf"\btitle(?:{separator}{token}){{0,3}}{separator}unchanged\b", observation))
         or (status == "RETRACTED" and re.search(r"\bunretracted\b", observation))
         or (status == "DELETED" and re.search(r"\bundeleted\b", observation))
         or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
