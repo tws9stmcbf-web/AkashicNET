@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -31,6 +32,25 @@ EXPECTED_SCOPE_FLAGS = {
     "exhaustive_for_pinned_artifacts": False,
     "exhaustive_beyond_pinned_artifacts": False,
     "synthesis_or_answer": False,
+}
+EXPECTED_PROMOTION_GUARDS = {
+    "truth_inference_allowed": False,
+    "framework_count_is_vote": False,
+    "source_count_upgrades_evidence": False,
+    "shared_source_counts_as_independent_confirmation": False,
+    "interpretation_upgrades_to_empirical_evidence": False,
+    "randomized_navigation_implies_probability": False,
+    "ranking_or_visualization_implies_endorsement": False,
+    "scientific_evidence_promotion_allowed": False,
+    "rights_or_public_release_promotion_allowed": False,
+    "accepted_edge_creation_allowed": False,
+}
+EXPECTED_OPERATIONAL_BOUNDARIES = {
+    "reddit_live_access": "HOLD",
+    "private_drive_material_allowed": False,
+    "website_publication_allowed": False,
+    "analytics_activation_allowed": False,
+    "multimedia_generation_allowed": False,
 }
 EXPECTED_EXCLUSIONS = {
     ("cardiac-arrest and NDE reports", "RESEARCH_DOMAIN_OR_OBSERVATION_NOT_A_FRAMEWORK"),
@@ -114,7 +134,7 @@ def decode_percent(text):
 def privacy_check(value):
     def check(text, is_key=False):
         decoded = decode_percent(text)
-        folded = decoded.casefold().replace("\\", "/")
+        folded = unicodedata.normalize("NFKC", decoded).casefold().replace("\\", "/")
         if any(marker in folded for marker in (
             "drive.google.com", "docs.google.com", "/my drive/", "akm-",
             "file://", "gdrive://",
@@ -320,13 +340,10 @@ def validate(data):
     }
     if data["summary"] != counts:
         raise ValueError("framework inventory summary drift")
-    if any(data["promotion_guards"].values()):
-        raise ValueError("promotion guard enabled")
-    boundaries = data["operational_boundaries"]
-    if boundaries["reddit_live_access"] != "HOLD" or any(
-        boundaries[key] for key in boundaries if key != "reddit_live_access"
-    ):
-        raise ValueError("operational boundary weakened")
+    if data["promotion_guards"] != EXPECTED_PROMOTION_GUARDS:
+        raise ValueError("promotion guard mapping drift")
+    if data["operational_boundaries"] != EXPECTED_OPERATIONAL_BOUNDARIES:
+        raise ValueError("operational boundary mapping drift")
 
 
 def main():
