@@ -517,7 +517,7 @@ def test_morphologically_negated_terminal_predicates_are_rejected(status, observ
     ("status", "observation"),
     [
         ("TITLE_CHANGED", "The title-change was not disputed and was independently verified."),
-        ("RETRACTED", "The retraction was not disputed and was independently verified."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted; the retraction was not disputed and was independently verified."),
         ("DELETED", "The source deletion was not disputed and was independently verified."),
     ],
 )
