@@ -147,14 +147,14 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     # A generic post-concept "no" is excluded so promotion disclaimers such as
     # "deleted and no claims were promoted" remain affirmative.
     post_negation = rf"(?:never|failed to|failure to|yet to|{without_denial})"
-    concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\\b"
+    concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\b"
     # A nearby "not" only negates the status when it leads to an event or
     # evidence predicate—not an unrelated verb such as "disputed".
     terminal_predicate = r"(?:occur(?:red)?|happen(?:ed)?|confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation)|retract(?:ed|ion)|delet(?:ed|ion)|chang(?:e|ed|ing))"
     concept_before_not_terminal_predicate = (
         rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}"
-        rf"not(?!\\s+(?:only|merely|just)\\b)(?:{separator}{token}){{0,3}}{separator}"
-        rf"{terminal_predicate}\\b"
+        rf"not(?!\s+(?:only|merely|just)\b)(?:{separator}{token}){{0,3}}{separator}"
+        rf"{terminal_predicate}\b"
     )
     concept_without_evidence = (
         rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}no"
@@ -203,9 +203,9 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         or re.search(neither_before_concept, observation)
         or re.search(concept_neither_nor, observation)
         or re.search(concept_comma_modifier_not, observation)
-        or (status == "TITLE_CHANGED" and re.search(r"\\btitle(?:{separator}{token}){{0,3}}{separator}unchanged\\b", observation))
-        or (status == "RETRACTED" and re.search(r"\\bunretracted\\b", observation))
-        or (status == "DELETED" and re.search(r"\\bundeleted\\b", observation))
+        or (status == "TITLE_CHANGED" and re.search(r"\btitle(?:{separator}{token}){{0,3}}{separator}unchanged\b", observation))
+        or (status == "RETRACTED" and re.search(r"\bunretracted\b", observation))
+        or (status == "DELETED" and re.search(r"\bundeleted\b", observation))
         or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
         or (status == "TITLE_CHANGED" and re.search(
             rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
