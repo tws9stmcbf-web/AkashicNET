@@ -125,7 +125,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     # finite predicate follows. Modifier phrases such as "for the moment"
     # and "so far" therefore remain in the status predicate.
     coordinated_clause = (
-        r"(?:but|yet|and|or|nor|so|for)(?=\s+"
+        r"(?:but|yet|and|or|nor|so)(?=\s+"
         r"(?:[^\s,;:.]+\s+){0,3}"
         r"(?:is|are|was|were|has|have|had|does|do|did|will|would|can|could|"
         r"may|might|must|shall|should|occurred|changed|retracted|deleted|"
