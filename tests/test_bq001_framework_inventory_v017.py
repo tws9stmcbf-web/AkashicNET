@@ -212,5 +212,23 @@ class FrameworkInventoryTests(unittest.TestCase):
                 validator.load_json(raw)
 
 
+    def test_item_boundaries_relations_and_locators_are_pinned(self):
+        self.mutate(lambda d: d["inventory"][0].update(
+            boundary="This changed boundary would weaken review-only scope."
+        ))
+        self.mutate(lambda d: d["inventory"][0].update(
+            relation_to_bq001="This changed relation would be unreviewed."
+        ))
+        self.mutate(lambda d: d["inventory"][0]["pinned_locators"].pop())
+
+    def test_governed_artifact_roles_are_path_bound(self):
+        def swap_roles(data):
+            data["governed_artifacts"][0]["role"], data["governed_artifacts"][1]["role"] = (
+                data["governed_artifacts"][1]["role"],
+                data["governed_artifacts"][0]["role"],
+            )
+        self.mutate(swap_roles)
+
+
 if __name__ == "__main__":
     unittest.main()
