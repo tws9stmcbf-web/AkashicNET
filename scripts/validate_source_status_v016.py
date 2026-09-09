@@ -140,13 +140,13 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     # clause such as "and its claims were not automatically promoted".
     token = rf"(?!(?:{coordinated_clause})){raw_token}"
     # "not only ... but ..." is affirmative focus, not status negation.
-    negation = rf"(?:no|not(?!\s+only\b)|never|failed to|failure to|yet to|{without_denial})"
+    negation = rf"(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{without_denial})"
     negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
     # A generic post-concept "no" is excluded so promotion disclaimers such as
     # "deleted and no claims were promoted" remain affirmative.
-    post_negation = rf"(?:not(?!\s+only\b)|never|failed to|failure to|yet to|{without_denial})"
+    post_negation = rf"(?:not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{without_denial})"
     concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\b"
     concept_without_evidence = (
         rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}no"
@@ -158,6 +158,10 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         rf"(?:{separator}(?:be|have|been)){{0,2}}{separator}"
         r"(?:confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation))\b"
     )
+    concept_remains_unconfirmed = (
+        rf"(?:{concept})(?:{separator}{token}){{0,5}}{separator}"
+        r"(?:unconfirmed|unverified)\b"
+    )
     reverse_title_change_denial = (
         rf"\bno(?:{separator}{token}){{0,3}}{separator}chang(?:e|ed|ing)\b"
         rf"(?:{separator}{token}){{0,4}}{separator}title\b"
@@ -167,9 +171,10 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         or re.search(concept_before_negation, observation)
         or re.search(concept_without_evidence, observation)
         or re.search(concept_cannot_be_confirmed, observation)
+        or re.search(concept_remains_unconfirmed, observation)
         or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
         or (status == "TITLE_CHANGED" and re.search(
-            rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+only\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
+            rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
             observation,
         ))
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
