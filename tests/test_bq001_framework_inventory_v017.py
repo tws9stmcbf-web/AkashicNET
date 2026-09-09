@@ -194,6 +194,23 @@ class FrameworkInventoryTests(unittest.TestCase):
         self.assertIn("CLAIM-BQ001-KOCH-2016-INTERP-01", self.data["scope"]["description"])
         self.mutate(lambda d: d["scope"].update(exhaustive_for_pinned_artifacts=True))
 
+    def test_review_only_scope_description_is_pinned(self):
+        self.mutate(lambda d: d["scope"].update(
+            description="BQ001 has been conclusively resolved."
+        ))
+
+    def test_schema_private_metadata_is_rejected_before_schema_validation(self):
+        schema = validator.load_json(validator.SCHEMA.read_bytes())
+        schema["$comment"] = (
+            "https%253A%252F%252Fdrive.google.com%252Ffile%252Fd%252Fsynthetic"
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(validator.canonical(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+                    validator.validate(self.data)
+
     def test_json_pointer_array_indices_are_canonical(self):
         document = {"items": list(range(11))}
         self.assertEqual(validator.resolve_pointer(document, "/items/0"), 0)
