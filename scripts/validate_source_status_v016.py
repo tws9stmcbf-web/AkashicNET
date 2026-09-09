@@ -140,7 +140,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     # clause such as "and its claims were not automatically promoted".
     token = rf"(?!(?:{coordinated_clause})){raw_token}"
     # "not only ... but ..." is affirmative focus, not status negation.
-    negation = rf"(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{without_denial})"
+    negation = rf"(?:no|not(?!\s+(?:only|merely|just)\b)|never|neither|failed to|failure to|yet to|{without_denial})"
     negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
@@ -159,7 +159,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"(?:confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation))\b"
     )
     concept_remains_unconfirmed = (
-        rf"(?:{concept})(?:{separator}{token}){{0,5}}{separator}"
+        rf"(?:{concept}){separator}(?:remains?|is|was|are|were){separator}"
         r"(?:unconfirmed|unverified)\b"
     )
     reverse_title_change_denial = (
