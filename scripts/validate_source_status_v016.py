@@ -187,6 +187,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
+        or re.search(concept_before_not_terminal_predicate, observation)
         or re.search(concept_without_evidence, observation)
         or re.search(concept_cannot_be_confirmed, observation)
         or re.search(concept_remains_unconfirmed, observation)
@@ -194,6 +195,9 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         or re.search(neither_before_concept, observation)
         or re.search(concept_neither_nor, observation)
         or re.search(concept_comma_modifier_not, observation)
+        or (status == "TITLE_CHANGED" and re.search(r"\\btitle(?:{separator}{token}){{0,3}}{separator}unchanged\\b", observation))
+        or (status == "RETRACTED" and re.search(r"\\bunretracted\\b", observation))
+        or (status == "DELETED" and re.search(r"\\bundeleted\\b", observation))
         or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
         or (status == "TITLE_CHANGED" and re.search(
             rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
