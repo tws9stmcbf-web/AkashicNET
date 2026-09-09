@@ -136,9 +136,9 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     )
     separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
     raw_token = r"[a-z]+(?:-[a-z]+)*"
-    # Do not let bounded modifier scans cross an unpunctuated coordinated
-    # clause such as "and its claims were not automatically promoted".
-    token = rf"(?!(?:{coordinated_clause})){raw_token}"
+    subordinate_clause = r"(?:after|although|because|if|once|since|unless|until|when|while|whereas)\\b"
+    # Do not let bounded modifier scans cross coordinated or subordinate clauses.
+    token = rf"(?!(?:{coordinated_clause}|{subordinate_clause})){raw_token}"
     # "not only ... but ..." is affirmative focus, not status negation.
     negation = rf"(?:no|not(?!\s+(?:only|merely|just)\b)|never|neither|failed to|failure to|yet to|{without_denial})"
     negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
@@ -162,6 +162,19 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         rf"(?:{concept}){separator}(?:remains?|is|was|are|were){separator}"
         r"(?:unconfirmed|unverified)\b"
     )
+    concept_idiomatic_nonconfirmation = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}"
+        rf"(?:by{separator}no{separator}means|in{separator}no{separator}way){separator}"
+        r"(?:confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation))\b"
+    )
+    neither_before_concept = (
+        rf"\bneither(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
+        rf"(?:{separator}{token}){{0,5}}{separator}nor\b"
+    )
+    concept_neither_nor = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}neither"
+        rf"(?:{separator}{token}){{0,4}}{separator}nor\b"
+    )
     reverse_title_change_denial = (
         rf"\bno(?:{separator}{token}){{0,3}}{separator}chang(?:e|ed|ing)\b"
         rf"(?:{separator}{token}){{0,4}}{separator}title\b"
@@ -172,6 +185,9 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         or re.search(concept_without_evidence, observation)
         or re.search(concept_cannot_be_confirmed, observation)
         or re.search(concept_remains_unconfirmed, observation)
+        or re.search(concept_idiomatic_nonconfirmation, observation)
+        or re.search(neither_before_concept, observation)
+        or re.search(concept_neither_nor, observation)
         or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
         or (status == "TITLE_CHANGED" and re.search(
             rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
