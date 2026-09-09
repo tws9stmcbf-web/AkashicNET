@@ -377,6 +377,20 @@ def test_not_only_focus_construction_remains_affirmative(status, observation):
     validator.validate(data)
 
 
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("DELETED", "The source was deleted, not merely made unavailable."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted, not merely corrected."),
+        ("DELETED", "The source was deleted, not just made unavailable."),
+    ],
+)
+def test_not_merely_and_not_just_focus_constructions_remain_affirmative(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
 
 @pytest.mark.parametrize(
     ("status", "observation"),
@@ -384,6 +398,8 @@ def test_not_only_focus_construction_remains_affirmative(status, observation):
         ("TITLE_CHANGED", "A title-change check found no change in the title."),
         ("RETRACTED", "A retraction notice says the retraction cannot be confirmed."),
         ("DELETED", "A deletion notice says the deletion cannot be verified."),
+        ("RETRACTED", "A retraction notice says the retraction remains unverified."),
+        ("DELETED", "A deletion notice says the deletion remains unconfirmed."),
     ],
 )
 def test_reverse_title_and_modal_nonconfirmation_are_rejected(status, observation):
