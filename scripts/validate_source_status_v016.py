@@ -135,7 +135,10 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"verifies?|verified)\b)"
     )
     separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
-    token = r"[a-z]+(?:-[a-z]+)*"
+    raw_token = r"[a-z]+(?:-[a-z]+)*"
+    # Do not let bounded modifier scans cross an unpunctuated coordinated
+    # clause such as "and its claims were not automatically promoted".
+    token = rf"(?!(?:{coordinated_clause})){raw_token}"
     # "not only ... but ..." is affirmative focus, not status negation.
     negation = rf"(?:no|not(?!\s+only\b)|never|failed to|failure to|yet to|{without_denial})"
     negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
@@ -150,10 +153,21 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         rf"(?:{separator}{token}){{0,2}}{separator}"
         r"(?:confirmation|verification|evidence|observation)\b"
     )
+    concept_cannot_be_confirmed = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}cannot"
+        rf"(?:{separator}(?:be|have|been)){{0,2}}{separator}"
+        r"(?:confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation))\b"
+    )
+    reverse_title_change_denial = (
+        rf"\bno(?:{separator}{token}){{0,3}}{separator}chang(?:e|ed|ing)\b"
+        rf"(?:{separator}{token}){{0,4}}{separator}title\b"
+    )
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
         or re.search(concept_without_evidence, observation)
+        or re.search(concept_cannot_be_confirmed, observation)
+        or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
         or (status == "TITLE_CHANGED" and re.search(
             rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+only\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
             observation,
