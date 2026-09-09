@@ -244,6 +244,26 @@ class FrameworkInventoryTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "unscoped git blob rejected"):
                     validator.validate(self.data)
 
+    def test_complete_safety_mappings_do_not_trust_mutable_schema(self):
+        schema = validator.load_json(validator.SCHEMA.read_bytes())
+        schema["properties"]["promotion_guards"]["required"] = []
+        schema["properties"]["operational_boundaries"]["required"] = ["reddit_live_access"]
+        candidate = copy.deepcopy(self.data)
+        candidate["promotion_guards"] = {}
+        candidate["operational_boundaries"] = {"reddit_live_access": "HOLD"}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(validator.canonical(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "promotion guard mapping drift"):
+                    validator.validate(candidate)
+
+    def test_unicode_normalized_private_url_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+            validator.privacy_check(
+                "https://drive%EF%BC%8Egoogle%EF%BC%8Ecom/file/d/private"
+            )
+
     def test_json_pointer_array_indices_are_canonical(self):
         document = {"items": list(range(11))}
         self.assertEqual(validator.resolve_pointer(document, "/items/0"), 0)
