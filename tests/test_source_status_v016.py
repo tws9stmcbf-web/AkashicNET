@@ -310,6 +310,73 @@ def test_coordinating_comma_starts_separate_clause(status, affirmative, ordering
     validator.validate(data)
 
 
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "An explicit title-change was recorded, but the archive reported its claims never warranted reclassification."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted, but the archive confirmed its claims never warranted reclassification."),
+        ("DELETED", "The source was deleted, but the archive confirmed its claims never warranted reclassification."),
+    ],
+)
+def test_past_tense_reporting_clause_preserves_affirmative_status(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
+@pytest.mark.parametrize("status,concept", [
+    ("TITLE_CHANGED", "title-change"), ("RETRACTED", "retraction"), ("DELETED", "deletion"),
+])
+@pytest.mark.parametrize("modifier", ["as-yet", "up-to-now"])
+def test_hyphenated_same_clause_negation_is_rejected(status, concept, modifier):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = (
+        f"A {concept} notice says the {concept} has, {modifier}, not occurred."
+    )
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "The title-change was recorded and no claims were automatically promoted."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted with no automatic falsity inference."),
+        ("DELETED", "The source was deleted and no claims were automatically promoted."),
+    ],
+)
+def test_unpunctuated_no_promotion_disclaimer_remains_affirmative(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
+@pytest.mark.parametrize("status,concept", [
+    ("TITLE_CHANGED", "title-change"), ("RETRACTED", "retraction"), ("DELETED", "deletion"),
+])
+def test_terminal_status_yet_to_occur_is_rejected(status, concept):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = (
+        f"A {concept} notice confirms the {concept} has yet to occur."
+    )
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "The title-change was not only observed but independently verified."),
+        ("RETRACTED", "A retraction notice confirms the work was not only retracted but independently verified."),
+        ("DELETED", "The source deletion was not only observed but independently verified."),
+    ],
+)
+def test_not_only_focus_construction_remains_affirmative(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
 def test_synthetic_retraction_cannot_infer_falsity() -> None:
     data = copy.deepcopy(SYNTHETIC)
     event(data, "RETRACTED")["truth_inference"] = "FALSE"
