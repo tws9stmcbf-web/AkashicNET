@@ -129,19 +129,33 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"(?:[^\s,;:.]+\s+){0,3}"
         r"(?:is|are|was|were|has|have|had|does|do|did|will|would|can|could|"
         r"may|might|must|shall|should|occurred|changed|retracted|deleted|"
-        r"remains?|became|becomes?|confirms?|states?|reports?|records?|says|"
-        r"indicates?|shows?|notes?|documents?|affirms?|finds?|observes?|verifies?)\b)"
+        r"remains?|became|becomes?|confirms?|confirmed|states?|stated|reports?|reported|"
+        r"records?|recorded|says|said|indicates?|indicated|shows?|showed|notes?|noted|"
+        r"documents?|documented|affirms?|affirmed|finds?|found|observes?|observed|"
+        r"verifies?|verified)\b)"
     )
     separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
-    negation_before_concept = rf"(?:{negation})(?:{separator}\w+){{0,5}}{separator}(?:{concept})"
+    token = r"[a-z]+(?:-[a-z]+)*"
+    # "not only ... but ..." is affirmative focus, not status negation.
+    negation = rf"(?:no|not(?!\s+only\b)|never|failed to|failure to|yet to|{without_denial})"
+    negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
-    concept_before_negation = rf"(?:{concept})(?:{separator}\w+){{0,6}}{separator}{negation}\b"
+    # A generic post-concept "no" is excluded so promotion disclaimers such as
+    # "deleted and no claims were promoted" remain affirmative.
+    post_negation = rf"(?:not(?!\s+only\b)|never|failed to|failure to|yet to|{without_denial})"
+    concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\b"
+    concept_without_evidence = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}no"
+        rf"(?:{separator}{token}){{0,2}}{separator}"
+        r"(?:confirmation|verification|evidence|observation)\b"
+    )
     return bool(
         re.search(negation_before_concept, observation)
         or re.search(concept_before_negation, observation)
+        or re.search(concept_without_evidence, observation)
         or (status == "TITLE_CHANGED" and re.search(
-            rf"\btitle(?:['’]s)?(?:{separator}\w+){{0,6}}{separator}(?:no|not|never|failed to|failure to)(?:{separator}\w+){{0,5}}{separator}chang(?:e|ed|ing)\b",
+            rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+only\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
             observation,
         ))
         or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
