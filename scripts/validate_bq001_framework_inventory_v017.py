@@ -131,11 +131,15 @@ def privacy_check(value):
             if normalized_key in FORBIDDEN_KEYS:
                 raise ValueError("private metadata rejected")
             if key == "git_blob_sha":
-                if (
-                    not isinstance(child, str)
-                    or not isinstance(value.get("path"), str)
-                    or EXPECTED_BLOBS.get(value["path"]) != child
-                ):
+                is_expected_artifact_pin = (
+                    isinstance(child, str)
+                    and isinstance(value.get("path"), str)
+                    and EXPECTED_BLOBS.get(value["path"]) == child
+                )
+                is_expected_schema_field = child == {
+                    "type": "string", "pattern": "^[a-f0-9]{40}$"
+                }
+                if not (is_expected_artifact_pin or is_expected_schema_field):
                     raise ValueError("unscoped git blob rejected")
                 continue
             if key == "inherited_v016_readiness_pin" and child == EXPECTED_PIN:
