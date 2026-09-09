@@ -339,8 +339,8 @@ def main():
         validate(data)
         if target == INVENTORY and target.read_text(encoding="utf-8") != canonical(data):
             raise ValueError("noncanonical serialization")
-    except (ValueError, TypeError, KeyError, OSError, IndexError, AttributeError):
-        print("BQ001 v0.17 framework inventory FAIL; no synthesis or promotion", file=sys.stderr)
+    except (ValueError, TypeError, KeyError, OSError, IndexError, AttributeError) as exc:
+        print(f"BQ001 v0.17 framework inventory FAIL: {exc}; no synthesis or promotion", file=sys.stderr)
         return 1
     print("BQ001 v0.17 framework inventory PASS; unresolved; review-only; zero accepted edges")
     return 0
