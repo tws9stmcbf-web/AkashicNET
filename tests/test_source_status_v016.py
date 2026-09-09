@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import importlib.util
 import json
+import time
 from pathlib import Path
 
 import pytest
@@ -435,6 +436,51 @@ def test_unrelated_nonconfirmation_does_not_negate_terminal_status(status, obser
 def test_unpunctuated_not_promotion_disclaimer_remains_affirmative(status, observation):
     data = copy.deepcopy(SYNTHETIC)
     event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
+def test_terminal_negation_scan_is_linear_on_long_whitespace() -> None:
+    start = time.monotonic()
+    assert not validator.terminal_evidence_is_negated(
+        "DELETED", "deletion" + " " * 25 + "x"
+    )
+    assert time.monotonic() - start < 1.0
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "A title-change notice says the title-change was by no means confirmed."),
+        ("RETRACTED", "A retraction notice says the retraction was in no way verified."),
+        ("DELETED", "A deletion notice says the deletion was by no means confirmed."),
+    ],
+)
+def test_idiomatic_direct_nonconfirmation_is_rejected(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "The title-change was recorded after the archive failed to preserve its metadata."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted although the archive failed to preserve its metadata."),
+        ("DELETED", "The source was deleted after the archive failed to preserve its metadata."),
+    ],
+)
+def test_subordinate_negation_does_not_negate_terminal_status(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
+def test_neither_reviewer_phrase_does_not_negate_terminal_status():
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "RETRACTED")["evidence"]["observation"] = (
+        "A retraction notice confirms the work was retracted; neither reviewer disputed retraction."
+    )
     validator.validate(data)
 
 
