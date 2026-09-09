@@ -36,19 +36,19 @@ EXPECTED_IDS = {
     "FW-BQ001-CONSCIOUSNESS-IIT",
 }
 # Fixed semantics for this reviewed slice; changes require explicit review.
-SEMANTIC_FIELDS = ('canonical_name', 'category', 'evidence_role', 'status', 'independence_state', 'represented_by')
+SEMANTIC_FIELDS = ("canonical_name", "category", "evidence_role", "status", "independence_state", "represented_by", "pinned_locators", "boundary", "relation_to_bq001")
 EXPECTED_SEMANTICS = {
-    'FW-BQ001-UMBRELLA-BIOLOGICAL-DEPENDENCE': ('Biological-dependence model', 'UMBRELLA_MODEL', 'organising_model_only', 'UNRESOLVED', 'NOT_APPLICABLE_TO_MODEL', ('MODEL-BQ001-BIOLOGICAL-DEPENDENCE',)),
-    'FW-BQ001-UMBRELLA-CONTINUITY': ('Continuity or survival model', 'UMBRELLA_MODEL', 'organising_model_only', 'UNRESOLVED', 'NOT_APPLICABLE_TO_MODEL', ('MODEL-BQ001-CONTINUITY',)),
-    'FW-BQ001-PHILOSOPHY-PHYSICALISM': ('Physicalism', 'PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SEP-PHYSICALISM', 'CLAIM-BQ001-PHYSICALISM-INTERP-01')),
-    'FW-BQ001-PHILOSOPHY-DUALISM': ('Dualism', 'PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SEP-DUALISM', 'CLAIM-BQ001-DUALISM-INTERP-01')),
-    'FW-BQ001-PHILOSOPHY-PANPSYCHISM': ('Panpsychism', 'PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SEP-PANPSYCHISM', 'CLAIM-BQ001-PANPSYCHISM-INTERP-01')),
-    'FW-BQ001-CONTEMPLATIVE-BUDDHIST-NONSELF': ('Buddhist non-self accounts', 'CONTEMPLATIVE_PHILOSOPHICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-SIDERITS-2011', 'CLAIM-BQ001-SIDERITS-2011-INTERP-01')),
-    'FW-BQ001-CONTEMPLATIVE-DAHL-PRACTICE-FAMILIES': ('Attentional, constructive, and deconstructive meditation families', 'PEER_REVIEWED_REVIEW_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-DAHL-2015', 'CLAIM-BQ001-DAHL-2015-INTERP-01')),
-    'FW-BQ001-CONTEMPLATIVE-SART': ('S-ART: self-awareness, self-regulation, and self-transcendence', 'PEER_REVIEWED_THEORETICAL_FRAMEWORK', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-VAGO-2012', 'CLAIM-BQ001-VAGO-2012-INTERP-01')),
-    'FW-BQ001-NDE-NEUROSCIENTIFIC-MODEL': ('Neuroscientific model of near-death experiences', 'NEUROSCIENTIFIC_EXPLANATORY_MODEL', 'INTERPRETATION', 'UNRESOLVED', 'UNASSESSED_REVIEW_REQUIRED', ('SRC-BQ001-MARTIAL-2025', 'CLAIM-BQ001-MARTIAL-2025-INTERP-01')),
-    'FW-BQ001-CONSCIOUSNESS-GNWT': ('Global Neuronal Workspace Theory', 'CONSCIOUSNESS_THEORY', 'Established Evidence', 'EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001', 'SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION', ('SRC-BQ001-COGITATE-2025', 'CLAIM-BQ001-COGITATE-2025-OBS-01')),
-    'FW-BQ001-CONSCIOUSNESS-IIT': ('Integrated Information Theory', 'CONSCIOUSNESS_THEORY', 'Established Evidence', 'EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001', 'SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT', ('SRC-BQ001-COGITATE-2025', 'CLAIM-BQ001-COGITATE-2025-OBS-01')),
+    "FW-BQ001-UMBRELLA-BIOLOGICAL-DEPENDENCE": ("Biological-dependence model", "UMBRELLA_MODEL", "organising_model_only", "UNRESOLVED", "NOT_APPLICABLE_TO_MODEL", ("MODEL-BQ001-BIOLOGICAL-DEPENDENCE",), ("spec-v0.1.json#/models/1", "public-synthesis-v0.1.json#/competing_models/0"), "Observed brain–conscious-state dependence does not prove that post-mortem continuation is impossible.", "Individual conscious experience is treated as dependent on functioning biological systems."),
+    "FW-BQ001-UMBRELLA-CONTINUITY": ("Continuity or survival model", "UMBRELLA_MODEL", "organising_model_only", "UNRESOLVED", "NOT_APPLICABLE_TO_MODEL", ("MODEL-BQ001-CONTINUITY",), ("spec-v0.1.json#/models/0", "public-synthesis-v0.1.json#/competing_models/1"), "Anomalous reports and conceptual possibility do not establish personal survival.", "Some aspect of consciousness may continue beyond individual biological functioning."),
+    "FW-BQ001-PHILOSOPHY-PHYSICALISM": ("Physicalism", "PHILOSOPHICAL_FRAMEWORK", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-SEP-PHYSICALISM", "CLAIM-BQ001-PHYSICALISM-INTERP-01"), ("evidence-batch4-v0.1.json#/sources/3", "evidence-batch4-v0.1.json#/claims/3"), "A philosophical position is not an experimental result or proof of non-survival.", "Provides philosophical support for physical dependence, with implications varying by version."),
+    "FW-BQ001-PHILOSOPHY-DUALISM": ("Dualism", "PHILOSOPHICAL_FRAMEWORK", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-SEP-DUALISM", "CLAIM-BQ001-DUALISM-INTERP-01"), ("evidence-batch4-v0.1.json#/sources/4", "evidence-batch4-v0.1.json#/claims/4"), "Conceptual space for survival is not empirical evidence that survival occurs.", "Provides conceptual space for mind not reducible to standard physicalism."),
+    "FW-BQ001-PHILOSOPHY-PANPSYCHISM": ("Panpsychism", "PHILOSOPHICAL_FRAMEWORK", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-SEP-PANPSYCHISM", "CLAIM-BQ001-PANPSYCHISM-INTERP-01"), ("evidence-batch4-v0.1.json#/sources/5", "evidence-batch4-v0.1.json#/claims/5"), "Panpsychism does not entail persistence of an individual's memories, identity, or subjectivity.", "Treats mentality or experience as fundamental or ubiquitous in nature."),
+    "FW-BQ001-CONTEMPLATIVE-BUDDHIST-NONSELF": ("Buddhist non-self accounts", "CONTEMPLATIVE_PHILOSOPHICAL_FRAMEWORK", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-SIDERITS-2011", "CLAIM-BQ001-SIDERITS-2011-INTERP-01"), ("evidence-batch4-v0.1.json#/sources/0", "evidence-batch4-v0.1.json#/claims/0"), "A tradition or philosophical doctrine is not empirical proof of survival or non-survival.", "Questions whether a permanent independent self is the correct unit of continuity."),
+    "FW-BQ001-CONTEMPLATIVE-DAHL-PRACTICE-FAMILIES": ("Attentional, constructive, and deconstructive meditation families", "PEER_REVIEWED_REVIEW_FRAMEWORK", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-DAHL-2015", "CLAIM-BQ001-DAHL-2015-INTERP-01"), ("evidence-batch4-v0.1.json#/sources/1", "evidence-batch4-v0.1.json#/claims/1"), "Changes in self-processing do not establish external ontology or post-mortem continuation.", "Models trainable cognitive processes and changes in self-processing."),
+    "FW-BQ001-CONTEMPLATIVE-SART": ("S-ART: self-awareness, self-regulation, and self-transcendence", "PEER_REVIEWED_THEORETICAL_FRAMEWORK", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-VAGO-2012", "CLAIM-BQ001-VAGO-2012-INTERP-01"), ("evidence-batch4-v0.1.json#/sources/2", "evidence-batch4-v0.1.json#/claims/2"), "Psychological self-transcendence is not consciousness independent of a biological organism.", "Models mindfulness through interacting psychological and neurobiological processes."),
+    "FW-BQ001-NDE-NEUROSCIENTIFIC-MODEL": ("Neuroscientific model of near-death experiences", "NEUROSCIENTIFIC_EXPLANATORY_MODEL", "INTERPRETATION", "UNRESOLVED", "UNASSESSED_REVIEW_REQUIRED", ("SRC-BQ001-MARTIAL-2025", "CLAIM-BQ001-MARTIAL-2025-INTERP-01"), ("evidence-batch2-v0.1.json#/sources/4", "evidence-batch2-v0.1.json#/claims/4"), "A plausible neuroscientific model is not proof that every NDE is fully explained or that non-survival is established.", "Proposes biological mechanisms that may account for features of NDE reports."),
+    "FW-BQ001-CONSCIOUSNESS-GNWT": ("Global Neuronal Workspace Theory", "CONSCIOUSNESS_THEORY", "Established Evidence", "EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001", "SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION", ("SRC-BQ001-COGITATE-2025", "CLAIM-BQ001-COGITATE-2025-OBS-01"), ("evidence-batch5-v0.1.json#/sources/1", "evidence-batch5-v0.1.json#/claims/1"), "Adversarial theory testing in living participants does not adjudicate post-mortem continuity.", "A theory of conscious access tested under living-brain experimental conditions."),
+    "FW-BQ001-CONSCIOUSNESS-IIT": ("Integrated Information Theory", "CONSCIOUSNESS_THEORY", "Established Evidence", "EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001", "SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT", ("SRC-BQ001-COGITATE-2025", "CLAIM-BQ001-COGITATE-2025-OBS-01"), ("evidence-batch5-v0.1.json#/sources/1", "evidence-batch5-v0.1.json#/claims/1"), "The shared comparison supplies one governed evidence source, not two independent confirmations, and does not adjudicate survival.", "A theory of consciousness tested alongside GNWT under a shared adversarial protocol."),
 }
 
 FORBIDDEN_KEYS = {
@@ -204,12 +204,23 @@ def validate(data):
 
     if set(paths) != set(EXPECTED_BLOBS):
         raise ValueError("governed artifact set drift")
+    expected_roles = {
+        "references/big-questions/BQ001/spec-v0.1.json": "question_and_umbrella_model_contract",
+        "references/big-questions/BQ001/public-synthesis-v0.1.json": "public_safe_synthesis",
+        "references/big-questions/BQ001/evidence-batch1-v0.1.json": "neuroscience_and_cardiac_arrest",
+        "references/big-questions/BQ001/evidence-batch2-v0.1.json": "memory_identity_and_nde_methods",
+        "references/big-questions/BQ001/evidence-batch3-v0.1.json": "reincarnation_reports_and_methods",
+        "references/big-questions/BQ001/evidence-batch4-v0.1.json": "contemplative_and_philosophy",
+        "references/big-questions/BQ001/evidence-batch5-v0.1.json": "supplemental_science_and_theory_testing",
+    }
 
     loaded = {}
     by_name = {}
     for artifact in artifacts:
         if artifact["git_blob_sha"] != EXPECTED_BLOBS[artifact["path"]]:
             raise ValueError("governed artifact pin drift")
+        if artifact["role"] != expected_roles[artifact["path"]]:
+            raise ValueError("governed artifact role drift")
         path = ROOT / artifact["path"]
         raw = path.read_bytes()
         if git_blob_sha(raw) != artifact["git_blob_sha"]:
