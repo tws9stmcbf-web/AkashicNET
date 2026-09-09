@@ -12,6 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 INVENTORY = ROOT / "references/big-questions/BQ001/framework-inventory-v0.17-slice1.json"
 SCHEMA = ROOT / "schemas/bq001-framework-inventory-v0.17-slice1.schema.json"
 EXPECTED_PIN = "4867ca7c8c9a4e1bc139f630815ecf49c79a2ef7"
+EXPECTED_SCOPE_DESCRIPTION = (
+    "Selected inventory of public-safe models, philosophical frameworks, contemplative "
+    "selfhood frameworks, and consciousness theories represented in the governed BQ001 "
+    "artifacts. This 11-item slice is not exhaustive: the neural-correlates research "
+    "programme (CLAIM-BQ001-KOCH-2016-INTERP-01; SRC-BQ001-KOCH-2016) remains outside "
+    "this slice and requires follow-up inventory review."
+)
 # Public repository blobs verified against EXPECTED_PIN; never derive from the inventory.
 EXPECTED_BLOBS = {
     "references/big-questions/BQ001/spec-v0.1.json": "b35b2397c8ab5341db313ec73c3e45b2bcdf4a5c",
@@ -188,6 +195,7 @@ def validate(data):
 
     privacy_check(data)
     schema = load_json(SCHEMA.read_bytes())
+    privacy_check(schema)
     Draft202012Validator.check_schema(schema)
     errors = sorted(Draft202012Validator(schema).iter_errors(data), key=lambda e: list(e.path))
     if errors:
@@ -195,6 +203,8 @@ def validate(data):
 
     if data["inherited_v016_readiness_pin"] != EXPECTED_PIN:
         raise ValueError("v0.16 pin drift")
+    if data["scope"]["description"] != EXPECTED_SCOPE_DESCRIPTION:
+        raise ValueError("review-only scope description drift")
 
     artifacts = data["governed_artifacts"]
     paths = [item["path"] for item in artifacts]
