@@ -19,6 +19,25 @@ EXPECTED_SCOPE_DESCRIPTION = (
     "programme (CLAIM-BQ001-KOCH-2016-INTERP-01; SRC-BQ001-KOCH-2016) remains outside "
     "this slice and requires follow-up inventory review."
 )
+EXPECTED_CORE = {
+    "inventory_id": "BQ001-FRAMEWORK-INVENTORY-V017-SLICE1",
+    "version": "0.1.0",
+    "release_track": "v0.17-evidence-intelligence-beta",
+    "question_id": "BQ001",
+    "question_status": "UNRESOLVED",
+    "mode": "REVIEW_ONLY",
+}
+EXPECTED_SCOPE_FLAGS = {
+    "exhaustive_for_pinned_artifacts": False,
+    "exhaustive_beyond_pinned_artifacts": False,
+    "synthesis_or_answer": False,
+}
+EXPECTED_EXCLUSIONS = {
+    ("cardiac-arrest and NDE reports", "RESEARCH_DOMAIN_OR_OBSERVATION_NOT_A_FRAMEWORK"),
+    ("reincarnation-type case literature", "RESEARCH_DOMAIN_AND_CASE_LITERATURE_NOT_A_SINGLE_FRAMEWORK"),
+    ("autobiographical memory and self-continuity findings", "EVIDENCE_DOMAIN_NOT_A_METAPHYSICAL_MODEL"),
+    ("source-status and synthetic terminal-state fixtures", "PROVENANCE_TEST_MATERIAL_NOT_EVIDENCE_OR_FRAMEWORK"),
+}
 # Public repository blobs verified against EXPECTED_PIN; never derive from the inventory.
 EXPECTED_BLOBS = {
     "references/big-questions/BQ001/spec-v0.1.json": "b35b2397c8ab5341db313ec73c3e45b2bcdf4a5c",
@@ -111,7 +130,13 @@ def privacy_check(value):
             )
             if normalized_key in FORBIDDEN_KEYS:
                 raise ValueError("private metadata rejected")
-            if key == "git_blob_sha" and isinstance(child, str) and re.fullmatch(r"[a-f0-9]{40}", child):
+            if key == "git_blob_sha":
+                if (
+                    not isinstance(child, str)
+                    or not isinstance(value.get("path"), str)
+                    or EXPECTED_BLOBS.get(value["path"]) != child
+                ):
+                    raise ValueError("unscoped git blob rejected")
                 continue
             if key == "inherited_v016_readiness_pin" and child == EXPECTED_PIN:
                 continue
@@ -201,10 +226,17 @@ def validate(data):
     if errors:
         raise ValueError("framework inventory schema violation")
 
+    if any(data.get(field) != expected for field, expected in EXPECTED_CORE.items()):
+        raise ValueError("review-only core invariant drift")
     if data["inherited_v016_readiness_pin"] != EXPECTED_PIN:
         raise ValueError("v0.16 pin drift")
     if data["scope"]["description"] != EXPECTED_SCOPE_DESCRIPTION:
         raise ValueError("review-only scope description drift")
+    if any(data["scope"].get(field) != expected for field, expected in EXPECTED_SCOPE_FLAGS.items()):
+        raise ValueError("review-only scope invariant drift")
+    exclusions = {(item["name"], item["reason"]) for item in data["exclusions"]}
+    if len(exclusions) != len(data["exclusions"]) or exclusions != EXPECTED_EXCLUSIONS:
+        raise ValueError("framework exclusion drift")
 
     artifacts = data["governed_artifacts"]
     paths = [item["path"] for item in artifacts]
