@@ -377,6 +377,36 @@ def test_not_only_focus_construction_remains_affirmative(status, observation):
     validator.validate(data)
 
 
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "A title-change check found no change in the title."),
+        ("RETRACTED", "A retraction notice says the retraction cannot be confirmed."),
+        ("DELETED", "A deletion notice says the deletion cannot be verified."),
+    ],
+)
+def test_reverse_title_and_modal_nonconfirmation_are_rejected(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "The title-change was recorded and its claims were not automatically promoted."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted and its claims were not automatically promoted."),
+        ("DELETED", "The source was deleted and its claims were not automatically promoted."),
+    ],
+)
+def test_unpunctuated_not_promotion_disclaimer_remains_affirmative(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
+
+
 def test_synthetic_retraction_cannot_infer_falsity() -> None:
     data = copy.deepcopy(SYNTHETIC)
     event(data, "RETRACTED")["truth_inference"] = "FALSE"
