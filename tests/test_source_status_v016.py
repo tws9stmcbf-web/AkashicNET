@@ -496,3 +496,32 @@ def test_synthetic_disclaimer_is_required() -> None:
     data["synthetic_disclaimer"] = "Test data."
     with pytest.raises(AssertionError, match="non-observational disclaimer"):
         validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "A title-change check confirmed that the title was unchanged."),
+        ("RETRACTED", "A retraction notice says the work remains unretracted."),
+        ("DELETED", "A deletion notice says the source remains undeleted."),
+    ],
+)
+def test_morphologically_negated_terminal_predicates_are_rejected(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("TITLE_CHANGED", "The title-change was not disputed and was independently verified."),
+        ("RETRACTED", "The retraction was not disputed and was independently verified."),
+        ("DELETED", "The source deletion was not disputed and was independently verified."),
+    ],
+)
+def test_not_on_unrelated_predicate_does_not_negate_terminal_status(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
