@@ -134,13 +134,13 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         r"documents?|documented|affirms?|affirmed|finds?|found|observes?|observed|"
         r"verifies?|verified)\b)"
     )
-    separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)+"
+    separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)"
     raw_token = r"[a-z]+(?:-[a-z]+)*"
-    subordinate_clause = r"(?:after|although|because|if|once|since|unless|until|when|while|whereas)\\b"
+    subordinate_clause = r"(?:after|although|because|if|once|since|unless|until|when|while|whereas)\b"
     # Do not let bounded modifier scans cross coordinated or subordinate clauses.
     token = rf"(?!(?:{coordinated_clause}|{subordinate_clause})){raw_token}"
     # "not only ... but ..." is affirmative focus, not status negation.
-    negation = rf"(?:no|not(?!\s+(?:only|merely|just)\b)|never|neither|failed to|failure to|yet to|{without_denial})"
+    negation = rf"(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{without_denial})"
     negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.
