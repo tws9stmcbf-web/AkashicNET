@@ -400,6 +400,8 @@ def test_not_merely_and_not_just_focus_constructions_remain_affirmative(status, 
         ("DELETED", "A deletion notice says the deletion cannot be verified."),
         ("RETRACTED", "A retraction notice says the retraction remains unverified."),
         ("DELETED", "A deletion notice says the deletion remains unconfirmed."),
+        ("RETRACTED", "A retraction notice says the work was neither retracted nor withdrawn."),
+        ("DELETED", "A deletion notice says the source was neither deleted nor removed."),
     ],
 )
 def test_reverse_title_and_modal_nonconfirmation_are_rejected(status, observation):
@@ -407,6 +409,19 @@ def test_reverse_title_and_modal_nonconfirmation_are_rejected(status, observatio
     event(data, status)["evidence"]["observation"] = observation
     with pytest.raises(AssertionError, match="evidence is negated"):
         validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "observation"),
+    [
+        ("DELETED", "The source was deleted while its provenance remains unconfirmed."),
+        ("RETRACTED", "A retraction notice confirms the work was retracted while its original provenance remains unverified."),
+    ],
+)
+def test_unrelated_nonconfirmation_does_not_negate_terminal_status(status, observation):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, status)["evidence"]["observation"] = observation
+    validator.validate(data)
 
 
 @pytest.mark.parametrize(
