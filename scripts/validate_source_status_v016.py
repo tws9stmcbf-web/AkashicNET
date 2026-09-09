@@ -175,9 +175,10 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}neither"
         rf"(?:{separator}{token}){{0,4}}{separator}nor\b"
     )
-    concept_modified_plain_not = (
-        rf"(?:{concept})(?:{separator}(?!{subordinate_clause}){raw_token}){{0,6}}"
-        rf"{separator}not(?!\s+(?:only|merely|just)\b)\b"
+    concept_comma_modifier_not = (
+        rf"(?:{concept}){separator}(?:has|have|had|is|are|was|were),\s*"
+        r"(?:for|so)(?:\s+[a-z-]+){0,5},\s*"
+        r"not(?!\s+(?:only|merely|just)\b)\b"
     )
     reverse_title_change_denial = (
         rf"\bno(?:{separator}{token}){{0,3}}{separator}chang(?:e|ed|ing)\b"
@@ -192,7 +193,7 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
         or re.search(concept_idiomatic_nonconfirmation, observation)
         or re.search(neither_before_concept, observation)
         or re.search(concept_neither_nor, observation)
-        or re.search(concept_modified_plain_not, observation)
+        or re.search(concept_comma_modifier_not, observation)
         or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
         or (status == "TITLE_CHANGED" and re.search(
             rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
