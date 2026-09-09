@@ -108,7 +108,9 @@ class FrameworkInventoryTests(unittest.TestCase):
             target.parent.mkdir(parents=True)
             target.write_bytes(raw)
             with patch.object(validator, "ROOT", root):
-                with self.assertRaisesRegex(ValueError, "governed artifact pin drift"):
+                with self.assertRaisesRegex(
+                    ValueError, "unscoped git blob rejected|governed artifact pin drift"
+                ):
                     validator.validate(candidate)
 
     def test_governed_artifact_path_substitution_rejected(self):
