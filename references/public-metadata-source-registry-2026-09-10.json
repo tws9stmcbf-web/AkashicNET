@@ -142,6 +142,21 @@
       "truth_inference_allowed": false,
       "scientific_evidence_promotion_allowed": false,
       "review_state": "PRIMARY_SOURCE_IDENTIFIERS_REQUIRED_FOR_MATHEMATICAL_CLAIMS"
+    },
+    {
+      "source_id": "CTX-NAMAGIRI-THAYAR-RAMANUJAN",
+      "title": "Namagiri Thayar in Ramanujan biographical context",
+      "entity_type": "religious and devotional context",
+      "tradition": "Hindu tradition; family-deity context as reported in biographical accounts of Srinivasa Ramanujan",
+      "related_source_id": "SRC-RAMANUJAN-MATHEMATICAL-AND-BIOGRAPHICAL-CONTEXT",
+      "context_source": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan",
+      "classification": "CULTURAL_AND_LIVED_TESTIMONY_CONTEXT",
+      "claim_boundary": "This record identifies a religious tradition and reported personal source of inspiration in Ramanujan's biography. It is not evidence that mathematical results were supernaturally derived, a mathematical method, a proof, or scientific confirmation.",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "content_ingested": false,
+      "truth_inference_allowed": false,
+      "scientific_evidence_promotion_allowed": false,
+      "review_state": "CONTEXT_ONLY"
     }
   ]
 }
