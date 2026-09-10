@@ -2,6 +2,7 @@
 
 import copy
 import json
+import os
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -122,11 +123,12 @@ class ReleaseCandidateTests(unittest.TestCase):
             mock.Mock(stdout="candidate-head\n"),
             mock.Mock(stdout=DATA["candidate_base_commit"] + "\n"),
         ]
-        with mock.patch(
-            "scripts.validate_v016_release_candidate.subprocess.run",
-            side_effect=completed,
-        ):
-            self.assertEqual(validate_repository_binding(), [])
+        with mock.patch.dict(os.environ, {"CANDIDATE_HEAD_SHA": ""}):
+            with mock.patch(
+                "scripts.validate_v016_release_candidate.subprocess.run",
+                side_effect=completed,
+            ):
+                self.assertEqual(validate_repository_binding(), [])
 
 
 if __name__ == "__main__":
