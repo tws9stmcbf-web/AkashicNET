@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 from pathlib import Path
 
-from scripts.validate_v016_release_candidate import validate_manifest
+from scripts.validate_v016_release_candidate import (\n    validate_manifest,\n    validate_repository_binding,\n)
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads(
@@ -112,6 +112,18 @@ class ReleaseCandidateTests(unittest.TestCase):
             )
         )
         self.assertIn("candidate summary", errors)
+
+
+    def test_repository_binding_accepts_declared_current_base(self):
+        completed = [
+            mock.Mock(stdout="candidate-head\\n"),
+            mock.Mock(stdout=DATA["candidate_base_commit"] + "\\n"),
+        ]
+        with mock.patch(
+            "scripts.validate_v016_release_candidate.subprocess.run",
+            side_effect=completed,
+        ):
+            self.assertEqual(validate_repository_binding(), [])
 
 
 if __name__ == "__main__":
