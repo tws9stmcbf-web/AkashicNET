@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02",
+  "generated_at": "2026-09-10",
   "generator": "scripts/build_public_source_url_inventory_v014.py",
   "guards": {
     "automatic_evidence_promotion": false,
@@ -67,126 +67,126 @@
   },
   "shards": [
     {
-      "content_sha": "ce9b2ecd23340c49311ec69105c60a1988db754c",
+      "content_sha": "51c8b9bebfb3d3240809c1271c6dbaac7cef2c8f",
       "entry_count": 479,
-      "occurrence_count": 1297,
+      "occurrence_count": 1316,
       "path": "references/community/source-url-inventory-v0.14/shard-0.json",
       "shard": "0"
     },
     {
-      "content_sha": "10dfe0c59ed40ca70b9d5b3237e173e9536974f3",
-      "entry_count": 497,
-      "occurrence_count": 1529,
+      "content_sha": "8be8e616778f28e06c61270e6b1c329deb2fa09c",
+      "entry_count": 498,
+      "occurrence_count": 1552,
       "path": "references/community/source-url-inventory-v0.14/shard-1.json",
       "shard": "1"
     },
     {
-      "content_sha": "4ede6ed61d6b5620e9c09fa0155fa8a12ee79212",
+      "content_sha": "2798ea7b72b51a540578db77b34f1cd9de3a8a69",
       "entry_count": 477,
-      "occurrence_count": 1353,
+      "occurrence_count": 1372,
       "path": "references/community/source-url-inventory-v0.14/shard-2.json",
       "shard": "2"
     },
     {
-      "content_sha": "82bab7c9af19020fec8a79d0c703e54e3d983d82",
+      "content_sha": "1bfa481e64f051020083677ce02e9408bbffefb9",
       "entry_count": 484,
-      "occurrence_count": 1376,
+      "occurrence_count": 1382,
       "path": "references/community/source-url-inventory-v0.14/shard-3.json",
       "shard": "3"
     },
     {
-      "content_sha": "233008a241b6ae4b0e214799fd8919445ae2eb10",
+      "content_sha": "2a1a9b718420e5b044ff5a200375ceddc6a841c5",
       "entry_count": 474,
-      "occurrence_count": 1326,
+      "occurrence_count": 1338,
       "path": "references/community/source-url-inventory-v0.14/shard-4.json",
       "shard": "4"
     },
     {
-      "content_sha": "e0ac1d386ef4c92f57681d0c8d6dd30f68c7ec4c",
+      "content_sha": "bf6e976815402c6ba96a77afd5088ea45b0edd32",
       "entry_count": 488,
-      "occurrence_count": 1492,
+      "occurrence_count": 1502,
       "path": "references/community/source-url-inventory-v0.14/shard-5.json",
       "shard": "5"
     },
     {
-      "content_sha": "ad8ccb52c21012ee2bca3c61d132c3fbff7cec01",
+      "content_sha": "43a70b14b816862e476bdb4e921ff719555b2e6a",
       "entry_count": 457,
-      "occurrence_count": 1252,
+      "occurrence_count": 1263,
       "path": "references/community/source-url-inventory-v0.14/shard-6.json",
       "shard": "6"
     },
     {
-      "content_sha": "5dd3e6ddf2bee82bad2c3d45ef210ec17cc58072",
+      "content_sha": "6c4d2aab9426fd854af20971a9ef7e64e1f3c52b",
       "entry_count": 514,
-      "occurrence_count": 1391,
+      "occurrence_count": 1405,
       "path": "references/community/source-url-inventory-v0.14/shard-7.json",
       "shard": "7"
     },
     {
-      "content_sha": "476cccd1dfc5009ef77409d06e7c758d48de42a6",
+      "content_sha": "3a305d71b51f6a30b207b49da678d32e1247b974",
       "entry_count": 493,
-      "occurrence_count": 1360,
+      "occurrence_count": 1385,
       "path": "references/community/source-url-inventory-v0.14/shard-8.json",
       "shard": "8"
     },
     {
-      "content_sha": "53bb3c916538203c0156a15409fdc3db5ffe7f9d",
+      "content_sha": "9181b6a4ef654b1073f4572825af2c13b7142d3a",
       "entry_count": 444,
-      "occurrence_count": 1231,
+      "occurrence_count": 1247,
       "path": "references/community/source-url-inventory-v0.14/shard-9.json",
       "shard": "9"
     },
     {
-      "content_sha": "9b644756e8ac74f2565e2499d3704a198c08358b",
-      "entry_count": 485,
-      "occurrence_count": 1313,
+      "content_sha": "5fe62f05a5790ee05b8b17c2eb898655c6513ef4",
+      "entry_count": 484,
+      "occurrence_count": 1326,
       "path": "references/community/source-url-inventory-v0.14/shard-a.json",
       "shard": "a"
     },
     {
-      "content_sha": "d30d51b4dd0087782392d5fff4bffe70fcfe2d6e",
+      "content_sha": "e96f63ce0c0086b19f43ac1330707317df61d01b",
       "entry_count": 459,
-      "occurrence_count": 1292,
+      "occurrence_count": 1309,
       "path": "references/community/source-url-inventory-v0.14/shard-b.json",
       "shard": "b"
     },
     {
-      "content_sha": "bb2f240669c9894aaa45f42fed3a6d1f4dd6f1f0",
-      "entry_count": 492,
-      "occurrence_count": 1394,
+      "content_sha": "a6a83685126d88276377ebbfbece965caedd37f3",
+      "entry_count": 493,
+      "occurrence_count": 1413,
       "path": "references/community/source-url-inventory-v0.14/shard-c.json",
       "shard": "c"
     },
     {
-      "content_sha": "b9b5e320f8e257d41bdb1d08a71b6364601583ac",
+      "content_sha": "a61c658610a78a0f233720694fa46b87ae2e7194",
       "entry_count": 505,
-      "occurrence_count": 1386,
+      "occurrence_count": 1409,
       "path": "references/community/source-url-inventory-v0.14/shard-d.json",
       "shard": "d"
     },
     {
-      "content_sha": "ee492b6003b138c6de3095eb0089efa6e114c9c0",
+      "content_sha": "67cf3970548889bbedafaf76c2140374bf151719",
       "entry_count": 449,
-      "occurrence_count": 1273,
+      "occurrence_count": 1279,
       "path": "references/community/source-url-inventory-v0.14/shard-e.json",
       "shard": "e"
     },
     {
-      "content_sha": "a343bde60cfd5252d62bffb5a6fe1591f8a128f8",
+      "content_sha": "d46c3b3bbd4af478a4a45382fae991e61ac0969d",
       "entry_count": 468,
-      "occurrence_count": 1324,
+      "occurrence_count": 1350,
       "path": "references/community/source-url-inventory-v0.14/shard-f.json",
       "shard": "f"
     }
   ],
-  "source_commit": "c890f73c0d30606df658e33bc9219e300e13fbe4",
+  "source_commit": "6ce46cad7959d1c6bd7ea7d09465b0bebc753c73",
   "state": "GENERATED_UNASSESSED",
   "summary": {
+    "external_url_occurrences": 21848,
+    "unique_normalized_external_urls": 7666,
     "assessed_unique_urls": 2,
-    "external_url_occurrences": 21589,
-    "shard_count": 16,
-    "unassessed_unique_urls": 7661,
-    "unique_normalized_external_urls": 7663
+    "unassessed_unique_urls": 7664,
+    "shard_count": 16
   },
   "target_release": "0.14.0-beta.1"
 }
