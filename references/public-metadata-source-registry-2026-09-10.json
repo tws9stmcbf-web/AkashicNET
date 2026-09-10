@@ -50,7 +50,8 @@
       "classification": "ARCHIVAL_PRIMARY_DOCUMENTATION",
       "rights_status": "METADATA_ONLY_HOLD",
       "reuse_boundary": "No book text, translations, audio, photographs, score, or ceremonial knowledge is ingested, reproduced, or licensed by this record.",
-      "cultural_boundary": "Mazatec ceremonial knowledge is living Indigenous tradition; this record is documentation, not a practice protocol or universalised claim."
+      "cultural_boundary": "Mazatec ceremonial knowledge is living Indigenous tradition; this record is documentation, not a practice protocol or universalised claim.",
+      "content_ingested": false
     },
     {
       "source_id": "SRC-WIKIPEDIA-TERENCE-MCKENNA-NOVELTY-THEORY",
