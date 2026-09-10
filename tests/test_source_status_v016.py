@@ -476,6 +476,23 @@ def test_subordinate_negation_does_not_negate_terminal_status(status, observatio
     validator.validate(data)
 
 
+def test_unable_to_confirm_rejects_deletion():
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "DELETED")["evidence"]["observation"] = (
+        "A deletion notice says the archive was unable to confirm the source was deleted."
+    )
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+def test_no_doubt_phrase_remains_affirmative():
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "DELETED")["evidence"]["observation"] = (
+        "A deletion notice says there is no doubt the source was deleted."
+    )
+    validator.validate(data)
+
+
 def test_neither_reviewer_phrase_does_not_negate_terminal_status():
     data = copy.deepcopy(SYNTHETIC)
     event(data, "RETRACTED")["evidence"]["observation"] = (
