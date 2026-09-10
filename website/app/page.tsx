@@ -33,7 +33,7 @@ export default function Home() {
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="#vision">Vision</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="#vision">Vision</a><a href="/big-questions/bq002">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/about">About</a>
         </nav>
       </header>
 
@@ -45,6 +45,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="primary-link" href="#vision">Explore AkashicNET <span>↘</span></a>
             <a className="text-link" href="/community">Enter the public commons →</a>
+            <a className="text-link" href="/big-questions/bq002">BQ002 · Where do thoughts come from? →</a>
           </div>
         </div>
         <div className="orbital" aria-hidden="true">
@@ -156,6 +157,8 @@ export default function Home() {
           <article className="active"><span>Now</span><h3>Corpus canonicalisation</h3><p>Resolve identity, structure and relationships without overclaiming.</p><b>In progress</b></article>
           <article><span>Next</span><h3>Knowledge graph</h3><p>Typed, reviewable relationships across sources and frameworks.</p><b>Planned</b></article>
           <article><span>Later</span><h3>Public exploration</h3><p>Safe search and discovery designed around provenance and uncertainty.</p><b>Research direction</b></article>
+          <article><span>2027 · Exploratory</span><h3>REGENERATE</h3><p>A future framework for repair, renewal and resilient flourishing. Scope and evidence model remain to be defined.</p><b>Future framework</b></article>
+          <article><span>2027 · Exploratory</span><h3>TRANSCEND</h3><p>A future framework for examining transformation beyond current boundaries without presenting metaphysical possibilities as established fact.</p><b>Future framework</b></article>
         </div>
       </section>
 
