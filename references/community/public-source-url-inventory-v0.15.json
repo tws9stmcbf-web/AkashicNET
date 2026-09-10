@@ -39,10 +39,12 @@
       "https://idp.nature.com/authorize"
     ],
     "excluded_path_prefixes": [
-      "references/community/source-url-inventory-v0.14/"
+      "references/community/source-url-inventory-v0.14/",
+      "references/community/source-url-inventory-v0.15/"
     ],
     "excluded_paths": [
-      "references/community/public-source-url-inventory-v0.14.json"
+      "references/community/public-source-url-inventory-v0.14.json",
+      "references/community/public-source-url-inventory-v0.15.json"
     ],
     "first_party_hosts": [
       "akashicnet.org",
