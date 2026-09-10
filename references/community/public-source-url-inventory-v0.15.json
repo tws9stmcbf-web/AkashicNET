@@ -1,0 +1,75 @@
+{
+  "generated_at": null,
+  "generator": "scripts/build_public_source_url_inventory_v014.py",
+  "guards": {
+    "automatic_evidence_promotion": false,
+    "automatic_source_replacement": false,
+    "original_urls_preserved": true,
+    "unavailability_changes_truth_status": false
+  },
+  "integrity_repairs": [
+    {
+      "application_artifact": "references/source-integrity-v014-assessment-batch2-repair-application-v0.1.json",
+      "applied_on": "2026-09-02",
+      "derivative_records_classified": [
+        "URL-3679b700a4958709",
+        "URL-eb1aaef0085f9e78"
+      ],
+      "extraction_artifacts_removed": [
+        "URL-a67a32c505e3f0b9",
+        "URL-aeb32f562d7d212b"
+      ],
+      "occurrences_reassigned_to": [
+        "URL-215ce0460d6daaef",
+        "URL-bbe98925af8858af"
+      ],
+      "original_urls_preserved_in_audit_history": true,
+      "repair_id": "V014-B2-R1-R2",
+      "review_artifact": "references/source-integrity-v014-assessment-batch2-review-v0.1.json",
+      "snapshot_policy": "TARGETED_DETERMINISTIC_REPAIR_AGAINST_PRESERVED_SOURCE_COMMIT",
+      "source_commit_preserved": true
+    }
+  ],
+  "inventory_version": "0.15.0",
+  "scope": {
+    "deployment_alias_hosts": [
+      "akashicnet-public.vocal-crow-3599.chatgpt.site"
+    ],
+    "derivative_endpoint_urls": [
+      "https://idp.nature.com/authorize"
+    ],
+    "excluded_path_prefixes": [
+      "references/community/source-url-inventory-v0.14/",
+      "references/community/source-url-inventory-v0.15/"
+    ],
+    "excluded_paths": [
+      "references/community/public-source-url-inventory-v0.14.json",
+      "references/community/public-source-url-inventory-v0.15.json"
+    ],
+    "first_party_hosts": [
+      "akashicnet.org",
+      "www.akashicnet.org"
+    ],
+    "include_roots": [
+      "references/big-questions",
+      "references/community",
+      "research",
+      "website/app"
+    ],
+    "included_suffixes": [
+      ".csv",
+      ".json",
+      ".jsonl",
+      ".md",
+      ".tsx"
+    ],
+    "internal_github_prefixes": [
+      "https://github.com/tws9stmcbf-web/AkashicNET"
+    ]
+  },
+  "shards": [],
+  "source_commit": null,
+  "state": "NOT_YET_GENERATED",
+  "summary": null,
+  "target_release": "0.15.0"
+}
