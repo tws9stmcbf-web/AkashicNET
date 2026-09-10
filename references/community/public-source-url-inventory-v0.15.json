@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-09-10",
-  "generator": "scripts/build_public_source_url_inventory_v014.py",
+  "generator": "scripts/build_public_source_url_inventory_v015.py",
   "guards": {
     "automatic_evidence_promotion": false,
     "automatic_source_replacement": false,
@@ -190,5 +190,5 @@
     "unassessed_unique_urls": 7664,
     "shard_count": 16
   },
-  "target_release": "0.14.0-beta.1"
+  "target_release": "0.15.0-beta.1"
 }
