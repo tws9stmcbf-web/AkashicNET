@@ -1,0 +1,163 @@
+{
+  "schema_version": "0.1",
+  "record_type": "public_metadata_only_source_registry",
+  "created_at": "2026-09-10",
+  "boundaries": {
+    "content_ingested": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false
+  },
+  "records": [
+    {
+      "source_id": "SRC-SI-MARIA-SABINA-1974",
+      "title": "Maria Sabina Sings Her Mazatec Mushroom Velada",
+      "source_type": "institutional archival catalogue record",
+      "institution": "Smithsonian Libraries and Archives",
+      "creator": "María Sabina (1894–1985)",
+      "contributors": {
+        "compiler": "R. Gordon Wasson",
+        "translators": [
+          "George M. Cowan",
+          "Florence Cowan"
+        ],
+        "transcriber": "Willard Rhodes"
+      },
+      "publication_date": "1974",
+      "documented_event_date": "1958-07-12/1958-07-13",
+      "place": "Huautla de Jiménez, Oaxaca, Mexico",
+      "languages": [
+        "Mazatec",
+        "English",
+        "Spanish"
+      ],
+      "formats_described": [
+        "transcript and translation",
+        "musical score",
+        "photographic sequence",
+        "four audio cassettes"
+      ],
+      "subjects": [
+        "Mazatec poetry",
+        "rites and ceremonies",
+        "mushroom ceremony"
+      ],
+      "record_id": "siris_sil_1117373",
+      "original_url": "https://www.si.edu/object/maria-sabina-sings-her-mazatec-mushroom-velada%3Asiris_sil_1117373",
+      "metadata_licence": "CC0, as stated by the catalogue record",
+      "metadata_basis": "Offline capture supplied by user; no catalogue-described material is ingested.",
+      "classification": "ARCHIVAL_PRIMARY_DOCUMENTATION",
+      "rights_status": "METADATA_ONLY_HOLD",
+      "reuse_boundary": "No book text, translations, audio, photographs, score, or ceremonial knowledge is ingested, reproduced, or licensed by this record.",
+      "cultural_boundary": "Mazatec ceremonial knowledge is living Indigenous tradition; this record is documentation, not a practice protocol or universalised claim.",
+      "content_ingested": false
+    },
+    {
+      "source_id": "SRC-WIKIPEDIA-TERENCE-MCKENNA-NOVELTY-THEORY",
+      "title": "Terence McKenna — Novelty theory and Timewave Zero",
+      "source_type": "tertiary biographical reference",
+      "publisher": "Wikipedia",
+      "subject_name": "Terence Kemp McKenna",
+      "life_dates": "1946-11-16/2000-04-03",
+      "roles_described": [
+        "author",
+        "lecturer",
+        "ethnobotanist"
+      ],
+      "fields_described": [
+        "ethnobotany",
+        "ethnomycology",
+        "metaphysics"
+      ],
+      "related_work": "The Invisible Landscape",
+      "theory_metadata": {
+        "name": "Novelty theory / Timewave Zero",
+        "described_basis": "I Ching-derived fractal model",
+        "stated_target_date": "2012",
+        "critical_status": "The linked article describes novelty theory as pseudoscience."
+      },
+      "original_url": "https://en.wikipedia.org/wiki/Terence_McKenna#Novelty_theory_and_Timewave_Zero",
+      "retrieved_at": "2026-09-10",
+      "classification": "INTERPRETIVE_CONTEXT_REFERENCE",
+      "claim_boundary": "This entry records how the linked article presents the theory within McKenna's intellectual history. It is not evidence that the theory is valid, predictive, scientific, or accepted.",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "content_ingested": false,
+      "review_state": "CONTEXT_ONLY"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-TESLA-MY-INVENTIONS-1919",
+      "title": "My Inventions: Nikola Tesla's Autobiography",
+      "creator": "Nikola Tesla (1856–1943)",
+      "source_type": "primary autobiographical source / historical technical narrative",
+      "first_publication": "Electrical Experimenter, 1919",
+      "original_url": "https://en.wikisource.org/wiki/My_Inventions",
+      "sections_described": [
+        "My Early Life",
+        "My First Efforts At Invention",
+        "My Later Endeavors",
+        "The Discovery of the Tesla Coil and Transformer",
+        "The Magnifying Transmitter",
+        "The Art of Telautomatics"
+      ],
+      "topics_described": [
+        "invention",
+        "Tesla coil and transformer",
+        "magnifying transmitter",
+        "telautomatics"
+      ],
+      "classification": "PRIMARY_HISTORICAL_SOURCE",
+      "rights_status": "PUBLIC_DOMAIN_WORK_WITH_PLATFORM_TRANSCRIPTION_CONTEXT",
+      "content_ingested": false,
+      "claim_boundary": "Tesla's autobiographical accounts, predictions, and self-interpretations are recorded as testimony and historical context. They are not independently verified technical evidence or scientific validation.",
+      "review_state": "HISTORICAL_CONTEXT_ONLY"
+    },
+    {
+      "source_id": "SRC-RAMANUJAN-MATHEMATICAL-AND-BIOGRAPHICAL-CONTEXT",
+      "title": "Srinivasa Ramanujan: mathematical corpus and biographical context",
+      "subject_name": "Srinivasa Ramanujan (1887–1920)",
+      "source_type": "composite metadata record",
+      "mathematical_status": "Mathematical results attributed to Ramanujan require independent proof or authoritative mathematical-source verification before being classified as established evidence.",
+      "primary_source_categories": [
+        "published papers",
+        "notebooks and manuscript leaves",
+        "Collected Papers of Srinivasa Ramanujan",
+        "Hardy–Ramanujan correspondence"
+      ],
+      "biographical_context_source": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan",
+      "lived_testimony": {
+        "topic": "Namagiri inspiration and visionary experience",
+        "classification": "LIVED_EXPERIENCE_OR_BIOGRAPHICAL_TESTIMONY",
+        "boundary": "Accounts of spiritual inspiration are recorded as biographical and religious testimony, not as a mathematical method, proof, causal explanation, or scientific confirmation."
+      },
+      "mathematical_areas_described": [
+        "number theory",
+        "infinite series",
+        "continued fractions",
+        "partition theory",
+        "mock theta functions"
+      ],
+      "classification": "MIXED_PRIMARY_MATHEMATICAL_AND_BIOGRAPHICAL_CONTEXT",
+      "rights_status": "METADATA_ONLY_PENDING_PRIMARY_SOURCE_IDENTIFIERS",
+      "content_ingested": false,
+      "truth_inference_allowed": false,
+      "scientific_evidence_promotion_allowed": false,
+      "review_state": "PRIMARY_SOURCE_IDENTIFIERS_REQUIRED_FOR_MATHEMATICAL_CLAIMS"
+    },
+    {
+      "source_id": "CTX-NAMAGIRI-THAYAR-RAMANUJAN",
+      "title": "Namagiri Thayar in Ramanujan biographical context",
+      "entity_type": "religious and devotional context",
+      "tradition": "Hindu tradition; family-deity context as reported in biographical accounts of Srinivasa Ramanujan",
+      "related_source_id": "SRC-RAMANUJAN-MATHEMATICAL-AND-BIOGRAPHICAL-CONTEXT",
+      "context_source": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan",
+      "classification": "CULTURAL_AND_LIVED_TESTIMONY_CONTEXT",
+      "claim_boundary": "This record identifies a religious tradition and reported personal source of inspiration in Ramanujan's biography. It is not evidence that mathematical results were supernaturally derived, a mathematical method, a proof, or scientific confirmation.",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "content_ingested": false,
+      "truth_inference_allowed": false,
+      "scientific_evidence_promotion_allowed": false,
+      "review_state": "CONTEXT_ONLY"
+    }
+  ]
+}
