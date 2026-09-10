@@ -70,12 +70,12 @@
     },
     {
       "path": "scripts/validate_source_status_v016.py",
-      "git_blob_sha": "d40777fc5c16809ccbd5a670226da21357898469",
+      "git_blob_sha": "6220f6f18d024aedd13c3d4aa7c48e52a93706ec",
       "role": "SOURCE_STATUS_VALIDATOR"
     },
     {
       "path": "tests/test_source_status_v016.py",
-      "git_blob_sha": "4d0155a32b8e226e5a9870b89565d06d886a546e",
+      "git_blob_sha": "aee33ea4072cb2c475352312640dbd9cfcb394b0",
       "role": "SOURCE_STATUS_MUTATION_TESTS"
     }
   ],

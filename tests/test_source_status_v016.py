@@ -493,13 +493,40 @@ def test_unable_to_dispute_phrase_remains_affirmative():
     validator.validate(data)
 
 
-@pytest.mark.parametrize("doubt_phrase", ["no doubt", "no reasonable doubt", "no serious doubt"])
+@pytest.mark.parametrize(
+    "doubt_phrase", ["no doubt", "no reasonable doubt", "no serious doubt", "no lingering doubt"]
+)
 def test_bounded_doubt_phrases_remain_affirmative(doubt_phrase):
     data = copy.deepcopy(SYNTHETIC)
     event(data, "DELETED")["evidence"]["observation"] = (
         f"A deletion notice says there is {doubt_phrase} the source was deleted."
     )
     validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    "modifier", ["independently", "directly", "actually", "fully", "definitively", "conclusively"]
+)
+def test_unable_to_bounded_modifier_confirm_rejects_deletion(modifier):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "DELETED")["evidence"]["observation"] = (
+        f"A deletion notice says the archive was unable to {modifier} confirm the source was deleted."
+    )
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
+
+
+@pytest.mark.parametrize(
+    ("status", "verb"), [("TITLE_CHANGED", "observe"), ("RETRACTED", "verify"), ("DELETED", "confirm")]
+)
+def test_unable_to_bounded_modifiers_reject_all_terminal_verbs(status, verb):
+    data = copy.deepcopy(SYNTHETIC)
+    concept = {"TITLE_CHANGED": "title-change", "RETRACTED": "retraction", "DELETED": "deletion"}[status]
+    event(data, status)["evidence"]["observation"] = (
+        f"A {concept} notice says the archive was unable to independently directly {verb} the {concept}."
+    )
+    with pytest.raises(AssertionError, match="evidence is negated"):
+        validator.validate(data)
 
 
 def test_neither_reviewer_phrase_does_not_negate_terminal_status():
