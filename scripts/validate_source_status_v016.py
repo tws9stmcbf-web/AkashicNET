@@ -141,7 +141,8 @@ def terminal_evidence_is_negated(status: str, observation: str) -> bool:
     token = rf"(?!(?:{coordinated_clause}|{subordinate_clause})){raw_token}"
     # "not only ... but ..." is affirmative focus, not status negation.
     # "no doubt" is idiomatic certainty, not a status negation.
-    negation = rf"(?:no(?!\s+doubt\b)|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|unable to|{without_denial})"
+    unable_denial = r"unable\s+to\s+(?:confirm(?:ed|ation)?|verif(?:y|ied|ication)|observ(?:e|ed|ation))"
+    negation = rf"(?:no(?!\s+(?:(?:reasonable|serious)\s+)?doubt\b)|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{unable_denial}|{without_denial})"
     negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
     # Only 'without' clauses whose complement denotes missing evidence negate
     # a status. Provenance and no-promotion consequences remain affirmative.

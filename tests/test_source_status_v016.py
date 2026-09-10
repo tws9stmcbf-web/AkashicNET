@@ -485,10 +485,19 @@ def test_unable_to_confirm_rejects_deletion():
         validator.validate(data)
 
 
-def test_no_doubt_phrase_remains_affirmative():
+def test_unable_to_dispute_phrase_remains_affirmative():
     data = copy.deepcopy(SYNTHETIC)
     event(data, "DELETED")["evidence"]["observation"] = (
-        "A deletion notice says there is no doubt the source was deleted."
+        "A deletion notice says the archive was unable to dispute the source was deleted."
+    )
+    validator.validate(data)
+
+
+@pytest.mark.parametrize("doubt_phrase", ["no doubt", "no reasonable doubt", "no serious doubt"])
+def test_bounded_doubt_phrases_remain_affirmative(doubt_phrase):
+    data = copy.deepcopy(SYNTHETIC)
+    event(data, "DELETED")["evidence"]["observation"] = (
+        f"A deletion notice says there is {doubt_phrase} the source was deleted."
     )
     validator.validate(data)
 
