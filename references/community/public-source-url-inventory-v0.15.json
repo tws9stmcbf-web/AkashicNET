@@ -69,122 +69,122 @@
   },
   "shards": [
     {
-      "content_sha": "380f23547a2f2d84373a823e189328b258398217",
+      "content_sha": "245e7ed7b390df3f76317dde2e823dddb53b990f",
       "entry_count": 479,
-      "occurrence_count": 2328,
+      "occurrence_count": 1316,
       "path": "references/community/source-url-inventory-v0.15/shard-0.json",
       "shard": "0"
     },
     {
-      "content_sha": "5b83e3aae374f630ffcbce9fdd9c7d5c5d06bb33",
+      "content_sha": "d139d7794873fd5284ddfcbf3184e072e492c599",
       "entry_count": 498,
-      "occurrence_count": 2627,
+      "occurrence_count": 1552,
       "path": "references/community/source-url-inventory-v0.15/shard-1.json",
       "shard": "1"
     },
     {
-      "content_sha": "898e2f5b4c5d0e9a4ba5692c0981bb525d171718",
+      "content_sha": "6913fdcace8cab87dbcd7d6af61ccc6532718088",
       "entry_count": 477,
-      "occurrence_count": 2390,
+      "occurrence_count": 1372,
       "path": "references/community/source-url-inventory-v0.15/shard-2.json",
       "shard": "2"
     },
     {
-      "content_sha": "38875702a5bc8e9948d862a04a35f4ab5ec132b8",
+      "content_sha": "6b439c48764bcbf7696f27ca7696d9b750b7be35",
       "entry_count": 484,
-      "occurrence_count": 2416,
+      "occurrence_count": 1382,
       "path": "references/community/source-url-inventory-v0.15/shard-3.json",
       "shard": "3"
     },
     {
-      "content_sha": "52df187ebe87154bbe3c534d82cb569e64014fd1",
+      "content_sha": "708f2f6274d0af64cf97c51083ec100f868f2cd3",
       "entry_count": 474,
-      "occurrence_count": 2347,
+      "occurrence_count": 1338,
       "path": "references/community/source-url-inventory-v0.15/shard-4.json",
       "shard": "4"
     },
     {
-      "content_sha": "97e3bf1ea3196af5ac1cd8ef23945380859ff912",
+      "content_sha": "46239a4d70eee3a7b6c00b930bff3a2185dfc45b",
       "entry_count": 488,
-      "occurrence_count": 2564,
+      "occurrence_count": 1502,
       "path": "references/community/source-url-inventory-v0.15/shard-5.json",
       "shard": "5"
     },
     {
-      "content_sha": "8a65cff718c11d6ab07d8b330cacdc605878dbdb",
+      "content_sha": "fc4f98bd6a4c240db4eb533886e4153e7cc3f063",
       "entry_count": 457,
-      "occurrence_count": 2235,
+      "occurrence_count": 1263,
       "path": "references/community/source-url-inventory-v0.15/shard-6.json",
       "shard": "6"
     },
     {
-      "content_sha": "c1d0633f1de71fd593ca59d015c3ae2d3291eabb",
+      "content_sha": "4713b85bb41509400845975704fbd02a04dbf8e4",
       "entry_count": 514,
-      "occurrence_count": 2492,
+      "occurrence_count": 1405,
       "path": "references/community/source-url-inventory-v0.15/shard-7.json",
       "shard": "7"
     },
     {
-      "content_sha": "8e8ee7e986ecb99f6a7286c047b5693b55727962",
+      "content_sha": "4ffb4e1a052d10166e4b96248176f962feb706d6",
       "entry_count": 493,
-      "occurrence_count": 2431,
+      "occurrence_count": 1385,
       "path": "references/community/source-url-inventory-v0.15/shard-8.json",
       "shard": "8"
     },
     {
-      "content_sha": "c540eaf8e8dc67b5cc38ddbbc52ef7d12cd49035",
+      "content_sha": "a01514c63630b795b45d53f0f3122be55280c4f9",
       "entry_count": 444,
-      "occurrence_count": 2192,
+      "occurrence_count": 1247,
       "path": "references/community/source-url-inventory-v0.15/shard-9.json",
       "shard": "9"
     },
     {
-      "content_sha": "aad81d8babc3fea34dcb59f01148b4f68d1283d0",
+      "content_sha": "9a815e28c7025d22899c88b9de2790c6f52f1666",
       "entry_count": 484,
-      "occurrence_count": 2350,
+      "occurrence_count": 1326,
       "path": "references/community/source-url-inventory-v0.15/shard-a.json",
       "shard": "a"
     },
     {
-      "content_sha": "1bbd058036d1cf50d074edd23e65bc8fa213afa0",
+      "content_sha": "b6e07de64387d2b1e59860888db0d101cc67255f",
       "entry_count": 459,
-      "occurrence_count": 2281,
+      "occurrence_count": 1309,
       "path": "references/community/source-url-inventory-v0.15/shard-b.json",
       "shard": "b"
     },
     {
-      "content_sha": "c78453b7393e4ec2170a716da9934df50a52df53",
+      "content_sha": "d46a9928e8d3b46fddab7f0ba8594c5de9907ecb",
       "entry_count": 493,
-      "occurrence_count": 2466,
+      "occurrence_count": 1413,
       "path": "references/community/source-url-inventory-v0.15/shard-c.json",
       "shard": "c"
     },
     {
-      "content_sha": "ce7c48421178a0f3fc6eb17438ed4163b59ebb00",
+      "content_sha": "95cf2a44f3ad67e77459530cb767bee4c5038ba5",
       "entry_count": 505,
-      "occurrence_count": 2477,
+      "occurrence_count": 1409,
       "path": "references/community/source-url-inventory-v0.15/shard-d.json",
       "shard": "d"
     },
     {
-      "content_sha": "c8da6e71b752bbc59912ca4a1e01b0518cbf3546",
+      "content_sha": "afb335c0c85f00454966e2b1aa16548e27ddb05c",
       "entry_count": 449,
-      "occurrence_count": 2240,
+      "occurrence_count": 1279,
       "path": "references/community/source-url-inventory-v0.15/shard-e.json",
       "shard": "e"
     },
     {
-      "content_sha": "b4d2b877eebaead812390d3df3a23e9816e764a6",
+      "content_sha": "d4f4dbebc6fd6e61e2efa66786746a0c918e80ca",
       "entry_count": 468,
-      "occurrence_count": 2348,
+      "occurrence_count": 1350,
       "path": "references/community/source-url-inventory-v0.15/shard-f.json",
       "shard": "f"
     }
   ],
-  "source_commit": "e5a62b300d90787e849c54b29888b68ddbc1a3b4",
+  "source_commit": "9b8cc2be178c110026441160b0b6dd5a6ea8cf51",
   "state": "GENERATED_UNASSESSED",
   "summary": {
-    "external_url_occurrences": 38184,
+    "external_url_occurrences": 21848,
     "unique_normalized_external_urls": 7666,
     "assessed_unique_urls": 2,
     "unassessed_unique_urls": 7664,
