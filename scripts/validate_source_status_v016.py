@@ -21,9 +21,36 @@ ALL_STATUSES = {
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 TERMINAL_STATUSES = {"TITLE_CHANGED", "RETRACTED", "DELETED"}
 NEGATED_TERMINAL_MARKERS = {
-    "TITLE_CHANGED": ("no title-change", "title did not change", "title was not changed"),
-    "RETRACTED": ("no retraction", "not retracted", "was not retracted"),
-    "DELETED": ("no deletion", "not deleted", "was not deleted"),
+    "TITLE_CHANGED": (
+        "no title-change",
+        "title did not change",
+        "title was not changed",
+        "title-change was not observed",
+    ),
+    "RETRACTED": (
+        "no retraction",
+        "not retracted",
+        "was not retracted",
+        "has not been retracted",
+        "retraction was not observed",
+    ),
+    "DELETED": (
+        "no deletion",
+        "not deleted",
+        "was not deleted",
+        "has not been deleted",
+        "deletion was not observed",
+    ),
+}
+NEGATION_CONTRACTIONS = {
+    "wasn't": "was not",
+    "wasn’t": "was not",
+    "isn't": "is not",
+    "isn’t": "is not",
+    "hasn't": "has not",
+    "hasn’t": "has not",
+    "didn't": "did not",
+    "didn’t": "did not",
 }
 
 
@@ -68,6 +95,129 @@ def require_reserved_url(value, field: str) -> None:
         or parsed.password is not None
     ):
         fail(f"synthetic URL must use a reserved hostname: {field}")
+
+
+def normalize_negation(text: str) -> str:
+    normalized = text.lower()
+    for contraction, expansion in NEGATION_CONTRACTIONS.items():
+        normalized = normalized.replace(contraction, expansion)
+    return re.sub(r"\b([a-z]+)n['’]t\b", r"\1 not", normalized)
+
+
+def terminal_evidence_is_negated(status: str, observation: str) -> bool:
+    concept_patterns = {
+        "TITLE_CHANGED": r"title(?:[- ]chang(?:e|ed|ing))",
+        "RETRACTED": r"retract(?:ion|ed|ing)",
+        "DELETED": r"delet(?:ion|ed|ing)",
+    }
+    without_denial = (
+        r"without(?:[\s,]+(?:any|sufficient|independent|direct|documented|published|supporting|corroborating)){0,2}[\s,]+"
+        r"(?:confirmation|verification|evidence|observation)\b"
+        r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
+        r"(?:confirming|verifying|observing)\b"
+        r"|without(?:[\s,]+(?:independently|directly|actually)){0,2}[\s,]+"
+        r"(?:finding|detecting|locating|discovering)(?:[\s,]+[a-z-]+){0,3}[\s,]+"
+        r"(?:confirmation|verification|evidence|observation)\b"
+    )
+    negation = rf"(?:no|not|never|failed to|failure to|{without_denial})"
+    concept = concept_patterns[status]
+    # A coordinating comma starts a separate clause only when a bounded
+    # finite predicate follows. Modifier phrases such as "for the moment"
+    # and "so far" therefore remain in the status predicate.
+    coordinated_clause = (
+        r"(?:but|yet|and|or|nor|so)(?=\s+"
+        r"(?:[^\s,;:.]+\s+){0,3}"
+        r"(?:is|are|was|were|has|have|had|does|do|did|will|would|can|could|"
+        r"may|might|must|shall|should|occurred|changed|retracted|deleted|"
+        r"remains?|became|becomes?|confirms?|confirmed|states?|stated|reports?|reported|"
+        r"records?|recorded|says|said|indicates?|indicated|shows?|showed|notes?|noted|"
+        r"documents?|documented|affirms?|affirmed|finds?|found|observes?|observed|"
+        r"verifies?|verified)\b)"
+    )
+    separator = rf"(?:\s+|,(?!\s*{coordinated_clause})\s*)"
+    raw_token = r"[a-z]+(?:-[a-z]+)*"
+    subordinate_clause = r"(?:after|although|because|if|once|since|unless|until|when|while|whereas)\b"
+    # Do not let bounded modifier scans cross coordinated or subordinate clauses.
+    token = rf"(?!(?:{coordinated_clause}|{subordinate_clause})){raw_token}"
+    # "not only ... but ..." is affirmative focus, not status negation.
+    # "no doubt"/"no lingering doubt" is idiomatic certainty, not a status negation.
+    unable_denial = (
+        r"unable\s+to(?:\s+(?:independently|directly|actually|fully|definitively|conclusively)){0,2}\s+"
+        r"(?:confirm(?:ed|ation)?|verif(?:y|ied|ication)|observ(?:e|ed|ation))"
+    )
+    negation = rf"(?:no(?!\s+(?:(?:reasonable|serious|lingering)\s+)?doubt\b)|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to|{unable_denial}|{without_denial})"
+    negation_before_concept = rf"(?:{negation})(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
+    # Only 'without' clauses whose complement denotes missing evidence negate
+    # a status. Provenance and no-promotion consequences remain affirmative.
+    # A generic post-concept "no" is excluded so promotion disclaimers such as
+    # "deleted and no claims were promoted" remain affirmative.
+    post_negation = rf"(?:never|failed to|failure to|yet to|{without_denial})"
+    concept_before_negation = rf"(?:{concept})(?:{separator}{token}){{0,6}}{separator}{post_negation}\b"
+    # A nearby "not" only negates the status when it leads to an event or
+    # evidence predicate—not an unrelated verb such as "disputed".
+    terminal_predicate = r"(?:occur(?:red)?|happen(?:ed)?|confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation)|retract(?:ed|ion)|delet(?:ed|ion)|chang(?:e|ed|ing))"
+    concept_before_not_terminal_predicate = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}"
+        rf"not(?!\s+(?:only|merely|just)\b)(?:{separator}{token}){{0,3}}{separator}"
+        rf"{terminal_predicate}\b"
+    )
+    concept_without_evidence = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}no"
+        rf"(?:{separator}{token}){{0,2}}{separator}"
+        r"(?:confirmation|verification|evidence|observation)\b"
+    )
+    concept_cannot_be_confirmed = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}cannot"
+        rf"(?:{separator}(?:be|have|been)){{0,2}}{separator}"
+        r"(?:confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation))\b"
+    )
+    concept_remains_unconfirmed = (
+        rf"(?:{concept}){separator}(?:remains?|is|was|are|were){separator}"
+        r"(?:unconfirmed|unverified)\b"
+    )
+    concept_idiomatic_nonconfirmation = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}"
+        rf"(?:by{separator}no{separator}means|in{separator}no{separator}way){separator}"
+        r"(?:confirm(?:ed|ation)?|verif(?:ied|ication)|observ(?:ed|ation))\b"
+    )
+    neither_before_concept = (
+        rf"\bneither(?:{separator}{token}){{0,5}}{separator}(?:{concept})"
+        rf"(?:{separator}{token}){{0,5}}{separator}nor\b"
+    )
+    concept_neither_nor = (
+        rf"(?:{concept})(?:{separator}{token}){{0,4}}{separator}neither"
+        rf"(?:{separator}{token}){{0,4}}{separator}nor\b"
+    )
+    concept_comma_modifier_not = (
+        rf"(?:{concept}){separator}(?:has|have|had|is|are|was|were),\s*"
+        r"(?:for|so)(?:\s+[a-z-]+){0,5},\s*"
+        r"not(?!\s+(?:only|merely|just)\b)\b"
+    )
+    reverse_title_change_denial = (
+        rf"\bno(?:{separator}{token}){{0,3}}{separator}chang(?:e|ed|ing)\b"
+        rf"(?:{separator}{token}){{0,4}}{separator}title\b"
+    )
+    return bool(
+        re.search(negation_before_concept, observation)
+        or re.search(concept_before_negation, observation)
+        or re.search(concept_before_not_terminal_predicate, observation)
+        or re.search(concept_without_evidence, observation)
+        or re.search(concept_cannot_be_confirmed, observation)
+        or re.search(concept_remains_unconfirmed, observation)
+        or re.search(concept_idiomatic_nonconfirmation, observation)
+        or re.search(neither_before_concept, observation)
+        or re.search(concept_neither_nor, observation)
+        or re.search(concept_comma_modifier_not, observation)
+        or (status == "TITLE_CHANGED" and re.search(rf"\btitle(?:{separator}{token}){{0,3}}{separator}unchanged\b", observation))
+        or (status == "RETRACTED" and re.search(r"\bunretracted\b", observation))
+        or (status == "DELETED" and re.search(r"\bundeleted\b", observation))
+        or (status == "TITLE_CHANGED" and re.search(reverse_title_change_denial, observation))
+        or (status == "TITLE_CHANGED" and re.search(
+            rf"\btitle(?:['’]s)?(?:{separator}{token}){{0,6}}{separator}(?:no|not(?!\s+(?:only|merely|just)\b)|never|failed to|failure to|yet to)(?:{separator}{token}){{0,5}}{separator}chang(?:e|ed|ing)\b",
+            observation,
+        ))
+        or any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status])
+    )
 
 
 def validate(data: dict) -> None:
@@ -154,11 +304,11 @@ def validate(data: dict) -> None:
         if status in {"CORRECTED", "RETRACTED"}:
             if not event["evidence"].get("notice_url"):
                 fail(f"notice status lacks notice URL: {event_id}")
-        observation = event["evidence"]["observation"].lower()
+        observation = normalize_negation(event["evidence"]["observation"])
         if synthetic and status in TERMINAL_STATUSES:
             if event["evidence"].get("observed_status") != status:
                 fail(f"synthetic terminal status lacks affirmative structured evidence: {event_id}")
-            if any(marker in observation for marker in NEGATED_TERMINAL_MARKERS[status]):
+            if terminal_evidence_is_negated(status, observation):
                 fail(f"synthetic terminal status evidence is negated: {event_id}")
         if status == "RETRACTED":
             affirmative_markers = ("retraction notice", "has been retracted", "was retracted")
