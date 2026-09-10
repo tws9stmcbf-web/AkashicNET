@@ -18,15 +18,31 @@
       "creator": "María Sabina (1894–1985)",
       "contributors": {
         "compiler": "R. Gordon Wasson",
-        "translators": ["George M. Cowan", "Florence Cowan"],
+        "translators": [
+          "George M. Cowan",
+          "Florence Cowan"
+        ],
         "transcriber": "Willard Rhodes"
       },
       "publication_date": "1974",
       "documented_event_date": "1958-07-12/1958-07-13",
       "place": "Huautla de Jiménez, Oaxaca, Mexico",
-      "languages": ["Mazatec", "English", "Spanish"],
-      "formats_described": ["transcript and translation", "musical score", "photographic sequence", "four audio cassettes"],
-      "subjects": ["Mazatec poetry", "rites and ceremonies", "mushroom ceremony"],
+      "languages": [
+        "Mazatec",
+        "English",
+        "Spanish"
+      ],
+      "formats_described": [
+        "transcript and translation",
+        "musical score",
+        "photographic sequence",
+        "four audio cassettes"
+      ],
+      "subjects": [
+        "Mazatec poetry",
+        "rites and ceremonies",
+        "mushroom ceremony"
+      ],
       "record_id": "siris_sil_1117373",
       "original_url": "https://www.si.edu/object/maria-sabina-sings-her-mazatec-mushroom-velada%3Asiris_sil_1117373",
       "metadata_licence": "CC0, as stated by the catalogue record",
@@ -43,8 +59,16 @@
       "publisher": "Wikipedia",
       "subject_name": "Terence Kemp McKenna",
       "life_dates": "1946-11-16/2000-04-03",
-      "roles_described": ["author", "lecturer", "ethnobotanist"],
-      "fields_described": ["ethnobotany", "ethnomycology", "metaphysics"],
+      "roles_described": [
+        "author",
+        "lecturer",
+        "ethnobotanist"
+      ],
+      "fields_described": [
+        "ethnobotany",
+        "ethnomycology",
+        "metaphysics"
+      ],
       "related_work": "The Invisible Landscape",
       "theory_metadata": {
         "name": "Novelty theory / Timewave Zero",
@@ -59,6 +83,33 @@
       "rights_status": "LINK_AND_METADATA_ONLY",
       "content_ingested": false,
       "review_state": "CONTEXT_ONLY"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-TESLA-MY-INVENTIONS-1919",
+      "title": "My Inventions: Nikola Tesla's Autobiography",
+      "creator": "Nikola Tesla (1856–1943)",
+      "source_type": "primary autobiographical source / historical technical narrative",
+      "first_publication": "Electrical Experimenter, 1919",
+      "original_url": "https://en.wikisource.org/wiki/My_Inventions",
+      "sections_described": [
+        "My Early Life",
+        "My First Efforts At Invention",
+        "My Later Endeavors",
+        "The Discovery of the Tesla Coil and Transformer",
+        "The Magnifying Transmitter",
+        "The Art of Telautomatics"
+      ],
+      "topics_described": [
+        "invention",
+        "Tesla coil and transformer",
+        "magnifying transmitter",
+        "telautomatics"
+      ],
+      "classification": "PRIMARY_HISTORICAL_SOURCE",
+      "rights_status": "PUBLIC_DOMAIN_WORK_WITH_PLATFORM_TRANSCRIPTION_CONTEXT",
+      "content_ingested": false,
+      "claim_boundary": "Tesla's autobiographical accounts, predictions, and self-interpretations are recorded as testimony and historical context. They are not independently verified technical evidence or scientific validation.",
+      "review_state": "HISTORICAL_CONTEXT_ONLY"
     }
   ]
 }
