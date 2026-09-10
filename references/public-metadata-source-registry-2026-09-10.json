@@ -110,6 +110,38 @@
       "content_ingested": false,
       "claim_boundary": "Tesla's autobiographical accounts, predictions, and self-interpretations are recorded as testimony and historical context. They are not independently verified technical evidence or scientific validation.",
       "review_state": "HISTORICAL_CONTEXT_ONLY"
+    },
+    {
+      "source_id": "SRC-RAMANUJAN-MATHEMATICAL-AND-BIOGRAPHICAL-CONTEXT",
+      "title": "Srinivasa Ramanujan: mathematical corpus and biographical context",
+      "subject_name": "Srinivasa Ramanujan (1887–1920)",
+      "source_type": "composite metadata record",
+      "mathematical_status": "Mathematical results attributed to Ramanujan require independent proof or authoritative mathematical-source verification before being classified as established evidence.",
+      "primary_source_categories": [
+        "published papers",
+        "notebooks and manuscript leaves",
+        "Collected Papers of Srinivasa Ramanujan",
+        "Hardy–Ramanujan correspondence"
+      ],
+      "biographical_context_source": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan",
+      "lived_testimony": {
+        "topic": "Namagiri inspiration and visionary experience",
+        "classification": "LIVED_EXPERIENCE_OR_BIOGRAPHICAL_TESTIMONY",
+        "boundary": "Accounts of spiritual inspiration are recorded as biographical and religious testimony, not as a mathematical method, proof, causal explanation, or scientific confirmation."
+      },
+      "mathematical_areas_described": [
+        "number theory",
+        "infinite series",
+        "continued fractions",
+        "partition theory",
+        "mock theta functions"
+      ],
+      "classification": "MIXED_PRIMARY_MATHEMATICAL_AND_BIOGRAPHICAL_CONTEXT",
+      "rights_status": "METADATA_ONLY_PENDING_PRIMARY_SOURCE_IDENTIFIERS",
+      "content_ingested": false,
+      "truth_inference_allowed": false,
+      "scientific_evidence_promotion_allowed": false,
+      "review_state": "PRIMARY_SOURCE_IDENTIFIERS_REQUIRED_FOR_MATHEMATICAL_CLAIMS"
     }
   ]
 }
