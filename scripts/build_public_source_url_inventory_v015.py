@@ -75,7 +75,7 @@ def main():
     for entry in entries: groups[entry["source_id"][4]].append(entry)
     metadata=[]
     for key in SHARDS:
-        rows=groups[key]; data={"inventory_version":"0.1.0","target_release":"0.14.0-beta.1","source_commit":source_commit,"shard":key,"entry_count":len(rows),"occurrence_count":sum(x["occurrence_count"] for x in rows),"entries":rows}
+        rows=groups[key]; data={"inventory_version":"0.1.0","target_release":"0.15.0","source_commit":source_commit,"shard":key,"entry_count":len(rows),"occurrence_count":sum(x["occurrence_count"] for x in rows),"entries":rows}
         rendered=canonical(data); path=SHARD_DIR/f"shard-{key}.json"
         metadata.append({"content_sha":git_blob_sha(rendered),"entry_count":data["entry_count"],"occurrence_count":data["occurrence_count"],"path":path.relative_to(ROOT).as_posix(),"shard":key})
         if args.check:
