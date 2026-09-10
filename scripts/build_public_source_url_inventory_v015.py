@@ -10,6 +10,7 @@ from urllib.parse import urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "references/community/public-source-url-inventory-v0.15.json"
 SHARD_DIR = ROOT / "references/community/source-url-inventory-v0.15"
+BASELINE_SHARD_DIR = ROOT / "references/community/source-url-inventory-v0.14"
 URL_RE = re.compile(r"https?://[^\s<>'\"\x60\\]+")
 SHARDS = "0123456789abcdef"
 
@@ -43,10 +44,21 @@ def files(scope):
         for path in sorted(p for p in root.rglob("*") if p.is_file()):
             rel=path.relative_to(ROOT).as_posix()
             if rel not in excluded and not rel.startswith(prefixes) and path.suffix.lower() in suffixes: yield path,rel
-def prior():
+def entries_in(directory):
     out={}
-    for path in sorted(SHARD_DIR.glob("shard-*.json")):
+    for path in sorted(directory.glob("shard-*.json")):
         for entry in json.loads(path.read_text()).get("entries",[]): out[entry["source_id"]]=entry
+    return out
+def prior():
+    # v0.14 is a read-only provenance baseline. Preserve its assessment metadata
+    # unless a v0.15 entry supplies an assessment of its own.
+    out=entries_in(BASELINE_SHARD_DIR)
+    for source_id, entry in entries_in(SHARD_DIR).items():
+        baseline=out.get(source_id,{})
+        if (entry.get("retrieval_status")!="UNASSESSED"
+                or baseline.get("retrieval_status","UNASSESSED")=="UNASSESSED"
+                or source_id not in out):
+            out[source_id]=entry
     return out
 def build_entries(scope):
     grouped={}
