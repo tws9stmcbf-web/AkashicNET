@@ -42,6 +42,20 @@ FORBIDDEN_FIELDS = {
     "categories", "moderation", "stickied", "locked", "is_self",
 }
 
+REQUIRED_FALSE_GATES = {
+    "reddit_api_called",
+    "reddit_api_verification",
+    "credentials_used",
+    "reddit_api_approved_enabled",
+    "crawled_or_paginated",
+    "permanent_availability_verified",
+    "authorship_verified",
+    "rights_promoted",
+    "scientific_evidence_promoted",
+    "truth_inference",
+    "public_count_promoted",
+}
+
 
 def load_canonical_post_ids() -> set[str]:
     post_ids: set[str] = set()
@@ -78,12 +92,10 @@ def main() -> int:
 
     if delta["schema"] != "akashicnet.reddit.canonical-delta-import.v0.2":
         raise SystemExit(f"unexpected schema: {delta['schema']}")
-    if delta.get("gates", {}).get("reddit_api_called") is not False:
-        raise SystemExit("reddit_api_called gate must be false")
-    if delta.get("gates", {}).get("crawled_or_paginated") is not False:
-        raise SystemExit("crawled_or_paginated gate must be false")
-    if delta.get("gates", {}).get("public_count_promoted") is not False:
-        raise SystemExit("public_count_promoted gate must be false")
+    gates = delta.get("gates", {})
+    for gate in sorted(REQUIRED_FALSE_GATES):
+        if gates.get(gate) is not False:
+            raise SystemExit(f"{gate} gate must be false")
     if delta.get("scope", {}).get("coverage") != "partial_manual":
         raise SystemExit("coverage must be marked partial_manual")
 

@@ -1,3 +1,4 @@
+import hashlib
 import json
 import subprocess
 import sys
@@ -58,16 +59,12 @@ def test_reddit_canonical_delta_2026_09_08_guardrails_hold_reddit_api():
 
 
 def test_reddit_canonical_delta_2026_09_08_sealed_2026_09_02_delta_untouched():
-    prior = json.loads(
-        (ROOT / "references" / "community" / "reddit-canonical-delta-import-2026-09-02.json")
-        .read_text(encoding="utf-8")
+    prior_path = (
+        ROOT / "references" / "community" / "reddit-canonical-delta-import-2026-09-02.json"
     )
-    assert len(prior["records"]) == 101
-    expected_fields = {
-        "canonical_url", "import_status", "live_verification_status",
-        "observed_at", "reddit_post_id", "source_batch",
-    }
-    assert {key for record in prior["records"] for key in record} == expected_fields
+    assert hashlib.sha256(prior_path.read_bytes()).hexdigest() == (
+        "edb59e8142183a7be57f81ced62c0e411eb5158ca1bed1276c78980a5832e667"
+    )
 
 
 if __name__ == "__main__":
