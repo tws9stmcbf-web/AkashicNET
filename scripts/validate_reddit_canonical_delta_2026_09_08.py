@@ -57,6 +57,13 @@ REQUIRED_FALSE_GATES = {
 }
 
 
+def normalize_reddit_post_id(post_id: str) -> str:
+    normalized = post_id.lower()
+    if normalized.startswith("t3_"):
+        normalized = normalized[3:]
+    return normalized
+
+
 def load_canonical_post_ids() -> set[str]:
     post_ids: set[str] = set()
     with URI_INDEX_PATH.open("r", encoding="utf-8-sig", newline="") as handle:
@@ -70,23 +77,28 @@ def load_canonical_post_ids() -> set[str]:
             if len(match) == 2:
                 post_id = match[1].split("/", 1)[0].split(",", 1)[0]
                 if post_id:
-                    post_ids.add(post_id.lower())
+                    post_ids.add(normalize_reddit_post_id(post_id))
     prior_delta = json.loads(PRIOR_DELTA_PATH.read_text(encoding="utf-8"))
     for record in prior_delta["records"]:
-        post_ids.add(record["reddit_post_id"].lower())
+        post_ids.add(normalize_reddit_post_id(record["reddit_post_id"]))
     return post_ids
+
+
+def permalink_identity(url: str) -> tuple[str, str]:
+    parts = [p for p in url.split("/") if p]
+    idx = parts.index("comments")
+    return parts[idx - 1], parts[idx + 1]
 
 
 def normalize_permalink(url: str) -> str:
     # Strip any slug/query/fragment down to the bare /r/<sub>/comments/<id>/ form.
-    parts = [p for p in url.split("/") if p]
-    idx = parts.index("comments")
-    subreddit = parts[idx - 1]
-    post_id = parts[idx + 1]
+    subreddit, post_id = permalink_identity(url)
     return f"https://www.reddit.com/r/{subreddit}/comments/{post_id}/"
 
 
-def validate_record(record: dict[str, object]) -> tuple[str, str]:
+def validate_record(
+    record: dict[str, object], expected_subreddit: str
+) -> tuple[str, str]:
     fields = set(record)
     if fields != ALLOWED_RECORD_FIELDS:
         missing = sorted(ALLOWED_RECORD_FIELDS - fields)
@@ -97,19 +109,33 @@ def validate_record(record: dict[str, object]) -> tuple[str, str]:
         )
 
     post_id = str(record["reddit_post_id"])
+    if normalize_reddit_post_id(post_id) != post_id:
+        raise ValueError("reddit_post_id must be lowercase and unprefixed")
+
     canonical_url = str(record["canonical_url"])
     try:
+        url_subreddit, url_post_id = permalink_identity(canonical_url)
         normalized_url = normalize_permalink(canonical_url)
     except (ValueError, IndexError) as exc:
         raise ValueError("invalid Reddit permalink") from exc
     if normalized_url != canonical_url:
         raise ValueError("Reddit permalink must be canonical")
-
-    url_post_id = canonical_url.split("/comments/", 1)[1].split("/", 1)[0]
     if url_post_id != post_id:
         raise ValueError("Reddit permalink post ID does not match reddit_post_id")
 
+    record_subreddit = str(record["subreddit"])
+    if url_subreddit != record_subreddit:
+        raise ValueError("Reddit permalink subreddit does not match record subreddit")
+    if record_subreddit != expected_subreddit:
+        raise ValueError("record subreddit does not match declared scope")
+
     return post_id, canonical_url
+
+
+def load_checkpoint() -> dict[str, object]:
+    if not CHECKPOINT_PATH.is_file():
+        raise SystemExit("required checked-in audit checkpoint is missing")
+    return json.loads(CHECKPOINT_PATH.read_text(encoding="utf-8"))
 
 
 def main() -> int:
@@ -122,8 +148,12 @@ def main() -> int:
     for gate in sorted(REQUIRED_FALSE_GATES):
         if gates.get(gate) is not False:
             raise SystemExit(f"{gate} gate must be false")
-    if delta.get("scope", {}).get("coverage") != "partial_manual":
+    scope = delta.get("scope", {})
+    if scope.get("coverage") != "partial_manual":
         raise SystemExit("coverage must be marked partial_manual")
+    expected_subreddit = scope.get("subreddit")
+    if not isinstance(expected_subreddit, str) or not expected_subreddit:
+        raise SystemExit("scope subreddit must be a non-empty string")
 
     canonical_post_ids = load_canonical_post_ids()
 
@@ -140,7 +170,7 @@ def main() -> int:
         fields = set(record)
         observed_fields |= fields
         try:
-            post_id, canonical_url = validate_record(record)
+            post_id, canonical_url = validate_record(record, expected_subreddit)
         except ValueError:
             rejected.append(str(record.get("reddit_post_id", "<missing>")))
             continue
@@ -200,10 +230,9 @@ def main() -> int:
     if len(accepted) != 10:
         raise SystemExit(f"expected all 10 candidates accepted, got {len(accepted)}")
 
-    if CHECKPOINT_PATH.exists():
-        checkpoint = json.loads(CHECKPOINT_PATH.read_text(encoding="utf-8"))
-        if result != checkpoint:
-            raise SystemExit("generated audit differs from checked-in checkpoint")
+    checkpoint = load_checkpoint()
+    if result != checkpoint:
+        raise SystemExit("generated audit differs from checked-in checkpoint")
 
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
