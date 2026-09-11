@@ -6,9 +6,10 @@ from pathlib import Path
 
 import pytest
 
-from scripts import validate_reddit_canonical_delta_2026_09_08 as validator
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from scripts import validate_reddit_canonical_delta_2026_09_08 as validator  # noqa: E402
 
 
 def _run():
@@ -100,6 +101,8 @@ def test_reddit_canonical_delta_2026_09_08_sealed_2026_09_02_delta_untouched():
 if __name__ == "__main__":
     test_reddit_canonical_delta_2026_09_08_all_candidates_accepted()
     test_reddit_canonical_delta_2026_09_08_field_allowlist()
+    test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field()
+    test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record()
     test_reddit_canonical_delta_2026_09_08_partial_coverage_and_no_public_count_change()
     test_reddit_canonical_delta_2026_09_08_guardrails_hold_reddit_api()
     test_reddit_canonical_delta_2026_09_08_sealed_2026_09_02_delta_untouched()
