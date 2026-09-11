@@ -2,7 +2,7 @@
   "schema_version": "0.16.0-beta.1",
   "artifact_status": "UNRELEASED_REVIEW_CANDIDATE",
   "issue": 277,
-  "candidate_base_commit": "4867ca7c8c9a4e1bc139f630815ecf49c79a2ef7",
+  "candidate_base_commit": "779be69acd564a09aada6212083d0fb3c0b599bf",
   "exact_head_ci_required": true,
   "release_decision": "PENDING_EXACT_HEAD_CI_AND_REVIEW",
   "baseline_locks": {
