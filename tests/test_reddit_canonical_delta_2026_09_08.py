@@ -4,6 +4,10 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
+from scripts import validate_reddit_canonical_delta_2026_09_08 as validator
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -38,6 +42,32 @@ def test_reddit_canonical_delta_2026_09_08_field_allowlist():
         "num_comments", "flair", "link_flair_text", "topic", "category",
     }
     assert forbidden.isdisjoint(result["record_fields"])
+
+
+def _first_delta_record():
+    delta_path = (
+        ROOT / "references" / "community" / "reddit-canonical-delta-import-2026-09-08.json"
+    )
+    delta = json.loads(delta_path.read_text(encoding="utf-8"))
+    return dict(delta["records"][0])
+
+
+def test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field():
+    record = _first_delta_record()
+    record.pop("title")
+
+    with pytest.raises(ValueError, match="exactly match allow-list"):
+        validator.validate_record(record)
+
+
+def test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record():
+    record = _first_delta_record()
+    record["canonical_url"] = record["canonical_url"].replace(
+        record["reddit_post_id"], "1mismatched"
+    )
+
+    with pytest.raises(ValueError, match="post ID does not match"):
+        validator.validate_record(record)
 
 
 def test_reddit_canonical_delta_2026_09_08_partial_coverage_and_no_public_count_change():
