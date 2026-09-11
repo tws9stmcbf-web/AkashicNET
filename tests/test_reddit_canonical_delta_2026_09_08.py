@@ -4,8 +4,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pytest
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
@@ -53,12 +51,22 @@ def _first_delta_record():
     return dict(delta["records"][0])
 
 
+def _assert_value_error(call, message):
+    try:
+        call()
+    except ValueError as exc:
+        assert message in str(exc)
+    else:
+        raise AssertionError("expected ValueError")
+
+
 def test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field():
     record = _first_delta_record()
     record.pop("title")
 
-    with pytest.raises(ValueError, match="exactly match allow-list"):
-        validator.validate_record(record)
+    _assert_value_error(
+        lambda: validator.validate_record(record), "exactly match allow-list"
+    )
 
 
 def test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record():
@@ -67,8 +75,9 @@ def test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record():
         record["reddit_post_id"], "1mismatched"
     )
 
-    with pytest.raises(ValueError, match="post ID does not match"):
-        validator.validate_record(record)
+    _assert_value_error(
+        lambda: validator.validate_record(record), "post ID does not match"
+    )
 
 
 def test_reddit_canonical_delta_2026_09_08_partial_coverage_and_no_public_count_change():
