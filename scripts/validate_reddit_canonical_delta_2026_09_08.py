@@ -86,6 +86,32 @@ def normalize_permalink(url: str) -> str:
     return f"https://www.reddit.com/r/{subreddit}/comments/{post_id}/"
 
 
+def validate_record(record: dict[str, object]) -> tuple[str, str]:
+    fields = set(record)
+    if fields != ALLOWED_RECORD_FIELDS:
+        missing = sorted(ALLOWED_RECORD_FIELDS - fields)
+        unexpected = sorted(fields - ALLOWED_RECORD_FIELDS)
+        raise ValueError(
+            f"record fields must exactly match allow-list: missing={missing} "
+            f"unexpected={unexpected}"
+        )
+
+    post_id = str(record["reddit_post_id"])
+    canonical_url = str(record["canonical_url"])
+    try:
+        normalized_url = normalize_permalink(canonical_url)
+    except (ValueError, IndexError) as exc:
+        raise ValueError("invalid Reddit permalink") from exc
+    if normalized_url != canonical_url:
+        raise ValueError("Reddit permalink must be canonical")
+
+    url_post_id = canonical_url.split("/comments/", 1)[1].split("/", 1)[0]
+    if url_post_id != post_id:
+        raise ValueError("Reddit permalink post ID does not match reddit_post_id")
+
+    return post_id, canonical_url
+
+
 def main() -> int:
     delta = json.loads(DELTA_PATH.read_text(encoding="utf-8"))
     records = delta["records"]
@@ -113,16 +139,10 @@ def main() -> int:
     for record in records:
         fields = set(record)
         observed_fields |= fields
-        post_id = record["reddit_post_id"]
-        canonical_url = record["canonical_url"]
-
-        invalid_fields = fields - ALLOWED_RECORD_FIELDS
-        forbidden_present = fields & FORBIDDEN_FIELDS
-        if invalid_fields or forbidden_present:
-            rejected.append(post_id)
-            continue
-        if normalize_permalink(canonical_url) != canonical_url:
-            rejected.append(post_id)
+        try:
+            post_id, canonical_url = validate_record(record)
+        except ValueError:
+            rejected.append(str(record.get("reddit_post_id", "<missing>")))
             continue
         if post_id in seen_ids or canonical_url in seen_urls:
             rejected.append(post_id)
