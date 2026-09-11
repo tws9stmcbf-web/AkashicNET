@@ -51,21 +51,23 @@ def _first_delta_record():
     return dict(delta["records"][0])
 
 
-def _assert_value_error(call, message):
+def _assert_exception(exception_type, call, message):
     try:
         call()
-    except ValueError as exc:
+    except exception_type as exc:
         assert message in str(exc)
     else:
-        raise AssertionError("expected ValueError")
+        raise AssertionError(f"expected {exception_type.__name__}")
 
 
 def test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field():
     record = _first_delta_record()
     record.pop("title")
 
-    _assert_value_error(
-        lambda: validator.validate_record(record), "exactly match allow-list"
+    _assert_exception(
+        ValueError,
+        lambda: validator.validate_record(record, "NeuronsToNirvana"),
+        "exactly match allow-list",
     )
 
 
@@ -75,8 +77,55 @@ def test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record():
         record["reddit_post_id"], "1mismatched"
     )
 
-    _assert_value_error(
-        lambda: validator.validate_record(record), "post ID does not match"
+    _assert_exception(
+        ValueError,
+        lambda: validator.validate_record(record, "NeuronsToNirvana"),
+        "post ID does not match",
+    )
+
+
+def test_reddit_canonical_delta_2026_09_08_rejects_non_normalized_post_id():
+    record = _first_delta_record()
+    record["reddit_post_id"] = record["reddit_post_id"].upper()
+    record["canonical_url"] = record["canonical_url"].replace(
+        record["canonical_url"].split("/comments/", 1)[1].split("/", 1)[0],
+        record["reddit_post_id"],
+    )
+
+    _assert_exception(
+        ValueError,
+        lambda: validator.validate_record(record, "NeuronsToNirvana"),
+        "lowercase and unprefixed",
+    )
+
+
+def test_reddit_canonical_delta_2026_09_08_requires_audit_checkpoint():
+    original_checkpoint_path = validator.CHECKPOINT_PATH
+    validator.CHECKPOINT_PATH = ROOT / "missing-reddit-delta-audit-checkpoint.json"
+    try:
+        _assert_exception(
+            SystemExit,
+            validator.load_checkpoint,
+            "required checked-in audit checkpoint is missing",
+        )
+    finally:
+        validator.CHECKPOINT_PATH = original_checkpoint_path
+
+
+def test_reddit_canonical_delta_2026_09_08_subreddit_matches_permalink_and_scope():
+    record = _first_delta_record()
+    record["subreddit"] = "DifferentSubreddit"
+    _assert_exception(
+        ValueError,
+        lambda: validator.validate_record(record, "NeuronsToNirvana"),
+        "permalink subreddit does not match",
+    )
+
+    record = _first_delta_record()
+    _assert_exception(
+        ValueError,
+        lambda: validator.validate_record(record, "DifferentSubreddit"),
+        "does not match declared scope",
     )
 
 
@@ -112,6 +161,9 @@ if __name__ == "__main__":
     test_reddit_canonical_delta_2026_09_08_field_allowlist()
     test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field()
     test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record()
+    test_reddit_canonical_delta_2026_09_08_rejects_non_normalized_post_id()
+    test_reddit_canonical_delta_2026_09_08_requires_audit_checkpoint()
+    test_reddit_canonical_delta_2026_09_08_subreddit_matches_permalink_and_scope()
     test_reddit_canonical_delta_2026_09_08_partial_coverage_and_no_public_count_change()
     test_reddit_canonical_delta_2026_09_08_guardrails_hold_reddit_api()
     test_reddit_canonical_delta_2026_09_08_sealed_2026_09_02_delta_untouched()
