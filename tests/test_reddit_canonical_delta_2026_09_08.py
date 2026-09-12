@@ -95,7 +95,7 @@ def test_reddit_canonical_delta_2026_09_08_rejects_non_normalized_post_id():
     _assert_exception(
         ValueError,
         lambda: validator.validate_record(record, "NeuronsToNirvana"),
-        "lowercase and unprefixed",
+        "lowercase base-36 string",
     )
 
 
