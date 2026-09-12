@@ -17,13 +17,13 @@ The binary assets are stored and served with the live Site. This manifest provid
 | Public asset | SHA-256 |
 | --- | --- |
 | `human2-hero.webp` | `44bf9df11e730efa7eb9f382cf158ddef221f8a60c09f02eca8d7c66a33638e7` |
-| `human2-fig1-evidence-commons.webp` | `a9f2e0cdc947989e13e9c732f7d79963b2f4152097ed6aebe219e231e1903f6f` |
+| `human2-fig1-evidence-commons.webp` | `00ad793cb4692d045e244796cd4b003bf386a9e8fb7233c42effa8b44a7d4cb9` |
 | `human2-fig2-seven-lenses-domains.webp` | `336595517a4d34cbeaee572c64d3a606e67551a27da8970e92f5fea469e46bb5` |
 | `human2-fig3-7x7-matrix.webp` | `462e197fe253813b6c5a2b44f1e2fb7f3ae9d8a135ca704415491fd64302fea6` |
 | `human2-fig4-flourishing-2100.webp` | `afe290ca1f3421bd0bdb5f10991c03dbd4c34eb2de23eb644c722f43df6c9e74` |
 | `human2-fig5-buddhafly-effect.webp` | `871cd40189b9ffcfc61bc24c0c8e38f18103e3f77494e1748560fdc133ac561b` |
 | `metad-ak-hero.webp` | `9cb64f102736603c585c89870f8d96e4387ecec8bb1f00ecd70849bae56e17bc` |
 | `metad-ak-fig1-multi-ai-architecture.webp` | `a6b7192d90d923acb5ad888b796393aa2643fa524d877b8205a5d1f023f92b89` |
-| `metad-ak-fig2-capabilities-boundaries.webp` | `dab7242cbdca8cb935e043c3280184ab1afa892590ea2ec04ecd12030f9806c3` |
+| `metad-ak-fig2-capabilities-boundaries.webp` | `546c8313f9ce4110086eeb8a005d3f133657b80ba6be784bcf619201b6045d88` |
 
 These WebP files are metadata-stripped, public-facing concept artwork. Page captions preserve the distinction between artistic metaphor, exploratory architecture, evidence and deployed capability.
