@@ -28,7 +28,7 @@ export default function MetadAkPage() {
           <h1>Many minds.<br/>Many models.<br/><em>Human judgement remains sovereign.</em></h1>
           <p>METAD-AK is an exploratory architecture for comparing multiple machine perspectives while preserving evidence boundaries, provenance, uncertainty and accountable human review.</p>
         </div>
-        <figure className="author-seal">
+        <figure className="author-seal framework-hero">
           <img src="/images/metad-ak-hero.webp" width="1254" height="1254" fetchPriority="high" alt="A luminous heart-tree divided between a living knowledge commons and a future meta-intelligence layer"/>
           <figcaption>Plural machine intelligence · evidence-aware synthesis · human accountability. Concept only; not currently deployed.</figcaption>
         </figure>

@@ -40,7 +40,7 @@ export default function HumanTwoPage() {
           <p>HUMAN 2.0 is an exploratory AkashicNET programme asking how humans might flourish more wisely within themselves, with one another, with technology and with the living Earth.</p>
           <p><strong>It is a question, not a destination.</strong> It is not a proposal for a superior species, compulsory enhancement or one ideal kind of human.</p>
         </div>
-        <figure className="author-seal">
+        <figure className="author-seal framework-hero">
           <img src="/images/human2-hero.webp" width="1254" height="1254" fetchPriority="high" alt="A luminous heart-tree joining human awareness, knowledge networks and the living Earth"/>
           <figcaption>HUMAN 2.0 connects inner awareness, shared knowledge and a flourishing biosphere. Artistic metaphor, not scientific evidence.</figcaption>
         </figure>
