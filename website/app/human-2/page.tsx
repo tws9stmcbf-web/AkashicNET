@@ -62,8 +62,10 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure">
-        <img src="/images/human2-fig1-evidence-commons.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustrated map connecting a community knowledge archive, epistemic labels and a living knowledge commons"/>
-        <figcaption><span>Figure 1 · Evidence commons</span><p>A visual map of a living knowledge commons. Its connections are exploratory and do not represent validated relationships or accepted evidence.</p></figcaption>
+        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable detailed evidence-commons figure">
+          <img src="/images/human2-fig1-evidence-commons.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Evidence-commons concept map using the five canonical labels: Established Evidence, Interpretation, Lived Experience/Testimony, Hypothesis and Speculation. Its archive snapshot distinguishes 9,502 source rows from 7,457 structurally unique URLs."/>
+        </div>
+        <figcaption><span>Figure 1 · Evidence commons</span><p>A visual map of a living knowledge commons. The archive snapshot distinguishes 9,502 source rows from 7,457 structurally unique URLs and uses the canonical five-label evidence taxonomy. Connections remain exploratory; they are not validated relationships or accepted evidence.</p></figcaption>
       </figure>
 
       <section className="constellation" id="lenses">
@@ -86,8 +88,10 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure">
-        <img src="/images/human2-fig2-seven-lenses-domains.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Conceptual AkashicNET flow from a human question through plural analysis and accountable human review"/>
-        <figcaption><span>Figure 2 · Lenses and domains</span><p>Concept artwork situating HUMAN 2.0 beside the proposed METAD-AK layer. Future capabilities shown are not currently deployed.</p></figcaption>
+        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable HUMAN 2.0 lenses-and-domains figure">
+          <img src="/images/human2-fig2-seven-lenses-domains.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="HUMAN 2.0 heart-tree connecting seven lenses—AWAKEN, HOMESENSE, HIERATIC, ADAPT, TRANSCEND, REGENERATE and #METAD—to seven domains—Self, Relationships, Intelligence, Resilience, Regeneration, Wisdom and Futures."/>
+        </div>
+        <figcaption><span>Figure 2 · Lenses and domains</span><p>A HUMAN-facing map of seven lenses across seven domains. #METAD is a cross-layer interpretive lens; METAD-AK remains the separate proposed technical orchestration layer.</p></figcaption>
       </figure>
 
       <section className="constellation" id="domains">
@@ -108,7 +112,9 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure">
-        <img src="/images/human2-fig3-7x7-matrix.webp" width="1600" height="1100" loading="lazy" decoding="async" alt="Seven AkashicNET lenses crossing seven domains to form a forty-nine-cell HUMAN 2.0 matrix"/>
+        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable HUMAN 2.0 seven-by-seven matrix">
+          <img src="/images/human2-fig3-7x7-matrix.webp" width="1600" height="1100" loading="lazy" decoding="async" alt="Seven AkashicNET lenses crossing seven domains to form a forty-nine-cell HUMAN 2.0 matrix"/>
+        </div>
         <figcaption><span>Figure 3 · The 7×7 matrix</span><p>Forty-nine places to ask better questions. Each cell is an analytical intersection, not a hierarchy, score or scientific result.</p></figcaption>
       </figure>
 
