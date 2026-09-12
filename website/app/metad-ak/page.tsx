@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const stages = [
   ["Input", "Human question, context, sources and analysis intent."],
   ["Orchestration", "Route work across suitable models, tools and evidence-aware workflows."],
-  ["Plural analysis", "Invite multiple independent perspectives rather than a single-model answer."],
+  ["Plural analysis", "Invite multiple distinct perspectives rather than a single-model answer."],
   ["Comparison", "Surface agreement, disagreement, uncertainty and model-specific contributions."],
   ["Evidence check", "Trace claims to sources and keep confidence separate from consensus."],
   ["Human review", "A human remains responsible for judgement, framing, values and release."],
@@ -70,7 +70,7 @@ export default function MetadAkPage() {
         <span>Non-negotiable safeguards</span>
         <div><strong>Consensus ≠ proof</strong><p>Several models giving similar answers do not constitute independent empirical confirmation.</p></div>
         <div><strong>Confidence ≠ evidence</strong><p>Model certainty must remain distinguishable from source quality and evidential strength.</p></div>
-        <div><strong>Provenance before promotion</strong><p>Claims should remain traceable to their source, model contribution and review context wherever practical.</p></div>
+        <div><strong>Provenance before promotion</strong><p>For any released synthesis, material claims remain traceable to their sources, model contributions and review context.</p></div>
         <div><strong>Uncertainty remains visible</strong><p>Disagreement, missing evidence and unknowns should survive synthesis rather than being smoothed away.</p></div>
       </aside>
 
@@ -89,9 +89,9 @@ export default function MetadAkPage() {
       </section>
 
       <section className="flying-tension">
-        <p className="section-label">Human meaning moved outward</p>
-        <h2>Keep the engine technical.<br/><em>Keep flourishing human.</em></h2>
-        <p>Questions of awareness, wisdom, compassion, community, neurodiversity, the BuddhaFly ethical layer and Flourishing 2100 belong primarily on the HUMAN 2.0 page. METAD-AK remains focused on orchestration, evidence, provenance, disagreement and accountable review.</p>
+        <p className="section-label">Scope boundary</p>
+        <h2>Technical architecture.<br/><em>Human purpose.</em></h2>
+        <p>METAD-AK remains focused on orchestration, evidence, provenance, disagreement and accountable review. Questions of awareness, wisdom, compassion, community, neurodiversity, the BuddhaFly ethical layer and Flourishing 2100 belong primarily on the HUMAN 2.0 page.</p>
       </section>
 
       <section className="constellation" id="horizon">
