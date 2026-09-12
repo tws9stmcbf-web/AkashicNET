@@ -29,8 +29,8 @@ export default function MetadAkPage() {
           <p>METAD-AK is an exploratory architecture for comparing multiple machine perspectives while preserving evidence boundaries, provenance, uncertainty and accountable human review.</p>
         </div>
         <figure className="author-seal">
-          <img src="/images/akashicnet-toroidal-love-logo.png" alt=""/>
-          <figcaption>Plural machine intelligence · evidence-aware synthesis · human accountability</figcaption>
+          <img src="/images/metad-ak-hero.webp" width="1254" height="1254" fetchPriority="high" alt="A luminous heart-tree divided between a living knowledge commons and a future meta-intelligence layer"/>
+          <figcaption>Plural machine intelligence · evidence-aware synthesis · human accountability. Concept only; not currently deployed.</figcaption>
         </figure>
       </section>
 
@@ -48,6 +48,11 @@ export default function MetadAkPage() {
           <p>Agreement among models is useful information, but it is not scientific replication and it does not become truth by vote.</p>
         </div>
       </section>
+
+      <figure className="framework-figure">
+        <img src="/images/metad-ak-fig1-multi-ai-architecture.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Conceptual multi-model workflow from human input through orchestration, comparison, evidence checks and human review"/>
+        <figcaption><span>Figure 1 · Multi-model architecture</span><p>A conceptual workflow. Named models and tools are illustrative, not endorsements, confirmed integrations or evidence of deployment.</p></figcaption>
+      </figure>
 
       <section className="constellation">
         <div className="constellation-intro">
@@ -107,6 +112,11 @@ export default function MetadAkPage() {
           <article><span>2033–2036</span><h3>Federated knowledge commons</h3><p>Interoperable systems preserve provenance across communities and tools.</p></article>
         </div>
       </section>
+
+      <figure className="framework-figure">
+        <img src="/images/metad-ak-fig2-capabilities-boundaries.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustrated exploratory roadmap from bounded multi-model foundations toward a federated knowledge commons"/>
+        <figcaption><span>Figure 2 · Capabilities and boundaries</span><p>A directional 2026–2036 roadmap. Dates and stages are exploratory rather than delivery commitments; METAD-AK remains not currently deployed.</p></figcaption>
+      </figure>
 
       <aside className="page-provenance" aria-label="Page version and status">
         <span>METAD-AK v0.1</span><span>Future / Exploratory</span><span>Not currently deployed</span><span>Human judgement remains sovereign</span><span>September 2026</span>
