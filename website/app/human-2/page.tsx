@@ -56,7 +56,7 @@ export default function HumanTwoPage() {
         <p className="section-label">The architecture</p>
         <h2>Knowledge infrastructure below.<br/><em>Flourishing above.</em></h2>
         <div>
-          <h3>AkashicNET → Evidence + Provenance → Human-guided Multi-AI → Seven Lenses → HUMAN 2.0 → Regenerative Society → Biosphere → Flourishing 2100</h3>
+          <h3>Proposed pathway: AkashicNET → Evidence + Provenance → Future Human-Guided Multi-Model Analysis → Seven Lenses → HUMAN 2.0 → Regenerative Society → Biosphere → Flourishing 2100</h3>
           <p>The framework is designed to stay revisable. Better evidence, criticism and community perspectives should be able to change the map.</p>
         </div>
       </section>
@@ -66,6 +66,7 @@ export default function HumanTwoPage() {
           <p className="section-label">Seven lenses</p>
           <h2>Different perspectives.<br/>A more complete picture.</h2>
           <p>These are cross-cutting analytical lenses, not seven commandments or compulsory stages.</p>
+          <p>Here, #METAD is the cross-layer interpretive lens. METAD-AK is the separate, proposed technical orchestration layer.</p>
         </div>
         <div className="constellation-grid">
           {lenses.map(([title, question, text], index) => (
@@ -129,10 +130,11 @@ export default function HumanTwoPage() {
 
       <aside className="meaning-boundary" aria-label="Evidence membrane">
         <span>Evidence membrane</span>
-        <div><strong>Established Evidence</strong><p>Well-supported findings remain traceable to public sources and methodological context.</p></div>
-        <div><strong>Interpretation</strong><p>Reasoned synthesis remains distinguishable from observation.</p></div>
-        <div><strong>Lived Experience / Testimony</strong><p>Subjective experience can be meaningful without automatically establishing external ontology.</p></div>
-        <div><strong>Hypothesis · Speculation · Imagination</strong><p>Exploratory ideas remain labelled, provisional and reversible.</p></div>
+        <div><strong>Established Evidence</strong><p>Appropriately reviewed support with explicit provenance, methods, limits and source context.</p></div>
+        <div><strong>Interpretation</strong><p>A reasoned reading, synthesis or framework presented as interpretation rather than established fact.</p></div>
+        <div><strong>Lived Experience/Testimony</strong><p>First-person or reported experience preserved as testimony without universalising it.</p></div>
+        <div><strong>Hypothesis</strong><p>A specific, testable or investigable proposition that remains unconfirmed.</p></div>
+        <div><strong>Speculation</strong><p>A possibility or conjecture with insufficient support for hypothesis or established-evidence status.</p></div>
       </aside>
 
       <section className="constellation" id="horizon">
@@ -142,7 +144,7 @@ export default function HumanTwoPage() {
           <p>This is a direction of travel, not a delivery promise.</p>
         </div>
         <div className="constellation-grid">
-          <article><span>2026</span><h3>Governed intelligence core</h3><p>Question Graphs, evidence intelligence, provenance, Living Library and human-guided AI.</p></article>
+          <article><span>2026</span><h3>Governed foundations</h3><p>Bounded Question Graph prototypes, provenance, the Living Library and AI-assisted analysis. METAD-AK orchestration is not currently deployed.</p></article>
           <article><span>2027–2029</span><h3>Scientific evidence intelligence</h3><p>Replication, methodology, effect sizes, uncertainty and evidence lineage.</p></article>
           <article><span>2030–2036</span><h3>Collaborative knowledge commons</h3><p>Researchers and communities contribute evidence, objections, replications, alternatives and corrections.</p></article>
           <article><span>2040+</span><h3>Biosphere knowledge network</h3><p>Ecology, biodiversity, climate, health, culture, technology and communities examined as interacting systems.</p></article>
