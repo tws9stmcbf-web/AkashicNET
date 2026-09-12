@@ -140,7 +140,9 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure framework-figure--square">
-        <img src="/images/human2-fig4-flourishing-2100.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Speculative regenerative future where technology, knowledge, communities and ecosystems coexist"/>
+        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable Flourishing 2100 figure">
+          <img src="/images/human2-fig4-flourishing-2100.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Speculative regenerative horizon connecting Living Earth, Human Flourishing, Knowledge Commons, Appropriate Technology and Future Generations."/>
+        </div>
         <figcaption><span>Figure 4 · Flourishing 2100</span><p>A speculative regenerative horizon: an invitation to consider which present choices make flourishing futures more likely, not a prediction or delivery promise.</p></figcaption>
       </figure>
 
@@ -155,7 +157,9 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure framework-figure--square">
-        <img src="/images/human2-fig5-buddhafly-effect.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="A luminous butterfly containing the four Brahmavihāras: mettā, karuṇā, muditā and upekkhā"/>
+        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable BuddhaFly effect figure">
+          <img src="/images/human2-fig5-buddhafly-effect.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="A luminous butterfly containing the four Brahmavihāras: mettā, karuṇā, muditā and upekkhā"/>
+        </div>
         <figcaption><span>Figure 5 · The BuddhaFly effect</span><p>The Brahmavihāras provide ethical inspiration for turning awareness toward wiser action. This is a values framework, not an evidential claim.</p></figcaption>
       </figure>
 
