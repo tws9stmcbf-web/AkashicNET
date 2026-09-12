@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import csv
 import json
+import re
+from datetime import datetime
 from collections import Counter
 from pathlib import Path
 
@@ -41,6 +43,12 @@ FORBIDDEN_FIELDS = {
     "link_flair_text", "link_flair_template_id", "topic", "topics", "category",
     "categories", "moderation", "stickied", "locked", "is_self",
 }
+
+REDDIT_POST_ID_RE = re.compile(r"^[0-9a-z]+$")
+CREATED_UTC_RE = re.compile(
+    r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$"
+)
+RETRIEVED_AT_UTC_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 REQUIRED_FALSE_GATES = {
     "reddit_api_called",
@@ -108,11 +116,15 @@ def validate_record(
             f"unexpected={unexpected}"
         )
 
-    post_id = str(record["reddit_post_id"])
+    post_id = record["reddit_post_id"]
+    if not isinstance(post_id, str) or not REDDIT_POST_ID_RE.fullmatch(post_id):
+        raise ValueError("reddit_post_id must be a non-empty lowercase base-36 string")
     if normalize_reddit_post_id(post_id) != post_id:
         raise ValueError("reddit_post_id must be lowercase and unprefixed")
 
-    canonical_url = str(record["canonical_url"])
+    canonical_url = record["canonical_url"]
+    if not isinstance(canonical_url, str):
+        raise ValueError("canonical_url must be a string")
     try:
         url_subreddit, url_post_id = permalink_identity(canonical_url)
         normalized_url = normalize_permalink(canonical_url)
@@ -129,7 +141,65 @@ def validate_record(
     if record_subreddit != expected_subreddit:
         raise ValueError("record subreddit does not match declared scope")
 
+    title = record["title"]
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError("title must be a non-empty string")
+
+    created_utc = record["created_utc"]
+    if not isinstance(created_utc, str) or not CREATED_UTC_RE.fullmatch(created_utc):
+        raise ValueError("created_utc must be an ISO 8601 UTC timestamp with milliseconds")
+    try:
+        created_at = datetime.strptime(created_utc, "%Y-%m-%dT%H:%M:%S.%fZ")
+    except ValueError as exc:
+        raise ValueError("created_utc must be a valid UTC timestamp") from exc
+
+    retrieved_at_utc = record["retrieved_at_utc"]
+    if (
+        not isinstance(retrieved_at_utc, str)
+        or not RETRIEVED_AT_UTC_RE.fullmatch(retrieved_at_utc)
+    ):
+        raise ValueError("retrieved_at_utc must be an ISO 8601 date")
+    try:
+        retrieved_at = datetime.strptime(retrieved_at_utc, "%Y-%m-%d")
+    except ValueError as exc:
+        raise ValueError("retrieved_at_utc must be a valid date") from exc
+    if created_at.date() > retrieved_at.date():
+        raise ValueError("created_utc must not be later than retrieved_at_utc")
+
+    fixed_values = {
+        "availability_status": "publicly_accessible",
+        "provenance": "manual_observation_of_public_subreddit_listing",
+        "import_status": "ACCEPTED_PENDING_COUNT_MERGE",
+    }
+    for field, expected in fixed_values.items():
+        if record[field] != expected:
+            raise ValueError(f"{field} must be {expected!r}")
+
     return post_id, canonical_url
+
+
+def validate_scope_counts(
+    scope: dict[str, object],
+    *,
+    candidates_reviewed: int,
+    already_present: int,
+    accepted: int,
+    rejected: int,
+    held: int,
+) -> None:
+    expected = {
+        "candidates_reviewed": candidates_reviewed,
+        "already_present_in_canonical_index": already_present,
+        "accepted_new_records": accepted,
+        "rejected_records": rejected,
+        "held_records": held,
+    }
+    for field, computed in expected.items():
+        declared = scope.get(field)
+        if type(declared) is not int or declared != computed:
+            raise SystemExit(
+                f"scope {field} must equal computed count {computed}, got {declared!r}"
+            )
 
 
 def load_checkpoint() -> dict[str, object]:
@@ -219,6 +289,15 @@ def main() -> int:
             "scientific_evidence_promotion": False,
         },
     }
+
+    validate_scope_counts(
+        scope,
+        candidates_reviewed=len(records),
+        already_present=len(already_present),
+        accepted=len(accepted),
+        rejected=len(rejected),
+        held=len(held),
+    )
 
     if len(records) != 10:
         raise SystemExit("expected exactly 10 candidate records")
