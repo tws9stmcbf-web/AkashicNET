@@ -99,6 +99,57 @@ def test_reddit_canonical_delta_2026_09_08_rejects_non_normalized_post_id():
     )
 
 
+def test_reddit_canonical_delta_2026_09_08_validates_metadata_values():
+    cases = {
+        "title": ("   ", "title must be a non-empty string"),
+        "created_utc": ("2026-09-07", "created_utc must be an ISO 8601"),
+        "retrieved_at_utc": ("2026-09-07T00:00:00Z", "retrieved_at_utc must be an ISO 8601 date"),
+        "availability_status": ("unknown", "availability_status must be"),
+        "provenance": ("reddit_api", "provenance must be"),
+        "import_status": ("ACCEPTED", "import_status must be"),
+    }
+    for field, (value, message) in cases.items():
+        record = _first_delta_record()
+        record[field] = value
+        _assert_exception(
+            ValueError,
+            lambda record=record: validator.validate_record(
+                record, "NeuronsToNirvana"
+            ),
+            message,
+        )
+
+    record = _first_delta_record()
+    record["retrieved_at_utc"] = "2026-09-06"
+    _assert_exception(
+        ValueError,
+        lambda: validator.validate_record(record, "NeuronsToNirvana"),
+        "created_utc must not be later",
+    )
+
+
+def test_reddit_canonical_delta_2026_09_08_reconciles_scope_counts():
+    scope = {
+        "candidates_reviewed": 10,
+        "already_present_in_canonical_index": 0,
+        "accepted_new_records": 9,
+        "rejected_records": 0,
+        "held_records": 0,
+    }
+    _assert_exception(
+        SystemExit,
+        lambda: validator.validate_scope_counts(
+            scope,
+            candidates_reviewed=10,
+            already_present=0,
+            accepted=10,
+            rejected=0,
+            held=0,
+        ),
+        "accepted_new_records must equal computed count 10",
+    )
+
+
 def test_reddit_canonical_delta_2026_09_08_requires_audit_checkpoint():
     original_checkpoint_path = validator.CHECKPOINT_PATH
     validator.CHECKPOINT_PATH = ROOT / "missing-reddit-delta-audit-checkpoint.json"
@@ -162,6 +213,8 @@ if __name__ == "__main__":
     test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field()
     test_reddit_canonical_delta_2026_09_08_permalink_id_matches_record()
     test_reddit_canonical_delta_2026_09_08_rejects_non_normalized_post_id()
+    test_reddit_canonical_delta_2026_09_08_validates_metadata_values()
+    test_reddit_canonical_delta_2026_09_08_reconciles_scope_counts()
     test_reddit_canonical_delta_2026_09_08_requires_audit_checkpoint()
     test_reddit_canonical_delta_2026_09_08_subreddit_matches_permalink_and_scope()
     test_reddit_canonical_delta_2026_09_08_partial_coverage_and_no_public_count_change()
