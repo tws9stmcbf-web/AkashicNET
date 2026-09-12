@@ -63,9 +63,9 @@ export default function HumanTwoPage() {
 
       <figure className="framework-figure">
         <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable detailed evidence-commons figure">
-          <img src="/images/human2-fig1-evidence-commons.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Evidence-commons concept map using the five canonical labels: Established Evidence, Interpretation, Lived Experience/Testimony, Hypothesis and Speculation. Its archive snapshot distinguishes 9,502 source rows from 7,457 structurally unique URLs."/>
+          <img src="/images/human2-fig1-evidence-commons.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Evidence-commons concept map using the five canonical labels: Established Evidence, Interpretation, Lived Experience/Testimony, Hypothesis and Speculation. Its archive snapshot describes the approximately 2,000-member r/NeuronsToNirvana community and distinguishes 9,502 source rows from 7,457 structurally unique URLs."/>
         </div>
-        <figcaption><span>Figure 1 · Evidence commons</span><p>A visual map of a living knowledge commons. The archive snapshot distinguishes 9,502 source rows from 7,457 structurally unique URLs and uses the canonical five-label evidence taxonomy. Connections remain exploratory; they are not validated relationships or accepted evidence.</p></figcaption>
+        <figcaption><span>Figure 1 · Evidence commons</span><p>A visual map of a living knowledge commons. The archive snapshot describes the approximately 2,000-member r/NeuronsToNirvana community, distinguishes 9,502 source rows from 7,457 structurally unique URLs and uses the canonical five-label evidence taxonomy. Connections remain exploratory; they are not validated relationships or accepted evidence.</p></figcaption>
       </figure>
 
       <section className="constellation" id="lenses">

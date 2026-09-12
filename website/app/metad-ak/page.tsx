@@ -53,7 +53,7 @@ export default function MetadAkPage() {
         <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable METAD-AK architecture figure">
           <img src="/images/metad-ak-fig1-multi-ai-architecture.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Conceptual multi-model workflow from human input through orchestration, comparison, evidence checks and human review"/>
         </div>
-        <figcaption><span>Figure 1 · Multi-model architecture</span><p>A conceptual workflow. Named models and tools are illustrative, not endorsements, confirmed integrations or evidence of deployment.</p></figcaption>
+        <figcaption><span>Figure 1 · Multi-model architecture</span><p>A provider-neutral conceptual workflow. Models and tools are illustrative components, not confirmed integrations or evidence of deployment.</p></figcaption>
       </figure>
 
       <section className="constellation">
