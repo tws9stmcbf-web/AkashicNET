@@ -65,6 +65,9 @@ export default function PowerOfTheDoctorPage() {
         <blockquote style={{ maxWidth: 920, margin: "30px auto 0", color: "#f2d98e", fontSize: "clamp(1.25rem,2.8vw,2rem)", lineHeight: 1.45 }}>
           “The mad quantum spacetime traveller with two hearts, trying their best to make the cosmos a slightly nicer place to live, microdosing wonder step by step since 23 November 1963.”
         </blockquote>
+        <p style={{ maxWidth: 780, margin: "12px auto 0", color: "#9fa7ba", lineHeight: 1.6 }}>
+          “Microdosing wonder” is playful wordplay for encountering the story episode by episode. It is not advice about substance use. Doctor Who first aired on 23 November 1963.
+        </p>
         <p style={{ maxWidth: 800, margin: "28px auto 0", fontSize: "clamp(1.1rem,2.2vw,1.45rem)", lineHeight: 1.75, color: "#d7d9e4" }}>
           What science fiction can teach us about continuity when a body, personality or world changes.
           A bridge from regeneration and resurrection to reincarnation, meta-awareness and mettā-awareness.
@@ -128,7 +131,7 @@ export default function PowerOfTheDoctorPage() {
         </p>
         <div style={{ display: "grid", gap: 16, marginTop: 34 }}>
           {chambers.map(([title, text]) => (
-            <article key={title} style={{ ...panel, padding: "24px clamp(22px,4vw,42px)", display: "grid", gridTemplateColumns: "minmax(180px, .5fr) 1.5fr", gap: 24, alignItems: "start" }}>
+            <article key={title} style={{ ...panel, padding: "24px clamp(22px,4vw,42px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,260px),1fr))", gap: 24, alignItems: "start" }}>
               <h3 style={{ margin: 0, color: "#e7cd7e" }}>{title}</h3>
               <p style={{ margin: 0, color: "#cbd0dd", lineHeight: 1.75 }}>{text}</p>
             </article>
@@ -181,7 +184,7 @@ export default function PowerOfTheDoctorPage() {
         <div style={{ borderLeft: "4px solid #d8b95c", padding: "8px 0 8px 24px", maxWidth: 920 }}>
           <p className="section-label">EVIDENCE BOUNDARY</p>
           <p style={{ color: "#cbd0dd", lineHeight: 1.8 }}>
-            <strong>Interpretation:</strong> the comparison among regeneration, resurrection and reincarnation is a cultural and philosophical analysis. <strong>Speculation:</strong> HOMESENSE VR is a future creative concept. It does not establish survival after death, direct perception of dark matter, quantum consciousness or any franchise&apos;s fictional mechanism as physically possible.
+            <strong>Interpretation:</strong> the comparison among regeneration, resurrection and reincarnation is a cultural and philosophical analysis. <strong>Speculation:</strong> HOMESENSE VR is a future creative concept. It does not establish survival after death, direct perception of dark matter, quantum consciousness or any franchise&apos;s fictional mechanism as physically possible. This is independent cultural commentary and is not affiliated with or endorsed by the referenced rights holders.
           </p>
           <p style={{ color: "#f0d98f", fontWeight: 800 }}>BQ001 remains UNRESOLVED. Fund the question, not the answer.</p>
           <a href="/big-questions/bq001">Explore BQ001: Does consciousness continue beyond the individual? →</a>
