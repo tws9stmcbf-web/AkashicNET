@@ -152,7 +152,7 @@ def load_json(raw):
 def decode_percent(text):
     decoded = text
     for _ in range(32):
-        updated = unquote(decoded)
+        updated = unquote(unicodedata.normalize("NFKC", decoded))
         if updated == decoded:
             return decoded
         decoded = updated
