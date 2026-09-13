@@ -62,6 +62,16 @@ export default function PowerOfTheDoctorPage() {
         <h1 style={{ margin: "20px auto", maxWidth: 980, fontSize: "clamp(3rem,8vw,7.4rem)", lineHeight: .92 }}>
           The Power<br /><em style={{ color: "#d8b95c" }}>of the Doctor</em>
         </h1>
+        <figure style={{ ...panel, margin: "34px auto 0", maxWidth: 1160, overflow: "hidden", padding: 0, textAlign: "left" }}>
+          <img
+            src="/images/power-of-the-doctor-two-toroidal-hearts.png"
+            alt="An original metadimensional blue box opens between quantum microspace and the cosmic web, revealing exactly two interwoven luminous toroidal hearts within an impossible spherical interior."
+            style={{ display: "block", width: "100%", height: "auto" }}
+          />
+          <figcaption style={{ padding: "16px 20px", color: "#b9bfd0", lineHeight: 1.65 }}>
+            <strong style={{ color: "#f3dc96" }}>Two sacred toroidal hearts.</strong> An original AkashicNET visual metaphor for continuity and compassion across scales; not a scientific diagram or a reproduction of a franchise prop.
+          </figcaption>
+        </figure>
         <blockquote style={{ maxWidth: 920, margin: "30px auto 0", color: "#f2d98e", fontSize: "clamp(1.25rem,2.8vw,2rem)", lineHeight: 1.45 }}>
           “The mad quantum spacetime traveller with two hearts, trying their best to make the cosmos a slightly nicer place to live, microdosing wonder step by step since 23 November 1963.”
         </blockquote>
@@ -139,6 +149,34 @@ export default function PowerOfTheDoctorPage() {
         </div>
       </section>
 
+
+      <section style={{ ...shell, padding: "70px 0 24px" }}>
+        <div style={{ ...panel, padding: "clamp(26px,5vw,52px)", background: "radial-gradient(circle at 20% 10%, rgba(36,154,190,.22), rgba(9,13,31,.97) 58%)" }}>
+          <p className="section-label">VIDEO CONCEPT · HAARLEM × ICPR 2026</p>
+          <h2 style={{ maxWidth: 920, fontSize: "clamp(2.2rem,5vw,4.3rem)", lineHeight: 1.05 }}>
+            From the shared table to the metadimensional café.
+          </h2>
+          <p style={{ maxWidth: 840, color: "#d7d9e4", lineHeight: 1.85 }}>
+            A future short-film version can combine 360° VR café footage from Haarlem during ICPR 2026 with the journey after eating at Holy Land. The two sacred toroidal hearts become the transition device: one holds embodied memory and human connection; the other opens toward the wider field of research, wonder and unanswered questions.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: 14, marginTop: 26 }}>
+            {[
+              ["01 · Holy Land", "Begin with food, place and companionship: grounded sensory details before the perceptual shift."],
+              ["02 · Haarlem VR Café", "Move into spherical images, spatial sound and candid moments from the ICPR gathering."],
+              ["03 · Two-Heart Portal", "Use the blue-box artwork as an original title frame and cymatic transition between inner and outer scale."],
+              ["04 · Return With Care", "End in ordinary Haarlem: integration, mettā and one practical act that makes the shared world kinder."],
+            ].map(([title, text]) => (
+              <article key={title} style={{ border: "1px solid rgba(216,185,92,.2)", borderRadius: 18, padding: 20, background: "rgba(5,8,20,.45)" }}>
+                <h3 style={{ marginTop: 0, color: "#e7cd7e" }}>{title}</h3>
+                <p style={{ marginBottom: 0, color: "#cbd0dd", lineHeight: 1.65 }}>{text}</p>
+              </article>
+            ))}
+          </div>
+          <p style={{ margin: "24px 0 0", color: "#9fa7ba", lineHeight: 1.65 }}>
+            Production placeholder: source clips, participant permissions and event/venue filming clearance are still required. The edit should distinguish personal experience, artistic metaphor and research evidence.
+          </p>
+        </div>
+      </section>
 
       <section style={{ ...shell, padding: "86px 0 24px" }}>
         <p className="section-label">WATCH THE IDEAS</p>
