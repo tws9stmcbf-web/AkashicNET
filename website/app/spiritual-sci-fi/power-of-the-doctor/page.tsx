@@ -194,6 +194,19 @@ export default function PowerOfTheDoctorPage() {
       </section>
 
 
+      <section style={{ ...shell, padding: "20px 0 70px", textAlign: "center" }}>
+        <div style={{ ...panel, padding: "clamp(28px,6vw,58px)" }}>
+          <p className="section-label">FROM INNER SPACE TO THE FESTIVAL FIELD</p>
+          <h2 style={{ margin: "16px auto", maxWidth: 850, fontSize: "clamp(2rem,4.5vw,3.8rem)", lineHeight: 1.08 }}>One signal. Thousands of bodies. A shared moment in time.</h2>
+          <p style={{ maxWidth: 760, margin: "20px auto 28px", color: "#d7d9e4", lineHeight: 1.8 }}>
+            Orbital&apos;s Doctor Who theme at Glastonbury 2010 turns a television signal into collective music, movement and memory: a cultural example of how one pattern can be carried by many minds.
+          </p>
+          <a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1dt6v7f/doctor_who_orbital_glastonbury_2010_bbc_music/">
+            Doctor Who × Orbital · Glastonbury 2010 <span>→</span>
+          </a>
+        </div>
+      </section>
+
       <section style={{ ...shell, padding: "10px 0 96px", textAlign: "center" }}>
         <div style={{ ...panel, padding: "clamp(32px,7vw,72px)", background: "radial-gradient(circle at 50% 100%, rgba(62,181,214,.25), rgba(10,14,32,.97) 62%)" }}>
           <p className="section-label">FINAL PORTAL · SOUND THROUGH TIME</p>
