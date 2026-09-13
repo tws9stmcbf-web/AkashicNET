@@ -52,6 +52,34 @@ EXPECTED_OPERATIONAL_BOUNDARIES = {
     "analytics_activation_allowed": False,
     "multimedia_generation_allowed": False,
 }
+ALLOWED_KEYS = {
+    "top": frozenset({
+        "exclusions", "governed_artifacts", "inherited_v016_readiness_pin",
+        "inventory", "inventory_id", "mode", "operational_boundaries",
+        "promotion_guards", "question_id", "question_status", "release_track",
+        "scope", "summary", "version",
+    }),
+    "scope": frozenset({
+        "description", "exhaustive_beyond_pinned_artifacts",
+        "exhaustive_for_pinned_artifacts", "synthesis_or_answer",
+    }),
+    "artifact": frozenset({"git_blob_sha", "path", "role"}),
+    "exclusion": frozenset({"name", "reason"}),
+    "item": frozenset({
+        "boundary", "canonical_name", "category", "evidence_role",
+        "independence_state", "inventory_item_id", "pinned_locators",
+        "relation_to_bq001", "represented_by", "status",
+    }),
+    "summary": frozenset({
+        "accepted_edges", "consciousness_theories", "contemplative_frameworks",
+        "governed_artifacts", "inventory_items",
+        "neuroscientific_explanatory_models", "philosophical_frameworks",
+        "resolved_items", "umbrella_models",
+    }),
+    "promotion_guards": frozenset(EXPECTED_PROMOTION_GUARDS),
+    "operational_boundaries": frozenset(EXPECTED_OPERATIONAL_BOUNDARIES),
+}
+
 EXPECTED_EXCLUSIONS = {
     ("cardiac-arrest and NDE reports", "RESEARCH_DOMAIN_OR_OBSERVATION_NOT_A_FRAMEWORK"),
     ("reincarnation-type case literature", "RESEARCH_DOMAIN_AND_CASE_LITERATURE_NOT_A_SINGLE_FRAMEWORK"),
@@ -135,6 +163,7 @@ def privacy_check(value):
     def check(text, is_key=False):
         decoded = decode_percent(text)
         folded = unicodedata.normalize("NFKC", decoded).casefold().replace("\\", "/")
+        folded = folded.translate(str.maketrans({"。": ".", "．": ".", "｡": "."}))
         if any(marker in folded for marker in (
             "drive.google.com", "docs.google.com", "/my drive/", "akm-",
             "file://", "gdrive://",
@@ -146,7 +175,9 @@ def privacy_check(value):
         for key, child in value.items():
             check(key, True)
             normalized_key = re.sub(
-                r"[^a-z0-9]", "", decode_percent(key).casefold()
+                r"[^a-z0-9]", "", unicodedata.normalize(
+                    "NFKC", decode_percent(key)
+                ).casefold()
             )
             if normalized_key in FORBIDDEN_KEYS:
                 raise ValueError("private metadata rejected")
@@ -239,10 +270,36 @@ def validate_shared_sources(items):
         raise ValueError("shared source independence state drift")
 
 
+def require_exact_keys(value, expected, label):
+    if not isinstance(value, dict) or set(value) != expected:
+        raise ValueError(f"{label} exact allowed-key set drift")
+
+
+def validate_allowed_keys(data):
+    require_exact_keys(data, ALLOWED_KEYS["top"], "top-level inventory")
+    require_exact_keys(data["scope"], ALLOWED_KEYS["scope"], "scope")
+    require_exact_keys(data["summary"], ALLOWED_KEYS["summary"], "summary")
+    require_exact_keys(
+        data["promotion_guards"], ALLOWED_KEYS["promotion_guards"], "promotion guards"
+    )
+    require_exact_keys(
+        data["operational_boundaries"],
+        ALLOWED_KEYS["operational_boundaries"],
+        "operational boundaries",
+    )
+    for artifact in data["governed_artifacts"]:
+        require_exact_keys(artifact, ALLOWED_KEYS["artifact"], "governed artifact")
+    for exclusion in data["exclusions"]:
+        require_exact_keys(exclusion, ALLOWED_KEYS["exclusion"], "exclusion")
+    for item in data["inventory"]:
+        require_exact_keys(item, ALLOWED_KEYS["item"], "inventory item")
+
+
 def validate(data):
     from jsonschema import Draft202012Validator
 
     privacy_check(data)
+    validate_allowed_keys(data)
     schema = load_json(SCHEMA.read_bytes())
     privacy_check(schema)
     Draft202012Validator.check_schema(schema)
