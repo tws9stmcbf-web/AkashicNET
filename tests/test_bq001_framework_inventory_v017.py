@@ -304,6 +304,18 @@ class FrameworkInventoryTests(unittest.TestCase):
                         f"https://drive{encoded_dot}google{encoded_dot}com/file/d/private"
                     )
 
+    def test_default_ignorable_characters_in_private_hosts_are_rejected(self):
+        private_urls = (
+            "https://drive\u200b.google.com/file/d/private",
+            "https://docs\u00ad.google.com/document/d/private",
+            "https://\ufeffdrive.google.com/file/d/private",
+            "https://drive%E2%80%8B.google.com/file/d/private",
+        )
+        for private_url in private_urls:
+            with self.subTest(private_url=private_url):
+                with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+                    validator.privacy_check(private_url)
+
     def test_nfkc_normalized_forbidden_metadata_keys_are_rejected(self):
         keys = (
             "ｄｒｉｖｅ＿ｉｄ",

@@ -164,6 +164,11 @@ def privacy_check(value):
         decoded = decode_percent(text)
         folded = unicodedata.normalize("NFKC", decoded).casefold().replace("\\", "/")
         folded = folded.translate(str.maketrans({"。": ".", "．": ".", "｡": "."}))
+        # Browsers and IDNA processing can discard Unicode format controls in hosts.
+        folded = "".join(
+            character for character in folded
+            if unicodedata.category(character) != "Cf"
+        )
         if any(marker in folded for marker in (
             "drive.google.com", "docs.google.com", "/my drive/", "akm-",
             "file://", "gdrive://",
