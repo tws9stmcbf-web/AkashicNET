@@ -86,6 +86,21 @@ export default function MettaAwarenessPage() {
         </div>
       </section>
 
+      <section className={styles.portalMap} aria-labelledby="portal-map-title">
+        <div className={styles.portalIntro}>
+          <p className={styles.label}>Portal constellation</p>
+          <h2 id="portal-map-title">Choose your depth.</h2>
+          <p>Begin anywhere. Move inward when the language, context and uncertainty boundaries feel clear. “Deeper” describes the level of inquiry, never the value or awareness of a person.</p>
+        </div>
+        <nav className={styles.portals} aria-label="Mettā-Awareness depth map">
+          <a className={styles.portalOne} href="#practice"><span>01</span><strong>Arrive</strong><small>Pause and notice</small></a>
+          <a className={styles.portalTwo} href="#capacities"><span>02</span><strong>Relate</strong><small>Four capacities</small></a>
+          <a className={styles.portalThree} href="#thirteen"><span>03</span><strong>Inquire</strong><small>13 revisable lenses</small></a>
+          <a className={styles.portalFour} href="#listen"><span>04</span><strong>Listen</strong><small>Guided media</small></a>
+          <a className={styles.portalFive} href="#cymatics"><span>05</span><strong>Contemplate</strong><small>Sound, symbol, unknown</small></a>
+        </nav>
+      </section>
+
       <section className={styles.places} aria-label="A worldwide field of practice">
         <article><span>City</span><h3>Amid movement</h3><p>Practise attention in crowds, transit, work and ordinary encounters.</p></article>
         <article><span>Temple</span><h3>Within tradition</h3><p>Approach inherited practices with context, respect and cultural humility.</p></article>
@@ -129,7 +144,7 @@ export default function MettaAwarenessPage() {
         </div>
       </section>
 
-      <section className={styles.capacities}>
+      <section className={styles.capacities} id="capacities">
         <div className={styles.sectionHead}>
           <p className={styles.label}>03 · Four capacities</p>
           <h2>Warmth needs structure.</h2>
@@ -182,7 +197,7 @@ export default function MettaAwarenessPage() {
         </div>
       </section>
 
-      <section className={styles.media}>
+      <section className={styles.media} id="listen">
         <div>
           <p className={styles.label}>07 · Listen and practise</p>
           <h2>Two doorways into the practice.</h2>
@@ -206,7 +221,7 @@ export default function MettaAwarenessPage() {
         </article>
       </section>
 
-      <section className={styles.audiovisual} aria-labelledby="audiovisual-title">
+      <section className={styles.audiovisual} id="cymatics" aria-labelledby="audiovisual-title">
         <div className={styles.audiovisualCopy}>
           <p className={styles.label}>08 · Optional audiovisual</p>
           <h2 id="audiovisual-title">Sound made visible.</h2>
