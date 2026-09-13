@@ -195,8 +195,16 @@ export default function AkashicVisionPage() {
           <article>
             <span>Continuity · Memory · Identity</span>
             <h3>AkashicTIMELESS</h3>
-            <p>NDEs, ancestry, memory, reincarnation and continuity across time. “Reincarnation Reimagined” belongs here as an open inquiry.</p>
-            <a className={styles.sourceLink} href="https://www.reddit.com/r/NeuronsToNirvana/search/?q=reincarnation%20OR%20%22past%20life%22&restrict_sr=1&sort=relevance&t=all">Explore N2N posts and videos on reincarnation and past lives ↗</a>
+            <p>NDEs, OBEs, ancestry, memory, reincarnation and continuity across time. “Reincarnation Reimagined” belongs here as an open inquiry.</p>
+            <ul className={styles.lensList} aria-label="AkashicTIMELESS inquiry lenses">
+              <li>Secular spirituality</li>
+              <li>Past-life testimony</li>
+              <li>NDEs and OBEs</li>
+              <li>Fiction and science fiction</li>
+              <li>Esoteric traditions</li>
+              <li>Eleusinian mysteries and the ergot hypothesis</li>
+            </ul>
+            <a className={styles.sourceLink} href="https://www.reddit.com/r/NeuronsToNirvana/search/?q=reincarnation%20OR%20%22past%20life%22&restrict_sr=1&sort=relevance&t=all">Explore published N2N posts and videos on reincarnation and past lives ↗</a>
             <p className={styles.sourceCaveat}>Community material is preserved as a field of testimony, interpretation and inquiry. Quantity or recurrence of reports does not by itself establish reincarnation as fact.</p>
           </article>
           <article>
