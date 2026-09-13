@@ -19,7 +19,9 @@
 .scaleCopy{position:relative;z-index:2;align-self:center;padding:80px clamp(28px,5vw,76px) 80px 24px;background:linear-gradient(90deg,transparent,#050712cc 16%)}
 .scaleCopy>p:first-child{color:var(--rose);font-weight:800;letter-spacing:.2em}.scaleCopy h2{margin:.15em 0;font:clamp(3.2rem,7vw,7rem)/.9 Georgia,serif;color:var(--gold);text-shadow:0 0 35px #f5cd7244}
 .scaleCopy blockquote{margin:30px 0;font:italic clamp(1.35rem,2.4vw,2rem)/1.45 Georgia,serif;color:#fff}
-.scaleCopy>p{color:#d4cfda;line-height:1.7}.scaleCopy ol{list-style:none;padding:0;margin:34px 0;display:grid;gap:8px}
+.scaleCopy>p{color:#d4cfda;line-height:1.7}.loveInvocation{margin:28px 0;padding:24px;border:1px solid #f5cd7247;border-radius:18px;background:radial-gradient(circle at 50% 0,#f5cd7215,transparent 68%);font:italic clamp(1.05rem,1.8vw,1.35rem)/1.55 Georgia,serif;color:#fff4d4}
+.loveInvocation small{display:block;margin-top:15px;padding-top:15px;border-top:1px solid #ffffff20;color:#bfc9d6;font:normal .78rem/1.5 Arial,sans-serif;letter-spacing:.04em}
+.scaleCopy ol{list-style:none;padding:0;margin:34px 0;display:grid;gap:8px}
 .scaleCopy li{display:flex;gap:14px;padding:10px 12px;border-left:1px solid #ffffff35;background:#ffffff08}.scaleCopy li>span{color:var(--cyan);font-size:.68rem;padding-top:3px}.scaleCopy li div{display:grid;gap:3px}.scaleCopy li strong{font-size:.88rem}.scaleCopy li small{color:#aaa;line-height:1.35}
 .scaleBoundary{display:block;color:#aaa;line-height:1.55;border-top:1px solid #ffffff1f;padding-top:18px}
 @keyframes heartBeat{0%,100%{transform:translate(-50%,-50%) scale(.96)}45%{transform:translate(-50%,-50%) scale(1.08)}55%{transform:translate(-50%,-50%) scale(1.02)}}
