@@ -258,6 +258,59 @@ class FrameworkInventoryTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "promotion guard mapping drift"):
                     validator.validate(candidate)
 
+    def test_exact_allowed_keys_survive_coordinated_schema_weakening(self):
+        schema = validator.load_json(validator.SCHEMA.read_bytes())
+
+        def allow_extensions(value):
+            if isinstance(value, dict):
+                if "additionalProperties" in value:
+                    value["additionalProperties"] = True
+                for child in value.values():
+                    allow_extensions(child)
+            elif isinstance(value, list):
+                for child in value:
+                    allow_extensions(child)
+
+        allow_extensions(schema)
+        mutations = (
+            lambda d: d.update(answer="synthetic"),
+            lambda d: d["scope"].update(answer="synthetic"),
+            lambda d: d["summary"].update(answer=1),
+            lambda d: d["promotion_guards"].update(answer=False),
+            lambda d: d["operational_boundaries"].update(answer=False),
+            lambda d: d["governed_artifacts"][0].update(answer="synthetic"),
+            lambda d: d["exclusions"][0].update(answer="synthetic"),
+            lambda d: d["inventory"][0].update(answer="synthetic"),
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(validator.canonical(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                for mutation in mutations:
+                    with self.subTest(mutation=mutation):
+                        candidate = copy.deepcopy(self.data)
+                        mutation(candidate)
+                        with self.assertRaisesRegex(ValueError, "allowed-key set drift"):
+                            validator.validate(candidate)
+
+    def test_idna_dot_variants_in_private_hosts_are_rejected(self):
+        for encoded_dot in ("%E3%80%82", "%EF%BC%8E", "%EF%BD%A1"):
+            with self.subTest(encoded_dot=encoded_dot):
+                with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+                    validator.privacy_check(
+                        f"https://drive{encoded_dot}google{encoded_dot}com/file/d/private"
+                    )
+
+    def test_nfkc_normalized_forbidden_metadata_keys_are_rejected(self):
+        keys = (
+            "ｄｒｉｖｅ＿ｉｄ",
+            "%EF%BD%84%EF%BD%92%EF%BD%89%EF%BD%96%EF%BD%85%EF%BC%BF%EF%BD%89%EF%BD%84",
+        )
+        for key in keys:
+            with self.subTest(key=key):
+                with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+                    validator.privacy_check({key: "synthetic"})
+
     def test_unicode_normalized_private_url_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "private metadata rejected"):
             validator.privacy_check(
