@@ -1,6 +1,6 @@
 "use client";
 
-import { PointerEvent, WheelEvent, useRef, useState } from "react";
+import { CSSProperties, PointerEvent, WheelEvent, useRef, useState } from "react";
 import styles from "./metta-awareness.module.css";
 
 const portals = [
@@ -74,7 +74,7 @@ export default function PortalConstellation() {
         className={styles.spatialStage}
         aria-label="Mettā-Awareness depth map"
         aria-describedby="portal-instructions"
-        style={{"--rx":`${view.rx}deg`,"--ry":`${view.ry}deg`,"--zoom":view.zoom} as React.CSSProperties}
+        style={{"--rx":`${view.rx}deg`,"--ry":`${view.ry}deg`,"--zoom":view.zoom} as CSSProperties}
       >
         <div className={styles.portals}>
           <i className={styles.depthPlaneOne} aria-hidden="true"/>
