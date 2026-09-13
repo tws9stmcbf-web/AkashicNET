@@ -151,6 +151,7 @@ export default function PowerOfTheDoctorPage() {
             ["Doctor Who", "Regeneration trailer · 1m 50s · Everything Is About to Change", "https://www.reddit.com/r/NeuronsToNirvana/comments/yb8fkk/regeneration_trailer_1m50s_everything_is_about_to/"],
             ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
             ["Doctor Who", "The Thirteenth Doctor regenerates · regeneration sequence", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e15hj6/the_thirteenth_doctor_regenerates_regenerations/"],
+            ["Doctor Who", "60th anniversary trailer · destiny, Donna Noble and erased memory", "https://www.reddit.com/r/NeuronsToNirvana/comments/16txyk3/official_trailer_2m37s_i_dont_believe_in_destiny/"],
             ["Doctor Who", "Was LSD an influence? · Reuters historical-cultural question", "https://www.reddit.com/r/NeuronsToNirvana/comments/18f2hx9/was_lsd_an_influence_on_doctor_who_reuters_apr/"],
             ["Battlestar Galactica", "Resurrection · official SYFY video portal", "https://www.youtube.com/@SYFY/search?query=Battlestar%20Galactica%20resurrection"],
             ["Star Trek", "Joined identity · official Star Trek video portal", "https://www.youtube.com/@StarTrekOfficial/search?query=Trill"],
