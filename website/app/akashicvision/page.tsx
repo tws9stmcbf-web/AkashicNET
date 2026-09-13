@@ -40,6 +40,7 @@ export default function AkashicVisionPage() {
           <a href="#experience">Experience</a>
           <a href="#translation">Translation</a>
           <a href="#vision">2042–2047</a>
+          <a href="#antecedents">Antecedents</a>
           <a href="/big-questions/bq001">BQ001</a>
         </nav>
       </header>
@@ -214,6 +215,55 @@ export default function AkashicVisionPage() {
           </article>
         </div>
         <p className={styles.constellationBoundary}><strong>Evidence boundary:</strong> shared themes generate questions. They do not establish equivalence between mathematical infinity, cosmological models, personal experience and spiritual teachings.</p>
+      </section>
+
+      <section className={styles.antecedents} id="antecedents" aria-labelledby="antecedents-title">
+        <div className={styles.sectionIntro}>
+          <div>
+            <p className={styles.kicker}>Akashic antecedents · Source constellation</p>
+            <h2 id="antecedents-title">From ākāśa to the Book of Life.</h2>
+          </div>
+          <p>Related traditions are connected by provenance, not collapsed into one claim. The older Sanskrit concept of ākāśa, later Western “Akashic Records,” and Edgar Cayce’s readings belong to different historical and evidential contexts.</p>
+        </div>
+        <div className={styles.antecedentGrid}>
+          <article>
+            <span>Indian philosophical antecedent</span>
+            <h3>Ākāśa</h3>
+            <p>Space, ether, sky or open expanse; treated in several Indian philosophical systems as an element or category of existence. It is not automatically equivalent to a universal memory archive.</p>
+            <a href="https://iep.utm.edu/sankhya/">Context · Internet Encyclopedia of Philosophy ↗</a>
+          </article>
+          <article>
+            <span>Later esoteric development</span>
+            <h3>Akashic Records</h3>
+            <p>The idea of a readable universal record developed through modern Western esoteric traditions. Similar language across traditions is a connection for study, not proof of identical origins or mechanisms.</p>
+            <a href="https://edgarcayce.org/edgar-cayce/readings/akashic-records/">A.R.E. Akashic Records overview ↗</a>
+          </article>
+          <article>
+            <span>Lived experience/testimony · Interpretation</span>
+            <h3>Edgar Cayce’s “Book of Life”</h3>
+            <p>A.R.E. says Cayce attributed his information to a person’s subconscious and the Akashic Records. Its public overview includes excerpts from readings 1650-1, 2533-8 and 304-5.</p>
+            <a href="https://www.youtube.com/playlist?list=PLB259A3284BC51563">Official A.R.E. Book of Life video series ↗</a>
+          </article>
+          <article>
+            <span>Hypothesis · Archaeological evaluation required</span>
+            <h3>Atlantis and the Hall of Records</h3>
+            <p>Cayce readings linked records with Bimini, Egypt and the Yucatán. AkashicNET preserves the reading numbers and subsequent interpretations while keeping geological and archaeological evaluation independent.</p>
+            <a href="https://edgarcayce.org/edgar-cayce/readings/ancient-mysteries/">A.R.E. Ancient Mysteries overview ↗</a>
+          </article>
+        </div>
+        <div className={styles.sourceShelf}>
+          <div>
+            <h3>Public discovery shelf</h3>
+            <p>Links and metadata are indexed for discovery. Protected readings and books are not copied into AkashicNET.</p>
+          </div>
+          <ul>
+            <li><a href="https://as2.edgarcaycefoundation.org/">Edgar Cayce Foundation archival catalogue</a></li>
+            <li><a href="https://edgarcayce.org/edgar-cayce/readings/reincarnation/">A.R.E. reincarnation overview</a></li>
+            <li><a href="https://www.youtube.com/watch?v=RvAKQcSQ6FE">Akashic Records, reincarnation and family karma</a></li>
+            <li><a href="https://archive.org/details/edgarcayceonakas0000tode">Kevin Todeschi’s book · controlled digital lending</a></li>
+          </ul>
+        </div>
+        <p className={styles.rightsBoundary}><strong>Rights and evidence boundary:</strong> catalogue facts, source URLs and reading identifiers may support discovery. Substantial quotations, complete readings, books, member-only results and video transcripts require their respective permissions. Cayce’s metaphysical claims remain testimony and interpretation unless independently established.</p>
       </section>
 
       <section className={styles.vows}>
