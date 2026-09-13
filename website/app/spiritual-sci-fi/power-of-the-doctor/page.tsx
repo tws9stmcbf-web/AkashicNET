@@ -178,6 +178,7 @@ export default function PowerOfTheDoctorPage() {
         <h2 style={{ maxWidth: 920, fontSize: "clamp(2.2rem,5vw,4.2rem)", lineHeight: 1.06 }}>Character, fragments, reality and possible worlds.</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16, marginTop: 30 }}>
           {[
+            ["One thread, many Doctors", "From TARDIS to complex spacetime event: the synthesis portal connecting incarnations, worlds and infinite possibilities.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1vom25d/doctor_who_from_tardis_to_complex_spacetime_event/"],
             ["The ethical traveller", "Ask ChatGPT: interpret the Doctor through another philosophical lens.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1lkuogk/ask_chatgpt_is_the_doctor_from_doctor_who/"],
             ["The Key to Time", "A crystalline whole scattered into segments: unity recovered without erasing the parts.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e16gt2/an_allegory_key_to_time_a_perfect_crystalline/"],
             ["The Pandorica Opens", "Containment, preserved memory and a cosmic reboot after spacetime fractures around the TARDIS.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1cpic32/the_pandorica_opens_ft_the_tardis_time_and/"],
