@@ -1,6 +1,6 @@
 # Public image asset manifest
 
-Snapshot date: 30 August 2026
+Snapshot dates: original asset set — 30 August 2026; AkashicVISION addition — 13 September 2026
 
 | Deployed asset | SHA-256 |
 |---|---|
@@ -9,5 +9,10 @@ Snapshot date: 30 August 2026
 | `knowledge-field.webp` | `36645e73904e94c3007157806bc174f409601b913c006f8d15d02e197ea9794c` |
 | `living-library-roots.webp` | `a41dc392ba04c365858de84560946896cf950925447aa7c4b8d5cea6f6f2735d` |
 | `matrix-enlightenment-library.png` | `260b946e6ed1cdd46c3fe7f02a808deeed5a4c0b2716c771d668c100055f72ae` |
+| `akashicvision-nde-merkaba-flower-of-life.webp` | `34a8081c87af719d9447cf137458412c0fe63375939710753c2b3897e334bf50` |
+
+## Provenance additions
+
+- `akashicvision-nde-merkaba-flower-of-life.webp` — original AkashicNET concept artwork added on 13 September 2026 for the AkashicVISION portal and homepage gateway. The toroidal heart, Merkaba, Flower of Life and cosmic-library imagery are artistic symbolism, not scientific evidence. The asset contains no private corpus data.
 
 The binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
