@@ -180,6 +180,7 @@ export default function PowerOfTheDoctorPage() {
           {[
             ["The ethical traveller", "Ask ChatGPT: interpret the Doctor through another philosophical lens.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1lkuogk/ask_chatgpt_is_the_doctor_from_doctor_who/"],
             ["The Key to Time", "A crystalline whole scattered into segments: unity recovered without erasing the parts.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e16gt2/an_allegory_key_to_time_a_perfect_crystalline/"],
+            ["The Pandorica Opens", "Containment, preserved memory and a cosmic reboot after spacetime fractures around the TARDIS.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1cpic32/the_pandorica_opens_ft_the_tardis_time_and/"],
             ["The Reality War", "A finale-scale puzzle about contested reality, identity and which world becomes actual.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1kyk7la/the_doctor_whoseason_2_finale_is_titled_the/"],
             ["Holodeck × TARDIS", "A parallel future timeline for an adaptive, larger-on-the-inside perceptual environment.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1mxw8mt/the_holodeck_tardis_a_parallel_future_timeline/"],
           ].map(([title, text, href]) => (
