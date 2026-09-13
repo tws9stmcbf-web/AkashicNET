@@ -91,6 +91,10 @@ export default function AkashicVisionPage() {
             </article>
           ))}
         </div>
+        <div className={styles.primarySource}>
+          <a className={styles.sourceLink} href="https://www.reddit.com/r/NeuronsToNirvana/comments/1by9vb4/hospital_after_anaesthesia_epiphany_true_reality/">Original N2N account · Hospital After Anaesthesia Epiphany: True Reality →</a>
+          <p><strong>Provenance:</strong> published 7 April 2024 after the Easter Monday experience. The post’s “Fifth Timeless” dimension is preserved as interpretation/speculation, not established physics or proof of survival beyond death.</p>
+        </div>
       </section>
 
       <section className={styles.symbols} aria-labelledby="symbols-title">
