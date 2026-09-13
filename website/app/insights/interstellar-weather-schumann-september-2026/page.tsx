@@ -27,11 +27,11 @@ const dimensions = [
   ["05", "REGENERATE", "Respond with rest, grounding, reflection and compassionate care."],
   ["06", "TRANSCEND", "Place Sun, Pachamama, biosphere and consciousness within a wider system."],
   ["07", "#METAD v2.1", "Compare competing explanations and search for contradictions."],
-  ["08", "ACTC", "Map agency, context, temporal order and candidate causal pathways."],
-  ["09", "MultidimensionalCUT · PAST", "Compare prior solar, geomagnetic, lunar and resonance patterns."],
-  ["10", "MultidimensionalCUT · PRESENT", "Describe the dated 11–12 September activity window precisely."],
-  ["11", "MultidimensionalCUT · FUTURE", "Pre-register what to measure during the next comparable event."],
-  ["12", "UMASC", "Relate matter, awareness, systems and culture without collapsing their differences."],
+  ["08", "ACTC v2.0", "Map agency, context, temporal order and candidate causal pathways."],
+  ["09", "MultidimensionalCUT v4.0.0 · PAST", "Compare prior solar, geomagnetic, lunar and resonance patterns."],
+  ["10", "MultidimensionalCUT v4.0.0 · PRESENT", "Describe the dated 11–12 September activity window precisely."],
+  ["11", "MultidimensionalCUT v4.0.0 · FUTURE", "Pre-register what to measure during the next comparable event."],
+  ["12", "UMASC v7.2", "Relate matter, awareness, systems and culture without collapsing their differences."],
   ["13", "AKASHICNET", "Synthesize the whole field while leaving unresolved questions open."],
 ];
 const sources = [
@@ -93,7 +93,7 @@ export default function InterstellarWeatherReport() {
           <p className="section-label">TRUE 13D ANALYSIS</p>
           <h2 style={{ maxWidth: 900, fontSize: "clamp(2.2rem,5vw,4.5rem)", lineHeight: 1.04 }}>Thirteen lenses. No premature closure.</h2>
           <figure style={{ ...panel, overflow: "hidden", padding: 0, marginTop: 30 }}>
-            <img src="/images/interstellar-weather-schumann-13d-2026-09-12.png" alt="Thirteen-dimensional AkashicNET analysis displaying AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, METAD v2.1, ACTC, three MultidimensionalCUT time lenses, UMASC and AkashicNET synthesis." style={{ display: "block", width: "100%", height: "auto" }} />
+            <img src="/images/interstellar-weather-schumann-13d-2026-09-12.png" alt="Thirteen-dimensional AkashicNET analysis displaying AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, METAD v2.1, ACTC v2.0, three MultidimensionalCUT v4.0.0 time lenses, UMASC v7.2 and AkashicNET synthesis." style={{ display: "block", width: "100%", height: "auto" }} />
             <figcaption style={{ padding: "16px 20px", color: "#b9bfd0", lineHeight: 1.65 }}><strong style={{ color: "#f3dc96" }}>The 13D architecture.</strong> “Dimensions” means analytical perspectives, not a claim that thirteen additional physical dimensions have been demonstrated.</figcaption>
           </figure>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(245px,1fr))", gap: 16, marginTop: 26 }}>
