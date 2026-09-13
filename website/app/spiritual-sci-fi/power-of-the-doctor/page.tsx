@@ -62,6 +62,9 @@ export default function PowerOfTheDoctorPage() {
         <h1 style={{ margin: "20px auto", maxWidth: 980, fontSize: "clamp(3rem,8vw,7.4rem)", lineHeight: .92 }}>
           The Power<br /><em style={{ color: "#d8b95c" }}>of the Doctor</em>
         </h1>
+        <blockquote style={{ maxWidth: 920, margin: "30px auto 0", color: "#f2d98e", fontSize: "clamp(1.25rem,2.8vw,2rem)", lineHeight: 1.45 }}>
+          “The mad quantum spacetime traveller with two hearts, trying their best to make the cosmos a slightly nicer place to live, microdosing wonder step by step since 23 November 1963.”
+        </blockquote>
         <p style={{ maxWidth: 800, margin: "28px auto 0", fontSize: "clamp(1.1rem,2.2vw,1.45rem)", lineHeight: 1.75, color: "#d7d9e4" }}>
           What science fiction can teach us about continuity when a body, personality or world changes.
           A bridge from regeneration and resurrection to reincarnation, meta-awareness and mettā-awareness.
@@ -131,6 +134,34 @@ export default function PowerOfTheDoctorPage() {
             </article>
           ))}
         </div>
+      </section>
+
+
+      <section style={{ ...shell, padding: "86px 0 24px" }}>
+        <p className="section-label">WATCH THE IDEAS</p>
+        <h2 style={{ maxWidth: 900, fontSize: "clamp(2.2rem,5vw,4.4rem)", lineHeight: 1.05 }}>Trailers and canonical clips as thought-experiment portals.</h2>
+        <p style={{ maxWidth: 840, color: "#d7d9e4", lineHeight: 1.8 }}>
+          These links lead to official franchise channels or authorised material. They provide cultural context; their stories and imagery remain the property of their respective rights holders.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(235px,1fr))", gap: 16, marginTop: 30 }}>
+          {[
+            ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
+            ["Battlestar Galactica", "Resurrection · official SYFY video portal", "https://www.youtube.com/@SYFY/search?query=Battlestar%20Galactica%20resurrection"],
+            ["Star Trek", "Joined identity · official Star Trek video portal", "https://www.youtube.com/@StarTrekOfficial/search?query=Trill"],
+            ["Avatar", "The Avatar cycle · official Netflix video portal", "https://www.youtube.com/@Netflix/search?query=Avatar%20The%20Last%20Airbender%20trailer"],
+            ["Dune", "Memory restored · official Warner Bros. portal", "https://www.youtube.com/@WarnerBrosPictures/search?query=Dune%20trailer"],
+            ["The Matrix", "Constructed reality · official Warner Bros. portal", "https://www.youtube.com/@WarnerBrosPictures/search?query=The%20Matrix%20trailer"],
+          ].map(([title, note, href]) => (
+            <a key={title} href={href} style={{ ...panel, display: "block", padding: 22, color: "inherit", textDecoration: "none" }}>
+              <span style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".08em" }}>WATCH ↗</span>
+              <h3 style={{ fontSize: "1.45rem", marginBottom: 8 }}>{title}</h3>
+              <p style={{ color: "#cbd0dd", lineHeight: 1.6, marginBottom: 0 }}>{note}</p>
+            </a>
+          ))}
+        </div>
+        <p style={{ color: "#9fa7ba", lineHeight: 1.65, marginTop: 20 }}>
+          Availability varies by country. No video is copied, hosted or presented as an endorsement by the rights holders.
+        </p>
       </section>
 
       <section style={{ ...shell, padding: "86px 0" }}>
