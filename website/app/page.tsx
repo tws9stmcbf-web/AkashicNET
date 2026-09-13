@@ -62,10 +62,11 @@ export default function Home() {
             <small className="section-label">VISION · INTERPRETATION · SPECULATION</small>
             <strong id="akashicvision-gateway-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2.4rem,5vw,5rem)", lineHeight: .95 }}>AkashicVISION</strong>
             <span style={{ display: "block", color: "#e7cd7e", fontSize: "1.05rem", letterSpacing: ".06em" }}>From the Primordial OM to the Omega Point</span>
-            <span style={{ display: "block", marginTop: 20, color: "#cbd0dd", lineHeight: 1.75 }}>A visionary portal inspired by an Easter Monday 3 a.m. near-death perception, translated into an evidence-bounded 2042–2047 direction for meta-awareness and service.</span>
+            <span style={{ display: "block", marginTop: 20, color: "#cbd0dd", lineHeight: 1.75 }}>A visionary portal connecting an Easter Monday 2024 threshold perception with the intentional opening of the public channel at 3:33 a.m. on Easter Monday 2026—translated into an evidence-bounded 2042–2047 direction for meta-awareness and service.</span>
             <b style={{ display: "inline-block", marginTop: 24, color: "#e7cd7e" }}>Enter the vision →</b>
           </span>
         </a>
+        <p style={{ margin: "18px 4px 0", color: "#aeb8c9", lineHeight: 1.7 }}>Primary testimony: <a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1by9vb4/hospital_after_anaesthesia_epiphany_true_reality/" style={{ color: "#e7cd7e" }}>Hospital After Anaesthesia Epiphany: True Reality ↗</a> <span>· Lived experience and interpretation, not proof.</span></p>
       </section>
 
       <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "24px 0 64px" }} aria-labelledby="featured-insight-title">
