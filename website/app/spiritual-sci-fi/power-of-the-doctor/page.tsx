@@ -183,6 +183,7 @@ export default function PowerOfTheDoctorPage() {
             ["The Pandorica Opens", "Containment, preserved memory and a cosmic reboot after spacetime fractures around the TARDIS.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1cpic32/the_pandorica_opens_ft_the_tardis_time_and/"],
             ["The Reality War", "A finale-scale puzzle about contested reality, identity and which world becomes actual.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1kyk7la/the_doctor_whoseason_2_finale_is_titled_the/"],
             ["Holodeck × TARDIS", "A parallel future timeline for an adaptive, larger-on-the-inside perceptual environment.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1mxw8mt/the_holodeck_tardis_a_parallel_future_timeline/"],
+            ["The pyramid prototype", "Can symbolic geometry become a safe physical shell for immersive sound and 360° experience?", "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleddp/need_help_building_a_structurally_sound_pyramid/"],
           ].map(([title, text, href]) => (
             <article key={title} style={{ ...panel, padding: 24 }}>
               <span style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".08em" }}>N2N PORTAL</span>
@@ -193,7 +194,7 @@ export default function PowerOfTheDoctorPage() {
           ))}
         </div>
         <p style={{ color: "#9fa7ba", lineHeight: 1.65, marginTop: 20 }}>
-          These community posts are interpretive and exploratory inputs. Their juxtaposition generates questions; it does not establish equivalence, causation or external ontology.
+          These community posts are interpretive and exploratory inputs. Their juxtaposition generates questions; it does not establish equivalence, causation or external ontology. Any physical pyramid or immersive enclosure would require qualified structural, fire, electrical, accessibility and event-safety review before construction or public use.
         </p>
       </section>
 
