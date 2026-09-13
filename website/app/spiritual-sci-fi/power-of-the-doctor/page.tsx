@@ -150,6 +150,7 @@ export default function PowerOfTheDoctorPage() {
           {[
             ["Doctor Who", "Regeneration trailer · 1m 50s · Everything Is About to Change", "https://www.reddit.com/r/NeuronsToNirvana/comments/yb8fkk/regeneration_trailer_1m50s_everything_is_about_to/"],
             ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
+            ["Doctor Who", "The Thirteenth Doctor regenerates · regeneration sequence", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e15hj6/the_thirteenth_doctor_regenerates_regenerations/"],
             ["Battlestar Galactica", "Resurrection · official SYFY video portal", "https://www.youtube.com/@SYFY/search?query=Battlestar%20Galactica%20resurrection"],
             ["Star Trek", "Joined identity · official Star Trek video portal", "https://www.youtube.com/@StarTrekOfficial/search?query=Trill"],
             ["Avatar", "The Avatar cycle · official Netflix video portal", "https://www.youtube.com/@Netflix/search?query=Avatar%20The%20Last%20Airbender%20trailer"],
