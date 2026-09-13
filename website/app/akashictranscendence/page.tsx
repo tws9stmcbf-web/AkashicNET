@@ -1,4 +1,5 @@
-import type { Metadata } from "next";\nimport type { CSSProperties } from "react";
+import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -50,7 +51,8 @@ export default function AkashicTranscendencePage() {
       <header className={styles.nav}>
         <a href="/" className={styles.wordmark}>AKASHICNET.ORG</a>
         <nav aria-label="AkashicTRANSCENDENCE navigation">
-          <a href="#love-cubed">Love Cubed</a>\n          <a href="#poem">Poem</a>
+          <a href="#love-cubed">Love Cubed</a>
+          <a href="#poem">Poem</a>
           <a href="#journeys">N2N journeys</a>
           <a href="/akashicvision">AkashicVISION</a>
         </nav>
