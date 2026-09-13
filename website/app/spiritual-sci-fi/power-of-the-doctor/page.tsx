@@ -148,6 +148,7 @@ export default function PowerOfTheDoctorPage() {
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(235px,1fr))", gap: 16, marginTop: 30 }}>
           {[
+            ["Doctor Who", "Regeneration trailer · 1m 50s · Everything Is About to Change", "https://www.reddit.com/r/NeuronsToNirvana/comments/yb8fkk/regeneration_trailer_1m50s_everything_is_about_to/"],
             ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
             ["Battlestar Galactica", "Resurrection · official SYFY video portal", "https://www.youtube.com/@SYFY/search?query=Battlestar%20Galactica%20resurrection"],
             ["Star Trek", "Joined identity · official Star Trek video portal", "https://www.youtube.com/@StarTrekOfficial/search?query=Trill"],
