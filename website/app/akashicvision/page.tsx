@@ -157,10 +157,20 @@ export default function AkashicVisionPage() {
       </section>
 
       <section className={styles.vision} id="vision">
-        <img
-          src="/images/akashicvision-sigil-2042-2047.webp"
-          alt="AkashicVISION sigil mapping seven stages from ethical roots through evidence and awareness to planetary service."
-        />
+        <div className={styles.livingSigil} aria-labelledby="sigil-title">
+          <span className={styles.sigilOm} aria-hidden="true">ॐ</span>
+          <h3 id="sigil-title">The living AkashicVISION pathway</h3>
+          <ol>
+            <li><span>01</span><strong>Bodhisattva roots</strong></li>
+            <li><span>02</span><strong>Knowledge spine</strong></li>
+            <li><span>03</span><strong>Evidence Commons</strong></li>
+            <li><span>04</span><strong>1729 Hardy–Ramanujan bridge</strong></li>
+            <li><span>05</span><strong>Meta-awareness</strong></li>
+            <li><span>06</span><strong>Meta-intelligence</strong></li>
+            <li><span>07</span><strong>Benefit of all beings</strong></li>
+          </ol>
+          <a href="/akashicvision" aria-label="Open the canonical AkashicVISION page">Canonical vision destination ↗</a>
+        </div>
         <div>
           <p className={styles.kicker}>AkashicVISION · 2042–2047</p>
           <h2>From the Primordial OM to the Omega Point.</h2>
