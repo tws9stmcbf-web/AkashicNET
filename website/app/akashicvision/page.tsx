@@ -120,6 +120,11 @@ export default function AkashicVisionPage() {
             </article>
           ))}
         </div>
+        <div className={styles.provenance}>
+          <span>Biographical provenance · 2005</span>
+          <p>In 2005, I created what I now recognise as an AI precursor for a bank. That early experience with computational decision systems informs AkashicNET’s insistence that capability, governance and human accountability must develop together.</p>
+          <small>Personal account. “AI precursor” is a retrospective description, not a claim that the system was equivalent to present-day generative AI.</small>
+        </div>
         <blockquote>Compassion guides purpose. Evidence governs factual claims. Wisdom serves all beings.</blockquote>
       </section>
 
