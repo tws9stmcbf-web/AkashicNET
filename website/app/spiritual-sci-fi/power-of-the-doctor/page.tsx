@@ -150,6 +150,7 @@ export default function PowerOfTheDoctorPage() {
           {[
             ["Doctor Who", "Regeneration trailer · 1m 50s · Everything Is About to Change", "https://www.reddit.com/r/NeuronsToNirvana/comments/yb8fkk/regeneration_trailer_1m50s_everything_is_about_to/"],
             ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
+            ["Doctor Who", "The crack in time · a new regeneration cycle received through connection", "https://www.reddit.com/r/NeuronsToNirvana/comments/1i2odsm/the_crack_in_time_ms_the_time_of_the_doctor/"],
             ["Doctor Who", "The Thirteenth Doctor regenerates · regeneration sequence", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e15hj6/the_thirteenth_doctor_regenerates_regenerations/"],
             ["Doctor Who", "60th anniversary trailer · destiny, Donna Noble and erased memory", "https://www.reddit.com/r/NeuronsToNirvana/comments/16txyk3/official_trailer_2m37s_i_dont_believe_in_destiny/"],
             ["Doctor Who", "Joy to the World · transformation into shared light across time", "https://www.reddit.com/r/NeuronsToNirvana/comments/1i29ewt/beautiful_ending_to_doctor_who_christmas_special/"],
