@@ -173,6 +173,29 @@ export default function PowerOfTheDoctorPage() {
         </p>
       </section>
 
+      <section style={{ ...shell, padding: "76px 0 20px" }}>
+        <p className="section-label">FURTHER PORTALS · MANY LENSES, NO FORCED CONCLUSION</p>
+        <h2 style={{ maxWidth: 920, fontSize: "clamp(2.2rem,5vw,4.2rem)", lineHeight: 1.06 }}>Character, fragments, reality and possible worlds.</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16, marginTop: 30 }}>
+          {[
+            ["The ethical traveller", "Ask ChatGPT: interpret the Doctor through another philosophical lens.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1lkuogk/ask_chatgpt_is_the_doctor_from_doctor_who/"],
+            ["The Key to Time", "A crystalline whole scattered into segments: unity recovered without erasing the parts.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e16gt2/an_allegory_key_to_time_a_perfect_crystalline/"],
+            ["The Reality War", "A finale-scale puzzle about contested reality, identity and which world becomes actual.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1kyk7la/the_doctor_whoseason_2_finale_is_titled_the/"],
+            ["Holodeck × TARDIS", "A parallel future timeline for an adaptive, larger-on-the-inside perceptual environment.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1mxw8mt/the_holodeck_tardis_a_parallel_future_timeline/"],
+          ].map(([title, text, href]) => (
+            <article key={title} style={{ ...panel, padding: 24 }}>
+              <span style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".08em" }}>N2N PORTAL</span>
+              <h3 style={{ fontSize: "1.5rem", marginBottom: 10 }}>{title}</h3>
+              <p style={{ color: "#cbd0dd", lineHeight: 1.65 }}>{text}</p>
+              <a href={href}>Explore the source post →</a>
+            </article>
+          ))}
+        </div>
+        <p style={{ color: "#9fa7ba", lineHeight: 1.65, marginTop: 20 }}>
+          These community posts are interpretive and exploratory inputs. Their juxtaposition generates questions; it does not establish equivalence, causation or external ontology.
+        </p>
+      </section>
+
       <section style={{ ...shell, padding: "86px 0" }}>
         <div style={{ ...panel, padding: "clamp(28px,6vw,64px)", textAlign: "center", background: "radial-gradient(circle at 50% 0, rgba(116,75,185,.3), rgba(10,14,32,.96) 58%)" }}>
           <p className="section-label">THE BIGGER AND SMALLER PICTURE</p>
