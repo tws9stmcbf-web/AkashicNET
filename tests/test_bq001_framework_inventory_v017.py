@@ -308,6 +308,7 @@ class FrameworkInventoryTests(unittest.TestCase):
         keys = (
             "ｄｒｉｖｅ＿ｉｄ",
             "%EF%BD%84%EF%BD%92%EF%BD%89%EF%BD%96%EF%BD%85%EF%BC%BF%EF%BD%89%EF%BD%84",
+            "ｄｒｉｖｅ％５ｆｉｄ",
         )
         for key in keys:
             with self.subTest(key=key):
