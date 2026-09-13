@@ -55,6 +55,9 @@ export default function MettaAwarenessPage() {
           <span className={styles.mountains} />
           <span className={styles.water} />
         </div>
+        <div className={styles.foregroundField} aria-hidden="true">
+          {Array.from({length:18}).map((_,i)=><i key={i} />)}
+        </div>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>AkashicNET 13D · wisdom-tradition lens · in development</p>
           <h1>Mettā<br/><em>Awareness</em></h1>
@@ -200,6 +203,31 @@ export default function MettaAwarenessPage() {
           <h3>Compassionate listening</h3>
           <p>A guided practice connected with the Plum Village tradition.</p>
           <a href="https://www.youtube.com/watch?v=O5Cw_7f43mA">Open on YouTube ↗</a>
+        </article>
+      </section>
+
+      <section className={styles.audiovisual} aria-labelledby="audiovisual-title">
+        <div className={styles.audiovisualCopy}>
+          <p className={styles.label}>08 · Optional audiovisual</p>
+          <h2 id="audiovisual-title">Sound made visible.</h2>
+          <p>Cymatics makes vibration patterns visible in physical media. Some people also describe sound-based practices as calming, meaningful or “healing”. Those subjective reports can be recorded as lived experience. Broader “quantum sound healing” explanations require separate definitions and evidence, and are not established by the geometry alone.</p>
+          <div className={styles.mediaLegend}>
+            <span><b>Observable</b> vibration producing visible patterns</span>
+            <span><b>Experiential</b> a listener’s reported response</span>
+            <span><b>Speculative</b> wider energetic or quantum interpretation</span>
+          </div>
+          <p className={styles.mediaCaution}>Optional sensory experience. Start quietly, stop if uncomfortable and do not use it as a substitute for healthcare.</p>
+        </div>
+        <article className={styles.cymaticPlayer}>
+          <div className={styles.cymaticHalo} aria-hidden="true"><span/><span/><span/></div>
+          <div className={styles.video}>
+            <iframe src="https://www.youtube-nocookie.com/embed/NdUL6yZu6uo" title="Fractal cymatics visualisation across a range of sound frequencies" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+          </div>
+          <div>
+            <h3>Fractal cymatics study</h3>
+            <p>A visual meditation on changing patterns. The accompanying music is separate from the cymatic source, according to the video description.</p>
+            <a href="https://www.youtube.com/watch?v=NdUL6yZu6uo">Open on YouTube ↗</a>
+          </div>
         </article>
       </section>
 
