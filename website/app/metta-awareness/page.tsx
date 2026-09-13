@@ -1,4 +1,5 @@
 import styles from "./metta-awareness.module.css";
+import PortalConstellation from "./PortalConstellation";
 
 const lenses = [
   ["01", "Observation", "What was actually said or done?"],
@@ -86,20 +87,7 @@ export default function MettaAwarenessPage() {
         </div>
       </section>
 
-      <section className={styles.portalMap} aria-labelledby="portal-map-title">
-        <div className={styles.portalIntro}>
-          <p className={styles.label}>Portal constellation</p>
-          <h2 id="portal-map-title">Choose your depth.</h2>
-          <p>Begin anywhere. Move inward when the language, context and uncertainty boundaries feel clear. “Deeper” describes the level of inquiry, never the value or awareness of a person.</p>
-        </div>
-        <nav className={styles.portals} aria-label="Mettā-Awareness depth map">
-          <a className={styles.portalOne} href="#practice"><span>01</span><strong>Arrive</strong><small>Pause and notice</small></a>
-          <a className={styles.portalTwo} href="#capacities"><span>02</span><strong>Relate</strong><small>Four capacities</small></a>
-          <a className={styles.portalThree} href="#thirteen"><span>03</span><strong>Inquire</strong><small>13 revisable lenses</small></a>
-          <a className={styles.portalFour} href="#listen"><span>04</span><strong>Listen</strong><small>Guided media</small></a>
-          <a className={styles.portalFive} href="#cymatics"><span>05</span><strong>Contemplate</strong><small>Sound, symbol, unknown</small></a>
-        </nav>
-      </section>
+      <PortalConstellation />
 
       <section className={styles.places} aria-label="A worldwide field of practice">
         <article><span>City</span><h3>Amid movement</h3><p>Practise attention in crowds, transit, work and ordinary encounters.</p></article>
