@@ -223,7 +223,7 @@ export default function AkashicVisionPage() {
             <h3>AkashicETERNAL</h3>
             <p>What traditions call the enduring, deathless or sacred, preserved as interpretation and speculation rather than established external ontology.</p>
           </article>
-        </div>
+          <article>\n            <span>Arts · Embodiment · #HOMESENSE800</span>\n            <h3>AkashicTRANSCENDENCE</h3>\n            <p>Sacred Toroidal Love and BuddhaFly Nature translate the TRANSCEND lens into poetry, festival imagery and an embodied birthday-moon reflection.</p>\n            <a className={styles.sourceLink} href="/akashictranscendence">Enter the Arts portal →</a>\n          </article>\n        </div>
         <p className={styles.constellationBoundary}><strong>Evidence boundary:</strong> shared themes generate questions. They do not establish equivalence between mathematical infinity, cosmological models, personal experience and spiritual teachings.</p>
       </section>
 
