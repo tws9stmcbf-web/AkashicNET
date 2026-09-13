@@ -33,7 +33,7 @@ export default function Home() {
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="#vision">Vision</a><a href="/big-questions/bq002">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="/insights/interstellar-weather-schumann-september-2026">Insights</a><a href="#vision">Vision</a><a href="/big-questions/bq002">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/about">About</a>
         </nav>
       </header>
 
@@ -53,6 +53,18 @@ export default function Home() {
           <span className="node node-a"/><span className="node node-b"/><span className="node node-c"/>
         </div>
         <p className="hero-note">Public portal · Protected corpus · Human-governed</p>
+      </section>
+
+      <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "24px 0 64px" }} aria-labelledby="featured-insight-title">
+        <a href="/insights/interstellar-weather-schumann-september-2026" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,320px),1fr))", gap: 0, overflow: "hidden", border: "1px solid rgba(216,185,92,.28)", borderRadius: 26, background: "linear-gradient(145deg,rgba(18,28,57,.96),rgba(7,11,26,.98))", color: "inherit", textDecoration: "none", boxShadow: "0 24px 80px rgba(0,0,0,.3)" }}>
+          <img src="/images/interstellar-weather-schumann-event-2026-09-12.png" alt="AkashicNET Interstellar Weather event overview connecting solar wind, the ionosphere, lightning, Earth resonance and human experience." style={{ width: "100%", height: "100%", minHeight: 280, objectFit: "cover" }} />
+          <span style={{ padding: "clamp(26px,5vw,54px)", alignSelf: "center" }}>
+            <small className="section-label">INSIGHTS NEWS DESK · INTERDIMENSIONAL LIGHTEXPLORERS HOTLINE</small>
+            <strong id="featured-insight-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2rem,4.5vw,4.4rem)", lineHeight: 1 }}>Schumann Activity Window</strong>
+            <span style={{ display: "block", color: "#cbd0dd", lineHeight: 1.7 }}>A dated AkashicNET 13D report on the 11–12 September signal, its space-weather context, human testimony and unresolved causal pathways.</span>
+            <b style={{ display: "inline-block", marginTop: 22, color: "#e7cd7e" }}>Read the report →</b>
+          </span>
+        </a>
       </section>
 
       <section className="snapshot" aria-label="Public project snapshot">
