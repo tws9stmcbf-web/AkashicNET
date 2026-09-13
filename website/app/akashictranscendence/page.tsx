@@ -18,16 +18,16 @@ const journeys = [
 const dimensions = [
   ["01", "AWAKEN", "Awareness and awakening"],
   ["02", "HIERATIC", "Sacred symbols and archetypes"],
-  ["03", "HOMESENSE", "Embodied life and synchronicity"],
+  ["03", "HOMESENSE · Phase 8", "TRANSCENDENCE active · embodied life and synchronicity"],
   ["04", "ADAPT", "Learning through change"],
   ["05", "REGENERATE", "Repair, renewal and flourishing"],
   ["06", "TRANSCEND", "Transformation beyond present boundaries"],
   ["07", "#METAD v2.1", "Metadimensional analysis"],
-  ["08", "ACTC", "Cross-domain collective inquiry"],
-  ["09", "MultidimensionalCUT · Time I", "Temporal origin and memory"],
-  ["10", "MultidimensionalCUT · Time II", "The experienced present"],
-  ["11", "MultidimensionalCUT · Time III", "Possibility and becoming"],
-  ["12", "UMASC", "Unified meaning and consciousness"],
+  ["08", "ACTC v2.0", "Agency, context, temporal order and candidate causal pathways"],
+  ["09", "MultidimensionalCUT v4.0.0 · PAST", "Compare prior patterns and inherited context"],
+  ["10", "MultidimensionalCUT v4.0.0 · PRESENT", "Describe the current experience and conditions precisely"],
+  ["11", "MultidimensionalCUT v4.0.0 · FUTURE", "Explore what to observe, test or cultivate next"],
+  ["12", "UMASC v7.2", "Relate matter, awareness, systems and culture without collapsing their differences"],
   ["13", "AkashicNET", "The integrating living knowledge field"],
 ];
 
@@ -81,7 +81,7 @@ export default function AkashicTranscendencePage() {
             <li key={number}><span>{number}</span><div><strong>{name}</strong><small>{purpose}</small></div></li>
           ))}
         </ol>
-        <p className={styles.frameworkNote}><strong>AkashicTRANSCENDENCE</strong> is the Arts portal through the sixth lens: TRANSCEND.</p>
+        <p className={styles.frameworkNote}><strong>Current creative phase:</strong> HOMESENSE Phase 8 · TRANSCENDENCE. <strong>AkashicTRANSCENDENCE</strong> is its Arts portal through the sixth lens: TRANSCEND.</p>
       </section>
 
       <section className={styles.journeys} id="journeys" aria-labelledby="journeys-title">
