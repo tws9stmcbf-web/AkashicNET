@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "AkashicVISION | From the Primordial OM to the Omega Point",
-  description: "A lived-experience-led, evidence-bounded vision of AkashicNET from an Easter Monday 3 a.m. near-death experience toward a 2042–2047 planetary knowledge network.",
+  description: "A lived-experience-led, evidence-bounded vision of AkashicNET: from an Easter Monday 2024 threshold experience to an intentional 3:33 a.m. public-channel opening on Easter Monday 2026, and toward a 2042–2047 planetary knowledge network.",
 };
 
 const layers = [
@@ -54,7 +54,7 @@ export default function AkashicVisionPage() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>AkashicVISION · Lived Experience/Testimony</p>
           <h1 id="vision-title">From the threshold<br />to a living library.</h1>
-          <p>Easter Monday · 3 a.m. · 2024</p>
+          <p>Easter Monday · circa 3 a.m. · 2024</p>
         </div>
         <div className={styles.crawlWindow} aria-hidden="true">
           <div className={styles.crawl}>
@@ -76,6 +76,15 @@ export default function AkashicVisionPage() {
         <p>The artwork and language on this page interpret a reported near-death experience. They do not establish survival after death, an external Akashic archive, the scientific action of sacred geometry or any completed AI capability.</p>
       </section>
 
+      <section className={styles.headlinePortal} aria-labelledby="headline-video-title">
+        <div>
+          <p className={styles.kicker}>Headline video · N2N source portal</p>
+          <h2 id="headline-video-title">Infinite flow meets the awakened eye.</h2>
+          <p>Spine lights, embodied chills and entheogenic imagery form a vivid contemporary expression of the vision. It is presented as creative testimony and interpretation—not as medical advice or proof of a metaphysical mechanism.</p>
+        </div>
+        <a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1qd0mju/infinite_flow_meets_the_awakened_eye_spine_lights/">Watch the source video on Reddit ↗</a>
+      </section>
+
       <section className={styles.story} id="experience">
         <div className={styles.sectionIntro}>
           <p className={styles.kicker}>The Easter Monday perception</p>
@@ -95,6 +104,20 @@ export default function AkashicVisionPage() {
           <a className={styles.sourceLink} href="https://www.reddit.com/r/NeuronsToNirvana/comments/1by9vb4/hospital_after_anaesthesia_epiphany_true_reality/">Original N2N account · Hospital After Anaesthesia Epiphany: True Reality →</a>
           <p><strong>Provenance:</strong> published 7 April 2024 after the Easter Monday experience. The post’s “Fifth Timeless” dimension is preserved as interpretation/speculation, not established physics or proof of survival beyond death.</p>
         </div>
+        <div className={styles.chronology}>
+          <article>
+            <span>Easter Monday · 1 April 2024 · circa 3 a.m.</span>
+            <h3>The threshold perception</h3>
+            <p>A hospital experience later interpreted through the language of Akasha and a timeless dimension.</p>
+          </article>
+          <i aria-hidden="true">∞</i>
+          <article>
+            <span>Easter Monday · 6 April 2026 · 3:33 a.m.</span>
+            <h3>The public channel opens</h3>
+            <p>The AkashicNET WhatsApp public channel was intentionally opened at 3:33 a.m.—a chosen act of public commitment and biographical provenance.</p>
+          </article>
+        </div>
+        <p className={styles.synchronicity}><strong>Interpretive boundary:</strong> the repeated Easter Monday timing may be experienced as meaningful synchronicity. The chronology records the dates and intention; it does not establish supernatural causation.</p>
       </section>
 
       <section className={styles.symbols} aria-labelledby="symbols-title">
@@ -173,6 +196,8 @@ export default function AkashicVisionPage() {
             <span>Continuity · Memory · Identity</span>
             <h3>AkashicTIMELESS</h3>
             <p>NDEs, ancestry, memory, reincarnation and continuity across time. “Reincarnation Reimagined” belongs here as an open inquiry.</p>
+            <a className={styles.sourceLink} href="https://www.reddit.com/r/NeuronsToNirvana/search/?q=reincarnation%20OR%20%22past%20life%22&restrict_sr=1&sort=relevance&t=all">Explore N2N posts and videos on reincarnation and past lives ↗</a>
+            <p className={styles.sourceCaveat}>Community material is preserved as a field of testimony, interpretation and inquiry. Quantity or recurrence of reports does not by itself establish reincarnation as fact.</p>
           </article>
           <article>
             <span>Contemplative lens</span>
