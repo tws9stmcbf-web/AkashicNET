@@ -15,6 +15,19 @@ const journeys = [
   ["Toroidal fields", "toroidal%20OR%20torus"],
 ];
 
+const scaleJourney = [
+  ["01", "Quantum possibility", "The smallest speculative threshold"],
+  ["02", "Cell · microbiome · blood", "Living exchange within the body"],
+  ["03", "Heart", "Rhythm, circulation and felt connection"],
+  ["04", "Tree", "Roots below, canopy above"],
+  ["05", "Forest", "Many lives forming an ecosystem"],
+  ["06", "Pachamama", "The living Earth as our shared home"],
+  ["07", "Moon · Sun", "Cycles, light and relationship"],
+  ["08", "Solar system", "Our local celestial neighbourhood"],
+  ["09", "Galaxies", "Vast islands of stars"],
+  ["10", "CosmOS", "The widest horizon of the visual journey"],
+];
+
 const dimensions = [
   ["01", "AWAKEN", "Awareness and awakening"],
   ["02", "HIERATIC", "Sacred symbols and archetypes"],
@@ -37,7 +50,7 @@ export default function AkashicTranscendencePage() {
       <header className={styles.nav}>
         <a href="/" className={styles.wordmark}>AKASHICNET.ORG</a>
         <nav aria-label="AkashicTRANSCENDENCE navigation">
-          <a href="#poem">Poem</a>
+          <a href="#love-cubed">Love Cubed</a>\n          <a href="#poem">Poem</a>
           <a href="#journeys">N2N journeys</a>
           <a href="/akashicvision">AkashicVISION</a>
         </nav>
@@ -51,6 +64,36 @@ export default function AkashicTranscendencePage() {
           <h1 id="transcendence-title">Akashic<span>TRANSCENDENCE</span></h1>
           <strong>Sacred Toroidal Love ♾️❤️</strong>
           <small>BuddhaFly Nature beneath the birthday moon · Ozora 2026</small>
+        </div>
+      </section>
+
+      <section className={styles.loveCubed} id="love-cubed" aria-labelledby="love-cubed-title">
+        <div className={styles.scaleSky} aria-hidden="true">
+          <div className={styles.tesseract}>
+            <span className={styles.tesseractInner} />
+          </div>
+          <div className={styles.torus}>
+            <span className={styles.torusLeft} />
+            <span className={styles.torusRight} />
+            <span className={styles.livingHeart}>❤️</span>
+          </div>
+          <div className={styles.scaleParticles}>
+            {scaleJourney.map(([number, name], index) => (
+              <span key={number} style={{ "--orbit": index } as React.CSSProperties}>{name}</span>
+            ))}
+          </div>
+        </div>
+        <div className={styles.scaleCopy}>
+          <p>#HOMESENSE³ ♾️❤️³</p>
+          <h2 id="love-cubed-title">LOVE CUBED</h2>
+          <blockquote>As above, so below.<br />As within, so without.</blockquote>
+          <p>One poetic scale journey: from quantum possibility, through the living body and biosphere, toward galaxies and CosmOS.</p>
+          <ol>
+            {scaleJourney.map(([number, name, meaning]) => (
+              <li key={number}><span>{number}</span><div><strong>{name}</strong><small>{meaning}</small></div></li>
+            ))}
+          </ol>
+          <small className={styles.scaleBoundary}>Artistic and interpretive symbolism. Toroidal organisation is not presented as an established structure at every scale.</small>
         </div>
       </section>
 
