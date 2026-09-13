@@ -209,6 +209,17 @@ export default function PowerOfTheDoctorPage() {
         </div>
       </section>
 
+      <section style={{ ...shell, padding: "0 0 70px", textAlign: "center" }}>
+        <div style={{ ...panel, padding: "clamp(28px,6vw,58px)" }}>
+          <p className="section-label">THE SIGNAL REGENERATES</p>
+          <h2 style={{ margin: "16px auto", maxWidth: 850, fontSize: "clamp(2rem,4.5vw,3.8rem)", lineHeight: 1.08 }}>A familiar identity enters a new visual spacetime.</h2>
+          <p style={{ maxWidth: 740, margin: "20px auto 28px", color: "#d7d9e4", lineHeight: 1.8 }}>
+            The title sequence introduced with <em>The Star Beast</em> preserves the programme&apos;s recognisable signal while transforming its sound, scale and visual language.
+          </p>
+          <a href="https://youtu.be/X_1bgdz7vig">The New Doctor Who Title Sequence · official video <span>→</span></a>
+        </div>
+      </section>
+
       <section style={{ ...shell, padding: "10px 0 96px", textAlign: "center" }}>
         <div style={{ ...panel, padding: "clamp(32px,7vw,72px)", background: "radial-gradient(circle at 50% 100%, rgba(62,181,214,.25), rgba(10,14,32,.97) 62%)" }}>
           <p className="section-label">FINAL PORTAL · SOUND THROUGH TIME</p>
