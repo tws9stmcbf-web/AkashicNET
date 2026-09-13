@@ -159,7 +159,18 @@ export default function Home() {
           <article><span>Later</span><h3>Public exploration</h3><p>Safe search and discovery designed around provenance and uncertainty.</p><b>Research direction</b></article>
           <article><span>2027 · Exploratory</span><h3>REGENERATE</h3><p>A future framework for repair, renewal and resilient flourishing. Scope and evidence model remain to be defined.</p><b>Future framework</b></article>
           <article><span>2027 · Exploratory</span><h3>TRANSCEND</h3><p>A future framework for examining transformation beyond current boundaries without presenting metaphysical possibilities as established fact.</p><b>Future framework</b></article>
-          <article><span>Future · Exploratory</span><h3>HOMESENSE VR</h3><p>A Spiritual Sci-Fi puzzle concept exploring regeneration, resurrection, reincarnation and continuity through cymatic sound and 360° perceptual worlds.</p><a href="/spiritual-sci-fi/power-of-the-doctor">Enter The Power of the Doctor →</a></article>
+          <article className="doctor-portal">
+            <span>Spiritual Sci-Fi · New portal</span>
+            <a className="doctor-portal-link" href="/spiritual-sci-fi/power-of-the-doctor" aria-label="Enter The Power of the Doctor">
+              <span className="time-box" aria-hidden="true"><i></i><b></b><em></em></span>
+              <span className="doctor-portal-copy">
+                <small>Two hearts · One impossible interior</small>
+                <strong>Enter The Power<br/>of the Doctor</strong>
+                <span>Open the metadimensional blue box →</span>
+              </span>
+            </a>
+            <p>Regeneration, resurrection and reincarnation meet cymatic sound, 360° worlds, sacred toroidal hearts and joystick-guided play.</p>
+          </article>
         </div>
       </section>
 
