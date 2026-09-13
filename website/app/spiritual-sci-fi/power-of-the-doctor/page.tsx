@@ -152,6 +152,7 @@ export default function PowerOfTheDoctorPage() {
             ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
             ["Doctor Who", "The Thirteenth Doctor regenerates · regeneration sequence", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e15hj6/the_thirteenth_doctor_regenerates_regenerations/"],
             ["Doctor Who", "60th anniversary trailer · destiny, Donna Noble and erased memory", "https://www.reddit.com/r/NeuronsToNirvana/comments/16txyk3/official_trailer_2m37s_i_dont_believe_in_destiny/"],
+            ["Doctor Who", "Joy to the World · transformation into shared light across time", "https://www.reddit.com/r/NeuronsToNirvana/comments/1i29ewt/beautiful_ending_to_doctor_who_christmas_special/"],
             ["Doctor Who", "Was LSD an influence? · Reuters historical-cultural question", "https://www.reddit.com/r/NeuronsToNirvana/comments/18f2hx9/was_lsd_an_influence_on_doctor_who_reuters_apr/"],
             ["Battlestar Galactica", "Resurrection · official SYFY video portal", "https://www.youtube.com/@SYFY/search?query=Battlestar%20Galactica%20resurrection"],
             ["Star Trek", "Joined identity · official Star Trek video portal", "https://www.youtube.com/@StarTrekOfficial/search?query=Trill"],
@@ -167,7 +168,7 @@ export default function PowerOfTheDoctorPage() {
           ))}
         </div>
         <p style={{ color: "#9fa7ba", lineHeight: 1.65, marginTop: 20 }}>
-          Availability varies by country. No video is copied, hosted or presented as an endorsement by the rights holders. The LSD item is retained as a historical-cultural question: aesthetic similarity and chronological overlap do not establish direct creative influence.
+          Availability varies by country. No video is copied, hosted or presented as an endorsement by the rights holders. “Joy to the World” uses fictional and theological imagery, including the Star of Bethlehem; this page does not present that narrative as a verified historical event. The LSD item is retained as a historical-cultural question: aesthetic similarity and chronological overlap do not establish direct creative influence.
         </p>
       </section>
 
