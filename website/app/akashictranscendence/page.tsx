@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next";\nimport type { CSSProperties } from "react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function AkashicTranscendencePage() {
           </div>
           <div className={styles.scaleParticles}>
             {scaleJourney.map(([number, name], index) => (
-              <span key={number} style={{ "--orbit": index } as React.CSSProperties}>{name}</span>
+              <span key={number} style={{ "--orbit": index } as CSSProperties}>{name}</span>
             ))}
           </div>
         </div>
@@ -88,6 +88,7 @@ export default function AkashicTranscendencePage() {
           <h2 id="love-cubed-title">LOVE CUBED</h2>
           <blockquote>As above, so below.<br />As within, so without.</blockquote>
           <p>One poetic scale journey: from quantum possibility, through the living body and biosphere, toward galaxies and CosmOS.</p>
+          <blockquote className={styles.loveInvocation}>May we carry the courage of the lion, the strength of the bull, and sacred love flowing infinitely through all beings and the cosmos itself.<small>Remain awake to deception, while honouring the wild wisdom of the wolf.</small></blockquote>
           <ol>
             {scaleJourney.map(([number, name, meaning]) => (
               <li key={number}><span>{number}</span><div><strong>{name}</strong><small>{meaning}</small></div></li>
