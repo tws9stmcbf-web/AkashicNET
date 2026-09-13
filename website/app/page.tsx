@@ -57,7 +57,7 @@ export default function Home() {
 
       <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "12px 0 64px" }} aria-labelledby="akashicvision-gateway-title">
         <a href="/akashicvision" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,340px),1fr))", overflow: "hidden", border: "1px solid rgba(216,185,92,.32)", borderRadius: 28, background: "radial-gradient(circle at 20% 10%,rgba(75,161,198,.19),rgba(7,11,26,.98) 60%)", color: "inherit", textDecoration: "none", boxShadow: "0 28px 90px rgba(0,0,0,.34)" }}>
-          <img src="/images/akashicvision-sigil-2042-2047.png" alt="AkashicVISION sigil: a seven-stage path from ethical roots and evidence toward planetary service." style={{ width: "100%", height: "100%", minHeight: 340, objectFit: "cover" }} />
+          <img src="/images/akashicvision-sigil-2042-2047.webp" alt="AkashicVISION sigil: a seven-stage path from ethical roots and evidence toward planetary service." style={{ width: "100%", height: "100%", minHeight: 340, objectFit: "cover" }} />
           <span style={{ padding: "clamp(28px,5vw,58px)", alignSelf: "center" }}>
             <small className="section-label">VISION · INTERPRETATION · SPECULATION</small>
             <strong id="akashicvision-gateway-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2.4rem,5vw,5rem)", lineHeight: .95 }}>AkashicVISION</strong>

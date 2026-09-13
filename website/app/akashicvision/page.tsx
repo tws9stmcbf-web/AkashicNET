@@ -47,7 +47,7 @@ export default function AkashicVisionPage() {
       <section className={styles.hero} aria-labelledby="vision-title">
         <img
           className={styles.heroImage}
-          src="/images/akashicvision-nde-merkaba-flower-of-life.png"
+          src="/images/akashicvision-nde-merkaba-flower-of-life.webp"
           alt="Artistic vision of a luminous toroidal heart within a Merkaba, surrounded by a faint Flower of Life and a cosmic library."
         />
         <div className={styles.vignette} />
@@ -157,7 +157,7 @@ export default function AkashicVisionPage() {
 
       <section className={styles.vision} id="vision">
         <img
-          src="/images/akashicvision-sigil-2042-2047.png"
+          src="/images/akashicvision-sigil-2042-2047.webp"
           alt="AkashicVISION sigil mapping seven stages from ethical roots through evidence and awareness to planetary service."
         />
         <div>
