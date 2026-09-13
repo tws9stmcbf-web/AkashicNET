@@ -183,6 +183,9 @@ export default function PowerOfTheDoctorPage() {
             ["The Key to Time", "A crystalline whole scattered into segments: unity recovered without erasing the parts.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e16gt2/an_allegory_key_to_time_a_perfect_crystalline/"],
             ["The Pandorica Opens", "Containment, preserved memory and a cosmic reboot after spacetime fractures around the TARDIS.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1cpic32/the_pandorica_opens_ft_the_tardis_time_and/"],
             ["The Reality War", "A finale-scale puzzle about contested reality, identity and which world becomes actual.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1kyk7la/the_doctor_whoseason_2_finale_is_titled_the/"],
+            ["Develop a MIND-TARDIS", "Lucid dreaming, meditation and breathwork as practices for navigating expansive inner landscapes.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1mpeb6p/multidimensional_consciousness_perspective/"],
+            ["You’ll Never Walk Alone", "From lived insight to research questions about companionship, co-regulation and relational experience.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1q7q9no/youll_never_walk_alone_from_lived_insight_to/"],
+            ["Never fail to be kind", "The Doctor’s ethical compass: expanded capability remains accountable to courage, love and kindness.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e5m8gg/never_be_cruel_never_be_cowardly_and_never_ever/"],
             ["Holodeck × TARDIS", "A parallel future timeline for an adaptive, larger-on-the-inside perceptual environment.", "https://www.reddit.com/r/NeuronsToNirvana/comments/1mxw8mt/the_holodeck_tardis_a_parallel_future_timeline/"],
             ["The pyramid prototype", "Can symbolic geometry become a safe physical shell for immersive sound and 360° experience?", "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleddp/need_help_building_a_structurally_sound_pyramid/"],
           ].map(([title, text, href]) => (
@@ -195,7 +198,7 @@ export default function PowerOfTheDoctorPage() {
           ))}
         </div>
         <p style={{ color: "#9fa7ba", lineHeight: 1.65, marginTop: 20 }}>
-          These community posts are interpretive and exploratory inputs. Their juxtaposition generates questions; it does not establish equivalence, causation or external ontology. Any physical pyramid or immersive enclosure would require qualified structural, fire, electrical, accessibility and event-safety review before construction or public use.
+          These community posts are interpretive and exploratory inputs. Their juxtaposition generates questions; it does not establish equivalence, causation or external ontology. The “You’ll Never Walk Alone” post is preserved as lived insight and hypothesis-generating interpretation, not proof of a single neural mechanism; specific claims about mirror systems, oxytocin or vagal activity require appropriately matched sources and context. Any physical pyramid or immersive enclosure would require qualified structural, fire, electrical, accessibility and event-safety review before construction or public use.
         </p>
       </section>
 
