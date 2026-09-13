@@ -255,7 +255,10 @@ class FrameworkInventoryTests(unittest.TestCase):
             path = Path(directory) / "schema.json"
             path.write_text(validator.canonical(schema), encoding="utf-8")
             with patch.object(validator, "SCHEMA", path):
-                with self.assertRaisesRegex(ValueError, "promotion guard mapping drift"):
+                with self.assertRaisesRegex(
+                    ValueError,
+                    "promotion guards exact allowed-key set drift|promotion guard mapping drift",
+                ):
                     validator.validate(candidate)
 
     def test_exact_allowed_keys_survive_coordinated_schema_weakening(self):
