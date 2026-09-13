@@ -151,6 +151,7 @@ export default function PowerOfTheDoctorPage() {
             ["Doctor Who", "Regeneration trailer · 1m 50s · Everything Is About to Change", "https://www.reddit.com/r/NeuronsToNirvana/comments/yb8fkk/regeneration_trailer_1m50s_everything_is_about_to/"],
             ["Doctor Who", "Guardians of the Edge · official clip", "https://www.youtube.com/watch?v=0SuDVcTv25g"],
             ["Doctor Who", "The Thirteenth Doctor regenerates · regeneration sequence", "https://www.reddit.com/r/NeuronsToNirvana/comments/1e15hj6/the_thirteenth_doctor_regenerates_regenerations/"],
+            ["Doctor Who", "Was LSD an influence? · Reuters historical-cultural question", "https://www.reddit.com/r/NeuronsToNirvana/comments/18f2hx9/was_lsd_an_influence_on_doctor_who_reuters_apr/"],
             ["Battlestar Galactica", "Resurrection · official SYFY video portal", "https://www.youtube.com/@SYFY/search?query=Battlestar%20Galactica%20resurrection"],
             ["Star Trek", "Joined identity · official Star Trek video portal", "https://www.youtube.com/@StarTrekOfficial/search?query=Trill"],
             ["Avatar", "The Avatar cycle · official Netflix video portal", "https://www.youtube.com/@Netflix/search?query=Avatar%20The%20Last%20Airbender%20trailer"],
@@ -165,7 +166,7 @@ export default function PowerOfTheDoctorPage() {
           ))}
         </div>
         <p style={{ color: "#9fa7ba", lineHeight: 1.65, marginTop: 20 }}>
-          Availability varies by country. No video is copied, hosted or presented as an endorsement by the rights holders.
+          Availability varies by country. No video is copied, hosted or presented as an endorsement by the rights holders. The LSD item is retained as a historical-cultural question: aesthetic similarity and chronological overlap do not establish direct creative influence.
         </p>
       </section>
 
