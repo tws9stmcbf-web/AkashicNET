@@ -1,5 +1,6 @@
 import styles from "./metta-awareness.module.css";
 import PortalConstellation from "./PortalConstellation";
+import ResonanceCipher from "./ResonanceCipher";
 
 const lenses = [
   ["01", "Observation", "What was actually said or done?"],
@@ -88,6 +89,7 @@ export default function MettaAwarenessPage() {
       </section>
 
       <PortalConstellation />
+      <ResonanceCipher />
 
       <section className={styles.places} aria-label="A worldwide field of practice">
         <article><span>City</span><h3>Amid movement</h3><p>Practise attention in crowds, transit, work and ordinary encounters.</p></article>
