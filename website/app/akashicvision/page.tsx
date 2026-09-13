@@ -162,6 +162,8 @@ export default function AkashicVisionPage() {
             <h3>AkashicINFINITE</h3>
             <p>Mathematics at the edge of imagination: infinities, limits, paradoxes, transfinite numbers, fractals, black holes, recurrence, deep time and possible universes.</p>
             <p className={styles.sourceNote}><em>A Trip to Infinity</em> is one cultural starting portal, not an evidential authority or the boundary of the subject.</p>
+            <a className={styles.sourceLink} href="https://www.reddit.com/r/NeuronsToNirvana/comments/1lcopuc/interdimensional_symbolism_infinity_8_the_8ball/">N2N source portal · Interdimensional Symbolism: Infinity, 8 and the 8-ball →</a>
+            <p className={styles.sourceCaveat}>Interpretation: the infinity sign, the numeral 8 and the 8-ball can be compared as cultural symbols. Their visual or linguistic association does not establish mathematical, physical or metaphysical equivalence.</p>
           </article>
           <article>
             <span>Continuity · Memory · Identity</span>
