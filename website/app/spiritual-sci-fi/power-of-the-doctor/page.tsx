@@ -188,6 +188,20 @@ export default function PowerOfTheDoctorPage() {
         </div>
       </section>
 
+
+      <section style={{ ...shell, padding: "10px 0 96px", textAlign: "center" }}>
+        <div style={{ ...panel, padding: "clamp(32px,7vw,72px)", background: "radial-gradient(circle at 50% 100%, rgba(62,181,214,.25), rgba(10,14,32,.97) 62%)" }}>
+          <p className="section-label">FINAL PORTAL · SOUND THROUGH TIME</p>
+          <h2 style={{ margin: "16px auto", maxWidth: 850, fontSize: "clamp(2.2rem,5vw,4.5rem)", lineHeight: 1.04 }}>The same theme.<br />Always regenerating.</h2>
+          <p style={{ maxWidth: 720, margin: "22px auto 30px", color: "#d7d9e4", lineHeight: 1.8 }}>
+            End the journey by hearing one musical identity pass through changing technologies, arrangements and eras while remaining recognisably itself.
+          </p>
+          <a className="primary-link" href="https://www.reddit.com/r/NeuronsToNirvana/comments/1dyp4r3/evolution_of_the_doctor_who_theme_tune/">
+            Evolution of the Doctor Who Theme Tune <span>→</span>
+          </a>
+        </div>
+      </section>
+
       <footer>
         <div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt="" /><p className="brand-name">AKASHICNET.ORG</p></div>
         <p>Spiritual Sci-Fi · Wonder with discernment</p>
