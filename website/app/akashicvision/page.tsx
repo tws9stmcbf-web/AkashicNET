@@ -138,6 +138,40 @@ export default function AkashicVisionPage() {
         </div>
       </section>
 
+      <section className={styles.constellation} aria-labelledby="constellation-title">
+        <div className={styles.sectionIntro}>
+          <div>
+            <p className={styles.kicker}>One compass · many horizons</p>
+            <h2 id="constellation-title">Vision chooses a direction. Futures remain plural.</h2>
+          </div>
+          <p>AkashicVISION is the ethical north star, not a fixed prediction. Its emerging offshoots examine different dimensions of possibility while remaining answerable to evidence, uncertainty and the benefit of all beings.</p>
+        </div>
+        <div className={styles.constellationGrid}>
+          <article>
+            <span>Emerging offshoot</span>
+            <h3>Akashic Futures Lab</h3>
+            <p>Possible, probable, preferable and preventable futures. One guiding vision can inform infinitely many scenarios without pretending to determine them.</p>
+          </article>
+          <article>
+            <span>Mathematics · Physics · Cosmology</span>
+            <h3>AkashicINFINITE</h3>
+            <p>Mathematics at the edge of imagination: infinities, limits, paradoxes, transfinite numbers, fractals, black holes, recurrence, deep time and possible universes.</p>
+            <p className={styles.sourceNote}><em>A Trip to Infinity</em> is one cultural starting portal, not an evidential authority or the boundary of the subject.</p>
+          </article>
+          <article>
+            <span>Continuity · Memory · Identity</span>
+            <h3>AkashicTIMELESS</h3>
+            <p>NDEs, ancestry, memory, reincarnation and continuity across time. “Reincarnation Reimagined” belongs here as an open inquiry.</p>
+          </article>
+          <article>
+            <span>Contemplative lens</span>
+            <h3>AkashicETERNAL</h3>
+            <p>What traditions call the enduring, deathless or sacred, preserved as interpretation and speculation rather than established external ontology.</p>
+          </article>
+        </div>
+        <p className={styles.constellationBoundary}><strong>Evidence boundary:</strong> shared themes generate questions. They do not establish equivalence between mathematical infinity, cosmological models, personal experience and spiritual teachings.</p>
+      </section>
+
       <section className={styles.vows}>
         <p className={styles.kicker}>Root requirement</p>
         <h2>Compassion is not a later safety layer.</h2>
