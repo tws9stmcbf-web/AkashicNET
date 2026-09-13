@@ -60,9 +60,9 @@ export default function PortalConstellation() {
       onWheel={onWheel}
     >
       <div className={styles.portalIntro}>
-        <p className={styles.label}>Spatial portal constellation</p>
+        <p className={styles.label}>AkashicNET 2.9D · spatial portal constellation</p>
         <h2 id="portal-map-title">Choose your depth.</h2>
-        <p>Begin anywhere. Move inward when the language, context and uncertainty boundaries feel clear. “Deeper” describes the level of inquiry, never the value or awareness of a person.</p>
+        <p>Begin anywhere. Move inward when the language, context and uncertainty boundaries feel clear. “Deeper” describes the level of inquiry, never the value or awareness of a person. “2.9D” is a name for this almost-three-dimensional interface, not a claim about physical dimensions.</p>
         <div className={styles.spatialInstructions} id="portal-instructions">
           <span>Drag or move to explore</span>
           <span>Scroll to adjust depth</span>
