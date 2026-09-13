@@ -213,6 +213,19 @@ export default function PowerOfTheDoctorPage() {
 
       <section style={{ ...shell, padding: "0 0 70px", textAlign: "center" }}>
         <div style={{ ...panel, padding: "clamp(28px,6vw,58px)" }}>
+          <p className="section-label">MUSICAL REGENERATION · 2018</p>
+          <h2 style={{ margin: "16px auto", maxWidth: 850, fontSize: "clamp(2rem,4.5vw,3.8rem)", lineHeight: 1.08 }}>The signal changes its body but keeps its pulse.</h2>
+          <p style={{ maxWidth: 740, margin: "20px auto 28px", color: "#d7d9e4", lineHeight: 1.8 }}>
+            Segun Akinola&apos;s electronic reconstruction offers another continuity puzzle: timbre, rhythm and production can regenerate while the underlying musical identity remains recognisable.
+          </p>
+          <a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1kd2fx0/doctor_who_segun_akinola_full_theme_remix_2018/">
+            Doctor Who · Segun Akinola full theme remix · 2018 <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <section style={{ ...shell, padding: "0 0 70px", textAlign: "center" }}>
+        <div style={{ ...panel, padding: "clamp(28px,6vw,58px)" }}>
           <p className="section-label">THE SIGNAL REGENERATES</p>
           <h2 style={{ margin: "16px auto", maxWidth: 850, fontSize: "clamp(2rem,4.5vw,3.8rem)", lineHeight: 1.08 }}>A familiar identity enters a new visual spacetime.</h2>
           <p style={{ maxWidth: 740, margin: "20px auto 28px", color: "#d7d9e4", lineHeight: 1.8 }}>
