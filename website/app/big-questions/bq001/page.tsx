@@ -209,6 +209,23 @@ export default function BQ001Page() {
         </ol>
       </section>
 
+      <section style={{ ...shell, paddingTop: 34, paddingBottom: 34 }} aria-labelledby="courage-title">
+        <div style={{ ...panel, borderColor: "rgba(117,219,199,.42)", background: "radial-gradient(circle at 50% 0%, rgba(117,219,199,.12), transparent 55%), linear-gradient(145deg, rgba(16,18,31,.92), rgba(8,10,20,.98))" }}>
+          <p style={{ color: "#75dbc7", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>COURAGE · HOPE · OPEN INQUIRY</p>
+          <h2 id="courage-title" style={{ fontSize: "clamp(1.9rem,4vw,3.4rem)", lineHeight: 1.12 }}>Your experience deserves to be heard.</h2>
+          <p style={{ color: "#d1cdc4", fontSize: "1.08rem", lineHeight: 1.8 }}>Many people may remain silent about NDEs, OBEs, past-life memories and other extraordinary experiences because they fear ridicule, rejection or being labelled mentally unwell. This possible reporting-suppression bias means the visible record may be incomplete.</p>
+          <p style={{ color: "#d1cdc4", fontSize: "1.08rem", lineHeight: 1.8 }}>Speaking openly is not a claim of certainty. It is an act of courage that allows shared patterns, differences and unanswered questions to become visible. AkashicNET can honour an experience, support the experiencer and investigate competing explanations at the same time.</p>
+          <blockquote style={{ margin: "30px 0", padding: "24px", borderLeft: "3px solid #d8b95c", background: "rgba(216,185,92,.07)", color: "#f5f2e8", fontSize: "clamp(1.25rem,2.7vw,2rem)", lineHeight: 1.5 }}>You are not required to deny what you experienced merely because its meaning remains unresolved.</blockquote>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 14 }}>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Compassion protects the person.</strong></article>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Evidence disciplines the inquiry.</strong></article>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Courage makes the invisible visible.</strong></article>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Love moves humanity forward.</strong></article>
+          </div>
+          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
+        </div>
+      </section>
+
       <section style={{ ...shell, paddingTop: 30, paddingBottom: 64 }}>
         <div style={{ ...panel, textAlign: "center", padding: "clamp(28px,6vw,58px)" }}>
           <p style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".15em", fontSize: 13 }}>CURRENT CONCLUSION · UNRESOLVED</p>
@@ -221,7 +238,7 @@ export default function BQ001Page() {
       <section id="sources" style={{ ...shell, paddingBottom: 72 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PROVENANCE</p>
         <p style={{ color: "#c8c4bb", lineHeight: 1.7 }}>This page is a public adaptation of the validated BQ001 synthesis in the AkashicNET repository. Every evidence card above is constrained by the underlying claim/source records; uncertainty and evidence class are preserved rather than converted into a confidence score.</p>
-        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.1 · AkashicNET PRE-ALPHA v0.10.x engine</p>
+        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.2 · AkashicNET PRE-ALPHA v0.10.x engine</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
