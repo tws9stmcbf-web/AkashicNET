@@ -52,6 +52,12 @@ const sources = [
   ["FAO Food Price Index · August 2026", "https://www.fao.org/worldfoodsituation/foodpricesindex/en/"],
   ["Food Systems Countdown Report 2026 · FAO", "https://openknowledge.fao.org/handle/20.500.14283/ce0482en"],
   ["Food systems performance against targets · Nature Food (2026)", "https://www.nature.com/articles/s43016-026-01379-0"],
+  ["Community gardens and urban food resilience · Discover Sustainability (2025)", "https://link.springer.com/article/10.1007/s43621-025-01628-5"],
+  ["Community gardens and resilient cities · npj Urban Sustainability (2025)", "https://www.nature.com/articles/s42949-025-00272-2"],
+  ["Community-supported agriculture evidence summary · County Health Rankings (2025)", "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/community-supported-agriculture-csa"],
+  ["Community food rescue and fridge model · Food Rescue US", "https://foodrescue.us/fridge-the-gap/"],
+  ["Indigenous Peoples’ food systems · FAO", "https://www.fao.org/indigenous-peoples/our-pillars/fao-work-on-indigenous-food-systems/en"],
+  ["Civil society and Indigenous Peoples’ agroecology input · FAO Open Knowledge (2026)", "https://openknowledge.fao.org/"],
 ];
 
 export default function GlobalFoodShortagesReport() {
@@ -162,6 +168,28 @@ export default function GlobalFoodShortagesReport() {
           <div style={{ ...panel, padding: "clamp(24px,4vw,42px)", marginTop: 24 }}>
             <h3 style={{ color: "#e7cd7e", fontSize: "1.55rem", marginTop: 0 }}>The pizza test 🍕</h3>
             <p style={{ color: "#d7d9e4", lineHeight: 1.8 }}>Eggs, goat cheese, spinach, broccoli and nearby salmon could cover a formidable keto breakfast and evening meal. But what would still arrive through the network? Salt, olive oil, coffee, cacao, spices, animal feed, medicines, spare parts and energy reveal the hidden dependencies. Proper Italian pizza may remain a logistical luxury. Pineapple is excluded on civilisational grounds, not food-security evidence. 🇮🇹</p>
+          </div>
+        </section>
+
+        <section style={{ ...shell, padding: "72px 0 22px" }}>
+          <p className="section-label">OPEN-WEB AND COMMUNITY SOLUTIONS SCAN</p>
+          <h2 style={{ maxWidth: 960, fontSize: "clamp(2.2rem,5vw,4.4rem)", lineHeight: 1.04 }}>Promising alternatives, with their limits visible.</h2>
+          <p style={{ maxWidth: 920, color: "#d7d9e4", lineHeight: 1.85 }}>A scan of research, public initiatives and community discourse found practical models worth testing. Social-media visibility is treated as discovery or testimony, not validation. AkashicNET and the indexed r/NeuronsToNirvana and r/TribalGathering material did not provide a sufficiently documented food-security programme to promote as evidence. The clearest relevant community theme was Tribal Gathering’s influence on AkashicNET through intercultural meeting, Indigenous knowledge, nature and community. That can inform process, but it does not establish agricultural effectiveness.</p>
+          <div style={{ display: "grid", gap: 14, marginTop: 28 }}>
+            {[
+              ["Community gardens and allotments", "SUPPORTED FOR MULTIPLE BENEFITS", "Reviews associate participation with fresh-food access, knowledge, wellbeing, social connection and urban resilience. Output and benefits vary, land access is unequal and gardens cannot replace staple supply."],
+              ["Subsidised CSA and farmer co-ops", "PROMISING WITH ACCESS SUPPORT", "Advance subscriptions and cooperative purchasing can stabilise farmer income and relationships. Subsidies, flexible payments and accessible collection are needed to avoid serving only higher-income households."],
+              ["Community fridges and food rescue", "PRACTICAL NEAR-TERM BRIDGE", "Redistribution can connect safe surplus with people who need it while reducing waste. It requires reliable stewardship, refrigeration, food-safety rules and must not become a substitute for adequate income."],
+              ["Indigenous-led food sovereignty", "RIGHTS-BASED SYSTEM CHANGE", "Locally governed food systems can preserve ecological knowledge, culture, biodiversity and self-determination. Work must be led by rights-holders with consent and benefit-sharing, not extract knowledge as a generic technique."],
+              ["Rooftop, hydroponic and vertical growing", "CONTEXT-DEPENDENT SUPPLEMENT", "These approaches can shorten routes for herbs and perishable produce where land is scarce. Capital, energy, water, nutrient inputs, maintenance and crop limits determine whether they improve resilience."],
+              ["Food forests and edible public space", "LOCAL EXPERIMENT", "Perennial planting can diversify neighbourhood food and ecological functions over time. Tenure, contamination testing, maintenance, harvesting rules and seasonal yield need local design."],
+              ["Shared cold storage and processing", "HIGH-LEVERAGE INFRASTRUCTURE", "Cooperative freezers, cool rooms, drying, fermentation and canning facilities can extend local harvests and reduce loss. Energy reliability, training and safety governance are essential."],
+              ["Open local food maps", "COORDINATION TOOL", "Public maps of growers, co-ops, kitchens, fridges, water, storage and transport can reveal gaps and coordinate response. Privacy, data quality and exclusion risks must be managed."],
+            ].map(([title,status,text]) => <article key={title} style={{ ...panel, padding: "22px clamp(22px,4vw,42px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,235px),1fr))", gap: 22 }}><div><h3 style={{ margin: "0 0 8px", color: "#e7cd7e" }}>{title}</h3><span style={{ color: "#a7f0c1", fontWeight: 900, fontSize: ".82rem", letterSpacing: ".06em" }}>{status}</span></div><p style={{ margin: 0, color: "#cbd0dd", lineHeight: 1.72 }}>{text}</p></article>)}
+          </div>
+          <div style={{ ...panel, padding: "clamp(24px,4vw,42px)", marginTop: 18 }}>
+            <h3 style={{ color: "#e7cd7e", fontSize: "1.55rem", marginTop: 0 }}>A realistic city-region prototype</h3>
+            <p style={{ color: "#d7d9e4", lineHeight: 1.8, marginBottom: 0 }}>Link inner-city growing sites and school gardens to peri-urban farms; organise purchasing through resident-owned co-ops and subsidised CSA shares; route safe surplus through community fridges and kitchens; add shared cold storage, composting and preservation; publish an open resource map; and measure affordability, nutrition, farmer income, waste, energy use and who actually benefits. Expand only what survives independent evaluation.</p>
           </div>
         </section>
 
