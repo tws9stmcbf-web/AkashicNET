@@ -304,17 +304,36 @@ class FrameworkInventoryTests(unittest.TestCase):
                         f"https://drive{encoded_dot}google{encoded_dot}com/file/d/private"
                     )
 
-    def test_default_ignorable_characters_in_private_hosts_are_rejected(self):
+    def test_uts46_ignored_characters_in_private_hosts_are_rejected(self):
         private_urls = (
             "https://drive\u200b.google.com/file/d/private",
             "https://docs\u00ad.google.com/document/d/private",
             "https://\ufeffdrive.google.com/file/d/private",
+            "https://drive\u034f.google.com/file/d/private",
+            "https://drive\ufe00.google.com/file/d/private",
+            "https://drive\ufe0f.google.com/file/d/private",
+            "https://drive\U000e0100.google.com/file/d/private",
             "https://drive%E2%80%8B.google.com/file/d/private",
+            "https://drive%CD%8F.google.com/file/d/private",
+            "https://drive%EF%B8%80.google.com/file/d/private",
+            "https://drive%EF%B8%8F.google.com/file/d/private",
+            "https://drive%F3%A0%84%80.google.com/file/d/private",
         )
         for private_url in private_urls:
             with self.subTest(private_url=private_url):
                 with self.assertRaisesRegex(ValueError, "private metadata rejected"):
                     validator.privacy_check(private_url)
+
+    def test_uts46_hostname_canonicalization_has_benign_controls(self):
+        benign_urls = (
+            "https://example\u034f.com/public",
+            "https://drive\ufe00.google.example/public",
+            "https://drive-google.com/public",
+            "https://drive\u2065.google.com/public",
+        )
+        for benign_url in benign_urls:
+            with self.subTest(benign_url=benign_url):
+                validator.privacy_check(benign_url)
 
     def test_nfkc_normalized_forbidden_metadata_keys_are_rejected(self):
         keys = (
