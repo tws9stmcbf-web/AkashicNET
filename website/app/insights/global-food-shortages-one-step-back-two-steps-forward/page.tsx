@@ -135,6 +135,27 @@ export default function GlobalFoodShortagesReport() {
         </section>
 
         <section style={{ ...shell, padding: "70px 0 22px" }}>
+          <p className="section-label">A PRACTICAL RESILIENCE MODEL</p>
+          <h2 style={{ maxWidth: 960, fontSize: "clamp(2.2rem,5vw,4.4rem)", lineHeight: 1.04 }}>Consume more consciously. Grow more locally. Share capacity.</h2>
+          <p style={{ maxWidth: 920, color: "#d7d9e4", lineHeight: 1.85 }}>“Eating less” needs a precise ethical boundary. People experiencing hunger or malnutrition do not need to consume less. Where diets and purchasing patterns are excessive, however, reducing overconsumption, food waste and unnecessarily resource-intensive demand can release household money and reduce pressure on land, water, energy and supply chains.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))", gap: 16, marginTop: 28 }}>
+            {[
+              ["Waste less", "Plan portions, use leftovers, share surplus, improve storage and rescue safe food before it becomes waste."],
+              ["Grow within cities", "Use allotments, balconies, rooftops, courtyards, school gardens, hydroponics and carefully managed vertical farms for suitable crops."],
+              ["Build food co-ops", "Pool purchasing, storage, transport and member labour so healthy food and resilient infrastructure become more accessible."],
+              ["Back local farmers", "Use farmers markets, community-supported agriculture, advance purchasing and fair contracts to give growers predictable demand and income."],
+              ["Close local loops", "Connect food scraps to safe composting, rainwater to permitted irrigation, local production to community kitchens and seasonal surplus to preservation."],
+              ["Share knowledge and tools", "Create seed libraries, tool libraries, growing workshops, communal freezers and neighbourhood response plans."],
+            ].map(([title,text]) => <article key={title} style={{ ...panel, padding: 24 }}><h3 style={{ color: "#e7cd7e", fontSize: "1.4rem" }}>{title}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.72 }}>{text}</p></article>)}
+          </div>
+          <div style={{ ...panel, padding: "clamp(24px,4vw,42px)", marginTop: 18, background: "radial-gradient(circle at 85% 10%,rgba(65,164,112,.18),rgba(9,13,31,.97) 58%)" }}>
+            <h3 style={{ color: "#a7f0c1", fontSize: "1.55rem", marginTop: 0 }}>The self-sustaining community, reframed</h3>
+            <p style={{ color: "#d7d9e4", lineHeight: 1.8 }}>Complete self-sufficiency is rarely realistic or desirable. A stronger goal is <strong>community food resilience</strong>: enough local growing, storage, skills, mutual aid and trusted producer relationships to absorb disruption, while remaining connected to regional and global networks for foods, tools and inputs that cannot be produced locally.</p>
+            <p style={{ color: "#d7d9e4", lineHeight: 1.8, marginBottom: 0 }}><strong>Neighbourhood layer:</strong> gardens, kitchens, preservation and sharing. <strong>City-region layer:</strong> co-ops, markets, warehouses, composting and peri-urban farms. <strong>National and global layer:</strong> staple reserves, fair trade, energy, fertiliser, transport and humanitarian coordination. Resilience comes from overlapping layers, not isolation.</p>
+          </div>
+        </section>
+
+        <section style={{ ...shell, padding: "70px 0 22px" }}>
           <p className="section-label">FROM PLANET TO PLATE</p>
           <h2 style={{ maxWidth: 920, fontSize: "clamp(2.2rem,5vw,4.4rem)", lineHeight: 1.04 }}>Resilience is practical, local and connected.</h2>
           <p style={{ maxWidth: 900, color: "#d7d9e4", lineHeight: 1.85 }}>An allotment, community garden or balcony can add vegetables and skills. Chickens may provide eggs and goats milk, but only where land, welfare knowledge, time and local rules permit. Rainwater capture, seed sharing, preserving, freezing, community kitchens and neighbourhood exchange can reduce fragility. None makes a household independent of land, feed, veterinary care, energy, tools or wider logistics.</p>
