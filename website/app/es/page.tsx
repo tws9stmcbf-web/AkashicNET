@@ -41,7 +41,7 @@ export default function LocalizedHome() {
   return <main lang="es" className={styles.page}>
     <header className={styles.nav}>
       <a className={styles.brand} href="/es"><img src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span>AKASHICNET.ORG</span></a>
-      <nav aria-label="Navegación principal"><a href="#start">Inicio</a><a href="#principles">Principios</a><a href="/big-questions">Grandes preguntas</a><a href="/support-impact">Apoyar</a><a className={styles.languages} href="/">EN</a><a className={styles.languages} href="/de">DE</a><a className={styles.languages} href="/es">ES</a><a className={styles.languages} href="/pt">PT</a><a className={styles.languages} href="/fr">FR</a></nav>
+      <nav aria-label="Navegación principal"><a href="#start">Inicio</a><a href="#principles">Principios</a><a href="/big-questions">Grandes preguntas</a><a href="/support-impact">Apoyar</a><a className={styles.languages} href="/">EN</a><a className={styles.languages} href="/de">DE</a><a className={styles.languages} href="/es" aria-current="page">ES</a><a className={styles.languages} href="/pt">PT</a><a className={styles.languages} href="/fr">FR</a></nav>
     </header>
     <section className={styles.hero} id="start">
       <p className={styles.kicker}>Una red viva de conocimiento · Introducción en español · v0.1</p>
