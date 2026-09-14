@@ -87,6 +87,23 @@ export default function SupportImpactPage() {
         <p style={{ color: "#aaa69d", lineHeight: 1.7 }}>Support enables development capacity; it does not purchase conclusions, evidence ratings, editorial control or privileged access to protected data.</p>
       </section>
 
+      <section style={{ ...shell, paddingTop: 28, paddingBottom: 52 }} aria-labelledby="finance-title">
+        <div style={{ ...panel, borderColor: "rgba(216,185,92,.38)" }}>
+          <p style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>SEPTEMBER 2026 · FINANCIAL MODEL IN DEVELOPMENT</p>
+          <h2 id="finance-title" style={{ fontSize: "clamp(2rem,4.5vw,3.6rem)" }}>From survival funding to sustainable stewardship.</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>This month AkashicNET will develop a transparent financial model before publishing numerical targets. The model will distinguish the creator’s basic living stability from project infrastructure, research and public-access costs.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: 14, marginTop: 22 }}>
+            {[
+              ["Baseline", "Define essential monthly living and independent-development capacity."],
+              ["Infrastructure", "Document hosting, storage, software, equipment and accessibility costs."],
+              ["Runway", "Model one-time and recurring support scenarios without promising outcomes."],
+              ["Transparency", "Design a quarterly income, expenditure, progress and next-needs report."],
+            ].map(([title,text]) => <article key={title} style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16, background: "rgba(255,255,255,.025)" }}><strong style={{ color: "#f1d47b" }}>{title}</strong><p style={{ color: "#c8c4bb", lineHeight: 1.65, marginBottom: 0 }}>{text}</p></article>)}
+          </div>
+          <p style={{ marginBottom: 0, marginTop: 22, color: "#c8c4bb", lineHeight: 1.7 }}><strong>Publication rule:</strong> all figures will be labelled as verified actuals, estimates or scenarios. Donations will never determine evidence conclusions or buy access to protected corpus data.</p>
+        </div>
+      </section>
+
       <section style={{ ...shell, paddingTop: 26, paddingBottom: 68 }} aria-labelledby="choose-title">
         <div style={{ ...panel, textAlign: "center", padding: "clamp(28px,6vw,56px)" }}>
           <p style={{ color: "#75dbc7", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>CHOOSE HOW TO HELP</p>
