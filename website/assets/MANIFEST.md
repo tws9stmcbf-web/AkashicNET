@@ -11,10 +11,11 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 | `matrix-enlightenment-library.png` | `260b946e6ed1cdd46c3fe7f02a808deeed5a4c0b2716c771d668c100055f72ae` |
 | `akashicvision-nde-merkaba-flower-of-life.webp` | `34a8081c87af719d9447cf137458412c0fe63375939710753c2b3897e334bf50` |
 | `akashictranscendence-homesense800.webp` | `687f161aa6ca926803d9f8c4e1c2c941b47503115fb807cb59fc5b333bf66586` |
+| `akashicomni-metadimensional-gateway.webp` | `baf2933e2372d9fb8c74b04128b7543bb959dbc0fa9455ccf0403f29ed9b4710` |
 
 ## Provenance additions
 
 - `akashicvision-nde-merkaba-flower-of-life.webp` — original AkashicNET concept artwork added on 13 September 2026 for the AkashicVISION portal and homepage gateway. The toroidal heart, Merkaba, Flower of Life and cosmic-library imagery are artistic symbolism, not scientific evidence. The asset contains no private corpus data.
 - `akashictranscendence-homesense800.webp` — original AkashicNET concept artwork added on 13 September 2026 for the AkashicTRANSCENDENCE Arts portal. BuddhaFly, full-moon, festival and toroidal imagery are autobiographical and artistic symbolism, not scientific evidence. The asset contains no private corpus data.
 
-The binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
+- `akashicomni-metadimensional-gateway.webp` — original AkashicNET concept artwork added on 14 September 2026 for the developing AkashicOMNI gateway. The 13D hypercube and orb are analytical and navigational metaphors, not scientific evidence of literal physical dimensions or a universal information field.\n\nThe binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
