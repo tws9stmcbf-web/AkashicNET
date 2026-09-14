@@ -5,7 +5,10 @@ import { useEffect, useMemo, useState } from "react";
 import styles from "./NewsDeskTicker.module.css";
 import type { NewsroomItem } from "./newsroom";
 
+const UTC_TIMESTAMP = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/;
+
 function formatStamp(value: string): string {
+  if (!UTC_TIMESTAMP.test(value)) return "Timestamp unavailable";
   return new Date(value).toLocaleString("en-GB", {
     timeZone: "UTC",
     year: "numeric",
@@ -40,8 +43,8 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
   }, []);
 
   const shouldRenderStatic = prefersReducedMotion || items.length <= 1;
-  const trackItems = useMemo(() => (shouldRenderStatic ? items : [...items, ...items]), [items, shouldRenderStatic]);
   const trackPaused = shouldRenderStatic || isPaused || isInteracting;
+  const marqueeItems = useMemo(() => items, [items]);
 
   return (
     <section className={styles.shell} aria-label="Insights newsroom latest 24 hours">
@@ -92,20 +95,28 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
             }}
           >
             <div className={`${styles.track} ${trackPaused ? styles.trackPaused : ""}`}>
-              {trackItems.map((item, index) => {
-                const isDuplicate = index >= items.length;
-                return (
-                  <ul key={`${item.id}-${index}`} className={styles.list} aria-hidden={isDuplicate}>
-                    <li className={styles.item}>
+              <ul className={styles.list}>
+                {marqueeItems.map((item) => (
+                  <li key={item.id} className={styles.item}>
+                    <span className={styles.bug} aria-label="AkashicNET News 24">AKN24</span>
+                    <span className={styles.category}>{item.category}</span>
+                    <a className={styles.storyLink} href={item.sourceUrl}>{item.headline}</a>
+                    <p className={styles.summary}>{item.shortSummary}</p>
+                    <p className={styles.meta}>Source {formatStamp(item.sourceTimestamp)} · Published {formatStamp(item.publishedAt)} · Updated {formatStamp(item.updatedAt)} · {item.evidenceLabel}</p>
+                  </li>
+                ))}
+              </ul>
+              <ul className={styles.list} aria-hidden="true">
+                {marqueeItems.map((item) => (
+                  <li key={`${item.id}-duplicate`} className={styles.item}>
                       <span className={styles.bug} aria-label="AkashicNET News 24">AKN24</span>
                       <span className={styles.category}>{item.category}</span>
-                      {isDuplicate ? <span className={styles.storyLink}>{item.headline}</span> : <a className={styles.storyLink} href={item.sourceUrl}>{item.headline}</a>}
+                      <span className={styles.storyLink}>{item.headline}</span>
                       <p className={styles.summary}>{item.shortSummary}</p>
                       <p className={styles.meta}>Source {formatStamp(item.sourceTimestamp)} · Published {formatStamp(item.publishedAt)} · Updated {formatStamp(item.updatedAt)} · {item.evidenceLabel}</p>
-                    </li>
-                  </ul>
-                );
-              })}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         )}

@@ -33,7 +33,7 @@ REQUIRED_COMPONENT_STRINGS = [
     "LATEST 24 HOURS",
     "Pause newsroom strip",
     "Play newsroom strip",
-    'aria-hidden={isDuplicate}',
+    'aria-hidden="true"',
     'onMouseEnter={() => setIsInteracting(true)}',
     'onFocusCapture={() => setIsInteracting(true)}',
     'Kindness Across Species',
