@@ -1,0 +1,995 @@
+{
+  "schema_version": "0.1.0",
+  "title": "AkashicNET Global Metadata Discovery Seed",
+  "generated_on": "2026-09-14",
+  "status": "exploratory",
+  "scope": {
+    "topic_count": 48,
+    "registry_count": 15,
+    "content_imported": false,
+    "metadata_only": true
+  },
+  "boundaries": [
+    "Presence in a source does not establish truth.",
+    "Documentary trace is not the same as ultimate origin.",
+    "Unknown is a valid value and must not be silently replaced by speculation.",
+    "Connections are discovery paths, not causal claims or corroboration.",
+    "Living people, private data and restricted archives are excluded by default.",
+    "Indigenous knowledge requires consent, context and cultural-sovereignty review.",
+    "Item-level rights override registry-level defaults."
+  ],
+  "controlled_values": {
+    "ultimate_status": [
+      "biological",
+      "physical",
+      "engineered",
+      "historical",
+      "documentary",
+      "social",
+      "legal",
+      "cultural",
+      "interpretive",
+      "plural",
+      "multifactorial",
+      "emergent",
+      "scenario-based",
+      "unresolved",
+      "unknown"
+    ],
+    "entity_status": [
+      "verified-person-or-organisation",
+      "documented-claimed-entity",
+      "unnamed-reported-presence",
+      "unknown-agent",
+      "not-applicable"
+    ],
+    "edge_status": [
+      "documented",
+      "taxonomic",
+      "co-occurrence",
+      "hypothesised",
+      "contested",
+      "unknown"
+    ]
+  },
+  "registries": [
+    {
+      "id": "SRC-001",
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org/",
+      "role": "cross-domain identifiers and statements",
+      "license": "CC0"
+    },
+    {
+      "id": "SRC-002",
+      "name": "Library of Congress Linked Data Service",
+      "url": "https://id.loc.gov/",
+      "role": "authoritative subjects and names",
+      "license": "public metadata; verify record terms"
+    },
+    {
+      "id": "SRC-003",
+      "name": "UNESCO Thesaurus",
+      "url": "https://vocabularies.unesco.org/browser/thesaurus/en/",
+      "role": "education culture science and society vocabulary",
+      "license": "verify terms of use"
+    },
+    {
+      "id": "SRC-004",
+      "name": "MeSH",
+      "url": "https://meshb.nlm.nih.gov/",
+      "role": "biomedical controlled vocabulary",
+      "license": "publicly accessible; verify reuse conditions"
+    },
+    {
+      "id": "SRC-005",
+      "name": "NASA Thesaurus",
+      "url": "https://sti.nasa.gov/nasa-thesaurus/",
+      "role": "space and aerospace vocabulary",
+      "license": "US government metadata; verify item status"
+    },
+    {
+      "id": "SRC-006",
+      "name": "AGROVOC",
+      "url": "https://www.fao.org/agrovoc/",
+      "role": "agriculture food and environment vocabulary",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "SRC-007",
+      "name": "Getty Art and Architecture Thesaurus",
+      "url": "https://www.getty.edu/research/tools/vocabularies/aat/",
+      "role": "art architecture and material culture",
+      "license": "Open Data Commons Attribution License"
+    },
+    {
+      "id": "SRC-008",
+      "name": "OpenAlex",
+      "url": "https://openalex.org/",
+      "role": "scholarly works concepts institutions and authors",
+      "license": "CC0 core data"
+    },
+    {
+      "id": "SRC-009",
+      "name": "Crossref",
+      "url": "https://www.crossref.org/",
+      "role": "DOI and scholarly publication metadata",
+      "license": "metadata terms vary by field"
+    },
+    {
+      "id": "SRC-010",
+      "name": "DataCite",
+      "url": "https://datacite.org/",
+      "role": "research object identifiers and metadata",
+      "license": "CC0 metadata"
+    },
+    {
+      "id": "SRC-011",
+      "name": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/",
+      "role": "scholarly orientation and terminology",
+      "license": "link and metadata only"
+    },
+    {
+      "id": "SRC-012",
+      "name": "CIA FOIA Reading Room",
+      "url": "https://www.cia.gov/readingroom/",
+      "role": "declassified documentary history",
+      "license": "item-specific; metadata and links only by default"
+    },
+    {
+      "id": "SRC-013",
+      "name": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "role": "biomedical discovery metadata",
+      "license": "citation metadata; article rights vary"
+    },
+    {
+      "id": "SRC-014",
+      "name": "Internet Archive",
+      "url": "https://archive.org/",
+      "role": "discovery of digitised public and permissioned materials",
+      "license": "item-specific"
+    },
+    {
+      "id": "SRC-015",
+      "name": "WorldCat",
+      "url": "https://search.worldcat.org/",
+      "role": "bibliographic discovery",
+      "license": "link and metadata only"
+    }
+  ],
+  "topics": [
+    {
+      "id": "TOPIC-001",
+      "label": "Consciousness",
+      "domain": "science-philosophy",
+      "origin": {
+        "documentary_trace": "ancient-and-modern",
+        "ultimate_status": "unknown",
+        "basis": [
+          "neuroscience",
+          "philosophy-of-mind",
+          "meditation",
+          "artificial-intelligence"
+        ]
+      },
+      "evidence_status": "discovery_metadata_only"
+    },
+    {
+      "id": "TOPIC-002",
+      "label": "Neuroscience",
+      "domain": "life-sciences",
+      "origin": {
+        "documentary_trace": "modern-discipline",
+        "ultimate_status": "biological",
+        "basis": "brain-and-nervous-system"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "consciousness",
+        "mental-health",
+        "neurodiversity",
+        "psychedelic-science"
+      ]
+    },
+    {
+      "id": "TOPIC-003",
+      "label": "Mental health",
+      "domain": "health",
+      "origin": {
+        "documentary_trace": "historically-evolving",
+        "ultimate_status": "multifactorial",
+        "basis": "biological-psychological-social"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "neuroscience",
+        "public-health",
+        "community",
+        "meditation"
+      ]
+    },
+    {
+      "id": "TOPIC-004",
+      "label": "Neurodiversity",
+      "domain": "health-society",
+      "origin": {
+        "documentary_trace": "late-20th-century-term",
+        "ultimate_status": "multifactorial",
+        "basis": "developmental-and-social"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "neuroscience",
+        "mental-health",
+        "accessibility",
+        "human-flourishing"
+      ]
+    },
+    {
+      "id": "TOPIC-005",
+      "label": "Psychedelic science",
+      "domain": "health-consciousness",
+      "origin": {
+        "documentary_trace": "20th-century-discipline",
+        "ultimate_status": "pharmacological-cultural",
+        "basis": "multiple-substances-and-practices"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "neuroscience",
+        "mental-health",
+        "indigenous-knowledge",
+        "mystical-experience"
+      ]
+    },
+    {
+      "id": "TOPIC-006",
+      "label": "Meditation",
+      "domain": "contemplative-practice",
+      "origin": {
+        "documentary_trace": "ancient-multiple-traditions",
+        "ultimate_status": "plural",
+        "basis": "cultural-and-practice-lineages"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "buddhism",
+        "yoga",
+        "mental-health",
+        "consciousness"
+      ]
+    },
+    {
+      "id": "TOPIC-007",
+      "label": "Buddhism",
+      "domain": "religion-philosophy",
+      "origin": {
+        "documentary_trace": "historical-south-asia",
+        "ultimate_status": "historical",
+        "basis": "teachings-associated-with-the-Buddha"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "meditation",
+        "ethics",
+        "interbeing",
+        "reincarnation"
+      ]
+    },
+    {
+      "id": "TOPIC-008",
+      "label": "Sikhism",
+      "domain": "religion",
+      "origin": {
+        "documentary_trace": "early-modern-punjab",
+        "ultimate_status": "historical",
+        "basis": "Guru-Nanak-and-Sikh-Gurus"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "ethics",
+        "service",
+        "music",
+        "interfaith"
+      ]
+    },
+    {
+      "id": "TOPIC-009",
+      "label": "Hindu traditions",
+      "domain": "religion-philosophy",
+      "origin": {
+        "documentary_trace": "ancient-south-asia",
+        "ultimate_status": "plural",
+        "basis": "multiple-textual-and-lived-lineages"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "yoga",
+        "vedanta",
+        "shiva-shakti",
+        "reincarnation"
+      ]
+    },
+    {
+      "id": "TOPIC-010",
+      "label": "Indigenous knowledge systems",
+      "domain": "culture-knowledge",
+      "origin": {
+        "documentary_trace": "multiple-local-lineages",
+        "ultimate_status": "plural",
+        "basis": "community-specific"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "ecology",
+        "plant-medicine",
+        "ceremony",
+        "cultural-sovereignty"
+      ]
+    },
+    {
+      "id": "TOPIC-011",
+      "label": "Mystical experience",
+      "domain": "consciousness-religion",
+      "origin": {
+        "documentary_trace": "cross-cultural",
+        "ultimate_status": "unknown",
+        "basis": "multiple-competing-models"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "consciousness",
+        "meditation",
+        "psychedelic-science",
+        "comparative-religion"
+      ]
+    },
+    {
+      "id": "TOPIC-012",
+      "label": "Near-death experiences",
+      "domain": "consciousness-health",
+      "origin": {
+        "documentary_trace": "modern-clinical-label-ancient-reports",
+        "ultimate_status": "unknown",
+        "basis": "physiological-psychological-transpersonal-models"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "resuscitation",
+        "mystical-experience",
+        "reincarnation",
+        "grief"
+      ]
+    },
+    {
+      "id": "TOPIC-013",
+      "label": "Reincarnation claims",
+      "domain": "religion-consciousness",
+      "origin": {
+        "documentary_trace": "ancient-cross-cultural",
+        "ultimate_status": "unresolved",
+        "basis": "tradition-testimony-and-case-research"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "memory",
+        "identity",
+        "near-death-experiences",
+        "bq001"
+      ]
+    },
+    {
+      "id": "TOPIC-014",
+      "label": "Anomalous cognition",
+      "domain": "parapsychology",
+      "origin": {
+        "documentary_trace": "19th-to-20th-century-research-category",
+        "ultimate_status": "unresolved",
+        "basis": "contested"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "remote-viewing",
+        "telepathy",
+        "statistics",
+        "replication"
+      ]
+    },
+    {
+      "id": "TOPIC-015",
+      "label": "Remote viewing",
+      "domain": "parapsychology-intelligence-history",
+      "origin": {
+        "documentary_trace": "20th-century-term",
+        "ultimate_status": "unresolved",
+        "basis": "documented-programmes-contested-phenomenon"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "anomalous-cognition",
+        "cold-war",
+        "declassified-records",
+        "replication"
+      ]
+    },
+    {
+      "id": "TOPIC-016",
+      "label": "Artificial intelligence",
+      "domain": "computing",
+      "origin": {
+        "documentary_trace": "20th-century-discipline",
+        "ultimate_status": "engineered",
+        "basis": "human-built-systems"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "machine-learning",
+        "ethics",
+        "consciousness",
+        "collective-intelligence"
+      ]
+    },
+    {
+      "id": "TOPIC-017",
+      "label": "Artificial sentience claims",
+      "domain": "computing-consciousness",
+      "origin": {
+        "documentary_trace": "21st-century-public-debate",
+        "ultimate_status": "unresolved",
+        "basis": "simulation-anthropomorphism-or-emergence"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "artificial-intelligence",
+        "philosophy-of-mind",
+        "language-models",
+        "unknown-agency"
+      ]
+    },
+    {
+      "id": "TOPIC-018",
+      "label": "Collective intelligence",
+      "domain": "systems-society",
+      "origin": {
+        "documentary_trace": "ancient-examples-modern-term",
+        "ultimate_status": "emergent",
+        "basis": "groups-networks-and-organisms"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "social-networks",
+        "swarm-intelligence",
+        "democracy",
+        "interbeing"
+      ]
+    },
+    {
+      "id": "TOPIC-019",
+      "label": "Complex systems",
+      "domain": "science",
+      "origin": {
+        "documentary_trace": "20th-century-discipline",
+        "ultimate_status": "emergent",
+        "basis": "interacting-components"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "networks",
+        "ecology",
+        "climate",
+        "collective-intelligence"
+      ]
+    },
+    {
+      "id": "TOPIC-020",
+      "label": "Quantum physics",
+      "domain": "physics",
+      "origin": {
+        "documentary_trace": "early-20th-century",
+        "ultimate_status": "physical",
+        "basis": "empirically-tested-formalisms"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "measurement",
+        "information",
+        "cosmology",
+        "quantum-biology"
+      ]
+    },
+    {
+      "id": "TOPIC-021",
+      "label": "Cosmology",
+      "domain": "physics-astronomy",
+      "origin": {
+        "documentary_trace": "ancient-inquiry-modern-science",
+        "ultimate_status": "physical",
+        "basis": "universe-scale-models"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "astrophysics",
+        "dark-matter",
+        "dark-energy",
+        "origins"
+      ]
+    },
+    {
+      "id": "TOPIC-022",
+      "label": "Origins of the universe",
+      "domain": "cosmology",
+      "origin": {
+        "documentary_trace": "ancient-question",
+        "ultimate_status": "unknown",
+        "basis": "competing-physical-models"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "cosmology",
+        "big-bang",
+        "inflation",
+        "quantum-gravity"
+      ]
+    },
+    {
+      "id": "TOPIC-023",
+      "label": "Origins of life",
+      "domain": "biology",
+      "origin": {
+        "documentary_trace": "ancient-question-modern-science",
+        "ultimate_status": "unknown",
+        "basis": "abiogenesis-hypotheses"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "chemistry",
+        "evolution",
+        "astrobiology",
+        "information"
+      ]
+    },
+    {
+      "id": "TOPIC-024",
+      "label": "Evolution",
+      "domain": "biology",
+      "origin": {
+        "documentary_trace": "19th-century-modern-synthesis",
+        "ultimate_status": "biological",
+        "basis": "descent-with-modification"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "genetics",
+        "ecology",
+        "origins-of-life",
+        "human-origins"
+      ]
+    },
+    {
+      "id": "TOPIC-025",
+      "label": "Human origins",
+      "domain": "anthropology-biology",
+      "origin": {
+        "documentary_trace": "ancient-question-modern-evidence",
+        "ultimate_status": "biological-cultural",
+        "basis": "evolution-and-migration"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "evolution",
+        "archaeology",
+        "genetics",
+        "culture"
+      ]
+    },
+    {
+      "id": "TOPIC-026",
+      "label": "Ecology",
+      "domain": "life-earth-sciences",
+      "origin": {
+        "documentary_trace": "19th-century-discipline",
+        "ultimate_status": "biophysical",
+        "basis": "organism-environment-relations"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "climate",
+        "biodiversity",
+        "indigenous-knowledge-systems",
+        "regeneration"
+      ]
+    },
+    {
+      "id": "TOPIC-027",
+      "label": "Climate change",
+      "domain": "earth-sciences",
+      "origin": {
+        "documentary_trace": "19th-century-science-modern-crisis",
+        "ultimate_status": "anthropogenic-natural",
+        "basis": "greenhouse-gas-driven-warming"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "energy",
+        "ecology",
+        "policy",
+        "justice"
+      ]
+    },
+    {
+      "id": "TOPIC-028",
+      "label": "Biodiversity",
+      "domain": "life-earth-sciences",
+      "origin": {
+        "documentary_trace": "modern-term-ancient-observation",
+        "ultimate_status": "biological",
+        "basis": "evolution-and-ecology"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "ecology",
+        "conservation",
+        "food-systems",
+        "climate-change"
+      ]
+    },
+    {
+      "id": "TOPIC-029",
+      "label": "Regeneration",
+      "domain": "ecology-society",
+      "origin": {
+        "documentary_trace": "multiple-lineages",
+        "ultimate_status": "plural",
+        "basis": "ecological-social-and-cultural-restoration"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "biodiversity",
+        "agriculture",
+        "community",
+        "human-flourishing"
+      ]
+    },
+    {
+      "id": "TOPIC-030",
+      "label": "Music",
+      "domain": "arts-culture",
+      "origin": {
+        "documentary_trace": "prehistoric",
+        "ultimate_status": "human-cultural",
+        "basis": "multiple-independent-lineages"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "rhythm",
+        "psytrance",
+        "ritual",
+        "neuroscience"
+      ]
+    },
+    {
+      "id": "TOPIC-031",
+      "label": "Psytrance",
+      "domain": "music-culture",
+      "origin": {
+        "documentary_trace": "late-20th-century",
+        "ultimate_status": "historical",
+        "basis": "electronic-music-and-global-festival-culture"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "music",
+        "altered-states",
+        "community",
+        "technology"
+      ]
+    },
+    {
+      "id": "TOPIC-032",
+      "label": "Sacred geometry",
+      "domain": "mathematics-culture",
+      "origin": {
+        "documentary_trace": "ancient-and-modern",
+        "ultimate_status": "plural",
+        "basis": "mathematical-forms-plus-cultural-interpretation"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "geometry",
+        "architecture",
+        "symbolism",
+        "toroidal-models"
+      ]
+    },
+    {
+      "id": "TOPIC-033",
+      "label": "Time",
+      "domain": "physics-philosophy",
+      "origin": {
+        "documentary_trace": "ancient-question",
+        "ultimate_status": "unknown",
+        "basis": "physical-and-experiential-models"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "relativity",
+        "consciousness",
+        "memory",
+        "multidimensionalcut"
+      ]
+    },
+    {
+      "id": "TOPIC-034",
+      "label": "Information",
+      "domain": "mathematics-computing",
+      "origin": {
+        "documentary_trace": "20th-century-formalisation",
+        "ultimate_status": "abstract-physical",
+        "basis": "multiple-definitions"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "entropy",
+        "computation",
+        "biology",
+        "knowledge-graphs"
+      ]
+    },
+    {
+      "id": "TOPIC-035",
+      "label": "Knowledge graphs",
+      "domain": "computing-library-science",
+      "origin": {
+        "documentary_trace": "late-20th-century",
+        "ultimate_status": "engineered",
+        "basis": "structured-entities-and-relations"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "metadata",
+        "ontologies",
+        "linked-data",
+        "artificial-intelligence"
+      ]
+    },
+    {
+      "id": "TOPIC-036",
+      "label": "Metadata",
+      "domain": "information-science",
+      "origin": {
+        "documentary_trace": "library-and-computing-history",
+        "ultimate_status": "engineered",
+        "basis": "descriptions-of-resources"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "knowledge-graphs",
+        "provenance",
+        "archives",
+        "discovery"
+      ]
+    },
+    {
+      "id": "TOPIC-037",
+      "label": "Provenance",
+      "domain": "archives-science",
+      "origin": {
+        "documentary_trace": "historically-evolving",
+        "ultimate_status": "documentary",
+        "basis": "records-of-origin-and-custody"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "metadata",
+        "reproducibility",
+        "rights",
+        "evidence"
+      ]
+    },
+    {
+      "id": "TOPIC-038",
+      "label": "Open science",
+      "domain": "science-governance",
+      "origin": {
+        "documentary_trace": "late-20th-to-21st-century",
+        "ultimate_status": "social",
+        "basis": "access-transparency-and-reuse-practices"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "reproducibility",
+        "public-data",
+        "citizen-science",
+        "ethics"
+      ]
+    },
+    {
+      "id": "TOPIC-039",
+      "label": "Ethics",
+      "domain": "philosophy-practice",
+      "origin": {
+        "documentary_trace": "ancient-multiple-traditions",
+        "ultimate_status": "plural",
+        "basis": "reasoning-culture-and-lived-values"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "compassion",
+        "rights",
+        "artificial-intelligence",
+        "research-governance"
+      ]
+    },
+    {
+      "id": "TOPIC-040",
+      "label": "Human flourishing",
+      "domain": "health-philosophy",
+      "origin": {
+        "documentary_trace": "ancient-and-modern",
+        "ultimate_status": "plural",
+        "basis": "wellbeing-meaning-relationships-and-conditions"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "mental-health",
+        "ethics",
+        "community",
+        "human-2-0"
+      ]
+    },
+    {
+      "id": "TOPIC-041",
+      "label": "Interbeing",
+      "domain": "contemplative-ecological",
+      "origin": {
+        "documentary_trace": "modern-term-with-older-roots",
+        "ultimate_status": "interpretive",
+        "basis": "relational-framework"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "buddhism",
+        "ecology",
+        "collective-intelligence",
+        "systems-thinking"
+      ]
+    },
+    {
+      "id": "TOPIC-042",
+      "label": "Human 2.0",
+      "domain": "akashicnet-framework",
+      "origin": {
+        "documentary_trace": "AkashicNET",
+        "ultimate_status": "speculative",
+        "basis": "developmental-and-civilisational-framework"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "human-flourishing",
+        "ethics",
+        "neurodiversity",
+        "future-studies"
+      ]
+    },
+    {
+      "id": "TOPIC-043",
+      "label": "Future studies",
+      "domain": "interdisciplinary",
+      "origin": {
+        "documentary_trace": "20th-century-discipline",
+        "ultimate_status": "scenario-based",
+        "basis": "possible-probable-and-preferred-futures"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "human-2-0",
+        "artificial-intelligence",
+        "climate-change",
+        "governance"
+      ]
+    },
+    {
+      "id": "TOPIC-044",
+      "label": "Unidentified anomalous phenomena",
+      "domain": "aerospace-public-policy",
+      "origin": {
+        "documentary_trace": "20th-century-category-evolving-terminology",
+        "ultimate_status": "unresolved",
+        "basis": "misidentification-classified-data-or-unknown"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "aerospace",
+        "sensors",
+        "unknown-agency",
+        "public-records"
+      ]
+    },
+    {
+      "id": "TOPIC-045",
+      "label": "Unknown agency",
+      "domain": "cross-domain",
+      "origin": {
+        "documentary_trace": "AkashicSENTIENCE-controlled-term",
+        "ultimate_status": "unresolved",
+        "basis": "insufficient-information"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "artificial-sentience-claims",
+        "mystical-experience",
+        "unidentified-anomalous-phenomena",
+        "anomalous-cognition"
+      ]
+    },
+    {
+      "id": "TOPIC-046",
+      "label": "Unknown origin",
+      "domain": "cross-domain",
+      "origin": {
+        "documentary_trace": "AkashicNET-controlled-term",
+        "ultimate_status": "unresolved",
+        "basis": "insufficient-information"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "origins-of-the-universe",
+        "origins-of-life",
+        "consciousness",
+        "provenance"
+      ]
+    },
+    {
+      "id": "TOPIC-047",
+      "label": "Rights and cultural sovereignty",
+      "domain": "ethics-law-culture",
+      "origin": {
+        "documentary_trace": "modern-governance-with-older-principles",
+        "ultimate_status": "social-legal",
+        "basis": "community-and-jurisdiction-specific"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "indigenous-knowledge-systems",
+        "archives",
+        "metadata",
+        "research-governance"
+      ]
+    },
+    {
+      "id": "TOPIC-048",
+      "label": "Evidence and uncertainty",
+      "domain": "science-philosophy",
+      "origin": {
+        "documentary_trace": "historically-evolving",
+        "ultimate_status": "epistemic",
+        "basis": "methods-for-claims-and-confidence"
+      },
+      "evidence_status": "discovery_metadata_only",
+      "connections": [
+        "statistics",
+        "replication",
+        "provenance",
+        "open-questions"
+      ]
+    }
+  ],
+  "unknown_nodes": [
+    {
+      "id": "UNKNOWN-AGENT-001",
+      "label": "Unknown or unnamed apparent agent",
+      "entity_status": "unknown-agent",
+      "ontological_status": "unresolved",
+      "use_when": "A source reports apparent agency but identity or independence cannot be established."
+    },
+    {
+      "id": "UNKNOWN-ORIGIN-001",
+      "label": "Unknown ultimate origin",
+      "entity_status": "not-applicable",
+      "ontological_status": "unresolved",
+      "use_when": "A topic has a traceable documentary history but its ultimate cause or source remains unresolved."
+    }
+  ]
+}
