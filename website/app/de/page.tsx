@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "AkashicNET verbindet Bewusstseinsforschung, gelebte Erfahrung, kontemplative Weisheit, Kreativität und planetarisches Wissen – ohne Möglichkeit mit Beweis zu verwechseln.",
   alternates: {
     canonical: "https://akashicnet.org/de",
-    languages: { en: "https://akashicnet.org/", de: "https://akashicnet.org/de", es: "https://akashicnet.org/es", "x-default": "https://akashicnet.org/" },
+    languages: { en: "https://akashicnet.org/", de: "https://akashicnet.org/de", es: "https://akashicnet.org/es", "pt-BR": "https://akashicnet.org/pt", fr: "https://akashicnet.org/fr", "x-default": "https://akashicnet.org/" },
   },
 };
 
@@ -20,10 +20,10 @@ const principles = [
 ];
 
 export default function GermanHome() {
-  return <main className={styles.page}>
+  return <main lang="de" className={styles.page}>
     <header className={styles.nav}>
       <a className={styles.brand} href="/de"><img src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span>AKASHICNET.ORG</span></a>
-      <nav aria-label="Hauptnavigation"><a href="#beginn">Start</a><a href="#prinzipien">Prinzipien</a><a href="/big-questions">Große Fragen</a><a href="/support-impact">Unterstützen</a><a className={styles.languages} href="/">EN</a><a className={styles.languages} href="/es">ES</a></nav>
+      <nav aria-label="Hauptnavigation"><a href="#beginn">Start</a><a href="#prinzipien">Prinzipien</a><a href="/big-questions">Große Fragen</a><a href="/support-impact">Unterstützen</a><a className={styles.languages} href="/">EN</a><a className={styles.languages} href="/de" aria-current="page">DE</a><a className={styles.languages} href="/es">ES</a><a className={styles.languages} href="/pt">PT</a><a className={styles.languages} href="/fr">FR</a></nav>
     </header>
     <section className={styles.hero} id="beginn">
       <p className={styles.kicker}>Ein lebendiges Wissensnetz · Deutsche Einführung · v0.1</p>
@@ -37,6 +37,6 @@ export default function GermanHome() {
       <div className={styles.grid}>{principles.map(([title,text],i)=><article className={styles.card} key={title}><h3>{String(i+1).padStart(2,"0")} · {title}</h3><p>{text}</p></article>)}</div>
     </section>
     <section className={styles.section}><div className={styles.boundary}><strong>Evidenzgrenze:</strong> Spirituelle Bedeutung, persönliche Erfahrung und wissenschaftliche Evidenz werden nicht gleichgesetzt. AkashicNET finanziert die Frage, nicht die Antwort. BQ001 bleibt UNGEKLÄRT.</div></section>
-    <footer className={styles.footer}><a href="/">English</a><a href="/es">Español</a><p>Grenzenloses Bewusstsein ist unendliche Liebe.</p></footer>
+    <footer className={styles.footer}><a href="/">English</a><a href="/de">Deutsch</a><a href="/es">Español</a><a href="/pt">Português</a><a href="/fr">Français</a><p>Grenzenloses Bewusstsein ist unendliche Liebe.</p></footer>
   </main>;
 }
