@@ -4,7 +4,7 @@
   "generated_on": "2026-09-14",
   "status": "exploratory",
   "scope": {
-    "topic_count": 48,
+    "topic_count": 49,
     "registry_count": 15,
     "content_imported": false,
     "metadata_only": true
@@ -1719,6 +1719,231 @@
         "human_reviewed": false,
         "last_reviewed": null,
         "notes": "Seed record; not eligible for automatic public promotion."
+      }
+    },
+    {
+      "id": "TOPIC-049",
+      "slug": "quality-of-life",
+      "label": "Quality of life",
+      "aliases": [
+        "QoL",
+        "well-being"
+      ],
+      "domain": "health-society-philosophy",
+      "summary": "How people experience their lives across health, autonomy, relationships, meaning, environment, material security and opportunity.",
+      "status": "discovery",
+      "origin": {
+        "documentary_trace": "Longstanding human concern; modern cross-cultural measurement includes the WHOQOL programme developed through fifteen international field centres.",
+        "ultimate_status": "plural",
+        "claimed_origins": [],
+        "evidence_note": "Quality of life is multidimensional and value-sensitive. No single index captures every person, culture or circumstance."
+      },
+      "entities": [],
+      "connections": [
+        {
+          "target": "human-flourishing",
+          "relation": "overlaps-with",
+          "edge_status": "documented",
+          "source_ids": [
+            "QOL-SRC-001",
+            "QOL-SRC-002"
+          ]
+        },
+        {
+          "target": "mental-health",
+          "relation": "quality-dimension",
+          "edge_status": "documented",
+          "source_ids": [
+            "QOL-SRC-001",
+            "QOL-SRC-003"
+          ]
+        },
+        {
+          "target": "community",
+          "relation": "quality-dimension",
+          "edge_status": "documented",
+          "source_ids": [
+            "QOL-SRC-001",
+            "QOL-SRC-003"
+          ]
+        },
+        {
+          "target": "ethics",
+          "relation": "frames-values-and-tradeoffs",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        },
+        {
+          "target": "climate-change",
+          "relation": "affects-living-conditions",
+          "edge_status": "documented",
+          "source_ids": [
+            "QOL-SRC-003"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "QOL-SRC-001",
+          "url": "https://www.who.int/tools/whoqol",
+          "source_type": "institutional-record",
+          "evidence_role": "definition",
+          "retrieved_on": "2026-09-14"
+        },
+        {
+          "id": "QOL-SRC-002",
+          "url": "https://hdr.undp.org/data-center/human-development-index",
+          "source_type": "institutional-record",
+          "evidence_role": "context",
+          "retrieved_on": "2026-09-14"
+        },
+        {
+          "id": "QOL-SRC-003",
+          "url": "https://unstats.un.org/sdgs/metadata/",
+          "source_type": "institutional-record",
+          "evidence_role": "context",
+          "retrieved_on": "2026-09-14"
+        }
+      ],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "Only original summaries and links are included. Instrument, dataset and document reuse conditions require item-level review."
+      },
+      "open_questions": [
+        "Which dimensions matter most to people in different cultures and circumstances?",
+        "How should subjective experience and objective living conditions be combined without erasing either?",
+        "Which interventions improve several dimensions without shifting harms onto other people, future generations or ecosystems?",
+        "How can minority needs and neurodivergent lives remain visible in population averages?"
+      ],
+      "solution_space": {
+        "status": "discovery",
+        "quality_dimensions": [
+          "physical health",
+          "mental health",
+          "autonomy",
+          "relationships",
+          "meaning",
+          "material security",
+          "environment",
+          "learning",
+          "participation",
+          "rest and play"
+        ],
+        "candidates": [
+          {
+            "label": "Secure basic needs and accessible essential services",
+            "level": "policy",
+            "evidence_status": "supported",
+            "potential_benefits": [
+              "health",
+              "security",
+              "agency"
+            ],
+            "tradeoffs": [
+              "funding choices",
+              "implementation capacity",
+              "unequal access risks"
+            ],
+            "source_ids": [
+              "QOL-SRC-002",
+              "QOL-SRC-003"
+            ]
+          },
+          {
+            "label": "Strengthen social connection and community participation",
+            "level": "community",
+            "evidence_status": "supported",
+            "potential_benefits": [
+              "belonging",
+              "mutual support",
+              "mental well-being"
+            ],
+            "tradeoffs": [
+              "exclusion risks",
+              "volunteer burden",
+              "cultural fit"
+            ],
+            "source_ids": [
+              "QOL-SRC-001",
+              "QOL-SRC-003"
+            ]
+          },
+          {
+            "label": "Support sleep, movement, nutrition and preventive care",
+            "level": "individual",
+            "evidence_status": "supported",
+            "potential_benefits": [
+              "physical health",
+              "energy",
+              "resilience"
+            ],
+            "tradeoffs": [
+              "must not individualise structural problems",
+              "access and disability constraints"
+            ],
+            "source_ids": [
+              "QOL-SRC-001"
+            ]
+          },
+          {
+            "label": "Design work, technology and public space for autonomy and accessibility",
+            "level": "multi-level",
+            "evidence_status": "hypothesised",
+            "potential_benefits": [
+              "agency",
+              "participation",
+              "neurodivergent inclusion"
+            ],
+            "tradeoffs": [
+              "competing needs",
+              "cost",
+              "measurement uncertainty"
+            ],
+            "source_ids": []
+          },
+          {
+            "label": "Protect ecological conditions that sustain present and future lives",
+            "level": "ecological",
+            "evidence_status": "supported",
+            "potential_benefits": [
+              "health",
+              "livelihoods",
+              "intergenerational security"
+            ],
+            "tradeoffs": [
+              "transition costs",
+              "distributional effects",
+              "local context"
+            ],
+            "source_ids": [
+              "QOL-SRC-003"
+            ]
+          },
+          {
+            "label": "Make room for meaning, contemplation, creativity and service",
+            "level": "individual",
+            "evidence_status": "mixed",
+            "potential_benefits": [
+              "purpose",
+              "emotional regulation",
+              "connection"
+            ],
+            "tradeoffs": [
+              "not universally desired",
+              "tradition and cultural-fit differences",
+              "cannot replace clinical or material support"
+            ],
+            "source_ids": [
+              "QOL-SRC-001"
+            ]
+          }
+        ]
+      },
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Worked pilot generated from public institutional metadata; synthesis and solution ratings require independent review before public promotion."
       }
     }
   ],
