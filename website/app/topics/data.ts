@@ -58,7 +58,11 @@ export type TopicRecord = {
   };
 };
 
-export const topicSeed = seed as typeof seed & { topics: TopicRecord[] };
+export const topicSeed = seed as unknown as {
+  schema_version: string;
+  registries: Array<{ id: string; name: string; url: string }>;
+  topics: TopicRecord[];
+};
 
 export const topics = [...topicSeed.topics].sort((a, b) =>
   a.label.localeCompare(b.label),
