@@ -1,0 +1,232 @@
+{
+  "batch_id": "BQ001-BATCH6-REINCARNATION-DREAM-MEMORY",
+  "version": "0.1.0",
+  "status": "CANONICAL_REVIEW",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-09-14",
+  "scope": "reincarnation_reports_xenoglossy_follow_up_dream_memory_and_regression_method_boundaries",
+  "public_route": "https://akashicnet.org/akashictimeless",
+  "evidence_boundary": "Reports and statistical patterns are established as observations in the cited datasets; reincarnation and transferred memory are not established mechanisms.",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-SADEGHI-2026-TEMPORAL",
+      "source_type": "PEER_REVIEWED_OBSERVATIONAL_DATABASE_ANALYSIS",
+      "title": "A Large-Scale Analysis of Temporal Patterns in Children's Purported Past-Life Memories",
+      "authors_short": "Sadeghi, Pehlivanova and Cozzolino",
+      "year": 2026,
+      "doi": "10.1037/cns0000493",
+      "url": "https://doi.org/10.1037/cns0000493",
+      "sample": "1678 cases",
+      "claim_scope": "An association was reported between unexpectedness of death and a shorter interval before the child's birth.",
+      "limitations": [
+        "Observational design.",
+        "Shared case-database provenance.",
+        "Mechanism unresolved.",
+        "Independent replication required."
+      ],
+      "retrieval_result": "DOI verified; publisher access may be restricted",
+      "rights": "citation and factual metadata only"
+    },
+    {
+      "source_id": "SRC-BQ001-COZZOLINO-2025-XENOGLOSSY",
+      "source_type": "PEER_REVIEWED_RETROSPECTIVE_DATABASE_COMPARISON",
+      "title": "Xenoglossy in Children's Past-Life Memory Cases",
+      "authors_short": "Cozzolino et al.",
+      "year": 2025,
+      "doi": "10.31156/jaex.27464",
+      "url": "https://doi.org/10.31156/jaex.27464",
+      "sample": "40 xenoglossy-coded cases and 872 comparison cases",
+      "claim_scope": "The authors reported associations between xenoglossy coding and selected case characteristics.",
+      "limitations": [
+        "Retrospective coding.",
+        "Contested construct.",
+        "Independent linguistic and source verification required."
+      ],
+      "retrieval_result": "article page verified",
+      "rights": "CC BY 4.0; citation and summary used"
+    },
+    {
+      "source_id": "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP",
+      "source_type": "PEER_REVIEWED_OBSERVATIONAL_FOLLOW_UP",
+      "title": "Impact of children's purported past-life memories: a follow-up investigation of American cases",
+      "authors_short": "Pehlivanova et al.",
+      "year": 2024,
+      "doi": "10.3389/fpsyg.2024.1473340",
+      "url": "https://doi.org/10.3389/fpsyg.2024.1473340",
+      "sample": "23 American adults first interviewed as children",
+      "claim_scope": "The study examined later wellbeing and perceived impact, not historical accuracy of childhood statements.",
+      "limitations": [
+        "Small sample.",
+        "Self-report.",
+        "Impact study only.",
+        "Does not test reincarnation."
+      ],
+      "retrieval_result": "DOI and open article verified",
+      "rights": "CC BY; citation and summary used"
+    },
+    {
+      "source_id": "SRC-BQ001-HUDACHEK-WAMSLEY-2023-DREAMS",
+      "source_type": "PEER_REVIEWED_META_ANALYSIS",
+      "title": "The relationship between dream content and memory consolidation: a meta-analysis",
+      "authors_short": "Hudachek and Wamsley",
+      "year": 2023,
+      "pmid": "37058584",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37058584/",
+      "sample": "16 studies, 45 effects",
+      "claim_scope": "Task-related dream content was associated with later memory performance, supporting an ordinary memory-processing pathway.",
+      "limitations": [
+        "Does not address every recurrent dream.",
+        "Does not test purported past-life identity.",
+        "Association is not mechanism proof."
+      ],
+      "retrieval_result": "PubMed record verified",
+      "rights": "citation and factual summary only"
+    },
+    {
+      "source_id": "SRC-BQ001-UVA-DOPS-HYPNOSIS",
+      "source_type": "RESEARCH_PROGRAM_GUIDANCE",
+      "title": "Concerns about Hypnotic Regression",
+      "authors_short": "University of Virginia Division of Perceptual Studies",
+      "url": "https://med.virginia.edu/perceptual-studies/resources/concerns-about-hypnotic-regression/",
+      "claim_scope": "Regression hypnosis is not used by the programme for case investigation; vividness or therapeutic benefit does not authenticate historical memory.",
+      "limitations": [
+        "Guidance rather than experimental result.",
+        "Does not adjudicate every spontaneous report."
+      ],
+      "retrieval_result": "public guidance page verified",
+      "rights": "citation and summary only"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-SADEGHI-2026-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A database analysis of 1,678 purported past-life-memory cases reported an association between unexpectedness of death and a shorter intermission before the child's birth.",
+      "domain": "reincarnation_case_literature",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-SADEGHI-2026-TEMPORAL"
+      ],
+      "limitations": [
+        "Observational association in a shared case database; information pathways, selection effects and causal mechanism remain unresolved."
+      ],
+      "uncertainty": "The reported association does not establish reincarnation or transferred memory.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed observational database analysis; DOI verified"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-COZZOLINO-2025-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A retrospective comparison reported associations between xenoglossy coding and selected characteristics in purported past-life-memory cases.",
+      "domain": "reincarnation_case_literature",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-COZZOLINO-2025-XENOGLOSSY"
+      ],
+      "limitations": [
+        "Retrospective coding and a contested construct require independent linguistic and source verification."
+      ],
+      "uncertainty": "A coded association does not authenticate xenoglossy, reincarnation or transferred memory.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed retrospective database comparison; article page verified"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-PEHLIVANOVA-2024-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A follow-up study examined later wellbeing and perceived impact in 23 American adults first interviewed about purported past-life memories as children.",
+      "domain": "reincarnation_case_literature",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP"
+      ],
+      "limitations": [
+        "Small self-report sample; the study assessed impact rather than historical accuracy."
+      ],
+      "uncertainty": "Later perceived impact does not test or establish reincarnation.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed observational follow-up; DOI and open article verified"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-HUDACHEK-WAMSLEY-2023-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A meta-analysis found that task-related dream content was associated with later memory performance across 16 studies and 45 effects.",
+      "domain": "dream_memory_consolidation",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-HUDACHEK-WAMSLEY-2023-DREAMS"
+      ],
+      "limitations": [
+        "The association does not explain every recurrent dream and does not test purported past-life identity."
+      ],
+      "uncertainty": "The finding supports an ordinary memory-processing pathway without proving a complete mechanism.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed meta-analysis; PubMed record verified"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-UVA-DOPS-HYPNOSIS-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Research-program guidance warns that regression hypnosis is not an evidential method for authenticating purported past-life memories.",
+      "domain": "reincarnation_methods",
+      "evidence_label": "Interpretation",
+      "source_ids": [
+        "SRC-BQ001-UVA-DOPS-HYPNOSIS"
+      ],
+      "limitations": [
+        "Guidance rather than an experimental result; it does not adjudicate every spontaneous report."
+      ],
+      "uncertainty": "Vividness or therapeutic benefit does not establish historical accuracy.",
+      "supports_models": [],
+      "provenance": [
+        "public research-program methodological guidance; page verified"
+      ]
+    }
+  ],
+  "alternative_explanations_to_test": [
+    "information leakage",
+    "cueing",
+    "coincidence",
+    "cryptomnesia",
+    "memory reconstruction",
+    "selection and publication bias",
+    "ordinary dream-memory consolidation",
+    "trauma, emotion and repeated waking concerns",
+    "fraud",
+    "unknown mechanisms"
+  ],
+  "method_notes": [
+    "Record exact spontaneous statements before identifying or contacting a proposed previous family.",
+    "Use blinded matching and controlled recognition where possible.",
+    "Publish negative outcomes and seek independent replication.",
+    "Do not treat an unavailable source as false and do not silently replace original URLs."
+  ],
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "These sources add observational patterns, lived-impact context, an ordinary dream-memory pathway and a regression-method boundary. They do not establish reincarnation, transferred memory, post-mortem continuity or the impossibility of such continuity."
+  },
+  "promotion_guards": {
+    "reports_or_associations_prove_reincarnation": false,
+    "xenoglossy_coding_authenticates_transferred_language": false,
+    "follow_up_impact_proves_historical_accuracy": false,
+    "dream_content_proves_past_life_memory": false,
+    "hypnotic_vividness_authenticates_memory": false,
+    "source_counting_upgrades_evidence": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_auto_promotion_allowed": false,
+    "rights_promotion_allowed": false
+  },
+  "rights_and_provenance": {
+    "original_urls_preserved": true,
+    "retrieval_results_preserved": true,
+    "rights_notes_preserved": true,
+    "silent_source_replacement": false
+  }
+}
