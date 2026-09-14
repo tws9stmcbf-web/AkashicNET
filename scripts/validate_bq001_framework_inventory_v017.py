@@ -131,6 +131,26 @@ FORBIDDEN_KEYS = {
     "objectsha256", "md5checksum", "sha256checksum", "privatedriveid",
 }
 
+# Complete ignored ranges from the Unicode IDNA Compatibility Processing (UTS-46)
+# mapping table. Keep this table versioned and review changes against the standard.
+UTS46_IGNORED_RANGES = (
+    (0x00AD, 0x00AD),
+    (0x034F, 0x034F),
+    (0x115F, 0x1160),
+    (0x17B4, 0x17B5),
+    (0x180B, 0x180F),
+    (0x200B, 0x200B),
+    (0x2060, 0x2064),
+    (0x206A, 0x206F),
+    (0x3164, 0x3164),
+    (0xFE00, 0xFE0F),
+    (0xFEFF, 0xFEFF),
+    (0xFFA0, 0xFFA0),
+    (0x1BCA0, 0x1BCA3),
+    (0x1D173, 0x1D17A),
+    (0xE0100, 0xE01EF),
+)
+
 
 def canonical(value):
     return json.dumps(value, sort_keys=True, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
@@ -164,10 +184,13 @@ def privacy_check(value):
         decoded = decode_percent(text)
         folded = unicodedata.normalize("NFKC", decoded).casefold().replace("\\", "/")
         folded = folded.translate(str.maketrans({"。": ".", "．": ".", "｡": "."}))
-        # Browsers and IDNA processing can discard Unicode format controls in hosts.
+        # Apply the complete UTS-46 ignored mapping before private-host matching.
         folded = "".join(
             character for character in folded
-            if unicodedata.category(character) != "Cf"
+            if not any(
+                start <= ord(character) <= end
+                for start, end in UTS46_IGNORED_RANGES
+            )
         )
         if any(marker in folded for marker in (
             "drive.google.com", "docs.google.com", "/my drive/", "akm-",
