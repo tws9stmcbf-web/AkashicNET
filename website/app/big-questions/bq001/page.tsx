@@ -126,6 +126,81 @@ const openQuestions = [
   "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",\n  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
 ];
 
+const researchTrail = [
+  {
+    code: "H1",
+    colour: "🩵",
+    title: "Reporting suppression",
+    status: "READY TO TEST",
+    test: "Compare anonymous and identifiable disclosure of NDE, OBE and past-life-like experiences using preregistered measures.",
+    horizon: "NEXT QUARTER",
+    movement: "A measurable disclosure gap would strengthen the case that the visible testimony record is incomplete.",
+  },
+  {
+    code: "H2",
+    colour: "🟠",
+    title: "Prospective past-life information",
+    status: "HIGH-VALUE · DIFFICULT",
+    test: "Timestamp statements before matching; separate interviewers and investigators; use blinded candidate sets and publish misses.",
+    horizon: "1–3 YEARS",
+    movement: "Repeated above-chance identification under independent controls could move this axis toward an empirical signal.",
+  },
+  {
+    code: "H3",
+    colour: "🟠",
+    title: "Above-chance identification",
+    status: "EMERGING DESIGN",
+    test: "Use preregistered scoring, matched decoys, blinded raters and correction for multiple comparisons.",
+    horizon: "1–3 YEARS",
+    movement: "Independent replication would matter more than one striking match.",
+  },
+  {
+    code: "H4",
+    colour: "🟠",
+    title: "NDE temporal correspondence",
+    status: "ACTIVE RESEARCH FRONTIER",
+    test: "Coordinate multicentre resuscitation studies with concealed targets, physiological monitoring and time-locked interviews.",
+    horizon: "3–10 YEARS",
+    movement: "Verified time-specific perception during tightly characterised physiology would materially change the profile.",
+  },
+  {
+    code: "H5",
+    colour: "💜",
+    title: "Meta-awareness across states",
+    status: "PLAUSIBLE TO STUDY",
+    test: "Compare validated meta-awareness measures across meditation, dreams, anaesthesia, psychedelics and clinical states.",
+    horizon: "NEXT QUARTER–3 YEARS",
+    movement: "Reproducible state-spanning markers could clarify continuity of function without proving post-mortem survival.",
+  },
+  {
+    code: "H6",
+    colour: "🟢",
+    title: "Mettā and integration",
+    status: "FEASIBLE",
+    test: "Test whether loving-kindness practice predicts safer integration, lower distress and more prosocial outcomes after extraordinary experiences.",
+    horizon: "NEXT QUARTER–1 YEAR",
+    movement: "Useful clinical or social effects would strengthen the wisdom axis, not prove metaphysical claims.",
+  },
+  {
+    code: "H7",
+    colour: "🩵",
+    title: "Cultural shaping",
+    status: "FEASIBLE",
+    test: "Compare narrative content across cultures, expectations and exposure while preserving common features and differences.",
+    horizon: "1–3 YEARS",
+    movement: "Results could reveal which patterns are culturally shaped and which recur across contexts.",
+  },
+  {
+    code: "H8",
+    colour: "🔴",
+    title: "Memory reconstruction",
+    status: "CRITICAL COUNTER-HYPOTHESIS",
+    test: "Track suggestion, rehearsal, source exposure, confidence and memory change prospectively.",
+    horizon: "NEXT QUARTER–3 YEARS",
+    movement: "If reconstruction explains results, continuity claims weaken; unexplained residuals remain unresolved rather than becoming proof.",
+  },
+];
+
 const shell: React.CSSProperties = {
   maxWidth: 1120,
   margin: "0 auto",
@@ -239,6 +314,30 @@ export default function BQ001Page() {
         </ol>
       </section>
 
+      <section style={{ ...shell, paddingTop: 34, paddingBottom: 34 }} aria-labelledby="research-trail-title">
+        <div style={{ ...panel, borderColor: "rgba(159,216,255,.38)" }}>
+          <p style={{ color: "#9fd8ff", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>COLOUR-CODED RESEARCH TRAIL</p>
+          <h2 id="research-trail-title" style={{ fontSize: "clamp(1.9rem,4vw,3.4rem)", lineHeight: 1.12 }}>From testimony to feasible tests.</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>These colours indicate research maturity and caution—not whether an idea is true. Every study should be preregistered where feasible, protect participants, publish null results and state what evidence would weaken as well as strengthen its hypothesis.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 14, marginTop: 24 }}>
+            {researchTrail.map((item) => (
+              <article key={item.code} style={{ padding: 20, border: "1px solid rgba(255,255,255,.11)", borderRadius: 17, background: "rgba(255,255,255,.025)" }}>
+                <span style={{ fontSize: 22 }} aria-hidden="true">{item.colour}</span>
+                <strong style={{ marginLeft: 10, color: "#f1d47b" }}>{item.code} · {item.title}</strong>
+                <span style={{ display: "block", marginTop: 10, color: "#a9a59c", fontSize: 11, fontWeight: 900, letterSpacing: ".1em" }}>{item.status} · {item.horizon}</span>
+                <p style={{ color: "#d1cdc4", lineHeight: 1.65 }}><strong>Test:</strong> {item.test}</p>
+                <p style={{ marginBottom: 0, color: "#c8c4bb", lineHeight: 1.65 }}><strong>What could move the needle:</strong> {item.movement}</p>
+              </article>
+            ))}
+          </div>
+          <div style={{ marginTop: 24, padding: 20, borderRadius: 16, background: "rgba(216,185,92,.07)", border: "1px solid rgba(216,185,92,.22)" }}>
+            <strong style={{ color: "#f1d47b" }}>Possible evidence-state progression</strong>
+            <p style={{ marginBottom: 0, color: "#d1cdc4", lineHeight: 1.8 }}>⚪ Unresolved → 🩵 Unresolved · Deepening → 🟠 Empirical signal detected → 🟢 Converging evidence → 💜 Provisional support for a defined continuity model</p>
+            <small style={{ display: "block", marginTop: 10, color: "#c8c4bb", lineHeight: 1.6 }}>This is a review pathway, not a prediction. A question may remain unresolved, move sideways, or return toward caution when stronger counter-evidence appears.</small>
+          </div>
+        </div>
+      </section>
+
       <section style={{ ...shell, paddingTop: 34, paddingBottom: 34 }} aria-labelledby="courage-title">
         <div style={{ ...panel, borderColor: "rgba(117,219,199,.42)", background: "radial-gradient(circle at 50% 0%, rgba(117,219,199,.12), transparent 55%), linear-gradient(145deg, rgba(16,18,31,.92), rgba(8,10,20,.98))" }}>
           <p style={{ color: "#75dbc7", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>COURAGE · HOPE · OPEN INQUIRY</p>
@@ -268,7 +367,7 @@ export default function BQ001Page() {
       <section id="sources" style={{ ...shell, paddingBottom: 72 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PROVENANCE</p>
         <p style={{ color: "#c8c4bb", lineHeight: 1.7 }}>This page is a public adaptation of the validated BQ001 synthesis in the AkashicNET repository. Every evidence card above is constrained by the underlying claim/source records; uncertainty and evidence class are preserved rather than converted into a confidence score.</p>
-        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.4 · AkashicNET PRE-ALPHA v0.10.x engine</p>
+        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.5 · AkashicNET PRE-ALPHA v0.10.x engine</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
