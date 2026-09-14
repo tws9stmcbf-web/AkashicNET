@@ -17,7 +17,7 @@ const questions = [
     quarter: "Launch reporting-suppression study; preregister prospective protocols; expand source audit.",
     year: "Begin blinded case matching, cultural-comparison and mettā-integration studies.",
     decade: "Assess multicentre replication and whether evidence converges on, revises or weakens a defined continuity model.",
-    maturity: "Canonical public investigation · v0.1.5",
+    maturity: "Canonical synthesis · v0.1.1 · page expanded Sep 2026",
   },
   {
     id: "BQ002",
