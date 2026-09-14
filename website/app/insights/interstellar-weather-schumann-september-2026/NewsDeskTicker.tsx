@@ -31,8 +31,12 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncPreference = () => setPrefersReducedMotion(mediaQuery.matches);
     syncPreference();
-    mediaQuery.addEventListener("change", syncPreference);
-    return () => mediaQuery.removeEventListener("change", syncPreference);
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", syncPreference);
+      return () => mediaQuery.removeEventListener("change", syncPreference);
+    }
+    mediaQuery.addListener(syncPreference);
+    return () => mediaQuery.removeListener(syncPreference);
   }, []);
 
   const shouldRenderStatic = prefersReducedMotion || items.length <= 1;
@@ -55,10 +59,11 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
             className={styles.toggle}
             type="button"
             onClick={() => setIsPaused((value) => !value)}
-            aria-pressed={trackPaused}
-            aria-label={trackPaused ? "Play newsroom strip" : "Pause newsroom strip"}
+            aria-pressed={isPaused}
+            aria-label={isPaused ? "Play newsroom strip" : "Pause newsroom strip"}
+            disabled={shouldRenderStatic}
           >
-            {trackPaused ? "Play" : "Pause"}
+            {shouldRenderStatic ? "Static" : isPaused ? "Play" : "Pause"}
           </button>
         </div>
 
@@ -94,7 +99,7 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
                     <li className={styles.item}>
                       <span className={styles.bug} aria-label="AkashicNET News 24">AKN24</span>
                       <span className={styles.category}>{item.category}</span>
-                      <a className={styles.storyLink} href={item.sourceUrl}>{item.headline}</a>
+                      {isDuplicate ? <span className={styles.storyLink}>{item.headline}</span> : <a className={styles.storyLink} href={item.sourceUrl}>{item.headline}</a>}
                       <p className={styles.summary}>{item.shortSummary}</p>
                       <p className={styles.meta}>Source {formatStamp(item.sourceTimestamp)} · Published {formatStamp(item.publishedAt)} · Updated {formatStamp(item.updatedAt)} · {item.evidenceLabel}</p>
                     </li>
