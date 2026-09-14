@@ -202,6 +202,36 @@ export default function BQ001Page() {
         </div>
       </section>
 
+      <section style={{ ...shell, paddingTop: 34, paddingBottom: 26 }} aria-labelledby="profile-title">
+        <div style={{ ...panel, borderColor: "rgba(159,216,255,.38)" }}>
+          <p style={{ color: "#9fd8ff", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>PROVISIONAL EVIDENCE PROFILE · BEFORE THE QUESTIONS</p>
+          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved does not mean motionless.</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>The inquiry is deepening, but its conclusion is not being pulled toward a predetermined yes or no. Each colour describes one axis only.</p>
+          <p aria-label="Rating colour key" style={{ color: "#c8c4bb", lineHeight: 1.9 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited or emerging</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within this axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 12, marginTop: 24 }}>
+            {[
+              ["⚪", "Overall conclusion", "UNRESOLVED", "Changes only when converging evidence discriminates among competing models."],
+              ["🩵", "Inquiry momentum", "DEEPENING ↗", "Rises as sources, testimonies, counter-evidence and definitions are systematically audited."],
+              ["⚪", "Direction of conclusion", "NOT YET DETERMINED", "Moves only after the evidence profile changes—not because more material supports a preferred answer."],
+              ["🟠", "Evidence strength", "LIMITED · MIXED", "Could rise through prospective documentation, better controls and independent corroboration."],
+              ["🟠", "Mechanistic feasibility", "SPECULATIVE", "Could rise if a coherent mechanism generates testable, successful predictions."],
+              ["🔴", "Independent replication", "LIMITED · CONTESTED", "Could rise when independent teams reproduce findings and publish null results as well as positive ones."],
+              ["🩵", "Phenomenological recurrence", "SUBSTANTIAL · NOT FULLY AUDITED", "Could become stronger after deduplication, firsthand-source checks and reporting-bias analysis."],
+              ["💜", "Philosophical coherence", "PLAUSIBLE UNDER SOME PREMISES", "Changes as assumptions about identity, selfhood, information and mind–brain relations are clarified."],
+              ["🟢", "Meaning and wisdom", "SUBSTANTIAL FOR MANY PEOPLE", "May deepen through testimony, ancient texts, art, prayer and compassionate dialogue; this does not upgrade empirical proof."],
+            ].map(([icon, label, value, potential]) => (
+              <article key={label} style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 15, background: "rgba(255,255,255,.025)" }}>
+                <span aria-hidden="true" style={{ fontSize: 22 }}>{icon}</span>
+                <span style={{ display: "block", marginTop: 8, color: "#a9a59c", fontSize: 11, fontWeight: 900, letterSpacing: ".1em", textTransform: "uppercase" }}>{label}</span>
+                <strong style={{ display: "block", marginTop: 8, color: "#f5f2e8", lineHeight: 1.4 }}>{value}</strong>
+                <small style={{ display: "block", marginTop: 10, color: "#c8c4bb", lineHeight: 1.6 }}><strong>Potential and when:</strong> {potential}</small>
+              </article>
+            ))}
+          </div>
+          <p style={{ marginBottom: 0, marginTop: 24, color: "#c8c4bb", lineHeight: 1.7 }}><strong>Reading rule:</strong> high meaning does not automatically mean strong empirical evidence, and limited scientific maturity does not make an experience meaningless.</p>
+        </div>
+      </section>
+
       <section style={{ ...shell, paddingTop: 30, paddingBottom: 44 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>OPEN QUESTIONS</p>
         <ol style={{ lineHeight: 1.85, color: "#d1cdc4", paddingLeft: 24 }}>
@@ -238,7 +268,7 @@ export default function BQ001Page() {
       <section id="sources" style={{ ...shell, paddingBottom: 72 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PROVENANCE</p>
         <p style={{ color: "#c8c4bb", lineHeight: 1.7 }}>This page is a public adaptation of the validated BQ001 synthesis in the AkashicNET repository. Every evidence card above is constrained by the underlying claim/source records; uncertainty and evidence class are preserved rather than converted into a confidence score.</p>
-        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.3 · AkashicNET PRE-ALPHA v0.10.x engine</p>
+        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.4 · AkashicNET PRE-ALPHA v0.10.x engine</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
