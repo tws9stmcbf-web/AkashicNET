@@ -222,7 +222,7 @@ export default function BQ001Page() {
             <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Courage makes the invisible visible.</strong></article>
             <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Love moves humanity forward.</strong></article>
           </div>
-          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
+          <p style={{ marginTop: 28, color: "#f1d47b", fontSize: "1.15rem", lineHeight: 1.7 }}><strong>Keep the faith.</strong> Bon Jovi and Armin van Buuren carried that message from rock into trance at Ultra Miami 2024: a cultural expression of perseverance and shared hope, not evidence for either conclusion.</p>\n          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
         </div>
       </section>
 
@@ -238,7 +238,7 @@ export default function BQ001Page() {
       <section id="sources" style={{ ...shell, paddingBottom: 72 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PROVENANCE</p>
         <p style={{ color: "#c8c4bb", lineHeight: 1.7 }}>This page is a public adaptation of the validated BQ001 synthesis in the AkashicNET repository. Every evidence card above is constrained by the underlying claim/source records; uncertainty and evidence class are preserved rather than converted into a confidence score.</p>
-        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.2 · AkashicNET PRE-ALPHA v0.10.x engine</p>
+        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.3 · AkashicNET PRE-ALPHA v0.10.x engine</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
