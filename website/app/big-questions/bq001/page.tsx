@@ -222,6 +222,7 @@ export default function BQ001Page() {
         <a href="/" style={{ color: "#f5f2e8", textDecoration: "none", fontWeight: 800, letterSpacing: ".12em" }}>AKASHICNET.ORG</a>
         <nav aria-label="Big Question navigation" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
           <a href="/" style={{ color: "#d9d4c7" }}>Home</a>
+          <a href="/big-questions" style={{ color: "#d9d4c7" }}>All Big Questions</a>
           <a href="/about" style={{ color: "#d9d4c7" }}>About</a>
           <a href="#sources" style={{ color: "#d9d4c7" }}>Sources</a>
         </nav>
