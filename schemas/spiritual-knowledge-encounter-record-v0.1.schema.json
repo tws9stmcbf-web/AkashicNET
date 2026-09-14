@@ -316,83 +316,92 @@
       }
     },
     "provenance": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "original_url_or_locator",
-        "retrieved_at",
-        "source_type",
-        "preserve_original"
-      ],
-      "properties": {
-        "original_url_or_locator": {
-          "type": "string",
-          "minLength": 1
-        },
-        "retrieved_at": {
-          "type": "string",
-          "format": "date"
-        },
-        "source_type": {
-          "enum": [
-            "primary_community_source",
-            "knowledge_holder",
-            "participant_account",
-            "traditional_text",
-            "translation",
-            "archive",
-            "peer_reviewed_study",
-            "secondary_analysis",
-            "media",
-            "unknown"
-          ]
-        },
-        "creator_or_custodian": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "publication_date": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "language": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "translation_details": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "chain_of_custody": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "preserve_original": {
-          "const": true
-        },
-        "availability": {
-          "enum": [
-            "available",
-            "access_limited",
-            "unavailable",
-            "unknown"
-          ]
-        },
-        "content_hash": {
-          "type": [
-            "string",
-            "null"
-          ]
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "provenance_id",
+          "original_url_or_locator",
+          "retrieved_at",
+          "source_type",
+          "preserve_original"
+        ],
+        "properties": {
+          "original_url_or_locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "source_type": {
+            "enum": [
+              "primary_community_source",
+              "knowledge_holder",
+              "participant_account",
+              "traditional_text",
+              "translation",
+              "archive",
+              "peer_reviewed_study",
+              "secondary_analysis",
+              "media",
+              "unknown"
+            ]
+          },
+          "creator_or_custodian": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "publication_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "translation_details": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "chain_of_custody": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "preserve_original": {
+            "const": true
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "access_limited",
+              "unavailable",
+              "unknown"
+            ]
+          },
+          "content_hash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provenance_id": {
+            "type": "string",
+            "pattern": "^PROV-[A-Z0-9][A-Z0-9-]+$"
+          }
         }
       }
     },
@@ -480,14 +489,18 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
+          "claim_id",
           "claim",
           "claim_type",
           "attributed_to",
-          "support_level"
+          "support_level",
+          "evidence_lane",
+          "provenance_ids"
         ],
         "properties": {
           "claim": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "claim_type": {
             "enum": [
@@ -521,104 +534,236 @@
               "boolean",
               "null"
             ]
+          },
+          "claim_id": {
+            "type": "string",
+            "pattern": "^CLAIM-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation"
+            ]
+          },
+          "provenance_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^PROV-[A-Z0-9][A-Z0-9-]+$"
+            }
           }
         }
       }
     },
     "interpretation_boundary": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "neutral_description",
-        "source_interpretation",
-        "akashicnet_assessment"
-      ],
-      "properties": {
-        "neutral_description": {
-          "type": "string"
-        },
-        "source_interpretation": {
-          "type": "string"
-        },
-        "akashicnet_assessment": {
-          "type": "string"
-        },
-        "ordinary_explanations": {
-          "type": "array",
-          "items": {
-            "type": "string"
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "neutral_description",
+            "source_interpretation",
+            "akashicnet_assessment"
+          ],
+          "properties": {
+            "neutral_description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_interpretation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "akashicnet_assessment": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ordinary_explanations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "metaphysical_interpretations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "non_equivalence_notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           }
         },
-        "metaphysical_interpretations": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "non_equivalence_notes": {
-          "type": "array",
-          "items": {
-            "type": "string"
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "content_withheld",
+            "withholding_reason"
+          ],
+          "properties": {
+            "content_withheld": {
+              "const": true
+            },
+            "withholding_reason": {
+              "enum": [
+                "metadata_only",
+                "do_not_reproduce"
+              ]
+            }
           }
         }
-      }
+      ]
     },
     "verification": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "status",
         "prospective_record",
-        "independent_sources",
-        "outcome"
+        "results",
+        "excluded_authentication_targets"
       ],
       "properties": {
-        "status": {
-          "enum": [
-            "not_attempted",
-            "in_progress",
-            "partially_verified",
-            "verified_specific_information",
-            "not_verified",
-            "falsified_specific_claim",
-            "undetermined"
-          ]
-        },
         "prospective_record": {
           "type": "boolean"
         },
-        "independent_sources": {
+        "results": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "verification_id",
+              "target_type",
+              "target_id",
+              "status",
+              "independent_provenance_ids",
+              "outcome"
+            ],
+            "properties": {
+              "verification_id": {
+                "type": "string",
+                "pattern": "^VERIFY-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "target_type": {
+                "enum": [
+                  "claim",
+                  "phenomenon"
+                ]
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A claim_id or a bounded phenomenon identifier. It must never identify a perceived being."
+              },
+              "status": {
+                "enum": [
+                  "not_attempted",
+                  "in_progress",
+                  "partially_verified",
+                  "verified_specific_information",
+                  "not_verified",
+                  "falsified_specific_claim",
+                  "undetermined"
+                ]
+              },
+              "independent_provenance_ids": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "pattern": "^PROV-[A-Z0-9][A-Z0-9-]+$"
+                }
+              },
+              "blinding": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "information_leakage_review": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "failed_matches_recorded": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "outcome": {
+                "type": "string",
+                "minLength": 1
+              },
+              "next_discriminating_test": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "partially_verified",
+                        "verified_specific_information",
+                        "not_verified",
+                        "falsified_specific_claim"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "independent_provenance_ids": {
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            ]
           }
         },
-        "blinding": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "information_leakage_review": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "failed_matches_recorded": {
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "outcome": {
-          "type": "string"
-        },
-        "next_discriminating_test": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "excluded_authentication_targets": {
+          "type": "array",
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "perceived_identity"
+              }
+            },
+            {
+              "contains": {
+                "const": "perceived_entity_existence"
+              }
+            }
+          ],
+          "items": {
+            "enum": [
+              "perceived_identity",
+              "perceived_entity_existence",
+              "record_wide_metaphysical_interpretation"
+            ]
+          }
         }
       }
     },
@@ -665,6 +810,242 @@
       "items": {
         "type": "string"
       }
+    },
+    "content_withheld": {
+      "const": true
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "care_review": {
+                "enum": [
+                  "required",
+                  "unknown"
+                ]
+              }
+            },
+            "required": [
+              "care_review"
+            ]
+          }
+        },
+        "required": [
+          "cultural_governance"
+        ]
+      },
+      "then": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "permission_status": {
+                "enum": [
+                  "community_review_required",
+                  "restricted",
+                  "unknown"
+                ]
+              },
+              "reproduction_status": {
+                "enum": [
+                  "metadata_only",
+                  "do_not_reproduce",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "permission_status": {
+                "enum": [
+                  "community_review_required",
+                  "restricted",
+                  "unknown"
+                ]
+              }
+            },
+            "required": [
+              "permission_status"
+            ]
+          }
+        },
+        "required": [
+          "cultural_governance"
+        ]
+      },
+      "then": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "reproduction_status": {
+                "enum": [
+                  "metadata_only",
+                  "do_not_reproduce",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "reproduction_status": {
+                "enum": [
+                  "permitted",
+                  "quotation_limited"
+                ]
+              }
+            },
+            "required": [
+              "reproduction_status"
+            ]
+          }
+        },
+        "required": [
+          "cultural_governance"
+        ]
+      },
+      "then": {
+        "properties": {
+          "cultural_governance": {
+            "required": [
+              "authority_to_control"
+            ],
+            "properties": {
+              "care_review": {
+                "enum": [
+                  "completed",
+                  "not_applicable"
+                ]
+              },
+              "authority_to_control": {
+                "type": "string",
+                "minLength": 1
+              },
+              "permission_status": {
+                "enum": [
+                  "explicit_permission",
+                  "public_with_attribution"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "permission_status": {
+                "const": "explicit_permission"
+              }
+            },
+            "required": [
+              "permission_status"
+            ]
+          }
+        },
+        "required": [
+          "cultural_governance"
+        ]
+      },
+      "then": {
+        "properties": {
+          "cultural_governance": {
+            "required": [
+              "authority_to_control"
+            ],
+            "properties": {
+              "care_review": {
+                "const": "completed"
+              },
+              "authority_to_control": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cultural_governance": {
+            "properties": {
+              "reproduction_status": {
+                "enum": [
+                  "metadata_only",
+                  "do_not_reproduce"
+                ]
+              }
+            },
+            "required": [
+              "reproduction_status"
+            ]
+          }
+        },
+        "required": [
+          "cultural_governance"
+        ]
+      },
+      "then": {
+        "required": [
+          "content_withheld"
+        ],
+        "properties": {
+          "summary": false,
+          "tradition_context": false,
+          "ritual_context": false,
+          "encounter_phenomenology": false,
+          "claims": {
+            "maxItems": 0
+          },
+          "interpretation_boundary": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "content_withheld",
+              "withholding_reason"
+            ],
+            "properties": {
+              "content_withheld": {
+                "const": true
+              },
+              "withholding_reason": {
+                "enum": [
+                  "metadata_only",
+                  "do_not_reproduce"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "content_withheld": false,
+          "claims": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
 }
