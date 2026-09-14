@@ -104,6 +104,25 @@ export default function SupportImpactPage() {
         </div>
       </section>
 
+      <section style={{ ...shell, paddingTop: 28, paddingBottom: 52 }} aria-labelledby="ask-title">
+        <div style={{ ...panel, borderColor: "rgba(117,219,199,.38)", background: "radial-gradient(circle at 50% 0%,rgba(117,219,199,.10),transparent 56%),linear-gradient(145deg,rgba(17,20,35,.94),rgba(7,9,18,.99))" }}>
+          <p style={{ color: "#75dbc7", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>ASK AKASHICNET · A REPORT FOR A COFFEE</p>
+          <h2 id="ask-title" style={{ fontSize: "clamp(2rem,4.5vw,3.6rem)" }}>Bring a detailed question.</h2>
+          <p style={{ color: "#d1cdc4", fontSize: "1.08rem", lineHeight: 1.8 }}>If a question needs more than a short answer, request a focused AkashicNET briefing. Where capacity and suitable public sources allow, the response can map evidence, interpretations, competing perspectives, uncertainty and practical next steps.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 14, marginTop: 22 }}>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong style={{ color: "#f1d47b" }}>1 · Ask</strong><p style={{ color: "#c8c4bb", lineHeight: 1.65, marginBottom: 0 }}>Send the question, intended audience, desired depth and any sources already found.</p></article>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong style={{ color: "#f1d47b" }}>2 · Scope</strong><p style={{ color: "#c8c4bb", lineHeight: 1.65, marginBottom: 0 }}>AkashicNET confirms whether a short reply, evidence brief or larger commissioned report is feasible.</p></article>
+            <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong style={{ color: "#f1d47b" }}>3 · Support</strong><p style={{ color: "#c8c4bb", lineHeight: 1.65, marginBottom: 0 }}>For a bounded brief, contribute a coffee if able. Larger work is agreed transparently before research begins.</p></article>
+          </div>
+          <p style={{ color: "#c8c4bb", lineHeight: 1.75, marginTop: 22 }}><strong>Why this exists:</strong> AkashicNET is being developed independently, without institutional funding and with limited personal resources. Support helps provide basic stability, research time and infrastructure so careful public-interest work can continue. The question remains welcome even when someone cannot contribute.</p>
+          <p style={{ color: "#aaa69d", lineHeight: 1.7 }}><strong>Boundary:</strong> availability depends on capacity and source access. A contribution does not guarantee a particular conclusion, and this pathway does not replace medical, legal, mental-health or financial professionals.</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 24 }}>
+            <a href="mailto:support@akashicnet.org?subject=Detailed%20AkashicNET%20question&body=My%20question%3A%0A%0AIntended%20audience%3A%0A%0ADesired%20depth%3A%0A%0ASources%20already%20found%3A" style={{ padding: "14px 21px", borderRadius: 999, background: "#75dbc7", color: "#071016", fontWeight: 900, textDecoration: "none" }}>Request assistance →</a>
+            <a href="https://buymeacoffee.com/akashicnet" target="_blank" rel="noreferrer" style={{ padding: "14px 21px", borderRadius: 999, border: "1px solid rgba(216,185,92,.5)", color: "#f1d47b", fontWeight: 900, textDecoration: "none" }}>☕ Support a report</a>
+          </div>
+        </div>
+      </section>
+
       <section style={{ ...shell, paddingTop: 26, paddingBottom: 68 }} aria-labelledby="choose-title">
         <div style={{ ...panel, textAlign: "center", padding: "clamp(28px,6vw,56px)" }}>
           <p style={{ color: "#75dbc7", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>CHOOSE HOW TO HELP</p>
