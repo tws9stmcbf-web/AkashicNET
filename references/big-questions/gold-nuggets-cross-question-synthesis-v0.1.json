@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "record_id": "BQ-CROSS-SYNTHESIS-GOLD-NUGGETS-2026-09-14",
+  "title": "Gold Nuggets Across the Big Questions",
+  "retrieved_at": "2026-09-14",
+  "public_route": "https://akashicnet.org/big-questions/gold-nuggets",
+  "indicator_semantics": {
+    "green": "productive research or method progress; not a truth verdict",
+    "amber": "promising lead with unresolved interpretation; not a probability",
+    "red": "evidential blocker or no present movement; not proof of falsehood"
+  },
+  "question_movements": [
+    {"question_id":"BQ001","signal":"amber","movement":"researchability moved","status":"UNRESOLVED","note":"Cross-case timing patterns and prospective protocols create testable leads without identifying survival or reincarnation as the mechanism."},
+    {"question_id":"BQ002","signal":"green","movement":"partial answer strengthened","status":"PARTIALLY ANSWERED; DEEP ORIGIN UNRESOLVED","note":"Dream and memory evidence strengthens ordinary cognitive accounts without resolving the origin of subjective awareness."},
+    {"question_id":"BQ003","signal":"amber","movement":"awaiting canonical synthesis","status":"DEFERRED TO SEPARATE AUTHORING WORKSTREAM","note":"Do not pre-empt or duplicate the canonical title, status or evidence profile being developed separately."},
+    {"question_id":"BQ004","signal":"amber","movement":"discriminating test identified","status":"EXPLORATORY","note":"Identity-bearing information must be distinguished from personal survival, living-agent effects and ordinary access."},
+    {"question_id":"BQ005","signal":"amber","movement":"conceptual distinction improved","status":"EXPLORATORY","note":"Information, identity and conscious persistence are separate claims."},
+    {"question_id":"BQ006","signal":"green","movement":"applied principle strengthened","status":"EXPLORATORY","note":"Belief-neutral care can respect transformative experiences without authenticating or ridiculing their interpretation."},
+    {"question_id":"BQ007","signal":"red","movement":"no empirical movement","status":"EXPLORATORY","note":"The current evidence batch supplies no discriminating evidence for cosmic purpose or teleology."},
+    {"question_id":"BQ008","signal":"amber","movement":"design analogy only","status":"EXPLORATORY","note":"Balance, resilience and symbiosis can inspire design without transferring mechanisms across domains."}
+  ],
+  "cross_question_distinctions": [
+    "conscious continuity",
+    "identity continuity",
+    "information continuity"
+  ],
+  "shared_test_ladder": [
+    "prospective record",
+    "source independence",
+    "blinded comparison",
+    "competing predictions",
+    "negative results",
+    "independent replication"
+  ],
+  "source_records": [
+    {"source_id":"SADEGHI-2026-TEMPORAL","original_url":"https://doi.org/10.1037/cns0000493","scope":"observational timing pattern across 1,678 purported past-life-memory cases","limitation":"mechanism-neutral; independent replication required"},
+    {"source_id":"HUDACHEK-WAMSLEY-2023-DREAMS","original_url":"https://pubmed.ncbi.nlm.nih.gov/37058584/","scope":"dream-content and memory-consolidation meta-analysis","limitation":"does not test past-life identity"},
+    {"source_id":"PEHLIVANOVA-2024-FOLLOWUP","original_url":"https://doi.org/10.3389/fpsyg.2024.1473340","scope":"adult wellbeing and perceived impact follow-up","limitation":"small impact study; not historical verification"},
+    {"source_id":"COZZOLINO-2025-XENOGLOSSY","original_url":"https://doi.org/10.31156/jaex.27464","scope":"retrospective xenoglossy-coded case comparison","limitation":"independent linguistic and source verification required"},
+    {"source_id":"UNEXPECTED-LUCIDITY-2025","original_url":"https://pubmed.ncbi.nlm.nih.gov/40748700/","scope":"prospective observations in advanced dementia","limitation":"small evidence base; mechanism unresolved"},
+    {"source_id":"UVA-DOPS-CHILDREN","original_url":"https://med.virginia.edu/perceptual-studies/our-research/children-who-report-memories-of-previous-lives/","scope":"research-program overview and case archive","limitation":"institutional records are not independent confirmation"},
+    {"source_id":"UVA-DOPS-HYPNOSIS","original_url":"https://med.virginia.edu/perceptual-studies/resources/concerns-about-hypnotic-regression/","scope":"methodological warning","limitation":"guidance rather than an experimental verdict"}
+  ],
+  "governance": [
+    "Presence in the archive is not scientific validation.",
+    "Unavailable or access-limited sources remain undetermined rather than false.",
+    "Signals describe inquiry progress, not probability, truth or metaphysical promotion.",
+    "Original URLs and retrieval context must be preserved."
+  ]
+}
