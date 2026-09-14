@@ -44,7 +44,10 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
       <div className={styles.broadcastCard}>
         <div className={styles.header}>
           <div className={styles.labelRow}>
-            <span className={styles.broadcastLabel}>AKASHICNET NEWS 24</span>
+            <span className={styles.broadcastLabel}>
+              <span className={styles.bug} aria-label="AkashicNET News 24">AKN24</span>
+              <span className={styles.expandedLabel}>AkashicNET News 24</span>
+            </span>
             <strong>LATEST 24 HOURS</strong>
             <span className={styles.snapshot}>Static newsroom snapshot through {formatStamp(snapshotTimestamp)}. No live telemetry implied.</span>
           </div>
@@ -63,6 +66,7 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
           <ul className={styles.staticList}>
             {items.map((item) => (
               <li key={item.id} className={styles.staticItem}>
+                <span className={styles.bug} aria-label="AkashicNET News 24">AKN24</span>
                 <span className={styles.category}>{item.category}</span>
                 <a className={styles.storyLink} href={item.sourceUrl}>{item.headline}</a>
                 <p className={styles.summary}>{item.shortSummary}</p>
@@ -88,6 +92,7 @@ export default function NewsDeskTicker({ items, kindnessItems, snapshotTimestamp
                 return (
                   <ul key={`${item.id}-${index}`} className={styles.list} aria-hidden={isDuplicate}>
                     <li className={styles.item}>
+                      <span className={styles.bug} aria-label="AkashicNET News 24">AKN24</span>
                       <span className={styles.category}>{item.category}</span>
                       <a className={styles.storyLink} href={item.sourceUrl}>{item.headline}</a>
                       <p className={styles.summary}>{item.shortSummary}</p>

@@ -58,7 +58,7 @@ export default function InterstellarWeatherReport() {
 
       <article>
         <section style={{ ...shell, padding: "clamp(70px,10vw,132px) 0 50px", textAlign: "center" }}>
-          <p className="section-label">INSIGHTS NEWS DESK · INTERDIMENSIONAL LIGHTEXPLORERS HOTLINE</p>
+          <p className="section-label">AKASHICNET INSIGHTS NEWSROOM · INTERDIMENSIONAL LIGHTEXPLORERS HOTLINE</p>
           <h1 style={{ margin: "18px auto", maxWidth: 1060, fontSize: "clamp(3rem,7.5vw,7rem)", lineHeight: .94 }}>Schumann<br/><em style={{ color: "#d8b95c" }}>Activity Window</em></h1>
           <p style={{ color: "#e7cd7e", fontWeight: 800, letterSpacing: ".08em" }}>11–12 SEPTEMBER 2026 UTC · QUIET BY 13 SEPTEMBER · STARDATE 2026.09.12</p>
           <p style={{ maxWidth: 850, margin: "24px auto 0", color: "#d7d9e4", fontSize: "clamp(1.1rem,2.2vw,1.42rem)", lineHeight: 1.75 }}>A 13D spiritual-science exploration of a visible source-plot disturbance, its solar, geomagnetic, lunar and human cofactors, and the difference between meaningful connection and demonstrated causality.</p>

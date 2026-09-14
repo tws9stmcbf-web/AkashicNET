@@ -20,13 +20,16 @@ CANONICAL_13D = [
 ]
 WINDOW_HOURS = 24
 REQUIRED_PAGE_STRINGS = [
+    "AKASHICNET INSIGHTS NEWSROOM",
     "Amplitude ≠ frequency",
     "Correlation ≠ causation",
     "AkashicONE is a coherent assessment within it, not a higher evidence tier.",
 ]
 REQUIRED_COMPONENT_STRINGS = [
     'window.matchMedia("(prefers-reduced-motion: reduce)")',
-    "AKASHICNET NEWS 24",
+    "AKN24",
+    'aria-label="AkashicNET News 24"',
+    "AkashicNET News 24",
     "LATEST 24 HOURS",
     "Pause newsroom strip",
     "Play newsroom strip",

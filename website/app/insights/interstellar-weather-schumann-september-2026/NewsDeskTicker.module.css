@@ -35,6 +35,7 @@
   display:inline-flex;
   align-items:center;
   gap:10px;
+  flex-wrap:wrap;
   padding:8px 14px;
   border-radius:999px;
   background:#b71f28;
@@ -43,6 +44,22 @@
   letter-spacing:.16em;
   text-transform:uppercase;
   font-size:.78rem;
+}
+
+.bug{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.24);
+  background:rgba(5,9,21,.28);
+}
+
+.expandedLabel{
+  display:inline-flex;
+  align-items:center;
 }
 
 .snapshot{
@@ -212,6 +229,12 @@
   .staticItem,
   .kindnessItem{
     min-width:min(82vw,320px);
+  }
+}
+
+@media (max-width: 640px){
+  .expandedLabel{
+    display:none;
   }
 }
 
