@@ -39,6 +39,18 @@ export type TopicRecord = {
     note: string;
   };
   open_questions: string[];
+  solution_space?: {
+    status: "not-assessed" | "discovery" | "reviewed";
+    quality_dimensions: string[];
+    candidates: Array<{
+      label: string;
+      level: "individual" | "community" | "institutional" | "policy" | "ecological" | "multi-level";
+      evidence_status: "established" | "supported" | "mixed" | "hypothesised" | "traditional-practice" | "unassessed";
+      potential_benefits: string[];
+      tradeoffs: string[];
+      source_ids: string[];
+    }>;
+  };
   review: {
     human_reviewed: boolean;
     last_reviewed: string | null;
