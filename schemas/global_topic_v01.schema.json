@@ -257,6 +257,89 @@
           "type": "string"
         }
       }
+    },
+    "solution_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "quality_dimensions",
+        "candidates"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not-assessed",
+            "discovery",
+            "reviewed"
+          ]
+        },
+        "quality_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "level",
+              "evidence_status",
+              "potential_benefits",
+              "tradeoffs",
+              "source_ids"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "level": {
+                "enum": [
+                  "individual",
+                  "community",
+                  "institutional",
+                  "policy",
+                  "ecological",
+                  "multi-level"
+                ]
+              },
+              "evidence_status": {
+                "enum": [
+                  "established",
+                  "supported",
+                  "mixed",
+                  "hypothesised",
+                  "traditional-practice",
+                  "unassessed"
+                ]
+              },
+              "potential_benefits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tradeoffs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
