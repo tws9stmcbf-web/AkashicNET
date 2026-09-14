@@ -162,818 +162,1564 @@
   "topics": [
     {
       "id": "TOPIC-001",
+      "slug": "consciousness",
       "label": "Consciousness",
+      "aliases": [],
       "domain": "science-philosophy",
+      "summary": "Discovery metadata seed for Consciousness.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-and-modern",
-        "ultimate_status": "unknown",
-        "basis": [
-          "neuroscience",
-          "philosophy-of-mind",
-          "meditation",
-          "artificial-intelligence"
-        ]
+        "ultimate_status": "unresolved",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only"
+      "entities": [],
+      "connections": [
+        {
+          "target": "neuroscience",
+          "relation": "related-topic",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        },
+        {
+          "target": "philosophy-of-mind",
+          "relation": "related-topic",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        },
+        {
+          "target": "meditation",
+          "relation": "related-topic",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        },
+        {
+          "target": "artificial-intelligence",
+          "relation": "related-topic",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        }
+      ],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-002",
+      "slug": "neuroscience",
       "label": "Neuroscience",
+      "aliases": [],
       "domain": "life-sciences",
+      "summary": "Discovery metadata seed for Neuroscience.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "modern-discipline",
-        "ultimate_status": "biological",
-        "basis": "brain-and-nervous-system"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: biological. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "consciousness",
-        "mental-health",
-        "neurodiversity",
-        "psychedelic-science"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-003",
+      "slug": "mental-health",
       "label": "Mental health",
+      "aliases": [],
       "domain": "health",
+      "summary": "Discovery metadata seed for Mental health.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "historically-evolving",
-        "ultimate_status": "multifactorial",
-        "basis": "biological-psychological-social"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: multifactorial. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "neuroscience",
-        "public-health",
-        "community",
-        "meditation"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-004",
+      "slug": "neurodiversity",
       "label": "Neurodiversity",
+      "aliases": [],
       "domain": "health-society",
+      "summary": "Discovery metadata seed for Neurodiversity.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "late-20th-century-term",
-        "ultimate_status": "multifactorial",
-        "basis": "developmental-and-social"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: multifactorial. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "neuroscience",
-        "mental-health",
-        "accessibility",
-        "human-flourishing"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-005",
+      "slug": "psychedelic-science",
       "label": "Psychedelic science",
+      "aliases": [],
       "domain": "health-consciousness",
+      "summary": "Discovery metadata seed for Psychedelic science.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-discipline",
-        "ultimate_status": "pharmacological-cultural",
-        "basis": "multiple-substances-and-practices"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: pharmacological-cultural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "neuroscience",
-        "mental-health",
-        "indigenous-knowledge",
-        "mystical-experience"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-006",
+      "slug": "meditation",
       "label": "Meditation",
+      "aliases": [],
       "domain": "contemplative-practice",
+      "summary": "Discovery metadata seed for Meditation.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-multiple-traditions",
         "ultimate_status": "plural",
-        "basis": "cultural-and-practice-lineages"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "buddhism",
-        "yoga",
-        "mental-health",
-        "consciousness"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-007",
+      "slug": "buddhism",
       "label": "Buddhism",
+      "aliases": [],
       "domain": "religion-philosophy",
+      "summary": "Discovery metadata seed for Buddhism.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "historical-south-asia",
-        "ultimate_status": "historical",
-        "basis": "teachings-associated-with-the-Buddha"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: historical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "meditation",
-        "ethics",
-        "interbeing",
-        "reincarnation"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-008",
+      "slug": "sikhism",
       "label": "Sikhism",
+      "aliases": [],
       "domain": "religion",
+      "summary": "Discovery metadata seed for Sikhism.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "early-modern-punjab",
-        "ultimate_status": "historical",
-        "basis": "Guru-Nanak-and-Sikh-Gurus"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: historical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "ethics",
-        "service",
-        "music",
-        "interfaith"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-009",
+      "slug": "hindu-traditions",
       "label": "Hindu traditions",
+      "aliases": [],
       "domain": "religion-philosophy",
+      "summary": "Discovery metadata seed for Hindu traditions.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-south-asia",
         "ultimate_status": "plural",
-        "basis": "multiple-textual-and-lived-lineages"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "yoga",
-        "vedanta",
-        "shiva-shakti",
-        "reincarnation"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-010",
+      "slug": "indigenous-knowledge-systems",
       "label": "Indigenous knowledge systems",
+      "aliases": [],
       "domain": "culture-knowledge",
+      "summary": "Discovery metadata seed for Indigenous knowledge systems.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "multiple-local-lineages",
         "ultimate_status": "plural",
-        "basis": "community-specific"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "ecology",
-        "plant-medicine",
-        "ceremony",
-        "cultural-sovereignty"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-011",
+      "slug": "mystical-experience",
       "label": "Mystical experience",
+      "aliases": [],
       "domain": "consciousness-religion",
+      "summary": "Discovery metadata seed for Mystical experience.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "cross-cultural",
-        "ultimate_status": "unknown",
-        "basis": "multiple-competing-models"
+        "ultimate_status": "unresolved",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "consciousness",
-        "meditation",
-        "psychedelic-science",
-        "comparative-religion"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-012",
+      "slug": "near-death-experiences",
       "label": "Near-death experiences",
+      "aliases": [],
       "domain": "consciousness-health",
+      "summary": "Discovery metadata seed for Near-death experiences.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "modern-clinical-label-ancient-reports",
-        "ultimate_status": "unknown",
-        "basis": "physiological-psychological-transpersonal-models"
+        "ultimate_status": "unresolved",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "resuscitation",
-        "mystical-experience",
-        "reincarnation",
-        "grief"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-013",
+      "slug": "reincarnation-claims",
       "label": "Reincarnation claims",
+      "aliases": [],
       "domain": "religion-consciousness",
+      "summary": "Discovery metadata seed for Reincarnation claims.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-cross-cultural",
         "ultimate_status": "unresolved",
-        "basis": "tradition-testimony-and-case-research"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "memory",
-        "identity",
-        "near-death-experiences",
-        "bq001"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-014",
+      "slug": "anomalous-cognition",
       "label": "Anomalous cognition",
+      "aliases": [],
       "domain": "parapsychology",
+      "summary": "Discovery metadata seed for Anomalous cognition.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "19th-to-20th-century-research-category",
         "ultimate_status": "unresolved",
-        "basis": "contested"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "remote-viewing",
-        "telepathy",
-        "statistics",
-        "replication"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-015",
+      "slug": "remote-viewing",
       "label": "Remote viewing",
+      "aliases": [],
       "domain": "parapsychology-intelligence-history",
+      "summary": "Discovery metadata seed for Remote viewing.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-term",
         "ultimate_status": "unresolved",
-        "basis": "documented-programmes-contested-phenomenon"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "anomalous-cognition",
-        "cold-war",
-        "declassified-records",
-        "replication"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-016",
+      "slug": "artificial-intelligence",
       "label": "Artificial intelligence",
+      "aliases": [],
       "domain": "computing",
+      "summary": "Discovery metadata seed for Artificial intelligence.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-discipline",
-        "ultimate_status": "engineered",
-        "basis": "human-built-systems"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: engineered. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "machine-learning",
-        "ethics",
-        "consciousness",
-        "collective-intelligence"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-017",
+      "slug": "artificial-sentience-claims",
       "label": "Artificial sentience claims",
+      "aliases": [],
       "domain": "computing-consciousness",
+      "summary": "Discovery metadata seed for Artificial sentience claims.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "21st-century-public-debate",
         "ultimate_status": "unresolved",
-        "basis": "simulation-anthropomorphism-or-emergence"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "artificial-intelligence",
-        "philosophy-of-mind",
-        "language-models",
-        "unknown-agency"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-018",
+      "slug": "collective-intelligence",
       "label": "Collective intelligence",
+      "aliases": [],
       "domain": "systems-society",
+      "summary": "Discovery metadata seed for Collective intelligence.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-examples-modern-term",
-        "ultimate_status": "emergent",
-        "basis": "groups-networks-and-organisms"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: emergent. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "social-networks",
-        "swarm-intelligence",
-        "democracy",
-        "interbeing"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-019",
+      "slug": "complex-systems",
       "label": "Complex systems",
+      "aliases": [],
       "domain": "science",
+      "summary": "Discovery metadata seed for Complex systems.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-discipline",
-        "ultimate_status": "emergent",
-        "basis": "interacting-components"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: emergent. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "networks",
-        "ecology",
-        "climate",
-        "collective-intelligence"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-020",
+      "slug": "quantum-physics",
       "label": "Quantum physics",
+      "aliases": [],
       "domain": "physics",
+      "summary": "Discovery metadata seed for Quantum physics.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "early-20th-century",
-        "ultimate_status": "physical",
-        "basis": "empirically-tested-formalisms"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: physical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "measurement",
-        "information",
-        "cosmology",
-        "quantum-biology"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-021",
+      "slug": "cosmology",
       "label": "Cosmology",
+      "aliases": [],
       "domain": "physics-astronomy",
+      "summary": "Discovery metadata seed for Cosmology.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-inquiry-modern-science",
-        "ultimate_status": "physical",
-        "basis": "universe-scale-models"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: physical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "astrophysics",
-        "dark-matter",
-        "dark-energy",
-        "origins"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-022",
+      "slug": "origins-of-the-universe",
       "label": "Origins of the universe",
+      "aliases": [],
       "domain": "cosmology",
+      "summary": "Discovery metadata seed for Origins of the universe.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-question",
-        "ultimate_status": "unknown",
-        "basis": "competing-physical-models"
+        "ultimate_status": "unresolved",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "cosmology",
-        "big-bang",
-        "inflation",
-        "quantum-gravity"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-023",
+      "slug": "origins-of-life",
       "label": "Origins of life",
+      "aliases": [],
       "domain": "biology",
+      "summary": "Discovery metadata seed for Origins of life.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-question-modern-science",
-        "ultimate_status": "unknown",
-        "basis": "abiogenesis-hypotheses"
+        "ultimate_status": "unresolved",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "chemistry",
-        "evolution",
-        "astrobiology",
-        "information"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-024",
+      "slug": "evolution",
       "label": "Evolution",
+      "aliases": [],
       "domain": "biology",
+      "summary": "Discovery metadata seed for Evolution.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "19th-century-modern-synthesis",
-        "ultimate_status": "biological",
-        "basis": "descent-with-modification"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: biological. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "genetics",
-        "ecology",
-        "origins-of-life",
-        "human-origins"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-025",
+      "slug": "human-origins",
       "label": "Human origins",
+      "aliases": [],
       "domain": "anthropology-biology",
+      "summary": "Discovery metadata seed for Human origins.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-question-modern-evidence",
-        "ultimate_status": "biological-cultural",
-        "basis": "evolution-and-migration"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: biological-cultural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "evolution",
-        "archaeology",
-        "genetics",
-        "culture"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-026",
+      "slug": "ecology",
       "label": "Ecology",
+      "aliases": [],
       "domain": "life-earth-sciences",
+      "summary": "Discovery metadata seed for Ecology.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "19th-century-discipline",
-        "ultimate_status": "biophysical",
-        "basis": "organism-environment-relations"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: biophysical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "climate",
-        "biodiversity",
-        "indigenous-knowledge-systems",
-        "regeneration"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-027",
+      "slug": "climate-change",
       "label": "Climate change",
+      "aliases": [],
       "domain": "earth-sciences",
+      "summary": "Discovery metadata seed for Climate change.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "19th-century-science-modern-crisis",
-        "ultimate_status": "anthropogenic-natural",
-        "basis": "greenhouse-gas-driven-warming"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: anthropogenic-natural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "energy",
-        "ecology",
-        "policy",
-        "justice"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-028",
+      "slug": "biodiversity",
       "label": "Biodiversity",
+      "aliases": [],
       "domain": "life-earth-sciences",
+      "summary": "Discovery metadata seed for Biodiversity.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "modern-term-ancient-observation",
-        "ultimate_status": "biological",
-        "basis": "evolution-and-ecology"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: biological. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "ecology",
-        "conservation",
-        "food-systems",
-        "climate-change"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-029",
+      "slug": "regeneration",
       "label": "Regeneration",
+      "aliases": [],
       "domain": "ecology-society",
+      "summary": "Discovery metadata seed for Regeneration.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "multiple-lineages",
         "ultimate_status": "plural",
-        "basis": "ecological-social-and-cultural-restoration"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "biodiversity",
-        "agriculture",
-        "community",
-        "human-flourishing"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-030",
+      "slug": "music",
       "label": "Music",
+      "aliases": [],
       "domain": "arts-culture",
+      "summary": "Discovery metadata seed for Music.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "prehistoric",
-        "ultimate_status": "human-cultural",
-        "basis": "multiple-independent-lineages"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: human-cultural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "rhythm",
-        "psytrance",
-        "ritual",
-        "neuroscience"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-031",
+      "slug": "psytrance",
       "label": "Psytrance",
+      "aliases": [],
       "domain": "music-culture",
+      "summary": "Discovery metadata seed for Psytrance.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "late-20th-century",
-        "ultimate_status": "historical",
-        "basis": "electronic-music-and-global-festival-culture"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: historical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "music",
-        "altered-states",
-        "community",
-        "technology"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-032",
+      "slug": "sacred-geometry",
       "label": "Sacred geometry",
+      "aliases": [],
       "domain": "mathematics-culture",
+      "summary": "Discovery metadata seed for Sacred geometry.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-and-modern",
         "ultimate_status": "plural",
-        "basis": "mathematical-forms-plus-cultural-interpretation"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "geometry",
-        "architecture",
-        "symbolism",
-        "toroidal-models"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-033",
+      "slug": "time",
       "label": "Time",
+      "aliases": [],
       "domain": "physics-philosophy",
+      "summary": "Discovery metadata seed for Time.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-question",
-        "ultimate_status": "unknown",
-        "basis": "physical-and-experiential-models"
+        "ultimate_status": "unresolved",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "relativity",
-        "consciousness",
-        "memory",
-        "multidimensionalcut"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-034",
+      "slug": "information",
       "label": "Information",
+      "aliases": [],
       "domain": "mathematics-computing",
+      "summary": "Discovery metadata seed for Information.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-formalisation",
-        "ultimate_status": "abstract-physical",
-        "basis": "multiple-definitions"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: abstract-physical. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "entropy",
-        "computation",
-        "biology",
-        "knowledge-graphs"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-035",
+      "slug": "knowledge-graphs",
       "label": "Knowledge graphs",
+      "aliases": [],
       "domain": "computing-library-science",
+      "summary": "Discovery metadata seed for Knowledge graphs.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "late-20th-century",
-        "ultimate_status": "engineered",
-        "basis": "structured-entities-and-relations"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: engineered. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "metadata",
-        "ontologies",
-        "linked-data",
-        "artificial-intelligence"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-036",
+      "slug": "metadata",
       "label": "Metadata",
+      "aliases": [],
       "domain": "information-science",
+      "summary": "Discovery metadata seed for Metadata.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "library-and-computing-history",
-        "ultimate_status": "engineered",
-        "basis": "descriptions-of-resources"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: engineered. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "knowledge-graphs",
-        "provenance",
-        "archives",
-        "discovery"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-037",
+      "slug": "provenance",
       "label": "Provenance",
+      "aliases": [],
       "domain": "archives-science",
+      "summary": "Discovery metadata seed for Provenance.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "historically-evolving",
-        "ultimate_status": "documentary",
-        "basis": "records-of-origin-and-custody"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: documentary. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "metadata",
-        "reproducibility",
-        "rights",
-        "evidence"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-038",
+      "slug": "open-science",
       "label": "Open science",
+      "aliases": [],
       "domain": "science-governance",
+      "summary": "Discovery metadata seed for Open science.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "late-20th-to-21st-century",
-        "ultimate_status": "social",
-        "basis": "access-transparency-and-reuse-practices"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: social. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "reproducibility",
-        "public-data",
-        "citizen-science",
-        "ethics"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-039",
+      "slug": "ethics",
       "label": "Ethics",
+      "aliases": [],
       "domain": "philosophy-practice",
+      "summary": "Discovery metadata seed for Ethics.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-multiple-traditions",
         "ultimate_status": "plural",
-        "basis": "reasoning-culture-and-lived-values"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "compassion",
-        "rights",
-        "artificial-intelligence",
-        "research-governance"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-040",
+      "slug": "human-flourishing",
       "label": "Human flourishing",
+      "aliases": [],
       "domain": "health-philosophy",
+      "summary": "Discovery metadata seed for Human flourishing.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "ancient-and-modern",
         "ultimate_status": "plural",
-        "basis": "wellbeing-meaning-relationships-and-conditions"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: plural. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "mental-health",
-        "ethics",
-        "community",
-        "human-2-0"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-041",
+      "slug": "interbeing",
       "label": "Interbeing",
+      "aliases": [],
       "domain": "contemplative-ecological",
+      "summary": "Discovery metadata seed for Interbeing.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "modern-term-with-older-roots",
-        "ultimate_status": "interpretive",
-        "basis": "relational-framework"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: interpretive. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "buddhism",
-        "ecology",
-        "collective-intelligence",
-        "systems-thinking"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-042",
+      "slug": "human-2-0",
       "label": "Human 2.0",
+      "aliases": [],
       "domain": "akashicnet-framework",
+      "summary": "Discovery metadata seed for Human 2.0.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "AkashicNET",
-        "ultimate_status": "speculative",
-        "basis": "developmental-and-civilisational-framework"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: speculative. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "human-flourishing",
-        "ethics",
-        "neurodiversity",
-        "future-studies"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-043",
+      "slug": "future-studies",
       "label": "Future studies",
+      "aliases": [],
       "domain": "interdisciplinary",
+      "summary": "Discovery metadata seed for Future studies.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-discipline",
-        "ultimate_status": "scenario-based",
-        "basis": "possible-probable-and-preferred-futures"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: scenario-based. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "human-2-0",
-        "artificial-intelligence",
-        "climate-change",
-        "governance"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-044",
+      "slug": "unidentified-anomalous-phenomena",
       "label": "Unidentified anomalous phenomena",
+      "aliases": [],
       "domain": "aerospace-public-policy",
+      "summary": "Discovery metadata seed for Unidentified anomalous phenomena.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "20th-century-category-evolving-terminology",
         "ultimate_status": "unresolved",
-        "basis": "misidentification-classified-data-or-unknown"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "aerospace",
-        "sensors",
-        "unknown-agency",
-        "public-records"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-045",
+      "slug": "unknown-agency",
       "label": "Unknown agency",
+      "aliases": [],
       "domain": "cross-domain",
+      "summary": "Discovery metadata seed for Unknown agency.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "AkashicSENTIENCE-controlled-term",
         "ultimate_status": "unresolved",
-        "basis": "insufficient-information"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "artificial-sentience-claims",
-        "mystical-experience",
-        "unidentified-anomalous-phenomena",
-        "anomalous-cognition"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-046",
+      "slug": "unknown-origin",
       "label": "Unknown origin",
+      "aliases": [],
       "domain": "cross-domain",
+      "summary": "Discovery metadata seed for Unknown origin.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "AkashicNET-controlled-term",
         "ultimate_status": "unresolved",
-        "basis": "insufficient-information"
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: unresolved. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "origins-of-the-universe",
-        "origins-of-life",
-        "consciousness",
-        "provenance"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-047",
+      "slug": "rights-and-cultural-sovereignty",
       "label": "Rights and cultural sovereignty",
+      "aliases": [],
       "domain": "ethics-law-culture",
+      "summary": "Discovery metadata seed for Rights and cultural sovereignty.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "modern-governance-with-older-principles",
-        "ultimate_status": "social-legal",
-        "basis": "community-and-jurisdiction-specific"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: social-legal. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "indigenous-knowledge-systems",
-        "archives",
-        "metadata",
-        "research-governance"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     },
     {
       "id": "TOPIC-048",
+      "slug": "evidence-and-uncertainty",
       "label": "Evidence and uncertainty",
+      "aliases": [],
       "domain": "science-philosophy",
+      "summary": "Discovery metadata seed for Evidence and uncertainty.",
+      "status": "discovery",
       "origin": {
         "documentary_trace": "historically-evolving",
-        "ultimate_status": "epistemic",
-        "basis": "methods-for-claims-and-confidence"
+        "ultimate_status": "partly-known",
+        "claimed_origins": [],
+        "evidence_note": "Seed classification: epistemic. Topic-level origin evidence has not yet been adjudicated."
       },
-      "evidence_status": "discovery_metadata_only",
-      "connections": [
-        "statistics",
-        "replication",
-        "provenance",
-        "open-questions"
-      ]
+      "entities": [],
+      "connections": [],
+      "sources": [],
+      "rights": {
+        "mode": "metadata-only",
+        "license": null,
+        "note": "No source content imported; registry and item rights require review."
+      },
+      "open_questions": [
+        "Which authoritative identifiers and sources best define this topic?",
+        "Which proposed connections are documented rather than merely plausible?"
+      ],
+      "review": {
+        "human_reviewed": false,
+        "last_reviewed": null,
+        "notes": "Seed record; not eligible for automatic public promotion."
+      }
     }
   ],
   "unknown_nodes": [
