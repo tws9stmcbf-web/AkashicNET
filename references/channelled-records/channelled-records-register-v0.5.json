@@ -1,0 +1,563 @@
+{
+  "schema_version": "0.1",
+  "register_version": "0.5.0",
+  "title": "AkashicNET Channelled Records Discovery Register",
+  "retrieved_at": "2026-09-14",
+  "site_source_commit": "55d30c050f2f2c9b3989f790f0e02b86ca151aec",
+  "public_route": "https://akashicnet.org/akashiclibrary/channelled-records",
+  "evidence_boundary": {
+    "testimony_is_not_established_fact": true,
+    "recurring_motifs_are_not_independent_confirmation": true,
+    "unavailable_sources_are_not_classified_as_false": true,
+    "statement": "Records are indexed as testimony, literature, art, cultural history or research context unless independently testable claims meet a different evidential standard."
+  },
+  "preservation": {
+    "original_urls_preserved": true,
+    "protected_content_mirrored": false,
+    "note": "Full protected texts, artworks and recordings remain with their custodians."
+  },
+  "source_family_count": 28,
+  "seed_record_count": 26,
+  "source_families": [
+    {
+      "title": "Edgar Cayce Foundation",
+      "period": "20th-century readings and institutional archive",
+      "access": "PUBLIC CATALOGUE · CONTROLLED CONTENT",
+      "rights": "METADATA-ONLY",
+      "topics": "Akashic records · reincarnation · dreams · spiritual development",
+      "href": "https://as2.edgarcaycefoundation.org/",
+      "text": "Index catalogue identifiers, dates, subjects and collection relationships. Do not reproduce complete readings without permission."
+    },
+    {
+      "title": "Jane Roberts Papers · Yale",
+      "period": "Seth-related papers · 1960s–1980s",
+      "access": "PUBLIC FINDING AID · ARCHIVAL ACCESS",
+      "rights": "METADATA-ONLY",
+      "topics": "Seth · identity · probable realities · reincarnation",
+      "href": "https://archives.yale.edu/repositories/12/resources/4482",
+      "text": "Use the Yale finding aid and collection hierarchy as provenance. Published Seth texts and unpublished papers retain their own rights and access conditions."
+    },
+    {
+      "title": "Dillman & Watkins Papers · Yale",
+      "period": "Research, correspondence and reception history",
+      "access": "PUBLIC FINDING AIDS · ARCHIVAL ACCESS",
+      "rights": "METADATA-ONLY",
+      "topics": "Seth research · witnesses · community history · interpretation",
+      "href": "https://archives.yale.edu/repositories/12/resources/11952",
+      "text": "Companion collections can reveal how claims circulated and were interpreted without being treated as independent confirmation of Seth."
+    },
+    {
+      "title": "L/L Research Channeling Archive",
+      "period": "Large continuing transcript collection",
+      "access": "MORE THAN 1,700 PUBLIC TRANSCRIPTS",
+      "rights": "LINK · LICENCE REVIEW",
+      "topics": "Law of One · reincarnation · densities · between-life claims",
+      "href": "https://www.llresearch.org/channeling",
+      "text": "Searchable first-party archive. Index sessions and themes while preserving its own disclaimers and copyright rather than mirroring the corpus."
+    },
+    {
+      "title": "William Stainton Moses",
+      "period": "19th-century automatic-writing record",
+      "access": "DIGITISED HISTORICAL EDITIONS",
+      "rights": "PUBLIC-DOMAIN EDITION",
+      "topics": "Spirit identity · ethics · survival · religious interpretation",
+      "href": "https://babel.hathitrust.org/cgi/ssd?id=uc1.a0001080951&seq=1",
+      "text": "A historical Spiritualist corpus suitable for text-level study when the exact public-domain edition and scan provenance are retained."
+    },
+    {
+      "title": "The Mahatma Letters",
+      "period": "Letters claimed from 1880–1884 · published 1923",
+      "access": "ONLINE HISTORICAL EDITION",
+      "rights": "LINK · EDITION CHECK",
+      "topics": "Karma · rebirth · adepts · theosophy · liberation",
+      "href": "https://www.theosociety.org/pasadena/mahatma/ml-con.htm",
+      "text": "Treat as Theosophical historical material with contested authorship, not authenticated communication from transcendent beings."
+    },
+    {
+      "title": "Kryon · Lee Carroll",
+      "period": "Modern channeling · since 1989",
+      "access": "FREE AUDIO INDEX + COMMERCIAL MATERIAL",
+      "rights": "METADATA-ONLY",
+      "topics": "Akashic themes · past lives · spiritual evolution",
+      "href": "https://menus.kryon.com/",
+      "text": "Index titles, dates, locations and official URLs. Audio and transcripts remain with the rights holder."
+    },
+    {
+      "title": "Bashar · Darryl Anka",
+      "period": "Modern channeling · since 1983",
+      "access": "PUBLIC CATALOGUE + PAID EVENTS",
+      "rights": "METADATA-ONLY",
+      "topics": "Identity · parallel realities · incarnation · contact narratives",
+      "href": "https://www.bashar.org/",
+      "text": "Catalogue metadata can map themes; protected recordings and event materials should not be copied or used as independent factual evidence."
+    },
+    {
+      "title": "Paul Selig",
+      "period": "Thirteen published channelled texts",
+      "access": "PUBLIC BIBLIOGRAPHY + COPYRIGHTED WORKS",
+      "rights": "METADATA-ONLY",
+      "topics": "Guides · selfhood · manifestation · spiritual development",
+      "href": "https://paulselig.com/",
+      "text": "Capture work-level bibliographic data and public descriptions. Full texts and recordings remain copyrighted."
+    },
+    {
+      "title": "Abraham-Hicks",
+      "period": "Modern workshops, books and recordings",
+      "access": "PUBLIC CLIPS + COMMERCIAL ARCHIVE",
+      "rights": "METADATA-ONLY",
+      "topics": "Nonphysical identity · intention · emotion · continuity",
+      "href": "https://abraham-hicks.com/",
+      "text": "Link official clips and catalogue records. Do not treat repeated motivational claims as independently corroborated observations."
+    },
+    {
+      "title": "A Course in Miracles · historical archive",
+      "period": "Helen Schucman notes and editorial history · 1965–1976",
+      "access": "OFFICIAL HISTORICAL ARCHIVE",
+      "rights": "LINK · RIGHTS RETAINED",
+      "topics": "Inner dictation · version history · forgiveness · perception",
+      "href": "https://acim.org/archives/",
+      "text": "Index notebooks, editorial stages and authorised historical material while separating the claimed source voice from the documented human production history."
+    },
+    {
+      "title": "Alice Bailey · authorised online books",
+      "period": "Claimed telepathic collaboration · 1919–1949",
+      "access": "TWENTY-FOUR ONLINE BOOKS",
+      "rights": "PERSONAL NON-COMMERCIAL USE",
+      "topics": "Djwhal Khul · esoteric philosophy · reincarnation · evolution",
+      "href": "https://www.lucistrust.org/online_books/welcome_obooks_website",
+      "text": "Use the Lucis Trust edition, catalogue and master index. Record the claimed Tibetan authorship as testimony rather than authenticated external identity."
+    },
+    {
+      "title": "Patience Worth · Washington University",
+      "period": "Pearl Curran archive · principally 1913–1937",
+      "access": "PUBLIC FINDING AID · ARCHIVAL ACCESS",
+      "rights": "METADATA-ONLY",
+      "topics": "Ouija communication · poetry · fiction · spirit authorship",
+      "href": "https://aspace.wustl.edu/repositories/6/resources/789",
+      "text": "The finding aid supplies collection-level custody and chronology for the alleged Patience Worth communications without deciding their authorship."
+    },
+    {
+      "title": "Patience Worth · Missouri Historical Society",
+      "period": "Dialogues, correspondence and papers · 1913–1937",
+      "access": "TWENTY-NINE TYPESCRIPT DIALOGUE VOLUMES",
+      "rights": "PUBLIC FINDING AID",
+      "topics": "Session history · witnesses · reception · literary production",
+      "href": "https://mohistory.mobiusconsortium.org/repositories/2/resources/186",
+      "text": "A second institutional custodian provides complementary provenance and supports record-level comparison without counting two archives as two independent entities."
+    },
+    {
+      "title": "Eileen Caddy · Findhorn archive",
+      "period": "Archival first-person recordings",
+      "access": "OFFICIAL PUBLIC CLIPS",
+      "rights": "LINK · RIGHTS RETAINED",
+      "topics": "Inner guidance · contemplation · dreams · community",
+      "href": "https://www.findhorn.org/blog/from-the-archives-eileen-caddy-learn-to-be-still",
+      "text": "Index dated first-person archive releases and distinguish inner-voice testimony from later community interpretation."
+    },
+    {
+      "title": "Suzanne Giesemann · session archive",
+      "period": "Contemporary continuing channeling archive",
+      "access": "PUBLIC RECORDINGS",
+      "rights": "LINK · RIGHTS RETAINED",
+      "topics": "Sanaya · after-death communication · unity · spiritual practice",
+      "href": "https://suzannegiesemann.com/gifts/channeling-sessions/",
+      "text": "Capture session dates, format and original recording URLs. Claims remain first-party testimony unless independently tested."
+    },
+    {
+      "title": "Conversations with God · Neale Donald Walsch",
+      "period": "Published dialogue series · 1995–present catalogue",
+      "access": "OFFICIAL BIBLIOGRAPHY",
+      "rights": "METADATA-ONLY",
+      "topics": "Inner dialogue · divinity · continuity · spiritual ethics",
+      "href": "https://www.nealedonaldwalsch.com/Store/Books",
+      "text": "Record titles, editions and dates from the official bibliography; do not reproduce copyrighted books or presume an external speaker."
+    },
+    {
+      "title": "Orin and DaBen · Sanaya Roman and Duane Packer",
+      "period": "Modern channeling catalogue · from the 1980s",
+      "access": "AUDIO + BOOK CATALOGUE",
+      "rights": "METADATA-ONLY",
+      "topics": "Guidance · selfhood · spiritual growth · channeling practice",
+      "href": "https://www.orindaben.com/catalog/section/channeling/type/",
+      "text": "Index first-party catalogue metadata and keep commercial recordings with their custodian. Claimed guide identities remain unresolved."
+    },
+    {
+      "title": "Leonora Piper · Cambridge SPR archive",
+      "period": "Sittings and scripts · 1886–1950",
+      "access": "PUBLIC CATALOGUE · READING-ROOM ACCESS",
+      "rights": "METADATA-ONLY",
+      "topics": "Trance mediumship · sittings · scripts · psychical research",
+      "href": "https://archivesearch.lib.cam.ac.uk/repositories/2/archival_objects/632814",
+      "text": "Cambridge University Library preserves the Society for Psychical Research file. Catalogue metadata was discoverable on 14 September 2026; automated retrieval returned 403, so access remains limited rather than classified as broken."
+    },
+    {
+      "title": "Gladys Osborne Leonard · Cambridge SPR archive",
+      "period": "Medium file · from 1919",
+      "access": "PUBLIC CATALOGUE · READING-ROOM ACCESS",
+      "rights": "METADATA-ONLY",
+      "topics": "Trance sittings · survival claims · psychical research · controls",
+      "href": "https://archivesearch.lib.cam.ac.uk/repositories/2/archival_objects/2097118",
+      "text": "Use the institutional file identifier and collection hierarchy as provenance. Catalogue metadata was indexed publicly, while automated page retrieval was access-limited on 14 September 2026."
+    },
+    {
+      "title": "Geraldine Cummins · Cambridge SPR archive",
+      "period": "Medium files · 1926–1970",
+      "access": "PUBLIC CATALOGUE · READING-ROOM ACCESS",
+      "rights": "METADATA-ONLY",
+      "topics": "Automatic writing · scripts · correspondence · psychical research",
+      "href": "https://archivesearch.lib.cam.ac.uk/repositories/2/archival_objects/2096876",
+      "text": "The Cambridge catalogue documents Cummins material within the SPR archive. Preserve file dates and custody without treating alleged communicators as authenticated sources; automated retrieval returned 403 on 14 September 2026."
+    },
+    {
+      "title": "Chico Xavier Memorial · Uberaba",
+      "period": "Municipal memorial and documentation centre · opened 2016",
+      "access": "PUBLIC MUSEUM RECORD",
+      "rights": "METADATA-ONLY",
+      "topics": "Psychography · Brazilian Spiritism · publications · reception history",
+      "href": "https://www.uberaba.mg.gov.br/",
+      "text": "The municipal record documents a museum created by local law and administered through Uberaba's cultural institutions. It establishes custody and public context, not the truth of attributed spirit authorship."
+    },
+    {
+      "title": "Eileen J. Garrett Collection · UMBC",
+      "period": "Parapsychology Foundation library · acquired 2022",
+      "access": "PUBLIC DIGITAL EXHIBITION · SPECIAL COLLECTIONS",
+      "rights": "METADATA + SELECTED IMAGES",
+      "topics": "Mediumship · parapsychology · spiritualism · research history",
+      "href": "https://library.umbc.edu/garrett/",
+      "text": "UMBC documents more than 12,000 books, over 100 periodicals and unique artefacts assembled by the Parapsychology Foundation. Collection custody and Garrett's institutional role are documented without authenticating psychic claims."
+    },
+    {
+      "title": "Hamilton Family fonds · Manitoba",
+      "period": "Papers 1919–1986 · psychic experiments principally 1918–1945",
+      "access": "PUBLIC FINDING AID + DIGITAL COLLECTION",
+      "rights": "REPOSITORY CONDITIONS",
+      "topics": "Séance registers · trance scripts · automatic writing · experimental controls",
+      "href": "https://archives.lib.umanitoba.ca/collections/complete_holdings/ead/html/Hamilton.shtml",
+      "text": "The University of Manitoba finding aid preserves attendance registers, affidavits, automatic writings, trance scripts, photographs and experimental notes. The unusually rich controls are part of the historical record, not proof that reported phenomena were paranormal."
+    },
+    {
+      "title": "Margery Crandon · UMBC Garrett Collection",
+      "period": "Mediumship controversy · principally 1920s",
+      "access": "PUBLIC DIGITAL EXHIBITION",
+      "rights": "METADATA + SELECTED IMAGES",
+      "topics": "Walter Stinson · séance mediumship · Houdini · dispute history",
+      "href": "https://library.umbc.edu/garrett/mediumship/margery-crandon/",
+      "text": "UMBC records both Crandon's claimed communication with her deceased brother and the contemporary controversy and scepticism. Competing interpretations remain attached to the same record."
+    },
+    {
+      "title": "Maurice Barbanell and Silver Birch · Waterloo",
+      "period": "Historical dissertation · 2024",
+      "access": "OPEN INSTITUTIONAL REPOSITORY",
+      "rights": "SCHOLARLY METADATA + OPEN THESIS",
+      "topics": "Silver Birch · trance mediumship · publishing · reception history",
+      "href": "https://uwspace.uwaterloo.ca/items/c41ba8ab-05d8-42ee-8d14-037c18abbb68",
+      "text": "This doctoral history documents Barbanell's career and decades of attributed Silver Birch teachings. It is contextual scholarship, not an independent validation or a substitute for primary session records."
+    },
+    {
+      "title": "Allan Kardec · BnF digital edition",
+      "period": "Le livre des esprits · 10th edition · 1863",
+      "access": "PUBLIC CATALOGUE + DIGITAL COPY",
+      "rights": "RIGHTS-FREE DIGITISED EDITION",
+      "topics": "Spirit teachings · multiple mediums · doctrine · publication history",
+      "href": "https://catalogue.bnf.fr/ark:/12148/cb300109618",
+      "text": "The Bibliothèque nationale de France identifies this 474-page edition as teachings attributed to higher spirits through multiple mediums, collected and arranged by Kardec. The catalogue and exact digitised edition establish publication provenance, not the identity of the alleged sources."
+    },
+    {
+      "title": "Madge Gill · William Morris Gallery",
+      "period": "Visionary art and archival objects · exhibition record · 2019",
+      "access": "PUBLIC MUSEUM RECORD",
+      "rights": "METADATA-ONLY · ARTWORK RIGHTS VARY",
+      "topics": "Myrninerest · visionary art · drawings · textiles · archival objects",
+      "href": "https://www.wmgallery.org.uk/event/madge-gill/",
+      "text": "The council-operated gallery records that Gill attributed many works to a spirit-guide she called Myrninerest. The museum record preserves the artist's attribution and material range without treating external authorship as established."
+    }
+  ],
+  "seed_records": [
+    {
+      "id": "CR-001",
+      "title": "Edgar Cayce Foundation catalogue",
+      "custodian": "Edgar Cayce Foundation",
+      "date": "20th-century collection",
+      "medium": "Finding aid + institutional catalogue",
+      "themes": "Akashic records · reincarnation · dreams · spiritual development",
+      "rights": "Public metadata · controlled readings",
+      "status": "Archive metadata; claimed trance material",
+      "href": "https://as2.edgarcaycefoundation.org/repositories/2/resources/3"
+    },
+    {
+      "id": "CR-002",
+      "title": "Jane Roberts Papers",
+      "custodian": "Yale University Library",
+      "date": "20th-century papers",
+      "medium": "Manuscripts · notes · correspondence · recordings",
+      "themes": "Seth · identity · probable realities · reincarnation",
+      "rights": "Public finding aid · repository conditions",
+      "status": "Archive metadata; claimed channelled material",
+      "href": "https://archives.yale.edu/repositories/12/resources/4482"
+    },
+    {
+      "id": "CR-003",
+      "title": "Dillman and Watkins related papers",
+      "custodian": "Yale University Library",
+      "date": "20th–21st-century research papers",
+      "medium": "Research files · correspondence · reception history",
+      "themes": "Seth research · witnesses · interpretation · community",
+      "rights": "Public finding aid · repository conditions",
+      "status": "Contextual archive; not independent confirmation",
+      "href": "https://archives.yale.edu/repositories/12/resources/11952"
+    },
+    {
+      "id": "CR-004",
+      "title": "The Ra Contact · complete session series",
+      "custodian": "L/L Research",
+      "date": "15 Jan 1981–15 Mar 1984",
+      "medium": "106 recorded and transcribed sessions",
+      "themes": "Unity · spiritual evolution · service · reincarnation · densities",
+      "rights": "Official online edition · licence review",
+      "status": "Claimed trance communication; provenance documented",
+      "href": "https://www.llresearch.org/channeling/ra-contact/intro"
+    },
+    {
+      "id": "CR-005",
+      "title": "The Ra Contact · version history",
+      "custodian": "L/L Research",
+      "date": "1980s–present editions",
+      "medium": "Cassette recordings · original and relistened transcripts",
+      "themes": "Transcript omissions · corrections · editorial history",
+      "rights": "Public documentation · licence review",
+      "status": "Textual provenance record",
+      "href": "https://www.llresearch.org/channeling/ra-contact/versions"
+    },
+    {
+      "id": "CR-006",
+      "title": "The Ra Contact · Session 81",
+      "custodian": "L/L Research",
+      "date": "Session 81 · 1982",
+      "medium": "Audio-derived question-and-answer transcript",
+      "themes": "Death and rebirth · time/space · unity · uncertainty",
+      "rights": "Official public transcript · licence review",
+      "status": "Individual claimed-communication record",
+      "href": "https://www.llresearch.org/channeling/ra-contact/81"
+    },
+    {
+      "id": "CR-007",
+      "title": "Spirit Teachings",
+      "custodian": "HathiTrust scan",
+      "date": "1883 edition",
+      "medium": "Published automatic-writing account",
+      "themes": "Survival · spirit identity · ethics · religious interpretation",
+      "rights": "Digitised historical edition · edition check",
+      "status": "Historical primary text; authorship claims unresolved",
+      "href": "https://babel.hathitrust.org/cgi/ssd?id=uc1.a0001080951&seq=1"
+    },
+    {
+      "id": "CR-008",
+      "title": "The Mahatma Letters · contents",
+      "custodian": "Theosophical University Press edition",
+      "date": "Letters attributed to 1880–1884 · first collected 1923",
+      "medium": "Online historical text edition",
+      "themes": "Karma · rebirth · adepts · liberation · theosophy",
+      "rights": "Online edition · edition and rights check",
+      "status": "Contested authorship; historical esoteric material",
+      "href": "https://www.theosociety.org/pasadena/mahatma/ml-con.htm"
+    },
+    {
+      "id": "CR-009",
+      "title": "A Course in Miracles · historical archive",
+      "custodian": "Foundation for Inner Peace",
+      "date": "Inner-dictation notes from 1965–1972 · first edition 1976",
+      "medium": "Historical notes · editorial records · published editions",
+      "themes": "Inner dictation · forgiveness · perception · spiritual transformation",
+      "rights": "Public archive metadata and selected material · rights retained",
+      "status": "Claimed inner dictation; version history documented",
+      "href": "https://acim.org/archives/"
+    },
+    {
+      "id": "CR-010",
+      "title": "Alice Bailey books · authorised online edition",
+      "custodian": "Lucis Trust",
+      "date": "Claimed collaboration 1919–1949",
+      "medium": "Twenty-four online books · catalogue · master index",
+      "themes": "Djwhal Khul · esoteric philosophy · reincarnation · spiritual evolution",
+      "rights": "Personal non-commercial access · copyright retained",
+      "status": "Claimed telepathic collaboration; authorised edition",
+      "href": "https://www.lucistrust.org/online_books/welcome_obooks_website"
+    },
+    {
+      "id": "CR-011",
+      "title": "Patience Worth Collection",
+      "custodian": "Washington University Libraries",
+      "date": "Pearl Curran material · principally 1913–1937",
+      "medium": "Typescripts · correspondence · finding aid",
+      "themes": "Ouija communication · spirit authorship · poetry · fiction",
+      "rights": "Public finding aid · repository conditions",
+      "status": "Archive metadata; alleged spirit communication",
+      "href": "https://aspace.wustl.edu/repositories/6/resources/789"
+    },
+    {
+      "id": "CR-012",
+      "title": "Patience Worth Collection · dialogue volumes",
+      "custodian": "Missouri Historical Society",
+      "date": "Dialogues and papers · 1913–1937",
+      "medium": "Twenty-nine typescript dialogue volumes · correspondence",
+      "themes": "Session chronology · witnesses · literary production · reception",
+      "rights": "Public finding aid · repository conditions",
+      "status": "Primary archival corpus; authorship claim unresolved",
+      "href": "https://mohistory.mobiusconsortium.org/repositories/2/resources/186"
+    },
+    {
+      "id": "CR-013",
+      "title": "Eileen Caddy · Findhorn archive",
+      "custodian": "Findhorn Foundation",
+      "date": "Archival recordings · 20th–21st century releases",
+      "medium": "First-person audio and video excerpts",
+      "themes": "Inner guidance · dreams · contemplation · community",
+      "rights": "Official public clips · rights retained",
+      "status": "First-person testimony; claimed inner voice",
+      "href": "https://www.findhorn.org/blog/from-the-archives-eileen-caddy-learn-to-be-still"
+    },
+    {
+      "id": "CR-014",
+      "title": "Suzanne Giesemann · channeling sessions",
+      "custodian": "Suzanne Giesemann",
+      "date": "Contemporary continuing archive",
+      "medium": "Public audio and video recordings",
+      "themes": "Sanaya · after-death communication · unity · spiritual practice",
+      "rights": "Official public archive · rights retained",
+      "status": "Claimed channeling; first-party recordings",
+      "href": "https://suzannegiesemann.com/gifts/channeling-sessions/"
+    },
+    {
+      "id": "CR-015",
+      "title": "Conversations with God · official bibliography",
+      "custodian": "Neale Donald Walsch",
+      "date": "Published dialogue series · 1995–present catalogue",
+      "medium": "Book-level bibliography and publisher descriptions",
+      "themes": "Inner dialogue · divinity · continuity · spiritual ethics",
+      "rights": "Public bibliographic metadata · copyrighted works",
+      "status": "Claimed internal dialogue; publication metadata",
+      "href": "https://www.nealedonaldwalsch.com/Store/Books"
+    },
+    {
+      "id": "CR-016",
+      "title": "Orin and DaBen · channeling catalogue",
+      "custodian": "LuminEssence Productions",
+      "date": "Modern channeling catalogue · from the 1980s",
+      "medium": "Audio courses · books · public catalogue metadata",
+      "themes": "Orin · DaBen · spiritual growth · guidance · selfhood",
+      "rights": "Public catalogue · commercial recordings protected",
+      "status": "Claimed channeling; first-party catalogue",
+      "href": "https://www.orindaben.com/catalog/section/channeling/type/"
+    },
+    {
+      "id": "CR-017",
+      "title": "Leonora Piper · sittings and scripts",
+      "custodian": "Cambridge University Library · Society for Psychical Research archive",
+      "date": "1886–1950",
+      "medium": "Sitting records · scripts · archival catalogue",
+      "themes": "Trance mediumship · survival claims · psychical research",
+      "rights": "Public catalogue metadata · reading-room conditions",
+      "status": "Institutional archive metadata; automated retrieval access-limited 14 Sep 2026",
+      "href": "https://archivesearch.lib.cam.ac.uk/repositories/2/archival_objects/632814"
+    },
+    {
+      "id": "CR-018",
+      "title": "Gladys Osborne Leonard · medium file",
+      "custodian": "Cambridge University Library · Society for Psychical Research archive",
+      "date": "From 19 September 1919",
+      "medium": "Medium file · sitting documentation · archival catalogue",
+      "themes": "Trance sittings · survival claims · witnesses · controls",
+      "rights": "Public catalogue metadata · reading-room conditions",
+      "status": "Institutional archive metadata; automated retrieval access-limited 14 Sep 2026",
+      "href": "https://archivesearch.lib.cam.ac.uk/repositories/2/archival_objects/2097118"
+    },
+    {
+      "id": "CR-019",
+      "title": "Geraldine Cummins · medium files",
+      "custodian": "Cambridge University Library · Society for Psychical Research archive",
+      "date": "1926–1970",
+      "medium": "Automatic-writing scripts · correspondence · archival catalogue",
+      "themes": "Automatic writing · spirit authorship · psychical research",
+      "rights": "Public catalogue metadata · reading-room conditions",
+      "status": "Institutional archive metadata; automated retrieval access-limited 14 Sep 2026",
+      "href": "https://archivesearch.lib.cam.ac.uk/repositories/2/archival_objects/2096876"
+    },
+    {
+      "id": "CR-020",
+      "title": "Chico Xavier Memorial · municipal record",
+      "custodian": "Municipality of Uberaba · Fundação Cultural",
+      "date": "Created by municipal law 12,448/2016 · public from 2016",
+      "medium": "Museum collection · publications · documentation centre",
+      "themes": "Psychography · Brazilian Spiritism · publications · reception history",
+      "rights": "Public institutional metadata · collection rights vary",
+      "status": "Municipal custody record; attributed authorship unresolved",
+      "href": "https://www.uberaba.mg.gov.br/"
+    },
+    {
+      "id": "CR-021",
+      "title": "Eileen J. Garrett Parapsychology Foundation Collection",
+      "custodian": "UMBC Albin O. Kuhn Library & Gallery · Special Collections",
+      "date": "Collection acquired 2022 · digital exhibition 2024",
+      "medium": "More than 12,000 books · 100+ periodicals · artefacts",
+      "themes": "Mediumship · parapsychology · spiritualism · research history",
+      "rights": "Public metadata and selected images · repository conditions",
+      "status": "Institutional collection; claims and research outcomes require item-level review",
+      "href": "https://library.umbc.edu/garrett/"
+    },
+    {
+      "id": "CR-022",
+      "title": "Hamilton Family fonds · psychic experimentation records",
+      "custodian": "University of Manitoba Archives & Special Collections",
+      "date": "Papers 1919–1986 · experiments principally 1918–1945",
+      "medium": "Séance registers · affidavits · trance scripts · automatic writings · photographs",
+      "themes": "Trance · survival claims · controls · witnesses · textual transmission",
+      "rights": "Public finding aid and digital collection · repository conditions",
+      "status": "Primary archival documentation; reported phenomena unresolved",
+      "href": "https://archives.lib.umanitoba.ca/collections/complete_holdings/ead/html/Hamilton.shtml"
+    },
+    {
+      "id": "CR-023",
+      "title": "Margery Crandon · claimed Walter communications",
+      "custodian": "UMBC · Eileen J. Garrett Parapsychology Foundation Collection",
+      "date": "Principally 1920s",
+      "medium": "Photographs · reports · controversy and reception records",
+      "themes": "Walter Stinson · séance mediumship · experimental dispute · deception allegations",
+      "rights": "Public exhibition metadata and selected images · repository conditions",
+      "status": "Contested historical record; claim and sceptical challenges preserved together",
+      "href": "https://library.umbc.edu/garrett/mediumship/margery-crandon/"
+    },
+    {
+      "id": "CR-024",
+      "title": "Maurice Barbanell and Silver Birch · historical study",
+      "custodian": "University of Waterloo · UWSpace",
+      "date": "Doctoral dissertation · 2024",
+      "medium": "Scholarly historical study · institutional repository",
+      "themes": "Silver Birch · trance mediumship · publishing · reception history",
+      "rights": "Open repository record · thesis terms apply",
+      "status": "Contextual scholarship; not primary transmission or independent confirmation",
+      "href": "https://uwspace.uwaterloo.ca/items/c41ba8ab-05d8-42ee-8d14-037c18abbb68"
+    },
+    {
+      "id": "CR-025",
+      "title": "Le livre des esprits · 10th edition",
+      "custodian": "Bibliothèque nationale de France · Gallica",
+      "date": "Paris · 1863 · 474 pages",
+      "medium": "Digitised historical edition · catalogue record",
+      "themes": "Spirit teachings · multiple mediums · doctrine · publication history",
+      "rights": "Rights-free digitised edition",
+      "status": "Primary published text; alleged spirit sources unresolved",
+      "href": "https://catalogue.bnf.fr/ark:/12148/cb300109618"
+    },
+    {
+      "id": "CR-026",
+      "title": "Madge Gill · Myrninerest exhibition record",
+      "custodian": "William Morris Gallery · Waltham Forest Council",
+      "date": "Exhibition record · 22 June–22 September 2019",
+      "medium": "Drawings · embroideries · textiles · archival objects",
+      "themes": "Myrninerest · visionary art · artist attribution · material culture",
+      "rights": "Public museum metadata · artwork and image rights vary",
+      "status": "Artist-attributed spirit-guide record; external authorship unverified",
+      "href": "https://www.wmgallery.org.uk/event/madge-gill/"
+    }
+  ]
+}
