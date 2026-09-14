@@ -41,6 +41,7 @@ export default function AkashicVisionPage() {
           <a href="#translation">Translation</a>
           <a href="#vision">2042–2047</a>
           <a href="#antecedents">Antecedents</a>
+          <a href="/akashicsentience">AkashicSENTIENCE</a>
           <a href="/big-questions/bq001">BQ001</a>
         </nav>
       </header>
@@ -228,6 +229,12 @@ export default function AkashicVisionPage() {
             <h3>AkashicTRANSCENDENCE</h3>
             <p>Sacred Toroidal Love and BuddhaFly Nature translate the TRANSCEND lens into poetry, festival imagery and an embodied birthday-moon reflection.</p>
             <a className={styles.sourceLink} href="/akashictranscendence">Enter the Arts portal →</a>
+          </article>
+          <article>
+            <span>Encounters · Apparent agency · Open inquiry</span>
+            <h3>AkashicSENTIENCE</h3>
+            <p>Mystical, mediumistic, psychedelic, anomalous and artificial-intelligence encounters mapped without assuming what their apparent source ultimately is.</p>
+            <a className={styles.sourceLink} href="/akashicsentience">Enter the encounter atlas →</a>
           </article>
         </div>
         <p className={styles.constellationBoundary}><strong>Evidence boundary:</strong> shared themes generate questions. They do not establish equivalence between mathematical infinity, cosmological models, personal experience and spiritual teachings.</p>
