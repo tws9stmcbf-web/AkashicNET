@@ -64,6 +64,7 @@ export default function BQ002Page() {
         <a href="/" style={{ color: "#f5f2e8", textDecoration: "none", fontWeight: 800, letterSpacing: ".12em" }}>AKASHICNET.ORG</a>
         <nav aria-label="Big Question navigation" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
           <a href="/" style={{ color: "#d9d4c7" }}>Home</a>
+          <a href="/big-questions" style={{ color: "#d9d4c7" }}>All Big Questions</a>
           <a href="/big-questions/bq001" style={{ color: "#d9d4c7" }}>BQ001</a>
           <a href="#sources" style={{ color: "#d9d4c7" }}>Sources</a>
         </nav>
@@ -104,6 +105,30 @@ export default function BQ002Page() {
               <p style={{ color: "#f0d681", lineHeight: 1.6 }}><strong>Boundary:</strong> {item.boundary}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section style={{ ...shell, paddingTop: 34, paddingBottom: 34 }} aria-labelledby="profile-title">
+        <div style={{ ...panel, borderColor: "rgba(159,216,255,.38)" }}>
+          <p style={{ color: "#9fd8ff", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>PROVISIONAL EVIDENCE PROFILE</p>
+          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved · Deepening ↗</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>The neural and psychological construction of thought has substantial empirical support. Whether all thought is fully explained by those processes—and whether transpersonal information contributes—remains unresolved.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: 12, marginTop: 22 }}>
+            {[
+              ["⚪", "Overall", "UNRESOLVED", "No complete origin theory is established."],
+              ["🩵", "Momentum", "DEEPENING ↗", "Methods for thought sampling and neural measurement continue to improve."],
+              ["🟢", "Neural mechanisms", "SUBSTANTIAL", "Could deepen within the next quarter to 3 years through time-resolved studies."],
+              ["🟠", "Transpersonal models", "SPECULATIVE", "Could move over years or decades only through distinctive, replicated predictions."],
+            ].map(([icon, label, value, note]) => (
+              <article key={label} style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 15, background: "rgba(255,255,255,.025)" }}>
+                <span aria-hidden="true" style={{ fontSize: 22 }}>{icon}</span>
+                <span style={{ display: "block", marginTop: 8, color: "#a9a59c", fontSize: 11, fontWeight: 900, letterSpacing: ".1em" }}>{label}</span>
+                <strong style={{ display: "block", marginTop: 8 }}>{value}</strong>
+                <small style={{ display: "block", marginTop: 10, color: "#c8c4bb", lineHeight: 1.6 }}>{note}</small>
+              </article>
+            ))}
+          </div>
+          <p style={{ marginBottom: 0, marginTop: 22, color: "#c8c4bb", lineHeight: 1.7 }}><strong>Time horizons:</strong> next quarter—improve definitions and measurement; 1–3 years—compare preregistered models; decade—evaluate whether converging results require a revised theory of mind.</p>
         </div>
       </section>
 
@@ -159,7 +184,7 @@ export default function BQ002Page() {
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PRIMARY COMMUNITY PROVENANCE</p>
         <p><a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1wanq3d/a_thought_just_popped_in_and_out_of_my_head_how/" target="_blank" rel="noreferrer" style={{ color: "#9fd8ff" }}>A Thought Just Popped In and Out of My Head</a></p>
         <p><a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1qq3m4b/an_observation_about_a_thought_i_keep_coming_back/" target="_blank" rel="noreferrer" style={{ color: "#9fd8ff" }}>An Observation About a Thought I Keep Coming Back To</a></p>
-        <p style={{ color: "#c8c4bb" }}>BQ002 · Public exploratory inquiry v0.1 · No truth promotion authorised</p>
+        <p style={{ color: "#c8c4bb" }}>BQ002 · Public exploratory inquiry v0.2 · No truth promotion authorised</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
