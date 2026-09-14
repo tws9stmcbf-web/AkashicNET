@@ -31,7 +31,7 @@ const evidence = [
 const dimensions = [
   ["01", "AWAKEN", "Notice hunger without reducing it to a distant statistic."],
   ["02", "HIERATIC", "Treat food, soil and water as culturally meaningful relationships as well as resources."],
-  ["03", "HOMESENSE", "Begin with kitchens, farms, markets and the lived reality of access."],
+  ["03", "HOMESENSE · Phase 8", "Begin with kitchens, farms, markets and the lived reality of access."],
   ["04", "ADAPT", "Protect people now while adapting production, storage and distribution."],
   ["05", "REGENERATE", "Restore soils, watersheds, biodiversity and farmer agency where possible."],
   ["06", "TRANSCEND", "Move beyond zero-sum scarcity narratives toward shared planetary stewardship."],
@@ -57,7 +57,6 @@ const sources = [
   ["Community-supported agriculture evidence summary · County Health Rankings (2025)", "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/community-supported-agriculture-csa"],
   ["Community food rescue and fridge model · Food Rescue US", "https://foodrescue.us/fridge-the-gap/"],
   ["Indigenous Peoples’ food systems · FAO", "https://www.fao.org/indigenous-peoples/our-pillars/fao-work-on-indigenous-food-systems/en"],
-  ["Civil society and Indigenous Peoples’ agroecology input · FAO Open Knowledge (2026)", "https://openknowledge.fao.org/"],
 ];
 
 export default function GlobalFoodShortagesReport() {
@@ -123,7 +122,7 @@ export default function GlobalFoodShortagesReport() {
           <p className="section-label">AKASHICOMNI v0.3.0 · TRUE 13D ANALYSIS</p>
           <h2 style={{ maxWidth: 900, fontSize: "clamp(2.2rem,5vw,4.5rem)", lineHeight: 1.04 }}>Thirteen lenses. One food system.</h2>
           <figure style={{ ...panel, overflow: "hidden", padding: 0, marginTop: 30 }}>
-            <img src="/images/akashicomni-global-food-security-13d.webp" alt="Conceptual AkashicOMNI circular map placing global food security at the centre of thirteen analytical lenses: AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, METAD, ACTC, past, present, future, UMASC and AkashicNET." style={{ display: "block", width: "100%", height: "auto" }} />
+            <img src="/images/akashicomni-global-food-security-13d.webp" alt="Conceptual AkashicOMNI circular map placing global food security at the centre of thirteen analytical lenses: AWAKEN, HIERATIC, HOMESENSE · Phase 8, ADAPT, REGENERATE, TRANSCEND, METAD, ACTC, past, present, future, UMASC and AkashicNET." style={{ display: "block", width: "100%", height: "auto" }} />
             <figcaption style={{ padding: "16px 20px", color: "#b9bfd0", lineHeight: 1.65 }}><strong style={{ color: "#f3dc96" }}>Analytical architecture.</strong> The image visualises a framework. It does not measure hunger, rank countries or establish causal effects.</figcaption>
           </figure>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(245px,1fr))", gap: 16, marginTop: 26 }}>

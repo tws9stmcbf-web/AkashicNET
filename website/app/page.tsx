@@ -81,6 +81,19 @@ export default function Home() {
         </a>
       </section>
 
+      <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "0 0 64px" }} aria-labelledby="food-security-insight-title">
+        <a href="/insights/global-food-shortages-one-step-back-two-steps-forward" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,320px),1fr))", gap: 0, overflow: "hidden", border: "1px solid rgba(216,185,92,.28)", borderRadius: 26, background: "linear-gradient(145deg,rgba(18,28,57,.96),rgba(7,11,26,.98))", color: "inherit", textDecoration: "none", boxShadow: "0 24px 80px rgba(0,0,0,.3)" }}>
+          <img src="/images/akn24-global-food-shortages.webp" alt="AKN24 editorial illustration showing global food-system pressure transitioning toward local and community resilience." style={{ width: "100%", height: "100%", minHeight: 280, objectFit: "cover" }} />
+          <span style={{ padding: "clamp(26px,5vw,54px)", alignSelf: "center" }}>
+            <small className="section-label">AKN24 · GLOBAL SYSTEMS DESK</small>
+            <strong id="food-security-insight-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2rem,4.5vw,4.4rem)", lineHeight: 1 }}>Global Food Shortages</strong>
+            <span style={{ display: "block", color: "#e7cd7e", fontWeight: 800, letterSpacing: ".06em" }}>ONE STEP BACK · TWO STEPS FORWARD</span>
+            <span style={{ display: "block", marginTop: 16, color: "#cbd0dd", lineHeight: 1.7 }}>An evidence-bounded AkashicOMNI v0.3.0 analysis of hunger, access, fragile logistics, leadership awareness and practical community resilience.</span>
+            <b style={{ display: "inline-block", marginTop: 22, color: "#e7cd7e" }}>Read the report →</b>
+          </span>
+        </a>
+      </section>
+
       <section className="snapshot" aria-label="Public project snapshot">
         <div><strong>9,502</strong><span>current Reddit source rows preserved</span></div>
         <div><strong>7,457</strong><span>structurally unique Reddit post URLs</span></div>
