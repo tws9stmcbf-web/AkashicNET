@@ -82,6 +82,22 @@ export default async function TopicPage({
             ) : <p>No candidate connections recorded.</p>}
           </article>
 
+          {topic.solution_space && (
+            <article className={`${styles.panel} ${styles.wide}`}>
+              <h2>Possible solutions and alternatives</h2>
+              <p><strong>Assessment status:</strong> {topic.solution_space.status}. These candidates are options for comparison, not universal prescriptions.</p>
+              <p><strong>Quality dimensions:</strong> {topic.solution_space.quality_dimensions.join(" · ")}</p>
+              {topic.solution_space.candidates.map((candidate) => (
+                <section key={candidate.label}>
+                  <h3>{candidate.label}</h3>
+                  <p>{candidate.level} · evidence: {candidate.evidence_status}</p>
+                  <p><strong>Potential benefits:</strong> {candidate.potential_benefits.join(", ")}</p>
+                  <p><strong>Tradeoffs:</strong> {candidate.tradeoffs.join(", ")}</p>
+                </section>
+              ))}
+            </article>
+          )}
+
           <article className={styles.panel}>
             <h2>Open questions</h2>
             <ul>{topic.open_questions.map((question) => <li key={question}>{question}</li>)}</ul>
