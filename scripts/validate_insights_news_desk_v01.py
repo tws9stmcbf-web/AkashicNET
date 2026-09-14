@@ -20,17 +20,16 @@ CANONICAL_13D = [
 ]
 WINDOW_HOURS = 24
 REQUIRED_PAGE_STRINGS = [
-    "AKASHICNET NEWS 24",
-    "LATEST 24 HOURS",
     "Amplitude ≠ frequency",
     "Correlation ≠ causation",
-    "BQ001 remains UNRESOLVED",
     "AkashicONE is a coherent assessment within it, not a higher evidence tier.",
 ]
 REQUIRED_COMPONENT_STRINGS = [
     'window.matchMedia("(prefers-reduced-motion: reduce)")',
-    'aria-label="Pause newsroom strip"',
-    'aria-label="Play newsroom strip"',
+    "AKASHICNET NEWS 24",
+    "LATEST 24 HOURS",
+    "Pause newsroom strip",
+    "Play newsroom strip",
     'aria-hidden={isDuplicate}',
     'onMouseEnter={() => setIsInteracting(true)}',
     'onFocusCapture={() => setIsInteracting(true)}',
@@ -38,6 +37,8 @@ REQUIRED_COMPONENT_STRINGS = [
     'Habitat Restored',
     'Wildlife Rescued',
     'Communities Cooperating',
+    'BQ001 remains UNRESOLVED',
+    'AkashicONE is a coherent assessment within it, not a higher evidence tier.',
 ]
 REQUIRED_REGISTRY_STRINGS = [
     '"Global Challenges"',
