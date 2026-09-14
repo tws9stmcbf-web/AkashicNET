@@ -166,55 +166,206 @@
       "label": "Consciousness",
       "aliases": [],
       "domain": "science-philosophy",
-      "summary": "Discovery metadata seed for Consciousness.",
+      "summary": "Subjective experience and awareness studied across neuroscience, psychology, philosophy, medicine, contemplative traditions and first-person testimony.",
       "status": "discovery",
       "origin": {
-        "documentary_trace": "ancient-and-modern",
+        "documentary_trace": "Questions about awareness appear across ancient philosophical and contemplative traditions; modern experimental consciousness science emerged through psychology, neuroscience and cognitive science.",
         "ultimate_status": "unresolved",
-        "claimed_origins": [],
-        "evidence_note": "Seed classification: unknown. Topic-level origin evidence has not yet been adjudicated."
+        "claimed_origins": [
+          "brain activity",
+          "integrated information",
+          "global availability or broadcasting",
+          "higher-order representation",
+          "recurrent processing",
+          "predictive processing",
+          "fundamental or panpsychic properties",
+          "non-dual or transpersonal interpretations"
+        ],
+        "evidence_note": "No broadly accepted theory currently explains every aspect of consciousness. A 2025 preregistered adversarial test found results consistent with some predictions of IIT and GNWT while challenging central claims of both."
       },
       "entities": [],
       "connections": [
         {
           "target": "neuroscience",
-          "relation": "related-topic",
-          "edge_status": "hypothesised",
-          "source_ids": []
+          "relation": "studied-by",
+          "edge_status": "documented",
+          "source_ids": [
+            "CON-SRC-002"
+          ]
         },
         {
           "target": "philosophy-of-mind",
-          "relation": "related-topic",
-          "edge_status": "hypothesised",
-          "source_ids": []
+          "relation": "studied-by",
+          "edge_status": "documented",
+          "source_ids": [
+            "CON-SRC-001"
+          ]
         },
         {
           "target": "meditation",
-          "relation": "related-topic",
+          "relation": "altered-or-trained-through",
           "edge_status": "hypothesised",
           "source_ids": []
         },
         {
-          "target": "artificial-intelligence",
-          "relation": "related-topic",
+          "target": "psychedelic-science",
+          "relation": "altered-state-research",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        },
+        {
+          "target": "artificial-sentience-claims",
+          "relation": "informs-attribution-of",
+          "edge_status": "hypothesised",
+          "source_ids": []
+        },
+        {
+          "target": "near-death-experiences",
+          "relation": "includes-contested-boundary-cases",
+          "edge_status": "contested",
+          "source_ids": []
+        },
+        {
+          "target": "quality-of-life",
+          "relation": "affects-and-enables",
           "edge_status": "hypothesised",
           "source_ids": []
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "id": "CON-SRC-001",
+          "url": "https://plato.stanford.edu/entries/consciousness/",
+          "source_type": "other",
+          "evidence_role": "definition",
+          "retrieved_on": "2026-09-14"
+        },
+        {
+          "id": "CON-SRC-002",
+          "url": "https://www.nature.com/articles/s41586-025-08888-1",
+          "source_type": "primary-source",
+          "evidence_role": "replication",
+          "retrieved_on": "2026-09-14"
+        }
+      ],
       "rights": {
-        "mode": "metadata-only",
+        "mode": "link-only",
         "license": null,
-        "note": "No source content imported; registry and item rights require review."
+        "note": "AkashicNET supplies original metadata and summaries. The Nature article is open access, but downstream reuse must follow its stated licence; SEP is linked rather than copied."
       },
       "open_questions": [
-        "Which authoritative identifiers and sources best define this topic?",
-        "Which proposed connections are documented rather than merely plausible?"
+        "Which neural processes are necessary or sufficient for particular conscious contents?",
+        "Why and how does subjective experience accompany physical or computational processing?",
+        "How should first-person reports and third-person measurements constrain one another?",
+        "Which non-human animals, artificial systems or altered states warrant consciousness attribution?",
+        "Can rival theories make sufficiently precise, discriminating predictions?",
+        "How should uncertainty about consciousness influence medicine, AI governance and the treatment of other beings?"
       ],
       "review": {
         "human_reviewed": false,
         "last_reviewed": null,
-        "notes": "Seed record; not eligible for automatic public promotion."
+        "notes": "Worked discovery pilot with philosophical orientation and a major open-science adversarial study. Requires broader systematic source coverage before public promotion."
+      },
+      "solution_space": {
+        "status": "discovery",
+        "quality_dimensions": [
+          "wakefulness and awareness",
+          "communication",
+          "autonomy",
+          "mental health",
+          "meaning",
+          "pain and suffering",
+          "ethical consideration"
+        ],
+        "candidates": [
+          {
+            "label": "Use preregistered adversarial collaborations between rival theories",
+            "level": "institutional",
+            "evidence_status": "supported",
+            "potential_benefits": [
+              "reduces theory-specific confirmation bias",
+              "produces discriminating tests",
+              "improves reproducibility"
+            ],
+            "tradeoffs": [
+              "expensive multi-site coordination",
+              "tests may target only parts of a theory",
+              "negative results remain interpretation-sensitive"
+            ],
+            "source_ids": [
+              "CON-SRC-002"
+            ]
+          },
+          {
+            "label": "Combine behavioural reports, neuroimaging, electrophysiology and perturbation",
+            "level": "institutional",
+            "evidence_status": "supported",
+            "potential_benefits": [
+              "triangulates across measurement limits",
+              "improves clinical translation"
+            ],
+            "tradeoffs": [
+              "method disagreement",
+              "report and task confounds",
+              "high cost and limited access"
+            ],
+            "source_ids": [
+              "CON-SRC-002"
+            ]
+          },
+          {
+            "label": "Include disciplined first-person and contemplative phenomenology",
+            "level": "multi-level",
+            "evidence_status": "mixed",
+            "potential_benefits": [
+              "richer descriptions of experience",
+              "better hypothesis generation",
+              "cultural breadth"
+            ],
+            "tradeoffs": [
+              "training and interpretation vary",
+              "retrospective bias",
+              "must not be mistaken for independent ontological proof"
+            ],
+            "source_ids": [
+              "CON-SRC-001"
+            ]
+          },
+          {
+            "label": "Adopt precaution under uncertain consciousness attribution",
+            "level": "policy",
+            "evidence_status": "hypothesised",
+            "potential_benefits": [
+              "reduces avoidable suffering",
+              "supports patient and animal protections",
+              "anticipates AI uncertainty"
+            ],
+            "tradeoffs": [
+              "false-positive attribution",
+              "resource allocation costs",
+              "criteria remain contested"
+            ],
+            "source_ids": [
+              "CON-SRC-001"
+            ]
+          },
+          {
+            "label": "Separate clinical detection from ultimate metaphysical explanation",
+            "level": "institutional",
+            "evidence_status": "hypothesised",
+            "potential_benefits": [
+              "supports practical care despite theoretical disagreement",
+              "prevents overclaiming"
+            ],
+            "tradeoffs": [
+              "operational markers may be incomplete",
+              "ethical thresholds remain disputed"
+            ],
+            "source_ids": [
+              "CON-SRC-002"
+            ]
+          }
+        ]
       }
     },
     {
