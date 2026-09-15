@@ -26,12 +26,12 @@
   },
   "sources": [
     {
-      "source_id": "MBB-KY-DICKENS-2025-10-27",
+      "source_id": "MBB-KY-DICKENS-2025-10-24",
       "publisher": "Mayim Bialik's Breakdown",
       "title": "Ky Dickens Has Proof Telepathy & Psychic Abilities Are Real!",
       "guest": "Ky Dickens",
-      "published_on": "2025-10-27",
-      "source_url": "https://www.bialikbreakdown.com/",
+      "published_on": "2025-10-24",
+      "source_url": "https://www.bialikbreakdown.com/episodes/better-than-cia-mind-readers-ky-dickens-has-proof-telepathy-psychic-abilities-are-real",
       "corroborating_catalog_url": "https://thetelepathytapes.com/podcast/",
       "source_type": "PODCAST_EPISODE_METADATA",
       "evidence_lane": "Lived Experience/Testimony",
@@ -42,7 +42,7 @@
         "alternative communication"
       ],
       "claim_boundary": "Records programme claims and discussion topics only; does not establish telepathy or a shared nonphysical environment.",
-      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+      "review_state": "OFFICIAL_EPISODE_PAGE_REVIEWED_TRANSCRIPT_NOT_REVIEWED"
     },
     {
       "source_id": "MBB-CHARLES-LIU-2026-09-02",
@@ -50,7 +50,7 @@
       "title": "Part Two: Near Death Experiences, Telepathy & the Multiverse. An Astrophysicist Explains",
       "guest": "Dr Charles Liu",
       "published_on": "2026-09-02",
-      "source_url": "https://www.bialikbreakdown.com/",
+      "source_url": "https://www.bialikbreakdown.com/episodes/part-two-near-death-experiences-telepathy-the-multiverse-an-astrophysicist-explains-dr-charles-liu",
       "source_type": "PODCAST_EPISODE_METADATA",
       "evidence_lane": "Interpretation",
       "topics": [
@@ -62,7 +62,11 @@
         "multiverse"
       ],
       "claim_boundary": "Expert discussion and hypothesis generation are not empirical demonstration of telepathy, survival or multiverse access.",
-      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+      "review_state": "OFFICIAL_EPISODE_PAGE_REVIEWED_TRANSCRIPT_NOT_REVIEWED",
+      "episode_urls": [
+        "https://www.bialikbreakdown.com/watch-podcast/near-death-experiences-telepathy-the-multiverse-an-astrophysicist-explains-dr-charles-liu",
+        "https://www.bialikbreakdown.com/episodes/part-two-near-death-experiences-telepathy-the-multiverse-an-astrophysicist-explains-dr-charles-liu"
+      ]
     },
     {
       "source_id": "MBB-BARBRA-BANNER-2026-09-04",
@@ -70,7 +74,7 @@
       "title": "No One Is Judged When They Die. Even Abusers Apologize",
       "guest": "Barbra Banner",
       "published_on": "2026-09-04",
-      "source_url": "https://www.bialikbreakdown.com/",
+      "source_url": "https://www.bialikbreakdown.com/episodes/no-one-is-judged-when-they-die-even-abusers-apologize-barbra-banner",
       "source_type": "PODCAST_EPISODE_METADATA",
       "evidence_lane": "Lived Experience/Testimony",
       "topics": [
@@ -80,7 +84,7 @@
         "symbolic communication"
       ],
       "claim_boundary": "Mediumship and after-death statements remain attributed testimony; no survival claim is promoted.",
-      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+      "review_state": "OFFICIAL_EPISODE_PAGE_REVIEWED_TRANSCRIPT_NOT_REVIEWED"
     },
     {
       "source_id": "MBB-SHARON-STONE-2026-09-08-09",
@@ -88,7 +92,7 @@
       "title": "Sharon Stone Saw the Afterlife: 5 Orbs Told Her to Stay & Share Their Message (Parts One and Two)",
       "guest": "Sharon Stone",
       "published_on": "2026-09-08/2026-09-09",
-      "source_url": "https://www.bialikbreakdown.com/",
+      "source_url": "https://www.bialikbreakdown.com/episodes/sharon-stone-saw-the-afterlife-5-orbs-told-her-to-stay-share-their-message",
       "source_type": "PODCAST_EPISODE_METADATA",
       "evidence_lane": "Lived Experience/Testimony",
       "topics": [
@@ -100,7 +104,11 @@
         "pattern recognition"
       ],
       "claim_boundary": "Preserves a first-person account without authenticating apparent entities, reincarnation or postmortem survival.",
-      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+      "review_state": "OFFICIAL_EPISODE_PAGE_REVIEWED_TRANSCRIPT_NOT_REVIEWED",
+      "episode_urls": [
+        "https://www.bialikbreakdown.com/episodes/sharon-stone-saw-the-afterlife-5-orbs-told-her-to-stay-share-their-message",
+        "https://www.bialikbreakdown.com/episodes/part-two-sharon-stone-saw-the-afterlife-5-orbs-told-her-to-stay-share-their-message"
+      ]
     },
     {
       "source_id": "MBB-JAMES-GIORDANO-2026-09-11",
@@ -108,7 +116,7 @@
       "title": "CIA Mind Control, MKUltra & Energy Weapons Are Real: Why A Pentagon Advisor Won't Rule Out Telepathy",
       "guest": "Dr James Giordano",
       "published_on": "2026-09-11",
-      "source_url": "https://www.bialikbreakdown.com/",
+      "source_url": "https://www.bialikbreakdown.com/episodes/cia-mind-control-mkultra-energy-weapons-are-real-why-a-pentagon-advisor-wont-rule-out-telepathy",
       "source_type": "PODCAST_EPISODE_METADATA",
       "evidence_lane": "Interpretation",
       "topics": [
@@ -120,15 +128,15 @@
         "neuroethics"
       ],
       "claim_boundary": "Not ruling out a mechanism is not positive evidence for it; historical programme facts remain separate from paranormal claims.",
-      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+      "review_state": "OFFICIAL_EPISODE_PAGE_REVIEWED_TRANSCRIPT_NOT_REVIEWED"
     },
     {
-      "source_id": "MBB-LISA-KUDROW-2026-08",
+      "source_id": "MBB-LISA-KUDROW-2026-07-21-23",
       "publisher": "Mayim Bialik's Breakdown",
-      "title": "Lisa Kudrow consciousness and intuition conversation (two parts)",
+      "title": "Lisa Kudrow consciousness and intuition conversations (Parts One and Two)",
       "guest": "Lisa Kudrow",
-      "published_on": "2026-08",
-      "source_url": "https://www.bialikbreakdown.com/",
+      "published_on": "2026-07-21/2026-07-23",
+      "source_url": "https://www.bialikbreakdown.com/episodes/my-dead-mother-texted-me-from-the-other-side-a-voice-predicted-my-career-first-lisa-kudrow",
       "source_type": "PODCAST_EPISODE_METADATA",
       "evidence_lane": "Lived Experience/Testimony",
       "topics": [
@@ -138,7 +146,11 @@
         "spirituality"
       ],
       "claim_boundary": "Preserves attributed experience without treating claircognizance as established information transfer.",
-      "review_state": "EXACT_EPISODE_METADATA_PENDING"
+      "review_state": "OFFICIAL_EPISODE_PAGE_REVIEWED_TRANSCRIPT_NOT_REVIEWED",
+      "episode_urls": [
+        "https://www.bialikbreakdown.com/episodes/my-dead-mother-texted-me-from-the-other-side-a-voice-predicted-my-career-first-lisa-kudrow",
+        "https://www.bialikbreakdown.com/episodes/part-two-psychic-ability-energy-healing-remote-viewing-her-100-success-rate-lisa-kudrow"
+      ]
     },
     {
       "source_id": "REDDIT-NTN-1OEHUW4",
@@ -236,6 +248,77 @@
       "review_state": "PAGE_SUMMARY_REVIEWED"
     },
     {
+      "source_id": "ASHA-FC-POSITION-2018",
+      "publisher": "American Speech-Language-Hearing Association",
+      "title": "Facilitated Communication (FC) — Position Statement",
+      "published_on": "2018",
+      "source_url": "https://www.asha.org/policy/ps2018-00352/",
+      "source_type": "PROFESSIONAL_POSITION_STATEMENT",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "facilitated communication",
+        "authorship",
+        "facilitator influence",
+        "disability rights"
+      ],
+      "claim_boundary": "Authoritative professional guidance on FC and authorship risk; it does not determine the validity of independent communication methods or every anomalous-information claim.",
+      "review_state": "OFFICIAL_POLICY_PAGE_REVIEWED"
+    },
+    {
+      "source_id": "SCHLOSSER-RPM-S2C-2026",
+      "publisher": "Review Journal of Autism and Developmental Disorders",
+      "title": "Systematic Review of Authorship in Rapid Prompting Method, Spelling to Communicate, and Variants: Outcomes, Significance and Clinical Implications",
+      "published_on": "2026-07-17",
+      "doi": "10.1007/s40489-026-00569-7",
+      "source_url": "https://link.springer.com/article/10.1007/s40489-026-00569-7",
+      "source_type": "SYSTEMATIC_REVIEW",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "rapid prompting method",
+        "spelling to communicate",
+        "authorship",
+        "prompt dependency"
+      ],
+      "claim_boundary": "Evaluates whether existing RPM/S2C research can independently demonstrate authorship; it does not establish absence of cognition or communicative potential in nonspeaking people.",
+      "review_state": "PRIMARY_ABSTRACT_AND_METHODS_SUMMARY_REVIEWED"
+    },
+    {
+      "source_id": "MILTON-WISEMAN-1999-GANZFELD",
+      "publisher": "Psychological Bulletin",
+      "title": "Does Psi Exist? Lack of Replication of an Anomalous Process of Information Transfer",
+      "published_on": "1999",
+      "doi": "10.1037/0033-2909.125.4.387",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/10414223/",
+      "source_type": "META_ANALYSIS",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "ganzfeld",
+        "telepathy",
+        "replication",
+        "publication bias",
+        "methodology"
+      ],
+      "claim_boundary": "A counter-source on one experimental telepathy literature; failure to replicate that effect does not by itself settle every anomalous-cognition claim.",
+      "review_state": "PRIMARY_ABSTRACT_REVIEWED"
+    },
+    {
+      "source_id": "GRAFF-RADFORD-2017-CAUDATE-NETWORKS",
+      "publisher": "Neurology",
+      "title": "Caudate nucleus as a component of networks controlling behavior",
+      "published_on": "2017",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5696645/",
+      "source_type": "PRIMARY_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "caudate nucleus",
+        "functional connectivity",
+        "cognitive networks",
+        "behaviour"
+      ],
+      "claim_boundary": "Supports ordinary network functions and connectivity of the caudate; it provides no evidence that caudate anatomy enables telepathy, remote viewing or nonlocal transfer.",
+      "review_state": "PRIMARY_RECORD_REVIEWED"
+    },
+    {
       "source_id": "ATW-SAMADHI-1",
       "publisher": "Awaken the World",
       "creator": "Daniel Schmidt",
@@ -307,7 +390,7 @@
   "candidate_links": [
     {
       "from": [
-        "MBB-KY-DICKENS-2025-10-27",
+        "MBB-KY-DICKENS-2025-10-24",
         "REDDIT-NTN-1EWRB8E"
       ],
       "relation": "BOUNDED_ANALOGY",
@@ -323,7 +406,7 @@
     },
     {
       "from": [
-        "MBB-KY-DICKENS-2025-10-27",
+        "MBB-KY-DICKENS-2025-10-24",
         "REDDIT-NTN-1OEHUW4",
         "MBB-JAMES-GIORDANO-2026-09-11"
       ],
@@ -340,17 +423,39 @@
       ],
       "relation": "CONTEMPLATIVE_PHILOSOPHY_COMPARISON",
       "note": "Compares nondual deconstruction of self with personal, information and process-continuity models; no evidential promotion."
+    },
+    {
+      "from": [
+        "MBB-KY-DICKENS-2025-10-24",
+        "COUNTER-TTG-TELEPATHY-TAPES-2026-02-09",
+        "ASHA-FC-POSITION-2018",
+        "SCHLOSSER-RPM-S2C-2026"
+      ],
+      "relation": "METHODOLOGICAL_COUNTERWEIGHT",
+      "note": "Telepathy testimony involving prompted or assisted communication must remain separate from independently validated authorship; cognition and authorship are distinct questions."
+    },
+    {
+      "from": [
+        "REDDIT-NTN-1OEHUW4",
+        "MBB-JAMES-GIORDANO-2026-09-11",
+        "GRAFF-RADFORD-2017-CAUDATE-NETWORKS",
+        "MILTON-WISEMAN-1999-GANZFELD"
+      ],
+      "relation": "NEUROBIOLOGY_AND_REPLICATION_BOUNDARY",
+      "note": "Ordinary caudate network findings and historical interest cannot supply a transmission mechanism; anomalous-transfer claims require blinded, independently replicated evidence."
     }
   ],
   "test_requirements": [
     "Preregister targets, matching rules, exclusions and stopping criteria.",
     "Record reports independently before participant contact or feedback.",
     "Use sensory isolation, randomized targets, time synchronization and tamper-evident logs.",
+    "For prompted, facilitated or letter-board communication, verify authorship with blinded message-passing controls that prevent facilitator knowledge, cueing and board movement from determining responses.",
+    "Treat demonstrated cognition, independent authorship and anomalous information transfer as three separate hypotheses.",
     "Separate accuracy from confidence, vividness and retrospective similarity.",
     "Replicate across independent teams and include adversarial leakage review.",
     "If hyperscanning is used, test whether cross-brain prediction exceeds shared-stimulus and physiological confounds."
   ],
-  "next_gate": "Human review of exact episode pages or transcripts, disability-rights and facilitated-communication critiques, and cited primary sources before canonical BQ or public-page integration.",
+  "next_gate": "Human review of full audio or transcripts where claims are consequential, additional disability-rights perspectives, independent authorship methods, and cited primary sources before canonical BQ or public-page integration.",
   "roadmap_alignment": {
     "horizon": "2026-2027",
     "programme": "v0.16-v0.20 governed core moving into v0.21-v0.39 scientific evidence intelligence",
@@ -358,8 +463,10 @@
       {
         "rank": 1,
         "sources": [
-          "MBB-KY-DICKENS-2025-10-27",
-          "NEJM-CLAASSEN-2024-CMD"
+          "MBB-KY-DICKENS-2025-10-24",
+          "NEJM-CLAASSEN-2024-CMD",
+          "ASHA-FC-POSITION-2018",
+          "SCHLOSSER-RPM-S2C-2026"
         ],
         "use": "BQ001 subquestion map: covert cognition, communication access and claims of anomalous transfer",
         "deliverable": "methods-and-countermethods dossier with disability-rights review"
@@ -369,9 +476,11 @@
         "sources": [
           "MBB-JAMES-GIORDANO-2026-09-11",
           "REDDIT-NTN-1OEHUW4",
-          "PNAS-STEPHENS-2010"
+          "PNAS-STEPHENS-2010",
+          "GRAFF-RADFORD-2017-CAUDATE-NETWORKS",
+          "MILTON-WISEMAN-1999-GANZFELD"
         ],
-        "use": "Neurobiology bridge: caudate/salience, entheogens and inter-brain coupling",
+        "use": "Neurobiology boundary: ordinary caudate/salience functions, entheogen hypotheses and inter-brain coupling, separated from transmission evidence",
         "deliverable": "mechanism matrix separating neural susceptibility from transmission evidence"
       },
       {
@@ -395,7 +504,7 @@
         "rank": 5,
         "sources": [
           "MBB-BARBRA-BANNER-2026-09-04",
-          "MBB-LISA-KUDROW-2026-08"
+          "MBB-LISA-KUDROW-2026-07-21-23"
         ],
         "use": "Testimony schema stress-test for mediumship, intuition and claircognizance",
         "deliverable": "claim-level testimony records linked to falsifiable questions, not conclusions"
@@ -429,7 +538,7 @@
         "title": "Mind Between Minds",
         "sources": [
           "PNAS-STEPHENS-2010",
-          "MBB-KY-DICKENS-2025-10-27",
+          "MBB-KY-DICKENS-2025-10-24",
           "MBB-JAMES-GIORDANO-2026-09-11"
         ],
         "purpose": "Distinguish ordinary neural coupling, assisted communication, anomalous information-transfer claims and shared-space testimony."
@@ -457,7 +566,7 @@
         "title": "After-Death Communication Testimony",
         "sources": [
           "MBB-BARBRA-BANNER-2026-09-04",
-          "MBB-LISA-KUDROW-2026-08"
+          "MBB-LISA-KUDROW-2026-07-21-23"
         ],
         "purpose": "Preserve attributed testimony, cultural meaning and grief context; link claims to prospective tests and counter-explanations."
       }
