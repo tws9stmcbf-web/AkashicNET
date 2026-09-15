@@ -342,3 +342,26 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
   .portal-heart { font-size:1.08rem; }
   .portal-mantra .portal-signature { font-size:.94rem; }
 }
+
+
+/* Deeper meaning of the Portal */
+.portal-meaning { padding:clamp(4.5rem,8vw,7rem) clamp(1.25rem,7vw,7rem); border-bottom:1px solid var(--line); background:radial-gradient(circle at 78% 15%,rgba(189,166,255,.12),transparent 28rem),linear-gradient(180deg,#07100f,#091412); }
+.portal-meaning-intro { display:grid; grid-template-columns:minmax(12rem,.48fr) minmax(0,1.52fr); column-gap:clamp(2rem,7vw,8rem); }
+.portal-meaning-intro h2 { margin:0 0 1.5rem; font:400 clamp(3rem,6vw,6.2rem)/.95 Georgia,serif; letter-spacing:-.05em; }
+.portal-meaning-intro>p:last-child { grid-column:2; max-width:52rem; color:#c7c5ba; font-size:1.08rem; line-height:1.8; }
+.portal-meaning-grid { display:grid; grid-template-columns:repeat(3,1fr); margin-top:4rem; border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.portal-meaning-grid article { min-height:24rem; padding:2rem clamp(1.35rem,3vw,2.7rem); border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:linear-gradient(145deg,rgba(139,230,199,.045),transparent); }
+.portal-meaning-grid article>span { color:var(--gold); font-size:1.55rem; }
+.portal-meaning-grid h3 { margin:4.5rem 0 1.3rem; font:400 clamp(1.65rem,2.8vw,2.45rem)/1.06 Georgia,serif; }
+.portal-meaning-grid p { color:var(--muted); line-height:1.75; }
+.portal-meaning blockquote { max-width:72rem; margin:clamp(3rem,6vw,5rem) auto 1.5rem; color:#f0d794; font:italic clamp(1.65rem,3.3vw,3.25rem)/1.35 Georgia,serif; text-align:center; }
+.portal-meaning-boundary { max-width:64rem; margin:0 auto; padding-top:1.5rem; border-top:1px solid rgba(231,188,102,.25); color:var(--muted); font-size:.83rem; line-height:1.7; text-align:center; }
+.portal-meaning-boundary strong { color:var(--gold); }
+@media (max-width:850px) {
+  .portal-meaning-intro { grid-template-columns:1fr; }
+  .portal-meaning-intro .section-label { margin-bottom:1.5rem; }
+  .portal-meaning-intro>p:last-child { grid-column:1; }
+  .portal-meaning-grid { grid-template-columns:1fr; }
+  .portal-meaning-grid article { min-height:auto; }
+  .portal-meaning-grid h3 { margin-top:2.5rem; }
+}

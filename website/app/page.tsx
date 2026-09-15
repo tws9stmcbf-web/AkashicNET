@@ -64,6 +64,33 @@ export default function Home() {
         <p className="hero-note">Public portal · Protected corpus · Human-governed</p>
       </section>
 
+      <section className="portal-meaning" aria-labelledby="portal-meaning-title">
+        <div className="portal-meaning-intro">
+          <p className="section-label">Beyond the surface</p>
+          <h2 id="portal-meaning-title">What does the Portal mean?</h2>
+          <p>The Portal to Infinity is an invitation to look beyond the boundaries through which we usually organise reality: self and other, mind and matter, science and spirituality, humanity and the wider living world.</p>
+        </div>
+        <div className="portal-meaning-grid">
+          <article>
+            <span aria-hidden="true">◎</span>
+            <h3>The toroidal metaphor</h3>
+            <p>The torus represents reciprocal flow. Awareness turns inward through reflection, moves outward through relationship and service, then returns carrying new information. It is a visual metaphor for participation, not evidence of a universal physical force.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">♾️</span>
+            <h3>From intelligence to meta-intelligence</h3>
+            <p>Intelligence solves within a frame. Meta-intelligence examines the frame itself: how knowledge is formed, where bias enters, what remains uncertain and how the process can improve. The loop stays open to revision.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">💗</span>
+            <h3>Metta as the compass</h3>
+            <p>Capability alone does not determine direction. Metta, or loving-kindness, asks intelligence to serve non-harm, dignity and flourishing. In AkashicNET, wisdom is measured partly by how responsibly knowledge is held and shared.</p>
+          </article>
+        </div>
+        <blockquote>“The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.”</blockquote>
+        <p className="portal-meaning-boundary"><strong>Interpretive boundary:</strong> Māyā and the veil are philosophical and contemplative language for apparent separation. They are not presented here as proof that physical boundaries are unreal or that metaphysical claims have been scientifically established.</p>
+      </section>
+
       <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "12px 0 64px" }} aria-labelledby="akashicvision-gateway-title">
         <a href="/akashicvision" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,340px),1fr))", overflow: "hidden", border: "1px solid rgba(216,185,92,.32)", borderRadius: 28, background: "radial-gradient(circle at 20% 10%,rgba(75,161,198,.19),rgba(7,11,26,.98) 60%)", color: "inherit", textDecoration: "none", boxShadow: "0 28px 90px rgba(0,0,0,.34)" }}>
           <img src="/images/akashicvision-nde-merkaba-flower-of-life.webp" alt="Artistic AkashicVISION scene: a luminous toroidal heart within a Merkaba, surrounded by a faint Flower of Life and cosmic library." style={{ width: "100%", height: "100%", minHeight: 340, objectFit: "cover" }} />
