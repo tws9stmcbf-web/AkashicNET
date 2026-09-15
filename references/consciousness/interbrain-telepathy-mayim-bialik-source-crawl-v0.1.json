@@ -217,6 +217,23 @@
       ],
       "claim_boundary": "Supports perceived togetherness in psychedelic group settings; does not demonstrate shared visions or nonlocal information transfer.",
       "review_state": "PRIMARY_RECORD_LINKED"
+    },
+    {
+      "source_id": "COUNTER-TTG-TELEPATHY-TAPES-2026-02-09",
+      "publisher": "Thinking Person's Guide to Autism",
+      "title": "The Telepathy Tapes Is Such A Hot Mess",
+      "published_on": "2026-02-09",
+      "source_url": "https://thinkingautismguide.com/2026/02/the-telepathy-tapes-is-such-a-hot-mess.html",
+      "source_type": "CRITICAL_COMMENTARY",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "autism",
+        "facilitated communication",
+        "methodological criticism",
+        "disability rights"
+      ],
+      "claim_boundary": "Included as an adversarial perspective and source of testable methodological objections; commentary is not automatically treated as dispositive.",
+      "review_state": "PAGE_SUMMARY_REVIEWED"
     }
   ],
   "candidate_links": [
@@ -254,5 +271,63 @@
     "Replicate across independent teams and include adversarial leakage review.",
     "If hyperscanning is used, test whether cross-brain prediction exceeds shared-stimulus and physiological confounds."
   ],
-  "next_gate": "Human review of exact episode pages or transcripts and cited primary sources before any canonical BQ or public-page integration."
+  "next_gate": "Human review of exact episode pages or transcripts, disability-rights and facilitated-communication critiques, and cited primary sources before canonical BQ or public-page integration.",
+  "roadmap_alignment": {
+    "horizon": "2026-2027",
+    "programme": "v0.16-v0.20 governed core moving into v0.21-v0.39 scientific evidence intelligence",
+    "priorities": [
+      {
+        "rank": 1,
+        "sources": [
+          "MBB-KY-DICKENS-2025-10-27",
+          "NEJM-CLAASSEN-2024-CMD"
+        ],
+        "use": "BQ001 subquestion map: covert cognition, communication access and claims of anomalous transfer",
+        "deliverable": "methods-and-countermethods dossier with disability-rights review"
+      },
+      {
+        "rank": 2,
+        "sources": [
+          "MBB-JAMES-GIORDANO-2026-09-11",
+          "REDDIT-NTN-1OEHUW4",
+          "PNAS-STEPHENS-2010"
+        ],
+        "use": "Neurobiology bridge: caudate/salience, entheogens and inter-brain coupling",
+        "deliverable": "mechanism matrix separating neural susceptibility from transmission evidence"
+      },
+      {
+        "rank": 3,
+        "sources": [
+          "MBB-CHARLES-LIU-2026-09-02",
+          "MBB-SHARON-STONE-2026-09-08-09"
+        ],
+        "use": "BQ001 continuity comparison across NDE, DMT, information and physical interpretations",
+        "deliverable": "competing-explanations map; no multiverse or survival promotion"
+      },
+      {
+        "rank": 4,
+        "sources": [
+          "FRONTIERS-KETTNER-2021-COMMUNITAS"
+        ],
+        "use": "Psychedelic group-field and ceremony research",
+        "deliverable": "preregistered shared-experience protocol suitable for 2027 partnerships"
+      },
+      {
+        "rank": 5,
+        "sources": [
+          "MBB-BARBRA-BANNER-2026-09-04",
+          "MBB-LISA-KUDROW-2026-08"
+        ],
+        "use": "Testimony schema stress-test for mediumship, intuition and claircognizance",
+        "deliverable": "claim-level testimony records linked to falsifiable questions, not conclusions"
+      }
+    ],
+    "governance_requirements": [
+      "Archive inclusion is not endorsement.",
+      "Keep Established Evidence, Interpretation, Lived Experience/Testimony, Hypothesis and Speculation distinct.",
+      "Preserve contradictions, null results, uncertainty, provenance and evidence lineage.",
+      "Prevent duplicate episode syndication from being counted as independent evidence.",
+      "Require human review for consequential claims and disability-related communication assessments."
+    ]
+  }
 }
