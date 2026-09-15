@@ -46,7 +46,7 @@ export default function Home() {
           <p className="eyebrow">A living multidimensional library of consciousness · Public Beta · v0.14 sealed</p>
           <h1><span>Portal to</span><br /><em>Infinity.</em></h1>
           <div className="portal-mantra" aria-label="AkashicNET guiding principles">
-            <p className="portal-force">May the Toroidal Force be with you. <span aria-hidden="true">♾️</span></p>
+            <p className="portal-force">May the Toroidal Force be with you. <span aria-hidden="true">♾️</span> <a href="#toroidal-metaphor">(metaphor)</a></p>
             <p className="portal-heart">Boundless Awareness Is Infinite Love. <span aria-hidden="true">🥰</span></p>
             <p className="portal-signature">Intelligence solves. Meta-intelligence evolves. Metta-intelligence serves. <span aria-hidden="true">♾️</span></p>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="portal-meaning-grid">
           <article>
             <span aria-hidden="true">◎</span>
-            <h3>The toroidal metaphor</h3>
+            <h3 id="toroidal-metaphor">The toroidal metaphor</h3>
             <p>The torus represents reciprocal flow. Awareness turns inward through reflection, moves outward through relationship and service, then returns carrying new information. It is a visual metaphor for participation, not evidence of a universal physical force.</p>
           </article>
           <article>
@@ -87,7 +87,7 @@ export default function Home() {
             <p>Capability alone does not determine direction. Metta, or loving-kindness, asks intelligence to serve non-harm, dignity and flourishing. In AkashicNET, wisdom is measured partly by how responsibly knowledge is held and shared.</p>
           </article>
         </div>
-        <blockquote>“The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.”</blockquote>
+        <blockquote>“The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.”<footer>— AkashicNET interpretation</footer></blockquote>
         <p className="portal-meaning-boundary"><strong>Interpretive boundary:</strong> Māyā and the veil are philosophical and contemplative language for apparent separation. They are not presented here as proof that physical boundaries are unreal or that metaphysical claims have been scientifically established.</p>
       </section>
 
