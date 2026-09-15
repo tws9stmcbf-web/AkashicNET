@@ -201,6 +201,7 @@ export default function Home() {
         </div>
         <div className="plain-summary">
           <p><strong>In one sentence:</strong> AkashicNET is an attempt to transform years of careful interdisciplinary curation into a navigable, ethical and evolving library—without pretending that every intriguing connection is true.</p>
+          <p><a className="text-link" href="/living-library-map">Explore the interactive Living Tree of Knowledge →</a></p>
         </div>
       </section>
 
