@@ -74,7 +74,7 @@ export default function SpiritPage() {
       <section id="journey" style={{ width: "min(1100px,calc(100% - 32px))", margin: "0 auto", padding: "30px 0 90px" }}>
         <div className="section-heading">
           <div><p className="section-label">THE JOURNEY</p><h2>One path, many kinds of meaning.</h2></div>
-          <p>The story is presented in readable layers rather than embedded as fragile, AI-generated microtext inside a single poster.</p>
+          <p>The story is presented in readable, accessible layers rather than relying on tiny lettering embedded inside a single poster.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: 18 }}>
           {journeys.map((item) => (
