@@ -54,7 +54,7 @@ const latestHighlights = [
     href: "/insights/interstellar-weather-schumann-september-2026",
     image: "/images/interstellar-weather-schumann-event-2026-09-12.png",
     imageAlt: "Diagram connecting solar wind, the ionosphere, lightning, Earth resonance and human experience.",
-    evidence: "Observation · Testimony · Hypothesis",
+    evidence: "Established Evidence · Lived Experience/Testimony · Hypothesis",
   },
   {
     category: "Heart · Consciousness",
@@ -66,7 +66,7 @@ const latestHighlights = [
     href: "/metta-awareness",
     image: "/images/akashicnet-toroidal-love-logo.png",
     imageAlt: "AkashicNET toroidal heart emblem.",
-    evidence: "Contemplative Practice · Interpretation",
+    evidence: "Interpretation",
   },
   {
     category: "Spiritual Sci-Fi",
@@ -78,7 +78,7 @@ const latestHighlights = [
     href: "/spiritual-sci-fi/power-of-the-doctor",
     image: "/images/power-of-the-doctor-two-toroidal-hearts.png",
     imageAlt: "Two luminous toroidal hearts in a spiritual science-fiction composition.",
-    evidence: "The Arts · Interpretation · Speculation",
+    evidence: "Interpretation · Speculation",
   },
   {
     category: "Living Reference",
@@ -90,7 +90,7 @@ const latestHighlights = [
     href: "/akashicomni",
     image: "/images/akashicomni-metadimensional-gateway.webp",
     imageAlt: "AkashicOMNI metadimensional gateway artwork.",
-    evidence: "Framework · Human-Governed",
+    evidence: "Interpretation",
   },
 ] as const;
 
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="latest-highlights-heading">
           <div>
             <p className="section-label">New Publications · Many Highlights</p>
-            <h2 id="latest-highlights-title">Fresh paths through the living library.</h2>
+            <h2 id="latest-highlights-title">Fresh Paths Through the Living Library.</h2>
           </div>
           <div className="latest-highlights-guide">
             <strong>{latestHighlights.length} highlights</strong>
