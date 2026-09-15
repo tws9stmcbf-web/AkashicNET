@@ -26,3 +26,5 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 - `akashicomni-global-food-security-13d.webp` — AI-assisted AkashicNET analytical artwork added on 14 September 2026 for the same report. It visualises the canonical AkashicOMNI v0.3.0 thirteen-lens framework, including `HOMESENSE · Phase 8`; it is not a measured risk map or evidence of literal dimensions. No private corpus data is present.
 
 The binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
+
+- `public/images/akashicnet-portal-to-infinity-7d-hero.webp` — generated cinematic homepage artwork; seven-dimensional portal imagery is artistic metaphor, not scientific evidence.

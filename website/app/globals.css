@@ -267,3 +267,47 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
 @media (max-width:700px) { .constellation-grid,.destination-pair { grid-template-columns:1fr; }.constellation-grid article:last-child { grid-column:1; }.destination-pair article:first-child { border-right:0; border-bottom:1px solid var(--line); }.destination-pair article { min-height:58svh; } }
 
 @media (max-width:700px) { .roadmap-grid .doctor-portal { grid-column:1; }.doctor-portal-link { align-items:flex-start; }.time-box { width:5.2rem; }.doctor-portal-copy strong { font-size:1.75rem; } }
+
+
+/* Portal to Infinity homepage hero */
+.portal-hero {
+  isolation:isolate;
+  grid-template-columns:minmax(0,1fr);
+  min-height:100svh;
+  background-image:linear-gradient(90deg,rgba(3,7,15,.9) 0%,rgba(3,7,15,.55) 48%,rgba(3,7,15,.28) 72%,rgba(3,7,15,.58) 100%),url('/images/akashicnet-portal-to-infinity-7d-hero.webp');
+  background-position:center;
+  background-size:cover;
+}
+.portal-hero::before { opacity:.22; background-size:4.5rem 4.5rem; animation:portal-grid-drift 24s linear infinite; }
+.portal-hero::after { height:38%; background:linear-gradient(transparent,rgba(3,10,9,.96)); }
+.portal-copy { max-width:53rem; padding:clamp(1.25rem,3vw,2.5rem); border:1px solid rgba(231,188,102,.2); background:linear-gradient(135deg,rgba(3,9,16,.78),rgba(3,9,16,.36)); box-shadow:0 2rem 8rem rgba(0,0,0,.42); backdrop-filter:blur(5px); }
+.portal-copy h1 { text-shadow:0 0 2.5rem rgba(189,166,255,.22); }
+.portal-copy h1 span { color:var(--ink); }
+.portal-copy h1 em { color:#e7bc66; }
+.portal-signature { max-width:44rem; margin:-.25rem 0 1.25rem; color:#f0d794; font:italic clamp(1rem,1.7vw,1.3rem)/1.55 Georgia,serif; }
+.portal-atmosphere { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.dimension-layer { position:absolute; left:61%; top:46%; width:min(55vw,48rem); aspect-ratio:1; border:1px solid rgba(189,166,255,.28); border-radius:50%; translate:-50% -50%; box-shadow:0 0 5rem rgba(139,230,199,.09),inset 0 0 4rem rgba(189,166,255,.08); }
+.dimension-one { animation:portal-breathe 9s ease-in-out infinite; }
+.dimension-two { scale:.78; border-style:dashed; animation:portal-spin 34s linear infinite; }
+.dimension-three { scale:.58; border-color:rgba(231,188,102,.32); animation:portal-spin-reverse 25s linear infinite; }
+.cymatic-field { position:absolute; left:61%; top:46%; width:min(34vw,30rem); aspect-ratio:1; translate:-50% -50%; border-radius:50%; opacity:.42; background:repeating-radial-gradient(circle,transparent 0 1.15rem,rgba(139,230,199,.15) 1.2rem 1.28rem); animation:cymatic-pulse 7s ease-in-out infinite; }
+.metta-pulse { position:absolute; left:61%; top:46%; width:8rem; aspect-ratio:1; translate:-50% -50%; border-radius:50%; background:radial-gradient(circle,rgba(255,173,196,.42),rgba(231,188,102,.13) 45%,transparent 72%); filter:blur(2px); animation:metta-glow 5.5s ease-in-out infinite; }
+.portal-depth-label { position:absolute; right:clamp(1.25rem,5vw,5rem); top:8.5rem; z-index:2; display:flex; flex-direction:column; align-items:flex-end; gap:.35rem; color:var(--gold); text-transform:uppercase; letter-spacing:.15em; }
+.portal-depth-label span { font:400 clamp(1.4rem,2.4vw,2.2rem) Georgia,serif; }
+.portal-depth-label small { color:#d5d2c8; font-size:.58rem; }
+@keyframes portal-grid-drift { to { background-position:5rem 5rem; } }
+@keyframes portal-breathe { 0%,100% { transform:scale(.96); opacity:.35; } 50% { transform:scale(1.04); opacity:.72; } }
+@keyframes portal-spin { to { transform:rotate(360deg); } }
+@keyframes portal-spin-reverse { to { transform:rotate(-360deg); } }
+@keyframes cymatic-pulse { 0%,100% { transform:scale(.92); opacity:.25; } 50% { transform:scale(1.08); opacity:.52; } }
+@keyframes metta-glow { 0%,100% { transform:scale(.82); opacity:.48; } 50% { transform:scale(1.28); opacity:.9; } }
+@media (max-width:700px) {
+  .portal-hero { min-height:100svh; background-position:58% center; padding-top:7.5rem; }
+  .portal-copy { align-self:end; margin-bottom:4rem; }
+  .portal-copy h1 { font-size:clamp(3.7rem,18vw,6.2rem); }
+  .dimension-layer,.cymatic-field,.metta-pulse { left:62%; top:37%; }
+  .portal-depth-label { top:6.2rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .portal-hero::before,.dimension-layer,.cymatic-field,.metta-pulse { animation:none!important; }
+}

@@ -37,20 +37,25 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">A living knowledge network · Public Beta · v0.14 sealed</p>
-          <h1>Awaken within.<br /><em>Serve without.</em></h1>
-          <p className="lede">AkashicNET explores how consciousness research, lived experience, contemplative wisdom, creativity and planetary knowledge might connect—without confusing possibility with proof.</p>
+      <section className="hero portal-hero" id="top">
+        <div className="portal-atmosphere" aria-hidden="true">
+          <span className="dimension-layer dimension-one"/><span className="dimension-layer dimension-two"/><span className="dimension-layer dimension-three"/>
+          <span className="cymatic-field"/><span className="metta-pulse"/>
+        </div>
+        <div className="hero-copy portal-copy">
+          <p className="eyebrow">A living multidimensional library of consciousness · Public Beta · v0.14 sealed</p>
+          <h1><span>Portal to</span><br /><em>Infinity.</em></h1>
+          <p className="portal-signature">Intelligence solves. Meta-intelligence evolves. Metta-intelligence serves. ♾️</p>
+          <p className="lede">Enter an evidence-governed knowledge network where consciousness research, lived experience, contemplative wisdom, creativity and planetary knowledge can meet without confusing possibility with proof.</p>
           <div className="hero-actions">
-            <a className="primary-link" href="#vision">Explore AkashicNET <span>↘</span></a>
-            <a className="text-link" href="/community">Enter the public commons →</a>
-            <a className="text-link" href="/big-questions/bq002">BQ002 · Where do thoughts come from? →</a>
+            <a className="primary-link" href="#start-here">Enter the portal <span>↘</span></a>
+            <a className="text-link" href="/big-questions">Explore the big questions →</a>
+            <a className="text-link" href="#boundary">How AkashicNET knows →</a>
           </div>
         </div>
-        <div className="orbital" aria-hidden="true">
-          <div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="orbit orbit-three"/><div className="core"><img src="/images/akashicnet-toroidal-love-logo.png" alt=""/></div>
-          <span className="node node-a"/><span className="node node-b"/><span className="node node-c"/>
+        <div className="portal-depth-label" aria-label="Artistic visualisation">
+          <span>3D → 7D</span>
+          <small>Artistic metaphor · not a scientific claim</small>
         </div>
         <p className="hero-note">Public portal · Protected corpus · Human-governed</p>
       </section>
