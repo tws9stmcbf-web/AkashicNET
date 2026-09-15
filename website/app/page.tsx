@@ -18,6 +18,82 @@ const domains = [
   ["Cosmos", "Physics, philosophy, deep time and the unknown"],
 ];
 
+
+const latestHighlights = [
+  {
+    category: "AKN24 · Global Systems",
+    date: "14 Sep 2026",
+    dateTime: "2026-09-14",
+    title: "Global Food Shortages",
+    kicker: "One Step Back · Two Steps Forward",
+    summary: "An evidence-bounded AkashicOMNI analysis of hunger, access, fragile logistics and practical community resilience.",
+    href: "/insights/global-food-shortages-one-step-back-two-steps-forward",
+    image: "/images/akn24-global-food-shortages.webp",
+    imageAlt: "Editorial illustration of global food-system pressure transitioning toward local and community resilience.",
+    evidence: "Established Evidence · Interpretation",
+  },
+  {
+    category: "Vision",
+    date: "14 Sep 2026",
+    dateTime: "2026-09-14",
+    title: "AkashicVISION",
+    kicker: "From the Primordial OM to the Omega Point",
+    summary: "A visionary 2042–2047 direction for meta-awareness and service, grounded in clearly labelled testimony and interpretation.",
+    href: "/akashicvision",
+    image: "/images/akashicvision-nde-merkaba-flower-of-life.webp",
+    imageAlt: "Artistic AkashicVISION scene with a toroidal heart, Merkaba and Flower of Life.",
+    evidence: "Lived Experience/Testimony · Interpretation · Speculation",
+  },
+  {
+    category: "Interstellar Weather",
+    date: "13 Sep 2026",
+    dateTime: "2026-09-13",
+    title: "Schumann Activity Window",
+    kicker: "The 11–12 September Signal",
+    summary: "A dated 13D report separating observed activity, space-weather context, human testimony and unresolved causal pathways.",
+    href: "/insights/interstellar-weather-schumann-september-2026",
+    image: "/images/interstellar-weather-schumann-event-2026-09-12.png",
+    imageAlt: "Diagram connecting solar wind, the ionosphere, lightning, Earth resonance and human experience.",
+    evidence: "Established Evidence · Lived Experience/Testimony · Hypothesis",
+  },
+  {
+    category: "Heart · Consciousness",
+    date: "13 Sep 2026",
+    dateTime: "2026-09-13",
+    title: "Mettā Awareness",
+    kicker: "Boundless Awareness Is Infinite Love",
+    summary: "A contemplative portal exploring loving-kindness as practice, ethical orientation and a bridge between inner and collective flourishing.",
+    href: "/metta-awareness",
+    image: "/images/akashicnet-toroidal-love-logo.png",
+    imageAlt: "AkashicNET toroidal heart emblem.",
+    evidence: "Interpretation",
+  },
+  {
+    category: "Spiritual Sci-Fi",
+    date: "13 Sep 2026",
+    dateTime: "2026-09-13",
+    title: "The Power of the Doctor",
+    kicker: "Two Hearts · One Impossible Interior",
+    summary: "A playful HOMESENSE portal where regeneration, sacred toroidal hearts, sound, story and multidimensional imagination meet.",
+    href: "/spiritual-sci-fi/power-of-the-doctor",
+    image: "/images/power-of-the-doctor-two-toroidal-hearts.png",
+    imageAlt: "Two luminous toroidal hearts in a spiritual science-fiction composition.",
+    evidence: "Interpretation · Speculation",
+  },
+  {
+    category: "Living Reference",
+    date: "14 Sep 2026",
+    dateTime: "2026-09-14",
+    title: "AkashicOMNI v0.3.0",
+    kicker: "Many Dimensions · One Governed Field",
+    summary: "The current orchestration framework for examining sources, systems, experience and uncertainty without collapsing them into one evidence tier.",
+    href: "/akashicomni",
+    image: "/images/akashicomni-metadimensional-gateway.webp",
+    imageAlt: "AkashicOMNI metadimensional gateway artwork.",
+    evidence: "Interpretation",
+  },
+] as const;
+
 const steps = [
   ["Discover", "Find a public source or question worth preserving."],
   ["Trace", "Record origin, date, context and rights boundary."],
@@ -33,7 +109,7 @@ export default function Home() {
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="/insights/interstellar-weather-schumann-september-2026">Insights</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
         </nav>
       </header>
 
@@ -60,43 +136,42 @@ export default function Home() {
         <p className="hero-note">Public portal · Protected corpus · Human-governed</p>
       </section>
 
-      <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "12px 0 64px" }} aria-labelledby="akashicvision-gateway-title">
-        <a href="/akashicvision" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,340px),1fr))", overflow: "hidden", border: "1px solid rgba(216,185,92,.32)", borderRadius: 28, background: "radial-gradient(circle at 20% 10%,rgba(75,161,198,.19),rgba(7,11,26,.98) 60%)", color: "inherit", textDecoration: "none", boxShadow: "0 28px 90px rgba(0,0,0,.34)" }}>
-          <img src="/images/akashicvision-nde-merkaba-flower-of-life.webp" alt="Artistic AkashicVISION scene: a luminous toroidal heart within a Merkaba, surrounded by a faint Flower of Life and cosmic library." style={{ width: "100%", height: "100%", minHeight: 340, objectFit: "cover" }} />
-          <span style={{ padding: "clamp(28px,5vw,58px)", alignSelf: "center" }}>
-            <small className="section-label">VISION · INTERPRETATION · SPECULATION</small>
-            <strong id="akashicvision-gateway-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2.4rem,5vw,5rem)", lineHeight: .95 }}>AkashicVISION</strong>
-            <span style={{ display: "block", color: "#e7cd7e", fontSize: "1.05rem", letterSpacing: ".06em" }}>From the Primordial OM to the Omega Point</span>
-            <span style={{ display: "block", marginTop: 20, color: "#cbd0dd", lineHeight: 1.75 }}>A visionary portal connecting an Easter Monday 2024 threshold perception with the intentional opening of the public channel at 3:33 a.m. on Easter Monday 2026—translated into an evidence-bounded 2042–2047 direction for meta-awareness and service.</span>
-            <b style={{ display: "inline-block", marginTop: 24, color: "#e7cd7e" }}>Enter the vision →</b>
-          </span>
-        </a>
-        <p style={{ margin: "18px 4px 0", color: "#aeb8c9", lineHeight: 1.7 }}>Primary testimony: <a href="https://www.reddit.com/r/NeuronsToNirvana/comments/1by9vb4/hospital_after_anaesthesia_epiphany_true_reality/" style={{ color: "#e7cd7e" }}>Hospital After Anaesthesia Epiphany: True Reality ↗</a> <span>· Lived experience and interpretation, not proof.</span></p>
-      </section>
-
-      <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "24px 0 64px" }} aria-labelledby="featured-insight-title">
-        <a href="/insights/interstellar-weather-schumann-september-2026" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,320px),1fr))", gap: 0, overflow: "hidden", border: "1px solid rgba(216,185,92,.28)", borderRadius: 26, background: "linear-gradient(145deg,rgba(18,28,57,.96),rgba(7,11,26,.98))", color: "inherit", textDecoration: "none", boxShadow: "0 24px 80px rgba(0,0,0,.3)" }}>
-          <img src="/images/interstellar-weather-schumann-event-2026-09-12.png" alt="AkashicNET Interstellar Weather event overview connecting solar wind, the ionosphere, lightning, Earth resonance and human experience." style={{ width: "100%", height: "100%", minHeight: 280, objectFit: "cover" }} />
-          <span style={{ padding: "clamp(26px,5vw,54px)", alignSelf: "center" }}>
-            <small className="section-label">INSIGHTS NEWS DESK · INTERDIMENSIONAL LIGHTEXPLORERS HOTLINE</small>
-            <strong id="featured-insight-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2rem,4.5vw,4.4rem)", lineHeight: 1 }}>Schumann Activity Window</strong>
-            <span style={{ display: "block", color: "#cbd0dd", lineHeight: 1.7 }}>A dated AkashicNET 13D report on the 11–12 September signal, its space-weather context, human testimony and unresolved causal pathways.</span>
-            <b style={{ display: "inline-block", marginTop: 22, color: "#e7cd7e" }}>Read the report →</b>
-          </span>
-        </a>
-      </section>
-
-      <section style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto", padding: "0 0 64px" }} aria-labelledby="food-security-insight-title">
-        <a href="/insights/global-food-shortages-one-step-back-two-steps-forward" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,320px),1fr))", gap: 0, overflow: "hidden", border: "1px solid rgba(216,185,92,.28)", borderRadius: 26, background: "linear-gradient(145deg,rgba(18,28,57,.96),rgba(7,11,26,.98))", color: "inherit", textDecoration: "none", boxShadow: "0 24px 80px rgba(0,0,0,.3)" }}>
-          <img src="/images/akn24-global-food-shortages.webp" alt="AKN24 editorial illustration showing global food-system pressure transitioning toward local and community resilience." style={{ width: "100%", height: "100%", minHeight: 280, objectFit: "cover" }} />
-          <span style={{ padding: "clamp(26px,5vw,54px)", alignSelf: "center" }}>
-            <small className="section-label">AKN24 · GLOBAL SYSTEMS DESK</small>
-            <strong id="food-security-insight-title" style={{ display: "block", margin: "16px 0", fontFamily: "var(--font-display,serif)", fontSize: "clamp(2rem,4.5vw,4.4rem)", lineHeight: 1 }}>Global Food Shortages</strong>
-            <span style={{ display: "block", color: "#e7cd7e", fontWeight: 800, letterSpacing: ".06em" }}>ONE STEP BACK · TWO STEPS FORWARD</span>
-            <span style={{ display: "block", marginTop: 16, color: "#cbd0dd", lineHeight: 1.7 }}>An evidence-bounded AkashicOMNI v0.3.0 analysis of hunger, access, fragile logistics, leadership awareness and practical community resilience.</span>
-            <b style={{ display: "inline-block", marginTop: 22, color: "#e7cd7e" }}>Read the report →</b>
-          </span>
-        </a>
+      <section className="latest-highlights" id="latest-highlights" aria-labelledby="latest-highlights-title">
+        <div className="latest-highlights-heading">
+          <div>
+            <p className="section-label">New Publications · Many Highlights</p>
+            <h2 id="latest-highlights-title">Fresh Paths Through the Living Library.</h2>
+          </div>
+          <div className="latest-highlights-guide">
+            <strong>{latestHighlights.length} highlights</strong>
+            <span>Scroll to explore →</span>
+          </div>
+        </div>
+        <div className="latest-highlights-rail">
+          {latestHighlights.map((item) => (
+            <article className="latest-highlight-card" key={item.href}>
+              <a href={item.href} aria-label={`Read ${item.title}`}>
+                <span className="latest-highlight-image">
+                  <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+                </span>
+                <span className="latest-highlight-copy">
+                  <span className="latest-highlight-meta">
+                    <small>{item.category}</small>
+                    <time dateTime={item.dateTime}>{item.date}</time>
+                  </span>
+                  <strong>{item.title}</strong>
+                  <b>{item.kicker}</b>
+                  <span className="latest-highlight-summary">{item.summary}</span>
+                  <span className="latest-highlight-footer">
+                    <small>{item.evidence}</small>
+                    <i aria-hidden="true">↗</i>
+                  </span>
+                </span>
+              </a>
+            </article>
+          ))}
+        </div>
+        <p className="latest-highlights-note">Publication dates describe AkashicNET releases. Evidence labels distinguish established evidence, interpretation, lived experience/testimony, hypothesis and speculation.</p>
       </section>
 
       <section className="snapshot" aria-label="Public project snapshot">
