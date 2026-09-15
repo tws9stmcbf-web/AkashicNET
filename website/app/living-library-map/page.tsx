@@ -50,8 +50,17 @@ const evidenceLegend = [
 export default function LivingLibraryMap() {
   const [active, setActive] = useState<Node | null>(null);
 
+  const isTouchFirst = (node: Node) =>
+    window.matchMedia("(hover: none)").matches && active?.id !== node.id;
+
+  const preview = (node: Node) => {
+    if (!window.matchMedia("(hover: none)").matches) {
+      setActive(node);
+    }
+  };
+
   const choose = (node: Node) => {
-    if (window.matchMedia("(hover: none)").matches && active?.id !== node.id) {
+    if (isTouchFirst(node)) {
       setActive(node);
       return;
     }
@@ -88,7 +97,7 @@ export default function LivingLibraryMap() {
                 style={{ left:`${node.x}%`, top:`${node.y}%` }}
                 aria-label={`${node.label}: ${node.note}`}
                 aria-pressed={active?.id === node.id}
-                onFocus={() => setActive(node)}
+                onFocus={() => preview(node)}
                 onMouseEnter={() => setActive(node)}
                 onClick={() => choose(node)}
               >
