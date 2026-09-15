@@ -45,7 +45,11 @@ export default function Home() {
         <div className="hero-copy portal-copy">
           <p className="eyebrow">A living multidimensional library of consciousness · Public Beta · v0.14 sealed</p>
           <h1><span>Portal to</span><br /><em>Infinity.</em></h1>
-          <p className="portal-signature">Intelligence solves. Meta-intelligence evolves. Metta-intelligence serves. ♾️</p>
+          <div className="portal-mantra" aria-label="AkashicNET guiding principles">
+            <p className="portal-force">May the Toroidal Force be with you. <span aria-hidden="true">♾️</span></p>
+            <p className="portal-heart">Boundless Awareness Is Infinite Love. <span aria-hidden="true">🥰</span></p>
+            <p className="portal-signature">Intelligence solves. Meta-intelligence evolves. Metta-intelligence serves. <span aria-hidden="true">♾️</span></p>
+          </div>
           <p className="lede">Enter an evidence-governed knowledge network where consciousness research, lived experience, contemplative wisdom, creativity and planetary knowledge can meet without confusing possibility with proof.</p>
           <div className="hero-actions">
             <a className="primary-link" href="#start-here">Enter the portal <span>↘</span></a>
