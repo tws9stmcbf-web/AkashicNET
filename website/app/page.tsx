@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AkashicNET — A living knowledge network",
+  description: "AkashicNET explores how consciousness research, lived experience, contemplative wisdom, creativity and planetary knowledge might connect—without confusing possibility with proof.",
+  alternates: {
+    canonical: "https://akashicnet.org/",
+    languages: { en: "https://akashicnet.org/", de: "https://akashicnet.org/de", es: "https://akashicnet.org/es", "pt-BR": "https://akashicnet.org/pt", fr: "https://akashicnet.org/fr", "x-default": "https://akashicnet.org/" },
+  },
+};
+
 const principles = [
   { number: "01", title: "Evidence before certainty", text: "Claims remain traceable to sources, context and uncertainty. Similar words alone never become proof." },
   { number: "02", title: "Compassion before scale", text: "Bodhisattva-inspired care, harm reduction and human dignity guide how knowledge is connected and shared." },
@@ -29,11 +40,11 @@ const steps = [
 
 export default function Home() {
   return (
-    <main>
+    <main lang="en">
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="/insights/interstellar-weather-schumann-september-2026">Insights</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="/insights/interstellar-weather-schumann-september-2026">Insights</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a><a href="/" aria-current="page">EN</a><a href="/de">DE</a><a href="/es">ES</a><a href="/pt">PT</a><a href="/fr">FR</a>
         </nav>
       </header>
 
