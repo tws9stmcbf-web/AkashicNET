@@ -1,0 +1,345 @@
+{
+  "schema_version": "0.1",
+  "record_type": "candidate_source_crawl",
+  "crawl_id": "AKN-SC-KARMA-REINCARNATION-OUTLIERS-2026-09-15",
+  "created_at": "2026-09-15",
+  "scope": "Bounded candidate sources on reported past-life memories, reincarnation-type case methods, and psychological or cultural effects of karma belief",
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "related_prs": [
+    329
+  ],
+  "relationship_to_pr_329": "Separate companion crawl only. It supplies a reincarnation and karma comparison lane without changing, depending on, or expanding PR #329's canonical effect.",
+  "canonical_effects": {
+    "bq001_status": "UNRESOLVED",
+    "evidence_promotion": false,
+    "public_synthesis_modified": false,
+    "graph_truth_inference": false,
+    "accepted_edges": 0
+  },
+  "scope_boundaries": [
+    "A scientifically unusual or well-documented case may justify closer study without establishing reincarnation, postmortem survival, or a transfer mechanism.",
+    "Studies of karma belief measure human cognition, attribution, honesty, generosity, punishment, or social judgment; they do not test metaphysical karmic causation.",
+    "Spontaneous childhood reports are kept distinct from hypnotic regression, recovered-memory practices, mediumship, dreams, and adult retrospective narratives.",
+    "Karma and rebirth have non-identical meanings across Hindu, Buddhist, Jain, Sikh, and other traditions; this crawl does not define a universal doctrine.",
+    "Archive inclusion is not endorsement, falsification, or canonical acceptance."
+  ],
+  "retrieval_limits": [
+    "Bibliographic records, abstracts, official repositories, and open full-text records were reviewed; not every source received a line-by-line full-text claim audit.",
+    "No case was independently reinvestigated and no original interview, translation, family record, death record, medical record, or matching procedure was revalidated.",
+    "Case-series publication, pre-identification notes, or apparent correspondence can reduce particular retrospective concerns but cannot by themselves exclude leakage, selective reporting, coincidence, translation effects, fraud, or analytical flexibility.",
+    "Psychological counter-sources on memory and suggestibility identify general risks and do not adjudicate any individual reincarnation-type case.",
+    "No survival mechanism, karmic law, rebirth process, personal identity continuity, or nonlocal information channel is authenticated."
+  ],
+  "rights": {
+    "storage_mode": "metadata_and_claim_summary_only",
+    "reproduce_full_text": false,
+    "reproduce_case_material": false,
+    "reproduce_images": false,
+    "quotations_stored": false,
+    "child_names_or_identifiers_stored": false,
+    "medical_records_stored": false,
+    "creator_and_publisher_rights_preserved": true,
+    "child_privacy_and_safeguarding_required": true
+  },
+  "cultural_handling": {
+    "status": "REVIEW_REQUIRED",
+    "requirements": [
+      "Do not collapse distinct Indian religious and philosophical traditions into a single Westernized reward-punishment model.",
+      "Separate participant belief measures from the doctrines, practices, languages, and communities from which karma and rebirth concepts arise.",
+      "Seek cultural and tradition-specific review before public interpretation.",
+      "Avoid caste, poverty, disability, bereavement, or victim-blaming implications that treat suffering as deserved."
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SEP-PERSONHOOD-INDIA-2022",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "title": "Personhood in Classical Indian Philosophy",
+      "source_url": "https://plato.stanford.edu/entries/personhood-india/",
+      "source_type": "SCHOLARLY_REFERENCE",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "karma",
+        "personhood",
+        "moral causality",
+        "Indian philosophy"
+      ],
+      "claim_boundary": "Provides conceptual provenance and contrasts among philosophical accounts; it is not empirical evidence for karma or rebirth.",
+      "review_state": "REFERENCE_ENTRY_REVIEWED"
+    },
+    {
+      "source_id": "WHITE-NORENZAYAN-SCHALLER-2019-KARMA",
+      "publisher": "Personality and Social Psychology Bulletin",
+      "title": "The Content and Correlates of Belief in Karma Across Cultures",
+      "published_on": "2019",
+      "doi": "10.1177/0146167218808502",
+      "source_url": "https://doi.org/10.1177/0146167218808502",
+      "source_type": "CROSS_CULTURAL_OBSERVATIONAL_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "karma belief",
+        "cross-cultural measurement",
+        "justice",
+        "social cognition"
+      ],
+      "claim_boundary": "Supports measurement of explicit karma beliefs and their correlates across sampled populations; correlations do not establish metaphysical karma or causal effects of belief.",
+      "review_state": "PRIMARY_ABSTRACT_AND_BIBLIOGRAPHIC_RECORD_REVIEWED"
+    },
+    {
+      "source_id": "WIESE-2023-KARMA-HONESTY",
+      "publisher": "Journal of Behavioral and Experimental Economics",
+      "title": "Karma and honest behavior: An experimental study",
+      "published_on": "2023",
+      "doi": "10.1016/j.socec.2023.102018",
+      "source_url": "https://doi.org/10.1016/j.socec.2023.102018",
+      "source_type": "EXPERIMENTAL_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "karma belief",
+        "honesty",
+        "behavioral experiment"
+      ],
+      "claim_boundary": "Tests whether a karma intervention affects reported or observed honesty under the study design; it does not test supernatural moral causation.",
+      "review_state": "PRIMARY_ABSTRACT_AND_BIBLIOGRAPHIC_RECORD_REVIEWED"
+    },
+    {
+      "source_id": "WHITE-WILLARD-2025-2026-KARMA-GENEROSITY",
+      "publisher": "Personality and Social Psychology Bulletin",
+      "title": "How Karma Harms and Helps Generosity Toward Those in Need",
+      "published_on": "2025-02-04 online; 2026-06 issue",
+      "doi": "10.1177/01461672251313829",
+      "pmid": "39902769",
+      "pmcid": "PMC13096616",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13096616/",
+      "source_type": "PREREGISTERED_CROSS_CULTURAL_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "karma belief",
+        "generosity",
+        "victim blaming",
+        "system justification",
+        "cross-cultural research"
+      ],
+      "claim_boundary": "Supports bounded claims about how thinking about karma can relate to both helping and blame or inequality judgments in sampled settings; it does not validate karmic causation or generalize to all traditions.",
+      "review_state": "PRIMARY_ABSTRACT_AND_OPEN_RECORD_REVIEWED"
+    },
+    {
+      "source_id": "MORAES-ET-AL-2022-PLM-SCOPING",
+      "publisher": "Explore",
+      "title": "Academic studies on claimed past-life memories: A scoping review",
+      "published_on": "2022",
+      "doi": "10.1016/j.explore.2021.05.006",
+      "pmid": "34147343",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+      "source_type": "SCOPING_REVIEW",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "claimed past-life memories",
+        "literature mapping",
+        "case research",
+        "methodology"
+      ],
+      "claim_boundary": "Establishes the existence, distribution, and methodological profile of a published observational literature; it does not establish reincarnation or survival.",
+      "review_state": "SYSTEMATIC_REVIEW_ABSTRACT_AND_BIBLIOGRAPHIC_RECORD_REVIEWED"
+    },
+    {
+      "source_id": "KEIL-TUCKER-2005-WRITTEN-RECORDS",
+      "publisher": "Journal of Scientific Exploration",
+      "title": "Children Who Claim to Remember Previous Lives: Cases with Written Records Made before the Previous Personality Was Identified",
+      "published_on": "2005",
+      "source_url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2015/11/REI32-Tucker_keil-1.pdf",
+      "source_type": "REINCARNATION_TYPE_CASE_SERIES",
+      "evidence_lane": "Lived Experience/Testimony",
+      "topics": [
+        "childhood reports",
+        "pre-identification records",
+        "retrospective matching",
+        "case investigation"
+      ],
+      "claim_boundary": "Pre-identification written records address one form of post-contact memory inflation; the cases remain observational and do not exclude all normal information pathways, selection effects, coincidence, or record-quality problems.",
+      "review_state": "AUTHOR_INSTITUTIONAL_COPY_LINKED_METADATA_AND_ABSTRACT_REVIEWED"
+    },
+    {
+      "source_id": "PASRICHA-2011-FAMILY-ATTITUDES",
+      "publisher": "Indian Journal of Psychiatry",
+      "title": "Do attitudes of families concerned influence features of children who claim to remember previous lives?",
+      "published_on": "2011",
+      "doi": "10.4103/0019-5545.75554",
+      "pmcid": "PMC3056182",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3056182/",
+      "source_type": "COMPARATIVE_OBSERVATIONAL_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "family attitudes",
+        "cultural context",
+        "childhood reports",
+        "case features"
+      ],
+      "claim_boundary": "Examines whether family attitudes are associated with reported case features; association does not fully explain the reports and does not validate reincarnation.",
+      "review_state": "PRIMARY_OPEN_RECORD_REVIEWED"
+    },
+    {
+      "source_id": "CECI-BRUCK-1993-CHILD-SUGGESTIBILITY",
+      "publisher": "Psychological Bulletin",
+      "title": "Suggestibility of the child witness: A historical review and synthesis",
+      "published_on": "1993",
+      "doi": "10.1037/0033-2909.113.3.403",
+      "pmid": "8316609",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8316609/",
+      "source_type": "METHODOLOGICAL_REVIEW",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "child memory",
+        "suggestibility",
+        "interview effects",
+        "source monitoring"
+      ],
+      "claim_boundary": "Supplies general child-memory and interview-method risks relevant to case assessment; it is not a case-specific refutation and should not be used to dismiss a report without examining its actual documentation.",
+      "review_state": "PRIMARY_ABSTRACT_REVIEWED"
+    },
+    {
+      "source_id": "PEHLIVANOVA-COZZOLINO-TUCKER-2024-FOLLOWUP",
+      "publisher": "Frontiers in Psychology",
+      "title": "Impact of children's purported past-life memories: a follow-up investigation of American cases",
+      "published_on": "2024",
+      "doi": "10.3389/fpsyg.2024.1473340",
+      "source_url": "https://doi.org/10.3389/fpsyg.2024.1473340",
+      "source_type": "OBSERVATIONAL_FOLLOW_UP",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "claimed past-life memories",
+        "adult follow-up",
+        "psychosocial impact",
+        "American cases"
+      ],
+      "claim_boundary": "Supports bounded observations about later characteristics and reported impact among a followed case sample; it does not verify the historical content of childhood reports or demonstrate survival.",
+      "review_state": "PRIMARY_OPEN_RECORD_AND_ABSTRACT_REVIEWED"
+    }
+  ],
+  "candidate_links": [
+    {
+      "from": [
+        "MORAES-ET-AL-2022-PLM-SCOPING",
+        "KEIL-TUCKER-2005-WRITTEN-RECORDS"
+      ],
+      "relation": "OUTLIER_CASE_METHOD_CLUSTER",
+      "note": "Pre-identification documentation is a higher-priority outlier feature for prospective methodological study, not a truth label."
+    },
+    {
+      "from": [
+        "KEIL-TUCKER-2005-WRITTEN-RECORDS",
+        "PASRICHA-2011-FAMILY-ATTITUDES",
+        "CECI-BRUCK-1993-CHILD-SUGGESTIBILITY"
+      ],
+      "relation": "CLAIM_AND_COUNTERMETHOD_TRIANGULATION",
+      "note": "Assess timing and specificity of records together with family expectations, interview structure, leakage pathways, base rates, and selective reporting."
+    },
+    {
+      "from": [
+        "PEHLIVANOVA-COZZOLINO-TUCKER-2024-FOLLOWUP",
+        "PASRICHA-2011-FAMILY-ATTITUDES"
+      ],
+      "relation": "CHILD_WELFARE_AND_CONTEXT",
+      "note": "Research value includes psychosocial impact and family response even if the metaphysical hypothesis remains unresolved."
+    },
+    {
+      "from": [
+        "WHITE-NORENZAYAN-SCHALLER-2019-KARMA",
+        "WIESE-2023-KARMA-HONESTY",
+        "WHITE-WILLARD-2025-2026-KARMA-GENEROSITY"
+      ],
+      "relation": "KARMA_BELIEF_BEHAVIOR",
+      "note": "Treat belief as a psychological and cultural variable with potentially prosocial and harmful attribution effects; do not infer a cosmic mechanism."
+    },
+    {
+      "from": [
+        "SEP-PERSONHOOD-INDIA-2022",
+        "WHITE-NORENZAYAN-SCHALLER-2019-KARMA"
+      ],
+      "relation": "CONCEPTUAL_PROVENANCE_BOUNDARY",
+      "note": "Empirical scales are operationalizations, not substitutes for tradition-specific accounts of karma, personhood, and rebirth."
+    }
+  ],
+  "outlier_priority_rules": [
+    "Prioritize statements recorded before any candidate previous person or family is identified.",
+    "Preserve the complete original statement set, including vague, wrong, unmatched, and later-modified items.",
+    "Use preregistered matching rules, blinded independent raters, decoy candidates, base-rate estimates, and correction for multiple comparisons.",
+    "Document every direct and indirect information pathway, interpreter role, media exposure, geographic link, and contact timeline.",
+    "Separate observation, witness recollection, investigator inference, record verification, and metaphysical interpretation.",
+    "Seek independent replication and adversarial audit before any evidential promotion.",
+    "Use trauma-informed, non-leading interviews and child safeguarding; research interest never overrides participant welfare or privacy."
+  ],
+  "excluded_or_deferred": [
+    {
+      "category": "hypnotic past-life regression",
+      "reason": "High suggestibility and source-monitoring risk; requires a separate memory-method review before inclusion."
+    },
+    {
+      "category": "celebrity or entertainment testimony",
+      "reason": "May be retained later as attributed lived experience, but is not part of this scientific-method companion crawl."
+    },
+    {
+      "category": "individual child case identities and media",
+      "reason": "Privacy, safeguarding, consent, and rights review required."
+    },
+    {
+      "category": "doctrinal truth adjudication",
+      "reason": "Outside the empirical scope and prohibited by the no-truth-inference boundary."
+    }
+  ],
+  "roadmap_alignment": {
+    "horizon": "2026-2027",
+    "programme": "Reincarnation Reimagined",
+    "parent_lens": "AkashicTIMELESS",
+    "status": "EXPLORATORY_COMPANION_TO_PR_329",
+    "priorities": [
+      {
+        "rank": 1,
+        "use": "Build a prospective case-quality rubric for claimed past-life memories.",
+        "sources": [
+          "MORAES-ET-AL-2022-PLM-SCOPING",
+          "KEIL-TUCKER-2005-WRITTEN-RECORDS",
+          "PASRICHA-2011-FAMILY-ATTITUDES",
+          "CECI-BRUCK-1993-CHILD-SUGGESTIBILITY"
+        ],
+        "deliverable": "Methods-and-countermethods matrix with leakage, matching, memory, cultural, privacy, and safeguarding fields."
+      },
+      {
+        "rank": 2,
+        "use": "Track later psychosocial outcomes separately from claim verification.",
+        "sources": [
+          "PEHLIVANOVA-COZZOLINO-TUCKER-2024-FOLLOWUP",
+          "PASRICHA-2011-FAMILY-ATTITUDES"
+        ],
+        "deliverable": "Child-and-family impact review with no metaphysical inference."
+      },
+      {
+        "rank": 3,
+        "use": "Map empirical karma-belief constructs and their mixed behavioral effects.",
+        "sources": [
+          "WHITE-NORENZAYAN-SCHALLER-2019-KARMA",
+          "WIESE-2023-KARMA-HONESTY",
+          "WHITE-WILLARD-2025-2026-KARMA-GENEROSITY"
+        ],
+        "deliverable": "Belief-behavior evidence table separating prosocial effects, blame, system justification, correlation, and experiment."
+      },
+      {
+        "rank": 4,
+        "use": "Compare person, memory, pattern, relationship, process, and culturally situated continuity models.",
+        "sources": [
+          "SEP-PERSONHOOD-INDIA-2022",
+          "MORAES-ET-AL-2022-PLM-SCOPING"
+        ],
+        "deliverable": "Tradition-aware comparison layer; no universal karma definition and no survival promotion."
+      }
+    ],
+    "governance_requirements": [
+      "BQ001 remains UNRESOLVED.",
+      "No canonical edge, public route, public synthesis, or truth inference is created by this record.",
+      "Keep Established Evidence, Interpretation, Lived Experience/Testimony, Hypothesis, and Speculation distinct.",
+      "Preserve nulls, mismatches, counter-sources, uncertainty, source independence, and evidence lineage.",
+      "Require human full-text, cultural, rights, privacy, and safeguarding review before canonical or public integration."
+    ]
+  },
+  "next_gate": "Fresh exact-head review of provenance, claim labels, limitations, counter-methods, cultural handling, child privacy, rights, and roadmap mapping; any later canonical or public use requires a separate human-approved integration decision."
+}
