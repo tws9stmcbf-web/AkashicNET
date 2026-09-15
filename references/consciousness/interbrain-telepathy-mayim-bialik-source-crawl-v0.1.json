@@ -234,6 +234,74 @@
       ],
       "claim_boundary": "Included as an adversarial perspective and source of testable methodological objections; commentary is not automatically treated as dispositive.",
       "review_state": "PAGE_SUMMARY_REVIEWED"
+    },
+    {
+      "source_id": "ATW-SAMADHI-1",
+      "publisher": "Awaken the World",
+      "creator": "Daniel Schmidt",
+      "title": "Samadhi Part 1: Maya, the Illusion of the Self",
+      "source_url": "https://awakentheworld.com/",
+      "source_type": "CONTEMPLATIVE_FILM",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "maya",
+        "self",
+        "nonduality",
+        "samadhi"
+      ],
+      "claim_boundary": "A contemplative account of the constructed or illusory self; not evidence that consciousness survives death.",
+      "review_state": "OFFICIAL_CATALOG_METADATA_REVIEWED"
+    },
+    {
+      "source_id": "ATW-SAMADHI-2",
+      "publisher": "Awaken the World",
+      "creator": "Daniel Schmidt",
+      "title": "Samadhi Part 2: It's Not What You Think",
+      "source_url": "https://awakentheworld.com/samadhi-part-2-its-not-what-you-think/",
+      "source_type": "CONTEMPLATIVE_FILM",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "awareness",
+        "identity",
+        "nonduality",
+        "samadhi"
+      ],
+      "claim_boundary": "Philosophical and practice-oriented interpretation; no empirical continuity claim.",
+      "review_state": "OFFICIAL_PAGE_METADATA_REVIEWED"
+    },
+    {
+      "source_id": "ATW-SAMADHI-3",
+      "publisher": "Awaken the World",
+      "creator": "Daniel Schmidt",
+      "title": "Samadhi Part 3: The Pathless Path",
+      "source_url": "https://awakentheworld.com/",
+      "source_type": "CONTEMPLATIVE_FILM",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "pathless path",
+        "awakening",
+        "nonduality",
+        "samadhi"
+      ],
+      "claim_boundary": "Contemplative teaching is retained as interpretation rather than promoted to established evidence.",
+      "review_state": "OFFICIAL_CATALOG_METADATA_REVIEWED"
+    },
+    {
+      "source_id": "ATW-SAMADHI-4",
+      "publisher": "Awaken the World",
+      "creator": "Daniel Schmidt",
+      "title": "Samadhi Part 4: Sadhana",
+      "source_url": "https://awakentheworld.com/",
+      "source_type": "CONTEMPLATIVE_FILM",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "sadhana",
+        "meditation",
+        "self-inquiry",
+        "samadhi"
+      ],
+      "claim_boundary": "Practice guidance may inform phenomenology and research questions but does not verify metaphysical claims.",
+      "review_state": "OFFICIAL_CATALOG_METADATA_REVIEWED"
     }
   ],
   "candidate_links": [
@@ -261,6 +329,17 @@
       ],
       "relation": "HYPOTHESIS_CLUSTER",
       "note": "Candidate cluster for future preregistered tests of inaccessible target information under sensory isolation."
+    },
+    {
+      "from": [
+        "ATW-SAMADHI-1",
+        "ATW-SAMADHI-2",
+        "ATW-SAMADHI-3",
+        "ATW-SAMADHI-4",
+        "MBB-CHARLES-LIU-2026-09-02"
+      ],
+      "relation": "CONTEMPLATIVE_PHILOSOPHY_COMPARISON",
+      "note": "Compares nondual deconstruction of self with personal, information and process-continuity models; no evidential promotion."
     }
   ],
   "test_requirements": [
@@ -332,7 +411,6 @@
   },
   "reincarnation_reimagined_extension": {
     "programme": "Reincarnation Reimagined",
-    "works_extension": "AWAKEN the Works",
     "parent_lens": "AkashicTIMELESS",
     "status": "EXPLORATORY_EXTENSION",
     "central_question": "If consciousness or information appears to cross ordinary boundaries, what—if anything—continues: a person, memory, pattern, relationship, awareness, or culturally shaped interpretation?",
@@ -358,12 +436,12 @@
       },
       {
         "id": "RR-AW-03",
-        "title": "Memory Without Biography",
+        "title": "Memory Without Biography · Samadhi Comparison",
         "sources": [
           "MBB-CHARLES-LIU-2026-09-02",
           "MBB-SHARON-STONE-2026-09-08-09"
         ],
-        "purpose": "Compare NDE, DMT, downloaded-memory, past-life and information-continuity interpretations without assuming personal survival."
+        "purpose": "Compare NDE, DMT, downloaded-memory, past-life and information-continuity interpretations without assuming personal survival. Compare these models with Samadhi's deconstruction of the separate self, without converting contemplative teaching into scientific evidence."
       },
       {
         "id": "RR-AW-04",
@@ -393,7 +471,14 @@
       "Social, cultural and retrospective construction",
       "Nonlocal or transpersonal access hypothesis"
     ],
-    "publication_rule": "AWAKEN may widen the questions and methods, but neither the number of testimonies nor thematic convergence changes BQ001 from UNRESOLVED.",
-    "route_note": "The repository mirror currently records /awaken as not present; this artifact defines the extension without claiming that a public route exists."
+    "publication_rule": "Awaken the World and the Samadhi films may deepen the philosophical and contemplative questions, but neither spiritual authority, thematic convergence nor experiential resonance changes BQ001 from UNRESOLVED.",
+    "route_note": "The repository mirror currently records /awaken as not present; this artifact defines the extension without claiming that a public route exists.",
+    "film_context": {
+      "initiative": "Awaken the World",
+      "creator": "Daniel Schmidt",
+      "series": "Samadhi",
+      "role": "Contemplative and philosophical comparison layer",
+      "boundary": "The films articulate nondual and contemplative interpretations of self, awareness and liberation. They are not empirical evidence for reincarnation, telepathy or postmortem survival."
+    }
   }
 }
