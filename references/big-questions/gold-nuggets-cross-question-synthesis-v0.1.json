@@ -24,27 +24,42 @@
       "movement": "fast synthesis progress; conclusion unchanged",
       "status": "UNRESOLVED",
       "note": "HIERATIC016 publication momentum around 31 October–2 November 2026 is high. Día de Muertos, All Saints and All Souls, ancestor traditions, bardo, karma and empirical reincarnation research require distinct provenance lanes.",
-      "next_action": "Prepare HIERATIC016 with those provenance lanes kept distinct."
+      "next_action": "Prepare HIERATIC016 with those provenance lanes kept distinct.",
+      "canonicality": "CANONICAL_GOVERNED",
+      "source_ids": [
+        "SADEGHI-2026-TEMPORAL",
+        "PEHLIVANOVA-2024-FOLLOWUP",
+        "COZZOLINO-2025-XENOGLOSSY",
+        "UNEXPECTED-LUCIDITY-2025",
+        "UVA-DOPS-CHILDREN",
+        "UVA-DOPS-HYPNOSIS"
+      ]
     },
     {
       "question_id": "BQ002",
       "question": "Where do thoughts come from?",
       "signal": "green",
       "speed": 3,
-      "movement": "partial answer strengthened",
-      "status": "PARTIALLY ANSWERED; DEEP ORIGIN UNRESOLVED",
-      "note": "Dream and memory evidence strengthens ordinary cognitive accounts without resolving the origin of subjective awareness.",
-      "next_action": "Add dream-memory consolidation as an established pathway while preserving the unresolved phenomenal layer."
+      "movement": "ordinary cognitive pathways strengthened; overall conclusion unchanged",
+      "status": "UNRESOLVED",
+      "note": "Dream and memory evidence strengthens an established cognitive pathway without resolving the complete origin of thought or subjective awareness.",
+      "next_action": "Add dream-memory consolidation as an established pathway while preserving the unresolved phenomenal layer.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": [
+        "HUDACHEK-WAMSLEY-2023-DREAMS"
+      ]
     },
     {
       "question_id": "BQ003",
       "question": "Can Love Harmonise Consciousness With the Cosmos?",
       "signal": "amber",
       "speed": 3,
-      "movement": "concept brief now active",
+      "movement": "noncanonical concept brief active",
       "status": "UNASSESSED / UNRESOLVED",
-      "note": "Canonical public page now separates biological, psychological, ethical, systems, lived-experience and cosmological meanings.",
-      "next_action": "Define one observable meaning of harmony and compare competing explanations at the same scale."
+      "note": "A noncanonical concept brief separates biological, psychological, ethical, systems, lived-experience and cosmological meanings. It is deferred to a separate governed authoring workstream.",
+      "next_action": "Create the governed canonical record and route separately; meanwhile define one observable meaning of harmony and compare competing explanations at the same scale.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": []
     },
     {
       "question_id": "BQ004",
@@ -54,7 +69,9 @@
       "movement": "karma separated into testable layers",
       "status": "EXPLORATORY",
       "note": "Immediate psychological and social feedback can be studied directly; across-life return remains unresolved.",
-      "next_action": "Map psychological, social and across-life karma to distinct tests."
+      "next_action": "Map psychological, social and across-life karma to distinct tests.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": []
     },
     {
       "question_id": "BQ005",
@@ -64,17 +81,23 @@
       "movement": "shared ethical floor strengthened",
       "status": "EXPLORATORY",
       "note": "Humility, kindness, respect and consent remain usable across competing worldviews.",
-      "next_action": "Publish a consent-first encounter protocol and invite plural-worldview critique."
+      "next_action": "Publish a consent-first encounter protocol and invite plural-worldview critique.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": []
     },
     {
       "question_id": "BQ006",
       "question": "Can Intelligence Become Wisdom?",
       "signal": "amber",
       "speed": 2,
-      "movement": "Anishinaabe-rooted cultural bridge identified",
+      "movement": "candidate Anishinaabe-rooted cultural bridge identified",
       "status": "EXPLORATORY",
-      "note": "HIERATIC001 and the Seven Grandfather Teachings provide a culturally grounded ethical compass. They must not be universalized or detached from Anishinaabe provenance.",
-      "next_action": "Develop BQ006 through HIERATIC001 while foregrounding Anishinaabe provenance and living voices."
+      "note": "HIERATIC001 and the Seven Grandfather Teachings are represented here only by an unverified community lead. They must not be described as culturally grounded, universalized or detached from specific Anishinaabe Nations, Elders and teaching lineages until living or primary provenance is attached.",
+      "next_action": "Seek permission-aware living or primary Anishinaabe provenance before using HIERATIC001 as a BQ006 evidence source.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": [
+        "REDDIT-TRIBALGATHERING-HIERATIC001-LEAD"
+      ]
     },
     {
       "question_id": "BQ007",
@@ -84,7 +107,9 @@
       "movement": "applied direction retained",
       "status": "EXPLORATORY",
       "note": "Belief-neutral care and consent-first ethics suggest institutional design principles.",
-      "next_action": "Translate one care principle into a measurable institutional design test."
+      "next_action": "Translate one care principle into a measurable institutional design test.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": []
     },
     {
       "question_id": "BQ008",
@@ -94,7 +119,9 @@
       "movement": "design analogy only",
       "status": "EXPLORATORY",
       "note": "Balance, resilience and symbiosis can inspire design without transferring mechanisms across domains.",
-      "next_action": "Test one measurable resilience intervention without importing quantum mechanisms."
+      "next_action": "Test one measurable resilience intervention without importing quantum mechanisms.",
+      "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+      "source_ids": []
     }
   ],
   "cross_question_distinctions": [
@@ -152,26 +179,39 @@
       "original_url": "https://med.virginia.edu/perceptual-studies/resources/concerns-about-hypnotic-regression/",
       "scope": "methodological warning",
       "limitation": "guidance rather than an experimental verdict"
+    },
+    {
+      "source_id": "REDDIT-TRIBALGATHERING-HIERATIC001-LEAD",
+      "original_url": "https://www.reddit.com/r/TribalGathering/comments/1sxwgdt/the_seven_grandfather_teachings_ancient_wisdom/",
+      "source_type": "unverified_community_lead",
+      "scope": "community-post lead concerning the Seven Grandfather Teachings",
+      "limitation": "Not a primary or living Anishinaabe source; author, Nation, Elder or teaching-lineage attribution and permission remain unverified; cannot establish cultural grounding."
     }
   ],
   "governance": [
     "Presence in the archive is not scientific validation.",
     "Unavailable or access-limited sources remain undetermined rather than false.",
     "Signals describe inquiry progress, not probability, truth or metaphysical promotion.",
-    "Original URLs and retrieval context must be preserved."
+    "Original URLs and retrieval context must be preserved.",
+    "BQ002 through BQ008 are noncanonical research snapshots until separately registered in the governed Big Questions architecture.",
+    "An empty source_ids array means that a movement is a planning statement, not a provenance-backed evidential conclusion."
   ],
   "framework_context": [
     {
       "framework_id": "HIERATIC016",
       "relation": "BQ001 reincarnation synthesis",
       "context_window": "31 October–2 November 2026",
-      "provenance_boundary": "Keep Día de Muertos, All Saints and All Souls, ancestor traditions, bardo, karma and empirical reincarnation research distinct."
+      "source_status": "PLANNING_ONLY; LANE-SPECIFIC PROVENANCE NOT YET ATTACHED",
+      "governance_requirement": "Do not treat this entry as provenance-backed or publication-ready. Obtain separate, permission-aware sources before comparing Día de Muertos, All Saints and All Souls, ancestor traditions, bardo, karma or empirical reincarnation research; do not collapse these lanes."
     },
     {
       "framework_id": "HIERATIC001",
       "relation": "BQ006 intelligence-to-wisdom cultural bridge",
       "original_url": "https://www.reddit.com/r/TribalGathering/comments/1sxwgdt/the_seven_grandfather_teachings_ancient_wisdom/",
-      "provenance_boundary": "Anishinaabe-rooted teaching; do not present as a universal or ownerless mapping. Seek living and primary Indigenous sources."
+      "provenance_boundary": "Anishinaabe-rooted teaching candidate; do not present as universal, ownerless or culturally grounded until a living or primary Anishinaabe source and relevant permission context are attached.",
+      "source_id": "REDDIT-TRIBALGATHERING-HIERATIC001-LEAD",
+      "source_type": "unverified_community_lead",
+      "evidence_status": "NOT CULTURALLY VERIFIED"
     }
   ]
 }
