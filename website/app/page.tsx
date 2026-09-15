@@ -152,7 +152,7 @@ export default function Home() {
             <article className="latest-highlight-card" key={item.href}>
               <a href={item.href} aria-label={`Read ${item.title}`}>
                 <span className="latest-highlight-image">
-                  <img src={item.image} alt={item.imageAlt} />
+                  <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
                 </span>
                 <span className="latest-highlight-copy">
                   <span className="latest-highlight-meta">
@@ -171,7 +171,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="latest-highlights-note">Publication dates describe AkashicNET releases. Evidence labels distinguish observation, established evidence, interpretation, lived experience, hypothesis and speculation.</p>
+        <p className="latest-highlights-note">Publication dates describe AkashicNET releases. Evidence labels distinguish established evidence, interpretation, lived experience/testimony, hypothesis and speculation.</p>
       </section>
 
       <section className="snapshot" aria-label="Public project snapshot">
