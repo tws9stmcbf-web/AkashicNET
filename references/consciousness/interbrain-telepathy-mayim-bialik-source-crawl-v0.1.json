@@ -1,0 +1,258 @@
+{
+  "schema_version": "0.1",
+  "record_type": "candidate_source_crawl",
+  "crawl_id": "AKN-SC-INTERBRAIN-TELEPATHY-2026-09-15",
+  "created_at": "2026-09-15",
+  "scope": "Inter-brain synchrony, covert consciousness, psychedelic telepathy testimony, nonspeaking autism, The Hill, NDE and mediumship",
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "canonical_effects": {
+    "bq001_status": "UNRESOLVED",
+    "evidence_promotion": false,
+    "public_synthesis_modified": false,
+    "graph_truth_inference": false
+  },
+  "retrieval_limits": [
+    "Podcast catalogue descriptions were reviewed; full audio transcripts were not retrieved or verified.",
+    "Reddit post bodies were not retrievable in this environment; URLs and titles are preserved as user-supplied discovery records.",
+    "Host descriptions and guest statements are not treated as independent verification.",
+    "No apparent entity, telepathic channel, survival claim or shared nonphysical place is authenticated."
+  ],
+  "rights": {
+    "storage_mode": "metadata_and_claim_summary_only",
+    "reproduce_transcripts": false,
+    "reproduce_audio": false,
+    "quotations_stored": false,
+    "creator_rights_preserved": true
+  },
+  "sources": [
+    {
+      "source_id": "MBB-KY-DICKENS-2025-10-27",
+      "publisher": "Mayim Bialik's Breakdown",
+      "title": "Ky Dickens Has Proof Telepathy & Psychic Abilities Are Real!",
+      "guest": "Ky Dickens",
+      "published_on": "2025-10-27",
+      "source_url": "https://www.bialikbreakdown.com/",
+      "corroborating_catalog_url": "https://thetelepathytapes.com/podcast/",
+      "source_type": "PODCAST_EPISODE_METADATA",
+      "evidence_lane": "Lived Experience/Testimony",
+      "topics": [
+        "nonspeaking autism",
+        "telepathy tests",
+        "The Hill",
+        "alternative communication"
+      ],
+      "claim_boundary": "Records programme claims and discussion topics only; does not establish telepathy or a shared nonphysical environment.",
+      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+    },
+    {
+      "source_id": "MBB-CHARLES-LIU-2026-09-02",
+      "publisher": "Mayim Bialik's Breakdown",
+      "title": "Part Two: Near Death Experiences, Telepathy & the Multiverse. An Astrophysicist Explains",
+      "guest": "Dr Charles Liu",
+      "published_on": "2026-09-02",
+      "source_url": "https://www.bialikbreakdown.com/",
+      "source_type": "PODCAST_EPISODE_METADATA",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "telepathy",
+        "NDE",
+        "DMT",
+        "collective consciousness",
+        "nonspeaking autism",
+        "multiverse"
+      ],
+      "claim_boundary": "Expert discussion and hypothesis generation are not empirical demonstration of telepathy, survival or multiverse access.",
+      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+    },
+    {
+      "source_id": "MBB-BARBRA-BANNER-2026-09-04",
+      "publisher": "Mayim Bialik's Breakdown",
+      "title": "No One Is Judged When They Die. Even Abusers Apologize",
+      "guest": "Barbra Banner",
+      "published_on": "2026-09-04",
+      "source_url": "https://www.bialikbreakdown.com/",
+      "source_type": "PODCAST_EPISODE_METADATA",
+      "evidence_lane": "Lived Experience/Testimony",
+      "topics": [
+        "mediumship",
+        "after-death communication",
+        "intuition",
+        "symbolic communication"
+      ],
+      "claim_boundary": "Mediumship and after-death statements remain attributed testimony; no survival claim is promoted.",
+      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+    },
+    {
+      "source_id": "MBB-SHARON-STONE-2026-09-08-09",
+      "publisher": "Mayim Bialik's Breakdown",
+      "title": "Sharon Stone Saw the Afterlife: 5 Orbs Told Her to Stay & Share Their Message (Parts One and Two)",
+      "guest": "Sharon Stone",
+      "published_on": "2026-09-08/2026-09-09",
+      "source_url": "https://www.bialikbreakdown.com/",
+      "source_type": "PODCAST_EPISODE_METADATA",
+      "evidence_lane": "Lived Experience/Testimony",
+      "topics": [
+        "near-death experience",
+        "stroke",
+        "orbs",
+        "synesthesia",
+        "past lives",
+        "pattern recognition"
+      ],
+      "claim_boundary": "Preserves a first-person account without authenticating apparent entities, reincarnation or postmortem survival.",
+      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+    },
+    {
+      "source_id": "MBB-JAMES-GIORDANO-2026-09-11",
+      "publisher": "Mayim Bialik's Breakdown",
+      "title": "CIA Mind Control, MKUltra & Energy Weapons Are Real: Why A Pentagon Advisor Won't Rule Out Telepathy",
+      "guest": "Dr James Giordano",
+      "published_on": "2026-09-11",
+      "source_url": "https://www.bialikbreakdown.com/",
+      "source_type": "PODCAST_EPISODE_METADATA",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "neurophysiology",
+        "entheogens",
+        "telepathy",
+        "remote viewing",
+        "caudate",
+        "neuroethics"
+      ],
+      "claim_boundary": "Not ruling out a mechanism is not positive evidence for it; historical programme facts remain separate from paranormal claims.",
+      "review_state": "TRANSCRIPT_NOT_REVIEWED"
+    },
+    {
+      "source_id": "MBB-LISA-KUDROW-2026-08",
+      "publisher": "Mayim Bialik's Breakdown",
+      "title": "Lisa Kudrow consciousness and intuition conversation (two parts)",
+      "guest": "Lisa Kudrow",
+      "published_on": "2026-08",
+      "source_url": "https://www.bialikbreakdown.com/",
+      "source_type": "PODCAST_EPISODE_METADATA",
+      "evidence_lane": "Lived Experience/Testimony",
+      "topics": [
+        "intuition",
+        "claircognizance",
+        "bereavement",
+        "spirituality"
+      ],
+      "claim_boundary": "Preserves attributed experience without treating claircognizance as established information transfer.",
+      "review_state": "EXACT_EPISODE_METADATA_PENDING"
+    },
+    {
+      "source_id": "REDDIT-NTN-1OEHUW4",
+      "publisher": "r/NeuronsToNirvana",
+      "title": "LSD, Caudate Nucleus, Microdosing, Telepathy, ICPR",
+      "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1oehuw4/lsd_caudate_nucleus_microdosing_telepathy_icpr/",
+      "source_type": "USER_SUPPLIED_REDDIT_DISCOVERY",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "LSD",
+        "microdosing",
+        "caudate nucleus",
+        "telepathy",
+        "ICPR"
+      ],
+      "claim_boundary": "Discovery record only until post body and cited sources receive claim-level review.",
+      "review_state": "BODY_NOT_RETRIEVED"
+    },
+    {
+      "source_id": "REDDIT-NTN-1EWRB8E",
+      "publisher": "r/NeuronsToNirvana",
+      "title": "Hidden Consciousness Detected in 25% of Unresponsive Patients Tested",
+      "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ewrb8e/hidden_consciousness_detected_in_25_of/",
+      "source_type": "USER_SUPPLIED_REDDIT_DISCOVERY",
+      "evidence_lane": "Interpretation",
+      "topics": [
+        "cognitive motor dissociation",
+        "covert consciousness",
+        "command following"
+      ],
+      "claim_boundary": "Covert command-following after severe brain injury does not demonstrate telepathy and is only a bounded analogy to nonspeaking autism.",
+      "review_state": "BODY_NOT_RETRIEVED"
+    },
+    {
+      "source_id": "PNAS-STEPHENS-2010",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "title": "Speaker-listener neural coupling underlies successful communication",
+      "doi": "10.1073/pnas.1008662107",
+      "source_url": "https://www.pnas.org/doi/10.1073/pnas.1008662107",
+      "source_type": "PRIMARY_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "speaker-listener coupling",
+        "communication",
+        "comprehension"
+      ],
+      "claim_boundary": "Supports neural coupling during ordinary communication; does not establish unaided distant thought transfer.",
+      "review_state": "PRIMARY_ABSTRACT_REVIEWED"
+    },
+    {
+      "source_id": "NEJM-CLAASSEN-2024-CMD",
+      "publisher": "New England Journal of Medicine",
+      "title": "Cognitive Motor Dissociation in Disorders of Consciousness",
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2400645",
+      "source_type": "PRIMARY_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "cognitive motor dissociation",
+        "covert command following",
+        "disorders of consciousness"
+      ],
+      "claim_boundary": "Demonstrates that behavioural unresponsiveness can conceal cognition in some brain-injured patients; does not establish telepathy or generalise directly to autism.",
+      "review_state": "PRIMARY_RECORD_LINKED"
+    },
+    {
+      "source_id": "FRONTIERS-KETTNER-2021-COMMUNITAS",
+      "publisher": "Frontiers in Pharmacology",
+      "title": "Psychedelic Communitas: Intersubjective Experience During Psychedelic Group Sessions Predicts Enduring Changes in Psychological Wellbeing and Social Connectedness",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8717779/",
+      "source_type": "PRIMARY_RESEARCH",
+      "evidence_lane": "Established Evidence",
+      "topics": [
+        "psychedelic communitas",
+        "group experience",
+        "social connectedness"
+      ],
+      "claim_boundary": "Supports perceived togetherness in psychedelic group settings; does not demonstrate shared visions or nonlocal information transfer.",
+      "review_state": "PRIMARY_RECORD_LINKED"
+    }
+  ],
+  "candidate_links": [
+    {
+      "from": [
+        "MBB-KY-DICKENS-2025-10-27",
+        "REDDIT-NTN-1EWRB8E"
+      ],
+      "relation": "BOUNDED_ANALOGY",
+      "note": "Covert or underestimated cognition motivates better assessment but does not validate facilitated communication or telepathy."
+    },
+    {
+      "from": [
+        "PNAS-STEPHENS-2010",
+        "FRONTIERS-KETTNER-2021-COMMUNITAS"
+      ],
+      "relation": "MECHANISM_CONTEXT",
+      "note": "Ordinary neural alignment and psychedelic communitas are plausible context for perceived mind-sharing."
+    },
+    {
+      "from": [
+        "MBB-KY-DICKENS-2025-10-27",
+        "REDDIT-NTN-1OEHUW4",
+        "MBB-JAMES-GIORDANO-2026-09-11"
+      ],
+      "relation": "HYPOTHESIS_CLUSTER",
+      "note": "Candidate cluster for future preregistered tests of inaccessible target information under sensory isolation."
+    }
+  ],
+  "test_requirements": [
+    "Preregister targets, matching rules, exclusions and stopping criteria.",
+    "Record reports independently before participant contact or feedback.",
+    "Use sensory isolation, randomized targets, time synchronization and tamper-evident logs.",
+    "Separate accuracy from confidence, vividness and retrospective similarity.",
+    "Replicate across independent teams and include adversarial leakage review.",
+    "If hyperscanning is used, test whether cross-brain prediction exceeds shared-stimulus and physiological confounds."
+  ],
+  "next_gate": "Human review of exact episode pages or transcripts and cited primary sources before any canonical BQ or public-page integration."
+}
