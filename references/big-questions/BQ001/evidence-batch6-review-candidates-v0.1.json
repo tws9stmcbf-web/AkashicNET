@@ -1,0 +1,229 @@
+{
+  "batch_id": "BQ001-BATCH6-POPULAR-MECHANICS-CONSCIOUSNESS-INTAKE",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-09-15",
+  "scope": "lucid_dreaming_biophoton_signalling_fundamental_consciousness_and_cortical_organoid_context",
+  "discovery_source_policy": "Popular Mechanics is retained as a discovery and framing source. Primary papers are recorded separately where available; headline language does not determine evidence status.",
+  "sources": [
+    {
+      "source_id": "SRC-BQ001-DEMIREL-JNEUROSCI-2025",
+      "source_type": "PRIMARY_PEER_REVIEWED_EEG_META_ANALYSIS",
+      "title": "Electrophysiological correlates of lucid dreaming: sensor and source level signatures",
+      "authors_short": "Demirel et al.",
+      "year": 2025,
+      "journal": "Journal of Neuroscience",
+      "doi": "10.1523/JNEUROSCI.2237-24.2025",
+      "url": "https://www.jneurosci.org/content/45/21/e2237242025",
+      "link_check": {
+        "checked_at": "2026-09-15",
+        "status": "AVAILABLE_VIA_PUBLISHER_SEARCH",
+        "title_match": true
+      },
+      "limitations": [
+        "The analysis pooled heterogeneous EEG datasets and lucid-dream verification procedures.",
+        "Distinct group-level electrophysiological correlates do not establish a wholly separate ontological form of consciousness.",
+        "Similarity to selected psychedelic correlates does not make lucid dreaming equivalent to a psychedelic state."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-POPMECH-LUCID-2025",
+      "source_type": "SECONDARY_SCIENCE_JOURNALISM",
+      "title": "Lucid Dreaming Isn’t Sleep or Wakefulness—It’s a New State of Consciousness, Scientists Find",
+      "authors_short": "Elizabeth Rayne",
+      "year": 2025,
+      "publisher": "Popular Mechanics",
+      "url": "https://www.popularmechanics.com/science/a69717162/lucid-dreaming-consciousness-state/",
+      "relationship_to_primary": "DISCOVERY_AND_PUBLIC_FRAMING_ONLY",
+      "limitations": [
+        "Headline wording is stronger than the primary paper's bounded electrophysiological conclusions.",
+        "Must not replace the primary paper in evidence assessment."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-POSPISIL-PRASAD-2026",
+      "source_type": "PEER_REVIEWED_CONCEPTUAL_REVIEW",
+      "title": "Biofield in neural communication: A review and conceptual framework",
+      "authors_short": "Pospíšil and Prasad",
+      "year": 2026,
+      "journal": "Progress in Biophysics and Molecular Biology",
+      "doi": "10.1016/j.pbiomolbio.2026.02.005",
+      "pmid": "41724272",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41724272/",
+      "link_check": {
+        "checked_at": "2026-09-15",
+        "status": "AVAILABLE",
+        "title_match": true
+      },
+      "limitations": [
+        "The review states that information coding, decoding and stable quantum-state propagation have not been demonstrated in neural tissue.",
+        "Biophoton emission is not evidence that biophotons carry neural information.",
+        "The proposed role in consciousness remains hypothetical and is not evidence for nonlocal or post-mortem consciousness."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-POPMECH-BIOFIELD-2026",
+      "source_type": "SECONDARY_SCIENCE_JOURNALISM",
+      "title": "Scientists Think Our Brains Might Use a Secret Pathway to Create Consciousness",
+      "authors_short": "Popular Mechanics",
+      "year": 2026,
+      "publisher": "Popular Mechanics",
+      "url": "https://www.popularmechanics.com/science/health/a70687768/biofield-quantum-consciousness/",
+      "relationship_to_primary": "DISCOVERY_AND_PUBLIC_FRAMING_ONLY",
+      "limitations": [
+        "The headline connects the proposed pathway to consciousness more strongly than the review establishes.",
+        "Must not be treated as experimental confirmation of quantum neural communication."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-POPMECH-FUNDAMENTAL-2026",
+      "source_type": "SECONDARY_INTERVIEW_AND_CONFERENCE_REPORTING",
+      "title": "Consciousness Is the Only Thing That Truly Exists, Scientist Claims",
+      "authors_short": "Danielle Zickl",
+      "year": 2026,
+      "publisher": "Popular Mechanics",
+      "url": "https://www.popularmechanics.com/science/a71386167/consciousness-fundamental-reality/",
+      "relationship_to_primary": "PHILOSOPHICAL_POSITION_AND_PUBLIC_FRAMING",
+      "limitations": [
+        "Reports theoretical and metaphysical positions rather than a decisive empirical test.",
+        "Radio and kite comparisons are analogies, not demonstrated mechanisms.",
+        "Fundamental consciousness does not by itself establish personal survival, reincarnation or nonlocal information transfer."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-STOUFFER-NATURE-2026",
+      "source_type": "PRIMARY_PEER_REVIEWED_DEVELOPMENTAL_ORGANOID_STUDY",
+      "title": "Temporal uncoupling of radial glia lineage progression in cortical organoids",
+      "authors_short": "Stouffer et al.",
+      "year": 2026,
+      "journal": "Nature",
+      "doi": "10.1038/s41586-026-10916-7",
+      "url": "https://www.nature.com/articles/s41586-026-10916-7",
+      "link_check": {
+        "checked_at": "2026-09-15",
+        "status": "AVAILABLE_VIA_PUBLISHER_AND_INSTITUTIONAL_RECORDS",
+        "title_match": true
+      },
+      "limitations": [
+        "The study concerns mouse cortical development and lineage timing.",
+        "It does not report a validated measure of consciousness in the organoids.",
+        "Ethical discussion about possible future organoid consciousness must remain separate from this study's findings."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ001-POPMECH-ORGANOID-2026",
+      "source_type": "SECONDARY_SCIENCE_JOURNALISM",
+      "title": "Scientists Grew a Brain Cortex in a Lab for the First Time Ever",
+      "authors_short": "Darren Orf",
+      "year": 2026,
+      "publisher": "Popular Mechanics",
+      "url": "https://www.popularmechanics.com/science/health/a73447069/mouse-cerebral-organoid/",
+      "relationship_to_primary": "DISCOVERY_AND_PUBLIC_FRAMING_ONLY",
+      "limitations": [
+        "The article's consciousness discussion is prospective neuroethics context, not a result of the cited study.",
+        "A cortical organoid is not equivalent to a complete mouse brain."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ001-DEMIREL-2025-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A pooled EEG analysis identified sensor- and source-level activity patterns associated with verified lucid dreaming that differed from non-lucid REM sleep and wakefulness.",
+      "domain": "altered_states_and_dream_consciousness",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-DEMIREL-JNEUROSCI-2025"
+      ],
+      "limitations": [
+        "Evidence supports electrophysiological differentiation at group level, not a metaphysical conclusion about consciousness."
+      ],
+      "uncertainty": "Replication with larger, more standardized datasets is needed to define the state's boundaries and mechanisms.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed primary analysis; secondary article retained only as discovery provenance"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-POSPISIL-2026-HYP-01",
+      "claim_type": "HYPOTHESIS",
+      "text": "Biophoton-mediated interactions may constitute an additional mode of neural communication, but neural information coding, decoding and stable quantum propagation have not been experimentally demonstrated.",
+      "domain": "biophotons_and_neural_communication",
+      "evidence_label": "Hypothesis",
+      "source_ids": [
+        "SRC-BQ001-POSPISIL-PRASAD-2026"
+      ],
+      "limitations": [
+        "Conceptual review with limited direct experimental evidence for the proposed communication mechanism."
+      ],
+      "uncertainty": "Feasibility and any relevance to conscious experience remain unresolved.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed conceptual review; PubMed-indexed record"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-FUNDAMENTAL-2026-INTERP-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Some consciousness researchers argue that consciousness may be fundamental rather than produced solely by brains.",
+      "domain": "alternative_hypotheses_and_unresolved_models",
+      "evidence_label": "Interpretation",
+      "source_ids": [
+        "SRC-BQ001-POPMECH-FUNDAMENTAL-2026"
+      ],
+      "limitations": [
+        "The article reports positions and analogies rather than an experimental adjudication among ontologies."
+      ],
+      "uncertainty": "The position remains philosophically and scientifically contested and does not demonstrate individual continuity.",
+      "supports_models": [],
+      "provenance": [
+        "secondary interview and conference reporting"
+      ]
+    },
+    {
+      "claim_id": "CLAIM-BQ001-STOUFFER-2026-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "Mouse cortical organoids produced major cortical cell types but showed temporal uncoupling of lineage progression relative to in-vivo development.",
+      "domain": "organoid_development_and_consciousness_detection_context",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ001-STOUFFER-NATURE-2026"
+      ],
+      "limitations": [
+        "Developmental fidelity was measured; consciousness was not."
+      ],
+      "uncertainty": "The work informs model validity and future neuroethics but provides no evidence that these organoids were conscious.",
+      "supports_models": [],
+      "provenance": [
+        "peer-reviewed primary developmental study; secondary article retained only as discovery provenance"
+      ]
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATE",
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "model_edges_upgrade_evidence": false
+  },
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "These candidates add evidence about lucid-dream electrophysiology and cortical-organoid development, plus a testable but currently hypothetical biophoton-signalling proposal and a philosophical fundamental-consciousness position. They do not establish nonlocal consciousness, telepathy, reincarnation or post-mortem continuity."
+  },
+  "promotion_guards": {
+    "secondary_headline_determines_evidence_status": false,
+    "brain_rhythm_signature_proves_ontological_state": false,
+    "biophoton_emission_proves_neural_information_transfer": false,
+    "quantum_language_proves_nonlocal_consciousness": false,
+    "fundamental_consciousness_proves_personal_survival": false,
+    "organoid_cortex_proves_organoid_consciousness": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false
+  }
+}
