@@ -329,5 +329,71 @@
       "Prevent duplicate episode syndication from being counted as independent evidence.",
       "Require human review for consequential claims and disability-related communication assessments."
     ]
+  },
+  "reincarnation_reimagined_extension": {
+    "programme": "Reincarnation Reimagined",
+    "works_extension": "AWAKEN the Works",
+    "parent_lens": "AkashicTIMELESS",
+    "status": "EXPLORATORY_EXTENSION",
+    "central_question": "If consciousness or information appears to cross ordinary boundaries, what—if anything—continues: a person, memory, pattern, relationship, awareness, or culturally shaped interpretation?",
+    "workstreams": [
+      {
+        "id": "RR-AW-01",
+        "title": "Hidden Mind",
+        "sources": [
+          "NEJM-CLAASSEN-2024-CMD",
+          "REDDIT-NTN-1EWRB8E"
+        ],
+        "purpose": "Separate absent behavioural output from absent consciousness; do not generalise acquired brain injury to autism."
+      },
+      {
+        "id": "RR-AW-02",
+        "title": "Mind Between Minds",
+        "sources": [
+          "PNAS-STEPHENS-2010",
+          "MBB-KY-DICKENS-2025-10-27",
+          "MBB-JAMES-GIORDANO-2026-09-11"
+        ],
+        "purpose": "Distinguish ordinary neural coupling, assisted communication, anomalous information-transfer claims and shared-space testimony."
+      },
+      {
+        "id": "RR-AW-03",
+        "title": "Memory Without Biography",
+        "sources": [
+          "MBB-CHARLES-LIU-2026-09-02",
+          "MBB-SHARON-STONE-2026-09-08-09"
+        ],
+        "purpose": "Compare NDE, DMT, downloaded-memory, past-life and information-continuity interpretations without assuming personal survival."
+      },
+      {
+        "id": "RR-AW-04",
+        "title": "Ceremony as Shared Field",
+        "sources": [
+          "FRONTIERS-KETTNER-2021-COMMUNITAS",
+          "REDDIT-NTN-1OEHUW4"
+        ],
+        "purpose": "Study psychedelic communitas and independently recorded shared-experience reports while controlling ritual, expectation and sensory leakage."
+      },
+      {
+        "id": "RR-AW-05",
+        "title": "After-Death Communication Testimony",
+        "sources": [
+          "MBB-BARBRA-BANNER-2026-09-04",
+          "MBB-LISA-KUDROW-2026-08"
+        ],
+        "purpose": "Preserve attributed testimony, cultural meaning and grief context; link claims to prospective tests and counter-explanations."
+      }
+    ],
+    "continuity_models_to_compare": [
+      "Biographical-person continuity",
+      "Memory or information continuity",
+      "Relational or ancestral continuity",
+      "Process continuity without permanent self",
+      "Common neurobiology and predictive processing",
+      "Social, cultural and retrospective construction",
+      "Nonlocal or transpersonal access hypothesis"
+    ],
+    "publication_rule": "AWAKEN may widen the questions and methods, but neither the number of testimonies nor thematic convergence changes BQ001 from UNRESOLVED.",
+    "route_note": "The repository mirror currently records /awaken as not present; this artifact defines the extension without claiming that a public route exists."
   }
 }
