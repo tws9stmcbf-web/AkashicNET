@@ -87,7 +87,7 @@ export default function Home() {
             <p>Capability alone does not determine direction. Metta, or loving-kindness, asks intelligence to serve non-harm, dignity and flourishing. In AkashicNET, wisdom is measured partly by how responsibly knowledge is held and shared.</p>
           </article>
         </div>
-        <blockquote>“The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.”<footer>— AkashicNET interpretation</footer></blockquote>
+        <blockquote>“The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.”<cite style={{ display: "block", marginTop: ".8rem", fontSize: ".4em", fontStyle: "normal" }}>— AkashicNET interpretation</cite></blockquote>
         <p className="portal-meaning-boundary"><strong>Interpretive boundary:</strong> Māyā and the veil are philosophical and contemplative language for apparent separation. They are not presented here as proof that physical boundaries are unreal or that metaphysical claims have been scientifically established.</p>
       </section>
 
