@@ -15,6 +15,7 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 | `akn24-global-food-shortages.webp` | `016169a0cd947f01505bb4143fbf839631bfad2eef9e27eede11400ae9b81d29` |
 | `akashicomni-global-food-security-13d.webp` | `b814cfe1ed6ed92da2814516fc17187a6831bf70016c4366d7f43c4e5db07aaa` |
 | `akashicnet-living-library-tree.webp` | `a00fd9e6b9eeafa847964512834b5f9662152fbd267c7ff11652afb11efd817b` |
+| `psy-nation-radio-listening-portal.png` | `011e63eb8160763db0af81933fc74445a7471ab6f271f79c3008ee7055a7fce8` |
 
 ## Provenance additions
 
@@ -27,6 +28,8 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 - `akashicomni-global-food-security-13d.webp` — AI-assisted AkashicNET analytical artwork added on 14 September 2026 for the same report. It visualises the canonical AkashicOMNI v0.3.0 thirteen-lens framework, including `HOMESENSE · Phase 8`; it is not a measured risk map or evidence of literal dimensions. No private corpus data is present.
 
 - `akashicnet-living-library-tree.webp` — AI-assisted AkashicNET ecological knowledge-map artwork added on 15 September 2026 for the interactive Living Library map. The rainforest tree, luminous inquiry cycle and mycelial connections are artistic metaphors, not scientific evidence. The asset contains no private corpus data or raw search inquiries.
+
+- `psy-nation-radio-listening-portal.png` — AI-assisted original AkashicNET artwork added on 16 September 2026 for the independent Psy-Nation Radio listening gateway. It is an unofficial portal badge, not the Psy-Nation Radio, SoundCloud, Apple Podcasts or YouTube brand mark. Cosmic radio-wave imagery is artistic symbolism; the asset contains no private corpus or listener data.
 
 The binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
 
