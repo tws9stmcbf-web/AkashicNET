@@ -60,6 +60,18 @@ class BQ003AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
 
+    def test_reincarnation_without_continuity_boundary_rejected(self):
+        candidate = copy.deepcopy(self.bridge)
+        candidate["named_hypothesis"]["decisive_boundary"] = "Universal awareness is reincarnation."
+        with self.assertRaises(ValueError):
+            self.validate(bridge=candidate)
+
+    def test_meta_awareness_hypothesis_promotion_rejected(self):
+        candidate = copy.deepcopy(self.bridge)
+        candidate["named_hypothesis"]["evidence_label"] = "Established Evidence"
+        with self.assertRaises(ValueError):
+            self.validate(bridge=candidate)
+
     def test_panpsychism_model_support_rejected(self):
         candidate = copy.deepcopy(self.bridge)
         candidate["governance"]["supports_models"] = ["BRIDGE-MODEL-PANPSYCHIC"]
