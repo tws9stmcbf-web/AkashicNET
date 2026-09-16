@@ -1,0 +1,200 @@
+{
+  "assessment_id": "BQ003-PROGRESS-ASSESSMENT-V0.1",
+  "version": "0.1.0",
+  "assessed_on": "2026-09-16",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ003",
+  "question_status": "UNRESOLVED",
+  "overall_progress": {
+    "level": 3,
+    "maximum": 10,
+    "label": "COMPETING_MODELS_DOCUMENTED",
+    "meaning": "The question has bounded definitions, competing explanations and candidate evidence pathways. The rating does not estimate truth or the probability that a field exists."
+  },
+  "level_semantics": [
+    {
+      "level": 1,
+      "label": "QUESTION_DEFINED"
+    },
+    {
+      "level": 2,
+      "label": "TERMS_AND_BOUNDARIES_CLARIFIED"
+    },
+    {
+      "level": 3,
+      "label": "COMPETING_MODELS_DOCUMENTED"
+    },
+    {
+      "level": 4,
+      "label": "TESTABLE_PREDICTIONS_IDENTIFIED"
+    },
+    {
+      "level": 5,
+      "label": "RELEVANT_EVIDENCE_ACCUMULATING"
+    },
+    {
+      "level": 6,
+      "label": "INDEPENDENT_REPLICATION_ACHIEVED"
+    },
+    {
+      "level": 7,
+      "label": "ALTERNATIVES_MEANINGFULLY_CONSTRAINED"
+    },
+    {
+      "level": 8,
+      "label": "PROVISIONAL_CONCLUSION_REACHED"
+    },
+    {
+      "level": 9,
+      "label": "CONCLUSION_SURVIVES_SUSTAINED_CHALLENGE"
+    },
+    {
+      "level": 10,
+      "label": "RESOLVED_OR_PRESENTLY_UNDECIDABLE_WITH_JUSTIFICATION"
+    }
+  ],
+  "axis_assessments": [
+    {
+      "axis": "personal_regulation",
+      "level": 5,
+      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
+      "bounded_finding": "Kindness and loving-kindness practices have evidence for some positive-emotion and wellbeing outcomes.",
+      "boundary": "Effects vary and do not establish access to an external field.",
+      "source_ids": [
+        "SRC-BQ003-ZENG-LKM-2015",
+        "SRC-BQ003-KREPLIN-MEDITATION-2018"
+      ]
+    },
+    {
+      "axis": "interpersonal_harmony",
+      "level": 6,
+      "label": "INDEPENDENT_REPLICATION_ACHIEVED_WITHIN_BOUNDED_AXIS",
+      "bounded_finding": "A meta-analysis of 60 experiments reported a medium effect of interpersonal synchrony on prosocial attitudes and behaviours.",
+      "boundary": "Social coordination does not demonstrate nonlocal consciousness or a cosmic field.",
+      "source_ids": [
+        "SRC-BQ003-MERVA-SYNCHRONY-2017"
+      ]
+    },
+    {
+      "axis": "compassionate_behaviour",
+      "level": 5,
+      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
+      "bounded_finding": "Meditation interventions show qualified effects on compassion and empathy.",
+      "boundary": "Methodological quality moderates findings; effects were not general across aggression, connectedness or prejudice.",
+      "source_ids": [
+        "SRC-BQ003-KREPLIN-MEDITATION-2018"
+      ]
+    },
+    {
+      "axis": "ecological_relationship",
+      "level": 5,
+      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
+      "bounded_finding": "Nature connectedness is associated with pro-environmental behaviour.",
+      "boundary": "Association with ecological care does not show communion with a conscious cosmos.",
+      "source_ids": [
+        "SRC-BQ003-WHITBURN-NATURE-2020"
+      ]
+    },
+    {
+      "axis": "altered_state_and_mystical_phenomenology",
+      "level": 3,
+      "label": "COMPETING_MODELS_DOCUMENTED",
+      "bounded_finding": "Reports of unity, sacred relatedness and encompassing love provide phenomenological and testimonial research targets.",
+      "boundary": "A reported experience does not by itself establish an external field or authenticate perceived beings.",
+      "source_ids": []
+    },
+    {
+      "axis": "nonlocal_consciousness",
+      "level": 2,
+      "label": "TERMS_AND_BOUNDARIES_CLARIFIED",
+      "bounded_finding": "Nonlocal access is a distinguishable hypothesis requiring prospective information-verification tests.",
+      "boundary": "No source in this assessment is accepted as replicated evidence of nonlocal access.",
+      "source_ids": []
+    },
+    {
+      "axis": "literal_cosmic_ontology",
+      "level": 1,
+      "label": "QUESTION_DEFINED",
+      "bounded_finding": "The pre-existing love-field model is now accurately stated.",
+      "boundary": "Its independent existence and intrinsic quality remain unconfirmed.",
+      "source_ids": []
+    },
+    {
+      "axis": "philosophical_and_contemplative_coherence",
+      "level": 3,
+      "label": "COMPETING_MODELS_DOCUMENTED",
+      "bounded_finding": "Receiver/filter, fundamental-consciousness and love-field interpretations can be compared without treating coherence as empirical confirmation.",
+      "boundary": "Philosophical or contemplative coherence is Interpretation, Hypothesis or Speculation according to the claim.",
+      "source_ids": []
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-BQ003-ZENG-LKM-2015",
+      "source_type": "PEER_REVIEWED_META_ANALYSIS",
+      "title": "The effect of loving-kindness meditation on positive emotions: a meta-analytic review",
+      "doi": "10.3389/fpsyg.2015.01693",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4630307/",
+      "limitations": [
+        "More studies are needed to identify active components.",
+        "Positive-emotion effects do not establish field access."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ003-KREPLIN-MEDITATION-2018",
+      "source_type": "PEER_REVIEWED_SYSTEMATIC_REVIEW_AND_META_ANALYSIS",
+      "title": "The limited prosocial effects of meditation: A systematic review and meta-analysis",
+      "doi": "10.1038/s41598-018-20299-z",
+      "url": "https://www.nature.com/articles/s41598-018-20299-z",
+      "limitations": [
+        "Effects were qualified by outcome type and methodological quality.",
+        "Meditation outcomes do not establish cosmic ontology."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ003-MERVA-SYNCHRONY-2017",
+      "source_type": "PEER_REVIEWED_META_ANALYSIS",
+      "title": "Prosocial Consequences of Interpersonal Synchrony: A Meta-Analysis",
+      "doi": "10.1177/1088868316657969",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28105388/",
+      "limitations": [
+        "Intentionality and experimenter effects moderated outcomes.",
+        "Interpersonal synchrony is not evidence of a nonlocal field."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ003-WHITBURN-NATURE-2020",
+      "source_type": "PEER_REVIEWED_META_ANALYSIS",
+      "title": "Meta-analysis of human connection to nature and proenvironmental behavior",
+      "doi": "10.1111/cobi.13381",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7027494/",
+      "limitations": [
+        "Predominantly correlational evidence limits causal inference.",
+        "Nature connectedness is not equivalent to cosmic consciousness."
+      ]
+    }
+  ],
+  "advancement_requirements": {
+    "level_4": [
+      "Operationalise love, access, alignment and field without collapsing distinct meanings.",
+      "Specify model-discriminating predictions before data collection.",
+      "Define prospective tests for independently verifiable information and durable behavioural effects.",
+      "Include neutral, negative and failed outcomes."
+    ],
+    "level_5": [
+      "Complete preregistered studies with active controls.",
+      "Measure behaviour alongside self-report.",
+      "Achieve independent replication across cultures and research groups.",
+      "Test expectation, suggestion, sensory leakage and cultural-exposure explanations."
+    ]
+  },
+  "governance": {
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "model_edges_upgrade_evidence": false
+  }
+}
