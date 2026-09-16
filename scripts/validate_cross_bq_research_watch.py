@@ -56,8 +56,9 @@ def validate(data):
             fail(f"{sid}: DOI and HTTPS URL required")
         if not source.get("limitations"):
             fail(f"{sid}: limitations required")
-        if not set(source.get("candidate_bq_links", [])).issubset(ALLOWED_CURRENT_BQS):
-            fail(f"{sid}: noncanonical BQ mapping")
+        links = source.get("candidate_bq_links")
+        if not isinstance(links, list) or not links or not set(links).issubset(ALLOWED_CURRENT_BQS):
+            fail(f"{sid}: nonempty current-BQ candidate mapping required")
         check = source.get("link_check", {})
         if check.get("status") != "AVAILABLE" or check.get("title_match") is not True:
             fail(f"{sid}: link and title check required")
@@ -68,6 +69,7 @@ def validate(data):
     if not isinstance(claims, list) or len(claims) != len(EXPECTED_SOURCES):
         fail("one bounded claim per source required")
     seen = set()
+    claimed_source_ids = []
     for claim in claims:
         cid = claim.get("claim_id")
         if not cid or cid in seen:
@@ -79,11 +81,16 @@ def validate(data):
             fail(f"{cid}: uncertainty and movement type required")
         if claim.get("supports_models") != []:
             fail(f"{cid}: supports_models must remain empty")
-        if not set(claim.get("candidate_bq_links", [])).issubset(ALLOWED_CURRENT_BQS):
-            fail(f"{cid}: noncanonical BQ mapping")
-        for sid in claim.get("source_ids", []):
-            if sid not in source_map:
-                fail(f"{cid}: unknown source {sid}")
+        links = claim.get("candidate_bq_links")
+        if not isinstance(links, list) or not links or not set(links).issubset(ALLOWED_CURRENT_BQS):
+            fail(f"{cid}: nonempty current-BQ candidate mapping required")
+        source_ids = claim.get("source_ids")
+        if not isinstance(source_ids, list) or len(source_ids) != 1:
+            fail(f"{cid}: exactly one source binding required")
+        sid = source_ids[0]
+        if sid not in source_map:
+            fail(f"{cid}: unknown source {sid}")
+        claimed_source_ids.append(sid)
         if claim.get("claim_type") == "INTERPRETATION" and claim.get("evidence_label") != "Interpretation":
             fail(f"{cid}: interpretation promotion")
         if claim.get("evidence_label") == "Established Evidence" and claim.get("claim_type") != "OBSERVATION":
@@ -98,6 +105,8 @@ def validate(data):
         ):
             if phrase in text:
                 fail(f"{cid}: forbidden overclaim")
+    if set(claimed_source_ids) != EXPECTED_SOURCES or len(set(claimed_source_ids)) != len(claimed_source_ids):
+        fail("claims must bind each source exactly once")
 
     adjudication = data.get("adjudication", {})
     if adjudication.get("decision") != "REVIEW_CANDIDATE":
