@@ -50,23 +50,27 @@ const evidenceLegend = [
 export default function LivingLibraryMap() {
   const [active, setActive] = useState<Node | null>(null);
   const pointerType = useRef<string | null>(null);
+  const touchArmedNodeId = useRef<string | null>(null);
 
   const preview = (node: Node) => {
     if (pointerType.current !== "touch") {
+      touchArmedNodeId.current = null;
       setActive(node);
     }
   };
 
   const choose = (event: MouseEvent<HTMLButtonElement>, node: Node) => {
     const isKeyboard = event.detail === 0;
-    const isTouchFirst =
-      !isKeyboard && pointerType.current === "touch" && active?.id !== node.id;
+    const isTouch = !isKeyboard && pointerType.current === "touch";
+    const isTouchFirst = isTouch && touchArmedNodeId.current !== node.id;
     pointerType.current = null;
 
     if (isTouchFirst) {
+      touchArmedNodeId.current = node.id;
       setActive(node);
       return;
     }
+    touchArmedNodeId.current = null;
     window.location.href = node.href;
   };
 
@@ -102,7 +106,10 @@ export default function LivingLibraryMap() {
                 aria-pressed={active?.id === node.id}
                 onPointerDown={(event) => { pointerType.current = event.pointerType; }}
                 onPointerEnter={(event) => {
-                  if (event.pointerType === "mouse") setActive(node);
+                  if (event.pointerType === "mouse") {
+                    touchArmedNodeId.current = null;
+                    setActive(node);
+                  }
                 }}
                 onPointerCancel={() => { pointerType.current = null; }}
                 onFocus={() => preview(node)}
