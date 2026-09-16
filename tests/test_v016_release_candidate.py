@@ -118,10 +118,11 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.assertIn("candidate summary", errors)
 
 
-    def test_repository_binding_accepts_declared_current_base(self):
+    def test_repository_binding_accepts_declared_base_as_ancestor(self):
         completed = [
             mock.Mock(stdout="candidate-head\n"),
-            mock.Mock(stdout=DATA["candidate_base_commit"] + "\n"),
+            mock.Mock(returncode=0),
+            mock.Mock(returncode=0),
         ]
         with mock.patch.dict(os.environ, {"CANDIDATE_HEAD_SHA": ""}):
             with mock.patch(
@@ -129,6 +130,22 @@ class ReleaseCandidateTests(unittest.TestCase):
                 side_effect=completed,
             ):
                 self.assertEqual(validate_repository_binding(), [])
+
+    def test_repository_binding_rejects_base_outside_main_history(self):
+        completed = [
+            mock.Mock(stdout="candidate-head\n"),
+            mock.Mock(returncode=0),
+            mock.Mock(returncode=1),
+        ]
+        with mock.patch.dict(os.environ, {"CANDIDATE_HEAD_SHA": ""}):
+            with mock.patch(
+                "scripts.validate_v016_release_candidate.subprocess.run",
+                side_effect=completed,
+            ):
+                self.assertIn(
+                    "candidate base is not an ancestor of main",
+                    validate_repository_binding(),
+                )
 
 
 if __name__ == "__main__":
