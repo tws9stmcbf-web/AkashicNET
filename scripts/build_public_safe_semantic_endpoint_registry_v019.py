@@ -55,6 +55,19 @@ def endpoint(endpoint_id, endpoint_type, label, assertion_class, evidence_status
     }
 
 
+def is_public_question(qid, config, root=ROOT):
+    spec_rel = config.get("spec")
+    if not spec_rel:
+        raise ValueError(f"missing spec for registered question: {qid}")
+    spec = json.loads((root / spec_rel).read_bytes())
+    if spec.get("id") != qid:
+        raise ValueError(f"question spec ID mismatch: expected {qid}, got {spec.get('id')}")
+    gate = spec.get("public_beta_gate")
+    if not isinstance(gate, bool):
+        raise ValueError(f"public_beta_gate must be boolean for {qid}")
+    return gate
+
+
 def parse_drive(text: str):
     rows = []
     for line in text.splitlines():
@@ -119,6 +132,8 @@ def load_real_inputs():
     evidence = {}
     artifact_rows = []
     for qid, config in sorted(architecture["questions"].items()):
+        if not is_public_question(qid, config):
+            continue
         synthesis_rel = f"references/big-questions/{qid}/public-synthesis-v0.1.json"
         synthesis_path = ROOT / synthesis_rel
         synthesis_raw = synthesis_path.read_bytes()
