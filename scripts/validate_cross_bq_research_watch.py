@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+import json
+import sys
+from pathlib import Path
+
+EXPECTED_SOURCES = {
+    "SRC-CROSSBQ-WALLECZEK-TPP-2025",
+    "SRC-CROSSBQ-MARTIAL-NEPTUNE-2025",
+    "SRC-CROSSBQ-BARRETO-NDE-REVIEW-2025",
+    "SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025",
+    "SRC-CROSSBQ-FINCHAM-A2A-2026",
+}
+ALLOWED_CURRENT_BQS = {"BQ001", "BQ002"}
+ALLOWED_LABELS = {
+    "Established Evidence",
+    "Interpretation",
+    "Lived Experience/Testimony",
+    "Hypothesis",
+    "Speculation",
+}
+FALSE_ADJUDICATION_GUARDS = {
+    "canonical_promotion_applied",
+    "public_synthesis_updated",
+    "website_updated",
+    "truth_inference_allowed",
+    "scientific_evidence_promotion_allowed",
+    "rights_promotion_allowed",
+    "model_edges_upgrade_evidence",
+}
+
+def fail(message):
+    raise ValueError(message)
+
+def validate(data):
+    if data.get("artifact_id") != "CROSS-BQ-RESEARCH-WATCH-2026-09-16":
+        fail("unexpected artifact_id")
+    if data.get("status") != "REVIEW_CANDIDATE":
+        fail("artifact must remain REVIEW_CANDIDATE")
+    scope = data.get("question_scope", {})
+    if set(scope.get("current_public_profiles", [])) != ALLOWED_CURRENT_BQS:
+        fail("current public BQ scope changed")
+    if scope.get("planned_questions_are_not_treated_as_canonical") is not True:
+        fail("planned questions must remain noncanonical")
+    statuses = data.get("question_status", {})
+    if statuses != {"BQ001": "UNRESOLVED", "BQ002": "UNRESOLVED"}:
+        fail("current BQs must remain UNRESOLVED")
+
+    sources = data.get("sources")
+    if not isinstance(sources, list) or len(sources) != len(EXPECTED_SOURCES):
+        fail("exact source candidate count required")
+    source_map = {item.get("source_id"): item for item in sources}
+    if set(source_map) != EXPECTED_SOURCES or len(source_map) != len(sources):
+        fail("source set changed or contains duplicates")
+    for sid, source in source_map.items():
+        if not source.get("doi") or not source.get("url", "").startswith("https://"):
+            fail(f"{sid}: DOI and HTTPS URL required")
+        if not source.get("limitations"):
+            fail(f"{sid}: limitations required")
+        if not set(source.get("candidate_bq_links", [])).issubset(ALLOWED_CURRENT_BQS):
+            fail(f"{sid}: noncanonical BQ mapping")
+        check = source.get("link_check", {})
+        if check.get("status") != "AVAILABLE" or check.get("title_match") is not True:
+            fail(f"{sid}: link and title check required")
+        if check.get("retraction_notice") != "NO_NOTICE_OBSERVED_AT_CHECK_TIME":
+            fail(f"{sid}: time-scoped retraction metadata required")
+
+    claims = data.get("claims")
+    if not isinstance(claims, list) or len(claims) != len(EXPECTED_SOURCES):
+        fail("one bounded claim per source required")
+    seen = set()
+    for claim in claims:
+        cid = claim.get("claim_id")
+        if not cid or cid in seen:
+            fail("claim IDs must be present and unique")
+        seen.add(cid)
+        if claim.get("evidence_label") not in ALLOWED_LABELS:
+            fail(f"{cid}: invalid evidence label")
+        if not claim.get("uncertainty") or not claim.get("movement_type"):
+            fail(f"{cid}: uncertainty and movement type required")
+        if claim.get("supports_models") != []:
+            fail(f"{cid}: supports_models must remain empty")
+        if not set(claim.get("candidate_bq_links", [])).issubset(ALLOWED_CURRENT_BQS):
+            fail(f"{cid}: noncanonical BQ mapping")
+        for sid in claim.get("source_ids", []):
+            if sid not in source_map:
+                fail(f"{cid}: unknown source {sid}")
+        if claim.get("claim_type") == "INTERPRETATION" and claim.get("evidence_label") != "Interpretation":
+            fail(f"{cid}: interpretation promotion")
+        if claim.get("evidence_label") == "Established Evidence" and claim.get("claim_type") != "OBSERVATION":
+            fail(f"{cid}: Established Evidence must be observational")
+        text = claim.get("text", "").lower()
+        for phrase in (
+            "proves psi",
+            "proves consciousness",
+            "proves survival",
+            "establishes post-mortem",
+            "disproves psi",
+        ):
+            if phrase in text:
+                fail(f"{cid}: forbidden overclaim")
+
+    adjudication = data.get("adjudication", {})
+    if adjudication.get("decision") != "REVIEW_CANDIDATE":
+        fail("adjudication must remain review-only")
+    for key in FALSE_ADJUDICATION_GUARDS:
+        if adjudication.get(key) is not False:
+            fail(f"guard must remain false: {key}")
+
+    rights = data.get("rights", {})
+    if rights.get("full_text_copied") is not False:
+        fail("full text must not be copied")
+    if rights.get("public_integration_allowed") is not False:
+        fail("public integration must remain disabled")
+    if rights.get("rights_review_required") is not True:
+        fail("rights review must remain required")
+
+    conclusion = data.get("batch_conclusion", {})
+    if conclusion.get("status") != "UNRESOLVED" or not conclusion.get("statement"):
+        fail("batch conclusion must remain UNRESOLVED")
+
+def main():
+    if len(sys.argv) != 2:
+        print("usage: validate_cross_bq_research_watch.py <artifact.json>", file=sys.stderr)
+        return 2
+    try:
+        validate(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8")))
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        print(f"CROSS-BQ RESEARCH WATCH FAIL: {exc}", file=sys.stderr)
+        return 1
+    print("CROSS-BQ RESEARCH WATCH PASS: review candidates only; BQ001 and BQ002 remain UNRESOLVED")
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
