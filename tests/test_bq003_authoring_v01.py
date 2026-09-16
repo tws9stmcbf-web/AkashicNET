@@ -68,9 +68,19 @@ class BQ003AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(bridge=candidate)
 
+    def test_canonical_registration_without_evidence_rejected(self):
+        candidate = copy.deepcopy(self.architecture)
+        candidate["questions"]["BQ003"] = {
+            "canonical_path": "references/big-questions/BQ003",
+            "spec": "references/big-questions/BQ003/spec-v0.1.json",
+            "evidence_batches": [],
+        }
+        with self.assertRaises(ValueError):
+            self.validate(architecture=candidate)
+
     def test_public_gate_rejected(self):
         candidate = copy.deepcopy(self.architecture)
-        candidate["questions"]["BQ003"]["public_beta_gate"] = True
+        candidate["authoring_candidates"]["BQ003"]["public_beta_gate"] = True
         with self.assertRaises(ValueError):
             self.validate(architecture=candidate)
 
