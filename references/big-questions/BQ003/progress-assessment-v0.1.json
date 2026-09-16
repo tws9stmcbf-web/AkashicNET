@@ -67,12 +67,12 @@
     },
     {
       "axis": "interpersonal_harmony",
-      "level": 6,
-      "label": "INDEPENDENT_REPLICATION_ACHIEVED_WITHIN_BOUNDED_AXIS",
+      "level": 5,
+      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
       "bounded_finding": "A meta-analysis of 60 experiments reported a medium effect of interpersonal synchrony on prosocial attitudes and behaviours.",
-      "boundary": "Social coordination does not demonstrate nonlocal consciousness or a cosmic field.",
+      "boundary": "The synthesis spans multiple experiments, but this assessment has not independently verified a Level 6 replication threshold; social coordination also does not demonstrate nonlocal consciousness or a cosmic field.",
       "source_ids": [
-        "SRC-BQ003-MERVA-SYNCHRONY-2017"
+        "SRC-BQ003-MOGAN-SYNCHRONY-2017"
       ]
     },
     {
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "source_id": "SRC-BQ003-MERVA-SYNCHRONY-2017",
+      "source_id": "SRC-BQ003-MOGAN-SYNCHRONY-2017",
       "source_type": "PEER_REVIEWED_META_ANALYSIS",
       "title": "Prosocial Consequences of Interpersonal Synchrony: A Meta-Analysis",
       "doi": "10.1177/1088868316657969",
@@ -160,7 +160,8 @@
       "limitations": [
         "Intentionality and experimenter effects moderated outcomes.",
         "Interpersonal synchrony is not evidence of a nonlocal field."
-      ]
+      ],
+      "authors_short": "Mogan, Fischer & Bulbulia"
     },
     {
       "source_id": "SRC-BQ003-WHITBURN-NATURE-2020",
