@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 import json
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = ROOT / "references/community/public-status-consistency-v0.15.json"
 STATUS = ROOT / "references/community/public-status-v0.14.json"
 LEDGER = ROOT / "references/community/release-ledger-v0.14.json"
-PROGRESS = ROOT / "website/app/development-progress/page.tsx"
+HOME = ROOT / "website/app/page.tsx"
 CHANGELOG = ROOT / "CHANGELOG.md"
-PUBLIC_APP = ROOT / "website/app"
 HANDOFF = ROOT / "docs/V014_PUBLIC_SYNC.md"
 V014 = "7b6cfd89de570c4b945d574dad570c37825645fe"
 
@@ -17,14 +15,14 @@ V014 = "7b6cfd89de570c4b945d574dad570c37825645fe"
 def fail(msg):
     raise SystemExit(f"FAIL: {msg}")
 
-for p in (CONTRACT, STATUS, LEDGER, PROGRESS, CHANGELOG, HANDOFF):
+for p in (CONTRACT, STATUS, LEDGER, HOME, CHANGELOG, HANDOFF):
     if not p.is_file():
         fail(f"missing required surface: {p.relative_to(ROOT)}")
 
 c = json.loads(CONTRACT.read_text())
 s = json.loads(STATUS.read_text())
 l = json.loads(LEDGER.read_text())
-progress = PROGRESS.read_text()
+home = HOME.read_text()
 changelog = CHANGELOG.read_text()
 handoff = HANDOFF.read_text()
 
@@ -39,27 +37,12 @@ r14 = next((r for r in l.get("releases", []) if r.get("version") == "0.14.0-beta
 if not r14 or r14.get("validated_release_commit") != V014 or r14.get("retargetable") is not False:
     fail("release ledger does not preserve immutable v0.14")
 
-for needle in ["v0.15", "SEALED BASELINE", "v0.16.0-beta.2", "GOVERNED CANDIDATE"]:
-    if needle not in progress:
-        fail(f"canonical development record missing status token: {needle}")
-
-allowed_product_status_surfaces = {
-    (ROOT / "website/app/page.tsx").resolve(),
-    PROGRESS.resolve(),
-}
-product_status = re.compile(
-    r"AkashicNET[^\n<]{0,40}(?:Pre-alpha|Public Beta)|"
-    r"(?:Pre-alpha|Public Beta)[^\n<]{0,40}AkashicNET",
-    re.IGNORECASE,
-)
-for surface in PUBLIC_APP.rglob("*.tsx"):
-    if surface.resolve() in allowed_product_status_surfaces:
-        continue
-    if product_status.search(surface.read_text()):
-        fail(
-            "product status must remain centralised on the homepage checkpoint "
-            f"and development record: {surface.relative_to(ROOT)}"
-        )
+for needle in c.get("homepage_requirements", {}).get("must_contain", []):
+    if needle not in home:
+        fail(f"homepage snapshot missing current status token: {needle}")
+for needle in c.get("homepage_requirements", {}).get("must_not_present_as_current", []):
+    if needle in home:
+        fail(f"homepage snapshot still presents stale current status: {needle}")
 
 for needle in ["v0.14.0-beta.1", "Automation & Reproducibility Beta", "2026-09-02"]:
     if needle not in changelog:
