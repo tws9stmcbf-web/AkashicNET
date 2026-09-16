@@ -185,8 +185,11 @@
     "level_5": [
       "Complete preregistered studies with active controls.",
       "Measure behaviour alongside self-report.",
-      "Achieve independent replication across cultures and research groups.",
+      "Accumulate relevant evidence across cultures and research groups.",
       "Test expectation, suggestion, sensory leakage and cultural-exposure explanations."
+    ],
+    "level_6": [
+      "Achieve independent replication across cultures and research groups."
     ]
   },
   "governance": {
