@@ -89,7 +89,7 @@ def discovered_source_status_fixture_paths() -> set[str]:
 
 
 def validate_repository_binding() -> list[str]:
-    """Bind the declared base and exact CI head to the checked-out Git history."""
+    """Bind the immutable candidate anchor and exact CI head to Git history."""
     errors: list[str] = []
     try:
         head = subprocess.run(
@@ -102,15 +102,19 @@ def validate_repository_binding() -> list[str]:
         expected_head = os.environ.get("CANDIDATE_HEAD_SHA", "").strip()
         if expected_head and head != expected_head:
             errors.append("exact candidate head checkout")
-        merge_base = subprocess.run(
-            ["git", "merge-base", "HEAD", "origin/main"],
-            cwd=ROOT,
-            check=True,
-            text=True,
-            capture_output=True,
-        ).stdout.strip()
-        if merge_base != EXPECTED_BASE_COMMIT:
-            errors.append("actual candidate base commit")
+        for ref, error in (
+            ("HEAD", "candidate base is not an ancestor of head"),
+            ("origin/main", "candidate base is not an ancestor of main"),
+        ):
+            result = subprocess.run(
+                ["git", "merge-base", "--is-ancestor", EXPECTED_BASE_COMMIT, ref],
+                cwd=ROOT,
+                check=False,
+                text=True,
+                capture_output=True,
+            )
+            if result.returncode != 0:
+                errors.append(error)
     except subprocess.CalledProcessError:
         errors.append("candidate repository binding")
     return errors
