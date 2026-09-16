@@ -32,6 +32,14 @@
           "notes": "Retained for Git history and reproducibility. Do not extend, count as a separate evidence batch, or use as the base for new bounded-question contracts."
         }
       ]
+    },
+    "BQ002": {
+      "canonical_path": "references/big-questions/BQ002",
+      "spec": "references/big-questions/BQ002/spec-v0.1.json",
+      "evidence_batches": [
+        "references/big-questions/BQ002/evidence-batch1-review-candidates-v0.1.json"
+      ],
+      "legacy_parallel_records": []
     }
   },
   "release_invariants": {
