@@ -1,0 +1,66 @@
+{
+  "bridge_id": "BQ001-BQ003-META-AWARENESS-BRIDGE-V0.1",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "questions": [
+    "BQ001",
+    "BQ003"
+  ],
+  "bridge_question": "Could meta-awareness continue beyond individual biological life if consciousness is fundamental or pervasive?",
+  "conditional_framing": "Panpsychism and animistic or relational ontologies are candidate frameworks. Their truth is not assumed.",
+  "distinctions": [
+    {
+      "continuity_type": "PERSONAL_IDENTITY_CONTINUITY",
+      "question": "Does the same autobiographical subject continue?",
+      "boundary": "General or pervasive consciousness would not by itself preserve memory, personality or identity."
+    },
+    {
+      "continuity_type": "META_AWARENESS_CONTINUITY",
+      "question": "Could awareness-of-awareness persist without the ordinary individual self?",
+      "boundary": "Reports of selfless or nondual awareness do not establish post-mortem persistence."
+    },
+    {
+      "continuity_type": "INFORMATION_CONTINUITY",
+      "question": "Could patterns or information persist without a continuing subject?",
+      "boundary": "Information persistence is not equivalent to conscious experience."
+    },
+    {
+      "continuity_type": "RELATIONAL_OR_ANIMISTIC_CONTINUITY",
+      "question": "Could personhood or awareness be understood as continuing through relationships with beings, places, ancestors or a living world?",
+      "boundary": "Animistic traditions are diverse, culturally situated and not interchangeable scientific hypotheses."
+    }
+  ],
+  "candidate_models": [
+    {
+      "model_id": "BRIDGE-MODEL-BIOLOGICAL-DEPENDENCE",
+      "position": "Meta-awareness depends on functioning biological organisation and ceases when that organisation irreversibly ends."
+    },
+    {
+      "model_id": "BRIDGE-MODEL-RECEIVER-FILTER",
+      "position": "Biological organisation filters or localises a wider awareness; some non-personal awareness may continue."
+    },
+    {
+      "model_id": "BRIDGE-MODEL-PANPSYCHIC",
+      "position": "Consciousness or proto-consciousness is fundamental or pervasive, without automatically implying survival of an individual subject."
+    },
+    {
+      "model_id": "BRIDGE-MODEL-RELATIONAL-ANIMISTIC",
+      "position": "Mind, agency or personhood may be relationally distributed across beings, places and worlds, with meanings governed by their specific traditions."
+    }
+  ],
+  "discriminating_questions": [
+    "What observation would distinguish impersonal meta-awareness from memory reconstruction or altered self-processing?",
+    "What evidence would show continuity of a subject rather than recurrence of a general property?",
+    "Can any prospectively recorded information be verified without ordinary sensory or informational access?",
+    "Which claims are empirical, philosophical, contemplative, testimonial or culturally governed?"
+  ],
+  "governance": {
+    "bq001_status": "UNRESOLVED",
+    "bq003_status": "UNRESOLVED",
+    "supports_models": [],
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "cultural_boundary": "Do not flatten diverse animistic or Indigenous ontologies into generic panpsychism; attribution, community authority, permission and CARE constraints apply."
+  }
+}
