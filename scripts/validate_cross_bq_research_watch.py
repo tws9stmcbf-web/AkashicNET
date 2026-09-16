@@ -9,6 +9,17 @@ EXPECTED_SOURCES = {
     "SRC-CROSSBQ-BARRETO-NDE-REVIEW-2025",
     "SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025",
     "SRC-CROSSBQ-FINCHAM-A2A-2026",
+    "SRC-CROSSBQ-RABOURDIN-OBE-2026",
+    "SRC-CROSSBQ-GALLO-CERTIFICATION-2026",
+    "SRC-CROSSBQ-HOURAN-DRAKES-2025",
+    "SRC-CROSSBQ-MAYER-GHOST-HUNTERS-2026",
+    "SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026",
+}
+EXPECTED_INSTITUTIONS = {
+    "INST-UVA-DOPS",
+    "INST-NYU-PARNIA",
+    "INST-ULIEGE-COMA",
+    "ORG-IANDS",
 }
 ALLOWED_CURRENT_BQS = {"BQ001", "BQ002"}
 ALLOWED_LABELS = {
@@ -65,6 +76,28 @@ def validate(data):
         if check.get("retraction_notice") != "NO_NOTICE_OBSERVED_AT_CHECK_TIME":
             fail(f"{sid}: time-scoped retraction metadata required")
 
+    held = source_map["SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026"]
+    if held.get("review_disposition") != "HOLD_PENDING_FULL_TEXT_METHOD_REVIEW":
+        fail("single mediumship case must remain on methodological hold")
+    for sid in EXPECTED_SOURCES - {"SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026"}:
+        disposition = source_map[sid].get("review_disposition")
+        if disposition not in (None, "REVIEW_CANDIDATE"):
+            fail(f"{sid}: unexpected review disposition")
+
+    institutions = data.get("research_institution_watch")
+    if not isinstance(institutions, list) or len(institutions) != len(EXPECTED_INSTITUTIONS):
+        fail("exact institutional watch count required")
+    institution_map = {item.get("institution_id"): item for item in institutions}
+    if set(institution_map) != EXPECTED_INSTITUTIONS or len(institution_map) != len(institutions):
+        fail("institutional watch set changed or contains duplicates")
+    for iid, institution in institution_map.items():
+        if not institution.get("url", "").startswith("https://"):
+            fail(f"{iid}: HTTPS URL required")
+        if not institution.get("topics") or not institution.get("evidence_boundary"):
+            fail(f"{iid}: topics and evidence boundary required")
+    if institution_map["ORG-IANDS"].get("role") != "SPECIALIST_NONPROFIT_JOURNAL_REGISTRY_AND_SUPPORT_NETWORK":
+        fail("IANDS must remain distinguished from academic research groups")
+
     claims = data.get("claims")
     if not isinstance(claims, list) or len(claims) != len(EXPECTED_SOURCES):
         fail("one bounded claim per source required")
@@ -107,6 +140,13 @@ def validate(data):
                 fail(f"{cid}: forbidden overclaim")
     if set(claimed_source_ids) != EXPECTED_SOURCES or len(set(claimed_source_ids)) != len(claimed_source_ids):
         fail("claims must bind each source exactly once")
+
+    case_claim = next(
+        claim for claim in claims
+        if claim.get("source_ids") == ["SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026"]
+    )
+    if case_claim.get("claim_type") != "TESTIMONY" or case_claim.get("evidence_label") != "Lived Experience/Testimony":
+        fail("held single case must remain testimony, not promoted evidence")
 
     adjudication = data.get("adjudication", {})
     if adjudication.get("decision") != "REVIEW_CANDIDATE":
