@@ -191,13 +191,13 @@
       "doi": "10.1073/pnas.1008662107",
       "source_url": "https://www.pnas.org/doi/10.1073/pnas.1008662107",
       "source_type": "PRIMARY_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "speaker-listener coupling",
         "communication",
         "comprehension"
       ],
-      "claim_boundary": "Supports neural coupling during ordinary communication; does not establish unaided distant thought transfer.",
+      "claim_boundary": "Provisional source summary pending claim-level evidence and provenance assessment; not an established-evidence determination. Supports neural coupling during ordinary communication; does not establish unaided distant thought transfer.",
       "review_state": "PRIMARY_ABSTRACT_REVIEWED"
     },
     {
@@ -206,13 +206,13 @@
       "title": "Cognitive Motor Dissociation in Disorders of Consciousness",
       "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2400645",
       "source_type": "PRIMARY_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "cognitive motor dissociation",
         "covert command following",
         "disorders of consciousness"
       ],
-      "claim_boundary": "Demonstrates that behavioural unresponsiveness can conceal cognition in some brain-injured patients; does not establish telepathy or generalise directly to autism.",
+      "claim_boundary": "Provisional source summary pending claim-level evidence and provenance assessment; not an established-evidence determination. Demonstrates that behavioural unresponsiveness can conceal cognition in some brain-injured patients; does not establish telepathy or generalise directly to autism.",
       "review_state": "PRIMARY_RECORD_LINKED"
     },
     {
@@ -221,13 +221,13 @@
       "title": "Psychedelic Communitas: Intersubjective Experience During Psychedelic Group Sessions Predicts Enduring Changes in Psychological Wellbeing and Social Connectedness",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8717779/",
       "source_type": "PRIMARY_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "psychedelic communitas",
         "group experience",
         "social connectedness"
       ],
-      "claim_boundary": "Supports perceived togetherness in psychedelic group settings; does not demonstrate shared visions or nonlocal information transfer.",
+      "claim_boundary": "Provisional source summary pending claim-level evidence and provenance assessment; not an established-evidence determination. Supports perceived togetherness in psychedelic group settings; does not demonstrate shared visions or nonlocal information transfer.",
       "review_state": "PRIMARY_RECORD_LINKED"
     },
     {
@@ -272,14 +272,14 @@
       "doi": "10.1007/s40489-026-00569-7",
       "source_url": "https://link.springer.com/article/10.1007/s40489-026-00569-7",
       "source_type": "SYSTEMATIC_REVIEW",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "rapid prompting method",
         "spelling to communicate",
         "authorship",
         "prompt dependency"
       ],
-      "claim_boundary": "Evaluates whether existing RPM/S2C research can independently demonstrate authorship; it does not establish absence of cognition or communicative potential in nonspeaking people.",
+      "claim_boundary": "Provisional source summary pending claim-level evidence and provenance assessment; not an established-evidence determination. Evaluates whether existing RPM/S2C research can independently demonstrate authorship; it does not establish absence of cognition or communicative potential in nonspeaking people.",
       "review_state": "PRIMARY_ABSTRACT_AND_METHODS_SUMMARY_REVIEWED"
     },
     {
@@ -290,7 +290,7 @@
       "doi": "10.1037/0033-2909.125.4.387",
       "source_url": "https://pubmed.ncbi.nlm.nih.gov/10414223/",
       "source_type": "META_ANALYSIS",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "ganzfeld",
         "telepathy",
@@ -298,7 +298,7 @@
         "publication bias",
         "methodology"
       ],
-      "claim_boundary": "A counter-source on one experimental telepathy literature; failure to replicate that effect does not by itself settle every anomalous-cognition claim.",
+      "claim_boundary": "Provisional source summary pending claim-level evidence and provenance assessment; not an established-evidence determination. A counter-source on one experimental telepathy literature; failure to replicate that effect does not by itself settle every anomalous-cognition claim.",
       "review_state": "PRIMARY_ABSTRACT_REVIEWED"
     },
     {
