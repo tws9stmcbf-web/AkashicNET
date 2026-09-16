@@ -24,10 +24,29 @@ EXPECTED_CONTINUITY_TYPES = {
     "INFORMATION_CONTINUITY",
     "RELATIONAL_OR_ANIMISTIC_CONTINUITY",
 }
+EXPECTED_BRIDGE_MODELS = {
+    "BRIDGE-MODEL-BIOLOGICAL-DEPENDENCE",
+    "BRIDGE-MODEL-RECEIVER-FILTER",
+    "BRIDGE-MODEL-PANPSYCHIC",
+    "BRIDGE-MODEL-RELATIONAL-ANIMISTIC",
+}
+EXPECTED_CULTURAL_GOVERNANCE = {
+    "indigenous_relational_cosmologies_are_not_generic_evidence",
+    "community_authority_permission_and_care_required",
+    "restricted_knowledge_must_remain_restricted",
+    "perceived_beings_must_not_be_authenticated_by_default",
+    "traditions_must_not_be_collapsed_into_one_cosmology",
+}
 FALSE_GUARDS = {
     "truth_inference_allowed",
     "scientific_evidence_promotion_allowed",
     "rights_promotion_allowed",
+}
+ASSESSMENT_FALSE_GUARDS = FALSE_GUARDS | {
+    "canonical_promotion_applied",
+    "public_synthesis_updated",
+    "website_updated",
+    "model_edges_upgrade_evidence",
 }
 
 def fail(message):
@@ -45,9 +64,12 @@ def validate(spec, assessment, bridge, aghor, architecture):
         fail("field-creation exclusion lost")
     if boundary.get("ontology_status") != "UNCONFIRMED" or boundary.get("access_status") != "UNCONFIRMED":
         fail("field ontology/access must remain unconfirmed")
-    models = {item.get("model_id") for item in spec.get("models", [])}
-    if models != EXPECTED_MODELS:
+    model_items = spec.get("models", [])
+    models = {item.get("model_id") for item in model_items}
+    if models != EXPECTED_MODELS or len(model_items) != len(EXPECTED_MODELS):
         fail("competing model set changed")
+    if any(item.get("status") != "UNRESOLVED" for item in model_items):
+        fail("competing models must remain unresolved")
     for claim in spec.get("claims", []):
         if claim.get("supports_models") != []:
             fail("BQ003 model support promotion")
@@ -71,8 +93,10 @@ def validate(spec, assessment, bridge, aghor, architecture):
     if len(lens.get("sources", [])) < 2:
         fail("Aghor lens requires lineage and scholarly context")
 
-    cultural = spec.get("cultural_governance", {})
-    if not all(cultural.values()):
+    cultural = spec.get("cultural_governance")
+    if not isinstance(cultural, dict) or set(cultural) != EXPECTED_CULTURAL_GOVERNANCE:
+        fail("BQ003 cultural governance requirements changed")
+    if any(cultural.get(key) is not True for key in EXPECTED_CULTURAL_GOVERNANCE):
         fail("BQ003 cultural governance must remain fail-closed")
 
     progress = assessment.get("overall_progress", {})
@@ -97,8 +121,9 @@ def validate(spec, assessment, bridge, aghor, architecture):
     cosmic = next((item for item in axes if item.get("axis") == "literal_cosmic_ontology"), None)
     if not cosmic or cosmic.get("level") != 1 or "unconfirmed" not in cosmic.get("boundary", "").lower():
         fail("literal cosmic ontology must remain Level 1 and unconfirmed")
-    for key in FALSE_GUARDS:
-        if assessment.get("governance", {}).get(key) is not False:
+    assessment_governance = assessment.get("governance", {})
+    for key in ASSESSMENT_FALSE_GUARDS:
+        if assessment_governance.get(key) is not False:
             fail(f"assessment guard weakened: {key}")
 
     if bridge.get("status") != "REVIEW_CANDIDATE":
@@ -108,6 +133,10 @@ def validate(spec, assessment, bridge, aghor, architecture):
     types = {item.get("continuity_type") for item in bridge.get("distinctions", [])}
     if types != EXPECTED_CONTINUITY_TYPES:
         fail("continuity distinctions changed")
+    bridge_model_items = bridge.get("candidate_models", [])
+    bridge_models = {item.get("model_id") for item in bridge_model_items}
+    if bridge_models != EXPECTED_BRIDGE_MODELS or len(bridge_model_items) != len(EXPECTED_BRIDGE_MODELS):
+        fail("bridge competing model set changed")
     hypothesis = bridge.get("named_hypothesis", {})
     if hypothesis.get("hypothesis_id") != "HYP-BQ001-META-AWARENESS-REINCARNATION-REIMAGINED":
         fail("named meta-awareness hypothesis missing")
@@ -147,8 +176,12 @@ def validate(spec, assessment, bridge, aghor, architecture):
     for claim in claims:
         if claim.get("supports_models") != []:
             fail("Aghor claims supports_models must remain empty")
-        if claim.get("evidence_label") not in {"Established Evidence", "Interpretation"}:
-            fail("Aghor claim label invalid")
+        expected_label = {
+            "OBSERVATION": "Established Evidence",
+            "INTERPRETATION": "Interpretation",
+        }.get(claim.get("claim_type"))
+        if expected_label is None or claim.get("evidence_label") != expected_label:
+            fail("Aghor claim type/evidence label pairing invalid")
         source_ids = claim.get("source_ids")
         if not isinstance(source_ids, list) or len(source_ids) != 1:
             fail("Aghor claims require one source each")
