@@ -15,15 +15,36 @@ class BQ003AuthoringTests(unittest.TestCase):
         self.spec = json.loads(module.SPEC.read_text(encoding="utf-8"))
         self.assessment = json.loads(module.ASSESSMENT.read_text(encoding="utf-8"))
         self.bridge = json.loads(module.BRIDGE.read_text(encoding="utf-8"))
+        self.aghor = json.loads(module.AGHOR.read_text(encoding="utf-8"))
         self.architecture = json.loads(module.ARCH.read_text(encoding="utf-8"))
 
-    def validate(self, spec=None, assessment=None, bridge=None, architecture=None):
+    def validate(self, spec=None, assessment=None, bridge=None, aghor=None, architecture=None):
         module.validate(
             spec or self.spec,
             assessment or self.assessment,
             bridge or self.bridge,
+            aghor or self.aghor,
             architecture or self.architecture,
         )
+
+    def test_aghori_full_text_hold_removal_rejected(self):
+        candidate = copy.deepcopy(self.aghor)
+        source = next(x for x in candidate["sources"] if x["source_id"] == "SRC-BQ003-GUPTA-KINA-RAMI-1993")
+        source["review_disposition"] = "ACCEPTED"
+        with self.assertRaises(ValueError):
+            self.validate(aghor=candidate)
+
+    def test_aghori_model_support_promotion_rejected(self):
+        candidate = copy.deepcopy(self.aghor)
+        candidate["bounded_claims"][0]["supports_models"] = ["MODEL-BQ003-LOVE-FIELD"]
+        with self.assertRaises(ValueError):
+            self.validate(aghor=candidate)
+
+    def test_aghori_canonical_acceptance_rejected(self):
+        candidate = copy.deepcopy(self.aghor)
+        candidate["governance"]["accepted_evidence_batch"] = True
+        with self.assertRaises(ValueError):
+            self.validate(aghor=candidate)
 
     def test_candidate_passes(self):
         self.validate()
