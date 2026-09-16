@@ -37,6 +37,23 @@ class BQ009AuthoringTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate)
 
+    def test_artifact_identity_change_and_removal_rejected(self):
+        for argument, original, key in (
+            ("assessment", self.assessment, "assessment_id"),
+            ("agenda", self.agenda, "agenda_id"),
+        ):
+            for value in (original[key].replace("BQ009", "BQ004"), "", None):
+                with self.subTest(argument=argument, value=value):
+                    candidate = copy.deepcopy(original)
+                    candidate[key] = value
+                    with self.assertRaises(ValueError):
+                        self.validate(**{argument: candidate})
+            with self.subTest(argument=argument, removed=True):
+                candidate = copy.deepcopy(original)
+                del candidate[key]
+                with self.assertRaises(ValueError):
+                    self.validate(**{argument: candidate})
+
     def test_candidate_passes(self):
         self.validate()
 

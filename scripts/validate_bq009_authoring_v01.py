@@ -149,6 +149,8 @@ def validate(spec, assessment, agenda, architecture):
     if any(cultural.get(key) is not True for key in EXPECTED_CULTURAL_GOVERNANCE):
         fail("BQ009 cultural governance must remain fail-closed")
 
+    if assessment.get("assessment_id") != "BQ009-PROGRESS-ASSESSMENT-V0.1":
+        fail("assessment artifact identity changed")
     if assessment.get("status") != "REVIEW_CANDIDATE" or assessment.get("question_id") != "BQ009":
         fail("assessment identity/status changed")
     if assessment.get("question_status") != "UNRESOLVED":
@@ -169,6 +171,8 @@ def validate(spec, assessment, agenda, architecture):
             fail(f"assessment axis changed: {axis}")
     require_false(assessment.get("governance"), FALSE_GUARDS | {"model_edges_upgrade_evidence"}, "assessment guard")
 
+    if agenda.get("agenda_id") != "BQ009-RESEARCH-AGENDA-V0.1":
+        fail("agenda artifact identity changed")
     if agenda.get("status") != "REVIEW_CANDIDATE" or agenda.get("question_id") != "BQ009":
         fail("research agenda identity/status changed")
     if agenda.get("question_status") != "UNRESOLVED":
