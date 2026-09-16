@@ -141,5 +141,32 @@
     "ai_synthesis_may_not_be_primary_source": true,
     "rights_promotion_allowed": false,
     "scientific_truth_inference_allowed": false
-  }
+  },
+  "culturally_situated_interpretive_lenses": [
+    {
+      "lens_id": "LENS-BQ003-AGHOR-NONDUAL-SHAIVA",
+      "name": "Aghor / nondual Śaiva perspective",
+      "evidence_label": "Interpretation",
+      "status": "REVIEW_CANDIDATE",
+      "documented_basis": "Aghor and nondual Śaiva sources support culturally situated themes including Śiva, nonduality, non-rejection and challenges to fixed purity/impurity distinctions.",
+      "akashicnet_interpretation": "If reality is understood as an indivisible expression of Śiva-consciousness, AkashicNET interprets this as compatible with—without proving—an omnipresent consciousness-field model. Radical non-rejection may be compared with an integrative quality described by AkashicNET as love.",
+      "attribution_boundary": "Do not state that all Aghoris teach that an omnipresent field is full of love. The field-of-love wording is an AkashicNET comparative interpretation unless a named lineage or primary teaching explicitly supports it.",
+      "scientific_boundary": "A culturally coherent metaphysical interpretation is not scientific confirmation of a field, nonlocal access, survival or reincarnation.",
+      "sources": [
+        {
+          "title": "Aghor, Aghori and Aughar",
+          "url": "https://www.shriaghoreshwar.org/en/aghor-aghori-and-aughar/",
+          "source_role": "LINEAGE_ORGANISATION_CONTEXT",
+          "limitation": "The page presents tradition and lineage context; it is not experimental evidence and cautions against reducing Aghor to a single conventional category."
+        },
+        {
+          "title": "Purity and Impurity in Nondualistic Śaiva Tantrism",
+          "url": "https://ejournals.eu/pliki_artykulu_czasopisma/pelny_tekst/1b6f5ae6-afa5-4cba-888d-d5bc9851dcb4/pobierz",
+          "source_role": "SCHOLARLY_COMPARATIVE_CONTEXT",
+          "limitation": "Nondual Śaiva scholarship is relevant context but must not be treated as identical to every Aghor lineage or contemporary practitioner."
+        }
+      ],
+      "supports_models": []
+    }
+  ]
 }
