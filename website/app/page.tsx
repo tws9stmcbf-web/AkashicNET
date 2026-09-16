@@ -183,7 +183,8 @@ export default function Home() {
         <div><strong>3</strong><span>SHA-256-verified duplicate pairs</span></div>
         <div><strong>9</strong><span>evidence-backed graph edges accepted</span></div>
         <div><strong>23</strong><span>nodes in the current knowledge-graph seed</span></div>
-        <p>Counts describe scope and pipeline state, not validated truth claims. See the linked development record below for canonical product-version status and sealed-release history.</p>
+        <div><strong>v0.14.0-beta.1</strong><span>Automation & Reproducibility Beta · READY / SEALED</span></div>
+        <p>Historical sealed release checkpoint · 2 September 2026. Counts describe scope and pipeline state, not validated truth claims. See the linked development record below for current product-version status and sealed-release history.</p>
       </section>
 
       <section className="plain-language" id="start-here">
