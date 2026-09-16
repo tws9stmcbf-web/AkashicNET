@@ -68,6 +68,14 @@ def validate(spec, assessment, bridge, architecture):
     axes = assessment.get("axis_assessments", [])
     if not axes:
         fail("axis assessments required")
+    interpersonal = next((item for item in axes if item.get("axis") == "interpersonal_harmony"), None)
+    if not interpersonal or interpersonal.get("level") != 5:
+        fail("interpersonal harmony must remain Level 5 until independent replication is verified")
+    if interpersonal.get("source_ids") != ["SRC-BQ003-MOGAN-SYNCHRONY-2017"]:
+        fail("interpersonal synchrony source binding changed")
+    source_ids = {item.get("source_id") for item in assessment.get("sources", [])}
+    if "SRC-BQ003-MOGAN-SYNCHRONY-2017" not in source_ids:
+        fail("corrected Mogan synchrony source required")
     cosmic = next((item for item in axes if item.get("axis") == "literal_cosmic_ontology"), None)
     if not cosmic or cosmic.get("level") != 1 or "unconfirmed" not in cosmic.get("boundary", "").lower():
         fail("literal cosmic ontology must remain Level 1 and unconfirmed")
