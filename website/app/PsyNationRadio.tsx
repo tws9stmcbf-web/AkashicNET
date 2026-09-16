@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Episode = {
   id: string;
@@ -101,10 +101,15 @@ const bars = Array.from({ length: 24 }, (_, index) => index);
 export default function PsyNationRadio() {
   const [selectedId, setSelectedId] = useState("100");
   const [loaded, setLoaded] = useState(false);
+  const playerRef = useRef<HTMLIFrameElement>(null);
   const selected = useMemo(
     () => episodes.find((episode) => episode.id === selectedId) ?? episodes[0],
     [selectedId],
   );
+
+  useEffect(() => {
+    if (loaded) playerRef.current?.focus();
+  }, [loaded]);
 
   function chooseEpisode(id: string) {
     setSelectedId(id);
@@ -182,7 +187,9 @@ export default function PsyNationRadio() {
 
           {loaded ? (
             <iframe
+              ref={playerRef}
               key={selected.id}
+              tabIndex={0}
               src={selected.embedUrl}
               title={`Psy-Nation Radio ${selected.number} on ${selected.provider}`}
               height={selected.height}
