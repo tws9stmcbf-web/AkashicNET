@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import sys
+from datetime import datetime
 from pathlib import Path
 
 EXPECTED_SOURCES = {
@@ -71,6 +72,16 @@ def validate(data):
         if not isinstance(links, list) or not links or not set(links).issubset(ALLOWED_CURRENT_BQS):
             fail(f"{sid}: nonempty current-BQ candidate mapping required")
         check = source.get("link_check", {})
+        checked_at = check.get("checked_at")
+        try:
+            checked_at_is_valid = (
+                isinstance(checked_at, str)
+                and datetime.strptime(checked_at, "%Y-%m-%d").strftime("%Y-%m-%d") == checked_at
+            )
+        except ValueError:
+            checked_at_is_valid = False
+        if not checked_at_is_valid:
+            fail(f"{sid}: valid ISO link-check date required")
         if check.get("status") != "AVAILABLE" or check.get("title_match") is not True:
             fail(f"{sid}: link and title check required")
         if check.get("retraction_notice") != "NO_NOTICE_OBSERVED_AT_CHECK_TIME":
@@ -123,6 +134,8 @@ def validate(data):
         sid = source_ids[0]
         if sid not in source_map:
             fail(f"{cid}: unknown source {sid}")
+        if not set(links).issubset(set(source_map[sid]["candidate_bq_links"])):
+            fail(f"{cid}: claim mapping exceeds bound source scope")
         claimed_source_ids.append(sid)
         if claim.get("claim_type") == "INTERPRETATION" and claim.get("evidence_label") != "Interpretation":
             fail(f"{cid}: interpretation promotion")

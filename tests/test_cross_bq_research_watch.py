@@ -46,6 +46,23 @@ class CrossBQResearchWatchTests(unittest.TestCase):
     def test_missing_limitation_rejected(self):
         self.assert_rejected(lambda d: d["sources"][0].__setitem__("limitations", []))
 
+    def test_missing_link_check_timestamp_rejected(self):
+        self.assert_rejected(lambda d: d["sources"][0]["link_check"].pop("checked_at"))
+
+    def test_invalid_link_check_timestamp_rejected(self):
+        self.assert_rejected(
+            lambda d: d["sources"][0]["link_check"].__setitem__("checked_at", "2026-02-30")
+        )
+
+    def test_claim_mapping_outside_bound_source_scope_rejected(self):
+        def remap_claim(d):
+            claim = next(
+                claim for claim in d["claims"]
+                if claim["source_ids"] == ["SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025"]
+            )
+            claim["candidate_bq_links"] = ["BQ002"]
+        self.assert_rejected(remap_claim)
+
     def test_overclaim_rejected(self):
         self.assert_rejected(lambda d: d["claims"][0].__setitem__("text", "This proves psi."))
 
