@@ -48,6 +48,28 @@ EXPECTED_CULTURAL_GOVERNANCE = {
     "benefit_sharing_and_non_extractive_research_required",
     "traditions_must_not_be_collapsed_into_one_path",
 }
+EXPECTED_PROMOTION_GUARDS = {
+    "testimony_may_not_auto_promote_to_established_evidence": True,
+    "transformative_state_may_not_be_presented_as_durable_trait": True,
+    "compassionate_intention_may_not_be_presented_as_observed_benefit": True,
+    "individual_change_may_not_be_presented_as_system_change": True,
+    "correlation_may_not_be_presented_as_causation": True,
+    "source_count_may_not_upgrade_evidence": True,
+    "semantic_similarity_may_not_upgrade_evidence": True,
+    "ai_synthesis_may_not_be_primary_source": True,
+    "rights_promotion_allowed": False,
+    "scientific_truth_inference_allowed": False,
+}
+EXPECTED_METHOD_REQUIREMENTS = [
+    "Prospective and longitudinal designs where feasible.",
+    "Preregistered outcomes and transparent deviations.",
+    "Behavioural, third-party, institutional or ecological measures alongside self-report.",
+    "Null results, adverse effects and heterogeneous responses retained.",
+    "Selection, expectancy, demand-characteristic and social-desirability alternatives assessed.",
+    "No metaphysical conclusion inferred from psychological or social outcomes.",
+    "Community-led cultural governance, permission and benefit sharing where applicable.",
+    "No individual-level change presented as institutional or planetary change without direct measurement.",
+]
 FALSE_GUARDS = {
     "canonical_promotion_applied",
     "public_synthesis_updated",
@@ -95,8 +117,18 @@ def validate(spec, assessment, agenda, architecture):
         fail("competing model set changed")
     if any(item.get("status") != "UNRESOLVED" for item in model_items):
         fail("competing models must remain unresolved")
-    if any(claim.get("supports_models") != [] for claim in spec.get("claims", [])):
-        fail("BQ004 model support promotion")
+    claims = spec.get("claims")
+    if not isinstance(claims, list) or len(claims) != 1:
+        fail("BQ004 must retain exactly one project-state claim")
+    claim = claims[0]
+    if (
+        claim.get("claim_id") != "CLAIM-BQ004-FRAMEWORK-001"
+        or claim.get("claim_type") != "PROJECT_STATE"
+        or claim.get("scope") != "project_state_only"
+        or claim.get("source_ids") != []
+        or claim.get("supports_models") != []
+    ):
+        fail("BQ004 project-state claim or no-support boundary changed")
 
     outcomes = spec.get("outcome_families", [])
     if set(outcomes) != EXPECTED_OUTCOMES or len(outcomes) != len(EXPECTED_OUTCOMES):
@@ -105,9 +137,9 @@ def validate(spec, assessment, agenda, architecture):
     for key in ("truth_inference_allowed", "edge_state_may_upgrade_evidence"):
         if spec.get("graph", {}).get(key) is not False:
             fail(f"BQ004 graph guard weakened: {key}")
-    guards = spec.get("promotion_guards", {})
-    if guards.get("rights_promotion_allowed") is not False or guards.get("scientific_truth_inference_allowed") is not False:
-        fail("BQ004 promotion guards weakened")
+    guards = spec.get("promotion_guards")
+    if guards != EXPECTED_PROMOTION_GUARDS:
+        fail("BQ004 promotion guards changed or weakened")
 
     cultural = spec.get("cultural_governance")
     if not isinstance(cultural, dict) or set(cultural) != EXPECTED_CULTURAL_GOVERNANCE:
@@ -146,9 +178,15 @@ def validate(spec, assessment, agenda, architecture):
         fail("research priority ranks changed")
     if any(not item.get("required_outcomes") for item in priority_items):
         fail("research priorities require measurable outcomes")
-    community = agenda.get("community_role", {})
-    if "cannot establish causation" not in community.get("evidence_boundary", ""):
+    if agenda.get("methodological_requirements") != EXPECTED_METHOD_REQUIREMENTS:
+        fail("research methodology boundaries changed")
+    community = agenda.get("community_role")
+    if not isinstance(community, dict) or set(community) != {"n2n_function", "evidence_boundary", "consent_boundary"}:
+        fail("community role boundaries changed")
+    if "cannot establish causation" not in community["evidence_boundary"]:
         fail("community evidence boundary weakened")
+    if "without permission" not in community["consent_boundary"]:
+        fail("community consent boundary weakened")
     require_false(agenda.get("governance"), FALSE_GUARDS | {"accepted_evidence_batch"}, "research agenda guard")
 
     if "BQ004" in architecture.get("questions", {}):
@@ -158,6 +196,8 @@ def validate(spec, assessment, agenda, architecture):
         fail("BQ004 authoring-candidate gate changed")
     if reg.get("canonical_registration_applied") is not False or reg.get("accepted_evidence_batches") != []:
         fail("BQ004 canonical acceptance must remain unapplied")
+    if reg.get("candidate_path") != "references/big-questions/BQ004":
+        fail("BQ004 candidate path changed")
     if reg.get("spec") != "references/big-questions/BQ004/spec-v0.1.json":
         fail("BQ004 spec registration changed")
     if reg.get("review_candidates") != [
