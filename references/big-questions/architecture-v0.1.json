@@ -48,7 +48,8 @@
       "spec": "references/big-questions/BQ003/spec-v0.1.json",
       "review_candidates": [
         "references/big-questions/BQ003/progress-assessment-v0.1.json",
-        "references/big-questions/BQ003/bq001-meta-awareness-bridge-v0.1.json"
+        "references/big-questions/BQ003/bq001-meta-awareness-bridge-v0.1.json",
+        "references/big-questions/BQ003/aghori-research-candidates-v0.1.json"
       ],
       "registration_status": "REVIEW_CANDIDATE",
       "canonical_registration_applied": false,
