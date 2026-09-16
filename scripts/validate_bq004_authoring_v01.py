@@ -125,6 +125,8 @@ def validate(spec, assessment, agenda, architecture):
         claim.get("claim_id") != "CLAIM-BQ004-FRAMEWORK-001"
         or claim.get("claim_type") != "PROJECT_STATE"
         or claim.get("scope") != "project_state_only"
+        or claim.get("text") != "BQ004 currently has no adjudicated substantive answer or accepted evidence batch."
+        or claim.get("uncertainty") != "No causal, clinical, social or metaphysical conclusion is implied."
         or claim.get("source_ids") != []
         or claim.get("supports_models") != []
     ):
