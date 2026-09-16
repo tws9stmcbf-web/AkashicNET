@@ -49,6 +49,59 @@ class BQ003AuthoringTests(unittest.TestCase):
     def test_candidate_passes(self):
         self.validate()
 
+    def test_renewed_review_guards_reject_promotion_and_removal(self):
+        cases = [
+            ("aghor", ("governance", "canonical_promotion_applied"), True),
+            ("aghor", ("governance", "public_synthesis_updated"), True),
+            ("aghor", ("governance", "website_updated"), True),
+            ("aghor", ("governance", "question_status"), "RESOLVED"),
+            ("spec", ("graph", "truth_inference_allowed"), True),
+            ("spec", ("graph", "edge_state_may_upgrade_evidence"), True),
+            ("assessment", ("status",), "ACCEPTED"),
+        ]
+        for document, path, promoted in cases:
+            for remove in (False, True):
+                with self.subTest(document=document, path=path, remove=remove):
+                    candidate = copy.deepcopy(getattr(self, document))
+                    parent = candidate
+                    for key in path[:-1]:
+                        parent = parent[key]
+                    if remove:
+                        del parent[path[-1]]
+                    else:
+                        parent[path[-1]] = promoted
+                    with self.assertRaises(ValueError):
+                        self.validate(**{document: candidate})
+
+    def test_aghor_interpretations_cannot_be_retyped_as_observations(self):
+        for index, claim in enumerate(self.aghor["bounded_claims"]):
+            if claim["claim_type"] != "INTERPRETATION":
+                continue
+            with self.subTest(claim=claim["claim_id"]):
+                candidate = copy.deepcopy(self.aghor)
+                candidate["bounded_claims"][index]["claim_type"] = "OBSERVATION"
+                candidate["bounded_claims"][index]["evidence_label"] = "Established Evidence"
+                with self.assertRaises(ValueError):
+                    self.validate(aghor=candidate)
+
+    def test_aghor_claim_source_swap_rejected(self):
+        candidate = copy.deepcopy(self.aghor)
+        first, second = candidate["bounded_claims"][:2]
+        first["source_ids"], second["source_ids"] = second["source_ids"], first["source_ids"]
+        with self.assertRaises(ValueError):
+            self.validate(aghor=candidate)
+
+    def test_aghor_claim_identity_changes_rejected(self):
+        for replacement in (None, "UNKNOWN", self.aghor["bounded_claims"][0]["claim_id"]):
+            with self.subTest(replacement=replacement):
+                candidate = copy.deepcopy(self.aghor)
+                if replacement is None:
+                    del candidate["bounded_claims"][1]["claim_id"]
+                else:
+                    candidate["bounded_claims"][1]["claim_id"] = replacement
+                with self.assertRaises(ValueError):
+                    self.validate(aghor=candidate)
+
     def test_assessment_promotion_flags_rejected(self):
         for key in (
             "canonical_promotion_applied",
