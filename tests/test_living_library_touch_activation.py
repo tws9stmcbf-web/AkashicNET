@@ -11,7 +11,7 @@ def test_touch_focus_and_compatibility_mouse_entry_cannot_consume_first_tap():
     assert 'const touchArmedNodeId = useRef<string | null>(null);' in source
     assert 'pointerType.current !== "touch"' in source
     assert 'onPointerEnter={(event) => {' in source
-    assert 'if (event.pointerType === "mouse") {' in source
+    assert 'if (event.pointerType === "mouse" || event.pointerType === "pen") {' in source
     assert 'touchArmedNodeId.current = null;' in source
     assert 'onMouseEnter={() => setActive(node)}' not in source
     assert 'window.matchMedia("(hover: none)")' not in source

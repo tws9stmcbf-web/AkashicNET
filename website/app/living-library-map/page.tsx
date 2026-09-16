@@ -106,7 +106,7 @@ export default function LivingLibraryMap() {
                 aria-pressed={active?.id === node.id}
                 onPointerDown={(event) => { pointerType.current = event.pointerType; }}
                 onPointerEnter={(event) => {
-                  if (event.pointerType === "mouse") {
+                  if (event.pointerType === "mouse" || event.pointerType === "pen") {
                     touchArmedNodeId.current = null;
                     setActive(node);
                   }
