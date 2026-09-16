@@ -28,6 +28,19 @@ class BQ003AuthoringTests(unittest.TestCase):
     def test_candidate_passes(self):
         self.validate()
 
+    def test_aghori_field_of_love_overattribution_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        lens = candidate["culturally_situated_interpretive_lenses"][0]
+        lens["attribution_boundary"] = "All Aghoris teach that the field is full of love."
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_aghori_lens_evidence_promotion_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        candidate["culturally_situated_interpretive_lenses"][0]["evidence_label"] = "Established Evidence"
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
     def test_field_creation_misstatement_rejected(self):
         candidate = copy.deepcopy(self.spec)
         candidate["hypothesis_boundary"]["excluded_claim"] = "No exclusion."
