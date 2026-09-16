@@ -53,6 +53,23 @@ def validate(spec, assessment, bridge, architecture):
     guards = spec.get("promotion_guards", {})
     if guards.get("rights_promotion_allowed") is not False or guards.get("scientific_truth_inference_allowed") is not False:
         fail("BQ003 promotion guards weakened")
+    lenses = spec.get("culturally_situated_interpretive_lenses", [])
+    if len(lenses) != 1 or lenses[0].get("lens_id") != "LENS-BQ003-AGHOR-NONDUAL-SHAIVA":
+        fail("bounded Aghor interpretive lens required")
+    lens = lenses[0]
+    if lens.get("evidence_label") != "Interpretation" or lens.get("status") != "REVIEW_CANDIDATE":
+        fail("Aghor lens must remain a review-candidate Interpretation")
+    if lens.get("supports_models") != []:
+        fail("Aghor lens supports_models must remain empty")
+    attribution = lens.get("attribution_boundary", "").lower()
+    if "do not state that all aghoris teach" not in attribution or "akashicnet comparative interpretation" not in attribution:
+        fail("Aghor attribution boundary missing")
+    scientific = lens.get("scientific_boundary", "").lower()
+    if "not scientific confirmation" not in scientific:
+        fail("Aghor scientific boundary missing")
+    if len(lens.get("sources", [])) < 2:
+        fail("Aghor lens requires lineage and scholarly context")
+
     cultural = spec.get("cultural_governance", {})
     if not all(cultural.values()):
         fail("BQ003 cultural governance must remain fail-closed")
