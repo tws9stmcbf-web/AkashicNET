@@ -59,6 +59,24 @@ class BQ004AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(spec=candidate)
 
+    def test_project_state_claim_removal_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        candidate["claims"] = []
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_promotion_guard_change_and_removal_rejected(self):
+        for key, value in module.EXPECTED_PROMOTION_GUARDS.items():
+            for remove in (False, True):
+                with self.subTest(key=key, remove=remove):
+                    candidate = copy.deepcopy(self.spec)
+                    if remove:
+                        del candidate["promotion_guards"][key]
+                    else:
+                        candidate["promotion_guards"][key] = not value
+                    with self.assertRaises(ValueError):
+                        self.validate(spec=candidate)
+
     def test_outcome_family_drift_rejected(self):
         candidate = copy.deepcopy(self.spec)
         candidate["outcome_families"][0] = "self_report_only"
@@ -116,6 +134,17 @@ class BQ004AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(agenda=candidate)
 
+    def test_methodology_and_community_consent_removal_rejected(self):
+        candidate = copy.deepcopy(self.agenda)
+        candidate["methodological_requirements"].pop()
+        with self.assertRaises(ValueError):
+            self.validate(agenda=candidate)
+
+        candidate = copy.deepcopy(self.agenda)
+        del candidate["community_role"]["consent_boundary"]
+        with self.assertRaises(ValueError):
+            self.validate(agenda=candidate)
+
     def test_agenda_guard_promotion_and_removal_rejected(self):
         for key in module.FALSE_GUARDS | {"accepted_evidence_batch"}:
             for remove in (False, True):
@@ -141,6 +170,11 @@ class BQ004AuthoringTests(unittest.TestCase):
     def test_authoring_registration_drift_rejected(self):
         candidate = copy.deepcopy(self.architecture)
         candidate["authoring_candidates"]["BQ004"]["public_beta_gate"] = True
+        with self.assertRaises(ValueError):
+            self.validate(architecture=candidate)
+
+        candidate = copy.deepcopy(self.architecture)
+        candidate["authoring_candidates"]["BQ004"]["candidate_path"] = "references/public/BQ004"
         with self.assertRaises(ValueError):
             self.validate(architecture=candidate)
 
