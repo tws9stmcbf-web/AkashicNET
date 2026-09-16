@@ -75,7 +75,7 @@
       "doi": "10.1177/0146167218808502",
       "source_url": "https://doi.org/10.1177/0146167218808502",
       "source_type": "CROSS_CULTURAL_OBSERVATIONAL_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "karma belief",
         "cross-cultural measurement",
@@ -93,7 +93,7 @@
       "doi": "10.1016/j.socec.2023.102018",
       "source_url": "https://doi.org/10.1016/j.socec.2023.102018",
       "source_type": "EXPERIMENTAL_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "karma belief",
         "honesty",
@@ -112,7 +112,7 @@
       "pmcid": "PMC13096616",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13096616/",
       "source_type": "PREREGISTERED_CROSS_CULTURAL_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "karma belief",
         "generosity",
@@ -132,7 +132,7 @@
       "pmid": "34147343",
       "source_url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
       "source_type": "SCOPING_REVIEW",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "claimed past-life memories",
         "literature mapping",
@@ -168,7 +168,7 @@
       "pmcid": "PMC3056182",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3056182/",
       "source_type": "COMPARATIVE_OBSERVATIONAL_RESEARCH",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "family attitudes",
         "cultural context",
@@ -187,7 +187,7 @@
       "pmid": "8316609",
       "source_url": "https://pubmed.ncbi.nlm.nih.gov/8316609/",
       "source_type": "METHODOLOGICAL_REVIEW",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "child memory",
         "suggestibility",
@@ -205,7 +205,7 @@
       "doi": "10.3389/fpsyg.2024.1473340",
       "source_url": "https://doi.org/10.3389/fpsyg.2024.1473340",
       "source_type": "OBSERVATIONAL_FOLLOW_UP",
-      "evidence_lane": "Established Evidence",
+      "evidence_lane": "Interpretation",
       "topics": [
         "claimed past-life memories",
         "adult follow-up",
