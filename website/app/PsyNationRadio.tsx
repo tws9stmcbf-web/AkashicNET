@@ -46,7 +46,7 @@ const episodes: Episode[] = [
     guest: "GMS",
     distinction: "SoundCloud selection",
     provider: "SoundCloud",
-    embedUrl: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/psy-nation-radio-085-incl-gms&color=%23c463ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false",
+    embedUrl: "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fpsynationradio%2Fpsy-nation-radio-085-incl-gms%3Futm_source%3Dakashicnet.org%26utm_medium%3Dreferral%26utm_campaign%3Dpsy_nation_radio&color=%23c463ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false",
     sourceUrl: `https://soundcloud.com/psynationradio/psy-nation-radio-085-incl-gms?${referral}`,
     height: 166,
   },
