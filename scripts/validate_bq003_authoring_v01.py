@@ -49,6 +49,22 @@ ASSESSMENT_FALSE_GUARDS = FALSE_GUARDS | {
     "model_edges_upgrade_evidence",
 }
 
+AGHOR_FALSE_GUARDS = FALSE_GUARDS | {
+    "canonical_promotion_applied",
+    "public_synthesis_updated",
+    "website_updated",
+}
+EXPECTED_AGHOR_CLAIMS = {
+    "CLAIM-BQ003-AGHOR-ETHNOGRAPHY-01": (
+        "SRC-BQ003-BARRETT-AGHOR-MEDICINE-2008", "OBSERVATION", "Established Evidence"),
+    "CLAIM-BQ003-AGHOR-LINEAGE-01": (
+        "SRC-BQ003-SHANKAR-AGHOR-2011", "INTERPRETATION", "Interpretation"),
+    "CLAIM-BQ003-KINA-RAMI-HISTORY-01": (
+        "SRC-BQ003-GUPTA-KINA-RAMI-1993", "INTERPRETATION", "Interpretation"),
+    "CLAIM-BQ003-DEATH-TEACHER-01": (
+        "SRC-BQ003-SURI-PITCHFORD-DEATH-2010", "INTERPRETATION", "Interpretation"),
+}
+
 def fail(message):
     raise ValueError(message)
 
@@ -76,6 +92,9 @@ def validate(spec, assessment, bridge, aghor, architecture):
     guards = spec.get("promotion_guards", {})
     if guards.get("rights_promotion_allowed") is not False or guards.get("scientific_truth_inference_allowed") is not False:
         fail("BQ003 promotion guards weakened")
+    for key in ("truth_inference_allowed", "edge_state_may_upgrade_evidence"):
+        if spec.get("graph", {}).get(key) is not False:
+            fail(f"BQ003 graph guard weakened: {key}")
     lenses = spec.get("culturally_situated_interpretive_lenses", [])
     if len(lenses) != 1 or lenses[0].get("lens_id") != "LENS-BQ003-AGHOR-NONDUAL-SHAIVA":
         fail("bounded Aghor interpretive lens required")
@@ -99,6 +118,8 @@ def validate(spec, assessment, bridge, aghor, architecture):
     if any(cultural.get(key) is not True for key in EXPECTED_CULTURAL_GOVERNANCE):
         fail("BQ003 cultural governance must remain fail-closed")
 
+    if assessment.get("status") != "REVIEW_CANDIDATE":
+        fail("assessment must remain review candidate")
     progress = assessment.get("overall_progress", {})
     if assessment.get("question_status") != "UNRESOLVED":
         fail("assessment must remain unresolved")
@@ -176,19 +197,20 @@ def validate(spec, assessment, bridge, aghor, architecture):
     for claim in claims:
         if claim.get("supports_models") != []:
             fail("Aghor claims supports_models must remain empty")
-        expected_label = {
-            "OBSERVATION": "Established Evidence",
-            "INTERPRETATION": "Interpretation",
-        }.get(claim.get("claim_type"))
-        if expected_label is None or claim.get("evidence_label") != expected_label:
-            fail("Aghor claim type/evidence label pairing invalid")
+        expected = EXPECTED_AGHOR_CLAIMS.get(claim.get("claim_id"))
+        if expected is None:
+            fail("unexpected Aghor claim identity")
+        source_id, claim_type, evidence_label = expected
         source_ids = claim.get("source_ids")
-        if not isinstance(source_ids, list) or len(source_ids) != 1:
-            fail("Aghor claims require one source each")
+        if (source_ids != [source_id] or claim.get("claim_type") != claim_type
+                or claim.get("evidence_label") != evidence_label):
+            fail("Aghor claim source/type/evidence binding changed")
         claimed.extend(source_ids)
     if set(claimed) != expected_aghor_sources or len(claimed) != len(set(claimed)):
         fail("Aghor claims must bind each source exactly once")
-    for key in FALSE_GUARDS:
+    if aghor.get("governance", {}).get("question_status") != "UNRESOLVED":
+        fail("Aghor question must remain unresolved")
+    for key in AGHOR_FALSE_GUARDS:
         if aghor.get("governance", {}).get(key) is not False:
             fail(f"Aghor batch guard weakened: {key}")
     if aghor.get("governance", {}).get("accepted_evidence_batch") is not False:
