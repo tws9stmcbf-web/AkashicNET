@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC = ROOT / "references/big-questions/BQ003/spec-v0.1.json"
 ASSESSMENT = ROOT / "references/big-questions/BQ003/progress-assessment-v0.1.json"
 BRIDGE = ROOT / "references/big-questions/BQ003/bq001-meta-awareness-bridge-v0.1.json"
+AGHOR = ROOT / "references/big-questions/BQ003/aghori-research-candidates-v0.1.json"
 ARCH = ROOT / "references/big-questions/architecture-v0.1.json"
 
 EXPECTED_MODELS = {
@@ -32,7 +33,7 @@ FALSE_GUARDS = {
 def fail(message):
     raise ValueError(message)
 
-def validate(spec, assessment, bridge, architecture):
+def validate(spec, assessment, bridge, aghor, architecture):
     if spec.get("id") != "BQ003" or spec.get("status") != "UNRESOLVED":
         fail("BQ003 identity/status changed")
     if spec.get("authoring_status") != "REVIEW_CANDIDATE" or spec.get("public_beta_gate") is not False:
@@ -127,6 +128,41 @@ def validate(spec, assessment, bridge, architecture):
         if bridge_governance.get(key) is not False:
             fail(f"bridge guard weakened: {key}")
 
+    expected_aghor_sources = {
+        "SRC-BQ003-BARRETT-AGHOR-MEDICINE-2008",
+        "SRC-BQ003-SHANKAR-AGHOR-2011",
+        "SRC-BQ003-GUPTA-KINA-RAMI-1993",
+        "SRC-BQ003-SURI-PITCHFORD-DEATH-2010",
+    }
+    if aghor.get("status") != "REVIEW_CANDIDATE" or aghor.get("question_id") != "BQ003":
+        fail("Aghor batch must remain a BQ003 review candidate")
+    sources = aghor.get("sources", [])
+    source_map = {item.get("source_id"): item for item in sources}
+    if set(source_map) != expected_aghor_sources or len(source_map) != len(sources):
+        fail("Aghor candidate source set changed")
+    if source_map["SRC-BQ003-GUPTA-KINA-RAMI-1993"].get("review_disposition") != "HOLD_FULL_TEXT_ACCESS_LIMITED":
+        fail("Gupta dissertation must remain on access-limited hold")
+    claims = aghor.get("bounded_claims", [])
+    claimed = []
+    for claim in claims:
+        if claim.get("supports_models") != []:
+            fail("Aghor claims supports_models must remain empty")
+        if claim.get("evidence_label") not in {"Established Evidence", "Interpretation"}:
+            fail("Aghor claim label invalid")
+        source_ids = claim.get("source_ids")
+        if not isinstance(source_ids, list) or len(source_ids) != 1:
+            fail("Aghor claims require one source each")
+        claimed.extend(source_ids)
+    if set(claimed) != expected_aghor_sources or len(claimed) != len(set(claimed)):
+        fail("Aghor claims must bind each source exactly once")
+    for key in FALSE_GUARDS:
+        if aghor.get("governance", {}).get(key) is not False:
+            fail(f"Aghor batch guard weakened: {key}")
+    if aghor.get("governance", {}).get("accepted_evidence_batch") is not False:
+        fail("Aghor batch must not be accepted canonically")
+    if aghor.get("governance", {}).get("full_text_copied") is not False:
+        fail("Aghor full text must not be copied")
+
     if "BQ003" in architecture.get("questions", {}):
         fail("BQ003 must not enter the canonical questions registry without an accepted evidence batch")
     reg = architecture.get("authoring_candidates", {}).get("BQ003", {})
@@ -143,6 +179,7 @@ def main():
             json.loads(SPEC.read_text(encoding="utf-8")),
             json.loads(ASSESSMENT.read_text(encoding="utf-8")),
             json.loads(BRIDGE.read_text(encoding="utf-8")),
+            json.loads(AGHOR.read_text(encoding="utf-8")),
             json.loads(ARCH.read_text(encoding="utf-8")),
         )
     except (OSError, json.JSONDecodeError, ValueError) as exc:
