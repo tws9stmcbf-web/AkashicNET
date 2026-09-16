@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests/v0.16-release-candidate.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
-EXPECTED_BASE_COMMIT = "779be69acd564a09aada6212083d0fb3c0b599bf"
+EXPECTED_BASE_COMMIT = "8cb7a6174b518a7d4b092691940d04610b687116"
 
 EXPECTED_BASELINES = {
     "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
@@ -119,8 +119,10 @@ def validate_repository_binding() -> list[str]:
 def validate_manifest(data: dict) -> list[str]:
     errors: list[str] = []
 
-    if data.get("schema_version") != "0.16.0-beta.1":
+    if data.get("schema_version") != "0.16.0-beta.2":
         errors.append("schema version")
+    if data.get("candidate_iteration") != 2:
+        errors.append("candidate iteration")
     if data.get("artifact_status") != "UNRELEASED_REVIEW_CANDIDATE":
         errors.append("candidate status")
     if data.get("issue") != 277:

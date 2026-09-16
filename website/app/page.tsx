@@ -119,7 +119,7 @@ export default function Home() {
           <span className="cymatic-field"/><span className="metta-pulse"/>
         </div>
         <div className="hero-copy portal-copy">
-          <p className="eyebrow">A living multidimensional library of consciousness · Public Beta · v0.14 sealed</p>
+          <p className="eyebrow">A living multidimensional library of consciousness</p>
           <h1><span>Portal to</span><br /><em>Infinity.</em></h1>
           <p className="portal-signature">Intelligence solves. Meta-intelligence evolves. Metta-intelligence serves. ♾️</p>
           <p className="lede">Enter an evidence-governed knowledge network where consciousness research, lived experience, contemplative wisdom, creativity and planetary knowledge can meet without confusing possibility with proof.</p>
@@ -183,8 +183,7 @@ export default function Home() {
         <div><strong>3</strong><span>SHA-256-verified duplicate pairs</span></div>
         <div><strong>9</strong><span>evidence-backed graph edges accepted</span></div>
         <div><strong>23</strong><span>nodes in the current knowledge-graph seed</span></div>
-        <div><strong>v0.14.0-beta.1</strong><span>Automation & Reproducibility Beta · READY / SEALED</span></div>
-        <p>Sealed release checkpoint · 2 September 2026 · Counts describe scope and pipeline state, not validated truth claims.</p>
+        <p>Counts describe scope and pipeline state, not validated truth claims. See the linked development record below for canonical product-version status and sealed-release history.</p>
       </section>
 
       <section className="plain-language" id="start-here">
@@ -271,7 +270,7 @@ export default function Home() {
       </section>
 
       <section className="roadmap" id="roadmap">
-        <div className="section-heading"><div><p className="section-label">07 · Public roadmap</p><h2>Build slowly enough to build wisely.</h2></div><span className="phase-pill">Current phase · Public Beta · v0.14 sealed</span></div>
+        <div className="section-heading"><div><p className="section-label">07 · Public roadmap</p><h2>Build slowly enough to build wisely.</h2></div><a className="phase-pill" href="/development-progress">Public Beta · v0.15 sealed · v0.16.0-beta.2 governed candidate →</a></div>
         <div className="roadmap-grid">
           <article className="complete"><span>Foundation</span><h3>Public-source indexing</h3><p>Deduplication, basic provenance and initial evidence boundaries.</p><b>Established</b></article>
           <article className="active"><span>Now</span><h3>Corpus canonicalisation</h3><p>Resolve identity, structure and relationships without overclaiming.</p><b>In progress</b></article>

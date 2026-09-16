@@ -27,6 +27,12 @@ class ReleaseCandidateTests(unittest.TestCase):
     def test_candidate_manifest_passes(self):
         self.assertEqual(validate_manifest(copy.deepcopy(DATA)), [])
 
+    def test_candidate_iteration_must_be_exact(self):
+        errors = self.errors_after(
+            lambda data: data.__setitem__("candidate_iteration", 1)
+        )
+        self.assertIn("candidate iteration", errors)
+
     def test_candidate_base_must_be_exact(self):
         errors = self.errors_after(
             lambda data: data.__setitem__("candidate_base_commit", "0" * 40)
