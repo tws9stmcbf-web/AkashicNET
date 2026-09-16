@@ -1,12 +1,23 @@
 {
   "artifact_id": "CROSS-BQ-RESEARCH-WATCH-2026-09-16",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "REVIEW_CANDIDATE",
   "assessed_on": "2026-09-16",
   "scope": "methodologically_material_recent_research_for_current_and_planned_big_questions",
   "question_scope": {
-    "current_public_profiles": ["BQ001", "BQ002"],
-    "planned_review_horizon": ["BQ003", "BQ004", "BQ005", "BQ006", "BQ007", "BQ008", "BQ009"],
+    "current_public_profiles": [
+      "BQ001",
+      "BQ002"
+    ],
+    "planned_review_horizon": [
+      "BQ003",
+      "BQ004",
+      "BQ005",
+      "BQ006",
+      "BQ007",
+      "BQ008",
+      "BQ009"
+    ],
     "planned_questions_are_not_treated_as_canonical": true
   },
   "sources": [
@@ -19,7 +30,10 @@
       "journal": "PLOS ONE",
       "doi": "10.1371/journal.pone.0335330",
       "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0335330",
-      "candidate_bq_links": ["BQ001", "BQ002"],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
       "study_metadata": {
         "participants": 26483,
         "critical_trials": 420472
@@ -46,7 +60,10 @@
       "doi": "10.1038/s41582-025-01072-z",
       "pmid": "40159547",
       "url": "https://www.nature.com/articles/s41582-025-01072-z",
-      "candidate_bq_links": ["BQ001", "BQ002"],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
       "link_check": {
         "checked_at": "2026-09-16",
         "status": "AVAILABLE",
@@ -69,7 +86,9 @@
       "doi": "10.1177/00302228251363788",
       "pmid": "40739712",
       "url": "https://pubmed.ncbi.nlm.nih.gov/40739712/",
-      "candidate_bq_links": ["BQ001"],
+      "candidate_bq_links": [
+        "BQ001"
+      ],
       "study_metadata": {
         "articles_reviewed": 775,
         "coverage_end": "2025-04"
@@ -95,7 +114,9 @@
       "journal": "Cor et Vasa",
       "doi": "10.33678/cor.2025.031",
       "url": "https://e-coretvasa.cz/en/artkey/cor-202503-0002_prevalence-of-near-death-experiences-nde-in-patients-with-refractory-cardiac-arrest-treated-with-conventiona.php",
-      "candidate_bq_links": ["BQ001"],
+      "candidate_bq_links": [
+        "BQ001"
+      ],
       "study_metadata": {
         "respondents": 44,
         "nde_symptom_reports": 15,
@@ -123,7 +144,9 @@
       "journal": "Frontiers in Psychology",
       "doi": "10.3389/fpsyg.2026.1851882",
       "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1851882/full",
-      "candidate_bq_links": ["BQ002"],
+      "candidate_bq_links": [
+        "BQ002"
+      ],
       "link_check": {
         "checked_at": "2026-09-16",
         "status": "AVAILABLE",
@@ -135,6 +158,143 @@
         "Self-reported psychedelic-like effects do not establish equivalence with drug-induced states.",
         "Phenomenological overlap does not establish a metaphysical or nonlocal mechanism."
       ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-RABOURDIN-OBE-2026",
+      "source_type": "PEER_REVIEWED_LITERATURE_REVIEW",
+      "title": "Phenomenology and Neurophysiology of Out-of-Body Experiences: Mechanisms, Characteristics, and Empirical Evidence",
+      "authors_short": "Rabourdin, Roy & Berghmans",
+      "year": 2026,
+      "journal": "Journal of the Society for Psychical Research",
+      "doi": "10.63499/khwya933",
+      "url": "https://jspr.spr.ac.uk/index.php/jspr/article/view/71",
+      "source_family": "Society for Psychical Research / JSPR",
+      "review_disposition": "REVIEW_CANDIDATE",
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "A literature review rather than a new prospective experimental confirmation.",
+        "Phenomenological and neurophysiological synthesis does not establish paranormal perception or mind-body separation.",
+        "Taxonomic and mechanistic conclusions require comparison with broader neuroscience and replication literature."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-GALLO-CERTIFICATION-2026",
+      "source_type": "PRIMARY_PEER_REVIEWED_DESCRIPTIVE_EVALUATION",
+      "title": "Evaluation of English-Speaking Medium and Trance Channeler Certifications",
+      "authors_short": "Gallo et al.",
+      "year": 2026,
+      "journal": "Journal of the Society for Psychical Research",
+      "doi": "10.63499/dswkb305",
+      "url": "https://jspr.spr.ac.uk/index.php/jspr/article/view/58",
+      "source_family": "Society for Psychical Research / JSPR",
+      "review_disposition": "REVIEW_CANDIDATE",
+      "candidate_bq_links": [
+        "BQ001"
+      ],
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Evaluates six English-language certification programmes, not mediumistic accuracy or post-mortem survival.",
+        "Programme descriptions and standards may change after the study period.",
+        "Findings support governance and public-safety review, not authentication of paranormal ability."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-HOURAN-DRAKES-2025",
+      "source_type": "PEER_REVIEWED_METHODOLOGICAL_INTERPRETATION",
+      "title": "AI Evaluation of the Drake-S Equation for Postmortem Survival Against Sudduth’s Evidentiary Standards",
+      "authors_short": "Houran & Laythe",
+      "year": 2025,
+      "journal": "Journal of the Society for Psychical Research",
+      "doi": "10.63499/xnwv2041",
+      "url": "https://jspr.spr.ac.uk/index.php/jspr/article/view/29",
+      "source_family": "Society for Psychical Research / JSPR",
+      "review_disposition": "REVIEW_CANDIDATE",
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "LLM outputs are methodological prompts, not independent empirical evidence.",
+        "Results can depend on model version, prompt construction and evaluator framing.",
+        "The analysis does not confirm ontological survival."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-MAYER-GHOST-HUNTERS-2026",
+      "source_type": "PRIMARY_PEER_REVIEWED_SURVEY",
+      "title": "Ghost Hunting Groups and Ghost Hunters in Germany: Results of Two Online Surveys",
+      "authors_short": "Mayer & Nowara",
+      "year": 2026,
+      "journal": "Journal of the Society for Psychical Research",
+      "doi": "10.63499/kta4es60",
+      "url": "https://jspr.spr.ac.uk/index.php/jspr/article/view/17",
+      "source_family": "Society for Psychical Research / JSPR",
+      "review_disposition": "REVIEW_CANDIDATE",
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
+      "study_metadata": {
+        "team_responses": 21,
+        "individual_responses": 39
+      },
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Small, self-selected online samples limit generalisability.",
+        "Self-reports describe practices, experiences and beliefs but do not validate paranormal phenomena.",
+        "Team-level and individual-level responses require careful separation."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026",
+      "source_type": "PEER_REVIEWED_SINGLE_CASE_RESEARCH_NOTE",
+      "title": "One Woman’s Extraordinary Set of Communications Through Mediums Can Be Interpreted as Compelling Evidence of Life After Death: But Should a Non-survivalist Explanation Be Considered?",
+      "authors_short": "Charman",
+      "year": 2026,
+      "journal": "Journal of the Society for Psychical Research",
+      "doi": "10.63499/sy0bb168",
+      "url": "https://jspr.spr.ac.uk/index.php/jspr/article/view/51",
+      "source_family": "Society for Psychical Research / JSPR",
+      "review_disposition": "HOLD_PENDING_FULL_TEXT_METHOD_REVIEW",
+      "candidate_bq_links": [
+        "BQ001"
+      ],
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Single case note; no general inference is warranted.",
+        "Full methodological details have not yet been reviewed for blinding, information leakage, prospective records or selection effects.",
+        "Privacy, consent and alternative explanations require explicit assessment before any further use."
+      ]
     }
   ],
   "claims": [
@@ -143,8 +303,13 @@
       "claim_type": "OBSERVATION",
       "text": "Across three high-powered studies, the preregistered target precognition effect was not reliably replicated; an opposite-direction anomaly replicated once and then failed to replicate.",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-CROSSBQ-WALLECZEK-TPP-2025"],
-      "candidate_bq_links": ["BQ001", "BQ002"],
+      "source_ids": [
+        "SRC-CROSSBQ-WALLECZEK-TPP-2025"
+      ],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
       "movement_type": "EVIDENCE_WEAKENED_FOR_SPECIFIC_PARADIGM_AND_METHOD_IMPROVED",
       "uncertainty": "The result constrains this paradigm and demonstrates stronger psi-research methods; it neither confirms precognition nor disproves every psi hypothesis.",
       "supports_models": []
@@ -154,8 +319,13 @@
       "claim_type": "INTERPRETATION",
       "text": "The NEPTUNE review organizes neurophysiological and psychological processes into a testable explanatory model for common NDE features.",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-CROSSBQ-MARTIAL-NEPTUNE-2025"],
-      "candidate_bq_links": ["BQ001", "BQ002"],
+      "source_ids": [
+        "SRC-CROSSBQ-MARTIAL-NEPTUNE-2025"
+      ],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
       "movement_type": "QUESTION_REFINED_AND_NEW_TESTS_PROPOSED",
       "uncertainty": "The model remains contested and does not resolve whether all NDE reports are fully explained by brain processes.",
       "supports_models": []
@@ -165,8 +335,12 @@
       "claim_type": "INTERPRETATION",
       "text": "A systematic and bibliometric review identified 775 NDE publications through April 2025 and found continued interdisciplinary growth without consensus on origin or nature.",
       "evidence_label": "Interpretation",
-      "source_ids": ["SRC-CROSSBQ-BARRETO-NDE-REVIEW-2025"],
-      "candidate_bq_links": ["BQ001"],
+      "source_ids": [
+        "SRC-CROSSBQ-BARRETO-NDE-REVIEW-2025"
+      ],
+      "candidate_bq_links": [
+        "BQ001"
+      ],
       "movement_type": "SOURCE_MAP_STRENGTHENED",
       "uncertainty": "Publication volume and thematic convergence do not establish the truth of survival or neurobiological models.",
       "supports_models": []
@@ -176,8 +350,12 @@
       "claim_type": "OBSERVATION",
       "text": "In a 44-person follow-up cohort of refractory cardiac-arrest survivors, 15 reported at least one NDE symptom; the numerical difference between conventional CPR and ECPR groups was not statistically significant.",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025"],
-      "candidate_bq_links": ["BQ001"],
+      "source_ids": [
+        "SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025"
+      ],
+      "candidate_bq_links": [
+        "BQ001"
+      ],
       "movement_type": "NEW_CLINICAL_POPULATION_AND_REPLICATION_TARGET",
       "uncertainty": "The small pilot does not establish a treatment effect, experiential timing, mechanism or post-mortem continuity.",
       "supports_models": []
@@ -187,10 +365,92 @@
       "claim_type": "OBSERVATION",
       "text": "In an exploratory controlled study, high-ventilation breathwork was associated with stronger acute psychedelic-like effects than body-scan meditation and with self-reported insight and behavioural change.",
       "evidence_label": "Established Evidence",
-      "source_ids": ["SRC-CROSSBQ-FINCHAM-A2A-2026"],
-      "candidate_bq_links": ["BQ002"],
+      "source_ids": [
+        "SRC-CROSSBQ-FINCHAM-A2A-2026"
+      ],
+      "candidate_bq_links": [
+        "BQ002"
+      ],
       "movement_type": "MEASURABLE_ALTERED_STATE_PATHWAY_ADDED",
       "uncertainty": "The exploratory findings require replication and do not establish equivalence with psychedelic states or any metaphysical interpretation.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-OBE-REVIEW-01",
+      "claim_type": "INTERPRETATION",
+      "text": "The JSPR review synthesizes phenomenological and neurophysiological accounts of out-of-body experiences and identifies mechanisms and empirical questions for further testing.",
+      "evidence_label": "Interpretation",
+      "source_ids": [
+        "SRC-CROSSBQ-RABOURDIN-OBE-2026"
+      ],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
+      "movement_type": "TAXONOMY_AND_TESTABLE_MECHANISMS_REFINED",
+      "uncertainty": "A review can organize competing accounts but does not independently confirm veridical perception or literal separation from the body.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-CERTIFICATION-01",
+      "claim_type": "OBSERVATION",
+      "text": "A descriptive evaluation of six English-speaking medium and trance-channeler certification programmes found substantial variation in skills assessment, protocol transparency, grief training, ethics training and interviewing.",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-CROSSBQ-GALLO-CERTIFICATION-2026"
+      ],
+      "candidate_bq_links": [
+        "BQ001"
+      ],
+      "movement_type": "ETHICS_AND_PUBLIC_SAFETY_GOVERNANCE_GAP_IDENTIFIED",
+      "uncertainty": "The study characterizes certification systems; it does not test paranormal ability, communication with the deceased or survival.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-DRAKES-AI-01",
+      "claim_type": "INTERPRETATION",
+      "text": "An LLM-assisted methodological critique applies Sudduth’s evidentiary standards to the Drake-S framework and recommends clearer treatment of covariance, preregistration, Bayesian updating and alternative explanations.",
+      "evidence_label": "Interpretation",
+      "source_ids": [
+        "SRC-CROSSBQ-HOURAN-DRAKES-2025"
+      ],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
+      "movement_type": "SURVIVAL_EVIDENCE_FRAMEWORK_CRITIQUE_STRENGTHENED",
+      "uncertainty": "Model outputs are not empirical observations and do not independently establish or refute post-mortem survival.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-GHOST-HUNTERS-01",
+      "claim_type": "OBSERVATION",
+      "text": "Two small German online surveys describe participating ghost-hunting teams’ and individuals’ reported methods, documentation practices, exceptional experiences and beliefs.",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-CROSSBQ-MAYER-GHOST-HUNTERS-2026"
+      ],
+      "candidate_bq_links": [
+        "BQ001",
+        "BQ002"
+      ],
+      "movement_type": "PRACTICE_AND_BELIEF_CONTEXT_MAPPED",
+      "uncertainty": "The observations concern respondents and their practices; they do not validate ghosts or paranormal causation.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-MEDIUMSHIP-CASE-01",
+      "claim_type": "TESTIMONY",
+      "text": "A JSPR research note presents and debates one reported set of communications through mediums, including whether a non-survivalist explanation should be considered.",
+      "evidence_label": "Lived Experience/Testimony",
+      "source_ids": [
+        "SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026"
+      ],
+      "candidate_bq_links": [
+        "BQ001"
+      ],
+      "movement_type": "CASE_ENTERED_METHOD_REVIEW_QUEUE",
+      "uncertainty": "The case remains on hold pending full-text review of controls, records, leakage, selection effects, consent and alternative explanations.",
       "supports_models": []
     }
   ],
@@ -199,7 +459,10 @@
     "Review full texts and supplementary materials before any canonical evidence decision.",
     "Check study registrations, corrections, retractions, conflicts of interest and accessible data or code.",
     "Map only to canonical Big Question IDs; planned BQ003-BQ009 remain review horizons, not canonical assignments.",
-    "Keep discovery journalism outside the primary evidence layer."
+    "Keep discovery journalism outside the primary evidence layer.",
+    "Complete full-text methodological review of the Charman single-case note before changing its HOLD disposition.",
+    "Monitor UVA DOPS, NYU Parnia Lab and University of Liège Coma Science Group for new primary studies; use IANDS as a discovery and field-resource source with study-level verification.",
+    "For reported past-life-memory cases, require prospective records where possible, independent identity matching, leakage controls, base-rate analysis, consent and child-safeguarding review."
   ],
   "adjudication": {
     "decision": "REVIEW_CANDIDATE",
@@ -223,6 +486,61 @@
   },
   "batch_conclusion": {
     "status": "UNRESOLVED",
-    "statement": "The candidates materially improve methods, field mapping and testable model comparison. The strongest movement is methodological rather than ontological; no candidate establishes psi, post-mortem continuation, a complete neurobiological account, or a metaphysical interpretation of altered states."
-  }
+    "statement": "The ten research candidates and four institutional watch entries improve methods, field mapping, governance, taxonomy and testable model comparison. The strongest movement is methodological rather than ontological; no candidate establishes psi, reincarnation, post-mortem continuation, a complete neurobiological account, or a metaphysical interpretation of altered states."
+  },
+  "research_institution_watch": [
+    {
+      "institution_id": "INST-UVA-DOPS",
+      "name": "Division of Perceptual Studies, University of Virginia School of Medicine",
+      "role": "ACADEMIC_RESEARCH_GROUP",
+      "topics": [
+        "near-death experiences",
+        "children reporting memories of previous lives",
+        "mind-body questions"
+      ],
+      "url": "https://med.virginia.edu/perceptual-studies/",
+      "intake_priority": "HIGH",
+      "evidence_boundary": "Institutional output must be assessed study by study; the programme’s existence does not validate reincarnation or survival."
+    },
+    {
+      "institution_id": "INST-NYU-PARNIA",
+      "name": "Parnia Lab, NYU Langone Health",
+      "role": "ACADEMIC_CLINICAL_RESEARCH_LAB",
+      "topics": [
+        "cardiac arrest",
+        "resuscitation",
+        "consciousness during and after cardiac arrest"
+      ],
+      "url": "https://med.nyu.edu/research/parnia-lab/",
+      "intake_priority": "HIGH",
+      "evidence_boundary": "Clinical observations and physiological recordings do not by themselves establish post-mortem consciousness."
+    },
+    {
+      "institution_id": "INST-ULIEGE-COMA",
+      "name": "Coma Science Group, University of Liège",
+      "role": "ACADEMIC_NEUROSCIENCE_GROUP",
+      "topics": [
+        "disorders of consciousness",
+        "near-death experiences",
+        "disconnected consciousness"
+      ],
+      "url": "https://www.coma.uliege.be/",
+      "intake_priority": "HIGH",
+      "evidence_boundary": "Neuroscientific models and induced-state comparisons require prospective testing and do not settle ontology."
+    },
+    {
+      "institution_id": "ORG-IANDS",
+      "name": "International Association for Near-Death Studies",
+      "role": "SPECIALIST_NONPROFIT_JOURNAL_REGISTRY_AND_SUPPORT_NETWORK",
+      "topics": [
+        "near-death studies",
+        "Journal of Near-Death Studies",
+        "participant recruitment",
+        "experiencer support"
+      ],
+      "url": "https://iands.org/nde-research/",
+      "intake_priority": "MEDIUM",
+      "evidence_boundary": "Use as a discovery, journal and participant-resource source; independently assess study design, peer review and claims."
+    }
+  ]
 }
