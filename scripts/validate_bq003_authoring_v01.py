@@ -90,6 +90,17 @@ def validate(spec, assessment, bridge, architecture):
     types = {item.get("continuity_type") for item in bridge.get("distinctions", [])}
     if types != EXPECTED_CONTINUITY_TYPES:
         fail("continuity distinctions changed")
+    hypothesis = bridge.get("named_hypothesis", {})
+    if hypothesis.get("hypothesis_id") != "HYP-BQ001-META-AWARENESS-REINCARNATION-REIMAGINED":
+        fail("named meta-awareness hypothesis missing")
+    if hypothesis.get("evidence_label") != "Hypothesis" or hypothesis.get("status") != "UNRESOLVED":
+        fail("meta-awareness hypothesis promoted")
+    if hypothesis.get("supports_models") != []:
+        fail("meta-awareness hypothesis supports_models must remain empty")
+    boundary = hypothesis.get("decisive_boundary", "").lower()
+    if "causal continuity" not in boundary or "universal re-expression rather than reincarnation" not in boundary:
+        fail("reincarnation/re-expression boundary missing")
+
     bridge_governance = bridge.get("governance", {})
     if bridge_governance.get("bq001_status") != "UNRESOLVED" or bridge_governance.get("bq003_status") != "UNRESOLVED":
         fail("bridge questions must remain unresolved")
