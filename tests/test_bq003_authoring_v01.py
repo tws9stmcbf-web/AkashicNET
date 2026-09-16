@@ -134,6 +134,14 @@ class BQ003AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(aghor=candidate)
 
+    def test_bridge_question_pair_change_rejected(self):
+        for questions in (["BQ004", "BQ005"], ["BQ001"], ["BQ003", "BQ001"]):
+            with self.subTest(questions=questions):
+                candidate = copy.deepcopy(self.bridge)
+                candidate["questions"] = questions
+                with self.assertRaises(ValueError):
+                    self.validate(bridge=candidate)
+
     def test_bridge_competing_model_removal_rejected(self):
         candidate = copy.deepcopy(self.bridge)
         candidate["candidate_models"].pop()
