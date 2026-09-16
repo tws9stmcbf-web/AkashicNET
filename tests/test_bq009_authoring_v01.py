@@ -5,13 +5,13 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VALIDATOR = ROOT / "scripts/validate_bq004_authoring_v01.py"
-spec = importlib.util.spec_from_file_location("bq004_validator", VALIDATOR)
+VALIDATOR = ROOT / "scripts/validate_bq009_authoring_v01.py"
+spec = importlib.util.spec_from_file_location("bq009_validator", VALIDATOR)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 
-class BQ004AuthoringTests(unittest.TestCase):
+class BQ009AuthoringTests(unittest.TestCase):
     def setUp(self):
         self.spec = json.loads(module.SPEC.read_text(encoding="utf-8"))
         self.assessment = json.loads(module.ASSESSMENT.read_text(encoding="utf-8"))
@@ -25,6 +25,17 @@ class BQ004AuthoringTests(unittest.TestCase):
             self.agenda if agenda is None else agenda,
             self.architecture if architecture is None else architecture,
         )
+
+    def test_existing_question_ids_cannot_be_reused(self):
+        snapshot = json.loads((ROOT / "references/big-questions/gold-nuggets-cross-question-synthesis-v0.1.json").read_text(encoding="utf-8"))
+        existing_ids = {item["question_id"] for item in snapshot["question_movements"]}
+        self.assertNotIn(self.spec["id"], existing_ids)
+        for question_id in existing_ids:
+            with self.subTest(question_id=question_id):
+                candidate = copy.deepcopy(self.spec)
+                candidate["id"] = question_id
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
 
     def test_candidate_passes(self):
         self.validate()
@@ -55,7 +66,7 @@ class BQ004AuthoringTests(unittest.TestCase):
 
     def test_model_support_promotion_rejected(self):
         candidate = copy.deepcopy(self.spec)
-        candidate["claims"][0]["supports_models"] = ["MODEL-BQ004-MULTILEVEL"]
+        candidate["claims"][0]["supports_models"] = ["MODEL-BQ009-MULTILEVEL"]
         with self.assertRaises(ValueError):
             self.validate(spec=candidate)
 
@@ -177,9 +188,9 @@ class BQ004AuthoringTests(unittest.TestCase):
 
     def test_canonical_registration_rejected(self):
         candidate = copy.deepcopy(self.architecture)
-        candidate["questions"]["BQ004"] = {
-            "canonical_path": "references/big-questions/BQ004",
-            "spec": "references/big-questions/BQ004/spec-v0.1.json",
+        candidate["questions"]["BQ009"] = {
+            "canonical_path": "references/big-questions/BQ009",
+            "spec": "references/big-questions/BQ009/spec-v0.1.json",
             "evidence_batches": [],
         }
         with self.assertRaises(ValueError):
@@ -187,12 +198,12 @@ class BQ004AuthoringTests(unittest.TestCase):
 
     def test_authoring_registration_drift_rejected(self):
         candidate = copy.deepcopy(self.architecture)
-        candidate["authoring_candidates"]["BQ004"]["public_beta_gate"] = True
+        candidate["authoring_candidates"]["BQ009"]["public_beta_gate"] = True
         with self.assertRaises(ValueError):
             self.validate(architecture=candidate)
 
         candidate = copy.deepcopy(self.architecture)
-        candidate["authoring_candidates"]["BQ004"]["candidate_path"] = "references/public/BQ004"
+        candidate["authoring_candidates"]["BQ009"]["candidate_path"] = "references/public/BQ009"
         with self.assertRaises(ValueError):
             self.validate(architecture=candidate)
 

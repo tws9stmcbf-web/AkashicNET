@@ -1,13 +1,14 @@
-name: Validate BQ004 authoring
+name: Validate BQ009 authoring
 
 on:
   pull_request:
     paths:
-      - "references/big-questions/BQ004/**"
+      - "references/big-questions/BQ009/**"
       - "references/big-questions/architecture-v0.1.json"
-      - "scripts/validate_bq004_authoring_v01.py"
-      - "tests/test_bq004_authoring_v01.py"
-      - ".github/workflows/validate-bq004-authoring.yml"
+      - "references/big-questions/gold-nuggets-cross-question-synthesis-v0.1.json"
+      - "scripts/validate_bq009_authoring_v01.py"
+      - "tests/test_bq009_authoring_v01.py"
+      - ".github/workflows/validate-bq009-authoring.yml"
   workflow_dispatch:
 
 permissions:
@@ -21,6 +22,6 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.12"
-      - run: python scripts/validate_bq004_authoring_v01.py
-      - run: python -m unittest tests/test_bq004_authoring_v01.py
+      - run: python scripts/validate_bq009_authoring_v01.py
+      - run: python -m unittest tests/test_bq009_authoring_v01.py
       - run: python scripts/validate_big_questions_registry_v013.py

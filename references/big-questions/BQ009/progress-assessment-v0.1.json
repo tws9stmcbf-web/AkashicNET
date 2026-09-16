@@ -1,8 +1,8 @@
 {
-  "assessment_id": "BQ004-PROGRESS-ASSESSMENT-V0.1",
+  "assessment_id": "BQ009-PROGRESS-ASSESSMENT-V0.1",
   "version": "0.1.0",
   "status": "REVIEW_CANDIDATE",
-  "question_id": "BQ004",
+  "question_id": "BQ009",
   "question_status": "UNRESOLVED",
   "assessed_on": "2026-09-16",
   "overall_progress": {
