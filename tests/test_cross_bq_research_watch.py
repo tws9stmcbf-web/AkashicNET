@@ -49,5 +49,14 @@ class CrossBQResearchWatchTests(unittest.TestCase):
     def test_overclaim_rejected(self):
         self.assert_rejected(lambda d: d["claims"][0].__setitem__("text", "This proves psi."))
 
+    def test_empty_source_binding_rejected(self):
+        self.assert_rejected(lambda d: d["claims"][0].__setitem__("source_ids", []))
+
+    def test_duplicate_source_binding_rejected(self):
+        self.assert_rejected(lambda d: d["claims"][1].__setitem__("source_ids", d["claims"][0]["source_ids"][:]))
+
+    def test_empty_bq_mapping_rejected(self):
+        self.assert_rejected(lambda d: d["claims"][0].__setitem__("candidate_bq_links", []))
+
 if __name__ == "__main__":
     unittest.main()
