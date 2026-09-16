@@ -1,3 +1,5 @@
+import PsyNationRadio from "./PsyNationRadio";
+
 const principles = [
   { number: "01", title: "Evidence before certainty", text: "Claims remain traceable to sources, context and uncertainty. Similar words alone never become proof." },
   { number: "02", title: "Compassion before scale", text: "Bodhisattva-inspired care, harm reduction and human dignity guide how knowledge is connected and shared." },
@@ -173,6 +175,8 @@ export default function Home() {
         </div>
         <p className="latest-highlights-note">Publication dates describe AkashicNET releases. Evidence labels distinguish established evidence, interpretation, lived experience/testimony, hypothesis and speculation.</p>
       </section>
+
+      <PsyNationRadio />
 
       <section className="snapshot" aria-label="Public project snapshot">
         <div><strong>9,502</strong><span>current Reddit source rows preserved</span></div>
