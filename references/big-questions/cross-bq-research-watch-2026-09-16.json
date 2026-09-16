@@ -1,0 +1,228 @@
+{
+  "artifact_id": "CROSS-BQ-RESEARCH-WATCH-2026-09-16",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "assessed_on": "2026-09-16",
+  "scope": "methodologically_material_recent_research_for_current_and_planned_big_questions",
+  "question_scope": {
+    "current_public_profiles": ["BQ001", "BQ002"],
+    "planned_review_horizon": ["BQ003", "BQ004", "BQ005", "BQ006", "BQ007", "BQ008", "BQ009"],
+    "planned_questions_are_not_treated_as_canonical": true
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CROSSBQ-WALLECZEK-TPP-2025",
+      "source_type": "PRIMARY_PEER_REVIEWED_PREREGISTERED_REPLICATION",
+      "title": "Metascientific replication project with the advanced meta-experimental protocol of the transparent psi project procedures for testing the precognitive effect claimed by Bem",
+      "authors_short": "Walleczek et al.",
+      "year": 2025,
+      "journal": "PLOS ONE",
+      "doi": "10.1371/journal.pone.0335330",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0335330",
+      "candidate_bq_links": ["BQ001", "BQ002"],
+      "study_metadata": {
+        "participants": 26483,
+        "critical_trials": 420472
+      },
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Tests a specific Bem-style precognition paradigm rather than every psi claim.",
+        "One opposite-direction anomaly replicated once but did not replicate in the third study.",
+        "Failure to replicate the target effect does not prove that every form of anomalous cognition is impossible."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-MARTIAL-NEPTUNE-2025",
+      "source_type": "PEER_REVIEWED_NEUROSCIENTIFIC_REVIEW_AND_MODEL",
+      "title": "A neuroscientific model of near-death experiences",
+      "authors_short": "Martial et al.",
+      "year": 2025,
+      "journal": "Nature Reviews Neurology",
+      "doi": "10.1038/s41582-025-01072-z",
+      "pmid": "40159547",
+      "url": "https://www.nature.com/articles/s41582-025-01072-z",
+      "candidate_bq_links": ["BQ001", "BQ002"],
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "A synthesis and explanatory model, not a decisive prospective test of the full model.",
+        "The model is contested and must be reviewed with published criticism and anomalous-case literature.",
+        "A neurophysiological account of NDE features would not by itself prove or disprove post-mortem continuation."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-BARRETO-NDE-REVIEW-2025",
+      "source_type": "PEER_REVIEWED_BIBLIOMETRIC_AND_SYSTEMATIC_REVIEW",
+      "title": "Near-Death Experiences: A Bibliometric and Systematic Review of Published Literature From 1977 to 2025",
+      "authors_short": "Barreto",
+      "year": 2025,
+      "journal": "Omega",
+      "doi": "10.1177/00302228251363788",
+      "pmid": "40739712",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40739712/",
+      "candidate_bq_links": ["BQ001"],
+      "study_metadata": {
+        "articles_reviewed": 775,
+        "coverage_end": "2025-04"
+      },
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Maps the published field and its themes; it does not adjudicate the ontology of NDEs.",
+        "Scopus-indexed literature and bibliometric structure are not equivalent to independent evidential confirmation.",
+        "The review reports that no consensus exists on NDE origin or nature."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025",
+      "source_type": "PRIMARY_PEER_REVIEWED_PILOT_OBSERVATIONAL_STUDY",
+      "title": "Prevalence of Near-Death Experiences (NDE) in Patients with Refractory Cardiac Arrest Treated with Conventional and Extracorporeal Cardiopulmonary Resuscitation",
+      "authors_short": "Kovářová et al.",
+      "year": 2025,
+      "journal": "Cor et Vasa",
+      "doi": "10.33678/cor.2025.031",
+      "url": "https://e-coretvasa.cz/en/artkey/cor-202503-0002_prevalence-of-near-death-experiences-nde-in-patients-with-refractory-cardiac-arrest-treated-with-conventiona.php",
+      "candidate_bq_links": ["BQ001"],
+      "study_metadata": {
+        "respondents": 44,
+        "nde_symptom_reports": 15,
+        "ecpr_respondents": 12,
+        "group_difference_p": 0.52
+      },
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Small pilot cohort with only 12 ECPR respondents.",
+        "The numerical ECPR difference was not statistically significant.",
+        "Reported NDE symptoms do not establish when experience occurred or whether consciousness continued beyond brain function."
+      ]
+    },
+    {
+      "source_id": "SRC-CROSSBQ-FINCHAM-A2A-2026",
+      "source_type": "PRIMARY_PEER_REVIEWED_EXPLORATORY_CONTROLLED_STUDY",
+      "title": "An exploratory study of breathwork-induced altered states of consciousness in experienced practitioners: the airways to alteration (A2A) trial",
+      "authors_short": "Fincham et al.",
+      "year": 2026,
+      "journal": "Frontiers in Psychology",
+      "doi": "10.3389/fpsyg.2026.1851882",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1851882/full",
+      "candidate_bq_links": ["BQ002"],
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "Exploratory study in experienced practitioners; generalisability is limited.",
+        "Self-reported psychedelic-like effects do not establish equivalence with drug-induced states.",
+        "Phenomenological overlap does not establish a metaphysical or nonlocal mechanism."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-CROSSBQ-TPP-REPLICATION-01",
+      "claim_type": "OBSERVATION",
+      "text": "Across three high-powered studies, the preregistered target precognition effect was not reliably replicated; an opposite-direction anomaly replicated once and then failed to replicate.",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-CROSSBQ-WALLECZEK-TPP-2025"],
+      "candidate_bq_links": ["BQ001", "BQ002"],
+      "movement_type": "EVIDENCE_WEAKENED_FOR_SPECIFIC_PARADIGM_AND_METHOD_IMPROVED",
+      "uncertainty": "The result constrains this paradigm and demonstrates stronger psi-research methods; it neither confirms precognition nor disproves every psi hypothesis.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-NEPTUNE-01",
+      "claim_type": "INTERPRETATION",
+      "text": "The NEPTUNE review organizes neurophysiological and psychological processes into a testable explanatory model for common NDE features.",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-CROSSBQ-MARTIAL-NEPTUNE-2025"],
+      "candidate_bq_links": ["BQ001", "BQ002"],
+      "movement_type": "QUESTION_REFINED_AND_NEW_TESTS_PROPOSED",
+      "uncertainty": "The model remains contested and does not resolve whether all NDE reports are fully explained by brain processes.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-NDE-LANDSCAPE-01",
+      "claim_type": "INTERPRETATION",
+      "text": "A systematic and bibliometric review identified 775 NDE publications through April 2025 and found continued interdisciplinary growth without consensus on origin or nature.",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-CROSSBQ-BARRETO-NDE-REVIEW-2025"],
+      "candidate_bq_links": ["BQ001"],
+      "movement_type": "SOURCE_MAP_STRENGTHENED",
+      "uncertainty": "Publication volume and thematic convergence do not establish the truth of survival or neurobiological models.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-ECPR-NDE-01",
+      "claim_type": "OBSERVATION",
+      "text": "In a 44-person follow-up cohort of refractory cardiac-arrest survivors, 15 reported at least one NDE symptom; the numerical difference between conventional CPR and ECPR groups was not statistically significant.",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-CROSSBQ-KOVAROVA-ECPR-NDE-2025"],
+      "candidate_bq_links": ["BQ001"],
+      "movement_type": "NEW_CLINICAL_POPULATION_AND_REPLICATION_TARGET",
+      "uncertainty": "The small pilot does not establish a treatment effect, experiential timing, mechanism or post-mortem continuity.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-CROSSBQ-BREATHWORK-ASC-01",
+      "claim_type": "OBSERVATION",
+      "text": "In an exploratory controlled study, high-ventilation breathwork was associated with stronger acute psychedelic-like effects than body-scan meditation and with self-reported insight and behavioural change.",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-CROSSBQ-FINCHAM-A2A-2026"],
+      "candidate_bq_links": ["BQ002"],
+      "movement_type": "MEASURABLE_ALTERED_STATE_PATHWAY_ADDED",
+      "uncertainty": "The exploratory findings require replication and do not establish equivalence with psychedelic states or any metaphysical interpretation.",
+      "supports_models": []
+    }
+  ],
+  "required_follow_up": [
+    "Retrieve and verify the peer-reviewed Greyson and Pehlivanova critique of NEPTUNE before treating the model comparison as balanced.",
+    "Review full texts and supplementary materials before any canonical evidence decision.",
+    "Check study registrations, corrections, retractions, conflicts of interest and accessible data or code.",
+    "Map only to canonical Big Question IDs; planned BQ003-BQ009 remain review horizons, not canonical assignments.",
+    "Keep discovery journalism outside the primary evidence layer."
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATE",
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "model_edges_upgrade_evidence": false
+  },
+  "question_status": {
+    "BQ001": "UNRESOLVED",
+    "BQ002": "UNRESOLVED"
+  },
+  "rights": {
+    "record_type": "CITATION_METADATA_AND_ORIGINAL_SUMMARY_ONLY",
+    "full_text_copied": false,
+    "public_integration_allowed": false,
+    "rights_review_required": true
+  },
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "The candidates materially improve methods, field mapping and testable model comparison. The strongest movement is methodological rather than ontological; no candidate establishes psi, post-mortem continuation, a complete neurobiological account, or a metaphysical interpretation of altered states."
+  }
+}
