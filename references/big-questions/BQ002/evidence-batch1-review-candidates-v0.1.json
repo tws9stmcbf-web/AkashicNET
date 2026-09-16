@@ -1,0 +1,92 @@
+{
+  "batch_id": "BQ002-BATCH1-DREAM-MEMORY-REVIEW-CANDIDATE",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ002",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-09-16",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "scope": "dream_content_and_memory_consolidation",
+  "sources": [
+    {
+      "source_id": "SRC-BQ002-HUDACHEK-WAMSLEY-2023",
+      "source_type": "PRIMARY_PEER_REVIEWED_META_ANALYSIS",
+      "title": "A meta-analysis of the relation between dream content and memory consolidation",
+      "authors_short": "Hudachek and Wamsley",
+      "year": 2023,
+      "journal": "Sleep",
+      "doi": "10.1093/sleep/zsad111",
+      "pmid": "37058584",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37058584/",
+      "study_design": "meta-analysis of studies linking incorporation of pre-sleep learning-task content into dreams with post-sleep memory performance",
+      "reported_denominators": {
+        "included_studies": 16,
+        "reported_effects": 45
+      },
+      "reported_result": "Task-related dreaming was associated with improved memory performance (SMD 0.51, 95% CI 0.28 to 0.74); the NREM subgroup association was statistically significant while the REM subgroup association was not.",
+      "link_check": {
+        "checked_at": "2026-09-16",
+        "status": "AVAILABLE",
+        "title_match": true,
+        "identifier_match": true,
+        "retraction_notice": "NO_NOTICE_OBSERVED_AT_CHECK_TIME"
+      },
+      "limitations": [
+        "The meta-analysis establishes an association and does not by itself prove that dream incorporation causes memory improvement.",
+        "Included studies varied in tasks, dream collection and analytic methods.",
+        "Subgroup differences between NREM and REM were based on smaller sets of effects and were described as preliminary.",
+        "The findings concern memory-related influences on dream content, not the complete origin of thoughts or subjective awareness."
+      ],
+      "rights": {
+        "record_type": "bibliographic_metadata_and_bounded_summary",
+        "full_text_republished": false
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ002-HUDACHEK-2023-OBS-01",
+      "claim_type": "OBSERVATION",
+      "text": "Across 16 included studies reporting 45 effects, task-related dream content was positively associated with post-sleep memory performance.",
+      "domain": "dreaming_and_sleep_cognition",
+      "evidence_label": "Established Evidence",
+      "source_ids": [
+        "SRC-BQ002-HUDACHEK-WAMSLEY-2023"
+      ],
+      "provenance": [
+        "peer-reviewed meta-analysis and indexed PubMed bibliographic record"
+      ],
+      "limitations": [
+        "The association does not establish that dream incorporation caused the memory improvement.",
+        "The finding supports a memory-related pathway shaping some dream thought content; it does not explain all thought or phenomenal awareness."
+      ],
+      "uncertainty": "The causal direction, underlying mechanisms and generalisability beyond the studied sleep-learning paradigms remain unresolved.",
+      "supports_models": []
+    }
+  ],
+  "adjudication": {
+    "decision": "REVIEW_CANDIDATE",
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "model_edges_upgrade_evidence": false
+  },
+  "batch_conclusion": {
+    "status": "UNRESOLVED",
+    "statement": "The batch supports a bounded ordinary pathway in which recent learning and memory consolidation are associated with some dream content. It does not resolve the complete causal or phenomenal origin of thought."
+  },
+  "promotion_guards": {
+    "association_proves_causation": false,
+    "dream_incorporation_explains_all_thought": false,
+    "memory_consolidation_resolves_subjective_experience": false,
+    "subgroup_result_is_definitive_sleep_stage_mechanism": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false
+  }
+}
