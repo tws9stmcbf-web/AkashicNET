@@ -49,6 +49,50 @@ class BQ003AuthoringTests(unittest.TestCase):
     def test_candidate_passes(self):
         self.validate()
 
+    def test_assessment_promotion_flags_rejected(self):
+        for key in (
+            "canonical_promotion_applied",
+            "public_synthesis_updated",
+            "website_updated",
+            "model_edges_upgrade_evidence",
+        ):
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.assessment)
+                candidate["governance"][key] = True
+                with self.assertRaises(ValueError):
+                    self.validate(assessment=candidate)
+
+    def test_cultural_governance_key_removal_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        del candidate["cultural_governance"]["restricted_knowledge_must_remain_restricted"]
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_competing_model_status_promotion_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        candidate["models"][0]["status"] = "ESTABLISHED"
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_interpretation_evidence_promotion_rejected(self):
+        candidate = copy.deepcopy(self.aghor)
+        claim = next(x for x in candidate["bounded_claims"] if x["claim_type"] == "INTERPRETATION")
+        claim["evidence_label"] = "Established Evidence"
+        with self.assertRaises(ValueError):
+            self.validate(aghor=candidate)
+
+    def test_bridge_competing_model_removal_rejected(self):
+        candidate = copy.deepcopy(self.bridge)
+        candidate["candidate_models"].pop()
+        with self.assertRaises(ValueError):
+            self.validate(bridge=candidate)
+
+    def test_replication_requirement_begins_at_level_6(self):
+        level_5 = " ".join(self.assessment["advancement_requirements"]["level_5"]).lower()
+        level_6 = " ".join(self.assessment["advancement_requirements"]["level_6"]).lower()
+        self.assertNotIn("achieve independent replication", level_5)
+        self.assertIn("achieve independent replication", level_6)
+
     def test_aghori_field_of_love_overattribution_rejected(self):
         candidate = copy.deepcopy(self.spec)
         lens = candidate["culturally_situated_interpretive_lenses"][0]
