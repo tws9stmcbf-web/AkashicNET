@@ -149,6 +149,8 @@ def validate(spec, assessment, bridge, aghor, architecture):
 
     if bridge.get("status") != "REVIEW_CANDIDATE":
         fail("bridge must remain review candidate")
+    if bridge.get("questions") != ["BQ001", "BQ003"]:
+        fail("bridge must bind exactly BQ001 and BQ003")
     if " if consciousness is fundamental or pervasive?" not in bridge.get("bridge_question", "").lower():
         fail("bridge must remain conditional")
     types = {item.get("continuity_type") for item in bridge.get("distinctions", [])}
