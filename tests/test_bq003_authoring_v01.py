@@ -46,6 +46,13 @@ class BQ003AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
 
+    def test_unverified_synchrony_replication_promotion_rejected(self):
+        candidate = copy.deepcopy(self.assessment)
+        axis = next(x for x in candidate["axis_assessments"] if x["axis"] == "interpersonal_harmony")
+        axis["level"] = 6
+        with self.assertRaises(ValueError):
+            self.validate(assessment=candidate)
+
     def test_cosmic_axis_promotion_rejected(self):
         candidate = copy.deepcopy(self.assessment)
         cosmic = next(x for x in candidate["axis_assessments"] if x["axis"] == "literal_cosmic_ontology")
