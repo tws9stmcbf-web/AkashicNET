@@ -44,20 +44,67 @@ for token in (
     if token not in home:
         fail(f"homepage missing required current-or-historical token: {token}")
 
-allowed_product_status_surfaces = {HOME.resolve(), PROGRESS.resolve()}
+# Inspect text across inline JSX tags, while keeping separate source lines apart.
+# This is a bounded status-copy guard, not a general JSX or natural-language parser.
+def status_text(source: str) -> str:
+    return re.sub(r"<[^>]*>", " ", source)
+
+
 product_status = re.compile(
-    r"AkashicNET[^\\n<]{0,40}(?:Pre-alpha|Public Beta)|"
-    r"(?:Pre-alpha|Public Beta)[^\\n<]{0,40}AkashicNET",
+    r"\bAkashicNET(?:[ \t]+(?:engine|product))?[ \t·:–—-]*"
+    r"(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
+    r"(?:Pre-alpha|Public Beta)[ \t·:–—-]*AkashicNET\b",
     re.IGNORECASE,
 )
+pre_alpha = re.compile(
+    r"\bAkashicNET[^\n<]{0,40}Pre-alpha|"
+    r"Pre-alpha[^\n<]{0,40}AkashicNET\b",
+    re.IGNORECASE,
+)
+allowed_product_status_surfaces = {HOME.resolve(), PROGRESS.resolve()}
 for surface in PUBLIC_APP.rglob("*.tsx"):
-    if surface.resolve() in allowed_product_status_surfaces:
-        continue
-    if product_status.search(surface.read_text()):
-        fail(
-            "product status must remain centralised on the homepage checkpoint "
-            f"and development record: {surface.relative_to(ROOT)}"
-        )
+    visible = status_text(surface.read_text())
+    if pre_alpha.search(visible):
+        fail(f"contradictory current Pre-alpha status: {surface.relative_to(ROOT)}")
+    if surface.resolve() not in allowed_product_status_surfaces:
+        if product_status.search(visible):
+            fail(
+                "product status must remain centralised on the homepage checkpoint "
+                f"and development record: {surface.relative_to(ROOT)}"
+            )
+
+# The homepage has one linked current-product label; the sealed snapshot is historical.
+links = re.findall(r'<a\b[^>]*href="/development-progress"[^>]*>(.*?)</a>', home, re.S)
+current_label = "Public Beta · v0.15 sealed · v0.16.0-beta.2 governed candidate"
+if len(links) != 1 or current_label not in status_text(links[0]):
+    fail("homepage must have one linked current-product checkpoint")
+if (home.count("Public Beta") != 1 or home.count("v0.16.0-beta.2") != 1
+        or "v0.16.7" in home):
+    fail("duplicate current-product homepage status")
+
+# Enforce status and limitation together in the governed checkpoint records.
+for version, status, limitation in (
+    ("v0.16.0-beta.2", "GOVERNED CANDIDATE", "not a sealed release"),
+    ("v0.16.7", "SITE CHECKPOINT", "not a release"),
+):
+    record = re.search(
+        r'\["' + re.escape(version) + r'",\s*"' + status + r'",\s*"([^"\n]+)"\]',
+        progress,
+    )
+    if not record or limitation not in record.group(1):
+        fail(f"missing candidate/checkpoint limitation: {version}")
+if "progress toward v0.17.0" not in status_text(progress):
+    fail("site checkpoint must describe progress toward v0.17.0")
+
+# Reject affirmative release claims even when the correct disclaimers also survive.
+release_claim = re.compile(
+    r"v0\.16\.(?:0-beta\.2|7)\b[ \t]*(?:is[ \t]+)?"
+    r"(?:a[ \t]+)?(?:sealed(?:[ \t]+release)?|released|READY[ \t]*/[ \t]*SEALED)\b|"
+    r"(?:sealed[ \t]+release|released)[ \t·:–—-]*v0\.16\.(?:0-beta\.2|7)\b",
+    re.IGNORECASE,
+)
+if release_claim.search(status_text(home + "\n" + progress)):
+    fail("unsealed candidate or site checkpoint presented as a release")
 
 for forbidden in (
     "BQ001 · RESOLVED",
