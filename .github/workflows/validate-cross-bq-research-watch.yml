@@ -1,0 +1,26 @@
+name: Validate cross-BQ research watch
+
+on:
+  pull_request:
+    paths:
+      - "references/big-questions/cross-bq-research-watch-2026-09-16.json"
+      - "scripts/validate_cross_bq_research_watch.py"
+      - "tests/test_cross_bq_research_watch.py"
+      - ".github/workflows/validate-cross-bq-research-watch.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate review-candidate artifact
+        run: python scripts/validate_cross_bq_research_watch.py references/big-questions/cross-bq-research-watch-2026-09-16.json
+      - name: Run mutation tests
+        run: python -m unittest tests/test_cross_bq_research_watch.py
