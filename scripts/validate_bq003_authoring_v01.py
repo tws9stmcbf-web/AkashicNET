@@ -91,10 +91,14 @@ def validate(spec, assessment, bridge, architecture):
         if bridge_governance.get(key) is not False:
             fail(f"bridge guard weakened: {key}")
 
-    reg = architecture.get("questions", {}).get("BQ003", {})
+    if "BQ003" in architecture.get("questions", {}):
+        fail("BQ003 must not enter the canonical questions registry without an accepted evidence batch")
+    reg = architecture.get("authoring_candidates", {}).get("BQ003", {})
     if reg.get("registration_status") != "REVIEW_CANDIDATE" or reg.get("public_beta_gate") is not False:
-        fail("BQ003 registry gate changed")
-    if reg.get("evidence_batches") != []:
+        fail("BQ003 authoring-candidate gate changed")
+    if reg.get("canonical_registration_applied") is not False:
+        fail("BQ003 canonical registration must remain unapplied")
+    if reg.get("accepted_evidence_batches") != []:
         fail("BQ003 has no accepted evidence batches yet")
 
 def main():
