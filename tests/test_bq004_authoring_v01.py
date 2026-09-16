@@ -65,6 +65,24 @@ class BQ004AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(spec=candidate)
 
+    def test_project_state_payload_change_and_removal_rejected(self):
+        replacements = {
+            "text": "Transformative experiences cause enduring planetary flourishing.",
+            "uncertainty": "The causal conclusion is established without uncertainty.",
+        }
+        for key, replacement in replacements.items():
+            for value in (replacement, "", None):
+                with self.subTest(key=key, value=value):
+                    candidate = copy.deepcopy(self.spec)
+                    candidate["claims"][0][key] = value
+                    with self.assertRaises(ValueError):
+                        self.validate(spec=candidate)
+            with self.subTest(key=key, removed=True):
+                candidate = copy.deepcopy(self.spec)
+                del candidate["claims"][0][key]
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+
     def test_promotion_guard_change_and_removal_rejected(self):
         for key, value in module.EXPECTED_PROMOTION_GUARDS.items():
             for remove in (False, True):
