@@ -58,5 +58,36 @@ class CrossBQResearchWatchTests(unittest.TestCase):
     def test_empty_bq_mapping_rejected(self):
         self.assert_rejected(lambda d: d["claims"][0].__setitem__("candidate_bq_links", []))
 
+    def test_mediumship_case_hold_removal_rejected(self):
+        self.assert_rejected(
+            lambda d: next(
+                source for source in d["sources"]
+                if source["source_id"] == "SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026"
+            ).__setitem__("review_disposition", "REVIEW_CANDIDATE")
+        )
+
+    def test_mediumship_case_evidence_promotion_rejected(self):
+        def promote(d):
+            claim = next(
+                claim for claim in d["claims"]
+                if claim["source_ids"] == ["SRC-CROSSBQ-CHARMAN-MEDIUMSHIP-2026"]
+            )
+            claim["claim_type"] = "OBSERVATION"
+            claim["evidence_label"] = "Established Evidence"
+        self.assert_rejected(promote)
+
+    def test_iands_academic_reclassification_rejected(self):
+        self.assert_rejected(
+            lambda d: next(
+                institution for institution in d["research_institution_watch"]
+                if institution["institution_id"] == "ORG-IANDS"
+            ).__setitem__("role", "ACADEMIC_RESEARCH_GROUP")
+        )
+
+    def test_institute_evidence_boundary_required(self):
+        self.assert_rejected(
+            lambda d: d["research_institution_watch"][0].__setitem__("evidence_boundary", "")
+        )
+
 if __name__ == "__main__":
     unittest.main()
