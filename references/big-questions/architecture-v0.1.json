@@ -49,5 +49,20 @@
     "scientific_evidence_auto_promotion_allowed": false,
     "rights_promotion_allowed": false,
     "privacy_posture_changed": false
+  },
+  "authoring_candidates": {
+    "BQ003": {
+      "candidate_path": "references/big-questions/BQ003",
+      "spec": "references/big-questions/BQ003/spec-v0.1.json",
+      "review_candidates": [
+        "references/big-questions/BQ003/progress-assessment-v0.1.json",
+        "references/big-questions/BQ003/bq001-meta-awareness-bridge-v0.1.json",
+        "references/big-questions/BQ003/aghori-research-candidates-v0.1.json"
+      ],
+      "registration_status": "REVIEW_CANDIDATE",
+      "canonical_registration_applied": false,
+      "accepted_evidence_batches": [],
+      "public_beta_gate": false
+    }
   }
 }
