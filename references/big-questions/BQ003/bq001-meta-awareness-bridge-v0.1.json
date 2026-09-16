@@ -52,7 +52,9 @@
     "What observation would distinguish impersonal meta-awareness from memory reconstruction or altered self-processing?",
     "What evidence would show continuity of a subject rather than recurrence of a general property?",
     "Can any prospectively recorded information be verified without ordinary sensory or informational access?",
-    "Which claims are empirical, philosophical, contemplative, testimonial or culturally governed?"
+    "Which claims are empirical, philosophical, contemplative, testimonial or culturally governed?",
+    "Does any individual, informational or causal continuity connect lives, or is the proposal only universal re-expression?",
+    "Could meta-awareness continue or become re-expressed beyond individual biological life without preserving the same autobiographical self?"
   ],
   "governance": {
     "bq001_status": "UNRESOLVED",
@@ -62,5 +64,14 @@
     "scientific_evidence_promotion_allowed": false,
     "rights_promotion_allowed": false,
     "cultural_boundary": "Do not flatten diverse animistic or Indigenous ontologies into generic panpsychism; attribution, community authority, permission and CARE constraints apply."
+  },
+  "named_hypothesis": {
+    "hypothesis_id": "HYP-BQ001-META-AWARENESS-REINCARNATION-REIMAGINED",
+    "name": "Meta-awareness continuity / reincarnation reimagined",
+    "evidence_label": "Hypothesis",
+    "status": "UNRESOLVED",
+    "formulation": "Individual personality and autobiographical identity may end with biological death, while meta-awareness—the capacity for awareness to recognise itself—may be fundamental or pervasive and become expressed through other conscious beings.",
+    "decisive_boundary": "If no individual, informational or causal continuity connects lives, the proposal describes universal re-expression rather than reincarnation.",
+    "supports_models": []
   }
 }
