@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, type MouseEvent } from "react";
 import styles from "./page.module.css";
 
 type Node = {
@@ -49,18 +49,21 @@ const evidenceLegend = [
 
 export default function LivingLibraryMap() {
   const [active, setActive] = useState<Node | null>(null);
-
-  const isTouchFirst = (node: Node) =>
-    window.matchMedia("(hover: none)").matches && active?.id !== node.id;
+  const pointerType = useRef<string | null>(null);
 
   const preview = (node: Node) => {
-    if (!window.matchMedia("(hover: none)").matches) {
+    if (pointerType.current !== "touch") {
       setActive(node);
     }
   };
 
-  const choose = (node: Node) => {
-    if (isTouchFirst(node)) {
+  const choose = (event: MouseEvent<HTMLButtonElement>, node: Node) => {
+    const isKeyboard = event.detail === 0;
+    const isTouchFirst =
+      !isKeyboard && pointerType.current === "touch" && active?.id !== node.id;
+    pointerType.current = null;
+
+    if (isTouchFirst) {
       setActive(node);
       return;
     }
@@ -97,9 +100,13 @@ export default function LivingLibraryMap() {
                 style={{ left:`${node.x}%`, top:`${node.y}%` }}
                 aria-label={`${node.label}: ${node.note}`}
                 aria-pressed={active?.id === node.id}
+                onPointerDown={(event) => { pointerType.current = event.pointerType; }}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === "mouse") setActive(node);
+                }}
+                onPointerCancel={() => { pointerType.current = null; }}
                 onFocus={() => preview(node)}
-                onMouseEnter={() => setActive(node)}
-                onClick={() => choose(node)}
+                onClick={(event) => choose(event, node)}
               >
                 <span>{node.label}</span>
               </button>
