@@ -61,7 +61,11 @@ def validate(registry, spec, batch1, batch3):
         fail("BQ001 must remain UNRESOLVED")
 
     maturity = registry.get("maturity", {})
-    if maturity.get("current_level") != 6 or maturity.get("candidate_level") != 7:
+    if (
+        maturity.get("current_level") != 6
+        or maturity.get("candidate_level") != 7
+        or maturity.get("candidate_level_name") != "PREDICTIONS_DEFINED"
+    ):
         fail("registry must describe the bounded Level 6 to Level 7 transition")
     if maturity.get("candidate_level_applied") is not False:
         fail("Level 7 may not be applied before review")
@@ -74,6 +78,8 @@ def validate(registry, spec, batch1, batch3):
         fail("competing model identities changed")
     if len(models) != 2:
         fail("exactly two competing models required")
+    all_prediction_ids = []
+    all_challenge_ids = []
     for model in models:
         if model.get("status") != "UNRESOLVED" or model.get("supports_models") != []:
             fail("model status or support boundary promoted")
@@ -88,6 +94,7 @@ def validate(registry, spec, batch1, batch3):
             for key in ("prediction_id", "statement", "boundary")
         ):
             fail("predictions require unique IDs and substantive statements and boundaries")
+        all_prediction_ids.extend(prediction_ids)
         challenge_ids = [item.get("observation_id") for item in challenges]
         if len(set(challenge_ids)) != len(challenge_ids) or any(
             not nonempty_string(item.get(key))
@@ -95,13 +102,18 @@ def validate(registry, spec, batch1, batch3):
             for key in ("observation_id", "statement")
         ):
             fail("potential disconfirming observations require unique IDs and substantive statements")
+        all_challenge_ids.extend(challenge_ids)
         if any(item.get("not_decisive_alone") is not True for item in challenges):
             fail("disconfirming observations must preserve auxiliary-assumption caution")
+    if len(set(all_prediction_ids)) != len(all_prediction_ids) or len(set(all_challenge_ids)) != len(all_challenge_ids):
+        fail("prediction and challenge IDs must be unique across all models")
 
     tests = registry.get("discriminating_tests", [])
     if {item.get("test_id") for item in tests} != EXPECTED_TESTS or len(tests) != 3:
         fail("discriminating test set changed")
     for test in tests:
+        if not nonempty_string(test.get("domain")) or not nonempty_string(test.get("design")):
+            fail("each discriminating test requires a substantive domain and design")
         rules = test.get("outcome_rules", {})
         if set(rules) != {"biological_dependence_strengthened", "continuity_strengthened", "neutral_or_ambiguous"}:
             fail("each test requires symmetric and neutral outcome rules")
