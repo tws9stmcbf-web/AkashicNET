@@ -30,6 +30,12 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_candidate_level_name_mutation_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["maturity"]["candidate_level_name"] = "TRUTH_CONFIRMED"
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_maturity_disclaimer_reversal_rejected(self):
         candidate = copy.deepcopy(self.registry)
         candidate["maturity"]["meaning"] = "Research-method maturity is evidence strength; model support and promotion are granted."
@@ -77,6 +83,18 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(candidate)
 
+    def test_cross_model_record_id_duplicates_rejected(self):
+        mutations = (
+            ("predictions", "prediction_id"),
+            ("potential_disconfirming_observations", "observation_id"),
+        )
+        for collection, key in mutations:
+            with self.subTest(collection=collection):
+                candidate = copy.deepcopy(self.registry)
+                candidate["models"][1][collection][0][key] = candidate["models"][0][collection][0][key]
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
     def test_empty_challenge_statement_rejected(self):
         candidate = copy.deepcopy(self.registry)
         candidate["models"][0]["potential_disconfirming_observations"][0]["statement"] = None
@@ -88,6 +106,14 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         candidate["discriminating_tests"][0]["outcome_rules"]["neutral_or_ambiguous"] = ""
         with self.assertRaises(ValueError):
             self.validate(candidate)
+
+    def test_empty_test_domain_and_design_rejected(self):
+        for key, value in (("domain", ""), ("design", None)):
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.registry)
+                candidate["discriminating_tests"][0][key] = value
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
 
     def test_child_safeguard_relaxation_rejected(self):
         candidate = copy.deepcopy(self.registry)
