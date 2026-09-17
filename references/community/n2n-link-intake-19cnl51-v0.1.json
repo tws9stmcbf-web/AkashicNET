@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "N2N-LINK-INTAKE-19cnl51",
+  "status": "REVIEW_CANDIDATE",
+  "created_utc": "2026-09-17",
+  "purpose": "Metadata-only intake of a user-supplied r/NeuronsToNirvana link. This artifact does not modify the sealed curated N2N index.",
+  "source": {
+    "platform": "reddit",
+    "subreddit": "NeuronsToNirvana",
+    "post_id": "19cnl51",
+    "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/19cnl51/abstract_introduction_conclusion_addiction_a/",
+    "supplied_title": "Abstract; Introduction; Conclusion | Addiction – a brain disorder or a spiritual disorder | OA Text: Mental Health and Addiction Research [Feb 2017]",
+    "supplied_post_date": "2024-01-22",
+    "metadata_verification_state": "PUBLIC_REDDIT_METADATA_RECHECK_REQUIRED",
+    "live_access_state": "HOLD",
+    "author": "Original poster as listed on Reddit"
+  },
+  "linked_source": {
+    "title": "Addiction – a brain disorder or a spiritual disorder",
+    "url": "https://www.oatext.com/Addiction-a-brain-disorder-or-a-spiritual-disorder.php",
+    "publication_year": 2017,
+    "source_kind": "perspective_article",
+    "review_state": "TITLE_AND_LANDING_PAGE_LOCATED_FULL_METHOD_REVIEW_PENDING"
+  },
+  "candidate_classification": {
+    "category": "Research",
+    "topic": "Addiction models, spirituality, recovery and stigma",
+    "source_type": "community_article_pointer",
+    "evidence_status": "community_observation",
+    "provenance_status": "link_only",
+    "summary": "A community pointer to a 2017 perspective article contrasting brain-disease and spiritual framings of addiction. It may support historical and conceptual review, but is not a clinical consensus statement or stand-alone evidence for either model.",
+    "research_question": "How can neurobiological, psychological, social and spiritual dimensions of addiction and recovery be integrated without moralising people or reducing a complex condition to one model?",
+    "visual_audio_art_flag": "No"
+  },
+  "counter_context": [
+    {
+      "title": "Drug Misuse and Addiction",
+      "organization": "National Institute on Drug Abuse",
+      "url": "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction/drug-misuse-addiction",
+      "role": "current_clinical_context",
+      "promotion_state": "NONE"
+    },
+    {
+      "title": "Addiction as a brain disease revised: why it still matters, and the need for consilience",
+      "venue": "Neuropsychopharmacology",
+      "url": "https://www.nature.com/articles/s41386-020-00950-y",
+      "role": "multilevel_methodological_context",
+      "promotion_state": "NONE"
+    }
+  ],
+  "rights_and_safety": {
+    "metadata_only": true,
+    "reddit_body_reproduced": false,
+    "article_text_reproduced": false,
+    "media_reproduced": false,
+    "medical_advice": false,
+    "moral_or_spiritual_defect_endorsed": false,
+    "attribution_requires_recheck": true
+  },
+  "governance": {
+    "human_review_required": true,
+    "curated_index_modified": false,
+    "public_synthesis_modified": false,
+    "website_modified": false,
+    "accepted_edges": 0,
+    "supports_models": [],
+    "truth_inference": false,
+    "evidence_promotion": false,
+    "scientific_evidence_promotion": false,
+    "rights_promotion": false,
+    "canonical_identity_promotion": false
+  },
+  "next_gate": "Verify live Reddit metadata through an authorised access path, review the linked article and counter-context, then decide whether to admit a bounded record through the governed N2N review process."
+}
