@@ -149,11 +149,44 @@ EXPECTED_SOURCE_LIMITATIONS = {'SRC-BQ002-BARSALOU-2008': ['The review covers mu
                                        'Functional costs and benefits vary with content, context '
                                        'and meta-awareness.']}
 
+EXPECTED_CANONICAL_CLAIMS = [{'claim_id': 'CLAIM-BQ002-FRAMEWORK-001',
+  'contradicts': [],
+  'domain': 'phenomenology_and_unresolved_origins',
+  'evidence_label': 'Established Evidence',
+  'provenance': ['references/big-questions/BQ002/spec-v0.1.json'],
+  'reviewed_support': True,
+  'scope': 'project_state_only',
+  'source_ids': [],
+  'supports_models': [],
+  'text': 'BQ002 currently has no adjudicated substantive answer.',
+  'uncertainty': 'No empirical or metaphysical conclusion is implied by this project-state '
+                 'statement.'}]
+EXPECTED_CANONICAL_MODELS = {'MODEL-BQ002-COGNITIVE-GENERATION': {'model_id': 'MODEL-BQ002-COGNITIVE-GENERATION',
+                                      'name': 'cognitive_generation_model',
+                                      'position': 'Thought content arises through interacting '
+                                                  'perceptual, mnemonic, predictive, affective, '
+                                                  'linguistic and action-related processes '
+                                                  'implemented by biological cognitive systems.',
+                                      'status': 'UNRESOLVED'},
+ 'MODEL-BQ002-PHENOMENAL-GAP': {'model_id': 'MODEL-BQ002-PHENOMENAL-GAP',
+                                'name': 'phenomenal_origin_unresolved_model',
+                                'position': 'Mechanistic accounts of thought content and access '
+                                            'may remain incomplete as accounts of why thought is '
+                                            'subjectively experienced.',
+                                'status': 'UNRESOLVED'}}
+
 def fail(message):
     raise ValueError(message)
 
 
 def validate(atlas, spec):
+    if spec.get("conclusion_policy") != "UNDETERMINED_AT_INGESTION":
+        fail("canonical conclusion policy must remain undetermined")
+    if spec.get("claims") != EXPECTED_CANONICAL_CLAIMS:
+        fail("canonical bounded claim contract changed")
+    canonical_models = spec.get("models", [])
+    if {m.get("model_id"): m for m in canonical_models} != EXPECTED_CANONICAL_MODELS:
+        fail("canonical bounded model definitions changed")
     if spec.get("id") != "BQ002" or spec.get("status") != "UNRESOLVED":
         fail("canonical BQ002 spec must remain UNRESOLVED")
     if spec.get("public_beta_gate") is not False:
