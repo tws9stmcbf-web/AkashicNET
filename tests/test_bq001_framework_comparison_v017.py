@@ -2,6 +2,9 @@ import copy
 import importlib.util
 import sys
 import unittest
+import tempfile
+from unittest.mock import patch
+import json
 from pathlib import Path
 
 
@@ -71,6 +74,46 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         for raw in ('{"x":1,"x":2}', '{"x":NaN}', '{"x":Infinity}'):
             with self.subTest(raw=raw), self.assertRaises(ValueError):
                 validator.load_json(raw)
+
+    def test_encoded_private_hosts_and_paths_fail_closed(self):
+        for text in (
+            "https://drive%2Egoogle%2Ecom/file/d/private",
+            "https://drive%252Egoogle.com/private",
+            "https://drive。google.com/private",
+            "https://drive\u034f.google.com/private",
+            "https://drive\ufe0f.google.com/private",
+            "https://drive\t.google.com/private",
+            "https://drive％２Ｅgoogle.com/private",
+            "https://drive.usercontent.google.com/download?id=synthetic",
+            "file%3A%2F%2Fprivate", "C:%5CMy%20Drive%5Cprivate",
+        ):
+            with self.subTest(text=text), self.assertRaisesRegex(ValueError, "private"):
+                validator.scan_safety(text)
+        validator.scan_safety("https://example.com/public")
+        validator.scan_safety("https://images.googleusercontent.com/public")
+
+    def test_identity_survives_coordinated_schema_changes(self):
+        for key, value in {"question_id": "BQ002", "packet_id": "OTHER", "version": "2.0.0"}.items():
+            candidate = copy.deepcopy(self.packet)
+            candidate[key] = value
+            schema = validator.load_json(validator.SCHEMA)
+            schema["properties"][key]["const"] = value
+            with tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "schema.json"
+                path.write_text(json.dumps(schema), encoding="utf-8")
+                with patch.object(validator, "SCHEMA", path):
+                    with self.subTest(key=key), self.assertRaisesRegex(ValueError, "packet identity drift"):
+                        self.validate(candidate)
+
+    def test_schema_annotations_are_privacy_scanned(self):
+        schema = validator.load_json(validator.SCHEMA)
+        schema["$comment"] = "https://drive%2Egoogle%2Ecom/file/d/private"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(json.dumps(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "private"):
+                    self.validate(self.packet)
 
 
 if __name__ == "__main__":

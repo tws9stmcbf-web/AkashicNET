@@ -6,6 +6,8 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import unicodedata
+from urllib.parse import unquote
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +18,15 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKET = ROOT / "references/big-questions/BQ001/framework-comparison-v0.17-slice1.json"
 SCHEMA = ROOT / "schemas/bq001-framework-comparison-v0.17-slice1.schema.json"
 INPUT_COMMIT = "ac30ecebdc2af6a2dea9c0c8fc00a5f33763fa44"
+EXPECTED_IDENTITY = {
+    "question_id": "BQ001",
+    "packet_id": "BQ001-FRAMEWORK-COMPARISON-V017-SLICE1",
+    "version": "0.1.0",
+    "mode": "REVIEW_ONLY",
+    "question_status": "UNRESOLVED",
+    "accepted_edges": 0,
+    "input_commit": INPUT_COMMIT,
+}
 EXPECTED_ANCHORS = {
     "references/big-questions/BQ001/framework-inventory-v0.17-slice1.json": "c2330c292840d95f80f5faad35f548fe5bb16094",
     "references/big-questions/BQ001/spec-v0.1.json": "b35b2397c8ab5341db313ec73c3e45b2bcdf4a5c",
@@ -60,6 +71,30 @@ CORRECTION_KEYS = {"claim_id", "evidence_label_changed", "related_notice_doi", "
 ANCESTRY_KEYS = {"claim_id", "inventory_item_ids", "rule", "source_id"}
 FORBIDDEN_KEYS = {"answer", "confidence", "conclusion", "probability", "rank", "score", "synthesis", "winner"}
 PRIVATE_MARKERS = ("drive.google.com", "docs.google.com", "drive.usercontent.google.com", "docs.googleusercontent.com")
+PRIVATE_PATH_MARKERS = ("/my drive/", "akm-", "file://", "gdrive://")
+# Same ignored ranges as the reviewed inventory validator at INPUT_COMMIT.
+UTS46_IGNORED_RANGES = (
+    (0x00AD, 0x00AD), (0x034F, 0x034F), (0x115F, 0x1160),
+    (0x17B4, 0x17B5), (0x180B, 0x180F), (0x200B, 0x200B),
+    (0x2060, 0x2064), (0x206A, 0x206F), (0x3164, 0x3164),
+    (0xFE00, 0xFE0F), (0xFEFF, 0xFEFF), (0xFFA0, 0xFFA0),
+    (0x1BCA0, 0x1BCA3), (0x1D173, 0x1D17A), (0xE0100, 0xE01EF),
+)
+
+
+def normalize_private_text(text: str) -> str:
+    for _ in range(32):
+        normalized = unquote(unicodedata.normalize("NFKC", text)).casefold()
+        normalized = normalized.replace("\\", "/").translate(str.maketrans({
+            "。": ".", "．": ".", "｡": ".", "\t": None, "\n": None, "\r": None,
+        }))
+        normalized = "".join(c for c in normalized if not any(
+            start <= ord(c) <= end for start, end in UTS46_IGNORED_RANGES
+        ))
+        if normalized == text:
+            return normalized
+        text = normalized
+    raise ValueError("privacy encoding did not stabilize")
 
 
 def reject_constant(value: str) -> None:
@@ -93,16 +128,19 @@ def assert_exact_keys(value: dict[str, Any], expected: set[str], label: str) -> 
 def scan_safety(value: Any) -> None:
     if isinstance(value, dict):
         for key, child in value.items():
-            if key.casefold() in FORBIDDEN_KEYS:
+            if normalize_private_text(key) in FORBIDDEN_KEYS:
                 raise ValueError(f"adjudicative key rejected: {key}")
+            scan_safety(key)
             scan_safety(child)
     elif isinstance(value, list):
         for child in value:
             scan_safety(child)
     elif isinstance(value, str):
-        folded = value.casefold()
+        folded = normalize_private_text(value)
         if any(marker in folded for marker in PRIVATE_MARKERS):
             raise ValueError("private Drive/Docs marker rejected")
+        if any(marker in folded for marker in PRIVATE_PATH_MARKERS):
+            raise ValueError("private path marker rejected")
 
 
 def git(*args: str) -> str:
@@ -203,6 +241,10 @@ def validate(packet: dict[str, Any] | None = None, *, verify_git: bool = True) -
     packet = packet if packet is not None else load_json(PACKET)
     schema = load_json(SCHEMA)
     scan_safety(packet)
+    scan_safety(schema)
+    for key, expected in EXPECTED_IDENTITY.items():
+        if type(packet.get(key)) is not type(expected) or packet.get(key) != expected:
+            raise ValueError(f"packet identity drift: {key}")
     Draft202012Validator.check_schema(schema)
     Draft202012Validator(schema).validate(packet)
     assert_exact_keys(packet, TOP_KEYS, "packet")
