@@ -414,6 +414,12 @@
       "version": "0.1",
       "path": "BLINDED-INTERVIEW-MANUAL-v0.1.md",
       "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED"
+    },
+    "blinded_scoring_and_decoy_manual": {
+      "id": "SDC-001",
+      "version": "0.1",
+      "path": "BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md",
+      "state": "DRAFT_STAGE_0"
     }
   },
   "interview_manual": {
@@ -464,5 +470,68 @@
       "PARTICIPANT_WITHDREW",
       "CLINICAL_STOP"
     ]
+  },
+  "scoring_and_decoy_manual": {
+    "id": "SDC-001",
+    "version": "0.1",
+    "path": "BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md",
+    "state": "DRAFT_STAGE_0",
+    "recruitment_authorized": false,
+    "operational_use_authorized": false,
+    "unit": "participant_event_with_one_primary_locked_interview",
+    "phases": [
+      "transcript_only_atomic_claim_extraction_and_lock",
+      "transcript_independent_candidate_set_generation_and_commitment",
+      "masked_dual_correspondence_scoring",
+      "blind_disagreement_adjudication",
+      "score_lock_before_dual_control_unblinding"
+    ],
+    "required_boundaries": [
+      "claim_set_locked_without_candidate_access",
+      "decoy_eligibility_sampling_and_replacement_independent_of_transcript_content",
+      "candidate_set_manifest_committed_before_scorer_access",
+      "true_and_decoy_candidates_symmetrically_rendered_in_randomized_masked_order",
+      "truth_position_hidden_from_claim_coders_scorers_adjudicators_and_analysts_until_authorized_release",
+      "null_contradictory_uncertain_contaminated_and_nonscorable_reports_retained_in_flow_ledger",
+      "post_lock_information_append_only_and_sensitivity_only",
+      "visual_and_auditory_channels_scored_separately"
+    ],
+    "prohibited_inputs_to_decoy_selection": [
+      "transcript_words",
+      "participant_characteristics",
+      "reported_imagery",
+      "scorer_preferences",
+      "observed_matches"
+    ],
+    "pending_stage_2_freeze": [
+      "primary_score_formula_and_direction",
+      "claim_weights_and_aggregation",
+      "decoy_count_and_strata",
+      "tie_and_disagreement_handling",
+      "minimum_meaningful_effect",
+      "randomization_test_statistic",
+      "multiplicity_family",
+      "missingness_and_unresolved_state_bounds",
+      "stopping_progression_and_rejection_boundaries"
+    ],
+    "scoring_states": [
+      "CLAIM_SET_LOCKED",
+      "CLAIM_SET_DISAGREEMENT",
+      "REPORT_NULL",
+      "REPORT_NONSCORABLE",
+      "SCORABILITY_UNKNOWN",
+      "CANDIDATE_SET_COMMITTED",
+      "DECOY_GENERATION_REPRODUCED",
+      "DECOY_GENERATION_FAILED",
+      "CANDIDATE_METADATA_LEAK",
+      "DUAL_SCORING_COMPLETE",
+      "SCORER_DISAGREEMENT",
+      "ADJUDICATION_COMPLETE",
+      "SCORE_LOCKED_BEFORE_UNBLINDING",
+      "PREMATURE_TRUTH_REVEAL",
+      "UNBLINDED_FOR_AUTHORIZED_ANALYSIS",
+      "PACKET_HELD_PENDING_ADJUDICATION"
+    ],
+    "interpretation_constraint": "correspondence_scores_do_not_by_themselves_establish_awareness_continuity_personal_survival_or_afterlife"
   }
 }
