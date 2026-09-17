@@ -1,0 +1,470 @@
+{
+  "schema_version": "0.1",
+  "packet_id": "AKN-ISSUE-343-LEININGER-CHRONOLOGY-DISPUTE-2026-09-17",
+  "created_at": "2026-09-17",
+  "status": "REVIEW_CANDIDATE",
+  "issue": 343,
+  "parent_ledger": {
+    "path": "references/big-questions/BQ001/issue-343-source-dedup-ledger-v0.1.json",
+    "merged_pr": 352,
+    "merge_commit": "dfc0854c826cade04d9bbc67fb69f7c712f66944"
+  },
+  "scope": "A review-only chronology and dispute map for the public James Leininger case literature identified through issue #343. It records attributed claims, documentation timing, exposure pathways, mismatches, source dependencies and unresolved disagreements; it does not adjudicate reincarnation, create a canonical case record or import source content.",
+  "decision_boundary": [
+    "No numerical probability of reincarnation is calculated or implied.",
+    "No claim is promoted as a verified hit, miss or accepted evidential edge.",
+    "Later commentary and responses share the same case-material lineage and do not count as independent case confirmation.",
+    "Military and archival records may test target facts, but do not by themselves establish when or how a child statement was made.",
+    "Only public case identifiers and metadata-level summaries are retained; no private child data, images, transcripts or full text are copied."
+  ],
+  "governance": {
+    "question_status": {
+      "BQ001": "UNRESOLVED",
+      "BQ002": "UNRESOLVED",
+      "BQ003": "UNRESOLVED"
+    },
+    "supports_models": [],
+    "accepted_edges": 0,
+    "canonical_identity_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "public_synthesis_update_allowed": false,
+    "website_update_allowed": false,
+    "source_import_allowed": false
+  },
+  "rights_and_safeguarding": {
+    "treatment": "METADATA_AND_ORIGINAL_SUMMARY_ONLY",
+    "full_text_stored": false,
+    "images_stored": false,
+    "transcripts_stored": false,
+    "private_child_information_stored": false,
+    "case_identifier_basis": "Already public in the cited scholarly exchange.",
+    "downstream_reuse_allowed": false
+  },
+  "source_chain": [
+    {
+      "source_id": "LEININGER-TUCKER-2016",
+      "title": "The Case of James Leininger: An American Case of the Reincarnation Type",
+      "author": "Jim B. Tucker",
+      "role": "INITIAL_SCHOLARLY_CASE_REPORT",
+      "doi": "10.1016/j.explore.2016.02.003",
+      "pmid": "27079216",
+      "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2017/04/REI42-Tucker-James-LeiningerPIIS1550830716000331.pdf",
+      "argument_identity_key": "doi:10.1016/j.explore.2016.02.003",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "use": "Chronology and attributed claim inventory only."
+    },
+    {
+      "source_id": "LEININGER-SUDDUTH-CRITIQUE",
+      "title": "The James Leininger Case Re-Examined",
+      "author": "Michael Sudduth",
+      "role": "CRITIQUE",
+      "url": "https://journalofscientificexploration.org/index.php/jse/article/view/2361",
+      "argument_identity_key": "journal-article:jse-2361",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "identity_status": "IDENTITY_METADATA_CONFLICT_UNRESOLVED",
+      "metadata_conflicts": {
+        "doi": {
+          "journal_landing_page": "10.31275/20212361",
+          "pdf_header": "10.31275/20212359",
+          "state": "CONFLICT_UNRESOLVED"
+        },
+        "publication_date": {
+          "journal_landing_page": "2022-01-15",
+          "pdf_header": "2021-12-30",
+          "state": "CONFLICT_UNRESOLVED"
+        }
+      },
+      "use": "Counter-chronology, ordinary-exposure pathways, testimony inconsistencies and denominator objections."
+    },
+    {
+      "source_id": "LEININGER-TUCKER-RESPONSE-2022",
+      "title": "Response to Sudduth's The James Leininger Case Re-Examined",
+      "author": "Jim B. Tucker",
+      "role": "AUTHOR_RESPONSE",
+      "doi": "10.31275/20222487",
+      "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2022/05/Tucker-JSE-Response-to-JL-crit-2487-Article-Text-12829-1-10-20220522-1.pdf",
+      "argument_identity_key": "doi:10.31275/20222487",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "use": "Author clarification of identification timing, claim counts and disputed mismatches."
+    },
+    {
+      "source_id": "LEININGER-SUDDUTH-REPLY-2022",
+      "title": "Response to Jim Tucker",
+      "author": "Michael Sudduth",
+      "role": "CRITIC_REPLY",
+      "doi": "10.31275/20222515",
+      "url": "https://journalofscientificexploration.org/index.php/jse/article/view/2515",
+      "argument_identity_key": "doi:10.31275/20222515",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "use": "Reply preserving disagreements after Tucker's clarifications."
+    },
+    {
+      "source_id": "LEININGER-MATLOCK-PART1-2022",
+      "title": "Clarifying Muddied Waters, Part 1: A Secure Timeline for the James Leininger Case",
+      "author": "James G. Matlock",
+      "role": "CHRONOLOGY_COMMENTARY",
+      "doi": "10.31275/20222529",
+      "url": "https://doi.org/10.31275/20222529",
+      "argument_identity_key": "doi:10.31275/20222529",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "use": "Later reconstruction using reported dated emails and unpublished documents; underlying artifacts remain unaudited here."
+    },
+    {
+      "source_id": "LEININGER-MATLOCK-PART2",
+      "title": "Clarifying Muddied Waters, Part 2: Methodological and Theoretical Considerations",
+      "author": "James G. Matlock",
+      "role": "METHODOLOGICAL_COMMENTARY",
+      "doi": "10.31275/20222765",
+      "url": "https://journalofscientificexploration.org/index.php/jse/article/view/2765",
+      "argument_identity_key": "doi:10.31275/20222765",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "metadata_conflicts": {
+        "publication_date": {
+          "journal_landing_page": "2023-02-11",
+          "pdf_or_issue_metadata": "2022-12-30",
+          "state": "CONFLICT_UNRESOLVED"
+        }
+      },
+      "use": "Methodological proposals and argument about the Part 1 timeline; not independent case evidence."
+    }
+  ],
+  "chronology": [
+    {
+      "sequence": 1,
+      "period": "2000-02",
+      "precision": "MONTH_REPORTED",
+      "event": "Museum visit and subsequent repeated exposure to a Blue Angels video are reported before the main statement sequence.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "RETROSPECTIVE_FAMILY_ACCOUNT_WITH_IDENTIFIED_EXPOSURE_PATHWAY",
+      "dispute": "The parties disagree about the explanatory weight and completeness of these ordinary-information exposures.",
+      "state": "ATTRIBUTED_UNADJUDICATED"
+    },
+    {
+      "sequence": 2,
+      "period": "2000-02/2000-04",
+      "precision": "RELATIVE_RANGE_REPORTED",
+      "event": "Crash play, nightmares and aviation-related statements are reported as beginning within roughly two months.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "PARENTAL_RECOLLECTION_WITH_LATER_REPORTING",
+      "dispute": "Exact dates, wording, frequency and contemporaneous preservation are incomplete.",
+      "state": "ATTRIBUTED_UNADJUDICATED"
+    },
+    {
+      "sequence": 3,
+      "period": "2000-08-27",
+      "precision": "DAY_REPORTED",
+      "event": "A printed online record associated with the word Natoma is reported.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE",
+        "LEININGER-MATLOCK-PART1-2022"
+      ],
+      "record_type": "REPORTED_DATED_DOCUMENT",
+      "dispute": "The document's existence, provenance, discovery sequence and causal relation to the child's earlier wording require artifact-level audit.",
+      "state": "DOCUMENT_EXISTENCE_REPORTED_NOT_AUDITED"
+    },
+    {
+      "sequence": 4,
+      "period": "2000-LATE",
+      "precision": "APPROXIMATE",
+      "event": "The name Jack Larsen is reported and later used in family searches.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "REPORTED_STATEMENT_AND_SEARCH_SEQUENCE",
+      "dispute": "Exact first wording, first fixation and information available during searches remain contested.",
+      "state": "ATTRIBUTED_UNADJUDICATED"
+    },
+    {
+      "sequence": 5,
+      "period": "2001",
+      "precision": "YEAR_APPROXIMATE",
+      "event": "Contact with Carol Bowman and related interpretive guidance occurred during the developing case.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "REPORTED_EXTERNAL_CONTACT",
+      "dispute": "Sequence, suggestion effects and influence on later elicitation or interpretation require dated-record reconstruction.",
+      "state": "EXPOSURE_PATHWAY_OPEN"
+    },
+    {
+      "sequence": 6,
+      "period": "2002-05/2002-06",
+      "precision": "MONTH_RANGE_REPORTED",
+      "event": "An ABC interview was recorded before the reported identification of James Huston Jr.; it was not broadcast.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-TUCKER-RESPONSE-2022",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "REPORTED_AUDIOVISUAL_RECORD",
+      "dispute": "The complete footage, transcript, timestamps, prompts and chain of custody were not audited in this packet.",
+      "state": "PRIMARY_ARTIFACT_ACCESS_REQUIRED"
+    },
+    {
+      "sequence": 7,
+      "period": "2002-FALL",
+      "precision": "SEASON_REPORTED",
+      "event": "Attendance at a Natoma Bay reunion and identification of James Huston Jr. are reported.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-TUCKER-RESPONSE-2022",
+        "LEININGER-SUDDUTH-REPLY-2022"
+      ],
+      "record_type": "REPORTED_IDENTIFICATION_EVENT",
+      "dispute": "Parties agree this is a crucial cutoff but dispute which statements are securely fixed before it.",
+      "state": "CUTOFF_REPORTED_CLAIM_MEMBERSHIP_UNRESOLVED"
+    },
+    {
+      "sequence": 8,
+      "period": "2003",
+      "precision": "YEAR_REPORTED",
+      "event": "Bruce Leininger prepared a retrospective chronology used in later analysis.",
+      "record_basis": [
+        "LEININGER-TUCKER-RESPONSE-2022",
+        "LEININGER-SUDDUTH-REPLY-2022",
+        "LEININGER-MATLOCK-PART1-2022"
+      ],
+      "record_type": "RETROSPECTIVE_CASE_CHRONOLOGY",
+      "dispute": "Its source files, revision history and independence from later knowledge require provenance audit.",
+      "state": "PROVENANCE_AUDIT_REQUIRED"
+    },
+    {
+      "sequence": 9,
+      "period": "2009",
+      "precision": "YEAR",
+      "event": "A family-authored book presented the developed case narrative.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "LATER_NARRATIVE_SOURCE",
+      "dispute": "Useful for provenance and later claims, but not a contemporaneous record of the earliest statements.",
+      "state": "DERIVATIVE_NARRATIVE"
+    },
+    {
+      "sequence": 10,
+      "period": "2010",
+      "precision": "YEAR_REPORTED",
+      "event": "Tucker conducted his first in-person investigation after major public development of the case.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE"
+      ],
+      "record_type": "LATER_RESEARCH_INTERVIEW",
+      "dispute": "Late entry increases dependence on surviving records and retrospective witnesses.",
+      "state": "ATTRIBUTED_UNADJUDICATED"
+    },
+    {
+      "sequence": 11,
+      "period": "2016-2023",
+      "precision": "PUBLICATION_CHAIN",
+      "event": "The case report, critique, response, reply and two-part commentary developed the present methodological dispute.",
+      "record_basis": [
+        "LEININGER-TUCKER-2016",
+        "LEININGER-SUDDUTH-CRITIQUE",
+        "LEININGER-TUCKER-RESPONSE-2022",
+        "LEININGER-SUDDUTH-REPLY-2022",
+        "LEININGER-MATLOCK-PART1-2022",
+        "LEININGER-MATLOCK-PART2"
+      ],
+      "record_type": "SCHOLARLY_ARGUMENT_CHAIN",
+      "dispute": "The publications offer competing interpretations of substantially overlapping case materials and are not independent replications.",
+      "state": "DISPUTE_OPEN"
+    }
+  ],
+  "claim_dispute_matrix": [
+    {
+      "claim_id": "JL-C01",
+      "claim_family": "Recurring crash, fire and trapped-pilot nightmares or play",
+      "earliest_record_status": "Reported before identification; exact original wording and complete contemporaneous record unavailable here.",
+      "ordinary_exposure_pathways": [
+        "Museum visit",
+        "Blue Angels video",
+        "Family discussion and later elicitation"
+      ],
+      "mismatch_or_ambiguity": "Broad imagery admits multiple aviation-related matches unless wording and scoring rules are frozen.",
+      "proponent_position": "Treated as an early behavior cluster consistent with the later target identification.",
+      "critic_position": "Exposure and retrospective reconstruction weaken specificity and chronology.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C02",
+      "claim_family": "Natoma",
+      "earliest_record_status": "A dated 2000-08-27 printout is reported, but the artifact and its causal sequence were not audited.",
+      "ordinary_exposure_pathways": [
+        "Internet search",
+        "Adult search participation",
+        "Possible prompting or fixation"
+      ],
+      "mismatch_or_ambiguity": "Spelling, first utterance, search order and adult contribution must be reconstructed.",
+      "proponent_position": "Presented as a specific early item connected to USS Natoma Bay.",
+      "critic_position": "Search context and chronology may permit ordinary acquisition or reconstruction.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C03",
+      "claim_family": "Jack Larsen",
+      "earliest_record_status": "Reported before identification; first verbatim record and search sequence remain incomplete.",
+      "ordinary_exposure_pathways": [
+        "Adult search process",
+        "Aviation names encountered during investigation"
+      ],
+      "mismatch_or_ambiguity": "Whether the name was spontaneous, stable and uniquely identifying is disputed.",
+      "proponent_position": "Presented as a specific associate-name match.",
+      "critic_position": "Documentation and search contamination are insufficiently controlled.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C04",
+      "claim_family": "Corsair aircraft",
+      "earliest_record_status": "Included among reported pre-identification items in Tucker's response.",
+      "ordinary_exposure_pathways": [
+        "Museum and aviation media",
+        "Blue Angels video",
+        "Family research"
+      ],
+      "mismatch_or_ambiguity": "Huston's fatal aircraft was reported as an FM-2, not a Corsair; earlier Corsair experience is offered as contextual fit.",
+      "proponent_position": "Acknowledges the fatal-flight mismatch but argues the target pilot had earlier Corsair experience.",
+      "critic_position": "Counts the fatal-flight aircraft discrepancy as a material mismatch and warns against post hoc broadening.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C05",
+      "claim_family": "Shot down by the Japanese near Iwo Jima",
+      "earliest_record_status": "Components are reported before identification, but exact wording and combination timing require primary records.",
+      "ordinary_exposure_pathways": [
+        "Aviation media",
+        "Adult questioning",
+        "Developing family research"
+      ],
+      "mismatch_or_ambiguity": "Geographic and event descriptions require predeclared tolerance; Chichi Jima and Iwo Jima must not be silently equated.",
+      "proponent_position": "Treats the cluster as corresponding to Huston's death during the Iwo Jima campaign.",
+      "critic_position": "Challenges specificity, timing and match construction.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C06",
+      "claim_family": "Engine fire or impact and death in water",
+      "earliest_record_status": "Reported in the pre-identification behavior-and-statement set, with wording variants across accounts.",
+      "ordinary_exposure_pathways": [
+        "Crash imagery in media",
+        "Repeated discussion and questioning"
+      ],
+      "mismatch_or_ambiguity": "Engine, fire, impact and water elements must be scored separately rather than combined after target selection.",
+      "proponent_position": "Reads the cluster as broadly consistent with the fatal crash account.",
+      "critic_position": "Argues variants and flexible aggregation reduce evidential force.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C07",
+      "claim_family": "James 3 or identity-name wording",
+      "earliest_record_status": "Reported as an early item; exact semantics and first preserved record are disputed.",
+      "ordinary_exposure_pathways": [
+        "Self-name usage",
+        "Adult interpretation",
+        "Later target-name knowledge"
+      ],
+      "mismatch_or_ambiguity": "The phrase can support multiple interpretations unless verbatim timing and elicitation context are fixed.",
+      "proponent_position": "Treats it as part of the pre-identification correspondence set.",
+      "critic_position": "Questions interpretation and documentation independence.",
+      "adjudication": "UNRESOLVED"
+    },
+    {
+      "claim_id": "JL-C08",
+      "claim_family": "Later family-life or personal details",
+      "earliest_record_status": "Reported after target identification or without secure pre-identification documentation in the reviewed chain.",
+      "ordinary_exposure_pathways": [
+        "Post-identification contact",
+        "Book research",
+        "Target-family interaction"
+      ],
+      "mismatch_or_ambiguity": "High leakage risk prevents use in a pre-identification hit denominator.",
+      "proponent_position": "May present some items as additional correspondences with qualifications.",
+      "critic_position": "Excludes or heavily discounts them because normal information transfer cannot be controlled.",
+      "adjudication": "UNRESOLVED"
+    }
+  ],
+  "denominator_accounting": {
+    "reported_case_total": {
+      "value": 30,
+      "attribution": "Tucker's 2022 response describes 30 reported accurate statements.",
+      "status": "AUTHOR_REPORTED_NOT_ACCEPTED_AS_DENOMINATOR"
+    },
+    "reported_pre_identification_documented_subset": {
+      "value": 10,
+      "attribution": "Tucker's 2022 response describes ten items with pre-identification documentation in the expanded source set.",
+      "status": "MEMBERSHIP_AND_ARTIFACT_AUDIT_REQUIRED"
+    },
+    "earlier_published_table": {
+      "description": "The 2016 article's table draws on the pre-identification ABC interview and is not treated here as a complete denominator.",
+      "status": "SUBSET_NOT_DENOMINATOR"
+    },
+    "missing_denominator_components": [
+      "Frozen verbatim claim list before target selection",
+      "All wrong, unmatched, ambiguous, repeated and later-added statements",
+      "Prompting and elicitation history",
+      "Predeclared match tolerances and unitization rules",
+      "Search-space and base-rate definition"
+    ],
+    "computed_hit_rate": null,
+    "numerical_probability": null,
+    "denominator_state": "UNRESOLVED"
+  },
+  "independence_and_leakage": {
+    "accepted_independent_case_replications": 0,
+    "case_material_lineages": 1,
+    "lineages": [
+      {
+        "key": "case:james-leininger-family-and-derivative-records",
+        "components": [
+          "Family recollection",
+          "Family notes and chronology",
+          "Unaired ABC footage",
+          "Family-authored book",
+          "Later researcher interviews and syntheses"
+        ],
+        "rule": "Do not count publications reanalyzing these components as independent confirmation."
+      }
+    ],
+    "external_record_rule": "Military or archival records may independently establish target facts, but they do not independently establish child-statement timing, wording or freedom from exposure.",
+    "leakage_state": "UNRESOLVED"
+  },
+  "unresolved_evidence_requests": [
+    "Controlled review of the complete original ABC footage, transcript, prompts, timestamps and chain of custody.",
+    "Original dated emails and files with preserved metadata rather than later excerpts alone.",
+    "Versioned provenance audit of the 2003 chronology and any master timeline.",
+    "A frozen, verbatim, pre-identification claim inventory before matching to a target.",
+    "A complete inventory of wrong, ambiguous, unmatched, repeated and post-identification claims.",
+    "Blind independent coding with predeclared units, match tolerances, decoy targets and base rates.",
+    "Independent archival review separating target-fact validation from statement-provenance validation.",
+    "Human resolution of the Sudduth critique DOI/date conflict and the Matlock Part 2 publication-date conflict."
+  ],
+  "packet_counts": {
+    "scholarly_chain_items": 6,
+    "chronology_nodes": 11,
+    "claim_families_mapped": 8,
+    "resolved_claims": 0,
+    "accepted_independent_case_replications": 0,
+    "accepted_edges": 0,
+    "source_imports_performed": 0,
+    "status_or_gate_changes": 0
+  },
+  "conclusion": "This packet makes the disagreement auditable but reaches no case-level truth finding. The chronology, denominator, exposure controls, claim unitization and primary-artifact provenance remain insufficiently settled for scoring or promotion.",
+  "next_gate": "Fresh exact-head review for chain completeness, metadata conflicts, chronology attribution, denominator accounting, leakage, privacy and rights. Any later artifact audit must remain separate and cannot open source-import, evidence, truth, rights, public-synthesis or website gates without an explicit governed decision."
+}
