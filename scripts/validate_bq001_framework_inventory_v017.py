@@ -184,6 +184,8 @@ def privacy_check(value):
         decoded = decode_percent(text)
         folded = unicodedata.normalize("NFKC", decoded).casefold().replace("\\", "/")
         folded = folded.translate(str.maketrans({"。": ".", "．": ".", "｡": "."}))
+        # WHATWG URL preprocessing removes ASCII tab, LF, and CR before parsing.
+        folded = folded.translate({ord("\t"): None, ord("\n"): None, ord("\r"): None})
         # Apply the complete UTS-46 ignored mapping before private-host matching.
         folded = "".join(
             character for character in folded
