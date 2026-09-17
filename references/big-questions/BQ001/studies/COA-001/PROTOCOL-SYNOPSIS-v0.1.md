@@ -44,7 +44,7 @@ Required outputs:
 1. frozen operational definitions;
 2. causal model and bias-control map;
 3. target generation, concealment, security and timestamp specification;
-4. eligibility and interview manual;
+4. eligibility framework and blinded interview manual;
 5. locked scoring rubric and decoy-construction procedure;
 6. denominator and attrition ledger;
 7. simulation-based sample-size plan;
@@ -155,6 +155,8 @@ Absence of a scalp EEG signal is not treated as proof of absent brain activity, 
 8. Log exposure to staff, family, media and previous interview questions.
 9. Audio-record, transcribe and cryptographically lock the transcript.
 10. Open target/event records only after lock confirmation.
+
+The complete neutral script, contamination audit, distress/stop rules, interpreter boundary and transcript-lock procedure are specified in [BIM-001 v0.1](./BLINDED-INTERVIEW-MANUAL-v0.1.md).
 
 ## Causal model
 
@@ -318,7 +320,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [ ] clinical review
 - [ ] statistical/adversarial review
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
-- [ ] interview manual
+- [x] blinded interview and contamination-audit manual — draft BIM-001 v0.1; clinical, ethics and methods validation pending
 - [ ] blinded scoring manual
 - [ ] simulation and sample-size report
 - [ ] ethics/data-protection outline
