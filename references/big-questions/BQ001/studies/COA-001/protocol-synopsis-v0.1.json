@@ -67,10 +67,32 @@
   ],
   "stage_2_primary_hypothesis": {
     "population": "TARGET_EXPOSED",
-    "outcome": "pre-registered true-versus-decoy time-aligned visual target score",
-    "null": "true and decoy assignments are exchangeable",
-    "alternative": "true time-aligned sequences receive higher scores than the frozen randomization distribution",
-    "interpretation_constraint": "correspondence_endpoint_does_not_by_itself_establish_awareness_or_continuity"
+    "unit": "participant_equal_weight_after_within_participant_event_aggregation",
+    "candidate_set": {
+      "true_sequences": 1,
+      "transcript_independent_decoys": 5,
+      "total_candidates": 6
+    },
+    "outcome": "mean_pre_adjudication_normalized_true_candidate_rank_utility_across_two_blinded_scorers",
+    "rank_utility": "U_equals_6_minus_midrank_divided_by_5",
+    "null_expectation": 0.5,
+    "effect": "delta_equals_mean_participant_U_minus_0.5",
+    "null": "true and decoy assignments are exchangeable within each committed candidate packet",
+    "alternative": "true time-aligned sequences receive higher normalized rank utility",
+    "primary_test": {
+      "type": "conditional_randomization_test",
+      "sidedness": "one_sided",
+      "alpha": 0.025,
+      "permutation_unit": "truth_position_within_committed_six_candidate_packet",
+      "exact_or_seeded_draws": "exact_if_feasible_otherwise_at_least_1000000_committed_draws"
+    },
+    "multiplicity": "one_confirmatory_endpoint_secondary_and_exploratory_outcomes_do_not_create_confirmatory_claims",
+    "unresolved_state_rule": "null_nonscorable_or_unresolved_TARGET_EXPOSED_primary_values_receive_neutral_U_0_5_with_worst_best_case_bounds_for_critical_integrity_states",
+    "provisional_minimum_carry_forward_delta": 0.05,
+    "planning_delta": 0.1,
+    "provisional_information_target_target_exposed": 132,
+    "target_power": 0.9,
+    "interpretation_constraint": "conditional_correspondence_only_no_prevalence_awareness_continuity_personal_survival_or_afterlife_inference"
   },
   "feasibility_gates": [
     {
@@ -420,6 +442,19 @@
       "version": "0.1",
       "path": "BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md",
       "state": "DRAFT_STAGE_0"
+    },
+    "stage_2_statistical_analysis_plan": {
+      "id": "SAP-001",
+      "version": "0.1",
+      "path": "STAGE-2-STATISTICAL-ANALYSIS-PLAN-v0.1.md",
+      "state": "DRAFT_FREEZE_CANDIDATE_INDEPENDENT_STATISTICAL_REVIEW_REQUIRED"
+    },
+    "simulation_and_sample_size_report": {
+      "id": "SIM-001",
+      "version": "0.1",
+      "path": "SIMULATION-AND-SAMPLE-SIZE-REPORT-v0.1.md",
+      "code_path": "analysis/coa001_rank_operating_characteristics_v0_1.py",
+      "state": "PROVISIONAL_STAGE_0_INDEPENDENT_REPRODUCTION_REQUIRED"
     }
   },
   "interview_manual": {
@@ -533,5 +568,63 @@
       "PACKET_HELD_PENDING_ADJUDICATION"
     ],
     "interpretation_constraint": "correspondence_scores_do_not_by_themselves_establish_awareness_continuity_personal_survival_or_afterlife"
+  },
+  "statistical_analysis_plan": {
+    "id": "SAP-001",
+    "version": "0.1",
+    "state": "DRAFT_FREEZE_CANDIDATE",
+    "preregistered": false,
+    "recruitment_authorized": false,
+    "operational_use_authorized": false,
+    "freeze_requires": [
+      "independent_statistical_review",
+      "independent_simulation_reproduction",
+      "stage_1_blinded_parameter_update",
+      "ethics_or_irb_approval",
+      "prospective_registration",
+      "versioned_protocol_amendment"
+    ],
+    "confirmatory_success_requires": [
+      "one_sided_randomization_p_value_at_most_0_025",
+      "observed_delta_at_least_0_05",
+      "directionally_positive_prespecified_neutral_missing_and_participant_cluster_analyses",
+      "no_unresolved_systemic_leakage_truth_position_exposure_or_decoy_exchangeability_failure",
+      "all_prerequisite_validity_gates_passed_before_unblinding",
+      "complete_flow_negative_controls_and_sensitivity_analyses_reported"
+    ],
+    "early_stopping": "no_efficacy_or_futility_stopping_safety_ethics_feasibility_and_integrity_pauses_only",
+    "independent_replication_required_before_model_review": true
+  },
+  "operating_characteristics": {
+    "id": "SIM-001",
+    "version": "0.1",
+    "method": "deterministic_exact_probability_convolution",
+    "alpha": 0.025,
+    "candidate_count": 6,
+    "alternative_families": [
+      "sparse_top_rank_mixture",
+      "soft_exponential_rank_shift"
+    ],
+    "conservative_required_target_exposed": {
+      "delta_0_05": {
+        "power_0_80": 377,
+        "power_0_90": 513
+      },
+      "delta_0_075": {
+        "power_0_80": 171,
+        "power_0_90": 231
+      },
+      "delta_0_10": {
+        "power_0_80": 97,
+        "power_0_90": 132
+      },
+      "delta_0_15": {
+        "power_0_80": 43,
+        "power_0_90": 59
+      }
+    },
+    "eligible_event_sample_size": "not_frozen_requires_stage_1_target_exposed_yield_with_uncertainty_and_ethics_review",
+    "stage_1_150_to_300_eligible_events_role": "feasibility_not_confirmatory_power",
+    "independent_reproduction_required": true
   }
 }
