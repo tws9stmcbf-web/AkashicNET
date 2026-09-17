@@ -91,7 +91,7 @@ export default function BigQuestionsPage() {
         <div style={{ ...panel, borderColor: "rgba(216,185,92,.38)", textAlign: "center" }}>
           <p style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>HOW RATINGS CHANGE</p>
           <h2 style={{ fontSize: "clamp(1.8rem,4vw,3.2rem)" }}>Scheduled review—not scheduled belief.</h2>
-          <p style={{ maxWidth: 850, margin: "0 auto", color: "#d1cdc4", lineHeight: 1.8 }}>A rating or deepening level changes only when completed work—such as stronger source mapping, model separation, methodological stress-testing, preregistered tests, replication or meaningful counter-evidence—changes a named axis. Time alone never upgrades a claim. Some questions may deepen for decades while remaining unresolved.</p>
+          <p style={{ maxWidth: 850, margin: "0 auto", color: "#d1cdc4", lineHeight: 1.8 }}>An evidence rating changes only when evidence changes a named axis. A deepening level changes when its defined research work is completed, even when a null result leaves every evidence-strength axis unchanged. Time and source volume alone never upgrade either measure. Some questions may deepen for decades while remaining unresolved.</p>
           <p style={{ color: "#c8c4bb", lineHeight: 1.8 }}><strong>Typical pathway:</strong> ⚪ Unresolved → 🩵 Deepening → 🟠 Signal detected → 🟢 Converging evidence → 💜 Provisional support for a clearly defined model</p>
         </div>
       </section>
