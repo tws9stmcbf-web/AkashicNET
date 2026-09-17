@@ -461,6 +461,12 @@
       "version": "0.1",
       "path": "ETHICS-AND-DATA-PROTECTION-OUTLINE-v0.1.md",
       "state": "DRAFT_STAGE_0_JURISDICTION_SPECIFIC_REVIEW_REQUIRED"
+    },
+    "data_flow_access_and_leakage_threat_model": {
+      "id": "DFL-001",
+      "version": "0.1",
+      "path": "DATA-FLOW-ACCESS-AND-LEAKAGE-THREAT-MODEL-v0.1.md",
+      "state": "DRAFT_STAGE_0_NOT_IMPLEMENTED_OR_VALIDATED"
     }
   },
   "interview_manual": {
@@ -699,6 +705,100 @@
       "prospective_registration",
       "staff_certification_and_site_rehearsal",
       "independent_statistical_clinical_ethics_privacy_and_security_signoff"
+    ]
+  },
+  "data_flow_and_leakage": {
+    "id": "DFL-001",
+    "version": "0.1",
+    "state": "SECURITY_SPECIFIED_NOT_IMPLEMENTED_OR_VALIDATED",
+    "recruitment_authorized": false,
+    "live_participant_data_processing_authorized": false,
+    "trust_zones": [
+      "Z0_CLINICAL_CARE",
+      "Z1_ELIGIBILITY_AND_IDENTITY",
+      "Z2_TARGET_DEVICE",
+      "Z3_INTERVIEW",
+      "Z4_CLAIM_AND_SCORING",
+      "Z5_TRUTH_LINKAGE",
+      "Z6_ANALYSIS",
+      "Z7_CONTROLLED_ARCHIVE",
+      "Z8_PUBLIC_AGGREGATE"
+    ],
+    "invariants": [
+      "no_direct_target_or_truth_route_to_participant_facing_staff",
+      "no_participant_level_or_operational_secret_data_to_public_or_AkashicNET_systems",
+      "intended_render_and_independent_actual_display_evidence_are_distinct",
+      "claim_and_score_locks_precede_truth_release",
+      "truth_release_requires_machine_prerequisites_and_dual_control",
+      "unknown_unrecoverable_and_security_failures_remain_in_applicable_denominators",
+      "controls_reduce_detect_measure_and_test_leakage_but_do_not_prove_absence"
+    ],
+    "permitted_flow_count": 17,
+    "leakage_scenario_count": 30,
+    "critical_boundaries": [
+      "identity_linkage_separate_from_target_and_interview",
+      "target_device_has_no_participant_identity_or_interview_content",
+      "scoring_receives_redacted_transcript_and_masked_candidates_only",
+      "truth_linkage_separate_until_authorized_analysis",
+      "aggregate_disclosure_review_required_before_publication"
+    ],
+    "independent_display_verification": {
+      "required": true,
+      "render_acknowledgement_alone": "insufficient",
+      "privacy_default": "non_imaging_non_audio_sensor",
+      "camera_or_microphone": "requires_separate_EDP_001_audiovisual_pathway"
+    },
+    "unblinding_prerequisites": [
+      "consent_and_data_use_state_permits_operation",
+      "transcript_and_claim_locks_verify",
+      "candidate_and_score_locks_verify",
+      "contamination_and_integrity_states_complete",
+      "decoy_manifest_and_generation_reproduce",
+      "analysis_code_and_environment_locked",
+      "no_unresolved_critical_incident",
+      "independent_access_log_review_complete",
+      "two_custodian_approval_recorded"
+    ],
+    "required_validation": [
+      "site_specific_topology_and_data_inventory",
+      "institutional_security_architecture_approval",
+      "privacy_DPIA_approval",
+      "production_implementation_evidence",
+      "independent_penetration_and_adversarial_assessment",
+      "independent_physical_and_clinical_human_factors_testing",
+      "decoy_exchangeability_and_metadata_blindness_testing",
+      "key_credential_and_recovery_rehearsal",
+      "incident_and_breach_exercise",
+      "access_log_review_procedure",
+      "signed_commissioning_baseline",
+      "change_and_recommissioning_policy",
+      "external_domain_signoff",
+      "ethics_and_regulatory_authorization"
+    ],
+    "states": [
+      "SECURITY_SPECIFIED_NOT_IMPLEMENTED",
+      "SITE_TOPOLOGY_INCOMPLETE",
+      "DATA_FLOW_NOT_AUTHORIZED",
+      "ROLE_ACCESS_NOT_ENFORCED",
+      "ELIGIBILITY_FEED_INCOMPLETE",
+      "ACTIVATION_TOKEN_INVALID",
+      "DISPLAY_NOT_INDEPENDENTLY_VERIFIED",
+      "TARGET_METADATA_LEAK",
+      "TRANSCRIPT_LOCK_INCOMPLETE",
+      "SCORING_PACKET_REDACTION_FAIL",
+      "CLAIM_SET_NOT_BLIND",
+      "CANDIDATE_METADATA_LEAK",
+      "SCORE_LOCK_INCOMPLETE",
+      "UNBLINDING_NOT_AUTHORIZED",
+      "ANALYSIS_ENVIRONMENT_INTEGRITY_FAIL",
+      "ARCHIVE_COMMIT_FAILED",
+      "PUBLICATION_GATE_CLOSED",
+      "DELETION_NOT_VERIFIED",
+      "KEY_CUSTODY_BREACH",
+      "CROSS_ZONE_ACCESS_ATTEMPT",
+      "PAUSED_PENDING_ADJUDICATION",
+      "SITE_SECURITY_COMMISSIONED",
+      "RECRUITMENT_NOT_AUTHORIZED"
     ]
   }
 }
