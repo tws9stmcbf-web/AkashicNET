@@ -97,25 +97,6 @@ Integrity metadata for this entry: normalized work key `1l26ks1`; full live titl
 
 Integrity metadata for this entry: normalized work key `1uoneax`; full live title observed as “🧠♾️ One Source. Many Paths. | Beyond The Ego, Into Infinite Intelligence — ‘Different names. Different maps. One mystery.’ [July 2026]”; published 6 July 2026; retrieved 2 September 2026; visual/audio/art flag: Yes (Figure 1 present, not reproduced).
 
-## Additional curated entries
-
-### Addiction — A Brain Disorder or a Spiritual Disorder
-
-- Reddit URL: https://www.reddit.com/r/NeuronsToNirvana/comments/19cnl51/abstract_introduction_conclusion_addiction_a/
-- Date: 2024-01-22
-- Post type: article excerpt and discussion pointer
-- Author: Original poster as listed on Reddit
-- Topic: Addiction models, spirituality, recovery and stigma
-- Category: Research
-- Short summary: A community source preserving an abstract, introduction and conclusion from a 2017 perspective article that contrasts brain-disease and spiritual models of addiction. It is useful for tracing competing framings and questions about meaning in recovery, but is not a clinical consensus statement or stand-alone evidence for either model.
-- External source URL: https://www.oatext.com/Addiction-a-brain-disorder-or-a-spiritual-disorder.php
-- Related Toolkit framework: Addiction / harm reduction / biopsychosocial-spiritual inquiry
-- Research-question potential: How can neurobiological, psychological, social and spiritual dimensions of addiction and recovery be integrated without moralising people or reducing a complex condition to one model?
-- Visual/audio/art flag: No
-- Evidence classification: Community / conceptual / exploratory; linked perspective article requires independent methodological review
-- Provenance/licensing status: Link-only record; title, date and public source metadata checked; no Reddit post body or article text reproduced; normalized work key `19cnl51`; retrieved 2026-09-17; human review required before any evidence or public-synthesis use.
-- Counter-context: Current NIDA guidance describes addiction as a chronic, treatable disorder involving functional changes in brain circuits. Contemporary scholarly debate also supports integrating neurobiological, behavioural, clinical and sociocultural levels rather than treating one framing as exhaustive. Spiritual meaning and recovery practice may be discussed separately from causal or diagnostic claims.
-
 ## Detailed record template
 
 ```markdown
