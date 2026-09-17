@@ -100,10 +100,14 @@
     {
       "work_id": "WORK-343-UVA-CHILDREN-PREVIOUS-LIVES",
       "title": "Children Who Report Memories of Past Lives",
-      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "identity_status": "EXISTING_GOVERNED_RECORD",
+      "existing_source_id": "UVA-DOPS-CHILDREN",
+      "existing_paths": [
+        "references/big-questions/gold-nuggets-cross-question-synthesis-v0.1.json"
+      ],
       "independence_key": "work:uva-children-report-memories-past-lives",
       "manifestation_ids": ["M343-008"],
-      "note": "Institutional overview and case-discovery page. Named case identity is public but is not independently adjudicated by this ledger."
+      "note": "Existing institutional overview and case-discovery record; do not create a duplicate source identity. Named case identity is public but is not independently adjudicated by this ledger."
     },
     {
       "work_id": "WORK-343-AWARE2-2023",
@@ -160,7 +164,7 @@
     {"manifestation_id":"M343-005","url":"https://journalofscientificexploration.org/index.php/jse/article/view/2361","source_role":"JOURNAL_RECORD","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_DOI_TITLE_MATCH_2026-09-17"},
     {"manifestation_id":"M343-006","url":"https://michaelsudduth.com/crash-and-burn-james-leininger-story-debunked/","source_role":"AUTHOR_COMMENTARY","classification":"DERIVATIVE_COMPANION","verification":"AVAILABLE_TITLE_AUTHOR_MATCH_2026-09-17"},
     {"manifestation_id":"M343-007","url":"https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2022/05/Tucker-JSE-Response-to-JL-crit-2487-Article-Text-12829-1-10-20220522-1.pdf","source_role":"AUTHOR_INSTITUTION_PDF","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_PDF_7_PAGES_DOI_MATCH_2026-09-17"},
-    {"manifestation_id":"M343-008","url":"https://med.virginia.edu/perceptual-studies/our-research/children-who-report-memories-of-previous-lives/","source_role":"INSTITUTIONAL_OVERVIEW","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_TITLE_MATCH_2026-09-17","identity_note":"Ryan Hammons is a public case label on the page; no separate source identity or claim score is created."},
+    {"manifestation_id":"M343-008","url":"https://med.virginia.edu/perceptual-studies/our-research/children-who-report-memories-of-previous-lives/","source_role":"INSTITUTIONAL_OVERVIEW","classification":"EXISTING_GOVERNED_RECORD","existing_source_id":"UVA-DOPS-CHILDREN","existing_paths":["references/big-questions/gold-nuggets-cross-question-synthesis-v0.1.json"],"verification":"EXISTING_GOVERNED_SOURCE_URL_MATCH","identity_note":"Ryan Hammons is a public case label on the page; no separate source identity or claim score is created."},
     {"manifestation_id":"M343-009","url":"https://pubmed.ncbi.nlm.nih.gov/37423492/","source_role":"BIBLIOGRAPHIC_RECORD","classification":"EXISTING_GOVERNED_RECORD","verification":"EXISTING_VERIFIED_SOURCE_INTEGRITY_RECORD"},
     {"manifestation_id":"M343-010","url":"https://www.elsevier.com/about/press-releases/new-evidence-indicates-patients-recall-death-experiences-after-cardiac","source_role":"PUBLISHER_PRESS_RELEASE","classification":"DERIVATIVE_COMPANION","same_work_as":"M343-009","verification":"AVAILABLE_TITLE_MATCH_2026-09-17"},
     {"manifestation_id":"M343-011","url":"https://orbi.uliege.be/handle/2268/291512","source_role":"INSTITUTIONAL_REPOSITORY_RECORD","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_DOI_PMID_TITLE_MATCH_2026-09-17"},
@@ -206,12 +210,12 @@
     "issue_cited_manifestations": 25,
     "verification_discovered_chain_manifestations": 1,
     "total_manifestations": 26,
-    "existing_governed_records": 1,
+    "existing_governed_records": 2,
     "existing_community_records": 8,
     "alternate_manifestations": 2,
     "derivative_companions": 3,
     "dynamic_queries_not_sources": 1,
-    "new_candidate_manifestations_including_chain_gap": 11,
+    "new_candidate_manifestations_including_chain_gap": 10,
     "canonical_imports_performed": 0,
     "status_or_gate_changes": 0
   },
