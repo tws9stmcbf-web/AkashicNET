@@ -45,6 +45,26 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(candidate)
 
+    def test_canonical_edges_rejected(self):
+        for field in ("source_ids", "contradicts"):
+            with self.subTest(field=field):
+                candidate = copy.deepcopy(self.spec)
+                candidate["claims"][0][field] = ["SRC-BQ002-SEED-001"]
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+
+    def test_canonical_model_promotion_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        candidate["models"][0]["status"] = "ESTABLISHED"
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_source_limitations_promotion_rejected(self):
+        candidate = copy.deepcopy(self.atlas)
+        candidate["sources"][0]["limitations"] = ["This proves all thought is transpersonal."]
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
