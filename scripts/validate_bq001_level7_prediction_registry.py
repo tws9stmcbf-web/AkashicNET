@@ -81,6 +81,8 @@ def validate(registry, spec, batch1, batch3):
     all_prediction_ids = []
     all_challenge_ids = []
     for model in models:
+        if not nonempty_string(model.get("operational_scope")):
+            fail("every model requires a substantive operational scope")
         if model.get("status") != "UNRESOLVED" or model.get("supports_models") != []:
             fail("model status or support boundary promoted")
         predictions = model.get("predictions", [])
@@ -123,6 +125,8 @@ def validate(registry, spec, batch1, batch3):
             fail("each test requires symmetric and neutral outcome rules")
         if any(not nonempty_string(value) for value in rules.values()):
             fail("outcome rules must contain substantive symmetric and neutral statements")
+        if len({" ".join(value.split()).casefold() for value in rules.values()}) != 3:
+            fail("outcome rule statements must be distinct")
     past_life = next(item for item in tests if item.get("test_id") == "TEST-BQ001-PASTLIFE-PROSPECTIVE")
     safeguards = past_life.get("safeguards", {})
     if set(safeguards) != EXPECTED_SAFEGUARDS or any(value is not True for value in safeguards.values()):
