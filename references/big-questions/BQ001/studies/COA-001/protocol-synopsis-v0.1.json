@@ -57,10 +57,11 @@
     }
   ],
   "analysis_populations": [
+    "ALL_ELIGIBLE_EVENTS",
     "ALL_INTERVIEWED",
     "TARGET_EXPOSED",
     "VISUAL_CLAIM",
-    "PER_PROTOCOL"
+    "TARGET_EXPOSED_PER_PROTOCOL"
   ],
   "stage_2_primary_hypothesis": {
     "population": "TARGET_EXPOSED",
@@ -71,69 +72,124 @@
   },
   "feasibility_gates": [
     {
-      "id": "complete_event_denominator",
+      "id": "G01_COMPLETE_EVENT_DENOMINATOR",
+      "numerator": "eligible_events_with_stable_id_and_all_minimum_eligibility_fields",
+      "denominator": "all_eligible_events_independently_identified_from_hospital_arrest_source",
       "threshold": ">=98%",
-      "mandatory": true
+      "mandatory": true,
+      "unknown_handling": "failure"
     },
     {
-      "id": "recoverable_device_status",
+      "id": "G02_RECOVERABLE_DEVICE_STATUS",
+      "numerator": "eligible_events_with_authenticated_device_state_covering_event_window",
+      "denominator": "ALL_ELIGIBLE_EVENTS",
       "threshold": ">=98%",
-      "mandatory": true
+      "mandatory": true,
+      "unknown_handling": "failure"
     },
     {
-      "id": "valid_target_activation",
+      "id": "G03_VALID_TARGET_ACTIVATION",
+      "numerator": "equipped_eligible_events_with_auditable_target_display_in_prespecified_interval",
+      "denominator": "eligible_events_with_commissioned_device_expected_operational_at_event_onset",
       "threshold": ">=85%",
-      "mandatory": true
+      "mandatory": true,
+      "unknown_handling": "failure"
     },
     {
-      "id": "complete_target_logs",
+      "id": "G04_COMPLETE_TARGET_LOGS",
+      "numerator": "activation_sessions_with_complete_canonical_records_valid_chain_signature_and_closing_digest",
+      "denominator": "all_activation_sessions_initiated_for_eligible_events",
       "threshold": ">=95%",
-      "mandatory": true
+      "mandatory": true,
+      "unknown_handling": "failure"
     },
     {
-      "id": "clock_sync",
-      "threshold": ">=95% within +/-1 second",
-      "mandatory": true
+      "id": "G05_CLOCK_SYNCHRONIZATION",
+      "numerator": "valid_activations_aligned_within_plus_or_minus_1_second_including_uncertainty",
+      "denominator": "valid_activations_with_target_session",
+      "threshold": ">=95%",
+      "mandatory": true,
+      "unknown_handling": "failure"
     },
     {
-      "id": "transcript_lock_before_unblinding",
+      "id": "G06_TRANSCRIPT_LOCK_BEFORE_UNBLINDING",
+      "numerator": "completed_interviews_locked_before_any_target_or_event_log_release",
+      "denominator": "all_completed_research_interviews_after_eligible_events",
       "threshold": "100%",
-      "mandatory": true
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE",
+      "critical_hold": "premature_unblinding"
     },
     {
-      "id": "critical_interviewer_unblinding",
+      "id": "G07_CRITICAL_INTERVIEWER_UNBLINDING",
+      "numerator": "completed_interviews_with_confirmed_critical_interviewer_unblinding_before_lock",
+      "denominator": "all_completed_research_interviews_after_eligible_events",
       "threshold": "<=2%",
-      "mandatory": true
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE",
+      "unresolved_incident": "HOLD"
     },
     {
-      "id": "contamination_audit",
+      "id": "G08_CONTAMINATION_AUDIT_COMPLETE",
+      "numerator": "completed_interviews_with_all_frozen_exposure_fields_complete_or_explicitly_unknown",
+      "denominator": "all_completed_research_interviews_after_eligible_events",
       "threshold": ">=95%",
-      "mandatory": true
+      "mandatory": true,
+      "blank_handling": "failure"
     },
     {
-      "id": "dual_coder_coverage",
-      "threshold": "100% of scorable reports",
-      "mandatory": true
+      "id": "G09_DUAL_CODER_COVERAGE",
+      "numerator": "scorable_locked_reports_independently_coded_by_two_qualified_blinded_coders",
+      "denominator": "all_reports_declared_scorable_before_target_unblinding",
+      "threshold": "100%",
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE"
     },
     {
-      "id": "categorical_agreement",
-      "threshold": "Cohen kappa >=0.80",
-      "mandatory": true
+      "id": "G10_CATEGORICAL_AGREEMENT",
+      "statistic": "Cohens_kappa",
+      "data": "all_eligible_dual_coded_primary_categorical_fields",
+      "threshold": ">=0.80",
+      "mandatory": true,
+      "insufficient_variance": "NOT_EVALUABLE"
     },
     {
-      "id": "continuous_agreement",
-      "threshold": "ICC >=0.90",
-      "mandatory": true
+      "id": "G11_CONTINUOUS_AGREEMENT",
+      "statistic": "frozen_ICC_form",
+      "data": "all_eligible_dual_coded_primary_continuous_scores",
+      "threshold": ">=0.90",
+      "mandatory": true,
+      "insufficient_variance": "NOT_EVALUABLE"
     },
     {
-      "id": "device_related_serious_adverse_events",
+      "id": "G12_SERIOUS_DEVICE_RELATED_ADVERSE_EVENTS",
+      "numerator": "confirmed_serious_device_related_adverse_events",
+      "denominator": "ALL_ELIGIBLE_EVENTS",
       "threshold": "0",
-      "mandatory": true
+      "mandatory": true,
+      "any_event": "HOLD"
     },
     {
-      "id": "resuscitation_interference",
-      "threshold": "0 documented instances",
-      "mandatory": true
+      "id": "G13_RESUSCITATION_INTERFERENCE",
+      "numerator": "confirmed_instances_study_activity_delayed_obstructed_or_altered_resuscitation",
+      "denominator": "ALL_ELIGIBLE_EVENTS",
+      "threshold": "0",
+      "mandatory": true,
+      "any_event": "HOLD"
+    },
+    {
+      "id": "G14_INTERVIEW_WITHDRAWAL_BURDEN",
+      "numerator": "approached_survivors_who_begin_then_withdraw_due_to_study_burden",
+      "denominator": "all_approached_eligible_survivors",
+      "threshold": "review_if_above_10_percent",
+      "mandatory": false
+    },
+    {
+      "id": "G15_FOLLOW_UP_RETENTION",
+      "numerator": "participants_completing_frozen_follow_up",
+      "denominator": "participants_eligible_and_consenting_for_follow_up",
+      "threshold": "descriptive_with_uncertainty",
+      "mandatory": false
     }
   ],
   "interpretation_ladder": [
@@ -207,5 +263,64 @@
       "UNRECOVERABLE"
     ],
     "completeness_consequence": "unknown_or_unrecoverable_states_count_against_applicable_feasibility_gates"
+  },
+  "analysis_population_definitions": {
+    "ALL_ELIGIBLE_EVENTS": "every eligible event regardless of device status, survival, consent or interview",
+    "ALL_INTERVIEWED": "eligible participant-events with a completed interview locked under the transcript procedure",
+    "TARGET_EXPOSED": "ALL_INTERVIEWED participant-events with an auditable target sequence displayed during the prespecified resuscitation interval",
+    "VISUAL_CLAIM": "secondary_exploratory_target_exposed_subgroup_only",
+    "TARGET_EXPOSED_PER_PROTOCOL": "TARGET_EXPOSED records without a frozen critical integrity breach; sensitivity analysis only"
+  },
+  "estimands": {
+    "stage_1_feasibility": {
+      "id": "EF-1",
+      "population": "ALL_ELIGIBLE_EVENTS_with_gate_specific_cohorts",
+      "summary": "gate_specific_proportions_or_agreement_statistics_with_uncertainty_pooled_and_by_site",
+      "intercurrent_event_strategy": "retain_death_non_interview_device_failure_missing_timing_and_breaches_as_flow_states",
+      "decision": "all_mandatory_gates_must_pass_no_compensation"
+    },
+    "stage_2_target_correspondence": {
+      "id": "EF-2",
+      "population": "TARGET_EXPOSED",
+      "unit": "participant_event_with_one_primary_locked_interview",
+      "variable": "frozen_true_versus_decoy_participant_event_correspondence_score",
+      "interpretation": "conditional_on_valid_exposure_and_later_reportability_no_prevalence_or_continuity_inference",
+      "required_sensitivity": [
+        "ALL_INTERVIEWED_flow",
+        "unresolved_state_bounds",
+        "TARGET_EXPOSED_PER_PROTOCOL",
+        "site_stratified",
+        "participant_cluster_aware",
+        "negative_controls"
+      ]
+    }
+  },
+  "feasibility_gate_common_rules": {
+    "statuses": [
+      "PASS",
+      "FAIL",
+      "NOT_EVALUABLE",
+      "HOLD"
+    ],
+    "unknown_and_unrecoverable": "remain_in_applicable_denominator_and_fail_completeness_or_recoverability",
+    "zero_denominator": "NOT_EVALUABLE",
+    "proportion_uncertainty": "two_sided_95_percent_confidence_interval_method_to_be_frozen_after_simulation",
+    "zero_event_uncertainty": "exact_one_sided_95_percent_upper_confidence_bound",
+    "agreement_uncertainty": "point_estimate_and_95_percent_confidence_interval; insufficient_variance_is_NOT_EVALUABLE",
+    "reporting": [
+      "pooled",
+      "by_site"
+    ],
+    "critical_hold_events": [
+      "serious_device_related_adverse_event",
+      "resuscitation_interference",
+      "unauthorized_plaintext_target_access",
+      "premature_unblinding"
+    ],
+    "minimum_counts": "require_simulation_before_freeze",
+    "offsetting": "forbidden"
+  },
+  "module_references": {
+    "estimands_and_feasibility_gates": "ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md"
   }
 }
