@@ -135,16 +135,16 @@ class BQ011AuthoringTests(unittest.TestCase):
                 candidate["claims"][0][key] = replacement
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate)
-
-        candidate = copy.deepcopy(self.spec)
-        candidate["claims"][0]["reviewed_support"] = 1
-        with self.assertRaises(ValueError):
-            self.validate(spec=candidate)
             with self.subTest(key=key, removed=True):
                 candidate = copy.deepcopy(self.spec)
                 del candidate["claims"][0][key]
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate)
+
+        candidate = copy.deepcopy(self.spec)
+        candidate["claims"][0]["reviewed_support"] = 1
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
 
     def test_promotion_guard_change_and_removal_rejected(self):
         for key, value in module.EXPECTED_PROMOTION_GUARDS.items():
@@ -157,6 +157,14 @@ class BQ011AuthoringTests(unittest.TestCase):
                         candidate["promotion_guards"][key] = not value
                     with self.assertRaises(ValueError):
                         self.validate(spec=candidate)
+
+    def test_promotion_guard_numeric_booleans_rejected(self):
+        for key, value in module.EXPECTED_PROMOTION_GUARDS.items():
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.spec)
+                candidate["promotion_guards"][key] = 1 if value else 0
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
 
     def test_outcome_family_drift_rejected(self):
         candidate = copy.deepcopy(self.spec)

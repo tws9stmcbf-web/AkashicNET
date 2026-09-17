@@ -166,7 +166,9 @@ def validate(spec, assessment, agenda, architecture):
         if spec.get("graph", {}).get(key) is not False:
             fail(f"BQ011 graph guard weakened: {key}")
     guards = spec.get("promotion_guards")
-    if guards != EXPECTED_PROMOTION_GUARDS:
+    if not isinstance(guards, dict) or set(guards) != set(EXPECTED_PROMOTION_GUARDS):
+        fail("BQ011 promotion guards changed or weakened")
+    if any(guards.get(key) is not expected for key, expected in EXPECTED_PROMOTION_GUARDS.items()):
         fail("BQ011 promotion guards changed or weakened")
 
     cultural = spec.get("cultural_governance")
