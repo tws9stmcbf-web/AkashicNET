@@ -63,7 +63,8 @@ export default function BigQuestionsPage() {
       <section style={{ ...shell, paddingBottom: 36 }} aria-labelledby="key-title">
         <div style={panel}>
           <h2 id="key-title" style={{ marginTop: 0 }}>One shared colour language</h2>
-          <p style={{ color: "#c8c4bb", lineHeight: 1.9 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited, emerging or speculative</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within the named axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>\n          <p style={{ color: "#d1cdc4", lineHeight: 1.8, marginBottom: 0 }}><strong>Deepening level:</strong> a 1–10 research-maturity marker, not a truth probability or evidence grade. 1 frames the question; 2 maps sources; 3 reaches review-candidate status; 4 separates models; 5 maps evidence; 6 stress-tests methods; 7 defines predictions; 8 runs tests; 9 triangulates findings; 10 enters resolution review. A question may remain unresolved at every level.</p>
+          <p style={{ color: "#c8c4bb", lineHeight: 1.9 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited, emerging or speculative</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within the named axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.8, marginBottom: 0 }}><strong>Deepening level:</strong> a 1–10 research-maturity marker, not a truth probability or evidence grade. 1 frames the question; 2 maps sources; 3 reaches review-candidate status; 4 separates models; 5 maps evidence; 6 stress-tests methods; 7 defines predictions; 8 runs tests; 9 triangulates findings; 10 enters resolution review. A question may remain unresolved at every level.</p>
         </div>
       </section>
 
