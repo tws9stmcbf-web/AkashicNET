@@ -96,12 +96,14 @@ A survivor may enter the interview cohort when:
 ### Prespecified analysis populations
 
 - **ALL-ELIGIBLE-EVENTS:** every eligible event, regardless of device status, survival, consent or interview.
+- **ALL-SURVIVORS:** eligible events followed by hospital survival; survivor-flow reporting only.
+- **ALL-APPROACH-ELIGIBLE:** survivors meeting the frozen clinical and ethical approach rule.
 - **ALL-INTERVIEWED:** every completed, locked interview after an eligible event.
 - **TARGET-EXPOSED:** ALL-INTERVIEWED participant-events for which an auditable target sequence was displayed during the prespecified resuscitation interval.
 - **VISUAL-CLAIM:** a secondary/exploratory TARGET-EXPOSED subgroup reporting visual perception assigned to the relevant interval under the frozen rubric.
-- **TARGET-EXPOSED-PER-PROTOCOL:** TARGET-EXPOSED records without a frozen critical integrity breach; sensitivity analysis only.
+- **PER-PROTOCOL TARGET-EXPOSED:** TARGET-EXPOSED records without a frozen critical integrity breach; sensitivity analysis only.
 
-ALL-ELIGIBLE-EVENTS, ALL-INTERVIEWED and TARGET-EXPOSED results must be reported even if a more selective subgroup appears stronger. Units, estimands, nesting, missing-state rules and gate denominators are specified in [EF-001 v0.1](./ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md).
+ALL-ELIGIBLE-EVENTS, ALL-INTERVIEWED and TARGET-EXPOSED results must be reported even if a more selective subgroup appears stronger. Units, estimands, nesting, missing-state rules and gate denominators are specified in [EAP-001 v0.1](./ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md).
 
 ### Exclusions
 
@@ -199,7 +201,7 @@ All secondary outcomes remain secondary even when more striking than the primary
 
 ## Stage-1 feasibility gates
 
-Thresholds are provisional until the clinical and statistical reviewers approve v0.2. They must be frozen before recruitment. Exact numerators, denominators, uncertainty reporting, zero-denominator handling, site rules and HOLD conditions are specified in [EF-001 v0.1](./ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md).
+Thresholds are provisional until the clinical and statistical reviewers approve v0.2. They must be frozen before recruitment. Exact numerators, denominators, uncertainty reporting, zero-denominator handling, site rules and HOLD conditions are specified in [EAP-001 v0.1](./ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md).
 
 | Gate | Provisional pass threshold | Mandatory? |
 |---|---:|---|
@@ -312,7 +314,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [x] hypotheses
 - [x] provisional feasibility gates
 - [x] denominator ledger
-- [x] estimand and feasibility-gate operationalization — draft EF-001 v0.1; statistical, clinical and simulation review pending
+- [x] estimand and feasibility-gate operationalization — draft EAP-001 v0.1; statistical, clinical and simulation review pending
 - [ ] clinical review
 - [ ] statistical/adversarial review
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
