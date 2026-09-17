@@ -203,6 +203,29 @@ class BQ011AuthoringTests(unittest.TestCase):
                 candidate["overall_progress"][key] = replacement
                 with self.assertRaises(ValueError):
                     self.validate(assessment=candidate)
+
+    def test_numeric_progress_fields_reject_booleans(self):
+        for key in ("level", "maximum"):
+            with self.subTest(scope="overall", key=key):
+                candidate = copy.deepcopy(self.assessment)
+                candidate["overall_progress"][key] = True
+                with self.assertRaises(ValueError):
+                    self.validate(assessment=candidate)
+
+        for item in self.assessment["axis_assessments"]:
+            for key in ("level", "maximum"):
+                with self.subTest(scope=item["axis"], key=key):
+                    candidate = copy.deepcopy(self.assessment)
+                    target = next(x for x in candidate["axis_assessments"] if x["axis"] == item["axis"])
+                    target[key] = True
+                    with self.assertRaises(ValueError):
+                        self.validate(assessment=candidate)
+
+    def test_priority_rank_rejects_boolean(self):
+        candidate = copy.deepcopy(self.agenda)
+        candidate["priorities"][0]["rank"] = True
+        with self.assertRaises(ValueError):
+            self.validate(agenda=candidate)
             with self.subTest(key=key, removed=True):
                 candidate = copy.deepcopy(self.assessment)
                 del candidate["overall_progress"][key]

@@ -184,7 +184,11 @@ def validate(spec, assessment, agenda, architecture):
     if assessment.get("question_status") != "UNRESOLVED":
         fail("assessment must remain unresolved")
     progress = assessment.get("overall_progress", {})
-    if progress != EXPECTED_OVERALL_PROGRESS:
+    if (
+        progress != EXPECTED_OVERALL_PROGRESS
+        or type(progress.get("level")) is not int
+        or type(progress.get("maximum")) is not int
+    ):
         fail("overall progress contract changed")
 
     axes = assessment.get("axis_assessments", [])
@@ -192,7 +196,12 @@ def validate(spec, assessment, agenda, architecture):
     if set(axis_map) != set(EXPECTED_AXES) or len(axis_map) != len(axes):
         fail("assessment axis set changed")
     for axis, level in EXPECTED_AXES.items():
-        if axis_map[axis].get("level") != level or axis_map[axis].get("maximum") != 10:
+        if (
+            type(axis_map[axis].get("level")) is not int
+            or type(axis_map[axis].get("maximum")) is not int
+            or axis_map[axis].get("level") != level
+            or axis_map[axis].get("maximum") != 10
+        ):
             fail(f"assessment axis changed: {axis}")
         if axis_map[axis].get("boundary") != EXPECTED_AXIS_BOUNDARIES[axis]:
             fail(f"assessment boundary changed: {axis}")
@@ -207,6 +216,8 @@ def validate(spec, assessment, agenda, architecture):
     priority_items = agenda.get("priorities", [])
     if [item.get("priority_id") for item in priority_items] != EXPECTED_PRIORITIES:
         fail("research priority identity/order changed")
+    if any(type(item.get("rank")) is not int for item in priority_items):
+        fail("research priority ranks must be integers")
     if [item.get("rank") for item in priority_items] != list(range(1, 13)):
         fail("research priority ranks changed")
     if any(not item.get("required_outcomes") for item in priority_items):
