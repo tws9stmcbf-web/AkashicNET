@@ -21,6 +21,12 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
     def validate(self, registry=None):
         module.validate(registry or self.registry, self.spec, self.batch1, self.batch3)
 
+    def test_cross_kind_id_collision_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["models"][1]["potential_disconfirming_observations"][0]["observation_id"] = candidate["models"][0]["predictions"][0]["prediction_id"]
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
