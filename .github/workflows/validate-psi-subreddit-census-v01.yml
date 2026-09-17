@@ -1,0 +1,21 @@
+name: Validate PSI subreddit metadata census v0.1
+on:
+  pull_request:
+    paths:
+      - "references/psi/subreddit-psi-metadata-census-v0.1.json"
+      - "scripts/validate_psi_subreddit_census_v01.py"
+      - ".github/workflows/validate-psi-subreddit-census-v01.yml"
+  push:
+    paths:
+      - "references/psi/subreddit-psi-metadata-census-v0.1.json"
+      - "scripts/validate_psi_subreddit_census_v01.py"
+      - ".github/workflows/validate-psi-subreddit-census-v01.yml"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_psi_subreddit_census_v01.py

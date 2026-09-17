@@ -1,0 +1,1125 @@
+{
+  "schema_version": "0.1",
+  "artifact_type": "METADATA_ONLY_SUBREDDIT_PSI_CENSUS",
+  "generated_on": "2026-09-17",
+  "related_issue": 354,
+  "source_surface": {
+    "path": "references/community/reddit-semantic-index.csv",
+    "git_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
+    "supplemental_governed_records": [
+      "1vyr82r",
+      "15rxs24"
+    ],
+    "subreddit": "r/NeuronsToNirvana",
+    "unique_indexed_post_ids": 7298,
+    "coverage": "complete_for_current_indexed_metadata_surface_not_complete_historical_subreddit",
+    "outbound_source_urls": "Only retained where already resolved in governed repository records; missing URLs are not inferred."
+  },
+  "method": {
+    "discovery": "Exact phenomenon terms in normalized Reddit title slugs plus explicitly governed seed post IDs.",
+    "deduplication": "One Reddit manifestation per post_id. Identical normalized title slugs share a provisional RSL lineage. Existing governed source IDs override provisional lineages. Cross-lane appearances point to one lineage but remain separate claim classifications.",
+    "limitations": [
+      "Title matches can include false positives and miss relevant posts.",
+      "A shared title is not proof of a shared external source.",
+      "An empty underlying_source_urls array means unresolved provenance, not absence of a source.",
+      "Counts describe metadata candidates, not evidence or corroboration."
+    ]
+  },
+  "lanes": {
+    "TEL": {
+      "operational_boundary": "Sender-to-receiver information-transfer claim family; ordinary empathy, synchrony and subjective connectedness excluded.",
+      "matched_manifestations": 28,
+      "provisional_unique_source_lineages": 25,
+      "records": [
+        {
+          "post_id": "113zl3j",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/113zl3j/dennis_mckenna_we_know_we_can_get_group_telepathy/",
+          "title_slug": "dennis_mckenna_we_know_we_can_get_group_telepathy",
+          "source_lineage_id": "RSL-113ZL3J",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "14qt3l7",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/14qt3l7/insights_telepathy_on_lsd_mar_2020/",
+          "title_slug": "insights_telepathy_on_lsd_mar_2020",
+          "source_lineage_id": "RSL-14QT3L7",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "14t1iqy",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/14t1iqy/initiating_telepathy_on_psychedelics_dec_2021/",
+          "title_slug": "initiating_telepathy_on_psychedelics_dec_2021",
+          "source_lineage_id": "RSL-14T1IQY",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "15weu8c",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/15weu8c/inspired_by_microdosing_telepathy_theory_the/",
+          "title_slug": "inspired_by_microdosing_telepathy_theory_the",
+          "source_lineage_id": "RSL-15WEU8C",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "15whvva",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/15whvva/inspired_by_microdosing_telepathy_theory_the/",
+          "title_slug": "inspired_by_microdosing_telepathy_theory_the",
+          "source_lineage_id": "RSL-15WEU8C",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1dfbbkf",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1dfbbkf/telepathy_experiments_and_metaanalysis_of_the/",
+          "title_slug": "telepathy_experiments_and_metaanalysis_of_the",
+          "source_lineage_id": "RSL-1DFBBKF",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1grgw31",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1grgw31/gansfeld_telepathy_experiments_explained_7m02s_40/",
+          "title_slug": "gansfeld_telepathy_experiments_explained_7m02s_40",
+          "source_lineage_id": "RSL-1GRGW31",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1hcbmra",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1hcbmra/the_telepathy_tapes_film_trailer_2m19s_sep_2024/",
+          "title_slug": "the_telepathy_tapes_film_trailer_2m19s_sep_2024",
+          "source_lineage_id": "RSL-1HCBMRA",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1hcvvjs",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1hcvvjs/telepathic_connections_with_gail_hayssen_and/",
+          "title_slug": "telepathic_connections_with_gail_hayssen_and",
+          "source_lineage_id": "RSL-1HCVVJS",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1hhl5zd",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1hhl5zd/dean_radin_on_telepathy_skeptics_and_pulling_back/",
+          "title_slug": "dean_radin_on_telepathy_skeptics_and_pulling_back",
+          "source_lineage_id": "RSL-1HHL5ZD",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1hl5jkf",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1hl5jkf/what_telepathy_tapes_just_pulled_ahead_of_joe/",
+          "title_slug": "what_telepathy_tapes_just_pulled_ahead_of_joe",
+          "source_lineage_id": "RSL-1HL5JKF",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1i310jd",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1i310jd/telepathy_tapes_hoax_or_promising_avenue_for/",
+          "title_slug": "telepathy_tapes_hoax_or_promising_avenue_for",
+          "source_lineage_id": "RSL-1I310JD",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1i9ilcz",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1i9ilcz/mindreading_the_surprising_secret_to_team_success/",
+          "title_slug": "mindreading_the_surprising_secret_to_team_success",
+          "source_lineage_id": "RSL-1I9ILCZ",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1j051sd",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1j051sd/ep_9_telepathy_across_dimensions_death_and_beyond/",
+          "title_slug": "ep_9_telepathy_across_dimensions_death_and_beyond",
+          "source_lineage_id": "RSL-1J051SD",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1j6fqks",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1j6fqks/insights_from_the_telepathy_tapes_featuring_dr/",
+          "title_slug": "insights_from_the_telepathy_tapes_featuring_dr",
+          "source_lineage_id": "RSL-1J6FQKS",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1ja6las",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ja6las/insights_from_the_telepathy_tapes_ft_dr_diane/",
+          "title_slug": "insights_from_the_telepathy_tapes_ft_dr_diane",
+          "source_lineage_id": "RSL-1JA6LAS",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1jc0gtk",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1jc0gtk/theoretical_explanations_for_shamanic_telepathy/",
+          "title_slug": "theoretical_explanations_for_shamanic_telepathy",
+          "source_lineage_id": "RSL-1JC0GTK",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1kahr4m",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1kahr4m/why_does_dmt_seem_to_unlock_telepathic_abilities/",
+          "title_slug": "why_does_dmt_seem_to_unlock_telepathic_abilities",
+          "source_lineage_id": "RSL-1KAHR4M",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1kj4wet",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1kj4wet/lucid_dreaming_telepathy_and_psi_with_robert/",
+          "title_slug": "lucid_dreaming_telepathy_and_psi_with_robert",
+          "source_lineage_id": "RSL-1KJ4WET",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1kqolp4",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1kqolp4/telepathy_in_lucid_dreams_stories_of_incredible/",
+          "title_slug": "telepathy_in_lucid_dreams_stories_of_incredible",
+          "source_lineage_id": "IONS-WAGGONER-2025-LUCID-DREAM-TELEPATHY",
+          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+          "underlying_source_urls": [
+            "https://noetic.org/blog/telepathy-in-lucid-dreams/"
+          ],
+          "lane": "TEL",
+          "review_state": "VERIFIED_OFFICIAL_SECONDARY",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1l66b09",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l66b09/exploring_dream_telepathy_a_conversation_with/",
+          "title_slug": "exploring_dream_telepathy_a_conversation_with",
+          "source_lineage_id": "RSL-1L66B09",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1l66cjg",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1l66cjg/exploring_dream_telepathy_a_conversation_with/",
+          "title_slug": "exploring_dream_telepathy_a_conversation_with",
+          "source_lineage_id": "RSL-1L66B09",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1mkfcug",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1mkfcug/inside_the_telepathy_tapes_the_science_changing/",
+          "title_slug": "inside_the_telepathy_tapes_the_science_changing",
+          "source_lineage_id": "RSL-1MKFCUG",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1mqx4w4",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1mqx4w4/these_kids_are_telepathic_this_reframes/",
+          "title_slug": "these_kids_are_telepathic_this_reframes",
+          "source_lineage_id": "RSL-1MQX4W4",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1mqy3f5",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1mqy3f5/these_kids_are_telepathic_this_reframes/",
+          "title_slug": "these_kids_are_telepathic_this_reframes",
+          "source_lineage_id": "RSL-1MQX4W4",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1oehuw4",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1oehuw4/lsd_caudate_nucleus_microdosing_telepathy_icpr/",
+          "title_slug": "lsd_caudate_nucleus_microdosing_telepathy_icpr",
+          "source_lineage_id": "RSL-1OEHUW4",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1pkoi61",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1pkoi61/your_reality_is_not_real_aliens_telepathy_time/",
+          "title_slug": "your_reality_is_not_real_aliens_telepathy_time",
+          "source_lineage_id": "RSL-1PKOI61",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1s0jfde",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1s0jfde/key_takeaways_from_ions_telepathy_research/",
+          "title_slug": "key_takeaways_from_ions_telepathy_research",
+          "source_lineage_id": "RSL-1S0JFDE",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "TEL",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "1kqolp4",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1kqolp4/telepathy_in_lucid_dreams_stories_of_incredible/",
+        "title_slug": "telepathy_in_lucid_dreams_stories_of_incredible",
+        "source_lineage_id": "IONS-WAGGONER-2025-LUCID-DREAM-TELEPATHY",
+        "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+        "underlying_source_urls": [
+          "https://noetic.org/blog/telepathy-in-lucid-dreams/"
+        ],
+        "lane": "TEL",
+        "review_state": "VERIFIED_OFFICIAL_SECONDARY",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "Official secondary article is already resolved, while the controlled-study basis remains unverified; suitable for separating testimony from experimental claims.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    },
+    "CHN": {
+      "operational_boundary": "Attributed nonordinary-source communications; content similarity does not authenticate source identity.",
+      "matched_manifestations": 15,
+      "provisional_unique_source_lineages": 14,
+      "records": [
+        {
+          "post_id": "17xbakb",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/17xbakb/new_study_on_psychic_channelers_and_disembodied/",
+          "title_slug": "new_study_on_psychic_channelers_and_disembodied",
+          "source_lineage_id": "RSL-17XBAKB",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1aog0fb",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1aog0fb/new_study_on_psychic_channelers_and_disembodied/",
+          "title_slug": "new_study_on_psychic_channelers_and_disembodied",
+          "source_lineage_id": "RSL-17XBAKB",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1bqlf7z",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1bqlf7z/outer_space_beings_and_channelling_spirits_9m39s/",
+          "title_slug": "outer_space_beings_and_channelling_spirits_9m39s",
+          "source_lineage_id": "RSL-1BQLF7Z",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1fcaj7p",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1fcaj7p/the_science_of_channeling_a_conversation_with_dr/",
+          "title_slug": "the_science_of_channeling_a_conversation_with_dr",
+          "source_lineage_id": "RSL-1FCAJ7P",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1gzggvn",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1gzggvn/share_your_channeled_insights_about/",
+          "title_slug": "share_your_channeled_insights_about",
+          "source_lineage_id": "RSL-1GZGGVN",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1i9ne5u",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1i9ne5u/channelers_answers_to_questions_from_scientists/",
+          "title_slug": "channelers_answers_to_questions_from_scientists",
+          "source_lineage_id": "RSL-1I9NE5U",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1k2dhie",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1k2dhie/shamanic_practices_trance_channeling_cosmic/",
+          "title_slug": "shamanic_practices_trance_channeling_cosmic",
+          "source_lineage_id": "RSL-1K2DHIE",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1lpo43c",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1lpo43c/5d_mindmeld_multidimensional_channelling_protocol/",
+          "title_slug": "5d_mindmeld_multidimensional_channelling_protocol",
+          "source_lineage_id": "RSL-1LPO43C",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1mdv8v4",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1mdv8v4/channelling_download_decoding_template_jun_2025/",
+          "title_slug": "channelling_download_decoding_template_jun_2025",
+          "source_lineage_id": "RSL-1MDV8V4",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1mqyrh8",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1mqyrh8/retrocausal_channelled_transmission_the_primary/",
+          "title_slug": "retrocausal_channelled_transmission_the_primary",
+          "source_lineage_id": "RSL-1MQYRH8",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1nkuftd",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nkuftd/howto_channelling_trance_pfccalming_practices/",
+          "title_slug": "howto_channelling_trance_pfccalming_practices",
+          "source_lineage_id": "RSL-1NKUFTD",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1tb69lh",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tb69lh/what_is_channeling_14m57s_channeling_beyond/",
+          "title_slug": "what_is_channeling_14m57s_channeling_beyond",
+          "source_lineage_id": "RSL-1TB69LH",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1tb7g08",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tb7g08/can_we_predict_the_future_22m26s_channeling/",
+          "title_slug": "can_we_predict_the_future_22m26s_channeling",
+          "source_lineage_id": "RSL-1TB7G08",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1tb8rrw",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1tb8rrw/do_abductions_happen_in_the_mind_9m27s_channeling/",
+          "title_slug": "do_abductions_happen_in_the_mind_9m27s_channeling",
+          "source_lineage_id": "RSL-1TB8RRW",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "CHN",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1vyr82r",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/three_channelers_describe_the_same_extraterrestrials/",
+          "title_slug": "three_channelers_describe_the_same_extraterrestrials",
+          "source_lineage_id": "IONS-CHANNELING-ETI-2026",
+          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+          "underlying_source_urls": [
+            "https://doi.org/10.1080/02604027.2026.2656120",
+            "https://doi.org/10.1080/02604027.2026.2656119",
+            "https://doi.org/10.31275/20263817",
+            "https://noetic.org/blog/channelers-describe-the-same-extraterrestrials/"
+          ],
+          "lane": "CHN",
+          "review_state": "PRIMARY_PROVENANCE_RESOLVED_MULTI_SOURCE_PACKET",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "1vyr82r",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/three_channelers_describe_the_same_extraterrestrials/",
+        "title_slug": "three_channelers_describe_the_same_extraterrestrials",
+        "source_lineage_id": "IONS-CHANNELING-ETI-2026",
+        "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+        "underlying_source_urls": [
+          "https://doi.org/10.1080/02604027.2026.2656120",
+          "https://doi.org/10.1080/02604027.2026.2656119",
+          "https://doi.org/10.31275/20263817",
+          "https://noetic.org/blog/channelers-describe-the-same-extraterrestrials/"
+        ],
+        "lane": "CHN",
+        "review_state": "PRIMARY_PROVENANCE_RESOLVED_MULTI_SOURCE_PACKET",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "Three primary papers and an official overview are resolved; full provenance review can test source separation, prospective design, semantic-analysis choices and exposure controls.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    },
+    "MED": {
+      "operational_boundary": "Claimed deceased-communicator material; bereavement, privacy and living-person safeguards apply.",
+      "matched_manifestations": 1,
+      "provisional_unique_source_lineages": 1,
+      "records": [
+        {
+          "post_id": "1bqlf7z",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1bqlf7z/outer_space_beings_and_channelling_spirits_9m39s/",
+          "title_slug": "outer_space_beings_and_channelling_spirits_9m39s",
+          "source_lineage_id": "RSL-1BQLF7Z",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "MED",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "1bqlf7z",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1bqlf7z/outer_space_beings_and_channelling_spirits_9m39s/",
+        "title_slug": "outer_space_beings_and_channelling_spirits_9m39s",
+        "source_lineage_id": "RSL-1BQLF7Z",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
+        "lane": "MED",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "A single title-bounded channeling/spirits record tests the MED boundary without presuming a deceased communicator; source identity and exact proposition remain unresolved.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    },
+    "PRE": {
+      "operational_boundary": "Consciously reportable future-information claims; presentiment physiology remains PRE-PHY and does not transfer evidence.",
+      "matched_manifestations": 5,
+      "provisional_unique_source_lineages": 3,
+      "records": [
+        {
+          "post_id": "1d0dn7f",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1d0dn7f/albert_hofmann_a_peculiar_presentiment_1943_he/",
+          "title_slug": "albert_hofmann_a_peculiar_presentiment_1943_he",
+          "source_lineage_id": "RSL-1D0DN7F",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PRE",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1d0vx1w",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1d0vx1w/albert_hofmann_a_peculiar_presentiment_1943_he/",
+          "title_slug": "albert_hofmann_a_peculiar_presentiment_1943_he",
+          "source_lineage_id": "RSL-1D0DN7F",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PRE",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1en7uzm",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1en7uzm/albert_hofmann_a_peculiar_presentiment_1943_he/",
+          "title_slug": "albert_hofmann_a_peculiar_presentiment_1943_he",
+          "source_lineage_id": "RSL-1D0DN7F",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PRE",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1fnhbs3",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1fnhbs3/the_science_of_precognition_1h38m_dr_julia/",
+          "title_slug": "the_science_of_precognition_1h38m_dr_julia",
+          "source_lineage_id": "RSL-1FNHBS3",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PRE",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1pqvfdb",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1pqvfdb/quantum_microtubule_theory_precognition_in/",
+          "title_slug": "quantum_microtubule_theory_precognition_in",
+          "source_lineage_id": "RSL-1PQVFDB",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PRE",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "1fnhbs3",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1fnhbs3/the_science_of_precognition_1h38m_dr_julia/",
+        "title_slug": "the_science_of_precognition_1h38m_dr_julia",
+        "source_lineage_id": "RSL-1FNHBS3",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
+        "lane": "PRE",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "A named precognition-science interview is bounded enough for official episode, transcript and cited-study provenance review.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    },
+    "RV": {
+      "operational_boundary": "Inaccessible-target information without an identified sender; sender-based protocols route to TEL.",
+      "matched_manifestations": 1,
+      "provisional_unique_source_lineages": 1,
+      "records": [
+        {
+          "post_id": "1g1layl",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1g1layl/psychic_abilities_in_the_us_military_remote/",
+          "title_slug": "psychic_abilities_in_the_us_military_remote",
+          "source_lineage_id": "RSL-1G1LAYL",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "RV",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "1g1layl",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1g1layl/psychic_abilities_in_the_us_military_remote/",
+        "title_slug": "psychic_abilities_in_the_us_military_remote",
+        "source_lineage_id": "RSL-1G1LAYL",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
+        "lane": "RV",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "The military/remote-viewing title supplies a bounded route to resolve the exact programme, practitioner and primary-document lineage.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    },
+    "PK": {
+      "operational_boundary": "Mental-intention effects on physical, random or biological systems; BIO-PK is retained as a subtype, not TEL support.",
+      "matched_manifestations": 4,
+      "provisional_unique_source_lineages": 3,
+      "records": [
+        {
+          "post_id": "15rxs24",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/15rxs24/abstract_evidence_for_correlations_between/",
+          "title_slug": "abstract_evidence_for_correlations_between",
+          "source_lineage_id": "ACHTERBERG-2005-DISTANT-INTENTIONALITY-FMRI",
+          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+          "underlying_source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/16398587/",
+            "https://doi.org/10.1089/acm.2005.11.965"
+          ],
+          "lane": "PK",
+          "review_state": "FULL_TEXT_METHODS_REVIEWED_HOLD",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1h1j3a7",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1h1j3a7/can_loving_intention_shift_global_consciousness/",
+          "title_slug": "can_loving_intention_shift_global_consciousness",
+          "source_lineage_id": "RSL-1H1J3A7",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PK",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1h5jqv9",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1h5jqv9/does_the_cooks_intention_affect_the_quality_of/",
+          "title_slug": "does_the_cooks_intention_affect_the_quality_of",
+          "source_lineage_id": "RSL-1H5JQV9",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PK",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1loa9u9",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1loa9u9/can_loving_intention_shift_global_consciousness/",
+          "title_slug": "can_loving_intention_shift_global_consciousness",
+          "source_lineage_id": "RSL-1H1J3A7",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PK",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "15rxs24",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/15rxs24/abstract_evidence_for_correlations_between/",
+        "title_slug": "abstract_evidence_for_correlations_between",
+        "source_lineage_id": "ACHTERBERG-2005-DISTANT-INTENTIONALITY-FMRI",
+        "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+        "underlying_source_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/16398587/",
+          "https://doi.org/10.1089/acm.2005.11.965"
+        ],
+        "lane": "PK",
+        "review_state": "FULL_TEXT_METHODS_REVIEWED_HOLD",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "The underlying fMRI distant-intentionality study is already identified and held; it supports a full provenance audit within the PK family/BIO-PK subtype without evidential promotion.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    },
+    "PSI-PERSON": {
+      "operational_boundary": "Practitioner/person metadata only; never an evidence category and never counted as corroboration.",
+      "matched_manifestations": 10,
+      "provisional_unique_source_lineages": 8,
+      "records": [
+        {
+          "post_id": "17xbakb",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/17xbakb/new_study_on_psychic_channelers_and_disembodied/",
+          "title_slug": "new_study_on_psychic_channelers_and_disembodied",
+          "source_lineage_id": "RSL-17XBAKB",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1aog0fb",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1aog0fb/new_study_on_psychic_channelers_and_disembodied/",
+          "title_slug": "new_study_on_psychic_channelers_and_disembodied",
+          "source_lineage_id": "RSL-17XBAKB",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1fcaxr3",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1fcaxr3/how_to_unlock_your_psychic_abilities_32m35s/",
+          "title_slug": "how_to_unlock_your_psychic_abilities_32m35s",
+          "source_lineage_id": "RSL-1FCAXR3",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1g1layl",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1g1layl/psychic_abilities_in_the_us_military_remote/",
+          "title_slug": "psychic_abilities_in_the_us_military_remote",
+          "source_lineage_id": "RSL-1G1LAYL",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1g2ok6c",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1g2ok6c/are_you_a_psychic_9_min_read_by_dr_sally_torkos/",
+          "title_slug": "are_you_a_psychic_9_min_read_by_dr_sally_torkos",
+          "source_lineage_id": "RSL-1G2OK6C",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1i9ne5u",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1i9ne5u/channelers_answers_to_questions_from_scientists/",
+          "title_slug": "channelers_answers_to_questions_from_scientists",
+          "source_lineage_id": "RSL-1I9NE5U",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1oyi2qp",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1oyi2qp/better_than_cia_mind_readers_ky_dickens_has_proof/",
+          "title_slug": "better_than_cia_mind_readers_ky_dickens_has_proof",
+          "source_lineage_id": "MBB-KY-DICKENS-2025-10-24",
+          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
+          "underlying_source_urls": [
+            "https://www.bialikbreakdown.com/episodes/better-than-cia-mind-readers-ky-dickens-has-proof-telepathy-psychic-abilities-are-real"
+          ],
+          "lane": "PSI-PERSON",
+          "review_state": "EXISTING_GOVERNED_SOURCE_REDDIT_MANIFESTATION",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1syy4n1",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1syy4n1/i_met_a_psychic_she_knew_everything_13m19s_dakota/",
+          "title_slug": "i_met_a_psychic_she_knew_everything_13m19s_dakota",
+          "source_lineage_id": "RSL-1SYY4N1",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1u9yom6",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9yom6/how_to_unlock_your_psychic_abilities_32m35s/",
+          "title_slug": "how_to_unlock_your_psychic_abilities_32m35s",
+          "source_lineage_id": "RSL-1FCAXR3",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "yc4frp",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/yc4frp/how_psychics_exploit_our_cognitive_biases_5m13s/",
+          "title_slug": "how_psychics_exploit_our_cognitive_biases_5m13s",
+          "source_lineage_id": "RSL-YC4FRP",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        }
+      ],
+      "selected_for_full_provenance_review": {
+        "post_id": "1g2ok6c",
+        "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1g2ok6c/are_you_a_psychic_9_min_read_by_dr_sally_torkos/",
+        "title_slug": "are_you_a_psychic_9_min_read_by_dr_sally_torkos",
+        "source_lineage_id": "RSL-1G2OK6C",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
+        "lane": "PSI-PERSON",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+        "evidence_transfer_allowed": false,
+        "independent_corroboration": false,
+        "selection_rationale": "A named-person psychic-label record can test identity, role, consent and claim-to-series routing while keeping the person index non-evidential.",
+        "selection_only": true,
+        "content_import_authorized": false,
+        "public_synthesis_authorized": false
+      }
+    }
+  },
+  "cross_lane_lineages": [
+    {
+      "source_lineage_id": "RSL-15WEU8C",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/15weu8c/inspired_by_microdosing_telepathy_theory_the/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/15whvva/inspired_by_microdosing_telepathy_theory_the/"
+      ],
+      "lanes": [
+        "TEL"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1L66B09",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1l66b09/exploring_dream_telepathy_a_conversation_with/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1l66cjg/exploring_dream_telepathy_a_conversation_with/"
+      ],
+      "lanes": [
+        "TEL"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1MQX4W4",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1mqx4w4/these_kids_are_telepathic_this_reframes/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1mqy3f5/these_kids_are_telepathic_this_reframes/"
+      ],
+      "lanes": [
+        "TEL"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-17XBAKB",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/17xbakb/new_study_on_psychic_channelers_and_disembodied/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1aog0fb/new_study_on_psychic_channelers_and_disembodied/"
+      ],
+      "lanes": [
+        "CHN",
+        "PSI-PERSON"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1BQLF7Z",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1bqlf7z/outer_space_beings_and_channelling_spirits_9m39s/"
+      ],
+      "lanes": [
+        "CHN",
+        "MED"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1I9NE5U",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1i9ne5u/channelers_answers_to_questions_from_scientists/"
+      ],
+      "lanes": [
+        "CHN",
+        "PSI-PERSON"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1D0DN7F",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1d0dn7f/albert_hofmann_a_peculiar_presentiment_1943_he/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1d0vx1w/albert_hofmann_a_peculiar_presentiment_1943_he/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1en7uzm/albert_hofmann_a_peculiar_presentiment_1943_he/"
+      ],
+      "lanes": [
+        "PRE"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1G1LAYL",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1g1layl/psychic_abilities_in_the_us_military_remote/"
+      ],
+      "lanes": [
+        "RV",
+        "PSI-PERSON"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1H1J3A7",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1h1j3a7/can_loving_intention_shift_global_consciousness/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1loa9u9/can_loving_intention_shift_global_consciousness/"
+      ],
+      "lanes": [
+        "PK"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    },
+    {
+      "source_lineage_id": "RSL-1FCAXR3",
+      "manifestations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1fcaxr3/how_to_unlock_your_psychic_abilities_32m35s/",
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9yom6/how_to_unlock_your_psychic_abilities_32m35s/"
+      ],
+      "lanes": [
+        "PSI-PERSON"
+      ],
+      "evidence_transfer_allowed": false,
+      "independent_corroboration": false
+    }
+  ],
+  "governance": {
+    "review_state": "REVIEW_REQUIRED",
+    "bq_statuses": {
+      "BQ001": "UNRESOLVED",
+      "BQ002": "UNRESOLVED",
+      "BQ003": "UNRESOLVED"
+    },
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "model_support_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "public_synthesis_allowed": false,
+    "website_promotion_allowed": false,
+    "source_import_allowed": false,
+    "content_import_allowed": false,
+    "privacy_gate": "FAIL_CLOSED",
+    "rights_gate": "FAIL_CLOSED"
+  }
+}
