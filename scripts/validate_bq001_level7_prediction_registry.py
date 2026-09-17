@@ -46,6 +46,10 @@ FALSE_GUARDS = {
 }
 
 
+EXPECTED_TEST_DOMAINS = {'TEST-BQ001-INDEPENDENT-REPLICATION': 'alternative_hypotheses_and_unresolved_models',
+ 'TEST-BQ001-PASTLIFE-PROSPECTIVE': 'reincarnation_case_research_and_critiques',
+ 'TEST-BQ001-RESUSCITATION-TIMELOCK': 'cardiac_arrest_and_nde_research'}
+
 def fail(message):
     raise ValueError(message)
 
@@ -55,6 +59,8 @@ def nonempty_string(value):
 
 
 def validate(registry, spec, batch1, batch3):
+    if registry.get("registry_id") != "BQ001-PREDICTION-REGISTRY-LEVEL7-V0.1":
+        fail("registry identity changed")
     if registry.get("status") != "REVIEW_CANDIDATE":
         fail("prediction registry must remain a review candidate")
     if registry.get("question_id") != "BQ001" or registry.get("question_status") != "UNRESOLVED":
@@ -105,6 +111,10 @@ def validate(registry, spec, batch1, batch3):
         ):
             fail("potential disconfirming observations require unique IDs and substantive statements")
         all_challenge_ids.extend(challenge_ids)
+        for records in (predictions, challenges):
+            statements = {" ".join(item["statement"].split()).casefold() for item in records}
+            if len(statements) != len(records):
+                fail("prediction and challenge statements must be distinct within each model")
         if any(item.get("not_decisive_alone") is not True for item in challenges):
             fail("disconfirming observations must preserve auxiliary-assumption caution")
     if len(set(all_prediction_ids)) != len(all_prediction_ids) or len(set(all_challenge_ids)) != len(all_challenge_ids):
@@ -118,6 +128,8 @@ def validate(registry, spec, batch1, batch3):
     if {item.get("test_id") for item in tests} != EXPECTED_TESTS or len(tests) != 3:
         fail("discriminating test set changed")
     for test in tests:
+        if test.get("domain") != EXPECTED_TEST_DOMAINS[test["test_id"]] or test.get("domain") not in spec.get("domains", []):
+            fail("test domain must match its canonical taxonomy binding")
         if not nonempty_string(test.get("domain")) or not nonempty_string(test.get("design")):
             fail("each discriminating test requires a substantive domain and design")
         rules = test.get("outcome_rules", {})
