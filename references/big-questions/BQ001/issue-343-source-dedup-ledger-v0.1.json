@@ -31,7 +31,7 @@
   "governance": {
     "question_status": {
       "BQ001": "UNRESOLVED",
-      "BQ002": "UNCHANGED",
+      "BQ002": "UNRESOLVED",
       "BQ003": "UNRESOLVED"
     },
     "supports_models": [],
@@ -57,7 +57,7 @@
       "work_id": "WORK-343-UVA-SURVIVING-DEATH-COMPANION",
       "title": "Surviving Death: Now Streaming on Netflix",
       "identity_status": "NEW_SOURCE_CANDIDATE",
-      "independence_key": "work:uva-surviving-death-companion",
+      "independence_key": "work:surviving-death-series-2021",
       "manifestation_ids": ["M343-002"],
       "note": "Institutional companion and participation statement; not independent validation of the series or its claims."
     },
@@ -84,7 +84,7 @@
       "work_id": "WORK-343-SUDDUTH-BLOG-LEININGER-2021",
       "title": "Crash and Burn: James Leininger Story Debunked",
       "identity_status": "NEW_SOURCE_CANDIDATE",
-      "independence_key": "work:sudduth-blog-leininger-2021",
+      "independence_key": "doi:10.31275/20212361",
       "manifestation_ids": ["M343-006"],
       "note": "Author commentary related to the journal critique; derivative in evidential lineage and not an independent replication."
     },
