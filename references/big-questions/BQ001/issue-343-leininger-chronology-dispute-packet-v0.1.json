@@ -463,8 +463,20 @@
     "accepted_independent_case_replications": 0,
     "accepted_edges": 0,
     "source_imports_performed": 0,
-    "status_or_gate_changes": 0
+    "status_or_gate_changes": 0,
+    "derivative_companions_reviewed": 1
   },
   "conclusion": "This packet makes the disagreement auditable but reaches no case-level truth finding. The chronology, denominator, exposure controls, claim unitization and primary-artifact provenance remain insufficiently settled for scoring or promotion.",
-  "next_gate": "Fresh exact-head review for chain completeness, metadata conflicts, chronology attribution, denominator accounting, leakage, privacy and rights. Any later artifact audit must remain separate and cannot open source-import, evidence, truth, rights, public-synthesis or website gates without an explicit governed decision."
+  "next_gate": "Fresh exact-head review for chain completeness, metadata conflicts, chronology attribution, denominator accounting, leakage, privacy and rights. Any later artifact audit must remain separate and cannot open source-import, evidence, truth, rights, public-synthesis or website gates without an explicit governed decision.",
+  "derivative_companions_reviewed": [
+    {
+      "title": "Crash and Burn: James Leininger Story Debunked",
+      "author": "Michael Sudduth",
+      "url": "https://michaelsudduth.com/crash-and-burn-james-leininger-story-debunked/",
+      "classification": "DERIVATIVE_COMPANION",
+      "argument_identity_key": "journal-article:jse-2361",
+      "evidential_lineage_key": "case:james-leininger-family-and-derivative-records",
+      "inclusion_rule": "Retained for chain completeness but excluded from the scholarly-chain and independence counts because it is author commentary associated with the journal critique."
+    }
+  ]
 }
