@@ -191,7 +191,7 @@ Among the prespecified TARGET-EXPOSED population, locked reports will identify o
 - **Null:** true and decoy assignments are exchangeable; performance does not exceed the preregistered chance/control distribution.
 - **Alternative:** true time-aligned sequences receive higher scores than expected under the frozen randomization test.
 
-The exact effect measure, multiplicity control, missing-data treatment and sample size must be frozen after Stage 1 and before any Stage-2 outcome is inspected.
+The draft freeze candidate is specified in [SAP-001 v0.1](./STAGE-2-STATISTICAL-ANALYSIS-PLAN-v0.1.md): one true sequence plus five transcript-independent decoys, participant-weighted normalized true-candidate rank utility, a one-sided conditional randomization test at alpha 0.025, one confirmatory endpoint, explicit neutral and bounded unresolved-state handling, and a provisional minimum carry-forward effect of delta 0.05. [SIM-001 v0.1](./SIMULATION-AND-SAMPLE-SIZE-REPORT-v0.1.md) provisionally targets 132 TARGET-EXPOSED participant-events for 90% power at planning delta 0.10. These choices require independent reproduction, Stage-1 parameter updates, statistical review and prospective freeze before Stage 2.
 
 ### Secondary hypotheses
 
@@ -322,6 +322,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
 - [x] blinded interview and contamination-audit manual — draft INT-001 v0.1; clinical, ethics and methods validation pending
 - [x] blinded scoring and decoy-construction manual — draft SDC-001 v0.1; statistical, psychometric, security and simulation validation pending
-- [ ] simulation and sample-size report
+- [x] Stage-2 endpoint/SAP draft freeze candidate — SAP-001 v0.1; independent statistical and psychometric review pending
+- [x] simulation and sample-size report — SIM-001 v0.1 with reproducible exact-enumeration code; independent reproduction and Stage-1 parameter update pending
 - [ ] ethics/data-protection outline
 - [ ] v0.2 freeze candidate
