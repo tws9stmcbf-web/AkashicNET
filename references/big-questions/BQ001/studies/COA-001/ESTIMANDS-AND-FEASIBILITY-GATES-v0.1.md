@@ -65,7 +65,7 @@ Every eligible event receives explicit machine-readable values, including `UNKNO
 | ALL-SURVIVORS | Eligible event followed by hospital survival | Survivor flow and approach feasibility | No event-level feasibility analysis |
 | ALL-APPROACH-ELIGIBLE | Survivor meeting the frozen clinical/ethical approach rule | Approach and consent feasibility | No target-effect claim |
 | ALL-INTERVIEWED | At least one completed protocol interview after an eligible event | Interview feasibility and broad report sensitivity analyses | No automatic target-effect inclusion |
-| TARGET-EXPOSED | Auditable target sequence displayed during the prespecified event interval | Stage-2 target-correspondence estimand and sensitivity analyses | Events with absent or uncertain valid exposure |
+| TARGET-EXPOSED | ALL-INTERVIEWED participant-event with an auditable target sequence displayed during the prespecified event interval | Stage-2 target-correspondence estimand and sensitivity analyses | Interviews with absent or uncertain valid exposure |
 | VISUAL-CLAIM | Interview contains a prespecified visual-perception claim for the relevant interval | Secondary/exploratory subgroup only | Confirmatory primary population unless independently justified before Stage 2 |
 | PER-PROTOCOL TARGET-EXPOSED | TARGET-EXPOSED record without a frozen critical integrity breach | Secondary supportive analysis | Primary intention-to-observe sensitivity analysis |
 
@@ -76,7 +76,7 @@ Every eligible event receives explicit machine-readable values, including `UNKNO
 - A new cardiac arrest is a new eligible event even when it occurs in the same person.
 - The first completed, transcript-locked interview within the frozen window is the primary interview.
 - Later interviews are retained and labelled secondary; they cannot replace or overwrite the primary interview.
-- A participant with multiple eligible events remains one participant for participant-level inference, with event-level clustering.
+- Each eligible event remains a distinct participant-event scoring unit; analyses account for repeated events through participant clustering.
 - Multiple claims or target epochs are aggregated by the frozen scoring rule before participant-level inference.
 - The analysis may not select the most accurate claim, epoch or interview after unblinding.
 - Cross-site transfers and duplicate records are reconciled through a pseudonymous linkage process before database lock.
@@ -101,7 +101,7 @@ Every eligible event receives explicit machine-readable values, including `UNKNO
 
 **Population:** TARGET-EXPOSED.
 
-**Unit of inference:** Participant, with prespecified aggregation across events and epochs and site-aware uncertainty.
+**Unit of analysis:** Participant-event, with prespecified aggregation across epochs; inference accounts for participant and site clustering.
 
 **Contrast:** True sequence score versus the frozen randomization/decoy distribution.
 
