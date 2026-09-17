@@ -23,13 +23,34 @@ EXPECTED_SOURCE_IDENTITIES = {
     "SRC-BQ002-BRUINEBERG-2018": ("10.1007/s11229-016-1239-1", "30996493", "https://pubmed.ncbi.nlm.nih.gov/30996493/"),
     "SRC-BQ002-SELI-2018": ("10.1016/j.tics.2018.03.010", None, "https://doi.org/10.1016/j.tics.2018.03.010"),
 }
+EXPECTED_SOURCE_METADATA = {
+    "SRC-BQ002-HUDACHEK-WAMSLEY-2023": ("PEER_REVIEWED_META_ANALYSIS", "A meta-analysis of the relation between dream content and memory consolidation", "Hudachek and Wamsley", 2023, "Existing BQ002 Batch 1 review-candidate source; metadata and bounded summary only."),
+    "SRC-BQ002-FOX-2015": ("PEER_REVIEWED_NEUROIMAGING_META_ANALYSIS", "The wandering brain: Meta-analysis of functional neuroimaging studies of mind-wandering and related spontaneous thought processes", "Fox et al.", 2015, "Indexed PubMed bibliographic record and peer-reviewed abstract-level review; metadata and bounded summary only."),
+    "SRC-BQ002-CHRISTOFF-2016": ("PEER_REVIEWED_THEORETICAL_REVIEW", "Mind-wandering as spontaneous thought: a dynamic framework", "Christoff et al.", 2016, "Indexed PubMed bibliographic record and abstract reviewed on 2026-09-17."),
+    "SRC-BQ002-SMALLWOOD-SCHOOLER-2015": ("PEER_REVIEWED_REVIEW", "The science of mind wandering: empirically navigating the stream of consciousness", "Smallwood and Schooler", 2015, "Indexed PubMed bibliographic record and publisher abstract reviewed on 2026-09-17."),
+    "SRC-BQ002-BARSALOU-2008": ("PEER_REVIEWED_REVIEW", "Grounded cognition", "Barsalou", 2008, "Indexed PubMed bibliographic record and abstract-level review; metadata and bounded summary only."),
+    "SRC-BQ002-FRISTON-KIEBEL-2009": ("PEER_REVIEWED_THEORETICAL_REVIEW", "Predictive coding under the free-energy principle", "Friston and Kiebel", 2009, "Peer-reviewed open repository record reviewed on 2026-09-17; metadata and bounded summary only."),
+    "SRC-BQ002-BRUINEBERG-2018": ("PEER_REVIEWED_METHODOLOGICAL_COUNTERSOURCE", "The anticipating brain is not a scientist: the free-energy principle from an ecological-enactive perspective", "Bruineberg, Kiverstein and Rietveld", 2018, "Indexed PubMed and PubMed Central record reviewed on 2026-09-17."),
+    "SRC-BQ002-SELI-2018": ("PEER_REVIEWED_CONCEPTUAL_COUNTERSOURCE", "Mind-Wandering as a Natural Kind: A Family-Resemblances View", "Seli et al.", 2018, "Publisher DOI record and indexed bibliographic search reviewed on 2026-09-17."),
+}
 EXPECTED_CLAIMS = {
-    "CLAIM-BQ002-ATLAS-DREAM-MEMORY-01": ("Established Evidence", "OBSERVATION", "dreaming_and_sleep_cognition", {"SRC-BQ002-HUDACHEK-WAMSLEY-2023"}, set()),
-    "CLAIM-BQ002-ATLAS-NETWORKS-01": ("Established Evidence", "OBSERVATION", "neural_dynamics_and_predictive_processing", {"SRC-BQ002-FOX-2015"}, {"SRC-BQ002-SELI-2018"}),
-    "CLAIM-BQ002-ATLAS-SPONTANEOUS-01": ("Interpretation", "INTERPRETATION", "spontaneous_thought_and_mind_wandering", {"SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-SMALLWOOD-SCHOOLER-2015"}, {"SRC-BQ002-SELI-2018"}),
-    "CLAIM-BQ002-ATLAS-GROUNDED-01": ("Interpretation", "INTERPRETATION", "language_action_and_embodied_cognition", {"SRC-BQ002-BARSALOU-2008"}, set()),
-    "CLAIM-BQ002-ATLAS-PREDICTIVE-01": ("Hypothesis", "HYPOTHESIS", "perception_memory_and_learning", {"SRC-BQ002-FRISTON-KIEBEL-2009"}, {"SRC-BQ002-BRUINEBERG-2018"}),
-    "CLAIM-BQ002-ATLAS-PHENOMENAL-01": ("Interpretation", "INTERPRETATION", "phenomenology_and_unresolved_origins", {"SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-BARSALOU-2008", "SRC-BQ002-FRISTON-KIEBEL-2009"}, {"SRC-BQ002-BRUINEBERG-2018"}),
+    "CLAIM-BQ002-ATLAS-DREAM-MEMORY-01": ("Established Evidence", "OBSERVATION", "dreaming_and_sleep_cognition", {"SRC-BQ002-HUDACHEK-WAMSLEY-2023"}, set(), "Across the studies synthesized by Hudachek and Wamsley, incorporation of learning-task content into dreams was positively associated with later memory performance."),
+    "CLAIM-BQ002-ATLAS-NETWORKS-01": ("Established Evidence", "OBSERVATION", "neural_dynamics_and_predictive_processing", {"SRC-BQ002-FOX-2015"}, {"SRC-BQ002-SELI-2018"}, "A meta-analysis of functional-neuroimaging studies reported convergent recruitment of default-mode and executive-system regions during mind-wandering and related spontaneous-thought tasks."),
+    "CLAIM-BQ002-ATLAS-SPONTANEOUS-01": ("Interpretation", "INTERPRETATION", "spontaneous_thought_and_mind_wandering", {"SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-SMALLWOOD-SCHOOLER-2015"}, {"SRC-BQ002-SELI-2018"}, "Dynamic accounts treat mind-wandering as part of a broader family of spontaneous-thought phenomena whose content and movement reflect interactions among memory, affect, attention and cognitive constraints."),
+    "CLAIM-BQ002-ATLAS-GROUNDED-01": ("Interpretation", "INTERPRETATION", "language_action_and_embodied_cognition", {"SRC-BQ002-BARSALOU-2008"}, set(), "Grounded-cognition research supports treating perception, bodily state, action and situated context as contributors to cognitive content rather than assuming thought is isolated from them."),
+    "CLAIM-BQ002-ATLAS-PREDICTIVE-01": ("Hypothesis", "HYPOTHESIS", "perception_memory_and_learning", {"SRC-BQ002-FRISTON-KIEBEL-2009"}, {"SRC-BQ002-BRUINEBERG-2018"}, "Predictive-coding and free-energy frameworks offer testable ways to model how prior expectations, sensory signals and action may constrain cognition."),
+    "CLAIM-BQ002-ATLAS-PHENOMENAL-01": ("Interpretation", "INTERPRETATION", "phenomenology_and_unresolved_origins", {"SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-BARSALOU-2008", "SRC-BQ002-FRISTON-KIEBEL-2009"}, {"SRC-BQ002-BRUINEBERG-2018"}, "Evidence about mechanisms, correlates and report constrains accounts of thought content but does not by itself resolve why thoughts are subjectively experienced."),
+}
+REQUIRED_TRUE_PROMOTION_GUARDS = {
+    "correlation_may_not_be_presented_as_complete_causal_explanation",
+    "neural_prediction_may_not_be_presented_as_thought_reading",
+    "dream_content_may_not_be_presented_as_independent_of_memory",
+    "mechanistic_account_may_not_be_presented_as_resolving_phenomenology",
+    "testimony_may_not_auto_promote_to_established_evidence",
+    "source_count_may_not_upgrade_evidence",
+    "retrieval_rank_may_not_upgrade_evidence",
+    "semantic_similarity_may_not_upgrade_evidence",
+    "ai_synthesis_may_not_be_primary_source",
 }
 FALSE_GUARDS = {
     "public_beta_gate", "canonical_promotion_applied", "evidence_promotion_applied",
@@ -52,6 +73,8 @@ def validate(atlas, spec):
     if graph.get("truth_inference_allowed") is not False or graph.get("edge_state_may_upgrade_evidence") is not False:
         fail("canonical graph truth and evidence-upgrade boundaries weakened")
     promotion_guards = spec.get("promotion_guards", {})
+    if any(promotion_guards.get(key) is not True for key in REQUIRED_TRUE_PROMOTION_GUARDS):
+        fail("canonical no-promotion prohibition missing or weakened")
     if promotion_guards.get("rights_promotion_allowed") is not False or promotion_guards.get("scientific_truth_inference_allowed") is not False:
         fail("canonical rights or scientific truth-inference boundary weakened")
     if atlas.get("status") != "REVIEW_CANDIDATE":
@@ -83,6 +106,12 @@ def validate(atlas, spec):
         expected_doi, expected_pmid, expected_url = EXPECTED_SOURCE_IDENTITIES[source["source_id"]]
         if (source.get("doi"), source.get("pmid"), source.get("url")) != (expected_doi, expected_pmid, expected_url):
             fail(f"source identity changed: {source['source_id']}")
+        expected_type, expected_title, expected_authors, expected_year, expected_provenance = EXPECTED_SOURCE_METADATA[source["source_id"]]
+        if (
+            source.get("source_type"), source.get("title"), source.get("authors_short"),
+            source.get("year"), source.get("provenance")
+        ) != (expected_type, expected_title, expected_authors, expected_year, expected_provenance):
+            fail(f"source bibliographic or provenance metadata changed: {source['source_id']}")
         if not source.get("limitations"):
             fail("every source requires limitations")
 
@@ -93,7 +122,7 @@ def validate(atlas, spec):
         fail("claim set changed or duplicated")
     used_sources = set()
     for claim_id, claim in claim_map.items():
-        expected_label, expected_type, expected_domain, expected_source_ids, expected_counter_ids = EXPECTED_CLAIMS[claim_id]
+        expected_label, expected_type, expected_domain, expected_source_ids, expected_counter_ids, expected_text = EXPECTED_CLAIMS[claim_id]
         label = claim.get("evidence_label")
         if label != expected_label or label not in allowed_labels:
             fail("claim evidence label changed")
@@ -101,6 +130,8 @@ def validate(atlas, spec):
             fail("claim type changed")
         if claim.get("domain") != expected_domain:
             fail("claim domain changed")
+        if claim.get("text") != expected_text:
+            fail("bounded claim text changed")
         source_ids = claim.get("source_ids", [])
         counter_ids = claim.get("counter_source_ids", [])
         if set(source_ids) != expected_source_ids or set(counter_ids) != expected_counter_ids:
