@@ -1,0 +1,28 @@
+name: Validate BQ001 Level 7 prediction registry
+
+on:
+  pull_request:
+    paths:
+      - "references/big-questions/BQ001/prediction-registry-level7-review-candidate-v0.1.json"
+      - "references/big-questions/BQ001/spec-v0.1.json"
+      - "references/big-questions/BQ001/evidence-batch1-v0.1.json"
+      - "references/big-questions/BQ001/evidence-batch3-v0.1.json"
+      - "scripts/validate_bq001_level7_prediction_registry.py"
+      - "tests/test_bq001_level7_prediction_registry.py"
+      - ".github/workflows/validate-bq001-level7-prediction-registry.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_bq001_level7_prediction_registry.py
+      - run: python -m unittest tests/test_bq001_level7_prediction_registry.py
+      - run: python scripts/validate_big_questions_registry_v013.py
