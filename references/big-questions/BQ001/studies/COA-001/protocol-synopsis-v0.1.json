@@ -17,16 +17,25 @@
     "website_promotion": false
   },
   "construct": {
-    "primary": "reportable_awareness_with_time_or_event_linked_episodic_content",
+    "latent_construct": "awareness_during_a_bounded_resuscitation_interval",
+    "primary_observable": "locked_later_report_and_correspondence_with_independently_timed_information",
+    "measurement_relation": "indirect_proxy_not_direct_observation",
     "excluded_as_primary": [
       "broad_consciousness",
       "sentience",
       "personal_survival",
       "afterlife"
     ],
-    "continuity_definition": "temporal relation between a documented resuscitation interval and later reportable content"
+    "continuity_definition": "hypothesized temporal relation between a documented resuscitation interval and later reportable content; not directly measured",
+    "temporal_alternatives": [
+      "encoding_during_cpr",
+      "peri_arrest_encoding",
+      "post_rosc_encoding",
+      "temporal_misattribution"
+    ],
+    "interpretation_constraint": "target correspondence alone does not establish awareness, continuity, personal survival or afterlife"
   },
-  "research_question": "Can specific, independently timed awareness reports be matched to events occurring during documented cardiac-arrest/resuscitation intervals, under conditions designed to exclude ordinary visual access, retrospective cueing and post-event information leakage?",
+  "research_question": "Can specific later reports be matched to independently timed information from documented cardiac-arrest/resuscitation intervals, under conditions designed to reduce, measure and test ordinary visual access, retrospective cueing, temporal misattribution and post-event information leakage?",
   "stages": [
     {
       "id": 0,
@@ -57,7 +66,8 @@
     "population": "TARGET_EXPOSED",
     "outcome": "pre-registered true-versus-decoy time-aligned visual target score",
     "null": "true and decoy assignments are exchangeable",
-    "alternative": "true time-aligned sequences receive higher scores than the frozen randomization distribution"
+    "alternative": "true time-aligned sequences receive higher scores than the frozen randomization distribution",
+    "interpretation_constraint": "correspondence_endpoint_does_not_by_itself_establish_awareness_or_continuity"
   },
   "feasibility_gates": [
     {
@@ -164,5 +174,38 @@
     "independent_statistical_oversight"
   ],
   "source_issue": 356,
-  "artifact_role": "method_development_not_preregistration_or_evidence"
+  "artifact_role": "method_development_not_preregistration_or_evidence",
+  "eligibility": {
+    "basis": "clinical_and_deployment_facts_independent_of_later_data_completeness_and_device_performance",
+    "event_criteria": [
+      "adult_patient_age_18_or_older",
+      "in_hospital_cardiac_arrest_in_participating_area_during_prespecified_study_active_period",
+      "chest_compressions_initiated"
+    ],
+    "prohibited_as_eligibility_conditions": [
+      "clinical_timing_recoverability",
+      "device_status_recoverability",
+      "activation_status",
+      "target_exposure_status",
+      "survival",
+      "consent",
+      "interview_completion"
+    ]
+  },
+  "denominator_rule": {
+    "population": "every_eligible_event",
+    "retain_states": [
+      "device_failure",
+      "log_deleted_or_unrecoverable",
+      "timing_unknown_or_unrecoverable",
+      "target_exposure_unknown",
+      "death",
+      "not_interviewed"
+    ],
+    "unknown_state_labels": [
+      "UNKNOWN",
+      "UNRECOVERABLE"
+    ],
+    "completeness_consequence": "unknown_or_unrecoverable_states_count_against_applicable_feasibility_gates"
+  }
 }
