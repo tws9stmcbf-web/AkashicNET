@@ -304,6 +304,18 @@ class FrameworkInventoryTests(unittest.TestCase):
                         f"https://drive{encoded_dot}google{encoded_dot}com/file/d/private"
                     )
 
+    def test_drive_content_delivery_hosts_are_rejected(self):
+        private_urls = (
+            "https://drive.usercontent.google.com/download?id=synthetic",
+            "https%3A%2F%2Fdrive.usercontent.google.com%2Fdownload%3Fid%3Dsynthetic",
+            "https://doc-00-example.docs.googleusercontent.com/docs/securesc/synthetic",
+        )
+        for private_url in private_urls:
+            with self.subTest(private_url=private_url):
+                with self.assertRaisesRegex(ValueError, "private metadata rejected"):
+                    validator.privacy_check(private_url)
+        validator.privacy_check("https://images.googleusercontent.com/public/example.png")
+
     def test_url_parser_controls_in_private_hosts_are_rejected(self):
         private_urls = (
             "https://drive\t.google.com/file/d/private",

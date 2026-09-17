@@ -195,8 +195,8 @@ def privacy_check(value):
             )
         )
         if any(marker in folded for marker in (
-            "drive.google.com", "docs.google.com", "/my drive/", "akm-",
-            "file://", "gdrive://",
+            "drive.google.com", "docs.google.com", "drive.usercontent.google.com",
+            "docs.googleusercontent.com", "/my drive/", "akm-", "file://", "gdrive://",
         )):
             raise ValueError("private metadata rejected")
         if not is_key and re.search(r"(?<![a-f0-9])[a-f0-9]{64}(?![a-f0-9])", folded):
