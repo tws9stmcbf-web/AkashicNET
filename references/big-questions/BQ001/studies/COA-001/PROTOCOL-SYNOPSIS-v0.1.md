@@ -265,6 +265,8 @@ Every participating site must report this complete flow:
 
 Results count against an anomalous-perception interpretation when matches do not exceed decoys, correlate with leakage or sensory access, disappear under blinded scoring, occur outside the target interval, depend on post-hoc categories, or fail independent replication.
 
+The ordered validity, stopping, negative-control, null-result, anomaly-candidate and independent-replication rules are specified in [FSC-001 v0.1](./FALSIFICATION-STOPPING-AND-CLASSIFICATION-RULES-v0.1.md). FSC-001 distinguishes protocol infeasibility, invalid or non-evaluable data, an imprecise valid null, a bound below the minimum meaningful effect, a statistical signal, an interpretation-blocked signal, an anomaly review candidate and an independently replicated review candidate. No class automatically changes BQ001.
+
 ## Interpretation ladder
 
 | Level | Meaning | BQ001 consequence |
@@ -329,4 +331,5 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [x] Stage-2 endpoint/SAP draft freeze candidate — SAP-001 v0.1; independent statistical and psychometric review pending
 - [x] simulation and sample-size report — SIM-001 v0.1 with reproducible exact-enumeration code; independent reproduction and Stage-1 parameter update pending
 - [x] ethics/data-protection outline — draft EDP-001 v0.1; jurisdiction-specific legal, ethics/IRB and privacy review pending
+- [x] decision-complete falsification, stopping and outcome-classification rules — draft FSC-001 v0.1; statistical, ethics, clinical and adversarial review pending
 - [ ] v0.2 freeze candidate

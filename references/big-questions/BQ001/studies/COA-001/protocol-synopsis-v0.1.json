@@ -467,6 +467,12 @@
       "version": "0.1",
       "path": "DATA-FLOW-ACCESS-AND-LEAKAGE-THREAT-MODEL-v0.1.md",
       "state": "DRAFT_STAGE_0_NOT_IMPLEMENTED_OR_VALIDATED"
+    },
+    "falsification_stopping_and_classification_rules": {
+      "id": "FSC-001",
+      "version": "0.1",
+      "path": "FALSIFICATION-STOPPING-AND-CLASSIFICATION-RULES-v0.1.md",
+      "state": "DRAFT_STAGE_0_NOT_PREREGISTERED"
     }
   },
   "interview_manual": {
@@ -799,6 +805,90 @@
       "PAUSED_PENDING_ADJUDICATION",
       "SITE_SECURITY_COMMISSIONED",
       "RECRUITMENT_NOT_AUTHORIZED"
+    ]
+  },
+  "falsification_stopping_and_classification": {
+    "id": "FSC-001",
+    "version": "0.1",
+    "state": "DRAFT_STAGE_0_NOT_PREREGISTERED",
+    "recruitment_authorized": false,
+    "operational_use_authorized": false,
+    "automatic_BQ001_update": false,
+    "ordered_decision_process": [
+      "authority_and_participant_protection",
+      "denominator_integrity",
+      "operational_feasibility",
+      "confirmatory_validity",
+      "frozen_statistical_result",
+      "prespecified_robustness",
+      "primary_outcome_classification",
+      "independent_replication_status",
+      "separate_governance_review"
+    ],
+    "primary_outcome_classes": [
+      "C0_NOT_STARTED",
+      "C1_PROTOCOL_INFEASIBLE",
+      "C2_CONFIRMATORY_INVALID",
+      "C3_VALID_NULL_IMPRECISE",
+      "C4_VALID_BOUND_BELOW_MINIMUM",
+      "C5_STATISTICAL_SIGNAL_ONLY",
+      "C6_SIGNAL_INTERPRETATION_BLOCKED",
+      "C7_ANOMALY_REVIEW_CANDIDATE",
+      "C8_INDEPENDENTLY_REPLICATED_REVIEW_CANDIDATE"
+    ],
+    "minimum_meaningful_effect_delta": 0.05,
+    "critical_boundaries": [
+      "unknown_unrecoverable_failed_and_breached_states_remain_in_applicable_denominators",
+      "safety_ethics_privacy_and_critical_integrity_failures_cannot_be_offset_by_target_match",
+      "no_unblinded_efficacy_or_futility_monitoring",
+      "no_outcome_based_sample_size_extension",
+      "no_single_case_subgroup_or_secondary_endpoint_substitution",
+      "C4_bounds_effects_under_the_protocol_not_awareness_itself",
+      "C7_is_review_candidate_not_continuity_evidence",
+      "C8_requires_independent_preregistered_replication_and_governance_review"
+    ],
+    "immediate_stop_triggers": [
+      "research_interference_or_serious_device_related_safety_event",
+      "authority_withdrawal",
+      "unauthorized_identifiable_data_disclosure_or_uncontained_high_risk_privacy_breach",
+      "unauthorized_truth_access_premature_unblinding_or_key_custody_compromise",
+      "fabricated_forged_substituted_or_replayed_evidence",
+      "systematic_denominator_suppression",
+      "uncommissioned_device_room_or_software_configuration"
+    ],
+    "anomaly_interpretation_blockers": [
+      "metadata_or_interface_truth_distinguishability_above_frozen_tolerance",
+      "prespecified_systematic_negative_control_correspondence",
+      "association_with_contamination_ordinary_access_timing_uncertainty_or_access_log_anomaly",
+      "failure_of_mandatory_neutral_missing_participant_cluster_or_leave_one_site_out_analysis",
+      "irreproducible_decoy_exchangeability_or_transcript_independent_generation",
+      "unresolved_critical_leakage_route"
+    ],
+    "replication_requires": [
+      "independent_team_and_sponsor",
+      "prospective_registration_before_recruitment",
+      "separate_participants_and_independently_commissioned_sites",
+      "same_or_stricter_compatible_primary_contract",
+      "independent_target_assets_and_analysis_implementation",
+      "C7_result_without_unresolved_critical_failure",
+      "complete_denominator_and_all_null_contradictory_invalid_records",
+      "independent_statistical_clinical_ethics_privacy_and_security_review"
+    ],
+    "prohibited_claims": [
+      "proved_consciousness",
+      "proved_survival",
+      "falsified_consciousness",
+      "evidence_of_afterlife",
+      "verified_NDE"
+    ],
+    "unresolved_before_freeze": [
+      "independent_statistical_review_of_C4_compatibility_bound",
+      "simulation_of_classification_error_and_stopping_behaviour",
+      "quantitative_negative_control_tolerances",
+      "ethics_approved_event_and_calendar_burden_cap",
+      "adjudication_charter_and_appeal_path",
+      "executable_prose_JSON_coverage_and_controlled_vocabulary_validation",
+      "prospective_registration_and_external_domain_signoff"
     ]
   }
 }
