@@ -1,6 +1,6 @@
 {
   "batch_id": "BQ001-BATCH6-POPULAR-MECHANICS-CONSCIOUSNESS-INTAKE",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "REVIEW_CANDIDATE",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
@@ -133,7 +133,71 @@
         "The study did not apply a validated measure of consciousness or subjective experience.",
         "The recipient mice lacked most cortical and hippocampal tissue, so developmental compensation and the remaining mouse nervous system limit attribution of behaviour specifically to the human-derived grafts.",
         "Reproducibility across donor cell lines, laboratories and protocols remains necessary before broader model claims are made."
-      ]
+      ],
+      "study_design": "Preclinical animal-model platform study using cortex- and hippocampus-depleted immunodeficient mice neonatally engrafted with four human cortical organoids, followed by anatomical, transcriptomic, imaging, electrophysiological and behavioural assays.",
+      "human_cell_lines": [
+        "1208-2",
+        "8119-1",
+        "0524-1"
+      ],
+      "denominator_summary": {
+        "overall_denominator": "No single overall N; cohorts overlap across assays and must not be summed.",
+        "graft_survival": "29 transplanted mice across 3 hiPS cell lines; 86.2% graft survival at 2 months.",
+        "graft_growth": "14 mice across 2 hiPS cell lines.",
+        "cortical_volume_fraction": "7 mice across 2 hiPS cell lines.",
+        "calcium_and_lfp_network_activity": "3 mice; 18 calcium bursts for the burst-participation analysis.",
+        "spontaneous_behaviour_MoSeq": "Session 1: control 24, apallial 14, XCX 11; session 2: control 22, apallial 9, XCX 7. Some male-only longitudinal analyses were smaller, including control 9, apallial 5 and XCX 3.",
+        "baseline_CatWalk": "control 16, apallial 10, XCX 7.",
+        "Y_maze": "control 39, apallial 16, XCX 18.",
+        "hypoxia_CatWalk": "control 11, apallial 9 and XCX 9.",
+        "hypoxia_cellular_assays": "typically 4 control-XCX and 4 post-hypoxia-XCX mice per quantified assay."
+      },
+      "exclusions_and_analysis_boundaries": [
+        "Behavioural cohorts excluded systemic morbidities unrelated to transplantation, including paraphimosis or malocclusion.",
+        "Body-weight analysis required measurements at 1, 2 and 3 months.",
+        "Y-maze alternation analysis required at least 10 arm entries; the first entry was excluded.",
+        "CatWalk retained one successful run per trial based on duration and continuity criteria.",
+        "The apallial group was excluded from statistical comparisons of directional diffusion because the cavity lacked directional fibre-orientation distributions.",
+        "Biological replicate was the mouse when possible; sample sizes were empirically estimated from prior studies rather than from a prospective power calculation.",
+        "Blinding was used whenever feasible, but the paper does not report universal blinding for every assay."
+      ],
+      "behavioural_attribution_boundary": "The study shows that behavioural phenotyping is possible and that XCX, apallial and control mice differ on selected measures. It does not establish that the human graft was necessary or sufficient for specific behaviours, and transplantation did not normalize the overall behavioural state space.",
+      "independent_replication_status": "NONE_YET_FOR_THIS_XENOCORTICATION_PLATFORM",
+      "ethics_and_consent": {
+        "human_donor_consent": "Donors consented to generation and use of hiPS-derived cells, including in-vivo transplantation.",
+        "oversight": [
+          "Stanford Stem Cell Research Oversight committee",
+          "Stanford Institutional Animal Care and Use Committee / APLAC",
+          "Stanford Neuroscience Institute Executive Committee",
+          "external independent ad hoc ethics committee"
+        ],
+        "framework": "International Society for Stem Cell Research guidelines and applicable regulations.",
+        "capacity_safeguard": "Locomotor and cognitive testing and ongoing welfare monitoring were used to assess possible altered or improved capacities."
+      },
+      "data_availability": {
+        "gene_expression": "GEO GSE301194; raw XCX sequencing data restricted by participant consent/privacy and available on reasonable request.",
+        "spatial_transcriptomics": "Zenodo DOI 10.5281/zenodo.21138437.",
+        "implication": "Restricted raw XCX sequencing data limits fully open independent reanalysis."
+      },
+      "competing_interests": "Stanford University holds cortical-organoid patents listing S.P.P. as an inventor and a provisional organoid-transplantation patent application listing S.P.P., O.R., F.G., K.D. and K.W.K. as inventors.",
+      "methods_audit": {
+        "reviewed_on": "2026-09-17",
+        "disposition": "REVIEW_CANDIDATE_METHODS_AUDITED",
+        "strengths": [
+          "Multiple complementary anatomical, transcriptomic, imaging, electrophysiological and behavioural methods.",
+          "Mouse-level replication used when possible and multiple hiPS cell lines represented.",
+          "Assay-specific denominators, corrections for multiple comparisons and several explicit exclusions are reported.",
+          "Prospective ethics consultation, donor consent and animal/stem-cell oversight are documented."
+        ],
+        "cautions": [
+          "Several mechanistic assays use n=3 mice and selected behavioural analyses have small XCX subsamples.",
+          "Cohorts differ across assays and overlap is not presented as one complete study-flow denominator.",
+          "Most behavioural work uses two of the three hiPS cell lines.",
+          "No prospective power calculation or independent laboratory replication is reported.",
+          "Behavioural differences do not demonstrate consciousness, sentience or human-like cognition."
+        ]
+      },
+      "review_disposition": "HOLD_FOR_INDEPENDENT_REPLICATION_AND_HUMAN_GOVERNANCE"
     },
     {
       "source_id": "SRC-BQ001-POPMECH-ORGANOID-2026",
@@ -234,9 +298,10 @@
       ],
       "limitations": [
         "The established result is biological integration and model capability; consciousness, sentience and subjective experience were not measured.",
-        "The study concerns living chimeric animal systems and does not test post-mortem continuity, reincarnation or nonlocal consciousness."
+        "The study concerns living chimeric animal systems and does not test post-mortem continuity, reincarnation or nonlocal consciousness.",
+        "Behavioural associations do not establish that the human graft was necessary or sufficient for specific behaviours."
       ],
-      "uncertainty": "The model's validity for specific human diseases and neural functions requires independent replication across donor lines, laboratories and protocols; any consciousness implication remains untested.",
+      "uncertainty": "The platform has not yet been independently replicated. Several mechanistic assays used n=3 mice, most behavioural work used two donor-derived hiPS cell lines, and raw XCX sequencing data are restricted by consent/privacy. Its validity for specific human diseases, neural functions or sentience measures remains unresolved.",
       "supports_models": [],
       "provenance": [
         "peer-reviewed primary Nature study; Stanford institutional report retained for methodological and ethical context"
