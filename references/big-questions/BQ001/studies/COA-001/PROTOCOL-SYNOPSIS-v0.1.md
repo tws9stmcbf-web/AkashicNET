@@ -309,7 +309,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [x] denominator ledger
 - [ ] clinical review
 - [ ] statistical/adversarial review
-- [ ] target-device security specification
+- [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
 - [ ] interview manual
 - [ ] blinded scoring manual
 - [ ] simulation and sample-size report
