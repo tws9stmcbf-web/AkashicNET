@@ -66,6 +66,12 @@ EXPECTED_COMMUNITY_ROLE = {
     "evidence_boundary": "Community recurrence and testimony can motivate research but cannot establish causation, efficacy or universal truth.",
     "consent_boundary": "Do not extract personal narratives, cultural material or identifying information without permission.",
 }
+EXPECTED_OVERALL_PROGRESS = {
+    "level": 3,
+    "maximum": 10,
+    "label": "COMPETING_MODELS_AND_CAUSAL_CHAIN_DOCUMENTED",
+    "meaning": "The problem, causal chain, competing models, outcome families and research priorities are documented. This level does not estimate whether any intervention works or whether planetary transformation will occur.",
+}
 EXPECTED_PRIORITIES = [f"BQ011-P{i:02d}" for i in range(1, 13)]
 EXPECTED_CULTURAL_GOVERNANCE = {
     "indigenous_and_lineage_knowledge_is_not_generic_evidence",
@@ -149,7 +155,7 @@ def validate(spec, assessment, agenda, architecture):
     if not isinstance(claims, list) or len(claims) != 1:
         fail("BQ011 must retain exactly one project-state claim")
     claim = claims[0]
-    if claim != EXPECTED_PROJECT_CLAIM:
+    if claim != EXPECTED_PROJECT_CLAIM or claim.get("reviewed_support") is not True:
         fail("BQ011 project-state claim or no-support boundary changed")
 
     outcomes = spec.get("outcome_families", [])
@@ -176,11 +182,8 @@ def validate(spec, assessment, agenda, architecture):
     if assessment.get("question_status") != "UNRESOLVED":
         fail("assessment must remain unresolved")
     progress = assessment.get("overall_progress", {})
-    if progress.get("level") != 3 or progress.get("maximum") != 10:
-        fail("overall progress must remain Level 3/10")
-    meaning = progress.get("meaning", "").lower()
-    if "does not estimate" not in meaning or "planetary transformation" not in meaning:
-        fail("progress-is-not-truth boundary missing")
+    if progress != EXPECTED_OVERALL_PROGRESS:
+        fail("overall progress contract changed")
 
     axes = assessment.get("axis_assessments", [])
     axis_map = {item.get("axis"): item for item in axes}

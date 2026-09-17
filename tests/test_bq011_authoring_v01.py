@@ -135,6 +135,11 @@ class BQ011AuthoringTests(unittest.TestCase):
                 candidate["claims"][0][key] = replacement
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate)
+
+        candidate = copy.deepcopy(self.spec)
+        candidate["claims"][0]["reviewed_support"] = 1
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
             with self.subTest(key=key, removed=True):
                 candidate = copy.deepcopy(self.spec)
                 del candidate["claims"][0][key]
@@ -178,6 +183,23 @@ class BQ011AuthoringTests(unittest.TestCase):
         candidate["overall_progress"]["level"] = 8
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
+
+    def test_overall_progress_label_and_meaning_drift_rejected(self):
+        replacements = {
+            "label": "DURABLE_BENEFIT_WITH_KNOWN_LIMITS",
+            "meaning": "This does not estimate planetary transformation, but proves planetary transformation.",
+        }
+        for key, replacement in replacements.items():
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.assessment)
+                candidate["overall_progress"][key] = replacement
+                with self.assertRaises(ValueError):
+                    self.validate(assessment=candidate)
+            with self.subTest(key=key, removed=True):
+                candidate = copy.deepcopy(self.assessment)
+                del candidate["overall_progress"][key]
+                with self.assertRaises(ValueError):
+                    self.validate(assessment=candidate)
 
     def test_assessment_axis_promotion_rejected(self):
         candidate = copy.deepcopy(self.assessment)
