@@ -293,6 +293,8 @@ Human-subject work requires:
 
 AkashicNET may design, document and audit the protocol. It cannot recruit patients or operate in a hospital without those partners and approvals.
 
+The minimum jurisdiction, consent, deceased/never-consented case, withdrawal, welfare, controller/processor, lawful-basis, DPIA, retention, transfer, breach and public-reporting requirements are specified in [EDP-001 v0.1](./ETHICS-AND-DATA-PROTECTION-OUTLINE-v0.1.md). EDP-001 is an institutional-review outline, not approval or legal advice.
+
 ## Evidence and governance lock
 
 - BQ001 status: **UNRESOLVED**
@@ -324,5 +326,5 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [x] blinded scoring and decoy-construction manual — draft SDC-001 v0.1; statistical, psychometric, security and simulation validation pending
 - [x] Stage-2 endpoint/SAP draft freeze candidate — SAP-001 v0.1; independent statistical and psychometric review pending
 - [x] simulation and sample-size report — SIM-001 v0.1 with reproducible exact-enumeration code; independent reproduction and Stage-1 parameter update pending
-- [ ] ethics/data-protection outline
+- [x] ethics/data-protection outline — draft EDP-001 v0.1; jurisdiction-specific legal, ethics/IRB and privacy review pending
 - [ ] v0.2 freeze candidate
