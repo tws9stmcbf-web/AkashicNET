@@ -1,0 +1,261 @@
+{
+  "atlas_id": "BQ002-EVIDENCE-ATLAS-LEVEL5-V0.1",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ002",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-09-17",
+  "maturity": {
+    "current_level": 4,
+    "candidate_level": 5,
+    "candidate_level_name": "EVIDENCE_MAPPED",
+    "candidate_level_applied": false,
+    "meaning": "Research maturity only; not truth probability, evidence strength, transpersonal support, or readiness for canonical or public promotion."
+  },
+  "scope": {
+    "purpose": "Map bounded claims, evidence, counter-interpretations and gaps across the six existing BQ002 domains.",
+    "complete_origin_theory_claimed": false,
+    "phenomenology_resolved": false,
+    "transpersonal_information_established": false,
+    "source_count_advances_level": false
+  },
+  "sources": [
+    {
+      "source_id": "SRC-BQ002-HUDACHEK-WAMSLEY-2023",
+      "source_type": "PEER_REVIEWED_META_ANALYSIS",
+      "title": "A meta-analysis of the relation between dream content and memory consolidation",
+      "authors_short": "Hudachek and Wamsley",
+      "year": 2023,
+      "doi": "10.1093/sleep/zsad111",
+      "pmid": "37058584",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37058584/",
+      "provenance": "Existing BQ002 Batch 1 review-candidate source; metadata and bounded summary only.",
+      "limitations": [
+        "The association does not establish that dream incorporation causes improved memory.",
+        "Tasks, dream collection and analytic methods varied across studies.",
+        "The findings do not explain the complete origin of thought or subjective awareness."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ002-FOX-2015",
+      "source_type": "PEER_REVIEWED_NEUROIMAGING_META_ANALYSIS",
+      "title": "The wandering brain: Meta-analysis of functional neuroimaging studies of mind-wandering and related spontaneous thought processes",
+      "authors_short": "Fox et al.",
+      "year": 2015,
+      "doi": "10.1016/j.neuroimage.2015.02.039",
+      "pmid": "25725466",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25725466/",
+      "provenance": "Indexed PubMed bibliographic record and peer-reviewed abstract-level review; metadata and bounded summary only.",
+      "limitations": [
+        "The synthesis pooled 24 functional-neuroimaging studies with heterogeneous tasks and definitions.",
+        "Spatial convergence identifies correlates and does not establish a unique causal origin of thought.",
+        "A corrigendum exists and must remain linked as provenance rather than treated as a retraction."
+      ],
+      "related_notice": {
+        "type": "CORRIGENDUM",
+        "pmid": "27320028",
+        "doi": "10.1016/j.neuroimage.2016.02.052"
+      }
+    },
+    {
+      "source_id": "SRC-BQ002-CHRISTOFF-2016",
+      "source_type": "PEER_REVIEWED_THEORETICAL_REVIEW",
+      "title": "Mind-wandering as spontaneous thought: a dynamic framework",
+      "authors_short": "Christoff et al.",
+      "year": 2016,
+      "doi": "10.1038/nrn.2016.113",
+      "pmid": "27654862",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27654862/",
+      "provenance": "Indexed PubMed bibliographic record and abstract reviewed on 2026-09-17.",
+      "limitations": [
+        "The article proposes a theoretical framework rather than reporting one decisive experiment.",
+        "Large-scale network recruitment does not by itself identify the complete causal or phenomenal origin of a thought.",
+        "Mind-wandering, dreaming and creative thought should not be treated as one homogeneous phenomenon."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ002-SMALLWOOD-SCHOOLER-2015",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "The science of mind wandering: empirically navigating the stream of consciousness",
+      "authors_short": "Smallwood and Schooler",
+      "year": 2015,
+      "doi": "10.1146/annurev-psych-010814-015331",
+      "pmid": "25293689",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25293689/",
+      "provenance": "Indexed PubMed bibliographic record and publisher abstract reviewed on 2026-09-17.",
+      "limitations": [
+        "Review-level synthesis depends on heterogeneous self-report and task-probe methods.",
+        "Retrospective awareness and report may miss or reshape the processes that preceded conscious access.",
+        "Functional costs and benefits vary with content, context and meta-awareness."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ002-BARSALOU-2008",
+      "source_type": "PEER_REVIEWED_REVIEW",
+      "title": "Grounded cognition",
+      "authors_short": "Barsalou",
+      "year": 2008,
+      "doi": "10.1146/annurev.psych.59.103006.093639",
+      "pmid": "17705682",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17705682/",
+      "provenance": "Indexed PubMed bibliographic record and abstract-level review; metadata and bounded summary only.",
+      "limitations": [
+        "The review covers multiple grounded-cognition theories rather than one settled mechanism.",
+        "Evidence for sensorimotor and situated contributions does not show that every concept or thought is fully grounded in the same way.",
+        "Grounding mechanisms do not resolve why cognition is subjectively experienced."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ002-FRISTON-KIEBEL-2009",
+      "source_type": "PEER_REVIEWED_THEORETICAL_REVIEW",
+      "title": "Predictive coding under the free-energy principle",
+      "authors_short": "Friston and Kiebel",
+      "year": 2009,
+      "doi": "10.1098/rstb.2008.0300",
+      "pmid": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2666703/",
+      "provenance": "Peer-reviewed open repository record reviewed on 2026-09-17; metadata and bounded summary only.",
+      "limitations": [
+        "The free-energy formulation is a broad theoretical framework and is not a direct observation of thought generation.",
+        "Model fit or explanatory scope does not establish that predictive coding is the unique cognitive architecture.",
+        "The framework does not by itself resolve phenomenal consciousness."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ002-BRUINEBERG-2018",
+      "source_type": "PEER_REVIEWED_METHODOLOGICAL_COUNTERSOURCE",
+      "title": "The anticipating brain is not a scientist: the free-energy principle from an ecological-enactive perspective",
+      "authors_short": "Bruineberg, Kiverstein and Rietveld",
+      "year": 2018,
+      "doi": "10.1007/s11229-016-1239-1",
+      "pmid": "30996493",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30996493/",
+      "provenance": "Indexed PubMed and PubMed Central record reviewed on 2026-09-17.",
+      "limitations": [
+        "The paper presents a philosophical and theoretical critique rather than a direct experimental refutation.",
+        "Its ecological-enactive interpretation is itself one contested framework.",
+        "Disagreement over the meaning of inference constrains interpretation but does not eliminate empirical predictive-processing findings."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ002-SELI-2018",
+      "source_type": "PEER_REVIEWED_CONCEPTUAL_COUNTERSOURCE",
+      "title": "Mind-Wandering as a Natural Kind: A Family-Resemblances View",
+      "authors_short": "Seli et al.",
+      "year": 2018,
+      "doi": "10.1016/j.tics.2018.03.010",
+      "pmid": null,
+      "url": "https://doi.org/10.1016/j.tics.2018.03.010",
+      "provenance": "Publisher DOI record and indexed bibliographic search reviewed on 2026-09-17.",
+      "limitations": [
+        "Conceptual analysis does not quantify the prevalence or neural basis of particular thought types.",
+        "A family-resemblances account may improve classification without resolving causal origin.",
+        "Operational heterogeneity remains an empirical problem even after terminology is refined."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ002-ATLAS-DREAM-MEMORY-01",
+      "claim_type": "OBSERVATION",
+      "text": "Across the studies synthesized by Hudachek and Wamsley, incorporation of learning-task content into dreams was positively associated with later memory performance.",
+      "domain": "dreaming_and_sleep_cognition",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ002-HUDACHEK-WAMSLEY-2023"],
+      "counter_source_ids": [],
+      "limitations": ["Association does not establish causal direction or explain all dream content."],
+      "unresolved_gap": "Which mechanisms link pre-sleep learning, dream incorporation and later performance remains unresolved.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ002-ATLAS-NETWORKS-01",
+      "claim_type": "OBSERVATION",
+      "text": "A meta-analysis of functional-neuroimaging studies reported convergent recruitment of default-mode and executive-system regions during mind-wandering and related spontaneous-thought tasks.",
+      "domain": "neural_dynamics_and_predictive_processing",
+      "evidence_label": "Established Evidence",
+      "source_ids": ["SRC-BQ002-FOX-2015"],
+      "counter_source_ids": ["SRC-BQ002-SELI-2018"],
+      "limitations": ["Task and construct heterogeneity limits inference from spatial convergence to a single mechanism or origin."],
+      "unresolved_gap": "The temporal and causal contributions of interacting networks to specific thought content remain unresolved.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ002-ATLAS-SPONTANEOUS-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Dynamic accounts treat mind-wandering as part of a broader family of spontaneous-thought phenomena whose content and movement reflect interactions among memory, affect, attention and cognitive constraints.",
+      "domain": "spontaneous_thought_and_mind_wandering",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-SMALLWOOD-SCHOOLER-2015"],
+      "counter_source_ids": ["SRC-BQ002-SELI-2018"],
+      "limitations": ["The category is heterogeneous and review-level frameworks are not unique causal explanations."],
+      "unresolved_gap": "Prospective measurements do not yet reconstruct a complete causal path from antecedent processes to a particular conscious thought.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ002-ATLAS-GROUNDED-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Grounded-cognition research supports treating perception, bodily state, action and situated context as contributors to cognitive content rather than assuming thought is isolated from them.",
+      "domain": "language_action_and_embodied_cognition",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ002-BARSALOU-2008"],
+      "counter_source_ids": [],
+      "limitations": ["The contribution and necessity of grounding vary across theories, tasks and types of representation."],
+      "unresolved_gap": "No single grounded account currently explains every abstract, linguistic or spontaneous thought.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ002-ATLAS-PREDICTIVE-01",
+      "claim_type": "HYPOTHESIS",
+      "text": "Predictive-coding and free-energy frameworks offer testable ways to model how prior expectations, sensory signals and action may constrain cognition.",
+      "domain": "perception_memory_and_learning",
+      "evidence_label": "Hypothesis",
+      "source_ids": ["SRC-BQ002-FRISTON-KIEBEL-2009"],
+      "counter_source_ids": ["SRC-BQ002-BRUINEBERG-2018"],
+      "limitations": ["The framework has competing interpretations and does not uniquely specify the origin of every thought."],
+      "unresolved_gap": "Evidence must distinguish particular implementations and predictions rather than treating the framework's breadth as confirmation.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ002-ATLAS-PHENOMENAL-01",
+      "claim_type": "INTERPRETATION",
+      "text": "Evidence about mechanisms, correlates and report constrains accounts of thought content but does not by itself resolve why thoughts are subjectively experienced.",
+      "domain": "phenomenology_and_unresolved_origins",
+      "evidence_label": "Interpretation",
+      "source_ids": ["SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-BARSALOU-2008", "SRC-BQ002-FRISTON-KIEBEL-2009"],
+      "counter_source_ids": ["SRC-BQ002-BRUINEBERG-2018"],
+      "limitations": ["This is a boundary on inference, not evidence for a transpersonal or non-biological source."],
+      "unresolved_gap": "The relationship between mechanistic explanation and phenomenal experience remains disputed.",
+      "supports_models": []
+    }
+  ],
+  "coverage": [
+    {"domain": "perception_memory_and_learning", "claim_ids": ["CLAIM-BQ002-ATLAS-PREDICTIVE-01"]},
+    {"domain": "spontaneous_thought_and_mind_wandering", "claim_ids": ["CLAIM-BQ002-ATLAS-SPONTANEOUS-01"]},
+    {"domain": "dreaming_and_sleep_cognition", "claim_ids": ["CLAIM-BQ002-ATLAS-DREAM-MEMORY-01"]},
+    {"domain": "language_action_and_embodied_cognition", "claim_ids": ["CLAIM-BQ002-ATLAS-GROUNDED-01"]},
+    {"domain": "neural_dynamics_and_predictive_processing", "claim_ids": ["CLAIM-BQ002-ATLAS-NETWORKS-01"]},
+    {"domain": "phenomenology_and_unresolved_origins", "claim_ids": ["CLAIM-BQ002-ATLAS-PHENOMENAL-01"]}
+  ],
+  "rights": {
+    "record_type": "bibliographic_metadata_and_bounded_summary",
+    "full_text_republished": false,
+    "audio_or_transcript_republished": false,
+    "quotations_republished": false
+  },
+  "governance": {
+    "question_status": "UNRESOLVED",
+    "public_beta_gate": false,
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "canonical_promotion_applied": false,
+    "evidence_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "transpersonal_claim_promoted": false,
+    "rights_promotion_allowed": false,
+    "privacy_posture_changed": false,
+    "cultural_safeguarding_relaxed": false
+  }
+}
