@@ -7,7 +7,7 @@
   "scope": "Metadata-only identity and manifestation reconciliation for every source URL in issue #343 and its discovery comment, plus one missing reply located while verifying the explicitly named Leininger critique-response chain.",
   "classification_vocabulary": {
     "EXISTING_GOVERNED_RECORD": "The underlying source already has a governed repository record; do not import a second source identity.",
-    "EXISTING_COMMUNITY_RECORD": "The Reddit post ID already occurs in a repository import ledger; do not import it again.",
+    "EXISTING_COMMUNITY_RECORD": "The Reddit post ID already occurs in a repository import ledger or semantic/URI index; do not import it again.",
     "NEW_SOURCE_CANDIDATE": "No matching default-branch record was found by identifier, title, DOI, PMID, PMCID or Reddit post ID; human review is still required.",
     "ALTERNATE_MANIFESTATION": "A second URL represents the same underlying work and must share one independence key.",
     "DERIVATIVE_COMPANION": "The URL is a publisher, institutional or author summary of another source and must not count as independent confirmation.",
@@ -18,7 +18,7 @@
     "ref": "main",
     "searched_on": "2026-09-17",
     "methods": [
-      "Exact DOI, PMID, PMCID, title token and Reddit post-ID search on the default branch",
+      "Exact DOI, PMID, PMCID, title token and Reddit post-ID search on the default branch, including the Reddit semantic and URI indexes",
       "Issue #343 body and comment review",
       "Comparison with open candidate workstreams PR #331 and PR #339"
     ],
@@ -166,16 +166,16 @@
     {"manifestation_id":"M343-011","url":"https://orbi.uliege.be/handle/2268/291512","source_role":"INSTITUTIONAL_REPOSITORY_RECORD","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_DOI_PMID_TITLE_MATCH_2026-09-17"},
     {"manifestation_id":"M343-012","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7707065/","source_role":"FULL_TEXT_REPOSITORY","classification":"ALTERNATE_MANIFESTATION","same_work_as":"M343-011","verification":"PMCID_AND_TITLE_CONFIRMED_2026-09-17"},
     {"manifestation_id":"M343-013","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10725084/","source_role":"FULL_TEXT_REPOSITORY","classification":"NEW_SOURCE_CANDIDATE","verification":"PMCID_DOI_PMID_TITLE_CONFIRMED_2026-09-17"},
-    {"manifestation_id":"M343-014","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/19ec1o5/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"19ec1o5"},
-    {"manifestation_id":"M343-015","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1gwoghi/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1gwoghi"},
-    {"manifestation_id":"M343-016","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1tlcanb/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1tlcanb"},
+    {"manifestation_id":"M343-014","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/19ec1o5/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"19ec1o5","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-015","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1gwoghi/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1gwoghi","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-016","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1tlcanb/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1tlcanb","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
     {"manifestation_id":"M343-017","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1w4plts/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1w4plts"},
-    {"manifestation_id":"M343-018","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/18fximw/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"18fximw"},
+    {"manifestation_id":"M343-018","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/18fximw/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"18fximw","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
     {"manifestation_id":"M343-019","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1whdhm3/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1whdhm3"},
     {"manifestation_id":"M343-020","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1w73h3c/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1w73h3c"},
-    {"manifestation_id":"M343-021","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1fusen1/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1fusen1"},
-    {"manifestation_id":"M343-022","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/18fnopa/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"18fnopa"},
-    {"manifestation_id":"M343-023","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1ep26fq/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1ep26fq"},
+    {"manifestation_id":"M343-021","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1fusen1/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1fusen1","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-022","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/18fnopa/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"18fnopa","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-023","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1ep26fq/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1ep26fq","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
     {"manifestation_id":"M343-024","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1vssvtl/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1vssvtl","existing_paths":["references/community/reddit-manual-delta-batch-0004.csv","references/community/reddit-canonical-delta-import-2026-09-02.json"]},
     {"manifestation_id":"M343-025","url":"https://www.reddit.com/r/NeuronsToNirvana/search/?q=NDE+OR+Death&restrict_sr=1","source_role":"DYNAMIC_DISCOVERY_ROUTE","classification":"DISCOVERY_QUERY_NOT_SOURCE","verification":"RESULT_SET_UNSTABLE_BY_DESIGN"},
     {"manifestation_id":"M343-026","url":"https://doi.org/10.31275/20222515","source_role":"JOURNAL_RECORD_DISCOVERED_DURING_VERIFICATION","classification":"NEW_SOURCE_CANDIDATE","verification":"DOI_TITLE_CHAIN_MATCH_2026-09-17"}
@@ -192,9 +192,9 @@
       "reason": "Only an institutional overview is linked; no claim denominator or archival chronology was reconciled."
     },
     {
-      "identity": "Ten newly surfaced Reddit records",
+      "identity": "Three newly surfaced Reddit records",
       "state": "IDENTITY_UNRESOLVED",
-      "reason": "Post IDs are stable discovery identifiers, but post bodies, timestamps, authorship, embedded-source identity and rights were not imported or verified."
+      "reason": "Post IDs 1w4plts, 1whdhm3 and 1w73h3c are stable discovery identifiers, but post bodies, timestamps, authorship, embedded-source identity and rights were not imported or verified. The other eight cited Reddit IDs already occur in repository indexes or import ledgers."
     },
     {
       "identity": "Dynamic Rethinking Death search result set",
@@ -207,11 +207,11 @@
     "verification_discovered_chain_manifestations": 1,
     "total_manifestations": 26,
     "existing_governed_records": 1,
-    "existing_community_records": 1,
+    "existing_community_records": 8,
     "alternate_manifestations": 2,
     "derivative_companions": 3,
     "dynamic_queries_not_sources": 1,
-    "new_candidate_manifestations_including_chain_gap": 18,
+    "new_candidate_manifestations_including_chain_gap": 11,
     "canonical_imports_performed": 0,
     "status_or_gate_changes": 0
   },
