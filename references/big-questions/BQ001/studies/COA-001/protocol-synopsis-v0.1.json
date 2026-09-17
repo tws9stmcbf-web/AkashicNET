@@ -455,6 +455,12 @@
       "path": "SIMULATION-AND-SAMPLE-SIZE-REPORT-v0.1.md",
       "code_path": "analysis/coa001_rank_operating_characteristics_v0_1.py",
       "state": "PROVISIONAL_STAGE_0_INDEPENDENT_REPRODUCTION_REQUIRED"
+    },
+    "ethics_and_data_protection_outline": {
+      "id": "EDP-001",
+      "version": "0.1",
+      "path": "ETHICS-AND-DATA-PROTECTION-OUTLINE-v0.1.md",
+      "state": "DRAFT_STAGE_0_JURISDICTION_SPECIFIC_REVIEW_REQUIRED"
     }
   },
   "interview_manual": {
@@ -626,5 +632,73 @@
     "eligible_event_sample_size": "not_frozen_requires_stage_1_target_exposed_yield_with_uncertainty_and_ethics_review",
     "stage_1_150_to_300_eligible_events_role": "feasibility_not_confirmatory_power",
     "independent_reproduction_required": true
+  },
+  "ethics_and_data_protection": {
+    "id": "EDP-001",
+    "version": "0.1",
+    "ethics_approval": false,
+    "legal_authorization": false,
+    "recruitment_authorized": false,
+    "live_participant_data_processing_authorized": false,
+    "classification_rule": "each_site_must_obtain_documented_institutional_and_regulatory_classification_strictest_applicable_protections_govern",
+    "consent_and_processing_boundary": "research_participation_consent_and_personal_data_processing_legal_basis_are_distinct",
+    "required_site_annex": [
+      "jurisdiction_and_institution",
+      "study_classification_and_competent_authority",
+      "sponsor_and_controller_identities",
+      "lawful_basis_and_special_category_condition",
+      "emergency_or_deferred_consent_authority",
+      "legally_authorized_representative_rules",
+      "deceased_and_never_regained_capacity_rules",
+      "ethics_and_regulatory_approvals",
+      "retention_schedule",
+      "international_transfer_mechanism",
+      "breach_notification_rules",
+      "insurance_compensation_and_complaints"
+    ],
+    "consent_states": [
+      "CAPABLE_CONSENT_OBTAINED",
+      "DEFERRED_CONSENT_PENDING",
+      "LAR_PERMISSION_ACTIVE",
+      "PARTICIPANT_RECONSENTED",
+      "PARTICIPANT_DECLINED",
+      "PARTICIPANT_WITHDREW",
+      "CAPACITY_NOT_REGAINED",
+      "DIED_BEFORE_CONSENT",
+      "REPRESENTATIVE_DECLINED",
+      "NO_AUTHORIZED_PATHWAY",
+      "CONSENT_STATUS_UNKNOWN"
+    ],
+    "fail_closed_rules": [
+      "blank_ambiguous_or_disputed_site_annex_field_means_SITE_NOT_AUTHORIZED",
+      "consent_status_unknown_means_hold_and_adjudicate",
+      "death_does_not_create_blanket_permission_for_identifiable_data_use",
+      "no_audiovisual_resuscitation_room_recording_by_default",
+      "no_participant_level_data_in_public_repositories_consumer_cloud_or_general_purpose_AI",
+      "no_unresolved_high_residual_privacy_risk",
+      "missing_prerecruitment_gate_means_RECRUITMENT_NOT_AUTHORIZED"
+    ],
+    "denominator_boundary": "consent_death_incapacity_and_withdrawal_are_flow_states_not_clinical_eligibility_conditions_identifiable_retention_still_requires_authority",
+    "public_output_boundary": "aggregate_disclosure_reviewed_outputs_only_no_raw_or_recognizable_narratives_without_separate_explicit_ethics_approved_pathway",
+    "required_before_live_processing": [
+      "complete_site_annex",
+      "confirmed_study_classification",
+      "institutional_sponsor_and_PI",
+      "ethics_or_IRB_approval",
+      "approved_emergency_deferred_consent_and_reconsent_pathway",
+      "approved_deceased_and_never_consented_matrix",
+      "approved_withdrawal_and_deletion_matrix",
+      "controller_processor_and_lawful_basis_record",
+      "DPIA_with_acceptable_residual_risk",
+      "data_flow_and_access_matrix",
+      "fixed_retention_and_transfer_schedule",
+      "validated_security_and_breach_exercise",
+      "clinical_device_and_auditory_safety_approval",
+      "participant_materials_and_translations",
+      "compensation_injury_and_complaint_pathway",
+      "prospective_registration",
+      "staff_certification_and_site_rehearsal",
+      "independent_statistical_clinical_ethics_privacy_and_security_signoff"
+    ]
   }
 }
