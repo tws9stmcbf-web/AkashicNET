@@ -99,6 +99,56 @@ EXPECTED_NOTICES = {'SRC-BQ002-BARSALOU-2008': None,
  'SRC-BQ002-SMALLWOOD-SCHOOLER-2015': None}
 
 
+EXPECTED_SOURCE_LIMITATIONS = {'SRC-BQ002-BARSALOU-2008': ['The review covers multiple grounded-cognition theories rather than '
+                             'one settled mechanism.',
+                             'Evidence for sensorimotor and situated contributions does not show '
+                             'that every concept or thought is fully grounded in the same way.',
+                             'Grounding mechanisms do not resolve why cognition is subjectively '
+                             'experienced.'],
+ 'SRC-BQ002-BRUINEBERG-2018': ['The paper presents a philosophical and theoretical critique rather '
+                               'than a direct experimental refutation.',
+                               'Its ecological-enactive interpretation is itself one contested '
+                               'framework.',
+                               'Disagreement over the meaning of inference constrains '
+                               'interpretation but does not eliminate empirical '
+                               'predictive-processing findings.'],
+ 'SRC-BQ002-CHRISTOFF-2016': ['The article proposes a theoretical framework rather than reporting '
+                              'one decisive experiment.',
+                              'Large-scale network recruitment does not by itself identify the '
+                              'complete causal or phenomenal origin of a thought.',
+                              'Mind-wandering, dreaming and creative thought should not be treated '
+                              'as one homogeneous phenomenon.'],
+ 'SRC-BQ002-FOX-2015': ['The synthesis pooled 24 functional-neuroimaging studies with '
+                        'heterogeneous tasks and definitions.',
+                        'Spatial convergence identifies correlates and does not establish a unique '
+                        'causal origin of thought.',
+                        'A corrigendum exists and must remain linked as provenance rather than '
+                        'treated as a retraction.'],
+ 'SRC-BQ002-FRISTON-KIEBEL-2009': ['The free-energy formulation is a broad theoretical framework '
+                                   'and is not a direct observation of thought generation.',
+                                   'Model fit or explanatory scope does not establish that '
+                                   'predictive coding is the unique cognitive architecture.',
+                                   'The framework does not by itself resolve phenomenal '
+                                   'consciousness.'],
+ 'SRC-BQ002-HUDACHEK-WAMSLEY-2023': ['The association does not establish that dream incorporation '
+                                     'causes improved memory.',
+                                     'Tasks, dream collection and analytic methods varied across '
+                                     'studies.',
+                                     'The findings do not explain the complete origin of thought '
+                                     'or subjective awareness.'],
+ 'SRC-BQ002-SELI-2018': ['Conceptual analysis does not quantify the prevalence or neural basis of '
+                         'particular thought types.',
+                         'A family-resemblances account may improve classification without '
+                         'resolving causal origin.',
+                         'Operational heterogeneity remains an empirical problem even after '
+                         'terminology is refined.'],
+ 'SRC-BQ002-SMALLWOOD-SCHOOLER-2015': ['Review-level synthesis depends on heterogeneous '
+                                       'self-report and task-probe methods.',
+                                       'Retrospective awareness and report may miss or reshape the '
+                                       'processes that preceded conscious access.',
+                                       'Functional costs and benefits vary with content, context '
+                                       'and meta-awareness.']}
+
 def fail(message):
     raise ValueError(message)
 
@@ -113,6 +163,15 @@ def validate(atlas, spec):
         fail("canonical claims must be present")
     if any(claim.get("supports_models") != [] for claim in canonical_claims):
         fail("canonical claims must retain empty model support")
+    for claim in canonical_claims:
+        if any(claim.get(key) != [] for key in ("source_ids", "contradicts")):
+            fail("canonical source and contradiction edges must remain empty")
+    models = spec.get("models", [])
+    expected_models = {"MODEL-BQ002-COGNITIVE-GENERATION", "MODEL-BQ002-PHENOMENAL-GAP"}
+    if len(models) != 2 or {m.get("model_id") for m in models} != expected_models:
+        fail("canonical model identities changed")
+    if any(m.get("status") != "UNRESOLVED" for m in models):
+        fail("canonical models must remain UNRESOLVED")
     graph = spec.get("graph", {})
     if graph.get("truth_inference_allowed") is not False or graph.get("edge_state_may_upgrade_evidence") is not False:
         fail("canonical graph truth and evidence-upgrade boundaries weakened")
@@ -158,7 +217,7 @@ def validate(atlas, spec):
             source.get("year"), source.get("provenance")
         ) != (expected_type, expected_title, expected_authors, expected_year, expected_provenance):
             fail(f"source bibliographic or provenance metadata changed: {source['source_id']}")
-        if not source.get("limitations"):
+        if source.get("limitations") != EXPECTED_SOURCE_LIMITATIONS[source["source_id"]]:
             fail("every source requires limitations")
 
     allowed_labels = set(spec.get("canonical_evidence_labels", []))
