@@ -27,6 +27,19 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_missing_operational_scope_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["models"][0]["operational_scope"] = "   "
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_duplicate_outcomes_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        rules = candidate["discriminating_tests"][0]["outcome_rules"]
+        rules["neutral_or_ambiguous"] = rules["continuity_strengthened"].upper() + "  "
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
