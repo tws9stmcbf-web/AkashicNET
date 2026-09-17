@@ -102,6 +102,8 @@ export default function PsyNationRadio() {
   const [selectedId, setSelectedId] = useState("100");
   const [loaded, setLoaded] = useState(false);
   const playerRef = useRef<HTMLIFrameElement>(null);
+  const episodeSelectRef = useRef<HTMLSelectElement>(null);
+  const restoreEpisodeFocusRef = useRef(false);
   const selected = useMemo(
     () => episodes.find((episode) => episode.id === selectedId) ?? episodes[0],
     [selectedId],
@@ -111,7 +113,17 @@ export default function PsyNationRadio() {
     if (loaded) playerRef.current?.focus();
   }, [loaded]);
 
+  useEffect(() => {
+    if (loaded || !restoreEpisodeFocusRef.current) return;
+    const frame = window.requestAnimationFrame(() => {
+      episodeSelectRef.current?.focus({ preventScroll: true });
+      restoreEpisodeFocusRef.current = false;
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [loaded, selectedId]);
+
   function chooseEpisode(id: string) {
+    restoreEpisodeFocusRef.current = true;
     setSelectedId(id);
     setLoaded(false);
   }
@@ -140,6 +152,7 @@ export default function PsyNationRadio() {
         <div className="psy-radio__selection">
           <label htmlFor="psy-radio-episode">Choose an episode</label>
           <select
+            ref={episodeSelectRef}
             id="psy-radio-episode"
             value={selectedId}
             onChange={(event) => chooseEpisode(event.target.value)}
