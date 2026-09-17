@@ -65,6 +65,23 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_canonical_semantic_promotion_rejected(self):
+        for change in ("claim_text", "extra_claim", "policy", "model_name", "model_position"):
+            with self.subTest(change=change):
+                candidate = copy.deepcopy(self.spec)
+                if change == "claim_text":
+                    candidate["claims"][0]["text"] = "The origin of thought is resolved."
+                elif change == "extra_claim":
+                    candidate["claims"].append(copy.deepcopy(candidate["claims"][0]))
+                elif change == "policy":
+                    candidate["conclusion_policy"] = "DETERMINED_AT_INGESTION"
+                elif change == "model_name":
+                    candidate["models"][0]["name"] = "established_answer"
+                else:
+                    candidate["models"][0]["position"] = "This proves the origin of all thought."
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
