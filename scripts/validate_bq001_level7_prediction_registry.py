@@ -108,6 +108,10 @@ def validate(registry, spec, batch1, batch3):
     if len(set(all_prediction_ids)) != len(all_prediction_ids) or len(set(all_challenge_ids)) != len(all_challenge_ids):
         fail("prediction and challenge IDs must be unique across all models")
 
+    combined_record_ids = all_prediction_ids + all_challenge_ids
+    if len(set(combined_record_ids)) != len(combined_record_ids):
+        fail("IDs must be unique across prediction and challenge record kinds")
+
     tests = registry.get("discriminating_tests", [])
     if {item.get("test_id") for item in tests} != EXPECTED_TESTS or len(tests) != 3:
         fail("discriminating test set changed")
