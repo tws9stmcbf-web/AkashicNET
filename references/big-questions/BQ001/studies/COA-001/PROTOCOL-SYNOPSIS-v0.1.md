@@ -254,7 +254,7 @@ Every participating site must report this complete flow:
 - No person with participant contact can access targets before transcript lock.
 - Device audit logs are append-only and independently checked.
 - Free recall precedes recognition.
-- Decoys preserve target frequency, timing and visual complexity.
+- Decoys preserve target frequency, timing and visual complexity under the transcript-independent rules in [SDC-001 v0.1](./BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md).
 - Scorers are blind to true/decoy assignment and study hypothesis where practical.
 - Analysis code is finalized against synthetic data.
 - Negative-control time windows and non-displayed decoy sequences are included.
@@ -321,7 +321,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [ ] statistical/adversarial review
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
 - [x] blinded interview and contamination-audit manual — draft INT-001 v0.1; clinical, ethics and methods validation pending
-- [ ] blinded scoring manual
+- [x] blinded scoring and decoy-construction manual — draft SDC-001 v0.1; statistical, psychometric, security and simulation validation pending
 - [ ] simulation and sample-size report
 - [ ] ethics/data-protection outline
 - [ ] v0.2 freeze candidate
