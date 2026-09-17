@@ -57,6 +57,18 @@ class BQ011AuthoringTests(unittest.TestCase):
     def test_candidate_passes(self):
         self.validate()
 
+    def test_conclusion_policy_change_and_removal_rejected(self):
+        for value in ("DETERMINED_AT_INGESTION", "", None):
+            with self.subTest(value=value):
+                candidate = copy.deepcopy(self.spec)
+                candidate["conclusion_policy"] = value
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+        candidate = copy.deepcopy(self.spec)
+        del candidate["conclusion_policy"]
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
     def test_causal_boundary_promotion_and_removal_rejected(self):
         for key in self.spec["causal_boundary"]:
             for remove in (False, True):
@@ -111,6 +123,24 @@ class BQ011AuthoringTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate)
 
+    def test_project_state_evidence_metadata_change_and_removal_rejected(self):
+        replacements = {
+            "evidence_label": "Hypothesis",
+            "provenance": [],
+            "reviewed_support": False,
+        }
+        for key, replacement in replacements.items():
+            with self.subTest(key=key, replacement=replacement):
+                candidate = copy.deepcopy(self.spec)
+                candidate["claims"][0][key] = replacement
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+            with self.subTest(key=key, removed=True):
+                candidate = copy.deepcopy(self.spec)
+                del candidate["claims"][0][key]
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+
     def test_promotion_guard_change_and_removal_rejected(self):
         for key, value in module.EXPECTED_PROMOTION_GUARDS.items():
             for remove in (False, True):
@@ -156,6 +186,20 @@ class BQ011AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
 
+    def test_assessment_boundary_change_and_removal_rejected(self):
+        for item in self.assessment["axis_assessments"]:
+            axis = item["axis"]
+            for remove in (False, True):
+                with self.subTest(axis=axis, remove=remove):
+                    candidate = copy.deepcopy(self.assessment)
+                    target = next(x for x in candidate["axis_assessments"] if x["axis"] == axis)
+                    if remove:
+                        del target["boundary"]
+                    else:
+                        target["boundary"] = "A causal pathway is established."
+                    with self.assertRaises(ValueError):
+                        self.validate(assessment=candidate)
+
     def test_assessment_guard_promotion_and_removal_rejected(self):
         for key in module.FALSE_GUARDS | {"model_edges_upgrade_evidence"}:
             for remove in (False, True):
@@ -185,6 +229,18 @@ class BQ011AuthoringTests(unittest.TestCase):
         candidate["methodological_requirements"].pop()
         with self.assertRaises(ValueError):
             self.validate(agenda=candidate)
+
+    def test_contradictory_community_boundaries_rejected(self):
+        replacements = {
+            "evidence_boundary": "Testimony cannot establish causation, but here it establishes causation.",
+            "consent_boundary": "Extract narratives without permission.",
+        }
+        for key, replacement in replacements.items():
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.agenda)
+                candidate["community_role"][key] = replacement
+                with self.assertRaises(ValueError):
+                    self.validate(agenda=candidate)
 
         candidate = copy.deepcopy(self.agenda)
         del candidate["community_role"]["consent_boundary"]

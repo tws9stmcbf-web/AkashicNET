@@ -40,6 +40,32 @@ EXPECTED_AXES = {
     "institutional_to_ecological_flourishing": 1,
     "harms_equity_and_cultural_governance": 2,
 }
+EXPECTED_AXIS_BOUNDARIES = {
+    "inner_experience_to_self_change": "Candidate mechanisms are framed, but no evidence batch has been accepted.",
+    "self_change_to_observable_behavior": "Self-report must remain separate from observed helping, nonviolence, generosity or stewardship.",
+    "behavior_to_community_change": "No reviewed causal pathway from individual change to community outcomes is established.",
+    "community_to_institutional_change": "No reviewed evidence shows that transformative experiences alter durable institutional incentives or policy.",
+    "institutional_to_ecological_flourishing": "Planetary and ecological outcomes remain an untested research horizon.",
+    "harms_equity_and_cultural_governance": "Risks and governance requirements are named but require source-led review and affected-community participation.",
+}
+EXPECTED_PROJECT_CLAIM = {
+    "claim_id": "CLAIM-BQ011-FRAMEWORK-001",
+    "claim_type": "PROJECT_STATE",
+    "text": "BQ011 currently has no adjudicated substantive answer or accepted evidence batch.",
+    "domain": "flourishing_measurement_and_long_term_follow_up",
+    "evidence_label": "Established Evidence",
+    "provenance": ["references/big-questions/BQ011/spec-v0.1.json"],
+    "source_ids": [],
+    "reviewed_support": True,
+    "scope": "project_state_only",
+    "uncertainty": "No causal, clinical, social or metaphysical conclusion is implied.",
+    "supports_models": [],
+}
+EXPECTED_COMMUNITY_ROLE = {
+    "n2n_function": "Generate questions, lived-experience signals, counterexamples and candidate patterns for formal review.",
+    "evidence_boundary": "Community recurrence and testimony can motivate research but cannot establish causation, efficacy or universal truth.",
+    "consent_boundary": "Do not extract personal narratives, cultural material or identifying information without permission.",
+}
 EXPECTED_PRIORITIES = [f"BQ011-P{i:02d}" for i in range(1, 13)]
 EXPECTED_CULTURAL_GOVERNANCE = {
     "indigenous_and_lineage_knowledge_is_not_generic_evidence",
@@ -95,6 +121,8 @@ def require_false(mapping, keys, label):
 def validate(spec, assessment, agenda, architecture):
     if spec.get("id") != "BQ011" or spec.get("status") != "UNRESOLVED":
         fail("BQ011 identity/status changed")
+    if spec.get("conclusion_policy") != "UNDETERMINED_AT_INGESTION":
+        fail("BQ011 conclusion policy changed")
     if spec.get("authoring_status") != "REVIEW_CANDIDATE" or spec.get("public_beta_gate") is not False:
         fail("BQ011 must remain a gated review candidate")
     if spec.get("causal_chain") != EXPECTED_CHAIN:
@@ -121,15 +149,7 @@ def validate(spec, assessment, agenda, architecture):
     if not isinstance(claims, list) or len(claims) != 1:
         fail("BQ011 must retain exactly one project-state claim")
     claim = claims[0]
-    if (
-        claim.get("claim_id") != "CLAIM-BQ011-FRAMEWORK-001"
-        or claim.get("claim_type") != "PROJECT_STATE"
-        or claim.get("scope") != "project_state_only"
-        or claim.get("text") != "BQ011 currently has no adjudicated substantive answer or accepted evidence batch."
-        or claim.get("uncertainty") != "No causal, clinical, social or metaphysical conclusion is implied."
-        or claim.get("source_ids") != []
-        or claim.get("supports_models") != []
-    ):
+    if claim != EXPECTED_PROJECT_CLAIM:
         fail("BQ011 project-state claim or no-support boundary changed")
 
     outcomes = spec.get("outcome_families", [])
@@ -169,6 +189,8 @@ def validate(spec, assessment, agenda, architecture):
     for axis, level in EXPECTED_AXES.items():
         if axis_map[axis].get("level") != level or axis_map[axis].get("maximum") != 10:
             fail(f"assessment axis changed: {axis}")
+        if axis_map[axis].get("boundary") != EXPECTED_AXIS_BOUNDARIES[axis]:
+            fail(f"assessment boundary changed: {axis}")
     require_false(assessment.get("governance"), FALSE_GUARDS | {"model_edges_upgrade_evidence"}, "assessment guard")
 
     if agenda.get("agenda_id") != "BQ011-RESEARCH-AGENDA-V0.1":
@@ -187,12 +209,8 @@ def validate(spec, assessment, agenda, architecture):
     if agenda.get("methodological_requirements") != EXPECTED_METHOD_REQUIREMENTS:
         fail("research methodology boundaries changed")
     community = agenda.get("community_role")
-    if not isinstance(community, dict) or set(community) != {"n2n_function", "evidence_boundary", "consent_boundary"}:
-        fail("community role boundaries changed")
-    if "cannot establish causation" not in community["evidence_boundary"]:
-        fail("community evidence boundary weakened")
-    if "without permission" not in community["consent_boundary"]:
-        fail("community consent boundary weakened")
+    if community != EXPECTED_COMMUNITY_ROLE:
+        fail("community role boundaries changed or weakened")
     require_false(agenda.get("governance"), FALSE_GUARDS | {"accepted_evidence_batch"}, "research agenda guard")
 
     if "BQ011" in architecture.get("questions", {}):
