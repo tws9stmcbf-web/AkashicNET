@@ -40,6 +40,27 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_duplicate_statements_rejected(self):
+        for collection in ("predictions", "potential_disconfirming_observations"):
+            with self.subTest(collection=collection):
+                candidate = copy.deepcopy(self.registry)
+                records = candidate["models"][0][collection]
+                records[1]["statement"] = records[0]["statement"].upper() + "  "
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
+    def test_invalid_test_domain_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["discriminating_tests"][0]["domain"] = "not_a_canonical_bq001_domain"
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_registry_identity_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["registry_id"] = "OTHER-REGISTRY"
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
