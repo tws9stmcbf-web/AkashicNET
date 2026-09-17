@@ -44,6 +44,20 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         self.mutate(lambda d: d["comparison_rows"][0].update(score=0.9))
         with self.assertRaisesRegex(ValueError, "adjudicative key rejected"):
             validator.scan_safety({"winner": "synthetic"})
+        for key in ("s_c_o_r_e", "r-a-n-k", "s%63ore", "ｗｉｎｎｅｒ"):
+            with self.subTest(key=key), self.assertRaisesRegex(
+                ValueError, "adjudicative key rejected"
+            ):
+                validator.scan_safety({key: "synthetic"})
+
+        schema = validator.load_json(validator.SCHEMA)
+        schema["x-review-metadata"] = {"s_c_o_r_e": 0.9, "r-a-n-k": 1}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(json.dumps(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "adjudicative key rejected"):
+                    self.validate(self.packet)
 
     def test_inventory_projection_cannot_drift(self):
         self.mutate(lambda d: d["comparison_rows"][2].update(canonical_name="Synthetic"), "inventory projection drift")

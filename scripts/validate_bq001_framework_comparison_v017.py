@@ -133,9 +133,9 @@ def assert_exact_keys(value: dict[str, Any], expected: set[str], label: str) -> 
 def scan_safety(value: Any) -> None:
     if isinstance(value, dict):
         for key, child in value.items():
-            if normalize_private_text(key) in FORBIDDEN_KEYS:
-                raise ValueError(f"adjudicative key rejected: {key}")
             normalized_key = re.sub(r"[^a-z0-9]", "", normalize_private_text(key))
+            if normalized_key in FORBIDDEN_KEYS:
+                raise ValueError(f"adjudicative key rejected: {key}")
             if normalized_key in PRIVATE_METADATA_KEYS:
                 raise ValueError(f"private metadata key rejected: {key}")
             scan_safety(key)
