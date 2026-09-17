@@ -48,10 +48,46 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_empty_prediction_fields_rejected(self):
+        for key in ("prediction_id", "statement", "boundary"):
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.registry)
+                candidate["models"][0]["predictions"][0][key] = ""
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
+    def test_duplicate_prediction_and_challenge_ids_rejected(self):
+        for collection, key in (("predictions", "prediction_id"), ("potential_disconfirming_observations", "observation_id")):
+            with self.subTest(collection=collection):
+                candidate = copy.deepcopy(self.registry)
+                records = candidate["models"][0][collection]
+                records[1][key] = records[0][key]
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
+    def test_empty_challenge_statement_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["models"][0]["potential_disconfirming_observations"][0]["statement"] = None
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_empty_outcome_rule_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["discriminating_tests"][0]["outcome_rules"]["neutral_or_ambiguous"] = ""
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_child_safeguard_relaxation_rejected(self):
         candidate = copy.deepcopy(self.registry)
         test = next(item for item in candidate["discriminating_tests"] if item["test_id"] == "TEST-BQ001-PASTLIFE-PROSPECTIVE")
         test["safeguards"]["public_identification_forbidden"] = False
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_child_safeguard_omission_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        test = next(item for item in candidate["discriminating_tests"] if item["test_id"] == "TEST-BQ001-PASTLIFE-PROSPECTIVE")
+        del test["safeguards"]["public_identification_forbidden"]
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
