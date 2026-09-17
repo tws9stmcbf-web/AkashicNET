@@ -30,6 +30,18 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_maturity_disclaimer_reversal_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["maturity"]["meaning"] = "Research-method maturity is evidence strength; model support and promotion are granted."
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_canonical_input_mutation_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["source_scope"]["canonical_inputs"][0] = "references/big-questions/BQ001/missing.json"
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_question_resolution_rejected(self):
         candidate = copy.deepcopy(self.registry)
         candidate["question_status"] = "RESOLVED"
