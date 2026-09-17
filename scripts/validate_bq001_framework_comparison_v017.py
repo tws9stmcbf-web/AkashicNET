@@ -70,6 +70,11 @@ ANCHOR_KEYS = {"git_blob_sha", "path"}
 CORRECTION_KEYS = {"claim_id", "evidence_label_changed", "related_notice_doi", "result"}
 ANCESTRY_KEYS = {"claim_id", "inventory_item_ids", "rule", "source_id"}
 FORBIDDEN_KEYS = {"answer", "confidence", "conclusion", "probability", "rank", "score", "synthesis", "winner"}
+PRIVATE_METADATA_KEYS = {
+    "driveid", "drivefileid", "driveobjectid", "fileid", "objectid",
+    "filename", "filepath", "privatepath", "parentid", "objecthash",
+    "objectsha256", "md5checksum", "sha256checksum", "privatedriveid",
+}
 PRIVATE_MARKERS = ("drive.google.com", "docs.google.com", "drive.usercontent.google.com", "docs.googleusercontent.com")
 PRIVATE_PATH_MARKERS = ("/my drive/", "akm-", "file://", "gdrive://")
 # Same ignored ranges as the reviewed inventory validator at INPUT_COMMIT.
@@ -130,6 +135,9 @@ def scan_safety(value: Any) -> None:
         for key, child in value.items():
             if normalize_private_text(key) in FORBIDDEN_KEYS:
                 raise ValueError(f"adjudicative key rejected: {key}")
+            normalized_key = re.sub(r"[^a-z0-9]", "", normalize_private_text(key))
+            if normalized_key in PRIVATE_METADATA_KEYS:
+                raise ValueError(f"private metadata key rejected: {key}")
             scan_safety(key)
             scan_safety(child)
     elif isinstance(value, list):

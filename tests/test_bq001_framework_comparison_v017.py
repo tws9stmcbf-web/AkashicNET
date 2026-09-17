@@ -115,6 +115,29 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "private"):
                     self.validate(self.packet)
 
+    def test_normalized_private_metadata_keys_are_rejected(self):
+        keys = (
+            "drive%5fid", "file%5fname", "drive%255fid",
+            "ｄｒｉｖｅ＿ｉｄ", "private-path", "object.sha256",
+        )
+        for key in keys:
+            with self.subTest(key=key), self.assertRaisesRegex(
+                ValueError, "private metadata key rejected"
+            ):
+                validator.scan_safety({key: "synthetic"})
+
+        schema = validator.load_json(validator.SCHEMA)
+        schema["x-private-audit"] = {
+            "drive%5fid": "opaque Drive ID",
+            "file%5fname": "private-title.pdf",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schema.json"
+            path.write_text(json.dumps(schema), encoding="utf-8")
+            with patch.object(validator, "SCHEMA", path):
+                with self.assertRaisesRegex(ValueError, "private metadata key rejected"):
+                    self.validate(self.packet)
+
 
 if __name__ == "__main__":
     unittest.main()
