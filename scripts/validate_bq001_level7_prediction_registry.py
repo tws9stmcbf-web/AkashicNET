@@ -23,6 +23,16 @@ EXPECTED_SAFEGUARDS = {
     "family_contact_pressure_forbidden",
     "culturally_situated_interpretation_required",
 }
+EXPECTED_CANONICAL_INPUTS = {
+    "references/big-questions/BQ001/spec-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+    "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+    "references/big-questions/BQ001/public-synthesis-v0.1.json",
+}
+EXPECTED_MATURITY_MEANING = (
+    "Research-method maturity only; not truth probability, evidence strength, model support, "
+    "or readiness for canonical or public promotion."
+)
 FALSE_GUARDS = {
     "canonical_promotion_applied",
     "evidence_promotion_applied",
@@ -55,10 +65,8 @@ def validate(registry, spec, batch1, batch3):
         fail("registry must describe the bounded Level 6 to Level 7 transition")
     if maturity.get("candidate_level_applied") is not False:
         fail("Level 7 may not be applied before review")
-    meaning = maturity.get("meaning", "").lower()
-    for phrase in ("research-method maturity", "not truth probability", "not truth probability", "evidence strength"):
-        if phrase not in meaning:
-            fail("maturity meaning must remain claim bounded")
+    if maturity.get("meaning") != EXPECTED_MATURITY_MEANING:
+        fail("maturity meaning must deny truth, evidence, model-support and promotion inferences")
 
     spec_models = {item.get("model_id") for item in spec.get("models", [])}
     models = registry.get("models", [])
@@ -104,13 +112,17 @@ def validate(registry, spec, batch1, batch3):
     if set(safeguards) != EXPECTED_SAFEGUARDS or any(value is not True for value in safeguards.values()):
         fail("child privacy and cultural safeguards must remain enabled")
 
+    source_scope = registry.get("source_scope", {})
+    canonical_inputs = set(source_scope.get("canonical_inputs", []))
+    if canonical_inputs != EXPECTED_CANONICAL_INPUTS or any(not (ROOT / path).is_file() for path in canonical_inputs):
+        fail("canonical provenance inputs changed or do not exist")
     known_ids = {item.get("source_id") for item in batch1.get("sources", []) + batch3.get("sources", [])}
-    used_ids = set(registry.get("source_scope", {}).get("source_ids_used_for_design_context_only", []))
+    used_ids = set(source_scope.get("source_ids_used_for_design_context_only", []))
     if not used_ids or not used_ids.issubset(known_ids):
         fail("design-context source provenance is invalid")
-    if registry.get("source_scope", {}).get("new_evidence_added") is not False:
+    if source_scope.get("new_evidence_added") is not False:
         fail("prediction registry cannot silently add evidence")
-    if registry.get("source_scope", {}).get("design_context_does_not_create_model_support") is not True:
+    if source_scope.get("design_context_does_not_create_model_support") is not True:
         fail("design context must not create model support")
 
     methods = registry.get("method_rules", {})
