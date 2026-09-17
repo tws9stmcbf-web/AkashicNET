@@ -5,13 +5,13 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VALIDATOR = ROOT / "scripts/validate_bq009_authoring_v01.py"
-spec = importlib.util.spec_from_file_location("bq009_validator", VALIDATOR)
+VALIDATOR = ROOT / "scripts/validate_bq011_authoring_v01.py"
+spec = importlib.util.spec_from_file_location("bq011_validator", VALIDATOR)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 
-class BQ009AuthoringTests(unittest.TestCase):
+class BQ011AuthoringTests(unittest.TestCase):
     def setUp(self):
         self.spec = json.loads(module.SPEC.read_text(encoding="utf-8"))
         self.assessment = json.loads(module.ASSESSMENT.read_text(encoding="utf-8"))
@@ -42,7 +42,7 @@ class BQ009AuthoringTests(unittest.TestCase):
             ("assessment", self.assessment, "assessment_id"),
             ("agenda", self.agenda, "agenda_id"),
         ):
-            for value in (original[key].replace("BQ009", "BQ004"), "", None):
+            for value in (original[key].replace("BQ011", "BQ004"), "", None):
                 with self.subTest(argument=argument, value=value):
                     candidate = copy.deepcopy(original)
                     candidate[key] = value
@@ -83,7 +83,7 @@ class BQ009AuthoringTests(unittest.TestCase):
 
     def test_model_support_promotion_rejected(self):
         candidate = copy.deepcopy(self.spec)
-        candidate["claims"][0]["supports_models"] = ["MODEL-BQ009-MULTILEVEL"]
+        candidate["claims"][0]["supports_models"] = ["MODEL-BQ011-MULTILEVEL"]
         with self.assertRaises(ValueError):
             self.validate(spec=candidate)
 
@@ -205,9 +205,9 @@ class BQ009AuthoringTests(unittest.TestCase):
 
     def test_canonical_registration_rejected(self):
         candidate = copy.deepcopy(self.architecture)
-        candidate["questions"]["BQ009"] = {
-            "canonical_path": "references/big-questions/BQ009",
-            "spec": "references/big-questions/BQ009/spec-v0.1.json",
+        candidate["questions"]["BQ011"] = {
+            "canonical_path": "references/big-questions/BQ011",
+            "spec": "references/big-questions/BQ011/spec-v0.1.json",
             "evidence_batches": [],
         }
         with self.assertRaises(ValueError):
@@ -215,12 +215,12 @@ class BQ009AuthoringTests(unittest.TestCase):
 
     def test_authoring_registration_drift_rejected(self):
         candidate = copy.deepcopy(self.architecture)
-        candidate["authoring_candidates"]["BQ009"]["public_beta_gate"] = True
+        candidate["authoring_candidates"]["BQ011"]["public_beta_gate"] = True
         with self.assertRaises(ValueError):
             self.validate(architecture=candidate)
 
         candidate = copy.deepcopy(self.architecture)
-        candidate["authoring_candidates"]["BQ009"]["candidate_path"] = "references/public/BQ009"
+        candidate["authoring_candidates"]["BQ011"]["candidate_path"] = "references/public/BQ011"
         with self.assertRaises(ValueError):
             self.validate(architecture=candidate)
 

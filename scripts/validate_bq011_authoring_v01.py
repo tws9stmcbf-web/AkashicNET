@@ -4,9 +4,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = ROOT / "references/big-questions/BQ009/spec-v0.1.json"
-ASSESSMENT = ROOT / "references/big-questions/BQ009/progress-assessment-v0.1.json"
-AGENDA = ROOT / "references/big-questions/BQ009/research-agenda-v0.1.json"
+SPEC = ROOT / "references/big-questions/BQ011/spec-v0.1.json"
+ASSESSMENT = ROOT / "references/big-questions/BQ011/progress-assessment-v0.1.json"
+AGENDA = ROOT / "references/big-questions/BQ011/research-agenda-v0.1.json"
 ARCH = ROOT / "references/big-questions/architecture-v0.1.json"
 
 EXPECTED_CHAIN = [
@@ -17,11 +17,11 @@ EXPECTED_CHAIN = [
     "HUMAN_AND_ECOLOGICAL_FLOURISHING",
 ]
 EXPECTED_MODELS = {
-    "MODEL-BQ009-TRANSIENT-STATE",
-    "MODEL-BQ009-INTEGRATION",
-    "MODEL-BQ009-SOCIAL-REINFORCEMENT",
-    "MODEL-BQ009-STRUCTURAL-CONSTRAINT",
-    "MODEL-BQ009-MULTILEVEL",
+    "MODEL-BQ011-TRANSIENT-STATE",
+    "MODEL-BQ011-INTEGRATION",
+    "MODEL-BQ011-SOCIAL-REINFORCEMENT",
+    "MODEL-BQ011-STRUCTURAL-CONSTRAINT",
+    "MODEL-BQ011-MULTILEVEL",
 }
 EXPECTED_OUTCOMES = {
     "observable_helping_and_generosity",
@@ -40,7 +40,7 @@ EXPECTED_AXES = {
     "institutional_to_ecological_flourishing": 1,
     "harms_equity_and_cultural_governance": 2,
 }
-EXPECTED_PRIORITIES = [f"BQ009-P{i:02d}" for i in range(1, 13)]
+EXPECTED_PRIORITIES = [f"BQ011-P{i:02d}" for i in range(1, 13)]
 EXPECTED_CULTURAL_GOVERNANCE = {
     "indigenous_and_lineage_knowledge_is_not_generic_evidence",
     "community_authority_permission_and_care_required",
@@ -93,12 +93,12 @@ def require_false(mapping, keys, label):
 
 
 def validate(spec, assessment, agenda, architecture):
-    if spec.get("id") != "BQ009" or spec.get("status") != "UNRESOLVED":
-        fail("BQ009 identity/status changed")
+    if spec.get("id") != "BQ011" or spec.get("status") != "UNRESOLVED":
+        fail("BQ011 identity/status changed")
     if spec.get("authoring_status") != "REVIEW_CANDIDATE" or spec.get("public_beta_gate") is not False:
-        fail("BQ009 must remain a gated review candidate")
+        fail("BQ011 must remain a gated review candidate")
     if spec.get("causal_chain") != EXPECTED_CHAIN:
-        fail("BQ009 causal chain changed")
+        fail("BQ011 causal chain changed")
 
     boundary = spec.get("causal_boundary")
     if not isinstance(boundary, dict) or set(boundary) != {
@@ -119,18 +119,18 @@ def validate(spec, assessment, agenda, architecture):
         fail("competing models must remain unresolved")
     claims = spec.get("claims")
     if not isinstance(claims, list) or len(claims) != 1:
-        fail("BQ009 must retain exactly one project-state claim")
+        fail("BQ011 must retain exactly one project-state claim")
     claim = claims[0]
     if (
-        claim.get("claim_id") != "CLAIM-BQ009-FRAMEWORK-001"
+        claim.get("claim_id") != "CLAIM-BQ011-FRAMEWORK-001"
         or claim.get("claim_type") != "PROJECT_STATE"
         or claim.get("scope") != "project_state_only"
-        or claim.get("text") != "BQ009 currently has no adjudicated substantive answer or accepted evidence batch."
+        or claim.get("text") != "BQ011 currently has no adjudicated substantive answer or accepted evidence batch."
         or claim.get("uncertainty") != "No causal, clinical, social or metaphysical conclusion is implied."
         or claim.get("source_ids") != []
         or claim.get("supports_models") != []
     ):
-        fail("BQ009 project-state claim or no-support boundary changed")
+        fail("BQ011 project-state claim or no-support boundary changed")
 
     outcomes = spec.get("outcome_families", [])
     if set(outcomes) != EXPECTED_OUTCOMES or len(outcomes) != len(EXPECTED_OUTCOMES):
@@ -138,20 +138,20 @@ def validate(spec, assessment, agenda, architecture):
 
     for key in ("truth_inference_allowed", "edge_state_may_upgrade_evidence"):
         if spec.get("graph", {}).get(key) is not False:
-            fail(f"BQ009 graph guard weakened: {key}")
+            fail(f"BQ011 graph guard weakened: {key}")
     guards = spec.get("promotion_guards")
     if guards != EXPECTED_PROMOTION_GUARDS:
-        fail("BQ009 promotion guards changed or weakened")
+        fail("BQ011 promotion guards changed or weakened")
 
     cultural = spec.get("cultural_governance")
     if not isinstance(cultural, dict) or set(cultural) != EXPECTED_CULTURAL_GOVERNANCE:
-        fail("BQ009 cultural governance requirements changed")
+        fail("BQ011 cultural governance requirements changed")
     if any(cultural.get(key) is not True for key in EXPECTED_CULTURAL_GOVERNANCE):
-        fail("BQ009 cultural governance must remain fail-closed")
+        fail("BQ011 cultural governance must remain fail-closed")
 
-    if assessment.get("assessment_id") != "BQ009-PROGRESS-ASSESSMENT-V0.1":
+    if assessment.get("assessment_id") != "BQ011-PROGRESS-ASSESSMENT-V0.1":
         fail("assessment artifact identity changed")
-    if assessment.get("status") != "REVIEW_CANDIDATE" or assessment.get("question_id") != "BQ009":
+    if assessment.get("status") != "REVIEW_CANDIDATE" or assessment.get("question_id") != "BQ011":
         fail("assessment identity/status changed")
     if assessment.get("question_status") != "UNRESOLVED":
         fail("assessment must remain unresolved")
@@ -171,9 +171,9 @@ def validate(spec, assessment, agenda, architecture):
             fail(f"assessment axis changed: {axis}")
     require_false(assessment.get("governance"), FALSE_GUARDS | {"model_edges_upgrade_evidence"}, "assessment guard")
 
-    if agenda.get("agenda_id") != "BQ009-RESEARCH-AGENDA-V0.1":
+    if agenda.get("agenda_id") != "BQ011-RESEARCH-AGENDA-V0.1":
         fail("agenda artifact identity changed")
-    if agenda.get("status") != "REVIEW_CANDIDATE" or agenda.get("question_id") != "BQ009":
+    if agenda.get("status") != "REVIEW_CANDIDATE" or agenda.get("question_id") != "BQ011":
         fail("research agenda identity/status changed")
     if agenda.get("question_status") != "UNRESOLVED":
         fail("research agenda must remain unresolved")
@@ -195,22 +195,22 @@ def validate(spec, assessment, agenda, architecture):
         fail("community consent boundary weakened")
     require_false(agenda.get("governance"), FALSE_GUARDS | {"accepted_evidence_batch"}, "research agenda guard")
 
-    if "BQ009" in architecture.get("questions", {}):
-        fail("BQ009 must not enter the canonical questions registry without an accepted evidence batch")
-    reg = architecture.get("authoring_candidates", {}).get("BQ009", {})
+    if "BQ011" in architecture.get("questions", {}):
+        fail("BQ011 must not enter the canonical questions registry without an accepted evidence batch")
+    reg = architecture.get("authoring_candidates", {}).get("BQ011", {})
     if reg.get("registration_status") != "REVIEW_CANDIDATE" or reg.get("public_beta_gate") is not False:
-        fail("BQ009 authoring-candidate gate changed")
+        fail("BQ011 authoring-candidate gate changed")
     if reg.get("canonical_registration_applied") is not False or reg.get("accepted_evidence_batches") != []:
-        fail("BQ009 canonical acceptance must remain unapplied")
-    if reg.get("candidate_path") != "references/big-questions/BQ009":
-        fail("BQ009 candidate path changed")
-    if reg.get("spec") != "references/big-questions/BQ009/spec-v0.1.json":
-        fail("BQ009 spec registration changed")
+        fail("BQ011 canonical acceptance must remain unapplied")
+    if reg.get("candidate_path") != "references/big-questions/BQ011":
+        fail("BQ011 candidate path changed")
+    if reg.get("spec") != "references/big-questions/BQ011/spec-v0.1.json":
+        fail("BQ011 spec registration changed")
     if reg.get("review_candidates") != [
-        "references/big-questions/BQ009/progress-assessment-v0.1.json",
-        "references/big-questions/BQ009/research-agenda-v0.1.json",
+        "references/big-questions/BQ011/progress-assessment-v0.1.json",
+        "references/big-questions/BQ011/research-agenda-v0.1.json",
     ]:
-        fail("BQ009 review-candidate registry changed")
+        fail("BQ011 review-candidate registry changed")
 
 
 def main():
@@ -222,9 +222,9 @@ def main():
             json.loads(ARCH.read_text(encoding="utf-8")),
         )
     except (OSError, json.JSONDecodeError, ValueError) as exc:
-        print(f"BQ009 AUTHORING FAIL: {exc}", file=sys.stderr)
+        print(f"BQ011 AUTHORING FAIL: {exc}", file=sys.stderr)
         return 1
-    print("BQ009 AUTHORING PASS: Level 3 review candidate; causal chain documented; no evidence accepted")
+    print("BQ011 AUTHORING PASS: Level 3 review candidate; causal chain documented; no evidence accepted")
     return 0
 
 

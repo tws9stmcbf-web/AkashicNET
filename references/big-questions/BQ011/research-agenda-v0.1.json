@@ -1,13 +1,13 @@
 {
-  "agenda_id": "BQ009-RESEARCH-AGENDA-V0.1",
+  "agenda_id": "BQ011-RESEARCH-AGENDA-V0.1",
   "version": "0.1.0",
   "status": "REVIEW_CANDIDATE",
-  "question_id": "BQ009",
+  "question_id": "BQ011",
   "question_status": "UNRESOLVED",
   "purpose": "Identify research capable of testing when experiences of interconnection become durable compassionate action, just institutions and ecological flourishing.",
   "priorities": [
     {
-      "priority_id": "BQ009-P01",
+      "priority_id": "BQ011-P01",
       "rank": 1,
       "title": "Compassion at scale",
       "question": "Which practices reliably convert empathy, compassion or metta into sustained helping, generosity and nonviolence?",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P02",
+      "priority_id": "BQ011-P02",
       "rank": 2,
       "title": "States into traits into service",
       "question": "When do psychedelic, contemplative, mystical or collective experiences produce lasting humility, care and ethical action?",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P03",
+      "priority_id": "BQ011-P03",
       "rank": 3,
       "title": "Flexible selfhood and prejudice",
       "question": "Does safely loosening rigid self-models reduce dehumanisation, prejudice and tribal hostility?",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P04",
+      "priority_id": "BQ011-P04",
       "rank": 4,
       "title": "Ecological connectedness",
       "question": "Does felt connection with nature predict or cause measurable stewardship and lower-impact behaviour?",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P05",
+      "priority_id": "BQ011-P05",
       "rank": 5,
       "title": "Collective synchrony without metaphysical assumptions",
       "question": "How do music, dance, ritual and shared attention affect trust, cooperation and belonging?",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P06",
+      "priority_id": "BQ011-P06",
       "rank": 6,
       "title": "Trauma and intergenerational repair",
       "question": "Which combinations of therapy, embodiment, community and meaning-making interrupt cycles of harm safely?",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P07",
+      "priority_id": "BQ011-P07",
       "rank": 7,
       "title": "Death awareness and compassionate priorities",
       "question": "Can death contemplation or end-of-life engagement reduce fear and increase care without requiring survival beliefs?",
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P08",
+      "priority_id": "BQ011-P08",
       "rank": 8,
       "title": "Wisdom across cultures",
       "question": "Which ethical insights recur across traditions, and which meanings must remain culturally and lineage specific?",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P09",
+      "priority_id": "BQ011-P09",
       "rank": 9,
       "title": "Community care and mutual witnessing",
       "question": "Which forms of listening and moderated experience-sharing improve belonging without amplifying dogma, delusion or misinformation?",
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P10",
+      "priority_id": "BQ011-P10",
       "rank": 10,
       "title": "Attention and information ecology",
       "question": "How do platforms, algorithms and AI alter agency, empathy and collective reality formation?",
@@ -118,7 +118,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P11",
+      "priority_id": "BQ011-P11",
       "rank": 11,
       "title": "Institutions of care",
       "question": "Which organisational, educational and economic structures reward cooperation, sufficiency and stewardship rather than extraction?",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "priority_id": "BQ009-P12",
+      "priority_id": "BQ011-P12",
       "rank": 12,
       "title": "Measuring flourishing",
       "question": "Which indicators capture meaning, belonging, compassion, justice and ecological health beyond narrow economic output?",

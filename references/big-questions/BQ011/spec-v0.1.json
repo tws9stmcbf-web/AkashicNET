@@ -1,5 +1,5 @@
 {
-  "id": "BQ009",
+  "id": "BQ011",
   "version": "0.1.0",
   "title": "What transforms experiences of interconnection into enduring compassionate action and planetary flourishing?",
   "status": "UNRESOLVED",
@@ -35,31 +35,31 @@
   ],
   "models": [
     {
-      "model_id": "MODEL-BQ009-TRANSIENT-STATE",
+      "model_id": "MODEL-BQ011-TRANSIENT-STATE",
       "name": "transient_state_model",
       "position": "Experiences of interconnection may be meaningful yet fade without producing durable behavioural or institutional change.",
       "status": "UNRESOLVED"
     },
     {
-      "model_id": "MODEL-BQ009-INTEGRATION",
+      "model_id": "MODEL-BQ011-INTEGRATION",
       "name": "integration_and_practice_model",
       "position": "Durable change depends on repeated practice, psychological integration, supportive relationships and opportunities for action.",
       "status": "UNRESOLVED"
     },
     {
-      "model_id": "MODEL-BQ009-SOCIAL-REINFORCEMENT",
+      "model_id": "MODEL-BQ011-SOCIAL-REINFORCEMENT",
       "name": "social_reinforcement_model",
       "position": "Communities and social norms determine whether compassionate intentions become stable habits or dissipate.",
       "status": "UNRESOLVED"
     },
     {
-      "model_id": "MODEL-BQ009-STRUCTURAL-CONSTRAINT",
+      "model_id": "MODEL-BQ011-STRUCTURAL-CONSTRAINT",
       "name": "structural_constraint_model",
       "position": "Institutional incentives, inequality and material conditions may dominate individual intentions and limit compassionate outcomes.",
       "status": "UNRESOLVED"
     },
     {
-      "model_id": "MODEL-BQ009-MULTILEVEL",
+      "model_id": "MODEL-BQ011-MULTILEVEL",
       "name": "multilevel_transformation_model",
       "position": "Lasting planetary benefit may require interacting individual, relational, institutional and ecological changes rather than a single intervention.",
       "status": "UNRESOLVED"
@@ -67,13 +67,13 @@
   ],
   "claims": [
     {
-      "claim_id": "CLAIM-BQ009-FRAMEWORK-001",
+      "claim_id": "CLAIM-BQ011-FRAMEWORK-001",
       "claim_type": "PROJECT_STATE",
-      "text": "BQ009 currently has no adjudicated substantive answer or accepted evidence batch.",
+      "text": "BQ011 currently has no adjudicated substantive answer or accepted evidence batch.",
       "domain": "flourishing_measurement_and_long_term_follow_up",
       "evidence_label": "Established Evidence",
       "provenance": [
-        "references/big-questions/BQ009/spec-v0.1.json"
+        "references/big-questions/BQ011/spec-v0.1.json"
       ],
       "source_ids": [],
       "reviewed_support": true,
