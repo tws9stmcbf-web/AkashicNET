@@ -64,6 +64,20 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
     def test_candidate_passes(self):
         self.validate()
 
+    def test_model_record_swap_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["models"][0]["model_id"], candidate["models"][1]["model_id"] = (
+            candidate["models"][1]["model_id"], candidate["models"][0]["model_id"]
+        )
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_registry_version_mutation_rejected(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["version"] = "99.0.0"
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_level_cannot_be_applied_before_review(self):
         candidate = copy.deepcopy(self.registry)
         candidate["maturity"]["candidate_level_applied"] = True
