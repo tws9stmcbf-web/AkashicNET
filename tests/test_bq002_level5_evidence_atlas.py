@@ -64,6 +64,19 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(candidate)
 
+    def test_source_bibliographic_metadata_swap_rejected(self):
+        candidate = copy.deepcopy(self.atlas)
+        first, second = candidate["sources"][0], candidate["sources"][1]
+        first["provenance"], second["provenance"] = second["provenance"], first["provenance"]
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_bounded_claim_text_mutation_rejected(self):
+        candidate = copy.deepcopy(self.atlas)
+        candidate["claims"][0]["text"] = "This source proves a complete transpersonal origin theory."
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_claim_type_mutation_rejected(self):
         candidate = copy.deepcopy(self.atlas)
         candidate["claims"][0]["claim_type"] = "HYPOTHESIS"
@@ -104,6 +117,14 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
                 for key in path[:-1]:
                     target = target[key]
                 target[path[-1]] = value
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate_spec)
+
+    def test_every_canonical_no_promotion_guard_is_required(self):
+        for key in module.REQUIRED_TRUE_PROMOTION_GUARDS:
+            with self.subTest(key=key):
+                candidate_spec = copy.deepcopy(self.spec)
+                candidate_spec["promotion_guards"][key] = False
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate_spec)
 
