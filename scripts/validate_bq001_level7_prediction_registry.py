@@ -49,6 +49,10 @@ FALSE_GUARDS = {
 EXPECTED_TEST_DOMAINS = {'TEST-BQ001-INDEPENDENT-REPLICATION': 'alternative_hypotheses_and_unresolved_models',
  'TEST-BQ001-PASTLIFE-PROSPECTIVE': 'reincarnation_case_research_and_critiques',
  'TEST-BQ001-RESUSCITATION-TIMELOCK': 'cardiac_arrest_and_nde_research'}
+EXPECTED_RECORD_PREFIXES = {
+    "MODEL-BQ001-BIOLOGICAL-DEPENDENCE": ("PRED-BQ001-BD-", "CHALLENGE-BQ001-BD-"),
+    "MODEL-BQ001-CONTINUITY": ("PRED-BQ001-CT-", "CHALLENGE-BQ001-CT-"),
+}
 
 def fail(message):
     raise ValueError(message)
@@ -61,6 +65,8 @@ def nonempty_string(value):
 def validate(registry, spec, batch1, batch3):
     if registry.get("registry_id") != "BQ001-PREDICTION-REGISTRY-LEVEL7-V0.1":
         fail("registry identity changed")
+    if registry.get("version") != "0.1.0":
+        fail("registry version changed")
     if registry.get("status") != "REVIEW_CANDIDATE":
         fail("prediction registry must remain a review candidate")
     if registry.get("question_id") != "BQ001" or registry.get("question_status") != "UNRESOLVED":
@@ -111,6 +117,11 @@ def validate(registry, spec, batch1, batch3):
         ):
             fail("potential disconfirming observations require unique IDs and substantive statements")
         all_challenge_ids.extend(challenge_ids)
+        prediction_prefix, challenge_prefix = EXPECTED_RECORD_PREFIXES[model["model_id"]]
+        if any(not item_id.startswith(prediction_prefix) for item_id in prediction_ids):
+            fail("prediction records are bound to the wrong model")
+        if any(not item_id.startswith(challenge_prefix) for item_id in challenge_ids):
+            fail("challenge records are bound to the wrong model")
         for records in (predictions, challenges):
             statements = {" ".join(item["statement"].split()).casefold() for item in records}
             if len(statements) != len(records):
