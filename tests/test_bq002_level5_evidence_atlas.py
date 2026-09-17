@@ -16,8 +16,8 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
         self.atlas = json.loads(module.ATLAS.read_text(encoding="utf-8"))
         self.spec = json.loads(module.SPEC.read_text(encoding="utf-8"))
 
-    def validate(self, atlas=None):
-        module.validate(atlas or self.atlas, self.spec)
+    def validate(self, atlas=None, spec=None):
+        module.validate(self.atlas if atlas is None else atlas, self.spec if spec is None else spec)
 
     def test_candidate_passes(self):
         self.validate()
@@ -48,6 +48,28 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_counter_source_moved_to_support_rejected(self):
+        candidate = copy.deepcopy(self.atlas)
+        claim = next(x for x in candidate["claims"] if x["claim_id"] == "CLAIM-BQ002-ATLAS-PREDICTIVE-01")
+        claim["source_ids"].append("SRC-BQ002-BRUINEBERG-2018")
+        claim["counter_source_ids"].remove("SRC-BQ002-BRUINEBERG-2018")
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_source_identity_and_provenance_mutations_rejected(self):
+        for key, value in (("doi", "10.0000/unrelated"), ("pmid", "0"), ("url", "https://example.invalid/"), ("provenance", "")):
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.atlas)
+                candidate["sources"][0][key] = value
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
+    def test_claim_type_mutation_rejected(self):
+        candidate = copy.deepcopy(self.atlas)
+        candidate["claims"][0]["claim_type"] = "HYPOTHESIS"
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
     def test_model_support_rejected(self):
         candidate = copy.deepcopy(self.atlas)
         candidate["claims"][0]["supports_models"] = ["MODEL-BQ002-COGNITIVE-GENERATION"]
@@ -59,6 +81,31 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
         candidate["coverage"].pop()
         with self.assertRaises(ValueError):
             self.validate(candidate)
+
+    def test_coverage_claim_domain_mismatch_rejected(self):
+        candidate = copy.deepcopy(self.atlas)
+        candidate["coverage"][0]["claim_ids"] = ["CLAIM-BQ002-ATLAS-DREAM-MEMORY-01"]
+        with self.assertRaises(ValueError):
+            self.validate(candidate)
+
+    def test_canonical_spec_boundary_mutations_rejected(self):
+        mutations = [
+            (("status",), "RESOLVED"),
+            (("public_beta_gate",), True),
+            (("graph", "truth_inference_allowed"), True),
+            (("graph", "edge_state_may_upgrade_evidence"), True),
+            (("promotion_guards", "rights_promotion_allowed"), True),
+            (("promotion_guards", "scientific_truth_inference_allowed"), True),
+        ]
+        for path, value in mutations:
+            with self.subTest(path=path):
+                candidate_spec = copy.deepcopy(self.spec)
+                target = candidate_spec
+                for key in path[:-1]:
+                    target = target[key]
+                target[path[-1]] = value
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate_spec)
 
     def test_promotion_and_boundary_mutations_rejected(self):
         paths = [
