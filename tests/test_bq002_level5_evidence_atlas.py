@@ -85,6 +85,21 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
     def test_candidate_passes(self):
         self.validate()
 
+    def test_canonical_open_question_mutation_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        candidate["open_questions"] = ["The complete origin of every thought is now proven."]
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_duplicate_claim_source_bindings_rejected(self):
+        for field in ("source_ids", "counter_source_ids"):
+            with self.subTest(field=field):
+                candidate = copy.deepcopy(self.atlas)
+                claim = next(item for item in candidate["claims"] if item[field])
+                claim[field].append(claim[field][0])
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
     def test_level_cannot_be_applied_before_review(self):
         candidate = copy.deepcopy(self.atlas)
         candidate["maturity"]["candidate_level_applied"] = True
