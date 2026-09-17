@@ -58,10 +58,12 @@
   ],
   "analysis_populations": [
     "ALL_ELIGIBLE_EVENTS",
+    "ALL_SURVIVORS",
+    "ALL_APPROACH_ELIGIBLE",
     "ALL_INTERVIEWED",
     "TARGET_EXPOSED",
     "VISUAL_CLAIM",
-    "TARGET_EXPOSED_PER_PROTOCOL"
+    "PER_PROTOCOL_TARGET_EXPOSED"
   ],
   "stage_2_primary_hypothesis": {
     "population": "TARGET_EXPOSED",
@@ -190,6 +192,84 @@
       "denominator": "participants_eligible_and_consenting_for_follow_up",
       "threshold": "descriptive_with_uncertainty",
       "mandatory": false
+    },
+    {
+      "id": "ASSET_MANIFEST_MATCH",
+      "numerator": "valid_exposures_with_rendered_assets_matching_frozen_manifest",
+      "denominator": "all_valid_exposures",
+      "threshold": "100%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "ENCRYPTED_PACKAGE_RECOVERY",
+      "numerator": "activations_with_authenticated_recoverable_evidence_package",
+      "denominator": "all_activations",
+      "threshold": ">=98%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "INDEPENDENT_DISPLAY_VERIFICATION",
+      "numerator": "activations_with_independent_evidence_intended_pixels_displayed_for_logged_interval",
+      "denominator": "all_claimed_valid_exposures",
+      "threshold": "freeze_after_commissioning",
+      "mandatory": true,
+      "render_acknowledgement_alone": "insufficient"
+    },
+    {
+      "id": "BLINDING_ASSESSMENT",
+      "numerator": "required_staff_cases_with_completed_frozen_blinding_assessment",
+      "denominator": "all_staff_cases_for_whom_assessment_required",
+      "threshold": "to_be_frozen",
+      "mandatory": true,
+      "missing_handling": "failure_of_completeness"
+    },
+    {
+      "id": "PRIMARY_INTERVIEW_TIMELINESS",
+      "numerator": "primary_interviews_inside_frozen_clinically_appropriate_window",
+      "denominator": "all_survivors_eligible_for_approach",
+      "threshold": "derive_from_simulation_and_clinical_review",
+      "mandatory": true
+    },
+    {
+      "id": "DECOY_SCORE_REPRODUCIBILITY",
+      "statistic": "independent_frozen_pipeline_agreement",
+      "data": "prespecified_synthetic_and_blinded_rehearsal_packets",
+      "threshold": "100_percent_computational_reproduction_human_tolerance_to_be_frozen",
+      "mandatory": true
+    },
+    {
+      "id": "UNAUTHORIZED_PLAINTEXT_TARGET_ACCESS",
+      "numerator": "confirmed_unauthorized_plaintext_access_before_permitted_unblinding",
+      "denominator": "all_activations_plus_access_log_audit_period",
+      "threshold": "0",
+      "mandatory": true,
+      "any_event": "PAUSED_PENDING_ADJUDICATION"
+    },
+    {
+      "id": "PREMATURE_UNBLINDING",
+      "numerator": "target_or_event_identity_released_before_complete_frozen_lock_sequence",
+      "denominator": "all_completed_primary_interviews_and_all_unblinding_requests",
+      "threshold": "0_analysed_cases",
+      "mandatory": true,
+      "any_occurrence": "PAUSED_PENDING_ADJUDICATION"
+    },
+    {
+      "id": "UNRESOLVED_VIEWING_ROUTE",
+      "numerator": "commissioned_configurations_with_unresolved_ordinary_visual_or_reflection_route",
+      "denominator": "all_commissioned_configurations",
+      "threshold": "0_before_activation",
+      "mandatory": true,
+      "any_event": "PAUSED_PENDING_ADJUDICATION"
+    },
+    {
+      "id": "INTERPRETER_CONFIDENTIALITY_COMPLIANCE",
+      "numerator": "interpreted_interviews_satisfying_frozen_confidentiality_and_role_separation",
+      "denominator": "all_interpreted_interviews",
+      "threshold": "100%",
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE"
     }
   ],
   "interpretation_ladder": [
@@ -266,10 +346,12 @@
   },
   "analysis_population_definitions": {
     "ALL_ELIGIBLE_EVENTS": "every eligible event regardless of device status, survival, consent or interview",
+    "ALL_SURVIVORS": "eligible events followed by hospital survival; survivor flow only",
+    "ALL_APPROACH_ELIGIBLE": "survivors meeting the frozen clinical and ethical approach rule",
     "ALL_INTERVIEWED": "eligible participant-events with a completed interview locked under the transcript procedure",
     "TARGET_EXPOSED": "ALL_INTERVIEWED participant-events with an auditable target sequence displayed during the prespecified resuscitation interval",
-    "VISUAL_CLAIM": "secondary_exploratory_target_exposed_subgroup_only",
-    "TARGET_EXPOSED_PER_PROTOCOL": "TARGET_EXPOSED records without a frozen critical integrity breach; sensitivity analysis only"
+    "VISUAL_CLAIM": "secondary_exploratory_TARGET_EXPOSED_subgroup_only",
+    "PER_PROTOCOL_TARGET_EXPOSED": "TARGET_EXPOSED records without a frozen critical integrity breach; supportive sensitivity analysis only"
   },
   "estimands": {
     "stage_1_feasibility": {
@@ -282,13 +364,13 @@
     "stage_2_target_correspondence": {
       "id": "EF-2",
       "population": "TARGET_EXPOSED",
-      "unit": "participant_event_with_one_primary_locked_interview",
+      "unit": "participant_event_with_one_primary_locked_interview_and_participant_and_site_clustering",
       "variable": "frozen_true_versus_decoy_participant_event_correspondence_score",
       "interpretation": "conditional_on_valid_exposure_and_later_reportability_no_prevalence_or_continuity_inference",
       "required_sensitivity": [
         "ALL_INTERVIEWED_flow",
         "unresolved_state_bounds",
-        "TARGET_EXPOSED_PER_PROTOCOL",
+        "PER_PROTOCOL_TARGET_EXPOSED",
         "site_stratified",
         "participant_cluster_aware",
         "negative_controls"
@@ -300,7 +382,7 @@
       "PASS",
       "FAIL",
       "NOT_EVALUABLE",
-      "HOLD"
+      "PAUSED_PENDING_ADJUDICATION"
     ],
     "unknown_and_unrecoverable": "remain_in_applicable_denominator_and_fail_completeness_or_recoverability",
     "zero_denominator": "NOT_EVALUABLE",
@@ -321,6 +403,11 @@
     "offsetting": "forbidden"
   },
   "module_references": {
-    "estimands_and_feasibility_gates": "ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md"
+    "estimands_and_feasibility_gates": {
+      "id": "EAP-001",
+      "version": "0.1",
+      "path": "ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md",
+      "state": "DRAFT_STAGE_0"
+    }
   }
 }
