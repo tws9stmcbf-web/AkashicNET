@@ -72,6 +72,18 @@ EXPECTED_OVERALL_PROGRESS = {
     "label": "COMPETING_MODELS_AND_CAUSAL_CHAIN_DOCUMENTED",
     "meaning": "The problem, causal chain, competing models, outcome families and research priorities are documented. This level does not estimate whether any intervention works or whether planetary transformation will occur.",
 }
+EXPECTED_SCALE = [
+    {"level": 1, "label": "QUESTION_FRAMED"},
+    {"level": 2, "label": "OUTCOMES_OPERATIONALISED"},
+    {"level": 3, "label": "COMPETING_MODELS_AND_CAUSAL_CHAIN_DOCUMENTED"},
+    {"level": 4, "label": "BOUNDED_EVIDENCE_BATCH_REVIEWED"},
+    {"level": 5, "label": "PROSPECTIVE_MULTI_METHOD_SIGNAL"},
+    {"level": 6, "label": "INDEPENDENT_REPLICATION"},
+    {"level": 7, "label": "CROSS_CULTURAL_AND_LONGITUDINAL_ROBUSTNESS"},
+    {"level": 8, "label": "CAUSAL_AND_IMPLEMENTATION_EVIDENCE"},
+    {"level": 9, "label": "INSTITUTIONAL_AND_ECOLOGICAL_OUTCOMES_REPLICATED"},
+    {"level": 10, "label": "DURABLE_BENEFIT_WITH_KNOWN_LIMITS"},
+]
 EXPECTED_PRIORITIES = [f"BQ011-P{i:02d}" for i in range(1, 13)]
 EXPECTED_CULTURAL_GOVERNANCE = {
     "indigenous_and_lineage_knowledge_is_not_generic_evidence",
@@ -190,6 +202,9 @@ def validate(spec, assessment, agenda, architecture):
         or type(progress.get("maximum")) is not int
     ):
         fail("overall progress contract changed")
+    scale = assessment.get("scale")
+    if scale != EXPECTED_SCALE or any(type(item.get("level")) is not int for item in scale or []):
+        fail("assessment scale contract changed")
 
     axes = assessment.get("axis_assessments", [])
     axis_map = {item.get("axis"): item for item in axes}

@@ -206,11 +206,15 @@ class BQ011AuthoringTests(unittest.TestCase):
 
     def test_numeric_progress_fields_reject_booleans(self):
         for key in ("level", "maximum"):
-            with self.subTest(scope="overall", key=key):
-                candidate = copy.deepcopy(self.assessment)
-                candidate["overall_progress"][key] = True
-                with self.assertRaises(ValueError):
-                    self.validate(assessment=candidate)
+            for remove in (False, True):
+                with self.subTest(scope="overall", key=key, remove=remove):
+                    candidate = copy.deepcopy(self.assessment)
+                    if remove:
+                        del candidate["overall_progress"][key]
+                    else:
+                        candidate["overall_progress"][key] = True
+                    with self.assertRaises(ValueError):
+                        self.validate(assessment=candidate)
 
         for item in self.assessment["axis_assessments"]:
             for key in ("level", "maximum"):
@@ -221,16 +225,30 @@ class BQ011AuthoringTests(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         self.validate(assessment=candidate)
 
+    def test_assessment_scale_change_and_removal_rejected(self):
+        candidate = copy.deepcopy(self.assessment)
+        del candidate["scale"]
+        with self.assertRaises(ValueError):
+            self.validate(assessment=candidate)
+
+        for index, item in enumerate(self.assessment["scale"]):
+            for key, value in (("level", True), ("label", "CONTRADICTORY_LEVEL")):
+                with self.subTest(index=index, key=key, removed=False):
+                    candidate = copy.deepcopy(self.assessment)
+                    candidate["scale"][index][key] = value
+                    with self.assertRaises(ValueError):
+                        self.validate(assessment=candidate)
+                with self.subTest(index=index, key=key, removed=True):
+                    candidate = copy.deepcopy(self.assessment)
+                    del candidate["scale"][index][key]
+                    with self.assertRaises(ValueError):
+                        self.validate(assessment=candidate)
+
     def test_priority_rank_rejects_boolean(self):
         candidate = copy.deepcopy(self.agenda)
         candidate["priorities"][0]["rank"] = True
         with self.assertRaises(ValueError):
             self.validate(agenda=candidate)
-            with self.subTest(key=key, removed=True):
-                candidate = copy.deepcopy(self.assessment)
-                del candidate["overall_progress"][key]
-                with self.assertRaises(ValueError):
-                    self.validate(assessment=candidate)
 
     def test_assessment_axis_promotion_rejected(self):
         candidate = copy.deepcopy(self.assessment)
