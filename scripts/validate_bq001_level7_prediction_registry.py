@@ -15,6 +15,14 @@ EXPECTED_TESTS = {
     "TEST-BQ001-PASTLIFE-PROSPECTIVE",
     "TEST-BQ001-INDEPENDENT-REPLICATION",
 }
+EXPECTED_SAFEGUARDS = {
+    "guardian_consent_required",
+    "child_assent_when_developmentally_possible",
+    "data_minimisation_required",
+    "public_identification_forbidden",
+    "family_contact_pressure_forbidden",
+    "culturally_situated_interpretation_required",
+}
 FALSE_GUARDS = {
     "canonical_promotion_applied",
     "evidence_promotion_applied",
@@ -30,6 +38,10 @@ FALSE_GUARDS = {
 
 def fail(message):
     raise ValueError(message)
+
+
+def nonempty_string(value):
+    return isinstance(value, str) and bool(value.strip())
 
 
 def validate(registry, spec, batch1, batch3):
@@ -61,6 +73,20 @@ def validate(registry, spec, batch1, batch3):
         challenges = model.get("potential_disconfirming_observations", [])
         if len(predictions) < 2 or len(challenges) < 2:
             fail("each model requires predictions and potential disconfirming observations")
+        prediction_ids = [item.get("prediction_id") for item in predictions]
+        if len(set(prediction_ids)) != len(prediction_ids) or any(
+            not nonempty_string(item.get(key))
+            for item in predictions
+            for key in ("prediction_id", "statement", "boundary")
+        ):
+            fail("predictions require unique IDs and substantive statements and boundaries")
+        challenge_ids = [item.get("observation_id") for item in challenges]
+        if len(set(challenge_ids)) != len(challenge_ids) or any(
+            not nonempty_string(item.get(key))
+            for item in challenges
+            for key in ("observation_id", "statement")
+        ):
+            fail("potential disconfirming observations require unique IDs and substantive statements")
         if any(item.get("not_decisive_alone") is not True for item in challenges):
             fail("disconfirming observations must preserve auxiliary-assumption caution")
 
@@ -71,9 +97,11 @@ def validate(registry, spec, batch1, batch3):
         rules = test.get("outcome_rules", {})
         if set(rules) != {"biological_dependence_strengthened", "continuity_strengthened", "neutral_or_ambiguous"}:
             fail("each test requires symmetric and neutral outcome rules")
+        if any(not nonempty_string(value) for value in rules.values()):
+            fail("outcome rules must contain substantive symmetric and neutral statements")
     past_life = next(item for item in tests if item.get("test_id") == "TEST-BQ001-PASTLIFE-PROSPECTIVE")
     safeguards = past_life.get("safeguards", {})
-    if not safeguards or any(value is not True for value in safeguards.values()):
+    if set(safeguards) != EXPECTED_SAFEGUARDS or any(value is not True for value in safeguards.values()):
         fail("child privacy and cultural safeguards must remain enabled")
 
     known_ids = {item.get("source_id") for item in batch1.get("sources", []) + batch3.get("sources", [])}
