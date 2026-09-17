@@ -60,6 +60,45 @@ FALSE_GUARDS = {
 }
 
 
+# Reviewed qualification and notice contracts; changes require explicit review.
+EXPECTED_QUALIFICATIONS = {'CLAIM-BQ002-ATLAS-DREAM-MEMORY-01': (['Association does not establish causal direction or '
+                                        'explain all dream content.'],
+                                       'Which mechanisms link pre-sleep learning, dream '
+                                       'incorporation and later performance remains unresolved.'),
+ 'CLAIM-BQ002-ATLAS-GROUNDED-01': (['The contribution and necessity of grounding vary across '
+                                    'theories, tasks and types of representation.'],
+                                   'No single grounded account currently explains every abstract, '
+                                   'linguistic or spontaneous thought.'),
+ 'CLAIM-BQ002-ATLAS-NETWORKS-01': (['Task and construct heterogeneity limits inference from '
+                                    'spatial convergence to a single mechanism or origin.'],
+                                   'The temporal and causal contributions of interacting networks '
+                                   'to specific thought content remain unresolved.'),
+ 'CLAIM-BQ002-ATLAS-PHENOMENAL-01': (['This is a boundary on inference, not evidence for a '
+                                      'transpersonal or non-biological source.'],
+                                     'The relationship between mechanistic explanation and '
+                                     'phenomenal experience remains disputed.'),
+ 'CLAIM-BQ002-ATLAS-PREDICTIVE-01': (['The framework has competing interpretations and does not '
+                                      'uniquely specify the origin of every thought.'],
+                                     'Evidence must distinguish particular implementations and '
+                                     "predictions rather than treating the framework's breadth as "
+                                     'confirmation.'),
+ 'CLAIM-BQ002-ATLAS-SPONTANEOUS-01': (['The category is heterogeneous and review-level frameworks '
+                                       'are not unique causal explanations.'],
+                                      'Prospective measurements do not yet reconstruct a complete '
+                                      'causal path from antecedent processes to a particular '
+                                      'conscious thought.')}
+EXPECTED_NOTICES = {'SRC-BQ002-BARSALOU-2008': None,
+ 'SRC-BQ002-BRUINEBERG-2018': None,
+ 'SRC-BQ002-CHRISTOFF-2016': None,
+ 'SRC-BQ002-FOX-2015': {'doi': '10.1016/j.neuroimage.2016.02.052',
+                        'pmid': '27320028',
+                        'type': 'CORRIGENDUM'},
+ 'SRC-BQ002-FRISTON-KIEBEL-2009': None,
+ 'SRC-BQ002-HUDACHEK-WAMSLEY-2023': None,
+ 'SRC-BQ002-SELI-2018': None,
+ 'SRC-BQ002-SMALLWOOD-SCHOOLER-2015': None}
+
+
 def fail(message):
     raise ValueError(message)
 
@@ -69,6 +108,11 @@ def validate(atlas, spec):
         fail("canonical BQ002 spec must remain UNRESOLVED")
     if spec.get("public_beta_gate") is not False:
         fail("canonical BQ002 public beta gate must remain closed")
+    canonical_claims = spec.get("claims")
+    if not isinstance(canonical_claims, list) or not canonical_claims:
+        fail("canonical claims must be present")
+    if any(claim.get("supports_models") != [] for claim in canonical_claims):
+        fail("canonical claims must retain empty model support")
     graph = spec.get("graph", {})
     if graph.get("truth_inference_allowed") is not False or graph.get("edge_state_may_upgrade_evidence") is not False:
         fail("canonical graph truth and evidence-upgrade boundaries weakened")
@@ -101,6 +145,8 @@ def validate(atlas, spec):
     if set(source_map) != EXPECTED_SOURCES or len(source_map) != len(sources):
         fail("source set changed or duplicated")
     for source in sources:
+        if source.get("related_notice") != EXPECTED_NOTICES[source["source_id"]]:
+            fail("source related-notice provenance changed")
         if not source.get("title") or not source.get("provenance"):
             fail("source provenance incomplete")
         expected_doi, expected_pmid, expected_url = EXPECTED_SOURCE_IDENTITIES[source["source_id"]]
@@ -130,6 +176,8 @@ def validate(atlas, spec):
             fail("claim type changed")
         if claim.get("domain") != expected_domain:
             fail("claim domain changed")
+        if (claim.get("limitations"), claim.get("unresolved_gap")) != EXPECTED_QUALIFICATIONS[claim_id]:
+            fail("bounded claim qualifications changed")
         if claim.get("text") != expected_text:
             fail("bounded claim text changed")
         source_ids = claim.get("source_ids", [])
