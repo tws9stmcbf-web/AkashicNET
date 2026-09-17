@@ -156,7 +156,7 @@ Absence of a scalp EEG signal is not treated as proof of absent brain activity, 
 9. Audio-record, transcribe and cryptographically lock the transcript.
 10. Open target/event records only after lock confirmation.
 
-The complete neutral script, contamination audit, distress/stop rules, interpreter boundary and transcript-lock procedure are specified in [BIM-001 v0.1](./BLINDED-INTERVIEW-MANUAL-v0.1.md).
+The complete neutral script, contamination audit, distress/stop rules, interpreter boundary and transcript-lock procedure are specified in [INT-001 v0.1](./BLINDED-INTERVIEW-MANUAL-v0.1.md).
 
 ## Causal model
 
@@ -320,7 +320,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [ ] clinical review
 - [ ] statistical/adversarial review
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
-- [x] blinded interview and contamination-audit manual — draft BIM-001 v0.1; clinical, ethics and methods validation pending
+- [x] blinded interview and contamination-audit manual — draft INT-001 v0.1; clinical, ethics and methods validation pending
 - [ ] blinded scoring manual
 - [ ] simulation and sample-size report
 - [ ] ethics/data-protection outline
