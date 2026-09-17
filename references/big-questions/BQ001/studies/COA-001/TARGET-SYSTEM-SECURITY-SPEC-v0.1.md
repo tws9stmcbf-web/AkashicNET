@@ -353,9 +353,11 @@ Every event MUST receive one or more machine-readable states:
 - `PREMATURE_UNBLIND`
 - `CASE_LINKAGE_UNCERTAIN`
 - `PACKAGE_UNRECOVERABLE`
+- `DEVICE_STATUS_UNKNOWN`
+- `TARGET_EXPOSURE_UNKNOWN`
 - `SAFETY_SHUTDOWN`
 
-Failure records MUST remain in the complete event denominator. A record may be unsuitable for target efficacy analysis while still contributing to feasibility and safety results.
+Event eligibility MUST be determined independently of device, package, timing and exposure recoverability. Unknown or unrecoverable states MUST remain in the complete event denominator and MUST count against the applicable completeness gate. A record may be unsuitable for target efficacy analysis while still contributing to feasibility and safety results.
 
 ## Commissioning tests
 
