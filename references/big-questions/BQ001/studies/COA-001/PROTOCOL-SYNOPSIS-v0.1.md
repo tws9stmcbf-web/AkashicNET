@@ -253,6 +253,7 @@ Every participating site must report this complete flow:
 - Random target generation occurs only after activation.
 - No person with participant contact can access targets before transcript lock.
 - Device audit logs are append-only and independently checked.
+- The end-to-end trust zones, data-object flows, role access, metadata/side-channel controls, unblinding state machine and adversarial leakage tests are specified in [DFL-001 v0.1](./DATA-FLOW-ACCESS-AND-LEAKAGE-THREAT-MODEL-v0.1.md).
 - Free recall precedes recognition.
 - Decoys preserve target frequency, timing and visual complexity under the transcript-independent rules in [SDC-001 v0.1](./BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md).
 - Scorers are blind to true/decoy assignment and study hypothesis where practical.
@@ -322,6 +323,7 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [ ] clinical review
 - [ ] statistical/adversarial review
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
+- [x] end-to-end data-flow/access matrix and leakage threat model — draft DFL-001 v0.1; implementation, penetration, physical and independent adversarial validation pending
 - [x] blinded interview and contamination-audit manual — draft INT-001 v0.1; clinical, ethics and methods validation pending
 - [x] blinded scoring and decoy-construction manual — draft SDC-001 v0.1; statistical, psychometric, security and simulation validation pending
 - [x] Stage-2 endpoint/SAP draft freeze candidate — SAP-001 v0.1; independent statistical and psychometric review pending
