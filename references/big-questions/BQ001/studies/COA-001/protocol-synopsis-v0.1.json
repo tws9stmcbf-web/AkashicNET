@@ -1,0 +1,168 @@
+{
+  "schema_version": "0.1",
+  "study_id": "COA-001",
+  "title": "Continuity of Awareness During Resuscitation",
+  "version": "0.1",
+  "dated": "2026-09-17",
+  "state": "DRAFT_STAGE_0_METHOD_DEVELOPMENT",
+  "parent_question": {
+    "id": "BQ001",
+    "status": "UNRESOLVED",
+    "depth_level": "8/10",
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_public_synthesis": false,
+    "website_promotion": false
+  },
+  "construct": {
+    "primary": "reportable_awareness_with_time_or_event_linked_episodic_content",
+    "excluded_as_primary": [
+      "broad_consciousness",
+      "sentience",
+      "personal_survival",
+      "afterlife"
+    ],
+    "continuity_definition": "temporal relation between a documented resuscitation interval and later reportable content"
+  },
+  "research_question": "Can specific, independently timed awareness reports be matched to events occurring during documented cardiac-arrest/resuscitation intervals, under conditions designed to exclude ordinary visual access, retrospective cueing and post-event information leakage?",
+  "stages": [
+    {
+      "id": 0,
+      "label": "protocol_construction",
+      "participant_recruitment": false,
+      "truth_inference": false
+    },
+    {
+      "id": 1,
+      "label": "multi_site_feasibility_pilot",
+      "provisional_sites": "3-5",
+      "provisional_eligible_events": "150-300",
+      "primary_outcome": "protocol_feasibility"
+    },
+    {
+      "id": 2,
+      "label": "confirmatory_multi_site_study",
+      "start_condition": "all mandatory Stage-1 gates pass and independent review, ethics approvals, registration and simulation-based sample size are complete"
+    }
+  ],
+  "analysis_populations": [
+    "ALL_INTERVIEWED",
+    "TARGET_EXPOSED",
+    "VISUAL_CLAIM",
+    "PER_PROTOCOL"
+  ],
+  "stage_2_primary_hypothesis": {
+    "population": "TARGET_EXPOSED",
+    "outcome": "pre-registered true-versus-decoy time-aligned visual target score",
+    "null": "true and decoy assignments are exchangeable",
+    "alternative": "true time-aligned sequences receive higher scores than the frozen randomization distribution"
+  },
+  "feasibility_gates": [
+    {
+      "id": "complete_event_denominator",
+      "threshold": ">=98%",
+      "mandatory": true
+    },
+    {
+      "id": "recoverable_device_status",
+      "threshold": ">=98%",
+      "mandatory": true
+    },
+    {
+      "id": "valid_target_activation",
+      "threshold": ">=85%",
+      "mandatory": true
+    },
+    {
+      "id": "complete_target_logs",
+      "threshold": ">=95%",
+      "mandatory": true
+    },
+    {
+      "id": "clock_sync",
+      "threshold": ">=95% within +/-1 second",
+      "mandatory": true
+    },
+    {
+      "id": "transcript_lock_before_unblinding",
+      "threshold": "100%",
+      "mandatory": true
+    },
+    {
+      "id": "critical_interviewer_unblinding",
+      "threshold": "<=2%",
+      "mandatory": true
+    },
+    {
+      "id": "contamination_audit",
+      "threshold": ">=95%",
+      "mandatory": true
+    },
+    {
+      "id": "dual_coder_coverage",
+      "threshold": "100% of scorable reports",
+      "mandatory": true
+    },
+    {
+      "id": "categorical_agreement",
+      "threshold": "Cohen kappa >=0.80",
+      "mandatory": true
+    },
+    {
+      "id": "continuous_agreement",
+      "threshold": "ICC >=0.90",
+      "mandatory": true
+    },
+    {
+      "id": "device_related_serious_adverse_events",
+      "threshold": "0",
+      "mandatory": true
+    },
+    {
+      "id": "resuscitation_interference",
+      "threshold": "0 documented instances",
+      "mandatory": true
+    }
+  ],
+  "interpretation_ladder": [
+    {
+      "level": 1,
+      "label": "PROTOCOL_FEASIBLE",
+      "bq001_effect": "none"
+    },
+    {
+      "level": 2,
+      "label": "TIMED_AWARENESS_SIGNAL",
+      "bq001_effect": "review_candidate_only"
+    },
+    {
+      "level": 3,
+      "label": "PERCEPTION_ANOMALY",
+      "bq001_effect": "evidence_candidate_no_model_support"
+    },
+    {
+      "level": 4,
+      "label": "INDEPENDENT_REPLICATION",
+      "bq001_effect": "eligible_for_comparative_model_review"
+    },
+    {
+      "level": 5,
+      "label": "CONTINUITY_RELEVANCE",
+      "bq001_effect": "may_update_only_after_governance_review"
+    }
+  ],
+  "required_before_recruitment": [
+    "institutional_principal_investigator",
+    "ethics_or_irb_approval",
+    "hospital_and_resuscitation_service_agreements",
+    "deferred_consent_framework",
+    "data_protection_impact_assessment",
+    "clinical_device_safety_review",
+    "prospective_trial_registration",
+    "independent_statistical_oversight"
+  ],
+  "source_issue": 356,
+  "artifact_role": "method_development_not_preregistration_or_evidence"
+}
