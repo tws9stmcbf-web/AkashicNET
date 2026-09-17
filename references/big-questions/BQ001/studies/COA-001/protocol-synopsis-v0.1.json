@@ -410,67 +410,59 @@
       "state": "DRAFT_STAGE_0"
     },
     "blinded_interview_manual": {
-      "id": "BIM-001",
+      "id": "INT-001",
       "version": "0.1",
       "path": "BLINDED-INTERVIEW-MANUAL-v0.1.md",
-      "state": "DRAFT_NOT_VALIDATED"
+      "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED"
     }
   },
   "interview_manual": {
-    "id": "BIM-001",
+    "id": "INT-001",
     "version": "0.1",
     "path": "BLINDED-INTERVIEW-MANUAL-v0.1.md",
-    "state": "DRAFT_NOT_VALIDATED",
+    "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED",
     "recruitment_authorized": false,
-    "primary_interview": "first_completed_locked_interview_within_frozen_window",
+    "primary_interview": "first_eligible_completed_interview_within_frozen_window",
     "order": [
-      "readiness_and_metadata",
+      "orientation_and_permission",
       "uninterrupted_free_narrative",
-      "participant_generated_chronology",
-      "neutral_perceptual_detail",
-      "claim_decomposition_and_source_monitoring",
-      "visual_target_free_recall",
-      "auditory_free_recall",
-      "environmental_event_recall",
-      "recognition_task",
+      "participant_defined_temporal_map",
+      "open_modality_clarification",
+      "environmental_free_recall",
+      "structured_phenomenology",
+      "free_target_recall",
+      "forced_choice_recognition",
       "contamination_and_exposure_audit",
-      "closure_and_welfare_check"
+      "closing_and_support"
     ],
     "required_boundaries": [
-      "free_recall_before_recognition",
-      "interviewer_blind_to_targets_and_sealed_event_content",
-      "no_target_or_event_unblinding_before_transcript_lock",
-      "participant_generated_timing_not_assumed_clinical_timing",
-      "distress_and_capacity_stop_rules",
-      "append_only_post_lock_corrections",
+      "free_narrative_before_structured_target_and_recognition_questions",
+      "interviewer_blind_to_targets_target_status_room_event_logs_and_outcome_relevant_clinical_details",
+      "source_recording_and_final_transcript_locked_before_target_or_event_record_release",
+      "participant_defined_timing_separated_from_clinical_timing",
+      "continued_assent_and_distress_capacity_stop_rules",
+      "append_only_post_lock_amendments",
       "primary_interview_not_replaced_by_later_interview"
     ],
     "prohibited_prompts": [
-      "out_of_body_or_tunnel_language_unless_participant_introduced",
-      "target_activation_or_target_category_disclosure",
-      "accuracy_reinforcement",
-      "metaphysical_religious_skeptical_or_diagnostic_interpretation"
+      "out_of_body_near_death_hidden_target_survival_or_paranormal_language_before_participant_or_designated_section",
+      "target_activation_appearance_frequency_or_location_disclosure",
+      "accuracy_reinforcement_or_null_report_disappointment",
+      "spiritual_religious_materialist_paranormal_or_diagnostic_interpretation_as_fact"
     ],
-    "blinding_states": [
-      "BLIND_CONFIRMED",
-      "BLINDNESS_UNKNOWN",
-      "MINOR_CONTEXT_EXPOSURE",
-      "CRITICAL_INTERVIEWER_UNBLIND",
-      "PREMATURE_UNBLIND"
-    ],
-    "contamination_codes": [
-      "NONE_REPORTED",
-      "STAFF_EXPOSURE",
-      "FAMILY_OR_VISITOR_EXPOSURE",
-      "PRIOR_INTERVIEW_EXPOSURE",
-      "RECORD_OR_PORTAL_EXPOSURE",
-      "LOCATION_REVISIT",
-      "MEDIA_OR_SOCIAL_EXPOSURE",
-      "STUDY_SYSTEM_EXPOSURE",
-      "PARTICIPANT_PUBLIC_DISCLOSURE",
-      "SOURCE_TIMING_UNKNOWN",
-      "CONTENT_UNKNOWN",
-      "AUDIT_INCOMPLETE"
+    "interview_states": [
+      "INTERVIEWER_BLIND_CONFIRMED",
+      "INTERVIEWER_BLIND_UNCERTAIN",
+      "INTERVIEWER_CRITICAL_UNBLINDING",
+      "NO_KNOWN_CONTAMINATION",
+      "CONTAMINATION_POSSIBLE",
+      "CONTAMINATION_CONFIRMED",
+      "CONTAMINATION_AUDIT_INCOMPLETE",
+      "TRANSCRIPT_LOCKED_BEFORE_UNBLINDING",
+      "PREMATURE_UNBLINDING",
+      "PRIMARY_INTERVIEW_INCOMPLETE",
+      "PARTICIPANT_WITHDREW",
+      "CLINICAL_STOP"
     ]
   }
 }
