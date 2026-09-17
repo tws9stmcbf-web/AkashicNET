@@ -19,6 +19,32 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
     def validate(self, atlas=None, spec=None):
         module.validate(self.atlas if atlas is None else atlas, self.spec if spec is None else spec)
 
+    def test_canonical_support_edge_rejected(self):
+        candidate = copy.deepcopy(self.spec)
+        candidate["claims"][0]["supports_models"] = ["MODEL-BQ002-COGNITIVE-GENERATION"]
+        with self.assertRaises(ValueError):
+            self.validate(spec=candidate)
+
+    def test_corrigendum_mutations_rejected(self):
+        for field in (None, "doi", "pmid", "type"):
+            with self.subTest(field=field):
+                candidate = copy.deepcopy(self.atlas)
+                source = next(s for s in candidate["sources"] if s["source_id"] == "SRC-BQ002-FOX-2015")
+                if field is None:
+                    del source["related_notice"]
+                else:
+                    source["related_notice"][field] = "unrelated"
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
+    def test_claim_qualification_promotion_rejected(self):
+        for key, value in (("limitations", ["This proves all thoughts arise transpersonally."]), ("unresolved_gap", "The complete origin is resolved.")):
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.atlas)
+                candidate["claims"][0][key] = value
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
