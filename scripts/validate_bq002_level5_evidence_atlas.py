@@ -173,7 +173,14 @@ EXPECTED_CANONICAL_MODELS = {'MODEL-BQ002-COGNITIVE-GENERATION': {'model_id': 'M
                                 'position': 'Mechanistic accounts of thought content and access '
                                             'may remain incomplete as accounts of why thought is '
                                             'subjectively experienced.',
-                                'status': 'UNRESOLVED'}}
+                                           'status': 'UNRESOLVED'}}
+EXPECTED_OPEN_QUESTIONS = [
+    "Which measurable processes generate or constrain specific thought content?",
+    "How do memory, perception, affect, language and action interact in spontaneous and deliberate thought?",
+    "What distinguishes the causal origin of a thought from retrospective awareness or report of it?",
+    "Which findings explain thought content, and which bear on subjective experience?",
+    "Which claims are empirical, philosophical, interpretive, testimonial or speculative?",
+]
 
 def fail(message):
     raise ValueError(message)
@@ -184,6 +191,8 @@ def validate(atlas, spec):
         fail("canonical conclusion policy must remain undetermined")
     if spec.get("claims") != EXPECTED_CANONICAL_CLAIMS:
         fail("canonical bounded claim contract changed")
+    if spec.get("open_questions") != EXPECTED_OPEN_QUESTIONS:
+        fail("canonical open-question contract changed")
     canonical_models = spec.get("models", [])
     if {m.get("model_id"): m for m in canonical_models} != EXPECTED_CANONICAL_MODELS:
         fail("canonical bounded model definitions changed")
@@ -274,6 +283,8 @@ def validate(atlas, spec):
             fail("bounded claim text changed")
         source_ids = claim.get("source_ids", [])
         counter_ids = claim.get("counter_source_ids", [])
+        if len(source_ids) != len(set(source_ids)) or len(counter_ids) != len(set(counter_ids)):
+            fail("claim source bindings must be unique")
         if set(source_ids) != expected_source_ids or set(counter_ids) != expected_counter_ids:
             fail("claim source binding invalid")
         if claim.get("supports_models") != []:
