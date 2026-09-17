@@ -51,8 +51,9 @@ def status_text(source: str) -> str:
 
 
 product_status = re.compile(
-    r"\bAkashicNET(?:[ \t]+(?:engine|product))?[ \t·:–—-]*"
-    r"(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
+    r"\bAkashicNET\b"
+    r"(?:[ \t·:–—-]+(?:engine|product|is|release|status|version|current))*"
+    r"[ \t·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
     r"(?:Pre-alpha|Public Beta)[ \t·:–—-]*AkashicNET\b",
     re.IGNORECASE,
 )
@@ -98,16 +99,25 @@ if "progress toward v0.17.0" not in status_text(progress):
 
 # Reject affirmative release claims even when the correct disclaimers also survive.
 release_claim = re.compile(
-    r"v0\.16\.(?:0-beta\.2|7)\b[ \t]*(?:is[ \t]+)?"
-    r"(?:a[ \t]+)?(?:sealed(?:[ \t]+release)?|released|READY[ \t]*/[ \t]*SEALED)\b|"
+    r"v0\.16\.(?:0-beta\.2|7)\b[ \t]*(?:"
+    r"(?:is[ \t]+)?(?:a[ \t]+)?sealed(?:[ \t]+release)?|"
+    r"released|READY[ \t]*/[ \t]*SEALED|"
+    r"is[ \t]+(?:the[ \t]+)?(?:current[ \t]+)?release"
+    r")\b|"
     r"(?:sealed[ \t]+release|released)[ \t·:–—-]*v0\.16\.(?:0-beta\.2|7)\b",
     re.IGNORECASE,
 )
 if release_claim.search(status_text(home + "\n" + progress)):
     fail("unsealed candidate or site checkpoint presented as a release")
 
+bq001_resolved = re.compile(
+    r"\bBQ001\b[ \t·:–—-]*(?:is[ \t]+|status[ \t·:–—-]*)?RESOLVED\b",
+    re.IGNORECASE,
+)
+if bq001_resolved.search(status_text(home + "\n" + progress)):
+    fail("public status surface contradicts BQ001 UNRESOLVED")
+
 for forbidden in (
-    "BQ001 · RESOLVED",
     "truth inference enabled",
     "scientifically confirmed",
     "canonical public integration complete",
