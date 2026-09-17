@@ -56,6 +56,7 @@ class CurrentPublicStatusTests(unittest.TestCase):
             "AkashicNET engine · Pre-alpha", "AkashicNET v0.16.7",
             "AkashicNET · Public Beta", "Public Beta · AkashicNET",
             "AkashicNET <span>v0.16.0-beta.2</span>",
+            "AkashicNET is v0.16.7", "AkashicNET release: v0.16.7",
         ):
             with self.subTest(label=label):
                 self.assert_rejected(extra=f"<p>{label}</p>")
@@ -71,8 +72,12 @@ class CurrentPublicStatusTests(unittest.TestCase):
 
     def test_affirmative_release_claims_rejected(self):
         for version in ("v0.16.0-beta.2", "v0.16.7"):
-            for claim in (f"{version} is a sealed release", f"{version} READY / SEALED",
-                          f"Released {version}"):
+            for claim in (
+                f"{version} is a sealed release",
+                f"{version} is the current release",
+                f"{version} READY / SEALED",
+                f"Released {version}",
+            ):
                 for surface in ("home", "progress"):
                     with self.subTest(claim=claim, surface=surface):
                         self.assert_rejected(**{surface: lambda text, claim=claim:
@@ -94,7 +99,7 @@ class CurrentPublicStatusTests(unittest.TestCase):
 
     def test_bq001_and_no_promotion_boundaries_required(self):
         self.assert_rejected(progress=lambda text:
-            text.replace("BQ001 remains UNRESOLVED", "BQ001 · RESOLVED"))
+            text + "<p>BQ001 is RESOLVED</p>")
         self.assert_rejected(progress=lambda text: text + "truth inference enabled")
 
 
