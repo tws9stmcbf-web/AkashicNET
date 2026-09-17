@@ -8,7 +8,9 @@
 
 ## Plain-language purpose
 
-COA-001 asks whether a person who survives an in-hospital cardiac arrest can later report specific, independently timed information from the resuscitation interval under conditions designed to exclude ordinary visual access, information leakage and flexible after-the-fact scoring.
+COA-001 asks whether a person who survives an in-hospital cardiac arrest can later report specific, independently timed information from the resuscitation interval under conditions designed to reduce, measure and test ordinary visual access, information leakage and flexible after-the-fact scoring.
+
+The directly observed outcome is a later locked report and its correspondence with independently timed information. Awareness during the interval is a latent construct inferred only indirectly through that proxy. A correspondence, even if statistically unusual, does not by itself establish awareness, continuity, personal survival or an afterlife.
 
 The first study does **not** test whether consciousness survives death. It tests whether the research procedure is reliable enough to justify a larger confirmatory study.
 
@@ -17,17 +19,19 @@ The first study does **not** test whether consciousness survives death. It tests
 | Term | COA-001 use |
 |---|---|
 | Consciousness | Umbrella concept; not treated as a single directly measured variable |
-| Awareness | Operational target: later reportable experience with time- or event-linked episodic content |
+| Awareness | Latent construct of interest; not directly observed. Its operational proxy is a later locked report with time- or event-linked episodic content |
 | Sentience | Out of scope for v0.1; the capacity for subjective or valenced experience is too broad for the first protocol |
-| Continuity | A temporal relation between a clinically documented resuscitation interval and later reportable content; not personal survival by definition |
-| Anomalous perception | A target or event correspondence that survives preregistered sensory-access, leakage, timing, multiplicity and scoring controls |
+| Continuity | A hypothesized temporal relation between a clinically documented resuscitation interval and later reportable content; not directly measured and not personal survival by definition |
+| Anomalous perception | A target or event correspondence that remains after preregistered tests of sensory access, leakage, timing, multiplicity and scoring bias |
 | Survival / afterlife | Not a direct endpoint and never inferred from one case or one study |
 
 Personal-identity continuity, meta-awareness continuity, information continuity and relational continuity remain separate hypotheses. COA-001 directly addresses none of them until the lower interpretation levels have been passed.
 
+The proxy cannot by itself distinguish encoding during CPR from peri-arrest or post-return-of-spontaneous-circulation encoding. Temporal attribution therefore requires prespecified markers, uncertainty bounds and sensitivity analyses.
+
 ## Research question
 
-> Can specific, independently timed awareness reports be matched to events occurring during documented cardiac-arrest/resuscitation intervals, under conditions designed to exclude ordinary visual access, retrospective cueing and post-event information leakage?
+> Can specific later reports be matched to independently timed information from documented cardiac-arrest/resuscitation intervals, under conditions designed to reduce, measure and test ordinary visual access, retrospective cueing, temporal misattribution and post-event information leakage?
 
 ## Programme stages
 
@@ -70,15 +74,15 @@ Stage 2 may start only if every mandatory Stage-1 gate passes, independent revie
 
 ### Event cohort
 
-Include an event in the denominator when all of the following apply:
+Event eligibility is determined only from clinical and deployment facts that do not depend on later data completeness or device performance. Include an event in the denominator when all of the following apply:
 
 1. adult patient (18 years or older);
-2. in-hospital cardiac arrest in a participating, activated study area;
-3. chest compressions initiated;
-4. arrest and resuscitation times available from clinical records;
-5. study device status and exposure status recoverable, including failed activation.
+2. in-hospital cardiac arrest in a participating study area during a prespecified study-active period, whether or not the study device activates;
+3. chest compressions initiated.
 
-The denominator includes device failures, deaths and non-interviewed survivors. These outcomes cannot be silently dropped.
+Clinical timing availability, device status, activation status, exposure status, survival, consent and interview completion are outcomes or flow states, not eligibility conditions. Missing or unrecoverable timing/device information must be recorded as `UNKNOWN` or `UNRECOVERABLE`; it cannot remove an otherwise eligible event.
+
+The denominator includes every eligible event, including device failures, deleted or unrecoverable logs, uncertain exposure, deaths and non-interviewed survivors. These outcomes cannot be silently dropped.
 
 ### Interview cohort
 
@@ -177,7 +181,7 @@ This is a progression hypothesis, not an efficacy hypothesis.
 
 ### Stage-2 confirmatory target hypothesis
 
-Among the prespecified TARGET-EXPOSED population, locked reports will identify or correspond more strongly to their true time-aligned visual target sequence than to exchangeable blinded decoy sequences under the frozen scoring rule.
+Among the prespecified TARGET-EXPOSED population, locked reports will identify or correspond more strongly to their true time-aligned visual target sequence than to exchangeable blinded decoy sequences under the frozen scoring rule. This correspondence endpoint is not, by itself, proof of awareness or continuity.
 
 - **Null:** true and decoy assignments are exchangeable; performance does not exceed the preregistered chance/control distribution.
 - **Alternative:** true time-aligned sequences receive higher scores than expected under the frozen randomization test.
