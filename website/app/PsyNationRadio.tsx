@@ -114,12 +114,25 @@ export default function PsyNationRadio() {
   }, [loaded]);
 
   useEffect(() => {
-    if (loaded || !restoreEpisodeFocusRef.current) return;
+    if (loaded) {
+      restoreEpisodeFocusRef.current = false;
+      return;
+    }
+    if (!restoreEpisodeFocusRef.current) return;
+    const cancelRestore = () => { restoreEpisodeFocusRef.current = false; };
     const frame = window.requestAnimationFrame(() => {
-      episodeSelectRef.current?.focus({ preventScroll: true });
+      if (restoreEpisodeFocusRef.current) {
+        episodeSelectRef.current?.focus({ preventScroll: true });
+      }
       restoreEpisodeFocusRef.current = false;
     });
-    return () => window.cancelAnimationFrame(frame);
+    document.addEventListener("pointerdown", cancelRestore, { capture: true, once: true });
+    document.addEventListener("keydown", cancelRestore, { capture: true, once: true });
+    return () => {
+      window.cancelAnimationFrame(frame);
+      document.removeEventListener("pointerdown", cancelRestore, true);
+      document.removeEventListener("keydown", cancelRestore, true);
+    };
   }, [loaded, selectedId]);
 
   function chooseEpisode(id: string) {
