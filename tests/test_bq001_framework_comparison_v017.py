@@ -165,6 +165,10 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         digests += [":".join(["0xaa"] * 32), "0xaa" * 32,
                     "\\xaa" * 32, "%5Cx%61%61" * 32,
                     "0XAA " * 32, "０ｘａａ：" * 32]
+        # Separators may occur inside a byte token, not only between bytes.
+        for token in ("0x_aa", "0x_a_a", "0x-aa", "0x a a",
+                      "0x%255faa", "０ｘ＿ａａ", "\\x_aa", "0x\u200b_aa"):
+            digests.append(",".join([token] * 32))
         for digest in digests:
             with self.subTest(digest=digest):
                 schema = validator.load_json(validator.SCHEMA)
@@ -177,6 +181,8 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                             self.validate(self.packet)
                 with self.assertRaisesRegex(ValueError, "unscoped digest"):
                     validator.scan_safety({"annotation": [digest]})
+                with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                    validator.scan_safety({digest: "annotation"})
         for digest in ("a" * 64, validator.INPUT_COMMIT):
             with self.assertRaisesRegex(ValueError, "unscoped digest"):
                 validator.scan_safety({digest: "annotation"})
