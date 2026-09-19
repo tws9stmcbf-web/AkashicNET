@@ -1,0 +1,400 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AkashicOMNI claim-review draft contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "framework_baseline",
+    "framework_target",
+    "release_status",
+    "review_state",
+    "packet_id",
+    "bq_id",
+    "accepted_edges",
+    "supports_models",
+    "promotion_allowed",
+    "independent_review_status",
+    "sources",
+    "claims"
+  ],
+  "properties": {
+    "format_version": {
+      "const": "0.5.0-draft.1"
+    },
+    "framework_baseline": {
+      "const": "0.4.0"
+    },
+    "framework_target": {
+      "const": "0.5.0"
+    },
+    "release_status": {
+      "const": "UNRELEASED"
+    },
+    "review_state": {
+      "const": "REVIEW_REQUIRED"
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+    },
+    "bq_id": {
+      "type": "null"
+    },
+    "accepted_edges": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "supports_models": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "promotion_allowed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth",
+        "evidence",
+        "rights",
+        "public_synthesis",
+        "website",
+        "bq_resolution"
+      ],
+      "properties": {
+        "truth": {
+          "const": false
+        },
+        "evidence": {
+          "const": false
+        },
+        "rights": {
+          "const": false
+        },
+        "public_synthesis": {
+          "const": false
+        },
+        "website": {
+          "const": false
+        },
+        "bq_resolution": {
+          "const": false
+        }
+      }
+    },
+    "independent_review_status": {
+      "const": "PENDING"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "url",
+          "location",
+          "access_status",
+          "provenance_note",
+          "rights_status"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "access_status": {
+            "enum": [
+              "NOT_REINSPECTED",
+              "ABSTRACT_ONLY",
+              "FULL_TEXT_INSPECTED"
+            ]
+          },
+          "provenance_note": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "rights_status": {
+            "const": "NOT_ASSESSED"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "wording",
+          "kind",
+          "source_ids",
+          "outcome_definition",
+          "supporting_observations",
+          "counter_evidence",
+          "counter_evidence_search_status",
+          "competing_explanations",
+          "missing_evidence",
+          "decision",
+          "status",
+          "assessments",
+          "comparison",
+          "revision_history"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+          },
+          "wording": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "kind": {
+            "enum": [
+              "OBSERVATION",
+              "MODEL_ESTIMATE",
+              "PROJECTION",
+              "TESTIMONY",
+              "CAUSAL_HYPOTHESIS",
+              "MECHANISM_HYPOTHESIS"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "outcome_definition": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "supporting_observations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          },
+          "counter_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          },
+          "counter_evidence_search_status": {
+            "enum": [
+              "NOT_COMPLETED",
+              "COMPLETED"
+            ]
+          },
+          "competing_explanations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          },
+          "missing_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          },
+          "decision": {
+            "const": "REVIEW_REQUIRED"
+          },
+          "status": {
+            "const": "UNRESOLVED"
+          },
+          "assessments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assessment_id",
+                "reviewer_id",
+                "reviewer_type",
+                "independence",
+                "independence_note",
+                "decision",
+                "rationale",
+                "source_locations"
+              ],
+              "properties": {
+                "assessment_id": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+                },
+                "reviewer_id": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+                },
+                "reviewer_type": {
+                  "enum": [
+                    "HUMAN",
+                    "AI"
+                  ]
+                },
+                "independence": {
+                  "enum": [
+                    "NOT_ESTABLISHED",
+                    "DECLARED_INDEPENDENT"
+                  ]
+                },
+                "independence_note": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "decision": {
+                  "enum": [
+                    "SUPPORT",
+                    "CHALLENGE",
+                    "INSUFFICIENT"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "source_locations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "minItems": 1
+                }
+              }
+            },
+            "minItems": 0
+          },
+          "comparison": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "pairs",
+              "agreements",
+              "disagreements"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "PENDING",
+                  "RECORDED"
+                ]
+              },
+              "pairs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "assessment_ids",
+                    "decision_agreement"
+                  ],
+                  "properties": {
+                    "assessment_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "uniqueItems": true
+                    },
+                    "decision_agreement": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "minItems": 0
+              },
+              "agreements": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              },
+              "disagreements": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            }
+          },
+          "revision_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "revision",
+                "date",
+                "change"
+              ],
+              "properties": {
+                "revision": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "change": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              }
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 1
+    }
+  }
+}
