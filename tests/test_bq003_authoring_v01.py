@@ -185,6 +185,14 @@ class BQ003AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
 
+    def test_axis_maturity_fields_rejected_on_every_axis(self):
+        for field, value in (("level", 9), ("label", "FINDINGS_TRIANGULATED")):
+            with self.subTest(field=field):
+                candidate = copy.deepcopy(self.assessment)
+                candidate["axis_assessments"][0][field] = value
+                with self.assertRaises(ValueError):
+                    self.validate(assessment=candidate)
+
     def test_unverified_synchrony_replication_promotion_rejected(self):
         candidate = copy.deepcopy(self.assessment)
         axis = next(x for x in candidate["axis_assessments"] if x["axis"] == "interpersonal_harmony")

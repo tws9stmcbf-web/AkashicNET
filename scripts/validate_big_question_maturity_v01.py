@@ -1,111 +1,76 @@
 #!/usr/bin/env python3
-import json
-import os
-import re
-import sys
+import json, os, re, sys
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-LADDER = ROOT / "references/big-questions/research-maturity-ladder-v0.1.json"
-ASSESSMENTS = ROOT / "references/big-questions/maturity-assessments-v0.1.json"
-MANAGED_FILES = (
-    ROOT / "website/app/big-questions/page.tsx",
-    ROOT / "website/app/big-questions/bq001/page.tsx",
-    ROOT / "website/app/big-questions/bq002/page.tsx",
-    ROOT / "references/big-questions/BQ003/progress-assessment-v0.1.json",
-)
-ASSERTION = re.compile(r"\b(BQ\d{3})\b[^\n]{0,160}?\bLevel\s+(\d{1,2})/10\b", re.IGNORECASE)
-
-
-def fail(message):
-    raise ValueError(message)
-
-
-def _assertions(text):
-    return [(question.upper(), int(level)) for question, level in ASSERTION.findall(text)]
-
-
-def validate(ladder, registry, managed_texts=(), pr_body=""):
-    stages = ladder.get("stages", [])
-    levels = [stage.get("level") for stage in stages]
-    if ladder.get("status") != "CANONICAL" or levels != list(range(1, 11)):
-        fail("canonical maturity ladder must contain ordered Levels 1 through 10")
-    if len({stage.get("id") for stage in stages}) != 10:
-        fail("canonical maturity stage ids must be unique")
-    rules = ladder.get("fail_closed_rules", {})
-    for key in (
-        "levels_are_cumulative",
-        "asserted_level_must_equal_highest_completed_stage",
-        "missing_or_unvalidated_stage_blocks_higher_assertions",
-        "level_8_requires_governed_test_execution",
-        "unresolved_is_allowed_at_every_level",
-    ):
-        if rules.get(key) is not True:
-            fail(f"canonical fail-closed rule weakened: {key}")
-
-    expected_ref = "references/big-questions/research-maturity-ladder-v0.1.json"
-    if registry.get("ladder_ref") != expected_ref:
-        fail("assessment registry must reference the canonical ladder")
-    assessments = registry.get("assessments", [])
-    by_id = {item.get("question_id"): item for item in assessments}
-    if set(by_id) != {f"BQ{number:03d}" for number in range(1, 10)} or len(by_id) != len(assessments):
-        fail("assessment registry must contain exactly BQ001 through BQ009")
-    for question_id, item in by_id.items():
-        if item.get("question_status") != "UNRESOLVED":
-            fail(f"{question_id} must remain unresolved")
-        completed = item.get("completed_stages", [])
-        level = item.get("asserted_level")
+ROOT=Path(__file__).resolve().parents[1]
+LADDER=ROOT/"references/big-questions/research-maturity-ladder-v0.1.json"
+ASSESSMENTS=ROOT/"references/big-questions/maturity-assessments-v0.1.json"
+ROOTS=(ROOT/"references/big-questions",ROOT/"website/app/big-questions")
+SUFFIXES={".json",".md",".mdx",".tsx",".ts",".jsx",".js"}
+ASSERTION=re.compile(r"\b(BQ\d{3})\b(?:(?!\bBQ\d{3}\b)[\s\S]){0,400}?\bLevel\s+(\d{1,2})/10\b",re.I)
+LEVEL=re.compile(r"\bLevel\s+(\d{1,2})/10\b",re.I)
+PATH_Q=re.compile(r"(?:^|/)(?:BQ|bq)(\d{3})(?:/|$)")
+MEANING="A level records completed governed research work. It is not a truth probability, evidence-strength grade, confidence score or promotion decision."
+STAGES=[(1,"QUESTION_FRAMED","Frame the question"),(2,"SOURCES_MAPPED","Map sources"),(3,"REVIEW_CANDIDATE_REACHED","Reach review-candidate status"),(4,"MODELS_SEPARATED","Separate models"),(5,"EVIDENCE_MAPPED","Map evidence"),(6,"METHODS_STRESS_TESTED","Stress-test methods"),(7,"PREDICTIONS_DEFINED","Define predictions"),(8,"GOVERNED_TESTS_RUN","Run tests"),(9,"FINDINGS_TRIANGULATED","Triangulate findings"),(10,"RESOLUTION_REVIEW_ENTERED","Enter resolution review")]
+EXPECTED={"BQ001":(6,None),"BQ002":(4,None),"BQ003":(4,None),**{f"BQ{i:03d}":(None,"UNSCORED_EXPLORATORY_NONCANONICAL") for i in range(4,9)},"BQ009":(None,"UNASSIGNED")}
+RULES=("levels_are_cumulative","asserted_level_must_equal_highest_completed_stage","missing_or_unvalidated_stage_blocks_higher_assertions","level_8_requires_governed_test_execution","unresolved_is_allowed_at_every_level","level_change_does_not_promote_truth_evidence_rights_public_synthesis_or_website")
+GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed")
+def fail(msg): raise ValueError(msg)
+def assertions(source,text):
+    match=PATH_Q.search(source.replace("\\","/"))
+    if match:return [(f"BQ{match.group(1)}",int(x)) for x in LEVEL.findall(text)]
+    return [(q.upper(),int(x)) for q,x in ASSERTION.findall(text)]
+def managed_files():
+    return sorted(p for root in ROOTS for p in root.rglob("*") if p.is_file() and p.suffix.lower() in SUFFIXES)
+def check_execution(qid,ref,artifact):
+    prefix=f"references/big-questions/{qid}/tests/"
+    if not ref.replace("\\","/").startswith(prefix) or not ref.endswith(".json"):fail(f"{qid} invalid execution ref")
+    if artifact.get("question_id")!=qid or artifact.get("execution_status")!="COMPLETED" or artifact.get("test_results_recorded") is not True:fail(f"{qid} governed execution not completed")
+    gov=artifact.get("governance",{})
+    if gov.get("review_state")!="REVIEW_REQUIRED":fail(f"{qid} execution not review-required")
+    for key in ("canonical_promotion_applied","truth_inference_allowed","evidence_promotion_allowed"):
+        if gov.get(key) is not False:fail(f"{qid} execution gate opened: {key}")
+def validate(ladder,registry,texts=(),pr_body="",artifacts=None):
+    actual=[(x.get("level"),x.get("id"),x.get("label")) for x in ladder.get("stages",[])]
+    if ladder.get("status")!="CANONICAL" or ladder.get("meaning")!=MEANING or actual!=STAGES:fail("canonical ladder semantics changed")
+    for key in RULES:
+        if ladder.get("fail_closed_rules",{}).get(key) is not True:fail(f"rule weakened: {key}")
+    if registry.get("ladder_ref")!="references/big-questions/research-maturity-ladder-v0.1.json":fail("wrong ladder ref")
+    items=registry.get("assessments",[]); by_id={x.get("question_id"):x for x in items}
+    if set(by_id)!=set(EXPECTED) or len(by_id)!=len(items):fail("BQ001-BQ009 required exactly once")
+    artifacts=artifacts or {}
+    for qid,(expected,classification) in EXPECTED.items():
+        item=by_id[qid]; level=item.get("asserted_level"); done=item.get("completed_stages",[])
+        if item.get("question_status")!="UNRESOLVED":fail(f"{qid} resolved")
+        if level!=expected:fail(f"{qid} governed score changed")
         if level is None:
-            if completed:
-                fail(f"{question_id} unscored assessment cannot claim completed stages")
+            if done or item.get("scoring_status")!=classification:fail(f"{qid} classification changed")
             continue
-        if not isinstance(level, int) or not 1 <= level <= 10:
-            fail(f"{question_id} asserted level invalid")
-        if completed != list(range(1, level + 1)):
-            fail(f"{question_id} assertion exceeds its highest consecutive completed stage")
-        if level >= 8 and 8 not in completed:
-            fail(f"{question_id} Level 8 requires governed test execution")
-
-    governance = registry.get("governance", {})
-    if governance.get("supports_models") != [] or governance.get("accepted_canonical_edges") != 0:
-        fail("model support or canonical edges promoted")
-    for key in (
-        "truth_inference_allowed",
-        "scientific_evidence_promotion_allowed",
-        "rights_promotion_allowed",
-        "public_synthesis_updated",
-        "website_promotion_allowed",
-    ):
-        if governance.get(key) is not False:
-            fail(f"governance gate opened: {key}")
-
-    for source, text in managed_texts:
-        for question_id, asserted in _assertions(text):
-            governed = by_id.get(question_id)
-            if governed is None or governed.get("asserted_level") != asserted:
-                fail(f"{source}: {question_id} Level {asserted}/10 exceeds or conflicts with governed assessment")
-    for question_id, asserted in _assertions(pr_body):
-        governed = by_id.get(question_id)
-        if governed is None or governed.get("asserted_level") != asserted:
-            fail(f"pull-request body: {question_id} Level {asserted}/10 exceeds or conflicts with governed assessment")
-
-
+        if done!=list(range(1,level+1)):fail(f"{qid} nonconsecutive stages")
+        refs=item.get("governed_test_execution_refs",[])
+        if not isinstance(refs,list):fail(f"{qid} execution refs invalid")
+        if level<8 and refs:fail(f"{qid} execution binding below Level 8")
+        if level>=8:
+            if not refs:fail(f"{qid} Level 8 lacks execution binding")
+            for ref in refs:
+                if ref not in artifacts:fail(f"{qid} missing execution artifact {ref}")
+                check_execution(qid,ref,artifacts[ref])
+    gov=registry.get("governance",{})
+    if gov.get("supports_models")!=[] or gov.get("accepted_canonical_edges")!=0:fail("model/edge promotion")
+    for key in GATES:
+        if gov.get(key) is not False:fail(f"gate opened: {key}")
+    for source,text in texts:
+        for qid,level in assertions(source,text):
+            if qid not in by_id or by_id[qid].get("asserted_level")!=level:fail(f"{source}: {qid} Level {level}/10 conflicts")
+    for qid,level in assertions("pull-request body",pr_body):
+        if qid not in by_id or by_id[qid].get("asserted_level")!=level:fail(f"PR body: {qid} Level {level}/10 conflicts")
 def main():
-    ladder = json.loads(LADDER.read_text())
-    registry = json.loads(ASSESSMENTS.read_text())
-    managed = [(str(path.relative_to(ROOT)), path.read_text()) for path in MANAGED_FILES]
-    pr_body = ""
-    event_path = os.environ.get("GITHUB_EVENT_PATH")
-    if event_path:
-        event = json.loads(Path(event_path).read_text())
-        pr_body = event.get("pull_request", {}).get("body") or ""
-    validate(ladder, registry, managed, pr_body)
-    print("Big Question maturity ladder and assessments valid")
-
-
-if __name__ == "__main__":
-    try:
-        main()
-    except (OSError, json.JSONDecodeError, ValueError) as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
-        raise SystemExit(1)
+    ladder=json.loads(LADDER.read_text()); registry=json.loads(ASSESSMENTS.read_text()); paths=managed_files()
+    texts=[(str(p.relative_to(ROOT)),p.read_text()) for p in paths]
+    refs={r for item in registry["assessments"] for r in item.get("governed_test_execution_refs",[])}
+    artifacts={r:json.loads((ROOT/r).read_text()) for r in refs if (ROOT/r).is_file()}
+    body=""
+    if os.environ.get("GITHUB_EVENT_PATH"):body=json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text()).get("pull_request",{}).get("body") or ""
+    validate(ladder,registry,texts,body,artifacts);print(f"Big Question maturity valid; scanned {len(paths)} files")
+if __name__=="__main__":
+    try:main()
+    except (OSError,json.JSONDecodeError,ValueError) as exc:print(f"ERROR: {exc}",file=sys.stderr);raise SystemExit(1)

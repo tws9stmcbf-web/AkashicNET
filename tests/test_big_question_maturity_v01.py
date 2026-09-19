@@ -1,44 +1,39 @@
-import copy
-import importlib.util
-import json
-import unittest
+import copy,importlib.util,json,unittest
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("maturity_validator", ROOT / "scripts/validate_big_question_maturity_v01.py")
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
-
-
-class BigQuestionMaturityTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.ladder = json.loads((ROOT / "references/big-questions/research-maturity-ladder-v0.1.json").read_text())
-        cls.registry = json.loads((ROOT / "references/big-questions/maturity-assessments-v0.1.json").read_text())
-
-    def test_canonical_state_passes(self):
-        module.validate(self.ladder, self.registry, [("page", "BQ001 · Level 6/10\nBQ002 · Level 4/10")])
-
-    def test_nonconsecutive_completion_fails_closed(self):
-        candidate = copy.deepcopy(self.registry)
-        candidate["assessments"][0]["completed_stages"] = [1, 2, 3, 4, 6]
-        with self.assertRaises(ValueError):
-            module.validate(self.ladder, candidate)
-
-    def test_file_overstatement_fails_closed(self):
-        with self.assertRaises(ValueError):
-            module.validate(self.ladder, self.registry, [("candidate.json", "BQ001 remains Level 8/10")])
-
-    def test_pr_body_overstatement_fails_closed(self):
-        with self.assertRaises(ValueError):
-            module.validate(self.ladder, self.registry, pr_body="BQ001: UNRESOLVED, Level 8/10")
-
-    def test_promotion_gate_fails_closed(self):
-        candidate = copy.deepcopy(self.registry)
-        candidate["governance"]["website_promotion_allowed"] = True
-        with self.assertRaises(ValueError):
-            module.validate(self.ladder, candidate)
-
-
-if __name__ == "__main__":
-    unittest.main()
+ROOT=Path(__file__).resolve().parents[1]
+spec=importlib.util.spec_from_file_location("v",ROOT/"scripts/validate_big_question_maturity_v01.py");v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
+class Tests(unittest.TestCase):
+ @classmethod
+ def setUpClass(c):
+  c.l=json.loads((ROOT/"references/big-questions/research-maturity-ladder-v0.1.json").read_text());c.r=json.loads((ROOT/"references/big-questions/maturity-assessments-v0.1.json").read_text())
+ def test_ok(s):v.validate(s.l,s.r,[("index","BQ001 · Level 6/10\nBQ002 · Level 4/10")])
+ def test_ladder_pinned(s):
+  c=copy.deepcopy(s.l);c["stages"][7]["label"]="Other"
+  with s.assertRaises(ValueError):v.validate(c,s.r)
+ def test_score_pinned(s):
+  c=copy.deepcopy(s.r);c["assessments"][0].update(asserted_level=7,completed_stages=list(range(1,8)))
+  with s.assertRaises(ValueError):v.validate(s.l,c)
+ def test_classification_pinned(s):
+  c=copy.deepcopy(s.r);c["assessments"][-1]["scoring_status"]="UNSCORED_EXPLORATORY_NONCANONICAL"
+  with s.assertRaises(ValueError):v.validate(s.l,c)
+ def test_nonconsecutive(s):
+  c=copy.deepcopy(s.r);c["assessments"][0]["completed_stages"]=[1,2,3,4,6]
+  with s.assertRaises(ValueError):v.validate(s.l,c)
+ def test_level8_binding(s):
+  c=copy.deepcopy(s.r);old=v.EXPECTED["BQ001"];v.EXPECTED["BQ001"]=(8,None)
+  try:
+   c["assessments"][0].update(asserted_level=8,completed_stages=list(range(1,9)))
+   with s.assertRaises(ValueError):v.validate(s.l,c)
+  finally:v.EXPECTED["BQ001"]=old
+ def test_multiline_file(s):
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,[("x.md","BQ001:\nLevel 8/10")])
+ def test_path_binding(s):
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,[("references/big-questions/BQ001/x.md","Level 8/10")])
+ def test_multiline_pr(s):
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,pr_body="BQ001:\nLevel 8/10")
+ def test_recursive_scan(s):
+  paths={str(p.relative_to(ROOT)) for p in v.managed_files()};s.assertIn("references/big-questions/BQ003/progress-assessment-v0.1.json",paths);s.assertIn("website/app/big-questions/bq001/page.tsx",paths)
+ def test_gate(s):
+  c=copy.deepcopy(s.r);c["governance"]["website_promotion_allowed"]=True
+  with s.assertRaises(ValueError):v.validate(s.l,c)
+if __name__=="__main__":unittest.main()

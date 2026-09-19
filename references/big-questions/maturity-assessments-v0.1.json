@@ -4,9 +4,9 @@
   "status": "REVIEW_CANDIDATE",
   "ladder_ref": "references/big-questions/research-maturity-ladder-v0.1.json",
   "assessments": [
-    {"question_id": "BQ001", "question_status": "UNRESOLVED", "asserted_level": 6, "completed_stages": [1, 2, 3, 4, 5, 6], "next_stage": 7, "next_gate": "Validate a governed predictions-and-falsifiers package before asserting Level 7; Level 8 additionally requires actual governed test execution."},
-    {"question_id": "BQ002", "question_status": "UNRESOLVED", "asserted_level": 4, "completed_stages": [1, 2, 3, 4], "next_stage": 5, "next_gate": "Complete a claim-by-claim evidence and counter-evidence map."},
-    {"question_id": "BQ003", "question_status": "UNRESOLVED", "asserted_level": 4, "completed_stages": [1, 2, 3, 4], "next_stage": 5, "next_gate": "Complete a governed claim-by-claim evidence and counter-evidence map before any Level 5 assertion.", "public_status": "NON_PUBLIC_REVIEW_CANDIDATE"},
+    {"question_id": "BQ001", "question_status": "UNRESOLVED", "asserted_level": 6, "completed_stages": [1, 2, 3, 4, 5, 6], "governed_test_execution_refs": [], "next_stage": 7, "next_gate": "Validate a governed predictions-and-falsifiers package before asserting Level 7; Level 8 additionally requires actual governed test execution."},
+    {"question_id": "BQ002", "question_status": "UNRESOLVED", "asserted_level": 4, "completed_stages": [1, 2, 3, 4], "governed_test_execution_refs": [], "next_stage": 5, "next_gate": "Complete a claim-by-claim evidence and counter-evidence map."},
+    {"question_id": "BQ003", "question_status": "UNRESOLVED", "asserted_level": 4, "completed_stages": [1, 2, 3, 4], "governed_test_execution_refs": [], "next_stage": 5, "next_gate": "Complete a governed claim-by-claim evidence and counter-evidence map before any Level 5 assertion.", "public_status": "NON_PUBLIC_REVIEW_CANDIDATE"},
     {"question_id": "BQ004", "question_status": "UNRESOLVED", "asserted_level": null, "completed_stages": [], "scoring_status": "UNSCORED_EXPLORATORY_NONCANONICAL"},
     {"question_id": "BQ005", "question_status": "UNRESOLVED", "asserted_level": null, "completed_stages": [], "scoring_status": "UNSCORED_EXPLORATORY_NONCANONICAL"},
     {"question_id": "BQ006", "question_status": "UNRESOLVED", "asserted_level": null, "completed_stages": [], "scoring_status": "UNSCORED_EXPLORATORY_NONCANONICAL"},

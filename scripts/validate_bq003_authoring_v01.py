@@ -137,6 +137,11 @@ def validate(spec, assessment, bridge, aghor, architecture):
     axes = assessment.get("axis_assessments", [])
     if not axes:
         fail("axis assessments required")
+    for axis in axes:
+        if "level" in axis or "label" in axis:
+            fail("axis assessments must not embed maturity-ladder fields")
+        if not isinstance(axis.get("evidence_state"), str) or not axis["evidence_state"]:
+            fail("every axis requires a nonempty evidence_state")
     interpersonal = next((item for item in axes if item.get("axis") == "interpersonal_harmony"), None)
     if not interpersonal or interpersonal.get("evidence_state") != "RELEVANT_EVIDENCE_MAPPED":
         fail("interpersonal harmony evidence-state boundary changed")
