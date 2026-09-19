@@ -130,7 +130,8 @@ def assert_exact_keys(value: dict[str, Any], expected: set[str], label: str) -> 
         raise ValueError(f"{label} exact allowed-key set drift")
 
 
-def scan_safety(value: Any) -> None:
+def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
+                location: tuple = ()) -> None:
     if isinstance(value, dict):
         for key, child in value.items():
             normalized_key = re.sub(r"[^a-z0-9]", "", normalize_private_text(key))
@@ -139,12 +140,15 @@ def scan_safety(value: Any) -> None:
             if normalized_key in PRIVATE_METADATA_KEYS:
                 raise ValueError(f"private metadata key rejected: {key}")
             scan_safety(key)
-            scan_safety(child)
+            scan_safety(child, digest_paths=digest_paths, location=(*location, key))
     elif isinstance(value, list):
-        for child in value:
-            scan_safety(child)
+        for index, child in enumerate(value):
+            scan_safety(child, digest_paths=digest_paths, location=(*location, index))
     elif isinstance(value, str):
         folded = normalize_private_text(value)
+        if re.search(r"[a-f0-9]{32,}", folded):
+            if digest_paths is None or digest_paths.get(location) != value:
+                raise ValueError("unscoped digest rejected")
         if any(marker in folded for marker in PRIVATE_MARKERS):
             raise ValueError("private Drive/Docs marker rejected")
         if any(marker in folded for marker in PRIVATE_PATH_MARKERS):
@@ -241,15 +245,21 @@ def validate_correction(packet: dict[str, Any], batch2: dict[str, Any]) -> None:
         "related_notice_doi": source["related_notice_doi"],
         "result": source["result"],
     }
-    if record != expected:
+    if any(type(record[key]) is not type(value) or record[key] != value
+           for key, value in expected.items()):
         raise ValueError("correction record drift")
 
 
 def validate(packet: dict[str, Any] | None = None, *, verify_git: bool = True) -> None:
     packet = packet if packet is not None else load_json(PACKET)
     schema = load_json(SCHEMA)
-    scan_safety(packet)
-    scan_safety(schema)
+    # Exceptions bind exact values to governed locations, never to arbitrary text.
+    digest_paths = {("input_commit",): INPUT_COMMIT}
+    for index, anchor in enumerate(packet.get("input_anchors", [])):
+        if isinstance(anchor, dict) and anchor.get("path") in EXPECTED_ANCHORS:
+            digest_paths[("input_anchors", index, "git_blob_sha")] = EXPECTED_ANCHORS[anchor["path"]]
+    scan_safety(packet, digest_paths=digest_paths)
+    scan_safety(schema, digest_paths={("properties", "input_commit", "const"): INPUT_COMMIT})
     for key, expected in EXPECTED_IDENTITY.items():
         if type(packet.get(key)) is not type(expected) or packet.get(key) != expected:
             raise ValueError(f"packet identity drift: {key}")

@@ -78,7 +78,7 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
 
     def test_input_commit_and_blobs_are_pinned(self):
         self.mutate(lambda d: d.update(input_commit="0" * 40))
-        self.mutate(lambda d: d["input_anchors"][0].update(git_blob_sha="0" * 40), "input anchor mapping drift")
+        self.mutate(lambda d: d["input_anchors"][0].update(git_blob_sha="0" * 40), "input anchor mapping drift|unscoped digest")
 
     def test_private_drive_markers_are_rejected(self):
         with self.assertRaisesRegex(ValueError, "private Drive/Docs marker rejected"):
@@ -140,6 +140,41 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                             with patch.object(validator, "SCHEMA", path):
                                 with self.assertRaisesRegex(ValueError, "mapping drift"):
                                     self.validate(candidate)
+
+    def test_correction_types_survive_coordinated_schema_changes(self):
+        for value in (0, 0.0):
+            with self.subTest(value=value):
+                candidate = copy.deepcopy(self.packet)
+                candidate["correction_records"][0]["evidence_label_changed"] = value
+                schema = validator.load_json(validator.SCHEMA)
+                schema["$defs"]["correctionRecord"]["properties"]["evidence_label_changed"] = {"const": value}
+                validator.Draft202012Validator(schema).validate(candidate)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "correction record drift"):
+                            self.validate(candidate)
+
+    def test_unscoped_digests_fail_closed(self):
+        digests = ["a" * size for size in (32, 40, 64, 128)]
+        digests += ["%61" * 64, "Ａ" * 64, validator.INPUT_COMMIT]
+        for digest in digests:
+            with self.subTest(digest=digest):
+                schema = validator.load_json(validator.SCHEMA)
+                schema["$comment"] = "Unscoped digest: " + digest
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                            self.validate(self.packet)
+                with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                    validator.scan_safety({"annotation": [digest]})
+        for digest in ("a" * 64, validator.INPUT_COMMIT):
+            with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                validator.scan_safety({digest: "annotation"})
+        validator.scan_safety("https://example.com/public-study-2025")
 
     def test_schema_annotations_are_privacy_scanned(self):
         schema = validator.load_json(validator.SCHEMA)
