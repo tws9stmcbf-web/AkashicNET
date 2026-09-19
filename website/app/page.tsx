@@ -1,3 +1,4 @@
+import { akashicOmniRelease } from "../lib/akashicomni-release";
 import PsyNationRadio from "./PsyNationRadio";
 
 const principles = [
@@ -84,11 +85,11 @@ const latestHighlights = [
   },
   {
     category: "Living Reference",
-    date: "16 Sep 2026",
-    dateTime: "2026-09-16",
-    title: "AkashicOMNI v0.4.0",
+    date: "19 Sep 2026",
+    dateTime: "2026-09-19",
+    title: `AkashicOMNI v${akashicOmniRelease.version}`,
     kicker: "Many Dimensions · One Governed Field",
-    summary: "Adds the Embodied Intelligence comparative pathway while preserving thirteen perspectives and boundaries between biography, interpretation and causal evidence.",
+    summary: "Refines embodied intelligence, wisdom and assessment guidance while preserving thirteen perspectives and the distinction between interpretation and evidence.",
     href: "/akashicomni",
     image: "/images/akashicomni-metadimensional-gateway.webp",
     imageAlt: "AkashicOMNI metadimensional gateway artwork.",
@@ -316,3 +317,4 @@ export default function Home() {
     </main>
   );
 }
+
