@@ -147,7 +147,9 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
     elif isinstance(value, str):
         folded = normalize_private_text(value)
         # Decode first, then strip separators without joining across non-hex letters.
-        digest_text = re.sub(r"[^a-z0-9]", "", folded)
+        # Backslashes are already mapped to slashes by privacy normalization.
+        byte_text = re.sub(r"(?:0x|/x)(?=[a-f0-9]{2})", "", folded)
+        digest_text = re.sub(r"[^a-z0-9]", "", byte_text)
         if re.search(r"[a-f0-9]{32,}", digest_text):
             if digest_paths is None or digest_paths.get(location) != value:
                 raise ValueError("unscoped digest rejected")

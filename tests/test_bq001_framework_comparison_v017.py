@@ -162,6 +162,9 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         for separator in ("-", ":", " ", "_", ".", "/", "%2D", "%253A", "－", "：", "\u200b"):
             digests.append(separator.join(["a" * 8] * 8))
         digests.append(":".join(["ab"] * 32))
+        digests += [":".join(["0xaa"] * 32), "0xaa" * 32,
+                    "\\xaa" * 32, "%5Cx%61%61" * 32,
+                    "0XAA " * 32, "０ｘａａ：" * 32]
         for digest in digests:
             with self.subTest(digest=digest):
                 schema = validator.load_json(validator.SCHEMA)
