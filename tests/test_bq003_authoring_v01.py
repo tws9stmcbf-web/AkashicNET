@@ -148,11 +148,11 @@ class BQ003AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(bridge=candidate)
 
-    def test_replication_requirement_begins_at_level_6(self):
-        level_5 = " ".join(self.assessment["advancement_requirements"]["level_5"]).lower()
-        level_6 = " ".join(self.assessment["advancement_requirements"]["level_6"]).lower()
-        self.assertNotIn("achieve independent replication", level_5)
-        self.assertIn("achieve independent replication", level_6)
+    def test_governed_execution_begins_at_stage_8(self):
+        stage_7 = " ".join(self.assessment["advancement_requirements"]["stage_7"]).lower()
+        stage_8 = " ".join(self.assessment["advancement_requirements"]["stage_8"]).lower()
+        self.assertNotIn("run governed tests", stage_7)
+        self.assertIn("run governed tests", stage_8)
 
     def test_aghori_field_of_love_overattribution_rejected(self):
         candidate = copy.deepcopy(self.spec)
@@ -188,14 +188,14 @@ class BQ003AuthoringTests(unittest.TestCase):
     def test_unverified_synchrony_replication_promotion_rejected(self):
         candidate = copy.deepcopy(self.assessment)
         axis = next(x for x in candidate["axis_assessments"] if x["axis"] == "interpersonal_harmony")
-        axis["level"] = 6
+        axis["evidence_state"] = "INDEPENDENT_REPLICATION_ACHIEVED"
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
 
     def test_cosmic_axis_promotion_rejected(self):
         candidate = copy.deepcopy(self.assessment)
         cosmic = next(x for x in candidate["axis_assessments"] if x["axis"] == "literal_cosmic_ontology")
-        cosmic["level"] = 5
+        cosmic["evidence_state"] = "RELEVANT_EVIDENCE_MAPPED"
         with self.assertRaises(ValueError):
             self.validate(assessment=candidate)
 

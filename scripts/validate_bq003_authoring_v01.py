@@ -123,8 +123,14 @@ def validate(spec, assessment, bridge, aghor, architecture):
     progress = assessment.get("overall_progress", {})
     if assessment.get("question_status") != "UNRESOLVED":
         fail("assessment must remain unresolved")
-    if progress.get("level") != 3 or progress.get("maximum") != 10:
-        fail("overall progress must remain Level 3/10 pending review")
+    if assessment.get("ladder_ref") != "references/big-questions/research-maturity-ladder-v0.1.json":
+        fail("assessment must reference the canonical maturity ladder")
+    if "level_semantics" in assessment:
+        fail("assessment must not embed a divergent maturity ladder")
+    if progress.get("level") != 4 or progress.get("maximum") != 10:
+        fail("overall progress must remain Level 4/10 pending review")
+    if progress.get("stage_id") != "MODELS_SEPARATED" or progress.get("completed_stages") != [1, 2, 3, 4]:
+        fail("BQ003 completed stages must remain canonical and consecutive")
     meaning = progress.get("meaning", "").lower()
     if "does not estimate truth" not in meaning or "field exists" not in meaning:
         fail("progress-is-not-truth boundary missing")
@@ -132,16 +138,16 @@ def validate(spec, assessment, bridge, aghor, architecture):
     if not axes:
         fail("axis assessments required")
     interpersonal = next((item for item in axes if item.get("axis") == "interpersonal_harmony"), None)
-    if not interpersonal or interpersonal.get("level") != 5:
-        fail("interpersonal harmony must remain Level 5 until independent replication is verified")
+    if not interpersonal or interpersonal.get("evidence_state") != "RELEVANT_EVIDENCE_MAPPED":
+        fail("interpersonal harmony evidence-state boundary changed")
     if interpersonal.get("source_ids") != ["SRC-BQ003-MOGAN-SYNCHRONY-2017"]:
         fail("interpersonal synchrony source binding changed")
     source_ids = {item.get("source_id") for item in assessment.get("sources", [])}
     if "SRC-BQ003-MOGAN-SYNCHRONY-2017" not in source_ids:
         fail("corrected Mogan synchrony source required")
     cosmic = next((item for item in axes if item.get("axis") == "literal_cosmic_ontology"), None)
-    if not cosmic or cosmic.get("level") != 1 or "unconfirmed" not in cosmic.get("boundary", "").lower():
-        fail("literal cosmic ontology must remain Level 1 and unconfirmed")
+    if not cosmic or cosmic.get("evidence_state") != "QUESTION_FRAMED" or "unconfirmed" not in cosmic.get("boundary", "").lower():
+        fail("literal cosmic ontology must remain question-framed and unconfirmed")
     assessment_governance = assessment.get("governance", {})
     for key in ASSESSMENT_FALSE_GUARDS:
         if assessment_governance.get(key) is not False:
