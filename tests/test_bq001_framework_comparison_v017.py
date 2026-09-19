@@ -167,7 +167,9 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                     "0XAA " * 32, "０ｘａａ：" * 32]
         # Separators may occur inside a byte token, not only between bytes.
         for token in ("0x_aa", "0x_a_a", "0x-aa", "0x a a",
-                      "0x%255faa", "０ｘ＿ａａ", "\\x_aa", "0x\u200b_aa"):
+                      "0x%255faa", "０ｘ＿ａａ", "\\x_aa", "0x\u200b_aa",
+                      "0_x_aa", "0%255fx%255faa", "０＿ｘ＿ａａ",
+                      "\\_x_aa", "0 - x : a_a"):
             digests.append(",".join([token] * 32))
         for digest in digests:
             with self.subTest(digest=digest):
