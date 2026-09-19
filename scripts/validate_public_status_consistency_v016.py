@@ -52,7 +52,8 @@ def status_text(source: str) -> str:
 
 product_status = re.compile(
     r"\bAkashicNET\b"
-    r"(?:[ \t·:–—-]+(?:engine|product|is|release|status|version|current))*"
+    # Accept ordinary connective words, but stop at independently versioned names.
+    r"(?:[ \t·:–—-]+(?!(?:METAD|ACTC|UMASC|MultidimensionalCUT|AkashicOMNI|BQ\d+)\b)[a-z]+)*"
     r"[ \t·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
     r"(?:Pre-alpha|Public Beta)[ \t·:–—-]*AkashicNET\b",
     re.IGNORECASE,
@@ -102,7 +103,7 @@ release_claim = re.compile(
     r"v0\.16\.(?:0-beta\.2|7)\b[ \t]*(?:"
     r"(?:is[ \t]+)?(?:a[ \t]+)?sealed(?:[ \t]+release)?|"
     r"released|READY[ \t]*/[ \t]*SEALED|"
-    r"is[ \t]+(?:the[ \t]+)?(?:current[ \t]+)?release"
+    r"is[ \t]+(?:the[ \t]+)?(?:(?:current|latest)[ \t]+)?release"
     r")\b|"
     r"(?:sealed[ \t]+release|released)[ \t·:–—-]*v0\.16\.(?:0-beta\.2|7)\b",
     re.IGNORECASE,
@@ -111,7 +112,7 @@ if release_claim.search(status_text(home + "\n" + progress)):
     fail("unsealed candidate or site checkpoint presented as a release")
 
 bq001_resolved = re.compile(
-    r"\bBQ001\b[ \t·:–—-]*(?:is[ \t]+|status[ \t·:–—-]*)?RESOLVED\b",
+    r"\bBQ001\b[ \t·:–—-]*(?:is[ \t]+|has[ \t]+been[ \t]+|status[ \t·:–—-]*)?RESOLVED\b",
     re.IGNORECASE,
 )
 if bq001_resolved.search(status_text(home + "\n" + progress)):

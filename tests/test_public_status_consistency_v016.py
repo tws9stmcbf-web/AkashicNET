@@ -33,10 +33,12 @@ class CurrentPublicStatusTests(unittest.TestCase):
                 text=True, capture_output=True, check=False,
             )
 
-    def assert_rejected(self, **changes):
+    def assert_rejected(self, *, reason=None, **changes):
         result = self.run_case(**changes)
         self.assertNotEqual(result.returncode, 0, result.stdout)
         self.assertIn("FAIL:", result.stderr)
+        if reason:
+            self.assertIn(reason, result.stderr)
 
     def test_current_copy_and_independent_framework_versions_pass(self):
         result = self.run_case(extra=(
@@ -57,6 +59,9 @@ class CurrentPublicStatusTests(unittest.TestCase):
             "AkashicNET · Public Beta", "Public Beta · AkashicNET",
             "AkashicNET <span>v0.16.0-beta.2</span>",
             "AkashicNET is v0.16.7", "AkashicNET release: v0.16.7",
+            "AkashicNET currently runs v0.16.7",
+            "AkashicNET now uses version v0.16.0-beta.2",
+            "AkashicNET currently <strong>runs</strong> v0.16.7",
         ):
             with self.subTest(label=label):
                 self.assert_rejected(extra=f"<p>{label}</p>")
@@ -88,6 +93,39 @@ class CurrentPublicStatusTests(unittest.TestCase):
             with self.subTest(disclaimer=disclaimer):
                 self.assert_rejected(progress=lambda text, phrase=disclaimer:
                     text.replace(phrase, "a completed release"))
+
+    def test_latest_release_claim_rejected_with_disclaimer_intact(self):
+        for version in ("v0.16.0-beta.2", "v0.16.7"):
+            with self.subTest(version=version):
+                self.assert_rejected(
+                    reason="unsealed candidate or site checkpoint presented as a release",
+                    progress=lambda text, version=version:
+                        text + f"<p>{version} is the latest release</p>",
+                )
+                self.assert_rejected(home=lambda text, version=version:
+                    text + f"<p>{version} is the latest release</p>")
+
+    def test_perfect_tense_resolution_rejected_with_unresolved_intact(self):
+        for surface in ("home", "progress"):
+            with self.subTest(surface=surface):
+                self.assert_rejected(
+                    reason="public status surface contradicts BQ001 UNRESOLVED",
+                    **{surface: lambda text:
+                        text + "<p>BQ001 has been RESOLVED</p>"},
+                )
+
+    def test_negative_claims_and_framework_versions_remain_allowed(self):
+        result = self.run_case(
+            progress=lambda text: text + (
+                "<p>v0.16.0-beta.2 is not the latest release.</p>"
+                "<p>v0.16.7 is not a release.</p>"
+                "<p>BQ001 has not been RESOLVED.</p>"
+            ),
+            extra=("<p>AkashicNET uses METAD v2.1</p>"
+                   "<p>AkashicNET uses MultidimensionalCUT v4.0.0</p>"
+                   "<p>AkashicNET uses AkashicOMNI v0.3.0</p>"),
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_checkpoint_direction_required(self):
         self.assert_rejected(progress=lambda text:

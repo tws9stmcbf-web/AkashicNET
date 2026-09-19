@@ -232,7 +232,7 @@ export default function BQ001Page() {
         <p style={{ color: "#d8b95c", letterSpacing: ".18em", fontWeight: 800, fontSize: 13 }}>BIG QUESTION 001 · PUBLIC INVESTIGATION</p>
         <h1 style={{ margin: "16px auto", maxWidth: 900, fontSize: "clamp(2.7rem, 8vw, 6.6rem)", lineHeight: .96, letterSpacing: "-.045em" }}>Does consciousness continue beyond the individual?</h1>
         <p style={{ maxWidth: 760, margin: "26px auto", color: "#c8c4bb", fontSize: "clamp(1.05rem, 2vw, 1.3rem)", lineHeight: 1.7 }}>AkashicNET maps the evidence without purchasing a conclusion. Neuroscience, cardiac-arrest research, memory and identity, reincarnation-type cases, contemplative traditions and philosophy of mind are kept visible together without flattening their evidential differences.</p>
-        <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED</div>
+        <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED · DEEPENING · LEVEL 6/10</div>
       </section>
 
       <section style={{ ...shell, paddingBottom: 44 }} aria-labelledby="legend-title">
@@ -281,13 +281,13 @@ export default function BQ001Page() {
       <section style={{ ...shell, paddingTop: 34, paddingBottom: 26 }} aria-labelledby="profile-title">
         <div style={{ ...panel, borderColor: "rgba(159,216,255,.38)" }}>
           <p style={{ color: "#9fd8ff", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>PROVISIONAL EVIDENCE PROFILE · BEFORE THE QUESTIONS</p>
-          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved does not mean motionless.</h2>
-          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>The inquiry is deepening, but its conclusion is not being pulled toward a predetermined yes or no. Each colour describes one axis only.</p>
+          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved · Deepening · Level 6/10</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>Level 6 means the inquiry has progressed through source mapping, model separation and evidence mapping into methodological stress-testing. It measures completed research work, not truth probability, confidence in survival, or readiness for promotion. The conclusion remains open.</p>
           <p aria-label="Rating colour key" style={{ color: "#c8c4bb", lineHeight: 1.9 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited or emerging</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within this axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 12, marginTop: 24 }}>
             {[
               ["⚪", "Overall conclusion", "UNRESOLVED", "Changes only when converging evidence discriminates among competing models."],
-              ["🩵", "Inquiry momentum", "DEEPENING ↗", "Rises as sources, testimonies, counter-evidence and definitions are systematically audited."],
+              ["🩵", "Inquiry momentum", "DEEPENING · LEVEL 6/10", "Advances toward Level 7 only when competing models gain explicit predictions and falsifiers."],
               ["⚪", "Direction of conclusion", "NOT YET DETERMINED", "Moves only after the evidence profile changes—not because more material supports a preferred answer."],
               ["🟠", "Evidence strength", "LIMITED · MIXED", "Could rise through prospective documentation, better controls and independent corroboration."],
               ["🟠", "Mechanistic feasibility", "SPECULATIVE", "Could rise if a coherent mechanism generates testable, successful predictions."],

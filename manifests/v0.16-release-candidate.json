@@ -3,7 +3,7 @@
   "candidate_iteration": 2,
   "artifact_status": "UNRELEASED_REVIEW_CANDIDATE",
   "issue": 277,
-  "candidate_base_commit": "200b829c90dd303d3563307f7087e39be5cc220a",
+  "candidate_base_commit": "4774adb3493a6b0148b20165b5860a328a4432dd",
   "exact_head_ci_required": true,
   "release_decision": "PENDING_EXACT_HEAD_CI_AND_REVIEW",
   "baseline_locks": {

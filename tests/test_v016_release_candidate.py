@@ -3,6 +3,8 @@
 import copy
 import json
 import os
+import subprocess
+import tempfile
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -124,17 +126,65 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.assertIn("candidate summary", errors)
 
 
-    def test_repository_binding_accepts_declared_current_base(self):
-        completed = [
-            mock.Mock(stdout="candidate-head\n"),
-            mock.Mock(stdout=DATA["candidate_base_commit"] + "\n"),
-        ]
-        with mock.patch.dict(os.environ, {"CANDIDATE_HEAD_SHA": ""}):
-            with mock.patch(
-                "scripts.validate_v016_release_candidate.subprocess.run",
-                side_effect=completed,
-            ):
-                self.assertEqual(validate_repository_binding(), [])
+class RepositoryBindingTests(unittest.TestCase):
+    """Exercise real Git ancestry, including main advancing after a green head."""
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.git("init", "-q")
+        self.git("config", "user.name", "Validator test")
+        self.git("config", "user.email", "validator@example.invalid")
+        self.git("commit", "--allow-empty", "-qm", "base")
+        self.base = self.git("rev-parse", "HEAD")
+        self.git("update-ref", "refs/remotes/origin/main", self.base)
+        self.git("commit", "--allow-empty", "-qm", "candidate")
+        self.head = self.git("rev-parse", "HEAD")
+
+    def git(self, *args):
+        return subprocess.run(
+            ["git", *args], cwd=self.root, check=True,
+            text=True, capture_output=True,
+        ).stdout.strip()
+
+    def errors(self, *, base=None, head=None):
+        with mock.patch("scripts.validate_v016_release_candidate.ROOT", self.root), \
+             mock.patch("scripts.validate_v016_release_candidate.EXPECTED_BASE_COMMIT", base or self.base), \
+             mock.patch.dict(os.environ, {"CANDIDATE_HEAD_SHA": head or self.head}):
+            return validate_repository_binding()
+
+    def advance_main(self):
+        tree = self.git("rev-parse", f"{self.base}^{{tree}}")
+        advanced = self.git("commit-tree", tree, "-p", self.base, "-m", "new main")
+        self.git("update-ref", "refs/remotes/origin/main", advanced)
+        return advanced
+
+    def test_current_main_ancestor_passes(self):
+        self.assertEqual(self.errors(), [])
+
+    def test_main_advancement_fails_even_when_old_merge_base_is_unchanged(self):
+        self.advance_main()
+        self.assertEqual(self.git("merge-base", "HEAD", "origin/main"), self.base)
+        self.assertIn("candidate must contain current origin/main", self.errors())
+        self.assertIn("actual candidate base commit", self.errors())
+
+    def test_repinning_without_integrating_main_fails(self):
+        advanced = self.advance_main()
+        self.assertIn("candidate must contain current origin/main", self.errors(base=advanced))
+
+    def test_integrated_and_rebound_main_passes(self):
+        advanced = self.advance_main()
+        self.git("merge", "--no-ff", "-m", "integrate main", "origin/main")
+        head = self.git("rev-parse", "HEAD")
+        self.assertEqual(self.errors(base=advanced, head=head), [])
+
+    def test_wrong_exact_head_fails(self):
+        self.assertIn("exact candidate head checkout", self.errors(head=self.base))
+
+    def test_missing_main_fails_closed(self):
+        self.git("update-ref", "-d", "refs/remotes/origin/main")
+        self.assertIn("candidate repository binding", self.errors())
 
 
 if __name__ == "__main__":

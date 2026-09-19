@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests/v0.16-release-candidate.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
-EXPECTED_BASE_COMMIT = "200b829c90dd303d3563307f7087e39be5cc220a"
+EXPECTED_BASE_COMMIT = "4774adb3493a6b0148b20165b5860a328a4432dd"
 
 EXPECTED_BASELINES = {
     "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
@@ -102,15 +102,24 @@ def validate_repository_binding() -> list[str]:
         expected_head = os.environ.get("CANDIDATE_HEAD_SHA", "").strip()
         if expected_head and head != expected_head:
             errors.append("exact candidate head checkout")
-        merge_base = subprocess.run(
-            ["git", "merge-base", "HEAD", "origin/main"],
+        current_main = subprocess.run(
+            ["git", "rev-parse", "origin/main"],
             cwd=ROOT,
             check=True,
             text=True,
             capture_output=True,
         ).stdout.strip()
-        if merge_base != EXPECTED_BASE_COMMIT:
+        if current_main != EXPECTED_BASE_COMMIT:
             errors.append("actual candidate base commit")
+        ancestor = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", "origin/main", "HEAD"],
+            cwd=ROOT,
+            check=False,
+            text=True,
+            capture_output=True,
+        )
+        if ancestor.returncode != 0:
+            errors.append("candidate must contain current origin/main")
     except subprocess.CalledProcessError:
         errors.append("candidate repository binding")
     return errors
