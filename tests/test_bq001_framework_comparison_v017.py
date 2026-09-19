@@ -159,6 +159,9 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
     def test_unscoped_digests_fail_closed(self):
         digests = ["a" * size for size in (32, 40, 64, 128)]
         digests += ["%61" * 64, "Ａ" * 64, validator.INPUT_COMMIT]
+        for separator in ("-", ":", " ", "_", ".", "/", "%2D", "%253A", "－", "：", "\u200b"):
+            digests.append(separator.join(["a" * 8] * 8))
+        digests.append(":".join(["ab"] * 32))
         for digest in digests:
             with self.subTest(digest=digest):
                 schema = validator.load_json(validator.SCHEMA)

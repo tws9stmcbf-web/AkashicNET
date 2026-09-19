@@ -146,7 +146,9 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
             scan_safety(child, digest_paths=digest_paths, location=(*location, index))
     elif isinstance(value, str):
         folded = normalize_private_text(value)
-        if re.search(r"[a-f0-9]{32,}", folded):
+        # Decode first, then strip separators without joining across non-hex letters.
+        digest_text = re.sub(r"[^a-z0-9]", "", folded)
+        if re.search(r"[a-f0-9]{32,}", digest_text):
             if digest_paths is None or digest_paths.get(location) != value:
                 raise ValueError("unscoped digest rejected")
         if any(marker in folded for marker in PRIVATE_MARKERS):
