@@ -119,6 +119,28 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                     with self.subTest(key=key), self.assertRaisesRegex(ValueError, "packet identity drift"):
                         self.validate(candidate)
 
+    def test_boundary_types_survive_coordinated_schema_changes(self):
+        for mapping, definition in (
+            ("operational_boundaries", "operationalBoundaries"),
+            ("promotion_guards", "promotionGuards"),
+        ):
+            for key, expected in self.packet[mapping].items():
+                if type(expected) is not bool:
+                    continue
+                for value in (0, 0.0):
+                    with self.subTest(mapping=mapping, key=key, value=value):
+                        candidate = copy.deepcopy(self.packet)
+                        candidate[mapping][key] = value
+                        schema = validator.load_json(validator.SCHEMA)
+                        schema["$defs"][definition]["properties"][key] = {"const": value}
+                        validator.Draft202012Validator(schema).validate(candidate)
+                        with tempfile.TemporaryDirectory() as directory:
+                            path = Path(directory) / "schema.json"
+                            path.write_text(json.dumps(schema), encoding="utf-8")
+                            with patch.object(validator, "SCHEMA", path):
+                                with self.assertRaisesRegex(ValueError, "mapping drift"):
+                                    self.validate(candidate)
+
     def test_schema_annotations_are_privacy_scanned(self):
         schema = validator.load_json(validator.SCHEMA)
         schema["$comment"] = "https://drive%2Egoogle%2Ecom/file/d/private"

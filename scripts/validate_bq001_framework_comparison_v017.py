@@ -258,9 +258,17 @@ def validate(packet: dict[str, Any] | None = None, *, verify_git: bool = True) -
     assert_exact_keys(packet, TOP_KEYS, "packet")
     assert_exact_keys(packet["operational_boundaries"], set(EXPECTED_OPERATIONAL_BOUNDARIES), "operational boundaries")
     assert_exact_keys(packet["promotion_guards"], set(EXPECTED_PROMOTION_GUARDS), "promotion guards")
-    if packet["operational_boundaries"] != EXPECTED_OPERATIONAL_BOUNDARIES:
+    if any(
+        type(packet["operational_boundaries"][key]) is not type(expected)
+        or packet["operational_boundaries"][key] != expected
+        for key, expected in EXPECTED_OPERATIONAL_BOUNDARIES.items()
+    ):
         raise ValueError("operational boundary mapping drift")
-    if packet["promotion_guards"] != EXPECTED_PROMOTION_GUARDS:
+    if any(
+        type(packet["promotion_guards"][key]) is not type(expected)
+        or packet["promotion_guards"][key] != expected
+        for key, expected in EXPECTED_PROMOTION_GUARDS.items()
+    ):
         raise ValueError("promotion guard mapping drift")
     if packet["accepted_edges"] != 0 or packet["question_status"] != "UNRESOLVED" or packet["mode"] != "REVIEW_ONLY":
         raise ValueError("core review-only invariant drift")
