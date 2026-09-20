@@ -244,7 +244,10 @@ def validate_rows(packet: dict[str, Any], inventory: dict[str, Any], documents: 
 
 
 def validate_correction(packet: dict[str, Any], batch2: dict[str, Any]) -> None:
-    record = packet["correction_records"][0]
+    records = packet["correction_records"]
+    if type(records) is not list or len(records) != 1:
+        raise ValueError("correction record cardinality drift")
+    record = records[0]
     assert_exact_keys(record, CORRECTION_KEYS, "correction record")
     claim = next(c for c in batch2["claims"] if c["claim_id"] == record["claim_id"])
     source = claim["correction_impact_assessment"]

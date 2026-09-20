@@ -76,6 +76,29 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         self.mutate(lambda d: d["correction_records"][0].update(evidence_label_changed=True))
         self.mutate(lambda d: d["correction_records"].clear())
 
+    def test_correction_cardinality_survives_coordinated_schema_changes(self):
+        for variant in ("empty", "duplicate", "changed_evidence", "non_list"):
+            with self.subTest(variant=variant):
+                candidate = copy.deepcopy(self.packet)
+                if variant == "empty":
+                    candidate["correction_records"] = []
+                elif variant == "non_list":
+                    candidate["correction_records"] = {}
+                else:
+                    extra = copy.deepcopy(candidate["correction_records"][0])
+                    if variant == "changed_evidence":
+                        extra["evidence_label_changed"] = True
+                    candidate["correction_records"].append(extra)
+                schema = validator.load_json(validator.SCHEMA)
+                schema["properties"]["correction_records"] = {}
+                validator.Draft202012Validator(schema).validate(candidate)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "correction record cardinality drift"):
+                            self.validate(candidate)
+
     def test_input_commit_and_blobs_are_pinned(self):
         self.mutate(lambda d: d.update(input_commit="0" * 40))
         self.mutate(lambda d: d["input_anchors"][0].update(git_blob_sha="0" * 40), "input anchor mapping drift|unscoped digest")
