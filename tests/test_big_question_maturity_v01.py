@@ -36,4 +36,30 @@ class Tests(unittest.TestCase):
  def test_gate(s):
   c=copy.deepcopy(s.r);c["governance"]["website_promotion_allowed"]=True
   with s.assertRaises(ValueError):v.validate(s.l,c)
+ def execution_artifact(s):
+  return {"question_id":"BQ001","execution_status":"COMPLETED","test_results_recorded":True,"governance":{"review_state":"REVIEW_REQUIRED","canonical_promotion_applied":False,**{key:False for key in v.GATES}}}
+ def test_long_multiline_assertions(s):
+  overstatement="BQ001:\\n"+("x"*1000)+"\\nLevel 8/10"
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,[("x.md",overstatement)])
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,pr_body=overstatement)
+ def test_structured_json_level(s):
+  text=json.dumps({"overall_progress":{"level":8,"maximum":10}})
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,[("references/big-questions/BQ001/new.json",text)])
+ def test_execution_path_traversal(s):
+  c=copy.deepcopy(s.r);old=v.EXPECTED["BQ001"];v.EXPECTED["BQ001"]=(8,None)
+  ref="references/big-questions/BQ001/tests/../../BQ002/not-a-test.json"
+  try:
+   c["assessments"][0].update(asserted_level=8,completed_stages=list(range(1,9)),governed_test_execution_refs=[ref])
+   with s.assertRaises(ValueError):v.validate(s.l,c,artifacts={ref:s.execution_artifact()})
+  finally:v.EXPECTED["BQ001"]=old
+ def test_execution_promotion_gates(s):
+  c=copy.deepcopy(s.r);old=v.EXPECTED["BQ001"];v.EXPECTED["BQ001"]=(8,None)
+  ref="references/big-questions/BQ001/tests/run.json"
+  try:
+   c["assessments"][0].update(asserted_level=8,completed_stages=list(range(1,9)),governed_test_execution_refs=[ref])
+   for key in v.GATES:
+    with s.subTest(key=key):
+     artifact=s.execution_artifact();artifact["governance"][key]=True
+     with s.assertRaises(ValueError):v.validate(s.l,c,artifacts={ref:artifact})
+  finally:v.EXPECTED["BQ001"]=old
 if __name__=="__main__":unittest.main()
