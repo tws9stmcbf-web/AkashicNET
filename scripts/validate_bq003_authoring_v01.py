@@ -253,7 +253,7 @@ def main():
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         print(f"BQ003 AUTHORING FAIL: {exc}", file=sys.stderr)
         return 1
-    print("BQ003 AUTHORING PASS: Level 3 review candidate; BQ001/BQ003 unresolved; field ontology unconfirmed")
+    print("BQ003 AUTHORING PASS: Level 4 review candidate; BQ001/BQ003 unresolved; field ontology unconfirmed")
     return 0
 
 if __name__ == "__main__":
