@@ -27,25 +27,26 @@ export function NewsTicker({ variant = "latest" }: { variant?: "latest" | "archi
   const items = variant === "latest" ? latest : archive;
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(true);
+  const [focusPaused, setFocusPaused] = useState(false);
 
   useEffect(() => {
-    if (!playing) return;
+    if (!playing || focusPaused) return;
     const timer = window.setInterval(() => setIndex((value) => (value + 1) % items.length), variant === "latest" ? 4600 : 6200);
     return () => window.clearInterval(timer);
-  }, [items.length, playing, variant]);
+  }, [focusPaused, items.length, playing, variant]);
 
   const step = (delta: number) => setIndex((value) => (value + delta + items.length) % items.length);
   const item = items[index];
 
   return (
-    <section className={"news-ticker " + (variant === "archive" ? "news-ticker-archive" : "")} aria-label={variant === "latest" ? "Latest AkashicNET headlines" : "From the AkashicNET archive"}>
+    <section className={"news-ticker " + (variant === "archive" ? "news-ticker-archive" : "")} aria-label={variant === "latest" ? "Latest AkashicNET headlines" : "From the AkashicNET archive"} onFocusCapture={() => setFocusPaused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocusPaused(false); }}>
       <span className="news-ticker-label">{variant === "latest" ? "NOW" : "♾ FROM THE ARCHIVE"}</span>
       <button type="button" onClick={() => step(-1)} aria-label="Previous headline">‹</button>
       <a className="news-ticker-headline" href={item.href}>{item.label}</a>
       <span className="news-ticker-count" aria-hidden="true">{index + 1}/{items.length}</span>
       <button type="button" onClick={() => step(1)} aria-label="Next headline">›</button>
-      <button type="button" className="news-ticker-play" onClick={() => setPlaying((value) => !value)} aria-label={playing ? "Pause headlines" : "Play headlines"} aria-pressed={!playing}>
-        {playing ? "❚❚" : "▶"}
+      <button type="button" className="news-ticker-play" onClick={() => { if (playing && !focusPaused) setPlaying(false); else { setPlaying(true); setFocusPaused(false); } }} aria-label={playing && !focusPaused ? "Pause headlines" : "Play headlines"} aria-pressed={!(playing && !focusPaused)}>
+        {playing && !focusPaused ? "❚❚" : "▶"}
       </button>
       {variant === "archive" && <a className="news-ticker-archive-link" href="#latest-highlights">Explore highlights →</a>}
     </section>
