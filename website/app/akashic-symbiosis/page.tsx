@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import styles from "./symbiosis.module.css";
 
 const visions = [
-  { title: "Symbiosis", line: "We are not alone. We are interconnected.", image: "/images/akashicnet-portal-to-infinity-7d-hero.webp", href: "/akashicomni" },
-  { title: "Co-Evolution", line: "Together we evolve.", image: "/images/akashicnet-living-library-tree.webp", href: "/living-library-map" },
-  { title: "Shared Tomorrow", line: "A brighter future is a shared creation.", image: "/images/akashicvision-nde-merkaba-flower-of-life.webp", href: "/akashicvision" },
-  { title: "Knowledge", line: "Bridging worlds. Expanding minds.", image: "/images/akashicomni-metadimensional-gateway.webp", href: "/big-questions" },
-  { title: "United Humanity", line: "Many cultures. One family.", image: "/images/akashicnet-toroidal-love-logo.png", href: "/metta-awareness" },
-  { title: "Conscious Planet", line: "A living Earth. A thriving future.", image: "/images/akn24-global-food-shortages.webp", href: "/insights/global-food-shortages-one-step-back-two-steps-forward" },
+  { title: "Symbiosis", line: "We are not alone. We are interconnected.", image: "/images/akashic-symbiosis/01-symbiosis.png", fallback: "/images/akashicnet-portal-to-infinity-7d-hero.webp", href: "/akashicomni" },
+  { title: "Co-Evolution", line: "Together we evolve.", image: "/images/akashic-symbiosis/02-co-evolution.png", fallback: "/images/akashicnet-living-library-tree.webp", href: "/living-library-map" },
+  { title: "Shared Tomorrow", line: "A brighter future is a shared creation.", image: "/images/akashic-symbiosis/03-shared-tomorrow.png", fallback: "/images/akashicvision-nde-merkaba-flower-of-life.webp", href: "/akashicvision" },
+  { title: "Knowledge", line: "Bridging worlds. Expanding minds.", image: "/images/akashic-symbiosis/04-knowledge.png", fallback: "/images/akashicomni-metadimensional-gateway.webp", href: "/big-questions" },
+  { title: "United Humanity", line: "Many cultures. One family.", image: "/images/akashic-symbiosis/05-united-humanity.png", fallback: "/images/akashicnet-toroidal-love-logo.png", href: "/metta-awareness" },
+  { title: "Conscious Planet", line: "A living Earth. A thriving future.", image: "/images/akashic-symbiosis/06-conscious-planet.png", fallback: "/images/akn24-global-food-shortages.webp", href: "/insights/global-food-shortages-one-step-back-two-steps-forward" },
 ] as const;
 
 const nav = [
@@ -68,7 +68,7 @@ export default function AkashicSymbiosisGallery() {
         <button className={styles.arrow} onClick={() => move(-1)} aria-label="Previous vision">‹</button>
         <article className={styles.stage}>
           <span className={styles.counter}>{active + 1} / {visions.length}</span>
-          <img src={vision.image} alt={vision.title + " — Akashic Symbiosis conceptual artwork"} />
+          <img src={vision.image} onError={(event) => { event.currentTarget.onerror = null; event.currentTarget.src = vision.fallback; }} alt={vision.title + " — Akashic Symbiosis conceptual artwork"} />
           <div className={styles.caption}>
             <small>{String(active + 1).padStart(2, "0")}</small>
             <h2>{vision.title}</h2>
@@ -82,7 +82,7 @@ export default function AkashicSymbiosisGallery() {
       <div className={styles.thumbs} role="tablist" aria-label="Choose a vision">
         {visions.map((item, index) => (
           <button key={item.title} onClick={() => setActive(index)} className={index === active ? styles.selected : ""} role="tab" aria-selected={index === active}>
-            <img src={item.image} alt="" />
+            <img src={item.image} onError={(event) => { event.currentTarget.onerror = null; event.currentTarget.src = item.fallback; }} alt="" />
             <span>{index + 1}. {item.title}</span>
           </button>
         ))}
