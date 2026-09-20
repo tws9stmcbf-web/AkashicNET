@@ -39,7 +39,7 @@ class Tests(unittest.TestCase):
  def execution_artifact(s):
   return {"question_id":"BQ001","execution_status":"COMPLETED","test_results_recorded":True,"governance":{"review_state":"REVIEW_REQUIRED","canonical_promotion_applied":False,**{key:False for key in v.GATES}}}
  def test_long_multiline_assertions(s):
-  overstatement="BQ001:\\n"+("x"*1000)+"\\nLevel 8/10"
+  overstatement="BQ001:\n"+("x"*1000)+"\nLevel 8/10"
   with s.assertRaises(ValueError):v.validate(s.l,s.r,[("x.md",overstatement)])
   with s.assertRaises(ValueError):v.validate(s.l,s.r,pr_body=overstatement)
  def test_structured_json_level(s):
