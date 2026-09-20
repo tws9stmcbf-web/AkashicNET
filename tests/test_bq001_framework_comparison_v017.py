@@ -64,6 +64,32 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         self.mutate(lambda d: d["comparison_rows"][2]["linked_record_ids"].pop(), "inventory projection drift")
         self.mutate(lambda d: d["comparison_rows"][0].update(comparison_state="INTERPRETIVE_FRAMEWORK_NOT_EMPIRICAL_ADJUDICATION"), "comparison state drift")
 
+    def test_row_membership_survives_coordinated_schema_changes(self):
+        for variant in ("extra_duplicate", "shadowed_assertion", "replaced_duplicate", "missing", "non_list"):
+            with self.subTest(variant=variant):
+                candidate = copy.deepcopy(self.packet)
+                rows = candidate["comparison_rows"]
+                if variant == "non_list":
+                    candidate["comparison_rows"] = {}
+                elif variant == "missing":
+                    rows.pop()
+                elif variant == "replaced_duplicate":
+                    rows[-1] = copy.deepcopy(rows[0])
+                else:
+                    extra = copy.deepcopy(rows[0])
+                    if variant == "shadowed_assertion":
+                        extra["evidence_role"] = "Established Evidence"
+                    rows.insert(0, extra)
+                schema = validator.load_json(validator.SCHEMA)
+                schema["properties"]["comparison_rows"] = {}
+                validator.Draft202012Validator(schema).validate(candidate)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "comparison row (cardinality|uniqueness) drift"):
+                            self.validate(candidate)
+
     def test_counter_inferences_and_research_gaps_are_preserved(self):
         self.mutate(lambda d: d["counter_inferences"].pop())
         self.mutate(lambda d: d["research_gaps"].pop())

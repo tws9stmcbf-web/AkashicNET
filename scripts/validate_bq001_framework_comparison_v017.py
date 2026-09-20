@@ -203,7 +203,13 @@ def expected_counter_state(item: dict[str, Any]) -> str:
 
 def validate_rows(packet: dict[str, Any], inventory: dict[str, Any], documents: list[dict[str, Any]]) -> None:
     source_items = {item["inventory_item_id"]: item for item in inventory["inventory"]}
-    rows = {row["inventory_item_id"]: row for row in packet["comparison_rows"]}
+    comparison_rows = packet["comparison_rows"]
+    if type(comparison_rows) is not list or len(comparison_rows) != 11:
+        raise ValueError("comparison row cardinality drift")
+    row_ids = [row["inventory_item_id"] for row in comparison_rows]
+    if len(set(row_ids)) != len(row_ids):
+        raise ValueError("comparison row uniqueness drift")
+    rows = {row["inventory_item_id"]: row for row in comparison_rows}
     if len(rows) != 11 or set(rows) != set(source_items):
         raise ValueError("comparison row membership drift")
     claims = {claim["claim_id"]: claim for document in documents for claim in document.get("claims", [])}
