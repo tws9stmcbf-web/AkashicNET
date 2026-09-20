@@ -1,7 +1,6 @@
 import styles from "./metta-awareness.module.css";
 import PortalConstellation from "./PortalConstellation";
 import ResonanceCipher from "./ResonanceCipher";
-import ResonanceCipher from "./ResonanceCipher";
 
 const lenses = [
   ["01", "Observation", "What was actually said or done?"],
