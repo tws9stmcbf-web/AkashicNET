@@ -45,8 +45,8 @@ export function NewsTicker({ variant = "latest" }: { variant?: "latest" | "archi
       <a className="news-ticker-headline" href={item.href}>{item.label}</a>
       <span className="news-ticker-count" aria-hidden="true">{index + 1}/{items.length}</span>
       <button type="button" onClick={() => step(1)} aria-label="Next headline">›</button>
-      <button type="button" className="news-ticker-play" onClick={() => { if (playing && !focusPaused) setPlaying(false); else { setPlaying(true); setFocusPaused(false); } }} aria-label={playing && !focusPaused ? "Pause headlines" : "Play headlines"} aria-pressed={!(playing && !focusPaused)}>
-        {playing && !focusPaused ? "❚❚" : "▶"}
+      <button type="button" className="news-ticker-play" onClick={() => setPlaying((value) => !value)} aria-label={playing ? "Pause headlines" : "Play headlines"} aria-pressed={!playing}>
+        {playing ? "❚❚" : "▶"}
       </button>
       {variant === "archive" && <a className="news-ticker-archive-link" href="#latest-highlights">Explore highlights →</a>}
     </section>
