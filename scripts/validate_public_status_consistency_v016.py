@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import re
+from html import unescape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,11 +48,11 @@ for token in (
 # Inspect text across inline JSX tags, while keeping separate source lines apart.
 # This is a bounded status-copy guard, not a general JSX or natural-language parser.
 def status_text(source: str) -> str:
-    return re.sub(r"<[^>]*>", " ", source)
+    return unescape(re.sub(r"<[^>]*>", " ", source)).replace("’", "'")
 
 
 product_status = re.compile(
-    r"\bAkashicNET\b"
+    r"\bAkashicNET\b(?:'s)?"
     # Accept ordinary connective words, but stop at independently versioned names.
     r"(?:[ \t·:–—-]+(?!(?:METAD|ACTC|UMASC|MultidimensionalCUT|AkashicOMNI|BQ\d+)\b)[a-z]+)*"
     r"[ \t·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
@@ -99,12 +100,13 @@ if "progress toward v0.17.0" not in status_text(progress):
     fail("site checkpoint must describe progress toward v0.17.0")
 
 # Reject affirmative release claims even when the correct disclaimers also survive.
+# Inspect the subject-to-predicate span, allowing connective words and adverbs.
+# Negations are barriers: a disclaimer must not become an affirmative assertion.
+# Punctuation and source-line boundaries still delimit this bounded copy guard.
+affirmative_words = r"(?:[ \t]+(?!(?:not|never|no|unresolved)\b)[a-z]+)*"
 release_claim = re.compile(
-    r"v0\.16\.(?:0-beta\.2|7)\b[ \t]*(?:"
-    r"(?:is[ \t]+)?(?:a[ \t]+)?sealed(?:[ \t]+release)?|"
-    r"released|READY[ \t]*/[ \t]*SEALED|"
-    r"is[ \t]+(?:the[ \t]+)?(?:(?:current|latest)[ \t]+)?release"
-    r")\b|"
+    r"v0\.16\.(?:0-beta\.2|7)\b" + affirmative_words
+    + r"[ \t]+(?:release|released|sealed|READY[ \t]*/[ \t]*SEALED)\b|"
     r"(?:sealed[ \t]+release|released)[ \t·:–—-]*v0\.16\.(?:0-beta\.2|7)\b",
     re.IGNORECASE,
 )
@@ -112,7 +114,7 @@ if release_claim.search(status_text(home + "\n" + progress)):
     fail("unsealed candidate or site checkpoint presented as a release")
 
 bq001_resolved = re.compile(
-    r"\bBQ001\b[ \t·:–—-]*(?:is[ \t]+|has[ \t]+been[ \t]+|status[ \t·:–—-]*)?RESOLVED\b",
+    r"\bBQ001\b[ \t·:–—-]*" + affirmative_words + r"[ \t·:–—-]*RESOLVED\b",
     re.IGNORECASE,
 )
 if bq001_resolved.search(status_text(home + "\n" + progress)):

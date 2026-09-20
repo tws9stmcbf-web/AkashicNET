@@ -131,6 +131,45 @@ class CurrentPublicStatusTests(unittest.TestCase):
         self.assert_rejected(progress=lambda text:
             text.replace("progress toward v0.17.0", "completed development"))
 
+    def test_adverbial_release_assertions_rejected(self):
+        for version in ("v0.16.0-beta.2", "v0.16.7"):
+            for wording in ("is now the latest release", "is currently the release",
+                            "has now been released", "is now a sealed release"):
+                with self.subTest(version=version, wording=wording):
+                    self.assert_rejected(
+                        reason="unsealed candidate or site checkpoint presented as a release",
+                        progress=lambda text, v=version, w=wording: text + f"<p>{v} {w}</p>",
+                    )
+
+    def test_possessive_product_labels_rejected(self):
+        for possessive in ("'s", "’s", "&apos;s", "&#39;s", "&#x2019;s"):
+            with self.subTest(possessive=possessive):
+                self.assert_rejected(
+                    reason="product status must remain centralised",
+                    extra=f"<p>AkashicNET{possessive} current version is v0.16.7</p>",
+                )
+
+    def test_adverbial_resolution_assertions_rejected(self):
+        for wording in ("has now been", "has finally been", "has been definitively", "is now"):
+            for surface in ("home", "progress"):
+                with self.subTest(wording=wording, surface=surface):
+                    self.assert_rejected(
+                        reason="public status surface contradicts BQ001 UNRESOLVED",
+                        **{surface: lambda text, w=wording: text + f"<p>BQ001 {w} RESOLVED</p>"},
+                    )
+
+    def test_adverbial_negatives_and_possessive_frameworks_pass(self):
+        result = self.run_case(
+            progress=lambda text: text + (
+                "<p>v0.16.7 is currently not the latest release.</p>"
+                "<p>v0.16.0-beta.2 has never been released.</p>"
+                "<p>BQ001 has not yet been RESOLVED.</p>"
+                "<p>BQ001 has never been definitively RESOLVED.</p>"
+            ),
+            extra="<p>AkashicNET’s METAD v2.1</p><p>AkashicNET's AkashicOMNI v0.3.0</p>",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_historical_homepage_context_required(self):
         self.assert_rejected(home=lambda text:
             text.replace("Historical sealed release checkpoint", "Current release"))
