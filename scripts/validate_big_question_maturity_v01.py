@@ -6,7 +6,7 @@ LADDER=ROOT/"references/big-questions/research-maturity-ladder-v0.1.json"
 ASSESSMENTS=ROOT/"references/big-questions/maturity-assessments-v0.1.json"
 ROOTS=(ROOT/"references/big-questions",ROOT/"website/app/big-questions")
 SUFFIXES={".json",".md",".mdx",".tsx",".ts",".jsx",".js"}
-ASSERTION=re.compile(r"\b(BQ\d{3})\b(?:(?!\bBQ\d{3}\b)[\s\S]){0,400}?\bLevel\s+(\d{1,2})/10\b",re.I)
+BQ=re.compile(r"\b(BQ\d{3})\b",re.I)
 LEVEL=re.compile(r"\bLevel\s+(\d{1,2})/10\b",re.I)
 PATH_Q=re.compile(r"(?:^|/)(?:BQ|bq)(\d{3})(?:/|$)")
 MEANING="A level records completed governed research work. It is not a truth probability, evidence-strength grade, confidence score or promotion decision."
@@ -15,19 +15,42 @@ EXPECTED={"BQ001":(6,None),"BQ002":(4,None),"BQ003":(4,None),**{f"BQ{i:03d}":(No
 RULES=("levels_are_cumulative","asserted_level_must_equal_highest_completed_stage","missing_or_unvalidated_stage_blocks_higher_assertions","level_8_requires_governed_test_execution","unresolved_is_allowed_at_every_level","level_change_does_not_promote_truth_evidence_rights_public_synthesis_or_website")
 GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed")
 def fail(msg): raise ValueError(msg)
+def json_levels(value):
+    found=[]
+    if isinstance(value,dict):
+        if value.get("maximum")==10 and isinstance(value.get("level"),int):found.append(value["level"])
+        for child in value.values():found.extend(json_levels(child))
+    elif isinstance(value,list):
+        for child in value:found.extend(json_levels(child))
+    return found
 def assertions(source,text):
     match=PATH_Q.search(source.replace("\\","/"))
-    if match:return [(f"BQ{match.group(1)}",int(x)) for x in LEVEL.findall(text)]
-    return [(q.upper(),int(x)) for q,x in ASSERTION.findall(text)]
+    if match:
+        levels=LEVEL.findall(text)
+        if Path(source).suffix.lower()==".json":
+            try:levels.extend(json_levels(json.loads(text)))
+            except json.JSONDecodeError:pass
+        return [(f"BQ{match.group(1)}",int(x)) for x in levels]
+    matches=list(BQ.finditer(text)); found=[]
+    for index,match in enumerate(matches):
+        end=matches[index+1].start() if index+1<len(matches) else len(text)
+        found.extend((match.group(1).upper(),int(x)) for x in LEVEL.findall(text[match.end():end]))
+    return found
 def managed_files():
     return sorted(p for root in ROOTS for p in root.rglob("*") if p.is_file() and p.suffix.lower() in SUFFIXES)
+def execution_path(qid,ref):
+    if not isinstance(ref,str) or not ref.endswith(".json"):fail(f"{qid} invalid execution ref")
+    governed=(ROOT/f"references/big-questions/{qid}/tests").resolve()
+    candidate=(ROOT/ref).resolve()
+    try:candidate.relative_to(governed)
+    except ValueError:fail(f"{qid} invalid execution ref")
+    return candidate
 def check_execution(qid,ref,artifact):
-    prefix=f"references/big-questions/{qid}/tests/"
-    if not ref.replace("\\","/").startswith(prefix) or not ref.endswith(".json"):fail(f"{qid} invalid execution ref")
+    execution_path(qid,ref)
     if artifact.get("question_id")!=qid or artifact.get("execution_status")!="COMPLETED" or artifact.get("test_results_recorded") is not True:fail(f"{qid} governed execution not completed")
     gov=artifact.get("governance",{})
     if gov.get("review_state")!="REVIEW_REQUIRED":fail(f"{qid} execution not review-required")
-    for key in ("canonical_promotion_applied","truth_inference_allowed","evidence_promotion_allowed"):
+    for key in ("canonical_promotion_applied",)+GATES:
         if gov.get(key) is not False:fail(f"{qid} execution gate opened: {key}")
 def validate(ladder,registry,texts=(),pr_body="",artifacts=None):
     actual=[(x.get("level"),x.get("id"),x.get("label")) for x in ladder.get("stages",[])]
@@ -66,8 +89,11 @@ def validate(ladder,registry,texts=(),pr_body="",artifacts=None):
 def main():
     ladder=json.loads(LADDER.read_text()); registry=json.loads(ASSESSMENTS.read_text()); paths=managed_files()
     texts=[(str(p.relative_to(ROOT)),p.read_text()) for p in paths]
-    refs={r for item in registry["assessments"] for r in item.get("governed_test_execution_refs",[])}
-    artifacts={r:json.loads((ROOT/r).read_text()) for r in refs if (ROOT/r).is_file()}
+    artifacts={}
+    for item in registry["assessments"]:
+        for ref in item.get("governed_test_execution_refs",[]):
+            path=execution_path(item["question_id"],ref)
+            if path.is_file():artifacts[ref]=json.loads(path.read_text())
     body=""
     if os.environ.get("GITHUB_EVENT_PATH"):body=json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text()).get("pull_request",{}).get("body") or ""
     validate(ladder,registry,texts,body,artifacts);print(f"Big Question maturity valid; scanned {len(paths)} files")
