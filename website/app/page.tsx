@@ -1,3 +1,4 @@
+import { akashicOmniRelease } from "../lib/akashicomni-release";
 import PsyNationRadio from "./PsyNationRadio";
 
 const principles = [
@@ -22,6 +23,18 @@ const domains = [
 
 
 const latestHighlights = [
+  {
+    category: "The Arts · Interactive Gallery",
+    date: "20 Sep 2026",
+    dateTime: "2026-09-20",
+    title: "Akashic Symbiosis",
+    kicker: "Six Visions · One Interconnected Future",
+    summary: "An interactive visual journey through symbiosis, co-evolution, shared tomorrow, knowledge, united humanity and a conscious planet.",
+    href: "/akashic-symbiosis",
+    image: "/images/akashicnet-portal-to-infinity-7d-hero.webp",
+    imageAlt: "AkashicNET cosmic portal artwork introducing the Akashic Symbiosis interactive gallery.",
+    evidence: "Conceptual Artwork · Interpretation",
+  },
   {
     category: "AKN24 · Global Systems",
     date: "14 Sep 2026",
@@ -84,11 +97,11 @@ const latestHighlights = [
   },
   {
     category: "Living Reference",
-    date: "14 Sep 2026",
-    dateTime: "2026-09-14",
-    title: "AkashicOMNI v0.3.0",
+    date: "19 Sep 2026",
+    dateTime: "2026-09-19",
+    title: `AkashicOMNI v${akashicOmniRelease.version}`,
     kicker: "Many Dimensions · One Governed Field",
-    summary: "The current orchestration framework for examining sources, systems, experience and uncertainty without collapsing them into one evidence tier.",
+    summary: "Refines embodied intelligence, wisdom and assessment guidance while preserving thirteen perspectives and the distinction between interpretation and evidence.",
     href: "/akashicomni",
     image: "/images/akashicomni-metadimensional-gateway.webp",
     imageAlt: "AkashicOMNI metadimensional gateway artwork.",
@@ -111,7 +124,7 @@ export default function Home() {
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashic-symbiosis">Symbiosis</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
         </nav>
       </header>
 
@@ -316,3 +329,4 @@ export default function Home() {
     </main>
   );
 }
+
