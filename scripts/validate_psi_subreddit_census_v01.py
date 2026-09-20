@@ -21,6 +21,7 @@ for key in (
     "content_import_allowed",
 ):
     assert governance[key] is False
+assert governance["review_state"] == "REVIEW_REQUIRED"
 assert governance["privacy_gate"] == "FAIL_CLOSED"
 assert governance["rights_gate"] == "FAIL_CLOSED"
 assert governance["bq_statuses"] == {
