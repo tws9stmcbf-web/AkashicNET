@@ -249,6 +249,42 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "private"):
                     self.validate(self.packet)
 
+    def test_fragmented_annotation_digests_fail_closed(self):
+        chunks = ["a1b2c3d4e5f60718", "192a3b4c5d6e7f80", "abcdef0123456789", "9876543210fedcba"]
+        variants = [
+            chunks,
+            [[chunk] for chunk in chunks],
+            {f"part{i}": chunk for i, chunk in enumerate(chunks)},
+            [{"part": chunk} for chunk in chunks],
+            ["%61" * 16] * 4,
+            ["０ｘ＿ａａ"] * 32,
+            list("a" * 64),
+            ["1" * 16, 2222222222222222, "3" * 16, "4" * 16],
+            {chunk: "annotation" for chunk in chunks},
+        ]
+        for annotation in variants:
+            with self.subTest(annotation=annotation):
+                schema = validator.load_json(validator.SCHEMA)
+                schema["x-private-audit"] = annotation
+                validator.Draft202012Validator(schema).validate(self.packet)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                            self.validate(self.packet)
+
+    def test_composite_scan_preserves_scoped_digests_and_text_barriers(self):
+        validator.scan_safety({"parts": ["a" * 16, "public annotation", "b" * 16]})
+        validator.scan_safety(
+            {"parts": ["a" * 16, validator.INPUT_COMMIT, "b" * 16]},
+            digest_paths={("parts", 1): validator.INPUT_COMMIT},
+        )
+        with self.assertRaisesRegex(ValueError, "unscoped digest"):
+            validator.scan_safety(
+                {"parts": [validator.INPUT_COMMIT]}, digest_paths={("elsewhere",): validator.INPUT_COMMIT}
+            )
+
     def test_normalized_private_metadata_keys_are_rejected(self):
         keys = (
             "drive%5fid", "file%5fname", "drive%255fid",
