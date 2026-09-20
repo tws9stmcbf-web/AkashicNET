@@ -18,7 +18,7 @@ def fail(msg): raise ValueError(msg)
 def json_levels(value):
     found=[]
     if isinstance(value,dict):
-        if value.get("maximum")==10 and isinstance(value.get("level"),int):found.append(value["level"])
+        if value.get("maximum")==10 and type(value.get("level")) is int:found.append(value["level"])
         for child in value.values():found.extend(json_levels(child))
     elif isinstance(value,list):
         for child in value:found.extend(json_levels(child))
