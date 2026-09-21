@@ -103,10 +103,13 @@ if "progress toward v0.17.0" not in status_text(progress):
 # Inspect the subject-to-predicate span, allowing connective words and adverbs.
 # Negations are barriers: a disclaimer must not become an affirmative assertion.
 # Punctuation and source-line boundaries still delimit this bounded copy guard.
-affirmative_words = r"(?:[ \t]+(?!(?:not|never|no|unresolved)\b)[a-z]+)*"
+# Keep multi-word negations intact; bare "far" and "yet" can be affirmative
+# (for example, "is the best release yet"). Share barriers with the BQ guard.
+negative_words = r"(?:not|never|no|unresolved|cannot|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
+affirmative_words = r"(?:[ \t]+(?!" + negative_words + r")[a-z]+)*"
 release_claim = re.compile(
     r"v0\.16\.(?:0-beta\.2|7)\b" + affirmative_words
-    + r"[ \t]+(?:release|released|sealed|READY[ \t]*/[ \t]*SEALED)\b|"
+    + r"[ \t]+(?:release|released|shipped|sealed|READY[ \t]*/[ \t]*SEALED)\b|"
     r"(?:sealed[ \t]+release|released)[ \t·:–—-]*v0\.16\.(?:0-beta\.2|7)\b",
     re.IGNORECASE,
 )

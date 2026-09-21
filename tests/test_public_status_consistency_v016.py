@@ -141,6 +141,54 @@ class CurrentPublicStatusTests(unittest.TestCase):
                         progress=lambda text, v=version, w=wording: text + f"<p>{v} {w}</p>",
                     )
 
+    def test_shipped_assertions_rejected_with_disclaimers_intact(self):
+        for version in ("v0.16.0-beta.2", "v0.16.7"):
+            for wording in ("has shipped", "has now shipped", "shipped", "is shipped"):
+                with self.subTest(version=version, wording=wording):
+                    self.assert_rejected(
+                        reason="unsealed candidate or site checkpoint presented as a release",
+                        progress=lambda text, v=version, w=wording: text + f"<p>{v} {w}</p>",
+                    )
+
+    def test_negative_release_constructions_pass(self):
+        for version in ("v0.16.0-beta.2", "v0.16.7"):
+            for wording in (
+                "has yet to be released", "has yet to ship", "has not shipped",
+                "cannot be released", "can not be released", "can't be released",
+                "is neither released nor sealed", "remains without a release",
+                "is far from released", "has yet to be shipped",
+            ):
+                with self.subTest(version=version, wording=wording):
+                    result = self.run_case(progress=lambda text, v=version, w=wording:
+                                           text + f"<p>{v} {w}</p>")
+                    self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_negative_resolution_constructions_pass(self):
+        for wording in (
+            "remains far from RESOLVED", "has yet to be RESOLVED",
+            "cannot be RESOLVED", "can not be RESOLVED", "can't be RESOLVED",
+            "is neither settled nor RESOLVED", "remains without a RESOLVED status",
+        ):
+            for surface in ("home", "progress"):
+                with self.subTest(wording=wording, surface=surface):
+                    result = self.run_case(**{surface: lambda text, w=wording:
+                                            text + f"<p>BQ001 {w}</p>"})
+                    self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_negative_copy_does_not_hide_separate_affirmative_claims(self):
+        for separator in (". ", "; ", "</p><p>", "\n"):
+            with self.subTest(separator=separator):
+                self.assert_rejected(
+                    reason="unsealed candidate or site checkpoint presented as a release",
+                    progress=lambda text, s=separator: text + (
+                        f"<p>v0.16.7 has yet to be released{s}v0.16.7 has shipped</p>"),
+                )
+                self.assert_rejected(
+                    reason="public status surface contradicts BQ001 UNRESOLVED",
+                    progress=lambda text, s=separator: text + (
+                        f"<p>BQ001 remains far from RESOLVED{s}BQ001 is RESOLVED</p>"),
+                )
+
     def test_possessive_product_labels_rejected(self):
         for possessive in ("'s", "’s", "&apos;s", "&#39;s", "&#x2019;s"):
             with self.subTest(possessive=possessive):
