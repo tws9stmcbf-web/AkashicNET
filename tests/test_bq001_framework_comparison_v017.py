@@ -274,7 +274,36 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                         with self.assertRaisesRegex(ValueError, "unscoped digest"):
                             self.validate(self.packet)
 
+    def test_key_value_fragmented_digests_fail_closed(self):
+        variants = [
+            {"a" * 20: "b" * 20},
+            {"a" * 16: "b" * 16},
+            {"a" * 16: {"b" * 16: ["c" * 16, "d" * 16]}},
+            [{"a" * 16: "b" * 16}, {"c" * 16: "d" * 16}],
+            {"%2561" * 20: "%2562" * 20},
+            {"Ａ" * 20: "Ｂ" * 20},
+            {"0_x_aa," * 8: "0_x_bb," * 8},
+        ]
+        for annotation in variants:
+            with self.subTest(annotation=annotation):
+                with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                    validator.scan_safety({"annotation": annotation})
+                schema = validator.load_json(validator.SCHEMA)
+                schema["x-private-audit"] = annotation
+                validator.Draft202012Validator(schema).validate(self.packet)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                            self.validate(self.packet)
+
     def test_composite_scan_preserves_scoped_digests_and_text_barriers(self):
+        validator.scan_safety({"a" * 20: "public annotation", "note": "b" * 20})
+        validator.scan_safety(
+            {"a" * 20: validator.INPUT_COMMIT, "note": "b" * 20},
+            digest_paths={("a" * 20,): validator.INPUT_COMMIT},
+        )
         validator.scan_safety({"parts": ["a" * 16, "public annotation", "b" * 16]})
         validator.scan_safety(
             {"parts": ["a" * 16, validator.INPUT_COMMIT, "b" * 16]},

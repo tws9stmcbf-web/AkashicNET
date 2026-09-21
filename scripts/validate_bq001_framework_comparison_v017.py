@@ -131,22 +131,23 @@ def assert_exact_keys(value: dict[str, Any], expected: set[str], label: str) -> 
 
 
 def composite_safety_text(value: Any, digest_paths: dict[tuple, str],
-                          location: tuple = (), *, keys: bool = False) -> str:
+                          location: tuple = (), *, keys: bool = False,
+                          values: bool = True) -> str:
     """Reconstruct JSON fragments without letting property names hide value chunks.
 
-    Keys are checked in their own stream. Exact governed digest locations become
+    Check values, keys, and interleaved key/value streams. Governed digests become
     non-hex barriers, so their exceptions cannot authorize adjacent private text.
     """
     if isinstance(value, dict):
         return "".join(
             (key if keys else "")
-            + composite_safety_text(child, digest_paths, (*location, key), keys=keys)
+            + composite_safety_text(child, digest_paths, (*location, key), keys=keys, values=values)
             for key, child in value.items()
         )
     if isinstance(value, list):
-        return "".join(composite_safety_text(child, digest_paths, (*location, index), keys=keys)
+        return "".join(composite_safety_text(child, digest_paths, (*location, index), keys=keys, values=values)
                        for index, child in enumerate(value))
-    if keys:
+    if not values:
         return ""
     if isinstance(value, str):
         return "[governed]" if digest_paths.get(location) == value else value
@@ -189,8 +190,8 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
     # Scan composite content once after leaf checks, including nested annotations.
     # Reuse the same decoding/digest rules so fragment boundaries are not an escape.
     if not location and isinstance(value, (dict, list)):
-        for keys in (False, True):
-            scan_safety(composite_safety_text(value, digest_paths or {}, keys=keys))
+        for keys, values in ((False, True), (True, False), (True, True)):
+            scan_safety(composite_safety_text(value, digest_paths or {}, keys=keys, values=values))
 
 
 def git(*args: str) -> str:
