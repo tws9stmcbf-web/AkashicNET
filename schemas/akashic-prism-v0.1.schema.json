@@ -199,6 +199,29 @@
             "items": {
               "type": "string"
             }
+          },
+          "interpretive_modes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "How this perspective presents the subject. Multiple modes may coexist; mixed modes must remain separated where their evidential roles differ.",
+            "items": {
+              "enum": [
+                "literal_claim",
+                "metaphorical",
+                "allegorical",
+                "symbolic",
+                "conceptual_model",
+                "phenomenological_description",
+                "cultural_teaching",
+                "philosophical_argument",
+                "scientific_hypothesis",
+                "artistic_expression",
+                "open_question",
+                "mixed_separated",
+                "other"
+              ]
+            }
           }
         }
       }
@@ -800,6 +823,115 @@
               "string",
               "null"
             ]
+          }
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "description": "Typed, independently assessable connections from this record to other concepts, traditions, claims, works or observations. A record may carry many connections at different strengths and evidence lanes.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "connection_id",
+          "target_ref",
+          "domains",
+          "relationship",
+          "evidence_lane",
+          "current_strength",
+          "uncertainty",
+          "alternative_explanations",
+          "next_discriminating_step"
+        ],
+        "properties": {
+          "connection_id": {
+            "type": "string",
+            "pattern": "^CONN-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "target_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domains": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "spiritual",
+                "scientific",
+                "esoteric",
+                "indigenous_or_traditional",
+                "ancient_or_historical",
+                "metaphysical",
+                "philosophical",
+                "psychological",
+                "phenomenological",
+                "artistic",
+                "other"
+              ]
+            }
+          },
+          "relationship": {
+            "enum": [
+              "describes",
+              "resembles",
+              "interprets",
+              "symbolises",
+              "contextualises",
+              "supports",
+              "contradicts",
+              "predicts",
+              "may_share_mechanism",
+              "historically_influenced",
+              "other"
+            ]
+          },
+          "evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "current_strength": {
+            "enum": [
+              "descriptive_only",
+              "suggestive",
+              "hypothesised",
+              "partially_supported",
+              "well_supported",
+              "contested",
+              "unresolved"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_discriminating_step": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
