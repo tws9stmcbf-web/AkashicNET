@@ -71,7 +71,7 @@ def main():
     result = {
         'archive_records': len(records), 'matching_records': len(matches),
         'returned_records': min(args.limit, len(matches)),
-        'boundary': 'Archived locations and curated metadata only; no live access, full-text review, authorship verification, rights or evidence promotion.',
+        'boundary': 'Archived locations and curated metadata only; no live access, full-text review, authorship verification, rights or evidence promotion. Presence in the archive or search output does not establish current public visibility or PUBLIC_VERIFIED/ELIGIBLE status; publication requires the existing sensitivity, rights and public-manifest reviews.',
         'records': matches[:args.limit],
     }
     if args.json:
