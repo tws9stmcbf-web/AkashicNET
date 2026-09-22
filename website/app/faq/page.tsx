@@ -183,6 +183,12 @@ const faqGroups: FAQGroup[] = [
         answer: "No. Experiences and traditions can be recorded as meaningful phenomenological or cultural knowledge. Claims about external beings, nonlocal information, survival after death or cosmic intelligence remain open, attributed and subject to appropriate investigation.",
       },
       {
+        id: "classification-change",
+        question: "Can a PRISM classification change as new experiences or studies appear?",
+        answer: "Yes. PRISM is designed for cumulative learning: new anecdotal reports, citizen science, controlled studies, replications or cultural review may strengthen, weaken, split or reclassify an assessment.",
+        analysis: "Detailed analysis: Different inputs do different epistemic work. Anecdotes can enrich phenomenology or reveal a recurrence signal but do not alone establish prevalence, causation or external ontology. Citizen science can generate and test hypotheses, with weight depending on protocol, sampling, controls, preregistration, data integrity and independence. Peer review adds quality control but is not final truth; replication and synthesis still matter. Every change is append-only, preserving the prior label, date, source, independence, rationale, reviewer role, uncertainty and gates passed or pending.",
+      },
+      {
         question: "What is the status of the Big Question about consciousness after death?",
         answer: "Unresolved. AkashicNET can compare competing models and evidence without selecting a preferred conclusion before its adjudication criteria are met.",
       },
