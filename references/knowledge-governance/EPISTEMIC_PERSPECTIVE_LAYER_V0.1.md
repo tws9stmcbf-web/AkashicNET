@@ -1,10 +1,12 @@
-# Epistemic Perspective Layer v0.1
+# AkashicPRISM v0.1
+
+**PRISM: Pluralistic Research & Inquiry across States and Meaning**
 
 ## Purpose
 
 AkashicNET can preserve spiritual, contemplative, shamanic, psychic, trance-channelled, philosophical, cultural and scientific perspectives without forcing them into one standard of knowledge.
 
-This layer records what was experienced, how a source or tradition interprets it, what meaning it carries, what changed after practice, which claims can be checked externally and what remains uncertain. It complements `spiritual-knowledge-encounter-record-v0.1.schema.json`; it does not replace that record.
+AkashicPRISM records what was experienced, how a source or tradition interprets it, what meaning it carries, what changed after practice, which claims can be checked externally and what remains uncertain. It complements `spiritual-knowledge-encounter-record-v0.1.schema.json`; it does not replace that record.
 
 ## Foundational commitment
 
@@ -69,5 +71,5 @@ The schema fixes automatic truth inference and automatic promotion from testimon
 
 ## Files
 
-- Schema: `schemas/epistemic-perspective-layer-v0.1.schema.json`
+- Schema: `schemas/akashic-prism-v0.1.schema.json`
 - Encounter foundation: `schemas/spiritual-knowledge-encounter-record-v0.1.schema.json`

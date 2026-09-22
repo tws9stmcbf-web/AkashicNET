@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://akashicnet.org/schemas/epistemic-perspective-layer-v0.1.schema.json",
-  "title": "AkashicNET Epistemic Perspective Layer v0.1",
-  "description": "Represents multiple ways of knowing around one subject while preserving attribution, cultural authority, source relationships, uncertainty and verification boundaries.",
+  "$id": "https://akashicnet.org/schemas/akashic-prism-v0.1.schema.json",
+  "title": "AkashicPRISM — Epistemic Perspective Layer v0.1",
+  "description": "Pluralistic Research & Inquiry across States and Meaning: multiple ways of knowing around one subject, with attribution, cultural authority, source relationships, uncertainty and investigation boundaries.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -23,7 +23,7 @@
     },
     "layer_id": {
       "type": "string",
-      "pattern": "^EPL-[A-Z0-9][A-Z0-9-]+$"
+      "pattern": "^PRISM-[A-Z0-9][A-Z0-9-]+$"
     },
     "subject_ref": {
       "type": "object",
