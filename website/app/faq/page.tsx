@@ -56,8 +56,8 @@ const faqGroups: FAQGroup[] = [
       {
         id: "blocked-records",
         question: "“Why integrate BLOCKED records at all?”",
-        answer: "Short answer: PRISM can preserve a blocked record as an unresolved investigation object without counting it as a completed read or accepted finding.",
-        analysis: "Detailed analysis: Archival practice preserves provenance even when an object is unavailable; scientific workflow records missing data rather than inventing values; Bayesian reasoning leaves confidence unchanged when the relevant evidence was not observed. A PRISM record may contain verified repository metadata, attributed perspective, access limitation, competing explanations and the next evidence or permission required. It may support topic mapping and investigation planning, but it remains excluded from scientific corroboration totals, accepted canonical edges and publication promotion until its separate gates are satisfied.",
+        answer: "Short answer: PRISM can preserve a blocked record as an unresolved investigation object; it may later support evidence only if the blocker is resolved and the relevant evidence gates are independently satisfied.",
+        analysis: "Detailed analysis: Archival practice preserves provenance even when an object is unavailable; scientific workflow records missing data rather than inventing values; Bayesian reasoning leaves confidence unchanged when the relevant evidence was not observed. A PRISM record may contain verified repository metadata, attributed perspective, access limitation, competing explanations and the next evidence or permission required. It can carry literal, metaphorical, allegorical, conceptual, phenomenological, cultural, philosophical or scientific-hypothesis readings at the same time, each with its own evidence lane. It may later mature when authorised material is examined and appropriate evidence supports a particular claim, but preservation or reinterpretation alone does not raise its status. Until then it remains excluded from scientific corroboration totals, accepted canonical edges and publication promotion.",
       },
       {
         id: "quantum-woo",
@@ -155,7 +155,7 @@ const faqGroups: FAQGroup[] = [
       },
       {
         question: "Can PRISM integrate a BLOCKED record?",
-        answer: "Yes—as a governed unresolved record. PRISM may preserve verified metadata, attributed perspectives, the blocker, uncertainty, alternative explanations and the next investigation step. It does not convert the item into a completed read, independent evidence, accepted canonical edge or publication-ready claim.",
+        answer: "Yes—as a governed unresolved record. PRISM may preserve verified metadata, multiple interpretive modes, typed connections, the blocker, uncertainty, alternatives and the next investigation step. A particular claim may later gain evidential support if authorised source access and the relevant validation gates are satisfied; the record is not promoted merely because it was integrated.",
       },
       {
         question: "Why use a tree, pyramid and prism?",
