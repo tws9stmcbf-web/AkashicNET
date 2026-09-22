@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. Seven public Reddit records have had their complete visible post text reviewed in this rotation. Six contain substantive bodies; one is a cross-post wrapper. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+Status: review draft. Nine public Reddit records have had their complete visible post text reviewed in this rotation. Seven contain substantive bodies; two are cross-post wrappers. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 7 public summaries staged; 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 9 public summaries staged; 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -19,6 +19,9 @@ This checkpoint proposes documentation integration only: 7 public summaries stag
 | microDJPanPSYchic | 1wmscxp | Complete visible wrapper text | Music cross-post | Review parent; verify work identity |
 | microINSIGHTS | 1wmhwfm | Complete visible body | Philosophical editorial reflection | Review attributed video separately |
 | NeuronsToNirvana | 1u49cm7 | Complete visible body | Community disclaimer and lived-experience framing | Check current crisis resources before reuse |
+
+| TribalGathering | 1sbz3wr | Complete visible body | Cross-cultural speculative synthesis | Verify each community attribution and theory comparison |
+| microDJPanPSYchic | 1u8aspz | Complete wrapper and one identified comment | Music curation plus interpretive model | Review parent and obtain primary mechanism evidence |
 
 Images, audio, video and complete comment trees are not reviewed. Selected rendered comments on 1u49cm7 were read but are not a separate quantified comment census.
 
@@ -77,6 +80,27 @@ Selected rendered navigation-comment text separates evidence, interpretation, te
 
 Gap: crisis-resource contact details require a fresh official-source check before republication. This draft deliberately does not reproduce the telephone numbers. No current resource verification has been completed.
 
+### 1sbz3wr — Tribal Gathering 2026: Igniting the Living Cosmos
+https://www.reddit.com/r/TribalGathering/comments/1sbz3wr/
+
+A regional table groups distinct peoples, beliefs and practices and compares them with consciousness theories. Treat those comparisons as the curator's hypotheses, not community testimony or demonstrated scientific equivalence. The blanket statement that every tradition shares one conscious-cosmos premise requires correction or community-specific support. Scientific terms such as entanglement and coherence are not established mechanisms simply because they appear in a cultural analogy.
+
+The declared 41–42 participating groups and predicted ceremonies need dated organizer records. No linked official lineup or community-specific references were visible in the body. Observed source link points to N2N post 1raakpe, queued but not read:
+https://www.reddit.com/r/NeuronsToNirvana/comments/1raakpe/metad_multiscale_entangled_theory_of_awareness/
+
+Candidate source types: dated organizer lineup, participating nations' own public educational resources, and authorized elder contributions with consent and context. Specific supporting sources remain to be located. Do not generalize ceremonial plant use across the grouped peoples or reproduce restricted knowledge. Respect and gratitude in the post do not establish factual provenance or permission.
+
+### 1u8aspz — Liquid Ace: Psychic Experience
+https://www.reddit.com/r/microDJPanPSYchic/comments/1u8aspz/
+
+Complete visible cross-post wrapper reviewed. Parent is 1smm5sg, not yet read:
+https://www.reddit.com/r/NeuronsToNirvana/comments/1smm5sg/liquid_ace_psychicexperience_ace_ventura/
+
+Also reviewed the complete rendered interpretation comment:
+https://www.reddit.com/r/microDJPanPSYchic/comments/1u8aspz/comment/oskq0kv/
+
+The comment proposes ACTC/HOMESENSE/METAD interpretations of music-associated insight and explicitly does not assert psychic transmission or external information transfer. Statements about predictive cycles, self-referential processing, integration and associative entropy need primary evidence and operational definitions. Classify as a proposed explanatory model, not established neuroscience. The identified comment is one reviewed comment, not an exhaustive comment census. Audio and parent media remain unreviewed. Count one distribution post; do not count it as an independent music work.
+
 ## Integration queue
 
 1. Verify originals and primary sources, documenting access scope and failures.
@@ -87,4 +111,4 @@ Gap: crisis-resource contact details require a fresh official-source check befor
 
 Love, peace, compassion and service can be editorial connectors. Such thematic relationships do not establish scientific causation, cultural equivalence or accepted canonical graph edges.
 
-Coverage percentage is unknown: these seven records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
+Coverage percentage is unknown: these nine records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
