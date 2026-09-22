@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. Twelve public Reddit records have had their complete visible post text reviewed in this rotation. Ten contain substantive bodies; two are cross-post wrappers. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+Status: review draft. Thirteen public Reddit records have had their complete visible post text reviewed in this rotation. Ten contain substantive bodies; two are brief cross-post wrappers; one displays a substantive embedded parent body. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 15 summaries staged (12 Reddit, one IONS overview, two research abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 16 summaries staged (13 Reddit, one IONS overview, two AWARE abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -193,3 +193,14 @@ Supporting checks: [NHS five steps](https://www.nhs.uk/mental-health/self-help/g
 [AWARE-II, PMID 37423492](https://pubmed.ncbi.nlm.nih.gov/37423492/), DOI 10.1016/j.resuscitation.2023.109903: abstract checked. 567 arrests, 53 survivors, 28 interviewed, 11 memory/perception reports. Separate 126-person community arm. EEG results during CPR do not establish participant-level timing of remembered experience or awareness after irreversible death. Full methods, target exposure, replication, data availability and correction checks pending.
 
 Both works: Parnia et al.; evidence class primary research abstract with preliminary interpretation; topics T004, T018, T026. External institutional and related-study claims remain pending. No full papers appraised or scientific conclusions promoted.
+
+
+## 1vzsh2d — 13 Keys symbolic map
+
+https://www.reddit.com/r/TribalGathering/comments/1vzsh2d/the_13_keys_to_the_infinite_chakras_0_12_from/
+
+Public cross-post by u/NeuronsToNirvana, published2026-08-27T12:23:34.137Z; accessed2026-09-22. Complete visible cross-post including embedded parent body read; parent1vzsfzv not separately counted. No comments or media reviewed. Interpretation/speculative ethical framework; it explicitly disclaims a unified historical chakra system and physiological frequency correspondences. Broad cultural comparisons still need community-specific sources. Proposed past-life research lists alternatives but supplies no cases or methods. No external study links in body.
+
+Tags: T002 Indigenous knowledge; T004 consciousness; T005 contemplation; T009 ethics and compassion; T020 philosophy; T026 research methods; T027 theory comparison; newT029 reported past-life memories; newT030 Schumann resonances. Each new topic has one Reddit post. Earlier twelve-record topic table is a historical subset, not this updated total. Project names are entities.
+
+Analyst-selected source: [NASA NTRS20120000051](https://ntrs.nasa.gov/citations/20120000051), Simoes/Pfaff/Freudenreich, Observation of Schumann Resonances in the Earth's Ionosphere (repository date2011-01-01; preprint). Full metadata page and abstract read, not PDF. Supports electromagnetic-resonance observations, not chakra or consciousness links. Candidate journal version DOI10.1029/2011GL049668 pending matching. Source note nested in this summary, not an extra staged record. Rights follow repository metadata; no copied paper. Community authority and traditional-source provenance pending. No full scientific appraisal or accepted graph edge.
