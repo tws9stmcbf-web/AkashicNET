@@ -109,7 +109,16 @@ Every review is append-only. It records the earlier and new evidence lane, direc
 
 ## Relationship to AkashicOMNI versioning
 
-The current released framework is AkashicOMNI v0.4.3. Under its Publication Impact Classifier, AkashicPRISM is a **compatible expansion**: it introduces a reusable epistemic layer, plural interpretive modes, typed connection assessments and append-only classification history while preserving existing evidence boundaries and historical assessments. It therefore supports a proposed **AkashicOMNI v0.5.0** MINOR release.
+The current released framework is AkashicOMNI v0.4.3. The proposed architecture assigns four distinct levels:
+
+1. **AkashicNET** — the encompassing knowledge ecosystem, corpus, graph, ledgers and publication surfaces.
+2. **AkashicOMNI** — the meta-framework coordinating twelve analytical frameworks.
+3. **The twelve frameworks** — AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, #METAD, ACTC, MultidimensionalCUT PAST, PRESENT and FUTURE, and UMASC.
+4. **AkashicPRISM** — a shared epistemic interface that receives outputs from the twelve frameworks and governs their interpretive mode, evidence lane, connection strength, uncertainty, cultural authority and revision history before integration into AkashicNET knowledge structures.
+
+PRISM therefore belongs to AkashicNET and serves as the functional interface between AkashicOMNI analysis and AkashicNET storage or publication. It is not a thirteenth peer framework, and AkashicNET is not one of the twelve frameworks.
+
+Under AkashicOMNI’s Publication Impact Classifier, AkashicPRISM is a **compatible expansion** while the v0.4.3 architecture remains historically preserved. It therefore supports a proposed **AkashicOMNI v0.5.0** MINOR release.
 
 This draft does not itself release v0.5.0. The candidate becomes current only through the project’s separate review, merge and publication process. Earlier assessments retain the AkashicOMNI version they originally cited and are not automatically recalculated.
 
