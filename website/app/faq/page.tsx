@@ -150,6 +150,12 @@ const faqGroups: FAQGroup[] = [
         answer: "AkashicPRISM means Pluralistic Research & Inquiry across States and Meaning. It is the epistemic interface between unusual experience and the AkashicNET knowledge system, separating what was experienced, how it was interpreted, what can be tested and what remains unknown.",
       },
       {
+        id: "prism-omni-version",
+        question: "Does AkashicPRISM advance the AkashicOMNI version?",
+        answer: "Yes—as a proposed compatible expansion. Under AkashicOMNI’s version rules, PRISM supports a MINOR advance from the current v0.4.3 to candidate v0.5.0.",
+        analysis: "Detailed analysis: PRISM adds a reusable epistemic layer, plural interpretive modes, typed connection assessments and append-only classification history while preserving existing evidence boundaries. The candidate version does not become current merely because it is drafted: review, merge and publication remain separate. Historical assessments retain the AkashicOMNI version they originally cited and are not automatically recalculated.",
+      },
+      {
         question: "Does PRISM treat every worldview as equally true?",
         answer: "No. PRISM represents perspectives fairly without flattening their differences. Inclusion is not verification, and respectful comparison is not a claim that distinct traditions describe the same reality.",
       },
