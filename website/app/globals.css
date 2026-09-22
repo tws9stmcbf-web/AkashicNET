@@ -597,3 +597,19 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
   .faq-item p { padding-right:1rem; }
 }
 @media (prefers-reduced-motion:reduce) { .faq-item summary span { transition:none; } }
+
+
+/* FAQ criticism responses and contact */
+.faq-group-note { max-width:18rem; margin-top:1.25rem; color:var(--muted); font-size:.78rem; line-height:1.65; }
+.faq-short { padding-bottom:.85rem!important; color:#dedacf!important; font-weight:700; }
+.faq-analysis { max-width:54rem; margin:0 3.5rem 1.8rem 0; padding:1.2rem 1.3rem; border-left:2px solid rgba(189,166,255,.65); background:linear-gradient(90deg,rgba(189,166,255,.08),transparent); }
+.faq-analysis p { padding:0; margin:0; color:var(--muted); font-size:.95rem; line-height:1.8; }
+.faq-contact { padding:clamp(5rem,8vw,8rem) clamp(1.25rem,8vw,9rem); border-top:1px solid var(--line); background:radial-gradient(circle at 85% 20%,rgba(139,230,199,.1),transparent 24rem),#081312; }
+.faq-contact h2 { max-width:58rem; margin:1.2rem 0 1.5rem; font:400 clamp(2.7rem,5vw,5.5rem)/.98 Georgia,serif; letter-spacing:-.04em; }
+.faq-contact>p:not(.section-label) { max-width:52rem; color:#c7c5ba; font-size:1.05rem; line-height:1.8; }
+.faq-contact-actions { display:flex; flex-wrap:wrap; align-items:center; gap:1.5rem; margin:2rem 0 1.3rem; }
+.faq-contact small { display:block; max-width:48rem; color:var(--muted); line-height:1.6; }
+@media (max-width:800px) {
+  .faq-group-note { max-width:none; }
+  .faq-analysis { margin-right:1rem; }
+}
