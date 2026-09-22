@@ -124,3 +124,50 @@ Include research pages, abstracts and original papers separately from Reddit rec
 Love, peace, compassion and service can be editorial connectors. Such thematic relationships do not establish scientific causation, cultural equivalence or accepted canonical graph edges.
 
 Coverage percentage is unknown: these ten records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
+
+## IONS-FAQ-001 — source read
+https://noetic.org/science/research-faqs/
+Read 22 September 2026; publication/revision date unknown. Full extracted FAQ; institutional overview, not a study. It points to publications and NEXA. Hypothesis validation remains pending. No archive submissions accessed. Historical-log overlap unknown. Proposed connection to consciousness questions; no canonical edge accepted.
+
+## Topic assignments for these ten public records
+Provisional tags from saved reading notes, not fresh reads. Tagging is descriptive, not evidence promotion. Private records are excluded from this public subset.
+
+| Post ID | Topics |
+|---|---|
+| 10a8yeh | consciousness; psychedelic science; research curation |
+| 1wmhy5s | meaning and connection; integration |
+| 1sxwgdt | Indigenous knowledge; ethics and compassion |
+| useg7z | microdosing; research methods; receptor pharmacology; research curation |
+| 1wmscxp | music |
+| 1wmhwfm | philosophy; identity; meaning and connection |
+| 1u49cm7 | harm reduction; lived experience; consciousness; platform governance |
+| 1sbz3wr | Indigenous knowledge; consciousness; theory comparison |
+| 1u8aspz | music; consciousness; theory comparison |
+| plrxca | microdosing; harm reduction; dose terminology; potency variability; drug interactions; tolerance; afterglow; integration; receptor pharmacology |
+
+| Topic | Posts in public subset |
+|---|---:|
+| Indigenous knowledge | 2 |
+| afterglow | 1 |
+| consciousness | 4 |
+| dose terminology | 1 |
+| drug interactions | 1 |
+| ethics and compassion | 1 |
+| harm reduction | 2 |
+| identity | 1 |
+| integration | 2 |
+| lived experience | 1 |
+| meaning and connection | 2 |
+| microdosing | 2 |
+| music | 2 |
+| philosophy | 1 |
+| platform governance | 1 |
+| potency variability | 1 |
+| psychedelic science | 1 |
+| receptor pharmacology | 2 |
+| research curation | 2 |
+| research methods | 1 |
+| theory comparison | 2 |
+| tolerance | 1 |
+
+Public subset: 10 tagged posts; 22 distinct topics. Source-work counts per topic remain unknown. One additional IONS overview summary staged separately; no new scientific paper appraisal or merge/deployment.
