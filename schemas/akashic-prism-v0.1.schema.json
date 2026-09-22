@@ -935,6 +935,163 @@
           }
         }
       }
+    },
+    "assessment_history": {
+      "type": "array",
+      "description": "Append-only history of classification reviews. New inputs may strengthen, weaken or reclassify an assessment, but never erase its prior state.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assessment_event_id",
+          "recorded_at",
+          "affected_ref",
+          "input_type",
+          "independence_status",
+          "prior_evidence_lane",
+          "new_evidence_lane",
+          "effect",
+          "rationale",
+          "uncertainty",
+          "reviewer_role",
+          "source_ids"
+        ],
+        "properties": {
+          "assessment_event_id": {
+            "type": "string",
+            "pattern": "^ASSESS-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "recorded_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "affected_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_type": {
+            "enum": [
+              "anecdotal_experience",
+              "community_recurrence_signal",
+              "citizen_science_observation",
+              "citizen_science_study",
+              "controlled_study",
+              "peer_reviewed_study",
+              "replication",
+              "systematic_review",
+              "meta_analysis",
+              "cultural_authority_review",
+              "source_correction",
+              "access_or_rights_change",
+              "other"
+            ]
+          },
+          "independence_status": {
+            "enum": [
+              "same_source",
+              "related_source",
+              "independent",
+              "partially_independent",
+              "unknown"
+            ]
+          },
+          "prior_evidence_lane": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated",
+              null
+            ]
+          },
+          "new_evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "effect": {
+            "enum": [
+              "strengthened",
+              "weakened",
+              "reclassified",
+              "no_change",
+              "split_into_components"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "gates_passed": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "source_access",
+                "provenance",
+                "method_review",
+                "independence_review",
+                "rights",
+                "cultural_authority",
+                "privacy",
+                "publication"
+              ]
+            }
+          },
+          "gates_pending": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "source_access",
+                "provenance",
+                "method_review",
+                "independence_review",
+                "rights",
+                "cultural_authority",
+                "privacy",
+                "publication"
+              ]
+            }
+          },
+          "supersedes_event_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^ASSESS-[A-Z0-9][A-Z0-9-]+$"
+          }
+        }
+      }
     }
   }
 }
