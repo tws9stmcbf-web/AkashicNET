@@ -126,13 +126,35 @@
       "blocker": "Inspected repository metadata is insufficient for substantive analysis or source identity verification.",
       "next_action": "Obtain authorised material with provenance to resolve identity and examine substantive content; preserve the live-access HOLD.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100020",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T19:43:24.883Z",
+      "review_scope": "Repository-only pilot and semantic-index metadata plus pinned queue membership; no live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "Pilot metadata has an unknown date, generic attribution and a catalogue-only summary. The external-source field points to the same Reddit post. Three semantic-index URL variants map to this ID, including variants with apparent catalogue-field fragments. These fields neither verify post identity nor supply post content or an independently identifiable primary study. Pattern similarity is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+      "access_limitations": [
+        "Live Reddit access remains HOLD; post body, comments, media and research sources were not reviewed."
+      ],
+      "blocker": "Verified source identity and substantive content are missing from the inspected metadata.",
+      "next_action": "Investigate shared provenance and URL-field anomalies through repository history before substantive review.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 4,
-    "next_pending_post_id": "100020",
-    "next_action": "Review next pending record; retain blocked records for later source verification."
+    "blocked": 5,
+    "next_pending_post_id": "100021",
+    "next_action": "Investigate N2N-INV-003 through repository extraction/index history; next pending post remains 100021. Preserve blocked records and all gates."
   },
   "repository_verification_events": [
     {
@@ -146,5 +168,91 @@
       "historical_reconciliation": "Earlier access-limit statements are retained as historical observations. This follow-up resolves that retrieval limitation for the inspected rows only; all four records remain BLOCKED.",
       "counting": "No new completed post reads, scientific appraisals or canonical edges; URL variants are deduplicated by ID."
     }
-  ]
+  ],
+  "investigation_register": {
+    "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
+    "counting": "Three overlapping issue groups across five inspected IDs, not fifteen unique posts. The purposive queue-prefix sample does not establish corpus-wide prevalence. No new completed-read or evidence counts.",
+    "items": [
+      {
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-09-22T19:43:24.883Z",
+        "affected_post_ids": [
+          "10001c",
+          "10001d",
+          "10001e",
+          "10001f",
+          "100020"
+        ],
+        "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+        "classification": "repository_metadata_investigation_signal",
+        "scientific_outlier": false,
+        "issue_id": "N2N-INV-001",
+        "title": "Templated metadata with unresolved provenance",
+        "priority": "high",
+        "priority_reason": "Source identity must be established before substantive assessment.",
+        "observation": "All five inspected pilot rows have unknown dates, generic attribution, the same catalogue-summary template and the same research-question wording.",
+        "assessment_sources": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
+        ],
+        "uncertainty": "Standardised curation may explain the repetition; origin and source existence remain unresolved. This is not evidence of fabricated posts.",
+        "next_action": "Trace the pilot rows' introducing commit and any documented input artefact using repository history.",
+        "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement."
+      },
+      {
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-09-22T19:43:24.883Z",
+        "affected_post_ids": [
+          "10001c",
+          "10001d",
+          "10001e",
+          "10001f",
+          "100020"
+        ],
+        "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+        "classification": "repository_metadata_investigation_signal",
+        "scientific_outlier": false,
+        "issue_id": "N2N-INV-002",
+        "title": "Self-referential external-source links",
+        "priority": "high",
+        "priority_reason": "The inspected links cannot support primary-study verification.",
+        "observation": "In each of five inspected pilot rows, external_source_url repeats the row's Reddit post URL.",
+        "assessment_sources": [
+          "references/community/n2n-pilot-index.csv"
+        ],
+        "uncertainty": "The schema may permit post URLs in this field. Missing independent citations in metadata does not prove the original post had no sources.",
+        "next_action": "Check field semantics in repository documentation and seek existing authorised source-link receipts.",
+        "resolution_criterion": "Document intended field semantics and any independently identifiable primary source; retain unknown where unavailable."
+      },
+      {
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-09-22T19:43:24.883Z",
+        "affected_post_ids": [
+          "10001c",
+          "10001d",
+          "10001e",
+          "10001f",
+          "100020"
+        ],
+        "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+        "classification": "repository_metadata_investigation_signal",
+        "scientific_outlier": false,
+        "issue_id": "N2N-INV-003",
+        "title": "URL variants carrying apparent catalogue-field fragments",
+        "priority": "medium",
+        "priority_reason": "Could confuse downstream URL handling or duplicate counts.",
+        "observation": "For each inspected ID the semantic index includes a clean-looking URL and two variants with trailing comma-delimited catalogue tokens. Fifteen rows represent five IDs in this inspected sample.",
+        "assessment_sources": [
+          "references/community/reddit-semantic-index.csv"
+        ],
+        "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uncertainty": "Possible parsing or export contamination; the responsible transformation has not been established.",
+        "next_action": "Inspect the URI extraction and semantic-index construction code or commit history; prepare a derived correction only if causally supported, preserving raw history.",
+        "resolution_criterion": "Identify the transformation and verify a minimal correction against affected examples without changing unique-post or evidence counts."
+      }
+    ]
+  }
 }
