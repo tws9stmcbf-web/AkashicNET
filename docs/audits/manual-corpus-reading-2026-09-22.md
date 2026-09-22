@@ -111,7 +111,7 @@ Visible body fully read; revision shown July 12, 2023. The post attributes colla
 Topic tags: microdosing; harm reduction; dose terminology; potency variability; drug interactions; tolerance; afterglow; integration; receptor pharmacology. This is an explicit tagging baseline for one record, not a topic census of all ten. Each of these nine tags occurs in this tagged record. Unique underlying-source counts remain unknown until URL extraction and work-level deduplication.
 
 ## IONS source stream
-Include research pages, abstracts and original papers separately from Reddit records. Capture source URL, work identity, related Reddit IDs, access scope, methods, results, limitations and integration stage. Historical audit logs recorded 196 entries: 39 containing content or abstracts and 157 blocked or empty. These are unrefreshed log counts, not unique studies or full-paper reads. Missing local files must be distinguished from publisher access failures. No new IONS page or paper has been read in this checkpoint.
+Include research pages, abstracts and original papers separately from Reddit records. Capture source URL, work identity, related Reddit IDs, access scope, methods, results, limitations and integration stage. Historical audit logs recorded 196 entries: 39 containing content or abstracts and 157 blocked or empty. These are unrefreshed log counts, not unique studies or full-paper reads. Missing local files must be distinguished from publisher access failures. One IONS institutional FAQ overview was read and summarized separately. No new IONS scientific paper was appraised.
 
 ## Integration queue
 
