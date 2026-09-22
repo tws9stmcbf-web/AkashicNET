@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent N2N research quality and discovery review; separate from TSC",
+  "created_on": "2026-09-22",
+  "queue": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "source_path": "references/community/reddit-uri-index.csv",
+    "source_commit": "201ab5326a08d25a7cbef62dca099153f634a98e",
+    "unique_n2n_post_ids": 7399,
+    "identity": "Lowercase post ID parsed from a valid NeuronsToNirvana Reddit URL; deduplicate alternate slugs, trailing slashes and annotations.",
+    "order": "ASCII lexicographic ascending post_id (0-9 then a-z); Reddit IDs are base36, not hexadecimal. This is not chronological/numeric ordering.",
+    "resume_rule": "Recompute sorted IDs from the pinned source; absent records are PENDING. Select smallest PENDING ID. Leave BLOCKED records visible for retry; never count them complete. On an explicit retry, revisit BLOCKED entries first. Reconcile a new source snapshot explicitly, including newly inserted lower IDs; never rely solely on last_id."
+  },
+  "statuses": [
+    "PENDING",
+    "IN_PROGRESS",
+    "PARTIAL",
+    "BLOCKED",
+    "COMPLETE"
+  ],
+  "completion_definition": {
+    "scope": "Post and its directly relevant cited sources; comments excluded unless explicitly included. Linked-source recursion is bounded and documented.",
+    "requirements": [
+      "Record actual post access and version/retrieval date without committing source bodies or personal data.",
+      "Identify claims and distinguish research, interpretation, testimony and creative material.",
+      "Examine available primary sources and document methods, limitations, relevant counterevidence and inaccessible material.",
+      "Record duplicate-source relationships and candidate topic/Big Question mappings.",
+      "Save a review artifact and explicit scope/limitations. Unexamined material central to the assessment means PARTIAL or BLOCKED."
+    ],
+    "meaning": "COMPLETE means complete for documented scope, never proof of claims, rights clearance, or publication approval."
+  },
+  "history_note": "No prior review is marked COMPLETE without locating its assessment artifact. Earlier discovery, indexing and metadata enrichment are not full analyses.",
+  "boundaries": {
+    "reddit_live_access": "HOLD",
+    "source_bodies_committed": false,
+    "comments_or_usernames_committed": false,
+    "website_integration": "HOLD",
+    "rights_promotion": false,
+    "evidence_promotion": false,
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "big_questions": "UNRESOLVED",
+    "publication": "No automatic publication or integration. This draft records workflow state only."
+  },
+  "records": [
+    {
+      "post_id": "10001c",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Archived record/provenance only; post content and external sources not accessed.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "The historical provenance audit identifies the 1000... sequence as a provenance anomaly. It does not prove generation or fabrication. Archive membership and dry-run processing do not establish post existence or substantiate any claim. No substantive scientific assessment is possible from this URL record alone.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md",
+        "data/reddit/README.md"
+      ],
+      "blocker": "No verified post content or primary-source links available in inspected records; live Reddit intake remains HOLD.",
+      "next_action": "Obtain authorised source access or owner-provided material with sufficient provenance; then examine the post and directly relevant primary sources.",
+      "integration_status": "HOLD"
+    }
+  ],
+  "checkpoint": {
+    "complete_in_this_ledger": 0,
+    "blocked": 1,
+    "next_pending_post_id": "10001d",
+    "next_action": "Assess the next pending archive record; do not infer its content from its URL slug."
+  }
+}
