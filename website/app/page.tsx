@@ -210,6 +210,7 @@ export default function Home() {
           <h2>What is being built behind this doorway?</h2>
           <p className="plain-lede">Imagine a library that looks like one simple website from the outside, but becomes vastly larger once you step through it—a <strong>TARDIS-like knowledge space</strong>, used here as a playful metaphor rather than a scientific claim.</p>
           <p>AkashicNET is a long-term <strong>citizen data-science project</strong>: human curiosity and community knowledge, organised with computational tools and AI assistance, while provenance, uncertainty, privacy and human judgement remain visible.</p>
+          <p className="project-attribution"><strong>Original vision and editorial direction:</strong> the AkashicNET founder. Developed and formalised through human–AI collaboration.</p>
         </div>
         <div className="living-tree" aria-label="The living library model">
           <div className="tree-crown"><span>CANOPY</span><h3>Ideas, frameworks and new questions</h3><p>Connections can grow, branch, be reviewed and change.</p></div>
