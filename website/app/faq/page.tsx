@@ -26,6 +26,14 @@ const faqGroups = [
         answer: "AI assists with retrieval, comparison, drafting, structure, validation and pattern-finding. The human founder supplies the mission, editorial direction, values and accountable judgement. AI output remains reviewable and can be corrected.",
       },
       {
+        question: "Is AkashicNET just “AI slop”?",
+        answer: "No. Its present outputs rest on human-led curation and community work accumulated since r/NeuronsToNirvana was created in March 2022. AI can accelerate drafting, retrieval and formalisation, but it did not create that history, choose the project’s values or replace editorial judgement. Quality is demonstrated through provenance, dated records, corrections, evidence labels and review—not by pretending AI was absent.",
+      },
+      {
+        question: "What personal experience helped catalyse the project?",
+        answer: "The founder describes an NDE-like revelation at around 3 a.m. on Easter Monday following emergency surgery for a ruptured appendix. It became a major personal catalyst for questions about consciousness, memory and reality. AkashicNET records this as lived experience and biographical provenance—not clinical confirmation of a near-death experience or proof of a metaphysical conclusion.",
+      },
+      {
         question: "What stage is the project at?",
         answer: "AkashicNET is pre-alpha: its architecture, corpus methods, evidence boundaries and public interfaces are still being tested and revised. A working feature or indexed record should not be mistaken for a validated scientific conclusion.",
       },
