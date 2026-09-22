@@ -26,8 +26,9 @@ const faqGroups = [
         answer: "AI assists with retrieval, comparison, drafting, structure, validation and pattern-finding. The human founder supplies the mission, editorial direction, values and accountable judgement. AI output remains reviewable and can be corrected.",
       },
       {
+        id: "ai-slop",
         question: "Is AkashicNET just “AI slop”?",
-        answer: "No. Its present outputs rest on human-led curation and community work accumulated since r/NeuronsToNirvana was created in March 2022. AI can accelerate drafting, retrieval and formalisation, but it did not create that history, choose the project’s values or replace editorial judgement. Quality is demonstrated through provenance, dated records, corrections, evidence labels and review—not by pretending AI was absent.",
+        answer: "No. Its present outputs rest on human-led curation and community work accumulated since r/NeuronsToNirvana was created in March 2022. AI can accelerate drafting, retrieval and formalisation, but it did not create that history, choose the project’s values or replace editorial judgement. Quality is demonstrated through provenance, dated records, corrections, evidence labels and review—not by pretending AI was absent. Please look around the site, inspect the sources and methods, and leave a specific, constructive comment about anything that could be improved.",
       },
       {
         question: "What personal experience helped catalyse the project?",
@@ -136,7 +137,7 @@ export default function FAQPage() {
             <p className="section-label">{group.label}</p>
             <div className="faq-list">
               {group.items.map((item, index) => (
-                <details className="faq-item" key={item.question} open={group === faqGroups[0] && index === 0}>
+                <details id={item.id} className="faq-item" key={item.question} open={(group === faqGroups[0] && index === 0) || item.id === "ai-slop"}>
                   <summary>{item.question}<span aria-hidden="true">+</span></summary>
                   <p>{item.answer}</p>
                 </details>
