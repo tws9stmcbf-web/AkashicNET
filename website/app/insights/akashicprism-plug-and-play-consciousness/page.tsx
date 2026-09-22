@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
   title: "A Thought Stream: Could Consciousness Inquiry Become Plug-and-Play? — AkashicNET",
-  description: "A live conceptual exploration of AkashicNET, AkashicOMNI and AkashicPRISM as a modular inquiry architecture for awareness, consciousness and sentience.",
+  description: "A developing conceptual exploration of AkashicNET, AkashicOMNI and AkashicPRISM as a modular inquiry architecture for awareness, consciousness and sentience.",
 };
 
 const shell: CSSProperties = { width: "min(100% - 40px, 1120px)", margin: "0 auto" };
@@ -40,9 +40,10 @@ function StructurePuzzle() {
 
   return (
     <figure style={{ margin: "36px 0 0" }}>
-      <svg role="img" aria-labelledby="prism-puzzle-title prism-puzzle-desc" viewBox="0 0 1200 880" style={{ width: "100%", height: "auto", display: "block" }}>
+      <div role="region" aria-label="Structure diagram; scroll horizontally on small screens" tabIndex={0} style={{ overflowX: "auto" }}>
+      <svg role="img" aria-labelledby="prism-puzzle-title prism-puzzle-desc" viewBox="0 0 1200 880" style={{ width: "100%", minWidth: 1000, height: "auto", display: "block" }}>
         <title id="prism-puzzle-title">The proposed AkashicNET, AkashicOMNI and AkashicPRISM plug-in architecture</title>
-        <desc id="prism-puzzle-desc">AkashicNET contains AkashicOMNI and its twelve modular analytical frameworks. Their outputs pass through AkashicPRISM into governed corpus, graph, ledger and publication structures. New evidence can return through the cycle.</desc>
+        <desc id="prism-puzzle-desc">AkashicNET contains AkashicOMNI and its twelve analytical perspectives. Their outputs pass through AkashicPRISM into governed corpus, graph, ledger and publication structures. New evidence can return through the cycle.</desc>
         <defs>
           <linearGradient id="net-field" x1="0" x2="1"><stop offset="0" stopColor="#0c1717"/><stop offset="1" stopColor="#111126"/></linearGradient>
           <linearGradient id="prism-field" x1="0" x2="1"><stop offset="0" stopColor="#8868cf"/><stop offset=".5" stopColor="#da91bf"/><stop offset="1" stopColor="#4fbfa3"/></linearGradient>
@@ -76,10 +77,17 @@ function StructurePuzzle() {
             <text x={x + 115} y="790" textAnchor="middle" fill="#e5dfd1" fontSize={name.length > 12 ? "15" : "18"} fontWeight="700" letterSpacing="1.2">{name}</text>
           </g>
         ))}
-        <path d="M1090 782 C1150 782 1148 540 1088 540" fill="none" stroke="#8be6c7" strokeWidth="3" strokeDasharray="8 8" markerEnd="url(#arrowhead)"/>
+        <path d="M1135 782 C1180 782 1180 460 1140 460" fill="none" stroke="#8be6c7" strokeWidth="3" strokeDasharray="8 8" markerEnd="url(#arrowhead)"/>
         <text x="1122" y="690" transform="rotate(-90 1122 690)" textAnchor="middle" fill="#8be6c7" fontSize="15" letterSpacing="2">NEW EVIDENCE RETURNS</text>
       </svg>
-      <figcaption style={{ maxWidth: 850, margin: "18px auto 0", color: "#a9aaa4", fontSize: 14, lineHeight: 1.7, textAlign: "center" }}>Conceptual jigsaw: the twelve frameworks are modular analytical components. PRISM connects and governs their outputs; it does not depict consciousness itself as a machine assembled from parts.</figcaption>
+      </div>
+      <figcaption style={{ maxWidth: 850, margin: "18px auto 0", color: "#a9aaa4", fontSize: 14, lineHeight: 1.7, textAlign: "center" }}>Conceptual jigsaw: the twelve analytical perspectives include past, present and future views of CUT. PRISM connects and governs their outputs; it does not depict consciousness itself as a machine assembled from parts.</figcaption>
+      <details style={{ marginTop: 20, color: "#d2d0c8", lineHeight: 1.8 }}>
+        <summary>Read the structure as text</summary>
+        <p>AkashicNET is the containing knowledge ecosystem. AkashicOMNI coordinates the analytical perspectives; AkashicPRISM is their shared epistemic interface.</p>
+        <ul>{pieces.map(([name]) => <li key={name}>{name}</li>)}</ul>
+        <p>PRISM records interpretations, evidence, alternatives, uncertainty, ethics and revisions. Governed outputs enter the corpus, knowledge graph and ledgers, with publication separately reviewed. New evidence returns to the analytical perspectives for reassessment.</p>
+      </details>
     </figure>
   );
 }
@@ -87,7 +95,7 @@ function StructurePuzzle() {
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", color: "#f4f0e4", background: "radial-gradient(circle at 75% 8%,rgba(123,93,184,.24),transparent 30rem),radial-gradient(circle at 12% 36%,rgba(69,178,147,.13),transparent 28rem),#050b0d" }}>
-      <header style={{ ...shell, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, paddingTop: 22, paddingBottom: 22, borderBottom: "1px solid rgba(255,255,255,.12)" }}>
+      <header style={{ ...shell, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20, paddingTop: 22, paddingBottom: 22, borderBottom: "1px solid rgba(255,255,255,.12)" }}>
         <a href="/" style={{ color: "#f4f0e4", textDecoration: "none", fontWeight: 900, letterSpacing: ".13em" }}>AKASHICNET.ORG</a>
         <nav aria-label="Article navigation" style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
           <a href="/akashicomni" style={{ color: "#cbc7d5" }}>AkashicOMNI</a>
@@ -140,7 +148,7 @@ export default function Page() {
                 ["03 · AKASHICPRISM", "Interpretations, evidence lanes, competing explanations, connection strengths and uncertainties are separated."],
                 ["04 · AKASHICNET", "Stable records, provenance, graph relationships, investigation states and revision history are preserved."],
                 ["05 · RETURN", "New evidence re-enters the cycle. Earlier assessments remain visible rather than silently disappearing."],
-              ].map(([name,text]) => <article key={name} style={{ display: "grid", gridTemplateColumns: "minmax(150px,.35fr) minmax(0,1fr)", gap: 24, padding: 24, background: "#091112" }}><strong style={{ color: "#8be6c7", letterSpacing: ".08em" }}>{name}</strong><span style={{ color: "#c8c5be", lineHeight: 1.7 }}>{text}</span></article>)}
+              ].map(([name,text]) => <article key={name} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: 24, padding: 24, background: "#091112" }}><strong style={{ color: "#8be6c7", letterSpacing: ".08em" }}>{name}</strong><span style={{ color: "#c8c5be", lineHeight: 1.7 }}>{text}</span></article>)}
             </div>
             <aside style={prismCheck}><strong style={{ color: "#c2a8ff" }}>Boundary:</strong> “Plug-and-play” describes modular inquiry and data compatibility. It is not a claim that sentience can be installed, that consciousness is software, or that subjective experience has been reduced to an engineering interface.</aside>
           </div>
@@ -149,7 +157,7 @@ export default function Page() {
         <section style={{ ...shell, paddingTop: "clamp(65px,9vw,110px)", paddingBottom: "clamp(65px,9vw,110px)" }} aria-labelledby="structure-puzzle-title">
           <p style={label}>PROPOSED STRUCTURE · 12 + PRISM</p>
           <h2 id="structure-puzzle-title" style={{ maxWidth: 920, margin: "18px 0 20px", font: "400 clamp(2.6rem,5.5vw,5.5rem)/.98 Georgia,serif", letterSpacing: "-.04em" }}>A plug-in jigsaw for inquiry—not a machine for manufacturing minds.</h2>
-          <p style={prose}>Each OMNI framework contributes a distinct analytical piece. PRISM is the shared connector that keeps their claims, meanings and evidence levels distinguishable before AkashicNET preserves the result.</p>
+          <p style={prose}>Each OMNI perspective contributes an analytical piece; the three CUT pieces are temporal views of one framework. PRISM is the shared connector that keeps their claims, meanings and evidence levels distinguishable before AkashicNET preserves the result.</p>
           <StructurePuzzle />
         </section>
 
@@ -201,7 +209,8 @@ export default function Page() {
         </section>
 
         <aside style={{ ...shell, display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 12, paddingTop: 24, paddingBottom: 24, color: "#969890", fontSize: 13 }}>
-          <span>Published as a developing conceptual article · 22 September 2026</span>
+          <span>Original vision and editorial direction: the AkashicNET founder. Developed and formalised through human–AI collaboration.</span>
+          <span>Draft conceptual article prepared · 22 September 2026</span>
           <span>Evidence status: interpretation · conceptual model · open question</span>
         </aside>
       </article>
