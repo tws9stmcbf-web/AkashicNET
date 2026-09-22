@@ -28,6 +28,62 @@ const terms = [
   ["Sentience", "Can a being have felt states, especially pleasure, pain or welfare-relevant experience?"],
 ] as const;
 
+function StructurePuzzle() {
+  const pieces = [
+    ["AWAKEN", 80, 170], ["HIERATIC", 350, 170], ["HOMESENSE", 620, 170], ["ADAPT", 890, 170],
+    ["REGENERATE", 80, 270], ["TRANSCEND", 350, 270], ["#METAD", 620, 270], ["ACTC", 890, 270],
+    ["CUT · PAST", 80, 370], ["CUT · PRESENT", 350, 370], ["CUT · FUTURE", 620, 370], ["UMASC", 890, 370],
+  ] as const;
+  const outputs = [
+    ["CORPUS", 80], ["KNOWLEDGE GRAPH", 350], ["LEDGERS", 620], ["PUBLICATION GATES", 890],
+  ] as const;
+
+  return (
+    <figure style={{ margin: "36px 0 0" }}>
+      <svg role="img" aria-labelledby="prism-puzzle-title prism-puzzle-desc" viewBox="0 0 1200 880" style={{ width: "100%", height: "auto", display: "block" }}>
+        <title id="prism-puzzle-title">The proposed AkashicNET, AkashicOMNI and AkashicPRISM plug-in architecture</title>
+        <desc id="prism-puzzle-desc">AkashicNET contains AkashicOMNI and its twelve modular analytical frameworks. Their outputs pass through AkashicPRISM into governed corpus, graph, ledger and publication structures. New evidence can return through the cycle.</desc>
+        <defs>
+          <linearGradient id="net-field" x1="0" x2="1"><stop offset="0" stopColor="#0c1717"/><stop offset="1" stopColor="#111126"/></linearGradient>
+          <linearGradient id="prism-field" x1="0" x2="1"><stop offset="0" stopColor="#8868cf"/><stop offset=".5" stopColor="#da91bf"/><stop offset="1" stopColor="#4fbfa3"/></linearGradient>
+          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#efc96f"/></marker>
+        </defs>
+
+        <rect x="15" y="15" width="1170" height="850" rx="34" fill="url(#net-field)" stroke="#efc96f" strokeWidth="2"/>
+        <text x="55" y="62" fill="#efc96f" fontSize="24" fontWeight="700" letterSpacing="4">AKASHICNET · THE CONTAINING KNOWLEDGE ECOSYSTEM</text>
+
+        <rect x="45" y="92" width="1110" height="405" rx="26" fill="#0b1519" stroke="#8be6c7" strokeWidth="2"/>
+        <text x="80" y="135" fill="#8be6c7" fontSize="22" fontWeight="700" letterSpacing="3">AKASHICOMNI · META-FRAMEWORK</text>
+        <text x="1120" y="135" textAnchor="end" fill="#aeb7b4" fontSize="17">12 modular ways of examining</text>
+
+        {pieces.map(([name,x,y],index) => (
+          <g key={name}>
+            <rect x={x} y={y} width="230" height="72" rx="14" fill={index % 3 === 0 ? "#182c31" : index % 3 === 1 ? "#272039" : "#1d3029"} stroke={index % 3 === 0 ? "#69cfe0" : index % 3 === 1 ? "#b99beb" : "#78d2ad"} strokeWidth="2"/>
+            <circle cx={x + 230} cy={y + 36} r="12" fill={index % 3 === 0 ? "#182c31" : index % 3 === 1 ? "#272039" : "#1d3029"} stroke={index % 3 === 0 ? "#69cfe0" : index % 3 === 1 ? "#b99beb" : "#78d2ad"} strokeWidth="2"/>
+            <text x={x + 115} y={y + 44} textAnchor="middle" fill="#f4f0e4" fontSize={name.length > 11 ? "16" : "19"} fontWeight="700" letterSpacing="1.5">{name}</text>
+          </g>
+        ))}
+
+        <line x1="600" y1="497" x2="600" y2="560" stroke="#efc96f" strokeWidth="4" markerEnd="url(#arrowhead)"/>
+        <rect x="180" y="580" width="840" height="100" rx="24" fill="url(#prism-field)"/>
+        <text x="600" y="620" textAnchor="middle" fill="#080d12" fontSize="25" fontWeight="800" letterSpacing="3">AKASHICPRISM · EPISTEMIC INTERFACE</text>
+        <text x="600" y="651" textAnchor="middle" fill="#10151b" fontSize="17">interpretation · evidence · alternatives · uncertainty · ethics · revision</text>
+
+        <line x1="600" y1="680" x2="600" y2="726" stroke="#efc96f" strokeWidth="4" markerEnd="url(#arrowhead)"/>
+        {outputs.map(([name,x]) => (
+          <g key={name}>
+            <rect x={x} y="746" width="230" height="72" rx="14" fill="#131d1c" stroke="#6b7773" strokeWidth="2"/>
+            <text x={x + 115} y="790" textAnchor="middle" fill="#e5dfd1" fontSize={name.length > 12 ? "15" : "18"} fontWeight="700" letterSpacing="1.2">{name}</text>
+          </g>
+        ))}
+        <path d="M1090 782 C1150 782 1148 540 1088 540" fill="none" stroke="#8be6c7" strokeWidth="3" strokeDasharray="8 8" markerEnd="url(#arrowhead)"/>
+        <text x="1122" y="690" transform="rotate(-90 1122 690)" textAnchor="middle" fill="#8be6c7" fontSize="15" letterSpacing="2">NEW EVIDENCE RETURNS</text>
+      </svg>
+      <figcaption style={{ maxWidth: 850, margin: "18px auto 0", color: "#a9aaa4", fontSize: 14, lineHeight: 1.7, textAlign: "center" }}>Conceptual jigsaw: the twelve frameworks are modular analytical components. PRISM connects and governs their outputs; it does not depict consciousness itself as a machine assembled from parts.</figcaption>
+    </figure>
+  );
+}
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", color: "#f4f0e4", background: "radial-gradient(circle at 75% 8%,rgba(123,93,184,.24),transparent 30rem),radial-gradient(circle at 12% 36%,rgba(69,178,147,.13),transparent 28rem),#050b0d" }}>
@@ -88,6 +144,13 @@ export default function Page() {
             </div>
             <aside style={prismCheck}><strong style={{ color: "#c2a8ff" }}>Boundary:</strong> “Plug-and-play” describes modular inquiry and data compatibility. It is not a claim that sentience can be installed, that consciousness is software, or that subjective experience has been reduced to an engineering interface.</aside>
           </div>
+        </section>
+
+        <section style={{ ...shell, paddingTop: "clamp(65px,9vw,110px)", paddingBottom: "clamp(65px,9vw,110px)" }} aria-labelledby="structure-puzzle-title">
+          <p style={label}>PROPOSED STRUCTURE · 12 + PRISM</p>
+          <h2 id="structure-puzzle-title" style={{ maxWidth: 920, margin: "18px 0 20px", font: "400 clamp(2.6rem,5.5vw,5.5rem)/.98 Georgia,serif", letterSpacing: "-.04em" }}>A plug-in jigsaw for inquiry—not a machine for manufacturing minds.</h2>
+          <p style={prose}>Each OMNI framework contributes a distinct analytical piece. PRISM is the shared connector that keeps their claims, meanings and evidence levels distinguishable before AkashicNET preserves the result.</p>
+          <StructurePuzzle />
         </section>
 
         <section style={{ ...shell, paddingTop: "clamp(65px,9vw,110px)", paddingBottom: "clamp(65px,9vw,110px)" }}>
