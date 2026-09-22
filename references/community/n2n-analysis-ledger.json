@@ -103,12 +103,48 @@
       "blocker": "Inspected metadata is insufficient for substantive analysis; verified post content and independently identifiable primary-source links are unavailable within the inspected scope.",
       "next_action": "Resolve source identity using authorised material with provenance before substantive assessment; keep live access on HOLD.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10001f",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T19:39:49.566Z",
+      "review_scope": "Repository-only URI, pilot and semantic-index metadata; no live Reddit retrieval or post-content read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "The pilot classifies the record as research_discussion/community_observation with unknown date and generic attribution. Its summary describes cataloguing, and its external-source URL points back to the same Reddit post. The semantic index provides three URL variants for the same ID, not three independent posts or sources. These inspected fields supply no independently identifiable primary study or verified post content; they do not establish existence, authorship or scientific support. Historical sequence anomalies remain unproven as fabrication.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
+      ],
+      "assessment_source_commit": "9ae8821f9824bc5d03550e9f894d27c82536deb9",
+      "access_limitations": [
+        "Post text, comments, media and external research sources were not accessed; live Reddit access remains HOLD."
+      ],
+      "blocker": "Inspected repository metadata is insufficient for substantive analysis or source identity verification.",
+      "next_action": "Obtain authorised material with provenance to resolve identity and examine substantive content; preserve the live-access HOLD.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 3,
-    "next_pending_post_id": "10001f",
+    "blocked": 4,
+    "next_pending_post_id": "100020",
     "next_action": "Review next pending record; retain blocked records for later source verification."
-  }
+  },
+  "repository_verification_events": [
+    {
+      "checked_at": "2026-09-22T19:39:49.566Z",
+      "source_commit": "9ae8821f9824bc5d03550e9f894d27c82536deb9",
+      "source_path": "references/community/reddit-semantic-index.csv",
+      "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
+      "scope": "CSV header and matching rows for 10001c, 10001d, 10001e and 10001f only.",
+      "method": "The file-content fetch returned no usable text. An authorised Git blob read recovered the repository file; no live Reddit request was made.",
+      "finding": "The header contains source, reddit_url, subreddit, url_type and post_id. Each of the four inspected IDs has three URL variants. These rows provide URL classification, not post bodies, independently identifiable primary studies or independent corroboration.",
+      "historical_reconciliation": "Earlier access-limit statements are retained as historical observations. This follow-up resolves that retrieval limitation for the inspected rows only; all four records remain BLOCKED.",
+      "counting": "No new completed post reads, scientific appraisals or canonical edges; URL variants are deduplicated by ID."
+    }
+  ]
 }
