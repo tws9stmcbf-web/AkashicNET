@@ -6,7 +6,7 @@
 
 AkashicNET can preserve spiritual, contemplative, shamanic, psychic, trance-channelled, philosophical, cultural and scientific perspectives without forcing them into one standard of knowledge.
 
-AkashicPRISM records what was experienced, how a source or tradition interprets it, what meaning it carries, what changed after practice, which claims can be checked externally and what remains uncertain. It complements `spiritual-knowledge-encounter-record-v0.1.schema.json`; it does not replace that record.
+AkashicPRISM records what was experienced, how a source or tradition interprets it, what meaning it carries, what changed after practice, which claims can be checked externally and what remains uncertain. One subject may support several coexisting readings—literal, metaphorical, allegorical, symbolic, conceptual, phenomenological, cultural, philosophical, scientific-hypothesis, artistic or open-question—without collapsing them into one verdict. It complements `spiritual-knowledge-encounter-record-v0.1.schema.json`; it does not replace that record.
 
 ## Foundational commitment
 
@@ -35,11 +35,23 @@ Knowledge history must be described precisely. Some knowledge has been fragmente
 5. **Metaphysical interpretation** — spirits, ancestors, Akasha, nonlocal mind, divine presence or wider consciousness, attributed and labelled.
 6. **External claims** — predictions, historical details, physiological effects or other claims that can be independently examined.
 7. **Uncertainty and alternatives** — unknowns, competing explanations and the next observation that could discriminate between them.
-8. **Investigation state** — stable ID, classification, observed facts, alternatives, uncertainty, priority, next action and resolution criterion.\n9. **State and transition observations** — waking, liminal, dream, contemplative, trance and altered-state phenomenology with timing, basis and uncertainty.\n10. **Comparative correspondences** — similarities and differences across named traditions or models, always with a non-equivalence note and cultural-authority status.\n11. **Source network** — posts, papers, books, teachings, testimony and media connected through explicit citation and interpretation edges.
+8. **Investigation state** — stable ID, classification, observed facts, alternatives, uncertainty, priority, next action and resolution criterion.
+9. **State and transition observations** — waking, liminal, dream, contemplative, trance and altered-state phenomenology with timing, basis and uncertainty.
+10. **Comparative correspondences** — similarities and differences across named traditions or models, always with a non-equivalence note and cultural-authority status.
+11. **Source network** — posts, papers, books, teachings, testimony and media connected through explicit citation and interpretation edges.
+12. **Interpretive modes** — one or more typed readings of the record, with mixed readings separated when their evidential roles differ.
+13. **Connection assessments** — independently scored links to spiritual, scientific, esoteric, Indigenous or traditional, ancient or historical, metaphysical, philosophical, psychological, phenomenological and artistic domains.
 
 ## Comparison rules
 
-- Compare reported features before comparing explanations.\n- Record both overlap and difference.\n- Do not translate culturally specific beings, realms or practices into generic neuroscience, panpsychism or perennialism by default.\n- Do not use brain correlates to erase meaning, or spiritual interpretation to bypass physiological and psychological evidence.\n- Treat lucid, astral, trance, channelled and bardo-related accounts as attributable records whose externally checkable components can be investigated.\n- Require a source and non-equivalence note for every cross-tradition correspondence.\n\n## Counting and identity
+- Compare reported features before comparing explanations.
+- Record both overlap and difference.
+- Do not translate culturally specific beings, realms or practices into generic neuroscience, panpsychism or perennialism by default.
+- Do not use brain correlates to erase meaning, or spiritual interpretation to bypass physiological and psychological evidence.
+- Treat lucid, astral, trance, channelled and bardo-related accounts as attributable records whose externally checkable components can be investigated.
+- Require a source and non-equivalence note for every cross-tradition correspondence.
+
+## Counting and identity
 
 The source network keeps four counts separate:
 
@@ -49,6 +61,14 @@ The source network keeps four counts separate:
 - independent evidence sources
 
 Alternate URLs, annotations and repeated citations do not become additional works or independent corroboration.
+
+## Interpretive plurality and evidence maturation
+
+A record may be meaningful in several ways at once. A teaching may be literal within one attributed tradition, allegorical within a literary analysis, phenomenologically descriptive for an experiencer and a scientific hypothesis only where it makes a defined, testable claim. These modes are stored separately; none automatically cancels or validates the others.
+
+Each proposed connection records its target, domains, relationship, evidence lane, current strength, sources, uncertainty, alternative explanations and next discriminating step. Resonance or resemblance begins as descriptive or suggestive. It can later become better supported only when new authorised material, appropriate evidence and independent review justify that change. The dated earlier assessment remains in history.
+
+A BLOCKED record may therefore mature into evidence, but not merely because it was preserved or reinterpreted. The specific blocker must be resolved, the relevant source must be examined, provenance and rights must be adequate, and the claim must satisfy the standard of its evidence lane. Other interpretations of the same record may remain metaphorical, contested or unresolved.
 
 ## Cultural and ethical boundaries
 
@@ -65,7 +85,15 @@ Alternate URLs, annotations and repeated citations do not become additional work
 
 ## Outlier handling
 
-- Preserve the observation before explaining it.\n- Separate the experience, interpretation and externally testable claim.\n- Record ordinary, cultural, psychological, neurological, relational and metaphysical alternatives without forcing premature closure.\n- Use BLOCKED only for a named workflow dependency such as missing authorised material. Keep the investigation itself open when the question remains live.\n- Do not discard an outlier because it conflicts with a dominant model. Do not promote it because it is extraordinary.\n- Record what evidence could strengthen, weaken or distinguish each explanation.\n- Close an investigation only against its stated resolution criterion, with dated sources and limitations.\n\n## Gates
+- Preserve the observation before explaining it.
+- Separate the experience, interpretation and externally testable claim.
+- Record ordinary, cultural, psychological, neurological, relational and metaphysical alternatives without forcing premature closure.
+- Use BLOCKED only for a named workflow dependency such as missing authorised material. Keep the investigation itself open when the question remains live.
+- Do not discard an outlier because it conflicts with a dominant model. Do not promote it because it is extraordinary.
+- Record what evidence could strengthen, weaken or distinguish each explanation.
+- Close an investigation only against its stated resolution criterion, with dated sources and limitations.
+
+## Gates
 
 The schema fixes automatic truth inference and automatic promotion from testimony or tradition to `false`. Rights, cultural authority, privacy, evidence review and publication decisions remain separate. Big Questions remain unresolved until their own adjudication process changes them.
 
