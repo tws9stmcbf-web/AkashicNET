@@ -154,7 +154,7 @@
     "complete_in_this_ledger": 0,
     "blocked": 5,
     "next_pending_post_id": "100021",
-    "next_action": "Resume repository-only assessment at 100021. INV-001 awaits new attributable upstream material after a bounded discussion search; do not repeat the same search without new evidence. Other investigations and gates remain unchanged."
+    "next_action": "Assess pending repository-only record 100021. INV-001 remains OPEN for authorised upstream provenance; its bounded repository receipt search is complete."
   },
   "repository_verification_events": [
     {
@@ -171,12 +171,12 @@
   ],
   "investigation_register": {
     "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
-    "counting": "Four open investigation groups: three overlapping metadata groups concern five inspected IDs; the fourth concerns a CLI dependency and adds no post IDs. No new completed-read or evidence counts.",
+    "counting": "Four open investigation groups: three overlapping metadata groups concern five inspected IDs; the fourth concerns a CLI dependency and adds no post IDs. The bounded INV-001 repository-receipt search added no completed-read or evidence counts.",
     "items": [
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T20:28:44.344Z",
+        "last_checked_at": "2026-09-22T20:22:00Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -197,7 +197,7 @@
           "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
         ],
         "uncertainty": "Standardised curation may explain the repetition; origin and source existence remain unresolved. This is not evidence of fabricated posts.",
-        "next_action": "If an authorised input receipt becomes available, match it to the five stable post IDs and Stage 1 commit; otherwise continue the pending repository-only queue at 100021.",
+        "next_action": "Repository-only receipt search is exhausted for now. Seek owner-provided or otherwise authorised provenance if available; meanwhile resume with pending post ID 100021.",
         "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement.",
         "follow_ups": [
           {
@@ -251,6 +251,27 @@
             "uncertainty": "A separately held export, manual curation record or other input could explain the insertion. Git history and negative search results do not establish post existence or fabrication.",
             "decision": "Keep INV-001 OPEN, awaiting new attributable upstream material. Do not repeat this exact search without new evidence or a changed repository reference. No post status or count changes.",
             "next_action": "If an authorised input receipt becomes available, match it to the five stable post IDs and Stage 1 commit; otherwise continue the pending repository-only queue at 100021."
+          },
+          {
+            "checked_at": "2026-09-22T20:22:00Z",
+            "source_commit": "f3e964ea513821a22e5292692d8370a457ba7ca7",
+            "status": "BOUNDED_REPOSITORY_RECEIPT_SEARCH_COMPLETE_UPSTREAM_PROVENANCE_OPEN",
+            "scope": "Repository-linked provenance search for the Stage 1 introducing commit: exact commit SHA in pull requests; exact Stage 1 expansion phrase in pull requests; exact SHA in issues; repository code/document searches for Stage 1 pilot/input-receipt language and affected ID 10001c; introducing commit metadata and available diff.",
+            "findings": [
+              "The exact introducing commit SHA search returned only the current audit PR #377; no historical PR discussion tied to the Stage 1 introduction was found in that bounded PR search.",
+              "The Stage 1 expansion phrase search did not identify a provenance receipt for the introducing commit. Repository search located the published pilot Markdown, which repeats the indexed records but does not document their upstream construction.",
+              "The introducing commit metadata names the expansion and changes the pilot CSV, Markdown index and archive status. Its available diff documents counts and safeguards, not an input receipt, retrieval log or independently attributable source for the five flagged records.",
+              "No repository-linked receipt was located within this bounded authorised evidence. This is an explicit search limit, not proof that no external or private receipt exists."
+            ],
+            "source_refs": [
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/f3e964ea513821a22e5292692d8370a457ba7ca7",
+              "https://github.com/tws9stmcbf-web/AkashicNET/pull/377",
+              "references/community/n2n-pilot-index.md"
+            ],
+            "search_limits": "GitHub connector searches are bounded and index-dependent. Private, deleted, unlinked or external records were not searched. No live Reddit access or removed private data was used.",
+            "uncertainty": "The repository does not establish the pre-Git construction path for these records. Standardised curation, imported catalogue material or another process remain possible; no fabrication inference is justified.",
+            "decision": "Keep INV-001 OPEN for owner-provided or otherwise authorised provenance. Treat the repository search branch as exhausted for now and resume the record queue.",
+            "next_action": "Assess pending post ID 100021 using repository-only evidence, or attach an authorised provenance receipt if one becomes available."
           }
         ]
       },
