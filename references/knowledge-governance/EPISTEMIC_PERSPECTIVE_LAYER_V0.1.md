@@ -14,6 +14,16 @@ AkashicNET welcomes scientific outliers, anomalous experiences and observations 
 
 A perspective is represented accurately before it is compared. Inclusion does not make every interpretation equivalent or establish a metaphysical claim. Scientific measurement is one epistemic lens. First-person experience, contemplative practice, lineage transmission, community attestation, philosophical argument and traditional knowledge retain their own attributed roles.
 
+## Spiritual science data engine
+
+The layer can function as a lateral inquiry engine across ordinary waking, mind-wandering, hypnagogic, dream, lucid-dream, hypnopompic, meditative, ritual-trance, psychedelic, reported out-of-body or astral, near-death and mediumship or channelled states. It records transitions as well as states, including hypnagogic and hypnopompic directions, without assuming that similar reports share one cause.
+
+Comparative correspondences may include named Amazonian ayahuasca cosmologies, Buddhist sense and bardo frameworks, Aboriginal Australian Dreaming traditions and other living or historical knowledge systems. Each comparison must retain its own language, lineage, people or nation, territory, authority and restrictions. A phenomenological resemblance is a research lead, not proof that traditions describe the same realm or ontology.
+
+The engine supports lateral exploration and disciplined mind-wandering through explicit graph edges. It can surface patterns across distant sources while keeping source identity, uncertainty, disanalogies and cultural limits visible.
+
+Knowledge history must be described precisely. Some knowledge has been fragmented, suppressed, displaced, mistranslated or lost across generations. Other knowledge remains living, orally transmitted, protected or restricted. AkashicNET must not declare knowledge lost, extinct, universal or available for reuse without appropriate community authority.
+
 ## Required layers
 
 1. **Experience** — the reported perception, state, encounter or practice.
@@ -23,9 +33,11 @@ A perspective is represented accurately before it is compared. Inclusion does no
 5. **Metaphysical interpretation** — spirits, ancestors, Akasha, nonlocal mind, divine presence or wider consciousness, attributed and labelled.
 6. **External claims** — predictions, historical details, physiological effects or other claims that can be independently examined.
 7. **Uncertainty and alternatives** — unknowns, competing explanations and the next observation that could discriminate between them.
-8. **Investigation state** — stable ID, classification, observed facts, alternatives, uncertainty, priority, next action and resolution criterion.\n9. **Source network** — posts, papers, books, teachings, testimony and media connected through explicit citation and interpretation edges.
+8. **Investigation state** — stable ID, classification, observed facts, alternatives, uncertainty, priority, next action and resolution criterion.\n9. **State and transition observations** — waking, liminal, dream, contemplative, trance and altered-state phenomenology with timing, basis and uncertainty.\n10. **Comparative correspondences** — similarities and differences across named traditions or models, always with a non-equivalence note and cultural-authority status.\n11. **Source network** — posts, papers, books, teachings, testimony and media connected through explicit citation and interpretation edges.
 
-## Counting and identity
+## Comparison rules
+
+- Compare reported features before comparing explanations.\n- Record both overlap and difference.\n- Do not translate culturally specific beings, realms or practices into generic neuroscience, panpsychism or perennialism by default.\n- Do not use brain correlates to erase meaning, or spiritual interpretation to bypass physiological and psychological evidence.\n- Treat lucid, astral, trance, channelled and bardo-related accounts as attributable records whose externally checkable components can be investigated.\n- Require a source and non-equivalence note for every cross-tradition correspondence.\n\n## Counting and identity
 
 The source network keeps four counts separate:
 

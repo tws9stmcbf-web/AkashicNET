@@ -10,6 +10,8 @@
     "layer_id",
     "subject_ref",
     "perspectives",
+    "state_observations",
+    "comparative_correspondences",
     "source_network",
     "investigation",
     "synthesis_boundary",
@@ -608,6 +610,197 @@
         },
         "access_limit_does_not_close_investigation": {
           "const": true
+        }
+      }
+    },
+    "state_observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "state_observation_id",
+          "state",
+          "report_basis",
+          "phenomenology",
+          "source_ids",
+          "uncertainty"
+        ],
+        "properties": {
+          "state_observation_id": {
+            "type": "string",
+            "pattern": "^STATE-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "state": {
+            "enum": [
+              "ordinary_waking",
+              "mind_wandering",
+              "hypnagogic",
+              "dream",
+              "lucid_dream",
+              "hypnopompic",
+              "meditation",
+              "ritual_trance",
+              "psychedelic_ayahuasca",
+              "psychedelic_other",
+              "reported_out_of_body_or_astral",
+              "near_death",
+              "mediumship_or_channelled",
+              "other"
+            ]
+          },
+          "transition_from": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transition_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "induction_context": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "report_basis": {
+            "enum": [
+              "first_person",
+              "community_attestation",
+              "traditional_teaching",
+              "historical_record",
+              "behavioural_observation",
+              "physiological_measurement",
+              "mixed_separated"
+            ]
+          },
+          "phenomenology": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "timing_or_sequence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "comparative_correspondences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "correspondence_id",
+          "terms",
+          "relation",
+          "status",
+          "cultural_authority_status",
+          "non_equivalence_note",
+          "source_ids"
+        ],
+        "properties": {
+          "correspondence_id": {
+            "type": "string",
+            "pattern": "^CORR-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "terms": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "term",
+                "context"
+              ],
+              "properties": {
+                "term": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "context": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "community_or_lineage": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "relation": {
+            "enum": [
+              "reported_similarity",
+              "phenomenological_overlap",
+              "shared_practice_context",
+              "historical_contact",
+              "hypothesised_correspondence",
+              "documented_difference",
+              "contested"
+            ]
+          },
+          "status": {
+            "enum": [
+              "observed_in_sources",
+              "described_by_holders",
+              "hypothesised",
+              "contested",
+              "unresolved"
+            ]
+          },
+          "cultural_authority_status": {
+            "enum": [
+              "confirmed",
+              "public_with_attribution",
+              "review_required",
+              "restricted",
+              "unknown"
+            ]
+          },
+          "non_equivalence_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "next_comparison_step": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     }
