@@ -124,7 +124,7 @@ export default function Home() {
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashic-symbiosis">Symbiosis</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashic-symbiosis">Symbiosis</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/faq">FAQ</a><a href="/about">About</a>
         </nav>
       </header>
 
