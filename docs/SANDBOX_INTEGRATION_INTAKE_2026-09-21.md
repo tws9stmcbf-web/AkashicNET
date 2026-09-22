@@ -8,7 +8,7 @@ Bring eligible owner-authored sandbox work into AkashicNET through a private inv
 
 ## Current evidence and limits
 
-An authenticated, user-requested browser inspection displayed 50 entries in one Perspectives flair view. This is a lower-bound discovery observation, not an exhaustive archive count, verified authorship census, or ingestion result. Search results and loaded-page counts must not be presented as complete totals. No raw content, titles, source identifiers, URLs, timestamps or per-record hashes are included in this proposal.
+An authenticated, user-requested browser inspection displayed 50 entries in one Perspectives flair view. This is a partial displayed-entry observation; a unique-post count is not established. It is not an exhaustive archive count, verified authorship census, or ingestion result. Search results and loaded-page counts must not be presented as complete totals. No raw content, titles, source identifiers, URLs, timestamps or per-record hashes are included in this proposal.
 
 Existing repository archive denominators remain unchanged. No new sandbox entries are represented as part of the canonical index.
 
@@ -16,7 +16,7 @@ Existing repository archive denominators remain unchanged. No new sandbox entrie
 
 1. Obtain an owner-provided account export or other specifically authorised export, or use an approved authenticated API route whose scope includes the source. Do not activate a crawler or bulk HTML scrape.
 2. Keep source files, private identifiers, raw text, media and inventory outside this repository in the controlled private data layer. Exclude other users' contributions without appropriate permission; separately handle deleted or withdrawn material.
-3. Deduplicate by source identity within that boundary. Record exact flair text, missing flair, available dates, authorship, content type and completeness privately. Count unique posts by flair, including an explicit no-flair category. Record the coverage boundary and source snapshot; do not equate search matches with archive totals.
+3. Deduplicate by normalized Reddit post ID within that boundary. Retain distinct cross-post IDs and record parent relationships separately; shared sources are not independent corroboration. Record exact flair text, missing flair, available dates, authorship, content type and completeness privately. Count unique posts by flair, including an explicit no-flair category. Record the coverage boundary and source snapshot; do not equate search matches with archive totals.
 4. Review sensitivity, third-party rights and source visibility. Personal, medical, diary-like, administrative and moderation material remain private by default under SECURITY.md.
 5. Map topics and proposed destinations without asserting evidential support or canonical identity. Distinguish established evidence, interpretation, lived experience/testimony, hypothesis and speculation. Historical AI-generated claims require source reinspection, not automatic adoption.
 6. Prepare sanitised candidate adaptations and a private source-to-adaptation record. Remove private provider identifiers from public outputs. Reuse existing public articles where appropriate rather than silently overwriting or duplicating them.
@@ -45,6 +45,6 @@ Existing repository archive denominators remain unchanged. No new sandbox entrie
 
 ## Invariants
 
-Live automated Reddit intake remains HOLD. Accepted canonical edges remain 0; supports_models remains empty. BQ001/BQ002/BQ003 remain UNRESOLVED. Truth, evidence, rights, canonical-identity, website, public-synthesis and other promotion gates remain closed. This document grants no runtime capability, changes no release status, enables no CI job, publishes no website content and authorises no merge.
+Live automated Reddit intake remains HOLD. Accepted canonical edges remain 0; supports_models remains empty. All Big Questions remain UNRESOLVED. Truth, evidence, rights, canonical-identity, website, public-synthesis and other promotion gates remain closed. This document grants no runtime capability, changes no release status, enables no CI job, publishes no website content and authorises no merge.
 
 The proposed workflow follows [Data security boundary](DATA_SECURITY_BOUNDARY.md) and [Security policy](../SECURITY.md). Checkbox completion must be backed by evidence; none is asserted here.
