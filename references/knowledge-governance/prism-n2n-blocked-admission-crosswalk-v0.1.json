@@ -1,0 +1,1632 @@
+{
+  "schema_version": "0.1",
+  "crosswalk_id": "PRISM-N2N-BLOCKED-ADMISSION-20260922",
+  "status": "DRAFT_METADATA_ONLY",
+  "assessed_on": "2026-09-22",
+  "purpose": "Derived PRISM admission crosswalk for the repository-only N2N analysis ledger. Admission preserves investigability; it is not acceptance as truth, evidence, rights clearance, canonical linkage or publication.",
+  "architecture": {
+    "ecosystem": "AkashicNET",
+    "orchestration_framework": "AkashicOMNI",
+    "epistemic_interface": "AkashicPRISM",
+    "flow": "repository metadata -> PRISM admission screen -> governed investigation linkage",
+    "note": "No AkashicOMNI substantive framework is applied because source content was not read."
+  },
+  "source_checkpoint": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "pull_request": 377,
+    "branch": "docs/n2n-analysis-ledger-20260922",
+    "head_commit": "d852f14f3c4f35c96460e5112878c1ffe4ffffa5",
+    "path": "references/community/n2n-analysis-ledger.json",
+    "blob_sha": "6e124881f9a95fa3a255f72324b08a4d63ef59a6",
+    "ledger_checkpoint": {
+      "complete_in_this_ledger": 0,
+      "blocked": 41,
+      "next_pending_post_id": "100045",
+      "next_action": "Continue pending repository-only assessment. Keep PR #378 substantive-reading counts separate."
+    }
+  },
+  "derivation_branch_context": {
+    "pull_request": 379,
+    "branch": "feat/epistemic-perspective-layer-20260922",
+    "head_before_crosswalk": "e7a640e6ca73a091ac483bde29ab253c555d3c3a"
+  },
+  "admission_rule": {
+    "admitted_means": "The record has enough repository metadata to retain a stable unresolved investigation object.",
+    "admitted_does_not_mean": [
+      "post existence verified",
+      "post or cited source read",
+      "claim identified or supported",
+      "scientific evidence",
+      "cultural authority established",
+      "reuse rights cleared",
+      "canonical edge accepted",
+      "publication approved"
+    ]
+  },
+  "assessment_summary": {
+    "source_records": 41,
+    "original_blocked": 41,
+    "original_complete": 0,
+    "prism_registered_metadata_only": 41,
+    "substantive_interpretation_eligible": 0,
+    "scientific_evidence_promotion_eligible": 0,
+    "canonical_edge_eligible": 0,
+    "publication_eligible": 0,
+    "provisional_topic_routing_records": 10,
+    "source_metadata_speculation_labels": 5,
+    "open_investigation_groups": 4,
+    "shared_post_investigation_groups": 3,
+    "tool_only_investigation_groups": 1
+  },
+  "safeguards": {
+    "reddit_live_access": "HOLD",
+    "source_bodies_committed": false,
+    "comments_or_usernames_committed": false,
+    "evidence_promotion": false,
+    "rights_promotion": false,
+    "accepted_canonical_edges": 0,
+    "big_questions": "UNRESOLVED",
+    "website_integration": "HOLD",
+    "publication": "HOLD"
+  },
+  "records": [
+    {
+      "subject_ref": {
+        "subject_id": "10001c",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post content or primary-source links available in inspected records; live Reddit intake remains HOLD.",
+      "next_action": "Obtain authorised source access or owner-provided material with sufficient provenance; then examine the post and directly relevant primary sources.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10001d",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Available metadata is insufficient for substantive analysis; verified post content and primary-source links are missing from inspected records.",
+      "next_action": "Obtain authorised source access or owner-provided material with provenance; resolve the post's identity before substantive assessment.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10001e",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Inspected metadata is insufficient for substantive analysis; verified post content and independently identifiable primary-source links are unavailable within the inspected scope.",
+      "next_action": "Resolve source identity using authorised material with provenance before substantive assessment; keep live access on HOLD.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10001f",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Inspected repository metadata is insufficient for substantive analysis or source identity verification.",
+      "next_action": "Obtain authorised material with provenance to resolve identity and examine substantive content; preserve the live-access HOLD.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100020",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified source identity and substantive content are missing from the inspected metadata.",
+      "next_action": "Investigate shared provenance and URL-field anomalies through repository history before substantive review.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100021",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Inspected metadata lacks verified source identity and substantive content for assessment.",
+      "next_action": "Revisit when authorised material with attributable source provenance is available; preserve the live-access HOLD.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100022",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100023",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100024",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100025",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100026",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100027",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100028",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100029",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10002a",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10002b",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified substantive post content and independently identifiable primary sources are unavailable in inspected metadata.",
+      "next_action": "Revisit on receipt of attributable authorised source material; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10002c",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10002d",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10002e",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10002f",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100030",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100031",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100032",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100033",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100034",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100035",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100036",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100037",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100038",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100039",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10003a",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10003b",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10003c",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10003d",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10003e",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "10003f",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": null,
+      "source_metadata_label": null,
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100040",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "source_metadata_label": "speculation (archive metadata; unverified)",
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100041",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "source_metadata_label": "speculation (archive metadata; unverified)",
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100042",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "source_metadata_label": "speculation (archive metadata; unverified)",
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100043",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "source_metadata_label": "speculation (archive metadata; unverified)",
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    },
+    {
+      "subject_ref": {
+        "subject_id": "100044",
+        "subject_type": "community_post"
+      },
+      "source_ledger_status": "BLOCKED",
+      "source_analysis_complete": false,
+      "prism_registration_status": "PRISM_REGISTERED_METADATA_ONLY",
+      "prism_investigation_status": "evidence_needed",
+      "admissible_scope": [
+        "stable_repository_identifier",
+        "repository_metadata_provenance",
+        "blocker_and_next_action",
+        "shared_investigation_linkage"
+      ],
+      "interpretive_modes_assigned": [],
+      "evidence_lane_assignment": "NOT_ASSIGNED_SOURCE_CONTENT_UNREAD",
+      "topic_routing": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "source_metadata_label": "speculation (archive metadata; unverified)",
+      "cultural_authority_status": "NOT_ASSESSED_SOURCE_CONTENT_UNREAD",
+      "rights_state": "METADATA_LINK_ONLY_NO_REPRODUCTION",
+      "privacy_state": "METADATA_ONLY_NO_SOURCE_BODIES_COMMENTS_OR_USERNAMES",
+      "linked_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "promotion_permissions": {
+        "substantive_interpretation": false,
+        "scientific_evidence": false,
+        "rights": false,
+        "accepted_canonical_edge": false,
+        "website_integration": false,
+        "publication": false
+      }
+    }
+  ]
+}
