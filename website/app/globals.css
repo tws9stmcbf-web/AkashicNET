@@ -568,3 +568,31 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
   .psy-radio__equalizer.is-active i { animation: none; transform: none; }
   .psy-radio__consent button:hover { transform: none; }
 }
+
+
+/* FAQ */
+.faq-page { background:radial-gradient(circle at 82% 8%,rgba(189,166,255,.12),transparent 28rem),var(--night); }
+.faq-hero { padding:10rem clamp(1.25rem,8vw,9rem) 4.5rem; border-bottom:1px solid var(--line); }
+.faq-hero h1 { max-width:76rem; margin-bottom:1.5rem; font-size:clamp(3.5rem,7vw,7.4rem); }
+.faq-hero h1 em { color:var(--violet); }
+.faq-hero>p:last-child { max-width:50rem; color:#c7c5ba; font-size:clamp(1rem,1.4vw,1.18rem); line-height:1.8; }
+.faq-directory { padding:1rem clamp(1.25rem,8vw,9rem) 6rem; }
+.faq-group { display:grid; grid-template-columns:minmax(11rem,.32fr) minmax(0,1fr); gap:clamp(2rem,7vw,8rem); padding:5rem 0; border-bottom:1px solid var(--line); }
+.faq-list { min-width:0; }
+.faq-item { border-top:1px solid var(--line); }
+.faq-item:last-child { border-bottom:1px solid var(--line); }
+.faq-item summary { display:flex; justify-content:space-between; align-items:flex-start; gap:2rem; padding:1.6rem 0; color:var(--ink); font:400 clamp(1.25rem,2vw,1.75rem)/1.35 Georgia,serif; cursor:pointer; list-style:none; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary span { flex:0 0 auto; color:var(--gold); font:400 1.5rem/1 Arial,sans-serif; transition:transform .2s ease; }
+.faq-item[open] summary span { transform:rotate(45deg); }
+.faq-item p { max-width:54rem; padding:0 3.5rem 1.8rem 0; color:var(--muted); font-size:1rem; line-height:1.8; }
+.faq-item summary:hover,.faq-item summary:focus-visible { color:var(--mint); }
+.faq-principle { padding:clamp(5rem,8vw,8rem) clamp(1.25rem,8vw,9rem); background:linear-gradient(135deg,#e9e2d3,#dce7df); color:#10201d; }
+.faq-principle .section-label { color:#856126; }
+.faq-principle blockquote { max-width:72rem; margin:1.5rem 0 0; font:400 clamp(2.4rem,5vw,5.5rem)/1.04 Georgia,serif; letter-spacing:-.035em; }
+@media (max-width:800px) {
+  .faq-group { grid-template-columns:1fr; gap:1.5rem; padding:3.5rem 0; }
+  .faq-item summary { gap:1rem; }
+  .faq-item p { padding-right:1rem; }
+}
+@media (prefers-reduced-motion:reduce) { .faq-item summary span { transition:none; } }
