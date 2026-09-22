@@ -93,6 +93,20 @@ A BLOCKED record may therefore mature into evidence, but not merely because it w
 - Record what evidence could strengthen, weaken or distinguish each explanation.
 - Close an investigation only against its stated resolution criterion, with dated sources and limitations.
 
+## Classification change and cumulative learning
+
+PRISM classifications are provisional assessments, not permanent identities. They may change when new authorised inputs arrive, including anecdotal experiences, recurrence signals, citizen-science observations or studies, controlled or peer-reviewed studies, replications, systematic reviews, meta-analyses, cultural-authority review, source corrections and access or rights changes.
+
+The evidential contribution depends on the input:
+
+- Anecdotal experience can enrich phenomenology, expose variation or create a recurrence signal; it does not by itself establish prevalence, causation or external ontology.
+- Citizen science can generate, refine or test hypotheses. Its contribution depends on protocol quality, sampling, controls, preregistration, data integrity, analysis and independence.
+- A peer-reviewed study can strengthen or weaken a claim, but peer review is quality control rather than final truth; design, effect size, limitations and replication still matter.
+- Replications, systematic reviews and meta-analyses can materially change confidence when the underlying studies and synthesis methods are suitable.
+- Cultural-authority review may correct attribution, interpretation, sharing status or non-equivalence without converting traditional knowledge into a scientific claim.
+
+Every review is append-only. It records the earlier and new evidence lane, direction of change, date, triggering inputs, independence, rationale, uncertainty, reviewer role and gates passed or still pending. A new assessment may supersede a prior judgement, but the earlier event remains visible.
+
 ## Gates
 
 The schema fixes automatic truth inference and automatic promotion from testimony or tradition to `false`. Rights, cultural authority, privacy, evidence review and publication decisions remain separate. Big Questions remain unresolved until their own adjudication process changes them.
