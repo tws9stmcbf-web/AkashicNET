@@ -80,12 +80,35 @@
       "blocker": "Available metadata is insufficient for substantive analysis; verified post content and primary-source links are missing from inspected records.",
       "next_action": "Obtain authorised source access or owner-provided material with provenance; resolve the post's identity before substantive assessment.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10001e",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only URI and pilot metadata assessment against the existing historical provenance audit; no live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "The pilot labels this record research_discussion/community_observation, with unknown date and generic attribution. Its external-source URL points back to the same Reddit post and supplies no independently identifiable primary study. Its summary describes cataloguing for later review, not substantive findings. Repository metadata does not establish post existence, authorship, or scientific support. The historical sequence anomaly is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md",
+        "data/reddit/README.md"
+      ],
+      "assessment_source_commit": "2d63ddc66f6b21e0151947325e21bb6276c3c040",
+      "access_limitations": [
+        "The semantic-index fetch returned no usable text; no claim is made that the file is empty or lacks further information.",
+        "Post content, comments, media and external primary sources were not accessed; live Reddit access remains HOLD."
+      ],
+      "blocker": "Inspected metadata is insufficient for substantive analysis; verified post content and independently identifiable primary-source links are unavailable within the inspected scope.",
+      "next_action": "Resolve source identity using authorised material with provenance before substantive assessment; keep live access on HOLD.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 2,
-    "next_pending_post_id": "10001e",
+    "blocked": 3,
+    "next_pending_post_id": "10001f",
     "next_action": "Review next pending record; retain blocked records for later source verification."
   }
 }
