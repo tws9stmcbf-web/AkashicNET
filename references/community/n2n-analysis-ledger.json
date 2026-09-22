@@ -154,7 +154,7 @@
     "complete_in_this_ledger": 0,
     "blocked": 5,
     "next_pending_post_id": "100021",
-    "next_action": "Investigate N2N-INV-004 supported use/callers and safe missing-input behavior; coordinate any search deduplication with N2N-INV-003. Next pending post remains 100021."
+    "next_action": "Resume pending repository-only post 100021. INV-004 diagnostic is fixed in draft; support status remains open. Preserve all other investigations and gates."
   },
   "repository_verification_events": [
     {
@@ -299,7 +299,7 @@
         "title": "Legacy search CLI references a privacy-removed input",
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:57:52.653Z",
-        "last_checked_at": "2026-09-22T19:57:52.653Z",
+        "last_checked_at": "2026-09-22T20:01:00.341Z",
         "source_commit": "c4843a20590fd5010abc9347fb7a0c43ecdbd9b2",
         "classification": "repository_tool_dependency_investigation_signal",
         "scientific_outlier": false,
@@ -313,8 +313,25 @@
           "https://github.com/tws9stmcbf-web/AkashicNET/commit/48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8"
         ],
         "uncertainty": "The tool may be intentionally historical or require a separately supplied private/local input. No website outage or supported runtime use is inferred.",
-        "next_action": "Check documented callers and intended support status. Prepare a clear missing-input diagnostic or public-safe replacement only where justified; never restore historical private metadata.",
-        "resolution_criterion": "Document supported use and verify behavior when permitted input is absent, with the public/private boundary preserved."
+        "next_action": "Establish whether the CLI is supported or retained as historical tooling before adding input provisioning or changing search semantics; diagnostic correction awaits draft review.",
+        "resolution_criterion": "Document supported use and verify behavior when permitted input is absent, with the public/private boundary preserved.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T20:01:00.341Z",
+            "source_commit": "a40e289da30905b75d940e3b25a9fc7faed90b82",
+            "status": "MISSING_INPUT_DIAGNOSTIC_FIXED_IN_DRAFT_SUPPORT_STATUS_OPEN",
+            "scope": "Default-branch GitHub code searches for akashic-search.py and akashic-search, top 20 each; current-head CLI inspection; synthetic behavior tests.",
+            "finding": "Both searches returned only the CLI's own usage string. No documented callers were found in these bounded searches; this is not an exhaustive absence claim. The original script's usage advertises local search over a fixed CSV; no authorised replacement input or active service integration was established.",
+            "change": "Catch FileNotFoundError when opening the fixed master index, print a privacy-aware missing-input diagnostic to stderr, and exit 2. No data restored or network fallback added. No search deduplication or input schema changes.",
+            "validation": [
+              "Missing-input simulation: exit 2 with explanatory diagnostic, no traceback.",
+              "No-argument behavior matches the original usage output and exit status.",
+              "Synthetic valid Reddit input: output and exit status match original code."
+            ],
+            "limits": "The CLI's intended support status and documented input provisioning remain unresolved; no production or live-site execution was tested.",
+            "decision": "Keep OPEN for support-status clarification; the missing-input traceback is addressed in this draft."
+          }
+        ]
       }
     ]
   }
