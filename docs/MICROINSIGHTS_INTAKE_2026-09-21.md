@@ -32,6 +32,6 @@ No source post is counted as independently verified evidence. A cross-post and i
 - [ ] Pass PUBLIC_VERIFIED, sensitivity/PII, reuse-rights and explicit ELIGIBLE/public-manifest review before public build inclusion.
 - [ ] Review website and magazine derivatives independently; retain evidence classifications and unresolved questions.
 
-Existing archive denominators are unchanged. This document is not an import into the canonical index and does not enable a crawler or automated HTML scraping. Live automated Reddit access remains HOLD. supports_models remains empty; BQ001/BQ002/BQ003 remain UNRESOLVED; truth, evidence, rights, canonical-identity, website, public-synthesis and other promotion gates remain closed. No release or merge is authorised by this checkpoint.
+Existing archive denominators are unchanged. This document is not an import into the canonical index and does not enable a crawler or automated HTML scraping. Live automated Reddit access remains HOLD. supports_models remains empty; all Big Questions remain UNRESOLVED; truth, evidence, rights, canonical-identity, website, public-synthesis and other promotion gates remain closed. No release or merge is authorised by this checkpoint.
 
 Governed by [Data security boundary](DATA_SECURITY_BOUNDARY.md) and [Security policy](../SECURITY.md).
