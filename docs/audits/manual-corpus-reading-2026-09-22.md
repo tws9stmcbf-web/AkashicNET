@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. Thirteen public Reddit records have had their complete visible post text reviewed in this rotation. Ten contain substantive bodies; two are brief cross-post wrappers; one displays a substantive embedded parent body. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+Status: review draft. Fourteen public Reddit records have had their complete visible post text reviewed in this rotation. Eleven contain substantive bodies; two are brief cross-post wrappers; one displays a substantive embedded parent body. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 16 summaries staged (13 Reddit, one IONS overview, two AWARE abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 17 summaries staged (14 Reddit, one IONS overview, two AWARE abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -204,3 +204,18 @@ Public cross-post by u/NeuronsToNirvana, published2026-08-27T12:23:34.137Z; acce
 Tags: T002 Indigenous knowledge; T004 consciousness; T005 contemplation; T009 ethics and compassion; T020 philosophy; T026 research methods; T027 theory comparison; newT029 reported past-life memories; newT030 Schumann resonances. Each new topic has one Reddit post. Earlier twelve-record topic table is a historical subset, not this updated total. Project names are entities.
 
 Analyst-selected source: [NASA NTRS20120000051](https://ntrs.nasa.gov/citations/20120000051), Simoes/Pfaff/Freudenreich, Observation of Schumann Resonances in the Earth's Ionosphere (repository date2011-01-01; preprint). Full metadata page and abstract read, not PDF. Supports electromagnetic-resonance observations, not chakra or consciousness links. Candidate journal version DOI10.1029/2011GL049668 pending matching. Source note nested in this summary, not an extra staged record. Rights follow repository metadata; no copied paper. Community authority and traditional-source provenance pending. No full scientific appraisal or accepted graph edge.
+
+
+## zfuxm4 — Updated Stamets Stack addendum
+https://www.reddit.com/r/microdosing/comments/zfuxm4/faqtip_016_addendum_updated_stamets_stack_espd55/
+
+Title: FAQ/Tip 016 Addendum: Updated Stamets Stack | ESPD55: McKenna Academy [May 2022]. Curator u/NeuronsToNirvana. Published2022-12-08T10:09:17.872Z; body states updated2024-02-03; title date is source context. Full visible body and14 identified substantive comments read; image pixels, videos and collapsed replies not reviewed. Educational curation and interpretation, not primary research. Personal health details excluded. Repeated plrxca reference adds no read.
+
+Tags T015,T010,T022,T007,T024,T025,T026; newT031 combination interventions (stacking),T032 dose–response and body size. Both new topics occur in this one post. Earlier topic tables are historical subsets. Larger anecdotal volume does not remove bias; macro-dose findings do not automatically generalize to microdosing. No dosing advice endorsed.
+
+Source checks (nested in this summary, not additional staged summaries):
+- Rootman2022 DOI10.1038/s41598-022-14512-3: complete abstract and selected excerpts, not full paper. Observational953microdosers/180comparators; no added mood/mental-health improvement from stacking; separate older-adult motor association. Partial overlap with2021sample noted; not independent replication.
+- Correction DOI10.1038/s41598-022-17428-0: complete notice read; interaction p-value corrected0.04→0.004. Same study, no added participants.
+- Cavanna2022 DOI10.1038/s41398-022-02039-0: abstract and initial methods only;34participants, placebo-controlled within-person design, no support for selected well-being/cognitive benefits. Different protocol, not stack replication. NCT05160220 registration chronology, supplementary methods and data availability pending.
+
+Batch quality: new post identity/title/creator/canonical URL/publication/access fields6/6 documented; exact revision timestamp0/1 (body label retained); post tagging1/1; primary research candidates resolved2/2 in selected verification set, both abstract scope, full papers0/2; correction checked1/1. This is a bounded self-check, not independent grading or complete source coverage. No canonical/evidence/rights gate changed.
