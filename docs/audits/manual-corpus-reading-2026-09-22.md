@@ -219,3 +219,42 @@ Source checks (nested in this summary, not additional staged summaries):
 - Cavanna2022 DOI10.1038/s41398-022-02039-0: abstract and initial methods only;34participants, placebo-controlled within-person design, no support for selected well-being/cognitive benefits. Different protocol, not stack replication. NCT05160220 registration chronology, supplementary methods and data availability pending.
 
 Batch quality: new post identity/title/creator/canonical URL/publication/access fields6/6 documented; exact revision timestamp0/1 (body label retained); post tagging1/1; primary research candidates resolved2/2 in selected verification set, both abstract scope, full papers0/2; correction checked1/1. This is a bounded self-check, not independent grading or complete source coverage. No canonical/evidence/rights gate changed.
+
+## Batched public reading update — 2026-09-22
+
+Five public post summaries below are draft-staged together. No merge/deployment or scientific acceptance is implied. Existing sections remain historical; these source-scope corrections supersede earlier incomplete checks. BQ001 UNRESOLVED; accepted canonical edges 0; governed Reddit API HOLD. No new private material included.
+
+### 1smm5sg — artist description and comment
+https://www.reddit.com/r/NeuronsToNirvana/comments/1smm5sg/liquid_ace_psychicexperience_ace_ventura/
+Title: 🎶 Liquid Ace - Psychic😵‍💫🌀Experience | Ace Ventura ♪.
+Curator u/NeuronsToNirvana; published 2026-04-15T23:09:51.125Z; revision unknown; accessed2026-09-22. Full visible body plus comment ohio9cg read, no media. Artist-description curation plus interpretive comment; not primary research. Tags T017,T004,T027,T002. Parent of previously read1u8aspz; one candidate music work, two post IDs. https://liquidsoul.bandcamp.com/track/psychic-experience full metadata text confirms Liquid Soul/Ace Ventura attribution, release2007-10-10 and all-rights-reserved notice; no audio heard. Exact Beatport recording equivalence pending. Neural mechanisms and attributed cultural quotations remain unverified; no cultural quotation reproduced. Stage draft only.
+
+### 1wmrm8k — festival cross-post
+https://www.reddit.com/r/microDJPanPSYchic/comments/1wmrm8k/tribal_gathering_tg26_official_after_movie_4m44s/
+Title: Tribal Gathering - TG26 (Official After Movie) (4m:44s) | Tribal Gathering Festival [Apr 2026].
+Curator u/NeuronsToNirvana; published2026-09-21T22:29:53.547Z; revision unknown; accessed2026-09-22. Full visible cross-post wrapper, no substantive body/comments/media. Parent1sl79s2 separately read below; not two films. Tag T033 festival documentation. Runtime/official status are title claims. Cultural permissions and reuse rights unknown. Stage draft only.
+
+### 1gwoghi — Greyson interview curation
+https://www.reddit.com/r/NeuronsToNirvana/comments/1gwoghi/learnings_from_1000_neardeath_experiences_1h35m/
+Title: Learnings from 1,000+ Near-Death Experiences (1h:35m🌀) | Dr. Bruce Greyson, University of Virginia | The Tim Ferriss Show [Oct 2024].
+Curator u/NeuronsToNirvana; published2024-11-21T19:49:36.533Z; revision unknown; accessed2026-09-22. Full link-post wrapper plus comments lyaqxjf/lyaqz0b read; video/transcript not reviewed. Tags T018,T004,T026,T025,T020. Secondary commentary and chapter list are not clinical data. Title's1000+ is not a verified dataset. Sources identified only: https://youtu.be/o96LNLaiDsc , https://www.brucegreyson.com/ , https://www.dailygrail.com/2024/11/near-death-experience-researcher-dr-bruce-greyson-its-irresponsible-to-just-ignore-it-and-say-it-doesnt-exist/ . Timestamp links deduplicated to one video. Underlying papers, case provenance and interview verification pending. Philosophical interpretation is distinct from survival evidence. Brief paraphrase only; stage draft.
+
+### 1wmhvzg — self-compassion editorial
+https://www.reddit.com/r/microINSIGHTS/comments/1wmhvzg/care_is_a_circle_selfcompassion_without_earning/
+Title: 💚 Care Is a Circle | Self-Compassion Without Earning Your Rest (2 min read) [21 September 2026].
+Creator u/NeuronsToNirvana; published2026-09-21T16:35:07.844Z; revision unknown; accessed2026-09-22. Full body read; no comments/media. Self-disclosed AI-assisted original reflection, inspired by1dyczik (not read); credits Liz and Mollie/Action for Happiness through archive. Tags T009,T014. Care/rest/boundaries framed ethically; network metaphor explicitly not a measurable cosmic field. No clinical efficacy claim verified. Existing NHS self-help and1wmhrb8/1wmghrs references deduplicated. Artwork not reproduced; attribution/licence verification pending. Stage draft.
+
+### 1sl79s2 — festival film parent
+https://www.reddit.com/r/TribalGathering/comments/1sl79s2/
+Title: Tribal Gathering - TG26 (Official After Movie) (4m:44s) | Tribal Gathering Festival [Apr 2026].
+Curator u/NeuronsToNirvana; published2026-04-14T12:28:56.262Z; revision unknown; accessed2026-09-22. Full visible body read, no comments/video reviewed. Promotional curation; tags T033,T017,T014. Post credits Gregor Sanz, TG Production/Burcam Studios, Grecia Malpica/Jhon Plugin; independently unverified. Reported festival figures are promotional claims, not audit participant counts. Website https://tribalgathering.com/ and https://www.youtube.com/@TribalGatheringLAB identified only. Same film candidate as1wmrm8k; no cultural teaching extracted, community authority and reuse permission unresolved. Stage draft.
+
+### Source verification updates nested under existing summaries
+
+ROOTMAN-2022 DOI10.1038/s41598-022-14512-3 upgraded by delegated verifier to full main HTML plus Tables1–2 and captions read; not PDF/supplements/figure images/data. One existing work and abstract, not new study. Explicitly not preregistered; self-selected unblinded observational cohort. Attrition denominator not located. Commercial/platform and supplement/patent interests disclosed. Motor-task subgroup associations do not establish causal stack efficacy; data/code repository not located in main article. Outlier-analysis narrative versus printed p=.07 requires reconciliation; prior correction concerns a different age interaction. Exhaustive appraisal remains incomplete.
+
+CAVANNA-2022 registry NCT05160220: structured ClinicalTrials.gov record read. Actual start2021-01-20; submitted2021-05-05; posted2021-12-16, after listed completion2021-10-01. Does not establish prospective registration; also conflicts with paper's2019–2020recruitment. History not verified; cause unknown, no misconduct inference. No new study or abstract.
+
+AWARE correspondence: Greyson/vanLommel DOI10.1016/j.resuscitation.2023.109924 complete one-page letter read from UVA. It quotes original Figure2 about two interviewees with EEG lacking explicit recall; original figure not verified. Critique is not new clinical data. Parnia reply DOI10.1016/j.resuscitation.2023.110080 verified at PubMed metadata scope only; full reply unavailable. Do not attribute the quotation to a read author response or infer time-matched EEG/recall. Original full AWARE papers remain pending.
+
+Batch receipts: five public summaries added to draft staging; nested checks add no separate summary count. Immediate per-record checkpoints retained in working ledger. New posts in this turn3; earlier queued summaries2. Exact revisions remain unknown. New topic assignments are descriptive, not scientific corroboration.
