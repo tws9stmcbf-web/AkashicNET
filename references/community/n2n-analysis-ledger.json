@@ -148,13 +148,47 @@
       "blocker": "Verified source identity and substantive content are missing from the inspected metadata.",
       "next_action": "Investigate shared provenance and URL-field anomalies through repository history before substantive review.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100021",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:36:22.957Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata. No post-content read or live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved",
+      "assessment": "The pilot title is Methods for comparing lived reports. Its date is unknown, attribution is generic, and the summary describes cataloguing for later synthesis rather than substantive findings. The external-source URL repeats the Reddit post URL. The URI and semantic indexes each contain three variants for this ID: a clean-looking URL and variants ending in comma-delimited Original and Research tokens. These are one queue identity, not independent posts or evidence. Inspected fields do not verify post existence, authorship, post content or an independently identifiable primary study. Metadata repetition does not prove fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "related_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "access_limitations": [
+        "Post text, comments, media, abstracts, papers and supplements were not accessed. Live Reddit access remains HOLD.",
+        "No upstream construction provenance is inferred for this record from the five-ID historical investigation."
+      ],
+      "blocker": "Inspected metadata lacks verified source identity and substantive content for assessment.",
+      "next_action": "Revisit when authorised material with attributable source provenance is available; preserve the live-access HOLD.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 5,
-    "next_pending_post_id": "100021",
-    "next_action": "Assess pending repository-only record 100021. INV-001 remains OPEN for authorised upstream provenance; its bounded repository receipt search is complete."
+    "blocked": 6,
+    "next_pending_post_id": "100022",
+    "next_action": "Assess pending repository-only record 100022. INV-001 awaits authorised upstream provenance; do not repeat its exhausted bounded receipt search without a new lead."
   },
   "repository_verification_events": [
     {
@@ -171,18 +205,19 @@
   ],
   "investigation_register": {
     "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
-    "counting": "Four open investigation groups: three overlapping metadata groups concern five inspected IDs; the fourth concerns a CLI dependency and adds no post IDs. The bounded INV-001 repository-receipt search added no completed-read or evidence counts.",
+    "counting": "Four OPEN investigation groups: three overlapping metadata groups now concern six inspected IDs; the fourth concerns a CLI dependency and adds no post IDs. Earlier five-ID history remains scoped to those five. No completed-read or evidence increase.",
     "items": [
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T20:22:00Z",
+        "last_checked_at": "2026-09-22T20:36:22.957Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
           "10001e",
           "10001f",
-          "100020"
+          "100020",
+          "100021"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -272,19 +307,36 @@
             "uncertainty": "The repository does not establish the pre-Git construction path for these records. Standardised curation, imported catalogue material or another process remain possible; no fabrication inference is justified.",
             "decision": "Keep INV-001 OPEN for owner-provided or otherwise authorised provenance. Treat the repository search branch as exhausted for now and resume the record queue.",
             "next_action": "Assess pending post ID 100021 using repository-only evidence, or attach an authorised provenance receipt if one becomes available."
+          },
+          {
+            "checked_at": "2026-09-22T20:36:22.957Z",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "status": "ADDITIONAL_METADATA_INSTANCE_STILL_OPEN",
+            "affected_post_ids": [
+              "100021"
+            ],
+            "scope": "Pilot row and matching URI/semantic rows for 100021 only; repository metadata.",
+            "finding": "Unknown date, generic attribution and catalogue-only summary recur in 100021. Its individual introducing commit was not traced.",
+            "source_refs": [
+              "references/community/n2n-pilot-index.csv",
+              "references/community/reddit-uri-index.csv",
+              "references/community/reddit-semantic-index.csv"
+            ],
+            "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
           }
         ]
       },
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-09-22T20:36:22.957Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
           "10001e",
           "10001f",
-          "100020"
+          "100020",
+          "100021"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -299,18 +351,37 @@
         ],
         "uncertainty": "The schema may permit post URLs in this field. Missing independent citations in metadata does not prove the original post had no sources.",
         "next_action": "Check field semantics in repository documentation and seek existing authorised source-link receipts.",
-        "resolution_criterion": "Document intended field semantics and any independently identifiable primary source; retain unknown where unavailable."
+        "resolution_criterion": "Document intended field semantics and any independently identifiable primary source; retain unknown where unavailable.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T20:36:22.957Z",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "status": "ADDITIONAL_METADATA_INSTANCE_STILL_OPEN",
+            "affected_post_ids": [
+              "100021"
+            ],
+            "scope": "Pilot row and matching URI/semantic rows for 100021 only; repository metadata.",
+            "finding": "The external_source_url repeats this record's Reddit URL; no independent primary study is identified in that field.",
+            "source_refs": [
+              "references/community/n2n-pilot-index.csv",
+              "references/community/reddit-uri-index.csv",
+              "references/community/reddit-semantic-index.csv"
+            ],
+            "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          }
+        ]
       },
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T19:57:52.653Z",
+        "last_checked_at": "2026-09-22T20:36:22.957Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
           "10001e",
           "10001f",
-          "100020"
+          "100020",
+          "100021"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -366,6 +437,22 @@
             ],
             "limits": "No live-site behavior, present production search dataset, original pre-import extraction process or private data assessed.",
             "decision": "Keep OPEN; distinguish input rows from unique posts. Coordinate with N2N-INV-004 before preparing any functional search change."
+          },
+          {
+            "checked_at": "2026-09-22T20:36:22.957Z",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "status": "ADDITIONAL_METADATA_INSTANCE_STILL_OPEN",
+            "affected_post_ids": [
+              "100021"
+            ],
+            "scope": "Pilot row and matching URI/semantic rows for 100021 only; repository metadata.",
+            "finding": "Each inspected URL index supplies three variants for one ID, including Original and Research comma suffixes; no additional independent evidence.",
+            "source_refs": [
+              "references/community/n2n-pilot-index.csv",
+              "references/community/reddit-uri-index.csv",
+              "references/community/reddit-semantic-index.csv"
+            ],
+            "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
           }
         ]
       },
