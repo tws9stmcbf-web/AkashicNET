@@ -37,7 +37,7 @@ export default function AboutPage() {
     <main className="about-page">
       <header className="nav-shell about-nav">
         <a className="wordmark" href="/" aria-label="Return to AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
-        <nav aria-label="About navigation"><a href="/">Home</a><a href="/community">Community</a><a href="#mission">Mission</a><a href="#constellation">Human thread</a></nav>
+        <nav aria-label="About navigation"><a href="/">Home</a><a href="/faq">FAQ</a><a href="/community">Community</a><a href="#mission">Mission</a><a href="#constellation">Human thread</a></nav>
       </header>
 
       <section className="about-hero">
