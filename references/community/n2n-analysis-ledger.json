@@ -154,7 +154,7 @@
     "complete_in_this_ledger": 0,
     "blocked": 5,
     "next_pending_post_id": "100021",
-    "next_action": "Resume pending repository-only post 100021. INV-004 diagnostic is fixed in draft; support status remains open. Preserve all other investigations and gates."
+    "next_action": "Next pending repository-only record remains 100021. Shared-blocker priority: trace any repository-linked input receipts for the Stage 1 pilot introduction under INV-001. INV-004 diagnostic is fixed in draft; support status remains open."
   },
   "repository_verification_events": [
     {
@@ -176,7 +176,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-09-22T20:12:50.716Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -197,8 +197,39 @@
           "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
         ],
         "uncertainty": "Standardised curation may explain the repetition; origin and source existence remain unresolved. This is not evidence of fabricated posts.",
-        "next_action": "Trace the pilot rows' introducing commit and any documented input artefact using repository history.",
-        "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement."
+        "next_action": "Inspect any repository-linked PR discussion or documented input receipt for the Stage 1 introducing commit; if none is available within authorised evidence, record that limit rather than infer origin.",
+        "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T20:12:50.716Z",
+            "source_commit": "7241a321f77fea73a341e60418aefcd7c6651c91",
+            "status": "GIT_INTRODUCTION_IDENTIFIED_UPSTREAM_PROVENANCE_OPEN",
+            "scope": "Path-specific pilot CSV history (first page, limit 10; four commits returned), all four historical CSV blobs inspected for the five previously flagged IDs, immediate Stage 1 parent blob check, current blob comparison, accompanying commit file lists/status patches and current archive documentation. Repository metadata only.",
+            "affected_post_ids": [
+              "10001c",
+              "10001d",
+              "10001e",
+              "10001f",
+              "100020"
+            ],
+            "findings": [
+              "The five flagged URL-bearing record lines are absent from the initial pilot dc644d56370a70816e7150e6cad0b509342b3394 and refined pilot f84c507e66363e04614d83d92ad06291979ef20d.",
+              "Stage 1 commit f3e964ea513821a22e5292692d8370a457ba7ca7 (2026-08-12T01:16:07Z) contains all five in CSV blob bed1d0e866738f0b51a0d69b39b2a0ecb1fccdac. Its immediate parent 8317b2eaf4455260fae7c3a47cb396b7c52217a9 has the earlier refined-pilot blob 5d76c949228d21d42265c1b244bc56ddc7338f8c, which lacks those five URL IDs. This identifies their introduction into this CSV.",
+              "The five record lines are byte-identical after line-ending removal between Stage 1 and Stage 2 commit 0bee17d1e8093705330fb3786a17052080128237 (2026-08-12T01:20:55Z). The Stage 2 CSV blob 20ef9b76ab327b996a0959856c5fa1d5e7acb0e4 also matches the current-head CSV blob.",
+              "The Stage 1 commit changes only the pilot CSV, pilot Markdown index and archive status document. Its message and inspected status patch describe expansion to 250 indexed records; they do not identify an upstream retrieval receipt or construction program. The Stage 2 status patch describes expansion to 1000 indexed records. Those historical catalogue counts are not completed-read counts."
+            ],
+            "source_refs": [
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/f3e964ea513821a22e5292692d8370a457ba7ca7",
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/0bee17d1e8093705330fb3786a17052080128237",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/8317b2eaf4455260fae7c3a47cb396b7c52217a9/references/community/n2n-pilot-index.csv",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/7241a321f77fea73a341e60418aefcd7c6651c91/references/community/n2n-pilot-index.csv"
+            ],
+            "validation": "Exact-line comparison passed for the five scoped records; absence checked in both earlier complete blobs. Immediate-parent and current blob SHAs agree with the inspected historical versions. No synthetic result is used as source provenance.",
+            "uncertainty": "This establishes a Git insertion point, not pre-Git origin, post existence, authorship or scientific support. Standardised curation or other construction processes remain possible; repetition does not prove fabrication. No exhaustive repository-wide receipt search was performed.",
+            "decision": "Keep OPEN. Preserve historical records and all gates; no new record assessment, completed read, independent evidence or canonical edge.",
+            "next_action": "Inspect any repository-linked PR discussion or documented input receipt for the Stage 1 introducing commit; if none is available within authorised evidence, record that limit rather than infer origin."
+          }
+        ]
       },
       {
         "status": "OPEN",
