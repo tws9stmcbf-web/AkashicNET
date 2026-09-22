@@ -154,7 +154,7 @@
     "complete_in_this_ledger": 0,
     "blocked": 5,
     "next_pending_post_id": "100021",
-    "next_action": "N2N-INV-003: trace pre-import URI construction or audit downstream consumers using existing canonicalisation; next pending post remains 100021."
+    "next_action": "Investigate N2N-INV-004 supported use/callers and safe missing-input behavior; coordinate any search deduplication with N2N-INV-003. Next pending post remains 100021."
   },
   "repository_verification_events": [
     {
@@ -171,7 +171,7 @@
   ],
   "investigation_register": {
     "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
-    "counting": "Three overlapping issue groups across five inspected IDs, not fifteen unique posts. The purposive queue-prefix sample does not establish corpus-wide prevalence. No new completed-read or evidence counts.",
+    "counting": "Four open investigation groups: three overlapping metadata groups concern five inspected IDs; the fourth concerns a CLI dependency and adds no post IDs. No new completed-read or evidence counts.",
     "items": [
       {
         "status": "OPEN",
@@ -229,7 +229,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T19:54:24.979Z",
+        "last_checked_at": "2026-09-22T19:57:52.653Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -250,7 +250,7 @@
         ],
         "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
         "uncertainty": "The inspected URL strings already existed at first URI import. The pre-import extraction/export process is not identified in the inspected history or code. Current census deduplication is demonstrated only for the five-ID sample; downstream consumers and corpus-wide coverage remain unchecked.",
-        "next_action": "Trace the pre-import URI extraction/export artefact if available; use the existing census canonicalise function for a bounded derived-view audit. Do not rewrite the raw archive or assume semantic-index generation caused the anomaly.",
+        "next_action": "Identify the intended public-safe search input and its consumers before proposing ID-based search deduplication; retain source variants as provenance and keep counts separately named.",
         "resolution_criterion": "Identify the transformation and verify a minimal correction against affected examples without changing unique-post or evidence counts.",
         "follow_ups": [
           {
@@ -272,8 +272,49 @@
             ],
             "search_limits": "Path-specific commit lists at the assessed head returned one semantic-index commit and two URI-index commits (page size 10). Default-branch code searches used reddit-semantic-index (top 10) and reddit-uri-index (top 20); these are discovery searches, not proof that no other construction code exists.",
             "decision": "Retain OPEN. No parser fix justified for the tested census behavior. Preserve raw archive; investigate upstream provenance and downstream handling separately."
+          },
+          {
+            "checked_at": "2026-09-22T19:57:52.653Z",
+            "status": "DOWNSTREAM_ROW_BEHAVIOR_CONFIRMED_LIVE_IMPACT_UNVERIFIED",
+            "source_commit": "c4843a20590fd5010abc9347fb7a0c43ecdbd9b2",
+            "scope": "tools/akashic-search.py and scripts/validate_unified_index_rebuild_v02.py; synthetic three-variant search test only.",
+            "findings": [
+              "The CLI appends each matching CSV row to results, sorts and prints len(results), with no post-ID deduplication.",
+              "Executing the unchanged CLI against an in-memory synthetic fixture containing three URL variants for one post ID returned three results. This proves conditional row-based behavior, not actual corpus or website inflation.",
+              "The referenced master CSV is absent at this head; commit 48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8 removed it under the public/private data separation change. Removed data was not recovered.",
+              "The count-only rebuild validator counts URI CSV rows, not unique post IDs. Its arithmetic does not validate unique-source counts or rebuild the absent search CSV."
+            ],
+            "source_refs": [
+              "tools/akashic-search.py",
+              "scripts/validate_unified_index_rebuild_v02.py",
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8"
+            ],
+            "limits": "No live-site behavior, present production search dataset, original pre-import extraction process or private data assessed.",
+            "decision": "Keep OPEN; distinguish input rows from unique posts. Coordinate with N2N-INV-004 before preparing any functional search change."
           }
         ]
+      },
+      {
+        "issue_id": "N2N-INV-004",
+        "title": "Legacy search CLI references a privacy-removed input",
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:57:52.653Z",
+        "last_checked_at": "2026-09-22T19:57:52.653Z",
+        "source_commit": "c4843a20590fd5010abc9347fb7a0c43ecdbd9b2",
+        "classification": "repository_tool_dependency_investigation_signal",
+        "scientific_outlier": false,
+        "priority": "medium",
+        "priority_reason": "The CLI cannot read its default input from the inspected checkout; intended supported use is unknown.",
+        "affected_post_ids": [],
+        "observation": "tools/akashic-search.py opens references/community/akashic-master-index.csv unconditionally after argument parsing. That path returns 404 at the assessed head; commit 48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8 lists it as removed in the privacy separation change.",
+        "assessment_sources": [
+          "tools/akashic-search.py",
+          "scripts/check_public_data_boundary.py",
+          "https://github.com/tws9stmcbf-web/AkashicNET/commit/48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8"
+        ],
+        "uncertainty": "The tool may be intentionally historical or require a separately supplied private/local input. No website outage or supported runtime use is inferred.",
+        "next_action": "Check documented callers and intended support status. Prepare a clear missing-input diagnostic or public-safe replacement only where justified; never restore historical private metadata.",
+        "resolution_criterion": "Document supported use and verify behavior when permitted input is absent, with the public/private boundary preserved."
       }
     ]
   }
