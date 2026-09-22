@@ -154,7 +154,7 @@
     "complete_in_this_ledger": 0,
     "blocked": 5,
     "next_pending_post_id": "100021",
-    "next_action": "Investigate N2N-INV-003 through repository extraction/index history; next pending post remains 100021. Preserve blocked records and all gates."
+    "next_action": "N2N-INV-003: trace pre-import URI construction or audit downstream consumers using existing canonicalisation; next pending post remains 100021."
   },
   "repository_verification_events": [
     {
@@ -229,7 +229,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-09-22T19:54:24.979Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -249,9 +249,31 @@
           "references/community/reddit-semantic-index.csv"
         ],
         "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
-        "uncertainty": "Possible parsing or export contamination; the responsible transformation has not been established.",
-        "next_action": "Inspect the URI extraction and semantic-index construction code or commit history; prepare a derived correction only if causally supported, preserving raw history.",
-        "resolution_criterion": "Identify the transformation and verify a minimal correction against affected examples without changing unique-post or evidence counts."
+        "uncertainty": "The inspected URL strings already existed at first URI import. The pre-import extraction/export process is not identified in the inspected history or code. Current census deduplication is demonstrated only for the five-ID sample; downstream consumers and corpus-wide coverage remain unchecked.",
+        "next_action": "Trace the pre-import URI extraction/export artefact if available; use the existing census canonicalise function for a bounded derived-view audit. Do not rewrite the raw archive or assume semantic-index generation caused the anomaly.",
+        "resolution_criterion": "Identify the transformation and verify a minimal correction against affected examples without changing unique-post or evidence counts.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T19:54:24.979Z",
+            "status": "PARTIALLY_EXPLAINED_STILL_OPEN",
+            "scope": "Five previously flagged IDs only: 10001c, 10001d, 10001e, 10001f, 100020.",
+            "findings": [
+              "Commit af0555d26abcd90d1dac685f67290cfdd772d1f9 added the URI archive on 2026-08-12. Its blob 6b6184b0f981928abb34f4b7d8bd262f3b5b48ca already contains all 15 inspected URL strings, including comma-suffixed variants.",
+              "Commit 5dc2700c182a489a8488414d863b69ee142178f2 added the semantic index on 2026-08-14 at blob 56be9ed9e89226c808ef1de4287056ee359187be. Matching variants were therefore present in the earlier URI archive; semantic metadata supplies no independent source corroboration.",
+              "At assessed head f95579d6c0cf3d392c3420a279c9137ab565ef08, scripts/reddit_corpus_census.py splits comma annotations and groups structural candidates by subreddit and post ID. tools/n2n/ingest_n2n.py reads pre-existing CSV fields; scripts/reddit_topic_audit_v078.py audits existing files. These inspected functions do not establish the original URI construction process.",
+              "Executing the existing census canonicalise function on the 15 historical sample rows yielded five candidate rows, ten annotation_derived rows, five unique IDs and five canonical URLs. Assertions passed; no network calls or source changes."
+            ],
+            "source_refs": [
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/af0555d26abcd90d1dac685f67290cfdd772d1f9",
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/5dc2700c182a489a8488414d863b69ee142178f2",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/f95579d6c0cf3d392c3420a279c9137ab565ef08/scripts/reddit_corpus_census.py",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/f95579d6c0cf3d392c3420a279c9137ab565ef08/tools/n2n/ingest_n2n.py",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/f95579d6c0cf3d392c3420a279c9137ab565ef08/scripts/reddit_topic_audit_v078.py"
+            ],
+            "search_limits": "Path-specific commit lists at the assessed head returned one semantic-index commit and two URI-index commits (page size 10). Default-branch code searches used reddit-semantic-index (top 10) and reddit-uri-index (top 20); these are discovery searches, not proof that no other construction code exists.",
+            "decision": "Retain OPEN. No parser fix justified for the tested census behavior. Preserve raw archive; investigate upstream provenance and downstream handling separately."
+          }
+        ]
       }
     ]
   }
