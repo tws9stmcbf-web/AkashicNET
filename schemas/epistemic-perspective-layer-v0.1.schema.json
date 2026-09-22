@@ -1,0 +1,615 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/epistemic-perspective-layer-v0.1.schema.json",
+  "title": "AkashicNET Epistemic Perspective Layer v0.1",
+  "description": "Represents multiple ways of knowing around one subject while preserving attribution, cultural authority, source relationships, uncertainty and verification boundaries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "layer_id",
+    "subject_ref",
+    "perspectives",
+    "source_network",
+    "investigation",
+    "synthesis_boundary",
+    "governance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "layer_id": {
+      "type": "string",
+      "pattern": "^EPL-[A-Z0-9][A-Z0-9-]+$"
+    },
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id",
+        "subject_type"
+      ],
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_type": {
+          "enum": [
+            "spiritual_knowledge_encounter",
+            "community_post",
+            "work",
+            "claim_group",
+            "big_question",
+            "other"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "perspectives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "perspective_id",
+          "lens",
+          "attributed_to",
+          "statement",
+          "epistemic_basis",
+          "claim_scope",
+          "evidence_lane",
+          "uncertainty"
+        ],
+        "properties": {
+          "perspective_id": {
+            "type": "string",
+            "pattern": "^EPI-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "lens": {
+            "enum": [
+              "first_person",
+              "contemplative",
+              "lineage",
+              "cultural",
+              "shamanic",
+              "bodhisattva_ethical",
+              "trance_channelled",
+              "philosophical",
+              "empirical_scientific",
+              "clinical_psychological",
+              "historical",
+              "comparative",
+              "other"
+            ]
+          },
+          "attributed_to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "epistemic_basis": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "direct_experience",
+                "ritual_practice",
+                "lineage_transmission",
+                "community_attestation",
+                "traditional_text",
+                "historical_record",
+                "philosophical_argument",
+                "observation",
+                "measurement",
+                "experiment",
+                "inference",
+                "other"
+              ]
+            }
+          },
+          "claim_scope": {
+            "enum": [
+              "phenomenological",
+              "personal_meaning",
+              "communal_meaning",
+              "ethical",
+              "spiritual",
+              "metaphysical",
+              "empirical",
+              "predictive",
+              "mixed"
+            ]
+          },
+          "evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "cultural_authority": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "community_or_lineage": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authority_to_share": {
+                "enum": [
+                  "confirmed",
+                  "public_with_attribution",
+                  "review_required",
+                  "restricted",
+                  "unknown"
+                ]
+              },
+              "speaker_position": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "externally_testable_elements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "practice_outcomes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "outcome_id",
+          "description",
+          "report_basis",
+          "timeframe",
+          "verification_status"
+        ],
+        "properties": {
+          "outcome_id": {
+            "type": "string",
+            "pattern": "^OUT-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "report_basis": {
+            "enum": [
+              "self_report",
+              "community_report",
+              "behavioural_observation",
+              "clinical_measure",
+              "physiological_measure",
+              "other"
+            ]
+          },
+          "timeframe": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification_status": {
+            "enum": [
+              "reported_only",
+              "partially_documented",
+              "independently_documented",
+              "contested",
+              "unknown"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          }
+        }
+      }
+    },
+    "source_network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodes",
+        "edges",
+        "counting_boundary"
+      ],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_id",
+              "source_type",
+              "locator",
+              "provenance_state",
+              "rights_state"
+            ],
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "source_type": {
+                "enum": [
+                  "community_post",
+                  "comment",
+                  "peer_reviewed_paper",
+                  "preprint",
+                  "book",
+                  "chapter",
+                  "traditional_teaching",
+                  "lineage_statement",
+                  "participant_account",
+                  "media",
+                  "archive_record",
+                  "dataset",
+                  "other"
+                ]
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "doi": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+              },
+              "post_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "work_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "provenance_state": {
+                "enum": [
+                  "verified",
+                  "partially_verified",
+                  "unresolved",
+                  "unavailable"
+                ]
+              },
+              "rights_state": {
+                "enum": [
+                  "cleared",
+                  "link_only",
+                  "quotation_limited",
+                  "restricted",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "edge_id",
+              "from_source_id",
+              "to_source_id",
+              "relation",
+              "independent_evidence"
+            ],
+            "properties": {
+              "edge_id": {
+                "type": "string",
+                "pattern": "^EDGE-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "from_source_id": {
+                "type": "string",
+                "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "to_source_id": {
+                "type": "string",
+                "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "relation": {
+                "enum": [
+                  "cites",
+                  "interprets",
+                  "supports",
+                  "contradicts",
+                  "contextualises",
+                  "derived_from",
+                  "same_work_as",
+                  "responds_to",
+                  "other"
+                ]
+              },
+              "independent_evidence": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "counting_boundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "url_rows",
+            "unique_post_ids",
+            "unique_works",
+            "independent_evidence_sources"
+          ],
+          "properties": {
+            "url_rows": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_post_ids": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_works": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "independent_evidence_sources": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "synthesis_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "neutral_description",
+        "convergences",
+        "disagreements",
+        "unverified_claims",
+        "remaining_uncertainty"
+      ],
+      "properties": {
+        "neutral_description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "convergences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disagreements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unverified_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "remaining_uncertainty": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "next_discriminating_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_inference_allowed",
+        "testimony_auto_promotion_allowed",
+        "tradition_auto_promotion_allowed",
+        "cultural_review_required",
+        "publication_status"
+      ],
+      "properties": {
+        "truth_inference_allowed": {
+          "const": false
+        },
+        "testimony_auto_promotion_allowed": {
+          "const": false
+        },
+        "tradition_auto_promotion_allowed": {
+          "const": false
+        },
+        "cultural_review_required": {
+          "type": "boolean"
+        },
+        "publication_status": {
+          "enum": [
+            "hold",
+            "review_candidate",
+            "approved"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "investigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "investigation_id",
+        "status",
+        "classification",
+        "observed_facts",
+        "alternative_explanations",
+        "uncertainty",
+        "priority",
+        "next_action",
+        "resolution_criterion"
+      ],
+      "properties": {
+        "investigation_id": {
+          "type": "string",
+          "pattern": "^INV-[A-Z0-9][A-Z0-9-]+$"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "monitoring",
+            "evidence_needed",
+            "resolved",
+            "closed_no_basis"
+          ]
+        },
+        "classification": {
+          "enum": [
+            "experiential_outlier",
+            "statistical_outlier",
+            "scientific_contradiction",
+            "cultural_or_traditional_claim",
+            "predictive_claim",
+            "source_or_metadata_anomaly",
+            "promising_research_lead",
+            "other"
+          ]
+        },
+        "observed_facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternative_explanations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        "priority_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution_criterion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "access_state": {
+          "enum": [
+            "available",
+            "partially_available",
+            "access_limited",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "access_limit_does_not_close_investigation": {
+          "const": true
+        }
+      }
+    }
+  }
+}
