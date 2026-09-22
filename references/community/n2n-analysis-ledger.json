@@ -154,7 +154,7 @@
     "complete_in_this_ledger": 0,
     "blocked": 5,
     "next_pending_post_id": "100021",
-    "next_action": "Next pending repository-only record remains 100021. Shared-blocker priority: trace any repository-linked input receipts for the Stage 1 pilot introduction under INV-001. INV-004 diagnostic is fixed in draft; support status remains open."
+    "next_action": "Resume repository-only assessment at 100021. INV-001 awaits new attributable upstream material after a bounded discussion search; do not repeat the same search without new evidence. Other investigations and gates remain unchanged."
   },
   "repository_verification_events": [
     {
@@ -176,7 +176,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T20:12:50.716Z",
+        "last_checked_at": "2026-09-22T20:28:44.344Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -197,7 +197,7 @@
           "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
         ],
         "uncertainty": "Standardised curation may explain the repetition; origin and source existence remain unresolved. This is not evidence of fabricated posts.",
-        "next_action": "Inspect any repository-linked PR discussion or documented input receipt for the Stage 1 introducing commit; if none is available within authorised evidence, record that limit rather than infer origin.",
+        "next_action": "If an authorised input receipt becomes available, match it to the five stable post IDs and Stage 1 commit; otherwise continue the pending repository-only queue at 100021.",
         "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement.",
         "follow_ups": [
           {
@@ -228,6 +228,29 @@
             "uncertainty": "This establishes a Git insertion point, not pre-Git origin, post existence, authorship or scientific support. Standardised curation or other construction processes remain possible; repetition does not prove fabrication. No exhaustive repository-wide receipt search was performed.",
             "decision": "Keep OPEN. Preserve historical records and all gates; no new record assessment, completed read, independent evidence or canonical edge.",
             "next_action": "Inspect any repository-linked PR discussion or documented input receipt for the Stage 1 introducing commit; if none is available within authorised evidence, record that limit rather than infer origin."
+          },
+          {
+            "checked_at": "2026-09-22T20:28:44.344Z",
+            "source_commit": "55e67b747b0fa71621434bf85a3a98b4c1677a83",
+            "status": "BOUNDED_DISCUSSION_SEARCH_NO_UPSTREAM_RECEIPT_FOUND",
+            "scope": "GitHub associated-PR and commit-comment endpoints for f3e964ea513821a22e5292692d8370a457ba7ca7; four repository-scoped issue/PR searches for the full commit SHA and exact phrase Expand N2N community archive, page size 100.",
+            "findings": [
+              "The associated-PR endpoint returned an empty array; the commit-comment endpoint returned an empty array.",
+              "The full-SHA issue search returned zero results. The full-SHA PR search returned only PR #377, whose current description repeats this audit's finding and is not independent corroboration.",
+              "Exact-phrase searches returned zero issues and zero PRs. All four successful searches reported incomplete_results=false."
+            ],
+            "source_refs": [
+              "https://api.github.com/repos/tws9stmcbf-web/AkashicNET/commits/f3e964ea513821a22e5292692d8370a457ba7ca7/pulls?per_page=100",
+              "https://api.github.com/repos/tws9stmcbf-web/AkashicNET/commits/f3e964ea513821a22e5292692d8370a457ba7ca7/comments?per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Aissue%20f3e964ea513821a22e5292692d8370a457ba7ca7&per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Apull-request%20f3e964ea513821a22e5292692d8370a457ba7ca7&per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Aissue%20%22Expand%20N2N%20community%20archive%22&per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Apull-request%20%22Expand%20N2N%20community%20archive%22&per_page=100"
+            ],
+            "limitations": "Search results are limited by accessible GitHub records and query matching; no universal absence claim is made. Initial searches lacking an issue/PR type qualifier returned HTTP 422 and were corrected; failed queries were not counted as negative findings. No Reddit access, source text, private historical data or external input receipt was obtained.",
+            "uncertainty": "A separately held export, manual curation record or other input could explain the insertion. Git history and negative search results do not establish post existence or fabrication.",
+            "decision": "Keep INV-001 OPEN, awaiting new attributable upstream material. Do not repeat this exact search without new evidence or a changed repository reference. No post status or count changes.",
+            "next_action": "If an authorised input receipt becomes available, match it to the five stable post IDs and Stage 1 commit; otherwise continue the pending repository-only queue at 100021."
           }
         ]
       },
