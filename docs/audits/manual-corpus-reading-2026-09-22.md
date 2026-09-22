@@ -1,0 +1,90 @@
+# Manual corpus reading checkpoint — 22 September 2026
+
+Status: review draft. Seven public Reddit records have had their complete visible post text reviewed in this rotation. Six contain substantive bodies; one is a cross-post wrapper. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+
+## Counting and boundaries
+
+Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
+
+This checkpoint proposes documentation integration only: 7 public summaries staged; 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+
+## Public records
+
+| Community | ID | Review scope | Classification | Next action |
+|---|---|---|---|---|
+| NeuronsToNirvana | 10a8yeh | Complete visible body | Curated discovery index with narrative and speculative questions | Appraise linked studies independently |
+| microINSIGHTS | 1wmhy5s | Complete visible body | Editorial reflection; attributed adaptation | Verify archive and social-source chain |
+| TribalGathering | 1sxwgdt | Complete visible body and rendered caption text | Interpretive cultural summary | Consult Indigenous-led sources |
+| microdosing | useg7z | Complete visible body | Curated research collection | Resolve revision dates; deduplicate underlying works |
+| microDJPanPSYchic | 1wmscxp | Complete visible wrapper text | Music cross-post | Review parent; verify work identity |
+| microINSIGHTS | 1wmhwfm | Complete visible body | Philosophical editorial reflection | Review attributed video separately |
+| NeuronsToNirvana | 1u49cm7 | Complete visible body | Community disclaimer and lived-experience framing | Check current crisis resources before reuse |
+
+Images, audio, video and complete comment trees are not reviewed. Selected rendered comments on 1u49cm7 were read but are not a separate quantified comment census.
+
+### 10a8yeh — Welcome and library index
+https://www.reddit.com/r/NeuronsToNirvana/comments/10a8yeh/
+
+A discovery hub combining research, cultural material, personal narrative and speculative questions. Retain different evidence types rather than interpreting one curated post as a study. Verify questions about telepathy, DMT and consciousness independently. Avoid unsupported ranking of Indigenous peoples or traditions.
+
+Selected source check only: the linked 2022 NEJM trial uses 1 mg as a control condition with psychological support. Within-arm improvement alone does not isolate a dose effect. Publisher/search abstract checked, not a full trial appraisal:
+https://www.nejm.org/doi/abs/10.1056/NEJMoa2206443
+https://pubmed.ncbi.nlm.nih.gov/36322843/
+
+### 1wmhy5s — A Shift in Perspective
+https://www.reddit.com/r/microINSIGHTS/comments/1wmhy5s/
+
+Editorial prompts about self, relationships and surroundings; the post distinguishes personal meaning from evidence. Proposed destination: reflective practice material, not empirical mechanism. Recorded attribution chain: archive 1ma49fn → BeckleyResearch social post 1904937251504603638 → editorial. Originals remain unreviewed.
+
+### 1sxwgdt — Seven Grandfather Teachings
+https://www.reddit.com/r/TribalGathering/comments/1sxwgdt/
+
+Interpretive presentation identifying Anishinaabe origins and variation among communities. Its declared inspiration is a student study page. Improve provenance through community-led sources, keeping the author's framework separate from the teachings. Animal associations and artwork remain unverified.
+
+Candidate sources, not fully reviewed or cleared for reuse:
+- https://www.7generations.org/seven-grandfather-teachings/ — search text located; direct open failed.
+- https://www.anishinabek.ca/wp-content/uploads/2020/04/AN_Book.pdf — search excerpt located.
+
+Community authority, permission and appropriate attribution must be assessed; no uniform Indigenous worldview is inferred.
+
+### useg7z — Data Science Collection
+https://www.reddit.com/r/microdosing/comments/useg7z/
+
+Navigation hub spanning figures, reviews, cases, animal work and clinical research. A March 2024 update heading and April 2024 highlight need reconciliation. Deduplicate underlying papers and cohorts rather than titles or figures. Overlaps the welcome index, including the NEJM trial. Assay context and study design must travel with any extracted finding.
+
+### 1wmscxp — Spiritual Beings
+https://www.reddit.com/r/microDJPanPSYchic/comments/1wmscxp/
+
+Cross-post points to parent 1uh50sg. One distribution record, not an additional independent music work. Preserve artist and label attribution after checking the parent. Audio, lyrics and media rights remain unreviewed. No scientific inference from the title.
+
+### 1wmhwfm — Money, Time & Ego
+https://www.reddit.com/r/microINSIGHTS/comments/1wmhwfm/
+
+AI-assisted editorial synthesis about labels, social conventions and practical responsibility. Explicitly responds to the theme of an Alan Watts video rather than presenting a verified transcript. Classify as interpretation/philosophy. The reflective exercise may support an editorial page but does not establish clinical efficacy or a physical mechanism.
+
+Observed source links:
+- https://www.reddit.com/r/microINSIGHTS/comments/1dy9z3r/the_illusion_of_money_time_ego_alan_watts_10m36s/
+- https://youtu.be/dYSQ1NF1hvw
+
+Both are queued; neither source body/media was reviewed in this checkpoint.
+
+### 1u49cm7 — Community disclaimer and humble reflections
+https://www.reddit.com/r/NeuronsToNirvana/comments/1u49cm7/
+
+The disclaimer separates informational material from professional advice. Its transpersonal framing is explicitly a sincere interpretation of lived experience, not established scientific fact. Preserve this distinction when connecting personal testimony to a knowledge graph.
+
+Selected rendered navigation-comment text separates evidence, interpretation, testimony, hypotheses and speculation; cross-disciplinary resemblance is not treated as causation. Comment-tree completeness and individual comment counts are unverified.
+
+Gap: crisis-resource contact details require a fresh official-source check before republication. This draft deliberately does not reproduce the telephone numbers. No current resource verification has been completed.
+
+## Integration queue
+
+1. Verify originals and primary sources, documenting access scope and failures.
+2. Resolve duplicate works and shared cohorts before calculating source totals.
+3. Review cultural provenance with relevant community-led sources.
+4. Prepare site summaries with evidence labels and links after review.
+5. Record merge and deployment receipts separately; never infer either from a draft PR.
+
+Love, peace, compassion and service can be editorial connectors. Such thematic relationships do not establish scientific causation, cultural equivalence or accepted canonical graph edges.
+
+Coverage percentage is unknown: these seven records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
