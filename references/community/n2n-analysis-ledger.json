@@ -59,12 +59,33 @@
       "blocker": "No verified post content or primary-source links available in inspected records; live Reddit intake remains HOLD.",
       "next_action": "Obtain authorised source access or owner-provided material with sufficient provenance; then examine the post and directly relevant primary sources.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10001d",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Archived URI and pilot metadata plus existing historical provenance audit; no live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "Pilot labels this record community_observation/research_discussion, with unknown date and generic attribution. Its external-source field links back to the same Reddit post, so it supplies no independently identifiable primary study. The summary describes cataloguing rather than substantive findings. Neither methods nor scientific claims can be evaluated from these fields. The existing sequence anomaly is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
+      ],
+      "access_limitations": [
+        "reddit-semantic-index.csv could not be read through the connector because of file size/support limits; no claim that it contains no further information.",
+        "Live Reddit access remains HOLD; post body and linked sources were not examined."
+      ],
+      "blocker": "Available metadata is insufficient for substantive analysis; verified post content and primary-source links are missing from inspected records.",
+      "next_action": "Obtain authorised source access or owner-provided material with provenance; resolve the post's identity before substantive assessment.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 1,
-    "next_pending_post_id": "10001d",
-    "next_action": "Assess the next pending archive record; do not infer its content from its URL slug."
+    "blocked": 2,
+    "next_pending_post_id": "10001e",
+    "next_action": "Review next pending record; retain blocked records for later source verification."
   }
 }
