@@ -150,6 +150,12 @@ const faqGroups: FAQGroup[] = [
         answer: "AkashicPRISM means Pluralistic Research & Inquiry across States and Meaning. It is the epistemic interface between unusual experience and the AkashicNET knowledge system, separating what was experienced, how it was interpreted, what can be tested and what remains unknown.",
       },
       {
+        id: "prism-architecture",
+        question: "Where does PRISM sit between AkashicNET and AkashicOMNI?",
+        answer: "AkashicNET is the encompassing ecosystem; AkashicOMNI coordinates twelve analytical frameworks; AkashicPRISM is the shared epistemic interface between their analysis and AkashicNET’s corpus, graph, ledgers and publication system.",
+        analysis: "Detailed analysis: PRISM belongs to AkashicNET organisationally and serves AkashicOMNI functionally. It receives the twelve frameworks’ outputs and records interpretive mode, evidence lane, connection strength, uncertainty, alternative explanations, cultural authority and revision history. It is not a thirteenth peer framework, and AkashicNET is not one of the twelve. The concise architecture is: AkashicNET contains the system; AkashicOMNI coordinates the inquiry; twelve frameworks examine; PRISM discriminates; the NET preserves.",
+      },
+      {
         id: "prism-omni-version",
         question: "Does AkashicPRISM advance the AkashicOMNI version?",
         answer: "Yes—as a proposed compatible expansion. Under AkashicOMNI’s version rules, PRISM supports a MINOR advance from the current v0.4.3 to candidate v0.5.0.",
