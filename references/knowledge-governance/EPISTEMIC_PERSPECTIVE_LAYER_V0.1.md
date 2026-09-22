@@ -107,6 +107,12 @@ The evidential contribution depends on the input:
 
 Every review is append-only. It records the earlier and new evidence lane, direction of change, date, triggering inputs, independence, rationale, uncertainty, reviewer role and gates passed or still pending. A new assessment may supersede a prior judgement, but the earlier event remains visible.
 
+## Relationship to AkashicOMNI versioning
+
+The current released framework is AkashicOMNI v0.4.3. Under its Publication Impact Classifier, AkashicPRISM is a **compatible expansion**: it introduces a reusable epistemic layer, plural interpretive modes, typed connection assessments and append-only classification history while preserving existing evidence boundaries and historical assessments. It therefore supports a proposed **AkashicOMNI v0.5.0** MINOR release.
+
+This draft does not itself release v0.5.0. The candidate becomes current only through the project’s separate review, merge and publication process. Earlier assessments retain the AkashicOMNI version they originally cited and are not automatically recalculated.
+
 ## Gates
 
 The schema fixes automatic truth inference and automatic promotion from testimony or tradition to `false`. Rights, cultural authority, privacy, evidence review and publication decisions remain separate. Big Questions remain unresolved until their own adjudication process changes them.
