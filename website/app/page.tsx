@@ -237,6 +237,7 @@ export default function Home() {
         <div className="process-grid">
           {steps.map(([title,text],index)=><article key={title}><span>{String(index+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p>{index<steps.length-1&&<b aria-hidden="true">→</b>}</article>)}
         </div>
+        <p><a className="text-link" href="/insights/akashicprism-plug-and-play-consciousness">Explore the PRISM inquiry jigsaw →</a> <span>Draft conceptual exploration · proposed AkashicOMNI v0.5.0</span></p>
         <div className="architecture-note"><span>Source</span><i>→</i><span>Provenance</span><i>→</i><span>Canonical record</span><i>→</i><span>Typed relationship</span><i>→</i><span>Human review</span></div>
       </section>
 
