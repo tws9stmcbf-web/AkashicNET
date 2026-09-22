@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. Nine public Reddit records have had their complete visible post text reviewed in this rotation. Seven contain substantive bodies; two are cross-post wrappers. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+Status: review draft. Ten public Reddit records have had their complete visible post text reviewed in this rotation. Eight contain substantive bodies; two are cross-post wrappers. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 9 public summaries staged; 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 10 public summaries staged; 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -22,6 +22,8 @@ This checkpoint proposes documentation integration only: 9 public summaries stag
 
 | TribalGathering | 1sbz3wr | Complete visible body | Cross-cultural speculative synthesis | Verify each community attribution and theory comparison |
 | microDJPanPSYchic | 1u8aspz | Complete wrapper and one identified comment | Music curation plus interpretive model | Review parent and obtain primary mechanism evidence |
+
+| microdosing | plrxca | Complete visible body | Collaborative moderator synthesis and curation | Appraise individual claims and deduplicate cited works |
 
 Images, audio, video and complete comment trees are not reviewed. Selected rendered comments on 1u49cm7 were read but are not a separate quantified comment census.
 
@@ -101,6 +103,16 @@ https://www.reddit.com/r/microDJPanPSYchic/comments/1u8aspz/comment/oskq0kv/
 
 The comment proposes ACTC/HOMESENSE/METAD interpretations of music-associated insight and explicitly does not assert psychic transmission or external information transfer. Statements about predictive cycles, self-referential processing, integration and associative entropy need primary evidence and operational definitions. Classify as a proposed explanatory model, not established neuroscience. The identified comment is one reviewed comment, not an exhaustive comment census. Audio and parent media remain unreviewed. Count one distribution post; do not count it as an independent music work.
 
+### plrxca — Sub-threshold dose FAQ
+https://www.reddit.com/r/microdosing/comments/plrxca/
+
+Visible body fully read; revision shown July 12, 2023. The post attributes collaborative moderator authorship and combines expert statements, participant reports, research references and practical guidance. Reported anecdote volume is not a verified dataset. Treat claims linking afterglow to an optimal dose, symptoms to tolerance, and interventions to relief as appraisal questions. This audit does not endorse dosing instructions. Images, linked papers and full comment-tree completeness remain unchecked; rendered comments read are not counted without an ID inventory.
+
+Topic tags: microdosing; harm reduction; dose terminology; potency variability; drug interactions; tolerance; afterglow; integration; receptor pharmacology. This is an explicit tagging baseline for one record, not a topic census of all ten. Each of these nine tags occurs in this tagged record. Unique underlying-source counts remain unknown until URL extraction and work-level deduplication.
+
+## IONS source stream
+Include research pages, abstracts and original papers separately from Reddit records. Capture source URL, work identity, related Reddit IDs, access scope, methods, results, limitations and integration stage. Historical audit logs recorded 196 entries: 39 containing content or abstracts and 157 blocked or empty. These are unrefreshed log counts, not unique studies or full-paper reads. Missing local files must be distinguished from publisher access failures. No new IONS page or paper has been read in this checkpoint.
+
 ## Integration queue
 
 1. Verify originals and primary sources, documenting access scope and failures.
@@ -111,4 +123,4 @@ The comment proposes ACTC/HOMESENSE/METAD interpretations of music-associated in
 
 Love, peace, compassion and service can be editorial connectors. Such thematic relationships do not establish scientific causation, cultural equivalence or accepted canonical graph edges.
 
-Coverage percentage is unknown: these nine records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
+Coverage percentage is unknown: these ten records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
