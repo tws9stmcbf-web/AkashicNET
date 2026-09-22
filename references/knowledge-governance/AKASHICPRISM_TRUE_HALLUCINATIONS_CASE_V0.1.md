@@ -14,6 +14,20 @@ This is the first bounded AkashicPRISM case specification. It is designed to exa
 
 The case preserves unusual reports as investigable questions. It does not presume that the reports are either literal descriptions of an external intelligence or reducible hallucinations.
 
+## Origin and intellectual lineage
+
+AkashicPRISM is an AkashicNET framework created in September 2026. It is not a framework devised or named by Terence McKenna, and no such attribution should be implied.
+
+McKenna is a major visionary precursor, particularly through the questions associated with *True Hallucinations*: how extraordinary states are narrated, how the perceived Logos or autonomous intelligence is interpreted, how experience becomes cosmology, and how imaginative hypotheses can be preserved without confusing them with established evidence.
+
+PRISM also arises from distinct methodological and ethical needs: AkashicNET's corpus and outlier audits; separation of testimony, interpretation and externally testable claims; structured psychonautic reporting; first-person and third-person comparison; cultural authority; source provenance; rights review; and explicit uncertainty. Its ancestry is therefore plural rather than singular.
+
+The most accurate relationship is:
+
+> McKenna helped inspire the questions and the courage to investigate them. AkashicPRISM supplies a contemporary evidence, provenance and cultural-governance method for holding those questions open.
+
+The familiar optical prism is a visual metaphor for one experience refracted through multiple lenses. It does not imply that McKenna originated the AkashicPRISM name, acronym, schema or governance system.
+
 ## Repository-verified anchor
 
 The repository-held Reddit URI and semantic indexes at commit `2d63ddc66f6b21e0151947325e21bb6276c3c040` both contain:
