@@ -182,13 +182,101 @@
       "blocker": "Inspected metadata lacks verified source identity and substantive content for assessment.",
       "next_action": "Revisit when authorised material with attributable source provenance is available; preserve the live-access HOLD.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100022",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100023",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100024",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100025",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 6,
-    "next_pending_post_id": "100022",
-    "next_action": "Assess pending repository-only record 100022. INV-001 awaits authorised upstream provenance; do not repeat its exhausted bounded receipt search without a new lead."
+    "blocked": 10,
+    "next_pending_post_id": "100026",
+    "next_action": "Continue pending repository-only assessment. Substantive reading in PR #378 has separate scope and counts; do not reset or combine them."
   },
   "repository_verification_events": [
     {
@@ -205,7 +293,7 @@
   ],
   "investigation_register": {
     "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
-    "counting": "Four OPEN investigation groups: three overlapping metadata groups now concern six inspected IDs; the fourth concerns a CLI dependency and adds no post IDs. Earlier five-ID history remains scoped to those five. No completed-read or evidence increase.",
+    "counting": "Four open investigation groups: three overlapping metadata groups concern ten inspected IDs; one CLI dependency group adds no post IDs. No completed post reads in this ledger.",
     "items": [
       {
         "status": "OPEN",
@@ -217,7 +305,11 @@
           "10001e",
           "10001f",
           "100020",
-          "100021"
+          "100021",
+          "100022",
+          "100023",
+          "100024",
+          "100025"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -323,6 +415,13 @@
               "references/community/reddit-semantic-index.csv"
             ],
             "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "scope": "Repository pilot/URI assessment of 100022–100025; concurrent 100021 assessment preserved.",
+            "finding": "The four additional IDs share the recorded metadata/source-link/annotation pattern. Twelve URI rows map to four IDs. No live source reads.",
+            "decision": "Keep OPEN; no independent evidence added."
           }
         ]
       },
@@ -336,7 +435,11 @@
           "10001e",
           "10001f",
           "100020",
-          "100021"
+          "100021",
+          "100022",
+          "100023",
+          "100024",
+          "100025"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -368,6 +471,13 @@
               "references/community/reddit-semantic-index.csv"
             ],
             "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "scope": "Repository pilot/URI assessment of 100022–100025; concurrent 100021 assessment preserved.",
+            "finding": "The four additional IDs share the recorded metadata/source-link/annotation pattern. Twelve URI rows map to four IDs. No live source reads.",
+            "decision": "Keep OPEN; no independent evidence added."
           }
         ]
       },
@@ -381,7 +491,11 @@
           "10001e",
           "10001f",
           "100020",
-          "100021"
+          "100021",
+          "100022",
+          "100023",
+          "100024",
+          "100025"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -453,6 +567,13 @@
               "references/community/reddit-semantic-index.csv"
             ],
             "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "scope": "Repository pilot/URI assessment of 100022–100025; concurrent 100021 assessment preserved.",
+            "finding": "The four additional IDs share the recorded metadata/source-link/annotation pattern. Twelve URI rows map to four IDs. No live source reads.",
+            "decision": "Keep OPEN; no independent evidence added."
           }
         ]
       },
