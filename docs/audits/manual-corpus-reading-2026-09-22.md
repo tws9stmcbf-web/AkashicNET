@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. Ten public Reddit records have had their complete visible post text reviewed in this rotation. Eight contain substantive bodies; two are cross-post wrappers. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+Status: review draft. Twelve public Reddit records have had their complete visible post text reviewed in this rotation. Ten contain substantive bodies; two are cross-post wrappers. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 10 public summaries staged; 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 15 summaries staged (12 Reddit, one IONS overview, two research abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -24,6 +24,9 @@ This checkpoint proposes documentation integration only: 10 public summaries sta
 | microDJPanPSYchic | 1u8aspz | Complete wrapper and one identified comment | Music curation plus interpretive model | Review parent and obtain primary mechanism evidence |
 
 | microdosing | plrxca | Complete visible body | Collaborative moderator synthesis and curation | Appraise individual claims and deduplicate cited works |
+| NeuronsToNirvana | 1w92g5v | Complete visible body; reconciled independent read once | Ethical synthesis and personal testimony | Verify primary textual sources |
+| microINSIGHTS | 1wmhrb8 | Complete visible body | Support-resource curation | Continue checking resource links |
+
 
 Images, audio, video and complete comment trees are not reviewed. Selected rendered comments on 1u49cm7 were read but are not a separate quantified comment census.
 
@@ -123,14 +126,14 @@ Include research pages, abstracts and original papers separately from Reddit rec
 
 Love, peace, compassion and service can be editorial connectors. Such thematic relationships do not establish scientific causation, cultural equivalence or accepted canonical graph edges.
 
-Coverage percentage is unknown: these ten records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
+Coverage percentage is unknown: these twelve records have not been reconciled against a fixed complete eligible corpus. The historical 7,457-ID index is not a verified denominator for this rotation.
 
 ## IONS-FAQ-001 — source read
 https://noetic.org/science/research-faqs/
 Read 22 September 2026; publication/revision date unknown. Full extracted FAQ; institutional overview, not a study. It points to publications and NEXA. Hypothesis validation remains pending. No archive submissions accessed. Historical-log overlap unknown. Proposed connection to consciousness questions; no canonical edge accepted.
 
-## Topic assignments for these ten public records
-Provisional tags from saved reading notes, not fresh reads. Tagging is descriptive, not evidence promotion. Private records are excluded from this public subset.
+## Topic assignments for these twelve public records
+Descriptive tags, not evidence promotion. Private records excluded.
 
 | Post ID | Topics |
 |---|---|
@@ -144,30 +147,49 @@ Provisional tags from saved reading notes, not fresh reads. Tagging is descripti
 | 1sbz3wr | Indigenous knowledge; consciousness; theory comparison |
 | 1u8aspz | music; consciousness; theory comparison |
 | plrxca | microdosing; harm reduction; dose terminology; potency variability; drug interactions; tolerance; afterglow; integration; receptor pharmacology |
+| 1w92g5v | ethics and compassion; integration; contemplation; psychedelic science; philosophy; lived experience; research methods |
+| 1wmhrb8 | integration; harm reduction; research curation |
 
 | Topic | Posts in public subset |
 |---|---:|
 | Indigenous knowledge | 2 |
 | afterglow | 1 |
 | consciousness | 4 |
+| contemplation | 1 |
 | dose terminology | 1 |
 | drug interactions | 1 |
-| ethics and compassion | 1 |
-| harm reduction | 2 |
+| ethics and compassion | 2 |
+| harm reduction | 3 |
 | identity | 1 |
-| integration | 2 |
-| lived experience | 1 |
+| integration | 4 |
+| lived experience | 2 |
 | meaning and connection | 2 |
 | microdosing | 2 |
 | music | 2 |
-| philosophy | 1 |
+| philosophy | 2 |
 | platform governance | 1 |
 | potency variability | 1 |
-| psychedelic science | 1 |
+| psychedelic science | 2 |
 | receptor pharmacology | 2 |
-| research curation | 2 |
-| research methods | 1 |
+| research curation | 3 |
+| research methods | 2 |
 | theory comparison | 2 |
 | tolerance | 1 |
 
-Public subset: 10 tagged posts; 22 distinct topics. Source-work counts per topic remain unknown. One additional IONS overview summary staged separately; no new scientific paper appraisal or merge/deployment.
+Public subset: 12 tagged posts; 23 distinct topics. Unique underlying work counts per topic remain unknown.
+
+## Reconciliation update — 22 September 2026
+
+INDEPENDENT-001 record 1w92g5v was incorporated once, not reread. Its external snippet-only duplicate adds zero reads. Project names are entity labels. Interpretation and personal testimony do not establish clinical effects.
+
+Post [1wmhrb8](https://www.reddit.com/r/microINSIGHTS/comments/1wmhrb8/selfhelp_integration_therapy_practical_resources/) by u/NeuronsToNirvana: “🌱 Self-Help, Integration & Therapy | Practical Resources, Peer Support & Everyday Care (4 min read) [21 September 2026]”. Published 2026-09-21T16:30:29.583Z; accessed 2026-09-22. Full visible body read; comments/media not reviewed. Tags: T012 integration, T010 harm reduction, T025 research curation. Ten external resource URLs and seven Reddit archive references are not seventeen studies. Journaling prompts are editorial, directories are not provider endorsements. One linked disclaimer was already read.
+
+Supporting checks: [NHS five steps](https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/five-steps-to-mental-wellbeing/) full informational page read; stated review due December 2025 is overdue. [Fireside support-line](https://www.firesideproject.org/support-line) excerpt only; peer support distinguished from emergency care. Dynamic availability labels conflict; live availability unverified. These are supporting checks, not additional staged study summaries.
+
+### Two abstract checks, not full-paper appraisals
+
+[AWARE-I, PMID 25301715](https://pubmed.ncbi.nlm.nih.gov/25301715/), DOI 10.1016/j.resuscitation.2014.09.004: abstract checked. 2,060 arrest events; 140 first-stage and 101 second-stage interviews. The externally supplied 39% memory figure does not match this abstract. Full-text denominators remain to inspect.
+
+[AWARE-II, PMID 37423492](https://pubmed.ncbi.nlm.nih.gov/37423492/), DOI 10.1016/j.resuscitation.2023.109903: abstract checked. 567 arrests, 53 survivors, 28 interviewed, 11 memory/perception reports. Separate 126-person community arm. EEG results during CPR do not establish participant-level timing of remembered experience or awareness after irreversible death. Full methods, target exposure, replication, data availability and correction checks pending.
+
+Both works: Parnia et al.; evidence class primary research abstract with preliminary interpretation; topics T004, T018, T026. External institutional and related-study claims remain pending. No full papers appraised or scientific conclusions promoted.
