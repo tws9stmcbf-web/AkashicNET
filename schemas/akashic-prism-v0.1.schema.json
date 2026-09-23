@@ -530,9 +530,9 @@
         "publication_status": {
           "enum": [
             "hold",
-            "review_candidate",
-            "approved"
-          ]
+            "review_candidate"
+          ],
+          "description": "Draft contract only. Publication approval requires a separately verified approval mechanism; schema validation does not authorize publication."
         },
         "notes": {
           "type": [
