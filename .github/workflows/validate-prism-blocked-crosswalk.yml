@@ -1,0 +1,30 @@
+name: Validate PRISM blocked crosswalk
+
+on:
+  pull_request:
+    paths:
+      - 'references/knowledge-governance/prism-n2n-blocked-admission-crosswalk-v0.1.json'
+      - 'scripts/validate_prism_blocked_crosswalk.py'
+      - 'tests/test_prism_blocked_crosswalk.py'
+      - '.github/workflows/validate-prism-blocked-crosswalk.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'references/knowledge-governance/prism-n2n-blocked-admission-crosswalk-v0.1.json'
+      - 'scripts/validate_prism_blocked_crosswalk.py'
+      - 'tests/test_prism_blocked_crosswalk.py'
+      - '.github/workflows/validate-prism-blocked-crosswalk.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_prism_blocked_crosswalk.py
+      - run: python -m unittest discover -s tests -p 'test_prism_blocked_crosswalk.py' -v
