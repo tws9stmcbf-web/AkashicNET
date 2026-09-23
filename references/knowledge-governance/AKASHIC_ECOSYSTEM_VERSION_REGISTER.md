@@ -127,3 +127,18 @@ A proposed neuroscience + HOMESENSE + PRISM comparison can relate measurements t
 ## Publication follow-up
 
 Sites version 539 successfully published source 3b8c8f47b178f4bcdaadb8949f99169c9fb9bb28. The PRISM Big Questions article now uses public label OMNI v0.5. Its framework proposal status is unchanged. This version register and combination assessment remain repository drafts; no additional corpus readings or evidence adjudications occurred.
+
+
+## Release reconciliation: AkashicPRISM v0.2 pre-alpha — 23 September 2026
+
+Public release profile v0.2 was published successfully in Sites version 544 from source `a2ed16c38691aaa9527fcb4ebe956a86e3e60f34`. Page: https://akashicnet.org/insights/akashicprism-big-questions#release . Machine-readable release record: https://akashicnet.org/releases/akashicprism-v0.2.json . Earlier v0.1 public source is preserved at `b4fb27a755391120504b08ec49f0f97665cc6c2b` in Sites history.
+
+This reconciles the public interface with existing assessment-register capabilities; it does not announce a fully implemented epistemic engine. The inspected private master identifies schema `0.2.0` and dataset revision `3`, although its historical filename contains v0.1. Private records and the database were neither published nor modified. Master documentation reports hosted snapshot r2; hosted state was not independently checked or synchronised in this release.
+
+The perspective schema and Inquiry Module remain draft v0.1 at inspected GitHub head `6aa9da5e1958f6b51c1aa77efcbe8e75210c82d6`; OMNI v0.5 remains proposed. AKN-FW-003 now has public pre-alpha release profile v0.2, distinct from these component versions. Earlier rows above remain historical checkpoints.
+
+The page includes the combination explorer, generated Doors of Perception artwork, short transparency report and explicit release limitations. The founder is credited with original vision and editorial direction; AI synthesis, implementation and artwork are disclosed. Contribution percentages remain unmeasured.
+
+Validation: SQLite integrity and foreign-key checks plus six synthetic behaviour checks passed on an in-memory copy. These check history preservation, same-record supersession, staging receipt presence, valid evidence enums and current-view advancement, not scientific truth or full governance enforcement. Site build, internal routes/anchors/assets, capacity boundaries and sitemap passed; deployment succeeded. Browser interaction was not tested. GitHub CI for the resulting register commit is checked separately, with no automatic inference from the site build.
+
+No new readings, imports, accepted canonical edges, evidence promotions or GitHub merges. BQ001 UNRESOLVED; Reddit live HOLD; privacy, rights, cultural-authority and scoped publication boundaries unchanged. Next: verify protected hosted snapshot against the latest master and reconcile dataset revisions without duplicate imports. Retrospective transparency reports for other posts remain separate work.
