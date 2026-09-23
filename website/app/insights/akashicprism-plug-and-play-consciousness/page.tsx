@@ -99,6 +99,7 @@ export default function Page() {
         <a href="/" style={{ color: "#f4f0e4", textDecoration: "none", fontWeight: 900, letterSpacing: ".13em" }}>AKASHICNET.ORG</a>
         <nav aria-label="Article navigation" style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
           <a href="/akashicomni" style={{ color: "#cbc7d5" }}>AkashicOMNI</a>
+          <a href="/insights/akashicprism-big-questions" style={{ color: "#cbc7d5" }}>PRISM &amp; Big Questions</a>
           <a href="/faq" style={{ color: "#cbc7d5" }}>FAQ</a>
           <a href="/" style={{ color: "#cbc7d5" }}>Home</a>
         </nav>
