@@ -4,11 +4,13 @@ on:
     paths:
       - "references/psi/subreddit-psi-metadata-census-v0.1.json"
       - "scripts/validate_psi_subreddit_census_v01.py"
+      - "tests/test_psi_subreddit_census_v01.py"
       - ".github/workflows/validate-psi-subreddit-census-v01.yml"
   push:
     paths:
       - "references/psi/subreddit-psi-metadata-census-v0.1.json"
       - "scripts/validate_psi_subreddit_census_v01.py"
+      - "tests/test_psi_subreddit_census_v01.py"
       - ".github/workflows/validate-psi-subreddit-census-v01.yml"
 jobs:
   validate:
@@ -19,3 +21,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/validate_psi_subreddit_census_v01.py
+      - run: python -m unittest discover -s tests -p 'test_psi_subreddit_census_v01.py' -v
