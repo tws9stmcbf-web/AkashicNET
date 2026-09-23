@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. Fourteen public Reddit records have had their complete visible post text reviewed in this rotation. Eleven contain substantive bodies; two are brief cross-post wrappers; one displays a substantive embedded parent body. This file contains audit summaries, not copied bodies or media. It does not represent a random or exhaustive sample.
+Status: review draft. This file contains 20 public Reddit record summaries, one IONS institutional FAQ overview and two AWARE abstract-check summaries: 23 staged summaries. Reddit review scopes include substantive bodies, wrappers and embedded parent text; they are not equivalent to full linked-source appraisals. Historical subset counts below retain their original scope. Private working records are excluded.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 17 summaries staged (14 Reddit, one IONS overview, two AWARE abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 23 summaries staged (20 Reddit, one IONS overview, two AWARE abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -258,3 +258,20 @@ CAVANNA-2022 registry NCT05160220: structured ClinicalTrials.gov record read. Ac
 AWARE correspondence: Greyson/vanLommel DOI10.1016/j.resuscitation.2023.109924 complete one-page letter read from UVA. It quotes original Figure2 about two interviewees with EEG lacking explicit recall; original figure not verified. Critique is not new clinical data. Parnia reply DOI10.1016/j.resuscitation.2023.110080 verified at PubMed metadata scope only; full reply unavailable. Do not attribute the quotation to a read author response or infer time-matched EEG/recall. Original full AWARE papers remain pending.
 
 Batch receipts: five public summaries added to draft staging; nested checks add no separate summary count. Immediate per-record checkpoints retained in working ledger. New posts in this turn3; earlier queued summaries2. Exact revisions remain unknown. New topic assignments are descriptive, not scientific corroboration.
+
+
+## 1vzfhwd — From Living Archive to Collective Intelligence
+
+https://www.reddit.com/r/NeuronsToNirvana/comments/1vzfhwd/rneuronstonirvana_akashicnet_from_living_archive/
+
+Creator: u/NeuronsToNirvana. Title: “r/NeuronsToNirvana × AkashicNET — From Living Archive to Collective Intelligence?” Published 27 August 2026 according to the recorded public search result; revision unknown. Full visible self-text read on 22 September 2026; image description reviewed, image pixels not inspected. This summary transfers an existing audited read; it adds no new read, study or source appraisal.
+
+Classification: original project synthesis and workflow hypothesis, not empirical research. The proposal connects archive discovery, semantic search, knowledge graphs and collective inquiry while distinguishing evidence, testimony, tradition and speculation. Its value is a testable approach to organizing inquiry, not evidence that the proposed system already works.
+
+Topics: consciousness; ethics and compassion; philosophy; research curation; research methods; theory comparison. These six assignments overlap existing topics and introduce no new topic.
+
+No scientific papers or datasets were cited in the body. Implementation quality and usefulness remain unverified. A future evaluation needs a defined benchmark, independent scoring, error and disagreement rates, provenance checks and retention of contradictory or null findings. Confirmation bias, unsupported semantic links and automation errors are relevant failure modes.
+
+Brief paraphrase only. Cultural and Pachamama framing is ethical context, not scientific proof or community endorsement. Draft staging does not grant publication rights, clear restrictions or accept canonical edges.
+
+Reconciliation dated 23 September 2026: this commit adds one previously saved public summary, bringing the file to 20 Reddit summaries plus three separately counted source summaries. Existing nested source checks are not additional staged summaries. No merge, public-site publication or evidence promotion is performed.
