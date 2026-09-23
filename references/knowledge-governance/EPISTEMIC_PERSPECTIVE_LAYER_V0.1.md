@@ -130,3 +130,45 @@ The schema fixes automatic truth inference and automatic promotion from testimon
 
 - Schema: `schemas/akashic-prism-v0.1.schema.json`
 - Encounter foundation: `schemas/spiritual-knowledge-encounter-record-v0.1.schema.json`
+
+
+## Dated follow-up: v0.5.0 release proposal and verification — 23 September 2026
+
+Status: **PROPOSED / UNRELEASED**. Source checkpoint: PR #379 at `1002aa388004fd152f221ee764d3af52a19adf55`, inspected on 23 September 2026 UTC. The repository release metadata in `website/lib/akashicomni-release.ts` still declares v0.4.3.
+
+### Terminology clarification
+
+The earlier “twelve frameworks” wording above is retained as historical drafting context. The more precise term for the proposed arrangement is **twelve analytical perspectives**: MultidimensionalCUT PAST, PRESENT and FUTURE are three temporal views of one framework. PRISM is a shared epistemic interface within NET, serving OMNI analysis. Inquiry Modules are proposed structured inputs to that process, not additional peer frameworks or executable consciousness components.
+
+### Candidate scope
+
+- Introduce AkashicPRISM v0.1 and the Inquiry Module v0.1 schema as draft contracts.
+- Explain the proposed NET / OMNI / PRISM relationship through the FAQ, thought-stream article and structure diagram.
+- Preserve outliers and alternative explanations with provenance, uncertainty and revision history.
+- Keep the 41-row metadata-only crosswalk distinct from completed source readings and independent evidence.
+- Preserve original vision and editorial direction attribution to the AkashicNET founder, with development and formalisation through human–AI collaboration.
+
+The MINOR version is a proposal, conditional on compatibility review. Confirm that any consumer of the historical thirteen-perspective structure continues to work or receives an explicitly versioned migration. Do not silently recalculate previous assessments or rename stored identifiers.
+
+### Verification evidence and limits
+
+All 13 pull-request workflow runs returned by the commit-specific GitHub Actions tool passed at the source checkpoint. That tool returns only the first page of pull-request-triggered runs; this is not an exhaustive check-suite, deployment or website-build verdict. Billed usage remains unknown.
+
+Website rendering is **UNVERIFIED**. Reads of `package.json` and `website/package.json` returned not found at this checkpoint. This does not prove that no build configuration exists elsewhere. TypeScript and a JSON Schema validator were unavailable in the inspected local runtimes; no local type-check, schema validation or browser rendering is claimed.
+
+### Required readiness work
+
+1. Locate the authoritative website build workspace and its dependency manifest; reconcile it with this exact PR source before running a build.
+2. Render the article at phone, tablet and desktop widths. Check heading wrapping, keyboard access to the scrolling diagram, text equivalent, homepage link and FAQ navigation.
+3. Validate both PRISM schemas with explicit synthetic positive and negative fixtures. Confirm forbidden automatic promotion is rejected; do not count these fixtures as corpus evidence.
+4. Review cross-record guarantees outside JSON Schema: source-ID resolution, stable-ID uniqueness, source independence, and append-only history require application or review controls.
+5. Verify compatibility of the twelve-perspective proposal with the current thirteen-perspective release and any stored references.
+6. Record the resulting commit and its checks before a separate release decision. Merge, deployment and publication require their own authorization.
+
+### Checkpoint boundaries
+
+No corpus records were read or reclassified during this follow-up. No investigation flag was resolved. The last saved repository-provenance checkpoint remains 41 BLOCKED, 0 COMPLETE and four open investigation groups; this is not a fresh census of other branches or the main corpus-reading audit.
+
+Live Reddit access remains HOLD. BQ001 remains UNRESOLVED. This work adds zero accepted canonical edges. Privacy, rights, cultural authority, evidence and publication gates are unchanged.
+
+Next bounded action: locate the authoritative build workspace and render the draft article. If unavailable, validate the module contracts with synthetic fixtures while preserving the rendering gap.
