@@ -1,12 +1,12 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. This file contains 20 public Reddit record summaries, one IONS institutional FAQ overview and two AWARE abstract-check summaries: 23 staged summaries. Reddit review scopes include substantive bodies, wrappers and embedded parent text; they are not equivalent to full linked-source appraisals. Historical subset counts below retain their original scope. Private working records are excluded.
+Status: review draft. This file contains 20 public Reddit record summaries, one IONS institutional FAQ overview and two AWARE source summaries: 23 staged summaries. The AWARE main-paper appraisal and bounded work/cohort reconciliation dated 23 September below supersede the earlier abstract-only checkpoints; unavailable supplements and correspondence remain explicitly pending. Reddit review scopes include substantive bodies, wrappers and embedded parent text; they are not equivalent to full linked-source appraisals. Historical subset counts below retain their original scope. Private working records are excluded.
 
 ## Counting and boundaries
 
 Count unique post IDs once. Feed previews, repeat visits, linked pages and media do not increment the post count. Reading a body is not exhaustive source appraisal. Original authorship of linked material is not established by the posting account. Private working records are excluded from this public manifest.
 
-This checkpoint proposes documentation integration only: 23 summaries staged (20 Reddit, one IONS overview, two AWARE abstracts); 0 merged by this change; 0 deployed by this change; 0 records with exhaustive linked-source appraisal. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
+This checkpoint proposes documentation integration only: 23 summaries staged (20 Reddit, one IONS overview, two AWARE works); 0 merged by this change; 0 deployed by this change; 2 AWARE main papers appraised; 0 AWARE source packages exhaustively appraised. Unavailable supplements, unread correspondence and unverified participant overlap prevent an exhaustive-completion claim. No new canonical edges or scientific conclusions are accepted. BQ001 remains UNRESOLVED; accepted canonical edges remain 0; governed Reddit live/API access remains HOLD. Evidence, rights, publication and promotion gates are unchanged.
 
 ## Public records
 
@@ -186,13 +186,13 @@ Post [1wmhrb8](https://www.reddit.com/r/microINSIGHTS/comments/1wmhrb8/selfhelp_
 
 Supporting checks: [NHS five steps](https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/five-steps-to-mental-wellbeing/) full informational page read; stated review due December 2025 is overdue. [Fireside support-line](https://www.firesideproject.org/support-line) excerpt only; peer support distinguished from emergency care. Dynamic availability labels conflict; live availability unverified. These are supporting checks, not additional staged study summaries.
 
-### Two abstract checks, not full-paper appraisals
+### AWARE source records — historical abstract checks superseded
 
-[AWARE-I, PMID 25301715](https://pubmed.ncbi.nlm.nih.gov/25301715/), DOI 10.1016/j.resuscitation.2014.09.004: abstract checked. 2,060 arrest events; 140 first-stage and 101 second-stage interviews. The externally supplied 39% memory figure does not match this abstract. Full-text denominators remain to inspect.
+The 22 September checkpoint checked abstracts for AWARE-I (PMID 25301715; DOI 10.1016/j.resuscitation.2014.09.004) and AWARE-II (PMID 37423492; DOI 10.1016/j.resuscitation.2023.109903). These remain the same two staged source summaries, now supported by the bounded main-paper appraisal below.
 
-[AWARE-II, PMID 37423492](https://pubmed.ncbi.nlm.nih.gov/37423492/), DOI 10.1016/j.resuscitation.2023.109903: abstract checked. 567 arrests, 53 survivors, 28 interviewed, 11 memory/perception reports. Separate 126-person community arm. EEG results during CPR do not establish participant-level timing of remembered experience or awareness after irreversible death. Full methods, target exposure, replication, data availability and correction checks pending.
+Correction to the earlier checkpoint: its abstract-only warning about the AWARE-I 39% figure was insufficient. The full-paper denominator reconciliation below supersedes it. No new study, participant, canonical edge or promoted conclusion is created by increasing access scope.
 
-Both works: Parnia et al.; evidence class primary research abstract with preliminary interpretation; topics T004, T018, T026. External institutional and related-study claims remain pending. No full papers appraised or scientific conclusions promoted.
+Both works retain topics T004, T018, T026. External institutional and related-study claims are not cleared by this review.
 
 
 ## 1vzsh2d — 13 Keys symbolic map
@@ -255,7 +255,7 @@ ROOTMAN-2022 DOI10.1038/s41598-022-14512-3 upgraded by delegated verifier to ful
 
 CAVANNA-2022 registry NCT05160220: structured ClinicalTrials.gov record read. Actual start2021-01-20; submitted2021-05-05; posted2021-12-16, after listed completion2021-10-01. Does not establish prospective registration; also conflicts with paper's2019–2020recruitment. History not verified; cause unknown, no misconduct inference. No new study or abstract.
 
-AWARE correspondence: Greyson/vanLommel DOI10.1016/j.resuscitation.2023.109924 complete one-page letter read from UVA. It quotes original Figure2 about two interviewees with EEG lacking explicit recall; original figure not verified. Critique is not new clinical data. Parnia reply DOI10.1016/j.resuscitation.2023.110080 verified at PubMed metadata scope only; full reply unavailable. Do not attribute the quotation to a read author response or infer time-matched EEG/recall. Original full AWARE papers remain pending.
+AWARE correspondence: Greyson/vanLommel DOI10.1016/j.resuscitation.2023.109924 complete one-page letter read from UVA. It quotes original Figure2 about two interviewees with EEG lacking explicit recall; original figure not verified. Critique is not new clinical data. Parnia reply DOI10.1016/j.resuscitation.2023.110080 verified at PubMed metadata scope only; full reply unavailable. Do not attribute the quotation to a read author response or infer time-matched EEG/recall. At that checkpoint the original full AWARE papers remained pending; the 23 September appraisal below supersedes that access status and verifies the original Figure 2. The author reply remains unread.
 
 Batch receipts: five public summaries added to draft staging; nested checks add no separate summary count. Immediate per-record checkpoints retained in working ledger. New posts in this turn3; earlier queued summaries2. Exact revisions remain unknown. New topic assignments are descriptive, not scientific corroboration.
 
@@ -275,3 +275,101 @@ No scientific papers or datasets were cited in the body. Implementation quality 
 Brief paraphrase only. Cultural and Pachamama framing is ethical context, not scientific proof or community endorsement. Draft staging does not grant publication rights, clear restrictions or accept canonical edges.
 
 Reconciliation dated 23 September 2026: this commit adds one previously saved public summary, bringing the file to 20 Reddit summaries plus three separately counted source summaries. Existing nested source checks are not additional staged summaries. No merge, public-site publication or evidence promotion is performed.
+
+
+## Bounded AWARE appraisal and reconciliation — 23 September 2026
+
+Scope: AWARE-I and AWARE-II main papers, available supplements and directly related correspondence. This is a documentation review of the existing two source records, not a new corpus import, systematic review, participant-level linkage or evidence-adjudication decision. Earlier non-AWARE source appraisals and historical topic tables are unchanged.
+
+### Access and provenance receipts
+
+| Item | Access actually completed | Remaining boundary |
+|---|---|---|
+| AWARE-I, Parnia et al., Resuscitation 85 (2014), 1799–1805 | All seven pages of main-paper text, Tables 1–3; original Figure 1 visually checked | Spanish-summary appendix not retrieved; no raw data or protocol-history audit |
+| AWARE-II, Parnia et al., Resuscitation 191 (2023), 109903 | All twelve pages of main-paper text, Tables 1–2 and figure captions; original Figures 1–2 visually checked | Supplementary methods/results, Figures S1/S2 and Excel examples not retrieved; Figure 3 image and underlying data not independently audited |
+| Greyson/van Lommel commentary | Complete one-page UVA-hosted letter reread | Critique, not an additional clinical cohort |
+| Gwinnutt commentary | Complete author-uploaded letter text read on ResearchGate | Retrospective clinical anecdote; no case-level verification |
+| Five other directly linked commentary/reply records below | Bibliographic identity and relationship only | Full texts not retrieved; their arguments are not appraised |
+
+Main-paper retrieval copies (publisher identifiers matched to PubMed; access does not grant redistribution rights):
+
+- [AWARE-I PDF](https://www.dasfoam.org/wp-content/uploads/2018/04/Parnia-2014-Awareness-During-Resuscitation-AWARE-Resuscitation.pdf), SHA-256 `a561768e86fa463fc082969276f3b5f5ccc34919bbe05759979b54ce76dce039`.
+- [AWARE-II PDF](https://frederikuldall.dk/wp-content/uploads/2023/12/PIIS0300957223002162.pdf), SHA-256 `3691cd99bac8c71b265bb7af41e0cf1c7523bfcf88adc787e7c19bd5ea81b9b7`.
+
+Publisher ScienceDirect/journal routes returned access or retrieval errors; the Crossref-advertised Elsevier XML route returned an unavailable-page body, not article XML. AWARE-II's appendix points to its DOI, but the supplemental files were not obtained. Do not relabel these failures as absence of supplements. No access control was bypassed and no full paper, figure, personal narrative or participant identifier is committed.
+
+### AWARE-I main-paper appraisal
+
+[DOI](https://doi.org/10.1016/j.resuscitation.2014.09.004); results pp.1801–1802, Figure 1, limitations/disclosures p.1804.
+
+Prospective observational recruitment: July 2008–December 2012. Flow: 2,060 arrest events → 330 discharge survivors → 140 stage-1 interviews → 101 stage-2 interviews. Stage 1 reports 55/140 (39%) perceived awareness/memories. Stage 2 separates 46/101 non-NDE memories, 9/101 NDEs (including 2/101 resuscitation recollections), and 46/101 without recall. These are different outcomes/denominators, not conflicting prevalence estimates.
+
+Preserve the printed inconsistency: 52 inpatient plus 90 later interviews totals 142; Table 1's footnote also uses 142, whereas the abstract, results and Figure 1 use 140. Do not silently repair it.
+
+Both detailed recollections arose without target shelves; one underwent corroboration. This is not a hidden-target hit or simultaneous demonstration of absent EEG. Survivor selection, delayed interviews and uncertain experience timing limit inference. Funding: Resuscitation Council UK, Nour and Bial; no conflicts declared. Author data access is stated, not an open dataset. The Spanish appendix remains unread.
+
+### AWARE-II main-paper appraisal
+
+[DOI](https://doi.org/10.1016/j.resuscitation.2023.109903); methods pp.2–4, results pp.6–9, Figure 2, disclosures p.10.
+
+Phases span April 2013–March 2020; weekday recruitment selected adult in-hospital arrests lasting at least five minutes. Flow: 567 → 213 sustained ROSC → 53 discharge survivors → 28 interviews; 11 reported memories/perceptions, including six RED reports. Categories overlap.
+
+Tablet/headphones: 365/567. No explicit stimulus recall; one interviewee selected the three fruits in the implicit task. The exposed-and-interviewed denominator is not established here. This is not a verified explicit auditory hit or convincing implicit-learning demonstration.
+
+EEG: 85 recorded, 53 interpretable, 49 with paired oximetry; these are nested subsets. The 53 EEG participants are not the 53 survivors. Figure 2 confirms only two interviewees had EEG data, neither with explicit cognitive recall. Pause-based sampling, artefacts, limited leads and unresolved alpha-coma interpretation prevent validating EEG as an experience-specific biomarker.
+
+The separate 126-person community narrative arm is selected for reported experiences; it cannot estimate prevalence. Funding: Templeton, Resuscitation Council UK, NYU, with NIHR staff support; no conflicts declared. Supplement/data reproducibility remains incomplete.
+
+### Work identity crosswalk
+
+Keys below are local audit labels only, not newly accepted canonical graph nodes or edges. Normalise DOI case/prefix and PMID aliases for matching; preserve distinct documents and provenance. A URL, abstract, mirror, supplement or reread is not another clinical study.
+
+| Audit key | Identity / alias | Record role and counting decision |
+|---|---|---|
+| AWARE-I | DOI 10.1016/j.resuscitation.2014.09.004; PMID 25301715 | One existing primary study work; abstract and PDF resolve to it |
+| AWARE-II | DOI 10.1016/j.resuscitation.2023.109903; PMID 37423492 | One existing primary study work; abstract and PDF resolve to it |
+| AWARE-II-VERSION-CANDIDATE | [SSRN 4246760](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4246760) | Matching title/authors/sample in indexed abstract; candidate earlier version, full version comparison pending; no independent-study increment |
+| I-COMMENT-1 | [PMID 25291252](https://pubmed.ncbi.nlm.nih.gov/25291252/); DOI 10.1016/j.resuscitation.2014.09.023 | AWARE-I commentary; metadata only |
+| I-COMMENT-2 | [PMID 26455647](https://pubmed.ncbi.nlm.nih.gov/26455647/); DOI 10.1016/j.resuscitation.2015.03.029 | AWARE-I methodological critique; metadata only |
+| I-REPLY-2 | [PMID 26455394](https://pubmed.ncbi.nlm.nih.gov/26455394/); DOI 10.1016/j.resuscitation.2015.09.397 | Parnia reply linked to I-COMMENT-2; metadata only |
+| I-COMMENT-3 | [PMID 26455397](https://pubmed.ncbi.nlm.nih.gov/26455397/); DOI 10.1016/j.resuscitation.2014.12.036 | Gwinnutt letter; full text read; separate anecdote, not an AWARE recruitment record |
+| I-REPLY-3 | [PMID 26455398](https://pubmed.ncbi.nlm.nih.gov/26455398/); DOI 10.1016/j.resuscitation.2015.09.398 | Parnia reply linked to I-COMMENT-3; metadata only |
+| II-COMMENT-1 | [PMID 38220416](https://pubmed.ncbi.nlm.nih.gov/38220416/); DOI 10.1016/j.resuscitation.2023.109924 | Greyson/van Lommel letter; full text read; no additional cohort |
+| II-REPLY-1 | [PMID 38097107](https://pubmed.ncbi.nlm.nih.gov/38097107/); DOI 10.1016/j.resuscitation.2023.110080 | Parnia reply; metadata only, no abstract; no claims inferred from its title |
+
+The bounded inventory contains two primary study works and seven distinct commentary/reply documents, plus one candidate earlier-version record. The seven commentary records are not seven replications. Their identifiers are reconciled; five full-text appraisals remain blocked. Publication year is distinct from the year embedded in a DOI.
+
+### Correspondence appraisal
+
+[Greyson/van Lommel full letter](https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2024/01/Greyson2024_AWAreness-during-REsuscitation-and-EEG-activity.pdf) challenges the biomarker interpretation because of the EEG/recall mismatch and possible CPR artefacts. Its Figure 2 reference is now checked against the original. Reviewer judgement: lack of paired positive observations prevents validation in this dataset; it does not establish that no neural correlate could exist. The unread Parnia reply cannot be treated as supporting either side.
+
+[Gwinnutt author-uploaded letter](https://www.researchgate.net/publication/282816006_Awareness_during_resuscitation) recounts one patient's later memory of a resuscitation intervention. It illustrates the importance of follow-up and competing timing explanations, but supplies no controlled target test, cohort prevalence or contemporaneous EEG. Keep the anecdote separate and omit its personal details. The linked reply remains unread.
+
+### Cohort reconciliation and aggregation rules
+
+| Relationship | Audit disposition |
+|---|---|
+| AWARE-I versus AWARE-II prospective recruitment | Different reported recruitment periods and protocols: retain separate study-cohort labels. This does not establish person-level disjointness across recurrent arrests |
+| Interviews, reported experiences, target testing, EEG and oximetry within a study | Nested or partly overlapping analytic subsets; never sum them as independent participants |
+| AWARE-II community narrative sample versus prospective samples or other archives | Separate sampling frame; individual overlap unknown, not verified zero |
+| Related pilot/physiology reports and later secondary analyses | Potential shared-cohort publications; require recruitment/date/site and dataset comparison before any independent-replication count |
+| Correspondence anecdote versus prospective participants | No linkage established; do not add it to either cohort |
+| Abstract/PDF/mirror/supplement and candidate preprint | Work/version relationships, not new participant recruitment |
+
+Deduplication resolves document identity and prevents double-counting; it does not invent a deduplicated person total. No pooled prevalence, combined participant count or independent-replication total is calculated. Unresolved participant overlap is retained as unknown. No names, case narratives or private records are used for linkage.
+
+### Registration, correction and reproducibility checks
+
+The [HRA AWARE-II record](https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/aware-ii/) identifies IRAS 153495, REC 14/SC/0263 and a 19 August 2014 opinion. Its proposed scope/sample differs from the final report. Ethics approval is not proof of prospective outcome registration; a dated protocol, statistical-analysis plan and amendment history are still required before judging outcome switching. No misconduct inference is made.
+
+PubMed structured metadata for both primary PMIDs and Crossref DOI records were checked on 23 September 2026. Retrieved PubMed relations identify comments; neither returned a correction/retraction relation. Crossref returned empty relations and no update fields. This is a bounded negative search, not certification that no correction exists; live publisher/Crossmark status was not verified. Metadata revision dates are not automatically paper corrections.
+
+Remaining reproducibility questions: target exposure among interviewees and chance-model specification; outcome/protocol history; handling of repeated EEG observations, missing data and artefact exclusion; qualitative coding reproducibility; source and cohort overlap for secondary reports. No raw-data reanalysis was performed.
+
+### Review disposition and unchanged gates
+
+- Completed: two main-paper appraisals; original flow diagrams and AWARE-II EEG figure checked; work identifiers reconciled; cohort/subset counting rules recorded; two available correspondence texts appraised.
+- Blocked or unresolved: supplements/translated appendix, five correspondence texts, protocol history, publisher correction status, raw-data reproducibility and individual overlap. Exhaustive source-package appraisal remains incomplete.
+- Counting: 23 staged summaries remain (20 Reddit + one IONS overview + two AWARE works). Nested checks add zero staged summaries, zero new Reddit reads and zero new clinical study works.
+- Scientific judgement: neither recollection nor a group-level EEG pattern establishes awareness after irreversible death or resolves competing metaphysical explanations. BQ001 remains UNRESOLVED.
+- This update changes documentation only. Accepted canonical edges remain 0; evidence/promotion, privacy, cultural-authority, rights, governed Reddit access (HOLD) and publication gates are unchanged. PR remains draft; no merge, deployment or publication is authorised by this appraisal.
