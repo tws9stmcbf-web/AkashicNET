@@ -1,6 +1,6 @@
 # Manual corpus reading checkpoint — 22 September 2026
 
-Status: review draft. This file contains 20 public Reddit record summaries, one IONS institutional FAQ overview and two AWARE source summaries: 23 staged summaries. The AWARE main-paper appraisal and bounded work/cohort reconciliation dated 23 September below supersede the earlier abstract-only checkpoints; unavailable supplements and correspondence remain explicitly pending. Reddit review scopes include substantive bodies, wrappers and embedded parent text; they are not equivalent to full linked-source appraisals. Historical subset counts below retain their original scope. Private working records are excluded.
+Status: review draft. This file contains 20 public Reddit record summaries, one IONS institutional FAQ overview and two AWARE source summaries: 23 staged summaries. The AWARE main-paper appraisal and bounded work/cohort reconciliation dated 23 September below supersede the earlier abstract-only checkpoints; unavailable supplements and correspondence remain explicitly pending. The 24 September addendum updates correspondence access and work identities without changing the 23 staged summaries. Reddit review scopes include substantive bodies, wrappers and embedded parent text; they are not equivalent to full linked-source appraisals. Historical subset counts below retain their original scope. Private working records are excluded.
 
 ## Counting and boundaries
 
@@ -279,6 +279,8 @@ Reconciliation dated 23 September 2026: this commit adds one previously saved pu
 
 ## Bounded AWARE appraisal and reconciliation — 23 September 2026
 
+Historical checkpoint: the 24 September correspondence addendum below supersedes this section's correspondence access counts and crosswalk scope. Main-paper appraisals remain in force.
+
 Scope: AWARE-I and AWARE-II main papers, available supplements and directly related correspondence. This is a documentation review of the existing two source records, not a new corpus import, systematic review, participant-level linkage or evidence-adjudication decision. Earlier non-AWARE source appraisals and historical topic tables are unchanged.
 
 ### Access and provenance receipts
@@ -379,3 +381,36 @@ Remaining reproducibility questions: target exposure among interviewees and chan
 The [NYU faculty bibliography](https://library.med.nyu.edu/api/publications/?in-biosketch=true&offset=10&person=parnis01&sort=display_rank) confirms II-REPLY-1's bibliographic identity but supplies no full text. Its [ResearchGate record](https://www.researchgate.net/publication/376466452_Reply_to_AWAreness_during_REsuscitation_and_EEG_activity) explicitly has no full text available; quotations displayed from citing papers were not substituted for reading the reply. Additional publisher/supplement searches yielded no new readable source. The saved-file search service failed, so saved-copy availability is unknown, not absent. No author was contacted or copy requested.
 
 Next source requirements remain the actual AWARE-II supplementary files, the AWARE-I translated appendix and the five unread commentary/reply documents identified in the crosswalk. Bibliographic confirmation does not upgrade their appraisal scope. This follow-up adds zero study works, zero source-text appraisals and zero staged summaries. The 23-summary count, draft status, BQ001 and all gates remain unchanged.
+
+## Correspondence reconciliation — 24 September 2026
+
+Subsequent working review adds Martial et al.'s previously read methodological letter to the bounded crosswalk. The complete author-uploaded Engmann critique has now been read. Parnia's reply to Engmann received provisional review from complete displayed text of a third-party copy; authoritative-copy verification remains pending. This addendum supersedes earlier correspondence counts and access labels, while retaining the dated receipts as history.
+
+### Current correspondence crosswalk
+
+| Audit key | DOI | Current review scope |
+|---|---|---|
+| I-COMMENT-1 | 10.1016/j.resuscitation.2014.09.023 | Olvera-Lopez/Varon editorial; metadata only |
+| I-COMMENT-2 | 10.1016/j.resuscitation.2015.03.029 | Engmann critique; complete author-uploaded one-page text read |
+| I-REPLY-2 | 10.1016/j.resuscitation.2015.09.397 | Parnia reply to Engmann; provisional complete displayed-text review; authoritative-copy verification pending |
+| I-COMMENT-3 | 10.1016/j.resuscitation.2014.12.036 | Gwinnutt letter; full reading recorded in the 23 September audit |
+| I-REPLY-3 | 10.1016/j.resuscitation.2015.09.398 | Parnia reply to Gwinnutt; metadata only |
+| II-COMMENT-1 | 10.1016/j.resuscitation.2023.109924 | Greyson/van Lommel letter; full institutional text read |
+| II-COMMENT-2 | 10.1016/j.resuscitation.2023.109980 | Martial et al.; complete institutional two-page text read in the working tracker |
+| II-REPLY-1 | 10.1016/j.resuscitation.2023.110080 | Parnia EEG reply; metadata only |
+
+### Access receipts and bounded appraisal
+
+[Martial et al., institutional copy](https://orbi.uliege.be/bitstream/2268/307001/1/1-s2.0-S0300957223002940-main.pdf) raises EEG classification/missingness and explicit-versus-implicit stimulus concerns. These are methodological criticisms of AWARE-II, not a new clinical cohort.
+
+[Engmann, author-uploaded copy](https://www.researchgate.net/publication/282812866_The_cart_was_put_before_the_horse_-_Basic_problems_in_NDE_research) questions personal predispositions, recovery factors and the conceptual basis of classification. His characterisation of the study's theological purpose is his interpretation, not a measured finding. Article DOI and journal page e13 match PMID 26455647.
+
+[Parnia, third-party displayed copy](https://www.scribd.com/document/595190844/parnia2015) rejects that characterisation, explains the broader scope and target design, and defends scale use. Title, author, journal, volume and e15 match [PMID 26455394](https://pubmed.ncbi.nlm.nih.gov/26455394/). Its DOI is rendered as a link placeholder and columns interleave; the appraisal remains provisional pending a publisher/author copy. The reply adds no new paired physiological observations. No full paper or figure is reproduced here.
+
+Reviewer judgement: classification, timing and mechanism are separate questions. Neither a scale category nor a correspondence argument establishes the cause or timing of an experience. Meaningful testimony can be retained without treating a proposed explanation as established.
+
+### Current disposition
+
+The bounded package now contains two primary works and eight correspondence documents, plus the existing candidate earlier version. Four correspondence texts have recorded full readings from author/institutional copies or the prior audit; one has provisional text-level review; three remain unread: I-COMMENT-1, I-REPLY-3 and II-REPLY-1. The count excludes the ventilation secondary analysis and the wider historical-literature tracker.
+
+The staged total remains 23 (20 Reddit, one IONS overview, two AWARE works). This reconciliation adds zero staged summaries, zero Reddit reads, zero primary clinical studies and zero accepted canonical edges. Supplements, translated appendix, protocol history, raw-data reproducibility and individual overlap remain unresolved. No exhaustive source-package completion is claimed. BQ001 remains UNRESOLVED; draft status and all existing governance gates remain unchanged. No merge or publication is performed.
