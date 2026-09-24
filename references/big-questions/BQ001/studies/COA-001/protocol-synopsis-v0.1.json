@@ -541,7 +541,13 @@
       "source_eligibility_frozen": false
     },
     "operational_use_authorized": false,
-    "live_participant_data_processing_authorized": false
+    "live_participant_data_processing_authorized": false,
+    "flow_accounting": {
+      "lock_success_required_for_completed_denominator": false,
+      "later_interview_may_replace_failed_primary": false,
+      "unknown_blinding_is_clean": false,
+      "zero_denominator_may_pass": false
+    }
   },
   "scoring_and_decoy_manual": {
     "id": "SDC-001",

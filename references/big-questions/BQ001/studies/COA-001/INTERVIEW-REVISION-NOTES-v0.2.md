@@ -27,6 +27,21 @@ Completion and lock success are now distinct. A failed primary lock cannot be hi
 
 Repository-wide CI is reported separately for the resulting commit. No independent clinical, ethics, security or statistical sign-off is claimed.
 
+## Static regression guards added
+
+`scripts/validate_coa001_stage0_v02.py` checks the versioned Stage-0 subset of the JSON contract: closed authority and promotion fields, BQ001 unresolved at Level 6/10, primary sequence, unresolved source eligibility, recognition exclusion, reference/header consistency and flow-accounting rules. The new `flow_accounting` fields make explicit the existing restrictions on lock-filtered denominators, replacement interviews, unknown blindness and zero-denominator passes. No scientific or numerical endpoint changes are introduced.
+
+Run from the repository root:
+
+```sh
+python scripts/validate_coa001_stage0_v02.py
+python -m unittest discover -s tests -p 'test_coa001_stage0_v02.py' -v
+```
+
+The dedicated read-only GitHub workflow runs these checks on relevant PR changes and main-branch updates. Local validation and 32 regression tests passed when added. Negative cases cover missing/mistyped/open gates, old recognition/audit order, failed-lock selection, silent source freeze, stale references, missing/symlinked manuals, malformed/duplicate/non-finite JSON, and Python optimisation bypass.
+
+Coverage is deliberately bounded. It does not validate every JSON field, arbitrary prose, statistical adequacy, actual access permissions, clinical conduct or hospital systems. Header checks are not semantic review. Exact versioned source and order values require a deliberate validator update if changed through governed review. CI configuration alone is not evidence that branch protection requires the check. Complete schemas, implementation and independent reviews remain pending; passing this validator grants no authority and cannot remove a review hold.
+
 ## Governance
 
 COA-001 stays DRAFT / STAGE 0. Recruitment, live participant processing and recognition execution remain NOT AUTHORISED. BQ001 remains UNRESOLVED at Level 6/10. Accepted canonical edges are 0; supports_models is empty; truth inference, scientific-evidence promotion, rights/public synthesis, publication, deployment and other promotion gates stay closed. No results or participant data are introduced.
