@@ -3,9 +3,9 @@
   "artifact": {
     "path": "references/psi/AkashicNET_PSI_Master_Ledger_2026-09-17.xlsx",
     "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    "size_bytes": 29007,
-    "sha256": "e9a25382453747a1767001f1480b94814f488c73675083fae30446857a0ca8b2",
-    "git_blob_sha": "f09cea83306ef09ed0c048ce182820132aca610a"
+    "size_bytes": 29160,
+    "sha256": "2c59e13f76aa341576d4e9a18b50f308170d2b49230bddf739976c78b0b11341",
+    "git_blob_sha": "87393ffa2c4af1e006639c1de367c72c99fed836"
   },
   "inventory": {
     "governed_case_packets": 8,
