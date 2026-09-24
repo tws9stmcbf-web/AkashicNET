@@ -8,7 +8,7 @@
   "parent_question": {
     "id": "BQ001",
     "status": "UNRESOLVED",
-    "depth_level": "8/10",
+    "depth_level": "6/10",
     "accepted_canonical_edges": 0,
     "supports_models": [],
     "truth_inference": false,
@@ -370,7 +370,7 @@
     "ALL_ELIGIBLE_EVENTS": "every eligible event regardless of device status, survival, consent or interview",
     "ALL_SURVIVORS": "eligible events followed by hospital survival; survivor flow only",
     "ALL_APPROACH_ELIGIBLE": "survivors meeting the frozen clinical and ethical approach rule",
-    "ALL_INTERVIEWED": "eligible participant-events with a completed interview locked under the transcript procedure",
+    "ALL_INTERVIEWED": "eligible participant-events with a completed primary protocol interview, regardless of transcript-lock success; lock and data-use states recorded separately",
     "TARGET_EXPOSED": "ALL_INTERVIEWED participant-events with an auditable target sequence displayed during the prespecified resuscitation interval",
     "VISUAL_CLAIM": "secondary_exploratory_TARGET_EXPOSED_subgroup_only",
     "PER_PROTOCOL_TARGET_EXPOSED": "TARGET_EXPOSED records without a frozen critical integrity breach; supportive sensitivity analysis only"
@@ -433,8 +433,8 @@
     },
     "blinded_interview_manual": {
       "id": "INT-001",
-      "version": "0.1",
-      "path": "BLINDED-INTERVIEW-MANUAL-v0.1.md",
+      "version": "0.2",
+      "path": "BLINDED-INTERVIEW-MANUAL-v0.2.md",
       "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED"
     },
     "blinded_scoring_and_decoy_manual": {
@@ -477,22 +477,21 @@
   },
   "interview_manual": {
     "id": "INT-001",
-    "version": "0.1",
-    "path": "BLINDED-INTERVIEW-MANUAL-v0.1.md",
+    "version": "0.2",
+    "path": "BLINDED-INTERVIEW-MANUAL-v0.2.md",
     "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED",
     "recruitment_authorized": false,
-    "primary_interview": "first_eligible_completed_interview_within_frozen_window",
+    "primary_interview": "chronologically_first_completed_primary_interview_within_frozen_window_independent_of_lock_success_or_outcome",
     "order": [
       "orientation_and_permission",
       "uninterrupted_free_narrative",
+      "N0_source_boundary",
       "participant_defined_temporal_map",
-      "open_modality_clarification",
-      "environmental_free_recall",
-      "structured_phenomenology",
-      "free_target_recall",
-      "forced_choice_recognition",
+      "participant_led_clarification",
+      "open_environmental_recall",
       "contamination_and_exposure_audit",
-      "closing_and_support"
+      "primary_closing",
+      "L1_verified_primary_lock"
     ],
     "required_boundaries": [
       "free_narrative_before_structured_target_and_recognition_questions",
@@ -501,7 +500,10 @@
       "participant_defined_timing_separated_from_clinical_timing",
       "continued_assent_and_distress_capacity_stop_rules",
       "append_only_post_lock_amendments",
-      "primary_interview_not_replaced_by_later_interview"
+      "primary_interview_not_replaced_by_later_interview",
+      "L1_before_structured_supplement_target_prompts_or_candidate_exposure",
+      "C1_before_primary_scorer_candidate_access",
+      "recognition_blocked_pending_coordinated_access_and_analysis_review"
     ],
     "prohibited_prompts": [
       "out_of_body_near_death_hidden_target_survival_or_paranormal_language_before_participant_or_designated_section",
@@ -522,7 +524,24 @@
       "PRIMARY_INTERVIEW_INCOMPLETE",
       "PARTICIPANT_WITHDREW",
       "CLINICAL_STOP"
-    ]
+    ],
+    "revision_state": "DRAFT_STAGE_0_NOT_VALIDATED",
+    "secondary_supplement": {
+      "after": "L1",
+      "lock": "L2",
+      "may_modify_primary": false
+    },
+    "recognition": {
+      "execution_authorized": false,
+      "primary_endpoint_inclusion": false,
+      "access_route": "NOT_DEFINED_OR_AUTHORIZED"
+    },
+    "primary_source_compatibility": {
+      "status": "HOLD_PENDING_INDEPENDENT_REVIEW",
+      "source_eligibility_frozen": false
+    },
+    "operational_use_authorized": false,
+    "live_participant_data_processing_authorized": false
   },
   "scoring_and_decoy_manual": {
     "id": "SDC-001",
@@ -547,7 +566,9 @@
       "truth_position_hidden_from_claim_coders_scorers_adjudicators_and_analysts_until_authorized_release",
       "null_contradictory_uncertain_contaminated_and_nonscorable_reports_retained_in_flow_ledger",
       "post_lock_information_append_only_and_sensitivity_only",
-      "visual_and_auditory_channels_scored_separately"
+      "visual_and_auditory_channels_scored_separately",
+      "L1_only_primary_source",
+      "L2_and_recognition_excluded_from_primary_packet"
     ],
     "prohibited_inputs_to_decoy_selection": [
       "transcript_words",
@@ -600,7 +621,8 @@
       "stage_1_blinded_parameter_update",
       "ethics_or_irb_approval",
       "prospective_registration",
-      "versioned_protocol_amendment"
+      "versioned_protocol_amendment",
+      "INT_001_v0_2_primary_source_and_failed_lock_compatibility_review"
     ],
     "confirmatory_success_requires": [
       "one_sided_randomization_p_value_at_most_0_025",
@@ -737,7 +759,8 @@
       "claim_and_score_locks_precede_truth_release",
       "truth_release_requires_machine_prerequisites_and_dual_control",
       "unknown_unrecoverable_and_security_failures_remain_in_applicable_denominators",
-      "controls_reduce_detect_measure_and_test_leakage_but_do_not_prove_absence"
+      "controls_reduce_detect_measure_and_test_leakage_but_do_not_prove_absence",
+      "participant_recognition_route_not_defined_or_authorized"
     ],
     "permitted_flow_count": 17,
     "leakage_scenario_count": 30,

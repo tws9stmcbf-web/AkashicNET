@@ -3,6 +3,7 @@
 **Module:** SIM-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** PROVISIONAL STAGE-0 ANALYSIS / INDEPENDENT REPRODUCTION REQUIRED  
 **Parent protocol:** COA-001 v0.1  
 **Statistical plan:** SAP-001 v0.1  
@@ -204,7 +205,7 @@ Stage 1 must first estimate yield, agreement, ties, clustering, missingness and 
 ## Governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -215,3 +216,4 @@ Stage 1 must first estimate yield, agreement, ties, clustering, missingness and 
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 SIM-001 is a planning analysis, not scientific evidence or a BQ001 update.
+

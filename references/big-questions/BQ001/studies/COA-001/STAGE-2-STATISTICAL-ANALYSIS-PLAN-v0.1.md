@@ -3,9 +3,10 @@
 **Module:** SAP-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT FREEZE CANDIDATE / INDEPENDENT STATISTICAL REVIEW REQUIRED  
 **Parent protocol:** COA-001 v0.1  
-**Related modules:** EAP-001 v0.1 · INT-001 v0.1 · SDC-001 v0.1 · TS-001 v0.1  
+**Related modules:** EAP-001 v0.1 · INT-001 v0.2 · SDC-001 v0.1 · TS-001 v0.1  
 **Governance:** Issue #356 · Draft PR #357
 
 ## Status and purpose
@@ -59,6 +60,25 @@ For candidate rank `R`, normalized utility is:
 Thus `U = 1` for an untied best rank, `U = 0` for an untied worst rank and the exchangeable null expectation is `0.5`.
 
 For each participant-event, the primary value is the mean of the two scorers’ true-candidate utilities. Repeated participant-events are averaged within participant before the study mean is calculated. Each participant therefore has total weight one.
+
+### Primary-source compatibility with INT-001 v0.2
+
+The candidate endpoint retains one true plus five decoy sequences, two original blinded scorer rankings, normalized rank utility, equal participant weighting and one-sided alpha 0.025. Recognition remains excluded from primary ranking.
+
+INT-001 v0.2 moves structured phenomenology and target-directed prompted recall into L2. Therefore the phrase “prompted free-recall claims” cannot automatically include all material available in the earlier interview sequence.
+
+Before prospective freeze, independent statistical/methods review MUST:
+
+1. enumerate eligible L1 elicitation classes and excluded L2/recognition classes;
+2. define the rule for audit-elicited and closing-addition content;
+3. review the effects of the revised source set on scorability, ties, missingness and anticipated information yield;
+4. assess the applicability of SIM-001 assumptions and reproduce or revise simulations if required;
+5. align population membership and failed-lock treatment with EAP-001 and the machine-readable contract;
+6. freeze rules without inspecting real participant outcomes.
+
+Until then, primary-source compatibility is HOLD. The existing proposed information target of 132 TARGET_EXPOSED participant-events is unchanged as a historical planning value, not newly validated for the revised source workflow.
+
+If a designated interview lacks a valid L1, do not reconstruct claims. Apply existing unresolved/critical-integrity handling only inside an already established and lawfully usable TARGET_EXPOSED record. If exposure or data-use authority cannot be established without prohibited access, keep that status unresolved and processing blocked; do not assume exposure to force the record into a scoring population.
 
 ### Null and non-scorable reports
 
@@ -246,7 +266,7 @@ SAP-001 requires review by:
 ## Governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -257,3 +277,4 @@ SAP-001 requires review by:
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 SAP-001 is a method-development artifact, not a result or evidence of continuity.
+

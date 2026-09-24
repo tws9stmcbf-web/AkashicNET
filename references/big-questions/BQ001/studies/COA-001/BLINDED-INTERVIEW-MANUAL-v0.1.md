@@ -8,6 +8,8 @@
 **Governance:** Issue #356 · Draft PR #357  
 **Related module:** EAP-001 v0.1
 
+> **Historical draft:** Retained for provenance. The proposed current manual is [INT-001 v0.2](./BLINDED-INTERVIEW-MANUAL-v0.2.md). The recognition-before-lock sequence below is superseded by that working draft and must not be used operationally. Neither version authorises recruitment.
+
 ## Purpose
 
 INT-001 defines how a clinically stable survivor may be approached and interviewed after an eligible in-hospital cardiac-arrest event while reducing suggestion, information leakage, retrospective cueing and interviewer influence.
@@ -449,7 +451,7 @@ Independent clinical, ethics/data-protection, statistics and methods reviewers m
 - INT-001: **PROVISIONAL, NOT CLINICALLY OR ETHICALLY APPROVED**
 - Recruitment: **NOT AUTHORIZED**
 - Protocol feasibility: **NOT ESTABLISHED**
-- BQ001: **UNRESOLVED · Level 8/10**
+- BQ001: **UNRESOLVED · Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -458,3 +460,4 @@ Independent clinical, ethics/data-protection, statistics and methods reviewers m
 - Website promotion: **OFF**
 
 This manual is a method-development artifact. It is not a clinical protocol approval, consent authorization, trial registration, result, accepted edge or evidence for awareness or continuity.
+

@@ -3,9 +3,10 @@
 **Module:** EDP-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT / STAGE-0 / JURISDICTION-SPECIFIC REVIEW REQUIRED  
 **Parent protocol:** COA-001 v0.1  
-**Related modules:** EAP-001 v0.1 · INT-001 v0.1 · SDC-001 v0.1 · SAP-001 v0.1 · SIM-001 v0.1 · TS-001 v0.1  
+**Related modules:** EAP-001 v0.1 · INT-001 v0.2 · SDC-001 v0.1 · SAP-001 v0.1 · SIM-001 v0.1 · TS-001 v0.1  
 **Governance:** Issue #356 · Draft PR #357
 
 ## Purpose and legal boundary
@@ -133,6 +134,14 @@ The approach must make clear:
 - whether general study results will be offered.
 
 Consent must be documented by a trained person independent of any dependent clinical relationship where required. Capacity and continued willingness are reassessed throughout.
+
+### INT-001 v0.2 contact and source boundaries
+
+For the INT-001 v0.2 revision, primary and secondary contacts require separately recorded readiness and continuing willingness. A transcript lock does not authorise a later task. Recognition remains NOT AUTHORISED pending its coordinated review.
+
+Approved consent information must not be withheld to protect blinding. Preserve the information-sheet/script version and any explanations as potential exposure. Necessary care, debrief and family contact must not be withheld or delayed for study purity.
+
+Source locking protects integrity; it is not independent retention authority. The existing institutional withdrawal/deletion matrix governs original and secondary records. Preserve only audit metadata permitted under that authority. These statements add no jurisdiction-specific legal or consent approval.
 
 ### D. Legally authorized representative or proxy
 
@@ -541,7 +550,7 @@ Unknown or disputed states fail closed.
 ## Governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -553,3 +562,4 @@ Unknown or disputed states fail closed.
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 EDP-001 does not constitute ethics approval, legal authorization or evidence of continuity.
+

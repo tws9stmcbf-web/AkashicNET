@@ -2,6 +2,7 @@
 
 **Protocol synopsis:** v0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT / STAGE-0 METHOD DEVELOPMENT  
 **Parent inquiry:** BQ001  
 **Governance issue:** [#356](https://github.com/tws9stmcbf-web/AkashicNET/issues/356)
@@ -98,7 +99,7 @@ A survivor may enter the interview cohort when:
 - **ALL-ELIGIBLE-EVENTS:** every eligible event, regardless of device status, survival, consent or interview.
 - **ALL-SURVIVORS:** eligible events followed by hospital survival; survivor-flow reporting only.
 - **ALL-APPROACH-ELIGIBLE:** survivors meeting the frozen clinical and ethical approach rule.
-- **ALL-INTERVIEWED:** every completed, locked interview after an eligible event.
+- **ALL-INTERVIEWED:** every participant-event with a completed primary protocol interview after an eligible event, regardless of transcript-lock success. Completion, lock status, data-use authority, exposure status and analysis eligibility are separate fields; membership is not permission to score or process a record.
 - **TARGET-EXPOSED:** ALL-INTERVIEWED participant-events for which an auditable target sequence was displayed during the prespecified resuscitation interval.
 - **VISUAL-CLAIM:** a secondary/exploratory TARGET-EXPOSED subgroup reporting visual perception assigned to the relevant interval under the frozen rubric.
 - **PER-PROTOCOL TARGET-EXPOSED:** TARGET-EXPOSED records without a frozen critical integrity breach; sensitivity analysis only.
@@ -118,7 +119,7 @@ Exclusions may concern a particular analysis but do not erase the event from the
 - Rapidly changing, time-coded targets.
 - Encrypted sequence and immutable audit log withheld from clinical staff, interviewers, coders and investigators until transcript lock.
 - Free recall collected before any recognition choices.
-- Forced-choice recognition uses prespecified balanced foils.
+- Forced-choice recognition remains a proposed secondary component, NOT AUTHORISED pending the jointly approved recognition access and analysis contract.
 - True and decoy sequences are scored through the same blinded procedure.
 
 ### Auditory channel
@@ -145,18 +146,18 @@ Absence of a scalp EEG signal is not treated as proof of absent brain activity, 
 
 ## Interview sequence
 
-1. Confirm interviewer blindness and log all known breaches.
-2. Invite uninterrupted free narrative using neutral prompts.
-3. Establish the participant's own temporal markers.
-4. Record visual, auditory, bodily, dream-like and transcendent content without suggesting categories.
-5. Collect structured phenomenology.
-6. Collect free recall of possible targets or room events.
-7. Only then administer forced-choice recognition.
-8. Log exposure to staff, family, media and previous interview questions.
-9. Audio-record, transcribe and cryptographically lock the transcript.
-10. Open target/event records only after lock confirmation.
+1. Confirm clinical and consent preconditions; document interviewer blindness and all prior exposures.
+2. Capture uninterrupted free narrative and seal its source boundary (N0).
+3. Clarify only participant-supplied content and temporal anchors; use open environmental recall without target-feature lists.
+4. Complete the contamination/exposure audit and primary closing, preserving the source and prompt associated with every statement.
+5. Verify and lock the primary recording, transcript and metadata (L1) before structured phenomenology, target-specific prompts or candidate presentation.
+6. Extract and lock the primary claim set (C1), without candidate access.
+7. Keep any separately approved structured or target-prompted supplement independently labelled and locked (L2); it cannot amend the primary account or claim set.
+8. Keep participant recognition NOT AUTHORISED until the protocol, security, data-flow, scoring and analysis specifications jointly define and approve its access route and analytic role.
+9. Permit masked candidate preparation and scoring only under their separately authorised TS-001/DFL-001/SDC-001 boundaries.
+10. Release truth position only after all score and analysis locks, incident clearance and dual-control approval.
 
-The complete neutral script, contamination audit, distress/stop rules, interpreter boundary and transcript-lock procedure are specified in [INT-001 v0.1](./BLINDED-INTERVIEW-MANUAL-v0.1.md).
+INT-001 v0.2 remains a working draft. The exact eligibility of prompted primary claims, operational windows, session-resumption rules and statistical consequences require prospective review and freeze. No participant research or progression is authorised.
 
 ## Causal model
 
@@ -301,7 +302,7 @@ The minimum jurisdiction, consent, deceased/never-consented case, withdrawal, we
 ## Evidence and governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -326,10 +327,11 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [ ] statistical/adversarial review
 - [x] target-device security specification — draft v0.1; engineering and adversarial validation pending
 - [x] end-to-end data-flow/access matrix and leakage threat model — draft DFL-001 v0.1; implementation, penetration, physical and independent adversarial validation pending
-- [x] blinded interview and contamination-audit manual — draft INT-001 v0.1; clinical, ethics and methods validation pending
+- [x] blinded interview and contamination-audit manual — draft INT-001 v0.2; clinical, ethics and methods validation pending
 - [x] blinded scoring and decoy-construction manual — draft SDC-001 v0.1; statistical, psychometric, security and simulation validation pending
 - [x] Stage-2 endpoint/SAP draft freeze candidate — SAP-001 v0.1; independent statistical and psychometric review pending
 - [x] simulation and sample-size report — SIM-001 v0.1 with reproducible exact-enumeration code; independent reproduction and Stage-1 parameter update pending
 - [x] ethics/data-protection outline — draft EDP-001 v0.1; jurisdiction-specific legal, ethics/IRB and privacy review pending
 - [x] decision-complete falsification, stopping and outcome-classification rules — draft FSC-001 v0.1; statistical, ethics, clinical and adversarial review pending
 - [ ] v0.2 freeze candidate
+

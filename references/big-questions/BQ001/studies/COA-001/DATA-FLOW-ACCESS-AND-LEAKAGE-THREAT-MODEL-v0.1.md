@@ -3,9 +3,10 @@
 **Module:** DFL-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT / STAGE-0 / NOT IMPLEMENTED OR VALIDATED  
 **Parent protocol:** COA-001 v0.1  
-**Related modules:** TS-001 v0.1 · INT-001 v0.1 · SDC-001 v0.1 · EDP-001 v0.1 · SAP-001 v0.1  
+**Related modules:** TS-001 v0.1 · INT-001 v0.2 · SDC-001 v0.1 · EDP-001 v0.1 · SAP-001 v0.1  
 **Governance:** Issue #356 · Draft PR #357
 
 ## Purpose and boundary
@@ -143,6 +144,21 @@ A pseudonymous ID is not an authorization token. Knowing an ID does not grant ac
 | F17 | Archive → destruction | Expired data | Retention trigger and legal hold check | Dual approval, processor propagation, backup expiry | Destruction certificate | `DELETION_NOT_VERIFIED` |
 
 No additional flow is allowed by implication. A site-specific addition requires updated threat analysis, ethics/privacy review, tests and version control.
+
+### Interview revision boundaries
+
+INT-001 v0.2 introduces the following proposed restrictions:
+
+- F07 produces L1 primary source objects. Any approved L2 supplement is a separate object; it cannot overwrite D11/D12 or add primary claims.
+- F08 carries only the primary redacted L1 source and permitted contamination metadata. It excludes later structured/recognition content from primary coding.
+- F09 produces C1 under transcript-only access. Claim coders cannot subsequently act as primary scorers for the same participant-event.
+- F10 occurs only after L1/C1 verification, valid data-use authority, incident clearance, approved restricted candidate preparation and committed masked manifests. Generators have no transcript content.
+- F11 continues to require independent masked scoring and score locks.
+- F12 is the later truth join. Earlier candidate preparation is not F12 and cannot waive any F12 prerequisite.
+
+D16 remains forbidden in Z3. No participant recognition zone or transfer is added. Z4 claim and scoring roles require distinct permissions even though they share a zone label. Role names without enforced access separation are not a control.
+
+All flows remain design specifications. An unresolved implementation, consent, integrity or timing condition means HOLD. All research, publication and promotion restrictions remain in force.
 
 ## Role-access matrix
 
@@ -476,7 +492,7 @@ TS-001 states remain authoritative for device failures, including `VALID_TARGET_
 ## Governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -489,3 +505,4 @@ TS-001 states remain authoritative for device failures, including `VALID_TARGET_
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 DFL-001 cannot change BQ001, prove the absence of leakage or authorize live research.
+

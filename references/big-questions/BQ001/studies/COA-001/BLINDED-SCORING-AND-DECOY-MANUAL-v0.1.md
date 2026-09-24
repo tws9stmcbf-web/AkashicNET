@@ -3,10 +3,11 @@
 **Module:** SDC-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT / STAGE-0 METHOD DEVELOPMENT  
 **Parent protocol:** COA-001 v0.1  
 **Governance:** Issue #356 · Draft PR #357  
-**Related modules:** EAP-001 v0.1 · INT-001 v0.1 · TS-001 v0.1
+**Related modules:** EAP-001 v0.1 · INT-001 v0.2 · TS-001 v0.1
 
 ## Purpose and boundary
 
@@ -18,7 +19,7 @@ This manual is a Stage-0 design artifact. It does not authorize recruitment, sco
 
 ## Non-negotiable rules
 
-1. The primary source is the first eligible completed interview locked under INT-001.
+1. The primary source is the chronologically first completed primary interview within the frozen window, designated independently of lock success or outcome. Only a verified L1 source is eligible for ordinary primary claim extraction. A failed lock stays attached to the designated interview; a later interview cannot replace it.
 2. Source recording and final transcript digests must be verified before scoring preparation.
 3. Claim extraction is completed and locked without access to any candidate target.
 4. Decoy eligibility, sampling and replacement rules are frozen independently of transcript content.
@@ -31,7 +32,7 @@ This manual is a Stage-0 design artifact. It does not authorize recruitment, sco
 11. Scoring rules cannot be changed after examining true-versus-decoy results.
 12. No individual narrative can replace the prespecified participant-event analysis.
 13. Post-lock information cannot alter the primary transcript, claim set or score; it is append-only and sensitivity-only.
-14. Recognition responses and free-recall claims remain separately identifiable.
+14. Recognition is secondary under SAP-001 and remains separately identifiable. Its data-collection pathway is NOT AUTHORISED; it never enters the primary ranking or claim packet.
 15. Visual and auditory channels are scored and analysed separately.
 
 ## Unit and packet hierarchy
@@ -84,6 +85,12 @@ A participant-event may enter scoring preparation only when:
 Failure of a precondition does not erase the event. It produces an explicit scoring state and remains in the applicable denominator or sensitivity analysis.
 
 ## Phase A — transcript-only claim extraction
+
+Under the proposed INT-001 v0.2 sequence, primary coders receive L1 only. Preserve each claim's first source span and elicitation class: spontaneous narrative, participant-led clarification, open environmental recall, audit-elicited or closing addition. Keep L2 and recognition records out of the primary claim/scoring packet. A claim with no frozen source-eligibility rule remains unresolved; the coder cannot decide eligibility by inspecting candidate correspondence.
+>
+The statistical reviewers must freeze which L1 prompted classes contribute to the primary rank endpoint. New content first supplied in L2 or after candidate exposure cannot enter the primary claim set. Any audit-elicited or closing-addition rule must address the possibility that the audit itself supplied a cue.
+>
+Failed source integrity triggers the existing held/breached-record pathway, not reconstruction from later retellings. Later-discovered contamination may change validity or interpretation through an append-only adjudication; original primary bytes and score provenance remain preserved subject to authorised rights handling.
 
 Two qualified coders independently review the same redacted locked transcript without targets, decoys, activation status, room-event logs or the study’s true assignment.
 
@@ -182,7 +189,7 @@ The provisional rubric must distinguish:
 - absent/unspecified attribute;
 - timing consistency;
 - modality consistency;
-- recognition-only correspondence;
+- recognition-only correspondence, reserved for a separately approved secondary packet and excluded from primary ranking;
 - contamination-sensitive correspondence.
 
 Every assigned value requires claim IDs, candidate IDs and rubric-rule IDs. Free-recall, prompted free-recall and recognition contributions remain separable. Scorers cannot add new claims, reinterpret the participant’s intended timing or consult outside event information.
@@ -381,7 +388,7 @@ SDC-001 cannot be operational until all are complete:
 ## Governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -392,3 +399,4 @@ SDC-001 cannot be operational until all are complete:
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 SDC-001 is not evidence of continuity and cannot change BQ001 or any promotion gate.
+

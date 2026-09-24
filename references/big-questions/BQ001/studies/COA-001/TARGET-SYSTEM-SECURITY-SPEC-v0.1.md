@@ -3,6 +3,7 @@
 **Module:** TS-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT / ENGINEERING AND ADVERSARIAL REVIEW REQUIRED  
 **Parent protocol:** COA-001 v0.1  
 **Governance:** Issue #356 · Draft PR #357
@@ -278,33 +279,22 @@ Activation SHOULD be automatic from a hospital-approved, non-interfering signal.
 
 The device MUST stop on a frozen rule based on a clinical/end-of-event signal or maximum duration. Staff MUST always be able to power down the device for safety without revealing targets; safety shutdowns remain in the denominator.
 
-## Transcript lock and unblinding
+## Primary locks, candidate preparation and truth release
 
-Unblinding is prohibited until:
+Primary recording, transcript and metadata MUST be verified and locked under INT-001 before any subsequent target-package processing is requested. The exposure audit, case linkage, data-use state and incident status MUST be verified. A lock receipt is necessary but does not itself grant access.
 
-1. the participant interview is complete;
-2. audio/video source files are write-protected;
-3. the transcript is finalized;
-4. the contamination/exposure audit is complete;
-5. transcript and interview-metadata digests are calculated;
-6. those digests receive an independent timestamp or repository receipt;
-7. the case linkage is verified;
-8. both designated custodial roles authorize release.
+Restricted candidate preparation and truth-position release are different operations:
 
-The unblinding request MUST bind the event ID, transcript digest, protocol version and reason for access.
+- **Candidate preparation:** only a separately authorised service and custodial roles may process encrypted target material into masked candidates. Before any candidate reaches a scorer, L1 and C1 MUST verify; the transcript-independent generation algorithm and masked manifest MUST be committed; the generator MUST have no narrative content; required access/metadata checks and dual custodial approvals MUST be recorded.
+- **Truth-position release:** MUST wait until SDC-001 and DFL-001 requirements for candidate, independent-score, adjudication, analysis and database locks are fulfilled, including independent access review, valid data-use authority, no unresolved critical incident and dual-control approval.
 
-Every unblinding MUST produce an append-only record containing:
+The exact service, key-use scope and institutional implementation remain to be specified and independently validated. No live processing is authorised in Stage 0.
 
-- request and approval times;
-- authorizing role IDs;
-- target-package digest;
-- transcript digest;
-- released scope;
-- software used;
-- verification result;
-- any deviation.
+Each request MUST bind event ID, L1/C1 digests as applicable, package digest, protocol version, purpose, requested scope and approvers. Each permitted or denied operation MUST retain an append-only audit event with time, uncertainty, actor, verification result and incident references.
 
-Interviewers MUST never participate in unblinding. Primary scorers SHOULD remain blind by receiving shuffled true and decoy packages rather than a labelled true sequence.
+Interviewers, interpreters, participants and primary claim coders MUST NOT receive target truth or candidate material through this process. Primary scorers receive masked candidates only and remain blind to truth position. Participant recognition remains blocked until its own coordinated access route is approved; masked candidates are still exposure even without a truth label.
+
+Unknown ordering, missing receipts or failed verification mean HOLD. No later lock cures premature access. Clinical care and institutional rights decisions retain priority.
 
 ## Decoy generation
 
@@ -415,7 +405,7 @@ These references do not by themselves certify the design. Institutional security
 - COA-001: **DRAFT / STAGE 0**
 - Target-system security: **SPECIFIED, NOT IMPLEMENTED OR VALIDATED**
 - Protocol feasibility: **NOT ESTABLISHED**
-- BQ001: **UNRESOLVED · Level 8/10**
+- BQ001: **UNRESOLVED · Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -424,3 +414,4 @@ These references do not by themselves certify the design. Institutional security
 - Website promotion: **OFF**
 
 This document is an engineering specification. It is not a clinical protocol approval, deployed device, trial registration, result or evidence for continuity.
+

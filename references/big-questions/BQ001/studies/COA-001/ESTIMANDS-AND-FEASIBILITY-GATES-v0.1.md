@@ -3,6 +3,7 @@
 **Module:** EAP-001  
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · INT-001 v0.2 alignment; no operational authorisation  
 **State:** DRAFT / STAGE-0 METHOD DEVELOPMENT  
 **Parent protocol:** COA-001 v0.1  
 **Governance:** Issue #356 · Draft PR #357
@@ -27,7 +28,7 @@ All rules remain provisional until clinical, statistical, ethics/data-protection
 |---|---|---|
 | Eligible event | One in-hospital cardiac-arrest event meeting the frozen clinical/location criteria | A person with two eligible arrests contributes two events |
 | Participant | One surviving person linked to one or more eligible events | Participant-level uncertainty must account for repeated events |
-| Interview | One protocol-governed interview after an eligible event | The first eligible locked interview is primary; later interviews are secondary |
+| Interview | One protocol-governed interview after an eligible event | The first completed primary interview within the frozen window is designated by chronology before target/scoring access, independently of lock success. Completion and lock are separate states. Earlier incomplete attempts remain in the flow ledger; later interviews cannot replace it because of integrity failures, content or outcome. |
 | Claim | One independently codable report element | Multiple claims from one interview are not independent participants |
 | Target epoch | One prespecified displayed time interval | Epochs are nested within events and participants |
 | Site | One separately governed hospital deployment | Site effects and failures are always reported |
@@ -74,12 +75,20 @@ Every eligible event receives explicit machine-readable values, including `UNKNO
 ## Repeated events, interviews, claims and epochs
 
 - A new cardiac arrest is a new eligible event even when it occurs in the same person.
-- The first completed, transcript-locked interview within the frozen window is the primary interview.
+- The first completed primary interview within the frozen window is designated by chronology before target/scoring access, independently of lock success. Completion and lock are separate states. Earlier incomplete attempts remain in the flow ledger; later interviews cannot replace it because of integrity failures, content or outcome.
 - Later interviews are retained and labelled secondary; they cannot replace or overwrite the primary interview.
 - Each eligible event remains a distinct participant-event scoring unit; analyses account for repeated events through participant clustering.
 - Multiple claims or target epochs are aggregated by the frozen scoring rule before participant-level inference.
 - The analysis may not select the most accurate claim, epoch or interview after unblinding.
 - Cross-site transfers and duplicate records are reconciled through a pseudonymous linkage process before database lock.
+
+Interrupted/resumed sessions require a prospectively frozen maximum interruption/window rule and intervening-exposure audit. Resume only under approved readiness and continuing consent. Until those rules are frozen, the relevant workflow remains blocked. If no interview completes in the window, record no primary completion; do not silently designate an out-of-window replacement.
+
+Failed or unknown L1 status remains inside the completed-primary-interview denominator for lock compliance. A verified lock is a prerequisite for ordinary primary-source use, not an entry condition for that feasibility denominator. Incomplete interviews remain in their separate flow category and the broader approach/eligible-event denominators.
+>
+Audit completion means every required audit field has an explicit response or documented unknown. It does not mean no contamination. Missing required fields fail audit completion; an answered “unknown” retains an unresolved exposure state.
+>
+Unknown blindness counts as breach pending adjudication under the existing gate rule. No favourable target correspondence can compensate for a mandatory failed gate.
 
 ## Estimands
 
@@ -252,7 +261,7 @@ Before a v0.2 freeze candidate:
 - This module: **PROVISIONAL, NOT PREREGISTERED**
 - Recruitment: **NOT AUTHORIZED**
 - Protocol feasibility: **NOT ESTABLISHED**
-- BQ001: **UNRESOLVED · Level 8/10**
+- BQ001: **UNRESOLVED · Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -261,3 +270,4 @@ Before a v0.2 freeze candidate:
 - Website promotion: **OFF**
 
 This module defines method-development rules only. It is not a result, trial registration, ethics approval, accepted edge or evidence for awareness or continuity.
+

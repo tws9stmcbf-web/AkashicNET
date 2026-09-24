@@ -2,6 +2,7 @@
 
 **Version:** 0.1  
 **Date:** 2026-09-17  
+**Draft amendment:** 2026-09-24 · canonical maturity wording per issue #363; all gates remain closed  
 **State:** DRAFT / STAGE-0 / NOT PREREGISTERED  
 **Parent protocol:** COA-001  
 **Normative scope:** decision rules for feasibility, validity, stopping and interpretation  
@@ -263,7 +264,7 @@ Terms such as “proved consciousness,” “proved survival,” “falsified co
 ## Governance lock
 
 - BQ001 status: **UNRESOLVED**
-- BQ001 depth: **Level 8/10**
+- BQ001 depth: **Level 6/10**
 - Accepted canonical edges: **0**
 - `supports_models`: **[]**
 - Truth inference: **OFF**
@@ -275,3 +276,4 @@ Terms such as “proved consciousness,” “proved survival,” “falsified co
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 FSC-001 is a Stage-0 decision contract. It does not preregister, authorize, classify a result that does not exist, change BQ001 or open any promotion gate.
+
