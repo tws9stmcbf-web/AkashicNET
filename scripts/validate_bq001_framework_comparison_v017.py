@@ -89,15 +89,25 @@ UTS46_IGNORED_RANGES = (
 
 def normalize_private_text(text: str) -> str:
     for _ in range(32):
-        normalized = unquote(unicodedata.normalize("NFKC", text)).casefold()
-        normalized = normalized.replace("\\", "/").translate(str.maketrans({
+        normalized = unquote(unicodedata.normalize("NFKC", text))
+        # Decode textual code-point escapes before case folding or slash mapping.
+        # Preserve other backslashes until nested encodings have stabilised.
+        def codepoint(match: re.Match) -> str:
+            number = int(next(part for part in match.groups() if part is not None), 16)
+            return chr(number) if number <= 0x10FFFF else match.group(0)
+
+        normalized = re.sub(
+            r"\\U([0-9a-fA-F]{8})|\\u\{([0-9a-fA-F]{1,6})\}|\\u([0-9a-fA-F]{4})",
+            codepoint, normalized,
+        ).casefold()
+        normalized = normalized.translate(str.maketrans({
             "。": ".", "．": ".", "｡": ".", "\t": None, "\n": None, "\r": None,
         }))
         normalized = "".join(c for c in normalized if not any(
             start <= ord(c) <= end for start, end in UTS46_IGNORED_RANGES
         ))
         if normalized == text:
-            return normalized
+            return normalized.replace("\\", "/")
         text = normalized
     raise ValueError("privacy encoding did not stabilize")
 
@@ -363,3 +373,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

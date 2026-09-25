@@ -30,6 +30,21 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         with context:
             self.validate(candidate)
 
+    def test_unicode_escape_digests_rejected(self):
+        for token in (r"\u0061", r"\U00000061", r"\u{0061}", r"%5Cu0061", r"\u005cu0061"):
+            encoded = token * 64
+            for value in (encoded, [encoded[:99], encoded[99:]],
+                          {encoded[:99]: encoded[99:]}):
+                with self.subTest(token=token, value=value), self.assertRaisesRegex(
+                    ValueError, "unscoped digest rejected"
+                ):
+                    validator.scan_safety(value)
+
+    def test_unicode_escape_benign_text_passes(self):
+        for value in (r"caf\u00e9", r"ordinary \U0001F333 text", r"\u{1F333}",
+                      r"invalid \uZZZZ text", r"C:\users\notes"):
+            validator.scan_safety(value)
+
     def test_reviewed_packet_passes(self):
         self.validate(self.packet)
 
@@ -340,3 +355,4 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
