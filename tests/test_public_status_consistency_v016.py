@@ -40,6 +40,22 @@ class CurrentPublicStatusTests(unittest.TestCase):
         if reason:
             self.assertIn(reason, result.stderr)
 
+    def test_unrelated_pending_words_do_not_hide_assertions(self):
+        for claim in ("v0.16.7 is pending documentation and is now released",
+                      "v0.16.7 is awaiting publication and is shipped",
+                      "BQ001 is pending publication and is RESOLVED",
+                      "v0.16.7 is pending release and is now shipped"):
+            with self.subTest(claim=claim):
+                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_unrelated_negative_prefix_does_not_hide_reverse_claim(self):
+        for claim in ("Not a draft: Shipped v0.16.7", "Not disputed: RESOLVED: BQ001"):
+            with self.subTest(claim=claim):
+                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_version_first_product_last_label_rejected(self):
+        self.assert_rejected(extra="<p>v0.16.7 is the current version of AkashicNET</p>")
+
     def test_current_copy_and_independent_framework_versions_pass(self):
         result = self.run_case(extra=(
             '<p>AkashicNET analysis: METAD v2.1, ACTC v2.0, UMASC v7.2</p>'

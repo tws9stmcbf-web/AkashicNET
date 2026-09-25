@@ -58,7 +58,8 @@ product_status = re.compile(
     r"[ \t·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
     r"(?:Pre-alpha|Public Beta)[ \t·:–—-]*AkashicNET\b|"
     r"\bv\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?[ \t]+(?:is[ \t]+)?"
-    r"AkashicNET(?:'s)?[ \t]+(?:current[ \t]+)?version\b",
+    r"(?:AkashicNET(?:'s)?[ \t]+(?:current[ \t]+)?version\b|"
+    r"(?:the[ \t]+)?(?:current[ \t]+)?version[ \t]+of[ \t]+AkashicNET\b)",
     re.IGNORECASE,
 )
 pre_alpha = re.compile(
@@ -107,14 +108,20 @@ if "progress toward v0.17.0" not in status_text(progress):
 # Punctuation and source-line boundaries still delimit this bounded copy guard.
 # Keep multi-word negations intact; bare "far" and "yet" can be affirmative
 # (for example, "is the best release yet"). Share barriers with the BQ guard.
-negative_words = r"(?:not|never|no|unresolved|cannot|neither|nor|without|pending|awaiting|far[ \t]+from|yet[ \t]+to)\b"
+negative_words = r"(?:not|never|no|unresolved|cannot|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
 affirmative_words = r"(?:[ \t]+(?!" + negative_words + r")[a-z]+)*"
 release_claim = re.compile(
     r"v0\.16\.(?:0-beta\.2|7)\b" + affirmative_words
     + r"[ \t]+(?:release|released|shipped|sealed|READY[ \t]*/[ \t]*SEALED)\b",
     re.IGNORECASE,
 )
-if release_claim.search(status_text(home + "\n" + progress)):
+# Mask only a directly qualified pending release noun phrase. A later shipped
+# or released predicate must still be checked, and BQ001 uses no pending barrier.
+release_text = re.sub(
+    r"\b(?:pending|awaiting)[ \t]+(?:a[ \t]+)?(?:sealed[ \t]+)?release\b",
+    "pendingevent", status_text(home + "\n" + progress), flags=re.IGNORECASE,
+)
+if release_claim.search(release_text):
     fail("unsealed candidate or site checkpoint presented as a release")
 
 bq001_resolved = re.compile(
@@ -134,7 +141,8 @@ reverse_claim = re.compile(
 block_text = re.sub(r"</?(?:p|div|li|h[1-6])\b[^>]*>", "\n", home + "\n" + progress)
 for clause in re.split(r"[\n;!?]|\.(?=\s)", status_text(block_text)):
     for match in reverse_claim.finditer(clause):
-        if not re.search(negative_words, clause[:match.start()], re.IGNORECASE):
+        if not re.search(r"\b" + negative_words + r"(?:[ \t]+yet)?[ \t]+$",
+                         clause[:match.start()], re.IGNORECASE):
             fail("predicate-first status contradicts unreleased/BQ001 boundaries")
 
 for forbidden in (
