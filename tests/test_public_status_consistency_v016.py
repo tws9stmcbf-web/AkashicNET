@@ -228,5 +228,34 @@ class CurrentPublicStatusTests(unittest.TestCase):
         self.assert_rejected(progress=lambda text: text + "truth inference enabled")
 
 
+    def test_predicate_first_shipped_claims_fail(self):
+        for version in ("v0.16.7", "v0.16.0-beta.2"):
+            for surface in ("home", "progress"):
+                with self.subTest(version=version, surface=surface):
+                    self.assert_rejected(**{surface: lambda text, v=version:
+                        text + f"<p>Shipped {v}</p>"})
+
+    def test_pending_and_awaiting_release_pass(self):
+        for wording in ("is pending release", "is awaiting release"):
+            result = self.run_case(progress=lambda text, w=wording:
+                text + f"<p>v0.16.7 {w}</p>")
+            self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_version_first_product_label_fails(self):
+        for possessive in ("'s", "’s", "&apos;s"):
+            self.assert_rejected(extra=
+                f"<p>v0.16.7 is AkashicNET{possessive} current version</p>")
+
+    def test_reversed_resolution_heading_fails(self):
+        for surface in ("home", "progress"):
+            self.assert_rejected(**{surface: lambda text:
+                text + "<p>RESOLVED: BQ001</p>"})
+
+    def test_reversed_negative_headings_pass(self):
+        result = self.run_case(progress=lambda text: text + (
+            "<p>Not resolved: BQ001</p>"
+            "<p>Not shipped v0.16.7</p>"))
+        self.assertEqual(result.returncode, 0, result.stderr)
+
 if __name__ == "__main__":
     unittest.main()
