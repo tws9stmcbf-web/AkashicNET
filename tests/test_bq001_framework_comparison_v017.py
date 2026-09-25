@@ -45,6 +45,14 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
                       r"invalid \uZZZZ text", r"C:\users\notes"):
             validator.scan_safety(value)
 
+    def test_nested_uppercase_unicode_escape_rejected(self):
+        for encoded in (r"https://\u005c\u005500000064rive.google.com/file/d/private",
+                        r"\u005c\u005500000061" * 64):
+            for value in (encoded, [encoded[:17], encoded[17:]],
+                          {encoded[:17]: encoded[17:]}):
+                with self.subTest(value=value), self.assertRaises(ValueError):
+                    validator.scan_safety(value)
+
     def test_reviewed_packet_passes(self):
         self.validate(self.packet)
 

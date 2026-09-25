@@ -99,7 +99,7 @@ def normalize_private_text(text: str) -> str:
         normalized = re.sub(
             r"\\U([0-9a-fA-F]{8})|\\u\{([0-9a-fA-F]{1,6})\}|\\u([0-9a-fA-F]{4})",
             codepoint, normalized,
-        ).casefold()
+        )
         normalized = normalized.translate(str.maketrans({
             "。": ".", "．": ".", "｡": ".", "\t": None, "\n": None, "\r": None,
         }))
@@ -107,7 +107,7 @@ def normalize_private_text(text: str) -> str:
             start <= ord(c) <= end for start, end in UTS46_IGNORED_RANGES
         ))
         if normalized == text:
-            return normalized.replace("\\", "/")
+            return normalized.casefold().replace("\\", "/")
         text = normalized
     raise ValueError("privacy encoding did not stabilize")
 
