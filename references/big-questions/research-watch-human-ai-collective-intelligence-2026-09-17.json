@@ -1,0 +1,145 @@
+{
+  "schema_version": "0.1",
+  "record_id": "RESEARCH-WATCH-HUMAN-AI-COLLECTIVE-INTELLIGENCE-2026-09-17",
+  "title": "Human–AI cognition and collective-intelligence research candidates",
+  "retrieved_at": "2026-09-17",
+  "status": "REVIEW_CANDIDATE",
+  "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+  "scope": "Metadata-only integration of two recent preprints for governed review; no automatic evidence, model, ladder, truth, rights, canonical or public promotion.",
+  "sources": [
+    {
+      "source_id": "ARXIV-2609.11737-ORCH",
+      "title": "ORCH: Organizational Principles Enable Collective Intelligence in Embodied AI",
+      "authors_short": "Ji, Hyun & Chen",
+      "publication_date": "2026-09-10",
+      "source_type": "PREPRINT_COMPUTATIONAL_BENCHMARK",
+      "url": "https://arxiv.org/abs/2609.11737",
+      "doi": "10.48550/arXiv.2609.11737",
+      "sample": {
+        "unit": "simulated wildfire-response missions",
+        "n": 25,
+        "additional_scope": "Teams of up to 50 heterogeneous embodied agents; eight language models; four comparison frameworks."
+      },
+      "measured_result": "The authors report that human-designed ORCH organisations improved final score by 63.97% and execution efficiency by 74.29% on average relative to four comparison frameworks; automatically generated organisations improved those measures by 43.63% and 52.53%.",
+      "limitations": [
+        "Preprint; peer review and independent replication were not verified at retrieval.",
+        "Results come from a simulated wildfire benchmark and do not establish real-world emergency-response effectiveness.",
+        "Benchmark performance does not establish wisdom, ethical judgment, consciousness or flourishing.",
+        "Reported percentages are author-reported aggregate comparisons and require methodological review before evidential use."
+      ],
+      "evidence_label": "Interpretation",
+      "confidence": {
+        "within_tested_benchmark": "MODERATE",
+        "real_world_generalisation": "LOW"
+      },
+      "candidate_bq_links": [
+        "BQ006",
+        "BQ007",
+        "BQ008"
+      ],
+      "link_interpretations": [
+        {
+          "question_id": "BQ006",
+          "evidence_label": "Interpretation",
+          "relation": "Tests whether organisation, rather than individual capability alone, can improve collective problem solving; it does not measure wisdom."
+        },
+        {
+          "question_id": "BQ007",
+          "evidence_label": "Interpretation",
+          "relation": "Offers a candidate institutional-design mechanism for coordinating complex relief tasks; no reduction of real-world suffering was tested."
+        },
+        {
+          "question_id": "BQ008",
+          "evidence_label": "Interpretation",
+          "relation": "Provides a computational example of matching coordination structure to changing task dependencies; this is not evidence for a universal balance principle."
+        }
+      ],
+      "supports_models": []
+    },
+    {
+      "source_id": "ARXIV-2609.14942-HUMAN-AI-COGNITION",
+      "title": "The Dynamic Organization of Sustained Human-AI Cognition: From Construct-Level Change to Relational Structure",
+      "authors_short": "Zijian Ru",
+      "publication_date": "2026-09-14",
+      "source_type": "PREPRINT_CONCEPTUAL_FRAMEWORK",
+      "url": "https://arxiv.org/abs/2609.14942",
+      "doi": "10.48550/arXiv.2609.14942",
+      "sample": null,
+      "proposed_result": "The paper proposes five relational dimensions for studying sustained human–AI cognition—execution locus, cognitive governance, representational reorganisation, process organisation and reachable cognitive space—and derives testable propositions about learning, agency and task organisation.",
+      "limitations": [
+        "Conceptual preprint with no reported participant sample or confirmatory empirical test.",
+        "The proposed dimensions and predictions require operationalisation, validation and independent testing.",
+        "The framework does not demonstrate improved understanding, agency, wisdom, consciousness or flourishing."
+      ],
+      "evidence_label": "Hypothesis",
+      "confidence": {
+        "conceptual_relevance": "MODERATE",
+        "empirical_predictions": "LOW"
+      },
+      "candidate_bq_links": [
+        "BQ002",
+        "BQ005",
+        "BQ006"
+      ],
+      "link_interpretations": [
+        {
+          "question_id": "BQ002",
+          "evidence_label": "Interpretation",
+          "relation": "Creates testable distinctions between human-originated, AI-executed and jointly reorganised cognitive work; it does not resolve where thoughts originate."
+        },
+        {
+          "question_id": "BQ005",
+          "evidence_label": "Interpretation",
+          "relation": "Cognitive governance and execution locus may help evaluate agency, consent and responsibility in human–AI relationships."
+        },
+        {
+          "question_id": "BQ006",
+          "evidence_label": "Interpretation",
+          "relation": "Suggests that output quality alone is insufficient for judging whether AI-assisted intelligence develops into understanding or wisdom."
+        }
+      ],
+      "supports_models": []
+    }
+  ],
+  "proposed_tests": [
+    {
+      "test_id": "RW-HUMAN-AI-01",
+      "hypothesis": "Task-specific organisational structures improve source-checking accuracy and efficiency relative to a fixed single-agent or flat multi-agent workflow.",
+      "preregistration_requirements": [
+        "Freeze task set and scoring rubric before execution.",
+        "Measure unsupported-claim rate, citation accuracy, correction recall, execution cost and completion time.",
+        "Include fixed-structure and no-AI comparison conditions.",
+        "Report neutral, negative and failed outcomes."
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "test_id": "RW-HUMAN-AI-02",
+      "hypothesis": "AI-assisted outputs with similar immediate quality can differ in retained human understanding and independent error detection according to execution locus and cognitive governance.",
+      "preregistration_requirements": [
+        "Define delayed retention and unaided error-detection outcomes.",
+        "Separate assistance intensity from decision authority.",
+        "Predefine participant exclusions and missing-data handling.",
+        "Measure perceived agency without treating self-report as objective performance."
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    }
+  ],
+  "governance": {
+    "question_statuses_unchanged": true,
+    "bq001_status": "UNRESOLVED",
+    "bq002_status": "UNRESOLVED",
+    "bq006_to_bq008_status": "EXPLORATORY",
+    "bq009_assignment_made": false,
+    "accepted_evidence_batch": false,
+    "source_import_applied": false,
+    "canonical_registration_applied": false,
+    "ladder_update_applied": false,
+    "supports_models": [],
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "public_synthesis_updated": false,
+    "website_updated": false
+  }
+}

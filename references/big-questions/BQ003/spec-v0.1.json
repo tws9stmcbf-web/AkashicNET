@@ -1,0 +1,172 @@
+{
+  "id": "BQ003",
+  "version": "0.1.0",
+  "title": "Can Love Harmonise Consciousness With the Cosmos?",
+  "research_question": "Is love a fundamental quality of a wider field of consciousness—and can conscious beings access or align with it?",
+  "status": "UNRESOLVED",
+  "authoring_status": "REVIEW_CANDIDATE",
+  "public_beta_gate": false,
+  "conclusion_policy": "UNDETERMINED_AT_INGESTION",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "hypothesis_boundary": {
+    "proposed_hypothesis": "A wider field of consciousness may already exist, with love as an intrinsic quality. Conscious beings may be able to access, receive or align with it.",
+    "excluded_claim": "Human love creates, controls or physically alters the proposed field.",
+    "ontology_status": "UNCONFIRMED",
+    "access_status": "UNCONFIRMED"
+  },
+  "operational_definitions": {
+    "love": [
+      "compassion",
+      "benevolence",
+      "care",
+      "prosocial motivation",
+      "mettā or loving-kindness as a named contemplative practice"
+    ],
+    "harmonise": "Become receptive to or aligned with the proposed pre-existing field; not create or control it.",
+    "consciousness": "Subjective experience and awareness, with wider-field interpretations kept model-specific.",
+    "cosmos": "May refer to the wider natural universe, living systems or a proposed consciousness field; these meanings must remain separate."
+  },
+  "canonical_evidence_labels": [
+    "Established Evidence",
+    "Interpretation",
+    "Lived Experience/Testimony",
+    "Hypothesis",
+    "Speculation"
+  ],
+  "domains": [
+    "personal_regulation",
+    "interpersonal_synchrony",
+    "collective_ritual_and_coordination",
+    "ecological_relationship",
+    "altered_state_and_mystical_phenomenology",
+    "nonlocal_consciousness",
+    "literal_cosmic_ontology",
+    "philosophical_and_contemplative_coherence"
+  ],
+  "models": [
+    {
+      "model_id": "MODEL-BQ003-BRAIN-GENERATED",
+      "name": "brain_generated_experience",
+      "position": "Experiences of universal love arise from neural, emotional and cognitive processes.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ003-PSYCHOLOGICAL-SYMBOLIC",
+      "name": "psychological_symbolic_access",
+      "position": "The field functions as an experiential symbol through which compassion, integration and diminished self-boundaries are encountered.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ003-RELATIONAL-EMERGENCE",
+      "name": "relational_emergence",
+      "position": "Love and harmony emerge between beings through connection, synchrony and mutual regulation without requiring an independent universal field.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ003-RECEIVER-FILTER",
+      "name": "receiver_filter",
+      "position": "The brain filters a wider consciousness; some states may loosen that filtering and permit access.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ003-FUNDAMENTAL-CONSCIOUSNESS",
+      "name": "fundamental_consciousness",
+      "position": "Consciousness is fundamental, and experiences of love may reflect alignment with its relational or integrative character.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ003-LOVE-FIELD",
+      "name": "pre_existing_love_field",
+      "position": "A wider field of consciousness exists and love is an intrinsic quality that conscious beings may access, receive or align with.",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ003-FRAMEWORK-001",
+      "text": "BQ003 currently has no adjudicated substantive answer.",
+      "domain": "literal_cosmic_ontology",
+      "evidence_label": "Established Evidence",
+      "provenance": [
+        "references/big-questions/BQ003/spec-v0.1.json"
+      ],
+      "source_ids": [],
+      "reviewed_support": true,
+      "scope": "project_state_only",
+      "uncertainty": "No empirical or metaphysical conclusion is implied by this project-state statement.",
+      "contradicts": [],
+      "supports_models": []
+    }
+  ],
+  "open_questions": [
+    "Do independently sampled reports share features of unconditional or universal love without prior common framing?",
+    "Do reported access experiences predict durable compassionate behaviour rather than only transient intensity?",
+    "Can any information reportedly obtained during such states be independently verified under prospective controls?",
+    "Can physiology, expectation, suggestion, shared sensory cues and cultural exposure account for observed effects?",
+    "Which observations would discriminate brain-generated, relational-emergence, receiver/filter and pre-existing-field models?"
+  ],
+  "cultural_governance": {
+    "indigenous_relational_cosmologies_are_not_generic_evidence": true,
+    "community_authority_permission_and_care_required": true,
+    "restricted_knowledge_must_remain_restricted": true,
+    "perceived_beings_must_not_be_authenticated_by_default": true,
+    "traditions_must_not_be_collapsed_into_one_cosmology": true
+  },
+  "graph": {
+    "node_types": [
+      "QUESTION",
+      "SOURCE",
+      "CLAIM",
+      "MODEL",
+      "UNCERTAINTY",
+      "OPEN_QUESTION"
+    ],
+    "edge_types": [
+      "SUPPORTED_BY",
+      "INTERPRETS",
+      "SUPPORTS_MODEL",
+      "CONTRADICTS",
+      "QUALIFIED_BY",
+      "RAISES"
+    ],
+    "truth_inference_allowed": false,
+    "edge_state_may_upgrade_evidence": false
+  },
+  "promotion_guards": {
+    "testimony_may_not_auto_promote_to_established_evidence": true,
+    "source_count_may_not_upgrade_evidence": true,
+    "retrieval_rank_may_not_upgrade_evidence": true,
+    "semantic_similarity_may_not_upgrade_evidence": true,
+    "tradition_longevity_may_not_upgrade_evidence": true,
+    "ai_synthesis_may_not_be_primary_source": true,
+    "rights_promotion_allowed": false,
+    "scientific_truth_inference_allowed": false
+  },
+  "culturally_situated_interpretive_lenses": [
+    {
+      "lens_id": "LENS-BQ003-AGHOR-NONDUAL-SHAIVA",
+      "name": "Aghor / nondual Śaiva perspective",
+      "evidence_label": "Interpretation",
+      "status": "REVIEW_CANDIDATE",
+      "documented_basis": "Aghor and nondual Śaiva sources support culturally situated themes including Śiva, nonduality, non-rejection and challenges to fixed purity/impurity distinctions.",
+      "akashicnet_interpretation": "If reality is understood as an indivisible expression of Śiva-consciousness, AkashicNET interprets this as compatible with—without proving—an omnipresent consciousness-field model. Radical non-rejection may be compared with an integrative quality described by AkashicNET as love.",
+      "attribution_boundary": "Do not state that all Aghoris teach that an omnipresent field is full of love. The field-of-love wording is an AkashicNET comparative interpretation unless a named lineage or primary teaching explicitly supports it.",
+      "scientific_boundary": "A culturally coherent metaphysical interpretation is not scientific confirmation of a field, nonlocal access, survival or reincarnation.",
+      "sources": [
+        {
+          "title": "Aghor, Aghori and Aughar",
+          "url": "https://www.shriaghoreshwar.org/en/aghor-aghori-and-aughar/",
+          "source_role": "LINEAGE_ORGANISATION_CONTEXT",
+          "limitation": "The page presents tradition and lineage context; it is not experimental evidence and cautions against reducing Aghor to a single conventional category."
+        },
+        {
+          "title": "Purity and Impurity in Nondualistic Śaiva Tantrism",
+          "url": "https://ejournals.eu/pliki_artykulu_czasopisma/pelny_tekst/1b6f5ae6-afa5-4cba-888d-d5bc9851dcb4/pobierz",
+          "source_role": "SCHOLARLY_COMPARATIVE_CONTEXT",
+          "limitation": "Nondual Śaiva scholarship is relevant context but must not be treated as identical to every Aghor lineage or contemporary practitioner."
+        }
+      ],
+      "supports_models": []
+    }
+  ]
+}

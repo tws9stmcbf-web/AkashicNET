@@ -1,0 +1,18 @@
+{
+  "component": "AkashicOMNI",
+  "version": "0.4.3",
+  "status": "PRE-ALPHA",
+  "date": "2026-09-19",
+  "previous_released_version": "0.4.2",
+  "change_type": "PATCH",
+  "changes": [
+    "Attribute biographical testimony and expose citation gaps",
+    "Separate context and contribution sources",
+    "Label descriptions of intelligence as interpretations"
+  ],
+  "perspective_count": 13,
+  "comparative_case_count": 8,
+  "historical_assessments_recalculated": false,
+  "v0_5_0_status": "UNRELEASED",
+  "publication_decision": "User approved applying the biographical audit corrections in this conversation."
+}

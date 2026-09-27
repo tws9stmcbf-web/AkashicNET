@@ -33,7 +33,14 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    name: Validate on ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - ubuntu-24.04
+          - ubuntu-26.04
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 10
     steps:
       - name: Check out repository
@@ -41,6 +48,16 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
+      - name: Verify exact tested head and record runner
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          {
+            echo "Runner label: ${{ matrix.runner }}"
+            echo "Runner image: ${ImageOS:-unknown} ${ImageVersion:-unknown}"
+            echo "Tested commit: $EXPECTED_HEAD"
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Fetch base branch
         run: git fetch --no-tags origin main:refs/remotes/origin/main
       - name: Set up Python
@@ -54,3 +71,7 @@ jobs:
         env:
           CANDIDATE_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: python scripts/validate_v016_release_candidate.py
+      - name: Verify deterministic governed artifacts
+        run: |
+          git diff --exit-code --             manifests/v0.16-release-candidate.json             references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json             references/source-status-fixture-v0.16.json             references/source-status-fixture-v0.16-slice2.json             references/source-status-fixture-v0.16-synthetic.json
+          sha256sum             manifests/v0.16-release-candidate.json             references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json             references/source-status-fixture-v0.16.json             references/source-status-fixture-v0.16-slice2.json             references/source-status-fixture-v0.16-synthetic.json
