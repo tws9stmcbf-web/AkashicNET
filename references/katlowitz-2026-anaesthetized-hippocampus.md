@@ -12,6 +12,13 @@
 **Primary source:**  
 https://doi.org/10.1038/s41586-026-10448-0
 
+## Source Corrections Checked · 27 September 2026
+
+- [11 June 2026 author correction](https://www.nature.com/articles/s41586-026-10784-1.pdf): Figure 1e's time scale was incorrect by a factor of ten. The corrected x-axis values are 0, 0.67, 1.33 and 2 milliseconds. The publisher reports that HTML and PDF were corrected.
+- [1 September 2026 author correction](https://www.nature.com/articles/s41586-026-11071-9): the y-axis of Figure 2k was corrected in HTML and PDF.
+
+Use the corrected figures for any quantitative interpretation. These notices concern figure axes; this check is not an independent replication or validation of the study. The existing evidence status and consciousness caveats are unchanged.
+
 ## 🔬 Research Area
 
 - Consciousness
