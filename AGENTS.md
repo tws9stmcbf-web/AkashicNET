@@ -14,10 +14,14 @@ Only record task-relevant research information. Do not copy unrelated personal o
 External sharing through submit-ara or context-drop must satisfy the existing project gates
 and the user's authorization for the specific material and destination.
 
-The owner's ChatGPT Skills installation includes compiler, research-manager, research-visualizer,
-research-foresight, research-fuzzer, and rigor-reviewer. Saving context-drop and submit-ara
-was rejected by the app on 2026-09-27; these two sharing skills are unavailable here.
-Other environments need their own installation. Never claim a skill, checker, or API ran
+The @ara-commons/ara-skills 0.9.0 package contains eight skill files. All eight imported
+files were previously reported to pass local skill-format validation after frontmatter adaptation;
+that report does not establish installation, runtime availability, or successful execution.
+An earlier session reported compiler, research-manager, research-visualizer, research-foresight,
+research-fuzzer, and rigor-reviewer as available, and reported that the app rejected saving
+context-drop and submit-ara on 2026-09-27. These are historical reports, not availability guarantees.
+Check the current session's available-skills catalog before following the routing block below;
+invoke only skills exposed in that session. Never claim a skill, checker, or API ran
 unless it actually ran; report unavailable skills instead of simulating their execution.
 The upstream routing block below is preserved verbatim; the governance requirements above apply throughout.
 
