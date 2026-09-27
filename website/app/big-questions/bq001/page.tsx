@@ -123,7 +123,8 @@ const openQuestions = [
   "Can prospective cardiac-arrest studies establish tighter temporal links between reported experience and measurable brain state?",
   "Can reincarnation-type research produce prospectively documented, independently verified cases with information pathways tightly controlled?",
   "What would count as continuity of an individual rather than continuity of information, resemblance or influence?",
-  "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",\n  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
+  "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",
+  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
 ];
 
 const researchTrail = [
@@ -352,7 +353,8 @@ export default function BQ001Page() {
             <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Courage makes the invisible visible.</strong></article>
             <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Love moves humanity forward.</strong></article>
           </div>
-          <p style={{ marginTop: 28, color: "#f1d47b", fontSize: "1.15rem", lineHeight: 1.7 }}><strong>Keep the faith.</strong> Bon Jovi and Armin van Buuren carried that message from rock into trance at Ultra Miami 2024: a cultural expression of perseverance and shared hope, not evidence for either conclusion.</p>\n          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
+          <p style={{ marginTop: 28, color: "#f1d47b", fontSize: "1.15rem", lineHeight: 1.7 }}><strong>Keep the faith.</strong> Bon Jovi and Armin van Buuren carried that message from rock into trance at Ultra Miami 2024: a cultural expression of perseverance and shared hope, not evidence for either conclusion.</p>
+          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
         </div>
       </section>
 
