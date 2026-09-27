@@ -3,6 +3,7 @@ export const akashicOmniRelease = {
   version: "0.4.4",
   anchor: "v0-4-4",
   date: "27 September 2026",
+  dateTime: "2026-09-27",
   status: "PRE-ALPHA",
   reflection: "Embodied intelligence informs wisdom; love and discernment guide it into service.",
   interpretation: "Within this framework, bodily awareness can contribute to wise judgement when considered alongside reflection, evidence, ethics and consequences. Bodily intuition can be mistaken. This is an interpretive principle, not a validated formula, a clinical assessment or a claim that illness produces wisdom.",
