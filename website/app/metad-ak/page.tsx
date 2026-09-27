@@ -29,7 +29,7 @@ export default function MetadAkPage() {
           <p>METAD-AK is an exploratory architecture for comparing multiple machine perspectives while preserving evidence boundaries, provenance, uncertainty and accountable human review.</p>
         </div>
         <figure className="author-seal framework-hero">
-          <img src="/images/metad-ak-hero.webp" width="1254" height="1254" fetchPriority="high" alt="A luminous heart-tree divided between a living knowledge commons and a future meta-intelligence layer"/>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
           <figcaption>Plural machine intelligence · evidence-aware synthesis · human accountability. Concept only; not currently deployed.</figcaption>
         </figure>
       </section>
@@ -50,8 +50,8 @@ export default function MetadAkPage() {
       </section>
 
       <figure className="framework-figure">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable METAD-AK architecture figure">
-          <img src="/images/metad-ak-fig1-multi-ai-architecture.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Conceptual multi-model workflow from human input through orchestration, comparison, evidence checks and human review"/>
+        <div>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
         </div>
         <figcaption><span>Figure 1 · Multi-model architecture</span><p>A provider-neutral conceptual workflow. Models and tools are illustrative components, not confirmed integrations or evidence of deployment.</p></figcaption>
       </figure>
@@ -116,8 +116,8 @@ export default function MetadAkPage() {
       </section>
 
       <figure className="framework-figure">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable METAD-AK roadmap figure">
-          <img src="/images/metad-ak-fig2-capabilities-boundaries.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Exploratory METAD-AK roadmap: Model-aware analysis in 2026–2027, Evidence-aware orchestration in 2027–2029, Collaborative intelligence in 2030–2032, and Federated knowledge commons in 2033–2036."/>
+        <div>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
         </div>
         <figcaption><span>Figure 2 · Capabilities and boundaries</span><p>A directional 2026–2036 roadmap. Dates and stages are exploratory rather than delivery commitments; METAD-AK remains not currently deployed.</p></figcaption>
       </figure>

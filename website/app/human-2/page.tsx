@@ -41,7 +41,7 @@ export default function HumanTwoPage() {
           <p><strong>It is a question, not a destination.</strong> It is not a proposal for a superior species, compulsory enhancement or one ideal kind of human.</p>
         </div>
         <figure className="author-seal framework-hero">
-          <img src="/images/human2-hero.webp" width="1254" height="1254" fetchPriority="high" alt="A luminous heart-tree joining human awareness, knowledge networks and the living Earth"/>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
           <figcaption>HUMAN 2.0 connects inner awareness, shared knowledge and a flourishing biosphere. Artistic metaphor, not scientific evidence.</figcaption>
         </figure>
       </section>
@@ -61,11 +61,14 @@ export default function HumanTwoPage() {
         </div>
       </section>
 
-      <figure className="framework-figure">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable detailed evidence-commons figure">
-          <img src="/images/human2-fig1-evidence-commons.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Evidence-commons concept map using the five canonical labels: Established Evidence, Interpretation, Lived Experience/Testimony, Hypothesis and Speculation. Its archive snapshot describes the approximately 2,000-member r/NeuronsToNirvana community and distinguishes 9,502 source rows from 7,457 structurally unique URLs."/>
+      <figure className="framework-figure" aria-labelledby="archive-checkpoint-title">
+        <div className="constellation-intro">
+          <h3 id="archive-checkpoint-title">Evidence commons · 2 September 2026 checkpoint</h3>
+          <p><strong>9,502 Reddit source rows + 2,657 Drive rows = 12,159 unified records.</strong></p>
+          <p>Separately: <strong>7,457 structurally unique Reddit URLs</strong>, across all subreddits in the structural checkpoint.</p>
+          <p>Established Evidence · Interpretation · Lived Experience/Testimony · Hypothesis · Speculation</p>
         </div>
-        <figcaption><span>Figure 1 · Evidence commons</span><p>A visual map of a living knowledge commons. The archive snapshot describes the approximately 2,000-member r/NeuronsToNirvana community, distinguishes 9,502 source rows from 7,457 structurally unique URLs and uses the canonical five-label evidence taxonomy. Connections remain exploratory; they are not validated relationships or accepted evidence.</p></figcaption>
+        <figcaption><span>Figure 1 · Evidence commons</span><p>The mixed-checkpoint artwork is withheld. These historical aggregate counts follow the <a href="https://github.com/tws9stmcbf-web/AkashicNET/blob/a144c74e7d0a9afe009d124be67a02f2da13a53f/references/community/reddit-structural-unified-topic-audit-method-v0.7.16.md">v0.7.16 structural/unified audit</a> and its September 2 delta. Structural validity is not Reddit API verification, permission to reuse content or scientific support. Connections remain exploratory; they are not validated relationships or accepted evidence.</p></figcaption>
       </figure>
 
       <section className="constellation" id="lenses">
@@ -88,8 +91,8 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable HUMAN 2.0 lenses-and-domains figure">
-          <img src="/images/human2-fig2-seven-lenses-domains.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="HUMAN 2.0 heart-tree connecting seven lenses—AWAKEN, HOMESENSE, HIERATIC, ADAPT, TRANSCEND, REGENERATE and #METAD—to seven domains—Self, Relationships, Intelligence, Resilience, Regeneration, Wisdom and Futures."/>
+        <div>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
         </div>
         <figcaption><span>Figure 2 · Lenses and domains</span><p>A HUMAN-facing map of seven lenses across seven domains. #METAD is a cross-layer interpretive lens; METAD-AK remains the separate proposed technical orchestration layer.</p></figcaption>
       </figure>
@@ -112,8 +115,8 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable HUMAN 2.0 seven-by-seven matrix">
-          <img src="/images/human2-fig3-7x7-matrix.webp" width="1600" height="1100" loading="lazy" decoding="async" alt="Seven AkashicNET lenses crossing seven domains to form a forty-nine-cell HUMAN 2.0 matrix"/>
+        <div>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
         </div>
         <figcaption><span>Figure 3 · The 7×7 matrix</span><p>Forty-nine places to ask better questions. Each cell is an analytical intersection, not a hierarchy, score or scientific result.</p></figcaption>
       </figure>
@@ -140,8 +143,8 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure framework-figure--square">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable Flourishing 2100 figure">
-          <img src="/images/human2-fig4-flourishing-2100.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Speculative regenerative horizon connecting Living Earth, Human Flourishing, Knowledge Commons, Appropriate Technology and Future Generations."/>
+        <div>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
         </div>
         <figcaption><span>Figure 4 · Flourishing 2100</span><p>A speculative regenerative horizon: an invitation to consider which present choices make flourishing futures more likely, not a prediction or delivery promise.</p></figcaption>
       </figure>
@@ -157,8 +160,8 @@ export default function HumanTwoPage() {
       </section>
 
       <figure className="framework-figure framework-figure--square">
-        <div className="framework-image-scroll" tabIndex={0} role="region" aria-label="Scrollable BuddhaFly effect figure">
-          <img src="/images/human2-fig5-buddhafly-effect.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="A luminous butterfly containing the four Brahmavihāras: mettā, karuṇā, muditā and upekkhā"/>
+        <div>
+          <p role="note">Concept artwork withheld pending provenance, sensitivity and rights review.</p>
         </div>
         <figcaption><span>Figure 5 · The BuddhaFly effect</span><p>The Brahmavihāras provide ethical inspiration for turning awareness toward wiser action. This is a values framework, not an evidential claim.</p></figcaption>
       </figure>
@@ -194,7 +197,7 @@ export default function HumanTwoPage() {
       </section>
 
       <aside className="page-provenance" aria-label="Page version and status">
-        <span>HUMAN 2.0 · v0.1</span><span>Exploratory framework</span><span>Concept figures · not evidence</span><span>September 2026</span>
+        <span>HUMAN 2.0 · v0.1</span><span>Exploratory framework</span><span>Artwork on HOLD · not evidence</span><span>September 2026</span>
       </aside>
 
       <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Know · Awaken · Adapt · Regenerate · Flourish</p><p>Awaken within · Serve without · 2026</p></footer>

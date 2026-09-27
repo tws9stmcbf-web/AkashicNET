@@ -65,6 +65,7 @@ export default function AboutPage() {
         <div>
           <h3>Correct without erasing · Serve rather than persuade</h3>
           <p>AkashicNET is designed as a living, revisable knowledge system. It can hold scientific evidence, interpretation, testimony, hypothesis and speculation together while keeping their differences visible.</p>
+          <p>Explore our provisional frameworks: <a className="text-link" href="/human-2">HUMAN 2.0</a> for human and planetary flourishing, and <a className="text-link" href="/metad-ak">METAD-AK</a> for proposed multi-model analysis. Both remain exploratory; METAD-AK is not currently deployed.</p>
         </div>
       </section>
 

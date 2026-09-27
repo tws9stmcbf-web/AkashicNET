@@ -1,6 +1,6 @@
 # Public image asset manifest
 
-Snapshot date: 30 August 2026
+Snapshot date: 30 August 2026 (original deployed-asset table below only)
 
 | Deployed asset | SHA-256 |
 |---|---|
@@ -14,7 +14,18 @@ The binary assets are stored and served with the live Site. This manifest provid
 
 ## HUMAN 2.0 / METAD-AK visual pass
 
-| Public asset | SHA-256 |
+Snapshot date: 12 September 2026 (historical visual pass)
+
+Disposition reviewed: 27 September 2026. **HOLD — not accepted for public release.**
+
+The following hashes identify the nine historical assets at PR #304 head
+`a144c74e7d0a9afe009d124be67a02f2da13a53f`; they are not release permissions.
+Their files are removed from the current public directory and their page embeds
+are withheld. Existing Git history is retained, not newly approved or erased.
+The August snapshot does not govern this section.
+
+
+| Withheld historical asset | SHA-256 |
 | --- | --- |
 | `human2-hero.webp` | `44bf9df11e730efa7eb9f382cf158ddef221f8a60c09f02eca8d7c66a33638e7` |
 | `human2-fig1-evidence-commons.webp` | `00ad793cb4692d045e244796cd4b003bf386a9e8fb7233c42effa8b44a7d4cb9` |
@@ -26,4 +37,23 @@ The binary assets are stored and served with the live Site. This manifest provid
 | `metad-ak-fig1-multi-ai-architecture.webp` | `a6b7192d90d923acb5ad888b796393aa2643fa524d877b8205a5d1f023f92b89` |
 | `metad-ak-fig2-capabilities-boundaries.webp` | `546c8313f9ce4110086eeb8a005d3f133657b80ba6be784bcf619201b6045d88` |
 
-These WebP files are metadata-stripped, public-facing concept artwork. Page captions preserve the distinction between artistic metaphor, exploratory architecture, evidence and deployed capability.
+Per-asset source commit, source path, Git blob identity, creator-provenance gap,
+public-visibility disposition, sensitivity-review disposition, rights/reuse
+disposition and explicit public-manifest HOLD are recorded in
+[`framework-artwork-review.json`](framework-artwork-review.json). No completed
+rights or sensitivity review, creator attestation or release acceptance was
+located; none is inferred from checksums or prior placement under `public/`.
+
+Figure 1's historical bytes are rejected for their mixed checkpoint and must not
+be restored. Its accessible page replacement shows the 2 September 2026 tuple:
+9,502 Reddit source rows + 2,657 Drive rows = 12,159 unified records, separately
+7,457 structurally unique Reddit URLs. The previous 12,058-record checkpoint
+remains historical, not current. No new raster or rights claim is introduced.
+
+Restoring any artwork requires independently verified public visibility,
+source/creator provenance, completed PII/sensitivity and rights/reuse reviews,
+and explicit public-manifest acceptance under `SECURITY.md`. A corrected Figure 1
+also requires a new hash and content review. This HOLD does not authorise release.
+All Big Questions remain UNRESOLVED; `supports_models=[]`; accepted canonical
+edges remain 0; Reddit live access remains HOLD. Privacy, evidence, rights,
+publication and promotion gates remain closed.
