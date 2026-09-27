@@ -112,6 +112,14 @@ def normalize_private_text(text: str, *, decode_hex: bool = True,
             + (r"|\\x([0-9a-fA-F]{2})" if decode_hex else ""),
             codepoint, normalized,
         )
+        # Decode octal escapes before slash mapping, retaining byte spellings
+        # in the digest scan so non-ASCII bytes cannot erase a fingerprint.
+        normalized = re.sub(
+            r"\\([0-7]{1,3})",
+            lambda match: (chr(int(match.group(1), 8)) if decode_hex
+                           else "\\x" + format(int(match.group(1), 8), "02x")),
+            normalized,
+        )
         normalized = normalized.translate(str.maketrans({
             "。": ".", "．": ".", "｡": ".", "\t": None, "\n": None, "\r": None,
         }))

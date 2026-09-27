@@ -17,6 +17,41 @@ SPEC.loader.exec_module(validator)
 
 
 class FrameworkComparisonValidationTests(unittest.TestCase):
+    def test_octal_private_annotations_rejected(self):
+        payloads = (
+            r"https://\144rive.google.com/file/d/private",
+            r"https://\144\162\151\166\145.google.com/file/d/private",
+            r"https://%5C144rive.google.com/file/d/private",
+            r"https://\134144rive.google.com/file/d/private",
+            r"\146ile://private",
+            r"C:\134My\40Drive\134private",
+        )
+        for payload in payloads:
+            for nested in (False, True):
+                with self.subTest(payload=payload, nested=nested):
+                    schema = validator.load_json(validator.SCHEMA)
+                    node = schema["properties"]["input_commit"] if nested else schema
+                    node["description"] = payload
+                    with self.assertRaisesRegex(ValueError, "private"):
+                        validator.validate_schema_contract(schema)
+                    with tempfile.TemporaryDirectory() as directory:
+                        path = Path(directory) / "schema.json"
+                        path.write_text(json.dumps(schema), encoding="utf-8")
+                        with patch.object(validator, "SCHEMA", path):
+                            with self.assertRaisesRegex(ValueError, "private"):
+                                self.validate(self.packet)
+
+    def test_octal_digest_and_benign_controls(self):
+        for payload in (r"\141" * 64, r"\377" * 32, r"\0" * 32):
+            with self.subTest(payload=payload), self.assertRaisesRegex(ValueError, "digest"):
+                validator.scan_safety(payload)
+        for payload in (r"ordinary \101 text", r"invalid \8 text",
+                        r"https://example.com/\141", r"ordinary \7 text"):
+            validator.scan_safety(payload)
+        schema = validator.load_json(validator.SCHEMA)
+        schema["description"] = r"Public \162eview only."
+        validator.validate_schema_contract(schema)
+
     def test_closed_schema_annotation_contract(self):
         original = validator.load_json(validator.SCHEMA)
         for payload in (
