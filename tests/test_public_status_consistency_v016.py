@@ -15,6 +15,23 @@ PROGRESS = "website/app/development-progress/page.tsx"
 
 
 class CurrentPublicStatusTests(unittest.TestCase):
+    def test_additional_copular_adverbs_rejected(self):
+        for claim in ("Release version is already v0.16.7",
+                      "Public release status is finally v0.16.7"):
+            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_contractions_and_considered_infinitive_pass(self):
+        for claim in ("v0.16.7 isn't released", "v0.16.7 hasn't been released",
+                      "v0.16.7 won't be released", "BQ001 isn't RESOLVED",
+                      "v0.16.7 is not considered to be a release",
+                      "BQ001 is not considered to be RESOLVED"):
+            with self.subTest(claim=claim):
+                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
+                self.assertEqual(result.returncode, 0, result.stderr)
+        for claim in ("v0.16.7 isn't released but is shipped",
+                      "BQ001 is considered to be RESOLVED"):
+            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
     def test_reverse_copular_adverbs_and_bq_headings_rejected(self):
         for claim in ("Official release is now v0.16.7",
                       "Release version is currently v0.16.0-beta.2",

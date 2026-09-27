@@ -105,9 +105,9 @@ if "progress toward v0.17.0" not in status_text(progress):
 # Check each predicate separately so negation of an unrelated noun or earlier
 # predicate cannot hide a later affirmative assertion. This remains a bounded
 # status-copy guard, not a general natural-language parser.
-negative_words = r"(?:not|never|no|cannot|can't|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
-predicate_adverbs = r"(?:yet|currently|officially|publicly|formally|definitively)"
-negative_modifiers = r"(?:be|been|considered|intended[ \t]+to[ \t]+be|a|an|the|its|latest|current|official|public|final|sealed|" + predicate_adverbs + r")"
+negative_words = r"(?:not|never|no|cannot|(?:can|is|are|was|were|has|have|had|do|does|did|wo|would|could|should|must)n?'t|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
+predicate_adverbs = r"(?:yet|now|already|still|[a-z]+ly)"
+negative_modifiers = r"(?:be|been|considered(?:[ \t]+to[ \t]+be)?|intended[ \t]+to[ \t]+be|a|an|the|its|latest|current|official|public|final|sealed|" + predicate_adverbs + r")"
 
 
 def predicate_is_negated(prefix: str) -> bool:
