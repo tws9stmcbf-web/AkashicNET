@@ -11,7 +11,9 @@ remain closed by the existing semantic validator and schema.
 
 Only `title` and `description` may vary as annotations. Each must be a plain string
 of 1 to 512 characters, and all such strings undergo privacy screening both
-individually and as one ordered sequence. Custom annotation keys, maps and arrays
+individually and as one canonical ordered sequence: title then description at
+each node, remaining object keys in lexical order, and arrays in their declared
+order. JSON object serialization order cannot change that screening sequence. Custom annotation keys, maps and arrays
 are rejected, even when their contents appear harmless. This prevents private
 locators or metadata labels from being hidden in arbitrary annotation key trees.
 

@@ -50,6 +50,35 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "private Drive/Docs"):
             validator.validate_schema_contract(schema)
 
+    def test_annotation_privacy_is_independent_of_object_order(self):
+        for nested in (False, True):
+            for reverse in (False, True):
+                for private in (False, True):
+                    schema = validator.load_json(validator.SCHEMA)
+                    node = schema['properties']['input_commit'] if nested else schema
+                    node['title'] = 'drive.' if private else 'Public review'
+                    node['description'] = 'google.com/file/d/private' if private else 'No model ranking.'
+                    def reorder(value):
+                        if isinstance(value, dict):
+                            return {key: reorder(value[key]) for key in sorted(value, reverse=reverse)}
+                        if isinstance(value, list):
+                            return [reorder(child) for child in value]
+                        return value
+                    schema = reorder(schema)
+                    with self.subTest(nested=nested, reverse=reverse, private=private):
+                        with tempfile.TemporaryDirectory() as directory:
+                            path = Path(directory) / 'schema.json'
+                            path.write_text(json.dumps(schema), encoding='utf-8')
+                            with patch.object(validator, 'SCHEMA', path):
+                                if private:
+                                    with self.assertRaisesRegex(ValueError, 'private Drive/Docs'):
+                                        validator.validate_schema_contract(schema)
+                                    with self.assertRaisesRegex(ValueError, 'private Drive/Docs'):
+                                        self.validate(self.packet)
+                                else:
+                                    validator.validate_schema_contract(schema)
+                                    self.validate(self.packet)
+
     def test_nested_metadata_key_paths_rejected(self):
         for annotation in ({"drive": {"id": "private-object-123"}},
                            {"drive": {"wrapper": {"file": {"id": "private-object-123"}}}},

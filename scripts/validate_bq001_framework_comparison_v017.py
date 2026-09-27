@@ -391,7 +391,10 @@ def validate_schema_contract(schema: Any) -> None:
     def structure(value):
         if isinstance(value, dict):
             result = {}
-            for key, child in value.items():
+            # Semantic annotation order is independent of JSON serialization.
+            # Visit title, description, then remaining keys lexically at every node.
+            for key in sorted(value, key=lambda key: (0 if key == "title" else 1 if key == "description" else 2, key)):
+                child = value[key]
                 if key in {"title", "description"}:
                     if not isinstance(child, str) or not 1 <= len(child) <= 512:
                         raise ValueError("schema contract: annotations must be 1..512 character strings")
