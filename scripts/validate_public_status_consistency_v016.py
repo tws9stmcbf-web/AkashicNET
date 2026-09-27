@@ -37,6 +37,8 @@ def validate_data(data, manifest):
         raise ValueError("candidate version disagrees with governed manifest")
     if manifest.get("artifact_status") != "UNRELEASED_REVIEW_CANDIDATE":
         raise ValueError("governed candidate must remain unreleased")
+    if manifest.get("release_decision") != "PENDING_EXACT_HEAD_CI_AND_REVIEW" or manifest.get("exact_head_ci_required") is not True:
+        raise ValueError("governed candidate must remain pending exact-head CI and review")
     summary = manifest.get("candidate_summary", {})
     if summary.get("question_id") != "BQ001" or summary.get("question_status") != "UNRESOLVED" or type(summary.get("accepted_edge_count")) is not int or summary["accepted_edge_count"] != 0:
         raise ValueError("governed BQ001 boundaries drift")

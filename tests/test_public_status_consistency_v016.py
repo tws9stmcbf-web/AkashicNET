@@ -73,6 +73,25 @@ class PublicStatusTests(unittest.TestCase):
                 (self.root / status.MANIFEST).write_text(json.dumps(data))
                 with self.assertRaises(ValueError): status.check(self.root)
 
+    def test_manifest_pending_release_requirements(self):
+        original = status.read_json(self.root / status.MANIFEST)
+        for key, values in (
+            ('release_decision', (None, 'READY', 'RELEASED', False)),
+            ('exact_head_ci_required', (None, False, 1, 'true')),
+        ):
+            for value in values:
+                with self.subTest(key=key, value=value):
+                    data = copy.deepcopy(original)
+                    if value is None:
+                        del data[key]
+                    else:
+                        data[key] = value
+                    (self.root / status.MANIFEST).write_text(json.dumps(data))
+                    before = {path: (self.root / path).read_bytes() for path in status.SURFACES}
+                    with self.assertRaisesRegex(ValueError, 'pending exact-head CI and review'):
+                        status.check(self.root, write=True)
+                    self.assertEqual(before, {path: (self.root / path).read_bytes() for path in status.SURFACES})
+
     def test_manifest_question_identity_is_required(self):
         original = status.read_json(self.root / status.MANIFEST)
         for question_id in (None, 'BQ002'):
