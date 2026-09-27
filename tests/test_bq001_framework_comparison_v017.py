@@ -17,6 +17,29 @@ SPEC.loader.exec_module(validator)
 
 
 class FrameworkComparisonValidationTests(unittest.TestCase):
+    def test_multiple_key_layers_private_locator_rejected(self):
+        variants = (
+            {"drive.": {"wrapper": {"google.com": "/file/d/private"}}},
+            {"drive%2e": {"wrapper": {"google%2ecom": "%2ffile%2fd%2fprivate"}}},
+            {"docs.": {"wrapper": [{"google.": {"extra": {"com": "/document/d/private"}}}]}},
+        )
+        for annotation in variants:
+            for full_validation in (False, True):
+                with self.subTest(annotation=annotation, full_validation=full_validation):
+                    if not full_validation:
+                        with self.assertRaisesRegex(ValueError, "private Drive/Docs"):
+                            validator.scan_safety(annotation)
+                        continue
+                    schema = validator.load_json(validator.SCHEMA)
+                    schema["x-private-audit"] = annotation
+                    with tempfile.TemporaryDirectory() as directory:
+                        path = Path(directory) / "schema.json"
+                        path.write_text(json.dumps(schema), encoding="utf-8")
+                        with patch.object(validator, "SCHEMA", path):
+                            with self.assertRaisesRegex(ValueError, "private Drive/Docs"):
+                                self.validate(self.packet)
+        validator.scan_safety({"public.": {"wrapper": {"example.org": "/guide"}}})
+
     def test_nested_key_leaf_references_rejected(self):
         for annotation in (
             [{"&": {"z": "#x61;"}} for _ in range(64)],

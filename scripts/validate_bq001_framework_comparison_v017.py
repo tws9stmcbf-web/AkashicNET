@@ -186,6 +186,27 @@ def mapping_depth(value: Any) -> int:
     return 0
 
 
+def branch_safety_texts(value: Any, digest_paths: dict[tuple, str],
+                        location: tuple = (), prefixes: frozenset[str] = frozenset({""})):
+    """Include or omit each ancestor key, preserving order and leaf barriers.
+
+    A complexity limit fails closed rather than silently dropping combinations.
+    """
+    if isinstance(value, dict):
+        for key, child in value.items():
+            choices = prefixes | frozenset(prefix + key for prefix in prefixes)
+            if len(choices) > 4096:
+                raise ValueError("privacy branch combination limit exceeded")
+            yield from branch_safety_texts(child, digest_paths, (*location, key), choices)
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            yield from branch_safety_texts(child, digest_paths, (*location, index), prefixes)
+    else:
+        leaf = composite_safety_text(value, digest_paths, location)
+        for prefix in prefixes:
+            yield prefix + leaf
+
+
 def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
                 location: tuple = ()) -> None:
     if isinstance(value, dict):
@@ -236,6 +257,13 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
         # Keep leaf text and governed-digest barriers in every projection.
         for depth in range(mapping_depth(value)):
             scan_safety(composite_safety_text(value, digest_paths or {}, keys=True, key_depth=depth))
+        # Check combinations along each branch as well as the cross-branch
+        # streams above: meaningful key fragments may sit at different depths.
+        seen = set()
+        for text in branch_safety_texts(value, digest_paths or {}):
+            if text not in seen:
+                scan_safety(text)
+                seen.add(text)
 
 
 def git(*args: str) -> str:
