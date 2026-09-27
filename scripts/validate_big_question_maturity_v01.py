@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, re, sys
+import ast, json, os, re, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 LADDER=ROOT/"references/big-questions/research-maturity-ladder-v0.1.json"
@@ -13,7 +13,7 @@ MEANING="A level records completed governed research work. It is not a truth pro
 STAGES=[(1,"QUESTION_FRAMED","Frame the question"),(2,"SOURCES_MAPPED","Map sources"),(3,"REVIEW_CANDIDATE_REACHED","Reach review-candidate status"),(4,"MODELS_SEPARATED","Separate models"),(5,"EVIDENCE_MAPPED","Map evidence"),(6,"METHODS_STRESS_TESTED","Stress-test methods"),(7,"PREDICTIONS_DEFINED","Define predictions"),(8,"GOVERNED_TESTS_RUN","Run tests"),(9,"FINDINGS_TRIANGULATED","Triangulate findings"),(10,"RESOLUTION_REVIEW_ENTERED","Enter resolution review")]
 EXPECTED={"BQ001":(6,None),"BQ002":(4,None),"BQ003":(4,None),**{f"BQ{i:03d}":(None,"UNSCORED_EXPLORATORY_NONCANONICAL") for i in range(4,9)},"BQ009":(None,"UNASSIGNED")}
 RULES=("levels_are_cumulative","asserted_level_must_equal_highest_completed_stage","missing_or_unvalidated_stage_blocks_higher_assertions","level_8_requires_governed_test_execution","unresolved_is_allowed_at_every_level","level_change_does_not_promote_truth_evidence_rights_public_synthesis_or_website")
-GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed")
+GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed","privacy_posture_changed")
 def fail(msg): raise ValueError(msg)
 def json_assertions(value,qid=None,path_qid=None):
     found=[]
@@ -30,20 +30,115 @@ def json_assertions(value,qid=None,path_qid=None):
     elif isinstance(value,list):
         for child in value:found.extend(json_assertions(child,qid,path_qid))
     return found
-def assertions(source,text):
-    match=PATH_Q.search(source.replace("\\","/"))
+def text_assertions(text,qid=None):
     found=[]
-    if Path(source).suffix.lower()==".json":
-        qid=f"BQ{match.group(1)}" if match else None
-        found.extend(json_assertions(json.loads(text),qid,qid))
-    if match:
-        levels=LEVEL.findall(text)
-        return found+[(f"BQ{match.group(1)}",int(x)) for x in levels]
     matches=list(BQ.finditer(text))
+    if qid:
+        end=matches[0].start() if matches else len(text)
+        found.extend((qid,int(x)) for x in LEVEL.findall(text[:end]))
     for index,match in enumerate(matches):
         end=matches[index+1].start() if index+1<len(matches) else len(text)
         found.extend((match.group(1).upper(),int(x)) for x in LEVEL.findall(text[match.end():end]))
     return found
+
+def script_assertions(source,text,path_qid=None):
+    """Read literal maturity objects with a syntax tree; never execute source.
+
+    Identity is inherited only within an object subtree, not between siblings.
+    Maturity values must be static integer literals. Ambiguous overrides and
+    malformed source fail closed instead of silently omitting an assertion.
+    Install scripts/big-question-maturity-requirements.txt before running.
+    """
+    try:
+        from tree_sitter import Language, Parser
+        import tree_sitter_javascript as javascript
+        import tree_sitter_typescript as typescript
+    except ImportError:
+        fail("install scripts/big-question-maturity-requirements.txt to scan scripts")
+    suffix=Path(source).suffix.lower()
+    grammar=(typescript.language_tsx() if suffix==".tsx" else
+             typescript.language_typescript() if suffix==".ts" else javascript.language())
+    root=Parser(Language(grammar)).parse(text.encode("utf-8")).root_node
+    if root.has_error:fail(f"{source}: invalid script syntax")
+    unknown=object()
+    def literal(node):
+        if node is None:return unknown
+        if node.type in ("parenthesized_expression","as_expression","satisfies_expression"):
+            return literal(node.named_children[0])
+        if node.type not in ("number","string"):return unknown
+        try:return ast.literal_eval(node.text.decode("utf-8"))
+        except (ValueError,SyntaxError):return unknown
+    def key_name(node):
+        if node is None:return unknown
+        if node.type in ("property_identifier","identifier"):
+            return node.text.decode("utf-8")
+        if node.type=="computed_property_name":
+            return literal(node.named_children[0])
+        return literal(node)
+    def walk(node,qid):
+        found=[]
+        ambiguous=False
+        # A link mentioning another BQ must not change the identity of later
+        # JSX text or another string. Object identities supply local context.
+        if node.type=="template_string":
+            found.extend(text_assertions(node.text.decode("utf-8")[1:-1],qid))
+        if node.type in ("string","jsx_text","comment"):
+            value=literal(node) if node.type=="string" else node.text.decode("utf-8")
+            return text_assertions(value,qid) if isinstance(value,str) else []
+        if node.type=="object":
+            fields={}
+            for child in node.named_children:
+                if child.type=="comment":continue
+                if child.type=="pair":
+                    key=key_name(child.child_by_field_name("key"))
+                    value=child.child_by_field_name("value")
+                elif child.type=="shorthand_property_identifier":
+                    key=child.text.decode("utf-8");value=None
+                elif child.type=="method_definition":
+                    key=key_name(child.child_by_field_name("name"));value=None
+                else:
+                    ambiguous=True
+                    continue
+                if key is unknown:
+                    ambiguous=True
+                elif key in ("question_id","id","level","maximum"):
+                    if key in fields:fail(f"{source}: duplicate maturity/identity field {key}")
+                    fields[key]=literal(value)
+            if "question_id" in fields:
+                identity=fields["question_id"]
+                if not isinstance(identity,str) or not BQ.fullmatch(identity):
+                    fail(f"{source}: invalid structured question identity")
+                qid=identity.upper()
+            # The existing website index uses id rather than question_id.
+            identity=fields.get("id")
+            if isinstance(identity,str) and BQ.fullmatch(identity):
+                if "question_id" in fields and identity.upper()!=qid:
+                    fail(f"{source}: conflicting structured question identities")
+                qid=identity.upper()
+            if ("question_id" in fields or isinstance(identity,str) and BQ.fullmatch(identity)) and path_qid and qid!=path_qid:
+                fail(f"{source}: structured question identity conflicts with path")
+            if "level" in fields or "maximum" in fields:
+                if type(fields.get("level")) is not int or type(fields.get("maximum")) is not int or fields["maximum"]!=10:
+                    fail(f"{source}: maturity needs literal integer level and maximum: 10")
+                if qid is None:fail(f"{source}: structured maturity assertion lacks question identity")
+                found.append((qid,fields["level"]))
+        for child in node.named_children:
+            found.extend(walk(child,qid))
+        if found and ambiguous:
+            fail(f"{source}: dynamic keys or spreads can override maturity data")
+        return found
+    return walk(root,path_qid)
+
+def assertions(source,text):
+    match=PATH_Q.search(source.replace("\\","/"))
+    found=[]
+    qid=f"BQ{match.group(1)}" if match else None
+    suffix=Path(source).suffix.lower()
+    if suffix==".json":
+        found.extend(json_assertions(json.loads(text),qid,qid))
+    elif suffix in (".ts",".tsx",".js",".jsx"):
+        return script_assertions(source,text,qid)
+    return found+text_assertions(text,qid)
 def managed_files():
     return sorted(p for root in ROOTS for p in root.rglob("*") if p.is_file() and p.suffix.lower() in SUFFIXES)
 def execution_path(qid,ref):

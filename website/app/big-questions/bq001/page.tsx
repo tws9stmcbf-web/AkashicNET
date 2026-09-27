@@ -123,7 +123,8 @@ const openQuestions = [
   "Can prospective cardiac-arrest studies establish tighter temporal links between reported experience and measurable brain state?",
   "Can reincarnation-type research produce prospectively documented, independently verified cases with information pathways tightly controlled?",
   "What would count as continuity of an individual rather than continuity of information, resemblance or influence?",
-  "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",\n  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
+  "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",
+  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
 ];
 
 const researchTrail = [

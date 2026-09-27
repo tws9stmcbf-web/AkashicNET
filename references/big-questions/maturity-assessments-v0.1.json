@@ -15,6 +15,7 @@
     {"question_id": "BQ009", "question_status": "UNRESOLVED", "asserted_level": null, "completed_stages": [], "scoring_status": "UNASSIGNED"}
   ],
   "governance": {
+    "privacy_posture_changed": false,
     "supports_models": [],
     "accepted_canonical_edges": 0,
     "truth_inference_allowed": false,
