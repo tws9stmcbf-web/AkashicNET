@@ -230,12 +230,6 @@ export default function AkashicVisionPage() {
             <p>Sacred Toroidal Love and BuddhaFly Nature translate the TRANSCEND lens into poetry, festival imagery and an embodied birthday-moon reflection.</p>
             <a className={styles.sourceLink} href="/akashictranscendence">Enter the Arts portal →</a>
           </article>
-          <article>
-            <span>Encounters · Apparent agency · Open inquiry</span>
-            <h3>AkashicSENTIENCE</h3>
-            <p>Mystical, mediumistic, psychedelic, anomalous and artificial-intelligence encounters mapped without assuming what their apparent source ultimately is.</p>
-            <a className={styles.sourceLink} href="/akashicsentience">Enter the encounter atlas →</a>
-          </article>
         </div>
         <p className={styles.constellationBoundary}><strong>Evidence boundary:</strong> shared themes generate questions. They do not establish equivalence between mathematical infinity, cosmological models, personal experience and spiritual teachings.</p>
       </section>
@@ -274,22 +268,6 @@ export default function AkashicVisionPage() {
             <a href="https://edgarcayce.org/edgar-cayce/readings/ancient-mysteries/">A.R.E. Ancient Mysteries overview ↗</a>
           </article>
         </div>
-        <div className={styles.sourceShelf}>
-          <div>
-            <p className={styles.kicker}>Declassified research trail</p>
-            <h3>Remote viewing: programme history is not proof.</h3>
-            <p>Declassified records establish that United States intelligence agencies funded and evaluated remote-viewing research. They do not, by themselves, establish that remote viewing is a reliable phenomenon or an Akashic mechanism.</p>
-          </div>
-          <ul>
-            <li><a href="https://www.cia.gov/readingroom/collection/stargate">CIA FOIA Reading Room · STAR GATE collection</a></li>
-            <li><a href="https://www.cia.gov/readingroom/document/cia-rdp96-00791r000200180006-4">1995 AIR evaluation · research and applications</a></li>
-            <li><strong>Established history:</strong> the programme, records and evaluation existed.</li>
-            <li><strong>Contested result:</strong> reviewers differed over the meaning of the laboratory statistics.</li>
-            <li><strong>Operational conclusion:</strong> the information was not shown to be sufficiently specific and dependable for intelligence use.</li>
-          </ul>
-        </div>
-        <p className={styles.rightsBoundary}><strong>Interpretive boundary:</strong> remote viewing sits beside Cayce as comparative phenomenology, not corroboration. AkashicNET preserves targets, protocols, outcomes, criticisms and competing interpretations separately. Declassification authenticates documentary history; it does not certify paranormal claims.</p>
-
         <div className={styles.sourceShelf}>
           <div>
             <h3>Public discovery shelf</h3>
