@@ -35,6 +35,11 @@ class ConnectionTests(unittest.TestCase):
                 record = copy.deepcopy(self.record)
                 connection = record['connections'][0]
                 connection.update(evidence_lane=lane, current_strength=strength)
+                if lane == 'traditional_knowledge':
+                    record['perspectives'][0]['cultural_authority'] = {
+                        'community_or_lineage': None, 'speaker_position': None,
+                        'authority_to_share': 'unknown',
+                    }
                 if sources is None:
                     del connection['source_ids']
                 else:
@@ -56,6 +61,7 @@ class ConnectionTests(unittest.TestCase):
                 record['connections'][0]['source_ids'] = sources
             record['source_network']['nodes'] = []
             self.assertEqual(validator.validate(record), [])
+            record['governance'].update(privacy_disposition='cleared', cultural_review_status='cleared')
             record['governance']['publication_status'] = 'review_candidate'
             self.assertFalse(validator.VALIDATOR.is_valid(record))
             self.assertTrue(validator.validate(record))
@@ -65,6 +71,7 @@ class ConnectionTests(unittest.TestCase):
         record['connections'].append(copy.deepcopy(record['connections'][0]))
         record['connections'][1]['connection_id'] = 'CONN-SECOND'
         record['connections'][1]['source_ids'] = []
+        record['governance'].update(privacy_disposition='cleared', cultural_review_status='cleared')
         record['governance']['publication_status'] = 'review_candidate'
         self.assertTrue(validator.validate(record))
 

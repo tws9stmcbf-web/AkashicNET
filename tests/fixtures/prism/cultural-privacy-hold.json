@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "layer_id": "PRISM-TEST",
+  "layer_id": "PRISM-CULTURAL-TEST",
   "subject_ref": {
     "subject_id": "synthetic-test",
     "subject_type": "other"
@@ -8,7 +8,7 @@
   "perspectives": [
     {
       "perspective_id": "EPI-TEST",
-      "lens": "philosophical",
+      "lens": "cultural",
       "attributed_to": "Synthetic fixture",
       "statement": "Test only; no corpus evidence.",
       "epistemic_basis": [
@@ -16,7 +16,12 @@
       ],
       "claim_scope": "personal_meaning",
       "evidence_lane": "interpretation",
-      "uncertainty": "Synthetic only."
+      "uncertainty": "Synthetic only.",
+      "cultural_authority": {
+        "community_or_lineage": null,
+        "speaker_position": null,
+        "authority_to_share": "unknown"
+      }
     }
   ],
   "state_observations": [],

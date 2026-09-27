@@ -157,7 +157,8 @@
                 "type": [
                   "string",
                   "null"
-                ]
+                ],
+                "pattern": "\\S"
               },
               "authority_to_share": {
                 "enum": [
@@ -172,9 +173,15 @@
                 "type": [
                   "string",
                   "null"
-                ]
+                ],
+                "pattern": "\\S"
               }
-            }
+            },
+            "required": [
+              "community_or_lineage",
+              "speaker_position",
+              "authority_to_share"
+            ]
           },
           "source_ids": {
             "type": "array",
@@ -223,7 +230,17 @@
               ]
             }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "$ref": "#/$defs/culturally_scoped_perspective"
+            },
+            "then": {
+              "$ref": "#/$defs/explicit_cultural_authority"
+            }
+          }
+        ]
       }
     },
     "practice_outcomes": {
@@ -512,7 +529,8 @@
         "testimony_auto_promotion_allowed",
         "tradition_auto_promotion_allowed",
         "cultural_review_required",
-        "publication_status"
+        "publication_status",
+        "privacy_disposition"
       ],
       "properties": {
         "truth_inference_allowed": {
@@ -539,8 +557,132 @@
             "string",
             "null"
           ]
+        },
+        "privacy_disposition": {
+          "enum": [
+            "review_required",
+            "cleared",
+            "restricted"
+          ],
+          "description": "Explicit privacy review disposition. Pending or restricted records stay on HOLD; cleared records still require every other gate. Validation does not perform or approve a review."
+        },
+        "cultural_review_status": {
+          "enum": [
+            "review_required",
+            "cleared",
+            "restricted"
+          ],
+          "description": "Required when cultural review applies. A cleared status does not override individual authority-to-share restrictions or authorize publication."
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "cultural_review_required"
+            ],
+            "properties": {
+              "cultural_review_required": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "cultural_review_status"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "privacy_disposition"
+            ],
+            "properties": {
+              "privacy_disposition": {
+                "enum": [
+                  "review_required",
+                  "restricted"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "hold"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "cultural_review_status"
+            ],
+            "properties": {
+              "cultural_review_status": {
+                "enum": [
+                  "review_required",
+                  "restricted"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "hold"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "review_candidate"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "privacy_disposition": {
+                "const": "cleared"
+              }
+            },
+            "if": {
+              "required": [
+                "cultural_review_required"
+              ],
+              "properties": {
+                "cultural_review_required": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "cultural_review_status"
+              ],
+              "properties": {
+                "cultural_review_status": {
+                  "const": "cleared"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "investigation": {
       "type": "object",
@@ -1172,6 +1314,332 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "anyOf": [
+          {
+            "required": [
+              "perspectives"
+            ],
+            "properties": {
+              "perspectives": {
+                "contains": {
+                  "$ref": "#/$defs/culturally_scoped_perspective"
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "investigation"
+            ],
+            "properties": {
+              "investigation": {
+                "required": [
+                  "classification"
+                ],
+                "properties": {
+                  "classification": {
+                    "const": "cultural_or_traditional_claim"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "source_network"
+            ],
+            "properties": {
+              "source_network": {
+                "required": [
+                  "nodes"
+                ],
+                "properties": {
+                  "nodes": {
+                    "contains": {
+                      "required": [
+                        "source_type"
+                      ],
+                      "properties": {
+                        "source_type": {
+                          "enum": [
+                            "traditional_teaching",
+                            "lineage_statement"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "state_observations"
+            ],
+            "properties": {
+              "state_observations": {
+                "contains": {
+                  "required": [
+                    "report_basis"
+                  ],
+                  "properties": {
+                    "report_basis": {
+                      "enum": [
+                        "traditional_teaching",
+                        "community_attestation"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "comparative_correspondences"
+            ],
+            "properties": {
+              "comparative_correspondences": {
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "required": [
+              "connections"
+            ],
+            "properties": {
+              "connections": {
+                "contains": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "evidence_lane"
+                      ],
+                      "properties": {
+                        "evidence_lane": {
+                          "const": "traditional_knowledge"
+                        }
+                      }
+                    },
+                    {
+                      "required": [
+                        "domains"
+                      ],
+                      "properties": {
+                        "domains": {
+                          "contains": {
+                            "const": "indigenous_or_traditional"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "perspectives": {
+                "contains": {
+                  "required": [
+                    "cultural_authority"
+                  ],
+                  "properties": {
+                    "cultural_authority": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "required": [
+              "cultural_review_status"
+            ],
+            "properties": {
+              "cultural_review_required": {
+                "const": true
+              }
+            }
+          },
+          "perspectives": {
+            "contains": {
+              "$ref": "#/$defs/explicit_cultural_authority"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "governance"
+        ],
+        "properties": {
+          "governance": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "review_candidate"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "perspectives": {
+            "items": {
+              "properties": {
+                "cultural_authority": {
+                  "type": "object",
+                  "properties": {
+                    "authority_to_share": {
+                      "enum": [
+                        "confirmed",
+                        "public_with_attribution"
+                      ]
+                    },
+                    "community_or_lineage": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "speaker_position": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "comparative_correspondences": {
+            "items": {
+              "properties": {
+                "cultural_authority_status": {
+                  "enum": [
+                    "confirmed",
+                    "public_with_attribution"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
     }
-  ]
+  ],
+  "$defs": {
+    "culturally_scoped_perspective": {
+      "anyOf": [
+        {
+          "required": [
+            "lens"
+          ],
+          "properties": {
+            "lens": {
+              "enum": [
+                "cultural",
+                "shamanic",
+                "lineage"
+              ]
+            }
+          }
+        },
+        {
+          "required": [
+            "evidence_lane"
+          ],
+          "properties": {
+            "evidence_lane": {
+              "const": "traditional_knowledge"
+            }
+          }
+        },
+        {
+          "required": [
+            "claim_scope"
+          ],
+          "properties": {
+            "claim_scope": {
+              "const": "communal_meaning"
+            }
+          }
+        },
+        {
+          "required": [
+            "interpretive_modes"
+          ],
+          "properties": {
+            "interpretive_modes": {
+              "contains": {
+                "const": "cultural_teaching"
+              }
+            }
+          }
+        },
+        {
+          "required": [
+            "epistemic_basis"
+          ],
+          "properties": {
+            "epistemic_basis": {
+              "contains": {
+                "enum": [
+                  "lineage_transmission",
+                  "community_attestation",
+                  "traditional_text"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "explicit_cultural_authority": {
+      "required": [
+        "cultural_authority"
+      ],
+      "properties": {
+        "cultural_authority": {
+          "type": "object",
+          "required": [
+            "community_or_lineage",
+            "speaker_position",
+            "authority_to_share"
+          ],
+          "properties": {
+            "community_or_lineage": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "\\S"
+            },
+            "speaker_position": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "\\S"
+            }
+          },
+          "description": "Unknown community or speaker position must be explicit null and remains on HOLD. Never infer authority from a lens or source label."
+        }
+      }
+    }
+  }
 }
