@@ -17,6 +17,25 @@ SPEC.loader.exec_module(validator)
 
 
 class FrameworkComparisonValidationTests(unittest.TestCase):
+    def test_nested_key_leaf_references_rejected(self):
+        for annotation in (
+            [{"&": {"z": "#x61;"}} for _ in range(64)],
+            [{"&": {"wrapper": {"z": "#97;"}}} for _ in range(64)],
+            [{"%26": {"z": "%23x61%3B"}} for _ in range(64)],
+        ):
+            with self.subTest(annotation=annotation):
+                with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                    validator.scan_safety({"annotation": annotation})
+                schema = validator.load_json(validator.SCHEMA)
+                schema["x-private-audit"] = annotation
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "schema.json"
+                    path.write_text(json.dumps(schema), encoding="utf-8")
+                    with patch.object(validator, "SCHEMA", path):
+                        with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                            self.validate(self.packet)
+        validator.scan_safety({"annotation": [{"&": {"z": "#x61;"}}]})
+
     def test_numeric_character_reference_digests_rejected(self):
         for token in ("&#x61;", "&#97;", "&amp;#x61;", "%26%23x61%3B", r"\u0026#x61;"):
             encoded=token*64

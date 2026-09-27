@@ -152,7 +152,8 @@ def assert_exact_keys(value: dict[str, Any], expected: set[str], label: str) -> 
 
 def composite_safety_text(value: Any, digest_paths: dict[tuple, str],
                           location: tuple = (), *, keys: bool = False,
-                          values: bool = True) -> str:
+                          values: bool = True, key_depth: int | None = None,
+                          depth: int = 0) -> str:
     """Reconstruct JSON fragments without letting property names hide value chunks.
 
     Check values, keys, and interleaved key/value streams. Governed digests become
@@ -160,18 +161,29 @@ def composite_safety_text(value: Any, digest_paths: dict[tuple, str],
     """
     if isinstance(value, dict):
         return "".join(
-            (key if keys else "")
-            + composite_safety_text(child, digest_paths, (*location, key), keys=keys, values=values)
+            (key if keys and (key_depth is None or key_depth == depth) else "")
+            + composite_safety_text(child, digest_paths, (*location, key), keys=keys, values=values,
+                                    key_depth=key_depth, depth=depth + 1)
             for key, child in value.items()
         )
     if isinstance(value, list):
-        return "".join(composite_safety_text(child, digest_paths, (*location, index), keys=keys, values=values)
+        return "".join(composite_safety_text(child, digest_paths, (*location, index), keys=keys, values=values,
+                                            key_depth=key_depth, depth=depth)
                        for index, child in enumerate(value))
     if not values:
         return ""
     if isinstance(value, str):
         return "[governed]" if digest_paths.get(location) == value else value
     return json.dumps(value)
+
+
+def mapping_depth(value: Any) -> int:
+    """Count key layers; list containers do not introduce wrapper keys."""
+    if isinstance(value, dict):
+        return 1 + max((mapping_depth(child) for child in value.values()), default=0)
+    if isinstance(value, list):
+        return max((mapping_depth(child) for child in value), default=0)
+    return 0
 
 
 def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
@@ -219,6 +231,11 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
     if not location and isinstance(value, (dict, list)):
         for keys, values in ((False, True), (True, False), (True, True)):
             scan_safety(composite_safety_text(value, digest_paths or {}, keys=keys, values=values))
+        # Retain each key layer with descendant leaves, so unrelated wrapper
+        # keys cannot interrupt encoded fragments assembled along branches.
+        # Keep leaf text and governed-digest barriers in every projection.
+        for depth in range(mapping_depth(value)):
+            scan_safety(composite_safety_text(value, digest_paths or {}, keys=True, key_depth=depth))
 
 
 def git(*args: str) -> str:
