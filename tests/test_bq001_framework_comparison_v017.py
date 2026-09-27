@@ -17,6 +17,28 @@ SPEC.loader.exec_module(validator)
 
 
 class FrameworkComparisonValidationTests(unittest.TestCase):
+    def test_percent_byte_fingerprints_rejected_before_lossy_decoding(self):
+        for token in ("%aa", "%FF", "%00", "%c2%aa", "%25aa", r"\u0025aa"):
+            encoded = token * 32
+            for annotation in (encoded, [encoded[:17], encoded[17:]],
+                               {encoded[:17]: encoded[17:]}):
+                with self.subTest(token=token, annotation=annotation):
+                    schema = validator.load_json(validator.SCHEMA)
+                    schema["x-private-audit"] = annotation
+                    with tempfile.TemporaryDirectory() as directory:
+                        path = Path(directory) / "schema.json"
+                        path.write_text(json.dumps(schema), encoding="utf-8")
+                        with patch.object(validator, "SCHEMA", path):
+                            with self.assertRaisesRegex(ValueError, "unscoped digest"):
+                                self.validate(self.packet)
+
+    def test_short_percent_text_and_scoped_pins_remain_allowed(self):
+        for text in ("https://example.com/a%20page", "ordinary %aa note",
+                     "100% complete", "invalid %ZZ text"):
+            validator.scan_safety(text)
+        validator.scan_safety({"pin": validator.INPUT_COMMIT},
+                              digest_paths={("pin",): validator.INPUT_COMMIT})
+
     def setUp(self):
         self.packet = validator.load_json(validator.PACKET)
 

@@ -87,9 +87,17 @@ UTS46_IGNORED_RANGES = (
 )
 
 
-def normalize_private_text(text: str, *, decode_hex: bool = True) -> str:
+def normalize_private_text(text: str, *, decode_hex: bool = True,
+                           preserve_percent_bytes: bool = False) -> str:
     for _ in range(32):
-        normalized = unquote(unicodedata.normalize("NFKC", text))
+        normalized = unicodedata.normalize("NFKC", text)
+        if preserve_percent_bytes:
+            # Retain every encoded byte before UTF-8 decoding can erase invalid
+            # bytes or collapse valid multibyte sequences. Repeat after nested
+            # Unicode escapes have exposed further percent tokens.
+            normalized = re.sub(r"%([0-9a-fA-F]{2})",
+                                lambda match: "\\x" + match.group(1), normalized)
+        normalized = unquote(normalized)
         # Decode textual code-point escapes before case folding or slash mapping.
         # Preserve other backslashes until nested encodings have stabilised.
         def codepoint(match: re.Match) -> str:
@@ -187,7 +195,11 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
         # non-hex letters as barriers rather than deleting arbitrary text.
         # Check decoded text and the byte representation: decoding arbitrary
         # digest bytes to Unicode must not erase an existing fingerprint match.
-        for representation in (folded, normalize_private_text(value, decode_hex=False)):
+        for representation in (
+            folded,
+            normalize_private_text(value, decode_hex=False),
+            normalize_private_text(value, decode_hex=False, preserve_percent_bytes=True),
+        ):
             byte_text = re.sub(
                 r"(?:0|/)[^a-z0-9]*x[^a-z0-9]*(?=[a-f0-9][^a-z0-9]*[a-f0-9])",
                 "", representation,
