@@ -15,6 +15,16 @@ PROGRESS = "website/app/development-progress/page.tsx"
 
 
 class CurrentPublicStatusTests(unittest.TestCase):
+    def test_pending_multiple_qualifiers_pass(self):
+        for claim in ("Pending final official release version: v0.16.7",
+                      "Awaiting the final sealed release version: v0.16.7",
+                      "Pending the final official public release status of v0.16.7"):
+            with self.subTest(claim=claim):
+                result=self.run_case(progress=lambda text: text+f"<p>{claim}</p>")
+                self.assertEqual(result.returncode,0,result.stderr)
+        self.assert_rejected(progress=lambda text: text+
+            "<p>Pending final documentation: Official release version: v0.16.7</p>")
+
     def test_release_heading_connectives_rejected(self):
         for claim in ("Official release version for v0.16.7", "Release status of v0.16.7"):
             with self.subTest(claim=claim):

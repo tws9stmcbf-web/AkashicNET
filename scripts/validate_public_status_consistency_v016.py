@@ -163,7 +163,8 @@ for clause in re.split(r"[\n;!?]|\.(?=\s)", status_text(block_text)):
         prefix = clause[:match.start()]
         pending_release = (
             not match.group().lower().startswith("resolved")
-            and re.search(r"\b(?:pending|awaiting)[ \t]+(?:(?:a|an|the|its)[ \t]+)?$", prefix, re.IGNORECASE)
+            and re.search(r"\b(?:pending|awaiting)[ \t]+(?:(?:a|an|the|its)[ \t]+)?"
+                          r"(?:(?:final|official|public|sealed)[ \t]+){0,3}$", prefix, re.IGNORECASE)
         )
         if not pending_release and not predicate_is_negated(prefix):
             fail("predicate-first status contradicts unreleased/BQ001 boundaries")
