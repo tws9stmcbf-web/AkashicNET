@@ -13,6 +13,7 @@ rejected, or held.
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 from datetime import datetime
@@ -49,6 +50,15 @@ CREATED_UTC_RE = re.compile(
     r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$"
 )
 RETRIEVED_AT_UTC_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+EXPECTED_SUBREDDIT = "NeuronsToNirvana"
+# Historical public checkpoint declared by this manual delta, not live counts.
+EXPECTED_PUBLIC_COUNTS = {"source_rows": 9502, "unified_index_records": 12159}
+REQUIRED_TRUE_GATES = {
+    "direct_public_accessibility_at_observation",
+    "historical_index_absence",
+    "unique_reddit_post_ids",
+    "unique_canonical_urls",
+}
 
 REQUIRED_FALSE_GATES = {
     "reddit_api_called",
@@ -135,11 +145,15 @@ def validate_record(
     if url_post_id != post_id:
         raise ValueError("Reddit permalink post ID does not match reddit_post_id")
 
-    record_subreddit = str(record["subreddit"])
+    record_subreddit = record["subreddit"]
+    if not isinstance(record_subreddit, str):
+        raise ValueError("record subreddit must be a string")
     if url_subreddit != record_subreddit:
         raise ValueError("Reddit permalink subreddit does not match record subreddit")
     if record_subreddit != expected_subreddit:
         raise ValueError("record subreddit does not match declared scope")
+    if record_subreddit != EXPECTED_SUBREDDIT:
+        raise ValueError(f"record subreddit must be {EXPECTED_SUBREDDIT}")
 
     title = record["title"]
     if not isinstance(title, str) or not title.strip():
@@ -202,6 +216,26 @@ def validate_scope_counts(
             )
 
 
+def validate_public_count_impact(impact: object) -> None:
+    if not isinstance(impact, dict):
+        raise SystemExit("public_count_impact must be an object")
+    if set(impact) - {*EXPECTED_PUBLIC_COUNTS, "note"}:
+        raise SystemExit("public_count_impact contains an unexpected count category")
+    for metric, baseline in EXPECTED_PUBLIC_COUNTS.items():
+        row = impact.get(metric)
+        if not isinstance(row, dict) or set(row) != {"before", "after", "change"}:
+            raise SystemExit(f"public_count_impact {metric} requires before/after/change")
+        for field, expected in (("before", baseline), ("after", baseline), ("change", 0)):
+            if type(row[field]) is not int or row[field] != expected:
+                raise SystemExit(f"public_count_impact {metric}.{field} must equal {expected}")
+
+
+def record_metadata_digest(record: dict[str, object]) -> str:
+    """Bind validated metadata to its ID; this does not verify the observation."""
+    payload = json.dumps(record, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
 def load_checkpoint() -> dict[str, object]:
     if not CHECKPOINT_PATH.is_file():
         raise SystemExit("required checked-in audit checkpoint is missing")
@@ -218,12 +252,16 @@ def main() -> int:
     for gate in sorted(REQUIRED_FALSE_GATES):
         if gates.get(gate) is not False:
             raise SystemExit(f"{gate} gate must be false")
+    for gate in sorted(REQUIRED_TRUE_GATES):
+        if gates.get(gate) is not True:
+            raise SystemExit(f"{gate} gate must be true")
+    validate_public_count_impact(delta.get("public_count_impact"))
     scope = delta.get("scope", {})
     if scope.get("coverage") != "partial_manual":
         raise SystemExit("coverage must be marked partial_manual")
     expected_subreddit = scope.get("subreddit")
-    if not isinstance(expected_subreddit, str) or not expected_subreddit:
-        raise SystemExit("scope subreddit must be a non-empty string")
+    if expected_subreddit != EXPECTED_SUBREDDIT:
+        raise SystemExit(f"scope subreddit must be {EXPECTED_SUBREDDIT}")
 
     canonical_post_ids = load_canonical_post_ids()
 
@@ -235,6 +273,7 @@ def main() -> int:
     seen_ids: set[str] = set()
     seen_urls: set[str] = set()
     observed_fields: set[str] = set()
+    record_metadata_sha256: dict[str, str] = {}
 
     for record in records:
         fields = set(record)
@@ -249,6 +288,7 @@ def main() -> int:
             continue
         seen_ids.add(post_id)
         seen_urls.add(canonical_url)
+        record_metadata_sha256[post_id] = record_metadata_digest(record)
 
         if post_id in canonical_post_ids:
             already_present.append(post_id)
@@ -265,7 +305,7 @@ def main() -> int:
     status_counts = Counter(record["availability_status"] for record in records)
 
     result = {
-        "schema": "akashicnet.reddit.canonical-delta-import-2026-09-08.audit.v0.1",
+        "schema": "akashicnet.reddit.canonical-delta-import-2026-09-08.audit.v0.2",
         "source": "references/community/reddit-canonical-delta-import-2026-09-08.json",
         "status": "REDDIT_MANUAL_DELTA_2026_09_08_AUDITED",
         "candidates_reviewed": len(records),
@@ -277,6 +317,8 @@ def main() -> int:
         "unique_canonical_urls": len(seen_urls),
         "availability_status_counts": dict(sorted(status_counts.items())),
         "record_fields": sorted(observed_fields),
+        "record_metadata_sha256": dict(sorted(record_metadata_sha256.items())),
+        "subreddit": EXPECTED_SUBREDDIT,
         "coverage": "partial_manual",
         "public_count_promoted": False,
         "guardrails": {

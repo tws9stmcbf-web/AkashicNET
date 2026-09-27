@@ -2,7 +2,11 @@ import hashlib
 import json
 import subprocess
 import sys
+import io
+from contextlib import redirect_stdout
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -207,7 +211,114 @@ def test_reddit_canonical_delta_2026_09_08_sealed_2026_09_02_delta_untouched():
     )
 
 
+def _validate_mutated_delta(change):
+    delta = json.loads(validator.DELTA_PATH.read_text(encoding="utf-8"))
+    change(delta)
+    with TemporaryDirectory() as directory:
+        path = Path(directory) / "delta.json"
+        path.write_text(json.dumps(delta, ensure_ascii=False), encoding="utf-8")
+        with patch.object(validator, "DELTA_PATH", path), redirect_stdout(io.StringIO()) as output:
+            validator.main()
+        return json.loads(output.getvalue())
+
+
+def test_rejects_coordinated_subreddit_substitution():
+    for subreddit in ("DifferentSubreddit", " ", 123, None):
+        def change(delta):
+            delta["scope"]["subreddit"] = subreddit
+            for record in delta["records"]:
+                record["subreddit"] = subreddit
+                record["canonical_url"] = (
+                    f"https://www.reddit.com/r/{subreddit}/comments/{record['reddit_post_id']}/"
+                )
+        _assert_exception(SystemExit, lambda: _validate_mutated_delta(change), "scope subreddit")
+
+
+def test_requires_affirmative_acceptance_gates():
+    for gate in (
+        "direct_public_accessibility_at_observation", "historical_index_absence",
+        "unique_reddit_post_ids", "unique_canonical_urls",
+    ):
+        for value in (False, 1, None, "true"):
+            _assert_exception(
+                SystemExit,
+                lambda: _validate_mutated_delta(lambda d: d["gates"].__setitem__(gate, value)),
+                f"{gate} gate must be true",
+            )
+        _assert_exception(
+            SystemExit,
+            lambda: _validate_mutated_delta(lambda d: d["gates"].pop(gate)),
+            f"{gate} gate must be true",
+        )
+
+
+def test_requires_unchanged_public_count_contract():
+    for value in (None, [], {}):
+        _assert_exception(
+            SystemExit,
+            lambda: _validate_mutated_delta(lambda d: d.__setitem__("public_count_impact", value)),
+            "public_count_impact",
+        )
+    _assert_exception(
+        SystemExit,
+        lambda: _validate_mutated_delta(lambda d: d.pop("public_count_impact")),
+        "public_count_impact",
+    )
+    for metric in ("source_rows", "unified_index_records"):
+        _assert_exception(
+            SystemExit,
+            lambda: _validate_mutated_delta(lambda d: d["public_count_impact"].pop(metric)),
+            "public_count_impact",
+        )
+        for field in ("before", "after", "change"):
+            for value in (-1, 1, True, False, "0", None):
+                _assert_exception(
+                    SystemExit,
+                    lambda: _validate_mutated_delta(
+                        lambda d: d["public_count_impact"][metric].__setitem__(field, value)
+                    ),
+                    "public_count_impact",
+                )
+            _assert_exception(
+                SystemExit,
+                lambda: _validate_mutated_delta(lambda d: d["public_count_impact"][metric].pop(field)),
+                "public_count_impact",
+            )
+        def change_both(delta):
+            row = delta["public_count_impact"][metric]
+            row["before"] += 1
+            row["after"] += 1
+        _assert_exception(SystemExit, lambda: _validate_mutated_delta(change_both), "public_count_impact")
+
+
+def test_audit_binds_valid_metadata_to_record_ids():
+    def swap_titles(delta):
+        first, second = delta["records"][:2]
+        first["title"], second["title"] = second["title"], first["title"]
+    changes = [swap_titles]
+    for field, value in (
+        ("title", "Different syntactically valid title"),
+        ("created_utc", "2026-09-01T00:00:00.000Z"),
+        ("retrieved_at_utc", "2026-09-09"),
+    ):
+        changes.append(lambda d, field=field, value=value: d["records"][0].__setitem__(field, value))
+    for change in changes:
+        _assert_exception(SystemExit, lambda: _validate_mutated_delta(change), "audit differs")
+
+
+def test_audit_ignores_record_and_object_serialization_order():
+    original = _run()
+    def reorder(delta):
+        delta["records"] = [dict(reversed(list(record.items()))) for record in reversed(delta["records"])]
+    assert _validate_mutated_delta(reorder) == original
+
+
 if __name__ == "__main__":
+    test_rejects_coordinated_subreddit_substitution()
+    test_requires_affirmative_acceptance_gates()
+    test_requires_unchanged_public_count_contract()
+    test_audit_binds_valid_metadata_to_record_ids()
+    test_audit_ignores_record_and_object_serialization_order()
     test_reddit_canonical_delta_2026_09_08_all_candidates_accepted()
     test_reddit_canonical_delta_2026_09_08_field_allowlist()
     test_reddit_canonical_delta_2026_09_08_requires_every_allowed_field()

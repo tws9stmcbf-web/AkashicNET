@@ -39,10 +39,23 @@
     "subreddit",
     "title"
   ],
+  "record_metadata_sha256": {
+    "1w73h3c": "32ac0c42fbee662b361b623d592be7aba18bc9cc9cf1e71daa6baa72ccdd253b",
+    "1w74zae": "f425970f5226ead743d7b9824c4cf9dfc2bbf76f60c6be4f5c8037e9a79126f9",
+    "1w8660u": "06f68ad12a5394364b5ef973f8bd9394068c60d421de4f0e8f555eea512ade6d",
+    "1w8qkcy": "b9397512a6a649c6fc7ce1404d36e8acb22cd6ce711cc545cf1df6c1739595f6",
+    "1w8v885": "9c19523f396128f21518ea2fd6db76f856ea3c2d7e659ccbe80711aa32cd9ce9",
+    "1w8w5y5": "68ab71dd1a3b9acd9f25db6c0c291ddb0b08cf0ebb91cc77941e6347e18f12c6",
+    "1w92g5v": "b4705821f31e90c6cae1c537ea3ac7fa0ee7ac3e9ab55515e1845ad7d32a895e",
+    "1w9r4ck": "66c10c928d2fbbaa1a77e9418f8c9c5f976c2be848c10d4cb7564c866ca1c0b4",
+    "1w9vyai": "08c6d1ab40a3252a723fdb7327615b0daa5555085c00b3af40063f3ff8a34e11",
+    "1wa2p67": "c1847e2c8254b323cf921c50a2b3f2771cb2786a0945e75ca12b7e60c896dd37"
+  },
   "rejected": [],
-  "schema": "akashicnet.reddit.canonical-delta-import-2026-09-08.audit.v0.1",
+  "schema": "akashicnet.reddit.canonical-delta-import-2026-09-08.audit.v0.2",
   "source": "references/community/reddit-canonical-delta-import-2026-09-08.json",
   "status": "REDDIT_MANUAL_DELTA_2026_09_08_AUDITED",
+  "subreddit": "NeuronsToNirvana",
   "unique_canonical_urls": 10,
   "unique_reddit_post_ids": 10
 }
