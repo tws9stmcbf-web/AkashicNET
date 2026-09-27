@@ -1,5 +1,6 @@
 import { akashicOmniRelease } from "../lib/akashicomni-release";
 import PsyNationRadio from "./PsyNationRadio";
+import { NewsTicker } from "./NewsTicker";
 
 const principles = [
   { number: "01", title: "Evidence before certainty", text: "Claims remain traceable to sources, context and uncertainty. Similar words alone never become proof." },
@@ -151,6 +152,8 @@ export default function Home() {
         <p className="hero-note">Public portal · Protected corpus · Human-governed</p>
       </section>
 
+      <NewsTicker />
+
       <section className="latest-highlights" id="latest-highlights" aria-labelledby="latest-highlights-title">
         <div className="latest-highlights-heading">
           <div>
@@ -221,6 +224,8 @@ export default function Home() {
           <p><a className="text-link" href="/living-library-map">Explore the interactive Living Tree of Knowledge →</a></p>
         </div>
       </section>
+
+      <NewsTicker variant="archive" />
 
       <section className="statement" id="vision">
         <div><p className="section-label">01 · The vision</p><p className="side-note">A library that remembers its uncertainty.</p></div>
@@ -329,4 +334,5 @@ export default function Home() {
     </main>
   );
 }
+
 
