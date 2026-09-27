@@ -73,6 +73,19 @@ class PublicStatusTests(unittest.TestCase):
                 (self.root / status.MANIFEST).write_text(json.dumps(data))
                 with self.assertRaises(ValueError): status.check(self.root)
 
+    def test_manifest_candidate_iteration_matches_rendered_ordinal(self):
+        original = status.read_json(self.root / status.MANIFEST)
+        for value in (None, 3, True, 2.0, '2'):
+            with self.subTest(value=value):
+                data = copy.deepcopy(original)
+                if value is None:
+                    del data['candidate_iteration']
+                else:
+                    data['candidate_iteration'] = value
+                (self.root / status.MANIFEST).write_text(json.dumps(data))
+                with self.assertRaisesRegex(ValueError, 'candidate iteration'):
+                    status.check(self.root, write=True)
+
     def test_manifest_pending_release_requirements(self):
         original = status.read_json(self.root / status.MANIFEST)
         for key, values in (
