@@ -197,6 +197,12 @@ def branch_safety_texts(value: Any, digest_paths: dict[tuple, str],
             choices = prefixes | frozenset(prefix + key for prefix in prefixes)
             if len(choices) > 4096:
                 raise ValueError("privacy branch combination limit exceeded")
+            # These are reconstructed key paths, not prose values. Apply the
+            # same key denylist before appending leaf text to the candidates.
+            for candidate in choices:
+                normalized = re.sub(r"[^a-z0-9]", "", normalize_private_text(candidate))
+                if normalized in PRIVATE_METADATA_KEYS:
+                    raise ValueError("private metadata key path rejected")
             yield from branch_safety_texts(child, digest_paths, (*location, key), choices)
     elif isinstance(value, list):
         for index, child in enumerate(value):

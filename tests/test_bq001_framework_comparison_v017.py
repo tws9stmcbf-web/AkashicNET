@@ -17,6 +17,26 @@ SPEC.loader.exec_module(validator)
 
 
 class FrameworkComparisonValidationTests(unittest.TestCase):
+    def test_nested_metadata_key_paths_rejected(self):
+        for annotation in ({"drive": {"id": "private-object-123"}},
+                           {"drive": {"wrapper": {"file": {"id": "private-object-123"}}}},
+                           {"%64rive": [{"%69d": "private-object-123"}]}):
+            for full_validation in (False, True):
+                with self.subTest(annotation=annotation, full_validation=full_validation):
+                    if not full_validation:
+                        with self.assertRaisesRegex(ValueError, "private metadata key"):
+                            validator.scan_safety(annotation)
+                        continue
+                    schema = validator.load_json(validator.SCHEMA)
+                    schema["x-private-audit"] = annotation
+                    with tempfile.TemporaryDirectory() as directory:
+                        path = Path(directory) / "schema.json"
+                        path.write_text(json.dumps(schema), encoding="utf-8")
+                        with patch.object(validator, "SCHEMA", path):
+                            with self.assertRaisesRegex(ValueError, "private metadata key"):
+                                self.validate(self.packet)
+        validator.scan_safety({"public": {"identifier": "example"}})
+
     def test_multiple_key_layers_private_locator_rejected(self):
         variants = (
             {"drive.": {"wrapper": {"google.com": "/file/d/private"}}},
