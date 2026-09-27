@@ -5,6 +5,7 @@ on:
     paths:
       - "references/big-questions/BQ001/**"
       - "references/big-questions/architecture-v0.1.json"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
       - "scripts/build_public_safe_semantic_endpoint_registry_v019.py"
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
@@ -26,6 +27,7 @@ on:
     paths:
       - "references/big-questions/BQ001/**"
       - "references/big-questions/architecture-v0.1.json"
+      - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
       - "scripts/build_public_safe_semantic_endpoint_registry_v019.py"
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
@@ -82,3 +84,5 @@ jobs:
         run: python scripts/validate_bq001_batch6_review.py
       - name: Run Batch 6 promotion and domain drift tests
         run: python tests/test_bq001_batch6_review.py
+      - name: Check public-safe semantic endpoint registry freshness
+        run: python scripts/build_public_safe_semantic_endpoint_registry_v019.py --check
