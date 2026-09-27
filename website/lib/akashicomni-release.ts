@@ -1,7 +1,7 @@
 /** Current framework metadata; historical assessments retain their cited version. */
 export const akashicOmniRelease = {
-  version: "0.4.4",
-  anchor: "v0-4-4",
+  version: "0.4.5",
+  anchor: "v0-4-5",
   date: "27 September 2026",
   dateTime: "2026-09-27",
   status: "PRE-ALPHA",
@@ -14,5 +14,5 @@ export const akashicOmniRelease = {
     ["Preserve uncertainty", "Record missing information and relevant contrary evidence. An outcome signal expresses an assessment, not a truth score or permission to promote evidence."],
     ["Connect insight with action", "Explain what a proportionate, compassionate action could be and what observations would change the assessment. Keep the framework version and assessment date with the result."],
   ],
-  changeNote: "Clarifies the provenance of the v0.2.0 governance release following PR #315: governance was introduced to distinguish ordinary publications from method changes; no external framework or major post series prompted that release. This dated documentation patch changes no analytical method, evidence boundary or earlier result. Earlier assessments remain unaffected, unrecalculated and retain their original version and date. The proposed v0.5.0 claim-review capability remains unreleased.",
+  changeNote: "Clarifies EXPAND² as two review passes, DISCERN and DEEPEN, followed by a synthesis output; aligns the ACTC lens with its existing repository description of agency, context, temporal order and candidate causes; and distinguishes interpretive outcome labels from evidence ratings. Prompted by the 27 September cross-surface consistency audit, not an external framework or post series. This documentation patch adds no lens or capability and changes no evidence status or prior assessment. Earlier assessments retain their original version and date and are not recalculated. The proposed v0.5.0 claim-review capability remains unreleased.",
 } as const;
