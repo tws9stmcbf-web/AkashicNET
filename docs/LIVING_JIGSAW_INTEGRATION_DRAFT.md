@@ -1,6 +1,6 @@
 # Living Jigsaw · Human Review Stage 1
 
-**Status:** Thirty-one provisional working pieces: twenty-nine retained Jigsaw source questions represented by twenty-eight pieces after combining J39/J40, plus three approved additions G01–G03 · 27 September 2026  
+**Status:** Thirty-two provisional working pieces: thirty retained Jigsaw source questions represented by twenty-nine pieces after combining J39/J40, plus three approved additions G01–G03 · 27 September 2026  
 **Sources:** [Jigsaw of Life](https://akashicnet.org/jigsaw-of-life) and [HUMAN 2.0, 7 × 13 Flourishing Matrix](https://akashicnet.org/human-2#matrix)  
 **Working inventory:** [138-entry review page](https://akashicnet.org/jigsaw-of-life/review)
 
@@ -349,3 +349,37 @@ The human editor responded “Yes approve” to these three non-exclusive suppor
 **Rationale:** J22 asks whether exploration can remain open before a correct answer is required. J21 connects play with embodied movement and discovery, while J37 connects playful exploration with feedback and adaptation. M40 supplies an ADAPT × Self context without becoming an additional Jigsaw piece. The link is non-exclusive.
 
 **Current scope:** Thirty-one provisional working pieces = twenty-eight working pieces from twenty-nine retained original Jigsaw source questions, plus G01–G03. J39/J40 remains the only approved merger. G04/G05 remain supporting prompts. Matrix cells remain supporting contexts, and no final edition count is approved.
+
+## Human approval · Intrapersonal, Metacognitive and Bodily connections · 27 September 2026, 11:33 Europe/Berlin
+
+The human editor responded “Yes” to these three non-exclusive supporting connections.
+
+| Spectrum lens | Approved Jigsaw connection | Existing approved matrix context | Approved purpose |
+|---|---|---|---|
+| Intrapersonal | J01 SELF | M01 AWAKEN × Self | Explore personal experience and what we mean by “I”. |
+| Metacognitive | J37 ADAPT | M45 ADAPT × Resilience | Notice assumptions and thinking habits that feedback might change. |
+| Bodily | J14 Rest | M66 REGENERATE × Self | Notice bodily signals and conditions that support recovery. |
+
+**Distinction:** Bodily awareness concerns felt signals; the approved Kinesthetic connection concerns movement and coordination. Both may overlap. Each question can draw on several lenses.
+
+**Scope:** These three editorial connections add no pieces or new matrix mappings. Ten Spectrum–Jigsaw supporting connections are now approved. Preserve all existing questions, source identifiers, history and links. No exclusive equivalence, causal claim or scientific validation is implied. The total remains thirty-one provisional working pieces, including the separately approved J22 Play. The final edition count remains open.
+
+## Human approval · J23 Creativity · 27 September 2026, 11:39 Europe/Berlin
+
+| Source ID | Approved standalone question | Approved Jigsaw links | Approved supporting matrix context | Disposition |
+|---|---|---|---|---|
+| J23 Creativity | What new combination is worth trying? | J22 Play; J24 Living Spectrum; J37 ADAPT | M44 ADAPT × Intelligence | Keep unchanged; approve the non-exclusive supporting matrix link. |
+
+**Living Spectrum connection:** Creative / Imaginative supports experimentation with new combinations. This is a non-exclusive editorial connection, not a one-to-one equivalence or scientific validation of the taxonomy.
+
+**Rationale:** J23 asks which new combination is worth testing. J22 connects creativity with open exploration, J24 connects it with multiple ways of being and knowing, and J37 connects experimentation with feedback and adaptation. M44 supplies an ADAPT × Intelligence context without becoming an additional Jigsaw piece.
+
+**Current scope:** Thirty-two provisional working pieces = twenty-nine working pieces from thirty retained original Jigsaw source questions, plus G01–G03. J39/J40 remains the only approved merger. G04/G05 remain supporting prompts. Matrix cells and Spectrum lenses remain non-exclusive supporting contexts, and no final edition count is approved.
+
+## Repository and release boundaries
+
+This document records human editorial decisions for the Living Jigsaw review. It does not create accepted evidence-graph edges, validate the Living Spectrum taxonomy, promote matrix contexts into pieces, publish a final Living Jigsaw edition or authorize a website release. Editorial links, interpretive usefulness, personal meaning and diagrammatic proximity do not establish empirical support.
+
+Throughout the remaining review and any later implementation, all Big Questions remain `UNRESOLVED`, `supports_models=[]`, accepted canonical edges remain 0 and Reddit live access remains `HOLD`. Every privacy, evidence, rights, cultural-authority, publication and promotion gate remains closed. No automatic truth, scientific-evidence, rights, identity, safety/efficacy or publication promotion is permitted. Preserve sealed baselines, source identifiers, publication histories and separately governed framework versions.
+
+The Living Jigsaw review remains outside the minimum bounded AkashicNET v0.17 scope. Any prototype, public-page update, final count or release requires separate review and explicit human approval.
