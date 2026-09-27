@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BATCH = "references/big-questions/BQ001/evidence-batch6-review-candidates-v0.1.json"
+BATCH = "references/big-questions/BQ001/evidence-batch6-reincarnation-dream-memory-review-candidates-v0.1.json"
 OLD_BATCH = "references/big-questions/BQ001/evidence-batch6-v0.1.json"
 REQUIRED_FALSE_GUARDS = {
     "reports_or_associations_prove_reincarnation",

@@ -76,7 +76,7 @@ export default function BQ002Page() {
         <p style={{ maxWidth: 780, margin: "26px auto", color: "#c8c4bb", fontSize: "clamp(1.05rem, 2vw, 1.3rem)", lineHeight: 1.7 }}>
           We often notice a thought only after it has appeared. AkashicNET compares neural, psychological, embodied, contemplative and transpersonal accounts without treating mystery as proof.
         </p>
-        <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED</div>
+        <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED · DEEPENING · LEVEL 4/10</div>
       </section>
 
       <section style={{ ...shell, paddingBottom: 44 }}>
@@ -111,12 +111,12 @@ export default function BQ002Page() {
       <section style={{ ...shell, paddingTop: 34, paddingBottom: 34 }} aria-labelledby="profile-title">
         <div style={{ ...panel, borderColor: "rgba(159,216,255,.38)" }}>
           <p style={{ color: "#9fd8ff", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>PROVISIONAL EVIDENCE PROFILE</p>
-          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved · Deepening ↗</h2>
-          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>The neural and psychological construction of thought has substantial empirical support. Whether all thought is fully explained by those processes—and whether transpersonal information contributes—remains unresolved.</p>
+          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved · Deepening · Level 4/10</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>Level 4 means the inquiry has framed the question, mapped initial sources and separated major explanatory models. It measures completed research work, not truth probability or confidence in transpersonal claims. The neural and psychological construction of thought has substantial empirical support, while the complete origin of thought remains unresolved.</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: 12, marginTop: 22 }}>
             {[
               ["⚪", "Overall", "UNRESOLVED", "No complete origin theory is established."],
-              ["🩵", "Momentum", "DEEPENING ↗", "Methods for thought sampling and neural measurement continue to improve."],
+              ["🩵", "Momentum", "DEEPENING · LEVEL 4/10", "Advances toward Level 5 through a claim-by-claim evidence map with counter-sources and explicit gaps."],
               ["🟢", "Neural mechanisms", "SUBSTANTIAL", "Could deepen within the next quarter to 3 years through time-resolved studies."],
               ["🟠", "Transpersonal models", "SPECULATIVE", "Could move over years or decades only through distinctive, replicated predictions."],
             ].map(([icon, label, value, note]) => (

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "product_stage": "PUBLIC_BETA",
+  "sealed_baseline": {
+    "version": "v0.15",
+    "status": "SEALED_BASELINE"
+  },
+  "candidate": {
+    "version": "v0.16.0-beta.2",
+    "status": "GOVERNED_CANDIDATE",
+    "sealed": false
+  },
+  "site_checkpoint": {
+    "version": "v0.16.7",
+    "status": "SITE_CHECKPOINT",
+    "is_release": false
+  },
+  "target": {
+    "version": "v0.17.0",
+    "status": "NEXT_MINOR",
+    "released": false
+  },
+  "bq001": {
+    "status": "UNRESOLVED",
+    "accepted_edges": 0
+  },
+  "reddit_live_access": "HOLD",
+  "promotion_allowed": false
+}

@@ -1,0 +1,694 @@
+{
+  "schema_version": "0.2.1",
+  "mode": "REVIEW_PACKET_ONLY",
+  "relationship_semantics": "The source public label contains the target topic label as an exact normalized token sequence; this does not assert broader aboutness.",
+  "boundaries": {
+    "automated_truth_inference_allowed": false,
+    "automated_acceptance_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "circular_confidence_allowed": false,
+    "graph_derived_signals_allowed": false,
+    "transitive_inference_allowed": false,
+    "representation_count_signal_allowed": false,
+    "private_drive_metadata_allowed": false
+  },
+  "input": {
+    "artifact_id": "artifact:public-safe-semantic-endpoint-registry:0.1.9",
+    "repository_record": "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json",
+    "sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447",
+    "public_safe": true
+  },
+  "generation_policy": {
+    "method": "EXACT_NORMALIZED_TOKEN_SEQUENCE",
+    "minimum_single_token_length": 4,
+    "eligible_source_types": [
+      "EVIDENCE_RECORD",
+      "FRAMEWORK",
+      "PUBLICATION",
+      "QUESTION"
+    ],
+    "target_type": "TOPIC",
+    "maximum_candidates": 25,
+    "overflow_behavior": "FAIL_CLOSED"
+  },
+  "proposed_candidates": [
+    {
+      "candidate_id": "candidate:semantic:191f4ddea1a78d584166",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:framework:community-inquiry",
+        "endpoint_type": "FRAMEWORK",
+        "label": "Community Inquiry",
+        "provenance": {
+          "artifact_id": "artifact:reddit-n2n-test-batch-25:public",
+          "record_id": "framework:Community Inquiry",
+          "independence_key": "source:reddit-index:n2n-test-batch-25",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:community",
+        "endpoint_type": "TOPIC",
+        "label": "Community",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "community",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "community",
+        "source_token_start": 0,
+        "source_token_end_exclusive": 1,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:19c4d2c70c48b2d04cf2",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-koch-2016",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "Neural correlates of consciousness: progress and problems",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+          "record_id": "SRC-BQ001-KOCH-2016",
+          "independence_key": "source:evidence:src-bq001-koch-2016",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:consciousness",
+        "endpoint_type": "TOPIC",
+        "label": "Consciousness",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "consciousness",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "consciousness",
+        "source_token_start": 3,
+        "source_token_end_exclusive": 4,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:19ed7cfa6ce4b807d123",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-aware2-2023",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+          "record_id": "SRC-BQ001-AWARE2-2023",
+          "independence_key": "source:evidence:src-bq001-aware2-2023",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:consciousness",
+        "endpoint_type": "TOPIC",
+        "label": "Consciousness",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "consciousness",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "consciousness",
+        "source_token_start": 9,
+        "source_token_end_exclusive": 10,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:2f8eb01ad4363504a3b6",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-tucker-2025",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "What do the cases of the reincarnation type tell us about the mind beyond the brain?",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+          "record_id": "SRC-BQ001-TUCKER-2025",
+          "independence_key": "source:evidence:src-bq001-tucker-2025",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:brain",
+        "endpoint_type": "TOPIC",
+        "label": "Brain",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "brain",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "brain",
+        "source_token_start": 15,
+        "source_token_end_exclusive": 16,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:2fcd56322574a00eaec0",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-allan-2025",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "New methodological directions for involving children in past life memories research",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+          "record_id": "SRC-BQ001-ALLAN-2025",
+          "independence_key": "source:evidence:src-bq001-allan-2025",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:research",
+        "endpoint_type": "TOPIC",
+        "label": "Research",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "research",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "research",
+        "source_token_start": 10,
+        "source_token_end_exclusive": 11,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:303a33d87f51450a3896",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:drive-publication:agrippa-occult-001",
+        "endpoint_type": "PUBLICATION",
+        "label": "Agrippa Occult Philosophy",
+        "provenance": {
+          "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+          "record_id": "AGRIPPA-OCCULT-001",
+          "independence_key": "source:drive-public-seed:stage-b-v0.1",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:philosophy",
+        "endpoint_type": "TOPIC",
+        "label": "Philosophy",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "philosophy",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "philosophy",
+        "source_token_start": 2,
+        "source_token_end_exclusive": 3,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:4e4c9bc1887135c87694",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:drive-publication:bardon-qabbalah-001",
+        "endpoint_type": "PUBLICATION",
+        "label": "Key to the True Qabbalah",
+        "provenance": {
+          "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+          "record_id": "BARDON-QABBALAH-001",
+          "independence_key": "source:drive-public-seed:stage-b-v0.1",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:kabbalah",
+        "endpoint_type": "TOPIC",
+        "label": "Qabbalah",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "kabbalah",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "qabbalah",
+        "source_token_start": 4,
+        "source_token_end_exclusive": 5,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:854b34c6a3d870962d68",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-maschke-2024",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch1-scientific-baseline",
+          "record_id": "SRC-BQ001-MASCHKE-2024",
+          "independence_key": "source:evidence:src-bq001-maschke-2024",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:consciousness",
+        "endpoint_type": "TOPIC",
+        "label": "Consciousness",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "consciousness",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "consciousness",
+        "source_token_start": 10,
+        "source_token_end_exclusive": 11,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:a5b341fbd98fa340e86e",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:question:bq001",
+        "endpoint_type": "QUESTION",
+        "label": "Does consciousness continue beyond the individual?",
+        "provenance": {
+          "artifact_id": "artifact:big-question:bq001:public-synthesis",
+          "record_id": "references/big-questions/BQ001/public-synthesis-v0.1.json",
+          "independence_key": "source:big-question:bq001",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:consciousness",
+        "endpoint_type": "TOPIC",
+        "label": "Consciousness",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "consciousness",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "consciousness",
+        "source_token_start": 1,
+        "source_token_end_exclusive": 2,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:a81be86e8a6e9e54db71",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-xu-pnas-2023",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "Surge of neurophysiological coupling and connectivity of gamma oscillations in the dying human brain",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch5-supplemental-science",
+          "record_id": "SRC-BQ001-XU-PNAS-2023",
+          "independence_key": "source:evidence:src-bq001-xu-pnas-2023",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:brain",
+        "endpoint_type": "TOPIC",
+        "label": "Brain",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "brain",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "brain",
+        "source_token_start": 13,
+        "source_token_end_exclusive": 14,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:aa46dbe9d8c846958d27",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-sep-panpsychism",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "Panpsychism",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch4-contemplative-philosophy",
+          "record_id": "SRC-BQ001-SEP-PANPSYCHISM",
+          "independence_key": "source:evidence:src-bq001-sep-panpsychism",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:panpsychism",
+        "endpoint_type": "TOPIC",
+        "label": "Panpsychism",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "panpsychism",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "panpsychism",
+        "source_token_start": 0,
+        "source_token_end_exclusive": 1,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:c6743c1f49599d7a51d8",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-tucker-2025",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "What do the cases of the reincarnation type tell us about the mind beyond the brain?",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch3-reincarnation-methods",
+          "record_id": "SRC-BQ001-TUCKER-2025",
+          "independence_key": "source:evidence:src-bq001-tucker-2025",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:reincarnation",
+        "endpoint_type": "TOPIC",
+        "label": "Reincarnation",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "reincarnation",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "reincarnation",
+        "source_token_start": 6,
+        "source_token_end_exclusive": 7,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:f043c41f69968d5b6f41",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:drive-publication:modern-shamanism-001",
+        "endpoint_type": "PUBLICATION",
+        "label": "Techniques of Modern Shamanism",
+        "provenance": {
+          "artifact_id": "artifact:drive-knowledge-graph-seed:0.1",
+          "record_id": "MODERN-SHAMANISM-001",
+          "independence_key": "source:drive-public-seed:stage-b-v0.1",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:shamanism",
+        "endpoint_type": "TOPIC",
+        "label": "Shamanism",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "shamanism",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "shamanism",
+        "source_token_start": 3,
+        "source_token_end_exclusive": 4,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    },
+    {
+      "candidate_id": "candidate:semantic:fca9643adce7a4831b3b",
+      "relationship": "LABEL_CONTAINS_EXACT_TOPIC_TERM",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "source_endpoint": {
+        "endpoint_id": "endpoint:evidence:src-bq001-cogitate-2025",
+        "endpoint_type": "EVIDENCE_RECORD",
+        "label": "Adversarial testing of global neuronal workspace and integrated information theories of consciousness",
+        "provenance": {
+          "artifact_id": "artifact:big-question-evidence:bq001:bq001-batch5-supplemental-science",
+          "record_id": "SRC-BQ001-COGITATE-2025",
+          "independence_key": "source:evidence:src-bq001-cogitate-2025",
+          "public_safe": true
+        }
+      },
+      "target_topic": {
+        "endpoint_id": "endpoint:topic:consciousness",
+        "endpoint_type": "TOPIC",
+        "label": "Consciousness",
+        "provenance": {
+          "artifact_id": "artifact:topic-census:0.7.5",
+          "record_id": "consciousness",
+          "independence_key": "source:topic-census:public-metadata-v0.7.5",
+          "public_safe": true
+        }
+      },
+      "anchor_evidence": {
+        "anchor_type": "EXACT_WHOLE_TERM",
+        "normalized_topic": "consciousness",
+        "source_token_start": 11,
+        "source_token_end_exclusive": 12,
+        "registry_sha256": "7352161f97013c1725f0710173217673cc735225f52850b7a53595cb33ba5447"
+      },
+      "signal_controls": {
+        "graph_derived": false,
+        "transitive_inference": false,
+        "representation_count_used": false,
+        "confidence_aggregation": false
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true,
+      "not_canonical_identity": true
+    }
+  ],
+  "accepted_edges": [],
+  "summary": {
+    "candidate_count": 14,
+    "counts_by_source_type": {
+      "EVIDENCE_RECORD": 9,
+      "FRAMEWORK": 1,
+      "PUBLICATION": 3,
+      "QUESTION": 1
+    },
+    "accepted_edges": 0,
+    "human_review_required": true
+  }
+}
