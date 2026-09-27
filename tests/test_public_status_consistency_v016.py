@@ -42,7 +42,7 @@ class PublicStatusTests(unittest.TestCase):
         changes = [
             lambda d: d['candidate'].update(sealed=True),
             lambda d: d['site_checkpoint'].update(is_release=True),
-            lambda d: d['target'].update(released=True),
+            lambda d: d['target']['github_release'].update(prerelease=False),
             lambda d: d['bq001'].update(status='RESOLVED'),
             lambda d: d['bq001'].update(accepted_edges=1),
             lambda d: d.update(reddit_live_access='LIVE'),
@@ -50,6 +50,34 @@ class PublicStatusTests(unittest.TestCase):
         ]
         for change in changes:
             with self.subTest(change=change): self.mutate_data(change)
+
+    def test_readiness_and_publication_are_independently_pinned(self):
+        for field in ('readiness', 'github_release'):
+            for key in status.EXPECTED['target'][field]:
+                with self.subTest(field=field, key=key, mutation='delete'):
+                    self.mutate_data(lambda d: d['target'][field].pop(key))
+                with self.subTest(field=field, key=key, mutation='contradict'):
+                    self.mutate_data(lambda d: d['target'][field].update({key: 'unverified'}))
+        for change in (
+            lambda d: d['target'].update(status='NEXT_MINOR'),
+            lambda d: d['target'].update(released=False),
+            lambda d: d['target'].pop('readiness'),
+            lambda d: d['target'].pop('github_release'),
+            lambda d: d['target']['readiness'].update(commit='2ab380827fd0ac0a1f89484867e10c26977a7c86'),
+            lambda d: d['target']['github_release'].update(prerelease=1),
+        ):
+            self.mutate_data(change)
+
+    def test_rendered_readiness_does_not_approve_main_or_deployment(self):
+        page = status.render(self.root)['website/app/development-progress/page.tsx']
+        for text in ('06:01:56 Europe/Berlin', '06:06:55 Europe/Berlin',
+                     'Approval does not extend to later main changes.',
+                     'GitHub publication does not establish website deployment.',
+                     status.EXPECTED['target']['readiness']['commit'],
+                     status.EXPECTED['target']['github_release']['url']):
+            self.assertIn(text, page)
+        self.assertNotIn('progress toward v0.17.0', page)
+        self.assertNotIn('NEXT MINOR', page)
 
     def test_types_unknown_fields_and_missing_fields_fail(self):
         for change in (lambda d: d['candidate'].update(sealed=0),
@@ -122,7 +150,7 @@ class PublicStatusTests(unittest.TestCase):
         for output in status.SURFACES:
             with self.subTest(output=output):
                 path = self.root / output; old = path.read_text()
-                path.write_text(old.replace('governed candidate', 'sealed release').replace('GOVERNED CANDIDATE', 'SEALED RELEASE'))
+                path.write_text(old.replace('READY', 'STABLE RELEASE'))
                 with self.assertRaisesRegex(ValueError, 'surface drift'): status.check(self.root)
                 path.write_text(old)
 
@@ -155,3 +183,4 @@ class PublicStatusTests(unittest.TestCase):
         self.assertFalse(status.read_json(self.root / status.DATA)['site_checkpoint']['is_release'])
 
 if __name__ == '__main__': unittest.main()
+

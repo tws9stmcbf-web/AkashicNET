@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Development Progress | AkashicNET",
-  description: "A transparent distinction between sealed AkashicNET releases, development checkpoints and the path toward v0.17.",
+  description: "A transparent distinction between pinned v0.17.0 readiness, GitHub prerelease publication and historical development checkpoints.",
 };
 
 const panel = {
@@ -39,10 +39,10 @@ export default function DevelopmentProgressPage() {
       </header>
 
       <section style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "clamp(84px,12vw,150px) 0 54px" }}>
-        <p className="section-label">PUBLIC DEVELOPMENT RECORD · 15 SEPTEMBER 2026</p>
+        <p className="section-label">PUBLIC DEVELOPMENT RECORD · 27 SEPTEMBER 2026</p>
         <h1 style={{ fontFamily: "var(--font-display,serif)", fontSize: "clamp(3.2rem,9vw,7.8rem)", lineHeight: .88, margin: "20px 0 28px" }}>Progress,<br/><em style={{ color: "#e7cd7e" }}>without pretence.</em></h1>
         <p style={{ maxWidth: 780, color: "#cbd0dd", fontSize: "clamp(1.05rem,2vw,1.35rem)", lineHeight: 1.75 }}>@@PROGRESS_INTRO@@</p>
-        <aside style={{ ...panel, marginTop: 34 }}><strong style={{ color: "#f1d47b" }}>Naming rule</strong><p style={{ color: "#b7bfce", lineHeight: 1.7, marginBottom: 0 }}><code>beta.1 → beta.2</code> advances the prerelease candidate. A plus sign denotes build metadata. Site checkpoints and page-iteration counts remain separate from governed release numbers. <a href="https://github.com/tws9stmcbf-web/AkashicNET/blob/main/manifests/v0.16-release-candidate.json" style={{ color: "#f1d47b" }}>Inspect the governed candidate record ↗</a></p></aside>
+        <aside style={{ ...panel, marginTop: 34 }}><strong style={{ color: "#f1d47b" }}>Naming rule</strong><p style={{ color: "#b7bfce", lineHeight: 1.7, marginBottom: 0 }}><code>beta.1 → beta.2</code> advances the prerelease candidate. A plus sign denotes build metadata. Site checkpoints and page-iteration counts remain separate from governed release numbers. <a href="https://github.com/tws9stmcbf-web/AkashicNET/blob/main/manifests/v0.16-release-candidate.json" style={{ color: "#f1d47b" }}>Inspect the historical v0.16 candidate record ↗</a></p></aside>
       </section>
 
       <section id="status" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0" }}>
@@ -59,7 +59,7 @@ export default function DevelopmentProgressPage() {
       </section>
 
       <section id="gates" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0 90px" }}>
-        <p className="section-label">03 · BEFORE v0.17</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Completion must be earned.</h2>
+        <p className="section-label">03 · EXACT-COMMIT READINESS GATES</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Approval stays with the reviewed commit.</h2>
         <div style={panel}><ol style={{ color: "#cbd0dd", lineHeight: 1.8, paddingLeft: 22 }}>{gates.map(gate=><li key={gate} style={{ marginBottom: 12 }}>{gate}</li>)}</ol></div>
         <aside style={{ marginTop: 24, borderLeft: "3px solid #e7cd7e", padding: "4px 0 4px 22px", color: "#b7bfce", lineHeight: 1.75 }}><strong style={{ color: "#f1d47b" }}>Boundary:</strong> version progress measures engineering and publication readiness. It does not measure truth, spiritual validity, scientific confirmation, safety, rights clearance or certainty.</aside>
         <div style={{ marginTop: 34, display: "flex", flexWrap: "wrap", gap: 14 }}><a className="primary-link" href="https://github.com/tws9stmcbf-web/AkashicNET">Inspect the public repository <span>↗</span></a><a className="text-link" href="/">Return home →</a></div>
@@ -69,4 +69,5 @@ export default function DevelopmentProgressPage() {
     </main>
   );
 }
+
 

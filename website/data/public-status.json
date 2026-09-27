@@ -17,8 +17,22 @@
   },
   "target": {
     "version": "v0.17.0",
-    "status": "NEXT_MINOR",
-    "released": false
+    "status": "READY",
+    "released": true,
+    "readiness": {
+      "commit": "677abddc472322621adf54697ac31c383be3b3c3",
+      "approved_at": "2026-09-27T06:01:56+02:00",
+      "issue_url": "https://github.com/tws9stmcbf-web/AkashicNET/issues/295",
+      "scope": "BOUNDED_REVIEW_ONLY"
+    },
+    "github_release": {
+      "id": 397503809,
+      "tag": "v0.17.0",
+      "commit": "677abddc472322621adf54697ac31c383be3b3c3",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/releases/tag/v0.17.0",
+      "published_at": "2026-09-27T04:06:55Z",
+      "prerelease": true
+    }
   },
   "bq001": {
     "status": "UNRESOLVED",

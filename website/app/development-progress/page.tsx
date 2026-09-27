@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Development Progress | AkashicNET",
-  description: "A transparent distinction between sealed AkashicNET releases, development checkpoints and the path toward v0.17.",
+  description: "A transparent distinction between pinned v0.17.0 readiness, GitHub prerelease publication and historical development checkpoints.",
 };
 
 const panel = {
@@ -14,10 +14,26 @@ const panel = {
 } as const;
 
 const checkpoints = [
-  ["v0.15", "SEALED BASELINE", "Public Sync & Observability Beta. Immutable release evidence remains governed by its exact commit and manifest."],
-  ["v0.16.0-beta.2", "GOVERNED CANDIDATE", "The second prerelease candidate, registered in the governed release-candidate manifest. Validation and exact-head review remain required; this is not a sealed release."],
-  ["v0.16.7", "SITE CHECKPOINT", "A presentation and integration marker. It is not a release, a percentage, or a claim that seven formal patch releases occurred."],
-  ["v0.17.0", "NEXT MINOR", "Reached only after intended scope, executable exact-head checks, review closure and release-integrity verification."],
+  [
+    "v0.15",
+    "SEALED BASELINE",
+    "Public Sync & Observability Beta. Immutable release evidence remains governed by its exact commit and manifest."
+  ],
+  [
+    "v0.16.0-beta.2",
+    "HISTORICAL GOVERNED CANDIDATE",
+    "The second v0.16 prerelease candidate remains recorded in its unchanged governed manifest; this is not a sealed release."
+  ],
+  [
+    "v0.16.7",
+    "SITE CHECKPOINT",
+    "A presentation and integration marker. It is not a release, a percentage, or a claim that seven formal patch releases occurred."
+  ],
+  [
+    "v0.17.0",
+    "READY / GITHUB PRERELEASE PUBLISHED",
+    "Evidence Intelligence Beta. Bounded review-only readiness and GitHub publication are separate records for exact commit 677abddc472322621adf54697ac31c383be3b3c3. Neither approves later main changes or establishes website deployment."
+  ]
 ];
 
 const changes = [
@@ -45,10 +61,10 @@ export default function DevelopmentProgressPage() {
       </header>
 
       <section style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "clamp(84px,12vw,150px) 0 54px" }}>
-        <p className="section-label">PUBLIC DEVELOPMENT RECORD · 15 SEPTEMBER 2026</p>
+        <p className="section-label">PUBLIC DEVELOPMENT RECORD · 27 SEPTEMBER 2026</p>
         <h1 style={{ fontFamily: "var(--font-display,serif)", fontSize: "clamp(3.2rem,9vw,7.8rem)", lineHeight: .88, margin: "20px 0 28px" }}>Progress,<br/><em style={{ color: "#e7cd7e" }}>without pretence.</em></h1>
-        <p style={{ maxWidth: 780, color: "#cbd0dd", fontSize: "clamp(1.05rem,2vw,1.35rem)", lineHeight: 1.75 }}>AkashicNET distinguishes an immutable sealed release from an active development checkpoint. The governed candidate is <strong style={{ color: "#f1d47b" }}>v0.16.0-beta.2</strong>. The separate <strong style={{ color: "#f1d47b" }}>v0.16.7 site checkpoint</strong> records presentation and integration progress toward v0.17.0.</p>
-        <aside style={{ ...panel, marginTop: 34 }}><strong style={{ color: "#f1d47b" }}>Naming rule</strong><p style={{ color: "#b7bfce", lineHeight: 1.7, marginBottom: 0 }}><code>beta.1 → beta.2</code> advances the prerelease candidate. A plus sign denotes build metadata. Site checkpoints and page-iteration counts remain separate from governed release numbers. <a href="https://github.com/tws9stmcbf-web/AkashicNET/blob/main/manifests/v0.16-release-candidate.json" style={{ color: "#f1d47b" }}>Inspect the governed candidate record ↗</a></p></aside>
+        <p style={{ maxWidth: 780, color: "#cbd0dd", fontSize: "clamp(1.05rem,2vw,1.35rem)", lineHeight: 1.75 }}>v0.17.0 Evidence Intelligence Beta is READY for bounded review-only use at <code>677abddc472322621adf54697ac31c383be3b3c3</code>. <a href="https://github.com/tws9stmcbf-web/AkashicNET/issues/295">Owner readiness approval</a>: <time dateTime="2026-09-27T06:01:56+02:00">27 September 2026 at 06:01:56 Europe/Berlin</time>. The separate <a href="https://github.com/tws9stmcbf-web/AkashicNET/releases/tag/v0.17.0">GitHub prerelease</a> was published at <time dateTime="2026-09-27T04:06:55Z">06:06:55 Europe/Berlin</time> on the same date, and its tag points to that same commit. Approval does not extend to later main changes. GitHub publication does not establish website deployment. The v0.16.0-beta.2 governed candidate and v0.16.7 site checkpoint remain historical records.</p>
+        <aside style={{ ...panel, marginTop: 34 }}><strong style={{ color: "#f1d47b" }}>Naming rule</strong><p style={{ color: "#b7bfce", lineHeight: 1.7, marginBottom: 0 }}><code>beta.1 → beta.2</code> advances the prerelease candidate. A plus sign denotes build metadata. Site checkpoints and page-iteration counts remain separate from governed release numbers. <a href="https://github.com/tws9stmcbf-web/AkashicNET/blob/main/manifests/v0.16-release-candidate.json" style={{ color: "#f1d47b" }}>Inspect the historical v0.16 candidate record ↗</a></p></aside>
       </section>
 
       <section id="status" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0" }}>
@@ -65,7 +81,7 @@ export default function DevelopmentProgressPage() {
       </section>
 
       <section id="gates" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0 90px" }}>
-        <p className="section-label">03 · BEFORE v0.17</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Completion must be earned.</h2>
+        <p className="section-label">03 · EXACT-COMMIT READINESS GATES</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Approval stays with the reviewed commit.</h2>
         <div style={panel}><ol style={{ color: "#cbd0dd", lineHeight: 1.8, paddingLeft: 22 }}>{gates.map(gate=><li key={gate} style={{ marginBottom: 12 }}>{gate}</li>)}</ol></div>
         <aside style={{ marginTop: 24, borderLeft: "3px solid #e7cd7e", padding: "4px 0 4px 22px", color: "#b7bfce", lineHeight: 1.75 }}><strong style={{ color: "#f1d47b" }}>Boundary:</strong> version progress measures engineering and publication readiness. It does not measure truth, spiritual validity, scientific confirmation, safety, rights clearance or certainty.</aside>
         <div style={{ marginTop: 34, display: "flex", flexWrap: "wrap", gap: 14 }}><a className="primary-link" href="https://github.com/tws9stmcbf-web/AkashicNET">Inspect the public repository <span>↗</span></a><a className="text-link" href="/">Return home →</a></div>
@@ -75,4 +91,5 @@ export default function DevelopmentProgressPage() {
     </main>
   );
 }
+
 
