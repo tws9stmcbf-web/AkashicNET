@@ -145,8 +145,12 @@ This is not 132 eligible arrests. The number of `ALL_ELIGIBLE_EVENTS` required d
 
 Stage 2 must use a dual stopping boundary fixed before recruitment:
 
-- stop accrual when the frozen unique-participant information target (at least 132 unique `TARGET_EXPOSED` participants) is reached; repeated events never increment this count; or
+- stop accrual when the frozen unique-participant information target (at least 132 unique `TARGET_EXPOSED` participants) is reached using the verified linkage count below; repeated events never increment this count; or
 - stop at the earlier maximum eligible-event count or calendar date derived from Stage-1 yield and ethics review.
+
+Before a record first increments the live stopping count, an authorized linkage custodian MUST verify its participant linkage and deduplicate repeated arrests, transfers and duplicate records across all participating sites under a prospectively frozen, lawful pseudonymous linkage procedure. Site-local IDs alone do not establish study-wide uniqueness. Unresolved or unverifiable linkage contributes zero to this count, without removing any eligible event from the ledger or changing its analysis-population status solely for that reason.
+
+Before every information-target stopping decision, recompute the count from the current verified participant groups and retain a dated linkage-verification receipt and count snapshot under institutional custody. Each verified participant group with at least one `TARGET_EXPOSED` event contributes at most one; known duplicates contribute no additional units. A challenged verification is withdrawn from the count until resolved. Database-lock reconciliation remains an additional audit and MUST NOT substitute for these pre-count and pre-stop checks. Accrual staff receive only authorized blinded count/verification status, not direct identifiers, linkage keys, target truth or correspondence scores. AkashicNET receives no participant-level data. If lawful cross-site linkage or verification cannot be completed, the information target cannot be declared met; ethical count/date caps still apply. Later discovery that a stopped cohort falls below target is reported as an information shortfall for independent review, never silently repaired by outcome-informed accrual extension.
 
 Reaching the ethical count/date cap below the information target is an underpowered/infeasible stop, not information-target attainment. All eligible events accrued before stopping remain in the ledger. Accrual staff and oversight bodies must remain blinded to correspondence outcomes. There is no early stopping for efficacy or futility based on correspondence scores.
 

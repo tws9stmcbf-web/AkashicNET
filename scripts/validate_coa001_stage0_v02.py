@@ -178,6 +178,14 @@ def validate(document: Any, study_dir: Path) -> None:
         "freeze_before_recruitment": "blinded_stage_1_simulation_of_participant_weighted_endpoint_and_independent_review",
         "repeated_events_increment_count": False,
         "ethical_cap_stop_below_target": "UNDERPOWERED_OR_INFEASIBLE_NOT_INFORMATION_TARGET_MET",
+        'linkage_verified_before_first_count': True,
+        'linkage_scope': 'all_participating_sites_repeated_arrests_transfers_and_duplicates',
+        'unresolved_or_challenged_linkage_contributes': 0,
+        'count_refresh': 'recompute_current_verified_participant_groups_before_every_information_target_stop',
+        'verification_evidence': 'dated_custodian_linkage_receipt_and_count_snapshot',
+        'unresolved_linkage_retained_in_event_ledger': True,
+        'linkage_privacy': 'approved_lawful_pseudonymous_procedure_no_participant_data_to_AkashicNET',
+        'post_stop_linkage_shortfall': 'report_for_independent_review_no_outcome_informed_accrual_extension',
     }.items():
         require(document, f"{stopping}/{key}", value)
     require(document, "operating_characteristics/calculation_unit",

@@ -80,7 +80,7 @@ Every eligible event receives explicit machine-readable values, including `UNKNO
 - Each eligible event remains a distinct participant-event scoring unit; analyses account for repeated events through participant clustering.
 - Multiple claims or target epochs are aggregated by the frozen scoring rule before participant-level inference.
 - The analysis may not select the most accurate claim, epoch or interview after unblinding.
-- Cross-site transfers and duplicate records are reconciled through a pseudonymous linkage process before database lock.
+- Cross-site transfers, repeated arrests and duplicate records MUST be reconciled through the approved pseudonymous linkage process across all participating sites before a participant first increments the live Stage-2 stopping count, and rechecked before every information-target stopping decision. Database-lock reconciliation is an additional audit, not the first deduplication step. Unresolved linkage contributes zero to the stopping count while every eligible event remains in its applicable flow denominators; linkage uncertainty is not an event exclusion.
 
 Interrupted/resumed sessions require a prospectively frozen maximum interruption/window rule and intervening-exposure audit. Resume only under approved readiness and continuing consent. Until those rules are frozen, the relevant workflow remains blocked. If no interview completes in the window, record no primary completion; do not silently designate an out-of-window replacement.
 

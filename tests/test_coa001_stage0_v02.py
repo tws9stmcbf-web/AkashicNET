@@ -48,6 +48,30 @@ class StageZeroRegressionTests(unittest.TestCase):
                 self.reject(key)
                 rule[key] = original
 
+    def test_linkage_must_be_verified_before_live_count_and_stop(self):
+        rule = self.document["statistical_analysis_plan"]["accrual_stopping_rule"]
+        for key, value in [
+            ("linkage_verified_before_first_count", False),
+            ("linkage_scope", "site_local_only"),
+            ("unresolved_or_challenged_linkage_contributes", 1),
+            ("unresolved_or_challenged_linkage_contributes", False),
+            ("count_refresh", "deduplicate_at_database_lock_only"),
+            ("verification_evidence", "none"),
+            ("unresolved_linkage_retained_in_event_ledger", False),
+            ("linkage_privacy", "send_identifiers_to_AkashicNET"),
+            ("post_stop_linkage_shortfall", "extend_after_outcome_review"),
+        ]:
+            with self.subTest(key=key, value=value):
+                original = rule[key]
+                rule[key] = value
+                self.reject(key)
+                rule[key] = original
+        guard.validate(self.document, self.study)
+
+    def test_missing_linkage_verification_rule_is_rejected(self):
+        del self.document["statistical_analysis_plan"]["accrual_stopping_rule"]["linkage_verified_before_first_count"]
+        self.reject("linkage_verified_before_first_count")
+
     def test_primary_target_and_simulation_units_cannot_drift(self):
         self.document["stage_2_primary_hypothesis"]["information_target_unit"] = "participant_event"
         self.reject("information_target_unit")
