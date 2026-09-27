@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests/v0.16-release-candidate.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
-EXPECTED_BASE_COMMIT = "28f144b215ab3b00189da31bb6e22b71b73604ad"
+EXPECTED_BASE_COMMIT = "5fb99152524b57948aa10662a1467944fea706c6"
 
 EXPECTED_BASELINES = {
     "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
