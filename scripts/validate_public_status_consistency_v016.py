@@ -58,8 +58,8 @@ product_status = re.compile(
     r"[ \t·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
     r"(?:Pre-alpha|Public Beta)[ \t·:–—-]*AkashicNET\b|"
     r"\bv\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?[ \t]+(?:is[ \t]+)?"
-    r"(?:AkashicNET(?:'s)?[ \t]+(?:current[ \t]+)?version\b|"
-    r"(?:the[ \t]+)?(?:current[ \t]+)?version[ \t]+of[ \t]+AkashicNET\b)",
+    r"(?:AkashicNET(?:'s)?[ \t]+(?:current[ \t]+)?(?:product[ \t]+)?version\b|"
+    r"(?:the[ \t]+)?(?:current[ \t]+)?(?:product[ \t]+)?version[ \t]+of[ \t]+AkashicNET\b)",
     re.IGNORECASE,
 )
 pre_alpha = re.compile(
@@ -118,7 +118,8 @@ release_claim = re.compile(
 # Mask only a directly qualified pending release noun phrase. A later shipped
 # or released predicate must still be checked, and BQ001 uses no pending barrier.
 release_text = re.sub(
-    r"\b(?:pending|awaiting)[ \t]+(?:a[ \t]+)?(?:sealed[ \t]+)?release\b",
+    r"\b(?:pending|awaiting)[ \t]+(?:(?:a|the|its)[ \t]+)?"
+    r"(?:(?:final|official|public|sealed)[ \t]+){0,3}release\b",
     "pendingevent", status_text(home + "\n" + progress), flags=re.IGNORECASE,
 )
 if release_claim.search(release_text):
@@ -141,7 +142,8 @@ reverse_claim = re.compile(
 block_text = re.sub(r"</?(?:p|div|li|h[1-6])\b[^>]*>", "\n", home + "\n" + progress)
 for clause in re.split(r"[\n;!?]|\.(?=\s)", status_text(block_text)):
     for match in reverse_claim.finditer(clause):
-        if not re.search(r"\b" + negative_words + r"(?:[ \t]+yet)?[ \t]+$",
+        if not re.search(r"\b" + negative_words
+                         + r"(?:[ \t]+(?:yet|officially|publicly|formally|definitively)){0,3}[ \t]+$",
                          clause[:match.start()], re.IGNORECASE):
             fail("predicate-first status contradicts unreleased/BQ001 boundaries")
 

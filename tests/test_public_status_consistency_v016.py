@@ -56,6 +56,33 @@ class CurrentPublicStatusTests(unittest.TestCase):
     def test_version_first_product_last_label_rejected(self):
         self.assert_rejected(extra="<p>v0.16.7 is the current version of AkashicNET</p>")
 
+    def test_qualified_pending_release_passes(self):
+        for phrase in ("pending final release", "awaiting its release",
+                       "pending the final sealed release"):
+            with self.subTest(phrase=phrase):
+                result = self.run_case(progress=lambda text:
+                    text + f"<p>v0.16.7 is {phrase}</p>")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assert_rejected(progress=lambda text:
+                    text + f"<p>v0.16.7 is {phrase} and is now shipped</p>")
+
+    def test_negated_reverse_predicate_adverbs_pass(self):
+        for claim in ("Not officially shipped v0.16.7",
+                      "Not yet officially shipped v0.16.7",
+                      "Never publicly released v0.16.7",
+                      "Not definitively RESOLVED: BQ001"):
+            with self.subTest(claim=claim):
+                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
+                self.assertEqual(result.returncode, 0, result.stderr)
+        self.assert_rejected(progress=lambda text:
+            text + "<p>Not officially disputed: RESOLVED: BQ001</p>")
+
+    def test_product_qualified_reverse_version_labels_rejected(self):
+        for label in ("v0.16.7 is the current product version of AkashicNET",
+                      "v0.16.7 is AkashicNET's current product version"):
+            with self.subTest(label=label):
+                self.assert_rejected(extra=f"<p>{label}</p>")
+
     def test_current_copy_and_independent_framework_versions_pass(self):
         result = self.run_case(extra=(
             '<p>AkashicNET analysis: METAD v2.1, ACTC v2.0, UMASC v7.2</p>'
