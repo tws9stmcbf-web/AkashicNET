@@ -10,7 +10,7 @@ Integration base: `645cffad768e2591638c46934bc96555ad6abc40`, after the authoriz
 The combined workflow runs without path filters and checks out the exact PR head
 (or push commit), records that SHA, and requires the integration base and inherited
 v0.16 readiness pin `4867ca7c8c9a4e1bc139f630815ecf49c79a2ef7` as ancestors.
-It runs inherited candidate validation, sealed/public status validation, inventory
+It runs inherited manifest/blob validation and all candidate dependency tests,\nsealed/public status validation, inventory
 and comparison validators with Git checks, mutation tests, and semantic-candidate
 replay with the historical v0.2.0 byte guard. Tracked files must remain unchanged.
 
@@ -32,3 +32,13 @@ BQ001 remains UNRESOLVED / Never Final, accepted canonical edges remain 0,
 Reddit live access remains HOLD, and all privacy/evidence/rights/publication/
 promotion boundaries stay closed. Sealed v0.14/v0.15 references are not retargeted.
 No release tag, publication, ingestion, analytics or multimedia action is authorized.
+
+## Historical repository binding
+
+The v0.16 CLI requires origin/main to equal its historical candidate base
+`5fb99152524b57948aa10662a1467944fea706c6`. Running that CLI on a forward v0.17
+branch fails by design. This workflow calls its unchanged validate_manifest and
+run_dependencies functions, preserving manifest values, artifact hashes and all
+mutation tests. It does not retarget any Git ref or alter the historical validator.
+The v0.17 exact checkout and integration/inherited ancestry checks above replace
+that obsolete repository-position assumption for this forward candidate only.

@@ -36,7 +36,14 @@ jobs:
         env:
           CANDIDATE_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
-          python scripts/validate_v016_release_candidate.py
+          python - <<'PY'
+          import json
+          from scripts.validate_v016_release_candidate import MANIFEST, validate_manifest, run_dependencies
+          errors = validate_manifest(json.loads(MANIFEST.read_text(encoding="utf-8")))
+          if errors:
+              raise SystemExit("Inherited manifest validation failed: " + ", ".join(errors))
+          run_dependencies()
+          PY
           python scripts/validate_public_status_consistency_v015.py
       - name: Validate typed public status and mutation cases
         run: |
