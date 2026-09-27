@@ -1,12 +1,11 @@
 {
   "batch_id": "BQ001-BATCH6-REINCARNATION-DREAM-MEMORY",
   "version": "0.1.0",
-  "status": "CANONICAL_REVIEW",
+  "status": "REVIEW_CANDIDATE",
   "question_id": "BQ001",
   "question_status": "UNRESOLVED",
   "assessed_on": "2026-09-14",
   "scope": "reincarnation_reports_xenoglossy_follow_up_dream_memory_and_regression_method_boundaries",
-  "public_route": "https://akashicnet.org/akashictimeless",
   "evidence_boundary": "Reports and statistical patterns are established as observations in the cited datasets; reincarnation and transferred memory are not established mechanisms.",
   "sources": [
     {
@@ -103,7 +102,7 @@
       "claim_id": "CLAIM-BQ001-SADEGHI-2026-OBS-01",
       "claim_type": "OBSERVATION",
       "text": "A database analysis of 1,678 purported past-life-memory cases reported an association between unexpectedness of death and a shorter intermission before the child's birth.",
-      "domain": "reincarnation_case_literature",
+      "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Established Evidence",
       "source_ids": [
         "SRC-BQ001-SADEGHI-2026-TEMPORAL"
@@ -121,7 +120,7 @@
       "claim_id": "CLAIM-BQ001-COZZOLINO-2025-OBS-01",
       "claim_type": "OBSERVATION",
       "text": "A retrospective comparison reported associations between xenoglossy coding and selected characteristics in purported past-life-memory cases.",
-      "domain": "reincarnation_case_literature",
+      "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Established Evidence",
       "source_ids": [
         "SRC-BQ001-COZZOLINO-2025-XENOGLOSSY"
@@ -139,7 +138,7 @@
       "claim_id": "CLAIM-BQ001-PEHLIVANOVA-2024-OBS-01",
       "claim_type": "OBSERVATION",
       "text": "A follow-up study examined later wellbeing and perceived impact in 23 American adults first interviewed about purported past-life memories as children.",
-      "domain": "reincarnation_case_literature",
+      "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Established Evidence",
       "source_ids": [
         "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP"
@@ -157,7 +156,7 @@
       "claim_id": "CLAIM-BQ001-HUDACHEK-WAMSLEY-2023-OBS-01",
       "claim_type": "OBSERVATION",
       "text": "A meta-analysis found that task-related dream content was associated with later memory performance across 16 studies and 45 effects.",
-      "domain": "dream_memory_consolidation",
+      "domain": "memory_identity_and_self_continuity",
       "evidence_label": "Established Evidence",
       "source_ids": [
         "SRC-BQ001-HUDACHEK-WAMSLEY-2023-DREAMS"
@@ -175,7 +174,7 @@
       "claim_id": "CLAIM-BQ001-UVA-DOPS-HYPNOSIS-INTERP-01",
       "claim_type": "INTERPRETATION",
       "text": "Research-program guidance warns that regression hypnosis is not an evidential method for authenticating purported past-life memories.",
-      "domain": "reincarnation_methods",
+      "domain": "reincarnation_case_research_and_critiques",
       "evidence_label": "Interpretation",
       "source_ids": [
         "SRC-BQ001-UVA-DOPS-HYPNOSIS"
@@ -221,12 +220,18 @@
     "source_counting_upgrades_evidence": false,
     "truth_inference_allowed": false,
     "scientific_evidence_auto_promotion_allowed": false,
-    "rights_promotion_allowed": false
+    "rights_promotion_allowed": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "public_export_allowed": false,
+    "privacy_promotion_allowed": false,
+    "publication_promotion_allowed": false
   },
   "rights_and_provenance": {
     "original_urls_preserved": true,
     "retrieval_results_preserved": true,
     "rights_notes_preserved": true,
     "silent_source_replacement": false
-  }
+  },
+  "review_boundary": "Review-only candidate metadata. Evidence labels are proposed classifications, not approval for public synthesis or export. Separate inspectable human approval and a separately reviewed promotion change are required."
 }

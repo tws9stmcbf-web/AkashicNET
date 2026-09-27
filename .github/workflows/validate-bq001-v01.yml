@@ -4,34 +4,42 @@ on:
   pull_request:
     paths:
       - "references/big-questions/BQ001/**"
+      - "references/big-questions/architecture-v0.1.json"
+      - "scripts/build_public_safe_semantic_endpoint_registry_v019.py"
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
       - "scripts/validate_bq001_batch2_v01.py"
       - "scripts/validate_bq001_batch3_v01.py"
       - "scripts/validate_bq001_batch4_v01.py"
+      - "scripts/validate_bq001_batch6_review.py"
       - "scripts/validate_bq001_public_synthesis_v01.py"
       - "tests/test_bq001_v01.py"
       - "tests/test_bq001_batch1_v01.py"
       - "tests/test_bq001_batch2_v01.py"
       - "tests/test_bq001_batch3_v01.py"
       - "tests/test_bq001_batch4_v01.py"
+      - "tests/test_bq001_batch6_review.py"
       - "tests/test_bq001_public_synthesis_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
   push:
     branches: [main]
     paths:
       - "references/big-questions/BQ001/**"
+      - "references/big-questions/architecture-v0.1.json"
+      - "scripts/build_public_safe_semantic_endpoint_registry_v019.py"
       - "scripts/validate_bq001_v01.py"
       - "scripts/validate_bq001_batch1_v01.py"
       - "scripts/validate_bq001_batch2_v01.py"
       - "scripts/validate_bq001_batch3_v01.py"
       - "scripts/validate_bq001_batch4_v01.py"
+      - "scripts/validate_bq001_batch6_review.py"
       - "scripts/validate_bq001_public_synthesis_v01.py"
       - "tests/test_bq001_v01.py"
       - "tests/test_bq001_batch1_v01.py"
       - "tests/test_bq001_batch2_v01.py"
       - "tests/test_bq001_batch3_v01.py"
       - "tests/test_bq001_batch4_v01.py"
+      - "tests/test_bq001_batch6_review.py"
       - "tests/test_bq001_public_synthesis_v01.py"
       - ".github/workflows/validate-bq001-v01.yml"
 
@@ -70,3 +78,7 @@ jobs:
         run: python scripts/validate_bq001_public_synthesis_v01.py references/big-questions/BQ001/public-synthesis-v0.1.json
       - name: Run BQ001 public synthesis negative tests
         run: python tests/test_bq001_public_synthesis_v01.py
+      - name: Validate Batch 6 review-only boundary and canonical domains
+        run: python scripts/validate_bq001_batch6_review.py
+      - name: Run Batch 6 promotion and domain drift tests
+        run: python tests/test_bq001_batch6_review.py

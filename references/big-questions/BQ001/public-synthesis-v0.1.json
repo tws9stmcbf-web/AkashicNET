@@ -10,8 +10,7 @@
     "references/big-questions/BQ001/evidence-batch2-v0.1.json",
     "references/big-questions/BQ001/evidence-batch3-v0.1.json",
     "references/big-questions/BQ001/evidence-batch4-v0.1.json",
-    "references/big-questions/BQ001/evidence-batch5-v0.1.json",
-    "references/big-questions/BQ001/evidence-batch6-v0.1.json"
+    "references/big-questions/BQ001/evidence-batch5-v0.1.json"
   ],
   "sections": [
     {
@@ -84,32 +83,14 @@
       "claim_ids": [
         "CLAIM-BQ001-SCOPING-2021-OBS-01",
         "CLAIM-BQ001-HARALDSSON-2003-OBS-01",
-        "CLAIM-BQ001-MORAES-2024-OBS-01",
-        "CLAIM-BQ001-SADEGHI-2026-OBS-01",
-        "CLAIM-BQ001-COZZOLINO-2025-OBS-01",
-        "CLAIM-BQ001-PEHLIVANOVA-2024-OBS-01"
+        "CLAIM-BQ001-MORAES-2024-OBS-01"
       ],
       "source_ids": [
         "SRC-BQ001-SCOPING-2021",
         "SRC-BQ001-HARALDSSON-2003",
-        "SRC-BQ001-MORAES-2024",
-        "SRC-BQ001-SADEGHI-2026-TEMPORAL",
-        "SRC-BQ001-COZZOLINO-2025-XENOGLOSSY",
-        "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP"
+        "SRC-BQ001-MORAES-2024"
       ],
       "boundary": "A reported match or unexplained case is not proof of reincarnation; information leakage, retrospective reconstruction, selection effects and alternative explanations remain live methodological concerns."
-    },
-    {
-      "id": "dream-memory-context",
-      "heading": "Dream content can reflect ordinary memory-consolidation processes",
-      "evidence_label": "Established Evidence",
-      "claim_ids": [
-        "CLAIM-BQ001-HUDACHEK-WAMSLEY-2023-OBS-01"
-      ],
-      "source_ids": [
-        "SRC-BQ001-HUDACHEK-WAMSLEY-2023-DREAMS"
-      ],
-      "boundary": "An association between task-related dreams and later memory performance does not explain every recurrent dream or authenticate purported past-life identity."
     },
     {
       "id": "reincarnation-methods",
@@ -117,15 +98,13 @@
       "evidence_label": "Interpretation",
       "claim_ids": [
         "CLAIM-BQ001-METHODS-INTERP-01",
-        "CLAIM-BQ001-TUCKER-2025-INTERP-01",
-        "CLAIM-BQ001-UVA-DOPS-HYPNOSIS-INTERP-01"
+        "CLAIM-BQ001-TUCKER-2025-INTERP-01"
       ],
       "source_ids": [
         "SRC-BQ001-SCOPING-2021",
         "SRC-BQ001-ALLAN-2025",
         "SRC-BQ001-TUCKER-2025",
-        "SRC-BQ001-TUCKER-2008",
-        "SRC-BQ001-UVA-DOPS-HYPNOSIS"
+        "SRC-BQ001-TUCKER-2008"
       ],
       "boundary": "Failure of simple psychological explanations does not establish reincarnation; psychological correlates do not establish that reincarnation is impossible."
     },
@@ -203,14 +182,14 @@
     "brain_dependence_proves_non_survival": false,
     "philosophical_position_counts_as_empirical_verdict": false
   },
-  "last_updated": "2026-09-14",
+  "last_updated": "2026-09-27",
   "change_record": {
-    "change": "Registered reviewed Batch 6 reincarnation and dream-memory sources in the governed BQ001 evidence pipeline.",
-    "canonical_batch": "references/big-questions/BQ001/evidence-batch6-v0.1.json",
+    "change": "Removed unapproved Batch 6 claims and sources from validated public synthesis; retained Batch 6 separately for review only.",
     "website_updated": false,
     "question_status_changed": false,
     "truth_inference_allowed": false,
     "automatic_scientific_evidence_promotion_allowed": false,
-    "rights_promotion_allowed": false
+    "rights_promotion_allowed": false,
+    "review_candidate_batch": "references/big-questions/BQ001/evidence-batch6-review-candidates-v0.1.json"
   }
 }
