@@ -15,6 +15,32 @@ PROGRESS = "website/app/development-progress/page.tsx"
 
 
 class CurrentPublicStatusTests(unittest.TestCase):
+    def test_reviewed_subject_negation_bypasses(self):
+        for claim in ("v0.16.7 is not a draft and is now released",
+                      "BQ001 is not disputed and is RESOLVED",
+                      "v0.16.7 is not released but is now shipped",
+                      "BQ001 remains UNRESOLVED and is now RESOLVED"):
+            with self.subTest(claim=claim):
+                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_reviewed_release_noun_and_resolution_headings(self):
+        for claim in ("Official release: v0.16.7", "Release: v0.16.7",
+                      "RESOLVED status: BQ001", "RESOLVED question: BQ001"):
+            with self.subTest(claim=claim):
+                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_reviewed_comma_product_label(self):
+        self.assert_rejected(extra="<p>AkashicNET, current version: v0.16.7</p>")
+
+    def test_directly_negated_new_headings_pass(self):
+        for claim in ("Not an official release: v0.16.7",
+                      "Not RESOLVED status: BQ001",
+                      "v0.16.7 is not yet officially released",
+                      "BQ001 is not definitively RESOLVED"):
+            with self.subTest(claim=claim):
+                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
+                self.assertEqual(result.returncode, 0, result.stderr)
+
     def run_case(self, *, home=None, progress=None, extra=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

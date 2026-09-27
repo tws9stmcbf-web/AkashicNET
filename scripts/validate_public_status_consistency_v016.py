@@ -54,9 +54,9 @@ def status_text(source: str) -> str:
 product_status = re.compile(
     r"\bAkashicNET\b(?:'s)?"
     # Accept ordinary connective words, but stop at independently versioned names.
-    r"(?:[ \t·:–—-]+(?!(?:METAD|ACTC|UMASC|MultidimensionalCUT|AkashicOMNI|BQ\d+)\b)[a-z]+)*"
-    r"[ \t·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
-    r"(?:Pre-alpha|Public Beta)[ \t·:–—-]*AkashicNET\b|"
+    r"(?:[ \t,·:–—-]+(?!(?:METAD|ACTC|UMASC|MultidimensionalCUT|AkashicOMNI|BQ\d+)\b)[a-z]+)*"
+    r"[ \t,·:–—-]*(?:Pre-alpha|Public Beta|v\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)\b|"
+    r"(?:Pre-alpha|Public Beta)[ \t,·:–—-]*AkashicNET\b|"
     r"\bv\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?[ \t]+(?:is[ \t]+)?"
     r"(?:AkashicNET(?:'s)?[ \t]+(?:current[ \t]+)?(?:product[ \t]+)?version\b|"
     r"(?:the[ \t]+)?(?:current[ \t]+)?(?:product[ \t]+)?version[ \t]+of[ \t]+AkashicNET\b)",
@@ -102,19 +102,29 @@ for version, status, limitation in (
 if "progress toward v0.17.0" not in status_text(progress):
     fail("site checkpoint must describe progress toward v0.17.0")
 
-# Reject affirmative release claims even when the correct disclaimers also survive.
-# Inspect the subject-to-predicate span, allowing connective words and adverbs.
-# Negations are barriers: a disclaimer must not become an affirmative assertion.
-# Punctuation and source-line boundaries still delimit this bounded copy guard.
-# Keep multi-word negations intact; bare "far" and "yet" can be affirmative
-# (for example, "is the best release yet"). Share barriers with the BQ guard.
-negative_words = r"(?:not|never|no|unresolved|cannot|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
-affirmative_words = r"(?:[ \t]+(?!" + negative_words + r")[a-z]+)*"
-release_claim = re.compile(
-    r"v0\.16\.(?:0-beta\.2|7)\b" + affirmative_words
-    + r"[ \t]+(?:release|released|shipped|sealed|READY[ \t]*/[ \t]*SEALED)\b",
-    re.IGNORECASE,
-)
+# Check each predicate separately so negation of an unrelated noun or earlier
+# predicate cannot hide a later affirmative assertion. This remains a bounded
+# status-copy guard, not a general natural-language parser.
+negative_words = r"(?:not|never|no|cannot|can't|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
+negative_modifiers = r"(?:yet|be|been|a|an|the|its|latest|current|official|public|final|sealed|officially|publicly|formally|definitively)"
+
+
+def predicate_is_negated(prefix: str) -> bool:
+    return bool(re.search(
+        r"\b" + negative_words + r"(?:[ \t]+" + negative_modifiers
+        + r"){0,6}[ \t]+$", prefix, re.IGNORECASE,
+    ))
+
+
+def has_affirmative_claim(text: str, subject: str, predicate: str) -> bool:
+    for match in re.finditer(subject, text, re.IGNORECASE):
+        # Stop at a sentence, block boundary, or another version identifier.
+        tail = re.match(r"[ \t,·:–—/a-z'-]*", text[match.end():], re.IGNORECASE).group()
+        for claim in re.finditer(predicate, tail, re.IGNORECASE):
+            if not predicate_is_negated(tail[:claim.start()]):
+                return True
+    return False
+
 # Mask only a directly qualified pending release noun phrase. A later shipped
 # or released predicate must still be checked, and BQ001 uses no pending barrier.
 release_text = re.sub(
@@ -122,29 +132,26 @@ release_text = re.sub(
     r"(?:(?:final|official|public|sealed)[ \t]+){0,3}release\b",
     "pendingevent", status_text(home + "\n" + progress), flags=re.IGNORECASE,
 )
-if release_claim.search(release_text):
+if has_affirmative_claim(
+    release_text, r"\bv0\.16\.(?:0-beta\.2|7)\b",
+    r"\b(?:release|released|shipped|sealed|READY[ \t]*/[ \t]*SEALED)\b",
+):
     fail("unsealed candidate or site checkpoint presented as a release")
 
-bq001_resolved = re.compile(
-    r"\bBQ001\b[ \t·:–—-]*" + affirmative_words + r"[ \t·:–—-]*RESOLVED\b",
-    re.IGNORECASE,
-)
-if bq001_resolved.search(status_text(home + "\n" + progress)):
+if has_affirmative_claim(status_text(home + "\n" + progress), r"\bBQ001\b", r"\bRESOLVED\b"):
     fail("public status surface contradicts BQ001 UNRESOLVED")
 
 # Predicate-first headings need their own negation check. Keep block and
 # sentence boundaries so a preceding disclaimer cannot hide a later heading.
 reverse_claim = re.compile(
-    r"\b(?:sealed[ \t]+release|released|shipped)[ \t·:–—-]*"
-    r"v0\.16\.(?:0-beta\.2|7)\b|\bRESOLVED[ \t·:–—-]+BQ001\b",
+    r"\b(?:(?:sealed|official|public|final)[ \t]+release|release|released|shipped)[ \t,·:–—-]*"
+    r"v0\.16\.(?:0-beta\.2|7)\b|\bRESOLVED(?:[ \t]+(?:status|question)){0,2}[ \t,·:–—-]+BQ001\b",
     re.IGNORECASE,
 )
 block_text = re.sub(r"</?(?:p|div|li|h[1-6])\b[^>]*>", "\n", home + "\n" + progress)
 for clause in re.split(r"[\n;!?]|\.(?=\s)", status_text(block_text)):
     for match in reverse_claim.finditer(clause):
-        if not re.search(r"\b" + negative_words
-                         + r"(?:[ \t]+(?:yet|officially|publicly|formally|definitively)){0,3}[ \t]+$",
-                         clause[:match.start()], re.IGNORECASE):
+        if not predicate_is_negated(clause[:match.start()]):
             fail("predicate-first status contradicts unreleased/BQ001 boundaries")
 
 for forbidden in (
@@ -159,3 +166,4 @@ print(
     "PASS: v0.16 public status is centralised; sealed v0.15 assertions and "
     "BQ001/no-promotion boundaries remain explicit"
 )
+
