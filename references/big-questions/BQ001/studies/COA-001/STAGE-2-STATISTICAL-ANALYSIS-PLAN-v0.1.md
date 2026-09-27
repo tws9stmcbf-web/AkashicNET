@@ -76,7 +76,7 @@ Before prospective freeze, independent statistical/methods review MUST:
 5. align population membership and failed-lock treatment with EAP-001 and the machine-readable contract;
 6. freeze rules without inspecting real participant outcomes.
 
-Until then, primary-source compatibility is HOLD. The existing proposed information target of 132 TARGET_EXPOSED participant-events is unchanged as a historical planning value, not newly validated for the revised source workflow.
+Until then, primary-source compatibility is HOLD. The historical calculation of 132 independent rank contributions is not validated for the revised source workflow. The participant-level stopping rule below supersedes the former participant-event boundary.
 
 If a designated interview lacks a valid L1, do not reconstruct claims. Apply existing unresolved/critical-integrity handling only inside an already established and lawfully usable TARGET_EXPOSED record. If exposure or data-use authority cannot be established without prohibited access, keep that status unresolved and processing blocked; do not assume exposure to force the record into a scoring population.
 
@@ -136,19 +136,19 @@ A successful single study is only a review candidate. Independent preregistered 
 
 SIM-001 evaluates a six-candidate rank test under two stylized alternative families. For a planning effect of `delta = 0.10`, the more conservative model requires:
 
-- **97 `TARGET_EXPOSED` participant-events for at least 80% power**;
-- **132 `TARGET_EXPOSED` participant-events for at least 90% power**.
+- **97 independent rank contributions for at least 80% power in that model**;
+- **132 independent rank contributions for at least 90% power in that model**.
 
-The Stage-2 information target is therefore provisionally **132 `TARGET_EXPOSED` participant-events**, subject to independent reproduction and review.
+The Stage-2 planning floor is **132 unique `TARGET_EXPOSED` participants**, counted once each regardless of repeated events. Before recruitment, independent reproduction and a blinded Stage-1 simulation update must determine and freeze the required unique-participant target (at least 132) for the participant-weighted endpoint, including scorer dependence, repeated events, ties, missingness and site effects. The simple rank calculation alone does not establish 90% power for that endpoint; recruitment remains blocked until this review and freeze are complete.
 
 This is not 132 eligible arrests. The number of `ALL_ELIGIBLE_EVENTS` required depends on survival, approach, consent, interview, activation and valid-exposure yields. Stage 1 must estimate those yields with uncertainty before an ethical maximum accrual cap and duration can be set.
 
 Stage 2 must use a dual stopping boundary fixed before recruitment:
 
-- stop accrual when 132 `TARGET_EXPOSED` participant-events are reached; or
+- stop accrual when the frozen unique-participant information target (at least 132 unique `TARGET_EXPOSED` participants) is reached; repeated events never increment this count; or
 - stop at the earlier maximum eligible-event count or calendar date derived from Stage-1 yield and ethics review.
 
-All eligible events accrued before stopping remain in the ledger. Accrual staff and oversight bodies must remain blinded to correspondence outcomes. There is no early stopping for efficacy or futility based on correspondence scores.
+Reaching the ethical count/date cap below the information target is an underpowered/infeasible stop, not information-target attainment. All eligible events accrued before stopping remain in the ledger. Accrual staff and oversight bodies must remain blinded to correspondence outcomes. There is no early stopping for efficacy or futility based on correspondence scores.
 
 ## Repeated events, sites and clustering
 
@@ -160,7 +160,7 @@ All eligible events accrued before stopping remain in the ledger. Accrual staff 
 - A site with a critical unresolved leakage route is paused; affected records remain visible and enter prespecified bounds.
 - No site may be removed because its observed correspondence is inconvenient.
 
-If repeated events are more common than assumed, SIM-001 must be rerun using the observed blinded cluster-size distribution before unblinding.
+If repeated events are more common than assumed, SIM-001 must be rerun using the observed blinded cluster-size distribution before unblinding to assess achieved information; this does not authorize an outcome-informed target change or accrual extension.
 
 ## Multiplicity
 
@@ -277,4 +277,5 @@ SAP-001 requires review by:
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 SAP-001 is a method-development artifact, not a result or evidence of continuity.
+
 

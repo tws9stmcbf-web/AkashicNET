@@ -151,7 +151,7 @@ Unless a gate states otherwise:
 1. **Thresholds are provisional.** Their final rationale and operating characteristics require simulation and independent statistical review.
 2. **Unknown handling:** `UNKNOWN`, `UNRECOVERABLE` and missing applicable status count in the denominator and not the numerator.
 3. **Uncertainty:** Report the estimate and a two-sided 95% interval. Binomial proportions use an exact or Wilson interval selected before database lock.
-4. **Zero denominators:** A mandatory gate with a zero denominator is `NOT_EVALUABLE`, never `PASS`.
+4. **Zero denominators:** A mandatory gate with a zero denominator is `NOT_EVALUABLE`, never `PASS`, except for the explicitly verified no-interpreter-use case below. Missing or unknown interpreter use is not verified zero use.
 5. **Site rule:** Report pooled and site-specific estimates. A site failure cannot be hidden through pooling.
 6. **Programme rule:** Any zero-tolerance safety, unauthorized-access or premature-unblinding event at any site pauses programme progression. For other mandatory gates, a failing site pauses that site and programme progression until the cause is remediated and an independent review determines whether the remaining evidence is interpretable.
 7. **No discretionary exclusions:** Denominator changes after recruitment require a versioned deviation record and independent adjudication.
@@ -204,7 +204,9 @@ Reliability gates remain `NOT_EVALUABLE` if the minimum sample required by the s
 | Premature unblinding | Target/event identity released before the complete frozen lock sequence | All completed primary interviews and all unblinding requests | 0 analysed cases; any occurrence pauses programme | All occurrences, including prevented attempts |
 | Unresolved viewing route | Installed site/device configuration with an unresolved ordinary visual/reflection route | All commissioned configurations | 0 before activation | Optical survey and remediation record |
 | Interview withdrawal due to burden | Approached survivors withdrawing because of study burden | All approached eligible survivors | ≤10%; review gate rather than efficacy gate | Estimate, 95% interval and reasons |
-| Interpreter confidentiality compliance | Interpreted interviews satisfying the frozen confidentiality and role-separation procedure | All interpreted interviews | 100% | Deviations and affected scope |
+| Interpreter confidentiality compliance | Interpreted interviews satisfying the frozen confidentiality and role-separation procedure | All interpreted interviews | 100%; verified zero use: PASS with reason NOT_APPLICABLE_NO_INTERPRETER_USE | Deviations and affected scope |
+
+For `INTERPRETER_CONFIDENTIALITY_COMPLIANCE` only, a zero denominator permits `PASS` with reason `NOT_APPLICABLE_NO_INTERPRETER_USE` when a complete interview ledger contains at least one completed interview and explicitly records no interpreter use for every interview in scope. Record the verification and reason separately for each site and pooled assessment; do not report a percentage or confidence interval for zero use. An empty ledger, missing records or unknown interpreter status remains `NOT_EVALUABLE`; it cannot be recoded as no use. With any interpreted interview, the 100% compliance rule applies and unknown compliance counts as failure. This exception neither establishes interpreter-procedure feasibility nor waives other gates or any incident-related hold.
 
 ## Attrition and missingness ledger
 
@@ -241,7 +243,7 @@ Each mandatory gate is assigned exactly one state:
 - `NOT_EVALUABLE`
 - `PAUSED_PENDING_ADJUDICATION`
 
-Only `PASS` permits progression. `NOT_EVALUABLE` is not evidence of feasibility. A gate may not be waived because an efficacy or correspondence result is interesting.
+Only `PASS` permits progression, including the documented no-interpreter-use exception above. `NOT_EVALUABLE` is not evidence of feasibility. A gate may not be waived because an efficacy or correspondence result is interesting.
 
 ## Required next artifacts
 
@@ -270,4 +272,5 @@ Before a v0.2 freeze candidate:
 - Website promotion: **OFF**
 
 This module defines method-development rules only. It is not a result, trial registration, ethics approval, accepted edge or evidence for awareness or continuity.
+
 

@@ -192,7 +192,7 @@ Among the prespecified TARGET-EXPOSED population, locked reports will identify o
 - **Null:** true and decoy assignments are exchangeable; performance does not exceed the preregistered chance/control distribution.
 - **Alternative:** true time-aligned sequences receive higher scores than expected under the frozen randomization test.
 
-The draft freeze candidate is specified in [SAP-001 v0.1](./STAGE-2-STATISTICAL-ANALYSIS-PLAN-v0.1.md): one true sequence plus five transcript-independent decoys, participant-weighted normalized true-candidate rank utility, a one-sided conditional randomization test at alpha 0.025, one confirmatory endpoint, explicit neutral and bounded unresolved-state handling, and a provisional minimum carry-forward effect of delta 0.05. [SIM-001 v0.1](./SIMULATION-AND-SAMPLE-SIZE-REPORT-v0.1.md) provisionally targets 132 TARGET-EXPOSED participant-events for 90% power at planning delta 0.10. These choices require independent reproduction, Stage-1 parameter updates, statistical review and prospective freeze before Stage 2.
+The draft freeze candidate is specified in [SAP-001 v0.1](./STAGE-2-STATISTICAL-ANALYSIS-PLAN-v0.1.md): one true sequence plus five transcript-independent decoys, participant-weighted normalized true-candidate rank utility, a one-sided conditional randomization test at alpha 0.025, one confirmatory endpoint, explicit neutral and bounded unresolved-state handling, and a provisional minimum carry-forward effect of delta 0.05. [SIM-001 v0.1](./SIMULATION-AND-SAMPLE-SIZE-REPORT-v0.1.md) provides a 132-independent-rank planning calculation for 90% power at delta 0.10. Accrual must count unique TARGET-EXPOSED participants, with a floor of 132 and a final participant target frozen from the blinded Stage-1 simulation update before recruitment; repeated events do not advance the stopping count. These choices require independent reproduction, Stage-1 parameter updates, statistical review and prospective freeze before Stage 2.
 
 ### Secondary hypotheses
 
@@ -334,4 +334,5 @@ This synopsis is a method-development artifact. It is not a preregistration, eth
 - [x] ethics/data-protection outline — draft EDP-001 v0.1; jurisdiction-specific legal, ethics/IRB and privacy review pending
 - [x] decision-complete falsification, stopping and outcome-classification rules — draft FSC-001 v0.1; statistical, ethics, clinical and adversarial review pending
 - [ ] v0.2 freeze candidate
+
 

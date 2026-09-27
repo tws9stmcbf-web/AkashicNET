@@ -202,7 +202,7 @@ Each log record MUST include:
 
 ### Hash chain
 
-For each record, the system MUST calculate a secure hash across the previous record digest and the current canonical record body. SHA-256 or a stronger approved Secure Hash Standard profile MAY be used; the final algorithm profile MUST be frozen.
+The unsigned canonical payload MUST contain all record fields except the derived `current_record_digest` and `digital_signature` fields. It MUST include `prior_record_digest`, binding the previous record exactly once. Compute `current_record_digest = H(canonicalize(unsigned_payload))`; then sign that digest and attach the two derived fields to form the stored record envelope. Verifiers MUST reconstruct the same unsigned payload by removing exactly those two fields, recompute and compare the digest, verify the signature over that digest, and check the prior-record link. Changing either derived field MUST NOT change the recomputed payload digest, but a mismatched digest or invalid signature MUST fail verification. SHA-256 or a stronger approved Secure Hash Standard profile MAY be used; the final algorithm, canonicalization and digest/signature encoding profiles MUST be frozen, including a fixed genesis value for the first `prior_record_digest`.
 
 The first event record MUST bind:
 
@@ -213,11 +213,11 @@ The first event record MUST bind:
 - event nonce;
 - activation counter.
 
-The final record MUST include a session-closing digest and record count. Broken chains, duplicate sequence numbers or missing records invalidate the per-protocol log.
+The final record payload MUST include a session-closing digest equal to the immediately preceding record digest and a count of preceding records. These summarize the chain before the closing record; neither references the closing record's own digest or signature. Broken chains, duplicate sequence numbers or missing records invalidate the per-protocol log.
 
 ### Digital signatures
 
-The device MUST sign records with a non-exportable signing key held in a hardware-backed keystore where feasible. The public key and device-to-site binding MUST be registered before recruitment.
+The device MUST sign each computed `current_record_digest` (under the frozen encoding profile), not the stored record envelope, with a non-exportable signing key held in a hardware-backed keystore where feasible. The public key and device-to-site binding MUST be registered before recruitment.
 
 The final signature algorithm MUST be selected with institutional security review. Algorithm substitution during the study is prohibited without a new protocol version.
 
@@ -414,4 +414,5 @@ These references do not by themselves certify the design. Institutional security
 - Website promotion: **OFF**
 
 This document is an engineering specification. It is not a clinical protocol approval, deployed device, trial registration, result or evidence for continuity.
+
 

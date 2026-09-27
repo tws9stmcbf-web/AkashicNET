@@ -164,6 +164,59 @@ def validate(document: Any, study_dir: Path) -> None:
         "participant_recognition_route_not_defined_or_authorized",
     ])
 
+    # Review blockers: guard the planning unit, the sole zero-use exception,
+    # and the non-recursive signing contract. These remain static draft checks.
+    require(document, "stage_2_primary_hypothesis/information_target_unit",
+            "unique_TARGET_EXPOSED_participant")
+    require(document, "stage_2_primary_hypothesis/provisional_information_target_target_exposed", 132)
+    require(document, "stage_2_primary_hypothesis/repeated_events_increment_information_count", False)
+    stopping = "statistical_analysis_plan/accrual_stopping_rule"
+    for key, value in {
+        "information_unit": "unique_TARGET_EXPOSED_participant",
+        "provisional_minimum_unique_participants": 132,
+        "final_unique_participant_target": None,
+        "freeze_before_recruitment": "blinded_stage_1_simulation_of_participant_weighted_endpoint_and_independent_review",
+        "repeated_events_increment_count": False,
+        "ethical_cap_stop_below_target": "UNDERPOWERED_OR_INFEASIBLE_NOT_INFORMATION_TARGET_MET",
+    }.items():
+        require(document, f"{stopping}/{key}", value)
+    require(document, "operating_characteristics/calculation_unit",
+            "independent_rank_contribution_not_repeated_participant_event")
+
+    gates = lookup(document, "feasibility_gates")
+    if not isinstance(gates, list) or any(not isinstance(g, dict) for g in gates):
+        fail("/feasibility_gates: expected gate objects")
+    interpreter = [g for g in gates if g.get("id") == "INTERPRETER_CONFIDENTIALITY_COMPLIANCE"]
+    if len(interpreter) != 1:
+        fail("INTERPRETER_CONFIDENTIALITY_COMPLIANCE: require exactly one gate")
+    for key, value in {
+        "denominator": "all_interpreted_interviews", "threshold": "100%", "mandatory": True,
+        "zero_denominator": "PASS_ONLY_IF_VERIFIED_NO_INTERPRETER_USE",
+        "zero_denominator_pass_reason": "NOT_APPLICABLE_NO_INTERPRETER_USE",
+        "zero_denominator_requires": [
+            "complete_interview_ledger", "at_least_one_completed_interview",
+            "explicit_no_interpreter_use_for_every_interview_in_scope",
+            "verification_recorded_by_site_and_pooled", "no_incident_hold_waived",
+        ],
+        "empty_missing_or_unknown_use": "NOT_EVALUABLE",
+        "unknown_compliance_with_interpreter_use": "FAIL",
+    }.items():
+        require(interpreter[0], key, value)
+    require(document, "feasibility_gate_common_rules/zero_denominator", "NOT_EVALUABLE")
+    require(document, "feasibility_gate_common_rules/zero_denominator_exception",
+            "INTERPRETER_CONFIDENTIALITY_COMPLIANCE_only_under_its_verified_no_use_rule")
+
+    for key, value in {
+        "unsigned_payload_excludes": ["current_record_digest", "digital_signature"],
+        "unsigned_payload_includes": ["prior_record_digest"],
+        "digest_input": "canonicalize_unsigned_payload",
+        "signature_input": "current_record_digest",
+        "verification": "recompute_digest_compare_verify_signature_and_prior_link",
+        "closing_digest": "immediately_preceding_record_digest",
+        "closing_count": "preceding_records_only", "profile_freeze_required": True,
+    }.items():
+        require(document, f"target_record_integrity/{key}", value)
+
     ref = lookup(document, "module_references/blinded_interview_manual")
     for key, value in [("id", "INT-001"), ("version", "0.2"), ("path", MANUAL),
                        ("state", "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED")]:
@@ -196,3 +249,4 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

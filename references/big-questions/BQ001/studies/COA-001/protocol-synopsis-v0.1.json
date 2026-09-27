@@ -92,7 +92,9 @@
     "planning_delta": 0.1,
     "provisional_information_target_target_exposed": 132,
     "target_power": 0.9,
-    "interpretation_constraint": "conditional_correspondence_only_no_prevalence_awareness_continuity_personal_survival_or_afterlife_inference"
+    "interpretation_constraint": "conditional_correspondence_only_no_prevalence_awareness_continuity_personal_survival_or_afterlife_inference",
+    "information_target_unit": "unique_TARGET_EXPOSED_participant",
+    "repeated_events_increment_information_count": false
   },
   "feasibility_gates": [
     {
@@ -291,7 +293,17 @@
       "denominator": "all_interpreted_interviews",
       "threshold": "100%",
       "mandatory": true,
-      "zero_denominator": "NOT_EVALUABLE"
+      "zero_denominator": "PASS_ONLY_IF_VERIFIED_NO_INTERPRETER_USE",
+      "zero_denominator_pass_reason": "NOT_APPLICABLE_NO_INTERPRETER_USE",
+      "zero_denominator_requires": [
+        "complete_interview_ledger",
+        "at_least_one_completed_interview",
+        "explicit_no_interpreter_use_for_every_interview_in_scope",
+        "verification_recorded_by_site_and_pooled",
+        "no_incident_hold_waived"
+      ],
+      "empty_missing_or_unknown_use": "NOT_EVALUABLE",
+      "unknown_compliance_with_interpreter_use": "FAIL"
     }
   ],
   "interpretation_ladder": [
@@ -422,7 +434,8 @@
       "premature_unblinding"
     ],
     "minimum_counts": "require_simulation_before_freeze",
-    "offsetting": "forbidden"
+    "offsetting": "forbidden",
+    "zero_denominator_exception": "INTERPRETER_CONFIDENTIALITY_COMPLIANCE_only_under_its_verified_no_use_rule"
   },
   "module_references": {
     "estimands_and_feasibility_gates": {
@@ -639,7 +652,15 @@
       "complete_flow_negative_controls_and_sensitivity_analyses_reported"
     ],
     "early_stopping": "no_efficacy_or_futility_stopping_safety_ethics_feasibility_and_integrity_pauses_only",
-    "independent_replication_required_before_model_review": true
+    "independent_replication_required_before_model_review": true,
+    "accrual_stopping_rule": {
+      "information_unit": "unique_TARGET_EXPOSED_participant",
+      "provisional_minimum_unique_participants": 132,
+      "final_unique_participant_target": null,
+      "freeze_before_recruitment": "blinded_stage_1_simulation_of_participant_weighted_endpoint_and_independent_review",
+      "repeated_events_increment_count": false,
+      "ethical_cap_stop_below_target": "UNDERPOWERED_OR_INFEASIBLE_NOT_INFORMATION_TARGET_MET"
+    }
   },
   "operating_characteristics": {
     "id": "SIM-001",
@@ -671,7 +692,8 @@
     },
     "eligible_event_sample_size": "not_frozen_requires_stage_1_target_exposed_yield_with_uncertainty_and_ethics_review",
     "stage_1_150_to_300_eligible_events_role": "feasibility_not_confirmatory_power",
-    "independent_reproduction_required": true
+    "independent_reproduction_required": true,
+    "calculation_unit": "independent_rank_contribution_not_repeated_participant_event"
   },
   "ethics_and_data_protection": {
     "id": "EDP-001",
@@ -919,5 +941,20 @@
       "executable_prose_JSON_coverage_and_controlled_vocabulary_validation",
       "prospective_registration_and_external_domain_signoff"
     ]
+  },
+  "target_record_integrity": {
+    "unsigned_payload_excludes": [
+      "current_record_digest",
+      "digital_signature"
+    ],
+    "unsigned_payload_includes": [
+      "prior_record_digest"
+    ],
+    "digest_input": "canonicalize_unsigned_payload",
+    "signature_input": "current_record_digest",
+    "verification": "recompute_digest_compare_verify_signature_and_prior_link",
+    "closing_digest": "immediately_preceding_record_digest",
+    "closing_count": "preceding_records_only",
+    "profile_freeze_required": true
   }
 }

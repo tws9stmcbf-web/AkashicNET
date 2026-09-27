@@ -32,6 +32,85 @@ class StageZeroRegressionTests(unittest.TestCase):
     def test_current_contract_and_manual(self):
         guard.validate(self.document, self.study)
 
+    def test_participant_event_stopping_regression_is_rejected(self):
+        rule = self.document["statistical_analysis_plan"]["accrual_stopping_rule"]
+        for key, value in [
+            ("information_unit", "TARGET_EXPOSED_participant_event"),
+            ("repeated_events_increment_count", True),
+            ("provisional_minimum_unique_participants", 131),
+            ("final_unique_participant_target", 132),
+            ("freeze_before_recruitment", "not_required"),
+            ("ethical_cap_stop_below_target", "INFORMATION_TARGET_MET"),
+        ]:
+            with self.subTest(key=key):
+                original = rule[key]
+                rule[key] = value
+                self.reject(key)
+                rule[key] = original
+
+    def test_primary_target_and_simulation_units_cannot_drift(self):
+        self.document["stage_2_primary_hypothesis"]["information_target_unit"] = "participant_event"
+        self.reject("information_target_unit")
+        self.document = copy.deepcopy(BASELINE)
+        self.document["operating_characteristics"]["calculation_unit"] = "repeated_event"
+        self.reject("calculation_unit")
+
+    def test_zero_interpreter_use_exception_is_conditional(self):
+        gate = next(g for g in self.document["feasibility_gates"]
+                    if g["id"] == "INTERPRETER_CONFIDENTIALITY_COMPLIANCE")
+        for key, value in [
+            ("zero_denominator", "NOT_EVALUABLE"),
+            ("zero_denominator", "PASS"),
+            ("zero_denominator_requires", []),
+            ("empty_missing_or_unknown_use", "PASS"),
+            ("unknown_compliance_with_interpreter_use", "PASS"),
+            ("threshold", ">=95%"),
+        ]:
+            with self.subTest(key=key, value=value):
+                original = gate[key]
+                gate[key] = value
+                self.reject(key)
+                gate[key] = original
+        # Each prerequisite is necessary; zero use cannot hide missingness or holds.
+        requirements = gate["zero_denominator_requires"][:]
+        for requirement in requirements:
+            with self.subTest(requirement=requirement):
+                gate["zero_denominator_requires"] = [r for r in requirements if r != requirement]
+                self.reject("zero_denominator_requires")
+        gate["zero_denominator_requires"] = requirements
+        guard.validate(self.document, self.study)
+
+    def test_zero_interpreter_exception_does_not_relax_other_gates(self):
+        self.document["feasibility_gate_common_rules"]["zero_denominator"] = "PASS"
+        self.reject("zero_denominator")
+
+    def test_missing_or_duplicate_interpreter_gate_is_rejected(self):
+        gates = self.document["feasibility_gates"]
+        gate = next(g for g in gates if g["id"] == "INTERPRETER_CONFIDENTIALITY_COMPLIANCE")
+        gates.remove(gate)
+        self.reject("require exactly one gate")
+        gates.extend([gate, copy.deepcopy(gate)])
+        self.reject("require exactly one gate")
+
+    def test_recursive_hash_or_signature_inputs_are_rejected(self):
+        integrity = self.document["target_record_integrity"]
+        for key, value in [
+            ("unsigned_payload_excludes", []),
+            ("unsigned_payload_excludes", ["digital_signature"]),
+            ("unsigned_payload_excludes", ["current_record_digest"]),
+            ("unsigned_payload_includes", []),
+            ("digest_input", "canonicalize_stored_record_envelope"),
+            ("signature_input", "stored_record_envelope"),
+            ("closing_digest", "current_record_digest"),
+            ("closing_count", "including_current_record"),
+            ("verification", "trust_attached_digest"),
+        ]:
+            with self.subTest(key=key, value=value):
+                original = integrity[key]
+                integrity[key] = value
+                self.reject(key)
+                integrity[key] = original
+
     def test_recruitment_permission_is_blocked(self):
         self.document["interview_manual"]["recruitment_authorized"] = True
         self.reject("recruitment_authorized")
@@ -202,3 +281,4 @@ class StageZeroRegressionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

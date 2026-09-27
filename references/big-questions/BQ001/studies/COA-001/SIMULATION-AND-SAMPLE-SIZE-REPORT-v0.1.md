@@ -14,7 +14,7 @@
 
 For the SAP-001 six-candidate normalized-rank endpoint and a one-sided exact upper-tail test at `alpha = 0.025`, the more conservative of two stylized alternative families requires:
 
-| True mean advantage `delta` above null 0.5 | Target power | Required `TARGET_EXPOSED` participant-events |
+| True mean advantage `delta` above null 0.5 | Target power | Required independent rank contributions |
 |---:|---:|---:|
 | 0.050 | 80% | 377 |
 | 0.050 | 90% | 513 |
@@ -25,7 +25,7 @@ For the SAP-001 six-candidate normalized-rank endpoint and a one-sided exact upp
 | 0.150 | 80% | 43 |
 | 0.150 | 90% | 59 |
 
-SAP-001 therefore uses **132 `TARGET_EXPOSED` participant-events** as the provisional 90%-power information target for a planning effect of `delta = 0.10`.
+SAP-001 uses **132 unique `TARGET_EXPOSED` participants** as a planning floor, not an event-count stopping boundary. The 90%-power result at `delta = 0.10` applies only to the independent-rank model. Before recruitment, blinded Stage-1 inputs and independent review must freeze a unique-participant target of at least 132 for the actual participant-weighted endpoint.
 
 This result does not establish that `delta = 0.10` is biologically, clinically or philosophically plausible. It quantifies the conditional sample requirement if that design effect is chosen. Independent statistical review must justify the minimum relevant effect and reproduce the calculations before freeze.
 
@@ -89,7 +89,7 @@ Neither family is asserted to describe awareness or real participant behaviour. 
 
 Selected sparse-mixture power values show the information gradient:
 
-| `TARGET_EXPOSED` n | Power at `delta=.05` | Power at `delta=.075` | Power at `delta=.10` | Power at `delta=.15` |
+| Independent rank contributions n | Power at `delta=.05` | Power at `delta=.075` | Power at `delta=.10` | Power at `delta=.15` |
 |---:|---:|---:|---:|---:|
 | 50 | 0.172 | 0.329 | 0.518 | 0.842 |
 | 75 | 0.255 | 0.480 | 0.706 | 0.955 |
@@ -106,9 +106,9 @@ Values are design calculations, not predicted study outcomes.
 
 The information target is conditional on reaching `TARGET_EXPOSED`, not on merely identifying eligible arrests.
 
-If the proportion of `ALL_ELIGIBLE_EVENTS` that ultimately reaches `TARGET_EXPOSED` is `q`, the rough expected eligible-event requirement is `132/q`:
+Let `q` be the number of unique `TARGET_EXPOSED` participants divided by `ALL_ELIGIBLE_EVENTS`, counting each participant once. The rough expected eligible-event requirement for the planning floor is `132/q` (replace 132 with the frozen participant target when available):
 
-| Stage-1 observed `TARGET_EXPOSED` yield | Approximate eligible events needed for 132 |
+| Stage-1 unique-participant yield per eligible event | Approximate eligible events needed for 132 unique participants |
 |---:|---:|
 | 2% | 6,600 |
 | 5% | 2,640 |
@@ -117,7 +117,7 @@ If the proportion of `ALL_ELIGIBLE_EVENTS` that ultimately reaches `TARGET_EXPOS
 
 These are arithmetic scenarios, not final accrual targets. Confidence limits around the Stage-1 yield, site heterogeneity, calendar time, consent and ethical burden must inform the maximum eligible-event cap.
 
-The provisional Stage-1 range of 150–300 eligible events is therefore a feasibility pilot, not a confirmatory sample. Even at a 20% yield it would be expected to provide only 30–60 `TARGET_EXPOSED` participant-events.
+The provisional Stage-1 range of 150–300 eligible events is therefore a feasibility pilot, not a confirmatory sample. Even at a 20% yield it would be expected to provide only 30–60 unique `TARGET_EXPOSED` participants under this unique-participant yield assumption.
 
 ## Attrition and integrity stress rules
 
@@ -190,12 +190,12 @@ Before SAP freeze:
 
 ## Decision
 
-SIM-001 supports continued Stage-0 development and provisionally selects 132 `TARGET_EXPOSED` participant-events for 90% power at `delta = 0.10`.
+SIM-001 supports continued Stage-0 development with a planning floor of 132 unique `TARGET_EXPOSED` participants. It establishes 90% power at `delta = 0.10` only for the independent-rank model, not the final participant-weighted design.
 
 It does **not** establish:
 
 - a final eligible-event sample size;
-- feasibility of obtaining 132 target-exposed interviews;
+- feasibility of obtaining the frozen number of unique target-exposed participants;
 - the truth of the alternative;
 - awareness during resuscitation;
 - continuity, personal survival or an afterlife.
@@ -216,4 +216,5 @@ Stage 1 must first estimate yield, agreement, ties, clustering, missingness and 
 - COA-001 state: **DRAFT / PROTOCOL-FEASIBLE NOT YET ESTABLISHED**
 
 SIM-001 is a planning analysis, not scientific evidence or a BQ001 update.
+
 
