@@ -83,6 +83,11 @@ def main():
             print('\nTITLE:', record['metadata'].get('title') or '[Title not captured]')
             print('KIND:', record['record_kind'])
             print('URL:', record['Reddit URL'])
+            for annotation in record['historical_annotations']:
+                print('HISTORICAL ANNOTATION (not current flair):', annotation)
+            for field, value in record['metadata'].items():
+                if field != 'title' and value:
+                    print(f'CURATED {field}:', value)
         if len(matches) > args.limit:
             print(f'Showing first {args.limit} of {len(matches)} matches.')
 
