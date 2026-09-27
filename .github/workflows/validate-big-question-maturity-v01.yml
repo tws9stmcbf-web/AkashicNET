@@ -2,6 +2,7 @@ name: Validate Big Question maturity v0.1
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, edited]
     paths:
       - "references/big-questions/**"
       - "website/app/big-questions/**"
