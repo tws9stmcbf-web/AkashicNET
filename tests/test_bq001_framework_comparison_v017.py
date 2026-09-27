@@ -56,6 +56,32 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
     def test_reviewed_packet_passes(self):
         self.validate(self.packet)
 
+    def test_hex_escape_private_locators_rejected(self):
+        for encoded in (r"https://\x64rive.google.com/file/d/private",
+                        r"https://%5Cx64rive.google.com/file/d/private",
+                        r"https://\u005cx64rive.google.com/file/d/private",
+                        r"https://\x5cU00000064rive.google.com/file/d/private",
+                        r"\x66ile://private"):
+            for value in (encoded, [encoded[:11], encoded[11:]],
+                          {encoded[:11]: encoded[11:]}):
+                with self.subTest(value=value), self.assertRaisesRegex(ValueError, "private"):
+                    validator.scan_safety(value)
+            schema = validator.load_json(validator.SCHEMA)
+            schema["$comment"] = encoded
+            with tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "schema.json"
+                path.write_text(json.dumps(schema), encoding="utf-8")
+                with patch.object(validator, "SCHEMA", path):
+                    with self.assertRaisesRegex(ValueError, "private"):
+                        self.validate(self.packet)
+
+    def test_hex_escape_digest_and_benign_controls(self):
+        for encoded in (r"\x61" * 64, r"\xff" * 32, r"\x00" * 32):
+            with self.subTest(encoded=encoded), self.assertRaisesRegex(ValueError, "digest"):
+                validator.scan_safety(encoded)
+        for value in (r"ordinary \x41 text", r"invalid \xZZ text", r"https://example.com/\x61"):
+            validator.scan_safety(value)
+
     def test_core_review_only_boundaries_are_closed(self):
         self.mutate(lambda d: d.update(question_status="RESOLVED"))
         self.mutate(lambda d: d.update(accepted_edges=1))

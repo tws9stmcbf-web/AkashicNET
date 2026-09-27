@@ -87,7 +87,7 @@ UTS46_IGNORED_RANGES = (
 )
 
 
-def normalize_private_text(text: str) -> str:
+def normalize_private_text(text: str, *, decode_hex: bool = True) -> str:
     for _ in range(32):
         normalized = unquote(unicodedata.normalize("NFKC", text))
         # Decode textual code-point escapes before case folding or slash mapping.
@@ -97,7 +97,8 @@ def normalize_private_text(text: str) -> str:
             return chr(number) if number <= 0x10FFFF else match.group(0)
 
         normalized = re.sub(
-            r"\\U([0-9a-fA-F]{8})|\\u\{([0-9a-fA-F]{1,6})\}|\\u([0-9a-fA-F]{4})",
+            r"\\U([0-9a-fA-F]{8})|\\u\{([0-9a-fA-F]{1,6})\}|\\u([0-9a-fA-F]{4})"
+            + (r"|\\x([0-9a-fA-F]{2})" if decode_hex else ""),
             codepoint, normalized,
         )
         normalized = normalized.translate(str.maketrans({
@@ -184,14 +185,17 @@ def scan_safety(value: Any, *, digest_paths: dict[tuple, str] | None = None,
         # Backslashes are already mapped to slashes by privacy normalization.
         # Ignore separators inside each recognized byte token as well. Keep
         # non-hex letters as barriers rather than deleting arbitrary text.
-        byte_text = re.sub(
-            r"(?:0|/)[^a-z0-9]*x[^a-z0-9]*(?=[a-f0-9][^a-z0-9]*[a-f0-9])",
-            "", folded,
-        )
-        digest_text = re.sub(r"[^a-z0-9]", "", byte_text)
-        if re.search(r"[a-f0-9]{32,}", digest_text):
-            if digest_paths is None or digest_paths.get(location) != value:
-                raise ValueError("unscoped digest rejected")
+        # Check decoded text and the byte representation: decoding arbitrary
+        # digest bytes to Unicode must not erase an existing fingerprint match.
+        for representation in (folded, normalize_private_text(value, decode_hex=False)):
+            byte_text = re.sub(
+                r"(?:0|/)[^a-z0-9]*x[^a-z0-9]*(?=[a-f0-9][^a-z0-9]*[a-f0-9])",
+                "", representation,
+            )
+            digest_text = re.sub(r"[^a-z0-9]", "", byte_text)
+            if re.search(r"[a-f0-9]{32,}", digest_text):
+                if digest_paths is None or digest_paths.get(location) != value:
+                    raise ValueError("unscoped digest rejected")
         if any(marker in folded for marker in PRIVATE_MARKERS):
             raise ValueError("private Drive/Docs marker rejected")
         if any(marker in folded for marker in PRIVATE_PATH_MARKERS):
