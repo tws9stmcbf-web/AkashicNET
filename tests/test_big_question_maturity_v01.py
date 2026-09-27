@@ -3,6 +3,26 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location("v",ROOT/"scripts/validate_big_question_maturity_v01.py");v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
 class Tests(unittest.TestCase):
+ def test_root_json_question_identity(s):
+  for value in ({"question_id":"BQ001","overall_progress":{"level":8,"maximum":10}},
+                [{"question_id":"BQ001","overall_progress":{"level":8,"maximum":10}}],
+                {"records":[{"question_id":"BQ001","overall_progress":{"level":8,"maximum":10}}]}):
+   with s.subTest(value=value),s.assertRaises(ValueError):
+    v.validate(s.l,s.r,[("references/big-questions/new.json",json.dumps(value))])
+  good={"records":[{"question_id":"BQ001","overall_progress":{"level":6,"maximum":10}},
+                   {"question_id":"BQ002","overall_progress":{"level":4,"maximum":10}}]}
+  v.validate(s.l,s.r,[("references/big-questions/new.json",json.dumps(good))])
+ def test_canonical_maximum_level(s):
+  for value in (9,None,"10",10.0):
+   c=copy.deepcopy(s.l);c["maximum_level"]=value
+   with s.subTest(value=value),s.assertRaises(ValueError):v.validate(c,s.r)
+ def test_execution_website_updated_gate(s):
+  ref="references/big-questions/BQ001/tests/run.json"
+  for value in (True,None,0):
+   artifact=s.execution_artifact();artifact["governance"]["website_updated"]=value
+   with s.subTest(value=value),s.assertRaises(ValueError):v.check_execution("BQ001",ref,artifact)
+  artifact=s.execution_artifact();artifact["governance"]["website_updated"]=False
+  v.check_execution("BQ001",ref,artifact)
  @classmethod
  def setUpClass(c):
   c.l=json.loads((ROOT/"references/big-questions/research-maturity-ladder-v0.1.json").read_text());c.r=json.loads((ROOT/"references/big-questions/maturity-assessments-v0.1.json").read_text())
@@ -37,7 +57,7 @@ class Tests(unittest.TestCase):
   c=copy.deepcopy(s.r);c["governance"]["website_promotion_allowed"]=True
   with s.assertRaises(ValueError):v.validate(s.l,c)
  def execution_artifact(s):
-  return {"question_id":"BQ001","execution_status":"COMPLETED","test_results_recorded":True,"governance":{"review_state":"REVIEW_REQUIRED","canonical_promotion_applied":False,**{key:False for key in v.GATES}}}
+  return {"question_id":"BQ001","execution_status":"COMPLETED","test_results_recorded":True,"governance":{"review_state":"REVIEW_REQUIRED","canonical_promotion_applied":False,"website_updated":False,**{key:False for key in v.GATES}}}
  def test_long_multiline_assertions(s):
   overstatement="BQ001:\n"+("x"*1000)+"\nLevel 8/10"
   with s.assertRaises(ValueError):v.validate(s.l,s.r,[("x.md",overstatement)])

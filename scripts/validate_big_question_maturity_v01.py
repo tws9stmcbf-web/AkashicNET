@@ -15,23 +15,31 @@ EXPECTED={"BQ001":(6,None),"BQ002":(4,None),"BQ003":(4,None),**{f"BQ{i:03d}":(No
 RULES=("levels_are_cumulative","asserted_level_must_equal_highest_completed_stage","missing_or_unvalidated_stage_blocks_higher_assertions","level_8_requires_governed_test_execution","unresolved_is_allowed_at_every_level","level_change_does_not_promote_truth_evidence_rights_public_synthesis_or_website")
 GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed")
 def fail(msg): raise ValueError(msg)
-def json_levels(value):
+def json_assertions(value,qid=None,path_qid=None):
     found=[]
     if isinstance(value,dict):
-        if value.get("maximum")==10 and type(value.get("level")) is int:found.append(value["level"])
-        for child in value.values():found.extend(json_levels(child))
+        if "question_id" in value:
+            identity=value["question_id"]
+            if not isinstance(identity,str) or not BQ.fullmatch(identity):fail("invalid structured question identity")
+            qid=identity.upper()
+            if path_qid and qid!=path_qid:fail("structured question identity conflicts with path")
+        if value.get("maximum")==10 and type(value.get("level")) is int:
+            if qid is None:fail("structured maturity assertion lacks question identity")
+            found.append((qid,value["level"]))
+        for child in value.values():found.extend(json_assertions(child,qid,path_qid))
     elif isinstance(value,list):
-        for child in value:found.extend(json_levels(child))
+        for child in value:found.extend(json_assertions(child,qid,path_qid))
     return found
 def assertions(source,text):
     match=PATH_Q.search(source.replace("\\","/"))
+    found=[]
+    if Path(source).suffix.lower()==".json":
+        qid=f"BQ{match.group(1)}" if match else None
+        found.extend(json_assertions(json.loads(text),qid,qid))
     if match:
         levels=LEVEL.findall(text)
-        if Path(source).suffix.lower()==".json":
-            try:levels.extend(json_levels(json.loads(text)))
-            except json.JSONDecodeError:pass
-        return [(f"BQ{match.group(1)}",int(x)) for x in levels]
-    matches=list(BQ.finditer(text)); found=[]
+        return found+[(f"BQ{match.group(1)}",int(x)) for x in levels]
+    matches=list(BQ.finditer(text))
     for index,match in enumerate(matches):
         end=matches[index+1].start() if index+1<len(matches) else len(text)
         found.extend((match.group(1).upper(),int(x)) for x in LEVEL.findall(text[match.end():end]))
@@ -50,11 +58,12 @@ def check_execution(qid,ref,artifact):
     if artifact.get("question_id")!=qid or artifact.get("execution_status")!="COMPLETED" or artifact.get("test_results_recorded") is not True:fail(f"{qid} governed execution not completed")
     gov=artifact.get("governance",{})
     if gov.get("review_state")!="REVIEW_REQUIRED":fail(f"{qid} execution not review-required")
-    for key in ("canonical_promotion_applied",)+GATES:
+    for key in ("canonical_promotion_applied","website_updated")+GATES:
         if gov.get(key) is not False:fail(f"{qid} execution gate opened: {key}")
 def validate(ladder,registry,texts=(),pr_body="",artifacts=None):
     actual=[(x.get("level"),x.get("id"),x.get("label")) for x in ladder.get("stages",[])]
-    if ladder.get("status")!="CANONICAL" or ladder.get("meaning")!=MEANING or actual!=STAGES:fail("canonical ladder semantics changed")
+    if (ladder.get("status")!="CANONICAL" or ladder.get("meaning")!=MEANING or actual!=STAGES
+        or type(ladder.get("maximum_level")) is not int or ladder["maximum_level"]!=10):fail("canonical ladder semantics changed")
     for key in RULES:
         if ladder.get("fail_closed_rules",{}).get(key) is not True:fail(f"rule weakened: {key}")
     if registry.get("ladder_ref")!="references/big-questions/research-maturity-ladder-v0.1.json":fail("wrong ladder ref")
