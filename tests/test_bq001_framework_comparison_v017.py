@@ -17,6 +17,21 @@ SPEC.loader.exec_module(validator)
 
 
 class FrameworkComparisonValidationTests(unittest.TestCase):
+    def test_numeric_character_reference_digests_rejected(self):
+        for token in ("&#x61;", "&#97;", "&amp;#x61;", "%26%23x61%3B", r"\u0026#x61;"):
+            encoded=token*64
+            for annotation in (encoded,[encoded[:19],encoded[19:]],{encoded[:19]:encoded[19:]}):
+                with self.subTest(token=token,annotation=annotation):
+                    schema=validator.load_json(validator.SCHEMA)
+                    schema["x-private-audit"]=annotation
+                    with tempfile.TemporaryDirectory() as directory:
+                        path=Path(directory)/"schema.json"
+                        path.write_text(json.dumps(schema),encoding="utf-8")
+                        with patch.object(validator,"SCHEMA",path):
+                            with self.assertRaisesRegex(ValueError,"unscoped digest"):
+                                self.validate(self.packet)
+        validator.scan_safety("A short &#x61; example &amp; note")
+
     def test_percent_byte_fingerprints_rejected_before_lossy_decoding(self):
         for token in ("%aa", "%FF", "%00", "%c2%aa", "%25aa", r"\u0025aa"):
             encoded = token * 32
@@ -411,4 +426,3 @@ class FrameworkComparisonValidationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

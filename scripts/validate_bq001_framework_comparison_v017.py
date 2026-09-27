@@ -7,6 +7,7 @@ import json
 import re
 import subprocess
 import unicodedata
+from html import unescape
 from urllib.parse import unquote
 from pathlib import Path
 from typing import Any
@@ -90,7 +91,7 @@ UTS46_IGNORED_RANGES = (
 def normalize_private_text(text: str, *, decode_hex: bool = True,
                            preserve_percent_bytes: bool = False) -> str:
     for _ in range(32):
-        normalized = unicodedata.normalize("NFKC", text)
+        normalized = unescape(unicodedata.normalize("NFKC", text))
         if preserve_percent_bytes:
             # Retain every encoded byte before UTF-8 decoding can erase invalid
             # bytes or collapse valid multibyte sequences. Repeat after nested
@@ -389,4 +390,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
