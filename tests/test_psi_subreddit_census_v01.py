@@ -1,4 +1,6 @@
+import copy
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -15,11 +17,20 @@ class PsiSubredditCensusReviewStateTests(unittest.TestCase):
     def setUp(self):
         self.data = json.loads((ROOT / ARTIFACT).read_text(encoding="utf-8"))
 
-    def validate(self):
+    def validate(self, tamper=None):
         # Run the real CLI against an isolated copy; never modify the census.
         with tempfile.TemporaryDirectory() as directory:
+            for relative in (
+                "references/community/reddit-semantic-index.csv",
+                "references/consciousness/interbrain-telepathy-mayim-bialik-source-crawl-v0.1.json",
+            ):
+                fixture = Path(directory) / relative
+                fixture.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / relative, fixture)
+                if relative == tamper:
+                    fixture.write_bytes(fixture.read_bytes() + b"\n")
             path = Path(directory) / ARTIFACT
-            path.parent.mkdir(parents=True)
+            path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(self.data), encoding="utf-8")
             return subprocess.run(
                 [sys.executable, str(VALIDATOR)], cwd=directory,
@@ -45,5 +56,124 @@ class PsiSubredditCensusReviewStateTests(unittest.TestCase):
         self.assertIn("KeyError: 'review_state'", result.stderr)
 
 
+    def assert_rejected(self):
+        result = self.validate()
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+
+    def test_vocabulary_and_normalization_drift_fail(self):
+        original = copy.deepcopy(self.data)
+        for field, value in (("normalization", "substring"), ("matching", "any substring"),
+                             ("seed_post_ids", {}), ("supplemental_metadata", [])):
+            with self.subTest(field=field):
+                self.data = copy.deepcopy(original)
+                self.data["method"]["discovery"][field] = value
+                self.assert_rejected()
+        self.data = copy.deepcopy(original)
+        self.data["method"]["discovery"]["vocabulary"]["CHN"].append("channel")
+        self.assert_rejected()
+
+    def test_counts_and_discovery_membership_drift_fail(self):
+        original = copy.deepcopy(self.data)
+        for field in ("matched_manifestations", "provisional_unique_source_lineages"):
+            with self.subTest(field=field):
+                self.data = copy.deepcopy(original)
+                self.data["lanes"]["TEL"][field] += 1
+                self.assert_rejected()
+        self.data = copy.deepcopy(original)
+        block = self.data["lanes"]["TEL"]
+        block["records"].pop(0)
+        block["matched_manifestations"] -= 1
+        block["provisional_unique_source_lineages"] -= 1
+        self.assert_rejected()  # Internally consistent counts cannot hide an omission.
+
+    def test_unlisted_bare_channel_record_fails(self):
+        block = self.data["lanes"]["CHN"]
+        record = copy.deepcopy(block["records"][0])
+        record.update(post_id="1ln91sj", title_slug="howto_channel_consciousnesses_jun_2025",
+                      reddit_url="https://www.reddit.com/r/NeuronsToNirvana/comments/1ln91sj/howto_channel_consciousnesses_jun_2025/",
+                      source_lineage_id="RSL-1LN91SJ")
+        block["records"].append(record)
+        block["matched_manifestations"] += 1
+        block["provisional_unique_source_lineages"] += 1
+        self.assert_rejected()
+
+    def test_unsupported_governed_mappings_fail(self):
+        original = copy.deepcopy(self.data)
+        for lane in ("TEL", "CHN", "PK"):
+            with self.subTest(lane=lane):
+                self.data = copy.deepcopy(original)
+                block = self.data["lanes"][lane]
+                selected = block["selected_for_full_provenance_review"]
+                record = next(r for r in block["records"] if r["post_id"] == selected["post_id"])
+                record["lineage_basis"] = selected["lineage_basis"] = "GOVERNED_SOURCE_MAPPING"
+                self.assert_rejected()
+
+    def test_provisional_review_state_and_source_url_cannot_be_elevated(self):
+        original = copy.deepcopy(self.data)
+        for key, value in (("review_state", "VERIFIED_OFFICIAL_SECONDARY"),
+                           ("underlying_source_urls", ["https://example.org/unverified"])):
+            with self.subTest(key=key):
+                self.data = copy.deepcopy(original)
+                block = self.data["lanes"]["TEL"]
+                selected = block["selected_for_full_provenance_review"]
+                record = next(r for r in block["records"] if r["post_id"] == selected["post_id"])
+                record[key] = selected[key] = value
+                self.assert_rejected()
+
+    def test_governed_locator_and_hash_are_required(self):
+        original = copy.deepcopy(self.data)
+        for field in ("path", "git_blob_sha", "pre_existing_commit", "json_pointer"):
+            with self.subTest(field=field):
+                self.data = copy.deepcopy(original)
+                record = next(r for r in self.data["lanes"]["PSI-PERSON"]["records"] if r["post_id"] == "1oyi2qp")
+                record["repository_provenance"][field] = "fabricated"
+                self.assert_rejected()
+        self.data = copy.deepcopy(original)
+        record = next(r for r in self.data["lanes"]["PSI-PERSON"]["records"] if r["post_id"] == "1oyi2qp")
+        del record["repository_provenance"]
+        self.assert_rejected()
+
+    def test_fabricated_or_altered_selections_fail(self):
+        original = copy.deepcopy(self.data)
+        selected = original["lanes"]["TEL"]["selected_for_full_provenance_review"]
+        record = next(r for r in original["lanes"]["TEL"]["records"] if r["post_id"] == selected["post_id"])
+        for field, value in record.items():
+            with self.subTest(field=field):
+                self.data = copy.deepcopy(original)
+                self.data["lanes"]["TEL"]["selected_for_full_provenance_review"][field] = "altered"
+                self.assert_rejected()
+            with self.subTest(missing=field):
+                self.data = copy.deepcopy(original)
+                del self.data["lanes"]["TEL"]["selected_for_full_provenance_review"][field]
+                self.assert_rejected()
+
+    def test_selection_from_another_lane_fails(self):
+        self.data["lanes"]["TEL"]["selected_for_full_provenance_review"] = copy.deepcopy(
+            self.data["lanes"]["PRE"]["selected_for_full_provenance_review"])
+        self.data["lanes"]["TEL"]["selected_for_full_provenance_review"]["lane"] = "TEL"
+        self.assert_rejected()
+
+    def test_duplicate_lane_record_fails(self):
+        block = self.data["lanes"]["TEL"]
+        block["records"].append(copy.deepcopy(block["records"][0]))
+        block["matched_manifestations"] += 1
+        self.assert_rejected()
+
+    def test_changed_repository_blob_bytes_fail(self):
+        for path in (
+            "references/community/reddit-semantic-index.csv",
+            "references/consciousness/interbrain-telepathy-mayim-bialik-source-crawl-v0.1.json",
+        ):
+            with self.subTest(path=path):
+                result = self.validate(tamper=path)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("pinned blob mismatch", result.stderr)
+
+    def test_index_pin_drift_fails(self):
+        self.data["source_surface"]["git_blob_sha"] = "0" * 40
+        self.assert_rejected()
+
+
 if __name__ == "__main__":
     unittest.main()
+

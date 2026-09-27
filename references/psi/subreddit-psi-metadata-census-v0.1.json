@@ -6,23 +6,88 @@
   "source_surface": {
     "path": "references/community/reddit-semantic-index.csv",
     "git_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
-    "supplemental_governed_records": [
-      "1vyr82r",
-      "15rxs24"
-    ],
     "subreddit": "r/NeuronsToNirvana",
     "unique_indexed_post_ids": 7298,
     "coverage": "complete_for_current_indexed_metadata_surface_not_complete_historical_subreddit",
-    "outbound_source_urls": "Only retained where already resolved in governed repository records; missing URLs are not inferred."
+    "outbound_source_urls": "Retained only for the hash-verified repository source record; unsupported mappings and URLs are removed pending provenance review.",
+    "supplemental_provisional_records": [
+      "1vyr82r"
+    ]
   },
   "method": {
-    "discovery": "Exact phenomenon terms in normalized Reddit title slugs plus explicitly governed seed post IDs.",
-    "deduplication": "One Reddit manifestation per post_id. Identical normalized title slugs share a provisional RSL lineage. Existing governed source IDs override provisional lineages. Cross-lane appearances point to one lineage but remain separate claim classifications.",
+    "discovery": {
+      "version": "1",
+      "normalization": "ASCII lowercase; extract [a-z0-9_]+ title slug immediately after /comments/<post_id>/; split on underscores and discard empty tokens; no stemming, decoding or substring matching.",
+      "matching": "Any listed phrase matches consecutive whole tokens. Bare channel is excluded. No semantic exclusions; false positives remain review candidates. Supplemental metadata enters only explicitly seeded lanes; vocabulary scans indexed metadata only.",
+      "index_rows": "Only NeuronsToNirvana post rows; URL post_id must equal row post_id. Deduplicate post IDs, choosing lexicographically smallest normalized slug and canonical URL. Rows without title slugs count toward indexed IDs but cannot match vocabulary.",
+      "vocabulary": {
+        "TEL": [
+          "telepathy",
+          "telepathic",
+          "mindreading"
+        ],
+        "CHN": [
+          "channeling",
+          "channelling",
+          "channelers",
+          "channeled",
+          "channelled"
+        ],
+        "MED": [
+          "mediumship",
+          "channelling_spirits"
+        ],
+        "PRE": [
+          "precognition",
+          "presentiment"
+        ],
+        "RV": [
+          "remote_viewing",
+          "military_remote"
+        ],
+        "PK": [
+          "psychokinesis",
+          "telekinesis",
+          "loving_intention",
+          "cooks_intention"
+        ],
+        "PSI-PERSON": [
+          "psychic",
+          "psychics",
+          "channelers",
+          "mind_readers"
+        ]
+      },
+      "seed_post_ids": {
+        "TEL": [],
+        "CHN": [
+          "1vyr82r"
+        ],
+        "MED": [],
+        "PRE": [],
+        "RV": [],
+        "PK": [
+          "15rxs24"
+        ],
+        "PSI-PERSON": []
+      },
+      "supplemental_metadata": [
+        {
+          "post_id": "1vyr82r",
+          "title_slug": "three_channelers_describe_the_same_extraterrestrials",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/three_channelers_describe_the_same_extraterrestrials/"
+        }
+      ],
+      "supplemental_metadata_origin": "Carried forward as unverified metadata from census commit 81cee7a6c93aa50be27b48f54ba5f1566ebce356, blob 62258a6f2d41d8f0f1fb0db0a71ac82e8b644a61. Not governed source provenance.",
+      "lineage_rule": "Group normalized title slugs across lanes; RSL- plus uppercase lexicographically smallest post ID, except the explicitly pinned governed source mapping."
+    },
+    "deduplication": "Replay discovery rules from the pinned index and explicit provisional seed metadata; group normalized slugs, with only hash-verified repository source overrides. Cross-lane appearances never transfer evidence.",
     "limitations": [
       "Title matches can include false positives and miss relevant posts.",
       "A shared title is not proof of a shared external source.",
       "An empty underlying_source_urls array means unresolved provenance, not absence of a source.",
-      "Counts describe metadata candidates, not evidence or corroboration."
+      "Counts describe metadata candidates, not evidence or corroboration.",
+      "PSI-PERSON includes a music-title false positive (1ubk0s5) under the explicit broad psychic vocabulary; person identity is not inferred. Bare channel does not match CHN, including 1ln91sj. These rules now define the replay; the earlier prose did not specify a reproducible algorithm."
     ]
   },
   "lanes": {
@@ -263,13 +328,11 @@
           "post_id": "1kqolp4",
           "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1kqolp4/telepathy_in_lucid_dreams_stories_of_incredible/",
           "title_slug": "telepathy_in_lucid_dreams_stories_of_incredible",
-          "source_lineage_id": "IONS-WAGGONER-2025-LUCID-DREAM-TELEPATHY",
-          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
-          "underlying_source_urls": [
-            "https://noetic.org/blog/telepathy-in-lucid-dreams/"
-          ],
+          "source_lineage_id": "RSL-1KQOLP4",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
           "lane": "TEL",
-          "review_state": "VERIFIED_OFFICIAL_SECONDARY",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
           "evidence_transfer_allowed": false,
           "independent_corroboration": false
         },
@@ -374,16 +437,14 @@
         "post_id": "1kqolp4",
         "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1kqolp4/telepathy_in_lucid_dreams_stories_of_incredible/",
         "title_slug": "telepathy_in_lucid_dreams_stories_of_incredible",
-        "source_lineage_id": "IONS-WAGGONER-2025-LUCID-DREAM-TELEPATHY",
-        "lineage_basis": "GOVERNED_SOURCE_MAPPING",
-        "underlying_source_urls": [
-          "https://noetic.org/blog/telepathy-in-lucid-dreams/"
-        ],
+        "source_lineage_id": "RSL-1KQOLP4",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
         "lane": "TEL",
-        "review_state": "VERIFIED_OFFICIAL_SECONDARY",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
         "evidence_transfer_allowed": false,
         "independent_corroboration": false,
-        "selection_rationale": "Official secondary article is already resolved, while the controlled-study basis remains unverified; suitable for separating testimony from experimental claims.",
+        "selection_rationale": "Provisional metadata lead only; underlying source identity, URLs, methods and any prior review claims require inspectable provenance before further review.",
         "selection_only": true,
         "content_import_authorized": false,
         "public_synthesis_authorized": false
@@ -566,16 +627,11 @@
           "post_id": "1vyr82r",
           "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/three_channelers_describe_the_same_extraterrestrials/",
           "title_slug": "three_channelers_describe_the_same_extraterrestrials",
-          "source_lineage_id": "IONS-CHANNELING-ETI-2026",
-          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
-          "underlying_source_urls": [
-            "https://doi.org/10.1080/02604027.2026.2656120",
-            "https://doi.org/10.1080/02604027.2026.2656119",
-            "https://doi.org/10.31275/20263817",
-            "https://noetic.org/blog/channelers-describe-the-same-extraterrestrials/"
-          ],
+          "source_lineage_id": "RSL-1VYR82R",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
           "lane": "CHN",
-          "review_state": "PRIMARY_PROVENANCE_RESOLVED_MULTI_SOURCE_PACKET",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
           "evidence_transfer_allowed": false,
           "independent_corroboration": false
         }
@@ -584,19 +640,14 @@
         "post_id": "1vyr82r",
         "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/three_channelers_describe_the_same_extraterrestrials/",
         "title_slug": "three_channelers_describe_the_same_extraterrestrials",
-        "source_lineage_id": "IONS-CHANNELING-ETI-2026",
-        "lineage_basis": "GOVERNED_SOURCE_MAPPING",
-        "underlying_source_urls": [
-          "https://doi.org/10.1080/02604027.2026.2656120",
-          "https://doi.org/10.1080/02604027.2026.2656119",
-          "https://doi.org/10.31275/20263817",
-          "https://noetic.org/blog/channelers-describe-the-same-extraterrestrials/"
-        ],
+        "source_lineage_id": "RSL-1VYR82R",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
         "lane": "CHN",
-        "review_state": "PRIMARY_PROVENANCE_RESOLVED_MULTI_SOURCE_PACKET",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
         "evidence_transfer_allowed": false,
         "independent_corroboration": false,
-        "selection_rationale": "Three primary papers and an official overview are resolved; full provenance review can test source separation, prospective design, semantic-analysis choices and exposure controls.",
+        "selection_rationale": "Provisional metadata lead only; underlying source identity, URLs, methods and any prior review claims require inspectable provenance before further review.",
         "selection_only": true,
         "content_import_authorized": false,
         "public_synthesis_authorized": false
@@ -764,14 +815,11 @@
           "post_id": "15rxs24",
           "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/15rxs24/abstract_evidence_for_correlations_between/",
           "title_slug": "abstract_evidence_for_correlations_between",
-          "source_lineage_id": "ACHTERBERG-2005-DISTANT-INTENTIONALITY-FMRI",
-          "lineage_basis": "GOVERNED_SOURCE_MAPPING",
-          "underlying_source_urls": [
-            "https://pubmed.ncbi.nlm.nih.gov/16398587/",
-            "https://doi.org/10.1089/acm.2005.11.965"
-          ],
+          "source_lineage_id": "RSL-15RXS24",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
           "lane": "PK",
-          "review_state": "FULL_TEXT_METHODS_REVIEWED_HOLD",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
           "evidence_transfer_allowed": false,
           "independent_corroboration": false
         },
@@ -816,17 +864,14 @@
         "post_id": "15rxs24",
         "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/15rxs24/abstract_evidence_for_correlations_between/",
         "title_slug": "abstract_evidence_for_correlations_between",
-        "source_lineage_id": "ACHTERBERG-2005-DISTANT-INTENTIONALITY-FMRI",
-        "lineage_basis": "GOVERNED_SOURCE_MAPPING",
-        "underlying_source_urls": [
-          "https://pubmed.ncbi.nlm.nih.gov/16398587/",
-          "https://doi.org/10.1089/acm.2005.11.965"
-        ],
+        "source_lineage_id": "RSL-15RXS24",
+        "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+        "underlying_source_urls": [],
         "lane": "PK",
-        "review_state": "FULL_TEXT_METHODS_REVIEWED_HOLD",
+        "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
         "evidence_transfer_allowed": false,
         "independent_corroboration": false,
-        "selection_rationale": "The underlying fMRI distant-intentionality study is already identified and held; it supports a full provenance audit within the PK family/BIO-PK subtype without evidential promotion.",
+        "selection_rationale": "Provisional metadata lead only; underlying source identity, URLs, methods and any prior review claims require inspectable provenance before further review.",
         "selection_only": true,
         "content_import_authorized": false,
         "public_synthesis_authorized": false
@@ -834,8 +879,8 @@
     },
     "PSI-PERSON": {
       "operational_boundary": "Practitioner/person metadata only; never an evidence category and never counted as corroboration.",
-      "matched_manifestations": 10,
-      "provisional_unique_source_lineages": 8,
+      "matched_manifestations": 11,
+      "provisional_unique_source_lineages": 9,
       "records": [
         {
           "post_id": "17xbakb",
@@ -921,7 +966,13 @@
           "lane": "PSI-PERSON",
           "review_state": "EXISTING_GOVERNED_SOURCE_REDDIT_MANIFESTATION",
           "evidence_transfer_allowed": false,
-          "independent_corroboration": false
+          "independent_corroboration": false,
+          "repository_provenance": {
+            "path": "references/consciousness/interbrain-telepathy-mayim-bialik-source-crawl-v0.1.json",
+            "git_blob_sha": "2266fa2073ef75e4757d97dfc5bc670bd187d6c6",
+            "pre_existing_commit": "dfc0854c826cade04d9bbc67fb69f7c712f66944",
+            "json_pointer": "/sources/0"
+          }
         },
         {
           "post_id": "1syy4n1",
@@ -940,6 +991,18 @@
           "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u9yom6/how_to_unlock_your_psychic_abilities_32m35s/",
           "title_slug": "how_to_unlock_your_psychic_abilities_32m35s",
           "source_lineage_id": "RSL-1FCAXR3",
+          "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
+          "underlying_source_urls": [],
+          "lane": "PSI-PERSON",
+          "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+          "evidence_transfer_allowed": false,
+          "independent_corroboration": false
+        },
+        {
+          "post_id": "1ubk0s5",
+          "reddit_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ubk0s5/ace_ventura_liquid_soul_psychic_experience/",
+          "title_slug": "ace_ventura_liquid_soul_psychic_experience",
+          "source_lineage_id": "RSL-1UBK0S5",
           "lineage_basis": "NORMALIZED_TITLE_SLUG_PROVISIONAL",
           "underlying_source_urls": [],
           "lane": "PSI-PERSON",
