@@ -169,6 +169,70 @@ class PsiSubredditCensusReviewStateTests(unittest.TestCase):
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIn("pinned blob mismatch", result.stderr)
 
+    def test_shared_lineage_order_does_not_change_membership(self):
+        self.data["cross_lane_lineages"].reverse()
+        for summary in self.data["cross_lane_lineages"]:
+            summary["manifestations"].reverse()
+            summary["lanes"].reverse()
+        result = self.validate()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_missing_or_duplicate_shared_lineages_fail(self):
+        original = copy.deepcopy(self.data)
+        for mutation in ("empty", "omitted", "duplicate"):
+            with self.subTest(mutation=mutation):
+                self.data = copy.deepcopy(original)
+                summaries = self.data["cross_lane_lineages"]
+                if mutation == "empty":
+                    summaries.clear()
+                elif mutation == "omitted":
+                    summaries.pop()
+                else:
+                    summaries.append(copy.deepcopy(summaries[0]))
+                self.assert_rejected()
+
+    def test_altered_shared_lineage_fields_fail(self):
+        original = copy.deepcopy(self.data)
+        mutations = (
+            ("source_lineage_id", "RSL-FABRICATED"),
+            ("manifestations", ["https://example.org/fabricated"]),
+            ("manifestations", []),
+            ("lanes", ["PK"]),
+            ("lanes", []),
+            ("evidence_transfer_allowed", True),
+            ("independent_corroboration", True),
+        )
+        for field, value in mutations:
+            with self.subTest(field=field, value=value):
+                self.data = copy.deepcopy(original)
+                self.data["cross_lane_lineages"][0][field] = value
+                self.assert_rejected()
+        for field in original["cross_lane_lineages"][0]:
+            with self.subTest(missing=field):
+                self.data = copy.deepcopy(original)
+                del self.data["cross_lane_lineages"][0][field]
+                self.assert_rejected()
+
+    def test_duplicate_summary_members_and_unshared_lineage_fail(self):
+        original = copy.deepcopy(self.data)
+        for field in ("manifestations", "lanes"):
+            with self.subTest(field=field):
+                self.data = copy.deepcopy(original)
+                values = self.data["cross_lane_lineages"][0][field]
+                values.append(values[0])
+                self.assert_rejected()
+        self.data = copy.deepcopy(original)
+        # A real record is insufficient: this lineage is not shared.
+        record = self.data["lanes"]["TEL"]["records"][0]
+        self.data["cross_lane_lineages"].insert(0, {
+            "source_lineage_id": record["source_lineage_id"],
+            "manifestations": [record["reddit_url"]],
+            "lanes": [record["lane"]],
+            "evidence_transfer_allowed": False,
+            "independent_corroboration": False,
+        })
+        self.assert_rejected()
+
     def test_index_pin_drift_fails(self):
         self.data["source_surface"]["git_blob_sha"] = "0" * 40
         self.assert_rejected()

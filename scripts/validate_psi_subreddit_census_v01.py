@@ -164,8 +164,32 @@ for lane, block in data["lanes"].items():
     assert selected["independent_corroboration"] is False
     assert all(record["evidence_transfer_allowed"] is False for record in block["records"])
     assert all(record["independent_corroboration"] is False for record in block["records"])
+# A shared lineage means multiple manifestations or multiple lane classifications.
+# Derive this collection only from records that passed all checks above.
+shared = {}
+for block in data["lanes"].values():
+    for record in block["records"]:
+        group = shared.setdefault(record["source_lineage_id"], {"manifestations": set(), "lanes": set()})
+        group["manifestations"].add(record["reddit_url"])
+        group["lanes"].add(record["lane"])
+expected_shared = [
+    {
+        "source_lineage_id": lineage_id,
+        "manifestations": sorted(group["manifestations"]),
+        "lanes": sorted(group["lanes"]),
+        "evidence_transfer_allowed": False,
+        "independent_corroboration": False,
+    }
+    for lineage_id, group in sorted(shared.items())
+    if len(group["manifestations"]) > 1 or len(group["lanes"]) > 1
+]
 for lineage in data["cross_lane_lineages"]:
     assert lineage["evidence_transfer_allowed"] is False
     assert lineage["independent_corroboration"] is False
+# Ordering is immaterial; keep lists (not sets) so duplicate summaries or members fail.
+actual_shared = [
+    {**item, "manifestations": sorted(item["manifestations"]), "lanes": sorted(item["lanes"])}
+    for item in data["cross_lane_lineages"]
+]
+assert sorted(actual_shared, key=lambda item: item["source_lineage_id"]) == expected_shared, "derived shared-lineage summary drift"
 print("PSI subreddit census governance validation passed")
-
