@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests/v0.16-release-candidate.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
-EXPECTED_BASE_COMMIT = "779be69acd564a09aada6212083d0fb3c0b599bf"
+EXPECTED_BASE_COMMIT = "5fb99152524b57948aa10662a1467944fea706c6"
 
 EXPECTED_BASELINES = {
     "v0.14": "7b6cfd89de570c4b945d574dad570c37825645fe",
@@ -89,7 +89,7 @@ def discovered_source_status_fixture_paths() -> set[str]:
 
 
 def validate_repository_binding() -> list[str]:
-    """Bind the immutable candidate anchor and exact CI head to Git history."""
+    """Bind the declared base and exact CI head to the checked-out Git history."""
     errors: list[str] = []
     try:
         head = subprocess.run(
@@ -102,19 +102,24 @@ def validate_repository_binding() -> list[str]:
         expected_head = os.environ.get("CANDIDATE_HEAD_SHA", "").strip()
         if expected_head and head != expected_head:
             errors.append("exact candidate head checkout")
-        for ref, error in (
-            ("HEAD", "candidate base is not an ancestor of head"),
-            ("origin/main", "candidate base is not an ancestor of main"),
-        ):
-            result = subprocess.run(
-                ["git", "merge-base", "--is-ancestor", EXPECTED_BASE_COMMIT, ref],
-                cwd=ROOT,
-                check=False,
-                text=True,
-                capture_output=True,
-            )
-            if result.returncode != 0:
-                errors.append(error)
+        current_main = subprocess.run(
+            ["git", "rev-parse", "origin/main"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        ).stdout.strip()
+        if current_main != EXPECTED_BASE_COMMIT:
+            errors.append("actual candidate base commit")
+        ancestor = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", "origin/main", "HEAD"],
+            cwd=ROOT,
+            check=False,
+            text=True,
+            capture_output=True,
+        )
+        if ancestor.returncode != 0:
+            errors.append("candidate must contain current origin/main")
     except subprocess.CalledProcessError:
         errors.append("candidate repository binding")
     return errors
@@ -123,8 +128,10 @@ def validate_repository_binding() -> list[str]:
 def validate_manifest(data: dict) -> list[str]:
     errors: list[str] = []
 
-    if data.get("schema_version") != "0.16.0-beta.1":
+    if data.get("schema_version") != "0.16.0-beta.2":
         errors.append("schema version")
+    if data.get("candidate_iteration") != 2:
+        errors.append("candidate iteration")
     if data.get("artifact_status") != "UNRELEASED_REVIEW_CANDIDATE":
         errors.append("candidate status")
     if data.get("issue") != 277:
@@ -240,3 +247,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

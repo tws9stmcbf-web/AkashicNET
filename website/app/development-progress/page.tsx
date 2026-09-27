@@ -1,0 +1,76 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Development Progress | AkashicNET",
+  description: "A transparent distinction between sealed AkashicNET releases, development checkpoints and the path toward v0.17.",
+};
+
+const panel = {
+  border: "1px solid rgba(216,185,92,.24)",
+  borderRadius: 22,
+  background: "linear-gradient(145deg,rgba(18,28,57,.94),rgba(7,11,26,.98))",
+  padding: "clamp(22px,4vw,40px)",
+} as const;
+
+const checkpoints = [
+  ["v0.15", "SEALED BASELINE", "Public Sync & Observability Beta. Immutable release evidence remains governed by its exact commit and manifest."],
+  ["v0.16.0-beta.2", "GOVERNED CANDIDATE", "The second prerelease candidate, registered in the governed release-candidate manifest. Validation and exact-head review remain required; this is not a sealed release."],
+  ["v0.16.7", "SITE CHECKPOINT", "A presentation and integration marker. It is not a release, a percentage, or a claim that seven formal patch releases occurred."],
+  ["v0.17.0", "NEXT MINOR", "Reached only after intended scope, executable exact-head checks, review closure and release-integrity verification."],
+];
+
+const changes = [
+  ["Public experience", "Expanded public portals, multilingual entry work, accessible presentation and clearer framework identities."],
+  ["Evidence and provenance", "More explicit source trails, asset integrity records, evidence-lane boundaries and public-manifest checks."],
+  ["Privacy and rights", "Fail-closed URL and hostname screening, cultural-sovereignty review, reproduction controls and human adjudication."],
+  ["Reliability", "Exact-head workflow checks, release-candidate validation and review-before-promotion discipline."],
+];
+
+const gates = [
+  "All required workflows must run and pass on the exact candidate head.",
+  "Substantive review findings must be corrected or explicitly adjudicated.",
+  "Generated assets, manifests and checksums must agree.",
+  "Privacy, provenance, rights, HOLD and uncertainty gates must remain fail-closed.",
+  "BQ001 remains UNRESOLVED; no testimony, hypothesis or inference is silently promoted to established evidence.",
+  "The sealed v0.14 and v0.15 baselines must remain unchanged.",
+];
+
+export default function DevelopmentProgressPage() {
+  return (
+    <main style={{ minHeight: "100vh", background: "#070b1a", color: "#f5f0e5" }}>
+      <header className="nav-shell">
+        <a className="wordmark" href="/" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
+        <nav aria-label="Progress page navigation"><a href="/">Home</a><a href="#status">Status</a><a href="#changes">Changes</a><a href="#gates">v0.17 gates</a><a href="https://github.com/tws9stmcbf-web/AkashicNET">GitHub ↗</a></nav>
+      </header>
+
+      <section style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "clamp(84px,12vw,150px) 0 54px" }}>
+        <p className="section-label">PUBLIC DEVELOPMENT RECORD · 15 SEPTEMBER 2026</p>
+        <h1 style={{ fontFamily: "var(--font-display,serif)", fontSize: "clamp(3.2rem,9vw,7.8rem)", lineHeight: .88, margin: "20px 0 28px" }}>Progress,<br/><em style={{ color: "#e7cd7e" }}>without pretence.</em></h1>
+        <p style={{ maxWidth: 780, color: "#cbd0dd", fontSize: "clamp(1.05rem,2vw,1.35rem)", lineHeight: 1.75 }}>AkashicNET distinguishes an immutable sealed release from an active development checkpoint. The governed candidate is <strong style={{ color: "#f1d47b" }}>v0.16.0-beta.2</strong>. The separate <strong style={{ color: "#f1d47b" }}>v0.16.7 site checkpoint</strong> records presentation and integration progress toward v0.17.0.</p>
+        <aside style={{ ...panel, marginTop: 34 }}><strong style={{ color: "#f1d47b" }}>Naming rule</strong><p style={{ color: "#b7bfce", lineHeight: 1.7, marginBottom: 0 }}><code>beta.1 → beta.2</code> advances the prerelease candidate. A plus sign denotes build metadata. Site checkpoints and page-iteration counts remain separate from governed release numbers. <a href="https://github.com/tws9stmcbf-web/AkashicNET/blob/main/manifests/v0.16-release-candidate.json" style={{ color: "#f1d47b" }}>Inspect the governed candidate record ↗</a></p></aside>
+      </section>
+
+      <section id="status" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0" }}>
+        <p className="section-label">01 · STATUS LANGUAGE</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Four labels. Four different meanings.</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,280px),1fr))", gap: 16 }}>
+          {checkpoints.map(([version,status,text])=><article key={version} style={panel}><small style={{ color: "#8ebad0", letterSpacing: ".12em" }}>{status}</small><h3 style={{ color: "#f1d47b", fontSize: "2rem", margin: "12px 0" }}>{version}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.7 }}>{text}</p></article>)}
+        </div>
+      </section>
+
+      <section id="changes" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0" }}>
+        <p className="section-label">02 · WHAT THE CHECKPOINT REPRESENTS</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Progress across the living system.</h2>
+        <div style={{ display: "grid", gap: 14 }}>{changes.map(([title,text])=><article key={title} style={{ ...panel, display: "grid", gridTemplateColumns: "minmax(160px,.35fr) 1fr", gap: 18 }}><h3 style={{ color: "#f1d47b", margin: 0 }}>{title}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.7, margin: 0 }}>{text}</p></article>)}</div>
+        <p style={{ color: "#9fa7ba", lineHeight: 1.75, marginTop: 22 }}>This page records categories of change, not proof that every open pull request is ready. Exact technical history remains in the repository’s commits, pull requests, workflow runs and release manifests.</p>
+      </section>
+
+      <section id="gates" style={{ width: "min(1080px,calc(100% - 32px))", margin: "0 auto", padding: "44px 0 90px" }}>
+        <p className="section-label">03 · BEFORE v0.17</p><h2 style={{ fontSize: "clamp(2rem,5vw,4rem)" }}>Completion must be earned.</h2>
+        <div style={panel}><ol style={{ color: "#cbd0dd", lineHeight: 1.8, paddingLeft: 22 }}>{gates.map(gate=><li key={gate} style={{ marginBottom: 12 }}>{gate}</li>)}</ol></div>
+        <aside style={{ marginTop: 24, borderLeft: "3px solid #e7cd7e", padding: "4px 0 4px 22px", color: "#b7bfce", lineHeight: 1.75 }}><strong style={{ color: "#f1d47b" }}>Boundary:</strong> version progress measures engineering and publication readiness. It does not measure truth, spiritual validity, scientific confirmation, safety, rights clearance or certainty.</aside>
+        <div style={{ marginTop: 34, display: "flex", flexWrap: "wrap", gap: 14 }}><a className="primary-link" href="https://github.com/tws9stmcbf-web/AkashicNET">Inspect the public repository <span>↗</span></a><a className="text-link" href="/">Return home →</a></div>
+      </section>
+
+      <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Transparent progress · Human-governed review</p><p>Awaken within · Serve without · 2026</p></footer>
+    </main>
+  );
+}
