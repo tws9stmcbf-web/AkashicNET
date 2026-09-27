@@ -17,7 +17,7 @@
   "input": {
     "artifact_id": "artifact:public-safe-semantic-endpoint-registry:0.1.9",
     "repository_record": "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json",
-    "sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35",
+    "sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53",
     "public_safe": true
   },
   "generation_policy": {
@@ -67,7 +67,7 @@
         "normalized_topic": "community",
         "source_token_start": 0,
         "source_token_end_exclusive": 1,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -113,7 +113,7 @@
         "normalized_topic": "consciousness",
         "source_token_start": 3,
         "source_token_end_exclusive": 4,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -159,7 +159,7 @@
         "normalized_topic": "consciousness",
         "source_token_start": 9,
         "source_token_end_exclusive": 10,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -205,7 +205,7 @@
         "normalized_topic": "brain",
         "source_token_start": 15,
         "source_token_end_exclusive": 16,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -251,7 +251,7 @@
         "normalized_topic": "research",
         "source_token_start": 10,
         "source_token_end_exclusive": 11,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -297,7 +297,7 @@
         "normalized_topic": "philosophy",
         "source_token_start": 2,
         "source_token_end_exclusive": 3,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -343,7 +343,7 @@
         "normalized_topic": "qabbalah",
         "source_token_start": 4,
         "source_token_end_exclusive": 5,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -389,7 +389,7 @@
         "normalized_topic": "consciousness",
         "source_token_start": 10,
         "source_token_end_exclusive": 11,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -435,7 +435,7 @@
         "normalized_topic": "consciousness",
         "source_token_start": 1,
         "source_token_end_exclusive": 2,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -481,7 +481,7 @@
         "normalized_topic": "brain",
         "source_token_start": 13,
         "source_token_end_exclusive": 14,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -527,7 +527,7 @@
         "normalized_topic": "panpsychism",
         "source_token_start": 0,
         "source_token_end_exclusive": 1,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -573,7 +573,7 @@
         "normalized_topic": "reincarnation",
         "source_token_start": 6,
         "source_token_end_exclusive": 7,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -619,7 +619,7 @@
         "normalized_topic": "shamanism",
         "source_token_start": 3,
         "source_token_end_exclusive": 4,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
@@ -665,7 +665,7 @@
         "normalized_topic": "consciousness",
         "source_token_start": 11,
         "source_token_end_exclusive": 12,
-        "registry_sha256": "a82c2c715b41f59d3f617ed21c992b57ebab5a2ecff14858eaabc83396397c35"
+        "registry_sha256": "bfa447b8371a04cc5586b0d5c07f68cdc72aa971bd3f8559cd311895eb0c8e53"
       },
       "signal_controls": {
         "graph_derived": false,
