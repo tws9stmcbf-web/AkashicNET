@@ -68,6 +68,8 @@ A record may be meaningful in several ways at once. A teaching may be literal wi
 
 Each proposed connection records its target, domains, relationship, evidence lane, current strength, sources, uncertainty, alternative explanations and next discriminating step. Resonance or resemblance begins as descriptive or suggestive. It can later become better supported only when new authorised material, appropriate evidence and independent review justify that change. The dated earlier assessment remains in history.
 
+Connection source traceability: `established_evidence` and every strength except `descriptive_only` or `unresolved` require nonempty `source_ids`. A source-free descriptive or unresolved connection is only a held inquiry record: its evidence lane cannot be `established_evidence`, and record-level `publication_status` must remain `hold`. Every supplied connection source ID must resolve to exactly one node with a nonblank locator. Run `python scripts/validate_prism_connections.py RECORD.json` to check the schema and these references. Passing establishes structural traceability only, not source verification, independent corroboration, cultural authority, privacy clearance, rights, publication approval or promotion. Other PRISM review findings remain separate.
+
 A BLOCKED record may therefore mature into evidence, but not merely because it was preserved or reinterpreted. The specific blocker must be resolved, the relevant source must be examined, provenance and rights must be adequate, and the claim must satisfy the standard of its evidence lane. Other interpretations of the same record may remain metaphorical, contested or unresolved.
 
 ## Cultural and ethical boundaries

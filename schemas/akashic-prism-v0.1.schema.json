@@ -916,7 +916,8 @@
             "items": {
               "type": "string",
               "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
-            }
+            },
+            "description": "Required and nonempty unless current_strength is descriptive_only or unresolved and evidence_lane is not established_evidence. Source-free connections require publication HOLD. Every supplied ID must resolve to exactly one source_network node with a nonblank locator; this does not approve evidence or publication."
           },
           "uncertainty": {
             "type": "string",
@@ -933,7 +934,50 @@
             "type": "string",
             "minLength": 1
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "anyOf": [
+                {
+                  "required": [
+                    "evidence_lane"
+                  ],
+                  "properties": {
+                    "evidence_lane": {
+                      "const": "established_evidence"
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "current_strength"
+                  ],
+                  "properties": {
+                    "current_strength": {
+                      "not": {
+                        "enum": [
+                          "descriptive_only",
+                          "unresolved"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "then": {
+              "required": [
+                "source_ids"
+              ],
+              "properties": {
+                "source_ids": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
       }
     },
     "assessment_history": {
@@ -1093,5 +1137,41 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "connections"
+        ],
+        "properties": {
+          "connections": {
+            "contains": {
+              "not": {
+                "required": [
+                  "source_ids"
+                ],
+                "properties": {
+                  "source_ids": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "properties": {
+              "publication_status": {
+                "const": "hold"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

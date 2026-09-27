@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "layer_id": "PRISM-TEST",
+  "subject_ref": {
+    "subject_id": "synthetic-test",
+    "subject_type": "other"
+  },
+  "perspectives": [
+    {
+      "perspective_id": "EPI-TEST",
+      "lens": "philosophical",
+      "attributed_to": "Synthetic fixture",
+      "statement": "Test only; no corpus evidence.",
+      "epistemic_basis": [
+        "philosophical_argument"
+      ],
+      "claim_scope": "personal_meaning",
+      "evidence_lane": "interpretation",
+      "uncertainty": "Synthetic only."
+    }
+  ],
+  "state_observations": [],
+  "comparative_correspondences": [],
+  "source_network": {
+    "nodes": [
+      {
+        "source_id": "SRC-TEST",
+        "source_type": "other",
+        "locator": "urn:akashicnet:synthetic:connection-test",
+        "provenance_state": "unresolved",
+        "rights_state": "unknown"
+      }
+    ],
+    "edges": [],
+    "counting_boundary": {
+      "url_rows": 0,
+      "unique_post_ids": 0,
+      "unique_works": 0,
+      "independent_evidence_sources": 0
+    }
+  },
+  "investigation": {
+    "investigation_id": "INV-TEST",
+    "status": "evidence_needed",
+    "classification": "other",
+    "observed_facts": [
+      "Synthetic test only."
+    ],
+    "alternative_explanations": [
+      "Not a real assessment."
+    ],
+    "uncertainty": "Unresolved.",
+    "priority": "low",
+    "next_action": "Review synthetic fixture.",
+    "resolution_criterion": "Test validation only."
+  },
+  "synthesis_boundary": {
+    "neutral_description": "Synthetic fixture only.",
+    "convergences": [],
+    "disagreements": [],
+    "unverified_claims": [],
+    "remaining_uncertainty": [
+      "No evidence assessment performed."
+    ]
+  },
+  "governance": {
+    "truth_inference_allowed": false,
+    "testimony_auto_promotion_allowed": false,
+    "tradition_auto_promotion_allowed": false,
+    "cultural_review_required": true,
+    "publication_status": "hold"
+  },
+  "connections": [
+    {
+      "connection_id": "CONN-TEST",
+      "target_ref": "synthetic-target",
+      "domains": [
+        "philosophical"
+      ],
+      "relationship": "resembles",
+      "evidence_lane": "interpretation",
+      "current_strength": "descriptive_only",
+      "source_ids": [
+        "SRC-TEST"
+      ],
+      "uncertainty": "Synthetic only.",
+      "alternative_explanations": [
+        "Resemblance may be incidental."
+      ],
+      "next_discriminating_step": "Obtain authorised sources."
+    }
+  ]
+}
