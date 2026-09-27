@@ -19,7 +19,8 @@
         "references/big-questions/BQ001/evidence-batch3-v0.1.json",
         "references/big-questions/BQ001/evidence-batch4-v0.1.json",
         "references/big-questions/BQ001/evidence-batch5-review-candidates-v0.1.json",
-        "references/big-questions/BQ001/evidence-batch5-v0.1.json"
+        "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+        "references/big-questions/BQ001/evidence-batch6-review-candidates-v0.1.json"
       ],
       "legacy_parallel_records": [
         {
@@ -31,6 +32,14 @@
           "notes": "Retained for Git history and reproducibility. Do not extend, count as a separate evidence batch, or use as the base for new bounded-question contracts."
         }
       ]
+    },
+    "BQ002": {
+      "canonical_path": "references/big-questions/BQ002",
+      "spec": "references/big-questions/BQ002/spec-v0.1.json",
+      "evidence_batches": [
+        "references/big-questions/BQ002/evidence-batch1-review-candidates-v0.1.json"
+      ],
+      "legacy_parallel_records": []
     }
   },
   "release_invariants": {
@@ -40,5 +49,20 @@
     "scientific_evidence_auto_promotion_allowed": false,
     "rights_promotion_allowed": false,
     "privacy_posture_changed": false
+  },
+  "authoring_candidates": {
+    "BQ003": {
+      "candidate_path": "references/big-questions/BQ003",
+      "spec": "references/big-questions/BQ003/spec-v0.1.json",
+      "review_candidates": [
+        "references/big-questions/BQ003/progress-assessment-v0.1.json",
+        "references/big-questions/BQ003/bq001-meta-awareness-bridge-v0.1.json",
+        "references/big-questions/BQ003/aghori-research-candidates-v0.1.json"
+      ],
+      "registration_status": "REVIEW_CANDIDATE",
+      "canonical_registration_applied": false,
+      "accepted_evidence_batches": [],
+      "public_beta_gate": false
+    }
   }
 }

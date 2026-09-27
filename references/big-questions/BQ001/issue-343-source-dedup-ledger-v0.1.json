@@ -1,0 +1,223 @@
+{
+  "schema_version": "0.1",
+  "ledger_id": "AKN-ISSUE-343-SOURCE-DEDUP-2026-09-17",
+  "created_at": "2026-09-17",
+  "status": "REVIEW_CANDIDATE",
+  "issue": 343,
+  "scope": "Metadata-only identity and manifestation reconciliation for every source URL in issue #343 and its discovery comment, plus one missing reply located while verifying the explicitly named Leininger critique-response chain.",
+  "classification_vocabulary": {
+    "EXISTING_GOVERNED_RECORD": "The underlying source already has a governed repository record; do not import a second source identity.",
+    "EXISTING_COMMUNITY_RECORD": "The Reddit post ID already occurs in a repository import ledger or semantic/URI index; do not import it again.",
+    "NEW_SOURCE_CANDIDATE": "No matching default-branch record was found by identifier, title, DOI, PMID, PMCID or Reddit post ID; human review is still required.",
+    "ALTERNATE_MANIFESTATION": "A second URL represents the same underlying work and must share one independence key.",
+    "DERIVATIVE_COMPANION": "The URL is a publisher, institutional or author summary of another source and must not count as independent confirmation.",
+    "DISCOVERY_QUERY_NOT_SOURCE": "A dynamic search route is provenance for discovery but is not a stable source record.",
+    "IDENTITY_UNRESOLVED": "The available metadata is insufficient for canonical identity or claim-level import."
+  },
+  "repository_search": {
+    "ref": "main",
+    "searched_on": "2026-09-17",
+    "methods": [
+      "Exact DOI, PMID, PMCID, title token and Reddit post-ID search on the default branch, including the Reddit semantic and URI indexes",
+      "Issue #343 body and comment review",
+      "Comparison with open candidate workstreams PR #331 and PR #339"
+    ],
+    "limitations": [
+      "No sealed release baseline was modified.",
+      "Absence from search is not proof that a source never appeared in an unavailable private or historical corpus.",
+      "This ledger records identity and provenance only; it does not perform full-text methodological adjudication."
+    ]
+  },
+  "governance": {
+    "question_status": {
+      "BQ001": "UNRESOLVED",
+      "BQ002": "UNRESOLVED",
+      "BQ003": "UNRESOLVED"
+    },
+    "supports_models": [],
+    "accepted_edges": 0,
+    "canonical_identity_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "public_synthesis_update_allowed": false,
+    "website_update_allowed": false,
+    "source_import_allowed": false
+  },
+  "works": [
+    {
+      "work_id": "WORK-343-SURVIVING-DEATH-SERIES-2021",
+      "title": "Surviving Death",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "work:surviving-death-series-2021",
+      "manifestation_ids": ["M343-001"],
+      "note": "Official catalogue metadata only; episode scenes, dialogue and timestamps remain unverified."
+    },
+    {
+      "work_id": "WORK-343-UVA-SURVIVING-DEATH-COMPANION",
+      "title": "Surviving Death: Now Streaming on Netflix",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "work:surviving-death-series-2021",
+      "manifestation_ids": ["M343-002"],
+      "note": "Institutional companion and participation statement; not independent validation of the series or its claims."
+    },
+    {
+      "work_id": "WORK-343-TUCKER-LEININGER-2016",
+      "title": "The Case of James Leininger: An American Case of the Reincarnation Type",
+      "doi": "10.1016/j.explore.2016.02.003",
+      "pmid": "27079216",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.1016/j.explore.2016.02.003",
+      "manifestation_ids": ["M343-003", "M343-004"],
+      "note": "One underlying paper with an author-institution PDF and a PubMed bibliographic manifestation."
+    },
+    {
+      "work_id": "WORK-343-SUDDUTH-LEININGER-2022",
+      "title": "The James Leininger Case Re-Examined",
+      "doi": "10.31275/20212361",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.31275/20212361",
+      "manifestation_ids": ["M343-005"],
+      "note": "Critical article; its conclusions remain attributed pending adjudication."
+    },
+    {
+      "work_id": "WORK-343-SUDDUTH-BLOG-LEININGER-2021",
+      "title": "Crash and Burn: James Leininger Story Debunked",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.31275/20212361",
+      "manifestation_ids": ["M343-006"],
+      "note": "Author commentary related to the journal critique; derivative in evidential lineage and not an independent replication."
+    },
+    {
+      "work_id": "WORK-343-TUCKER-RESPONSE-2022",
+      "title": "Response to Sudduth's The James Leininger Case Re-Examined",
+      "doi": "10.31275/20222487",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.31275/20222487",
+      "manifestation_ids": ["M343-007"],
+      "note": "Response in the same contested case chain; not an independent case replication."
+    },
+    {
+      "work_id": "WORK-343-UVA-CHILDREN-PREVIOUS-LIVES",
+      "title": "Children Who Report Memories of Past Lives",
+      "identity_status": "EXISTING_GOVERNED_RECORD",
+      "existing_source_id": "UVA-DOPS-CHILDREN",
+      "existing_paths": [
+        "references/big-questions/gold-nuggets-cross-question-synthesis-v0.1.json"
+      ],
+      "independence_key": "work:uva-children-report-memories-past-lives",
+      "manifestation_ids": ["M343-008"],
+      "note": "Existing institutional overview and case-discovery record; do not create a duplicate source identity. Named case identity is public but is not independently adjudicated by this ledger."
+    },
+    {
+      "work_id": "WORK-343-AWARE2-2023",
+      "title": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+      "doi": "10.1016/j.resuscitation.2023.109903",
+      "pmid": "37423492",
+      "identity_status": "EXISTING_GOVERNED_RECORD",
+      "existing_source_id": "SRC-BQ001-AWARE2-2023",
+      "existing_paths": [
+        "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+        "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json"
+      ],
+      "independence_key": "doi:10.1016/j.resuscitation.2023.109903",
+      "manifestation_ids": ["M343-009", "M343-010"],
+      "note": "Do not create another AWARE II source record. The Elsevier item is a publisher summary, not independent confirmation."
+    },
+    {
+      "work_id": "WORK-343-KAMP-BEREAVEMENT-2020",
+      "title": "Sensory and Quasi-Sensory Experiences of the Deceased in Bereavement: An Interdisciplinary and Integrative Review",
+      "doi": "10.1093/schbul/sbaa113",
+      "pmid": "33099644",
+      "pmcid": "PMC7707065",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.1093/schbul/sbaa113",
+      "manifestation_ids": ["M343-011", "M343-012"],
+      "note": "ORBi and PMC are alternate manifestations of one review and must not be counted twice."
+    },
+    {
+      "work_id": "WORK-343-SABUCEDO-CULTURAL-BEREAVEMENT-2020",
+      "title": "Perceiving those who are gone: Cultural research on post-bereavement perception or hallucination of the deceased",
+      "doi": "10.1177/1363461520962887",
+      "pmid": "33043856",
+      "pmcid": "PMC10725084",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.1177/1363461520962887",
+      "manifestation_ids": ["M343-013"],
+      "note": "Cultural-context review candidate; it neither verifies nor falsifies communication with the deceased."
+    },
+    {
+      "work_id": "WORK-343-SUDDUTH-RESPONSE-TO-TUCKER-2022",
+      "title": "Response to Jim Tucker",
+      "doi": "10.31275/20222515",
+      "identity_status": "NEW_SOURCE_CANDIDATE",
+      "independence_key": "doi:10.31275/20222515",
+      "manifestation_ids": ["M343-026"],
+      "note": "Not linked in #343 but located while checking its explicit instruction to retain later replies; recorded only as a missing chain candidate."
+    }
+  ],
+  "manifestations": [
+    {"manifestation_id":"M343-001","url":"https://www.netflix.com/title/80998853","source_role":"OFFICIAL_CATALOGUE","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_TITLE_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-002","url":"https://med.virginia.edu/perceptual-studies/dops-media/surviving-death-now-streaming-on-netflix/","source_role":"INSTITUTIONAL_COMPANION","classification":"DERIVATIVE_COMPANION","verification":"AVAILABLE_TITLE_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-003","url":"https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2017/04/REI42-Tucker-James-LeiningerPIIS1550830716000331.pdf","source_role":"AUTHOR_INSTITUTION_PDF","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_PDF_8_PAGES_2026-09-17"},
+    {"manifestation_id":"M343-004","url":"https://pubmed.ncbi.nlm.nih.gov/27079216/","source_role":"BIBLIOGRAPHIC_RECORD","classification":"ALTERNATE_MANIFESTATION","same_work_as":"M343-003","verification":"PMID_TITLE_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-005","url":"https://journalofscientificexploration.org/index.php/jse/article/view/2361","source_role":"JOURNAL_RECORD","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_DOI_TITLE_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-006","url":"https://michaelsudduth.com/crash-and-burn-james-leininger-story-debunked/","source_role":"AUTHOR_COMMENTARY","classification":"DERIVATIVE_COMPANION","verification":"AVAILABLE_TITLE_AUTHOR_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-007","url":"https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2022/05/Tucker-JSE-Response-to-JL-crit-2487-Article-Text-12829-1-10-20220522-1.pdf","source_role":"AUTHOR_INSTITUTION_PDF","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_PDF_7_PAGES_DOI_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-008","url":"https://med.virginia.edu/perceptual-studies/our-research/children-who-report-memories-of-previous-lives/","source_role":"INSTITUTIONAL_OVERVIEW","classification":"EXISTING_GOVERNED_RECORD","existing_source_id":"UVA-DOPS-CHILDREN","existing_paths":["references/big-questions/gold-nuggets-cross-question-synthesis-v0.1.json"],"verification":"EXISTING_GOVERNED_SOURCE_URL_MATCH","identity_note":"Ryan Hammons is a public case label on the page; no separate source identity or claim score is created."},
+    {"manifestation_id":"M343-009","url":"https://pubmed.ncbi.nlm.nih.gov/37423492/","source_role":"BIBLIOGRAPHIC_RECORD","classification":"EXISTING_GOVERNED_RECORD","verification":"EXISTING_VERIFIED_SOURCE_INTEGRITY_RECORD"},
+    {"manifestation_id":"M343-010","url":"https://www.elsevier.com/about/press-releases/new-evidence-indicates-patients-recall-death-experiences-after-cardiac","source_role":"PUBLISHER_PRESS_RELEASE","classification":"DERIVATIVE_COMPANION","same_work_as":"M343-009","verification":"AVAILABLE_TITLE_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-011","url":"https://orbi.uliege.be/handle/2268/291512","source_role":"INSTITUTIONAL_REPOSITORY_RECORD","classification":"NEW_SOURCE_CANDIDATE","verification":"AVAILABLE_DOI_PMID_TITLE_MATCH_2026-09-17"},
+    {"manifestation_id":"M343-012","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7707065/","source_role":"FULL_TEXT_REPOSITORY","classification":"ALTERNATE_MANIFESTATION","same_work_as":"M343-011","verification":"PMCID_AND_TITLE_CONFIRMED_2026-09-17"},
+    {"manifestation_id":"M343-013","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10725084/","source_role":"FULL_TEXT_REPOSITORY","classification":"NEW_SOURCE_CANDIDATE","verification":"PMCID_DOI_PMID_TITLE_CONFIRMED_2026-09-17"},
+    {"manifestation_id":"M343-014","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/19ec1o5/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"19ec1o5","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-015","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1gwoghi/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1gwoghi","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-016","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1tlcanb/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1tlcanb","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-017","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1w4plts/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1w4plts"},
+    {"manifestation_id":"M343-018","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/18fximw/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"18fximw","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-019","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1whdhm3/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1whdhm3"},
+    {"manifestation_id":"M343-020","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1w73h3c/","source_role":"COMMUNITY_DISCOVERY","classification":"NEW_SOURCE_CANDIDATE","reddit_post_id":"1w73h3c"},
+    {"manifestation_id":"M343-021","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1fusen1/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1fusen1","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-022","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/18fnopa/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"18fnopa","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-023","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1ep26fq/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1ep26fq","existing_paths":["references/community/reddit-semantic-index.csv","references/community/reddit-uri-index.csv"]},
+    {"manifestation_id":"M343-024","url":"https://www.reddit.com/r/NeuronsToNirvana/comments/1vssvtl/","source_role":"COMMUNITY_DISCOVERY","classification":"EXISTING_COMMUNITY_RECORD","reddit_post_id":"1vssvtl","existing_paths":["references/community/reddit-manual-delta-batch-0004.csv","references/community/reddit-canonical-delta-import-2026-09-02.json"]},
+    {"manifestation_id":"M343-025","url":"https://www.reddit.com/r/NeuronsToNirvana/search/?q=NDE+OR+Death&restrict_sr=1","source_role":"DYNAMIC_DISCOVERY_ROUTE","classification":"DISCOVERY_QUERY_NOT_SOURCE","verification":"RESULT_SET_UNSTABLE_BY_DESIGN"},
+    {"manifestation_id":"M343-026","url":"https://doi.org/10.31275/20222515","source_role":"JOURNAL_RECORD_DISCOVERED_DURING_VERIFICATION","classification":"NEW_SOURCE_CANDIDATE","verification":"DOI_TITLE_CHAIN_MATCH_2026-09-17"}
+  ],
+  "unresolved_identities": [
+    {
+      "identity": "Netflix episode-level scenes and participants",
+      "state": "IDENTITY_UNRESOLVED",
+      "reason": "No authorised full viewing, transcript audit or timestamps were used."
+    },
+    {
+      "identity": "Ryan Hammons case-level claim set",
+      "state": "IDENTITY_UNRESOLVED",
+      "reason": "Only an institutional overview is linked; no claim denominator or archival chronology was reconciled."
+    },
+    {
+      "identity": "Three newly surfaced Reddit records",
+      "state": "IDENTITY_UNRESOLVED",
+      "reason": "Post IDs 1w4plts, 1whdhm3 and 1w73h3c are stable discovery identifiers, but post bodies, timestamps, authorship, embedded-source identity and rights were not imported or verified. The other eight cited Reddit IDs already occur in repository indexes or import ledgers."
+    },
+    {
+      "identity": "Dynamic Rethinking Death search result set",
+      "state": "IDENTITY_UNRESOLVED",
+      "reason": "The query is reproducible but its membership changes over time; it is not a frozen corpus denominator."
+    }
+  ],
+  "summary": {
+    "issue_cited_manifestations": 25,
+    "verification_discovered_chain_manifestations": 1,
+    "total_manifestations": 26,
+    "existing_governed_records": 2,
+    "existing_community_records": 8,
+    "alternate_manifestations": 2,
+    "derivative_companions": 3,
+    "dynamic_queries_not_sources": 1,
+    "new_candidate_manifestations_including_chain_gap": 10,
+    "canonical_imports_performed": 0,
+    "status_or_gate_changes": 0
+  },
+  "next_gate": "Human review of this identity ledger. If accepted, create separate bounded methodological work packets for the Leininger exchange, AWARE II limitations, bereavement context and any selected Reddit-linked primary sources; never import duplicate manifestations as independent evidence."
+}

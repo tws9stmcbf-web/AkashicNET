@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
 DEFAULT_OUTPUT = ROOT / "references/community/semantic-link-candidates-v0.2.0.json"
+V021_OUTPUT = ROOT / "references/community/semantic-link-candidates-v0.2.1.json"
 VERSION = "0.2.0"
 RELATIONSHIP = "LABEL_CONTAINS_EXACT_TOPIC_TERM"
 SOURCE_TYPES = {"PUBLICATION", "FRAMEWORK", "QUESTION", "EVIDENCE_RECORD"}
@@ -67,7 +68,9 @@ def candidate_id(source_id: str, target_id: str, normalized_topic: str) -> str:
     return f"candidate:semantic:{sha256(raw)[:20]}"
 
 
-def build_packet(registry_raw: bytes) -> dict:
+def build_packet(registry_raw: bytes, version: str = VERSION) -> dict:
+    if version not in {"0.2.0", "0.2.1"}:
+        raise ValueError("unsupported candidate packet version")
     registry = json.loads(registry_raw)
     registry_sha = sha256(registry_raw)
     endpoints = registry.get("endpoints", [])
@@ -118,7 +121,7 @@ def build_packet(registry_raw: bytes) -> dict:
         raise ValueError(f"review volume exceeds fail-closed cap: {len(candidates)} > {MAX_CANDIDATES}")
     counts = {kind: sum(c["source_endpoint"]["endpoint_type"] == kind for c in candidates) for kind in sorted(SOURCE_TYPES)}
     return {
-        "schema_version": VERSION,
+        "schema_version": version,
         "mode": "REVIEW_PACKET_ONLY",
         "relationship_semantics": "The source public label contains the target topic label as an exact normalized token sequence; this does not assert broader aboutness.",
         "boundaries": dict(BOUNDARIES),
@@ -147,9 +150,9 @@ def build_packet(registry_raw: bytes) -> dict:
     }
 
 
-def validate_packet(packet: dict) -> list[str]:
+def validate_packet(packet: dict, version: str = VERSION) -> list[str]:
     errors = []
-    if packet.get("schema_version") != VERSION or packet.get("mode") != "REVIEW_PACKET_ONLY": errors.append("version or mode")
+    if packet.get("schema_version") != version or packet.get("mode") != "REVIEW_PACKET_ONLY": errors.append("version or mode")
     if packet.get("boundaries") != BOUNDARIES or any(packet.get("boundaries", {}).values()): errors.append("unsafe boundaries")
     if packet.get("accepted_edges") != []: errors.append("accepted edges prohibited")
     input_row = packet.get("input", {})
@@ -198,24 +201,26 @@ def validate_packet(packet: dict) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--version", choices=("0.2.0", "0.2.1"), default=VERSION)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    packet = build_packet(args.input.read_bytes())
-    errors = validate_packet(packet)
+    output = args.output or (V021_OUTPUT if args.version == "0.2.1" else DEFAULT_OUTPUT)
+    packet = build_packet(args.input.read_bytes(), args.version)
+    errors = validate_packet(packet, args.version)
     if errors:
         print("\n".join(f"ERROR: {error}" for error in errors))
         return 1
     rendered = json.dumps(packet, indent=2, ensure_ascii=False) + "\n"
     if args.check:
-        if not args.output.exists() or args.output.read_text() != rendered:
+        if not output.exists() or output.read_text(encoding="utf-8") != rendered:
             print("ERROR: semantic link candidate packet is stale")
             return 1
     else:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(rendered)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered, encoding="utf-8")
     print(json.dumps(packet["summary"], sort_keys=True))
-    print("AKASHICNET SEMANTIC LINK CANDIDATES v0.2.0 PASS")
+    print(f"AKASHICNET SEMANTIC LINK CANDIDATES v{args.version} PASS")
     return 0
 
 

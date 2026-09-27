@@ -1,0 +1,149 @@
+{
+  "batch_id": "BQ003-AGHOR-RESEARCH-CANDIDATES-V0.1",
+  "version": "0.1.0",
+  "assessed_on": "2026-09-16",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ003",
+  "scope": "culturally_situated_aghor_context_for_nonduality_non_rejection_death_healing_and_service",
+  "sources": [
+    {
+      "source_id": "SRC-BQ003-BARRETT-AGHOR-MEDICINE-2008",
+      "source_type": "ACADEMIC_ETHNOGRAPHIC_MONOGRAPH",
+      "title": "Aghor Medicine: Pollution, Death, and Healing in Northern India",
+      "authors_short": "Ron Barrett",
+      "year": 2008,
+      "publisher": "University of California Press",
+      "url": "https://www.ucpress.edu/flyer/books/aghor-medicine/paper",
+      "candidate_links": [
+        "BQ003",
+        "BQ001"
+      ],
+      "review_disposition": "REVIEW_CANDIDATE",
+      "limitations": [
+        "Ethnographic and medical-anthropological research does not test an omnipresent consciousness field.",
+        "Descriptions of healing practice do not establish paranormal efficacy.",
+        "The studied settings and lineages must not be generalized to every Aghori practitioner."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ003-SHANKAR-AGHOR-2011",
+      "source_type": "ACADEMIC_ANTHROPOLOGY_DISSERTATION",
+      "title": "Aghoreshwar Bhagawan Ram and the Aghor Tradition",
+      "authors_short": "Jishnu Shankar",
+      "year": 2011,
+      "publisher": "Syracuse University",
+      "url": "https://surface.syr.edu/ant_etd/93/",
+      "candidate_links": [
+        "BQ003"
+      ],
+      "review_disposition": "REVIEW_CANDIDATE",
+      "limitations": [
+        "A dissertation focused on Aghoreshwar Bhagawan Ram and a modern Aghor lineage.",
+        "Lineage-specific findings must not be generalized to all Aghoris.",
+        "Anthropological interpretation is not experimental evidence of metaphysical claims."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ003-GUPTA-KINA-RAMI-1993",
+      "source_type": "ACADEMIC_RELIGION_DISSERTATION",
+      "title": "The politics of heterodoxy and the Kina Rami ascetics of Banaras",
+      "authors_short": "Roxanne Poormon Gupta",
+      "year": 1993,
+      "publisher": "Syracuse University",
+      "url": "https://surface.syr.edu/rel_etd/50/",
+      "candidate_links": [
+        "BQ003"
+      ],
+      "review_disposition": "HOLD_FULL_TEXT_ACCESS_LIMITED",
+      "limitations": [
+        "Repository access provides metadata and abstract-level context; full text is access-limited.",
+        "Historical and political analysis does not establish consciousness-field ontology.",
+        "Kina Rami history must not be treated as a universal account of Aghor."
+      ]
+    },
+    {
+      "source_id": "SRC-BQ003-SURI-PITCHFORD-DEATH-2010",
+      "source_type": "PEER_REVIEWED_TRANSPERSONAL_INTERPRETIVE_ARTICLE",
+      "title": "The Gift of Life: Death As Teacher in the Aghori Sect",
+      "authors_short": "Suri & Pitchford",
+      "year": 2010,
+      "journal": "International Journal of Transpersonal Studies",
+      "doi": "10.24972/ijts.2010.29.1.128",
+      "url": "https://digitalcommons.ciis.edu/ijts-transpersonalstudies/vol29/iss1/13/",
+      "candidate_links": [
+        "BQ003",
+        "BQ001"
+      ],
+      "review_disposition": "REVIEW_CANDIDATE",
+      "limitations": [
+        "Interpretive and transpersonal scholarship is not prospective evidence of post-mortem survival.",
+        "Discussion of death and nonduality does not establish reincarnation or persistent meta-awareness.",
+        "The article must not be used to authenticate metaphysical ontology."
+      ]
+    }
+  ],
+  "bounded_claims": [
+    {
+      "claim_id": "CLAIM-BQ003-AGHOR-ETHNOGRAPHY-01",
+      "claim_type": "OBSERVATION",
+      "evidence_label": "Established Evidence",
+      "text": "Academic ethnographic research documents Aghor approaches to pollution, death, healing, stigma and the interaction of ritual, Ayurveda and biomedicine in studied settings.",
+      "source_ids": [
+        "SRC-BQ003-BARRETT-AGHOR-MEDICINE-2008"
+      ],
+      "scope": "existence_and_content_of_documented_ethnographic_research_only",
+      "uncertainty": "This does not establish paranormal healing, a consciousness field or universal applicability.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ003-AGHOR-LINEAGE-01",
+      "claim_type": "INTERPRETATION",
+      "evidence_label": "Interpretation",
+      "text": "A detailed anthropology dissertation provides lineage-specific context for Aghoreshwar Bhagawan Ram and modern Aghor reform, service and practice.",
+      "source_ids": [
+        "SRC-BQ003-SHANKAR-AGHOR-2011"
+      ],
+      "uncertainty": "Its interpretations require lineage-aware reading and cannot represent every Aghori.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ003-KINA-RAMI-HISTORY-01",
+      "claim_type": "INTERPRETATION",
+      "evidence_label": "Interpretation",
+      "text": "A religion dissertation situates Kina Rami ascetics within the history and politics of heterodox Śaivism.",
+      "source_ids": [
+        "SRC-BQ003-GUPTA-KINA-RAMI-1993"
+      ],
+      "uncertainty": "Full-text review remains blocked by access limits; only bounded bibliographic and abstract-level use is allowed.",
+      "supports_models": []
+    },
+    {
+      "claim_id": "CLAIM-BQ003-DEATH-TEACHER-01",
+      "claim_type": "INTERPRETATION",
+      "evidence_label": "Interpretation",
+      "text": "A transpersonal-studies article interprets death, nonduality and transformation within an Aghori context.",
+      "source_ids": [
+        "SRC-BQ003-SURI-PITCHFORD-DEATH-2010"
+      ],
+      "uncertainty": "The interpretation does not demonstrate survival, reincarnation, persistent meta-awareness or a universal consciousness field.",
+      "supports_models": []
+    }
+  ],
+  "research_horizon": [
+    "Lineage-led qualitative research on meanings of nonduality, love, Śiva-consciousness and non-rejection.",
+    "Prospective phenomenology of fear of death, disgust processing and self-boundary experience before and after sustained practice.",
+    "Behavioural assessment of compassion, service and non-rejection without reducing practice to laboratory constructs.",
+    "Physiological or neural measures may study practice-related states but cannot alone adjudicate metaphysical ontology."
+  ],
+  "governance": {
+    "question_status": "UNRESOLVED",
+    "accepted_evidence_batch": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "full_text_copied": false
+  }
+}

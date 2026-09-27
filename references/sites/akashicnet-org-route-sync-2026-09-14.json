@@ -1,0 +1,274 @@
+{
+  "schema_version": "0.1",
+  "snapshot_date": "2026-09-14",
+  "title": "AkashicNET Sites to GitHub route synchronization ledger",
+  "repositories": {
+    "deployed_site_source": {
+      "provider": "OpenAI Sites Git",
+      "commit": "55d30c050f2f2c9b3989f790f0e02b86ca151aec",
+      "deployment_version": 263,
+      "public_url": "https://akashicnet.org"
+    },
+    "github": {
+      "repository": "tws9stmcbf-web/AkashicNET",
+      "baseline_branch": "main",
+      "baseline_commit": "b334a18bb8e2e413917cb7e27288f1e3063e351d",
+      "visibility": "private"
+    }
+  },
+  "interpretation": "Route presence compares page entrypoints only. It does not imply content parity for shared routes, and it does not classify GitHub-only routes as obsolete without review.",
+  "counts": {
+    "sites_routes": 54,
+    "github_routes": 14,
+    "shared_route_names": 11,
+    "missing_from_github": 43,
+    "github_only": 3
+  },
+  "shared_route_names": [
+    "/",
+    "/about",
+    "/akashicomni",
+    "/akashicvision",
+    "/big-questions",
+    "/big-questions/bq001",
+    "/big-questions/bq002",
+    "/community",
+    "/insights/interstellar-weather-schumann-september-2026",
+    "/metta-awareness",
+    "/spiritual-sci-fi/power-of-the-doctor"
+  ],
+  "missing_from_github": [
+    {
+      "route": "/7d",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/bluebird-artichoke",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/channelled-records",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/channelled-records/cq003",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/channelled-records/cq004",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/mkultra",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/remote-viewing",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/shamanic-channelled-testimony",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashiclibrary/unexpected-lucidity",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashicrecords",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashictimeless",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashictimeless/cayce",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashictimeless/evidence-matrix",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashictimeless/evidence-matrix/jagdish-chandra",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashictimeless/evidence-matrix/ka",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/akashictimeless/evidence-matrix/kumkum-verma",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/awaken",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/big-questions/thought-experiments/bowie-cat",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/contact",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/data",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/explore",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/frameworks",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/harm-reduction",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/harmonic-singularity",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/identity",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/insights",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/insights/13d-global-challenges",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/insights/pseudo-method",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/noetic-sciences",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/possible-futures",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/privacy",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/question-reality",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/ramanujan",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/sacred-spaces",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/sanskrit",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/spiritual-beings",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/spiritual-sci-fi",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/spiritual-sci-fi/guardians-of-the-edge",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/status",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/support",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/synchronicity",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    },
+    {
+      "route": "/updates",
+      "status": "NOT_PRESENT_IN_GITHUB_WEBSITE_TREE",
+      "next_review": "Reconcile presentation code and supporting components before import"
+    }
+  ],
+  "github_only": [
+    {
+      "route": "/akashicone",
+      "status": "NOT_PRESENT_IN_DEPLOYED_SITES_TREE",
+      "next_review": "Determine whether legacy, renamed or intentionally repository-only"
+    },
+    {
+      "route": "/akashictranscendence",
+      "status": "NOT_PRESENT_IN_DEPLOYED_SITES_TREE",
+      "next_review": "Determine whether legacy, renamed or intentionally repository-only"
+    },
+    {
+      "route": "/support-impact",
+      "status": "NOT_PRESENT_IN_DEPLOYED_SITES_TREE",
+      "next_review": "Determine whether legacy, renamed or intentionally repository-only"
+    }
+  ]
+}

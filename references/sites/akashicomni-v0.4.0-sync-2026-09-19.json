@@ -1,0 +1,29 @@
+{
+  "component": "AkashicOMNI",
+  "version": "0.4.0",
+  "status": "PRE-ALPHA",
+  "release_date": "2026-09-16",
+  "sync_date": "2026-09-19",
+  "source_commit": "c211becf81ff5298b4939ebee363935818aa2ebb",
+  "site_version": 417,
+  "deployment_status": "succeeded",
+  "source_path": "app/akashicomni/page.tsx",
+  "source_sha256": "1427c138070f1f9cdf8ba151154ba925d0132c92b49a92727fc143c3c72b2fcd",
+  "capability": "Embodied Intelligence comparative case pathway",
+  "case_count": 8,
+  "perspective_count": 13,
+  "historical_assessments_recalculated": false,
+  "v0_5_0_released": false,
+  "scope": [
+    "Current framework version links and footnote",
+    "Eight case descriptions, source links and inference boundaries copied from published source",
+    "Homepage current framework reference"
+  ],
+  "not_changed": [
+    "Historical v0.3.0 assessments",
+    "AkashicNET product release",
+    "BQ status and maturity",
+    "Canonical edges and model support",
+    "Evidence, privacy, rights and promotion boundaries"
+  ]
+}
