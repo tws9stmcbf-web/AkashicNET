@@ -107,7 +107,10 @@ if "progress toward v0.17.0" not in status_text(progress):
 # status-copy guard, not a general natural-language parser.
 negative_words = r"(?:not|never|no|cannot|(?:can|is|are|was|were|has|have|had|do|does|did|wo|would|could|should|must)n?'t|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
 predicate_adverbs = r"(?:yet|now|already|still|[a-z]+ly)"
-negative_modifiers = r"(?:be|been|considered(?:[ \t]+to[ \t]+be)?|intended[ \t]+to[ \t]+be|a|an|the|its|latest|current|official|public|final|sealed|" + predicate_adverbs + r")"
+# Heading adverbs do not all preserve negation: "not only/merely released"
+# still asserts a release. Keep negation modifiers explicitly scoped.
+negative_adverbs = r"(?:yet|now|already|still|currently|officially|publicly|formally|definitively|finally)"
+negative_modifiers = r"(?:be|been|considered(?:[ \t]+to[ \t]+be)?|intended[ \t]+to[ \t]+be|a|an|the|its|latest|current|official|public|final|sealed|" + negative_adverbs + r")"
 
 
 def predicate_is_negated(prefix: str) -> bool:
@@ -115,7 +118,7 @@ def predicate_is_negated(prefix: str) -> bool:
     # fresh affirmative verb ("but is shipped") must not inherit that negation.
     prefix = re.sub(
         r"(?:\b(?:release|released|shipped|sealed|resolved)[ \t]+(?:or|nor)[ \t]+"
-        + r"(?:(?:be|been|" + predicate_adverbs + r")[ \t]+){0,3})+$",
+        + r"(?:(?:to[ \t]+be|be|been|" + negative_adverbs + r")[ \t]+){0,3})+$",
         "", prefix, flags=re.IGNORECASE,
     )
     return bool(re.search(
@@ -151,13 +154,15 @@ if has_affirmative_claim(status_text(home + "\n" + progress), r"\bBQ001\b", r"\b
 
 # Predicate-first headings need their own negation check. Keep block and
 # sentence boundaries so a preceding disclaimer cannot hide a later heading.
+copular_heading = (r"(?:" + predicate_adverbs + r"[ \t]+){0,3}is[ \t]+"
+                   r"(?:" + predicate_adverbs + r"[ \t]+){0,3}")
 reverse_claim = re.compile(
     r"\b(?:(?:sealed|official|public|final)[ \t]+release|release|released|shipped)[ \t,·:–—-]*"
     r"(?:(?:version|status)[ \t,·:–—-]+){0,2}"
-    r"(?:(?:for|of)[ \t]+|is[ \t]+(?:(?:now|" + predicate_adverbs + r")[ \t]+){0,3})?"
+    r"(?:(?:for|of)[ \t]+|" + copular_heading + r")?"
     r"v0\.16\.(?:0-beta\.2|7)\b|"
     r"\bRESOLVED(?:[ \t]+(?:status|research|question|for|of)){0,4}[ \t,·:–—-]+"
-    r"(?:is[ \t]+(?:(?:now|" + predicate_adverbs + r")[ \t]+){0,3})?BQ001\b",
+    r"(?:" + copular_heading + r")?BQ001\b",
     re.IGNORECASE,
 )
 block_text = re.sub(r"</?(?:p|div|li|h[1-6])\b[^>]*>", "\n", home + "\n" + progress)
