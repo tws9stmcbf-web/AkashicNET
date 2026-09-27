@@ -5,6 +5,7 @@ import hashlib
 import importlib.metadata
 from pathlib import Path
 import shutil
+import tempfile
 
 
 HASHES = {
@@ -25,8 +26,9 @@ def prepare(destination):
         if hashlib.sha256(data).hexdigest() != digest:
             raise ValueError(f"Unreviewed upstream content: {name}")
         texts[name] = data.decode("utf-8")
-    destination = Path(destination).resolve()
-    if destination.exists() or source in destination.parents:
+    destination = Path(destination).absolute()
+    destination = destination.parent.resolve() / destination.name
+    if destination.exists() or destination.is_symlink() or source in destination.parents:
         raise ValueError("Use a new overlay directory outside the installed package")
 
     lm = texts["openai_lm.py"]
@@ -49,13 +51,29 @@ def prepare(destination):
         "                        'verify selected model pricing separately.')\n\n"
     ) + scorer[end:]
     # No package imports: preparing the overlay cannot invoke upstream downloads.
-    destination.mkdir(parents=True)
-    target = destination / "factscore"
-    shutil.copytree(source, target, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    (target / "openai_lm.py").write_text(lm, encoding="utf-8")
-    (target / "atomic_facts.py").write_text(atomic, encoding="utf-8")
-    (target / "factscorer.py").write_text(scorer, encoding="utf-8")
-    shutil.copyfile(Path(__file__).with_name("factscore_compat.py"), target / "akashicnet_compat.py")
+    outputs = {
+        "openai_lm.py": lm.encode("utf-8"),
+        "atomic_facts.py": atomic.encode("utf-8"),
+        "factscorer.py": scorer.encode("utf-8"),
+        "akashicnet_compat.py": Path(__file__).with_name("factscore_compat.py").read_bytes(),
+    }
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    # Same filesystem: the requested path appears only after a complete build.
+    # TemporaryDirectory also cleans up on exceptions, including KeyboardInterrupt.
+    with tempfile.TemporaryDirectory(prefix=f".{destination.name}-", dir=destination.parent) as tmp:
+        staged = Path(tmp) / "overlay"
+        target = staged / "factscore"
+        shutil.copytree(source, target, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        for name, data in outputs.items():
+            (target / name).write_bytes(data)
+        for name, expected in outputs.items():
+            actual = (target / name).read_bytes()
+            if actual != expected:
+                raise ValueError(f"Incomplete transformed overlay: {name}")
+            compile(actual, str(target / name), "exec")
+        if destination.exists() or destination.is_symlink():
+            raise ValueError("Use a new overlay directory outside the installed package")
+        staged.rename(destination)
     return destination
 
 

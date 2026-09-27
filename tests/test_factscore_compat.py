@@ -88,6 +88,119 @@ class CompatTests(unittest.TestCase):
                 prepare("unused")
 
 
+class PublicationTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.source = self.root / 'source'
+        self.source.mkdir()
+        # Synthetic source exercises preparation without installing/importing upstream.
+        fixtures = {
+            'openai_lm.py': 'import logging\nclass LM:\n    def run(self, model_name, cache_file):\n        self.model_name = model_name\n        if self.model_name == "ChatGPT":\n            pass\n',
+            'atomic_facts.py': 'import nltk\nnltk.download("punkt")\nclass Atomic:\n    def __init__(self):\n        self.nlp = spacy.load("test")\n',
+            'factscorer.py': 'class Scorer:\n    def print_cost_estimates(self):\n        pass\n    def get_score(self):\n        pass\n',
+        }
+        import hashlib
+        digests = {}
+        for name, content in fixtures.items():
+            (self.source / name).write_text(content)
+            digests[name] = hashlib.sha256(content.encode()).hexdigest()
+        self.original = {p.name: p.read_bytes() for p in self.source.iterdir()}
+        dist = types.SimpleNamespace(version='0.2.0', locate_file=lambda _: self.source)
+        for mocker in (patch('prepare_factscore_compat.importlib.metadata.distribution', return_value=dist),
+                       patch('prepare_factscore_compat.HASHES', digests)):
+            mocker.start()
+            self.addCleanup(mocker.stop)
+        self.destination = self.root / 'result'
+
+    def assert_unpublished_and_clean(self):
+        self.assertFalse(self.destination.exists())
+        self.assertEqual(list(self.root.iterdir()), [self.source])
+        self.assertEqual({p.name: p.read_bytes() for p in self.source.iterdir()}, self.original)
+
+    def test_partial_copy_failure_is_cleaned(self):
+        def fail_copy(source, target, **kwargs):
+            self.assertFalse(self.destination.exists())
+            target.mkdir(parents=True)
+            (target / 'atomic_facts.py').write_bytes(self.original['atomic_facts.py'])
+            raise OSError('copy failed')
+        with patch('prepare_factscore_compat.shutil.copytree', side_effect=fail_copy):
+            with self.assertRaisesRegex(OSError, 'copy failed'):
+                prepare(self.destination)
+        self.assert_unpublished_and_clean()
+
+    def test_each_write_failure_or_interrupt_is_cleaned(self):
+        original_write = Path.write_bytes
+        for name in (*HASHES, 'akashicnet_compat.py'):
+            for error in (OSError('write failed'), KeyboardInterrupt()):
+                with self.subTest(name=name, error=type(error).__name__):
+                    def fail_write(path, data):
+                        self.assertFalse(self.destination.exists())
+                        if path.name == name:
+                            original_write(path, data[:10])
+                            raise error
+                        return original_write(path, data)
+                    with patch.object(Path, 'write_bytes', fail_write):
+                        with self.assertRaises(type(error)):
+                            prepare(self.destination)
+                    self.assert_unpublished_and_clean()
+
+    def test_silent_incomplete_write_rejected(self):
+        original_write = Path.write_bytes
+        def truncate(path, data):
+            return original_write(path, data[:10] if path.name == 'atomic_facts.py' else data)
+        with patch.object(Path, 'write_bytes', truncate):
+            with self.assertRaisesRegex(ValueError, 'Incomplete transformed overlay'):
+                prepare(self.destination)
+        self.assert_unpublished_and_clean()
+
+    def test_rename_failure_is_cleaned(self):
+        with patch.object(Path, 'rename', side_effect=OSError('rename failed')):
+            with self.assertRaisesRegex(OSError, 'rename failed'):
+                prepare(self.destination)
+        self.assert_unpublished_and_clean()
+
+    def test_success_visible_only_at_rename(self):
+        original_rename = Path.rename
+        def inspect(staged, destination):
+            self.assertFalse(destination.exists())
+            self.assertEqual(staged.parent.parent, destination.parent)
+            target = staged / 'factscore'
+            self.assertNotIn('nltk.download', (target / 'atomic_facts.py').read_text())
+            self.assertIn('require_tokenizer()', (target / 'atomic_facts.py').read_text())
+            for name in (*HASHES, 'akashicnet_compat.py'):
+                compile((target / name).read_bytes(), name, 'exec')
+            return original_rename(staged, destination)
+        with patch.object(Path, 'rename', inspect):
+            self.assertEqual(prepare(self.destination), self.destination)
+        self.assertEqual(set(self.root.iterdir()), {self.source, self.destination})
+
+    def test_existing_destination_rejected_without_changes(self):
+        for kind in ('directory', 'file', 'dangling_symlink'):
+            with self.subTest(kind=kind):
+                if kind == 'directory':
+                    self.destination.mkdir()
+                elif kind == 'file':
+                    self.destination.write_text('keep')
+                else:
+                    self.destination.symlink_to(self.root / 'missing')
+                with patch('prepare_factscore_compat.shutil.copytree') as copy:
+                    with self.assertRaisesRegex(ValueError, 'new overlay directory'):
+                        prepare(self.destination)
+                    copy.assert_not_called()
+                if kind == 'directory':
+                    self.assertEqual(list(self.destination.iterdir()), [])
+                    self.destination.rmdir()
+                else:
+                    if kind == 'file':
+                        self.assertEqual(self.destination.read_text(), 'keep')
+                    else:
+                        self.assertTrue(self.destination.is_symlink())
+                    self.destination.unlink()
+                self.assert_unpublished_and_clean()
+
+
 try:
     INSTALLED = importlib.metadata.version("factscore") == "0.2.0"
 except importlib.metadata.PackageNotFoundError:
@@ -154,3 +267,4 @@ print('Real overlay offline checks passed')
 
 if __name__ == "__main__":
     unittest.main()
+
