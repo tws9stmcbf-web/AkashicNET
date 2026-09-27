@@ -107,7 +107,7 @@ if "progress toward v0.17.0" not in status_text(progress):
 # status-copy guard, not a general natural-language parser.
 negative_words = r"(?:not|never|no|cannot|can't|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
 predicate_adverbs = r"(?:yet|currently|officially|publicly|formally|definitively)"
-negative_modifiers = r"(?:be|been|a|an|the|its|latest|current|official|public|final|sealed|" + predicate_adverbs + r")"
+negative_modifiers = r"(?:be|been|considered|intended[ \t]+to[ \t]+be|a|an|the|its|latest|current|official|public|final|sealed|" + predicate_adverbs + r")"
 
 
 def predicate_is_negated(prefix: str) -> bool:
@@ -153,8 +153,11 @@ if has_affirmative_claim(status_text(home + "\n" + progress), r"\bBQ001\b", r"\b
 # sentence boundaries so a preceding disclaimer cannot hide a later heading.
 reverse_claim = re.compile(
     r"\b(?:(?:sealed|official|public|final)[ \t]+release|release|released|shipped)[ \t,·:–—-]*"
-    r"(?:(?:version|status)[ \t,·:–—-]+){0,2}(?:(?:for|of|is)[ \t]+)?v0\.16\.(?:0-beta\.2|7)\b|"
-    r"\bRESOLVED(?:[ \t]+(?:status|research|question|for|of)){0,4}[ \t,·:–—-]+BQ001\b",
+    r"(?:(?:version|status)[ \t,·:–—-]+){0,2}"
+    r"(?:(?:for|of)[ \t]+|is[ \t]+(?:(?:now|" + predicate_adverbs + r")[ \t]+){0,3})?"
+    r"v0\.16\.(?:0-beta\.2|7)\b|"
+    r"\bRESOLVED(?:[ \t]+(?:status|research|question|for|of)){0,4}[ \t,·:–—-]+"
+    r"(?:is[ \t]+(?:(?:now|" + predicate_adverbs + r")[ \t]+){0,3})?BQ001\b",
     re.IGNORECASE,
 )
 block_text = re.sub(r"</?(?:p|div|li|h[1-6])\b[^>]*>", "\n", home + "\n" + progress)
