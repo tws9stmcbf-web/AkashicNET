@@ -141,7 +141,7 @@ with tempfile.TemporaryDirectory() as tmp:
             # Exercise actual dispatch without loading any credential.
             assert lm._generate('synthetic', max_output_length=11)[0] == 'synthetic result'
             assert request.call_args.kwargs['model'] == ('offline-verify' if role == 'ChatGPT' else 'offline-atomic')
-            assert request.call_args.kwargs['max_tokens'] == 11
+            assert request.call_args.kwargs['max_tokens'] == (2048 if role == 'ChatGPT' else 512)
     with patch('logging.warning') as warning:
         FactScorer.print_cost_estimates(None, 100, 'test', 'davinci-003')
         assert 'unavailable' in warning.call_args.args[0]

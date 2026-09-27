@@ -34,7 +34,9 @@ def prepare(destination):
     lm = lm.replace("        self.model_name = model_name", "        self.compat = ModelConfig.from_role(model_name)\n        cache_file = self.compat.cache_path(cache_file)\n        self.model_name = model_name", 1)
     # Replace dispatch and obsolete unbounded API helpers, retaining key loading.
     lm = lm[:lm.index("        if self.model_name == \"ChatGPT\":")] + (
-        "        return generate(self.compat, prompt, max_output_length, self.temp)\n")
+        "        # Preserve upstream per-role token budgets during compatibility review.\n"
+        "        budget = max_sequence_length if self.model_name == 'ChatGPT' else 512\n"
+        "        return generate(self.compat, prompt, budget, self.temp)\n")
     atomic = texts["atomic_facts.py"].replace(
         'nltk.download("punkt")', 'from factscore.akashicnet_compat import require_tokenizer')
     atomic = atomic.replace('        self.nlp = spacy.load(', '        require_tokenizer()\n        self.nlp = spacy.load(', 1)
