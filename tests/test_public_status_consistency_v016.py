@@ -15,6 +15,27 @@ PROGRESS = "website/app/development-progress/page.tsx"
 
 
 class CurrentPublicStatusTests(unittest.TestCase):
+    def test_qualified_reverse_heading_connectors_rejected(self):
+        for claim in ("Official release version: v0.16.7",
+                      "Public release status: v0.16.7",
+                      "RESOLVED status for BQ001",
+                      "RESOLVED research question: BQ001"):
+            with self.subTest(claim=claim):
+                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_pending_reverse_and_coordinated_negation_pass(self):
+        for claim in ("Pending release: v0.16.7", "Pending official release: v0.16.7",
+                      "Awaiting final release version: v0.16.7",
+                      "v0.16.7 has not been released or shipped",
+                      "v0.16.7 has never been released or sealed or shipped"):
+            with self.subTest(claim=claim):
+                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
+                self.assertEqual(result.returncode, 0, result.stderr)
+        for claim in ("v0.16.7 has been released or shipped",
+                      "v0.16.7 has not been released but is shipped",
+                      "Pending documentation: Official release version: v0.16.7"):
+            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
     def test_reviewed_subject_negation_bypasses(self):
         for claim in ("v0.16.7 is not a draft and is now released",
                       "BQ001 is not disputed and is RESOLVED",
