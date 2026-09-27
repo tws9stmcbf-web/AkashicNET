@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+import hashlib
+
 import json
 import re
 import subprocess
@@ -376,9 +378,43 @@ def validate_correction(packet: dict[str, Any], batch2: dict[str, Any]) -> None:
         raise ValueError("correction record drift")
 
 
+# Pin the structural schema contract, excluding only bounded plain-text annotations.
+# A new keyword, property, nested extension, const or constraint needs an explicit
+# validator contract update and review; JSON Schema's permissive annotation rules
+# are not the publication policy for this packet.
+SCHEMA_STRUCTURE_SHA256 = "5a19dc3a68d6bc6c138548d8eebe952313246cedc2e0a83ad4adabeb4629b1d1"
+
+
+def validate_schema_contract(schema: Any) -> None:
+    annotations = []
+
+    def structure(value):
+        if isinstance(value, dict):
+            result = {}
+            for key, child in value.items():
+                if key in {"title", "description"}:
+                    if not isinstance(child, str) or not 1 <= len(child) <= 512:
+                        raise ValueError("schema contract: annotations must be 1..512 character strings")
+                    annotations.append(child)
+                else:
+                    result[key] = structure(child)
+            return result
+        if isinstance(value, list):
+            return [structure(child) for child in value]
+        return value
+
+    body = json.dumps(structure(schema), sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+    if hashlib.sha256(body.encode()).hexdigest() != SCHEMA_STRUCTURE_SHA256:
+        raise ValueError("schema contract: unapproved structural or annotation extension")
+    # Scan the permitted annotation values together as well as individually.
+    # There are no user-defined keys or containers in this annotation channel.
+    scan_safety(annotations)
+
+
 def validate(packet: dict[str, Any] | None = None, *, verify_git: bool = True) -> None:
     packet = packet if packet is not None else load_json(PACKET)
     schema = load_json(SCHEMA)
+    validate_schema_contract(schema)
     # Exceptions bind exact values to governed locations, never to arbitrary text.
     digest_paths = {("input_commit",): INPUT_COMMIT}
     for index, anchor in enumerate(packet.get("input_anchors", [])):
