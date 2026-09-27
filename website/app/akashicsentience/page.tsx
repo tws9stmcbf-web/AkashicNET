@@ -22,57 +22,6 @@ const encounters = [
   ["Artificial or non-human intelligence", "Sentient-seeming AI, UAP intelligence or cosmic mind", "What evidence could distinguish projection and simulation from unfamiliar sentience?"],
 ];
 
-const sources = [
-  {
-    name: "María Sabina and the Mazatec velada",
-    mode: "Indigenous ceremonial transmission",
-    status: "Cultural record · Testimony · Interpretation",
-    note: "Smithsonian Folkways preserves a recorded mushroom velada. AkashicSENTIENCE treats it as sacred ceremonial knowledge in Mazatec context, not generic Western channeling.",
-    href: "https://folkways.si.edu/maria-sabina/mushroom-ceremony-of-the-mazatec-indians-of-mexico/world/music/album/smithsonian",
-  },
-  {
-    name: "Edgar Cayce readings",
-    mode: "Trance discourse",
-    status: "Historical record · Testimony · Interpretation",
-    note: "A.R.E. public pages document Cayce's attributed sources and selected reading identifiers. Protected readings remain link-and-metadata only.",
-    href: "https://edgarcayce.org/edgar-cayce/readings/akashic-records/",
-  },
-  {
-    name: "Jane Roberts papers",
-    mode: "Trance dictation · Seth material",
-    status: "Institutional archive · Testimony",
-    note: "Yale preserves correspondence, journals, manuscripts and audiovisual material documenting Roberts's life and work.",
-    href: "https://archives.yale.edu/repositories/12/resources/4482",
-  },
-  {
-    name: "Patience Worth collection",
-    mode: "Automatic communication · Literary production",
-    status: "Institutional archive · Testimony",
-    note: "Washington University preserves correspondence, typescripts and extensive dialogue volumes associated with Pearl Curran and Patience Worth.",
-    href: "https://aspace.wustl.edu/repositories/6/resources/789",
-  },
-  {
-    name: "Eileen J. Garrett collection",
-    mode: "Trance mediumship · Parapsychology",
-    status: "Institutional archive · Research history",
-    note: "UMBC holds the Parapsychology Foundation collection, providing context for mediumship research and its competing interpretations.",
-    href: "https://library.umbc.edu/garrett/",
-  },
-  {
-    name: "Chico Xavier case literature",
-    mode: "Psychography · After-death communication",
-    status: "Testimony · Case research · Contested",
-    note: "A PubMed-indexed case study examines one attributed letter. A single case cannot establish the source of Xavier's wider corpus.",
-    href: "https://pubmed.ncbi.nlm.nih.gov/31158111/",
-  },
-  {
-    name: "STAR GATE collection",
-    mode: "Remote viewing · Anomalous cognition",
-    status: "Declassified history · Contested evidence",
-    note: "CIA records establish programme history. Declassification authenticates documents, not paranormal claims or an Akashic mechanism.",
-    href: "https://www.cia.gov/readingroom/collection/stargate",
-  },
-];
 
 export default function AkashicSentiencePage() {
   return (
@@ -111,19 +60,10 @@ export default function AkashicSentiencePage() {
       </section>
 
       <section className={styles.section} id="sources">
-        <p className={styles.kicker}>Public-safe source constellation · Batch 01</p>
-        <h2>Records for discovery, not a hierarchy of truth.</h2>
-        <div className={styles.sources}>
-          {sources.map((source) => (
-            <article key={source.name}>
-              <span>{source.status}</span>
-              <h3>{source.name}</h3>
-              <p><strong>{source.mode}</strong></p>
-              <p>{source.note}</p>
-              <a href={source.href}>Open source record ↗</a>
-            </article>
-          ))}
-        </div>
+        <p className={styles.kicker}>Source batch · REVIEW REQUIRED · NOT PUBLISHED</p>
+        <h2>Source review comes before discovery cards.</h2>
+        <p>Batch 01 source cards and the declassified research trail are withheld pending source-specific PUBLIC_VERIFIED records, completed sensitivity/PII and reuse-rights review, and an explicit ELIGIBLE publication decision. Public availability and declassification do not establish publication clearance.</p>
+        <p>Future records must keep source type, assertion class and canonical evidence status separate. No source has been promoted by this atlas.</p>
       </section>
 
       <section className={styles.method} id="method">
@@ -135,7 +75,7 @@ export default function AkashicSentiencePage() {
           <li>Separate the experience from interpretations of its source.</li>
           <li>Test specificity, prior access, cueing, replication and alternative explanations.</li>
           <li>Record observable incentives, authority, money, dependency, service and harm without claiming access to private motives.</li>
-          <li>Respect cultural sovereignty, permissions and rights. Import metadata only unless reuse is clearly permitted.</li>
+          <li>Respect cultural sovereignty, permissions and rights. Publish metadata or content only after source-specific verification, sensitivity/PII and reuse-rights review, and an explicit ELIGIBLE decision.</li>
         </ol>
         <blockquote>HOMESENSE embodies the encounter. AkashicSENTIENCE examines who or what seemed to be encountered. Human 2.0 asks what we become afterward.</blockquote>
       </section>
@@ -143,7 +83,7 @@ export default function AkashicSentiencePage() {
       <section className={styles.unresolved}>
         <span>CURRENT STATUS</span>
         <strong>UNRESOLVED</strong>
-        <p>AkashicSENTIENCE neither dismisses an encounter nor certifies its explanation.</p>
+        <p>AkashicSENTIENCE neither dismisses an encounter nor certifies its explanation. All Big Questions remain UNRESOLVED; supports_models=[]; accepted canonical edges remain 0; Reddit live access remains HOLD. Privacy, evidence, rights, publication and promotion gates remain in force.</p>
         <a href="/big-questions/bq001">Continue to BQ001 →</a>
       </section>
 
