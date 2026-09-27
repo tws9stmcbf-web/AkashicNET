@@ -73,6 +73,19 @@ class PublicStatusTests(unittest.TestCase):
                 (self.root / status.MANIFEST).write_text(json.dumps(data))
                 with self.assertRaises(ValueError): status.check(self.root)
 
+    def test_manifest_question_identity_is_required(self):
+        original = status.read_json(self.root / status.MANIFEST)
+        for question_id in (None, 'BQ002'):
+            with self.subTest(question_id=question_id):
+                data = copy.deepcopy(original)
+                if question_id is None:
+                    del data['candidate_summary']['question_id']
+                else:
+                    data['candidate_summary']['question_id'] = question_id
+                (self.root / status.MANIFEST).write_text(json.dumps(data))
+                with self.assertRaisesRegex(ValueError, 'BQ001 boundaries drift'):
+                    status.check(self.root)
+
     def test_rendered_labels_cannot_be_changed_by_hand(self):
         for output in status.SURFACES:
             with self.subTest(output=output):

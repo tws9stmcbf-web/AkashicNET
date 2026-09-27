@@ -38,7 +38,7 @@ def validate_data(data, manifest):
     if manifest.get("artifact_status") != "UNRELEASED_REVIEW_CANDIDATE":
         raise ValueError("governed candidate must remain unreleased")
     summary = manifest.get("candidate_summary", {})
-    if summary.get("question_status") != "UNRESOLVED" or type(summary.get("accepted_edge_count")) is not int or summary["accepted_edge_count"] != 0:
+    if summary.get("question_id") != "BQ001" or summary.get("question_status") != "UNRESOLVED" or type(summary.get("accepted_edge_count")) is not int or summary["accepted_edge_count"] != 0:
         raise ValueError("governed BQ001 boundaries drift")
     guards = manifest.get("promotion_boundaries", {})
     if set(guards) != {"truth", "scientific_evidence", "rights", "identity", "safety_efficacy", "private_data", "edge_acceptance", "website_publication"} or any(value is not False for value in guards.values()):
