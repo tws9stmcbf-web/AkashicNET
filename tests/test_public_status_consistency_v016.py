@@ -15,6 +15,24 @@ PROGRESS = "website/app/development-progress/page.tsx"
 
 
 class CurrentPublicStatusTests(unittest.TestCase):
+    def test_copular_release_headings_rejected(self):
+        for claim in ("Official release is v0.16.7", "Release version is v0.16.7",
+                      "Public release status is v0.16.0-beta.2"):
+            with self.subTest(claim=claim):
+                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
+    def test_repeated_coordination_auxiliaries_pass(self):
+        for claim in ("v0.16.7 has not been released or been shipped",
+                      "v0.16.7 will not be released or be officially shipped",
+                      "v0.16.7 has not been released or officially been sealed or been shipped"):
+            with self.subTest(claim=claim):
+                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
+                self.assertEqual(result.returncode, 0, result.stderr)
+        for claim in ("v0.16.7 has been released or been shipped",
+                      "v0.16.7 has not been released but has been shipped",
+                      "v0.16.7 has not been released or is shipped"):
+            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+
     def test_pending_multiple_qualifiers_pass(self):
         for claim in ("Pending final official release version: v0.16.7",
                       "Awaiting the final sealed release version: v0.16.7",

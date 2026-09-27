@@ -115,7 +115,7 @@ def predicate_is_negated(prefix: str) -> bool:
     # fresh affirmative verb ("but is shipped") must not inherit that negation.
     prefix = re.sub(
         r"(?:\b(?:release|released|shipped|sealed|resolved)[ \t]+(?:or|nor)[ \t]+"
-        + r"(?:" + predicate_adverbs + r"[ \t]+){0,3})+$",
+        + r"(?:(?:be|been|" + predicate_adverbs + r")[ \t]+){0,3})+$",
         "", prefix, flags=re.IGNORECASE,
     )
     return bool(re.search(
@@ -153,7 +153,7 @@ if has_affirmative_claim(status_text(home + "\n" + progress), r"\bBQ001\b", r"\b
 # sentence boundaries so a preceding disclaimer cannot hide a later heading.
 reverse_claim = re.compile(
     r"\b(?:(?:sealed|official|public|final)[ \t]+release|release|released|shipped)[ \t,·:–—-]*"
-    r"(?:(?:version|status)[ \t,·:–—-]+){0,2}(?:(?:for|of)[ \t]+)?v0\.16\.(?:0-beta\.2|7)\b|"
+    r"(?:(?:version|status)[ \t,·:–—-]+){0,2}(?:(?:for|of|is)[ \t]+)?v0\.16\.(?:0-beta\.2|7)\b|"
     r"\bRESOLVED(?:[ \t]+(?:status|research|question|for|of)){0,4}[ \t,·:–—-]+BQ001\b",
     re.IGNORECASE,
 )
