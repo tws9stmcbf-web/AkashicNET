@@ -1,6 +1,6 @@
 # Public image asset manifest
 
-Snapshot dates: original asset set — 30 August 2026; AkashicVISION and AkashicTRANSCENDENCE additions — 13 September 2026
+Snapshot dates: original asset set — 30 August 2026; AkashicVISION and AkashicTRANSCENDENCE additions — 13 September 2026; AKN24 food-security additions — 14 September 2026
 
 | Deployed asset | SHA-256 |
 |---|---|
@@ -12,6 +12,11 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 | `akashicvision-nde-merkaba-flower-of-life.webp` | `34a8081c87af719d9447cf137458412c0fe63375939710753c2b3897e334bf50` |
 | `akashictranscendence-homesense800.webp` | `687f161aa6ca926803d9f8c4e1c2c941b47503115fb807cb59fc5b333bf66586` |
 | `akashicomni-metadimensional-gateway.webp` | `baf2933e2372d9fb8c74b04128b7543bb959dbc0fa9455ccf0403f29ed9b4710` |
+| `public/images/akashicnet-portal-to-infinity-7d-hero.webp` | `af86af56783114a0f0d10672b6ea832b7454f0cf9133d52568df0e2b2de30bda` |
+| `akn24-global-food-shortages.webp` | `016169a0cd947f01505bb4143fbf839631bfad2eef9e27eede11400ae9b81d29` |
+| `akashicomni-global-food-security-13d.webp` | `b814cfe1ed6ed92da2814516fc17187a6831bf70016c4366d7f43c4e5db07aaa` |
+| `akashicnet-living-library-tree.webp` | `a00fd9e6b9eeafa847964512834b5f9662152fbd267c7ff11652afb11efd817b` |
+| `psy-nation-radio-listening-portal.png` | `011e63eb8160763db0af81933fc74445a7471ab6f271f79c3008ee7055a7fce8` |
 
 ## Provenance additions
 
@@ -20,4 +25,13 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 
 - `akashicomni-metadimensional-gateway.webp` — original AkashicNET concept artwork added on 14 September 2026 for the developing AkashicOMNI gateway. The 13D hypercube and orb are analytical and navigational metaphors, not scientific evidence of literal physical dimensions or a universal information field.
 
+- `akn24-global-food-shortages.webp` — AI-assisted AkashicNET editorial artwork added on 14 September 2026 for the AKN24 global food-security report and homepage entry point. It contrasts system fragility with practical resilience and is labelled as conceptual, not documentary evidence or a forecast. No private corpus data is present.
+- `akashicomni-global-food-security-13d.webp` — AI-assisted AkashicNET analytical artwork added on 14 September 2026 for the same report. It visualises the canonical AkashicOMNI v0.3.0 thirteen-lens framework, including `HOMESENSE · Phase 8`; it is not a measured risk map or evidence of literal dimensions. No private corpus data is present.
+
+- `akashicnet-living-library-tree.webp` — AI-assisted AkashicNET ecological knowledge-map artwork added on 15 September 2026 for the interactive Living Library map. The rainforest tree, luminous inquiry cycle and mycelial connections are artistic metaphors, not scientific evidence. The asset contains no private corpus data or raw search inquiries.
+
+- `psy-nation-radio-listening-portal.png` — AI-assisted original AkashicNET artwork added on 16 September 2026 for the independent Psy-Nation Radio listening gateway. It is an unofficial portal badge, not the Psy-Nation Radio, SoundCloud, Apple Podcasts or YouTube brand mark. Cosmic radio-wave imagery is artistic symbolism; the asset contains no private corpus or listener data.
+
 The binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
+
+- `public/images/akashicnet-portal-to-infinity-7d-hero.webp` — generated cinematic homepage artwork; seven-dimensional portal imagery is artistic metaphor, not scientific evidence.

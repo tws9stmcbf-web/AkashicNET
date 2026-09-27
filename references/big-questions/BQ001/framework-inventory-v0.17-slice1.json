@@ -1,0 +1,298 @@
+{
+  "exclusions": [
+    {
+      "name": "cardiac-arrest and NDE reports",
+      "reason": "RESEARCH_DOMAIN_OR_OBSERVATION_NOT_A_FRAMEWORK"
+    },
+    {
+      "name": "reincarnation-type case literature",
+      "reason": "RESEARCH_DOMAIN_AND_CASE_LITERATURE_NOT_A_SINGLE_FRAMEWORK"
+    },
+    {
+      "name": "autobiographical memory and self-continuity findings",
+      "reason": "EVIDENCE_DOMAIN_NOT_A_METAPHYSICAL_MODEL"
+    },
+    {
+      "name": "source-status and synthetic terminal-state fixtures",
+      "reason": "PROVENANCE_TEST_MATERIAL_NOT_EVIDENCE_OR_FRAMEWORK"
+    }
+  ],
+  "governed_artifacts": [
+    {
+      "git_blob_sha": "b35b2397c8ab5341db313ec73c3e45b2bcdf4a5c",
+      "path": "references/big-questions/BQ001/spec-v0.1.json",
+      "role": "question_and_umbrella_model_contract"
+    },
+    {
+      "git_blob_sha": "b5e793a0ea7d8756f395b9bd49c50ad01a1c79d8",
+      "path": "references/big-questions/BQ001/public-synthesis-v0.1.json",
+      "role": "public_safe_synthesis"
+    },
+    {
+      "git_blob_sha": "fc795ea3f224a33e969db6170c9a840dc03ef242",
+      "path": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+      "role": "neuroscience_and_cardiac_arrest"
+    },
+    {
+      "git_blob_sha": "894ee42a3a2c1b8cf09f8026fac9b03dc74bf5f9",
+      "path": "references/big-questions/BQ001/evidence-batch2-v0.1.json",
+      "role": "memory_identity_and_nde_methods"
+    },
+    {
+      "git_blob_sha": "44ab4a1bb7dc941a52c9d7529e719ed7e91cc3f5",
+      "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+      "role": "reincarnation_reports_and_methods"
+    },
+    {
+      "git_blob_sha": "4d3f4bebc8605290abc62fa1eaa735912d44c60f",
+      "path": "references/big-questions/BQ001/evidence-batch4-v0.1.json",
+      "role": "contemplative_and_philosophy"
+    },
+    {
+      "git_blob_sha": "473a64435784412e783b4d6bf590f44859fca006",
+      "path": "references/big-questions/BQ001/evidence-batch5-v0.1.json",
+      "role": "supplemental_science_and_theory_testing"
+    }
+  ],
+  "inherited_v016_readiness_pin": "4867ca7c8c9a4e1bc139f630815ecf49c79a2ef7",
+  "inventory": [
+    {
+      "boundary": "Observed brain–conscious-state dependence does not prove that post-mortem continuation is impossible.",
+      "canonical_name": "Biological-dependence model",
+      "category": "UMBRELLA_MODEL",
+      "evidence_role": "organising_model_only",
+      "independence_state": "NOT_APPLICABLE_TO_MODEL",
+      "inventory_item_id": "FW-BQ001-UMBRELLA-BIOLOGICAL-DEPENDENCE",
+      "pinned_locators": [
+        "spec-v0.1.json#/models/1",
+        "public-synthesis-v0.1.json#/competing_models/0"
+      ],
+      "relation_to_bq001": "Individual conscious experience is treated as dependent on functioning biological systems.",
+      "represented_by": [
+        "MODEL-BQ001-BIOLOGICAL-DEPENDENCE"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "Anomalous reports and conceptual possibility do not establish personal survival.",
+      "canonical_name": "Continuity or survival model",
+      "category": "UMBRELLA_MODEL",
+      "evidence_role": "organising_model_only",
+      "independence_state": "NOT_APPLICABLE_TO_MODEL",
+      "inventory_item_id": "FW-BQ001-UMBRELLA-CONTINUITY",
+      "pinned_locators": [
+        "spec-v0.1.json#/models/0",
+        "public-synthesis-v0.1.json#/competing_models/1"
+      ],
+      "relation_to_bq001": "Some aspect of consciousness may continue beyond individual biological functioning.",
+      "represented_by": [
+        "MODEL-BQ001-CONTINUITY"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "A philosophical position is not an experimental result or proof of non-survival.",
+      "canonical_name": "Physicalism",
+      "category": "PHILOSOPHICAL_FRAMEWORK",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-PHILOSOPHY-PHYSICALISM",
+      "pinned_locators": [
+        "evidence-batch4-v0.1.json#/sources/3",
+        "evidence-batch4-v0.1.json#/claims/3"
+      ],
+      "relation_to_bq001": "Provides philosophical support for physical dependence, with implications varying by version.",
+      "represented_by": [
+        "SRC-BQ001-SEP-PHYSICALISM",
+        "CLAIM-BQ001-PHYSICALISM-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "Conceptual space for survival is not empirical evidence that survival occurs.",
+      "canonical_name": "Dualism",
+      "category": "PHILOSOPHICAL_FRAMEWORK",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-PHILOSOPHY-DUALISM",
+      "pinned_locators": [
+        "evidence-batch4-v0.1.json#/sources/4",
+        "evidence-batch4-v0.1.json#/claims/4"
+      ],
+      "relation_to_bq001": "Provides conceptual space for mind not reducible to standard physicalism.",
+      "represented_by": [
+        "SRC-BQ001-SEP-DUALISM",
+        "CLAIM-BQ001-DUALISM-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "Panpsychism does not entail persistence of an individual's memories, identity, or subjectivity.",
+      "canonical_name": "Panpsychism",
+      "category": "PHILOSOPHICAL_FRAMEWORK",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-PHILOSOPHY-PANPSYCHISM",
+      "pinned_locators": [
+        "evidence-batch4-v0.1.json#/sources/5",
+        "evidence-batch4-v0.1.json#/claims/5"
+      ],
+      "relation_to_bq001": "Treats mentality or experience as fundamental or ubiquitous in nature.",
+      "represented_by": [
+        "SRC-BQ001-SEP-PANPSYCHISM",
+        "CLAIM-BQ001-PANPSYCHISM-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "A tradition or philosophical doctrine is not empirical proof of survival or non-survival.",
+      "canonical_name": "Buddhist non-self accounts",
+      "category": "CONTEMPLATIVE_PHILOSOPHICAL_FRAMEWORK",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-CONTEMPLATIVE-BUDDHIST-NONSELF",
+      "pinned_locators": [
+        "evidence-batch4-v0.1.json#/sources/0",
+        "evidence-batch4-v0.1.json#/claims/0"
+      ],
+      "relation_to_bq001": "Questions whether a permanent independent self is the correct unit of continuity.",
+      "represented_by": [
+        "SRC-BQ001-SIDERITS-2011",
+        "CLAIM-BQ001-SIDERITS-2011-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "Changes in self-processing do not establish external ontology or post-mortem continuation.",
+      "canonical_name": "Attentional, constructive, and deconstructive meditation families",
+      "category": "PEER_REVIEWED_REVIEW_FRAMEWORK",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-CONTEMPLATIVE-DAHL-PRACTICE-FAMILIES",
+      "pinned_locators": [
+        "evidence-batch4-v0.1.json#/sources/1",
+        "evidence-batch4-v0.1.json#/claims/1"
+      ],
+      "relation_to_bq001": "Models trainable cognitive processes and changes in self-processing.",
+      "represented_by": [
+        "SRC-BQ001-DAHL-2015",
+        "CLAIM-BQ001-DAHL-2015-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "Psychological self-transcendence is not consciousness independent of a biological organism.",
+      "canonical_name": "S-ART: self-awareness, self-regulation, and self-transcendence",
+      "category": "PEER_REVIEWED_THEORETICAL_FRAMEWORK",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-CONTEMPLATIVE-SART",
+      "pinned_locators": [
+        "evidence-batch4-v0.1.json#/sources/2",
+        "evidence-batch4-v0.1.json#/claims/2"
+      ],
+      "relation_to_bq001": "Models mindfulness through interacting psychological and neurobiological processes.",
+      "represented_by": [
+        "SRC-BQ001-VAGO-2012",
+        "CLAIM-BQ001-VAGO-2012-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "A plausible neuroscientific model is not proof that every NDE is fully explained or that non-survival is established.",
+      "canonical_name": "Neuroscientific model of near-death experiences",
+      "category": "NEUROSCIENTIFIC_EXPLANATORY_MODEL",
+      "evidence_role": "INTERPRETATION",
+      "independence_state": "UNASSESSED_REVIEW_REQUIRED",
+      "inventory_item_id": "FW-BQ001-NDE-NEUROSCIENTIFIC-MODEL",
+      "pinned_locators": [
+        "evidence-batch2-v0.1.json#/sources/4",
+        "evidence-batch2-v0.1.json#/claims/4"
+      ],
+      "relation_to_bq001": "Proposes biological mechanisms that may account for features of NDE reports.",
+      "represented_by": [
+        "SRC-BQ001-MARTIAL-2025",
+        "CLAIM-BQ001-MARTIAL-2025-INTERP-01"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "boundary": "Adversarial theory testing in living participants does not adjudicate post-mortem continuity.",
+      "canonical_name": "Global Neuronal Workspace Theory",
+      "category": "CONSCIOUSNESS_THEORY",
+      "evidence_role": "Established Evidence",
+      "independence_state": "SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION",
+      "inventory_item_id": "FW-BQ001-CONSCIOUSNESS-GNWT",
+      "pinned_locators": [
+        "evidence-batch5-v0.1.json#/sources/1",
+        "evidence-batch5-v0.1.json#/claims/1"
+      ],
+      "relation_to_bq001": "A theory of conscious access tested under living-brain experimental conditions.",
+      "represented_by": [
+        "SRC-BQ001-COGITATE-2025",
+        "CLAIM-BQ001-COGITATE-2025-OBS-01"
+      ],
+      "status": "EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001"
+    },
+    {
+      "boundary": "The shared comparison supplies one governed evidence source, not two independent confirmations, and does not adjudicate survival.",
+      "canonical_name": "Integrated Information Theory",
+      "category": "CONSCIOUSNESS_THEORY",
+      "evidence_role": "Established Evidence",
+      "independence_state": "SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT",
+      "inventory_item_id": "FW-BQ001-CONSCIOUSNESS-IIT",
+      "pinned_locators": [
+        "evidence-batch5-v0.1.json#/sources/1",
+        "evidence-batch5-v0.1.json#/claims/1"
+      ],
+      "relation_to_bq001": "A theory of consciousness tested alongside GNWT under a shared adversarial protocol.",
+      "represented_by": [
+        "SRC-BQ001-COGITATE-2025",
+        "CLAIM-BQ001-COGITATE-2025-OBS-01"
+      ],
+      "status": "EMPIRICALLY_TESTED_NOT_ADJUDICATED_FOR_BQ001"
+    }
+  ],
+  "inventory_id": "BQ001-FRAMEWORK-INVENTORY-V017-SLICE1",
+  "mode": "REVIEW_ONLY",
+  "operational_boundaries": {
+    "analytics_activation_allowed": false,
+    "multimedia_generation_allowed": false,
+    "private_drive_material_allowed": false,
+    "reddit_live_access": "HOLD",
+    "website_publication_allowed": false
+  },
+  "promotion_guards": {
+    "accepted_edge_creation_allowed": false,
+    "framework_count_is_vote": false,
+    "interpretation_upgrades_to_empirical_evidence": false,
+    "randomized_navigation_implies_probability": false,
+    "ranking_or_visualization_implies_endorsement": false,
+    "rights_or_public_release_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "shared_source_counts_as_independent_confirmation": false,
+    "source_count_upgrades_evidence": false,
+    "truth_inference_allowed": false
+  },
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "release_track": "v0.17-evidence-intelligence-beta",
+  "scope": {
+    "description": "Selected inventory of public-safe models, philosophical frameworks, contemplative selfhood frameworks, and consciousness theories represented in the governed BQ001 artifacts. This 11-item slice is not exhaustive: the neural-correlates research programme (CLAIM-BQ001-KOCH-2016-INTERP-01; SRC-BQ001-KOCH-2016) remains outside this slice and requires follow-up inventory review.",
+    "exhaustive_beyond_pinned_artifacts": false,
+    "exhaustive_for_pinned_artifacts": false,
+    "synthesis_or_answer": false
+  },
+  "summary": {
+    "accepted_edges": 0,
+    "consciousness_theories": 2,
+    "contemplative_frameworks": 3,
+    "governed_artifacts": 7,
+    "inventory_items": 11,
+    "neuroscientific_explanatory_models": 1,
+    "philosophical_frameworks": 3,
+    "resolved_items": 0,
+    "umbrella_models": 2
+  },
+  "version": "0.1.0"
+}

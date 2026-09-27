@@ -1,0 +1,108 @@
+{
+  "id": "BQ002",
+  "version": "0.1.0",
+  "title": "Where do thoughts come from?",
+  "status": "UNRESOLVED",
+  "public_beta_gate": false,
+  "conclusion_policy": "UNDETERMINED_AT_INGESTION",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "canonical_evidence_labels": [
+    "Established Evidence",
+    "Interpretation",
+    "Lived Experience/Testimony",
+    "Hypothesis",
+    "Speculation"
+  ],
+  "domains": [
+    "perception_memory_and_learning",
+    "spontaneous_thought_and_mind_wandering",
+    "dreaming_and_sleep_cognition",
+    "language_action_and_embodied_cognition",
+    "neural_dynamics_and_predictive_processing",
+    "phenomenology_and_unresolved_origins"
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-BQ002-SEED-001",
+      "source_type": "FRAMEWORK_PLACEHOLDER",
+      "citation": "Seed placeholder only; replace with a reproducible primary or secondary source before supporting a substantive claim.",
+      "publication_date": null,
+      "url": null,
+      "limitations": [
+        "Not evidence",
+        "Cannot support Established Evidence"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "model_id": "MODEL-BQ002-COGNITIVE-GENERATION",
+      "name": "cognitive_generation_model",
+      "position": "Thought content arises through interacting perceptual, mnemonic, predictive, affective, linguistic and action-related processes implemented by biological cognitive systems.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ002-PHENOMENAL-GAP",
+      "name": "phenomenal_origin_unresolved_model",
+      "position": "Mechanistic accounts of thought content and access may remain incomplete as accounts of why thought is subjectively experienced.",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ002-FRAMEWORK-001",
+      "text": "BQ002 currently has no adjudicated substantive answer.",
+      "domain": "phenomenology_and_unresolved_origins",
+      "evidence_label": "Established Evidence",
+      "provenance": [
+        "references/big-questions/BQ002/spec-v0.1.json"
+      ],
+      "source_ids": [],
+      "reviewed_support": true,
+      "scope": "project_state_only",
+      "uncertainty": "No empirical or metaphysical conclusion is implied by this project-state statement.",
+      "contradicts": [],
+      "supports_models": []
+    }
+  ],
+  "open_questions": [
+    "Which measurable processes generate or constrain specific thought content?",
+    "How do memory, perception, affect, language and action interact in spontaneous and deliberate thought?",
+    "What distinguishes the causal origin of a thought from retrospective awareness or report of it?",
+    "Which findings explain thought content, and which bear on subjective experience?",
+    "Which claims are empirical, philosophical, interpretive, testimonial or speculative?"
+  ],
+  "graph": {
+    "node_types": [
+      "QUESTION",
+      "SOURCE",
+      "CLAIM",
+      "MODEL",
+      "UNCERTAINTY",
+      "OPEN_QUESTION"
+    ],
+    "edge_types": [
+      "SUPPORTED_BY",
+      "INTERPRETS",
+      "SUPPORTS_MODEL",
+      "CONTRADICTS",
+      "QUALIFIED_BY",
+      "RAISES"
+    ],
+    "truth_inference_allowed": false,
+    "edge_state_may_upgrade_evidence": false
+  },
+  "promotion_guards": {
+    "correlation_may_not_be_presented_as_complete_causal_explanation": true,
+    "neural_prediction_may_not_be_presented_as_thought_reading": true,
+    "dream_content_may_not_be_presented_as_independent_of_memory": true,
+    "mechanistic_account_may_not_be_presented_as_resolving_phenomenology": true,
+    "testimony_may_not_auto_promote_to_established_evidence": true,
+    "source_count_may_not_upgrade_evidence": true,
+    "retrieval_rank_may_not_upgrade_evidence": true,
+    "semantic_similarity_may_not_upgrade_evidence": true,
+    "ai_synthesis_may_not_be_primary_source": true,
+    "rights_promotion_allowed": false,
+    "scientific_truth_inference_allowed": false
+  }
+}
