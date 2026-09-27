@@ -1,0 +1,20 @@
+name: FActScore compatibility offline
+on:
+  pull_request:
+    paths:
+      - 'scripts/factscore_compat.py'
+      - 'scripts/prepare_factscore_compat.py'
+      - 'tests/test_factscore_compat.py'
+      - '.github/workflows/factscore-compat-offline.yml'
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Run dependency-free offline tests (optional installed-package check skips)
+        run: python -m unittest discover -s tests -p test_factscore_compat.py -v
