@@ -26,6 +26,7 @@ EXPECTED = {'schema_version': 1,
                                'commit': '677abddc472322621adf54697ac31c383be3b3c3',
                                'url': 'https://github.com/tws9stmcbf-web/AkashicNET/releases/tag/v0.17.0',
                                'published_at': '2026-09-27T04:06:55Z',
+                               'draft': False,
                                'prerelease': True}},
  'bq001': {'status': 'UNRESOLVED', 'accepted_edges': 0},
  'reddit_live_access': 'HOLD',
@@ -96,7 +97,7 @@ def fragments(data):
         f'The {candidate} governed candidate and {checkpoint} site checkpoint remain historical records.'
     )
     return {
-        "CURRENT_LABEL": f"Public Beta · {baseline} sealed · {target} READY · GitHub prerelease published",
+        "CURRENT_LABEL": f"Public Beta · {baseline} sealed · {target} READY · bounded review only · {readiness['commit']} · GitHub prerelease published",
         "CHECKPOINT_ROWS": rows,
         "PROGRESS_INTRO": intro,
         "BQ001_BOUNDARY": "BQ001 remains " + data["bq001"]["status"] + "; no testimony, hypothesis or inference is silently promoted to established evidence.",

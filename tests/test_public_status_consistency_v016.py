@@ -79,6 +79,19 @@ class PublicStatusTests(unittest.TestCase):
         self.assertNotIn('progress toward v0.17.0', page)
         self.assertNotIn('NEXT MINOR', page)
 
+    def test_published_github_release_must_be_non_draft(self):
+        for mutation in (
+            lambda d: d['target']['github_release'].pop('draft'),
+            lambda d: d['target']['github_release'].update(draft=True),
+        ):
+            with self.subTest(mutation=mutation):
+                self.mutate_data(mutation)
+
+    def test_homepage_ready_label_is_bounded_to_approved_commit(self):
+        homepage = status.render(self.root)['website/app/page.tsx']
+        commit = status.EXPECTED['target']['readiness']['commit']
+        self.assertIn('v0.17.0 READY · bounded review only · ' + commit, homepage)
+
     def test_types_unknown_fields_and_missing_fields_fail(self):
         for change in (lambda d: d['candidate'].update(sealed=0),
                        lambda d: d['bq001'].update(accepted_edges=False),

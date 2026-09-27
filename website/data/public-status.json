@@ -31,7 +31,8 @@
       "commit": "677abddc472322621adf54697ac31c383be3b3c3",
       "url": "https://github.com/tws9stmcbf-web/AkashicNET/releases/tag/v0.17.0",
       "published_at": "2026-09-27T04:06:55Z",
-      "prerelease": true
+      "prerelease": true,
+      "draft": false
     }
   },
   "bq001": {
