@@ -51,6 +51,13 @@ CREATED_UTC_RE = re.compile(
 )
 RETRIEVED_AT_UTC_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 EXPECTED_SUBREDDIT = "NeuronsToNirvana"
+# Fixed provenance contract for this dated manual import. Changes require review.
+EXPECTED_IMPORT_PROVENANCE = {
+    "import_date": "2026-09-08",
+    "extends_schema": "akashicnet.reddit.canonical-delta-import.v0.1",
+    "source_description": "Manually verified public listing metadata for r/NeuronsToNirvana observed on 2026-09-08. Reddit's API was not called; no credentials were used; REDDIT_API_APPROVED was not enabled; no crawling or pagination occurred.",
+    "approval": "Focused, human-supplied candidate set reviewed against the canonical index; count promotion deliberately deferred pending a later validated merged checkpoint.",
+}
 # Historical public checkpoint declared by this manual delta, not live counts.
 EXPECTED_PUBLIC_COUNTS = {"source_rows": 9502, "unified_index_records": 12159}
 REQUIRED_TRUE_GATES = {
@@ -248,6 +255,9 @@ def main() -> int:
 
     if delta["schema"] != "akashicnet.reddit.canonical-delta-import.v0.2":
         raise SystemExit(f"unexpected schema: {delta['schema']}")
+    for field, expected in EXPECTED_IMPORT_PROVENANCE.items():
+        if delta.get(field) != expected:
+            raise SystemExit(f"{field} must be {expected!r}")
     gates = delta.get("gates", {})
     for gate in sorted(REQUIRED_FALSE_GATES):
         if gates.get(gate) is not False:

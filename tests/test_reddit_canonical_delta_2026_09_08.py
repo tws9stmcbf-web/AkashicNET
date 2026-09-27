@@ -313,7 +313,43 @@ def test_audit_ignores_record_and_object_serialization_order():
     assert _validate_mutated_delta(reorder) == original
 
 
+def test_requires_dated_import_identity():
+    for value in ("2026-09-09", "2026-09-02", "", None, 20260908, False, [], {}):
+        _assert_exception(
+            SystemExit,
+            lambda: _validate_mutated_delta(lambda d: d.__setitem__("import_date", value)),
+            "import_date must be",
+        )
+    _assert_exception(
+        SystemExit,
+        lambda: _validate_mutated_delta(lambda d: d.pop("import_date")),
+        "import_date must be",
+    )
+
+
+def test_requires_top_level_provenance():
+    contradictions = {
+        "extends_schema": "akashicnet.reddit.canonical-delta-import.v0.2",
+        "source_description": "Collected through the Reddit API with credentials and crawling.",
+        "approval": "Approved for immediate public count and scientific-evidence promotion.",
+    }
+    for field, contradiction in contradictions.items():
+        for value in (contradiction, "", None, False, 123, [], {}):
+            _assert_exception(
+                SystemExit,
+                lambda: _validate_mutated_delta(lambda d: d.__setitem__(field, value)),
+                f"{field} must be",
+            )
+        _assert_exception(
+            SystemExit,
+            lambda: _validate_mutated_delta(lambda d: d.pop(field)),
+            f"{field} must be",
+        )
+
+
 if __name__ == "__main__":
+    test_requires_dated_import_identity()
+    test_requires_top_level_provenance()
     test_rejects_coordinated_subreddit_substitution()
     test_requires_affirmative_acceptance_gates()
     test_requires_unchanged_public_count_contract()
