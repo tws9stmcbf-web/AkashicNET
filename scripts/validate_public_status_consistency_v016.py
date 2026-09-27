@@ -106,14 +106,16 @@ if "progress toward v0.17.0" not in status_text(progress):
 # predicate cannot hide a later affirmative assertion. This remains a bounded
 # status-copy guard, not a general natural-language parser.
 negative_words = r"(?:not|never|no|cannot|can't|neither|nor|without|far[ \t]+from|yet[ \t]+to)\b"
-negative_modifiers = r"(?:yet|be|been|a|an|the|its|latest|current|official|public|final|sealed|officially|publicly|formally|definitively)"
+predicate_adverbs = r"(?:yet|currently|officially|publicly|formally|definitively)"
+negative_modifiers = r"(?:be|been|a|an|the|its|latest|current|official|public|final|sealed|" + predicate_adverbs + r")"
 
 
 def predicate_is_negated(prefix: str) -> bool:
     # "not released or shipped" negates both predicates. An adversative or a
     # fresh affirmative verb ("but is shipped") must not inherit that negation.
     prefix = re.sub(
-        r"(?:\b(?:release|released|shipped|sealed|resolved)[ \t]+(?:or|nor)[ \t]+)+$",
+        r"(?:\b(?:release|released|shipped|sealed|resolved)[ \t]+(?:or|nor)[ \t]+"
+        + r"(?:" + predicate_adverbs + r"[ \t]+){0,3})+$",
         "", prefix, flags=re.IGNORECASE,
     )
     return bool(re.search(
@@ -134,7 +136,7 @@ def has_affirmative_claim(text: str, subject: str, predicate: str) -> bool:
 # Mask only a directly qualified pending release noun phrase. A later shipped
 # or released predicate must still be checked, and BQ001 uses no pending barrier.
 release_text = re.sub(
-    r"\b(?:pending|awaiting)[ \t]+(?:(?:a|the|its)[ \t]+)?"
+    r"\b(?:pending|awaiting)[ \t]+(?:(?:a|an|the|its)[ \t]+)?"
     r"(?:(?:final|official|public|sealed)[ \t]+){0,3}release\b",
     "pendingevent", status_text(home + "\n" + progress), flags=re.IGNORECASE,
 )
@@ -151,7 +153,7 @@ if has_affirmative_claim(status_text(home + "\n" + progress), r"\bBQ001\b", r"\b
 # sentence boundaries so a preceding disclaimer cannot hide a later heading.
 reverse_claim = re.compile(
     r"\b(?:(?:sealed|official|public|final)[ \t]+release|release|released|shipped)[ \t,·:–—-]*"
-    r"(?:(?:version|status)[ \t,·:–—-]+){0,2}v0\.16\.(?:0-beta\.2|7)\b|"
+    r"(?:(?:version|status)[ \t,·:–—-]+){0,2}(?:(?:for|of)[ \t]+)?v0\.16\.(?:0-beta\.2|7)\b|"
     r"\bRESOLVED(?:[ \t]+(?:status|research|question|for|of)){0,4}[ \t,·:–—-]+BQ001\b",
     re.IGNORECASE,
 )
@@ -161,7 +163,7 @@ for clause in re.split(r"[\n;!?]|\.(?=\s)", status_text(block_text)):
         prefix = clause[:match.start()]
         pending_release = (
             not match.group().lower().startswith("resolved")
-            and re.search(r"\b(?:pending|awaiting)[ \t]+$", prefix, re.IGNORECASE)
+            and re.search(r"\b(?:pending|awaiting)[ \t]+(?:(?:a|an|the|its)[ \t]+)?$", prefix, re.IGNORECASE)
         )
         if not pending_release and not predicate_is_negated(prefix):
             fail("predicate-first status contradicts unreleased/BQ001 boundaries")
