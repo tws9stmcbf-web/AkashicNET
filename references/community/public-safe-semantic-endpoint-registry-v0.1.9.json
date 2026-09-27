@@ -44,7 +44,7 @@
     {
       "artifact_id": "artifact:big-question:bq001:public-synthesis",
       "repository_record": "references/big-questions/BQ001/public-synthesis-v0.1.json",
-      "sha256": "4faa7dfdffb762a6fec6c46e012c424ee001ab9592f6c81f88e777e9dc6d394e",
+      "sha256": "af907250c2b62a43d97600cafc0f4ef7770d6003abd6ed9402af1d2222031bbd",
       "public_safe": true
     },
     {
