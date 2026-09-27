@@ -1,455 +1,112 @@
-"""Mutation checks for current naming; sealed validators are never modified."""
-
+"""Typed status, generated rendering, and editorial-boundary regression tests."""
+import copy
+import importlib.util
+import json
 from pathlib import Path
 import shutil
-import subprocess
-import sys
 import tempfile
 import unittest
 
-
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = "scripts/validate_public_status_consistency_v016.py"
-HOME = "website/app/page.tsx"
-PROGRESS = "website/app/development-progress/page.tsx"
+SPEC = importlib.util.spec_from_file_location('status', ROOT / 'scripts/validate_public_status_consistency_v016.py')
+status = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(status)
 
+class PublicStatusTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        paths = [status.DATA, status.MANIFEST, *status.SURFACES]
+        paths += [source for source, _ in status.SURFACES.values()]
+        for name in paths:
+            dest = self.root / name
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ROOT / name, dest)
 
-class CurrentPublicStatusTests(unittest.TestCase):
-    def test_focus_negation_and_precopular_adverbs_rejected(self):
-        for claim in ("v0.16.7 isn't only released, it is stable",
-                      "v0.16.7 is not merely released",
-                      "BQ001 is not only RESOLVED",
-                      "Release version currently is v0.16.7",
-                      "Official release now is v0.16.7",
-                      "RESOLVED status currently is BQ001"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def mutate_data(self, change):
+        data = copy.deepcopy(status.EXPECTED)
+        change(data)
+        (self.root / status.DATA).write_text(json.dumps(data))
+        with self.assertRaisesRegex(ValueError, 'contract drift'):
+            status.check(self.root)
 
-    def test_coordinated_infinitives_pass(self):
-        result = self.run_case(progress=lambda text: text +
-            "<p>v0.16.7 is not considered to be released or to be shipped</p>")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assert_rejected(progress=lambda text: text +
-            "<p>v0.16.7 is considered to be released or to be shipped</p>")
+    def test_current_pages_and_deterministic_replay(self):
+        status.check(self.root)
+        before = status.render(self.root)
+        status.check(self.root, write=True)
+        self.assertEqual(before, status.render(self.root))
+        status.check(self.root)
 
-    def test_additional_copular_adverbs_rejected(self):
-        for claim in ("Release version is already v0.16.7",
-                      "Public release status is finally v0.16.7"):
-            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_no_release_or_resolution_promotion(self):
+        changes = [
+            lambda d: d['candidate'].update(sealed=True),
+            lambda d: d['site_checkpoint'].update(is_release=True),
+            lambda d: d['target'].update(released=True),
+            lambda d: d['bq001'].update(status='RESOLVED'),
+            lambda d: d['bq001'].update(accepted_edges=1),
+            lambda d: d.update(reddit_live_access='LIVE'),
+            lambda d: d.update(promotion_allowed=True),
+        ]
+        for change in changes:
+            with self.subTest(change=change): self.mutate_data(change)
 
-    def test_contractions_and_considered_infinitive_pass(self):
-        for claim in ("v0.16.7 isn't released", "v0.16.7 hasn't been released",
-                      "v0.16.7 won't be released", "BQ001 isn't RESOLVED",
-                      "v0.16.7 is not considered to be a release",
-                      "BQ001 is not considered to be RESOLVED"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-        for claim in ("v0.16.7 isn't released but is shipped",
-                      "BQ001 is considered to be RESOLVED"):
-            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_types_unknown_fields_and_missing_fields_fail(self):
+        for change in (lambda d: d['candidate'].update(sealed=0),
+                       lambda d: d['bq001'].update(accepted_edges=False),
+                       lambda d: d.update(schema_version=True),
+                       lambda d: d.update(label='Released'),
+                       lambda d: d.pop('candidate')):
+            with self.subTest(change=change): self.mutate_data(change)
 
-    def test_reverse_copular_adverbs_and_bq_headings_rejected(self):
-        for claim in ("Official release is now v0.16.7",
-                      "Release version is currently v0.16.0-beta.2",
-                      "RESOLVED status is BQ001",
-                      "RESOLVED research question is now BQ001"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_duplicate_json_keys_rejected(self):
+        path = self.root / status.DATA
+        path.write_text(path.read_text().replace('"schema_version": 1', '"schema_version": 1, "schema_version": 1'))
+        with self.assertRaisesRegex(ValueError, 'duplicate JSON key'): status.check(self.root)
 
-    def test_negated_predicate_verbs_pass(self):
-        for claim in ("v0.16.7 is not considered a release",
-                      "BQ001 is not considered RESOLVED",
-                      "v0.16.7 is not intended to be a release",
-                      "BQ001 is not intended to be RESOLVED"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-        for claim in ("v0.16.7 is considered a release",
-                      "BQ001 is considered RESOLVED",
-                      "v0.16.7 is not considered a draft and is released",
-                      "BQ001 is not considered disputed but is RESOLVED"):
-            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_manifest_disagreement_rejected(self):
+        original = status.read_json(self.root / status.MANIFEST)
+        for key, value in (('schema_version', '0.17.0'), ('artifact_status', 'RELEASED'),
+                           ('promotion_boundaries', {'truth': True})):
+            with self.subTest(key=key):
+                data = copy.deepcopy(original); data[key] = value
+                (self.root / status.MANIFEST).write_text(json.dumps(data))
+                with self.assertRaises(ValueError): status.check(self.root)
 
-    def test_copular_release_headings_rejected(self):
-        for claim in ("Official release is v0.16.7", "Release version is v0.16.7",
-                      "Public release status is v0.16.0-beta.2"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_rendered_labels_cannot_be_changed_by_hand(self):
+        for output in status.SURFACES:
+            with self.subTest(output=output):
+                path = self.root / output; old = path.read_text()
+                path.write_text(old.replace('governed candidate', 'sealed release').replace('GOVERNED CANDIDATE', 'SEALED RELEASE'))
+                with self.assertRaisesRegex(ValueError, 'surface drift'): status.check(self.root)
+                path.write_text(old)
 
-    def test_repeated_coordination_auxiliaries_pass(self):
-        for claim in ("v0.16.7 has not been released or been shipped",
-                      "v0.16.7 will not be released or be officially shipped",
-                      "v0.16.7 has not been released or officially been sealed or been shipped"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-        for claim in ("v0.16.7 has been released or been shipped",
-                      "v0.16.7 has not been released but has been shipped",
-                      "v0.16.7 has not been released or is shipped"):
-            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_required_slots_cannot_be_removed_or_duplicated(self):
+        for source, tokens in status.SURFACES.values():
+            path = self.root / source; original = path.read_text()
+            for token in tokens:
+                for replacement in ('', ('@@' + token + '@@') * 2):
+                    with self.subTest(token=token, replacement=replacement):
+                        marker = '@@' + token + '@@'
+                        path.write_text(original.replace(marker, replacement))
+                        with self.assertRaises(ValueError): status.check(self.root)
+            path.write_text(original)
 
-    def test_pending_multiple_qualifiers_pass(self):
-        for claim in ("Pending final official release version: v0.16.7",
-                      "Awaiting the final sealed release version: v0.16.7",
-                      "Pending the final official public release status of v0.16.7"):
-            with self.subTest(claim=claim):
-                result=self.run_case(progress=lambda text: text+f"<p>{claim}</p>")
-                self.assertEqual(result.returncode,0,result.stderr)
-        self.assert_rejected(progress=lambda text: text+
-            "<p>Pending final documentation: Official release version: v0.16.7</p>")
+    def test_dependency_versions_and_disclaimers_are_editorial_copy(self):
+        # These examples are accepted as template prose, never used as status data.
+        path = self.root / 'website/status-templates/home.tsx.in'
+        for text in ("AkashicNET, built with React v19.0", "v0.16.7 is not to be released",
+                     "v0.16.7 has not been released, sealed, or shipped"):
+            path.write_text(path.read_text() + '\n// Editorial example: ' + text + '\n')
+        status.check(self.root, write=True)
+        status.check(self.root)
+        self.assertFalse(status.read_json(self.root / status.DATA)['candidate']['sealed'])
 
-    def test_release_heading_connectives_rejected(self):
-        for claim in ("Official release version for v0.16.7", "Release status of v0.16.7"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
+    def test_free_prose_does_not_set_authoritative_status(self):
+        # Semantic review is explicitly outside this validator's contract.
+        path = self.root / 'website/status-templates/home.tsx.in'
+        path.write_text(path.read_text() + '\n// Review fixture: Official release is v0.16.7\n')
+        status.check(self.root, write=True)
+        self.assertFalse(status.read_json(self.root / status.DATA)['site_checkpoint']['is_release'])
 
-    def test_pending_determiners_and_negation_modifiers_pass(self):
-        for claim in ("Awaiting the final release version: v0.16.7",
-                      "Pending an official release version for v0.16.7",
-                      "v0.16.7 has not been released or officially shipped",
-                      "v0.16.7 has not been released or publicly shipped",
-                      "v0.16.7 has not been released or officially sealed or publicly shipped",
-                      "v0.16.7 is not currently released", "BQ001 is not currently RESOLVED"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-        for claim in ("v0.16.7 has been released or officially shipped",
-                      "v0.16.7 has not been released but is publicly shipped",
-                      "Pending an audit: Official release version for v0.16.7"):
-            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_qualified_reverse_heading_connectors_rejected(self):
-        for claim in ("Official release version: v0.16.7",
-                      "Public release status: v0.16.7",
-                      "RESOLVED status for BQ001",
-                      "RESOLVED research question: BQ001"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_pending_reverse_and_coordinated_negation_pass(self):
-        for claim in ("Pending release: v0.16.7", "Pending official release: v0.16.7",
-                      "Awaiting final release version: v0.16.7",
-                      "v0.16.7 has not been released or shipped",
-                      "v0.16.7 has never been released or sealed or shipped"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-        for claim in ("v0.16.7 has been released or shipped",
-                      "v0.16.7 has not been released but is shipped",
-                      "Pending documentation: Official release version: v0.16.7"):
-            self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_reviewed_subject_negation_bypasses(self):
-        for claim in ("v0.16.7 is not a draft and is now released",
-                      "BQ001 is not disputed and is RESOLVED",
-                      "v0.16.7 is not released but is now shipped",
-                      "BQ001 remains UNRESOLVED and is now RESOLVED"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_reviewed_release_noun_and_resolution_headings(self):
-        for claim in ("Official release: v0.16.7", "Release: v0.16.7",
-                      "RESOLVED status: BQ001", "RESOLVED question: BQ001"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_reviewed_comma_product_label(self):
-        self.assert_rejected(extra="<p>AkashicNET, current version: v0.16.7</p>")
-
-    def test_directly_negated_new_headings_pass(self):
-        for claim in ("Not an official release: v0.16.7",
-                      "Not RESOLVED status: BQ001",
-                      "v0.16.7 is not yet officially released",
-                      "BQ001 is not definitively RESOLVED"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-
-    def run_case(self, *, home=None, progress=None, extra=None):
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            for name in (SCRIPT, HOME, PROGRESS):
-                target = root / name
-                target.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(ROOT / name, target)
-            for name, transform in ((HOME, home), (PROGRESS, progress)):
-                if transform:
-                    target = root / name
-                    target.write_text(transform(target.read_text()))
-            if extra is not None:
-                (root / "website/app/ordinary.tsx").write_text(extra)
-            return subprocess.run(
-                [sys.executable, str(root / SCRIPT)],
-                text=True, capture_output=True, check=False,
-            )
-
-    def assert_rejected(self, *, reason=None, **changes):
-        result = self.run_case(**changes)
-        self.assertNotEqual(result.returncode, 0, result.stdout)
-        self.assertIn("FAIL:", result.stderr)
-        if reason:
-            self.assertIn(reason, result.stderr)
-
-    def test_unrelated_pending_words_do_not_hide_assertions(self):
-        for claim in ("v0.16.7 is pending documentation and is now released",
-                      "v0.16.7 is awaiting publication and is shipped",
-                      "BQ001 is pending publication and is RESOLVED",
-                      "v0.16.7 is pending release and is now shipped"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_unrelated_negative_prefix_does_not_hide_reverse_claim(self):
-        for claim in ("Not a draft: Shipped v0.16.7", "Not disputed: RESOLVED: BQ001"):
-            with self.subTest(claim=claim):
-                self.assert_rejected(progress=lambda text: text + f"<p>{claim}</p>")
-
-    def test_version_first_product_last_label_rejected(self):
-        self.assert_rejected(extra="<p>v0.16.7 is the current version of AkashicNET</p>")
-
-    def test_qualified_pending_release_passes(self):
-        for phrase in ("pending final release", "awaiting its release",
-                       "pending the final sealed release"):
-            with self.subTest(phrase=phrase):
-                result = self.run_case(progress=lambda text:
-                    text + f"<p>v0.16.7 is {phrase}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-                self.assert_rejected(progress=lambda text:
-                    text + f"<p>v0.16.7 is {phrase} and is now shipped</p>")
-
-    def test_negated_reverse_predicate_adverbs_pass(self):
-        for claim in ("Not officially shipped v0.16.7",
-                      "Not yet officially shipped v0.16.7",
-                      "Never publicly released v0.16.7",
-                      "Not definitively RESOLVED: BQ001"):
-            with self.subTest(claim=claim):
-                result = self.run_case(progress=lambda text: text + f"<p>{claim}</p>")
-                self.assertEqual(result.returncode, 0, result.stderr)
-        self.assert_rejected(progress=lambda text:
-            text + "<p>Not officially disputed: RESOLVED: BQ001</p>")
-
-    def test_product_qualified_reverse_version_labels_rejected(self):
-        for label in ("v0.16.7 is the current product version of AkashicNET",
-                      "v0.16.7 is AkashicNET's current product version"):
-            with self.subTest(label=label):
-                self.assert_rejected(extra=f"<p>{label}</p>")
-
-    def test_current_copy_and_independent_framework_versions_pass(self):
-        result = self.run_case(extra=(
-            '<p>AkashicNET analysis: METAD v2.1, ACTC v2.0, UMASC v7.2</p>'
-            '<p>BQ001 · Public synthesis v0.1.1 · Page iteration 04</p>'
-        ))
-        self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_pre_alpha_rejected_on_both_allowed_surfaces(self):
-        for surface in ("home", "progress"):
-            with self.subTest(surface=surface):
-                self.assert_rejected(**{surface: lambda text:
-                    text + '<p>AkashicNET <span>engine · Pre-alpha</span></p>'})
-
-    def test_ordinary_product_labels_rejected(self):
-        for label in (
-            "AkashicNET engine · Pre-alpha", "AkashicNET v0.16.7",
-            "AkashicNET · Public Beta", "Public Beta · AkashicNET",
-            "AkashicNET <span>v0.16.0-beta.2</span>",
-            "AkashicNET is v0.16.7", "AkashicNET release: v0.16.7",
-            "AkashicNET currently runs v0.16.7",
-            "AkashicNET now uses version v0.16.0-beta.2",
-            "AkashicNET currently <strong>runs</strong> v0.16.7",
-        ):
-            with self.subTest(label=label):
-                self.assert_rejected(extra=f"<p>{label}</p>")
-
-    def test_duplicate_current_homepage_status_rejected(self):
-        self.assert_rejected(home=lambda text: text + "<p>Public Beta</p>")
-        self.assert_rejected(home=lambda text: text + "<p>v0.16.0-beta.2</p>")
-        self.assert_rejected(home=lambda text: text + "<p>v0.16.7</p>")
-
-    def test_checkpoint_must_link_to_development_record(self):
-        self.assert_rejected(home=lambda text:
-            text.replace('href="/development-progress"', 'href="/"'))
-
-    def test_affirmative_release_claims_rejected(self):
-        for version in ("v0.16.0-beta.2", "v0.16.7"):
-            for claim in (
-                f"{version} is a sealed release",
-                f"{version} is the current release",
-                f"{version} READY / SEALED",
-                f"Released {version}",
-            ):
-                for surface in ("home", "progress"):
-                    with self.subTest(claim=claim, surface=surface):
-                        self.assert_rejected(**{surface: lambda text, claim=claim:
-                            text + f"<p>{claim}</p>"})
-
-    def test_candidate_and_checkpoint_disclaimers_required(self):
-        for disclaimer in ("not a sealed release", "not a release"):
-            with self.subTest(disclaimer=disclaimer):
-                self.assert_rejected(progress=lambda text, phrase=disclaimer:
-                    text.replace(phrase, "a completed release"))
-
-    def test_latest_release_claim_rejected_with_disclaimer_intact(self):
-        for version in ("v0.16.0-beta.2", "v0.16.7"):
-            with self.subTest(version=version):
-                self.assert_rejected(
-                    reason="unsealed candidate or site checkpoint presented as a release",
-                    progress=lambda text, version=version:
-                        text + f"<p>{version} is the latest release</p>",
-                )
-                self.assert_rejected(home=lambda text, version=version:
-                    text + f"<p>{version} is the latest release</p>")
-
-    def test_perfect_tense_resolution_rejected_with_unresolved_intact(self):
-        for surface in ("home", "progress"):
-            with self.subTest(surface=surface):
-                self.assert_rejected(
-                    reason="public status surface contradicts BQ001 UNRESOLVED",
-                    **{surface: lambda text:
-                        text + "<p>BQ001 has been RESOLVED</p>"},
-                )
-
-    def test_negative_claims_and_framework_versions_remain_allowed(self):
-        result = self.run_case(
-            progress=lambda text: text + (
-                "<p>v0.16.0-beta.2 is not the latest release.</p>"
-                "<p>v0.16.7 is not a release.</p>"
-                "<p>BQ001 has not been RESOLVED.</p>"
-            ),
-            extra=("<p>AkashicNET uses METAD v2.1</p>"
-                   "<p>AkashicNET uses MultidimensionalCUT v4.0.0</p>"
-                   "<p>AkashicNET uses AkashicOMNI v0.3.0</p>"),
-        )
-        self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_checkpoint_direction_required(self):
-        self.assert_rejected(progress=lambda text:
-            text.replace("progress toward v0.17.0", "completed development"))
-
-    def test_adverbial_release_assertions_rejected(self):
-        for version in ("v0.16.0-beta.2", "v0.16.7"):
-            for wording in ("is now the latest release", "is currently the release",
-                            "has now been released", "is now a sealed release"):
-                with self.subTest(version=version, wording=wording):
-                    self.assert_rejected(
-                        reason="unsealed candidate or site checkpoint presented as a release",
-                        progress=lambda text, v=version, w=wording: text + f"<p>{v} {w}</p>",
-                    )
-
-    def test_shipped_assertions_rejected_with_disclaimers_intact(self):
-        for version in ("v0.16.0-beta.2", "v0.16.7"):
-            for wording in ("has shipped", "has now shipped", "shipped", "is shipped"):
-                with self.subTest(version=version, wording=wording):
-                    self.assert_rejected(
-                        reason="unsealed candidate or site checkpoint presented as a release",
-                        progress=lambda text, v=version, w=wording: text + f"<p>{v} {w}</p>",
-                    )
-
-    def test_negative_release_constructions_pass(self):
-        for version in ("v0.16.0-beta.2", "v0.16.7"):
-            for wording in (
-                "has yet to be released", "has yet to ship", "has not shipped",
-                "cannot be released", "can not be released", "can't be released",
-                "is neither released nor sealed", "remains without a release",
-                "is far from released", "has yet to be shipped",
-            ):
-                with self.subTest(version=version, wording=wording):
-                    result = self.run_case(progress=lambda text, v=version, w=wording:
-                                           text + f"<p>{v} {w}</p>")
-                    self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_negative_resolution_constructions_pass(self):
-        for wording in (
-            "remains far from RESOLVED", "has yet to be RESOLVED",
-            "cannot be RESOLVED", "can not be RESOLVED", "can't be RESOLVED",
-            "is neither settled nor RESOLVED", "remains without a RESOLVED status",
-        ):
-            for surface in ("home", "progress"):
-                with self.subTest(wording=wording, surface=surface):
-                    result = self.run_case(**{surface: lambda text, w=wording:
-                                            text + f"<p>BQ001 {w}</p>"})
-                    self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_negative_copy_does_not_hide_separate_affirmative_claims(self):
-        for separator in (". ", "; ", "</p><p>", "\n"):
-            with self.subTest(separator=separator):
-                self.assert_rejected(
-                    reason="unsealed candidate or site checkpoint presented as a release",
-                    progress=lambda text, s=separator: text + (
-                        f"<p>v0.16.7 has yet to be released{s}v0.16.7 has shipped</p>"),
-                )
-                self.assert_rejected(
-                    reason="public status surface contradicts BQ001 UNRESOLVED",
-                    progress=lambda text, s=separator: text + (
-                        f"<p>BQ001 remains far from RESOLVED{s}BQ001 is RESOLVED</p>"),
-                )
-
-    def test_possessive_product_labels_rejected(self):
-        for possessive in ("'s", "’s", "&apos;s", "&#39;s", "&#x2019;s"):
-            with self.subTest(possessive=possessive):
-                self.assert_rejected(
-                    reason="product status must remain centralised",
-                    extra=f"<p>AkashicNET{possessive} current version is v0.16.7</p>",
-                )
-
-    def test_adverbial_resolution_assertions_rejected(self):
-        for wording in ("has now been", "has finally been", "has been definitively", "is now"):
-            for surface in ("home", "progress"):
-                with self.subTest(wording=wording, surface=surface):
-                    self.assert_rejected(
-                        reason="public status surface contradicts BQ001 UNRESOLVED",
-                        **{surface: lambda text, w=wording: text + f"<p>BQ001 {w} RESOLVED</p>"},
-                    )
-
-    def test_adverbial_negatives_and_possessive_frameworks_pass(self):
-        result = self.run_case(
-            progress=lambda text: text + (
-                "<p>v0.16.7 is currently not the latest release.</p>"
-                "<p>v0.16.0-beta.2 has never been released.</p>"
-                "<p>BQ001 has not yet been RESOLVED.</p>"
-                "<p>BQ001 has never been definitively RESOLVED.</p>"
-            ),
-            extra="<p>AkashicNET’s METAD v2.1</p><p>AkashicNET's AkashicOMNI v0.3.0</p>",
-        )
-        self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_historical_homepage_context_required(self):
-        self.assert_rejected(home=lambda text:
-            text.replace("Historical sealed release checkpoint", "Current release"))
-
-    def test_bq001_and_no_promotion_boundaries_required(self):
-        self.assert_rejected(progress=lambda text:
-            text + "<p>BQ001 is RESOLVED</p>")
-        self.assert_rejected(progress=lambda text: text + "truth inference enabled")
-
-
-    def test_predicate_first_shipped_claims_fail(self):
-        for version in ("v0.16.7", "v0.16.0-beta.2"):
-            for surface in ("home", "progress"):
-                with self.subTest(version=version, surface=surface):
-                    self.assert_rejected(**{surface: lambda text, v=version:
-                        text + f"<p>Shipped {v}</p>"})
-
-    def test_pending_and_awaiting_release_pass(self):
-        for wording in ("is pending release", "is awaiting release"):
-            result = self.run_case(progress=lambda text, w=wording:
-                text + f"<p>v0.16.7 {w}</p>")
-            self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_version_first_product_label_fails(self):
-        for possessive in ("'s", "’s", "&apos;s"):
-            self.assert_rejected(extra=
-                f"<p>v0.16.7 is AkashicNET{possessive} current version</p>")
-
-    def test_reversed_resolution_heading_fails(self):
-        for surface in ("home", "progress"):
-            self.assert_rejected(**{surface: lambda text:
-                text + "<p>RESOLVED: BQ001</p>"})
-
-    def test_reversed_negative_headings_pass(self):
-        result = self.run_case(progress=lambda text: text + (
-            "<p>Not resolved: BQ001</p>"
-            "<p>Not shipped v0.16.7</p>"))
-        self.assertEqual(result.returncode, 0, result.stderr)
-
-if __name__ == "__main__":
-    unittest.main()
+if __name__ == '__main__': unittest.main()

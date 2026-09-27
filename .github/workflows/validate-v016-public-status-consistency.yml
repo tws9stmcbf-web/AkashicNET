@@ -3,6 +3,10 @@ name: Validate v0.16 public status consistency
 on:
   pull_request:
     paths:
+      - 'website/data/public-status.json'
+      - 'website/status-templates/**'
+      - 'manifests/v0.16-release-candidate.json'
+      - 'docs/public-status-contract.md'
       - 'website/app/page.tsx'
       - 'website/app/development-progress/page.tsx'
       - 'website/app/**/*.tsx'
@@ -38,3 +42,4 @@ jobs:
         run: python scripts/validate_public_status_consistency_v016.py
       - name: Test current-status regression cases
         run: python -m unittest discover -s tests -p 'test_public_status_consistency_v016.py'
+
