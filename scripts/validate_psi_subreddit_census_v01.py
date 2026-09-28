@@ -133,7 +133,10 @@ for lane, block in data["lanes"].items():
     assert len(ids) == len(set(ids)), (lane, "duplicate post ID")
     assert set(ids) == set(discovered[lane]), (lane, "discovery membership drift")
     assert block["matched_manifestations"] == len(discovered[lane])
-    assert block["provisional_unique_source_lineages"] == len({r["source_lineage_id"] for r in records})
+    assert block["provisional_unique_source_lineages"] == len({
+        r["source_lineage_id"] for r in records
+        if r["lineage_basis"] == "NORMALIZED_TITLE_SLUG_PROVISIONAL"
+    }), (lane, "provisional lineage count drift")
     for record in records:
         pid = record["post_id"]
         assert record["lane"] == lane

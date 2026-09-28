@@ -880,7 +880,7 @@
     "PSI-PERSON": {
       "operational_boundary": "Practitioner/person metadata only; never an evidence category and never counted as corroboration.",
       "matched_manifestations": 11,
-      "provisional_unique_source_lineages": 9,
+      "provisional_unique_source_lineages": 8,
       "records": [
         {
           "post_id": "17xbakb",

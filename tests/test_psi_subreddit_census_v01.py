@@ -86,6 +86,30 @@ class PsiSubredditCensusReviewStateTests(unittest.TestCase):
         block["provisional_unique_source_lineages"] -= 1
         self.assert_rejected()  # Internally consistent counts cannot hide an omission.
 
+    def test_provisional_count_excludes_preserved_governed_lineage(self):
+        block = self.data["lanes"]["PSI-PERSON"]
+        self.assertEqual(block["matched_manifestations"], 11)
+        self.assertEqual(block["provisional_unique_source_lineages"], 8)
+        self.assertEqual(len({r["source_lineage_id"] for r in block["records"]}), 9)
+        governed = [r for r in block["records"] if r["lineage_basis"] == "GOVERNED_SOURCE_MAPPING"]
+        self.assertEqual([r["post_id"] for r in governed], ["1oyi2qp"])
+        self.assertEqual(governed[0]["source_lineage_id"], "MBB-KY-DICKENS-2025-10-24")
+        result = self.validate()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_total_lineages_cannot_be_reported_as_provisional(self):
+        self.data["lanes"]["PSI-PERSON"]["provisional_unique_source_lineages"] = 9
+        result = self.validate()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("provisional lineage count drift", result.stderr)
+
+    def test_governed_basis_cannot_drift_with_provisional_count(self):
+        block = self.data["lanes"]["PSI-PERSON"]
+        record = next(r for r in block["records"] if r["post_id"] == "1oyi2qp")
+        record["lineage_basis"] = "NORMALIZED_TITLE_SLUG_PROVISIONAL"
+        block["provisional_unique_source_lineages"] = 9
+        self.assert_rejected()
+
     def test_unlisted_bare_channel_record_fails(self):
         block = self.data["lanes"]["CHN"]
         record = copy.deepcopy(block["records"][0])
