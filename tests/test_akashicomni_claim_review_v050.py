@@ -79,7 +79,7 @@ class ClaimReviewTests(unittest.TestCase):
         c = self.add_simulated_verified_reviews()
         for a in c['assessments']:
             a['provenance'] = 'SYNTHETIC_FIXTURE'
-        self.assertEqual(omni.compare_assessments(c['assessments']), [])
+        self.assertEqual(omni.compare_assessments(c['assessments'], self.packet, c), [])
         self.assertTrue(any('synthetic fixtures' in e for e in omni.validate(self.packet)))
         c['comparison'] = {'status':'PENDING','pairs':[],'agreements':[],'disagreements':[]}
         for a in c['assessments']:
@@ -89,10 +89,10 @@ class ClaimReviewTests(unittest.TestCase):
     def test_missing_or_unverified_reviewer_provenance_fails_closed(self):
         c = self.add_simulated_verified_reviews()
         c['assessments'][0]['reviewer_verification'] = None
-        self.assertEqual(omni.compare_assessments(c['assessments']), [])
+        self.assertEqual(omni.compare_assessments(c['assessments'], self.packet, c), [])
         self.assertTrue(omni.validate(self.packet))
         del c['assessments'][0]['provenance']
-        self.assertEqual(omni.compare_assessments(c['assessments']), [])
+        self.assertEqual(omni.compare_assessments(c['assessments'], self.packet, c), [])
         self.assertTrue(omni.validate(self.packet))
 
     def test_self_verified_independence_rejected(self):
@@ -113,6 +113,7 @@ class ClaimReviewTests(unittest.TestCase):
                     source['inspection_verification'] = None
                     self.assertTrue(any('SUPPORT requires' in e for e in omni.validate(self.packet)))
         self.packet = baseline
+        self.mock_trusted_records()
         self.assertEqual(omni.validate(self.packet), [])
 
     def test_inspection_attestation_cannot_override_uninspected_status(self):
@@ -159,7 +160,7 @@ class ClaimReviewTests(unittest.TestCase):
             self.assertTrue(any('digest mismatch' in e for e in omni.validate(self.packet)))
 
     def add_simulated_verified_reviews(self):
-        """Simulate attested records only in unit tests; never write these to the pilot."""
+        """Fabricate packet labels only; these MUST fail against the real registry."""
         for source in self.packet["sources"]:
             source["access_status"] = "FULL_TEXT_INSPECTED"
             source["inspection_verification"] = self.verification()
@@ -171,20 +172,88 @@ class ClaimReviewTests(unittest.TestCase):
             'rationale':'Synthetic rationale, not a scientific assessment.',
             'source_locations':['Synthetic test locator.']}
             for i,d in enumerate(['SUPPORT','CHALLENGE'])]
-        c['comparison']={'status':'RECORDED','pairs':omni.compare_assessments(c['assessments']),
+        c['comparison']={'status':'RECORDED','pairs':[{'assessment_ids':['TEST-A0','TEST-A1'], 'decision_agreement':False}],
                          'agreements':[], 'disagreements':['The synthetic decisions differ.']}
         return c
 
+    def mock_trusted_records(self):
+        """Isolated positive control, never a production registry or real review."""
+        records = {
+            'reviewer_attestations': [omni.verification_record(self.packet, claim=c, assessment=a)
+                for c in self.packet['claims'] for a in c['assessments']],
+            'source_inspections': [omni.verification_record(self.packet, source=s)
+                for s in self.packet['sources']],
+        }
+        mocked = patch.object(omni, 'load_verifications', return_value=records)
+        mocked.start()
+        self.addCleanup(mocked.stop)
+        return records
+
+    def test_relabeled_synthetic_reviewers_cannot_qualify(self):
+        c = self.add_simulated_verified_reviews()
+        # Isolate reviewer authentication from the source SUPPORT gate.
+        for a in c['assessments']:
+            a['decision'] = 'CHALLENGE'
+        for source in self.packet['sources']:
+            source['inspection_verification'] = None
+        self.assertEqual(omni.compare_assessments(c['assessments'], self.packet, c), [])
+        for status in ('RECORDED', 'PENDING'):
+            c['comparison'] = {'status':status, 'pairs':[], 'agreements':[], 'disagreements':[]}
+            self.assertTrue(any('reviewer attestation is not repository-trusted' in e
+                                for e in omni.validate(self.packet)))
+
+    def test_relabeled_source_inspections_cannot_enable_support(self):
+        c = self.add_simulated_verified_reviews()
+        c['assessments'] = c['assessments'][:1]
+        c['assessments'][0]['reviewer_verification'] = None
+        c['comparison'] = {'status':'PENDING', 'pairs':[], 'agreements':[], 'disagreements':[]}
+        self.assertTrue(any('SUPPORT requires' in e for e in omni.validate(self.packet)))
+        self.assertTrue(any('inspection attestation is not repository-trusted' in e
+                            for e in omni.validate(self.packet)))
+
+    def test_trusted_records_cannot_be_replayed_on_changed_subjects(self):
+        c = self.add_simulated_verified_reviews()
+        self.mock_trusted_records()
+        baseline = copy.deepcopy(self.packet)
+        mutations = [
+            lambda p: p.update(packet_id='OTHER-PACKET'),
+            lambda p: p['claims'][0].update(wording='A different claim.'),
+            lambda p: p['claims'][0]['assessments'][0].update(reviewer_id='OTHER-REVIEWER'),
+            lambda p: p['claims'][0]['assessments'][0].update(decision='CHALLENGE'),
+            lambda p: p['claims'][0]['assessments'][0]['reviewer_verification'].update(
+                verified_by='OTHER-VERIFIER'),
+            lambda p: p['sources'][0].update(url='https://example.invalid/other-source'),
+            lambda p: p['sources'][0].update(location='Other pages.'),
+            lambda p: p['sources'][1]['artifact'].update(sha256='0' * 64),
+        ]
+        for mutate in mutations:
+            p = copy.deepcopy(baseline)
+            mutate(p)
+            self.assertTrue(any('not repository-trusted' in e for e in omni.validate(p)))
+
+    def test_missing_or_malformed_registry_fails_closed(self):
+        c = self.add_simulated_verified_reviews()
+        for contents in ('{}', '[]', 'not json', '{"reviewer_attestations":{},"source_inspections":[]}'):
+            with patch.object(Path, 'read_text', return_value=contents):
+                with self.assertRaises(ValueError):
+                    omni.load_verifications()
+                self.assertEqual(omni.compare_assessments(c['assessments'], self.packet, c), [])
+        with patch.object(omni, 'VERIFICATIONS', ROOT / 'missing-registry.json'):
+            self.assertTrue(any('trusted verification registry' in e for e in omni.validate(self.packet)))
+            self.assertEqual(omni.compare_assessments(c['assessments'], self.packet, c), [])
+
     def test_comparison_preserves_disagreement(self):
         c=self.add_simulated_verified_reviews()
+        self.mock_trusted_records()
         self.assertEqual(omni.validate(self.packet),[])
         c['comparison']['disagreements']=[]
         self.assertTrue(omni.validate(self.packet))
 
     def test_forged_agreement_and_reference_rejected(self):
-        c=self.add_simulated_verified_reviews(); c['comparison']['pairs'][0]['decision_agreement']=True
+        c=self.add_simulated_verified_reviews(); self.mock_trusted_records()
+        c['comparison']['pairs'][0]['decision_agreement']=True
         self.assertTrue(omni.validate(self.packet))
-        c['comparison']['pairs']=omni.compare_assessments(c['assessments'])
+        c['comparison']['pairs']=omni.compare_assessments(c['assessments'], self.packet, c)
         c['comparison']['pairs'][0]['assessment_ids'][0]='TEST-MISSING'
         self.assertTrue(omni.validate(self.packet))
 
@@ -202,7 +271,8 @@ class ClaimReviewTests(unittest.TestCase):
 
     def test_agreement_is_not_framework_release(self):
         c=self.add_simulated_verified_reviews(); c['assessments'][1]['decision']='SUPPORT'
-        c['comparison']={'status':'RECORDED','pairs':omni.compare_assessments(c['assessments']),
+        self.mock_trusted_records()
+        c['comparison']={'status':'RECORDED','pairs':omni.compare_assessments(c['assessments'], self.packet, c),
                          'agreements':['Synthetic decisions agree.'],'disagreements':[]}
         self.assertEqual(omni.validate(self.packet),[])
         self.packet['release_status']='RELEASED'
