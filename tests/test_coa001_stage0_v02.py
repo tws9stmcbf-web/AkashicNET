@@ -54,6 +54,11 @@ class StageZeroRegressionTests(unittest.TestCase):
         self.document["estimands"]["stage_2_target_correspondence"]["unit"] = "participant_event"
         self.reject("stage_2_primary_hypothesis/unit")
 
+    def test_matching_per_protocol_population_in_both_contract_sections_is_rejected(self):
+        self.document["stage_2_primary_hypothesis"]["population"] = "PER_PROTOCOL_TARGET_EXPOSED"
+        self.document["estimands"]["stage_2_target_correspondence"]["population"] = "PER_PROTOCOL_TARGET_EXPOSED"
+        self.reject("stage_2_primary_hypothesis/population")
+
     def test_missing_canonical_aggregation_rule_is_rejected(self):
         del self.document["estimands"]["stage_2_target_correspondence"]["aggregation_order"]
         self.reject("aggregation_order")

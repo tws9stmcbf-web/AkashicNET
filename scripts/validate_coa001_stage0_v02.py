@@ -165,6 +165,7 @@ def validate(document: Any, study_dir: Path) -> None:
     ])
 
     # EF-2 must describe the same participant-weighted estimand as the SAP hypothesis.
+    require(document, "stage_2_primary_hypothesis/population", "TARGET_EXPOSED")
     require(document, "stage_2_primary_hypothesis/unit",
             "participant_equal_weight_after_within_participant_event_aggregation")
     require(document, "stage_2_primary_hypothesis/effect", "delta_equals_mean_participant_U_minus_0.5")
