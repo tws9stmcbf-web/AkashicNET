@@ -1,10 +1,14 @@
 """Build a disposable local overlay; do not edit the installed dependency."""
 
 import argparse
+import ctypes
+import errno
 import hashlib
 import importlib.metadata
+import os
 from pathlib import Path
 import shutil
+import sys
 import tempfile
 
 
@@ -13,6 +17,24 @@ HASHES = {
     "openai_lm.py": "382afabaf96f6ddf79cb1d2c427774f3bc1c4d38874068a9e136a67e68811b41",
     "atomic_facts.py": "16d095911fe3a372e34c9abd917f0223503cef586db172c6ab20e8436ccd6737",
 }
+
+
+def publish_noreplace(staged, destination):
+    """Linux-only atomic publication; never fall back to replacing rename."""
+    if sys.platform != "linux":
+        raise OSError(errno.ENOSYS, "Atomic no-replace publication requires Linux renameat2")
+    libc = ctypes.CDLL(None, use_errno=True)
+    try:
+        renameat2 = libc.renameat2
+    except AttributeError as exc:
+        raise OSError(errno.ENOSYS, "libc renameat2 is unavailable") from exc
+    renameat2.argtypes = [ctypes.c_int, ctypes.c_char_p,
+                          ctypes.c_int, ctypes.c_char_p, ctypes.c_uint]
+    renameat2.restype = ctypes.c_int
+    # AT_FDCWD=-100; RENAME_NOREPLACE=1. Kernel/filesystem errors fail closed.
+    if renameat2(-100, os.fsencode(staged), -100, os.fsencode(destination), 1) != 0:
+        error = ctypes.get_errno()
+        raise OSError(error, os.strerror(error), os.fspath(destination))
 
 
 def prepare(destination):
@@ -71,9 +93,7 @@ def prepare(destination):
             if actual != expected:
                 raise ValueError(f"Incomplete transformed overlay: {name}")
             compile(actual, str(target / name), "exec")
-        if destination.exists() or destination.is_symlink():
-            raise ValueError("Use a new overlay directory outside the installed package")
-        staged.rename(destination)
+        publish_noreplace(staged, destination)
     return destination
 
 

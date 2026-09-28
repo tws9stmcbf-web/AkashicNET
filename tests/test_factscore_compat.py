@@ -1,5 +1,6 @@
 """Offline checks. Optional installed-package checks run when factscore is present."""
 import importlib.metadata
+import errno
 import os
 from pathlib import Path
 import subprocess
@@ -11,7 +12,7 @@ from unittest.mock import Mock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from factscore_compat import ModelConfig, generate, require_tokenizer
-from prepare_factscore_compat import prepare, HASHES
+from prepare_factscore_compat import prepare, publish_noreplace, HASHES
 
 
 class CompatTests(unittest.TestCase):
@@ -156,13 +157,13 @@ class PublicationTests(unittest.TestCase):
         self.assert_unpublished_and_clean()
 
     def test_rename_failure_is_cleaned(self):
-        with patch.object(Path, 'rename', side_effect=OSError('rename failed')):
+        with patch('prepare_factscore_compat.publish_noreplace', side_effect=OSError('rename failed')):
             with self.assertRaisesRegex(OSError, 'rename failed'):
                 prepare(self.destination)
         self.assert_unpublished_and_clean()
 
     def test_success_visible_only_at_rename(self):
-        original_rename = Path.rename
+        original_rename = publish_noreplace
         def inspect(staged, destination):
             self.assertFalse(destination.exists())
             self.assertEqual(staged.parent.parent, destination.parent)
@@ -172,9 +173,41 @@ class PublicationTests(unittest.TestCase):
             for name in (*HASHES, 'akashicnet_compat.py'):
                 compile((target / name).read_bytes(), name, 'exec')
             return original_rename(staged, destination)
-        with patch.object(Path, 'rename', inspect):
+        with patch('prepare_factscore_compat.publish_noreplace', side_effect=inspect):
             self.assertEqual(prepare(self.destination), self.destination)
         self.assertEqual(set(self.root.iterdir()), {self.source, self.destination})
+
+    def test_concurrent_empty_destination_is_preserved(self):
+        claimed = None
+        def claim_then_publish(staged, destination):
+            nonlocal claimed
+            destination.mkdir()
+            claimed = destination.stat()
+            return publish_noreplace(staged, destination)
+        with patch('prepare_factscore_compat.publish_noreplace', side_effect=claim_then_publish):
+            with self.assertRaises(FileExistsError):
+                prepare(self.destination)
+        current = self.destination.stat()
+        self.assertEqual((current.st_dev, current.st_ino), (claimed.st_dev, claimed.st_ino))
+        self.assertEqual(list(self.destination.iterdir()), [])
+        self.assertEqual(set(self.root.iterdir()), {self.source, self.destination})
+        self.assertEqual({p.name: p.read_bytes() for p in self.source.iterdir()}, self.original)
+
+    def test_unsupported_publication_is_cleaned_without_fallback(self):
+        for failure in ('platform', 'libc', 'kernel'):
+            with self.subTest(failure=failure):
+                libc = types.SimpleNamespace()
+                if failure == 'kernel':
+                    libc.renameat2 = Mock(return_value=-1)
+                with patch('prepare_factscore_compat.sys.platform', 'other' if failure == 'platform' else 'linux'), \
+                     patch('prepare_factscore_compat.ctypes.CDLL', return_value=libc), \
+                     patch('prepare_factscore_compat.ctypes.get_errno', return_value=errno.ENOSYS), \
+                     patch.object(Path, 'rename') as unsafe_rename:
+                    with self.assertRaises(OSError) as error:
+                        prepare(self.destination)
+                    self.assertEqual(error.exception.errno, errno.ENOSYS)
+                    unsafe_rename.assert_not_called()
+                self.assert_unpublished_and_clean()
 
     def test_existing_destination_rejected_without_changes(self):
         for kind in ('directory', 'file', 'dangling_symlink'):
