@@ -2,6 +2,7 @@
 import copy
 import importlib.util
 import json
+import re
 from pathlib import Path
 import shutil
 import tempfile
@@ -13,6 +14,22 @@ status = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(status)
 
 class PublicStatusTests(unittest.TestCase):
+    def test_status_pill_wraps_without_truncating_approved_commit(self):
+        # Source guard for the mobile overflow regression; not a browser layout test.
+        css = (ROOT / 'website/app/globals.css').read_text()
+        rules = re.findall(r'\.phase-pill\s*\{([^}]+)\}', css)
+        self.assertEqual(len(rules), 1, 'Keep one authoritative pill wrapping rule')
+        declarations = dict(part.strip().split(':', 1) for part in rules[0].split(';') if part.strip())
+        declarations = {key.strip(): value.strip() for key, value in declarations.items()}
+        self.assertEqual(declarations.get('white-space'), 'normal')
+        self.assertEqual(declarations.get('overflow-wrap'), 'anywhere')
+        self.assertEqual(declarations.get('min-width'), '0')
+        self.assertEqual(declarations.get('max-width'), '100%')
+        page = status.render(ROOT)['website/app/page.tsx']
+        pill = re.search(r'<a className="phase-pill"[^>]*>([^<]+)</a>', page).group(1)
+        self.assertIn(status.EXPECTED['target']['readiness']['commit'], pill)
+        self.assertIn('bounded review only', pill)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
