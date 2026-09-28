@@ -14,7 +14,9 @@
     "rights": false,
     "public_synthesis": false,
     "website": false,
-    "bq_resolution": false
+    "bq_resolution": false,
+    "privacy": false,
+    "cultural_authority": false
   },
   "independent_review_status": "PENDING",
   "sources": [
@@ -24,7 +26,23 @@
       "location": "Hagelin et al. (1999), Social Indicators Research 47, 153\u2013201; methods/results, printed pp. 180\u2013186 to re-inspect.",
       "access_status": "NOT_REINSPECTED",
       "provenance_note": "Transferred from Meditation-Crime-AkashicOMNI-Article-Draft.md, article revision 0.1, 19 September 2026. The editorial draft reports inspection of primary-paper passages; this implementation does not claim fresh inspection or independent replication.",
-      "rights_status": "NOT_ASSESSED"
+      "rights_status": "NOT_ASSESSED",
+      "source_kind": "PRIMARY",
+      "inspection_verification": null
+    },
+    {
+      "source_id": "SOURCE-EDITORIAL-20260919",
+      "source_kind": "EDITORIAL_DRAFT",
+      "url": "https://chatgpt.com/api/library/files/libfile_3c6f369867ec8191806f8f9ad1a21583/download",
+      "location": "Article revision 0.1: The Washington case (figures); Three pathways to distinguish; Where Maharishi Vedic Science fits; Article revision 0.1 (15.6% correction).",
+      "access_status": "FULL_TEXT_INSPECTED",
+      "inspection_verification": null,
+      "provenance_note": "Original 19 September 2026 editorial draft retrieved byte-for-byte on 28 September 2026; repository artifact and SHA-256 pin the actual input. AI inspected the draft for lineage only, not the primary paper. No human source verification, independent replication, evidence or rights admission is claimed.",
+      "rights_status": "NOT_ASSESSED",
+      "artifact": {
+        "repository_path": "references/akashicomni/Meditation-Crime-AkashicOMNI-Article-Draft-2026-09-19.md",
+        "sha256": "b660b86660af0c3d38979830646f8652274490d2707fc74ae32446fa0e3346ad"
+      }
     }
   ],
   "claims": [
@@ -33,7 +51,8 @@
       "wording": "The editorial draft attributes a maximum 23.3% model-estimated HRA reduction, using the 1993 baseline, to the paper.",
       "kind": "MODEL_ESTIMATE",
       "source_ids": [
-        "SOURCE-HAGELIN-1999"
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
       ],
       "outcome_definition": "Homicides, rapes and assaults; maximum difference from a modelled counterfactual, not a raw before-and-after change.",
       "supporting_observations": [],
@@ -62,15 +81,22 @@
           "revision": 1,
           "date": "2026-09-19",
           "change": "Created review-only pilot from article revision 0.1; no scientific validation or evidence admission."
+        },
+        {
+          "revision": 2,
+          "date": "2026-09-28",
+          "change": "Registered recovered editorial input with repository path and SHA-256; wording unchanged, primary reinspection and human verification remain pending."
         }
-      ]
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-20260919"
     },
     {
       "claim_id": "OMNI-MC-002",
       "wording": "The editorial draft attributes a 15.6% combined HRA-plus-robbery estimate at the final-week peak to the paper.",
       "kind": "MODEL_ESTIMATE",
       "source_ids": [
-        "SOURCE-HAGELIN-1999"
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
       ],
       "outcome_definition": "Combined HRA and robbery endpoint at final-week peak; not a gathering-wide average. The article corrects the earlier PDF wording overall.",
       "supporting_observations": [],
@@ -99,15 +125,22 @@
           "revision": 1,
           "date": "2026-09-19",
           "change": "Created review-only pilot from article revision 0.1; no scientific validation or evidence admission."
+        },
+        {
+          "revision": 2,
+          "date": "2026-09-28",
+          "change": "Registered recovered editorial input with repository path and SHA-256; wording unchanged, primary reinspection and human verification remain pending."
         }
-      ]
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-20260919"
     },
     {
       "claim_id": "OMNI-MC-003",
       "wording": "The editorial draft attributes a projected 48% long-term HRA reduction for a permanent group to the paper.",
       "kind": "PROJECTION",
       "source_ids": [
-        "SOURCE-HAGELIN-1999"
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
       ],
       "outcome_definition": "Long-term projection; not an observed outcome.",
       "supporting_observations": [],
@@ -136,15 +169,22 @@
           "revision": 1,
           "date": "2026-09-19",
           "change": "Created review-only pilot from article revision 0.1; no scientific validation or evidence admission."
+        },
+        {
+          "revision": 2,
+          "date": "2026-09-28",
+          "change": "Registered recovered editorial input with repository path and SHA-256; wording unchanged, primary reinspection and human verification remain pending."
         }
-      ]
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-20260919"
     },
     {
       "claim_id": "OMNI-MC-004",
       "wording": "Collective meditation caused a citywide reduction in crime.",
       "kind": "CAUSAL_HYPOTHESIS",
       "source_ids": [
-        "SOURCE-HAGELIN-1999"
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
       ],
       "outcome_definition": "Causal effect beyond a modelled association; no causal adjudication performed.",
       "supporting_observations": [],
@@ -173,15 +213,22 @@
           "revision": 1,
           "date": "2026-09-19",
           "change": "Created review-only pilot from article revision 0.1; no scientific validation or evidence admission."
+        },
+        {
+          "revision": 2,
+          "date": "2026-09-28",
+          "change": "Registered recovered editorial input with repository path and SHA-256; wording unchanged, primary reinspection and human verification remain pending."
         }
-      ]
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-20260919"
     },
     {
       "claim_id": "OMNI-MC-005",
       "wording": "A nonlocal consciousness mechanism caused the reported association.",
       "kind": "MECHANISM_HYPOTHESIS",
       "source_ids": [
-        "SOURCE-HAGELIN-1999"
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
       ],
       "outcome_definition": "Mechanism-specific attribution beyond any reproducible social outcome; unresolved.",
       "supporting_observations": [],
@@ -210,8 +257,14 @@
           "revision": 1,
           "date": "2026-09-19",
           "change": "Created review-only pilot from article revision 0.1; no scientific validation or evidence admission."
+        },
+        {
+          "revision": 2,
+          "date": "2026-09-28",
+          "change": "Registered recovered editorial input with repository path and SHA-256; wording unchanged, primary reinspection and human verification remain pending."
         }
-      ]
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-20260919"
     }
   ]
 }

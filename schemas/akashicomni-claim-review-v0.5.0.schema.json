@@ -58,7 +58,9 @@
         "rights",
         "public_synthesis",
         "website",
-        "bq_resolution"
+        "bq_resolution",
+        "privacy",
+        "cultural_authority"
       ],
       "properties": {
         "truth": {
@@ -78,6 +80,12 @@
         },
         "bq_resolution": {
           "const": false
+        },
+        "privacy": {
+          "const": false
+        },
+        "cultural_authority": {
+          "const": false
         }
       }
     },
@@ -95,7 +103,9 @@
           "location",
           "access_status",
           "provenance_note",
-          "rights_status"
+          "rights_status",
+          "source_kind",
+          "inspection_verification"
         ],
         "properties": {
           "source_id": {
@@ -126,8 +136,51 @@
           },
           "rights_status": {
             "const": "NOT_ASSESSED"
+          },
+          "source_kind": {
+            "enum": [
+              "PRIMARY",
+              "EDITORIAL_DRAFT"
+            ]
+          },
+          "inspection_verification": {
+            "$ref": "#/$defs/verification"
+          },
+          "artifact": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "repository_path",
+              "sha256"
+            ],
+            "properties": {
+              "repository_path": {
+                "type": "string",
+                "pattern": "^references/akashicomni/[A-Za-z0-9_.-]+[.]md$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "source_kind": {
+                  "const": "EDITORIAL_DRAFT"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "artifact"
+              ]
+            }
+          }
+        ]
       },
       "minItems": 1
     },
@@ -151,7 +204,8 @@
           "status",
           "assessments",
           "comparison",
-          "revision_history"
+          "revision_history",
+          "lineage_source_id"
         ],
         "properties": {
           "claim_id": {
@@ -248,7 +302,9 @@
                 "independence_note",
                 "decision",
                 "rationale",
-                "source_locations"
+                "source_locations",
+                "provenance",
+                "reviewer_verification"
               ],
               "properties": {
                 "assessment_id": {
@@ -296,6 +352,15 @@
                     "pattern": "\\S"
                   },
                   "minItems": 1
+                },
+                "provenance": {
+                  "enum": [
+                    "REAL_REVIEW",
+                    "SYNTHETIC_FIXTURE"
+                  ]
+                },
+                "reviewer_verification": {
+                  "$ref": "#/$defs/verification"
                 }
               }
             },
@@ -391,10 +456,42 @@
               }
             },
             "minItems": 1
+          },
+          "lineage_source_id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
           }
         }
       },
       "minItems": 1
+    }
+  },
+  "$defs": {
+    "verification": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "verified_by",
+        "record_url"
+      ],
+      "properties": {
+        "status": {
+          "const": "HUMAN_VERIFIED"
+        },
+        "verified_by": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+        },
+        "record_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      }
     }
   }
 }

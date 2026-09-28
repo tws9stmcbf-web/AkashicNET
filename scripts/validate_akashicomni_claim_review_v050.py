@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate review-only records; structural success never releases the framework."""
 import argparse
+import hashlib
 import itertools
 import json
 from pathlib import Path
@@ -13,10 +14,13 @@ PILOT = ROOT / 'data/akashicomni/meditation-crime-pilot-v0.5.0.json'
 
 
 def compare_assessments(assessments):
-    """Compare declared-independent human decisions, not truth or rationale quality."""
+    """Compare real, human-verified independent reviewers; never test personas."""
     eligible = sorted((a for a in assessments
                        if a['reviewer_type'] == 'HUMAN'
-                       and a['independence'] == 'DECLARED_INDEPENDENT'),
+                       and a['independence'] == 'DECLARED_INDEPENDENT'
+                       and a.get('provenance') == 'REAL_REVIEW'
+                       and a.get('reviewer_verification')
+                       and a['reviewer_verification'].get('status') == 'HUMAN_VERIFIED'),
                       key=lambda a: a['assessment_id'])
     return [{'assessment_ids': [a['assessment_id'], b['assessment_id']],
              'decision_agreement': a['decision'] == b['decision']}
@@ -39,9 +43,26 @@ def validate(packet):
     unique([s['source_id'] for s in packet['sources']], 'sources')
     unique([c['claim_id'] for c in packet['claims']], 'claims')
     sources = {s['source_id']: s for s in packet['sources']}
+    for source in packet['sources']:
+        if source['inspection_verification'] and source['access_status'] != 'FULL_TEXT_INSPECTED':
+            errors.append(f"{source['source_id']}: inspection verification requires full-text inspection")
+        if 'artifact' in source:
+            artifact = source['artifact']
+            path = (ROOT / artifact['repository_path']).resolve()
+            try:
+                if not path.is_relative_to(ROOT) or not path.is_file():
+                    raise ValueError('missing or non-repository artifact')
+                if hashlib.sha256(path.read_bytes()).hexdigest() != artifact['sha256']:
+                    raise ValueError('artifact digest mismatch')
+            except (OSError, ValueError) as exc:
+                errors.append(f"{source['source_id']}: {exc}")
     for claim in packet['claims']:
         cid = claim['claim_id']
         refs = claim['source_ids']
+        lineage = sources.get(claim['lineage_source_id'])
+        if (claim['lineage_source_id'] not in refs or not lineage
+                or lineage['source_kind'] != 'EDITORIAL_DRAFT'):
+            errors.append(f'{cid}: lineage must reference a registered editorial artifact in source_ids')
         if not set(refs) <= sources.keys():
             errors.append(f'{cid}: unknown source reference')
         elif any(sources[s]['access_status'] == 'NOT_REINSPECTED' for s in refs):
@@ -58,6 +79,17 @@ def validate(packet):
         unique([a['assessment_id'] for a in assessments], f'{cid} assessments')
         unique([a['reviewer_id'] for a in assessments], f'{cid} current reviewers')
         for a in assessments:
+            if a['provenance'] == 'SYNTHETIC_FIXTURE':
+                errors.append(f'{cid}: synthetic fixtures are forbidden in governed packets')
+            if a['reviewer_verification']:
+                if a['reviewer_type'] != 'HUMAN' or a['provenance'] != 'REAL_REVIEW':
+                    errors.append(f'{cid}: only real humans may carry reviewer verification')
+                if a['reviewer_verification']['verified_by'] == a['reviewer_id']:
+                    errors.append(f'{cid}: reviewer cannot self-verify independence')
+            if a['decision'] == 'SUPPORT' and any(
+                    s not in sources or sources[s]['access_status'] != 'FULL_TEXT_INSPECTED'
+                    or not sources[s]['inspection_verification'] for s in refs):
+                errors.append(f'{cid}: SUPPORT requires human-verified full-text inspection of every source')
             if a['reviewer_type'] == 'AI' and a['independence'] != 'NOT_ESTABLISHED':
                 errors.append(f'{cid}: AI output cannot declare independent human review')
         comparison = claim['comparison']
