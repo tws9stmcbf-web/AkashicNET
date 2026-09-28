@@ -32,6 +32,32 @@ class StageZeroRegressionTests(unittest.TestCase):
     def test_current_contract_and_manual(self):
         guard.validate(self.document, self.study)
 
+    def test_canonical_estimand_cannot_revert_to_event_weighting(self):
+        estimand = self.document["estimands"]["stage_2_target_correspondence"]
+        for key, value in [
+            ("unit", "participant_event_with_one_primary_locked_interview_and_participant_and_site_clustering"),
+            ("variable", "frozen_true_versus_decoy_participant_event_correspondence_score"),
+            ("summary", "delta_equals_mean_event_U_minus_0.5"),
+            ("aggregation_order", ["mean_two_scorer_utilities_within_event", "mean_across_events"]),
+            ("aggregation_order", list(reversed(estimand["aggregation_order"]))),
+            ("population", "PER_PROTOCOL_TARGET_EXPOSED"),
+        ]:
+            with self.subTest(key=key, value=value):
+                original = estimand[key]
+                estimand[key] = value
+                self.reject(key)
+                estimand[key] = original
+        guard.validate(self.document, self.study)
+
+    def test_matching_event_weighting_in_both_contract_sections_is_rejected(self):
+        self.document["stage_2_primary_hypothesis"]["unit"] = "participant_event"
+        self.document["estimands"]["stage_2_target_correspondence"]["unit"] = "participant_event"
+        self.reject("stage_2_primary_hypothesis/unit")
+
+    def test_missing_canonical_aggregation_rule_is_rejected(self):
+        del self.document["estimands"]["stage_2_target_correspondence"]["aggregation_order"]
+        self.reject("aggregation_order")
+
     def test_participant_event_stopping_regression_is_rejected(self):
         rule = self.document["statistical_analysis_plan"]["accrual_stopping_rule"]
         for key, value in [

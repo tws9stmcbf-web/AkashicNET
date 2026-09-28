@@ -110,7 +110,9 @@ Unknown blindness counts as breach pending adjudication under the existing gate 
 
 **Population:** TARGET-EXPOSED.
 
-**Unit of analysis:** Participant-event, with prespecified aggregation across epochs; inference accounts for participant and site clustering.
+**Unit of analysis:** Participant, with equal total weight per participant after averaging repeated eligible events, as specified in SAP-001. Participant-events remain scoring units, not independently weighted primary analysis units.
+
+**Variable and aggregation:** First average the two blinded scorers’ pre-adjudication true-candidate normalized rank utilities within each event, then average event utilities within each participant, then take the equally weighted mean across participants. Apply SAP-001 unresolved-state handling before aggregation. The primary contrast is `delta = mean(U_participant) - 0.5`; event-level weighting is a sensitivity analysis only. Prespecified site and participant dependence handling does not replace equal participant weighting.
 
 **Contrast:** True sequence score versus the frozen randomization/decoy distribution.
 

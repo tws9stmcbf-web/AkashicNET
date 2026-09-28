@@ -164,6 +164,21 @@ def validate(document: Any, study_dir: Path) -> None:
         "participant_recognition_route_not_defined_or_authorized",
     ])
 
+    # EF-2 must describe the same participant-weighted estimand as the SAP hypothesis.
+    require(document, "stage_2_primary_hypothesis/unit",
+            "participant_equal_weight_after_within_participant_event_aggregation")
+    require(document, "stage_2_primary_hypothesis/effect", "delta_equals_mean_participant_U_minus_0.5")
+    estimand = "estimands/stage_2_target_correspondence"
+    require(document, f"{estimand}/population", lookup(document, "stage_2_primary_hypothesis/population"))
+    require(document, f"{estimand}/unit", lookup(document, "stage_2_primary_hypothesis/unit"))
+    require(document, f"{estimand}/summary", lookup(document, "stage_2_primary_hypothesis/effect"))
+    require(document, f"{estimand}/variable",
+            "participant_mean_of_event_mean_pre_adjudication_true_candidate_rank_utilities_across_two_blinded_scorers")
+    require(document, f"{estimand}/aggregation_order", [
+        "mean_two_scorer_utilities_within_event", "mean_event_utilities_within_participant",
+        "equal_weight_mean_across_participants",
+    ])
+
     # Review blockers: guard the planning unit, the sole zero-use exception,
     # and the non-recursive signing contract. These remain static draft checks.
     require(document, "stage_2_primary_hypothesis/information_target_unit",

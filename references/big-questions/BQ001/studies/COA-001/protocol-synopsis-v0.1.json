@@ -398,8 +398,8 @@
     "stage_2_target_correspondence": {
       "id": "EF-2",
       "population": "TARGET_EXPOSED",
-      "unit": "participant_event_with_one_primary_locked_interview_and_participant_and_site_clustering",
-      "variable": "frozen_true_versus_decoy_participant_event_correspondence_score",
+      "unit": "participant_equal_weight_after_within_participant_event_aggregation",
+      "variable": "participant_mean_of_event_mean_pre_adjudication_true_candidate_rank_utilities_across_two_blinded_scorers",
       "interpretation": "conditional_on_valid_exposure_and_later_reportability_no_prevalence_or_continuity_inference",
       "required_sensitivity": [
         "ALL_INTERVIEWED_flow",
@@ -408,6 +408,12 @@
         "site_stratified",
         "participant_cluster_aware",
         "negative_controls"
+      ],
+      "summary": "delta_equals_mean_participant_U_minus_0.5",
+      "aggregation_order": [
+        "mean_two_scorer_utilities_within_event",
+        "mean_event_utilities_within_participant",
+        "equal_weight_mean_across_participants"
       ]
     }
   },
