@@ -12,6 +12,7 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 | `akashicvision-nde-merkaba-flower-of-life.webp` | `34a8081c87af719d9447cf137458412c0fe63375939710753c2b3897e334bf50` |
 | `akashictranscendence-homesense800.webp` | `687f161aa6ca926803d9f8c4e1c2c941b47503115fb807cb59fc5b333bf66586` |
 | `akashicomni-metadimensional-gateway.webp` | `baf2933e2372d9fb8c74b04128b7543bb959dbc0fa9455ccf0403f29ed9b4710` |
+| `public/images/akashicnet-portal-to-infinity-7d-hero.webp` | `af86af56783114a0f0d10672b6ea832b7454f0cf9133d52568df0e2b2de30bda` |
 | `akn24-global-food-shortages.webp` | `016169a0cd947f01505bb4143fbf839631bfad2eef9e27eede11400ae9b81d29` |
 | `akashicomni-global-food-security-13d.webp` | `b814cfe1ed6ed92da2814516fc17187a6831bf70016c4366d7f43c4e5db07aaa` |
 | `akashicnet-living-library-tree.webp` | `a00fd9e6b9eeafa847964512834b5f9662152fbd267c7ff11652afb11efd817b` |

@@ -1,0 +1,20 @@
+{
+  "component": "AkashicOMNI",
+  "version": "0.4.2",
+  "status": "PRE-ALPHA",
+  "date": "2026-09-19",
+  "previous_released_version": "0.4.0",
+  "unissued_patch_numbers": [
+    "0.4.1"
+  ],
+  "change_type": "PATCH",
+  "changes": [
+    "Clarify embodied intelligence as a potential contributor to wisdom, not a validated formula",
+    "Clarify assessment, source-access and visual-provenance guidance"
+  ],
+  "perspective_count": 13,
+  "comparative_case_count": 8,
+  "historical_assessments_recalculated": false,
+  "v0_5_0_status": "UNRELEASED",
+  "publication_decision": "User approved developing and releasing v0.4.2 in this conversation."
+}
