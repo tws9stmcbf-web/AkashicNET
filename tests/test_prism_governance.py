@@ -31,6 +31,48 @@ class GovernanceTests(unittest.TestCase):
             speaker_position='Synthetic test role', authority_to_share='confirmed')
         return record
 
+    def pending_event(self, gate, event_id='ASSESS-TEST'):
+        return {
+            'assessment_event_id': event_id,
+            'recorded_at': '2026-09-27T07:00:00Z',
+            'affected_ref': 'EPI-TEST',
+            'input_type': 'cultural_authority_review' if gate == 'cultural_authority'
+                          else 'other',
+            'independence_status': 'unknown',
+            'prior_evidence_lane': None,
+            'new_evidence_lane': 'interpretation',
+            'effect': 'no_change',
+            'rationale': 'Synthetic pending gate.',
+            'uncertainty': 'Test fixture only.',
+            'reviewer_role': 'synthetic',
+            'source_ids': [],
+            'gates_pending': [gate],
+        }
+
+    def test_current_event_gate_overrides_cleared_aggregate(self):
+        for gate in ('privacy', 'cultural_authority'):
+            with self.subTest(gate=gate):
+                record = self.candidate()
+                record['assessment_history'] = [self.pending_event(gate)]
+                self.assertTrue(validator.VALIDATOR.is_valid(record))
+                self.assertIn(gate, ' '.join(validator.validate(record)))
+                record['governance']['publication_status'] = 'hold'
+                self.assertEqual(validator.validate(record), [])
+
+    def test_superseded_pending_event_requires_current_clearance(self):
+        for gate in ('privacy', 'cultural_authority'):
+            with self.subTest(gate=gate):
+                record = self.candidate()
+                successor = self.pending_event(gate, 'ASSESS-CLEAR')
+                successor['gates_pending'] = []
+                successor['gates_passed'] = [gate]
+                successor['supersedes_event_id'] = 'ASSESS-TEST'
+                record['assessment_history'] = [self.pending_event(gate), successor]
+                self.assertEqual(validator.validate(record), [])
+                record['assessment_history'].reverse()
+                self.assertIn('ambiguous event supersession',
+                              ' '.join(validator.validate(record)))
+
     def test_pending_fixture_is_valid_without_mutation(self):
         before = copy.deepcopy(self.record)
         self.assert_validity(self.record, True)
