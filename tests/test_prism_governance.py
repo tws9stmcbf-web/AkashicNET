@@ -69,6 +69,9 @@ class GovernanceTests(unittest.TestCase):
                 successor['supersedes_event_id'] = 'ASSESS-TEST'
                 record['assessment_history'] = [self.pending_event(gate), successor]
                 self.assertEqual(validator.validate(record), [])
+                del successor['gates_passed']
+                self.assertIn(gate, ' '.join(validator.validate(record)))
+                successor['gates_passed'] = [gate]
                 record['assessment_history'].reverse()
                 self.assertIn('ambiguous event supersession',
                               ' '.join(validator.validate(record)))
