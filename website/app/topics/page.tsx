@@ -23,7 +23,7 @@ export default function TopicsPage() {
         <p className={styles.eyebrow}>Universal Topic Atlas · v{topicSeed.schema_version} · Exploratory</p>
         <h1>A page for every describable topic.</h1>
         <p>AkashicNET can grow toward a connected page for any subject while preserving what is documented, what is interpreted and what remains unknown.</p>
-        <p className={styles.boundary}><strong>Discovery boundary:</strong> appearing in this atlas does not make a topic, claim or connection true. All current records are metadata-only seeds awaiting source-level review.</p>
+        <p className={styles.boundary}><strong>Discovery boundary:</strong> appearing in this atlas does not make a topic, claim or connection true. Review and reuse state appear on each record; presence in the atlas does not imply approval or publication.</p>
       </section>
 
       <section className={styles.content} id="atlas">
@@ -32,7 +32,7 @@ export default function TopicsPage() {
             <p className={styles.eyebrow}>Initial cross-domain seed</p>
             <h2>From neurons to galaxies</h2>
           </div>
-          <p className={styles.count}>{topics.length} discovery topics · {topicSeed.registries.length} registries</p>
+          <p className={styles.count}>{topics.length} topic records · {topicSeed.registries.length} registries</p>
         </div>
         <div className={styles.grid}>
           {topics.map((topic) => (
@@ -40,7 +40,7 @@ export default function TopicsPage() {
               <span>{topic.id} · {topic.domain}</span>
               <h3>{topic.label}</h3>
               <p>{topic.summary}</p>
-              <strong>Explore metadata →</strong>
+              <strong>{topic.status} · {topic.rights.mode} →</strong>
             </a>
           ))}
         </div>
