@@ -36,10 +36,11 @@ def validate(record):
                               'a nonblank locator')
     if record['governance']['publication_status'] == 'review_candidate':
         history = record.get('assessment_history', [])
-        superseded = [event.get('supersedes_event_id') for event in history
-                      if event.get('supersedes_event_id')]
+        successors = {event['supersedes_event_id']: event for event in history
+                      if event.get('supersedes_event_id')}
         seen = set()
-        valid_chain = True
+        valid_chain = len(successors) == sum(
+            bool(event.get('supersedes_event_id')) for event in history)
         for event in history:
             event_id = event['assessment_event_id']
             predecessor = event.get('supersedes_event_id')
@@ -50,13 +51,15 @@ def validate(record):
             errors.append('assessment_history: ambiguous event supersession')
         else:
             for event in history:
-                if event['assessment_event_id'] not in superseded:
-                    pending = set(event.get('gates_pending', [])) & {
-                        'privacy', 'cultural_authority'}
-                    if pending:
-                        errors.append('assessment_history: current event '
-                                      f"{event['assessment_event_id']} has pending "
-                                      f"{', '.join(sorted(pending))} gate")
+                pending = set(event.get('gates_pending', [])) & {
+                    'privacy', 'cultural_authority'}
+                successor = successors.get(event['assessment_event_id'])
+                if successor:
+                    pending -= set(successor.get('gates_passed', []))
+                if pending:
+                    errors.append('assessment_history: event '
+                                  f"{event['assessment_event_id']} has unresolved "
+                                  f"{', '.join(sorted(pending))} gate")
     return errors
 
 
