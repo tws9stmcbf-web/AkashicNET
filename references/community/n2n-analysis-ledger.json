@@ -1262,7 +1262,7 @@
           "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
         ],
         "uncertainty": "Standardised curation may explain the repetition; origin and source existence remain unresolved. This is not evidence of fabricated posts.",
-        "next_action": "Repository-only receipt search is exhausted for now. Seek owner-provided or otherwise authorised provenance if available; meanwhile resume with pending post ID 100021.",
+        "next_action": "Repository-only receipt search is exhausted for now. Seek owner-provided or otherwise authorised provenance if available; meanwhile resume repository-only assessment at checkpoint.next_pending_post_id, after confirming it is the smallest PENDING ID under queue.resume_rule. If no pending ID remains, stop queue continuation.",
         "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement.",
         "follow_ups": [
           {
