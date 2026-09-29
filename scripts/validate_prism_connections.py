@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Validate PRISM schema and connection source references, without promotion.
+"""Validate PRISM schema, connection references and candidate event gates.
 
-This is not an evidence-independence, privacy, rights or publication approval
-validator. Locators are checked locally; no source is fetched or deemed read.
+This does not conduct privacy or cultural review, nor grant rights or publication
+approval. Locators are checked locally; no source is fetched or deemed read.
 """
 import argparse
 import json
@@ -34,6 +34,29 @@ def validate(record):
             elif not matches[0]['locator'].strip():
                 errors.append(f'connections[{index}]: {source_id} requires '
                               'a nonblank locator')
+    if record['governance']['publication_status'] == 'review_candidate':
+        history = record.get('assessment_history', [])
+        superseded = [event.get('supersedes_event_id') for event in history
+                      if event.get('supersedes_event_id')]
+        seen = set()
+        valid_chain = True
+        for event in history:
+            event_id = event['assessment_event_id']
+            predecessor = event.get('supersedes_event_id')
+            if event_id in seen or (predecessor and predecessor not in seen):
+                valid_chain = False
+            seen.add(event_id)
+        if not valid_chain:
+            errors.append('assessment_history: ambiguous event supersession')
+        else:
+            for event in history:
+                if event['assessment_event_id'] not in superseded:
+                    pending = set(event.get('gates_pending', [])) & {
+                        'privacy', 'cultural_authority'}
+                    if pending:
+                        errors.append('assessment_history: current event '
+                                      f"{event['assessment_event_id']} has pending "
+                                      f"{', '.join(sorted(pending))} gate")
     return errors
 
 
@@ -63,7 +86,7 @@ def main():
     for error in errors:
         print(f'ERROR: {error}')
     if not errors:
-        print('PASS: schema and connection source traceability only; no gate approval')
+        print('PASS: schema, connection traceability and candidate event gates; no gate approval')
     return 1 if errors else 0
 
 
