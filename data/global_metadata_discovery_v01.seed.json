@@ -20,19 +20,10 @@
   ],
   "controlled_values": {
     "ultimate_status": [
-      "biological",
-      "physical",
-      "engineered",
-      "historical",
-      "documentary",
-      "social",
-      "legal",
-      "cultural",
-      "interpretive",
+      "known",
+      "partly-known",
       "plural",
-      "multifactorial",
-      "emergent",
-      "scenario-based",
+      "contested",
       "unresolved",
       "unknown"
     ],
@@ -1985,7 +1976,7 @@
           {
             "label": "Secure basic needs and accessible essential services",
             "level": "policy",
-            "evidence_status": "supported",
+            "evidence_status": "unassessed",
             "potential_benefits": [
               "health",
               "security",
@@ -2004,7 +1995,7 @@
           {
             "label": "Strengthen social connection and community participation",
             "level": "community",
-            "evidence_status": "supported",
+            "evidence_status": "unassessed",
             "potential_benefits": [
               "belonging",
               "mutual support",
@@ -2023,7 +2014,7 @@
           {
             "label": "Support sleep, movement, nutrition and preventive care",
             "level": "individual",
-            "evidence_status": "supported",
+            "evidence_status": "unassessed",
             "potential_benefits": [
               "physical health",
               "energy",
@@ -2056,7 +2047,7 @@
           {
             "label": "Protect ecological conditions that sustain present and future lives",
             "level": "ecological",
-            "evidence_status": "supported",
+            "evidence_status": "unassessed",
             "potential_benefits": [
               "health",
               "livelihoods",
