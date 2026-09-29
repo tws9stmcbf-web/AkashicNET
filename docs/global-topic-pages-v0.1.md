@@ -12,7 +12,7 @@ AkashicNET can represent any describable topic through one governed route:
 /topics/{slug}
 ```
 
-A topic page is generated from a validated record rather than authored as an unsupported essay. A stub may exist with only a label, provenance and open questions; richer publication requires review.
+A topic page is generated from a validated record rather than authored as an unsupported essay. A stub may carry empty display arrays and an explicit pending review record. The schema requires every field consumed by the page; richer publication requires a dated human review, record-level sources and a known reuse mode. A status label alone never promotes evidence or rights.
 
 ## Page contract
 
