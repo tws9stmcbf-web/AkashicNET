@@ -13,7 +13,12 @@
     "origin",
     "connections",
     "sources",
-    "rights"
+    "rights",
+    "summary",
+    "aliases",
+    "entities",
+    "open_questions",
+    "review"
   ],
   "properties": {
     "id": {
@@ -54,7 +59,9 @@
       "additionalProperties": false,
       "required": [
         "documentary_trace",
-        "ultimate_status"
+        "ultimate_status",
+        "claimed_origins",
+        "evidence_note"
       ],
       "properties": {
         "documentary_trace": {
@@ -92,7 +99,8 @@
         "additionalProperties": false,
         "required": [
           "label",
-          "entity_status"
+          "entity_status",
+          "ontological_status"
         ],
         "properties": {
           "id": {
@@ -129,7 +137,8 @@
         "required": [
           "target",
           "relation",
-          "edge_status"
+          "edge_status",
+          "source_ids"
         ],
         "properties": {
           "target": {
@@ -210,7 +219,8 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "mode"
+        "mode",
+        "note"
       ],
       "properties": {
         "mode": {
@@ -256,7 +266,12 @@
         "notes": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "human_reviewed",
+        "last_reviewed",
+        "notes"
+      ]
     },
     "solution_space": {
       "type": "object",
@@ -341,5 +356,87 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "reviewed",
+              "public"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "human_reviewed": {
+                "const": true
+              },
+              "last_reviewed": {
+                "type": "string",
+                "format": "date",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "human_reviewed",
+              "last_reviewed"
+            ]
+          },
+          "sources": {
+            "minItems": 1
+          },
+          "rights": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "metadata-only",
+                  "link-only",
+                  "licensed-reuse",
+                  "public-domain"
+                ]
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "public"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "rights": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "link-only",
+                  "licensed-reuse",
+                  "public-domain"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }
