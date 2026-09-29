@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { findTopic, labelForSlug, topics } from "../data";
+import { findTopic, labelForSlug, topics, type TopicRecord } from "../data";
 import styles from "../topics.module.css";
+
+function SourceRefs({ ids, sources }: { ids: string[]; sources: TopicRecord["sources"] }) {
+  return ids.length ? <span> · Sources: {ids.map((id, index) => {
+    const source = sources.find((entry) => entry.id === id);
+    return <span key={id}>{index > 0 ? ", " : ""}{source ? <a href={source.url}>{id}</a> : `${id} (unverified reference)`}</span>;
+  })}</span> : <span> · No claim-level sources recorded</span>;
+}
 
 export function generateStaticParams() {
   return topics.map((topic) => ({ slug: topic.slug }));
@@ -45,8 +52,8 @@ export default async function TopicPage({
         <p className={styles.eyebrow}>{topic.id} · {topic.domain}</p>
         <h1>{topic.label}</h1>
         <p>{topic.summary}</p>
-        <span className={styles.status}>{topic.status} · metadata only</span>
-        <p className={styles.boundary}><strong>Evidence boundary:</strong> this is an unreviewed discovery record, not an authoritative article. Connections are hypotheses until supported by record-level sources.</p>
+        <span className={styles.status}>{topic.status} · {topic.rights.mode}</span>
+        <p className={styles.boundary}><strong>Evidence boundary:</strong> {topic.review.human_reviewed ? `Human reviewed ${topic.review.last_reviewed ?? "(date unavailable)"}.` : "Human review pending."} This {topic.status} record is a discovery page, not an authoritative article. Connections require claim-level sources; linked sources do not establish causation.</p>
       </section>
 
       <section className={styles.content}>
@@ -74,7 +81,7 @@ export default async function TopicPage({
                   return (
                     <li key={`${connection.target}-${connection.relation}`}>
                       {internal ? <a href={`/topics/${connection.target}`}>{internal.label}</a> : labelForSlug(connection.target)}
-                      {" · "}{connection.relation} · {connection.edge_status}
+                      {" · "}{connection.relation} · {connection.edge_status}<SourceRefs ids={connection.source_ids} sources={topic.sources} />
                     </li>
                   );
                 })}
@@ -90,7 +97,7 @@ export default async function TopicPage({
               {topic.solution_space.candidates.map((candidate) => (
                 <section key={candidate.label}>
                   <h3>{candidate.label}</h3>
-                  <p>{candidate.level} · evidence: {candidate.evidence_status}</p>
+                  <p>{candidate.level} · evidence: {candidate.evidence_status}<SourceRefs ids={candidate.source_ids} sources={topic.sources} /></p>
                   <p><strong>Potential benefits:</strong> {candidate.potential_benefits.join(", ")}</p>
                   <p><strong>Tradeoffs:</strong> {candidate.tradeoffs.join(", ")}</p>
                 </section>
