@@ -3,6 +3,55 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location("v",ROOT/"scripts/validate_big_question_maturity_v01.py");v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
 class Tests(unittest.TestCase):
+ def test_canonical_asserted_level_json(s):
+  path="references/big-questions/BQ001/new.json"
+  for level in (8, "8", True, 6.0):
+   with s.subTest(level=level),s.assertRaises(ValueError):
+    v.validate(s.l,s.r,[(path,json.dumps({"asserted_level":level,"completed_stages":list(range(1,9))}))])
+  s.assertEqual(v.assertions(path,'{"asserted_level":6}'),[("BQ001",6)])
+  root="references/big-questions/new.json"
+  value={"records":[{"question_id":"BQ001","progress":{"asserted_level":6}},
+                    {"question_id":"BQ002","asserted_level":4},
+                    {"question_id":"BQ004","asserted_level":None}]}
+  v.validate(s.l,s.r,[(root,json.dumps(value))])
+  value["records"][1]["asserted_level"]=6
+  with s.assertRaises(ValueError):v.validate(s.l,s.r,[(root,json.dumps(value))])
+  with s.assertRaisesRegex(ValueError,"lacks question identity"):
+   v.assertions(root,'{"asserted_level":8}')
+  with s.assertRaisesRegex(ValueError,"conflicts with path"):
+   v.assertions(path,'{"question_id":"BQ002","asserted_level":4}')
+ def test_canonical_asserted_level_scripts(s):
+  for ext in ("ts","tsx","js","jsx"):
+   path=f"website/app/big-questions/bq001/new.{ext}"
+   for value in ("8", "'8'", "nextLevel", "6 + 2", "true", "6.0"):
+    with s.subTest(ext=ext,value=value),s.assertRaises(ValueError):
+     v.validate(s.l,s.r,[(path,"const p = {asserted_level: "+value+"};")])
+   s.assertEqual(v.assertions(path,"const p = {asserted_level: 6};"),[("BQ001",6)])
+   for value in ("{asserted_level: 6, ...override}",
+                 "{asserted_level: 6, asserted_level: 8}",
+                 "{asserted_level: 6, level: 8, maximum: 10}"):
+    with s.subTest(ext=ext,value=value),s.assertRaises(ValueError):
+     v.validate(s.l,s.r,[(path,"const p = "+value+";")])
+  root="website/app/big-questions/new.ts"
+  text="const p = [{question_id:'BQ001', progress:{asserted_level:6}}, {id:'BQ002', asserted_level:4}, {id:'BQ004', asserted_level:null}];"
+  v.validate(s.l,s.r,[(root,text)])
+  with s.assertRaises(ValueError):
+   v.validate(s.l,s.r,[(root,text.replace("asserted_level:4","asserted_level:6"))])
+  with s.assertRaisesRegex(ValueError,"lacks question identity"):
+   v.assertions(root,"const p = {asserted_level:8};")
+ def test_registry_review_candidate_status(s):
+  for value in ("CANONICAL","PUBLISHED",None,False,"missing"):
+   c=copy.deepcopy(s.r);c["status"]=value
+   if value=="missing":del c["status"]
+   with s.subTest(value=value),s.assertRaisesRegex(ValueError,"review-candidate"):
+    v.validate(s.l,c)
+ def test_registry_promotion_fields(s):
+  for key in ("canonical_promotion_applied","website_updated"):
+   for value in (True,None,0,"false","missing"):
+    c=copy.deepcopy(s.r);c["governance"][key]=value
+    if value=="missing":del c["governance"][key]
+    with s.subTest(key=key,value=value),s.assertRaisesRegex(ValueError,key):
+     v.validate(s.l,c)
  def test_explicit_text_identity_overrides_directory(s):
   path="references/big-questions/BQ001/x.md"
   with s.assertRaises(ValueError):v.validate(s.l,s.r,[(path,"BQ002 Level 6/10")])

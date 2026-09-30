@@ -13,7 +13,7 @@ MEANING="A level records completed governed research work. It is not a truth pro
 STAGES=[(1,"QUESTION_FRAMED","Frame the question"),(2,"SOURCES_MAPPED","Map sources"),(3,"REVIEW_CANDIDATE_REACHED","Reach review-candidate status"),(4,"MODELS_SEPARATED","Separate models"),(5,"EVIDENCE_MAPPED","Map evidence"),(6,"METHODS_STRESS_TESTED","Stress-test methods"),(7,"PREDICTIONS_DEFINED","Define predictions"),(8,"GOVERNED_TESTS_RUN","Run tests"),(9,"FINDINGS_TRIANGULATED","Triangulate findings"),(10,"RESOLUTION_REVIEW_ENTERED","Enter resolution review")]
 EXPECTED={"BQ001":(6,None),"BQ002":(4,None),"BQ003":(4,None),**{f"BQ{i:03d}":(None,"UNSCORED_EXPLORATORY_NONCANONICAL") for i in range(4,9)},"BQ009":(None,"UNASSIGNED")}
 RULES=("levels_are_cumulative","asserted_level_must_equal_highest_completed_stage","missing_or_unvalidated_stage_blocks_higher_assertions","level_8_requires_governed_test_execution","unresolved_is_allowed_at_every_level","level_change_does_not_promote_truth_evidence_rights_public_synthesis_or_website")
-GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed","privacy_posture_changed")
+GATES=("truth_inference_allowed","scientific_evidence_promotion_allowed","rights_promotion_allowed","public_synthesis_updated","website_promotion_allowed","privacy_posture_changed","canonical_promotion_applied","website_updated")
 def fail(msg): raise ValueError(msg)
 def json_assertions(value,qid=None,path_qid=None):
     found=[]
@@ -23,6 +23,10 @@ def json_assertions(value,qid=None,path_qid=None):
             if not isinstance(identity,str) or not BQ.fullmatch(identity):fail("invalid structured question identity")
             qid=identity.upper()
             if path_qid and qid!=path_qid:fail("structured question identity conflicts with path")
+        if "asserted_level" in value and value["asserted_level"] is not None:
+            if type(value["asserted_level"]) is not int:fail("asserted_level must be an integer or null")
+            if qid is None:fail("structured maturity assertion lacks question identity")
+            found.append((qid,value["asserted_level"]))
         if value.get("maximum")==10 and type(value.get("level")) is int:
             if qid is None:fail("structured maturity assertion lacks question identity")
             found.append((qid,value["level"]))
@@ -65,6 +69,7 @@ def script_assertions(source,text,path_qid=None):
         if node is None:return unknown
         if node.type in ("parenthesized_expression","as_expression","satisfies_expression"):
             return literal(node.named_children[0])
+        if node.type=="null":return None
         if node.type not in ("number","string"):return unknown
         try:return ast.literal_eval(node.text.decode("utf-8"))
         except (ValueError,SyntaxError):return unknown
@@ -101,7 +106,7 @@ def script_assertions(source,text,path_qid=None):
                     continue
                 if key is unknown:
                     ambiguous=True
-                elif key in ("question_id","id","level","maximum"):
+                elif key in ("question_id","id","level","maximum","asserted_level"):
                     if key in fields:fail(f"{source}: duplicate maturity/identity field {key}")
                     fields[key]=literal(value)
             if "question_id" in fields:
@@ -117,6 +122,11 @@ def script_assertions(source,text,path_qid=None):
                 qid=identity.upper()
             if ("question_id" in fields or isinstance(identity,str) and BQ.fullmatch(identity)) and path_qid and qid!=path_qid:
                 fail(f"{source}: structured question identity conflicts with path")
+            if "asserted_level" in fields and fields["asserted_level"] is not None:
+                if type(fields["asserted_level"]) is not int:
+                    fail(f"{source}: asserted_level needs a literal integer or null")
+                if qid is None:fail(f"{source}: structured maturity assertion lacks question identity")
+                found.append((qid,fields["asserted_level"]))
             if "level" in fields or "maximum" in fields:
                 if type(fields.get("level")) is not int or type(fields.get("maximum")) is not int or fields["maximum"]!=10:
                     fail(f"{source}: maturity needs literal integer level and maximum: 10")
@@ -153,7 +163,7 @@ def check_execution(qid,ref,artifact):
     if artifact.get("question_id")!=qid or artifact.get("execution_status")!="COMPLETED" or artifact.get("test_results_recorded") is not True:fail(f"{qid} governed execution not completed")
     gov=artifact.get("governance",{})
     if gov.get("review_state")!="REVIEW_REQUIRED":fail(f"{qid} execution not review-required")
-    for key in ("canonical_promotion_applied","website_updated")+GATES:
+    for key in GATES:
         if gov.get(key) is not False:fail(f"{qid} execution gate opened: {key}")
 def validate(ladder,registry,texts=(),pr_body="",artifacts=None):
     actual=[(x.get("level"),x.get("id"),x.get("label")) for x in ladder.get("stages",[])]
@@ -161,6 +171,7 @@ def validate(ladder,registry,texts=(),pr_body="",artifacts=None):
         or type(ladder.get("maximum_level")) is not int or ladder["maximum_level"]!=10):fail("canonical ladder semantics changed")
     for key in RULES:
         if ladder.get("fail_closed_rules",{}).get(key) is not True:fail(f"rule weakened: {key}")
+    if registry.get("status")!="REVIEW_CANDIDATE":fail("registry must remain review-candidate")
     if registry.get("ladder_ref")!="references/big-questions/research-maturity-ladder-v0.1.json":fail("wrong ladder ref")
     items=registry.get("assessments",[]); by_id={x.get("question_id"):x for x in items}
     if set(by_id)!=set(EXPECTED) or len(by_id)!=len(items):fail("BQ001-BQ009 required exactly once")

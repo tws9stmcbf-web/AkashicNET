@@ -16,6 +16,8 @@
   ],
   "governance": {
     "privacy_posture_changed": false,
+    "canonical_promotion_applied": false,
+    "website_updated": false,
     "supports_models": [],
     "accepted_canonical_edges": 0,
     "truth_inference_allowed": false,
