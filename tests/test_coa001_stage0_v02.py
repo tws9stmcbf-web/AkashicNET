@@ -2,10 +2,13 @@
 import copy
 import importlib.util
 import json
+import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import tempfile
+import textwrap
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +17,41 @@ SPEC = importlib.util.spec_from_file_location("coa001_guard", SCRIPT)
 guard = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(guard)
 BASELINE = json.loads(guard.CONTRACT.read_text(encoding="utf-8"))
+
+
+class ExactHeadWorkflowRegressionTests(unittest.TestCase):
+    def test_checkout_and_verification_use_pr_head_with_push_fallback(self):
+        workflow = (ROOT / ".github/workflows/validate-coa001-stage0-v02.yml").read_text()
+        expression = "${{ github.event.pull_request.head.sha || github.sha }}"
+        checkout = re.search(r"      - uses: actions/checkout@[^\n]+\n(.*?)(?=      - )",
+                             workflow, re.S)
+        self.assertIsNotNone(checkout)
+        self.assertIn("          ref: " + expression, checkout.group(1))
+        verification = re.search(r"      - name: Verify exact tested commit\n(.*?)(?=      - )",
+                                 workflow, re.S)
+        self.assertIsNotNone(verification)
+        self.assertIn("          EXPECTED_HEAD: " + expression, verification.group(1))
+        self.assertLess(workflow.index(verification.group(0)),
+                        workflow.index("      - name: Validate static Stage-0 boundaries"))
+
+        # Execute the workflow's actual shell block with runner fail-fast semantics.
+        # A synthetic merge/different SHA must fail before recording success.
+        block = verification.group(1).split("        run: |\n", 1)[1]
+        shell = textwrap.dedent(block)
+        actual = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+        with tempfile.TemporaryDirectory() as directory:
+            summary = Path(directory) / "summary"
+            for expected, should_pass in [(actual, True), ("0" * 40, False)]:
+                with self.subTest(expected=expected):
+                    summary.write_text("")
+                    result = subprocess.run(
+                        ["bash", "--noprofile", "--norc", "-eo", "pipefail", "-c", shell],
+                        cwd=ROOT, env={**os.environ, "EXPECTED_HEAD": expected,
+                                       "GITHUB_STEP_SUMMARY": str(summary)},
+                        capture_output=True, text=True)
+                    self.assertEqual(result.returncode == 0, should_pass)
+                    self.assertEqual(summary.read_text(),
+                                     f"Tested commit: {actual}\n" if should_pass else "")
 
 
 class StageZeroRegressionTests(unittest.TestCase):
@@ -336,4 +374,3 @@ class StageZeroRegressionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
