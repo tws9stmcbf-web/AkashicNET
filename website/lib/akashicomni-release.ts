@@ -1,8 +1,9 @@
 /** Current framework metadata; historical assessments retain their cited version. */
 export const akashicOmniRelease = {
-  version: "0.4.3",
-  anchor: "v0-4-3",
-  date: "19 September 2026",
+  version: "0.4.5",
+  anchor: "v0-4-5",
+  date: "27 September 2026",
+  dateTime: "2026-09-27",
   status: "PRE-ALPHA",
   reflection: "Embodied intelligence informs wisdom; love and discernment guide it into service.",
   interpretation: "Within this framework, bodily awareness can contribute to wise judgement when considered alongside reflection, evidence, ethics and consequences. Bodily intuition can be mistaken. This is an interpretive principle, not a validated formula, a clinical assessment or a claim that illness produces wisdom.",
@@ -13,5 +14,5 @@ export const akashicOmniRelease = {
     ["Preserve uncertainty", "Record missing information and relevant contrary evidence. An outcome signal expresses an assessment, not a truth score or permission to promote evidence."],
     ["Connect insight with action", "Explain what a proportionate, compassionate action could be and what observations would change the assessment. Keep the framework version and assessment date with the result."],
   ],
-  changeNote: "Corrects source attribution and citation gaps in the eight embodied-intelligence cases, distinguishes interpretation from measured traits, and adds direct context and contribution sources. Kepler’s health claim remains unresolved and Faraday’s health source is marked abstract-only. The thirteen perspectives are unchanged; earlier assessments are not recalculated. The proposed v0.5.0 claim-review capability remains unreleased.",
+  changeNote: "Clarifies EXPAND² as two review passes, DISCERN and DEEPEN, followed by a synthesis output; aligns the ACTC lens with its existing repository description of agency, context, temporal order and candidate causes; and distinguishes interpretive outcome labels from evidence ratings. Prompted by the 27 September cross-surface consistency audit, not an external framework or post series. This documentation patch adds no lens or capability and changes no evidence status or prior assessment. Earlier assessments retain their original version and date and are not recalculated. The proposed v0.5.0 claim-review capability remains unreleased.",
 } as const;
