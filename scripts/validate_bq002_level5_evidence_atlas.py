@@ -183,6 +183,21 @@ EXPECTED_CANONICAL_MODELS = {'MODEL-BQ002-COGNITIVE-GENERATION': {'model_id': 'M
                                             'may remain incomplete as accounts of why thought is '
                                             'subjectively experienced.',
                                            'status': 'UNRESOLVED'}}
+EXPECTED_MATURITY_MEANING = (
+    "Research maturity only; not truth probability, evidence strength, transpersonal support, "
+    "or readiness for canonical or public promotion."
+)
+EXPECTED_CANONICAL_SOURCES = [{
+    "source_id": "SRC-BQ002-SEED-001",
+    "source_type": "FRAMEWORK_PLACEHOLDER",
+    "citation": "Seed placeholder only; replace with a reproducible primary or secondary source before supporting a substantive claim.",
+    "publication_date": None,
+    "url": None,
+    "limitations": ["Not evidence", "Cannot support Established Evidence"],
+}]
+EXPECTED_EVIDENCE_LABELS = [
+    "Established Evidence", "Interpretation", "Lived Experience/Testimony", "Hypothesis", "Speculation",
+]
 EXPECTED_OPEN_QUESTIONS = [
     "Which measurable processes generate or constrain specific thought content?",
     "How do memory, perception, affect, language and action interact in spontaneous and deliberate thought?",
@@ -196,6 +211,10 @@ def fail(message):
 
 
 def validate(atlas, spec):
+    if spec.get("sources") != EXPECTED_CANONICAL_SOURCES:
+        fail("canonical placeholder-source contract changed")
+    if spec.get("canonical_evidence_labels") != EXPECTED_EVIDENCE_LABELS:
+        fail("canonical evidence-label taxonomy changed")
     if spec.get("conclusion_policy") != "UNDETERMINED_AT_INGESTION":
         fail("canonical conclusion policy must remain undetermined")
     if spec.get("claims") != EXPECTED_CANONICAL_CLAIMS:
@@ -240,10 +259,8 @@ def validate(atlas, spec):
         fail("atlas must describe the bounded Level 4 to Level 5 transition")
     if maturity.get("candidate_level_applied") is not False:
         fail("Level 5 may not be applied before review")
-    meaning = maturity.get("meaning", "").lower()
-    for phrase in ("research maturity", "not truth probability", "evidence strength", "transpersonal support"):
-        if phrase not in meaning:
-            fail("maturity meaning must remain claim bounded")
+    if maturity.get("meaning") != EXPECTED_MATURITY_MEANING:
+        fail("maturity meaning must remain claim bounded")
 
     scope = atlas.get("scope", {})
     for key in ("complete_origin_theory_claimed", "phenomenology_resolved", "transpersonal_information_established", "source_count_advances_level"):
@@ -313,6 +330,8 @@ def validate(atlas, spec):
         fail("all six canonical BQ002 domains must be mapped exactly once")
     for item in coverage:
         ids = item.get("claim_ids", [])
+        if len(ids) != len(set(ids)):
+            fail("coverage claim bindings must be unique")
         if not ids or not set(ids).issubset(claim_map):
             fail("coverage claim binding invalid")
         if any(claim_map[claim_id].get("domain") != item.get("domain") for claim_id in ids):

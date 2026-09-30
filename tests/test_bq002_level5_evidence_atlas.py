@@ -82,6 +82,47 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(spec=candidate)
 
+    def test_exact_maturity_meaning_required(self):
+        for value in (None, "", "Research maturity, not truth probability; evidence strength and transpersonal support are now established."):
+            with self.subTest(value=value):
+                candidate = copy.deepcopy(self.atlas)
+                candidate["maturity"]["meaning"] = value
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
+    def test_canonical_placeholder_contract_required(self):
+        for field in self.spec["sources"][0]:
+            with self.subTest(field=field):
+                candidate = copy.deepcopy(self.spec)
+                candidate["sources"][0][field] = "Established support"
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+        for sources in ([], self.spec["sources"] * 2, None):
+            with self.subTest(sources=sources):
+                candidate = copy.deepcopy(self.spec)
+                candidate["sources"] = sources
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+
+    def test_exact_evidence_taxonomy_required(self):
+        labels = self.spec["canonical_evidence_labels"]
+        for replacement in (labels + ["Verified Truth"], labels[:-1],
+                            [x for x in labels if x != "Lived Experience/Testimony"],
+                            labels + [labels[0]], None):
+            with self.subTest(replacement=replacement):
+                candidate = copy.deepcopy(self.spec)
+                candidate["canonical_evidence_labels"] = replacement
+                with self.assertRaises(ValueError):
+                    self.validate(spec=candidate)
+
+    def test_duplicate_coverage_claim_bindings_rejected(self):
+        for index in range(len(self.atlas["coverage"])):
+            with self.subTest(index=index):
+                candidate = copy.deepcopy(self.atlas)
+                candidate["coverage"][index]["claim_ids"] *= 2
+                with self.assertRaises(ValueError):
+                    self.validate(candidate)
+
     def test_candidate_passes(self):
         self.validate()
 
