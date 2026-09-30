@@ -104,6 +104,76 @@ class ConnectionTests(unittest.TestCase):
             record['governance'][field] = True
             self.assertTrue(validator.validate(record), field)
 
+    def independent_pair(self):
+        network = self.record['source_network']
+        first = network['nodes'][0]
+        first.update(provenance_state='verified', work_id='WORK-A')
+        second = copy.deepcopy(first)
+        second.update(source_id='SRC-SECOND', work_id='WORK-B', locator='urn:synthetic:second')
+        network['nodes'].append(second)
+        network['edges'] = [dict(edge_id='EDGE-TEST', from_source_id='SRC-TEST',
+                                 to_source_id='SRC-SECOND', relation='supports',
+                                 independent_evidence=True)]
+        network['counting_boundary']['independent_evidence_sources'] = 2
+        return network
+
+    def test_unresolved_or_empty_network_cannot_claim_evidence(self):
+        for count in (1, 999, True, 0.0):
+            record = copy.deepcopy(self.record)
+            record['source_network']['counting_boundary']['independent_evidence_sources'] = count
+            self.assertTrue(validator.validate(record))
+        self.record['source_network']['nodes'] = []
+        self.record['connections'] = []
+        self.assertEqual(validator.validate(self.record), [])
+        self.record['source_network']['counting_boundary']['independent_evidence_sources'] = 1
+        self.assertTrue(validator.validate(self.record))
+
+    def test_independent_work_count_is_recomputed(self):
+        network = self.independent_pair()
+        self.assertEqual(validator.validate(self.record), [])
+        network['edges'].append(dict(network['edges'][0], edge_id='EDGE-REPEAT'))
+        self.assertEqual(validator.validate(self.record), [])
+        for count in (0, 1, 3):
+            network['counting_boundary']['independent_evidence_sources'] = count
+            self.assertTrue(validator.validate(self.record))
+
+    def test_unverified_unlocated_or_unidentified_work_rejected(self):
+        self.independent_pair()
+        for field, value in [('provenance_state', 'unresolved'), ('work_id', None),
+                             ('work_id', '  '), ('locator', '  ')]:
+            record = copy.deepcopy(self.record)
+            record['source_network']['nodes'][1][field] = value
+            self.assertTrue(validator.validate(record), field)
+        self.record['source_network']['edges'][0]['to_source_id'] = 'SRC-MISSING'
+        self.assertTrue(validator.validate(self.record))
+
+    def test_duplicate_work_aliases_and_derivation_are_not_independent(self):
+        self.independent_pair()
+        for field, value in [('work_id', 'WORK-SAME'), ('doi', '10.1234/same'),
+                             ('locator', 'urn:same'), ('post_id', 'same')]:
+            record = copy.deepcopy(self.record)
+            for node in record['source_network']['nodes']:
+                node[field] = value
+            self.assertTrue(validator.validate(record), field)
+        for relation in ('same_work_as', 'derived_from'):
+            record = copy.deepcopy(self.record)
+            record['source_network']['edges'].append(dict(
+                record['source_network']['edges'][0], edge_id='EDGE-ALIAS',
+                relation=relation, independent_evidence=False))
+            self.assertTrue(validator.validate(record), relation)
+        self.record['source_network']['nodes'].append(
+            copy.deepcopy(self.record['source_network']['nodes'][0]))
+        self.assertTrue(validator.validate(self.record))
+
+    def test_null_or_false_independence_does_not_count(self):
+        network = self.independent_pair()
+        for value in (False, None):
+            network['edges'][0]['independent_evidence'] = value
+            network['counting_boundary']['independent_evidence_sources'] = 0
+            self.assertEqual(validator.validate(self.record), [])
+            network['counting_boundary']['independent_evidence_sources'] = 2
+            self.assertTrue(validator.validate(self.record))
+
     def test_optional_connections_remain_optional(self):
         del self.record['connections']
         self.assertEqual(validator.validate(self.record), [])

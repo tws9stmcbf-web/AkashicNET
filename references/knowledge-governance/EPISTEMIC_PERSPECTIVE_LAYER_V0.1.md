@@ -62,6 +62,8 @@ The source network keeps four counts separate:
 
 Alternate URLs, annotations and repeated citations do not become additional works or independent corroboration.
 
+The semantic validator recomputes `independent_evidence_sources` as the distinct work-identity groups participating in explicitly independent `supports` or `contradicts` edges. Both endpoints must resolve uniquely to verified sources with nonblank locators and work IDs. Shared work IDs, DOIs, post IDs or locators, and `same_work_as`/`derived_from` chains collapse identity groups; an independent edge within one group is rejected. No qualifying edges means zero. This is a conservative structural counting contract, not a finding of real-world independence or evidence promotion.
+
 ## Interpretive plurality and evidence maturation
 
 A record may be meaningful in several ways at once. A teaching may be literal within one attributed tradition, allegorical within a literary analysis, phenomenologically descriptive for an experiencer and a scientific hypothesis only where it makes a defined, testable claim. These modes are stored separately; none automatically cancels or validates the others.

@@ -152,8 +152,8 @@ const faqGroups: FAQGroup[] = [
       {
         id: "prism-architecture",
         question: "Where does PRISM sit between AkashicNET and AkashicOMNI?",
-        answer: "AkashicNET is the encompassing ecosystem; AkashicOMNI coordinates twelve analytical frameworks; AkashicPRISM is the shared epistemic interface between their analysis and AkashicNET’s corpus, graph, ledgers and publication system.",
-        analysis: "Detailed analysis: PRISM belongs to AkashicNET organisationally and serves AkashicOMNI functionally. It receives the twelve frameworks’ outputs and records interpretive mode, evidence lane, connection strength, uncertainty, alternative explanations, cultural authority and revision history. It is not a thirteenth peer framework, and AkashicNET is not one of the twelve. The concise architecture is: AkashicNET contains the system; AkashicOMNI coordinates the inquiry; twelve frameworks examine; PRISM discriminates; the NET preserves.",
+        answer: "AkashicNET is the encompassing ecosystem; the proposed AkashicOMNI v0.5.0 architecture would coordinate twelve analytical perspectives; AkashicPRISM is the shared epistemic interface between their analysis and AkashicNET’s corpus, graph, ledgers and publication system.",
+        analysis: "Detailed analysis: AkashicOMNI v0.4.3 remains current. In the proposed v0.5.0 architecture, PRISM would belong to AkashicNET organisationally and serve AkashicOMNI functionally. It would receive outputs from twelve analytical perspectives, including three temporal CUT views of one framework, and record interpretive mode, evidence lane, connection strength, uncertainty, alternative explanations, cultural authority and revision history. It is not a thirteenth peer framework, and AkashicNET is not one of the twelve. The concise architecture is: AkashicNET contains the system; AkashicOMNI coordinates the inquiry; twelve perspectives would examine; PRISM would discriminate; the NET would preserve.",
       },
       {
         id: "prism-omni-version",

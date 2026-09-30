@@ -34,6 +34,62 @@ def validate(record):
             elif not matches[0]['locator'].strip():
                 errors.append(f'connections[{index}]: {source_id} requires '
                               'a nonblank locator')
+    # Count only explicitly independent, verified work identities. Equivalence
+    # and derivation links (plus repeated identity fields) collapse aliases.
+    parent = {source_id: source_id for source_id in nodes}
+
+    def find(source_id):
+        while parent[source_id] != source_id:
+            source_id = parent[source_id]
+        return source_id
+
+    def union(left, right):
+        parent[find(left)] = find(right)
+
+    identities = {}
+    for source_id, matches in nodes.items():
+        if len(matches) != 1:
+            errors.append(f'source_network: ambiguous source identity {source_id}')
+        for node in matches:
+            for field in ('work_id', 'doi', 'post_id', 'locator'):
+                value = node.get(field)
+                if isinstance(value, str) and value.strip():
+                    key = (field, value.strip().casefold())
+                    if key in identities:
+                        union(source_id, identities[key])
+                    identities[key] = source_id
+    edges = record['source_network']['edges']
+    resolved_edges = []
+    for edge in edges:
+        left, right = edge['from_source_id'], edge['to_source_id']
+        if left not in nodes or right not in nodes:
+            errors.append('source_network: edge has unresolved source identity')
+            continue
+        resolved_edges.append(edge)
+        if edge['relation'] in ('same_work_as', 'derived_from'):
+            union(left, right)
+    independent = set()
+    for edge in resolved_edges:
+        if edge['independent_evidence'] is not True:
+            continue
+        source_ids = (edge['from_source_id'], edge['to_source_id'])
+        if (edge['relation'] not in ('supports', 'contradicts')
+                or find(source_ids[0]) == find(source_ids[1])):
+            errors.append('source_network: independence conflicts with relationship or work identity')
+            continue
+        eligible = all(len(nodes[sid]) == 1 and
+                       nodes[sid][0]['provenance_state'] == 'verified' and
+                       nodes[sid][0]['locator'].strip() and
+                       isinstance(nodes[sid][0].get('work_id'), str) and
+                       nodes[sid][0]['work_id'].strip() for sid in source_ids)
+        if not eligible:
+            errors.append('source_network: independent evidence requires verified, located work identities')
+            continue
+        independent.update(find(sid) for sid in source_ids)
+    expected = len(independent)
+    actual = record['source_network']['counting_boundary']['independent_evidence_sources']
+    if type(actual) is not int or actual != expected:
+        errors.append(f'counting_boundary.independent_evidence_sources: expected {expected}')
     if record['governance']['publication_status'] == 'review_candidate':
         history = record.get('assessment_history', [])
         successors = {event['supersedes_event_id']: event for event in history

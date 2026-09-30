@@ -3,6 +3,8 @@ name: Validate PRISM blocked crosswalk
 on:
   pull_request:
     paths:
+      - 'schemas/akashic-prism*.schema.json'
+      - 'website/**'
       - 'references/knowledge-governance/prism-n2n-blocked-admission-crosswalk-v0.1.json'
       - 'scripts/validate_prism_blocked_crosswalk.py'
       - 'tests/test_prism_blocked_crosswalk.py'
@@ -10,6 +12,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'schemas/akashic-prism*.schema.json'
+      - 'website/**'
       - 'references/knowledge-governance/prism-n2n-blocked-admission-crosswalk-v0.1.json'
       - 'scripts/validate_prism_blocked_crosswalk.py'
       - 'tests/test_prism_blocked_crosswalk.py'

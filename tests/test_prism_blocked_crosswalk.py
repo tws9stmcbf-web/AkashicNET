@@ -21,6 +21,44 @@ class CrosswalkTests(unittest.TestCase):
     def test_current_checkpoint_passes(self):
         self.assertEqual(validator.validate(self.data), [])
 
+    def test_record_specific_fields_cannot_drift_or_disappear(self):
+        fields = ('blocker', 'next_action', 'linked_investigations',
+                  'topic_routing', 'source_metadata_label')
+        for index in range(len(self.data['records'])):
+            for field in fields:
+                for remove in (False, True):
+                    with self.subTest(index=index, field=field, remove=remove):
+                        data = copy.deepcopy(self.data)
+                        if remove:
+                            del data['records'][index][field]
+                        else:
+                            data['records'][index][field] = 'invented'
+                        self.assertTrue(validator.validate(data))
+
+    def test_record_contract_cannot_be_swapped_between_ids(self):
+        records = self.data['records']
+        records[0]['subject_ref'], records[-1]['subject_ref'] = (
+            records[-1]['subject_ref'], records[0]['subject_ref'])
+        self.assertTrue(validator.validate(self.data))
+
+    def test_workflow_watches_schemas_and_website_for_both_events(self):
+        workflow = (ROOT / '.github/workflows/validate-prism-blocked-crosswalk.yml').read_text()
+        for event in ('pull_request:', 'push:'):
+            section = workflow.split('  ' + event, 1)[1].split('\n\n', 1)[0]
+            if event == 'pull_request:':
+                section = section.split('  push:', 1)[0]
+            self.assertIn("'schemas/akashic-prism*.schema.json'", section)
+            self.assertIn("'website/**'", section)
+
+    def test_faq_architecture_is_proposed_and_uses_perspectives(self):
+        faq = (ROOT / 'website/app/faq/page.tsx').read_text()
+        section = faq.split('id: "prism-architecture"', 1)[1].split('\n      }', 1)[0]
+        self.assertIn('proposed AkashicOMNI v0.5.0', section)
+        self.assertIn('twelve analytical perspectives', section)
+        self.assertIn('v0.4.3 remains current', section)
+        self.assertIn('three temporal CUT views of one framework', section)
+        self.assertNotIn('twelve frameworks', section)
+
     def test_record_order_does_not_change_membership(self):
         self.data['records'].reverse()
         self.assertEqual(validator.validate(self.data), [])

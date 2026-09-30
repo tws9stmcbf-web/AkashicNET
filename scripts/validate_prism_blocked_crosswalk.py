@@ -123,6 +123,98 @@ COUNTER_EFFECT = {'new_records': 0,
                   'evidence_promotions': 0}
 
 
+# Record-specific values reconciled against SOURCE_CHECKPOINT, not live input.
+RECORD_CONTRACTS = [
+    (('10001c',), {'blocker': 'No verified post content or primary-source links available in inspected records; live '
+            'Reddit intake remains HOLD.',
+ 'next_action': 'Obtain authorised source access or owner-provided material with sufficient '
+                'provenance; then examine the post and directly relevant primary sources.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('10001d',), {'blocker': 'Available metadata is insufficient for substantive analysis; verified post content '
+            'and primary-source links are missing from inspected records.',
+ 'next_action': 'Obtain authorised source access or owner-provided material with provenance; '
+                "resolve the post's identity before substantive assessment.",
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('10001e',), {'blocker': 'Inspected metadata is insufficient for substantive analysis; verified post content '
+            'and independently identifiable primary-source links are unavailable within the '
+            'inspected scope.',
+ 'next_action': 'Resolve source identity using authorised material with provenance before '
+                'substantive assessment; keep live access on HOLD.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('10001f',), {'blocker': 'Inspected repository metadata is insufficient for substantive analysis or source '
+            'identity verification.',
+ 'next_action': 'Obtain authorised material with provenance to resolve identity and examine '
+                'substantive content; preserve the live-access HOLD.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('100020',), {'blocker': 'Verified source identity and substantive content are missing from the inspected '
+            'metadata.',
+ 'next_action': 'Investigate shared provenance and URL-field anomalies through repository history '
+                'before substantive review.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('100021',), {'blocker': 'Inspected metadata lacks verified source identity and substantive content for '
+            'assessment.',
+ 'next_action': 'Revisit when authorised material with attributable source provenance is '
+                'available; preserve the live-access HOLD.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('100022', '100023', '100024', '100025'), {'blocker': 'Verified post content and independently identifiable primary-source material '
+            'unavailable in the inspected rows.',
+ 'next_action': 'Revisit when attributable source material becomes available; do not repeat the '
+                'exhausted provenance search without a new lead.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('100026', '100027', '100028', '100029', '10002a'), {'blocker': 'Verified post content and independently identifiable primary-source material are '
+            'unavailable in the inspected rows.',
+ 'next_action': 'Revisit when attributable source material becomes available; do not repeat the '
+                'exhausted provenance search without a new lead.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('10002b',), {'blocker': 'Verified substantive post content and independently identifiable primary sources are '
+            'unavailable in inspected metadata.',
+ 'next_action': 'Revisit on receipt of attributable authorised source material; do not repeat '
+                'exhausted provenance searches without a new lead.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('10002c', '10002d', '10002e', '10002f', '100030', '100031', '100032', '100033', '100034', '100035', '10003b', '10003c', '10003d', '10003e', '10003f'), {'blocker': 'Verified post content and independently identifiable primary-source material are '
+            'unavailable in the inspected rows.',
+ 'next_action': 'Revisit when attributable authorised source material becomes available; do not '
+                'repeat exhausted provenance searches without a new lead.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': None,
+ 'source_metadata_label': None}),
+    (('100036', '100037', '100038', '100039', '10003a'), {'blocker': 'Verified post content and independently identifiable source material are unavailable '
+            'in the inspected repository records.',
+ 'next_action': 'Revisit only when attributable post/source material is available; retain '
+                'title-derived topic mapping as provisional.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': 'Consciousness; contemplative practice; self/witness (title-level routing only)',
+ 'source_metadata_label': None}),
+    (('100040', '100041', '100042', '100043', '100044'), {'blocker': 'No verified post body, argument or independently identifiable source in inspected '
+            'records.',
+ 'next_action': 'Revisit with attributable post/source material; do not promote title-derived '
+                'themes into claims.',
+ 'linked_investigations': ['N2N-INV-001', 'N2N-INV-002', 'N2N-INV-003'],
+ 'topic_routing': 'Philosophy; self and identity; uncertainty and meaning (title-level routing '
+                  'only)',
+ 'source_metadata_label': 'speculation (archive metadata; unverified)'}),
+]
+EXPECTED_RECORDS = {sid: contract for ids, contract in RECORD_CONTRACTS for sid in ids}
+
+
 def same(actual, expected):
     """Require JSON types too: false must never pass as the integer zero."""
     if type(actual) is not type(expected):
@@ -171,6 +263,9 @@ def validate(data):
         else:
             ids.append(subject['subject_id'])
             fixed(subject, 'subject_type', 'community_post', where + '.subject_ref')
+        if isinstance(subject, dict) and isinstance(subject.get('subject_id'), str):
+            for key, expected in EXPECTED_RECORDS.get(subject['subject_id'], {}).items():
+                fixed(record, key, expected, where)
         for key, expected in RECORD_BOUNDARY.items():
             fixed(record, key, expected, where)
         resolution = record.get('paper_link_resolution')
