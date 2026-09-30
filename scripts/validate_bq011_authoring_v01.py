@@ -16,12 +16,39 @@ EXPECTED_CHAIN = [
     "COMMUNITY_AND_INSTITUTIONAL_CHANGE",
     "HUMAN_AND_ECOLOGICAL_FLOURISHING",
 ]
+# Independent contracts pinned from the reviewed v0.1 candidate.
+# Do not derive these expectations from the documents being validated at runtime.
 EXPECTED_MODELS = {
-    "MODEL-BQ011-TRANSIENT-STATE",
-    "MODEL-BQ011-INTEGRATION",
-    "MODEL-BQ011-SOCIAL-REINFORCEMENT",
-    "MODEL-BQ011-STRUCTURAL-CONSTRAINT",
-    "MODEL-BQ011-MULTILEVEL",
+    "MODEL-BQ011-TRANSIENT-STATE": {
+        "model_id": "MODEL-BQ011-TRANSIENT-STATE",
+        "name": "transient_state_model",
+        "position": "Experiences of interconnection may be meaningful yet fade without producing durable behavioural or institutional change.",
+        "status": "UNRESOLVED"
+    },
+    "MODEL-BQ011-INTEGRATION": {
+        "model_id": "MODEL-BQ011-INTEGRATION",
+        "name": "integration_and_practice_model",
+        "position": "Durable change depends on repeated practice, psychological integration, supportive relationships and opportunities for action.",
+        "status": "UNRESOLVED"
+    },
+    "MODEL-BQ011-SOCIAL-REINFORCEMENT": {
+        "model_id": "MODEL-BQ011-SOCIAL-REINFORCEMENT",
+        "name": "social_reinforcement_model",
+        "position": "Communities and social norms determine whether compassionate intentions become stable habits or dissipate.",
+        "status": "UNRESOLVED"
+    },
+    "MODEL-BQ011-STRUCTURAL-CONSTRAINT": {
+        "model_id": "MODEL-BQ011-STRUCTURAL-CONSTRAINT",
+        "name": "structural_constraint_model",
+        "position": "Institutional incentives, inequality and material conditions may dominate individual intentions and limit compassionate outcomes.",
+        "status": "UNRESOLVED"
+    },
+    "MODEL-BQ011-MULTILEVEL": {
+        "model_id": "MODEL-BQ011-MULTILEVEL",
+        "name": "multilevel_transformation_model",
+        "position": "Lasting planetary benefit may require interacting individual, relational, institutional and ecological changes rather than a single intervention.",
+        "status": "UNRESOLVED"
+    }
 }
 EXPECTED_OUTCOMES = {
     "observable_helping_and_generosity",
@@ -84,7 +111,173 @@ EXPECTED_SCALE = [
     {"level": 9, "label": "INSTITUTIONAL_AND_ECOLOGICAL_OUTCOMES_REPLICATED"},
     {"level": 10, "label": "DURABLE_BENEFIT_WITH_KNOWN_LIMITS"},
 ]
-EXPECTED_PRIORITIES = [f"BQ011-P{i:02d}" for i in range(1, 13)]
+EXPECTED_ADVANCEMENT_REQUIREMENTS = {
+    "level_4": [
+        "Review at least one bounded evidence batch for each major transition in the causal chain.",
+        "Separate self-report, observed behavior, community indicators, institutional change and ecological outcomes.",
+        "Record null findings, adverse effects, spiritual bypassing, coercion and moral licensing."
+    ],
+    "level_5": [
+        "Use prospective designs with preregistered outcomes and follow-up beyond the immediate experience.",
+        "Include behavioural and third-party measures alongside self-report.",
+        "Measure mediators, moderators and baseline differences."
+    ],
+    "level_6": [
+        "Achieve independent replication across research groups and intervention contexts.",
+        "Replicate benefits and harms with adequate power and transparent exclusions."
+    ],
+    "level_7": [
+        "Test cross-cultural validity with community-led governance and measurement adaptation.",
+        "Demonstrate durability across months or years and across socioeconomic settings."
+    ],
+    "level_8": [
+        "Use designs capable of distinguishing intervention effects from selection, expectancy and social reinforcement.",
+        "Evaluate implementation fidelity, access, equity and unintended consequences."
+    ],
+    "level_9": [
+        "Replicate community, institutional or ecological outcomes rather than inferring them from individual reports.",
+        "Show that benefits do not depend on exploitation, cultural extraction or displaced harms."
+    ],
+    "level_10": [
+        "Demonstrate durable net benefit with clearly bounded generalisability and known failure modes.",
+        "Preserve uncertainty and monitoring rather than declaring a final universal solution."
+    ]
+}
+EXPECTED_PRIORITIES = [
+    {
+        "priority_id": "BQ011-P01",
+        "rank": 1,
+        "title": "Compassion at scale",
+        "question": "Which practices reliably convert empathy, compassion or metta into sustained helping, generosity and nonviolence?",
+        "required_outcomes": [
+            "observed_behavior",
+            "durability",
+            "harms"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P02",
+        "rank": 2,
+        "title": "States into traits into service",
+        "question": "When do psychedelic, contemplative, mystical or collective experiences produce lasting humility, care and ethical action?",
+        "required_outcomes": [
+            "self_report",
+            "observed_behavior",
+            "longitudinal_follow_up"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P03",
+        "rank": 3,
+        "title": "Flexible selfhood and prejudice",
+        "question": "Does safely loosening rigid self-models reduce dehumanisation, prejudice and tribal hostility?",
+        "required_outcomes": [
+            "validated_attitudes",
+            "observed_intergroup_behavior",
+            "adverse_effects"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P04",
+        "rank": 4,
+        "title": "Ecological connectedness",
+        "question": "Does felt connection with nature predict or cause measurable stewardship and lower-impact behaviour?",
+        "required_outcomes": [
+            "observed_ecological_behavior",
+            "material_footprint",
+            "durability"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P05",
+        "rank": 5,
+        "title": "Collective synchrony without metaphysical assumptions",
+        "question": "How do music, dance, ritual and shared attention affect trust, cooperation and belonging?",
+        "required_outcomes": [
+            "behavioral_cooperation",
+            "inclusion_and_exclusion",
+            "physiological_or_temporal_synchrony"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P06",
+        "rank": 6,
+        "title": "Trauma and intergenerational repair",
+        "question": "Which combinations of therapy, embodiment, community and meaning-making interrupt cycles of harm safely?",
+        "required_outcomes": [
+            "clinical_and_functional_change",
+            "relationship_outcomes",
+            "adverse_events"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P07",
+        "rank": 7,
+        "title": "Death awareness and compassionate priorities",
+        "question": "Can death contemplation or end-of-life engagement reduce fear and increase care without requiring survival beliefs?",
+        "required_outcomes": [
+            "death_anxiety",
+            "prosocial_behavior",
+            "worldview_coercion_checks"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P08",
+        "rank": 8,
+        "title": "Wisdom across cultures",
+        "question": "Which ethical insights recur across traditions, and which meanings must remain culturally and lineage specific?",
+        "required_outcomes": [
+            "community_authority",
+            "attribution",
+            "non_extractive_benefit"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P09",
+        "rank": 9,
+        "title": "Community care and mutual witnessing",
+        "question": "Which forms of listening and moderated experience-sharing improve belonging without amplifying dogma, delusion or misinformation?",
+        "required_outcomes": [
+            "belonging",
+            "epistemic_humility",
+            "safety_incidents"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P10",
+        "rank": 10,
+        "title": "Attention and information ecology",
+        "question": "How do platforms, algorithms and AI alter agency, empathy and collective reality formation?",
+        "required_outcomes": [
+            "attention_and_agency",
+            "polarisation",
+            "wellbeing",
+            "manipulation_risk"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P11",
+        "rank": 11,
+        "title": "Institutions of care",
+        "question": "Which organisational, educational and economic structures reward cooperation, sufficiency and stewardship rather than extraction?",
+        "required_outcomes": [
+            "policy_and_incentive_change",
+            "distributional_effects",
+            "implementation_durability"
+        ]
+    },
+    {
+        "priority_id": "BQ011-P12",
+        "rank": 12,
+        "title": "Measuring flourishing",
+        "question": "Which indicators capture meaning, belonging, compassion, justice and ecological health beyond narrow economic output?",
+        "required_outcomes": [
+            "cross_cultural_validity",
+            "distributional_equity",
+            "ecological_indicators"
+        ]
+    }
+]
 EXPECTED_CULTURAL_GOVERNANCE = {
     "indigenous_and_lineage_knowledge_is_not_generic_evidence",
     "community_authority_permission_and_care_required",
@@ -158,11 +351,14 @@ def validate(spec, assessment, agenda, architecture):
     if any(value is not False for value in boundary.values()):
         fail("causal boundary must remain fail-closed")
 
-    model_items = spec.get("models", [])
-    if {item.get("model_id") for item in model_items} != EXPECTED_MODELS or len(model_items) != len(EXPECTED_MODELS):
+    model_items = spec.get("models")
+    if not isinstance(model_items, list) or any(not isinstance(item, dict) for item in model_items):
+        fail("competing models must be a list of records")
+    if {item.get("model_id") for item in model_items} != set(EXPECTED_MODELS) or len(model_items) != len(EXPECTED_MODELS):
         fail("competing model set changed")
-    if any(item.get("status") != "UNRESOLVED" for item in model_items):
-        fail("competing models must remain unresolved")
+    for item in model_items:
+        if item != EXPECTED_MODELS[item["model_id"]]:
+            fail(f"competing model payload changed: {item['model_id']}")
     claims = spec.get("claims")
     if not isinstance(claims, list) or len(claims) != 1:
         fail("BQ011 must retain exactly one project-state claim")
@@ -220,6 +416,8 @@ def validate(spec, assessment, agenda, architecture):
             fail(f"assessment axis changed: {axis}")
         if axis_map[axis].get("boundary") != EXPECTED_AXIS_BOUNDARIES[axis]:
             fail(f"assessment boundary changed: {axis}")
+    if assessment.get("advancement_requirements") != EXPECTED_ADVANCEMENT_REQUIREMENTS:
+        fail("advancement requirements changed or weakened")
     require_false(assessment.get("governance"), FALSE_GUARDS | {"model_edges_upgrade_evidence"}, "assessment guard")
 
     if agenda.get("agenda_id") != "BQ011-RESEARCH-AGENDA-V0.1":
@@ -228,15 +426,15 @@ def validate(spec, assessment, agenda, architecture):
         fail("research agenda identity/status changed")
     if agenda.get("question_status") != "UNRESOLVED":
         fail("research agenda must remain unresolved")
-    priority_items = agenda.get("priorities", [])
-    if [item.get("priority_id") for item in priority_items] != EXPECTED_PRIORITIES:
-        fail("research priority identity/order changed")
+    priority_items = agenda.get("priorities")
+    if not isinstance(priority_items, list) or any(not isinstance(item, dict) for item in priority_items):
+        fail("research priorities must be a list of records")
     if any(type(item.get("rank")) is not int for item in priority_items):
         fail("research priority ranks must be integers")
-    if [item.get("rank") for item in priority_items] != list(range(1, 13)):
-        fail("research priority ranks changed")
-    if any(not item.get("required_outcomes") for item in priority_items):
-        fail("research priorities require measurable outcomes")
+    if any(not isinstance(item.get("required_outcomes"), list) for item in priority_items):
+        fail("research priority outcomes must be lists")
+    if priority_items != EXPECTED_PRIORITIES:
+        fail("research priority payloads changed")
     if agenda.get("methodological_requirements") != EXPECTED_METHOD_REQUIREMENTS:
         fail("research methodology boundaries changed")
     community = agenda.get("community_role")

@@ -93,6 +93,78 @@ class BQ011AuthoringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(spec=candidate)
 
+    def test_complete_model_payload_mutations_rejected(self):
+        for index, model in enumerate(self.spec["models"]):
+            for key in model:
+                for remove in (False, True):
+                    with self.subTest(model=index, key=key, remove=remove):
+                        candidate = copy.deepcopy(self.spec)
+                        if remove:
+                            del candidate["models"][index][key]
+                        else:
+                            candidate["models"][index][key] = "Interconnection is proven to cause planetary flourishing."
+                        with self.assertRaises(ValueError):
+                            self.validate(spec=candidate)
+            candidate = copy.deepcopy(self.spec)
+            candidate["models"][index]["supports_models"] = ["MODEL-BQ011-MULTILEVEL"]
+            with self.subTest(model=index, added_field=True), self.assertRaises(ValueError):
+                self.validate(spec=candidate)
+
+    def test_advancement_ladder_removal_and_malformed_values_rejected(self):
+        candidate = copy.deepcopy(self.assessment)
+        del candidate["advancement_requirements"]
+        with self.assertRaises(ValueError):
+            self.validate(assessment=candidate)
+        for value in (None, True, "optional", [], {}):
+            with self.subTest(value=value):
+                candidate = copy.deepcopy(self.assessment)
+                candidate["advancement_requirements"] = value
+                with self.assertRaises(ValueError):
+                    self.validate(assessment=candidate)
+
+    def test_each_advancement_level_removal_and_weakening_rejected(self):
+        for level, requirements in self.assessment["advancement_requirements"].items():
+            candidate = copy.deepcopy(self.assessment)
+            del candidate["advancement_requirements"][level]
+            with self.subTest(level=level, removed=True), self.assertRaises(ValueError):
+                self.validate(assessment=candidate)
+            for index in range(len(requirements)):
+                for remove in (False, True):
+                    with self.subTest(level=level, index=index, remove=remove):
+                        candidate = copy.deepcopy(self.assessment)
+                        if remove:
+                            candidate["advancement_requirements"][level].pop(index)
+                        else:
+                            candidate["advancement_requirements"][level][index] = "Self-report alone is sufficient; further review is optional."
+                        with self.assertRaises(ValueError):
+                            self.validate(assessment=candidate)
+
+    def test_priority_conclusion_rewrites_and_field_removal_rejected(self):
+        for index in range(len(self.agenda["priorities"])):
+            for key in ("title", "question", "required_outcomes"):
+                candidate = copy.deepcopy(self.agenda)
+                del candidate["priorities"][index][key]
+                with self.subTest(priority=index, key=key, removed=True), self.assertRaises(ValueError):
+                    self.validate(agenda=candidate)
+            for key in ("title", "question"):
+                candidate = copy.deepcopy(self.agenda)
+                candidate["priorities"][index][key] = "Interconnection is proven to cause planetary flourishing."
+                with self.subTest(priority=index, key=key), self.assertRaises(ValueError):
+                    self.validate(agenda=candidate)
+
+    def test_each_priority_malformed_and_downgraded_outcomes_rejected(self):
+        for index, priority in enumerate(self.agenda["priorities"]):
+            outcomes = priority["required_outcomes"]
+            mutations = [True, 1, "self_report", {"self_report": True}, None, [],
+                         ["self_report"], outcomes + [outcomes[0]], list(reversed(outcomes))]
+            mutations.extend(outcomes[:i] + outcomes[i + 1:] for i in range(len(outcomes)))
+            for value in mutations:
+                with self.subTest(priority=index, outcomes=value):
+                    candidate = copy.deepcopy(self.agenda)
+                    candidate["priorities"][index]["required_outcomes"] = value
+                    with self.assertRaises(ValueError):
+                        self.validate(agenda=candidate)
+
     def test_model_support_promotion_rejected(self):
         candidate = copy.deepcopy(self.spec)
         candidate["claims"][0]["supports_models"] = ["MODEL-BQ011-MULTILEVEL"]
