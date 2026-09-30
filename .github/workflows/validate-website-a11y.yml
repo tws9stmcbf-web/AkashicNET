@@ -28,6 +28,11 @@ jobs:
         env:
           EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+      - name: Existing affected repository checks
+        run: |
+          python scripts/validate_public_status_consistency_v015.py
+          python scripts/validate_evidence_taxonomy_v010.py
+          python scripts/validate_actions_immutable_refs.py
       - run: npm ci
         working-directory: tests/website-a11y
       - run: npx playwright install --with-deps chromium

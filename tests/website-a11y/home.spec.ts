@@ -34,7 +34,7 @@ for (const width of [320, 375, 820, 821, 900, 1024, 1280, 1440]) {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('/');
     const header = page.locator('.home-nav');
-    if (width > 820) await expect(header.locator("nav a:visible")).toHaveCount(17);
+    await expect(header.locator("nav a:visible")).toHaveCount(width > 820 ? 17 : 5);
     expect(await header.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
     for (const [route] of locales) {
       const link = header.locator(`nav a[href="${route}"]`);

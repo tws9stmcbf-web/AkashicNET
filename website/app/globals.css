@@ -271,4 +271,5 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
 /* Keep the full homepage navigation in flow as its links wrap. */
 .home-nav { position:relative; flex-wrap:wrap; gap:1rem; }
 .home-nav nav { min-width:0; max-width:100%; flex-wrap:wrap; gap:.5rem 1rem; }
-.home-nav nav a { display:inline-flex; align-items:center; min-height:2.75rem; overflow-wrap:anywhere; }
+.home-nav nav a { align-items:center; min-height:2.75rem; overflow-wrap:anywhere; }
+@media (min-width:821px) { .home-nav nav a { display:inline-flex; } }
