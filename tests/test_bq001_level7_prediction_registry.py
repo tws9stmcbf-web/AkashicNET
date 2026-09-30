@@ -49,6 +49,51 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate(candidate)
 
+    def test_cross_kind_normalized_statements_rejected(self):
+        for model_index in range(len(self.registry["models"])):
+            for normalized in (False, True):
+                with self.subTest(model=model_index, normalized=normalized):
+                    candidate = copy.deepcopy(self.registry)
+                    model = candidate["models"][model_index]
+                    statement = model["predictions"][0]["statement"]
+                    if normalized:
+                        statement = "  " + " \t\n ".join(statement.upper().split()) + "  "
+                    model["potential_disconfirming_observations"][0]["statement"] = statement
+                    with self.assertRaisesRegex(ValueError, "statements must be distinct"):
+                        self.validate(candidate)
+
+    def test_design_context_source_set_mutations_rejected(self):
+        original = self.registry["source_scope"]["source_ids_used_for_design_context_only"]
+        mutations = {
+            "empty": [],
+            "duplicate": original + [original[0]],
+            "known_addition": original + ["SRC-BQ001-KOCH-2016"],
+            "known_substitution": ["SRC-BQ001-KOCH-2016"] + original[1:],
+            "unknown_substitution": ["UNKNOWN"] + original[1:],
+            "duplicate_substitution": [original[1]] + original[1:],
+        }
+        for index in range(len(original)):
+            mutations[f"missing_{index}"] = original[:index] + original[index + 1:]
+        for name, source_ids in mutations.items():
+            with self.subTest(mutation=name):
+                candidate = copy.deepcopy(self.registry)
+                candidate["source_scope"]["source_ids_used_for_design_context_only"] = source_ids
+                with self.assertRaisesRegex(ValueError, "design-context source"):
+                    self.validate(candidate)
+
+    def test_design_context_source_order_is_irrelevant(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["source_scope"]["source_ids_used_for_design_context_only"].reverse()
+        self.validate(candidate)
+
+    def test_design_context_sources_must_still_exist_in_canonical_inputs(self):
+        self.batch1["sources"] = [
+            item for item in self.batch1["sources"]
+            if item["source_id"] != "SRC-BQ001-AWARE-2014"
+        ]
+        with self.assertRaisesRegex(ValueError, "design-context source"):
+            self.validate()
+
     def test_invalid_test_domain_rejected(self):
         candidate = copy.deepcopy(self.registry)
         candidate["discriminating_tests"][0]["domain"] = "not_a_canonical_bq001_domain"

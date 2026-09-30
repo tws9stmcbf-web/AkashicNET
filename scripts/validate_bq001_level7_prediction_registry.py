@@ -10,6 +10,12 @@ BATCH1 = ROOT / "references/big-questions/BQ001/evidence-batch1-v0.1.json"
 BATCH3 = ROOT / "references/big-questions/BQ001/evidence-batch3-v0.1.json"
 
 EXPECTED_MODELS = {"MODEL-BQ001-BIOLOGICAL-DEPENDENCE", "MODEL-BQ001-CONTINUITY"}
+EXPECTED_DESIGN_CONTEXT_SOURCE_IDS = {
+    "SRC-BQ001-AWARE-2014",
+    "SRC-BQ001-AWARE2-2023",
+    "SRC-BQ001-MASCHKE-2024",
+    "SRC-BQ001-SCOPING-2021",
+}
 EXPECTED_TESTS = {
     "TEST-BQ001-RESUSCITATION-TIMELOCK",
     "TEST-BQ001-PASTLIFE-PROSPECTIVE",
@@ -122,10 +128,10 @@ def validate(registry, spec, batch1, batch3):
             fail("prediction records are bound to the wrong model")
         if any(not item_id.startswith(challenge_prefix) for item_id in challenge_ids):
             fail("challenge records are bound to the wrong model")
-        for records in (predictions, challenges):
-            statements = {" ".join(item["statement"].split()).casefold() for item in records}
-            if len(statements) != len(records):
-                fail("prediction and challenge statements must be distinct within each model")
+        records = predictions + challenges
+        statements = {" ".join(item["statement"].split()).casefold() for item in records}
+        if len(statements) != len(records):
+            fail("prediction and challenge statements must be distinct within each model")
         if any(item.get("not_decisive_alone") is not True for item in challenges):
             fail("disconfirming observations must preserve auxiliary-assumption caution")
     if len(set(all_prediction_ids)) != len(all_prediction_ids) or len(set(all_challenge_ids)) != len(all_challenge_ids):
@@ -160,8 +166,14 @@ def validate(registry, spec, batch1, batch3):
     if canonical_inputs != EXPECTED_CANONICAL_INPUTS or any(not (ROOT / path).is_file() for path in canonical_inputs):
         fail("canonical provenance inputs changed or do not exist")
     known_ids = {item.get("source_id") for item in batch1.get("sources", []) + batch3.get("sources", [])}
-    used_ids = set(source_scope.get("source_ids_used_for_design_context_only", []))
-    if not used_ids or not used_ids.issubset(known_ids):
+    source_ids = source_scope.get("source_ids_used_for_design_context_only", [])
+    if (
+        not isinstance(source_ids, list)
+        or any(not isinstance(source_id, str) for source_id in source_ids)
+        or len(source_ids) != len(EXPECTED_DESIGN_CONTEXT_SOURCE_IDS)
+        or set(source_ids) != EXPECTED_DESIGN_CONTEXT_SOURCE_IDS
+        or not EXPECTED_DESIGN_CONTEXT_SOURCE_IDS.issubset(known_ids)
+    ):
         fail("design-context source provenance is invalid")
     if source_scope.get("new_evidence_added") is not False:
         fail("prediction registry cannot silently add evidence")
