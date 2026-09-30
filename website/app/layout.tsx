@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const requestedLanguage = (await headers()).get("x-akashicnet-document-language");
+  const language = ["de", "es", "pt-BR", "fr"].includes(requestedLanguage ?? "")
+    ? requestedLanguage! : "en";
+  return <html lang={language}><body>{children}</body></html>;
 }

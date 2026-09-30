@@ -267,3 +267,8 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
 @media (max-width:700px) { .constellation-grid,.destination-pair { grid-template-columns:1fr; }.constellation-grid article:last-child { grid-column:1; }.destination-pair article:first-child { border-right:0; border-bottom:1px solid var(--line); }.destination-pair article { min-height:58svh; } }
 
 @media (max-width:700px) { .roadmap-grid .doctor-portal { grid-column:1; }.doctor-portal-link { align-items:flex-start; }.time-box { width:5.2rem; }.doctor-portal-copy strong { font-size:1.75rem; } }
+
+/* Keep the full homepage navigation in flow as its links wrap. */
+.home-nav { position:relative; flex-wrap:wrap; gap:1rem; }
+.home-nav nav { min-width:0; max-width:100%; flex-wrap:wrap; gap:.5rem 1rem; }
+.home-nav nav a { display:inline-flex; align-items:center; min-height:2.75rem; overflow-wrap:anywhere; }

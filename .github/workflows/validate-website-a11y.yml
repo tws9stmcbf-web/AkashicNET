@@ -1,0 +1,36 @@
+name: Validate multilingual website accessibility
+
+on:
+  pull_request:
+    paths:
+      - 'website/**'
+      - 'tests/website-a11y/**'
+      - '.github/workflows/validate-website-a11y.yml'
+  push:
+    branches: [main, website/multilingual-home-v01]
+    paths:
+      - 'website/**'
+      - 'tests/website-a11y/**'
+      - '.github/workflows/validate-website-a11y.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify tested commit
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+      - run: npm ci
+        working-directory: tests/website-a11y
+      - run: npx playwright install --with-deps chromium
+        working-directory: tests/website-a11y
+      - run: npm run build && npm test
+        working-directory: tests/website-a11y
