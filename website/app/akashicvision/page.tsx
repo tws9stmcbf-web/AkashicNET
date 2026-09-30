@@ -41,6 +41,7 @@ export default function AkashicVisionPage() {
           <a href="#translation">Translation</a>
           <a href="#vision">2042–2047</a>
           <a href="#antecedents">Antecedents</a>
+          <a href="/akashicsentience">AkashicSENTIENCE</a>
           <a href="/big-questions/bq001">BQ001</a>
         </nav>
       </header>

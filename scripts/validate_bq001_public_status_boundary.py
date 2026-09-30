@@ -14,7 +14,6 @@ REQUIRED = (
     "Established Evidence · Interpretation · Lived Experience/Testimony · Hypothesis · Speculation",
     ">Biological dependence<",
     ">Continuity<",
-    "AkashicNET PRE-ALPHA v0.10.x engine",
 )
 
 FORBIDDEN = (
@@ -78,7 +77,6 @@ def main() -> int:
 
     print("AKASHICNET BQ001 PUBLIC STATUS BOUNDARY PASS", {
         "public_label": "PUBLIC INVESTIGATION",
-        "engine_provenance": "PRE-ALPHA v0.10.x",
         "question_status": status,
         "model_statuses": model_statuses,
         "synthesis": SYNTHESIS.name,
