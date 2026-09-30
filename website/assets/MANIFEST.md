@@ -1,6 +1,6 @@
 # Public image asset manifest
 
-Snapshot dates: original asset set — 30 August 2026; AkashicVISION and AkashicTRANSCENDENCE additions — 13 September 2026; AKN24 food-security additions — 14 September 2026
+Snapshot dates: original asset set — 30 August 2026; AkashicVISION and AkashicTRANSCENDENCE additions — 13 September 2026; AKN24 food-security additions — 14 September 2026; Infinity Key Spirit candidate withheld — 15 September 2026
 
 | Deployed asset | SHA-256 |
 |---|---|
@@ -24,6 +24,8 @@ Snapshot dates: original asset set — 30 August 2026; AkashicVISION and Akashic
 
 - `akn24-global-food-shortages.webp` — AI-assisted AkashicNET editorial artwork added on 14 September 2026 for the AKN24 global food-security report and homepage entry point. It contrasts system fragility with practical resilience and is labelled as conceptual, not documentary evidence or a forecast. No private corpus data is present.
 - `akashicomni-global-food-security-13d.webp` — AI-assisted AkashicNET analytical artwork added on 14 September 2026 for the same report. It visualises the canonical AkashicOMNI v0.3.0 thirteen-lens framework, including `HOMESENSE · Phase 8`; it is not a measured risk map or evidence of literal dimensions. No private corpus data is present.
+
+- A withheld candidate is excluded from this publication. Concrete generation/source lineage, `PUBLIC_VERIFIED`, completed sensitivity/PII review, reviewed reuse rights and an explicit `ELIGIBLE` decision remain unresolved. Audit-only identifiers belong in the controlled private layer. No publication approval is implied.
 
 The binary assets are stored and served with the live Site. This manifest provides integrity and historical provenance without copying the private Drive corpus into GitHub.
 

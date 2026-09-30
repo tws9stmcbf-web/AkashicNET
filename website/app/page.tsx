@@ -149,7 +149,7 @@ export default function Home() {
       <section className="domain-section">
         <div className="section-heading"><div><p className="section-label">03 · A constellation of domains</p><h2>Many ways of knowing.<br/>No forced sameness.</h2></div><p>The network preserves differences while making thoughtful relationships visible.</p></div>
         <div className="domain-grid">
-          {domains.map(([title,text],index)=><article key={title}><span aria-hidden="true">{["◉","△","♡","ॐ","⌁","◎","✦","∞"][index]}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}
+          {domains.map(([title,text],index)=><article key={title}><span aria-hidden="true">{["◉","△","♡","ॐ","⌁","◎","✦","∞"][index]}</span><div><h3>{title === "Spirit" ? <a href="/spirit" style={{ color: "inherit", textDecoration: "none" }}>{title} <span aria-hidden="true">→</span></a> : title}</h3><p>{text}</p></div></article>)}
         </div>
       </section>
 
