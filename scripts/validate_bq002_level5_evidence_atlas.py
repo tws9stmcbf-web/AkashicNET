@@ -7,6 +7,15 @@ ROOT = Path(__file__).resolve().parents[1]
 ATLAS = ROOT / "references/big-questions/BQ002/evidence-atlas-level5-review-candidate-v0.1.json"
 SPEC = ROOT / "references/big-questions/BQ002/spec-v0.1.json"
 
+EXPECTED_BQ002_DOMAINS = frozenset([
+    "perception_memory_and_learning",
+    "spontaneous_thought_and_mind_wandering",
+    "dreaming_and_sleep_cognition",
+    "language_action_and_embodied_cognition",
+    "neural_dynamics_and_predictive_processing",
+    "phenomenology_and_unresolved_origins"
+])
+
 EXPECTED_SOURCES = {
     "SRC-BQ002-HUDACHEK-WAMSLEY-2023", "SRC-BQ002-FOX-2015",
     "SRC-BQ002-CHRISTOFF-2016", "SRC-BQ002-SMALLWOOD-SCHOOLER-2015",
@@ -297,9 +306,11 @@ def validate(atlas, spec):
         fail("every source must be used by a bounded claim or counter-interpretation")
 
     domains = set(spec.get("domains", []))
+    if domains != EXPECTED_BQ002_DOMAINS:
+        fail("canonical BQ002 domain set changed")
     coverage = atlas.get("coverage", [])
-    if {item.get("domain") for item in coverage} != domains or len(coverage) != len(domains):
-        fail("all existing BQ002 domains must be mapped exactly once")
+    if {item.get("domain") for item in coverage} != EXPECTED_BQ002_DOMAINS or len(coverage) != len(EXPECTED_BQ002_DOMAINS):
+        fail("all six canonical BQ002 domains must be mapped exactly once")
     for item in coverage:
         ids = item.get("claim_ids", [])
         if not ids or not set(ids).issubset(claim_map):

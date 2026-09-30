@@ -173,6 +173,16 @@ class BQ002Level5EvidenceAtlasTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_spec_domain_removal_with_matching_coverage_removal_rejected(self):
+        candidate_spec = copy.deepcopy(self.spec)
+        removed_domain = candidate_spec["domains"].pop()
+        candidate_atlas = copy.deepcopy(self.atlas)
+        candidate_atlas["coverage"] = [
+            item for item in candidate_atlas["coverage"] if item["domain"] != removed_domain
+        ]
+        with self.assertRaisesRegex(ValueError, "canonical BQ002 domain set changed"):
+            self.validate(candidate_atlas, candidate_spec)
+
     def test_coverage_claim_domain_mismatch_rejected(self):
         candidate = copy.deepcopy(self.atlas)
         candidate["coverage"][0]["claim_ids"] = ["CLAIM-BQ002-ATLAS-DREAM-MEMORY-01"]

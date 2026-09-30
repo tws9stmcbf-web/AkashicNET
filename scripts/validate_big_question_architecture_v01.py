@@ -12,6 +12,7 @@ COMMUNITY = ROOT / "references" / "community"
 BQ_NAME = re.compile(r"^BQ\d{3}$")
 COMMUNITY_BQ = re.compile(r"^bq\d{3}.*", re.IGNORECASE)
 CANONICAL_BATCH = re.compile(r"^evidence-batch.*\.json$", re.IGNORECASE)
+REVIEW_CANDIDATE = re.compile(r"^.*review-candidate.*\.json$", re.IGNORECASE)
 
 
 def assert_canonical_batch_registry(question_id: str, canonical: Path, batches: list[str], root: Path) -> None:
@@ -26,6 +27,44 @@ def assert_canonical_batch_registry(question_id: str, canonical: Path, batches: 
         f"unregistered={sorted(discovered - registered)}; "
         f"missing={sorted(registered - discovered)}"
     )
+
+
+def assert_review_artifact_registry(question_id: str, canonical: Path, artifacts: list[dict], root: Path) -> None:
+    entries = {item.get("path"): item for item in artifacts}
+    assert len(entries) == len(artifacts), f"{question_id}: duplicate review-artifact path"
+    discovered = {
+        str(path.resolve())
+        for path in canonical.iterdir()
+        if path.is_file() and REVIEW_CANDIDATE.fullmatch(path.name)
+        and not CANONICAL_BATCH.fullmatch(path.name)
+    }
+    registered = {str((root / path).resolve()) for path in entries if isinstance(path, str)}
+    assert discovered == registered, (
+        f"{question_id}: review-artifact registry drift; "
+        f"unregistered={sorted(discovered - registered)}; "
+        f"missing={sorted(registered - discovered)}"
+    )
+    for path, entry in entries.items():
+        assert isinstance(path, str) and entry.get("status") == "REVIEW_CANDIDATE", (
+            f"{question_id}: review artifacts must be explicitly registered as REVIEW_CANDIDATE"
+        )
+        resolved = (root / path).resolve()
+        assert resolved.parent == canonical.resolve(), f"{question_id}: review artifact escaped canonical tree"
+        payload = json.loads(resolved.read_text(encoding="utf-8"))
+        assert payload.get("status") == entry["status"], f"{question_id}: review artifact status mismatch: {path}"
+        maturity = payload.get("maturity", {})
+        governance = payload.get("governance", {})
+        assert maturity.get("candidate_level_applied") is False, f"{question_id}: review candidate was applied: {path}"
+        for key in (
+            "public_beta_gate", "canonical_promotion_applied", "evidence_promotion_applied",
+            "public_synthesis_updated", "website_updated", "truth_inference_allowed",
+            "scientific_evidence_promotion_allowed", "transpersonal_claim_promoted",
+            "rights_promotion_allowed", "privacy_posture_changed", "cultural_safeguarding_relaxed",
+        ):
+            assert governance.get(key) is False, f"{question_id}: review artifact gate weakened ({key}): {path}"
+        assert governance.get("question_status") == "UNRESOLVED"
+        assert governance.get("accepted_canonical_edges") == 0
+        assert governance.get("supports_models") == []
 
 
 def main() -> int:
@@ -62,6 +101,9 @@ def main() -> int:
             payload = json.loads(path.read_text(encoding="utf-8"))
             assert payload.get("question_id") == question_id
         assert_canonical_batch_registry(question_id, canonical, batches, ROOT)
+
+        review_artifacts = record.get("review_artifacts", [])
+        assert_review_artifact_registry(question_id, canonical, review_artifacts, ROOT)
 
         for legacy in record.get("legacy_parallel_records", []):
             path = legacy["path"]
