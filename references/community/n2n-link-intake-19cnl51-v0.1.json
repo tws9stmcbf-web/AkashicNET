@@ -14,7 +14,34 @@
     "author": "Original poster as listed on Reddit",
     "candidate_title": "Abstract; Introduction; Conclusion | Addiction – a brain disorder or a spiritual disorder | OA Text: Mental Health and Addiction Research [Feb 2017]",
     "candidate_post_date": "2024-01-22",
-    "metadata_basis": "USER_SUPPLIED_URL_PLUS_NONAUTHORITATIVE_PUBLIC_METADATA_LOOKUP"
+    "metadata_basis": "USER_SUPPLIED_URL_PLUS_UNVERIFIED_LEGACY_CANDIDATE_METADATA",
+    "metadata_lookup_provenance": {
+      "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/19cnl51/abstract_introduction_conclusion_addiction_a/",
+      "reddit_post_id": "19cnl51",
+      "source_status": "UNVERIFIED_PENDING_AUTHORISED_REDDIT_CHECK",
+      "ingestion_timestamp": null,
+      "observation_timestamp": "2026-09-30T06:03:23Z",
+      "retrieval_method": "READ_COMMITTED_REPOSITORY_METADATA_ONLY_NO_REDDIT_REQUEST",
+      "api_endpoint_or_documented_source": "https://github.com/tws9stmcbf-web/AkashicNET/blob/d523970e10c9a3a136ce9f13ad1ef95f0170fb0c/references/community/n2n-link-intake-19cnl51-v0.1.json",
+      "observed_fields": [
+        "candidate_title",
+        "candidate_post_date"
+      ],
+      "observation_scope": "Re-observation of inherited candidate values in the committed intake; not a reproduction or verification of the original public lookup.",
+      "rate_limit_state": "NOT_APPLICABLE_NO_REDDIT_REQUEST",
+      "original_public_lookup": {
+        "documented_source": null,
+        "observation_timestamp": null,
+        "retrieval_method": null,
+        "rate_limit_state": "UNKNOWN_NOT_RECORDED",
+        "audit_state": "PROVENANCE_MISSING_ADMISSION_BLOCKED",
+        "note": "The prior artifact reports a non-authoritative public lookup but retains no source, timestamp, method or rate-limit record. Creation date is not a lookup timestamp; repository re-observation does not repair that missing historical provenance."
+      },
+      "duplicate_check_result": "EXISTING_HISTORICAL_RECORD_SAME_POST_ID_AND_NORMALIZED_URL",
+      "classification_result": "EXISTING_CANDIDATE_CLASSIFICATION_NOT_ADMITTED",
+      "human_review_required": true,
+      "final_record_status": "REVIEW_CANDIDATE"
+    }
   },
   "linked_source": {
     "title": "Addiction – a brain disorder or a spiritual disorder",
@@ -71,5 +98,46 @@
     "rights_promotion": false,
     "canonical_identity_promotion": false
   },
-  "next_gate": "Verify live Reddit metadata through an authorised access path, review the linked article and counter-context, then decide whether to admit a bounded record through the governed N2N review process."
+  "next_gate": "Recover documented provenance for the original public metadata lookup or replace the candidate metadata through an authorised audited metadata-only access path; reconcile with historical source URL-f46fe77193184c4b (not an independent source), review the linked article and counter-context, and obtain human review before any governed admission. Reddit live access remains HOLD; this correction authorises no live fetch.",
+  "historical_reconciliation": {
+    "checked_at": "2026-09-30T06:03:23Z",
+    "repository_commit": "d523970e10c9a3a136ce9f13ad1ef95f0170fb0c",
+    "duplicate_check_result": "EXISTING_HISTORICAL_RECORD_SAME_POST_ID_AND_NORMALIZED_URL",
+    "comparison_method": "Exact Reddit post ID and normalized URL equality; strip the intake URL trailing slash. Read CSV rows and the inventory entry locally without accessing Reddit.",
+    "normalized_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/19cnl51/abstract_introduction_conclusion_addiction_a",
+    "historical_source_id": "URL-f46fe77193184c4b",
+    "historical_retrieval_status": "UNASSESSED",
+    "historical_retrieved_on": null,
+    "historical_observed_title": null,
+    "documented_sources": [
+      {
+        "repository_path": "references/community/reddit-semantic-index.csv",
+        "sha256": "4a025c5f2fd673be8864d9d94ccf59b06a3fd5cd36647977eea44c090959b5f0",
+        "lines": [
+          4343
+        ]
+      },
+      {
+        "repository_path": "references/community/reddit-uri-index.csv",
+        "sha256": "3a6a702061cff7ae9e8d555b1de32b17cba9401f59451fce739f7f8411804b80",
+        "lines": [
+          4343
+        ]
+      },
+      {
+        "repository_path": "references/community/source-url-inventory-v0.15/shard-f.json",
+        "sha256": "2c8274d9ac1661dfe27ea05e2abd79666446a3ca1a963ae3111b2928fb4ad3d0",
+        "line_range": [
+          3741,
+          3769
+        ]
+      }
+    ],
+    "relationship": "REVIEW_METADATA_FOR_EXISTING_HISTORICAL_POINTER_NOT_AN_INDEPENDENT_SOURCE",
+    "independent_source": false,
+    "new_source_ingested": false,
+    "canonical_identity_verified": false,
+    "reconciliation_scope": "Exact pointer match only; no new canonical identity, origin, title/date, evidence or rights verification. Preserve historical retrieval UNASSESSED and unresolved origin.",
+    "classification_state": "HOLD_PENDING_PROVENANCE_AND_HUMAN_REVIEW"
+  }
 }
