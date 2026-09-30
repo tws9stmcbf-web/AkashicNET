@@ -10,6 +10,8 @@ function SourceRefs({ ids, sources }: { ids: string[]; sources: TopicRecord["sou
   })}</span> : <span> · No claim-level sources recorded</span>;
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return topics.map((topic) => ({ slug: topic.slug }));
 }
@@ -63,6 +65,11 @@ export default async function TopicPage({
             <p>{topic.origin.documentary_trace ?? "Not yet established."}</p>
             <p><strong>Ultimate-origin status:</strong> {topic.origin.ultimate_status}</p>
             <p>{topic.origin.evidence_note}</p>
+            <h3>Claimed origins and competing interpretations</h3>
+            <p>These are recorded accounts, not established conclusions.</p>
+            {topic.origin.claimed_origins.length ? (
+              <ul>{topic.origin.claimed_origins.map((origin) => <li key={origin}>{origin}</li>)}</ul>
+            ) : <p>No claimed origins recorded.</p>}
           </article>
 
           <article className={styles.panel}>
@@ -98,7 +105,7 @@ export default async function TopicPage({
                 <section key={candidate.label}>
                   <h3>{candidate.label}</h3>
                   <p>{candidate.level} · evidence: {candidate.evidence_status}<SourceRefs ids={candidate.source_ids} sources={topic.sources} /></p>
-                  <p><strong>Potential benefits:</strong> {candidate.potential_benefits.join(", ")}</p>
+                  <p><strong>Proposed benefits (not established by listing):</strong> {candidate.potential_benefits.join(", ")}</p>
                   <p><strong>Tradeoffs:</strong> {candidate.tradeoffs.join(", ")}</p>
                 </section>
               ))}

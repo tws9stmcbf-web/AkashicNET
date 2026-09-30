@@ -161,9 +161,32 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "edge_status": {
+                  "enum": [
+                    "documented",
+                    "taxonomic",
+                    "co-occurrence"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "source_ids": {
+                  "minItems": 1
+                }
+              }
             }
           }
-        }
+        ]
       }
     },
     "sources": {
@@ -325,13 +348,13 @@
               },
               "evidence_status": {
                 "enum": [
-                  "established",
                   "supported",
                   "mixed",
                   "hypothesised",
                   "traditional-practice",
                   "unassessed"
-                ]
+                ],
+                "description": "Established is unavailable in v0.1: independent reviewed evidence and replication are not represented."
               },
               "potential_benefits": {
                 "type": "array",
@@ -349,10 +372,69 @@
                 "type": "array",
                 "items": {
                   "type": "string"
+                },
+                "uniqueItems": true
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "evidence_status": {
+                      "enum": [
+                        "supported",
+                        "mixed"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "source_ids": {
+                      "minItems": 1
+                    }
+                  }
                 }
               }
-            }
+            ]
           }
+        }
+      }
+    },
+    "public_clearance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "reviewed_on",
+        "decision_ref",
+        "privacy_checked",
+        "rights_checked",
+        "cultural_sovereignty_checked"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "HOLD",
+            "CLEARED"
+          ]
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "decision_ref": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "privacy_checked": {
+          "const": true
+        },
+        "rights_checked": {
+          "const": true
+        },
+        "cultural_sovereignty_checked": {
+          "const": true
         }
       }
     }
@@ -434,8 +516,18 @@
                 ]
               }
             }
+          },
+          "public_clearance": {
+            "properties": {
+              "decision": {
+                "const": "CLEARED"
+              }
+            }
           }
-        }
+        },
+        "required": [
+          "public_clearance"
+        ]
       }
     }
   ]

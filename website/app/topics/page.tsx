@@ -23,7 +23,7 @@ export default function TopicsPage() {
         <p className={styles.eyebrow}>Universal Topic Atlas · v{topicSeed.schema_version} · Exploratory</p>
         <h1>A page for every describable topic.</h1>
         <p>AkashicNET can grow toward a connected page for any subject while preserving what is documented, what is interpreted and what remains unknown.</p>
-        <p className={styles.boundary}><strong>Discovery boundary:</strong> appearing in this atlas does not make a topic, claim or connection true. Review and reuse state appear on each record; presence in the atlas does not imply approval or publication.</p>
+        <p className={styles.boundary}><strong>Discovery boundary:</strong> appearing in this atlas does not make a topic, claim or connection true. Review and reuse state appear on each record; public-safe clearance permits display only; it does not promote scientific evidence or reuse rights.</p>
       </section>
 
       <section className={styles.content} id="atlas">
@@ -34,6 +34,7 @@ export default function TopicsPage() {
           </div>
           <p className={styles.count}>{topics.length} topic records · {topicSeed.registries.length} registries</p>
         </div>
+        <p>Only records with an explicit public-safe clearance are shown. Uncleared records remain withheld.</p>
         <div className={styles.grid}>
           {topics.map((topic) => (
             <a className={styles.card} href={`/topics/${topic.slug}`} key={topic.id}>

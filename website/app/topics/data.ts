@@ -1,6 +1,15 @@
+import { isPublicTopic } from "./public-eligibility.mjs";
 import seed from "../../../data/global_metadata_discovery_v01.seed.json";
 
 export type TopicRecord = {
+  public_clearance?: {
+    decision: "HOLD" | "CLEARED";
+    reviewed_on: string;
+    decision_ref: string;
+    privacy_checked: true;
+    rights_checked: true;
+    cultural_sovereignty_checked: true;
+  };
   id: string;
   slug: string;
   label: string;
@@ -35,7 +44,7 @@ export type TopicRecord = {
   }>;
   rights: {
     mode: string;
-    license: string | null;
+    license?: string | null;
     note: string;
   };
   open_questions: string[];
@@ -45,7 +54,7 @@ export type TopicRecord = {
     candidates: Array<{
       label: string;
       level: "individual" | "community" | "institutional" | "policy" | "ecological" | "multi-level";
-      evidence_status: "established" | "supported" | "mixed" | "hypothesised" | "traditional-practice" | "unassessed";
+      evidence_status: "supported" | "mixed" | "hypothesised" | "traditional-practice" | "unassessed";
       potential_benefits: string[];
       tradeoffs: string[];
       source_ids: string[];
@@ -64,7 +73,7 @@ export const topicSeed = seed as unknown as {
   topics: TopicRecord[];
 };
 
-export const topics = [...topicSeed.topics].sort((a, b) =>
+export const topics = topicSeed.topics.filter(isPublicTopic).sort((a, b) =>
   a.label.localeCompare(b.label),
 );
 
