@@ -135,13 +135,19 @@
   "recommended_destination": {
     "internal": "AkashicNET Human–AI Cognition and Ethics Watch",
     "community_candidate": "r/NeuronsToNirvana",
-    "publication_condition": "Only after separate human review and with framing centred on appearance versus evidence; not as a sentience claim."
+    "publication_condition": "Publication is closed and Reddit live access remains HOLD. Separate human review does not authorize live access or publication; any future release requires a separate governed gate decision and framing centred on appearance versus evidence, not a sentience claim."
   },
   "governance": {
     "review_only": true,
     "question_statuses_unchanged": true,
     "bq001_status": "UNRESOLVED",
     "bq005_to_bq007_statuses_unchanged": true,
+    "bq005_status": "UNRESOLVED",
+    "bq006_status": "UNRESOLVED",
+    "bq007_status": "UNRESOLVED",
+    "privacy_posture_changed": false,
+    "private_material_allowed": false,
+    "private_drive_material_allowed": false,
     "supports_models": [],
     "accepted_edges": [],
     "accepted_evidence_batch": false,
@@ -153,6 +159,8 @@
     "rights_promotion_allowed": false,
     "public_synthesis_updated": false,
     "website_updated": false,
+    "reddit_live_access": "HOLD",
+    "reddit_publication_allowed": false,
     "reddit_publication_applied": false,
     "human_review_required": true
   }
