@@ -158,6 +158,61 @@
       "truth_inference_allowed": false,
       "scientific_evidence_promotion_allowed": false,
       "review_state": "CONTEXT_ONLY"
+    },
+    {
+      "source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Psi Encyclopedia",
+      "source_type": "specialist encyclopedia / tertiary reference; individual entries may provide secondary research synthesis",
+      "publisher": "Society for Psychical Research",
+      "original_url": "https://psi-encyclopedia.spr.ac.uk/",
+      "retrieved_at": "2026-10-01",
+      "topics_described": [
+        "experimental parapsychology",
+        "ESP and psychokinesis",
+        "near-death and out-of-body experiences",
+        "mediumship and survival of death",
+        "reincarnation",
+        "research methods and sceptical perspectives"
+      ],
+      "classification": "SPECIALIST_REFERENCE_AND_RESEARCH_DISCOVERY",
+      "editorial_orientation": "Favourable toward psi research. The About page asserts that the literature validates psi and states that the encyclopedia reflects experimenters' and investigators' findings; this is the publisher's position, not an AkashicNET finding.",
+      "editorial_features": [
+        "signed articles and named editorial staff",
+        "staff writers and specialist contributors",
+        "some case studies link original research reports"
+      ],
+      "review_scope": "Homepage, About page and the 2026-09-28 editorial inspected. Individual encyclopedia entries and their underlying studies have not been appraised by this registration.",
+      "provenance_sources": [
+        {
+          "url": "https://psi-encyclopedia.spr.ac.uk/",
+          "role": "Publisher identity, signed-article description and topic coverage",
+          "retrieved_at": "2026-10-01"
+        },
+        {
+          "url": "https://psi-encyclopedia.spr.ac.uk/about/",
+          "role": "Editorial orientation, contributor types and links to original reports",
+          "retrieved_at": "2026-10-01"
+        },
+        {
+          "url": "https://psi-encyclopedia.spr.ac.uk/2026/09/28/the-psi-encyclopedia-vs-wikipedia/",
+          "role": "Editorial context; claims about Wikipedia bias require separate verification",
+          "retrieved_at": "2026-10-01"
+        }
+      ],
+      "claim_boundary": "Use for attributed background, research history and discovery of original sources. Assess each entry and underlying study separately, including methods, limitations, critical analyses and independent replications. Registration does not establish psi, reincarnation, postmortem survival or any other disputed claim; editorial review must not be assumed to equal journal peer review.",
+      "evidence_lineage_rule": "An encyclopedia entry, the original study it describes and other summaries of that study belong to the same evidence lineage. Registration contributes zero independent studies or replications. Any future study-level records require identity and dataset deduplication; multiple articles or publishers do not establish independence.",
+      "independent_studies_added": 0,
+      "supports_models": [],
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "reuse_boundary": "Public access does not grant republication rights. No article text, research-report PDFs or images are ingested or reproduced; any future reuse needs a separate rights assessment.",
+      "content_ingested": false,
+      "truth_inference_allowed": false,
+      "rights_promotion_allowed": false,
+      "scientific_evidence_promotion_allowed": false,
+      "canonical_identity_promotion_allowed": false,
+      "public_promotion_allowed": false,
+      "review_state": "REVIEW_REQUIRED",
+      "big_question_boundary": "No Big Question status or claim-to-source mapping changes; all existing UNRESOLVED statuses remain unchanged."
     }
   ]
 }
