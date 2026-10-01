@@ -76,6 +76,39 @@ class GovernanceTests(unittest.TestCase):
                 self.assertIn('ambiguous event supersession',
                               ' '.join(validator.validate(record)))
 
+    def test_supersession_cannot_clear_another_reference(self):
+        for gate in ('privacy', 'cultural_authority'):
+            with self.subTest(gate=gate):
+                record = self.candidate()
+                other = copy.deepcopy(record['perspectives'][0])
+                other['perspective_id'] = 'EPI-SECOND'
+                record['perspectives'].append(other)
+                pending = self.pending_event(gate)
+                successor = self.pending_event(gate, 'ASSESS-CLEAR')
+                successor.update(affected_ref='EPI-SECOND', gates_pending=[],
+                                 gates_passed=[gate],
+                                 supersedes_event_id=pending['assessment_event_id'])
+                record['assessment_history'] = [pending, successor]
+                before = copy.deepcopy(record)
+                self.assertTrue(validator.VALIDATOR.is_valid(record))
+                self.assertIn(gate, ' '.join(validator.validate(record)))
+                self.assertEqual(record, before)
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / 'cross-reference.json'
+                    path.write_text(json.dumps(record))
+                    result = subprocess.run([sys.executable, str(SCRIPT), str(path)],
+                                            capture_output=True, text=True)
+                    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+                    self.assertIn(gate, result.stdout)
+                    self.assertNotIn('Traceback', result.stderr)
+                # HOLD retains the unresolved history without granting clearance.
+                record['governance']['publication_status'] = 'hold'
+                self.assertEqual(validator.validate(record), [])
+                # Clearance for the original reference remains structurally valid.
+                record['governance']['publication_status'] = 'review_candidate'
+                successor['affected_ref'] = pending['affected_ref']
+                self.assertEqual(validator.validate(record), [])
+
     def test_pending_fixture_is_valid_without_mutation(self):
         before = copy.deepcopy(self.record)
         self.assert_validity(self.record, True)

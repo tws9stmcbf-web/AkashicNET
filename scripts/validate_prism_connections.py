@@ -136,7 +136,8 @@ def validate(record):
                 pending = set(event.get('gates_pending', [])) & {
                     'privacy', 'cultural_authority'}
                 successor = successors.get(event['assessment_event_id'])
-                if successor:
+                # A clearance only resolves gates for the same affected reference.
+                if successor and successor['affected_ref'] == event['affected_ref']:
                     pending -= set(successor.get('gates_passed', []))
                 if pending:
                     errors.append('assessment_history: event '
