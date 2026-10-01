@@ -50,8 +50,13 @@ for (const width of [320, 375, 820, 821, 900, 1024, 1280, 1440]) {
       if (href) reached.add(href);
     }
     for (const [route] of locales) expect(reached.has(route)).toBe(true);
-    const bounds = await header.boundingBox();
-    const hero = await page.locator('.hero').boundingBox();
-    expect(hero!.y).toBeGreaterThanOrEqual(bounds!.y + bounds!.height);
+    // Keyboard focus can trigger smooth scrolling. Read both viewport-relative
+    // rectangles in one browser task so scrolling cannot move one between reads.
+    const gap = await page.evaluate(() => {
+      const header = document.querySelector('.home-nav')!.getBoundingClientRect();
+      const hero = document.querySelector('.hero')!.getBoundingClientRect();
+      return hero.top - header.bottom;
+    });
+    expect(gap).toBeGreaterThanOrEqual(0);
   });
 }
