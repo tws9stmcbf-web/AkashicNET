@@ -1,0 +1,166 @@
+"""Regression cases for fabricated reads, promotion and checkpoint drift."""
+import copy
+import importlib.util
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import unittest
+
+ROOT = Path(__file__).resolve().parents[1]
+SCRIPT = ROOT / 'scripts/validate_prism_blocked_crosswalk.py'
+SPEC = importlib.util.spec_from_file_location('crosswalk_validator', SCRIPT)
+validator = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(validator)
+
+
+class CrosswalkTests(unittest.TestCase):
+    def setUp(self):
+        self.data = validator.load_crosswalk(validator.DEFAULT_PATH)
+
+    def test_current_checkpoint_passes(self):
+        self.assertEqual(validator.validate(self.data), [])
+
+    def test_every_summary_count_is_required_and_pinned_or_derived(self):
+        for field in self.data['assessment_summary']:
+            for value in (999, None, False, '0', 'missing'):
+                with self.subTest(field=field, value=value):
+                    data = copy.deepcopy(self.data)
+                    if value == 'missing':
+                        del data['assessment_summary'][field]
+                    else:
+                        data['assessment_summary'][field] = value
+                    self.assertTrue(validator.validate(data))
+
+    def test_record_specific_fields_cannot_drift_or_disappear(self):
+        fields = ('blocker', 'next_action', 'linked_investigations',
+                  'topic_routing', 'source_metadata_label')
+        for index in range(len(self.data['records'])):
+            for field in fields:
+                for remove in (False, True):
+                    with self.subTest(index=index, field=field, remove=remove):
+                        data = copy.deepcopy(self.data)
+                        if remove:
+                            del data['records'][index][field]
+                        else:
+                            data['records'][index][field] = 'invented'
+                        self.assertTrue(validator.validate(data))
+
+    def test_record_contract_cannot_be_swapped_between_ids(self):
+        records = self.data['records']
+        records[0]['subject_ref'], records[-1]['subject_ref'] = (
+            records[-1]['subject_ref'], records[0]['subject_ref'])
+        self.assertTrue(validator.validate(self.data))
+
+    def test_workflow_watches_schemas_and_website_for_both_events(self):
+        workflow = (ROOT / '.github/workflows/validate-prism-blocked-crosswalk.yml').read_text()
+        for event in ('pull_request:', 'push:'):
+            section = workflow.split('  ' + event, 1)[1].split('\n\n', 1)[0]
+            if event == 'pull_request:':
+                section = section.split('  push:', 1)[0]
+            self.assertIn("'schemas/akashic-prism*.schema.json'", section)
+            self.assertIn("'website/**'", section)
+
+    def test_faq_architecture_is_proposed_and_uses_perspectives(self):
+        faq = (ROOT / 'website/app/faq/page.tsx').read_text()
+        section = faq.split('id: "prism-architecture"', 1)[1].split('\n      }', 1)[0]
+        self.assertIn('proposed AkashicOMNI v0.5.0', section)
+        self.assertIn('twelve analytical perspectives', section)
+        self.assertIn('v0.4.3 remains current', section)
+        self.assertIn('three temporal CUT views of one framework', section)
+        self.assertNotIn('twelve frameworks', section)
+
+    def test_record_order_does_not_change_membership(self):
+        self.data['records'].reverse()
+        self.assertEqual(validator.validate(self.data), [])
+
+    def test_unread_cannot_become_not_applicable_or_verified(self):
+        for status in ('NOT_APPLICABLE', 'VERIFIED', None):
+            with self.subTest(status=status):
+                self.data['records'][0]['paper_link_resolution']['status'] = status
+                self.assertTrue(validator.validate(self.data))
+
+    def test_fabricated_source_metadata_is_rejected(self):
+        for field, value in {'primary_doi': '10.1234/fabricated',
+                             'additional_dois': ['10.1234/other'],
+                             'paper_title': 'Unverified title',
+                             'paper_authors': ['Unverified author'],
+                             'checked_on': '2026-09-23',
+                             'verification_depth': 'FULL_TEXT',
+                             'relationship_to_post': 'VERIFIED',
+                             'link_found_in': 'post',
+                             'link_evidence_locator': 'invented'}.items():
+            with self.subTest(field=field):
+                data = copy.deepcopy(self.data)
+                data['records'][0]['paper_link_resolution'][field] = value
+                self.assertTrue(validator.validate(data))
+
+    def test_missing_and_unknown_resolution_fields_fail(self):
+        for field in self.data['records'][0]['paper_link_resolution']:
+            data = copy.deepcopy(self.data)
+            del data['records'][0]['paper_link_resolution'][field]
+            self.assertTrue(validator.validate(data), field)
+        self.data['records'][0]['paper_link_resolution']['approved'] = True
+        self.assertTrue(validator.validate(self.data))
+
+    def test_all_permissions_require_explicit_false(self):
+        for permission in self.data['records'][0]['promotion_permissions']:
+            for value in (True, 0, None, 'false'):
+                data = copy.deepcopy(self.data)
+                data['records'][0]['promotion_permissions'][permission] = value
+                self.assertTrue(validator.validate(data), (permission, value))
+            data = copy.deepcopy(self.data)
+            del data['records'][0]['promotion_permissions'][permission]
+            self.assertTrue(validator.validate(data), permission)
+
+    def test_membership_drift_fails_even_with_same_total(self):
+        self.data['records'][1] = copy.deepcopy(self.data['records'][0])
+        self.assertTrue(validator.validate(self.data))
+
+    def test_missing_record_and_adjusted_total_fail(self):
+        self.data['records'].pop()
+        self.data['assessment_summary']['source_records'] = 40
+        self.assertTrue(validator.validate(self.data))
+
+    def test_pin_and_metadata_provenance_tampering_fail(self):
+        for path, field in [('source_checkpoint', 'head_commit'),
+                            ('source_checkpoint', 'blob_sha')]:
+            data = copy.deepcopy(self.data)
+            data[path][field] = '0' * 40
+            self.assertTrue(validator.validate(data))
+        self.data['doi_enrichment_followup']['metadata_check']['source_blob'] = '0' * 40
+        self.assertTrue(validator.validate(self.data))
+
+    def test_count_and_gate_changes_fail(self):
+        for field in ('source_records', 'original_blocked', 'original_complete',
+                      'prism_registered_metadata_only', 'publication_eligible'):
+            data = copy.deepcopy(self.data)
+            data['assessment_summary'][field] += 1
+            self.assertTrue(validator.validate(data), field)
+        for field, value in [('reddit_live_access', 'OPEN'), ('publication', 'OPEN'),
+                             ('accepted_canonical_edges', 1), ('big_questions', 'RESOLVED')]:
+            data = copy.deepcopy(self.data)
+            data['safeguards'][field] = value
+            self.assertTrue(validator.validate(data), field)
+
+    def test_malformed_shapes_report_errors(self):
+        for value in (None, [], 'record'):
+            data = copy.deepcopy(self.data)
+            data['records'][0] = value
+            self.assertTrue(validator.validate(data))
+        self.assertTrue(validator.validate([]))
+
+    def test_cli_rejects_invalid_json_without_traceback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'bad.json'
+            for content in ('{', '{"records": [], "records": []}', '{"value": NaN}'):
+                path.write_text(content)
+                result = subprocess.run([sys.executable, str(SCRIPT), str(path)],
+                                        capture_output=True, text=True)
+                self.assertEqual(result.returncode, 1)
+                self.assertIn('ERROR:', result.stdout)
+                self.assertNotIn('Traceback', result.stderr)
+
+
+if __name__ == '__main__':
+    unittest.main()
