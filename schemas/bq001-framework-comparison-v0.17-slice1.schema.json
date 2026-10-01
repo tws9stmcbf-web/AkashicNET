@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/bq001-framework-comparison-v0.17-slice1.schema.json",
+  "title": "BQ001 v0.17 framework comparison packet slice 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["accepted_edges", "comparison_rows", "correction_records", "counter_inferences", "input_anchors", "input_commit", "mode", "operational_boundaries", "packet_id", "promotion_guards", "question_id", "question_status", "research_gaps", "shared_ancestry_groups", "version"],
+  "properties": {
+    "accepted_edges": {"const": 0},
+    "comparison_rows": {"type": "array", "minItems": 11, "maxItems": 11, "uniqueItems": true, "items": {"$ref": "#/$defs/comparisonRow"}},
+    "correction_records": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/correctionRecord"}},
+    "counter_inferences": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "input_anchors": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/inputAnchor"}},
+    "input_commit": {"const": "ac30ecebdc2af6a2dea9c0c8fc00a5f33763fa44"},
+    "mode": {"const": "REVIEW_ONLY"},
+    "operational_boundaries": {"$ref": "#/$defs/operationalBoundaries"},
+    "packet_id": {"const": "BQ001-FRAMEWORK-COMPARISON-V017-SLICE1"},
+    "promotion_guards": {"$ref": "#/$defs/promotionGuards"},
+    "question_id": {"const": "BQ001"},
+    "question_status": {"const": "UNRESOLVED"},
+    "research_gaps": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "shared_ancestry_groups": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/sharedAncestry"}},
+    "version": {"const": "0.1.0"}
+  },
+  "$defs": {
+    "comparisonRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["boundary", "canonical_name", "category", "comparison_state", "counter_evidence_state", "evidence_role", "independence_state", "inventory_item_id", "linked_record_ids", "relation_to_bq001"],
+      "properties": {
+        "boundary": {"type": "string", "minLength": 1},
+        "canonical_name": {"type": "string", "minLength": 1},
+        "category": {"enum": ["UMBRELLA_MODEL", "PHILOSOPHICAL_FRAMEWORK", "CONTEMPLATIVE_PHILOSOPHICAL_FRAMEWORK", "PEER_REVIEWED_REVIEW_FRAMEWORK", "PEER_REVIEWED_THEORETICAL_FRAMEWORK", "NEUROSCIENTIFIC_EXPLANATORY_MODEL", "CONSCIOUSNESS_THEORY"]},
+        "comparison_state": {"enum": ["MODEL_CONTRACT_ONLY_NOT_ADJUDICATED", "INTERPRETIVE_FRAMEWORK_NOT_EMPIRICAL_ADJUDICATION", "LIVING_BRAIN_TESTED_NOT_ADJUDICATED_FOR_BQ001"]},
+        "counter_evidence_state": {"enum": ["PACKET_LEVEL_COUNTER_INFERENCES_PRESERVED", "NO_FRAMEWORK_SPECIFIC_COUNTERCLAIM_IN_PINNED_INVENTORY", "SHARED_ADVERSARIAL_RESULT_CHALLENGED_PREDICTIONS_NOT_A_BQ001_COUNTERCLAIM"]},
+        "evidence_role": {"enum": ["organising_model_only", "INTERPRETATION", "Established Evidence"]},
+        "independence_state": {"enum": ["NOT_APPLICABLE_TO_MODEL", "UNASSESSED_REVIEW_REQUIRED", "SINGLE_GOVERNED_SOURCE_DO_NOT_COUNT_AS_REPLICATION", "SHARED_SOURCE_WITH_GNWT_DO_NOT_DOUBLE_COUNT"]},
+        "inventory_item_id": {"type": "string", "pattern": "^FW-BQ001-"},
+        "linked_record_ids": {"type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "relation_to_bq001": {"type": "string", "minLength": 1}
+      }
+    },
+    "correctionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "evidence_label_changed", "related_notice_doi", "result"],
+      "properties": {
+        "claim_id": {"const": "CLAIM-BQ001-MARTIAL-2025-INTERP-01"},
+        "evidence_label_changed": {"const": false},
+        "related_notice_doi": {"const": "10.1038/s41582-025-01111-9"},
+        "result": {"const": "NO_MATERIAL_IMPACT_ON_MAPPED_HIGH_LEVEL_INTERPRETATION_IDENTIFIED"}
+      }
+    },
+    "inputAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["git_blob_sha", "path"],
+      "properties": {
+        "git_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "path": {"type": "string", "pattern": "^references/big-questions/BQ001/[^/]+\\.json$"}
+      }
+    },
+    "operationalBoundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analytics_activation_allowed", "multimedia_generation_allowed", "private_drive_material_allowed", "reddit_live_access", "website_publication_allowed"],
+      "properties": {
+        "analytics_activation_allowed": {"const": false},
+        "multimedia_generation_allowed": {"const": false},
+        "private_drive_material_allowed": {"const": false},
+        "reddit_live_access": {"const": "HOLD"},
+        "website_publication_allowed": {"const": false}
+      }
+    },
+    "promotionGuards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted_edge_creation_allowed", "evidence_promotion_allowed", "framework_count_is_vote", "ranking_allowed", "rights_promotion_allowed", "scientific_evidence_promotion_allowed", "shared_source_counts_as_independent_confirmation", "source_count_upgrades_evidence", "truth_inference_allowed"],
+      "properties": {
+        "accepted_edge_creation_allowed": {"const": false},
+        "evidence_promotion_allowed": {"const": false},
+        "framework_count_is_vote": {"const": false},
+        "ranking_allowed": {"const": false},
+        "rights_promotion_allowed": {"const": false},
+        "scientific_evidence_promotion_allowed": {"const": false},
+        "shared_source_counts_as_independent_confirmation": {"const": false},
+        "source_count_upgrades_evidence": {"const": false},
+        "truth_inference_allowed": {"const": false}
+      }
+    },
+    "sharedAncestry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "inventory_item_ids", "rule", "source_id"],
+      "properties": {
+        "claim_id": {"const": "CLAIM-BQ001-COGITATE-2025-OBS-01"},
+        "inventory_item_ids": {"const": ["FW-BQ001-CONSCIOUSNESS-GNWT", "FW-BQ001-CONSCIOUSNESS-IIT"]},
+        "rule": {"const": "ONE_GOVERNED_SOURCE_NOT_TWO_INDEPENDENT_CONFIRMATIONS"},
+        "source_id": {"const": "SRC-BQ001-COGITATE-2025"}
+      }
+    }
+  }
+}
