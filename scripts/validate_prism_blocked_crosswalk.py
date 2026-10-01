@@ -291,6 +291,21 @@ def validate(data):
     for key, (field, value) in mappings.items():
         count = sum(isinstance(r, dict) and same(r.get(field), value) for r in records)
         fixed(summary, key, count, 'assessment_summary')
+    fixed(summary, 'provisional_topic_routing_records', sum(
+        isinstance(r, dict) and isinstance(r.get('topic_routing'), str)
+        and bool(r['topic_routing'].strip()) for r in records), 'assessment_summary')
+    fixed(summary, 'source_metadata_speculation_labels', sum(
+        isinstance(r, dict) and r.get('source_metadata_label') ==
+        'speculation (archive metadata; unverified)' for r in records), 'assessment_summary')
+    shared_groups = {group for r in records if isinstance(r, dict)
+                     for group in (r.get('linked_investigations', [])
+                                   if isinstance(r.get('linked_investigations'), list) else [])
+                     if isinstance(group, str)}
+    fixed(summary, 'shared_post_investigation_groups', len(shared_groups), 'assessment_summary')
+    # The immutable ledger also has N2N-INV-004, an OPEN tool dependency
+    # investigation with no affected post IDs. It must not inflate post counts.
+    fixed(summary, 'tool_only_investigation_groups', 1, 'assessment_summary')
+    fixed(summary, 'open_investigation_groups', len(shared_groups) + 1, 'assessment_summary')
     for key, permission in {
         'substantive_interpretation_eligible': 'substantive_interpretation',
         'scientific_evidence_promotion_eligible': 'scientific_evidence',

@@ -123,7 +123,7 @@ export default function AboutPage() {
       </aside>
 
       <aside className="page-provenance" aria-label="Page version and update date">
-        <span>About page · Anonymous public edition</span><span>AkashicNET · Pre-alpha</span><span>Updated 30 August 2026</span>
+        <span>About page · Anonymous public edition</span><span>Updated 30 August 2026</span>
       </aside>
       <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Unity through neurodiversity.</p><p>Awaken within · Serve without · 2026</p></footer>
     </main>

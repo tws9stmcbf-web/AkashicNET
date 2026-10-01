@@ -174,6 +174,28 @@ class ConnectionTests(unittest.TestCase):
             network['counting_boundary']['independent_evidence_sources'] = 2
             self.assertTrue(validator.validate(self.record))
 
+    def test_doi_identity_aliases_cannot_inflate_independent_count(self):
+        self.independent_pair()
+        for left_field, right_field, left, right in (
+                ('doi', 'doi', '10.1234/Same', '10.1234/same'),
+                ('doi', 'locator', '10.1234/same', 'https://doi.org/10.1234/same'),
+                ('locator', 'locator', 'https://doi.org/10.1234/same',
+                 'http://dx.doi.org/10.1234/same'),
+                ('locator', 'locator', 'https://doi.org/10.1234/same',
+                 'https://doi.org/10.1234/%73ame?utm_source=copy#abstract')):
+            with self.subTest(left=left, right=right):
+                record = copy.deepcopy(self.record)
+                record['source_network']['nodes'][0][left_field] = left
+                record['source_network']['nodes'][1][right_field] = right
+                self.assertTrue(validator.VALIDATOR.is_valid(record))
+                self.assertIn('independence conflicts', ' '.join(validator.validate(record)))
+
+    def test_valid_distinct_dois_do_not_fail_the_schema(self):
+        network = self.independent_pair()
+        network['nodes'][0]['doi'] = '10.1234/first'
+        network['nodes'][1]['doi'] = '10.1234/second'
+        self.assertEqual(validator.validate(self.record), [])
+
     def test_optional_connections_remain_optional(self):
         del self.record['connections']
         self.assertEqual(validator.validate(self.record), [])

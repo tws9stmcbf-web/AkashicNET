@@ -19,6 +19,9 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 
+# Review-only website harness dependencies/build outputs
+/tests/prism-website/node_modules/
+
 # Akashic Library runtime state
 /tools/akashic-library/state/*.jsonl
 /tools/akashic-library/state/checkpoint.json

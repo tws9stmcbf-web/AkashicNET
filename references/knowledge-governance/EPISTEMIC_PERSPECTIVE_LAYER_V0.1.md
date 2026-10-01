@@ -64,6 +64,8 @@ Alternate URLs, annotations and repeated citations do not become additional work
 
 The semantic validator recomputes `independent_evidence_sources` as the distinct work-identity groups participating in explicitly independent `supports` or `contradicts` edges. Both endpoints must resolve uniquely to verified sources with nonblank locators and work IDs. Shared work IDs, DOIs, post IDs or locators, and `same_work_as`/`derived_from` chains collapse identity groups; an independent edge within one group is rejected. No qualifying edges means zero. This is a conservative structural counting contract, not a finding of real-world independence or evidence promotion.
 
+Bare DOI identifiers and DOI-resolver locators (`doi.org` or `dx.doi.org`, HTTP or HTTPS) share one case-insensitive identity, including percent-encoded paths and locator query/fragment variants. This local alias resolution does not fetch the DOI or verify the work's content.
+
 ## Interpretive plurality and evidence maturation
 
 A record may be meaningful in several ways at once. A teaching may be literal within one attributed tradition, allegorical within a literary analysis, phenomenologically descriptive for an experiencer and a scientific hypothesis only where it makes a defined, testable claim. These modes are stored separately; none automatically cancels or validates the others.

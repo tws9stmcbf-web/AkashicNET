@@ -29,14 +29,14 @@ jobs:
           python-version: "3.11"
       - name: Build and validate candidates
         run: |
-          python scripts/prepare_semantic_link_candidates_v020.py
+          python scripts/prepare_semantic_link_candidates_v020.py --version 0.2.1
           python -m unittest -v tests/test_prepare_semantic_link_candidates_v020.py
           python -m py_compile scripts/prepare_semantic_link_candidates_v020.py tests/test_prepare_semantic_link_candidates_v020.py
       - name: Open governed candidate pull request when changed
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
-          OUTPUT: references/community/semantic-link-candidates-v0.2.0.json
+          OUTPUT: references/community/semantic-link-candidates-v0.2.1.json
         run: |
           if [ -z "$(git status --porcelain -- "$OUTPUT")" ]; then
             echo "Semantic link candidate packet is current; no pull request required."
@@ -58,6 +58,6 @@ jobs:
           gh label create human-reviewed --repo "$REPOSITORY" --color 0E8A16 --description "Human reviewed the governed packet; permits exact-head mechanical merge only" --force
           pr_url="$(gh pr create --repo "$REPOSITORY" --base main --head "$branch" --draft \
             --title "Prepare review-only semantic link candidates" \
-            --body $'Generated deterministically from the approved public-safe endpoint registry. Every record remains an `INFERRED_CANDIDATE`, requires human review, and is not an accepted graph edge, truth claim, evidence promotion, rights clearance, or canonical identity decision.\n\nAfter reviewing every literal label-to-topic proposal, add the `human-reviewed` label. The owner-only exact-head gate will squash-merge the proposal packet mechanically.')"
+            --body $'Generated deterministically from the approved public-safe endpoint registry. Every record remains an `INFERRED_CANDIDATE`, requires human review, and is not an accepted graph edge, truth claim, evidence promotion, rights clearance, or canonical identity decision.\n\nManual review and an explicit merge decision are required. The existing automatic merge gate remains restricted to v0.2.0 and does not authorize this v0.2.1 packet.')"
           echo "Opened $pr_url"
           gh workflow run validate-semantic-link-candidates.yml --repo "$REPOSITORY" --ref "$branch"

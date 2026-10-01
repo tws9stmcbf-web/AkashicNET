@@ -21,6 +21,17 @@ class CrosswalkTests(unittest.TestCase):
     def test_current_checkpoint_passes(self):
         self.assertEqual(validator.validate(self.data), [])
 
+    def test_every_summary_count_is_required_and_pinned_or_derived(self):
+        for field in self.data['assessment_summary']:
+            for value in (999, None, False, '0', 'missing'):
+                with self.subTest(field=field, value=value):
+                    data = copy.deepcopy(self.data)
+                    if value == 'missing':
+                        del data['assessment_summary'][field]
+                    else:
+                        data['assessment_summary'][field] = value
+                    self.assertTrue(validator.validate(data))
+
     def test_record_specific_fields_cannot_drift_or_disappear(self):
         fields = ('blocker', 'next_action', 'linked_investigations',
                   'topic_routing', 'source_metadata_label')

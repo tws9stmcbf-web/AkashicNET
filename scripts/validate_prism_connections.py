@@ -8,6 +8,8 @@ import argparse
 import json
 from collections import defaultdict
 from pathlib import Path
+import re
+from urllib.parse import unquote, urlsplit
 
 from jsonschema import Draft202012Validator
 
@@ -15,6 +17,23 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = json.loads((ROOT / 'schemas/akashic-prism-v0.1.schema.json').read_text())
 Draft202012Validator.check_schema(SCHEMA)
 VALIDATOR = Draft202012Validator(SCHEMA)
+
+
+def doi_identity(value):
+    """Resolve syntactic DOI aliases locally; never infer real independence."""
+    if not isinstance(value, str):
+        return None
+    value = value.strip()
+    if value.casefold().startswith('doi:'):
+        value = value[4:].strip()
+    try:
+        parsed = urlsplit(value)
+    except ValueError:
+        return None
+    if parsed.scheme.casefold() in ('http', 'https') and parsed.hostname in (
+            'doi.org', 'dx.doi.org'):
+        value = unquote(parsed.path.lstrip('/'))
+    return value.casefold() if re.fullmatch(r'10\.[0-9]{4,9}/\S+', value) else None
 
 
 def validate(record):
@@ -51,6 +70,13 @@ def validate(record):
         if len(matches) != 1:
             errors.append(f'source_network: ambiguous source identity {source_id}')
         for node in matches:
+            for field in ('doi', 'locator'):
+                doi = doi_identity(node.get(field))
+                if doi:
+                    key = ('canonical_doi', doi)
+                    if key in identities:
+                        union(source_id, identities[key])
+                    identities[key] = source_id
             for field in ('work_id', 'doi', 'post_id', 'locator'):
                 value = node.get(field)
                 if isinstance(value, str) and value.strip():
