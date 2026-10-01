@@ -52,6 +52,8 @@ def assert_review_artifact_registry(question_id: str, canonical: Path, artifacts
         assert resolved.parent == canonical.resolve(), f"{question_id}: review artifact escaped canonical tree"
         payload = json.loads(resolved.read_text(encoding="utf-8"))
         assert payload.get("status") == entry["status"], f"{question_id}: review artifact status mismatch: {path}"
+        assert payload.get("question_id") == question_id, f"{question_id}: review artifact question identity mismatch: {path}"
+        assert payload.get("question_status") == "UNRESOLVED", f"{question_id}: review artifact question must remain UNRESOLVED: {path}"
         maturity = payload.get("maturity", {})
         governance = payload.get("governance", {})
         assert maturity.get("candidate_level_applied") is False, f"{question_id}: review candidate was applied: {path}"
