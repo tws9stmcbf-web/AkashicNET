@@ -13,7 +13,7 @@ Publisher full-text HTML examined; supplementary materials and underlying datase
 ## Empirical findings and limitations
 Peer-reviewed analysis combined human and animal recordings across six species and seven anaesthetic regimes. Among over 6,000 features, 485 changed consistently across 15 contrasts: local activity persisted for shorter periods and regional synchrony decreased. Mean correlation between selected feature signatures was 0.86; this is not a consciousness-classification accuracy or a treatment effect.
 
-Samples comprised 15 humans, five macaques, four marmosets, 43 mice, seven zebrafish and ten nematodes, plus two macaques in the stimulation dataset. Centromedian-thalamus stimulation restored responsiveness and reversed the signature; a control stimulation site did neither.
+Samples comprised 15 humans, five macaques, four marmosets, 43 mice, seven zebrafish and ten nematodes, plus a stimulation dataset with two implanted macaques and three separate awake controls (Methods: Animals and ethics; Anesthesia protocol). Centromedian-thalamus stimulation restored responsiveness and reversed the signature; a control stimulation site did neither.
 
 Assessment: substantial cross-dataset convergence for an anaesthesia-associated signature; limited evidence for a general causal account of experience. Mostly existing datasets, exploratory feature selection, heterogeneous measurement, small primate samples and only two stimulation animals limit inference. No preregistration was verified. Independent prospective replication of the complete signature was not identified. The study contains feature-specific effect sizes rather than one pooled clinical effect. Behavioural unresponsiveness does not establish absence of subjective experience. Gene-expression associations and modelling suggest mechanisms requiring direct validation.
 
@@ -43,6 +43,6 @@ BQ001/BQ002 repository context was checked at e522b0cd1cf193981508ebe6fe6bfaadf3
 
 ## Review boundaries and next step
 All BQs remain UNRESOLVED. supports_models=[]; accepted canonical edges added=0.
-Canonical promotion, public synthesis, website update, scientific-evidence promotion, truth inference and rights promotion: false.
+Canonical promotion, public synthesis, website update, website promotion, scientific-evidence promotion, truth inference, rights promotion, privacy clearance and publication clearance: false.
 This is citation metadata and an original review draft; it is not an accepted evidence batch or publication clearance. No spiritual interpretation or channelled testimony is presented as empirical evidence.
 Before governed ingestion or public integration: review supplements, data/code availability, registration, confidence intervals, conflicts and correction notices; independently assess claim-to-source mappings; apply the existing review and rights process.
