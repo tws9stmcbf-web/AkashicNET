@@ -1873,7 +1873,53 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Retrospective questionnaire comparison with historical prospective cohorts",
+        "sample": {
+          "analysed_participants": 190,
+          "non_life_threatening_group": 50,
+          "coma_group": 140,
+          "coma_etiologies": {
+            "anoxic": 45,
+            "traumatic": 30,
+            "other": 65
+          },
+          "selection": "Self-selected respondents; Greyson score at least 7"
+        },
+        "outcomes": [
+          "Greyson NDE scale intensity and feature frequencies"
+        ],
+        "controls": "Coma etiologies and non-life-threatening accounts; published prospective anoxic cohorts are historical comparators.",
+        "reported_findings": "Authors report no intensity/content differences between non-life-threatening and coma groups; retrospective versus prospective feature frequencies differ.",
+        "limitations": [
+          "Retrospective self-report and recruitment selection.",
+          "Historical comparison does not isolate design effects.",
+          "Cross-publication participant overlap unverified."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00203/full",
+            "sections": [
+              "Materials and methods",
+              "Results"
+            ],
+            "retrieval_refs": [
+              "turn54view3",
+              "turn53view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS",
+        "data": {
+          "status": "PUBLIC_DATASET_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-OA-006",
@@ -1935,7 +1981,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Within-participant retrospective autobiographical-memory comparison",
+        "sample": {
+          "unique_participants": 25,
+          "memory_types_per_participant": 3,
+          "selection": "Reported life-threatening experience; Greyson score at least 7"
+        },
+        "outcomes": [
+          "Autobiographical Interview episodic/non-episodic detail scoring",
+          "Memory Characteristics Questionnaire",
+          "Centrality of Event Scale"
+        ],
+        "controls": "Each participant recalls NDE, flashbulb and control autobiographical memories.",
+        "reported_findings": "Authors report more episodic details in NDE recollections than comparison memories.",
+        "limitations": [
+          "Recollection richness does not establish event accuracy.",
+          "Retrospective, selected sample; overlap with other cohorts unverified."
+        ],
+        "data": {
+          "status": "AUTHOR_REQUEST",
+          "public_repository_verified": false,
+          "source_statement": "Datasets available on request to corresponding author."
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.00888/full",
+            "sections": [
+              "Materials and methods",
+              "Conclusion",
+              "Data availability statement"
+            ],
+            "retrieval_refs": [
+              "turn53view1",
+              "turn54view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS"
+      }
     },
     {
       "record_id": "CM-OA-007",
@@ -1998,7 +2087,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Retrospective text analysis of reported narrative sequences",
+        "sample": {
+          "written_narratives": 154,
+          "language": "French",
+          "selection": "Greyson score at least 7/32"
+        },
+        "analysis": "Feature coding and ordering inferred from narratives; two-rater agreement reported.",
+        "reported_findings": "Most frequent four-feature sequence occurred in only a limited subset; no universal order established.",
+        "limitations": [
+          "Narrative order does not measure physiological timing.",
+          "Retrospective selection and cross-publication overlap unverified."
+        ],
+        "correction_notice": {
+          "record_id": "CM-OA-008",
+          "doi": "10.3389/fnhum.2017.00435",
+          "scope": "REFERENCE_EDITOR_NAME"
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00311/full",
+            "sections": [
+              "Abstract",
+              "Materials and Methods",
+              "Correction link"
+            ],
+            "retrieval_refs": [
+              "turn55view2",
+              "turn53view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS",
+        "data": {
+          "status": "PUBLIC_DATASET_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      },
+      "lineage_note": "Original and corrigendum share a publication lineage; overlap with other NDE cohorts remains unverified."
     },
     {
       "record_id": "CM-OA-008",
@@ -2061,7 +2193,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Bibliographic corrigendum; no new experiment",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "correction_metadata": {
+          "target_record_id": "CM-OA-007",
+          "target_doi": "10.3389/fnhum.2017.00311",
+          "scope": "REFERENCE_EDITOR_NAME",
+          "incorrect_spelling": "Cardefia",
+          "corrected_spelling": "Cardeña",
+          "scientific_conclusions_changed_author_statement": false,
+          "independently_assessed": false
+        },
+        "limitations": [
+          "Authors state conclusions unchanged; this is not independent validation.",
+          "Correction and original belong to one publication lineage."
+        ],
+        "data": {
+          "status": "NOT_APPLICABLE_NO_NEW_DATASET",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00435/full",
+            "sections": [
+              "Correction to original article",
+              "Corrected reference"
+            ],
+            "retrieval_refs": [
+              "turn55view1",
+              "turn53view3"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS"
+      },
+      "lineage_note": "Correction to CM-OA-007; no new experimental cohort or independent confirmation."
     },
     {
       "record_id": "CM-OA-009",
@@ -4946,7 +5121,61 @@
         "rights_reference": "turn12view18",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "df56ccba2ecb36fae3b21bc840c5cbb94a334d6b2cb70633bbb0ea4bc1067229"
+      "input_record_sha256": "df56ccba2ecb36fae3b21bc840c5cbb94a334d6b2cb70633bbb0ea4bc1067229",
+      "study_metadata": {
+        "design": "Within-participant placebo-controlled, single-blind, fixed-order DMT study with separate NDE comparison",
+        "sample": {
+          "dosing_participants": 13,
+          "sessions_per_dosing_participant": 2,
+          "separate_nde_comparison_participants": 13,
+          "selection": "Healthy volunteers with prior classic psychedelic experience"
+        },
+        "controls": {
+          "session_order": [
+            "placebo",
+            "DMT"
+          ],
+          "session_interval_days": 7,
+          "order_randomized": false,
+          "blinding": "Participants blinded; research team aware",
+          "nde_comparator": "Age/gender-matched retrospective NDE reports"
+        },
+        "outcomes": [
+          "Greyson NDE scale primary",
+          "Ego-Dissolution Inventory",
+          "Mystical Experience Questionnaire"
+        ],
+        "reported_findings": "Authors report increased NDE-scale scores under DMT and phenomenological overlap with NDE reports.",
+        "limitations": [
+          "Small selected sample; fixed order and conspicuous effects constrain blinding.",
+          "Nonsignificant group differences do not establish equivalence.",
+          "Similarity does not establish survival or endogenous DMT causation.",
+          "EEG findings are reported elsewhere; comparator overlap unverified."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01424/full",
+            "sections": [
+              "Experimental Design",
+              "Study Procedures and Participants",
+              "Comparison to Actual Near-Death Experiences"
+            ],
+            "retrieval_refs": [
+              "turn55view0",
+              "turn54view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS",
+        "data": {
+          "status": "PUBLIC_DATASET_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B14-0020",
@@ -6123,6 +6352,19 @@
         "CM-PSI-020",
         "CM-PSI-026",
         "CM-PSI-027"
+      ],
+      "new_records_added": 0,
+      "evidence_promoted": false
+    },
+    {
+      "id": "ENRICHMENT-21",
+      "date": "2026-10-02",
+      "record_ids": [
+        "CM-OA-005",
+        "CM-OA-006",
+        "CM-OA-007",
+        "CM-OA-008",
+        "SRC-B14-0019"
       ],
       "new_records_added": 0,
       "evidence_promoted": false

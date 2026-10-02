@@ -67,6 +67,14 @@ def validate():
     assert dumas['analysed_participants'] == dumas['analysed_dyads'] * 2
     assert enriched['SRC-B15-0004']['study_metadata']['sample']['new_participants'] == 0
     assert enriched['SRC-B16-0002']['study_metadata']['sample']['new_experimental_cohort'] is False
+    nde = enriched['CM-OA-005']['study_metadata']['sample']
+    assert nde['non_life_threatening_group'] + nde['coma_group'] == nde['analysed_participants']
+    assert sum(nde['coma_etiologies'].values()) == nde['coma_group']
+    correction = enriched['CM-OA-008']['study_metadata']
+    assert correction['sample']['new_participants'] == 0 and not correction['sample']['new_experimental_cohort']
+    assert correction['correction_metadata']['target_doi'] == enriched['CM-OA-007']['doi']
+    assert enriched['CM-OA-007']['study_metadata']['correction_notice']['doi'] == enriched['CM-OA-008']['doi']
+    assert enriched['CM-OA-007']['lineage_group'] == enriched['CM-OA-008']['lineage_group']
     return {'passed': True, 'records': len(records), 'method_enriched_records': len(enriched), 'duplicate_ids_titles_dois_urls': 0,
             'independent_studies_promoted': 0, 'accepted_edges': 0,
             'website_updated': False, 'scientific_claims_validated': False,
