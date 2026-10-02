@@ -1,0 +1,25 @@
+{
+  "status": "PUBLIC_VERIFIED",
+  "publication_decision": "ELIGIBLE",
+  "scope": "Public-source bibliographic facts, links and original AI-assisted discovery notes; no article bodies or participant data",
+  "source_boundary": "53 records through batch 12, CM-OA-012, ten earlier publication leads and six compassion/prosocial leads; 70 total. Later source batches from other branches excluded.",
+  "sensitivity_review": "Passed: public author attribution only; no private provider IDs, credentials or personal correspondence",
+  "reuse_review": "Metadata/link and original-note scope reviewed; per-article notices retained; no blanket article or dataset reuse permission asserted",
+  "independent_studies_promoted": 0,
+  "accepted_edges_added": 0,
+  "canonical_bq_evidence_status_changed": false,
+  "appraisal_status": "PRELIMINARY",
+  "reviewed_on": "2026-10-02",
+  "preliminary_appraisals": 2,
+  "record_count": 70,
+  "new_reference_leads": 6,
+  "existing_records_enriched_in_this_pass": 0,
+  "independent_studies_added": 0,
+  "new_lead_review_status": "REVIEW_REQUIRED",
+  "retrieval_limits": [
+    "Selected methods and metadata only; no completed risk-of-bias appraisal.",
+    "Primary repository challenges and subscription access limited some checks; depths recorded per source.",
+    "No dataset files or reuse licences newly verified."
+  ],
+  "latest_batch": "Six compassion/prosocial leads CM-LEAD-011 to CM-LEAD-016"
+}
