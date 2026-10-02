@@ -1,0 +1,454 @@
+{
+  "created_on": "2026-10-02",
+  "batch": 13,
+  "purpose": "Licensed BQ002 and BQ003 discovery metadata",
+  "records": [
+    {
+      "record_id": "SRC-B13-0001",
+      "title": "Self-Reported Stickiness of Mind-Wandering Affects Task Performance",
+      "authors": [
+        "Marieke K. van Vugt",
+        "Nico Broers"
+      ],
+      "publication_date": "2016-05-18",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fpsyg.2016.00732",
+      "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00732/full",
+      "publisher": "Frontiers",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": null,
+      "study_design_note": "Behavioral task with thought reports",
+      "original_summary": "Examines links between difficulty disengaging from thoughts and task performance.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "mind-wandering",
+        "attention"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "Self-reports and task associations do not establish the ultimate origin of thoughts.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fpsyg.2016.00732",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00732/full",
+        "rights_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00732/full",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view0",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0002",
+      "title": "Neurocomputational Model of EEG Complexity during Mind Wandering",
+      "authors": [
+        "Antonio J. Ibáñez-Molina",
+        "Sergio Iglesias-Parro"
+      ],
+      "publication_date": "2016-03-04",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fncom.2016.00020",
+      "source_url": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2016.00020/full",
+      "publisher": "Frontiers",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": null,
+      "study_design_note": "Computational model with EEG comparison",
+      "original_summary": "Models interactions between default-mode and salience networks during internally directed attention.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "mind-wandering",
+        "attention"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "A plausible model is not a uniquely established causal explanation; empirical data lineage needs review.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fncom.2016.00020",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2016.00020/full",
+        "rights_source": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2016.00020/full",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view1",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0003",
+      "title": "Prediction of Mind-Wandering with Electroencephalogram and Non-linear Regression Modeling",
+      "authors": [
+        "Issaku Kawashima",
+        "Hiroaki Kumano"
+      ],
+      "publication_date": "2017-07-12",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fnhum.2017.00365",
+      "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00365/full",
+      "publisher": "Frontiers",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": null,
+      "study_design_note": "EEG prediction study",
+      "original_summary": "Uses EEG features and regression to estimate reported mind-wandering during an attention task.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "mind-wandering",
+        "attention"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "Young sample and task-specific probes limit generalisation; prediction is not causal explanation.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fnhum.2017.00365",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00365/full",
+        "rights_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00365/full",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view2",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0004",
+      "title": "Mindfulness and Compassion: An Examination of Mechanism and Scalability",
+      "authors": [
+        "Daniel Lim",
+        "Paul Condon",
+        "David DeSteno"
+      ],
+      "publication_date": "2015-02-17",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0118221",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118221",
+      "publisher": "Public Library of Science",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": "REVIEW_CANDIDATE",
+      "study_design_note": "Active-control training experiment",
+      "original_summary": "Compares app-based mindfulness training with cognitive training using an observed helping opportunity.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "meditation",
+        "compassion"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "A specific helping behaviour does not establish universal compassion or a cosmic property of consciousness.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0118221",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118221",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118221",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view3",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      },
+      "data_access_lead": {
+        "publisher_statement": "Relevant data in paper and supporting files",
+        "accessed": false
+      }
+    },
+    {
+      "record_id": "SRC-B13-0005",
+      "title": "Regulation of the Neural Circuitry of Emotion by Compassion Meditation: Effects of Meditative Expertise",
+      "authors": [
+        "Antoine Lutz",
+        "Julie Brefczynski-Lewis",
+        "Tom Johnstone",
+        "Richard J. Davidson"
+      ],
+      "publication_date": "2008-03-26",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0001897",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001897",
+      "publisher": "Public Library of Science",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": "REVIEW_CANDIDATE",
+      "study_design_note": "Expert/novice fMRI comparison",
+      "original_summary": "Examines responses to emotional sounds during compassion meditation and rest.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "meditation",
+        "compassion"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "Expert/novice differences can reflect selection and prior experience; brain signals are not direct measures of ethical conduct.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0001897",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001897",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001897",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view4",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0006",
+      "title": "Distinct Neural Activity Associated with Focused-Attention Meditation and Loving-Kindness Meditation",
+      "authors": [
+        "Tatia M. C. Lee",
+        "Mei-Kei Leung",
+        "Wai-Kai Hou",
+        "Joey C. Y. Tang",
+        "Jing Yin",
+        "Kwok-Fai So",
+        "Chack-Fan Lee",
+        "Chetwyn C. H. Chan"
+      ],
+      "publication_date": "2012-08-15",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0040054",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040054",
+      "publisher": "Public Library of Science",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": "REVIEW_CANDIDATE",
+      "study_design_note": "Expert/novice fMRI comparison",
+      "original_summary": "Compares attention and emotion processing across focused-attention and loving-kindness meditation.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "meditation",
+        "compassion"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "Restricted participant population and expertise comparisons limit causal and population-wide conclusions.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0040054",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040054",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040054",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view5",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0007",
+      "title": "Divergent effects of brief contemplative practices in response to an acute stressor: A randomized controlled trial of brief breath awareness, loving-kindness, gratitude or an attention control practice",
+      "authors": [
+        "Matthew J. Hirshberg",
+        "Simon B. Goldberg",
+        "Stacey M. Schaefer",
+        "Lisa Flook",
+        "David Findley",
+        "Richard J. Davidson"
+      ],
+      "publication_date": "2018-12-12",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0207765",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207765",
+      "publisher": "Public Library of Science",
+      "source_type": "journal research article",
+      "batches": [
+        "13"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Version not independently verified; article-specific attribution notice inspected.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; separate datasets and third-party material need their own checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "bq003_status": "REVIEW_CANDIDATE",
+      "study_design_note": "Randomized four-arm experiment",
+      "original_summary": "Compares brief contemplative practices on affect and responses to an acute laboratory stressor.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "topic_tags": [
+        "meditation",
+        "compassion"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED",
+      "quality_flags": [
+        "Brief training in undergraduates cannot establish durable benefits across populations.",
+        "Full evidence appraisal and participant-overlap review pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0207765",
+      "lineage_note": "Publication identity only; not a verified independent study group. Reviews may already discuss this paper.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207765",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207765",
+        "metadata_locator": "Article heading, author list, publication date and DOI",
+        "rights_locator": "Article copyright notice",
+        "web_reference": "turn1view6",
+        "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
+      },
+      "data_access_lead": {
+        "url": "https://doi.org/10.17605/OSF.IO/GV5RC",
+        "publisher_statement": "Data available through OSF",
+        "accessed": false,
+        "dataset_licence_verified": false
+      }
+    }
+  ],
+  "bq_evidence_status_changed": false,
+  "independent_studies_added": 0,
+  "accepted_edges_added": 0,
+  "website_updated": false
+}

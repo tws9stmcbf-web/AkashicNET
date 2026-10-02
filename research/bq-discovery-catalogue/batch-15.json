@@ -1,0 +1,337 @@
+{
+  "batch": 15,
+  "records": [
+    {
+      "record_id": "SRC-B15-0001",
+      "title": "Brain functional connectivity correlates of anomalous interaction between sensorily isolated monozygotic twins",
+      "authors": [
+        "Richard B. Silberstein",
+        "Felicity J. Bigelow"
+      ],
+      "authors_complete": true,
+      "publication_date": "2024-04-10",
+      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "doi": "10.3389/fnhum.2024.1388049",
+      "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1388049/full",
+      "journal": "Frontiers in Human Neuroscience",
+      "source_type": "experimental EEG study",
+      "batches": [
+        "15"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice only; datasets and third-party material need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "access_status": "FREE_FULL_TEXT_LOCATOR",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Related query: can measured activity covary between sensorily isolated people? Does not answer the ultimate origin of thought or survival of consciousness.",
+      "original_summary": "Five twin pairs tested twice; authors report stimulus-aligned receiver connectivity changes.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "10 participants; repeated sessions are not independent cohorts; small sample and low spatial resolution; replication needed.",
+        "Correction/retraction clearance, independent replication and complete statistical appraisal pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fnhum.2024.1388049",
+      "lineage_note": "Publication identifier; cohort overlap and independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Authors offer raw data on request; no public repository verified.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1388049/full",
+        "reference": "turn27view2",
+        "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
+      }
+    },
+    {
+      "record_id": "SRC-B15-0002",
+      "title": "EEG correlates of social interaction at distance",
+      "authors": [
+        "William Giroldini",
+        "Luciano Pederzoli",
+        "Marco Bilucaglia",
+        "Patrizio Caini",
+        "Alessandro Ferrini",
+        "Simone Melloni",
+        "Elena Prati",
+        "Patrizio Tressoldi"
+      ],
+      "authors_complete": true,
+      "publication_date": "2015-08-03",
+      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "doi": "10.12688/f1000research.6755.3",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4770988/",
+      "journal": "F1000Research",
+      "source_type": "experimental EEG study",
+      "batches": [
+        "15"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice only; datasets and third-party material need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "access_status": "FREE_FULL_TEXT_LOCATOR",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Related query: can measured activity covary between sensorily isolated people? Does not answer the ultimate origin of thought or survival of consciousness.",
+      "original_summary": "Reports a receiver response under a new electrode-correlation analysis in sensorily isolated paired recordings.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Six participants produced 25 paired recordings; conventional averaging found a response only in stimulated participants; exploratory algorithm and open reviewer reservations require appraisal.",
+        "Correction/retraction clearance, independent replication and complete statistical appraisal pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.12688/f1000research.6755.3",
+      "lineage_note": "Publication identifier; cohort overlap and independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Article links raw data and code at https://doi.org/10.6084/m9.figshare.1466876; files and their licences not inspected.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4770988/",
+        "reference": "turn25view1",
+        "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
+      },
+      "version_metadata": {
+        "version": 3,
+        "version_date": "2016-01-14",
+        "original_publication_date": "2015-08-03",
+        "doi_family": "10.12688/f1000research.6755",
+        "version_note": "All versions remain one publication/study lineage."
+      }
+    },
+    {
+      "record_id": "SRC-B15-0003",
+      "title": "Investigating paranormal phenomena: Functional brain imaging of telepathy",
+      "authors": [
+        "Ganesan Venkatasubramanian"
+      ],
+      "authors_complete": false,
+      "publication_date": "2008",
+      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "doi": "10.4103/0973-6131.43543",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3144613/",
+      "journal": "International Journal of Yoga",
+      "source_type": "fMRI case comparison",
+      "batches": [
+        "15"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": null,
+      "licence_version": null,
+      "licence_notice_verified": false,
+      "licence_scope": "Article-specific notice only; datasets and third-party material need separate checks.",
+      "rights_status": "LINK_AND_METADATA_ONLY_LICENCE_UNVERIFIED",
+      "access_status": "FREE_FULL_TEXT_LOCATOR",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Related query: can measured activity covary between sensorily isolated people? Does not answer the ultimate origin of thought or survival of consciousness.",
+      "original_summary": "Compares a mentalist and a control participant in a telepathy task; authors report differing activation patterns.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Very small case comparison; activation is not a demonstrated communication mechanism; full methods and licence appraisal pending.",
+        "Correction/retraction clearance, independent replication and complete statistical appraisal pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.4103/0973-6131.43543",
+      "lineage_note": "Publication identifier; cohort overlap and independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not checked.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3144613/",
+        "reference": "turn26search1",
+        "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
+      }
+    },
+    {
+      "record_id": "SRC-B15-0004",
+      "title": "Revisiting the earliest hyperscanning study: power and functional connectivity in the alpha band may link brains far apart",
+      "authors": [
+        "Tolga Esat Özkurt"
+      ],
+      "authors_complete": true,
+      "publication_date": "2024-10-08",
+      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "doi": "10.3389/fnhum.2024.1476944",
+      "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1476944/full",
+      "journal": "Frontiers in Human Neuroscience",
+      "source_type": "historical EEG reanalysis",
+      "batches": [
+        "15"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice only; datasets and third-party material need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "access_status": "FREE_FULL_TEXT_LOCATOR",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Related query: can measured activity covary between sensorily isolated people? Does not answer the ultimate origin of thought or survival of consciousness.",
+      "original_summary": "Reanalyses digitised traces published in 1965; reports alpha synchrony including a twin and unrelated subject.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "No new participant cohort; available printed traces constrain inference; retain Duane-Behrendt 1965 lineage.",
+        "Correction/retraction clearance, independent replication and complete statistical appraisal pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "STUDY:DUANE-BEHRENDT-1965",
+      "lineage_note": "Historical reanalysis: same original study, no additional independent cohort.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Digitised published traces; supplementary materials linked, not downloaded.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1476944/full",
+        "reference": "turn25view2",
+        "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
+      }
+    },
+    {
+      "record_id": "SRC-B15-0005",
+      "title": "Neuroimaging studies of extra-sensory perception: A systematic and critical review",
+      "authors": [
+        "David J. Acunzo",
+        "Andrea H. Denton",
+        "Marina Weiler",
+        "Edward F. Kelly"
+      ],
+      "authors_complete": true,
+      "publication_date": "2026-04-18",
+      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "doi": "10.1016/j.neuroimage.2026.121937",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42009267/",
+      "journal": "NeuroImage",
+      "source_type": "systematic critical review",
+      "batches": [
+        "15"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": null,
+      "licence_version": null,
+      "licence_notice_verified": false,
+      "licence_scope": "Article-specific notice only; datasets and third-party material need separate checks.",
+      "rights_status": "LINK_AND_METADATA_ONLY_LICENCE_UNVERIFIED",
+      "access_status": "PUBMED_FREE_ARTICLE_LABEL_FULL_TEXT_NOT_INSPECTED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Related query: can measured activity covary between sensorily isolated people? Does not answer the ultimate origin of thought or survival of consciousness.",
+      "original_summary": "Reviews 143 reports representing 129 studies; identifies small samples, analytical flexibility, inadequate multiplicity control and limited replication.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Synthesis of existing studies; not 129 additional independently ingested studies. Abstract inspected; complete review appraisal pending.",
+        "Correction/retraction clearance, independent replication and complete statistical appraisal pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1016/j.neuroimage.2026.121937",
+      "lineage_note": "Publication identifier; cohort overlap and independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not checked.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://pubmed.ncbi.nlm.nih.gov/42009267/",
+        "reference": "turn27view1",
+        "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
+      }
+    },
+    {
+      "record_id": "SRC-B15-0006",
+      "title": "Evidence for correlations between distant intentionality and brain function in recipients: a functional magnetic resonance imaging analysis",
+      "authors": [
+        "Jeanne Achterberg",
+        "Karin Cooke",
+        "Todd Richards",
+        "Leanna J. Standish",
+        "Leila Kozak",
+        "James Lake"
+      ],
+      "authors_complete": true,
+      "publication_date": "2005-12",
+      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "doi": "10.1089/acm.2005.11.965",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16398587/",
+      "journal": "The Journal of Alternative and Complementary Medicine",
+      "source_type": "experimental fMRI study",
+      "batches": [
+        "15"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": null,
+      "licence_version": null,
+      "licence_notice_verified": false,
+      "licence_scope": "Article-specific notice only; datasets and third-party material need separate checks.",
+      "rights_status": "LINK_AND_METADATA_ONLY_LICENCE_UNVERIFIED",
+      "access_status": "PUBLISHER_RESTRICTED_ACCESS",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Related query: can measured activity covary between sensorily isolated people? Does not answer the ultimate origin of thought or survival of consciousness.",
+      "original_summary": "Eleven healers selected connected recipients; authors report activation differences between sending and control periods.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Small study; reported brain correlation does not establish clinical benefit or proposed multidimensional mechanisms. Full methods review pending.",
+        "Correction/retraction clearance, independent replication and complete statistical appraisal pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1089/acm.2005.11.965",
+      "lineage_note": "Publication identifier; cohort overlap and independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not checked.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://pubmed.ncbi.nlm.nih.gov/16398587/",
+        "reference": "turn22search0",
+        "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
+      }
+    }
+  ],
+  "independent_studies_added": 0,
+  "accepted_edges_added": 0,
+  "website_updated": false
+}

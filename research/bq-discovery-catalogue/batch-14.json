@@ -1,0 +1,1133 @@
+{
+  "created_on": "2026-10-02",
+  "batch": 14,
+  "purpose": "Larger licensed BQ discovery metadata batch",
+  "records": [
+    {
+      "record_id": "SRC-B14-0001",
+      "title": "Characteristics of Near-Death Experiences Memories as Compared to Real and Imagined Events Memories",
+      "authors": [
+        "Marie Thonnard",
+        "Vanessa Charland-Verville",
+        "Serge Brédart",
+        "Hedwige Dehon",
+        "Didier Ledoux",
+        "Steven Laureys",
+        "Audrey Vanhaudenhuyse"
+      ],
+      "publication_date": "2013-03-27",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0057620",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057620",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Compares reported NDE memory characteristics with memories of other events.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0057620",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057620",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057620",
+        "metadata_reference": "turn7view0",
+        "rights_reference": "turn12view0",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0002",
+      "title": "Qualitative thematic analysis of the phenomenology of near-death experiences",
+      "authors": [
+        "Helena Cassol",
+        "Benoît Pétré",
+        "Sophie Degrange",
+        "Charlotte Martial",
+        "Vanessa Charland-Verville",
+        "François Lallier",
+        "Isabelle Bragard",
+        "Michèle Guillaume",
+        "Steven Laureys"
+      ],
+      "publication_date": "2018-02-14",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0193001",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0193001",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Identifies themes in retrospective NDE narratives.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0193001",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0193001",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0193001",
+        "metadata_reference": "turn7view1",
+        "rights_reference": "turn12view1",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0003",
+      "title": "Characterization of near death experiences using text mining analyses: A preliminary study",
+      "authors": [
+        "Vanessa Charland-Verville",
+        "Demetrius Ribeiro de Paula",
+        "Charlotte Martial",
+        "Helena Cassol",
+        "Georgios Antonopoulos",
+        "Blaine Alexander Chronik",
+        "Andrea Soddu",
+        "Steven Laureys"
+      ],
+      "publication_date": "2020-01-30",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0227402",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227402",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Uses automated text analysis to characterise retrospective NDE reports.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0227402",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227402",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227402",
+        "metadata_reference": "turn7view2",
+        "rights_reference": "turn12view2",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0004",
+      "title": "Lab meets real life: A laboratory assessment of spontaneous thought and its ecological validity",
+      "authors": [
+        "Christine Kuehner",
+        "Annett Welz",
+        "Iris Reinhard",
+        "Georg W. Alpers"
+      ],
+      "publication_date": "2017-09-14",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0184488",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0184488",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Compares laboratory measures of spontaneous thought with experience sampling in daily life.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0184488",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0184488",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0184488",
+        "metadata_reference": "turn7view3",
+        "rights_reference": "turn12view3",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0005",
+      "title": "How Self-Generated Thought Shapes Mood—The Relation between Mind-Wandering and Mood Depends on the Socio-Temporal Content of Thoughts",
+      "authors": [
+        "Florence J. M. Ruby",
+        "Jonathan Smallwood",
+        "Haakon Engen",
+        "Tania Singer"
+      ],
+      "publication_date": "2013-10-23",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0077554",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0077554",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines associations between thought content and later mood.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0077554",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0077554",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0077554",
+        "metadata_reference": "turn7view4",
+        "rights_reference": "turn12view4",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0006",
+      "title": "Fluctuating Minds: Spontaneous Psychophysical Variability during Mind-Wandering",
+      "authors": [
+        "Rodrigo A. Henríquez",
+        "Ana B. Chica",
+        "Pablo Billeke",
+        "Paolo Bartolomeo"
+      ],
+      "publication_date": "2016-02-10",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0147174",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147174",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines variability in perception and performance during mind-wandering.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0147174",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147174",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147174",
+        "metadata_reference": "turn8view0",
+        "rights_reference": "turn12view5",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0007",
+      "title": "A closer look at the timecourse of mind wandering: Pupillary responses and behaviour",
+      "authors": [
+        "Claudia Pelagatti",
+        "Paola Binda",
+        "Manila Vannucci"
+      ],
+      "publication_date": "2020-04-30",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0226792",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226792",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines pupil responses and behaviour around reported mind-wandering.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0226792",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226792",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226792",
+        "metadata_reference": "turn8view1",
+        "rights_reference": "turn12view6",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0008",
+      "title": "Spontaneous mind wandering impairs model-based decision making",
+      "authors": [
+        "Shuyan Liu",
+        "Milena Rabovsky",
+        "Daniel J. Schad"
+      ],
+      "publication_date": "2023-01-26",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0279532",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0279532",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines mind-wandering alongside model-based decision making.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0279532",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0279532",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0279532",
+        "metadata_reference": "turn8view2",
+        "rights_reference": "turn12view7",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0009",
+      "title": "Representing Representation: Integration between the Temporal Lobe and the Posterior Cingulate Influences the Content and Form of Spontaneous Thought",
+      "authors": [
+        "Jonathan Smallwood",
+        "Theodoros Karapanagiotidis",
+        "Florence Ruby",
+        "Barbara Medea",
+        "Irene de Caso",
+        "Mahiko Konishi",
+        "Hao-Ting Wang",
+        "Glyn Hallam",
+        "Daniel S. Margulies",
+        "Elizabeth Jefferies"
+      ],
+      "publication_date": "2016-04-05",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0152272",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152272",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines associations between resting-state connectivity and the content of spontaneous thought.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0152272",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152272",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152272",
+        "metadata_reference": "turn8view3",
+        "rights_reference": "turn12view8",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0010",
+      "title": "Absence without leave or leave without absence: Examining the interrelations among mind wandering, metacognition and cognitive control",
+      "authors": [
+        "Leonhard Hakon Drescher",
+        "Eva Van den Bussche",
+        "Kobe Desender"
+      ],
+      "publication_date": "2018-02-09",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0191639",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191639",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines relationships among mind-wandering, metacognition and cognitive control.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0191639",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191639",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191639",
+        "metadata_reference": "turn8view4",
+        "rights_reference": "turn12view9",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0011",
+      "title": "Assessing the effect of Loving-Kindness Meditation on pain and social well-being using a randomized controlled trial design",
+      "authors": [
+        "Olivia Young",
+        "Katherine O’Connell",
+        "Naomi Nero",
+        "Melinda C. Somers",
+        "Paige A. Freeburg",
+        "Mary Ann Dutton",
+        "Abigail A. Marsh"
+      ],
+      "publication_date": "2026-09-16",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0357888",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Compares loving-kindness meditation with a comparison intervention on pain and social wellbeing.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Selected populations, practice types and comparison conditions limit generalisation; these measures do not establish cosmic consciousness.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0357888",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+        "metadata_reference": "turn9view0",
+        "rights_reference": "turn12view10",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      },
+      "bq003_status": "REVIEW_CANDIDATE"
+    },
+    {
+      "record_id": "SRC-B14-0012",
+      "title": "A compassion-based program to reduce psychological distress in medical students: A pilot randomized clinical trial",
+      "authors": [
+        "Blanca Rojas",
+        "Elena Catalan",
+        "Gustavo Diez",
+        "Pablo Roca"
+      ],
+      "publication_date": "2023-06-23",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0287388",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287388",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines a compassion programme in medical students using a pilot randomized design.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Selected populations, practice types and comparison conditions limit generalisation; these measures do not establish cosmic consciousness.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0287388",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287388",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287388",
+        "metadata_reference": "turn9view1",
+        "rights_reference": "turn12view11",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      },
+      "bq003_status": "REVIEW_CANDIDATE"
+    },
+    {
+      "record_id": "SRC-B14-0013",
+      "title": "Increasing autobiographical memory specificity: Using kindness meditation to impact features of memory retrieval",
+      "authors": [
+        "Amanda Lathan",
+        "Barbara Dritschel"
+      ],
+      "publication_date": "2023-06-28",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0287007",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287007",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines kindness-based meditation and specificity of autobiographical memory retrieval.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Selected populations, practice types and comparison conditions limit generalisation; these measures do not establish cosmic consciousness.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0287007",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287007",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287007",
+        "metadata_reference": "turn14view0",
+        "rights_reference": "turn12view12",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      },
+      "bq003_status": "REVIEW_CANDIDATE"
+    },
+    {
+      "record_id": "SRC-B14-0014",
+      "title": "An 18-month meditation training selectively improves psychological well-being in older adults: A secondary analysis of a randomised controlled trial",
+      "authors": [
+        "Marco Schlosser",
+        "Olga M. Klimecki",
+        "Fabienne Collette",
+        "Julie Gonneaud",
+        "Matthias Kliegel",
+        "Natalie L. Marchant",
+        "Gaël Chételat",
+        "Antoine Lutz"
+      ],
+      "publication_date": "2023-12-01",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0294753",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294753",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Reports a secondary analysis of psychological wellbeing during an extended meditation trial.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Selected populations, practice types and comparison conditions limit generalisation; these measures do not establish cosmic consciousness.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending.",
+        "Secondary analysis: link to other Age-Well/Medit-Ageing publications before counting independent studies."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0294753",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294753",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294753",
+        "metadata_reference": "turn9view3",
+        "rights_reference": "turn12view13",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      },
+      "bq003_status": "REVIEW_CANDIDATE",
+      "collective_author_displayed": "for the Medit-Ageing Research Group"
+    },
+    {
+      "record_id": "SRC-B14-0015",
+      "title": "The Role of Compassion in Altruistic Helping and Punishment Behavior",
+      "authors": [
+        "Helen Y. Weng",
+        "Andrew S. Fox",
+        "Heather C. Hessenthaler",
+        "Diane E. Stodola",
+        "Richard J. Davidson"
+      ],
+      "publication_date": "2015-12-10",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.1371/journal.pone.0143794",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143794",
+      "publisher": "Public Library of Science",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Examines compassion training alongside helping and punishment behaviour.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Selected populations, practice types and comparison conditions limit generalisation; these measures do not establish cosmic consciousness.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0143794",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143794",
+        "rights_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143794",
+        "metadata_reference": "turn14view1",
+        "rights_reference": "turn12view14",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      },
+      "bq003_status": "REVIEW_CANDIDATE"
+    },
+    {
+      "record_id": "SRC-B14-0016",
+      "title": "Near death experiences: a multidisciplinary hypothesis",
+      "authors": [
+        "István Bókkon",
+        "Birendra N. Mallick",
+        "Jack A. Tuszynski"
+      ],
+      "publication_date": "2013-09-11",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fnhum.2013.00533",
+      "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00533/full",
+      "publisher": "Frontiers",
+      "source_type": "hypothesis and theory",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Proposes biological mechanisms for NDE features including perceived light.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending.",
+        "Synthesis or theory record; not another independent experimental confirmation."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fnhum.2013.00533",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00533/full",
+        "rights_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00533/full",
+        "metadata_reference": "turn13view2",
+        "rights_reference": "turn12view15",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0017",
+      "title": "Neuro-functional modeling of near-death experiences in contexts of altered states of consciousness",
+      "authors": [
+        "Raymond Romand",
+        "Günter Ehret"
+      ],
+      "publication_date": "2023-01-18",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fpsyg.2022.846159",
+      "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.846159/full",
+      "publisher": "Frontiers",
+      "source_type": "explanatory synthesis; publisher type not captured",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Synthesises neuro-functional explanations of NDEs across altered states.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending.",
+        "DOI contains 2022; publication date displayed by publisher is 2023-01-18.",
+        "Synthesis or theory record; not another independent experimental confirmation."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fpsyg.2022.846159",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.846159/full",
+        "rights_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.846159/full",
+        "metadata_reference": "turn11view1",
+        "rights_reference": "turn12view16",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0018",
+      "title": "What happens in the brain when we die? Deciphering the neurophysiology of the final moments in life",
+      "authors": [
+        "Nathan A. Shlobin",
+        "Jaan Aru",
+        "Raul Vicente",
+        "Ajmal Zemmar"
+      ],
+      "publication_date": "2023-05-09",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fnagi.2023.1143848",
+      "source_url": "https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1143848/full",
+      "publisher": "Frontiers",
+      "source_type": "review",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Reviews brain activity near death and proposed relationships to reported experiences.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending.",
+        "Synthesis or theory record; not another independent experimental confirmation."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fnagi.2023.1143848",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1143848/full",
+        "rights_source": "https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1143848/full",
+        "metadata_reference": "turn13view3",
+        "rights_reference": "turn12view17",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0019",
+      "title": "DMT Models the Near-Death Experience",
+      "authors": [
+        "Christopher Timmermann",
+        "Leor Roseman",
+        "Luke Williams",
+        "David Erritzoe",
+        "Charlotte Martial",
+        "Héléna Cassol",
+        "Steven Laureys",
+        "David Nutt",
+        "Robin Carhart-Harris"
+      ],
+      "publication_date": "2018-08-15",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fpsyg.2018.01424",
+      "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01424/full",
+      "publisher": "Frontiers",
+      "source_type": "original research",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ001"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Compares DMT-induced experiences with features commonly reported in NDEs.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Reports and phenomenological similarities do not establish survival after irreversible death; review primary designs and sample overlap.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fpsyg.2018.01424",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01424/full",
+        "rights_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01424/full",
+        "metadata_reference": "turn11view3",
+        "rights_reference": "turn12view18",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0020",
+      "title": "A Mind Free to Wander: Neural and Computational Constraints on Spontaneous Thought",
+      "authors": [
+        "Elisa Ciaramelli",
+        "Alessandro Treves"
+      ],
+      "publication_date": "2019-01-23",
+      "date_semantics": "Publisher displayed publication date",
+      "doi": "10.3389/fpsyg.2019.00039",
+      "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00039/full",
+      "publisher": "Frontiers",
+      "source_type": "opinion",
+      "batches": [
+        "14"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_version_note": "Article-specific attribution notice verified; version not independently verified.",
+      "licence_notice_verified": true,
+      "licence_scope": "Article notice; separate datasets and third-party materials need separate checks.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "original_summary": "Proposes neural and computational constraints on spontaneous thought.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Task measures, associations and models do not resolve the ultimate origin of thoughts; review causal and ecological limits.",
+        "Full methods appraisal, correction/retraction screening and lineage adjudication pending.",
+        "Synthesis or theory record; not another independent experimental confirmation."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "metadata_check_state": "PUBLISHER_METADATA_CHECKED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fpsyg.2019.00039",
+      "lineage_note": "Publication identifier only; independence and overlap not verified.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00039/full",
+        "rights_source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00039/full",
+        "metadata_reference": "turn11view4",
+        "rights_reference": "turn12view19",
+        "rights_locator": "Article-specific Creative Commons Attribution notice"
+      }
+    }
+  ],
+  "independent_studies_added": 0,
+  "accepted_edges_added": 0,
+  "bq_evidence_status_changed": false,
+  "website_updated": false,
+  "source_queue": [
+    {
+      "source": "EXPLORE: The Journal of Science & Healing",
+      "status": "DISCOVERY_LEAD; no journal-wide licence inferred",
+      "scope_url": "https://shop.elsevier.com/journals/explore/1550-8307",
+      "article_lead": "https://doi.org/10.1016/j.explore.2026.103495",
+      "next_check": "Article-level authors, dates, DOI, licence, duplication and methods"
+    }
+  ]
+}

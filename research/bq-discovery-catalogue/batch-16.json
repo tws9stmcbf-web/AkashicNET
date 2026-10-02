@@ -1,0 +1,330 @@
+{
+  "batch": 16,
+  "records": [
+    {
+      "record_id": "SRC-B16-0001",
+      "title": "Anomalous experiences, psi and functional neuroimaging",
+      "authors": [
+        "David J. Acunzo",
+        "Renaud Evrard",
+        "Thomas Rabeyron"
+      ],
+      "publication_date": "2013-12-23",
+      "date_semantics": "Displayed publication date at verified precision",
+      "doi": "10.3389/fnhum.2013.00893",
+      "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00893/full",
+      "journal": "Frontiers in Human Neuroscience",
+      "source_type": "opinion / methodological criticism",
+      "batches": [
+        "16"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; datasets and third-party items require separate verification.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "access_status": "OPEN_ARTICLE_LOCATOR",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Context for thought, interpersonal interaction and intention queries; mappings do not establish a consciousness mechanism or healing benefit.",
+      "original_summary": "Examines six early neuroimaging reports and discusses randomisation, cue counterbalancing, information shielding and sample-size problems.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Opinion and methodological analysis, not a new experimental cohort. Specific criticisms are attributed to these authors and require checking against original methods.",
+        "Full appraisal, independent replication and correction/retraction clearance pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fnhum.2013.00893",
+      "lineage_note": "Reviews and opinion papers inherit cited study lineages; no independent experiment added through synthesis. Cohort independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not verified in this batch.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00893/full",
+        "reference": "turn34view1",
+        "rights_reference": "turn31view3",
+        "inspection_scope": "Selected metadata, access notices and relevant abstract/methods passages; no complete evidence appraisal."
+      },
+      "cited_study_identifiers": [
+        "10.1089/acm.2005.11.965",
+        "10.4103/0973-6131.43543",
+        "10.1162/jocn.2008.20.1.182"
+      ],
+      "cited_study_identifiers_status": "SELECTED_REFERENCES_ONLY",
+      "suggested_relations": [
+        {
+          "target_doi": "10.1089/acm.2005.11.965",
+          "relationship": "discusses",
+          "status": "REVIEW_CANDIDATE",
+          "accepted": false
+        },
+        {
+          "target_doi": "10.4103/0973-6131.43543",
+          "relationship": "discusses",
+          "status": "REVIEW_CANDIDATE",
+          "accepted": false
+        },
+        {
+          "target_doi": "10.1162/jocn.2008.20.1.182",
+          "relationship": "discusses",
+          "status": "REVIEW_CANDIDATE",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "record_id": "SRC-B16-0002",
+      "title": "Non-local mind from the perspective of social cognition",
+      "authors": [
+        "Jonas Chatel-Goldman",
+        "Jean-Luc Schwartz",
+        "Christian Jutten",
+        "Marco Congedo"
+      ],
+      "publication_date": "2013-04-02",
+      "date_semantics": "Displayed publication date at verified precision",
+      "doi": "10.3389/fnhum.2013.00107",
+      "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00107/full",
+      "journal": "Frontiers in Human Neuroscience",
+      "source_type": "mini review",
+      "batches": [
+        "16"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; datasets and third-party items require separate verification.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "access_status": "OPEN_ARTICLE_LOCATOR",
+      "bq_relevance": [
+        "BQ002",
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Context for thought, interpersonal interaction and intention queries; mappings do not establish a consciousness mechanism or healing benefit.",
+      "original_summary": "Organises social-cognition and hyperscanning research across interacting people.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "The paper uses non-local to mean operations across interacting brains sharing information; this is not itself evidence for sensory-isolated telepathy or quantum nonlocality.",
+        "Full appraisal, independent replication and correction/retraction clearance pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.3389/fnhum.2013.00107",
+      "lineage_note": "Reviews and opinion papers inherit cited study lineages; no independent experiment added through synthesis. Cohort independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not verified in this batch.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00107/full",
+        "reference": "turn30view1",
+        "rights_reference": "turn31view4",
+        "inspection_scope": "Selected metadata, access notices and relevant abstract/methods passages; no complete evidence appraisal."
+      },
+      "cited_study_identifiers": [
+        "10.1371/journal.pone.0012166"
+      ],
+      "cited_study_identifiers_status": "SELECTED_REFERENCES_ONLY",
+      "suggested_relations": [
+        {
+          "target_doi": "10.1371/journal.pone.0012166",
+          "relationship": "discusses",
+          "status": "REVIEW_CANDIDATE",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "record_id": "SRC-B16-0003",
+      "title": "Inter-Brain Synchronization during Social Interaction",
+      "authors": [
+        "Guillaume Dumas",
+        "Jacqueline Nadel",
+        "Robert Soussignan",
+        "Jacques Martinerie",
+        "Line Garnero"
+      ],
+      "publication_date": "2010-08-17",
+      "date_semantics": "Displayed publication date at verified precision",
+      "doi": "10.1371/journal.pone.0012166",
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012166",
+      "journal": "PLOS ONE",
+      "source_type": "experimental EEG study",
+      "batches": [
+        "16"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY",
+      "licence_version": null,
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; datasets and third-party items require separate verification.",
+      "rights_status": "ARTICLE_CC_BY_NOTICE_VERIFIED",
+      "access_status": "OPEN_ARTICLE_LOCATOR",
+      "bq_relevance": [
+        "BQ002",
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Context for thought, interpersonal interaction and intention queries; mappings do not establish a consciousness mechanism or healing benefit.",
+      "original_summary": "Reports interbrain synchronisation during spontaneous imitation of hand movements viewed via a video connection.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Abstract reports 18 analysed participants in nine dyads; methods lists 22 recruited participants. Recruitment and analysis counts must remain distinct. Visual communication is part of the design; this is a conventional-interaction comparator, not a distant-intention test.",
+        "Full appraisal, independent replication and correction/retraction clearance pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1371/journal.pone.0012166",
+      "lineage_note": "Reviews and opinion papers inherit cited study lineages; no independent experiment added through synthesis. Cohort independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not verified in this batch.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012166",
+        "reference": "turn33view0",
+        "rights_reference": "turn33view0",
+        "inspection_scope": "Selected metadata, access notices and relevant abstract/methods passages; no complete evidence appraisal."
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "SELECTED_REFERENCES_ONLY",
+      "suggested_relations": []
+    },
+    {
+      "record_id": "SRC-B16-0004",
+      "title": "Distant Healing Intention Therapies: An Overview of the Scientific Evidence",
+      "authors": [
+        "Dean Radin",
+        "Marilyn Schlitz",
+        "Christopher Baur"
+      ],
+      "publication_date": "2015-11-01",
+      "date_semantics": "Displayed publication date at verified precision",
+      "doi": "10.7453/gahmj.2015.012.suppl",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4654780/",
+      "journal": "Global Advances in Health and Medicine",
+      "source_type": "narrative overview",
+      "batches": [
+        "16"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": "CC BY-NC-ND 3.0",
+      "licence_version": "3.0",
+      "licence_notice_verified": true,
+      "licence_scope": "Article-specific notice; datasets and third-party items require separate verification.",
+      "rights_status": "ARTICLE_CC_BY_NC_ND_NOTICE_INDEXED",
+      "access_status": "OPEN_ARTICLE_LOCATOR",
+      "bq_relevance": [
+        "BQ002",
+        "BQ003"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Context for thought, interpersonal interaction and intention queries; mappings do not establish a consciousness mechanism or healing benefit.",
+      "original_summary": "Surveys distant-healing intention experiments and distinguishes physiological correlation from clinical efficacy.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Narrative synthesis is not an additional independent experiment. Noncommercial and no-derivatives conditions are recorded; no article text or adapted figures retained. PMC full-page retrieval blocked; indexed licence notice inspected.",
+        "Full appraisal, independent replication and correction/retraction clearance pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.7453/gahmj.2015.012.suppl",
+      "lineage_note": "Reviews and opinion papers inherit cited study lineages; no independent experiment added through synthesis. Cohort independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not verified in this batch.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4654780/",
+        "reference": "turn30search1",
+        "rights_reference": "turn30search1",
+        "inspection_scope": "Selected metadata, access notices and relevant abstract/methods passages; no complete evidence appraisal."
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "SELECTED_REFERENCES_ONLY",
+      "suggested_relations": []
+    },
+    {
+      "record_id": "SRC-B16-0005",
+      "title": "Using neuroimaging to resolve the psi debate",
+      "authors": [
+        "Samuel T. Moulton",
+        "Stephen M. Kosslyn"
+      ],
+      "publication_date": "2008-01",
+      "date_semantics": "Displayed publication date at verified precision",
+      "doi": "10.1162/jocn.2008.20.1.182",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18095790/",
+      "journal": "Journal of Cognitive Neuroscience",
+      "source_type": "experimental fMRI study",
+      "batches": [
+        "16"
+      ],
+      "retrieved_date": "2026-10-02",
+      "article_licence": null,
+      "licence_version": null,
+      "licence_notice_verified": false,
+      "licence_scope": "Article-specific notice; datasets and third-party items require separate verification.",
+      "rights_status": "LINK_AND_METADATA_ONLY_LICENCE_UNVERIFIED",
+      "access_status": "METADATA_ONLY_FULL_TEXT_LICENCE_UNVERIFIED",
+      "bq_relevance": [
+        "BQ002"
+      ],
+      "bq_mapping_status": "AI_SUGGESTED_DISCOVERY_RELEVANCE_ONLY",
+      "mapping_note": "Context for thought, interpersonal interaction and intention queries; mappings do not establish a consciousness mechanism or healing benefit.",
+      "original_summary": "Authors report indistinguishable neural responses to psi and non-psi stimuli, while stimulus-arousal differences produced expected activation effects.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "quality_flags": [
+        "Null finding for this design, not universal proof of absence. Full methods and statistical sensitivity appraisal pending. Full-text licence unverified; retained as metadata-only comparator.",
+        "Full appraisal, independent replication and correction/retraction clearance pending."
+      ],
+      "review_state": "REVIEW_REQUIRED",
+      "evidence_assessed": false,
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "accepted_edges_added": 0,
+      "lineage_group": "PUBLICATION:10.1162/jocn.2008.20.1.182",
+      "lineage_note": "Reviews and opinion papers inherit cited study lineages; no independent experiment added through synthesis. Cohort independence not adjudicated.",
+      "article_text_retained": false,
+      "raw_data_collected": false,
+      "data_availability": "Not verified in this batch.",
+      "verification": {
+        "checked_on": "2026-10-02",
+        "metadata_source": "https://pubmed.ncbi.nlm.nih.gov/18095790/",
+        "reference": "turn33search0",
+        "rights_reference": null,
+        "inspection_scope": "Selected metadata, access notices and relevant abstract/methods passages; no complete evidence appraisal."
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "SELECTED_REFERENCES_ONLY",
+      "suggested_relations": [],
+      "doi_alias_candidates": [
+        "10.1162/jocn.2008.20006"
+      ],
+      "doi_alias_note": "Alternative DOI seen in secondary discovery sources; PubMed DOI retained as canonical metadata. Resolve before future deduplication."
+    }
+  ],
+  "independent_studies_added": 0,
+  "accepted_edges_added": 0,
+  "website_updated": false,
+  "github_committed": false
+}

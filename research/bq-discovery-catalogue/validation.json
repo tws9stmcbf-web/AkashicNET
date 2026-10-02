@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "records": 91,
+  "duplicate_ids_titles_dois_urls": 0,
+  "independent_studies_promoted": 0,
+  "accepted_edges": 0,
+  "website_updated": false,
+  "scientific_claims_validated": false,
+  "checks": [
+    "count and identifiers",
+    "batch snapshot membership",
+    "evidence and rights governance",
+    "no article text or raw data"
+  ]
+}
