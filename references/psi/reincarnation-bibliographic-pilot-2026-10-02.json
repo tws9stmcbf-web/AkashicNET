@@ -236,7 +236,7 @@
         "search_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=10.1037%2Fcns0000493%5BDOI%5D&retmode=json&tool=AkashicNETMetadataPilot&retmax=10",
         "search_count": 0,
         "lookup": "EXACT_DOI_QUERY",
-        "summary_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39649781&retmode=json&tool=AkashicNETMetadataPilot",
+        "summary_endpoint": null,
         "match_status": "NO_MATCH_RETURNED_FOR_EXACT_DOI_QUERY",
         "records": []
       },
@@ -315,7 +315,7 @@
         "search_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=10.31156%2Fjaex.27464%5BDOI%5D&retmode=json&tool=AkashicNETMetadataPilot&retmax=10",
         "search_count": 0,
         "lookup": "EXACT_DOI_QUERY",
-        "summary_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39649781&retmode=json&tool=AkashicNETMetadataPilot",
+        "summary_endpoint": null,
         "match_status": "NO_MATCH_RETURNED_FOR_EXACT_DOI_QUERY",
         "records": []
       },
