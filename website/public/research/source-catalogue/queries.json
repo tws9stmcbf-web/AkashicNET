@@ -1,6 +1,6 @@
 {
-  "version": "0.3",
-  "source_boundary": "53 records through batch 12 plus CM-OA-012 active-control follow-up; 54 total",
+  "version": "0.4",
+  "source_boundary": "53 records through batch 12, CM-OA-012 active-control follow-up and ten publication leads; 64 total. Later source batches from other branches excluded.",
   "queries": [
     {
       "query_id": "Q001",
@@ -10,7 +10,9 @@
       "source_record_ids": [
         "SRC-SPR-PE-0001",
         "CM-PSI-001",
-        "CM-PSI-006"
+        "CM-PSI-006",
+        "CM-LEAD-001",
+        "CM-LEAD-002"
       ],
       "competing_explanations_to_assess": [
         "Sensory access during resuscitation",
@@ -39,7 +41,9 @@
         "CM-PSI-013",
         "CM-PSI-014",
         "CM-PSI-017",
-        "CM-PSI-026"
+        "CM-PSI-026",
+        "CM-LEAD-005",
+        "CM-LEAD-006"
       ],
       "competing_explanations_to_assess": [
         "Information leakage and family contact",
@@ -151,7 +155,10 @@
         "CM-PSI-015",
         "CM-PSI-016",
         "CM-PSI-018",
-        "CM-PSI-019"
+        "CM-PSI-019",
+        "CM-LEAD-007",
+        "CM-LEAD-008",
+        "CM-LEAD-009"
       ],
       "competing_explanations_to_assess": [
         "Analytical flexibility",
@@ -177,7 +184,8 @@
       "source_record_ids": [
         "CM-PSI-002",
         "CM-PSI-022",
-        "CM-PSI-023"
+        "CM-PSI-023",
+        "CM-LEAD-003"
       ],
       "competing_explanations_to_assess": [
         "Fluctuating cognition and arousal",
@@ -226,12 +234,14 @@
       "query_id": "Q009",
       "parent_bq": "BQ001",
       "title": "Birthmarks and physical correspondences",
-      "query": "How are claimed correspondences between birthmarks and a deceased person\u2019s injuries documented and compared with chance or ordinary developmental explanations?",
+      "query": "How are claimed correspondences between birthmarks and a deceased person’s injuries documented and compared with chance or ordinary developmental explanations?",
       "source_record_ids": [
         "CM-PSI-026",
         "CM-PSI-027",
         "SRC-SPR-PE-0003",
-        "CM-PSI-014"
+        "CM-PSI-014",
+        "CM-LEAD-004",
+        "CM-LEAD-005"
       ],
       "competing_explanations_to_assess": [
         "Common mark locations and broad matching criteria",
@@ -259,7 +269,8 @@
         "CM-PSI-010",
         "CM-PSI-028",
         "CM-PSI-015",
-        "CM-PSI-019"
+        "CM-PSI-019",
+        "CM-LEAD-010"
       ],
       "competing_explanations_to_assess": [
         "Chance matching across many details",
