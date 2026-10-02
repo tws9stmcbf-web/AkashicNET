@@ -178,3 +178,20 @@ continuation_staging_batch_0008:
       evidence: [../../evidence/batch-0008-validation.txt, ../../evidence/batch-0008-counts.json]
   claims_touched: []
   logic_revisions: []
+continuation_provenance_completion:
+  direction:
+    provenance: user
+    excerpt: Can you enrich?
+  events:
+    - id: N21
+      type: decision
+      provenance: ai-suggested
+      choice: Complete remaining 75 offline historical receipt links; descriptive metadata remains unsupported.
+      evidence: [../../../n2n-historical-observation-completion-method.md]
+    - id: N22
+      type: experiment
+      provenance: ai-executed
+      result: Nine tests passed; 125 unique cumulative receipt-linked IDs, no overlap, no new curated fields.
+      evidence: [../../evidence/provenance-completion-validation.txt, ../../evidence/provenance-completion-counts.json]
+  claims_touched: []
+  logic_revisions: []

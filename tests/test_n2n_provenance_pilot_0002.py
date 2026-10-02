@@ -34,7 +34,7 @@ class SecondProvenancePilotTests(unittest.TestCase):
     def test_missing_previous_and_unreviewed_batch_rejected(self):
         with tempfile.TemporaryDirectory() as temp, self.assertRaises(FileNotFoundError):
             build(Path(temp), 2)
-        for n in (0, 3, True, 1.0):
+        for n in (0, 4, True, 1.0):
             with self.subTest(n=n), self.assertRaises(ValueError):
                 build(batch_number=n)
 

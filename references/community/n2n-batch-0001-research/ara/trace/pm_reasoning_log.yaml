@@ -41,3 +41,8 @@ entries:
     notes:
       - Completed the structural queue with the requested final 396; exact archive-set equality tested.
       - No title, current verification, rights, evidence or maturity promotion; descriptive enrichment remains incomplete.
+  - turn: 2026-10-02_001-provenance-completion
+    notes:
+      - Completed historical feed linkage on enrichment request; process evidence only.
+      - Pinned feed population exhausted. Further descriptive enrichment requires attributable source snapshots.
+      - No rights, evidence, publication or maturity promotion; Reddit remains HOLD.

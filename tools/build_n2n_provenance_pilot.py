@@ -17,8 +17,8 @@ BATCHES = [f'references/community/n2n-metadata-batch-{n:04d}.json' for n in rang
 
 
 def build(root=ROOT, batch_number=1):
-    if type(batch_number) is not int or batch_number not in (1, 2):
-        raise ValueError('only provenance pilot batches 1 and 2 are enabled')
+    if type(batch_number) is not int or batch_number not in (1, 2, 3):
+        raise ValueError('only provenance pilot batches 1, 2 and 3 are enabled')
     prior = None
     if batch_number == 2:
         prior = json.loads((root / OUTPUT).read_text())
@@ -39,7 +39,7 @@ def build(root=ROOT, batch_number=1):
     if len(eligible) != 125 or len(staged) != 5000 or set(eligible) & staged:
         raise ValueError('historical receipt population drift')
     rows = []
-    for i in eligible[(batch_number - 1) * 25:batch_number * 25]:
+    for i in eligible[(batch_number - 1) * 25:(125 if batch_number == 3 else batch_number * 25)]:
         rows.append({'post_id': i, 'archived_url': archive[i]['Reddit URL'],
                      'source_locations': archive[i]['source_locations'],
                      'historical_observation_receipts': receipts[i],
@@ -71,10 +71,29 @@ def build(root=ROOT, batch_number=1):
         result['previous_pilot'] = {'path': OUTPUT, 'sha256': hashlib.sha256((root / OUTPUT).read_bytes()).hexdigest()}
         result['counts'].update(previous_provenance_records=25, overlap_with_previous=0,
                                 cumulative_provenance_records=50, remaining_historical_feed_candidates=75)
+    if batch_number == 3:
+        previous = []
+        previous_ids = set()
+        for n in (1, 2):
+            path = output_path(n)
+            value = json.loads((root / path).read_text())
+            validate(value, root, n)
+            previous_ids.update(r['post_id'] for r in value['records'])
+            previous.append({'path': path, 'sha256': hashlib.sha256((root / path).read_bytes()).hexdigest()})
+        ids = {r['post_id'] for r in rows}
+        if len(previous_ids) != 50 or len(ids) != 75 or ids & previous_ids or ids | previous_ids != set(eligible):
+            raise ValueError('receipt completion overlap or coverage drift')
+        result['selection_rule'] = 'Remaining 75 lowercase post IDs in lexical order after the two validated 25-record pilots; eligible ranks 51-125 from pinned historical feeds. Separate provenance overlay, not additional staging records.'
+        result['previous_pilots'] = previous
+        result['counts'].update(previous_provenance_records=50, overlap_with_previous=0,
+                                cumulative_provenance_records=125, remaining_historical_feed_candidates=0)
+        result['original_pilot_checkpoint'] = {'staged_records': result['counts'].pop('staging_queue_unchanged'), 'selected_overlap': result['counts'].pop('selected_staging_overlap'), 'scope': 'Pinned first five staging manifests only; not current queue coverage.'}
     return result
 
 
 def output_path(batch_number):
+    if batch_number == 3:
+        return 'references/community/n2n-historical-observation-completion-0075.json'
     return OUTPUT if batch_number == 1 else 'references/community/n2n-historical-observation-pilot-0025-batch-0002.json'
 
 
@@ -86,7 +105,7 @@ def validate(value, root=ROOT, batch_number=1):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--write', action='store_true')
-    p.add_argument('--batch', type=int, choices=(1, 2), default=1)
+    p.add_argument('--batch', type=int, choices=(1, 2, 3), default=1)
     args = p.parse_args()
     expected = build(batch_number=args.batch)
     destination = ROOT / output_path(args.batch)

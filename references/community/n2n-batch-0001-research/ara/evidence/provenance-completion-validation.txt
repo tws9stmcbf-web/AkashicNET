@@ -1,0 +1,14 @@
+test_each_new_pinned_source_drift_rejected (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_each_new_pinned_source_drift_rejected) ... ok
+test_inventions_temporal_promotion_and_gate_mutations_rejected (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_inventions_temporal_promotion_and_gate_mutations_rejected) ... ok
+test_reproduction_counts_and_every_receipt (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_reproduction_counts_and_every_receipt) ... ok
+test_missing_previous_and_unreviewed_batch_rejected (tests.test_n2n_provenance_pilot_0002.SecondProvenancePilotTests.test_missing_previous_and_unreviewed_batch_rejected) ... ok
+test_overlap_and_current_verification_rejected (tests.test_n2n_provenance_pilot_0002.SecondProvenancePilotTests.test_overlap_and_current_verification_rejected) ... ok
+test_reproduction_and_cumulative_nonoverlap (tests.test_n2n_provenance_pilot_0002.SecondProvenancePilotTests.test_reproduction_and_cumulative_nonoverlap) ... ok
+test_exact_coverage_and_unchanged_pilots (tests.test_n2n_provenance_completion.ProvenanceCompletionTests.test_exact_coverage_and_unchanged_pilots) ... ok
+test_promotion_overlap_and_omission_rejected (tests.test_n2n_provenance_completion.ProvenanceCompletionTests.test_promotion_overlap_and_omission_rejected) ... ok
+test_receipt_fidelity_and_queue_membership (tests.test_n2n_provenance_completion.ProvenanceCompletionTests.test_receipt_fidelity_and_queue_membership) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 11.890s
+
+OK
