@@ -1,0 +1,1352 @@
+{
+  "enrichment_id": "ENRICHMENT-24",
+  "date": "2026-10-02",
+  "records_total": 91,
+  "new_records_added": 0,
+  "independent_studies_promoted": 0,
+  "accepted_edges_added": 0,
+  "original_batch_snapshots_modified": false,
+  "changes": [
+    {
+      "record_id": "CM-IONS-001",
+      "study_metadata": {
+        "design": "Cross-sectional survey of academic professionals",
+        "sample": {
+          "survey_completers": 442,
+          "proposed_experiment_scenarios": 10
+        },
+        "outcomes": [
+          "Confidence in survival",
+          "Paranormal belief",
+          "Persuasiveness and expected success of proposed experiments"
+        ],
+        "limitations": [
+          "Ratings of proposed experiments are not completed survival tests.",
+          "Self-selected survey beliefs do not verify the phenomenon."
+        ],
+        "inspection_note": "Publisher abstract only; full questionnaire and dataset uninspected",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.lub.lu.se/jaex/article/view/24125",
+            "sections": [
+              "Publisher abstract"
+            ],
+            "retrieval_refs": [
+              "turn75view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "CM-IONS-002",
+      "study_metadata": {
+        "design": "Qualitative structured interviews across transformative traditions",
+        "sample": {
+          "teachers_and_scholars_interviewed": 47
+        },
+        "outcomes": [
+          "Reported predictors and outcomes of transformation",
+          "Compassion and altruism themes"
+        ],
+        "limitations": [
+          "Expert interpretations do not establish causal effects or measured helping behavior.",
+          "Full methods and sampling frame not inspected."
+        ],
+        "references": [
+          {
+            "source_url": "https://noetic.org/publication/i-to-we-the-role-of-consciousness-transformation-in-compassion-and-altruism/",
+            "sections": [
+              "IONS reproduced abstract and citation"
+            ],
+            "retrieval_refs": [
+              "turn75view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_REPRODUCED_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-IONS-004",
+      "study_metadata": {
+        "design": "Secondary analysis of personal-development workshop survey records",
+        "sample": {
+          "post_survey_record_count": null,
+          "unique_participants": null,
+          "new_experimental_cohort": false
+        },
+        "outcomes": [
+          "Reported insight",
+          "Noetic experiences",
+          "Transpersonal experiences"
+        ],
+        "limitations": [
+          "Post-survey records are not necessarily unique people.",
+          "Uncontrolled self-report does not establish efficacy or anomalous capacities.",
+          "Overlap with other workshop publications unresolved."
+        ],
+        "references": [
+          {
+            "source_url": "https://digitalcommons.ciis.edu/ijts-transpersonalstudies/vol41/iss1/6/",
+            "sections": [
+              "Publisher abstract",
+              "Licence notice"
+            ],
+            "retrieval_refs": [
+              "turn75view2",
+              "turn89view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_AND_LICENCE",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-IONS-006",
+      "study_metadata": {
+        "design": "Educational practice/course resource; not a clinical trial",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Nine guided practices across transformative traditions, including loving-kindness.",
+        "limitations": [
+          "Program descriptions are not experimental outcomes.",
+          "Course/media access and reuse rights require separate checks."
+        ],
+        "references": [
+          {
+            "source_url": "https://noetic.org/experience/living-deeply-practices/",
+            "sections": [
+              "Program description",
+              "Included practices"
+            ],
+            "retrieval_refs": [
+              "turn77view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_RESOURCE_DESCRIPTION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-IONS-007",
+      "study_metadata": {
+        "design": "Research project page describing an anonymous beliefs survey",
+        "sample": {
+          "respondent_count": null
+        },
+        "outcomes": [
+          "Beliefs about which aspects of a person survive death"
+        ],
+        "source_reported_status": "Complete",
+        "limitations": [
+          "Completion status is not a result or evidence appraisal.",
+          "No findings or dataset established from this page."
+        ],
+        "references": [
+          {
+            "source_url": "https://noetic.org/research/what-survives-death/",
+            "sections": [
+              "Study purpose",
+              "Status and activities"
+            ],
+            "retrieval_refs": [
+              "turn77view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_PROJECT_DESCRIPTION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-OA-001",
+      "study_metadata": {
+        "design": "Three-stage psychometric instrument development and validation",
+        "sample": {
+          "study1_abstract_count": 521,
+          "study1_summary_count": 507,
+          "study2_time1_nsi_complete": 667,
+          "study2_time2_table_count": 542,
+          "study3_participants": null,
+          "aggregate_unique_participants": null
+        },
+        "outcomes": [
+          "Exploratory and confirmatory factor analyses",
+          "Construct validity",
+          "Test-retest reliability"
+        ],
+        "limitations": [
+          "Self-report scale validity does not independently verify extrasensory abilities.",
+          "Selected membership samples and stage-specific denominators constrain generalization."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://doi.org/10.6084/m9.figshare.17029883",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.838582/full",
+            "sections": [
+              "Abstract",
+              "Study 1 summary",
+              "Study 2 table",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn99view0",
+              "turn100view0",
+              "turn100view1"
+            ]
+          }
+        ],
+        "count_note": "Stage-specific counts retained; no summed unique-participant total assigned.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS"
+      }
+    },
+    {
+      "record_id": "CM-OA-009",
+      "study_metadata": {
+        "design": "ERP experiment in a subgroup from a previous randomized Awareness Training Program trial",
+        "sample": {
+          "erp_participants": 85,
+          "atp_group": 42,
+          "waitlist_group": 43,
+          "new_experimental_cohort": false
+        },
+        "outcomes": [
+          "Negative-picture ERPs",
+          "Heart-rate variability",
+          "Behavioral ratings"
+        ],
+        "limitations": [
+          "Earlier trial participants are reused, not a new independent replication.",
+          "Neural/emotional response does not measure real-world compassion or helping.",
+          "No pre-training ERP measurement; within-person neural change was not measured."
+        ],
+        "controls": "Compassion/wisdom/neutral priming and neutral pictures; seven-week training versus waitlist.",
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.891656/full",
+            "sections": [
+              "Abstract",
+              "Participants",
+              "Experimental design",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn76view0",
+              "turn97view0",
+              "turn105view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false,
+          "source_statement": "Authors locate original contributions in the article and supplementary material; further inquiries go to corresponding authors."
+        }
+      }
+    },
+    {
+      "record_id": "CM-OA-010",
+      "study_metadata": {
+        "design": "Literature synthesis of first-person reports and published neuroimaging meta-analyses",
+        "sample": {
+          "new_participants": 0,
+          "new_experimental_cohort": false
+        },
+        "analysis": "Compares mind-wandering/DMN and REM-dreaming reports and activation patterns.",
+        "limitations": [
+          "Cross-literature similarity is not a within-person causal test.",
+          "DMN and REM are proxies, not direct proof of identical experience."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00412/full",
+            "sections": [
+              "Abstract"
+            ],
+            "retrieval_refs": [
+              "turn76view1",
+              "turn89view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-OA-011",
+      "study_metadata": {
+        "design": "Conceptual literature synthesis proposing context/content hypotheses",
+        "sample": {
+          "new_participants": 0,
+          "new_experimental_cohort": false
+        },
+        "content_scope": "Costs and benefits of self-generated thought depend on task demands and content.",
+        "limitations": [
+          "Proposed hypotheses are not new experimental results.",
+          "Adaptive framing does not imply benefit in every task or clinical context."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2013.00441/full",
+            "sections": [
+              "Abstract"
+            ],
+            "retrieval_refs": [
+              "turn76view2",
+              "turn89view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B13-0001",
+      "study_metadata": {
+        "design": "Within-participant sustained-attention experiment with concern cues and thought probes",
+        "sample": {
+          "participants": 26,
+          "excluded_for_go_error_rule": 0
+        },
+        "outcomes": [
+          "Thought stickiness",
+          "Off-task reports",
+          "Response-time variability"
+        ],
+        "limitations": [
+          "Self-report stickiness associations do not establish causal direction.",
+          "Small, selected task sample."
+        ],
+        "reported_findings": "Concern cues had no clear task-performance effect; stickiness tracked off-task reports and response-time variability.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00732/full",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn78view0",
+              "turn97view1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B13-0002",
+      "study_metadata": {
+        "design": "Kuramoto mean-field simulation compared with previously collected EEG",
+        "sample": {
+          "new_experimental_cohort": false,
+          "empirical_validation_participants": null
+        },
+        "outcomes": [
+          "Simulated EEG structural complexity",
+          "Correspondence with real EEG"
+        ],
+        "limitations": [
+          "Model fit is not proof of a unique mechanism.",
+          "Empirical EEG derives from earlier work; acquisition sample unverified."
+        ],
+        "analysis": "Contrasts salience-network versus default-mode-network synchrony when external stimulation is applied.",
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2016.00020/full",
+            "sections": [
+              "Abstract",
+              "Discussion"
+            ],
+            "retrieval_refs": [
+              "turn78view1",
+              "turn87view0",
+              "turn97view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B13-0003",
+      "study_metadata": {
+        "design": "EEG regression prediction during sustained attention",
+        "sample": {
+          "recruited_participants": 50,
+          "excluded_depression_rule": 2,
+          "excluded_report_range": 5,
+          "analysed_participants": 43
+        },
+        "outcomes": [
+          "EEG power/coherence",
+          "Self-reported mind-wandering intensity",
+          "Held-out prediction"
+        ],
+        "limitations": [
+          "Prediction against subjective labels is not independent diagnosis.",
+          "Narrow training population and exclusion rules limit generalization."
+        ],
+        "analysis": "Linear/nonlinear support-vector regression compared on held-out data.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00365/full",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn78view2",
+              "turn87view1",
+              "turn96view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0001",
+      "study_metadata": {
+        "design": "Retrospective memory-characteristics comparison",
+        "sample": {
+          "nde_coma_group": 8,
+          "coma_memories_without_nde": 6,
+          "no_coma_memory_group": 7,
+          "healthy_controls": 18,
+          "unique_participants": 39
+        },
+        "outcomes": [
+          "Memory Characteristics Questionnaire",
+          "Five memory types per participant"
+        ],
+        "limitations": [
+          "Vividness and detail do not establish external accuracy.",
+          "Small retrospective groups; overlap with other NDE publications unverified."
+        ],
+        "reported_findings": "Authors report richer characteristics for NDE recollections than comparison memories.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057620",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn80view0",
+              "turn87view2",
+              "turn104view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0002",
+      "study_metadata": {
+        "design": "Qualitative thematic analysis of cardiac-arrest survivor narratives",
+        "sample": {
+          "written_nde_narratives": 34
+        },
+        "outcomes": [
+          "Time-bounded themes",
+          "Transversal self-reflection theme"
+        ],
+        "limitations": [
+          "Narrative themes do not establish physiological timing or survival.",
+          "Selected retrospective accounts; cross-publication overlap unverified."
+        ],
+        "data": {
+          "status": "ETHICS_COMMITTEE_APPROVED_ACCESS",
+          "public_repository_verified": false,
+          "source_statement": "Eligible researchers may request confidential data through institutional ethics committee."
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0193001",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn80view1",
+              "turn88view0",
+              "turn104view1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0003",
+      "study_metadata": {
+        "design": "Retrospective automated text mining and hierarchical clustering",
+        "sample": {
+          "participants_with_firsthand_narrative": 158
+        },
+        "outcomes": [
+          "Word frequencies",
+          "Visual, emotional and spatial clusters"
+        ],
+        "limitations": [
+          "Words and clusters describe reports, not verified events or causal mechanisms.",
+          "Language, selection and overlap with prior narrative studies require appraisal."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227402",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn80view2",
+              "turn88view1",
+              "turn104view2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0004",
+      "study_metadata": {
+        "design": "Repeated laboratory assessment plus daily-life experience sampling",
+        "sample": {
+          "participants": 43,
+          "laboratory_sessions_per_person": 2,
+          "ambulatory_days": 5,
+          "scheduled_assessments_per_day": 10,
+          "completed_daily_assessments": 1964,
+          "scheduled_daily_assessments": 2150
+        },
+        "outcomes": [
+          "Amsterdam Resting State Questionnaire",
+          "Mind wandering",
+          "Rumination",
+          "Positive/negative affect"
+        ],
+        "limitations": [
+          "Repeated reports are not independent participants.",
+          "Student cohort and associations constrain causal/generalization claims."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0184488",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn82view0",
+              "turn88view2",
+              "turn101view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0005",
+      "study_metadata": {
+        "design": "Laboratory thought sampling with lagged mood analysis",
+        "sample": {
+          "recruited_participants": 85,
+          "methods_accuracy_exclusions": 3,
+          "results_probe_participants": 83,
+          "reconciled_analysed_participants": null,
+          "recorded_probes": 590
+        },
+        "outcomes": [
+          "Socio-temporal thought content",
+          "Affect and subsequent mood"
+        ],
+        "limitations": [
+          "Methods imply 82 while results report 83; denominator unresolved.",
+          "Temporal precedence in observational lag analysis does not establish causation."
+        ],
+        "reported_findings": "Past/other and future/self thought content had different subsequent-mood associations.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0077554",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn82view1",
+              "turn92view0",
+              "turn96view1",
+              "turn101view1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0006",
+      "study_metadata": {
+        "design": "Adaptive sustained-attention task with reaction-time-triggered thought probes",
+        "sample": {
+          "reported_undergraduates": 33,
+          "additional_excluded_participant": 1,
+          "reconciled_recruited_participants": null
+        },
+        "outcomes": [
+          "Response-time changes",
+          "On/off-task self-reports"
+        ],
+        "limitations": [
+          "Trigger-based sampling may constrain which episodes are detected.",
+          "Task interruptions and on/off-task categories may alter or simplify experience."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "count_note": "Reported 33 and an additional excluded participant retained separately; no inferred recruitment total.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147174",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn82view2",
+              "turn92view1",
+              "turn96view2",
+              "turn101view2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0007",
+      "study_metadata": {
+        "design": "Vigilance and pupillometry experiment with self-caught mind wandering",
+        "sample": {
+          "recruited_participants": 28,
+          "excluded_noncompliance": 4,
+          "analysed_participants": 24
+        },
+        "outcomes": [
+          "Pupil diameter",
+          "Cue-triggered thought onset",
+          "Behavioral reports"
+        ],
+        "limitations": [
+          "Pupil responses are not unique to mind wandering.",
+          "Small student sample and retrospective trigger attribution."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://doi.org/10.5281/zenodo.3673044",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226792",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn79view0",
+              "turn92view2",
+              "turn95view0",
+              "turn102view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0008",
+      "study_metadata": {
+        "design": "Trait questionnaire and two-step decision task with computational modeling",
+        "sample": {
+          "participants": 33
+        },
+        "outcomes": [
+          "Spontaneous/deliberate mind-wandering propensity",
+          "Model-based and model-free decision parameters"
+        ],
+        "limitations": [
+          "Trait associations do not show acute mind wandering caused choices.",
+          "Correlated model parameters are not independent confirmations."
+        ],
+        "reported_findings": "Spontaneous trait reports related to lower model-based control; no significant deliberate-mind-wandering effects reported.",
+        "data": {
+          "status": "CONFIDENTIALITY_RESTRICTED_REQUEST",
+          "public_repository_verified": false,
+          "source_statement": "Data requests subject to confidentiality restrictions."
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0279532",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn79view1",
+              "turn91view0",
+              "turn95view1",
+              "turn102view1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0009",
+      "study_metadata": {
+        "design": "Resting-state fMRI connectivity and later experience-sampling association",
+        "sample": {
+          "recruited_imaging_cohorts": [
+            39,
+            48
+          ],
+          "additional_behavioral_sample": 67,
+          "final_imaging_analysis_count": null
+        },
+        "outcomes": [
+          "Seed-based connectivity",
+          "Content and form of spontaneous thought"
+        ],
+        "limitations": [
+          "Recruitment cohorts and validation sample are separate denominators.",
+          "Connectivity associations do not establish a causal representational hub."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://neurovault.org/collections/1238/",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152272",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn79view2",
+              "turn91view1",
+              "turn95view2",
+              "turn102view2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0010",
+      "study_metadata": {
+        "design": "Three-task individual-differences study with structural equation modeling",
+        "sample": {
+          "recruited_participants": 64,
+          "excluded_low_accuracy": 1,
+          "analysed_participants": 63
+        },
+        "outcomes": [
+          "SART mind wandering",
+          "Perceptual confidence/metacognitive efficiency",
+          "Conflict-task cognitive control"
+        ],
+        "limitations": [
+          "Latent-model relations are observational.",
+          "Subjective detection and behavioral mind-wandering indices differ."
+        ],
+        "reported_findings": "No cognitive-control/behavioral-mind-wandering relation; metacognitive efficiency related negatively to subjective tracking.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://github.com/l-drescher/raw_data_MW_MC_CC",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191639",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn81view0",
+              "turn91view2",
+              "turn98view0",
+              "turn103view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0011",
+      "study_metadata": {
+        "design": "Two-arm randomized online LKM versus progressive-muscle-relaxation trial",
+        "sample": {
+          "enrolled_participants": 75,
+          "not_completed": 6,
+          "final_sample": 69,
+          "outcome_specific_missingness": "One omitted follow-up wall sit; two omitted baseline pain-onset reports."
+        },
+        "outcomes": [
+          "Remote wall-sit pain/tolerance",
+          "Social support and well-being"
+        ],
+        "limitations": [
+          "Baseline blinding does not imply all trial phases were blinded.",
+          "Pandemic context and outcome-specific missingness limit interpretation."
+        ],
+        "intervention": "Four weeks; 24 guided sessions of 15 minutes.",
+        "reported_findings": "Neither intervention reduced pain or increased tolerance; PMR improved perceived social support relative to LKM.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://osf.io/hz3nv/",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn81view1",
+              "turn86view0",
+              "turn98view1",
+              "turn103view1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0012",
+      "study_metadata": {
+        "design": "Pilot randomized eight-week compassion cultivation versus waitlist trial",
+        "sample": {
+          "randomized_participants": 44,
+          "withdrew_before_start": 4,
+          "analysed_participants": 40,
+          "compassion_group": 18,
+          "waitlist_group": 22
+        },
+        "outcomes": [
+          "Self-reported stress/anxiety/burnout",
+          "Compassion/mindfulness/emotion regulation",
+          "Two-month follow-up"
+        ],
+        "limitations": [
+          "Small, predominantly female medical-student sample.",
+          "Waitlist/self-report outcomes do not isolate specific intervention mechanisms."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://github.com/nirakara-lab/CCT-medical-students",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287388",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn81view2",
+              "turn86view1",
+              "turn98view2",
+              "turn103view2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0013",
+      "study_metadata": {
+        "design": "Randomized self-compassion meditation versus coloring in remitted depression",
+        "sample": {
+          "recruited_participants": 55,
+          "withdrew_meditation": 4,
+          "withdrew_coloring": 1,
+          "complete_data_participants": 50
+        },
+        "outcomes": [
+          "Extended Autobiographical Memory Test",
+          "Specificity",
+          "Valence",
+          "Perspective",
+          "Remoteness"
+        ],
+        "limitations": [
+          "Memory-test changes do not establish relapse prevention.",
+          "Student sample and complete-case selection limit generalization."
+        ],
+        "intervention": "Four weeks.",
+        "reported_findings": "Specificity improved relative to coloring; no remoteness change reported.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://doi.org/10.17630/abc1b4e6-d220-4ceb-83fd-42546b8316f2",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287007",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn83view0",
+              "turn94view0",
+              "turn105view0"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0015",
+      "study_metadata": {
+        "design": "Two-study economic-game investigation: trait associations and randomized training",
+        "sample": {
+          "study1_helping_recruitment_methods": 139,
+          "study1_helping_recruitment_results": 142,
+          "study1_helping_final": 136,
+          "study1_punishment_recruited": 143,
+          "study1_punishment_final": 132,
+          "study2_participants": null,
+          "aggregate_unique_participants": null
+        },
+        "outcomes": [
+          "Costly victim helping",
+          "Transgressor punishment",
+          "Empathic concern"
+        ],
+        "limitations": [
+          "Helping recruitment count differs between sections; unresolved.",
+          "Study 2 reuses a previously published training cohort, not independent replication.",
+          "Economic games do not exhaust real-world altruism."
+        ],
+        "reported_findings": "Compassion training increased helping relative to reappraisal; punishment did not differ.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143794",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn83view1",
+              "turn86view2",
+              "turn94view1",
+              "turn105view1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "SRC-B14-0016",
+      "study_metadata": {
+        "design": "Multidisciplinary mechanistic hypothesis and literature discussion",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Biophoton/phosphene and reperfusion hypotheses for NDE light phenomena.",
+        "limitations": [
+          "Proposed biophysical/quantum links are not direct tests in NDE participants.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00533/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn83view2",
+              "turn90view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B14-0017",
+      "study_metadata": {
+        "design": "Neurofunctional literature review of altered-state NDE models",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Drug effects, epilepsy, stimulation, ischemia and gravitational-stress analogues.",
+        "limitations": [
+          "Model/phenomenology overlap does not establish a single mechanism for every clinical NDE.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.846159/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn85view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B14-0018",
+      "study_metadata": {
+        "design": "Review of neurophysiology around death",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Dying-brain recordings compared with memory, dream, OBE and meditative findings.",
+        "limitations": [
+          "Animal/human recordings and survivor recollections require distinct timing and species labels.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1143848/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn85view1",
+              "turn90view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B14-0020",
+      "study_metadata": {
+        "design": "Opinion article on neural/computational constraints",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Adaptive and mechanistic accounts of spontaneous thought.",
+        "limitations": [
+          "Conceptual propositions are not new experimental findings.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00039/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn85view2",
+              "turn90view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B15-0006",
+      "study_metadata": {
+        "design": "Sensory-isolated recipient fMRI with randomized intention/no-intention intervals",
+        "sample": {
+          "healers_recruited": 11,
+          "recipients_each_healer_selected": 1,
+          "final_scanned_analysis_count": null
+        },
+        "outcomes": [
+          "fMRI send versus no-send contrast"
+        ],
+        "limitations": [
+          "Abstract does not establish final scanned sample or full exclusion/analysis details.",
+          "Correlation is not proof of distant healing or causal mechanism.",
+          "Whole-brain inference and sensory-isolation protocol need full-method appraisal."
+        ],
+        "controls": "Random two-minute send/no-send intervals unknown to recipient.",
+        "references": [
+          {
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/16398587/",
+            "sections": [
+              "PubMed abstract"
+            ],
+            "retrieval_refs": [
+              "turn84view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBMED_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    }
+  ],
+  "source_snapshot_sha256": "c17be54adf984256abd10fabd9a777fbb7fd2ceb8636c22a4e02de606140eb52",
+  "inspection_regime": "Primary/publication and research-resource inspection at stated depths",
+  "limitations": "Metadata extraction only, not scientific appraisal. Unknown counts remain null; repository links are not verified dataset access or reuse permission. Overlapping cohorts and secondary summaries add no independent confirmations."
+}

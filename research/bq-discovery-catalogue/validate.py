@@ -48,6 +48,39 @@ def validate():
             assert metadata['appraisal_status'] == 'NOT_INDEPENDENTLY_APPRAISED'
             assert metadata['references'] and all(ref['source_url'].startswith('https://') and ref['sections'] for ref in metadata['references'])
     assert set(audit_ids) == set(enriched) and len(audit_ids) == len(set(audit_ids))
+    coverage = data['enrichment_coverage']
+    assert len(enriched) == coverage['records_with_study_metadata'] == coverage['records_total'] == len(records)
+    assert coverage['scientific_appraisal_complete'] is False
+    for number in (23, 24):
+        audit = json.loads((ROOT / f'enrichment-{number}.json').read_text())
+        for change in audit['changes']:
+            metadata = change['study_metadata']
+            assert metadata.get('inspection_scope')
+            assert metadata['data']['public_repository_verified'] is False
+            assert all(ref.get('retrieval_refs') for ref in metadata['references'])
+            if number == 23:
+                assert metadata['sample']['new_experimental_cohort'] is False
+                assert metadata['sample']['new_participants'] == 0
+                assert metadata['review_questions_provenance'] == 'AI_SUGGESTED_APPRAISAL_QUESTIONS'
+    for rid, recruited_key, lost_keys, analysed_key in (
+        ('SRC-B13-0003', 'recruited_participants', ['excluded_depression_rule', 'excluded_report_range'], 'analysed_participants'),
+        ('SRC-B14-0007', 'recruited_participants', ['excluded_noncompliance'], 'analysed_participants'),
+        ('SRC-B14-0010', 'recruited_participants', ['excluded_low_accuracy'], 'analysed_participants'),
+        ('SRC-B14-0011', 'enrolled_participants', ['not_completed'], 'final_sample'),
+        ('SRC-B14-0012', 'randomized_participants', ['withdrew_before_start'], 'analysed_participants'),
+        ('SRC-B14-0013', 'recruited_participants', ['withdrew_meditation', 'withdrew_coloring'], 'complete_data_participants'),
+    ):
+        sample = enriched[rid]['study_metadata']['sample']
+        assert sample[recruited_key] - sum(sample[key] for key in lost_keys) == sample[analysed_key]
+    atp = enriched['CM-OA-009']['study_metadata']['sample']
+    assert atp['atp_group'] + atp['waitlist_group'] == atp['erp_participants']
+    assert atp['new_experimental_cohort'] is False
+    daily = enriched['SRC-B14-0004']['study_metadata']['sample']
+    assert daily['scheduled_daily_assessments'] == daily['participants'] * daily['ambulatory_days'] * daily['scheduled_assessments_per_day']
+    assert daily['completed_daily_assessments'] <= daily['scheduled_daily_assessments']
+    mood = enriched['SRC-B14-0005']['study_metadata']['sample']
+    assert mood['recruited_participants'] - mood['methods_accuracy_exclusions'] != mood['results_probe_participants']
+    assert mood['reconciled_analysed_participants'] is None
     review = enriched['SRC-B15-0005']['study_metadata']['sample']
     assert review['reports_reviewed'] >= review['studies_reviewed'] and review['new_participants'] == 0
     assert enriched['SRC-B16-0005']['study_metadata']['sample']['scanned_participants'] is None

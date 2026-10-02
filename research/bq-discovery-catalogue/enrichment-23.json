@@ -1,0 +1,1477 @@
+{
+  "enrichment_id": "ENRICHMENT-23",
+  "date": "2026-10-02",
+  "records_total": 91,
+  "new_records_added": 0,
+  "independent_studies_promoted": 0,
+  "accepted_edges_added": 0,
+  "original_batch_snapshots_modified": false,
+  "changes": [
+    {
+      "record_id": "SRC-SPR-PE-0001",
+      "study_metadata": {
+        "design": "Review of AWARE resuscitation studies",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Hidden visual targets",
+          "Survivor interview selection",
+          "AWARE I and II"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were targets active and available in the room, and were recall results checked against original reports?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Secondary target-test claims require primary-paper checking; cardiac arrest is not irreversible death.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "SRC-SPR-PE-0004",
+      "study_metadata": {
+        "design": "Psychological explanation and methods overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Barnum statements",
+          "Verbal/nonverbal feedback",
+          "Advance information gathering"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were sitters and readers blinded and all statements scored, including misses?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Plausible ordinary mechanisms are not proof of fraud in any particular reading.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/cold-reading/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view1",
+              "turn65view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Hyman (1977, 1981)",
+            "Roe and Roxburgh (2013a, 2013b)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-SPR-PE-0005",
+      "study_metadata": {
+        "design": "Historical and methodological review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Hypnosis",
+          "Sleep",
+          "Psychedelic states",
+          "Meditation",
+          "Ganzfeld"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was the induced state independently measured rather than inferred from induction alone?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "State induction, subjective experience and verified information accuracy are distinct.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/altered-states-consciousness-and-psi/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view2",
+              "turn65view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "SRC-SPR-PE-0006",
+      "study_metadata": {
+        "design": "Methodological critique and confirmatory-design proposal",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Physiology before random stimuli",
+          "Post hoc processing",
+          "Preregistered classification"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Can locked preprocessing predict held-out randomly selected targets without future-data leakage?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Author recommendations and critiques are not a new experiment or a result adjudication.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/presentiment-research-methods/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view3",
+              "turn65view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Kennedy (2013)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-SPR-PE-0007",
+      "study_metadata": {
+        "design": "Historical research-integrity review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Established versus suspected fraud",
+          "Shared control",
+          "Transparent data handling"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What contemporaneous documentation distinguishes established misconduct from suspicion?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Misconduct allegations remain attributed; not independently adjudicated here.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/researcher-fraud-in-experimental-parapsychology/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view4",
+              "turn64view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-001",
+      "study_metadata": {
+        "design": "NDE research and interpretation overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Reported features",
+          "Distressing experiences",
+          "Clinical studies",
+          "Competing explanations"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Which observations were prospectively documented and linked to measured clinical timing?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Reported experiences do not establish survival after irreversible death.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/near-death-experience/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view5",
+              "turn64view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-002",
+      "study_metadata": {
+        "design": "Historical and clinical case review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Terminal lucidity",
+          "Paradoxical lucidity",
+          "Neurological disorders"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was prior impairment documented and lucidity rated prospectively with a clear timing definition?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Case reports and theoretical interpretations are not controlled causal tests.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/terminal-lucidity/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view6",
+              "turn64view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-003",
+      "study_metadata": {
+        "design": "Philosophical and evidential overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Mediumship",
+          "Reincarnation cases",
+          "NDEs",
+          "Living-agent psi"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What findings distinguish personal identity continuity from information transfer or ordinary alternatives?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Competing-model discussion is not a confirmation of survival.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/postmortem-survival/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view7",
+              "turn66view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-004",
+      "study_metadata": {
+        "design": "Bereavement-experience research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Sensed presence",
+          "Dreams",
+          "Survey definitions",
+          "Psychological explanations"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "How were experiences defined and participants recruited, and what was independently corroborated?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Meaning and comfort do not establish external communication.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/after-death-communications-overview/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn69view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-005",
+      "study_metadata": {
+        "design": "Distressing-NDE taxonomy and interpretation review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Inverse",
+          "Void",
+          "Hellish reports",
+          "Aftereffects"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "How are distress, recall and follow-up selection measured across studies?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Experiential categories are not evidence of punishment or a particular afterlife.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/distressing-near-death-experience/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn69view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-006",
+      "study_metadata": {
+        "design": "Pediatric NDE research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Child accounts",
+          "Participatory methods",
+          "Intensive-care context"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were accounts collected directly from children and separated from adult retrospective recollections?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Adult and child reports cannot be assumed equivalent; cited studies unappraised.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/childrens-near-death-experiences/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn69view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-007",
+      "study_metadata": {
+        "design": "Meditation/psi literature overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Practice type",
+          "State versus trait",
+          "Attention",
+          "Setting and belief"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were meditation practice and psi-task accuracy measured separately with appropriate controls?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Historical traditions, experimental outcomes and interpretations remain separate.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/meditation-and-psi/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn67view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-008",
+      "study_metadata": {
+        "design": "Dream-ESP history and research review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Spontaneous cases",
+          "Maimonides experiments",
+          "Target judging"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were dream reports timestamped before target disclosure with blinded judging and failed matches retained?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Selective correspondence and recall bias require case-level assessment.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/dreams-and-esp/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn67view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-009",
+      "study_metadata": {
+        "design": "Lucid-dreaming research and practice overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "REM sleep",
+          "Induction methods",
+          "Dream diaries",
+          "Applications"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was lucidity physiologically signaled and separated from claims of shared or telepathic dreaming?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Lucid awareness does not itself validate anomalous information access.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/lucid-dreaming/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn67view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-010",
+      "study_metadata": {
+        "design": "Historical and contemporary dream-incubation overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Temple practices",
+          "Problem solving",
+          "Experimental dream relevance"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Do claimed benefits have prespecified outcomes and comparators rather than historical testimonials?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Religious healing accounts and modern laboratory evidence are different source types.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/dream-incubation/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn70view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-011",
+      "study_metadata": {
+        "design": "Cultural and speculative conceptual review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Tulpa traditions",
+          "Folklore",
+          "Dissociation",
+          "Philip experiments"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What observable test would distinguish an external entity from imagination or group suggestion?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Speculative entities and cultural beliefs are not established experimental findings.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/thoughtforms/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn70view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-012",
+      "study_metadata": {
+        "design": "Psychology/parapsychology literature overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Personality and cognition",
+          "Clinical experiences",
+          "Social belief"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Which claims concern psychological reports and which require independent information verification?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Psychological importance of reports does not determine their proposed mechanism.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/psychology-and-parapsychology/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn70view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-013",
+      "study_metadata": {
+        "design": "Cultural, philosophical and case-research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Eastern/Western/tribal traditions",
+          "Children’s reports",
+          "Ordinary alternatives"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Are religious frameworks kept separate from case documentation and causal inference?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Broad overview is not a new case collection or independent study.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-overview/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn68view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-014",
+      "study_metadata": {
+        "design": "Secondary cross-cultural case-pattern review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Onset and cessation",
+          "Violent death",
+          "Case solvability",
+          "Culture"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "How were cases selected, coded and deduplicated, and what population supplies comparison rates?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Patterns in selected cases do not establish population prevalence or causal mechanism.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/patterns-reincarnation-cases/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn68view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-015",
+      "study_metadata": {
+        "design": "Experimenter-variable research review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Interpersonal behavior",
+          "Expectancy",
+          "Investigator-psi hypothesis"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were experimenter effects experimentally manipulated and blinded rather than inferred retrospectively?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Ordinary experimenter influence and anomalous explanations are distinct hypotheses.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/experimenter-effects/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn68view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-016",
+      "study_metadata": {
+        "design": "Conceptual review of declining effects",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Motivation",
+          "Within-run changes",
+          "Replication",
+          "Statistical artifacts"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What test distinguishes a causal decline mechanism from false positives and failed replication?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "A decline explanation should not automatically rescue a failed replication.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/decline-effect-parapsychology/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn72view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Colborn (2007)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-PSI-017",
+      "study_metadata": {
+        "design": "Philosophical living-agent-psi hypothesis discussion",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Survival alternatives",
+          "Precision versus magnitude",
+          "Explanatory flexibility"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What risky prediction distinguishes living-agent psi from survival and ordinary mechanisms?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "An alternative hypothesis is not evidence that its proposed capacities exist.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/super-psi-hypothesis/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn72view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Braude (2003, 2009, 2014)",
+            "Sudduth (2014, 2016)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-PSI-018",
+      "study_metadata": {
+        "design": "Historical research-methods discussion",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Preregistration",
+          "Exploration versus confirmation",
+          "Open records",
+          "Meta-analysis"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Are the methodological recommendations assessed separately from claims about historical experiments?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Historical methodological arguments do not validate all earlier findings.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/jb-rhine-and-the-replication-crisis-in-research/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn72view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-019",
+      "study_metadata": {
+        "design": "Secondary report of a confirmatory replication project",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Consensus protocol",
+          "Independent auditing",
+          "Preregistration",
+          "Null replication"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Do original protocol, registered analysis and published results agree?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Project summary is a publication lead, not an additional independent cohort.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/transparent-psi-project/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn71view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Kekecs et al. (2022), Transparent Psi Project"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-PSI-021",
+      "study_metadata": {
+        "design": "Philosophical xenoglossy evidence critique",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Language skill versus factual knowledge",
+          "Dissociation",
+          "Latent learning",
+          "Living-agent psi"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was responsive linguistic competence independently scored and ordinary exposure investigated?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Skill reports alone do not establish survival or a previous identity.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/xenoglossy-evidence-survival/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn71view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-022",
+      "study_metadata": {
+        "design": "Deathbed-vision research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Caregiver surveys",
+          "Clinical accounts",
+          "Cross-cultural reports"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were medications, delirium, witness selection and timing measured using comparable definitions?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Caregiver recollection and patient reports require distinct source labels.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/deathbed-visions-research/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn71view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-023",
+      "study_metadata": {
+        "design": "Review of danger, death and bereavement phenomena",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Crisis impressions",
+          "Terminal lucidity",
+          "Deathbed visions"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were dates and predictions documented before learning the event, with chance correspondences assessed?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Several overlapping phenomena are not independent confirmations of one mechanism.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/phenomena-relating-danger-death-bereavement/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn74view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Stevenson (1973)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-PSI-024",
+      "study_metadata": {
+        "design": "Cross-state deceased-encounter case and survey review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Dreams",
+          "Waking apparitions",
+          "Bereavement",
+          "Unknown-information claims"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What was corroborated independently and what remains perceived meaning or vividness?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Comfort, vividness and purported veridicality must not be collapsed.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/encounters-deceased/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn74view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
+    },
+    {
+      "record_id": "CM-PSI-025",
+      "study_metadata": {
+        "design": "Secondary review of intermission-memory cases",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Between-lives reports",
+          "Cultural variation",
+          "Stages",
+          "Case comparisons"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were reports documented before identification and are overlapping case collections deduplicated?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Source interpretations and reported case correspondences remain unverified.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-intermission-memories/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn74view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Sharma and Tucker (2004)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CM-PSI-028",
+      "study_metadata": {
+        "design": "Historical and case-based dream review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Pregnancy dreams",
+          "Departure dreams",
+          "Naming and expectations"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was dream content recorded before conception, birth or identity selection rather than reconstructed later?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Anecdotal narratives and cultural expectations do not establish reincarnation.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/announcing-and-departure_dreams/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn73view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Story (1975)",
+            "Stevenson (1983)",
+            "Tucker (2005)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
+    }
+  ],
+  "source_snapshot_sha256": "c17be54adf984256abd10fabd9a777fbb7fd2ceb8636c22a4e02de606140eb52",
+  "inspection_regime": "Secondary encyclopedia scope and AI-suggested appraisal questions",
+  "limitations": "Metadata extraction only, not scientific appraisal. Unknown counts remain null; repository links are not verified dataset access or reuse permission. Overlapping cohorts and secondary summaries add no independent confirmations."
+}

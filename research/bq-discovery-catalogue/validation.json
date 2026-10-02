@@ -1,7 +1,7 @@
 {
   "passed": true,
   "records": 91,
-  "method_enriched_records": 30,
+  "method_enriched_records": 91,
   "duplicate_ids_titles_dois_urls": 0,
   "independent_studies_promoted": 0,
   "accepted_edges": 0,

@@ -95,7 +95,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Review of AWARE resuscitation studies",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Hidden visual targets",
+          "Survivor interview selection",
+          "AWARE I and II"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were targets active and available in the room, and were recall results checked against original reports?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Secondary target-test claims require primary-paper checking; cardiac arrest is not irreversible death.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "SRC-SPR-PE-0002",
@@ -438,7 +481,59 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Psychological explanation and methods overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Barnum statements",
+          "Verbal/nonverbal feedback",
+          "Advance information gathering"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were sitters and readers blinded and all statements scored, including misses?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Plausible ordinary mechanisms are not proof of fraud in any particular reading.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/cold-reading/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view1",
+              "turn65view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Hyman (1977, 1981)",
+            "Roe and Roxburgh (2013a, 2013b)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-SPR-PE-0005",
@@ -513,7 +608,53 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Historical and methodological review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Hypnosis",
+          "Sleep",
+          "Psychedelic states",
+          "Meditation",
+          "Ganzfeld"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was the induced state independently measured rather than inferred from induction alone?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "State induction, subjective experience and verified information accuracy are distinct.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/altered-states-consciousness-and-psi/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view2",
+              "turn65view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "SRC-SPR-PE-0006",
@@ -588,7 +729,58 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Methodological critique and confirmatory-design proposal",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Physiology before random stimuli",
+          "Post hoc processing",
+          "Preregistered classification"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Can locked preprocessing predict held-out randomly selected targets without future-data leakage?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Author recommendations and critiques are not a new experiment or a result adjudication.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/presentiment-research-methods/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view3",
+              "turn65view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Kennedy (2013)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-SPR-PE-0007",
@@ -663,7 +855,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Historical research-integrity review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Established versus suspected fraud",
+          "Shared control",
+          "Transparent data handling"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What contemporaneous documentation distinguishes established misconduct from suspicion?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Misconduct allegations remain attributed; not independently adjudicated here.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/researcher-fraud-in-experimental-parapsychology/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view4",
+              "turn64view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-001",
@@ -727,7 +963,52 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "NDE research and interpretation overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Reported features",
+          "Distressing experiences",
+          "Clinical studies",
+          "Competing explanations"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Which observations were prospectively documented and linked to measured clinical timing?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Reported experiences do not establish survival after irreversible death.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/near-death-experience/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view5",
+              "turn64view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-002",
@@ -791,7 +1072,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Historical and clinical case review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Terminal lucidity",
+          "Paradoxical lucidity",
+          "Neurological disorders"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was prior impairment documented and lucidity rated prospectively with a clear timing definition?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Case reports and theoretical interpretations are not controlled causal tests.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/terminal-lucidity/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view6",
+              "turn64view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-003",
@@ -855,7 +1180,52 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Philosophical and evidential overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Mediumship",
+          "Reincarnation cases",
+          "NDEs",
+          "Living-agent psi"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What findings distinguish personal identity continuity from information transfer or ordinary alternatives?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Competing-model discussion is not a confirmation of survival.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/postmortem-survival/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn62view7",
+              "turn66view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-004",
@@ -919,7 +1289,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Bereavement-experience research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Sensed presence",
+          "Dreams",
+          "Survey definitions",
+          "Psychological explanations"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "How were experiences defined and participants recruited, and what was independently corroborated?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Meaning and comfort do not establish external communication.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/after-death-communications-overview/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn69view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-005",
@@ -983,7 +1397,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Distressing-NDE taxonomy and interpretation review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Inverse",
+          "Void",
+          "Hellish reports",
+          "Aftereffects"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "How are distress, recall and follow-up selection measured across studies?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Experiential categories are not evidence of punishment or a particular afterlife.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/distressing-near-death-experience/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn69view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-006",
@@ -1047,7 +1505,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Pediatric NDE research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Child accounts",
+          "Participatory methods",
+          "Intensive-care context"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were accounts collected directly from children and separated from adult retrospective recollections?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Adult and child reports cannot be assumed equivalent; cited studies unappraised.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/childrens-near-death-experiences/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn69view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-007",
@@ -1111,7 +1612,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Meditation/psi literature overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Practice type",
+          "State versus trait",
+          "Attention",
+          "Setting and belief"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were meditation practice and psi-task accuracy measured separately with appropriate controls?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Historical traditions, experimental outcomes and interpretations remain separate.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/meditation-and-psi/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn67view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-IONS-001",
@@ -1172,7 +1717,44 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Cross-sectional survey of academic professionals",
+        "sample": {
+          "survey_completers": 442,
+          "proposed_experiment_scenarios": 10
+        },
+        "outcomes": [
+          "Confidence in survival",
+          "Paranormal belief",
+          "Persuasiveness and expected success of proposed experiments"
+        ],
+        "limitations": [
+          "Ratings of proposed experiments are not completed survival tests.",
+          "Self-selected survey beliefs do not verify the phenomenon."
+        ],
+        "inspection_note": "Publisher abstract only; full questionnaire and dataset uninspected",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.lub.lu.se/jaex/article/view/24125",
+            "sections": [
+              "Publisher abstract"
+            ],
+            "retrieval_refs": [
+              "turn75view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "CM-IONS-002",
@@ -1244,7 +1826,41 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Qualitative structured interviews across transformative traditions",
+        "sample": {
+          "teachers_and_scholars_interviewed": 47
+        },
+        "outcomes": [
+          "Reported predictors and outcomes of transformation",
+          "Compassion and altruism themes"
+        ],
+        "limitations": [
+          "Expert interpretations do not establish causal effects or measured helping behavior.",
+          "Full methods and sampling frame not inspected."
+        ],
+        "references": [
+          {
+            "source_url": "https://noetic.org/publication/i-to-we-the-role-of-consciousness-transformation-in-compassion-and-altruism/",
+            "sections": [
+              "IONS reproduced abstract and citation"
+            ],
+            "retrieval_refs": [
+              "turn75view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_REPRODUCED_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-IONS-003",
@@ -1422,7 +2038,47 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary analysis of personal-development workshop survey records",
+        "sample": {
+          "post_survey_record_count": null,
+          "unique_participants": null,
+          "new_experimental_cohort": false
+        },
+        "outcomes": [
+          "Reported insight",
+          "Noetic experiences",
+          "Transpersonal experiences"
+        ],
+        "limitations": [
+          "Post-survey records are not necessarily unique people.",
+          "Uncontrolled self-report does not establish efficacy or anomalous capacities.",
+          "Overlap with other workshop publications unresolved."
+        ],
+        "references": [
+          {
+            "source_url": "https://digitalcommons.ciis.edu/ijts-transpersonalstudies/vol41/iss1/6/",
+            "sections": [
+              "Publisher abstract",
+              "Licence notice"
+            ],
+            "retrieval_refs": [
+              "turn75view2",
+              "turn89view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_AND_LICENCE",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-IONS-005",
@@ -1603,7 +2259,40 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Educational practice/course resource; not a clinical trial",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Nine guided practices across transformative traditions, including loving-kindness.",
+        "limitations": [
+          "Program descriptions are not experimental outcomes.",
+          "Course/media access and reuse rights require separate checks."
+        ],
+        "references": [
+          {
+            "source_url": "https://noetic.org/experience/living-deeply-practices/",
+            "sections": [
+              "Program description",
+              "Included practices"
+            ],
+            "retrieval_refs": [
+              "turn77view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_RESOURCE_DESCRIPTION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-IONS-007",
@@ -1661,7 +2350,42 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Research project page describing an anonymous beliefs survey",
+        "sample": {
+          "respondent_count": null
+        },
+        "outcomes": [
+          "Beliefs about which aspects of a person survive death"
+        ],
+        "source_reported_status": "Complete",
+        "limitations": [
+          "Completion status is not a result or evidence appraisal.",
+          "No findings or dataset established from this page."
+        ],
+        "references": [
+          {
+            "source_url": "https://noetic.org/research/what-survives-death/",
+            "sections": [
+              "Study purpose",
+              "Status and activities"
+            ],
+            "retrieval_refs": [
+              "turn77view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_PROJECT_DESCRIPTION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-OA-001",
@@ -1722,7 +2446,55 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Three-stage psychometric instrument development and validation",
+        "sample": {
+          "study1_abstract_count": 521,
+          "study1_summary_count": 507,
+          "study2_time1_nsi_complete": 667,
+          "study2_time2_table_count": 542,
+          "study3_participants": null,
+          "aggregate_unique_participants": null
+        },
+        "outcomes": [
+          "Exploratory and confirmatory factor analyses",
+          "Construct validity",
+          "Test-retest reliability"
+        ],
+        "limitations": [
+          "Self-report scale validity does not independently verify extrasensory abilities.",
+          "Selected membership samples and stage-specific denominators constrain generalization."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://doi.org/10.6084/m9.figshare.17029883",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.838582/full",
+            "sections": [
+              "Abstract",
+              "Study 1 summary",
+              "Study 2 table",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn99view0",
+              "turn100view0",
+              "turn100view1"
+            ]
+          }
+        ],
+        "count_note": "Stage-specific counts retained; no summed unique-participant total assigned.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS"
+      }
     },
     {
       "record_id": "CM-OA-002",
@@ -2534,7 +3306,54 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "ERP experiment in a subgroup from a previous randomized Awareness Training Program trial",
+        "sample": {
+          "erp_participants": 85,
+          "atp_group": 42,
+          "waitlist_group": 43,
+          "new_experimental_cohort": false
+        },
+        "outcomes": [
+          "Negative-picture ERPs",
+          "Heart-rate variability",
+          "Behavioral ratings"
+        ],
+        "limitations": [
+          "Earlier trial participants are reused, not a new independent replication.",
+          "Neural/emotional response does not measure real-world compassion or helping.",
+          "No pre-training ERP measurement; within-person neural change was not measured."
+        ],
+        "controls": "Compassion/wisdom/neutral priming and neutral pictures; seven-week training versus waitlist.",
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.891656/full",
+            "sections": [
+              "Abstract",
+              "Participants",
+              "Experimental design",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn76view0",
+              "turn97view0",
+              "turn105view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false,
+          "source_statement": "Authors locate original contributions in the article and supplementary material; further inquiries go to corresponding authors."
+        }
+      }
     },
     {
       "record_id": "CM-OA-010",
@@ -2594,7 +3413,40 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Literature synthesis of first-person reports and published neuroimaging meta-analyses",
+        "sample": {
+          "new_participants": 0,
+          "new_experimental_cohort": false
+        },
+        "analysis": "Compares mind-wandering/DMN and REM-dreaming reports and activation patterns.",
+        "limitations": [
+          "Cross-literature similarity is not a within-person causal test.",
+          "DMN and REM are proxies, not direct proof of identical experience."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00412/full",
+            "sections": [
+              "Abstract"
+            ],
+            "retrieval_refs": [
+              "turn76view1",
+              "turn89view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-OA-011",
@@ -2651,7 +3503,40 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Conceptual literature synthesis proposing context/content hypotheses",
+        "sample": {
+          "new_participants": 0,
+          "new_experimental_cohort": false
+        },
+        "content_scope": "Costs and benefits of self-generated thought depend on task demands and content.",
+        "limitations": [
+          "Proposed hypotheses are not new experimental results.",
+          "Adaptive framing does not imply benefit in every task or clinical context."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2013.00441/full",
+            "sections": [
+              "Abstract"
+            ],
+            "retrieval_refs": [
+              "turn76view2",
+              "turn89view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-008",
@@ -2687,7 +3572,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Dream-ESP history and research review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Spontaneous cases",
+          "Maimonides experiments",
+          "Target judging"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were dream reports timestamped before target disclosure with blinded judging and failed matches retained?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Selective correspondence and recall bias require case-level assessment.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/dreams-and-esp/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn67view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-009",
@@ -2723,7 +3651,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Lucid-dreaming research and practice overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "REM sleep",
+          "Induction methods",
+          "Dream diaries",
+          "Applications"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was lucidity physiologically signaled and separated from claims of shared or telepathic dreaming?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Lucid awareness does not itself validate anomalous information access.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/lucid-dreaming/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn67view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-010",
@@ -2759,7 +3731,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Historical and contemporary dream-incubation overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Temple practices",
+          "Problem solving",
+          "Experimental dream relevance"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Do claimed benefits have prespecified outcomes and comparators rather than historical testimonials?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Religious healing accounts and modern laboratory evidence are different source types.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/dream-incubation/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn70view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-011",
@@ -2796,7 +3811,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Cultural and speculative conceptual review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Tulpa traditions",
+          "Folklore",
+          "Dissociation",
+          "Philip experiments"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What observable test would distinguish an external entity from imagination or group suggestion?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Speculative entities and cultural beliefs are not established experimental findings.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/thoughtforms/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn70view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-012",
@@ -2832,7 +3891,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Psychology/parapsychology literature overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Personality and cognition",
+          "Clinical experiences",
+          "Social belief"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Which claims concern psychological reports and which require independent information verification?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Psychological importance of reports does not determine their proposed mechanism.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/psychology-and-parapsychology/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn70view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-013",
@@ -2868,7 +3970,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Cultural, philosophical and case-research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Eastern/Western/tribal traditions",
+          "Children’s reports",
+          "Ordinary alternatives"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Are religious frameworks kept separate from case documentation and causal inference?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Broad overview is not a new case collection or independent study.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-overview/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn68view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-014",
@@ -2904,7 +4049,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary cross-cultural case-pattern review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Onset and cessation",
+          "Violent death",
+          "Case solvability",
+          "Culture"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "How were cases selected, coded and deduplicated, and what population supplies comparison rates?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Patterns in selected cases do not establish population prevalence or causal mechanism.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/patterns-reincarnation-cases/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn68view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-015",
@@ -2940,7 +4129,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Experimenter-variable research review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Interpersonal behavior",
+          "Expectancy",
+          "Investigator-psi hypothesis"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were experimenter effects experimentally manipulated and blinded rather than inferred retrospectively?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Ordinary experimenter influence and anomalous explanations are distinct hypotheses.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/experimenter-effects/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn68view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-016",
@@ -2976,7 +4208,58 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Conceptual review of declining effects",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Motivation",
+          "Within-run changes",
+          "Replication",
+          "Statistical artifacts"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What test distinguishes a causal decline mechanism from false positives and failed replication?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "A decline explanation should not automatically rescue a failed replication.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/decline-effect-parapsychology/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn72view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Colborn (2007)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-017",
@@ -3014,7 +4297,58 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Philosophical living-agent-psi hypothesis discussion",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Survival alternatives",
+          "Precision versus magnitude",
+          "Explanatory flexibility"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What risky prediction distinguishes living-agent psi from survival and ordinary mechanisms?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "An alternative hypothesis is not evidence that its proposed capacities exist.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/super-psi-hypothesis/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn72view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Braude (2003, 2009, 2014)",
+            "Sudduth (2014, 2016)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-018",
@@ -3050,7 +4384,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Historical research-methods discussion",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Preregistration",
+          "Exploration versus confirmation",
+          "Open records",
+          "Meta-analysis"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Are the methodological recommendations assessed separately from claims about historical experiments?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Historical methodological arguments do not validate all earlier findings.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/jb-rhine-and-the-replication-crisis-in-research/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn72view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-019",
@@ -3086,7 +4464,58 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary report of a confirmatory replication project",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Consensus protocol",
+          "Independent auditing",
+          "Preregistration",
+          "Null replication"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Do original protocol, registered analysis and published results agree?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Project summary is a publication lead, not an additional independent cohort.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/transparent-psi-project/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn71view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Kekecs et al. (2022), Transparent Psi Project"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-020",
@@ -3213,7 +4642,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Philosophical xenoglossy evidence critique",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Language skill versus factual knowledge",
+          "Dissociation",
+          "Latent learning",
+          "Living-agent psi"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was responsive linguistic competence independently scored and ordinary exposure investigated?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Skill reports alone do not establish survival or a previous identity.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/xenoglossy-evidence-survival/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn71view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-022",
@@ -3251,7 +4724,50 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Deathbed-vision research overview",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Caregiver surveys",
+          "Clinical accounts",
+          "Cross-cultural reports"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were medications, delirium, witness selection and timing measured using comparable definitions?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Caregiver recollection and patient reports require distinct source labels.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/deathbed-visions-research/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn71view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-023",
@@ -3289,7 +4805,57 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Review of danger, death and bereavement phenomena",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Crisis impressions",
+          "Terminal lucidity",
+          "Deathbed visions"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were dates and predictions documented before learning the event, with chance correspondences assessed?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Several overlapping phenomena are not independent confirmations of one mechanism.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/phenomena-relating-danger-death-bereavement/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn74view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Stevenson (1973)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-024",
@@ -3327,7 +4893,51 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Cross-state deceased-encounter case and survey review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Dreams",
+          "Waking apparitions",
+          "Bereavement",
+          "Unknown-information claims"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "What was corroborated independently and what remains perceived meaning or vividness?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Comfort, vividness and purported veridicality must not be collapsed.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/encounters-deceased/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn74view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX"
+      }
     },
     {
       "record_id": "CM-PSI-025",
@@ -3365,7 +4975,58 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary review of intermission-memory cases",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Between-lives reports",
+          "Cultural variation",
+          "Stages",
+          "Case comparisons"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Were reports documented before identification and are overlapping case collections deduplicated?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Source interpretations and reported case correspondences remain unverified.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-intermission-memories/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn74view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Sharma and Tucker (2004)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-026",
@@ -3595,7 +5256,59 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Historical and case-based dream review",
+        "source_scope": "SECONDARY_OVERVIEW_OR_ARGUMENT",
+        "topics": [
+          "Pregnancy dreams",
+          "Departure dreams",
+          "Naming and expectations"
+        ],
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_or_study_count": null
+        },
+        "review_questions": [
+          "Was dream content recorded before conception, birth or identity selection rather than reconstructed later?"
+        ],
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "limitations": [
+          "Anecdotal narratives and cultural expectations do not establish reincarnation.",
+          "Cited original reports not independently appraised; cross-publication overlap unresolved."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/announcing-and-departure_dreams/",
+            "sections": [
+              "Introduction/overview",
+              "Section index and selected discussion"
+            ],
+            "retrieval_refs": [
+              "turn73view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_INTRODUCTION_AND_SECTION_INDEX",
+        "original_source_leads": {
+          "citations_as_identified_in_secondary_source": [
+            "Story (1975)",
+            "Stevenson (1983)",
+            "Tucker (2005)"
+          ],
+          "primary_reports_inspected": false,
+          "independence_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B13-0001",
@@ -3656,7 +5369,46 @@
         "web_reference": "turn1view0",
         "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
       },
-      "input_record_sha256": "cd68db552af7f1304f15f067628267cfc85802c49a6c47920d067cc5871ac151"
+      "input_record_sha256": "cd68db552af7f1304f15f067628267cfc85802c49a6c47920d067cc5871ac151",
+      "study_metadata": {
+        "design": "Within-participant sustained-attention experiment with concern cues and thought probes",
+        "sample": {
+          "participants": 26,
+          "excluded_for_go_error_rule": 0
+        },
+        "outcomes": [
+          "Thought stickiness",
+          "Off-task reports",
+          "Response-time variability"
+        ],
+        "limitations": [
+          "Self-report stickiness associations do not establish causal direction.",
+          "Small, selected task sample."
+        ],
+        "reported_findings": "Concern cues had no clear task-performance effect; stickiness tracked off-task reports and response-time variability.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00732/full",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn78view0",
+              "turn97view1"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B13-0002",
@@ -3717,7 +5469,46 @@
         "web_reference": "turn1view1",
         "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
       },
-      "input_record_sha256": "d06440a15923f9565b84c059fba4aeca9bd634dca3b6eee983ba04f3ea9708ea"
+      "input_record_sha256": "d06440a15923f9565b84c059fba4aeca9bd634dca3b6eee983ba04f3ea9708ea",
+      "study_metadata": {
+        "design": "Kuramoto mean-field simulation compared with previously collected EEG",
+        "sample": {
+          "new_experimental_cohort": false,
+          "empirical_validation_participants": null
+        },
+        "outcomes": [
+          "Simulated EEG structural complexity",
+          "Correspondence with real EEG"
+        ],
+        "limitations": [
+          "Model fit is not proof of a unique mechanism.",
+          "Empirical EEG derives from earlier work; acquisition sample unverified."
+        ],
+        "analysis": "Contrasts salience-network versus default-mode-network synchrony when external stimulation is applied.",
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2016.00020/full",
+            "sections": [
+              "Abstract",
+              "Discussion"
+            ],
+            "retrieval_refs": [
+              "turn78view1",
+              "turn87view0",
+              "turn97view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B13-0003",
@@ -3778,7 +5569,49 @@
         "web_reference": "turn1view2",
         "correction_retraction_clearance": "NOT_COMPREHENSIVELY_ASSESSED"
       },
-      "input_record_sha256": "d5dec18347ed8110a0347566b002549359c0e4505500c0cbcd6eee1582b0a28e"
+      "input_record_sha256": "d5dec18347ed8110a0347566b002549359c0e4505500c0cbcd6eee1582b0a28e",
+      "study_metadata": {
+        "design": "EEG regression prediction during sustained attention",
+        "sample": {
+          "recruited_participants": 50,
+          "excluded_depression_rule": 2,
+          "excluded_report_range": 5,
+          "analysed_participants": 43
+        },
+        "outcomes": [
+          "EEG power/coherence",
+          "Self-reported mind-wandering intensity",
+          "Held-out prediction"
+        ],
+        "limitations": [
+          "Prediction against subjective labels is not independent diagnosis.",
+          "Narrow training population and exclusion rules limit generalization."
+        ],
+        "analysis": "Linear/nonlinear support-vector regression compared on held-out data.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00365/full",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn78view2",
+              "turn87view1",
+              "turn96view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B13-0004",
@@ -4286,7 +6119,49 @@
         "rights_reference": "turn12view0",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "0513724bc2ad5bf1aaa40e195ef5249677f2e0606b5c117b3986669f8786bf5d"
+      "input_record_sha256": "0513724bc2ad5bf1aaa40e195ef5249677f2e0606b5c117b3986669f8786bf5d",
+      "study_metadata": {
+        "design": "Retrospective memory-characteristics comparison",
+        "sample": {
+          "nde_coma_group": 8,
+          "coma_memories_without_nde": 6,
+          "no_coma_memory_group": 7,
+          "healthy_controls": 18,
+          "unique_participants": 39
+        },
+        "outcomes": [
+          "Memory Characteristics Questionnaire",
+          "Five memory types per participant"
+        ],
+        "limitations": [
+          "Vividness and detail do not establish external accuracy.",
+          "Small retrospective groups; overlap with other NDE publications unverified."
+        ],
+        "reported_findings": "Authors report richer characteristics for NDE recollections than comparison memories.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057620",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn80view0",
+              "turn87view2",
+              "turn104view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0002",
@@ -4346,7 +6221,46 @@
         "rights_reference": "turn12view1",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "00209fd68f894b77ca0e288ee302752022c9b91fbdbe7a017297bc31fc7bb588"
+      "input_record_sha256": "00209fd68f894b77ca0e288ee302752022c9b91fbdbe7a017297bc31fc7bb588",
+      "study_metadata": {
+        "design": "Qualitative thematic analysis of cardiac-arrest survivor narratives",
+        "sample": {
+          "written_nde_narratives": 34
+        },
+        "outcomes": [
+          "Time-bounded themes",
+          "Transversal self-reflection theme"
+        ],
+        "limitations": [
+          "Narrative themes do not establish physiological timing or survival.",
+          "Selected retrospective accounts; cross-publication overlap unverified."
+        ],
+        "data": {
+          "status": "ETHICS_COMMITTEE_APPROVED_ACCESS",
+          "public_repository_verified": false,
+          "source_statement": "Eligible researchers may request confidential data through institutional ethics committee."
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0193001",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn80view1",
+              "turn88view0",
+              "turn104view1"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0003",
@@ -4405,7 +6319,46 @@
         "rights_reference": "turn12view2",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "2728b3e6ddbba5a7334fd6bc4223421c597cf484845c8b9db3b5f03271bb1f01"
+      "input_record_sha256": "2728b3e6ddbba5a7334fd6bc4223421c597cf484845c8b9db3b5f03271bb1f01",
+      "study_metadata": {
+        "design": "Retrospective automated text mining and hierarchical clustering",
+        "sample": {
+          "participants_with_firsthand_narrative": 158
+        },
+        "outcomes": [
+          "Word frequencies",
+          "Visual, emotional and spatial clusters"
+        ],
+        "limitations": [
+          "Words and clusters describe reports, not verified events or causal mechanisms.",
+          "Language, selection and overlap with prior narrative studies require appraisal."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227402",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn80view2",
+              "turn88view1",
+              "turn104view2"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0004",
@@ -4460,7 +6413,53 @@
         "rights_reference": "turn12view3",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "34944e2329fb20d107e36ea461ca50b10c679ec772fbe98f00aaab22201c6ac6"
+      "input_record_sha256": "34944e2329fb20d107e36ea461ca50b10c679ec772fbe98f00aaab22201c6ac6",
+      "study_metadata": {
+        "design": "Repeated laboratory assessment plus daily-life experience sampling",
+        "sample": {
+          "participants": 43,
+          "laboratory_sessions_per_person": 2,
+          "ambulatory_days": 5,
+          "scheduled_assessments_per_day": 10,
+          "completed_daily_assessments": 1964,
+          "scheduled_daily_assessments": 2150
+        },
+        "outcomes": [
+          "Amsterdam Resting State Questionnaire",
+          "Mind wandering",
+          "Rumination",
+          "Positive/negative affect"
+        ],
+        "limitations": [
+          "Repeated reports are not independent participants.",
+          "Student cohort and associations constrain causal/generalization claims."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0184488",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn82view0",
+              "turn88view2",
+              "turn101view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0005",
@@ -4515,7 +6514,50 @@
         "rights_reference": "turn12view4",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "80b7bdfecabb885ba9a029f7876fb9f4e673ac8f0c50a45aa700e7a36253713e"
+      "input_record_sha256": "80b7bdfecabb885ba9a029f7876fb9f4e673ac8f0c50a45aa700e7a36253713e",
+      "study_metadata": {
+        "design": "Laboratory thought sampling with lagged mood analysis",
+        "sample": {
+          "recruited_participants": 85,
+          "methods_accuracy_exclusions": 3,
+          "results_probe_participants": 83,
+          "reconciled_analysed_participants": null,
+          "recorded_probes": 590
+        },
+        "outcomes": [
+          "Socio-temporal thought content",
+          "Affect and subsequent mood"
+        ],
+        "limitations": [
+          "Methods imply 82 while results report 83; denominator unresolved.",
+          "Temporal precedence in observational lag analysis does not establish causation."
+        ],
+        "reported_findings": "Past/other and future/self thought content had different subsequent-mood associations.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0077554",
+            "sections": [
+              "Abstract",
+              "Selected methods"
+            ],
+            "retrieval_refs": [
+              "turn82view1",
+              "turn92view0",
+              "turn96view1",
+              "turn101view1"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0006",
@@ -4570,7 +6612,50 @@
         "rights_reference": "turn12view5",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "065c2b955d68398179a98bdfcc77b74a07e35382b9752ff25862ab0ffd3e5ab4"
+      "input_record_sha256": "065c2b955d68398179a98bdfcc77b74a07e35382b9752ff25862ab0ffd3e5ab4",
+      "study_metadata": {
+        "design": "Adaptive sustained-attention task with reaction-time-triggered thought probes",
+        "sample": {
+          "reported_undergraduates": 33,
+          "additional_excluded_participant": 1,
+          "reconciled_recruited_participants": null
+        },
+        "outcomes": [
+          "Response-time changes",
+          "On/off-task self-reports"
+        ],
+        "limitations": [
+          "Trigger-based sampling may constrain which episodes are detected.",
+          "Task interruptions and on/off-task categories may alter or simplify experience."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "count_note": "Reported 33 and an additional excluded participant retained separately; no inferred recruitment total.",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147174",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn82view2",
+              "turn92view1",
+              "turn96view2",
+              "turn101view2"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0007",
@@ -4624,7 +6709,51 @@
         "rights_reference": "turn12view6",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "bb37ecfbe49b98c60b8214fa2966011bb5385b0efa8eec2fb1af888743161145"
+      "input_record_sha256": "bb37ecfbe49b98c60b8214fa2966011bb5385b0efa8eec2fb1af888743161145",
+      "study_metadata": {
+        "design": "Vigilance and pupillometry experiment with self-caught mind wandering",
+        "sample": {
+          "recruited_participants": 28,
+          "excluded_noncompliance": 4,
+          "analysed_participants": 24
+        },
+        "outcomes": [
+          "Pupil diameter",
+          "Cue-triggered thought onset",
+          "Behavioral reports"
+        ],
+        "limitations": [
+          "Pupil responses are not unique to mind wandering.",
+          "Small student sample and retrospective trigger attribution."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://doi.org/10.5281/zenodo.3673044",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226792",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn79view0",
+              "turn92view2",
+              "turn95view0",
+              "turn102view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0008",
@@ -4678,7 +6807,48 @@
         "rights_reference": "turn12view7",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "3adecb6a725e7badab8dc66a62db95ffc7b5384f73e745d07f90d3934b684860"
+      "input_record_sha256": "3adecb6a725e7badab8dc66a62db95ffc7b5384f73e745d07f90d3934b684860",
+      "study_metadata": {
+        "design": "Trait questionnaire and two-step decision task with computational modeling",
+        "sample": {
+          "participants": 33
+        },
+        "outcomes": [
+          "Spontaneous/deliberate mind-wandering propensity",
+          "Model-based and model-free decision parameters"
+        ],
+        "limitations": [
+          "Trait associations do not show acute mind wandering caused choices.",
+          "Correlated model parameters are not independent confirmations."
+        ],
+        "reported_findings": "Spontaneous trait reports related to lower model-based control; no significant deliberate-mind-wandering effects reported.",
+        "data": {
+          "status": "CONFIDENTIALITY_RESTRICTED_REQUEST",
+          "public_repository_verified": false,
+          "source_statement": "Data requests subject to confidentiality restrictions."
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0279532",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn79view1",
+              "turn91view0",
+              "turn95view1",
+              "turn102view1"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0009",
@@ -4739,7 +6909,53 @@
         "rights_reference": "turn12view8",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "a34ade21c19af807f223646ea82edb5b0bfcda6ef0e45c924808a70a76bc1162"
+      "input_record_sha256": "a34ade21c19af807f223646ea82edb5b0bfcda6ef0e45c924808a70a76bc1162",
+      "study_metadata": {
+        "design": "Resting-state fMRI connectivity and later experience-sampling association",
+        "sample": {
+          "recruited_imaging_cohorts": [
+            39,
+            48
+          ],
+          "additional_behavioral_sample": 67,
+          "final_imaging_analysis_count": null
+        },
+        "outcomes": [
+          "Seed-based connectivity",
+          "Content and form of spontaneous thought"
+        ],
+        "limitations": [
+          "Recruitment cohorts and validation sample are separate denominators.",
+          "Connectivity associations do not establish a causal representational hub."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://neurovault.org/collections/1238/",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152272",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn79view2",
+              "turn91view1",
+              "turn95view2",
+              "turn102view2"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0010",
@@ -4793,7 +7009,52 @@
         "rights_reference": "turn12view9",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "a00d3e22b85f797694c7bf67868a555f5aa92b47a68a225d3c1a9c207188889f"
+      "input_record_sha256": "a00d3e22b85f797694c7bf67868a555f5aa92b47a68a225d3c1a9c207188889f",
+      "study_metadata": {
+        "design": "Three-task individual-differences study with structural equation modeling",
+        "sample": {
+          "recruited_participants": 64,
+          "excluded_low_accuracy": 1,
+          "analysed_participants": 63
+        },
+        "outcomes": [
+          "SART mind wandering",
+          "Perceptual confidence/metacognitive efficiency",
+          "Conflict-task cognitive control"
+        ],
+        "limitations": [
+          "Latent-model relations are observational.",
+          "Subjective detection and behavioral mind-wandering indices differ."
+        ],
+        "reported_findings": "No cognitive-control/behavioral-mind-wandering relation; metacognitive efficiency related negatively to subjective tracking.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://github.com/l-drescher/raw_data_MW_MC_CC",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191639",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn81view0",
+              "turn91view2",
+              "turn98view0",
+              "turn103view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0011",
@@ -4852,7 +7113,53 @@
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
       "bq003_status": "REVIEW_CANDIDATE",
-      "input_record_sha256": "a2a375cf98e4b3bf89ba5892819579bfb7ec713172ea28af2078697add932142"
+      "input_record_sha256": "a2a375cf98e4b3bf89ba5892819579bfb7ec713172ea28af2078697add932142",
+      "study_metadata": {
+        "design": "Two-arm randomized online LKM versus progressive-muscle-relaxation trial",
+        "sample": {
+          "enrolled_participants": 75,
+          "not_completed": 6,
+          "final_sample": 69,
+          "outcome_specific_missingness": "One omitted follow-up wall sit; two omitted baseline pain-onset reports."
+        },
+        "outcomes": [
+          "Remote wall-sit pain/tolerance",
+          "Social support and well-being"
+        ],
+        "limitations": [
+          "Baseline blinding does not imply all trial phases were blinded.",
+          "Pandemic context and outcome-specific missingness limit interpretation."
+        ],
+        "intervention": "Four weeks; 24 guided sessions of 15 minutes.",
+        "reported_findings": "Neither intervention reduced pain or increased tolerance; PMR improved perceived social support relative to LKM.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://osf.io/hz3nv/",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn81view1",
+              "turn86view0",
+              "turn98view1",
+              "turn103view1"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0012",
@@ -4908,7 +7215,53 @@
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
       "bq003_status": "REVIEW_CANDIDATE",
-      "input_record_sha256": "fc66404960097d56ebb51ae98f6576e38ce182cfbd98d8b37631f9fe10bdb285"
+      "input_record_sha256": "fc66404960097d56ebb51ae98f6576e38ce182cfbd98d8b37631f9fe10bdb285",
+      "study_metadata": {
+        "design": "Pilot randomized eight-week compassion cultivation versus waitlist trial",
+        "sample": {
+          "randomized_participants": 44,
+          "withdrew_before_start": 4,
+          "analysed_participants": 40,
+          "compassion_group": 18,
+          "waitlist_group": 22
+        },
+        "outcomes": [
+          "Self-reported stress/anxiety/burnout",
+          "Compassion/mindfulness/emotion regulation",
+          "Two-month follow-up"
+        ],
+        "limitations": [
+          "Small, predominantly female medical-student sample.",
+          "Waitlist/self-report outcomes do not isolate specific intervention mechanisms."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://github.com/nirakara-lab/CCT-medical-students",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287388",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn81view2",
+              "turn86view1",
+              "turn98view2",
+              "turn103view2"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0013",
@@ -4962,7 +7315,55 @@
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
       "bq003_status": "REVIEW_CANDIDATE",
-      "input_record_sha256": "1eb10c3502b283431e086cbd3f7506b3a85602eb4f560370dc61c813c72a6ec9"
+      "input_record_sha256": "1eb10c3502b283431e086cbd3f7506b3a85602eb4f560370dc61c813c72a6ec9",
+      "study_metadata": {
+        "design": "Randomized self-compassion meditation versus coloring in remitted depression",
+        "sample": {
+          "recruited_participants": 55,
+          "withdrew_meditation": 4,
+          "withdrew_coloring": 1,
+          "complete_data_participants": 50
+        },
+        "outcomes": [
+          "Extended Autobiographical Memory Test",
+          "Specificity",
+          "Valence",
+          "Perspective",
+          "Remoteness"
+        ],
+        "limitations": [
+          "Memory-test changes do not establish relapse prevention.",
+          "Student sample and complete-case selection limit generalization."
+        ],
+        "intervention": "Four weeks.",
+        "reported_findings": "Specificity improved relative to coloring; no remoteness change reported.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_REPOSITORY",
+          "repository_url": "https://doi.org/10.17630/abc1b4e6-d220-4ceb-83fd-42546b8316f2",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287007",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn83view0",
+              "turn94view0",
+              "turn105view0"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0014",
@@ -5133,7 +7534,56 @@
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
       "bq003_status": "REVIEW_CANDIDATE",
-      "input_record_sha256": "ae2f7744dec06f6c4645fc24e7e9601264cf105000a73165ef48ddb3b496ef0b"
+      "input_record_sha256": "ae2f7744dec06f6c4645fc24e7e9601264cf105000a73165ef48ddb3b496ef0b",
+      "study_metadata": {
+        "design": "Two-study economic-game investigation: trait associations and randomized training",
+        "sample": {
+          "study1_helping_recruitment_methods": 139,
+          "study1_helping_recruitment_results": 142,
+          "study1_helping_final": 136,
+          "study1_punishment_recruited": 143,
+          "study1_punishment_final": 132,
+          "study2_participants": null,
+          "aggregate_unique_participants": null
+        },
+        "outcomes": [
+          "Costly victim helping",
+          "Transgressor punishment",
+          "Empathic concern"
+        ],
+        "limitations": [
+          "Helping recruitment count differs between sections; unresolved.",
+          "Study 2 reuses a previously published training cohort, not independent replication.",
+          "Economic games do not exhaust real-world altruism."
+        ],
+        "reported_findings": "Compassion training increased helping relative to reappraisal; punishment did not differ.",
+        "data": {
+          "status": "PUBLISHER_REPORTS_PAPER_AND_SUPPLEMENTS",
+          "public_repository_verified": false,
+          "files_and_licence_inspected": false
+        },
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_ABSTRACT_AND_METHODS",
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143794",
+            "sections": [
+              "Abstract",
+              "Selected methods",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn83view1",
+              "turn86view2",
+              "turn94view1",
+              "turn105view1"
+            ]
+          }
+        ]
+      }
     },
     {
       "record_id": "SRC-B14-0016",
@@ -5188,7 +7638,40 @@
         "rights_reference": "turn12view15",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "068b313cb3d6b485335fee56dce34b2c06507eb7b6cce27ed3ac3236b02e8d1b"
+      "input_record_sha256": "068b313cb3d6b485335fee56dce34b2c06507eb7b6cce27ed3ac3236b02e8d1b",
+      "study_metadata": {
+        "design": "Multidisciplinary mechanistic hypothesis and literature discussion",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Biophoton/phosphene and reperfusion hypotheses for NDE light phenomena.",
+        "limitations": [
+          "Proposed biophysical/quantum links are not direct tests in NDE participants.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00533/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn83view2",
+              "turn90view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B14-0017",
@@ -5243,7 +7726,39 @@
         "rights_reference": "turn12view16",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "3e65538677ca8b13148b9f69cc083eeab1a41f4319e6308844db95c22bf9919c"
+      "input_record_sha256": "3e65538677ca8b13148b9f69cc083eeab1a41f4319e6308844db95c22bf9919c",
+      "study_metadata": {
+        "design": "Neurofunctional literature review of altered-state NDE models",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Drug effects, epilepsy, stimulation, ischemia and gravitational-stress analogues.",
+        "limitations": [
+          "Model/phenomenology overlap does not establish a single mechanism for every clinical NDE.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.846159/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn85view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B14-0018",
@@ -5299,7 +7814,40 @@
         "rights_reference": "turn12view17",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "fc692c0c0a07462a99440cc750b92155476e320a6211dde7c4d61f79edce87b2"
+      "input_record_sha256": "fc692c0c0a07462a99440cc750b92155476e320a6211dde7c4d61f79edce87b2",
+      "study_metadata": {
+        "design": "Review of neurophysiology around death",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Dying-brain recordings compared with memory, dream, OBE and meditative findings.",
+        "limitations": [
+          "Animal/human recordings and survivor recollections require distinct timing and species labels.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1143848/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn85view1",
+              "turn90view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B14-0019",
@@ -5467,7 +8015,40 @@
         "rights_reference": "turn12view19",
         "rights_locator": "Article-specific Creative Commons Attribution notice"
       },
-      "input_record_sha256": "dfee2c487e7c34af2c1ca8b79426ad30afbc1c92ad783b63e9d50f9a39fea5cb"
+      "input_record_sha256": "dfee2c487e7c34af2c1ca8b79426ad30afbc1c92ad783b63e9d50f9a39fea5cb",
+      "study_metadata": {
+        "design": "Opinion article on neural/computational constraints",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0
+        },
+        "content_scope": "Adaptive and mechanistic accounts of spontaneous thought.",
+        "limitations": [
+          "Conceptual propositions are not new experimental findings.",
+          "Cited underlying experiments require separate appraisal and deduplication."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00039/full",
+            "sections": [
+              "Abstract or opening opinion discussion"
+            ],
+            "retrieval_refs": [
+              "turn85view2",
+              "turn90view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBLISHER_ABSTRACT_OR_OPENING_DISCUSSION",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B15-0001",
@@ -6017,7 +8598,44 @@
         "reference": "turn22search0",
         "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
       },
-      "input_record_sha256": "34830407e92c7dfe02108f64f4852e79da731c3f81f4c5a7f53b43045f3510f9"
+      "input_record_sha256": "34830407e92c7dfe02108f64f4852e79da731c3f81f4c5a7f53b43045f3510f9",
+      "study_metadata": {
+        "design": "Sensory-isolated recipient fMRI with randomized intention/no-intention intervals",
+        "sample": {
+          "healers_recruited": 11,
+          "recipients_each_healer_selected": 1,
+          "final_scanned_analysis_count": null
+        },
+        "outcomes": [
+          "fMRI send versus no-send contrast"
+        ],
+        "limitations": [
+          "Abstract does not establish final scanned sample or full exclusion/analysis details.",
+          "Correlation is not proof of distant healing or causal mechanism.",
+          "Whole-brain inference and sensory-isolation protocol need full-method appraisal."
+        ],
+        "controls": "Random two-minute send/no-send intervals unknown to recipient.",
+        "references": [
+          {
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/16398587/",
+            "sections": [
+              "PubMed abstract"
+            ],
+            "retrieval_refs": [
+              "turn84view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "PUBMED_ABSTRACT",
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "SRC-B16-0001",
@@ -6619,6 +9237,89 @@
       ],
       "new_records_added": 0,
       "evidence_promoted": false
+    },
+    {
+      "id": "ENRICHMENT-23",
+      "date": "2026-10-02",
+      "record_ids": [
+        "SRC-SPR-PE-0001",
+        "SRC-SPR-PE-0004",
+        "SRC-SPR-PE-0005",
+        "SRC-SPR-PE-0006",
+        "SRC-SPR-PE-0007",
+        "CM-PSI-001",
+        "CM-PSI-002",
+        "CM-PSI-003",
+        "CM-PSI-004",
+        "CM-PSI-005",
+        "CM-PSI-006",
+        "CM-PSI-007",
+        "CM-PSI-008",
+        "CM-PSI-009",
+        "CM-PSI-010",
+        "CM-PSI-011",
+        "CM-PSI-012",
+        "CM-PSI-013",
+        "CM-PSI-014",
+        "CM-PSI-015",
+        "CM-PSI-016",
+        "CM-PSI-017",
+        "CM-PSI-018",
+        "CM-PSI-019",
+        "CM-PSI-021",
+        "CM-PSI-022",
+        "CM-PSI-023",
+        "CM-PSI-024",
+        "CM-PSI-025",
+        "CM-PSI-028"
+      ],
+      "new_records_added": 0,
+      "evidence_promoted": false
+    },
+    {
+      "id": "ENRICHMENT-24",
+      "date": "2026-10-02",
+      "record_ids": [
+        "CM-IONS-001",
+        "CM-IONS-002",
+        "CM-IONS-004",
+        "CM-IONS-006",
+        "CM-IONS-007",
+        "CM-OA-001",
+        "CM-OA-009",
+        "CM-OA-010",
+        "CM-OA-011",
+        "SRC-B13-0001",
+        "SRC-B13-0002",
+        "SRC-B13-0003",
+        "SRC-B14-0001",
+        "SRC-B14-0002",
+        "SRC-B14-0003",
+        "SRC-B14-0004",
+        "SRC-B14-0005",
+        "SRC-B14-0006",
+        "SRC-B14-0007",
+        "SRC-B14-0008",
+        "SRC-B14-0009",
+        "SRC-B14-0010",
+        "SRC-B14-0011",
+        "SRC-B14-0012",
+        "SRC-B14-0013",
+        "SRC-B14-0015",
+        "SRC-B14-0016",
+        "SRC-B14-0017",
+        "SRC-B14-0018",
+        "SRC-B14-0020",
+        "SRC-B15-0006"
+      ],
+      "new_records_added": 0,
+      "evidence_promoted": false
     }
-  ]
+  ],
+  "enrichment_coverage": {
+    "records_with_study_metadata": 91,
+    "records_total": 91,
+    "coverage_semantics": "At least one scoped metadata enrichment per discovery record; inspection depths vary. Not full-text appraisal or scientific validation.",
+    "scientific_appraisal_complete": false
+  }
 }

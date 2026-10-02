@@ -8,7 +8,7 @@ The catalogue links research on consciousness, spontaneous thought, compassion, 
 
 - `catalogue.json`: consolidated current metadata through Batch 16.
 - `batch-13.json` through `batch-16.json`: additive batch snapshots.
-- `enrichment-17.json` through `enrichment-22.json`: method-enrichment audits covering thirty existing records; batch snapshots remain unchanged.
+- `enrichment-17.json` through `enrichment-24.json`: scoped enrichment audits covering all 91 existing records; batch snapshots remain unchanged.
 - `validate.py`: repeatable integrity and governance checks.
 - `validation.json`: result of the checked export.
 
@@ -32,7 +32,7 @@ This research snapshot is not connected to a public website route or ingestion p
 
 ## Method metadata
 
-Thirty records now distinguish unique participants, repeated observations, exclusions, sensory conditions, analysis and data availability. Each extraction links primary-source sections and retrieval references. Reported methods are not independently appraised. `input_record_sha256` still identifies the originating record before enrichment; the enrichment audit identifies its input snapshot. Reanalysis sampling rates describe digitisation, not verified original acquisition. Reviews and trace reanalyses add no new cohorts.
+All 91 records now carry scoped enrichment. Empirical entries distinguish unique participants, repeated observations, exclusions, sensory conditions, analysis and data availability. Each extraction links inspected source sections and retrieval references; secondary entries identify their overview scope. Reported methods are not independently appraised. `input_record_sha256` still identifies the originating record before enrichment; the enrichment audit identifies its input snapshot. Reanalysis sampling rates describe digitisation, not verified original acquisition. Reviews and trace reanalyses add no new cohorts.
 
 Enrichment 18 includes null findings and critical syntheses. Inspection depth is recorded per entry: publisher main text, PubMed abstract/metadata, or primary-source indexed excerpts. Unverified sample counts stay null; review study counts are kept separate from participant counts. The case-comparison author list and issue-month date were completed from PubMed.
 
@@ -43,3 +43,5 @@ Enrichment 20 covers five secondary reincarnation/survival entries. Source-repor
 Enrichment 21 covers four NDE research publications and one linked corrigendum. Historical cohorts, repeated memory types and dosing sessions are distinguished from participants. The correction concerns a reference editor’s name and adds no cohort. Fixed-order DMT comparisons do not establish equivalence or survival; memory detail and narrative order are not accuracy or physiological-timing measurements. The memory study reports data access on author request. Cross-publication cohort overlap remains unverified.
 
 Enrichment 22 covers metta therapy results and their protocol, a positive-emotion meta-analysis, and two meditation surveys. Protocol and results retain one registration lineage. Article, study and participant counts are separate. The 2018 survey’s 1120/1130 discrepancy remains unresolved; OSF access is publisher-reported because repository retrieval failed. The therapy result includes a nonsignificant compassion outcome and a funding-only displayed change history. The 2024 workshop study has abstract-level inspection limits.
+
+Enrichments 23–24 complete metadata coverage of the remaining 61 records: 30 secondary encyclopedia entries and 31 journal/publication/resource records. Secondary topics and AI-suggested review questions are explicit; programs and project pages are not trial results. Literature reviews, simulations and reused cohorts do not add independent confirmations. Known recruitment/analysis discrepancies remain unresolved; missing counts remain null. Null and contrary findings are retained. Repository URLs are publisher-reported leads with files, licences and completeness unchecked. Coverage means one scoped extraction per record, with varying inspection depth; it does not mean all original papers, datasets or scientific claims were appraised.
