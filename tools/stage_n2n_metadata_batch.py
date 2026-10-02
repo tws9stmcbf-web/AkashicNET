@@ -24,8 +24,8 @@ URI, META = list(PINS)[:2]
 
 
 def build(root=ROOT, batch_number=1):
-    if type(batch_number) is not int or batch_number not in (1, 2, 3, 4, 5, 6):
-        raise ValueError("only reviewed batches 1 through 6 are supported")
+    if type(batch_number) is not int or batch_number not in (1, 2, 3, 4, 5, 6, 7):
+        raise ValueError("only reviewed batches 1 through 7 are supported")
     previous = None
     earlier = []
     if batch_number > 1:
@@ -111,6 +111,8 @@ def build(root=ROOT, batch_number=1):
             manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 4000 validated IDs in batches 0001 through 0004 and take the next 1000 (global eligible ranks 4001-5000). No chronological, evidential or representative-sample claim.'
         if batch_number == 6:
             manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 5000 validated IDs in batches 0001 through 0005 and take the next 1000 (global eligible ranks 5001-6000). No chronological, evidential or representative-sample claim.'
+        if batch_number == 7:
+            manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 6000 validated IDs in batches 0001 through 0006 and take the next 1000 (global eligible ranks 6001-7000). No chronological, evidential or representative-sample claim.'
         prior_path = f'references/community/n2n-metadata-batch-{batch_number - 1:04d}.json'
         manifest['previous_batch'] = {'path': prior_path, 'sha256': hashlib.sha256((root / prior_path).read_bytes()).hexdigest()}
         manifest['counts'].update(previously_staged=len(prior_ids), overlap_with_previous=0,
@@ -133,7 +135,7 @@ def validate(value, root=ROOT, batch_number=1):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
-    parser.add_argument('--batch', type=int, choices=(1, 2, 3, 4, 5, 6), default=1)
+    parser.add_argument('--batch', type=int, choices=(1, 2, 3, 4, 5, 6, 7), default=1)
     args = parser.parse_args()
     expected = build(batch_number=args.batch)
     path = ROOT / f'references/community/n2n-metadata-batch-{args.batch:04d}.json'

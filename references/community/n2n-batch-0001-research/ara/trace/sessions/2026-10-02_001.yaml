@@ -144,3 +144,20 @@ continuation_staging_batch_0006:
       evidence: [../../evidence/batch-0006-validation.txt, ../../evidence/batch-0006-counts.json]
   claims_touched: []
   logic_revisions: []
+continuation_staging_batch_0007:
+  direction:
+    provenance: user
+    excerpt: Next 1,000
+  events:
+    - id: N17
+      type: decision
+      provenance: ai-suggested
+      choice: Continue staging ranks 6001-7000; leave remaining 396 for a separately requested tranche.
+      evidence: [../../../n2n-metadata-batch-0007-method.md]
+    - id: N18
+      type: experiment
+      provenance: ai-executed
+      result: Five targeted tests passed; 7000 cumulative unique, zero overlap, 396 remaining.
+      evidence: [../../evidence/batch-0007-validation.txt, ../../evidence/batch-0007-counts.json]
+  claims_touched: []
+  logic_revisions: []

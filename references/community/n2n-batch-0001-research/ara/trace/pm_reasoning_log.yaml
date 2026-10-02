@@ -33,3 +33,7 @@ entries:
       - User explicitly selected the staging queue; added eligible ranks 5001-6000.
       - Preserved earlier manifests and receipt pilot; its queue count remains a historical checkpoint.
       - No curated metadata, rights, evidence or maturity promotion.
+  - turn: 2026-10-02_001-staging7
+    notes:
+      - Added requested 1000-record staging tranche, preserving previous manifests and receipt pilot.
+      - Captured validation as process evidence only; no metadata, rights or maturity promotion.
