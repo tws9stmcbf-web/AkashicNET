@@ -1,6 +1,6 @@
 {
-  "version": "0.4",
-  "source_boundary": "53 records through batch 12, CM-OA-012 active-control follow-up and ten publication leads; 64 total. Later source batches from other branches excluded.",
+  "version": "0.5",
+  "source_boundary": "53 records through batch 12, CM-OA-012, ten earlier publication leads and six compassion/prosocial leads; 70 total. Later source batches from other branches excluded.",
   "queries": [
     {
       "query_id": "Q001",
@@ -98,7 +98,13 @@
         "CM-OA-003",
         "CM-OA-004",
         "CM-OA-009",
-        "CM-OA-012"
+        "CM-OA-012",
+        "CM-LEAD-011",
+        "CM-LEAD-012",
+        "CM-LEAD-013",
+        "CM-LEAD-014",
+        "CM-LEAD-015",
+        "CM-LEAD-016"
       ],
       "competing_explanations_to_assess": [
         "Expectancy and attention",
@@ -108,13 +114,15 @@
       "next_review_steps": [
         "Separate wait-list from active-control comparisons",
         "Compare protocol with reported outcomes",
-        "Extract attrition, follow-up and uncertainty"
+        "Extract attrition, follow-up and uncertainty",
+        "Separate observed helping and donation from self-reported compassion",
+        "Reconcile overlapping review populations, trial eligibility and comparator results"
       ],
       "status": "PROPOSED_QUERY",
       "provenance": "ai-suggested",
       "synthesis_status": "NOT_STARTED",
       "evidence_status_changed": false,
-      "scope_note": "Discovery links; two initial appraisals available. Pain/social outcomes are adjacent to the query; no evidence weight assigned."
+      "scope_note": "Loving-kindness, compassion and mindfulness are distinct interventions. Adjacent prosocial leads included for comparison; no evidence weight assigned. Two preliminary appraisals remain available."
     },
     {
       "query_id": "Q005",
@@ -158,7 +166,9 @@
         "CM-PSI-019",
         "CM-LEAD-007",
         "CM-LEAD-008",
-        "CM-LEAD-009"
+        "CM-LEAD-009",
+        "CM-LEAD-015",
+        "CM-LEAD-016"
       ],
       "competing_explanations_to_assess": [
         "Analytical flexibility",

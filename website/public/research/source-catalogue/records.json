@@ -2779,5 +2779,379 @@
     },
     "source_role": "meta_analytic_review",
     "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-011",
+    "title": "Short-Term Compassion Training Increases Prosocial Behavior in a Newly Developed Prosocial Game",
+    "authors": [
+      "Susanne Leiberg",
+      "Olga Klimecki",
+      "Tania Singer"
+    ],
+    "partial_authors": false,
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017798",
+    "source": "PLOS One",
+    "doi": "10.1371/journal.pone.0017798",
+    "published": null,
+    "dates": {
+      "publication_year": "2011",
+      "published": "2011-03-09"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY (version not verified in inspected notice)",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1371/journal.pone.0017798",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Publisher metadata, licence and selected methods checked.",
+      "role": "nonrandomized_controlled_training_study",
+      "measurement_context": "Game validation followed by compassion versus memory training; outcome is helping in the Zurich Prosocial Game. Training assignment depended on participant timing and available slots, not randomization.",
+      "limitations": [
+        "Short follow-up and female-only sample; game helping does not establish durable everyday behaviour.",
+        "Allocation, attrition and cohort overlap require full appraisal."
+      ],
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017798"
+      ],
+      "identifiers": {
+        "doi": "10.1371/journal.pone.0017798"
+      },
+      "sample_reported": "Experiment 1: 68; Experiment 2: 69 entered, 60 completed, one missing-game exclusion.",
+      "date_roles": {
+        "published": "2011-03-09"
+      }
+    },
+    "source_role": "nonrandomized_controlled_training_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-012",
+    "title": "Compassion training alters altruism and neural responses to suffering",
+    "authors": [
+      "Helen Y Weng",
+      "Andrew S Fox",
+      "Alexander J Shackman",
+      "Diane E Stodola",
+      "Jessica Z K Caldwell",
+      "Matthew C Olson",
+      "Gregory M Rogers",
+      "Richard J Davidson"
+    ],
+    "partial_authors": false,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23696200/",
+    "source": "Journal / repository",
+    "doi": "10.1177/0956797612469537",
+    "published": null,
+    "dates": {
+      "publication_year": "2013",
+      "online": "2013-05-21",
+      "issue": "2013-07-01"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1177/0956797612469537",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Primary indexed metadata and abstract checked; repository body blocked by browser challenge.",
+      "role": "randomized_training_study",
+      "measurement_context": "PubMed indexes a randomized controlled trial in healthy adults using redistribution of money and neural responses to suffering.",
+      "limitations": [
+        "Full methods, denominators and comparator appraisal pending.",
+        "Neural associations do not establish a distinct compassion mechanism or cosmic interpretation."
+      ],
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/23696200/"
+      ],
+      "identifiers": {
+        "doi": "10.1177/0956797612469537"
+      },
+      "date_roles": {
+        "online": "2013-05-21",
+        "issue": "2013-07-01"
+      }
+    },
+    "source_role": "randomized_training_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-013",
+    "title": "Meditation Increases Compassionate Responses to Suffering",
+    "authors": [
+      "Paul Condon",
+      "Gaëlle Desbordes",
+      "Willa B. Miller",
+      "David DeSteno"
+    ],
+    "partial_authors": false,
+    "url": "https://paulcondon.org/wp-content/uploads/2014/10/condon-et-al-2013-meditation-increases-compassion.pdf",
+    "source": "Journal / repository",
+    "doi": "10.1177/0956797613485603",
+    "published": null,
+    "dates": {
+      "publication_year": "2013",
+      "online": "2013-08-21"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1177/0956797613485603",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Author-hosted original paper and selected supplemental methods checked.",
+      "role": "randomized_waitlist_training_study",
+      "measurement_context": "Eight-week mindfulness or compassion training versus wait-list; observed outcome is offering a seat to a confederate presenting discomfort. Confederates were blind to condition and hypothesis.",
+      "limitations": [
+        "Wait-list does not match instructor contact or class participation.",
+        "One staged encounter; attrition and exclusions constrain generalization."
+      ],
+      "source_urls": [
+        "https://paulcondon.org/wp-content/uploads/2014/10/condon-et-al-2013-meditation-increases-compassion.pdf"
+      ],
+      "identifiers": {
+        "doi": "10.1177/0956797613485603"
+      },
+      "sample_reported": "67 initially recruited; 26 dropped out and two excluded; 39 final participants.",
+      "date_roles": {
+        "online": "2013-08-21"
+      }
+    },
+    "source_role": "randomized_waitlist_training_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-014",
+    "title": "Effects of compassion meditation on a psychological model of charitable donation",
+    "authors": [
+      "Yoni K Ashar",
+      "Jessica R Andrews-Hanna",
+      "Tal Yarkoni",
+      "Jenifer Sills",
+      "Joan Halifax",
+      "Sona Dimidjian",
+      "Tor D Wager"
+    ],
+    "partial_authors": false,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27018610/",
+    "source": "Journal / repository",
+    "doi": "10.1037/emo0000119",
+    "published": null,
+    "dates": {
+      "publication_year": "2016",
+      "online": "2016-03-28",
+      "issue": "2016-08"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1037/emo0000119",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "PubMed metadata plus author-hosted paper selected methods and results checked.",
+      "role": "model_development_and_randomized_trial",
+      "measurement_context": "Two studies: donation-model development and a four-week trial versus placebo oxytocin and familiarity training. Donation choices use real experimental earnings. Results qualify the abstract: donation change differs from familiarity and pooled controls, but not placebo oxytocin alone; familiarity donations decrease while compassion changes are nonsignificant.",
+      "limitations": [
+        "Post-intervention assessors were not blind; full risk-of-bias appraisal pending.",
+        "Later imaging reports may reuse this cohort; no additional independent study inferred."
+      ],
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/27018610/",
+        "https://www.talyarkoni.org/pdf/Ashar_Emotion_2016.pdf"
+      ],
+      "identifiers": {
+        "doi": "10.1037/emo0000119"
+      },
+      "sample_reported": "Study 2: 58 randomized; one donation-task exclusion reported.",
+      "date_roles": {
+        "online": "2016-03-28",
+        "issue": "2016-08"
+      }
+    },
+    "source_role": "model_development_and_randomized_trial",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-015",
+    "title": "The limited prosocial effects of meditation: A systematic review and meta-analysis",
+    "authors": [
+      "Ute Kreplin",
+      "Miguel Farias",
+      "Inti A. Brazil"
+    ],
+    "partial_authors": false,
+    "url": "https://pureportal.coventry.ac.uk/en/publications/the-limited-prosocial-effects-of-meditation-a-systematic-review-a/",
+    "source": "Journal / repository",
+    "doi": "10.1038/s41598-018-20299-z",
+    "published": null,
+    "dates": {
+      "publication_year": "2018",
+      "published": "2018-02-05"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0 (article notice in university deposit); repository boilerplate also present",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1038/s41598-018-20299-z",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "University metadata, deposited paper licence and selected sections checked; publisher page failed.",
+      "role": "systematic_meta_analytic_review",
+      "measurement_context": "Review of randomized meditation studies in healthy adults; examines prosocial outcome types and methodological moderators. Its abstract qualifies compassion findings by passive controls and teacher-author involvement.",
+      "limitations": [
+        "Review estimates are not new participant cohorts.",
+        "Reconcile inclusion criteria, outcome coding and study overlap with CM-LEAD-016 before synthesis."
+      ],
+      "source_urls": [
+        "https://pureportal.coventry.ac.uk/en/publications/the-limited-prosocial-effects-of-meditation-a-systematic-review-a/"
+      ],
+      "identifiers": {
+        "doi": "10.1038/s41598-018-20299-z"
+      },
+      "publisher_url": "https://www.nature.com/articles/s41598-018-20299-z",
+      "related_records": [
+        {
+          "id": "CM-LEAD-016",
+          "relation": "overlapping_topic_review_not_independent_replication"
+        }
+      ],
+      "date_roles": {
+        "published": "2018-02-05"
+      }
+    },
+    "source_role": "systematic_meta_analytic_review",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-016",
+    "title": "A Systematic Review and Meta-analysis of the Effects of Meditation on Empathy, Compassion, and Prosocial Behaviors",
+    "authors": [
+      "Christina M. Luberto",
+      "Nina Shinday",
+      "Rhayun Song",
+      "Lisa L. Philpotts",
+      "Elyse R. Park",
+      "Gregory L. Fricchione",
+      "Gloria Y. Yeh"
+    ],
+    "partial_authors": false,
+    "url": "https://link.springer.com/article/10.1007/s12671-017-0841-8",
+    "source": "Journal / repository",
+    "doi": "10.1007/s12671-017-0841-8",
+    "published": null,
+    "dates": {
+      "publication_year": "2018",
+      "online": "2017-10-23",
+      "issue_year": "2018"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1007/s12671-017-0841-8",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Publisher metadata, abstract and bibliography checked; subscription body not appraised.",
+      "role": "systematic_meta_analytic_review",
+      "measurement_context": "Publisher abstract separates self-reported and observed prosocial outcomes and reports an active-control subgroup. Broader population inclusion differs from CM-LEAD-015; reconcile eligibility and trial overlap before comparing conclusions.",
+      "limitations": [
+        "Pooled review findings do not add independent studies beyond included trials.",
+        "Full subgroup, bias and study-level overlap audit pending."
+      ],
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s12671-017-0841-8"
+      ],
+      "identifiers": {
+        "doi": "10.1007/s12671-017-0841-8"
+      },
+      "sample_reported": "26 studies, 1714 participants reported in abstract.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-015",
+          "relation": "overlapping_topic_review_not_independent_replication"
+        }
+      ],
+      "date_roles": {
+        "online": "2017-10-23",
+        "issue_year": "2018"
+      }
+    },
+    "source_role": "systematic_meta_analytic_review",
+    "role_provenance": "ai-suggested"
   }
 ]
