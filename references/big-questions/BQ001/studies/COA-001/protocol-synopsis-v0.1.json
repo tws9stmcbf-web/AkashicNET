@@ -1,0 +1,974 @@
+{
+  "schema_version": "0.1",
+  "study_id": "COA-001",
+  "title": "Continuity of Awareness During Resuscitation",
+  "version": "0.1",
+  "dated": "2026-09-17",
+  "state": "DRAFT_STAGE_0_METHOD_DEVELOPMENT",
+  "parent_question": {
+    "id": "BQ001",
+    "status": "UNRESOLVED",
+    "depth_level": "6/10",
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "rights_public_synthesis": false,
+    "website_promotion": false
+  },
+  "construct": {
+    "latent_construct": "awareness_during_a_bounded_resuscitation_interval",
+    "primary_observable": "locked_later_report_and_correspondence_with_independently_timed_information",
+    "measurement_relation": "indirect_proxy_not_direct_observation",
+    "excluded_as_primary": [
+      "broad_consciousness",
+      "sentience",
+      "personal_survival",
+      "afterlife"
+    ],
+    "continuity_definition": "hypothesized temporal relation between a documented resuscitation interval and later reportable content; not directly measured",
+    "temporal_alternatives": [
+      "encoding_during_cpr",
+      "peri_arrest_encoding",
+      "post_rosc_encoding",
+      "temporal_misattribution"
+    ],
+    "interpretation_constraint": "target correspondence alone does not establish awareness, continuity, personal survival or afterlife"
+  },
+  "research_question": "Can specific later reports be matched to independently timed information from documented cardiac-arrest/resuscitation intervals, under conditions designed to reduce, measure and test ordinary visual access, retrospective cueing, temporal misattribution and post-event information leakage?",
+  "stages": [
+    {
+      "id": 0,
+      "label": "protocol_construction",
+      "participant_recruitment": false,
+      "truth_inference": false
+    },
+    {
+      "id": 1,
+      "label": "multi_site_feasibility_pilot",
+      "provisional_sites": "3-5",
+      "provisional_eligible_events": "150-300",
+      "primary_outcome": "protocol_feasibility"
+    },
+    {
+      "id": 2,
+      "label": "confirmatory_multi_site_study",
+      "start_condition": "all mandatory Stage-1 gates pass and independent review, ethics approvals, registration and simulation-based sample size are complete"
+    }
+  ],
+  "analysis_populations": [
+    "ALL_ELIGIBLE_EVENTS",
+    "ALL_SURVIVORS",
+    "ALL_APPROACH_ELIGIBLE",
+    "ALL_INTERVIEWED",
+    "TARGET_EXPOSED",
+    "VISUAL_CLAIM",
+    "PER_PROTOCOL_TARGET_EXPOSED"
+  ],
+  "stage_2_primary_hypothesis": {
+    "population": "TARGET_EXPOSED",
+    "unit": "participant_equal_weight_after_within_participant_event_aggregation",
+    "candidate_set": {
+      "true_sequences": 1,
+      "transcript_independent_decoys": 5,
+      "total_candidates": 6
+    },
+    "outcome": "mean_pre_adjudication_normalized_true_candidate_rank_utility_across_two_blinded_scorers",
+    "rank_utility": "U_equals_6_minus_midrank_divided_by_5",
+    "null_expectation": 0.5,
+    "effect": "delta_equals_mean_participant_U_minus_0.5",
+    "null": "true and decoy assignments are exchangeable within each committed candidate packet",
+    "alternative": "true time-aligned sequences receive higher normalized rank utility",
+    "primary_test": {
+      "type": "conditional_randomization_test",
+      "sidedness": "one_sided",
+      "alpha": 0.025,
+      "permutation_unit": "truth_position_within_committed_six_candidate_packet",
+      "exact_or_seeded_draws": "exact_if_feasible_otherwise_at_least_1000000_committed_draws"
+    },
+    "multiplicity": "one_confirmatory_endpoint_secondary_and_exploratory_outcomes_do_not_create_confirmatory_claims",
+    "unresolved_state_rule": "null_nonscorable_or_unresolved_TARGET_EXPOSED_primary_values_receive_neutral_U_0_5_with_worst_best_case_bounds_for_critical_integrity_states",
+    "provisional_minimum_carry_forward_delta": 0.05,
+    "planning_delta": 0.1,
+    "provisional_information_target_target_exposed": 132,
+    "target_power": 0.9,
+    "interpretation_constraint": "conditional_correspondence_only_no_prevalence_awareness_continuity_personal_survival_or_afterlife_inference",
+    "information_target_unit": "unique_TARGET_EXPOSED_participant",
+    "repeated_events_increment_information_count": false
+  },
+  "feasibility_gates": [
+    {
+      "id": "G01_COMPLETE_EVENT_DENOMINATOR",
+      "numerator": "eligible_events_with_stable_id_and_all_minimum_eligibility_fields",
+      "denominator": "all_eligible_events_independently_identified_from_hospital_arrest_source",
+      "threshold": ">=98%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "G02_RECOVERABLE_DEVICE_STATUS",
+      "numerator": "eligible_events_with_authenticated_device_state_covering_event_window",
+      "denominator": "ALL_ELIGIBLE_EVENTS",
+      "threshold": ">=98%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "G03_VALID_TARGET_ACTIVATION",
+      "numerator": "equipped_eligible_events_with_auditable_target_display_in_prespecified_interval",
+      "denominator": "eligible_events_with_commissioned_device_expected_operational_at_event_onset",
+      "threshold": ">=85%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "G04_COMPLETE_TARGET_LOGS",
+      "numerator": "activation_sessions_with_complete_canonical_records_valid_chain_signature_and_closing_digest",
+      "denominator": "all_activation_sessions_initiated_for_eligible_events",
+      "threshold": ">=95%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "G05_CLOCK_SYNCHRONIZATION",
+      "numerator": "valid_activations_aligned_within_plus_or_minus_1_second_including_uncertainty",
+      "denominator": "valid_activations_with_target_session",
+      "threshold": ">=95%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "G06_TRANSCRIPT_LOCK_BEFORE_UNBLINDING",
+      "numerator": "completed_interviews_locked_before_any_target_or_event_log_release",
+      "denominator": "all_completed_research_interviews_after_eligible_events",
+      "threshold": "100%",
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE",
+      "critical_hold": "premature_unblinding"
+    },
+    {
+      "id": "G07_CRITICAL_INTERVIEWER_UNBLINDING",
+      "numerator": "completed_interviews_with_confirmed_critical_interviewer_unblinding_before_lock",
+      "denominator": "all_completed_research_interviews_after_eligible_events",
+      "threshold": "<=2%",
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE",
+      "unresolved_incident": "HOLD"
+    },
+    {
+      "id": "G08_CONTAMINATION_AUDIT_COMPLETE",
+      "numerator": "completed_interviews_with_all_frozen_exposure_fields_complete_or_explicitly_unknown",
+      "denominator": "all_completed_research_interviews_after_eligible_events",
+      "threshold": ">=95%",
+      "mandatory": true,
+      "blank_handling": "failure"
+    },
+    {
+      "id": "G09_DUAL_CODER_COVERAGE",
+      "numerator": "scorable_locked_reports_independently_coded_by_two_qualified_blinded_coders",
+      "denominator": "all_reports_declared_scorable_before_target_unblinding",
+      "threshold": "100%",
+      "mandatory": true,
+      "zero_denominator": "NOT_EVALUABLE"
+    },
+    {
+      "id": "G10_CATEGORICAL_AGREEMENT",
+      "statistic": "Cohens_kappa",
+      "data": "all_eligible_dual_coded_primary_categorical_fields",
+      "threshold": ">=0.80",
+      "mandatory": true,
+      "insufficient_variance": "NOT_EVALUABLE"
+    },
+    {
+      "id": "G11_CONTINUOUS_AGREEMENT",
+      "statistic": "frozen_ICC_form",
+      "data": "all_eligible_dual_coded_primary_continuous_scores",
+      "threshold": ">=0.90",
+      "mandatory": true,
+      "insufficient_variance": "NOT_EVALUABLE"
+    },
+    {
+      "id": "G12_SERIOUS_DEVICE_RELATED_ADVERSE_EVENTS",
+      "numerator": "confirmed_serious_device_related_adverse_events",
+      "denominator": "ALL_ELIGIBLE_EVENTS",
+      "threshold": "0",
+      "mandatory": true,
+      "any_event": "HOLD"
+    },
+    {
+      "id": "G13_RESUSCITATION_INTERFERENCE",
+      "numerator": "confirmed_instances_study_activity_delayed_obstructed_or_altered_resuscitation",
+      "denominator": "ALL_ELIGIBLE_EVENTS",
+      "threshold": "0",
+      "mandatory": true,
+      "any_event": "HOLD"
+    },
+    {
+      "id": "G14_INTERVIEW_WITHDRAWAL_BURDEN",
+      "numerator": "approached_survivors_who_begin_then_withdraw_due_to_study_burden",
+      "denominator": "all_approached_eligible_survivors",
+      "threshold": "review_if_above_10_percent",
+      "mandatory": false
+    },
+    {
+      "id": "G15_FOLLOW_UP_RETENTION",
+      "numerator": "participants_completing_frozen_follow_up",
+      "denominator": "participants_eligible_and_consenting_for_follow_up",
+      "threshold": "descriptive_with_uncertainty",
+      "mandatory": false
+    },
+    {
+      "id": "ASSET_MANIFEST_MATCH",
+      "numerator": "valid_exposures_with_rendered_assets_matching_frozen_manifest",
+      "denominator": "all_valid_exposures",
+      "threshold": "100%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "ENCRYPTED_PACKAGE_RECOVERY",
+      "numerator": "activations_with_authenticated_recoverable_evidence_package",
+      "denominator": "all_activations",
+      "threshold": ">=98%",
+      "mandatory": true,
+      "unknown_handling": "failure"
+    },
+    {
+      "id": "INDEPENDENT_DISPLAY_VERIFICATION",
+      "numerator": "activations_with_independent_evidence_intended_pixels_displayed_for_logged_interval",
+      "denominator": "all_claimed_valid_exposures",
+      "threshold": "freeze_after_commissioning",
+      "mandatory": true,
+      "render_acknowledgement_alone": "insufficient"
+    },
+    {
+      "id": "BLINDING_ASSESSMENT",
+      "numerator": "required_staff_cases_with_completed_frozen_blinding_assessment",
+      "denominator": "all_staff_cases_for_whom_assessment_required",
+      "threshold": "to_be_frozen",
+      "mandatory": true,
+      "missing_handling": "failure_of_completeness"
+    },
+    {
+      "id": "PRIMARY_INTERVIEW_TIMELINESS",
+      "numerator": "primary_interviews_inside_frozen_clinically_appropriate_window",
+      "denominator": "all_survivors_eligible_for_approach",
+      "threshold": "derive_from_simulation_and_clinical_review",
+      "mandatory": true
+    },
+    {
+      "id": "DECOY_SCORE_REPRODUCIBILITY",
+      "statistic": "independent_frozen_pipeline_agreement",
+      "data": "prespecified_synthetic_and_blinded_rehearsal_packets",
+      "threshold": "100_percent_computational_reproduction_human_tolerance_to_be_frozen",
+      "mandatory": true
+    },
+    {
+      "id": "UNAUTHORIZED_PLAINTEXT_TARGET_ACCESS",
+      "numerator": "confirmed_unauthorized_plaintext_access_before_permitted_unblinding",
+      "denominator": "all_activations_plus_access_log_audit_period",
+      "threshold": "0",
+      "mandatory": true,
+      "any_event": "PAUSED_PENDING_ADJUDICATION"
+    },
+    {
+      "id": "PREMATURE_UNBLINDING",
+      "numerator": "target_or_event_identity_released_before_complete_frozen_lock_sequence",
+      "denominator": "all_completed_primary_interviews_and_all_unblinding_requests",
+      "threshold": "0_analysed_cases",
+      "mandatory": true,
+      "any_occurrence": "PAUSED_PENDING_ADJUDICATION"
+    },
+    {
+      "id": "UNRESOLVED_VIEWING_ROUTE",
+      "numerator": "commissioned_configurations_with_unresolved_ordinary_visual_or_reflection_route",
+      "denominator": "all_commissioned_configurations",
+      "threshold": "0_before_activation",
+      "mandatory": true,
+      "any_event": "PAUSED_PENDING_ADJUDICATION"
+    },
+    {
+      "id": "INTERPRETER_CONFIDENTIALITY_COMPLIANCE",
+      "numerator": "interpreted_interviews_satisfying_frozen_confidentiality_and_role_separation",
+      "denominator": "all_interpreted_interviews",
+      "threshold": "100%",
+      "mandatory": true,
+      "zero_denominator": "PASS_ONLY_IF_VERIFIED_NO_INTERPRETER_USE",
+      "zero_denominator_pass_reason": "NOT_APPLICABLE_NO_INTERPRETER_USE",
+      "zero_denominator_requires": [
+        "complete_interview_ledger",
+        "at_least_one_completed_interview",
+        "explicit_no_interpreter_use_for_every_interview_in_scope",
+        "verification_recorded_by_site_and_pooled",
+        "no_incident_hold_waived"
+      ],
+      "empty_missing_or_unknown_use": "NOT_EVALUABLE",
+      "unknown_compliance_with_interpreter_use": "FAIL"
+    }
+  ],
+  "interpretation_ladder": [
+    {
+      "level": 1,
+      "label": "PROTOCOL_FEASIBLE",
+      "bq001_effect": "none"
+    },
+    {
+      "level": 2,
+      "label": "TIMED_AWARENESS_SIGNAL",
+      "bq001_effect": "review_candidate_only"
+    },
+    {
+      "level": 3,
+      "label": "PERCEPTION_ANOMALY",
+      "bq001_effect": "evidence_candidate_no_model_support"
+    },
+    {
+      "level": 4,
+      "label": "INDEPENDENT_REPLICATION",
+      "bq001_effect": "eligible_for_comparative_model_review"
+    },
+    {
+      "level": 5,
+      "label": "CONTINUITY_RELEVANCE",
+      "bq001_effect": "may_update_only_after_governance_review"
+    }
+  ],
+  "required_before_recruitment": [
+    "institutional_principal_investigator",
+    "ethics_or_irb_approval",
+    "hospital_and_resuscitation_service_agreements",
+    "deferred_consent_framework",
+    "data_protection_impact_assessment",
+    "clinical_device_safety_review",
+    "prospective_trial_registration",
+    "independent_statistical_oversight"
+  ],
+  "source_issue": 356,
+  "artifact_role": "method_development_not_preregistration_or_evidence",
+  "eligibility": {
+    "basis": "clinical_and_deployment_facts_independent_of_later_data_completeness_and_device_performance",
+    "event_criteria": [
+      "adult_patient_age_18_or_older",
+      "in_hospital_cardiac_arrest_in_participating_area_during_prespecified_study_active_period",
+      "chest_compressions_initiated"
+    ],
+    "prohibited_as_eligibility_conditions": [
+      "clinical_timing_recoverability",
+      "device_status_recoverability",
+      "activation_status",
+      "target_exposure_status",
+      "survival",
+      "consent",
+      "interview_completion"
+    ]
+  },
+  "denominator_rule": {
+    "population": "every_eligible_event",
+    "retain_states": [
+      "device_failure",
+      "log_deleted_or_unrecoverable",
+      "timing_unknown_or_unrecoverable",
+      "target_exposure_unknown",
+      "death",
+      "not_interviewed"
+    ],
+    "unknown_state_labels": [
+      "UNKNOWN",
+      "UNRECOVERABLE"
+    ],
+    "completeness_consequence": "unknown_or_unrecoverable_states_count_against_applicable_feasibility_gates"
+  },
+  "analysis_population_definitions": {
+    "ALL_ELIGIBLE_EVENTS": "every eligible event regardless of device status, survival, consent or interview",
+    "ALL_SURVIVORS": "eligible events followed by hospital survival; survivor flow only",
+    "ALL_APPROACH_ELIGIBLE": "survivors meeting the frozen clinical and ethical approach rule",
+    "ALL_INTERVIEWED": "eligible participant-events with a completed primary protocol interview, regardless of transcript-lock success; lock and data-use states recorded separately",
+    "TARGET_EXPOSED": "ALL_INTERVIEWED participant-events with an auditable target sequence displayed during the prespecified resuscitation interval",
+    "VISUAL_CLAIM": "secondary_exploratory_TARGET_EXPOSED_subgroup_only",
+    "PER_PROTOCOL_TARGET_EXPOSED": "TARGET_EXPOSED records without a frozen critical integrity breach; supportive sensitivity analysis only"
+  },
+  "estimands": {
+    "stage_1_feasibility": {
+      "id": "EF-1",
+      "population": "ALL_ELIGIBLE_EVENTS_with_gate_specific_cohorts",
+      "summary": "gate_specific_proportions_or_agreement_statistics_with_uncertainty_pooled_and_by_site",
+      "intercurrent_event_strategy": "retain_death_non_interview_device_failure_missing_timing_and_breaches_as_flow_states",
+      "decision": "all_mandatory_gates_must_pass_no_compensation"
+    },
+    "stage_2_target_correspondence": {
+      "id": "EF-2",
+      "population": "TARGET_EXPOSED",
+      "unit": "participant_equal_weight_after_within_participant_event_aggregation",
+      "variable": "participant_mean_of_event_mean_pre_adjudication_true_candidate_rank_utilities_across_two_blinded_scorers",
+      "interpretation": "conditional_on_valid_exposure_and_later_reportability_no_prevalence_or_continuity_inference",
+      "required_sensitivity": [
+        "ALL_INTERVIEWED_flow",
+        "unresolved_state_bounds",
+        "PER_PROTOCOL_TARGET_EXPOSED",
+        "site_stratified",
+        "participant_cluster_aware",
+        "negative_controls"
+      ],
+      "summary": "delta_equals_mean_participant_U_minus_0.5",
+      "aggregation_order": [
+        "mean_two_scorer_utilities_within_event",
+        "mean_event_utilities_within_participant",
+        "equal_weight_mean_across_participants"
+      ]
+    }
+  },
+  "feasibility_gate_common_rules": {
+    "statuses": [
+      "PASS",
+      "FAIL",
+      "NOT_EVALUABLE",
+      "PAUSED_PENDING_ADJUDICATION"
+    ],
+    "unknown_and_unrecoverable": "remain_in_applicable_denominator_and_fail_completeness_or_recoverability",
+    "zero_denominator": "NOT_EVALUABLE",
+    "proportion_uncertainty": "two_sided_95_percent_confidence_interval_method_to_be_frozen_after_simulation",
+    "zero_event_uncertainty": "exact_one_sided_95_percent_upper_confidence_bound",
+    "agreement_uncertainty": "point_estimate_and_95_percent_confidence_interval; insufficient_variance_is_NOT_EVALUABLE",
+    "reporting": [
+      "pooled",
+      "by_site"
+    ],
+    "critical_hold_events": [
+      "serious_device_related_adverse_event",
+      "resuscitation_interference",
+      "unauthorized_plaintext_target_access",
+      "premature_unblinding"
+    ],
+    "minimum_counts": "require_simulation_before_freeze",
+    "offsetting": "forbidden",
+    "zero_denominator_exception": "INTERPRETER_CONFIDENTIALITY_COMPLIANCE_only_under_its_verified_no_use_rule"
+  },
+  "module_references": {
+    "estimands_and_feasibility_gates": {
+      "id": "EAP-001",
+      "version": "0.1",
+      "path": "ESTIMANDS-AND-FEASIBILITY-GATES-v0.1.md",
+      "state": "DRAFT_STAGE_0"
+    },
+    "blinded_interview_manual": {
+      "id": "INT-001",
+      "version": "0.2",
+      "path": "BLINDED-INTERVIEW-MANUAL-v0.2.md",
+      "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED"
+    },
+    "blinded_scoring_and_decoy_manual": {
+      "id": "SDC-001",
+      "version": "0.1",
+      "path": "BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md",
+      "state": "DRAFT_STAGE_0"
+    },
+    "stage_2_statistical_analysis_plan": {
+      "id": "SAP-001",
+      "version": "0.1",
+      "path": "STAGE-2-STATISTICAL-ANALYSIS-PLAN-v0.1.md",
+      "state": "DRAFT_FREEZE_CANDIDATE_INDEPENDENT_STATISTICAL_REVIEW_REQUIRED"
+    },
+    "simulation_and_sample_size_report": {
+      "id": "SIM-001",
+      "version": "0.1",
+      "path": "SIMULATION-AND-SAMPLE-SIZE-REPORT-v0.1.md",
+      "code_path": "analysis/coa001_rank_operating_characteristics_v0_1.py",
+      "state": "PROVISIONAL_STAGE_0_INDEPENDENT_REPRODUCTION_REQUIRED"
+    },
+    "ethics_and_data_protection_outline": {
+      "id": "EDP-001",
+      "version": "0.1",
+      "path": "ETHICS-AND-DATA-PROTECTION-OUTLINE-v0.1.md",
+      "state": "DRAFT_STAGE_0_JURISDICTION_SPECIFIC_REVIEW_REQUIRED"
+    },
+    "data_flow_access_and_leakage_threat_model": {
+      "id": "DFL-001",
+      "version": "0.1",
+      "path": "DATA-FLOW-ACCESS-AND-LEAKAGE-THREAT-MODEL-v0.1.md",
+      "state": "DRAFT_STAGE_0_NOT_IMPLEMENTED_OR_VALIDATED"
+    },
+    "falsification_stopping_and_classification_rules": {
+      "id": "FSC-001",
+      "version": "0.1",
+      "path": "FALSIFICATION-STOPPING-AND-CLASSIFICATION-RULES-v0.1.md",
+      "state": "DRAFT_STAGE_0_NOT_PREREGISTERED"
+    }
+  },
+  "interview_manual": {
+    "id": "INT-001",
+    "version": "0.2",
+    "path": "BLINDED-INTERVIEW-MANUAL-v0.2.md",
+    "state": "PROVISIONAL_NOT_CLINICALLY_OR_ETHICALLY_APPROVED",
+    "recruitment_authorized": false,
+    "primary_interview": "chronologically_first_completed_primary_interview_within_frozen_window_independent_of_lock_success_or_outcome",
+    "order": [
+      "orientation_and_permission",
+      "uninterrupted_free_narrative",
+      "N0_source_boundary",
+      "participant_defined_temporal_map",
+      "participant_led_clarification",
+      "open_environmental_recall",
+      "contamination_and_exposure_audit",
+      "primary_closing",
+      "L1_verified_primary_lock"
+    ],
+    "required_boundaries": [
+      "free_narrative_before_structured_target_and_recognition_questions",
+      "interviewer_blind_to_targets_target_status_room_event_logs_and_outcome_relevant_clinical_details",
+      "source_recording_and_final_transcript_locked_before_target_or_event_record_release",
+      "participant_defined_timing_separated_from_clinical_timing",
+      "continued_assent_and_distress_capacity_stop_rules",
+      "append_only_post_lock_amendments",
+      "primary_interview_not_replaced_by_later_interview",
+      "L1_before_structured_supplement_target_prompts_or_candidate_exposure",
+      "C1_before_primary_scorer_candidate_access",
+      "recognition_blocked_pending_coordinated_access_and_analysis_review"
+    ],
+    "prohibited_prompts": [
+      "out_of_body_near_death_hidden_target_survival_or_paranormal_language_before_participant_or_designated_section",
+      "target_activation_appearance_frequency_or_location_disclosure",
+      "accuracy_reinforcement_or_null_report_disappointment",
+      "spiritual_religious_materialist_paranormal_or_diagnostic_interpretation_as_fact"
+    ],
+    "interview_states": [
+      "INTERVIEWER_BLIND_CONFIRMED",
+      "INTERVIEWER_BLIND_UNCERTAIN",
+      "INTERVIEWER_CRITICAL_UNBLINDING",
+      "NO_KNOWN_CONTAMINATION",
+      "CONTAMINATION_POSSIBLE",
+      "CONTAMINATION_CONFIRMED",
+      "CONTAMINATION_AUDIT_INCOMPLETE",
+      "TRANSCRIPT_LOCKED_BEFORE_UNBLINDING",
+      "PREMATURE_UNBLINDING",
+      "PRIMARY_INTERVIEW_INCOMPLETE",
+      "PARTICIPANT_WITHDREW",
+      "CLINICAL_STOP"
+    ],
+    "revision_state": "DRAFT_STAGE_0_NOT_VALIDATED",
+    "secondary_supplement": {
+      "after": "L1",
+      "lock": "L2",
+      "may_modify_primary": false
+    },
+    "recognition": {
+      "execution_authorized": false,
+      "primary_endpoint_inclusion": false,
+      "access_route": "NOT_DEFINED_OR_AUTHORIZED"
+    },
+    "primary_source_compatibility": {
+      "status": "HOLD_PENDING_INDEPENDENT_REVIEW",
+      "source_eligibility_frozen": false
+    },
+    "operational_use_authorized": false,
+    "live_participant_data_processing_authorized": false,
+    "flow_accounting": {
+      "lock_success_required_for_completed_denominator": false,
+      "later_interview_may_replace_failed_primary": false,
+      "unknown_blinding_is_clean": false,
+      "zero_denominator_may_pass": false
+    }
+  },
+  "scoring_and_decoy_manual": {
+    "id": "SDC-001",
+    "version": "0.1",
+    "path": "BLINDED-SCORING-AND-DECOY-MANUAL-v0.1.md",
+    "state": "DRAFT_STAGE_0",
+    "recruitment_authorized": false,
+    "operational_use_authorized": false,
+    "unit": "participant_event_with_one_primary_locked_interview",
+    "phases": [
+      "transcript_only_atomic_claim_extraction_and_lock",
+      "transcript_independent_candidate_set_generation_and_commitment",
+      "masked_dual_correspondence_scoring",
+      "blind_disagreement_adjudication",
+      "score_lock_before_dual_control_unblinding"
+    ],
+    "required_boundaries": [
+      "claim_set_locked_without_candidate_access",
+      "decoy_eligibility_sampling_and_replacement_independent_of_transcript_content",
+      "candidate_set_manifest_committed_before_scorer_access",
+      "true_and_decoy_candidates_symmetrically_rendered_in_randomized_masked_order",
+      "truth_position_hidden_from_claim_coders_scorers_adjudicators_and_analysts_until_authorized_release",
+      "null_contradictory_uncertain_contaminated_and_nonscorable_reports_retained_in_flow_ledger",
+      "post_lock_information_append_only_and_sensitivity_only",
+      "visual_and_auditory_channels_scored_separately",
+      "L1_only_primary_source",
+      "L2_and_recognition_excluded_from_primary_packet"
+    ],
+    "prohibited_inputs_to_decoy_selection": [
+      "transcript_words",
+      "participant_characteristics",
+      "reported_imagery",
+      "scorer_preferences",
+      "observed_matches"
+    ],
+    "pending_stage_2_freeze": [
+      "primary_score_formula_and_direction",
+      "claim_weights_and_aggregation",
+      "decoy_count_and_strata",
+      "tie_and_disagreement_handling",
+      "minimum_meaningful_effect",
+      "randomization_test_statistic",
+      "multiplicity_family",
+      "missingness_and_unresolved_state_bounds",
+      "stopping_progression_and_rejection_boundaries"
+    ],
+    "scoring_states": [
+      "CLAIM_SET_LOCKED",
+      "CLAIM_SET_DISAGREEMENT",
+      "REPORT_NULL",
+      "REPORT_NONSCORABLE",
+      "SCORABILITY_UNKNOWN",
+      "CANDIDATE_SET_COMMITTED",
+      "DECOY_GENERATION_REPRODUCED",
+      "DECOY_GENERATION_FAILED",
+      "CANDIDATE_METADATA_LEAK",
+      "DUAL_SCORING_COMPLETE",
+      "SCORER_DISAGREEMENT",
+      "ADJUDICATION_COMPLETE",
+      "SCORE_LOCKED_BEFORE_UNBLINDING",
+      "PREMATURE_TRUTH_REVEAL",
+      "UNBLINDED_FOR_AUTHORIZED_ANALYSIS",
+      "PACKET_HELD_PENDING_ADJUDICATION"
+    ],
+    "interpretation_constraint": "correspondence_scores_do_not_by_themselves_establish_awareness_continuity_personal_survival_or_afterlife"
+  },
+  "statistical_analysis_plan": {
+    "id": "SAP-001",
+    "version": "0.1",
+    "state": "DRAFT_FREEZE_CANDIDATE",
+    "preregistered": false,
+    "recruitment_authorized": false,
+    "operational_use_authorized": false,
+    "freeze_requires": [
+      "independent_statistical_review",
+      "independent_simulation_reproduction",
+      "stage_1_blinded_parameter_update",
+      "ethics_or_irb_approval",
+      "prospective_registration",
+      "versioned_protocol_amendment",
+      "INT_001_v0_2_primary_source_and_failed_lock_compatibility_review"
+    ],
+    "confirmatory_success_requires": [
+      "one_sided_randomization_p_value_at_most_0_025",
+      "observed_delta_at_least_0_05",
+      "directionally_positive_prespecified_neutral_missing_and_participant_cluster_analyses",
+      "no_unresolved_systemic_leakage_truth_position_exposure_or_decoy_exchangeability_failure",
+      "all_prerequisite_validity_gates_passed_before_unblinding",
+      "complete_flow_negative_controls_and_sensitivity_analyses_reported"
+    ],
+    "early_stopping": "no_efficacy_or_futility_stopping_safety_ethics_feasibility_and_integrity_pauses_only",
+    "independent_replication_required_before_model_review": true,
+    "accrual_stopping_rule": {
+      "information_unit": "unique_TARGET_EXPOSED_participant",
+      "provisional_minimum_unique_participants": 132,
+      "final_unique_participant_target": null,
+      "freeze_before_recruitment": "blinded_stage_1_simulation_of_participant_weighted_endpoint_and_independent_review",
+      "repeated_events_increment_count": false,
+      "ethical_cap_stop_below_target": "UNDERPOWERED_OR_INFEASIBLE_NOT_INFORMATION_TARGET_MET",
+      "linkage_verified_before_first_count": true,
+      "linkage_scope": "all_participating_sites_repeated_arrests_transfers_and_duplicates",
+      "unresolved_or_challenged_linkage_contributes": 0,
+      "count_refresh": "recompute_current_verified_participant_groups_before_every_information_target_stop",
+      "verification_evidence": "dated_custodian_linkage_receipt_and_count_snapshot",
+      "unresolved_linkage_retained_in_event_ledger": true,
+      "linkage_privacy": "approved_lawful_pseudonymous_procedure_no_participant_data_to_AkashicNET",
+      "post_stop_linkage_shortfall": "report_for_independent_review_no_outcome_informed_accrual_extension"
+    }
+  },
+  "operating_characteristics": {
+    "id": "SIM-001",
+    "version": "0.1",
+    "method": "deterministic_exact_probability_convolution",
+    "alpha": 0.025,
+    "candidate_count": 6,
+    "alternative_families": [
+      "sparse_top_rank_mixture",
+      "soft_exponential_rank_shift"
+    ],
+    "conservative_required_target_exposed": {
+      "delta_0_05": {
+        "power_0_80": 377,
+        "power_0_90": 513
+      },
+      "delta_0_075": {
+        "power_0_80": 171,
+        "power_0_90": 231
+      },
+      "delta_0_10": {
+        "power_0_80": 97,
+        "power_0_90": 132
+      },
+      "delta_0_15": {
+        "power_0_80": 43,
+        "power_0_90": 59
+      }
+    },
+    "eligible_event_sample_size": "not_frozen_requires_stage_1_target_exposed_yield_with_uncertainty_and_ethics_review",
+    "stage_1_150_to_300_eligible_events_role": "feasibility_not_confirmatory_power",
+    "independent_reproduction_required": true,
+    "calculation_unit": "independent_rank_contribution_not_repeated_participant_event"
+  },
+  "ethics_and_data_protection": {
+    "id": "EDP-001",
+    "version": "0.1",
+    "ethics_approval": false,
+    "legal_authorization": false,
+    "recruitment_authorized": false,
+    "live_participant_data_processing_authorized": false,
+    "classification_rule": "each_site_must_obtain_documented_institutional_and_regulatory_classification_strictest_applicable_protections_govern",
+    "consent_and_processing_boundary": "research_participation_consent_and_personal_data_processing_legal_basis_are_distinct",
+    "required_site_annex": [
+      "jurisdiction_and_institution",
+      "study_classification_and_competent_authority",
+      "sponsor_and_controller_identities",
+      "lawful_basis_and_special_category_condition",
+      "emergency_or_deferred_consent_authority",
+      "legally_authorized_representative_rules",
+      "deceased_and_never_regained_capacity_rules",
+      "ethics_and_regulatory_approvals",
+      "retention_schedule",
+      "international_transfer_mechanism",
+      "breach_notification_rules",
+      "insurance_compensation_and_complaints"
+    ],
+    "consent_states": [
+      "CAPABLE_CONSENT_OBTAINED",
+      "DEFERRED_CONSENT_PENDING",
+      "LAR_PERMISSION_ACTIVE",
+      "PARTICIPANT_RECONSENTED",
+      "PARTICIPANT_DECLINED",
+      "PARTICIPANT_WITHDREW",
+      "CAPACITY_NOT_REGAINED",
+      "DIED_BEFORE_CONSENT",
+      "REPRESENTATIVE_DECLINED",
+      "NO_AUTHORIZED_PATHWAY",
+      "CONSENT_STATUS_UNKNOWN"
+    ],
+    "fail_closed_rules": [
+      "blank_ambiguous_or_disputed_site_annex_field_means_SITE_NOT_AUTHORIZED",
+      "consent_status_unknown_means_hold_and_adjudicate",
+      "death_does_not_create_blanket_permission_for_identifiable_data_use",
+      "no_audiovisual_resuscitation_room_recording_by_default",
+      "no_participant_level_data_in_public_repositories_consumer_cloud_or_general_purpose_AI",
+      "no_unresolved_high_residual_privacy_risk",
+      "missing_prerecruitment_gate_means_RECRUITMENT_NOT_AUTHORIZED"
+    ],
+    "denominator_boundary": "consent_death_incapacity_and_withdrawal_are_flow_states_not_clinical_eligibility_conditions_identifiable_retention_still_requires_authority",
+    "public_output_boundary": "aggregate_disclosure_reviewed_outputs_only_no_raw_or_recognizable_narratives_without_separate_explicit_ethics_approved_pathway",
+    "required_before_live_processing": [
+      "complete_site_annex",
+      "confirmed_study_classification",
+      "institutional_sponsor_and_PI",
+      "ethics_or_IRB_approval",
+      "approved_emergency_deferred_consent_and_reconsent_pathway",
+      "approved_deceased_and_never_consented_matrix",
+      "approved_withdrawal_and_deletion_matrix",
+      "controller_processor_and_lawful_basis_record",
+      "DPIA_with_acceptable_residual_risk",
+      "data_flow_and_access_matrix",
+      "fixed_retention_and_transfer_schedule",
+      "validated_security_and_breach_exercise",
+      "clinical_device_and_auditory_safety_approval",
+      "participant_materials_and_translations",
+      "compensation_injury_and_complaint_pathway",
+      "prospective_registration",
+      "staff_certification_and_site_rehearsal",
+      "independent_statistical_clinical_ethics_privacy_and_security_signoff"
+    ]
+  },
+  "data_flow_and_leakage": {
+    "id": "DFL-001",
+    "version": "0.1",
+    "state": "SECURITY_SPECIFIED_NOT_IMPLEMENTED_OR_VALIDATED",
+    "recruitment_authorized": false,
+    "live_participant_data_processing_authorized": false,
+    "trust_zones": [
+      "Z0_CLINICAL_CARE",
+      "Z1_ELIGIBILITY_AND_IDENTITY",
+      "Z2_TARGET_DEVICE",
+      "Z3_INTERVIEW",
+      "Z4_CLAIM_AND_SCORING",
+      "Z5_TRUTH_LINKAGE",
+      "Z6_ANALYSIS",
+      "Z7_CONTROLLED_ARCHIVE",
+      "Z8_PUBLIC_AGGREGATE"
+    ],
+    "invariants": [
+      "no_direct_target_or_truth_route_to_participant_facing_staff",
+      "no_participant_level_or_operational_secret_data_to_public_or_AkashicNET_systems",
+      "intended_render_and_independent_actual_display_evidence_are_distinct",
+      "claim_and_score_locks_precede_truth_release",
+      "truth_release_requires_machine_prerequisites_and_dual_control",
+      "unknown_unrecoverable_and_security_failures_remain_in_applicable_denominators",
+      "controls_reduce_detect_measure_and_test_leakage_but_do_not_prove_absence",
+      "participant_recognition_route_not_defined_or_authorized"
+    ],
+    "permitted_flow_count": 17,
+    "leakage_scenario_count": 30,
+    "critical_boundaries": [
+      "identity_linkage_separate_from_target_and_interview",
+      "target_device_has_no_participant_identity_or_interview_content",
+      "scoring_receives_redacted_transcript_and_masked_candidates_only",
+      "truth_linkage_separate_until_authorized_analysis",
+      "aggregate_disclosure_review_required_before_publication"
+    ],
+    "independent_display_verification": {
+      "required": true,
+      "render_acknowledgement_alone": "insufficient",
+      "privacy_default": "non_imaging_non_audio_sensor",
+      "camera_or_microphone": "requires_separate_EDP_001_audiovisual_pathway"
+    },
+    "unblinding_prerequisites": [
+      "consent_and_data_use_state_permits_operation",
+      "transcript_and_claim_locks_verify",
+      "candidate_and_score_locks_verify",
+      "contamination_and_integrity_states_complete",
+      "decoy_manifest_and_generation_reproduce",
+      "analysis_code_and_environment_locked",
+      "no_unresolved_critical_incident",
+      "independent_access_log_review_complete",
+      "two_custodian_approval_recorded"
+    ],
+    "required_validation": [
+      "site_specific_topology_and_data_inventory",
+      "institutional_security_architecture_approval",
+      "privacy_DPIA_approval",
+      "production_implementation_evidence",
+      "independent_penetration_and_adversarial_assessment",
+      "independent_physical_and_clinical_human_factors_testing",
+      "decoy_exchangeability_and_metadata_blindness_testing",
+      "key_credential_and_recovery_rehearsal",
+      "incident_and_breach_exercise",
+      "access_log_review_procedure",
+      "signed_commissioning_baseline",
+      "change_and_recommissioning_policy",
+      "external_domain_signoff",
+      "ethics_and_regulatory_authorization"
+    ],
+    "states": [
+      "SECURITY_SPECIFIED_NOT_IMPLEMENTED",
+      "SITE_TOPOLOGY_INCOMPLETE",
+      "DATA_FLOW_NOT_AUTHORIZED",
+      "ROLE_ACCESS_NOT_ENFORCED",
+      "ELIGIBILITY_FEED_INCOMPLETE",
+      "ACTIVATION_TOKEN_INVALID",
+      "DISPLAY_NOT_INDEPENDENTLY_VERIFIED",
+      "TARGET_METADATA_LEAK",
+      "TRANSCRIPT_LOCK_INCOMPLETE",
+      "SCORING_PACKET_REDACTION_FAIL",
+      "CLAIM_SET_NOT_BLIND",
+      "CANDIDATE_METADATA_LEAK",
+      "SCORE_LOCK_INCOMPLETE",
+      "UNBLINDING_NOT_AUTHORIZED",
+      "ANALYSIS_ENVIRONMENT_INTEGRITY_FAIL",
+      "ARCHIVE_COMMIT_FAILED",
+      "PUBLICATION_GATE_CLOSED",
+      "DELETION_NOT_VERIFIED",
+      "KEY_CUSTODY_BREACH",
+      "CROSS_ZONE_ACCESS_ATTEMPT",
+      "PAUSED_PENDING_ADJUDICATION",
+      "SITE_SECURITY_COMMISSIONED",
+      "RECRUITMENT_NOT_AUTHORIZED"
+    ]
+  },
+  "falsification_stopping_and_classification": {
+    "id": "FSC-001",
+    "version": "0.1",
+    "state": "DRAFT_STAGE_0_NOT_PREREGISTERED",
+    "recruitment_authorized": false,
+    "operational_use_authorized": false,
+    "automatic_BQ001_update": false,
+    "ordered_decision_process": [
+      "authority_and_participant_protection",
+      "denominator_integrity",
+      "operational_feasibility",
+      "confirmatory_validity",
+      "frozen_statistical_result",
+      "prespecified_robustness",
+      "primary_outcome_classification",
+      "independent_replication_status",
+      "separate_governance_review"
+    ],
+    "primary_outcome_classes": [
+      "C0_NOT_STARTED",
+      "C1_PROTOCOL_INFEASIBLE",
+      "C2_CONFIRMATORY_INVALID",
+      "C3_VALID_NULL_IMPRECISE",
+      "C4_VALID_BOUND_BELOW_MINIMUM",
+      "C5_STATISTICAL_SIGNAL_ONLY",
+      "C6_SIGNAL_INTERPRETATION_BLOCKED",
+      "C7_ANOMALY_REVIEW_CANDIDATE",
+      "C8_INDEPENDENTLY_REPLICATED_REVIEW_CANDIDATE"
+    ],
+    "minimum_meaningful_effect_delta": 0.05,
+    "critical_boundaries": [
+      "unknown_unrecoverable_failed_and_breached_states_remain_in_applicable_denominators",
+      "safety_ethics_privacy_and_critical_integrity_failures_cannot_be_offset_by_target_match",
+      "no_unblinded_efficacy_or_futility_monitoring",
+      "no_outcome_based_sample_size_extension",
+      "no_single_case_subgroup_or_secondary_endpoint_substitution",
+      "C4_bounds_effects_under_the_protocol_not_awareness_itself",
+      "C7_is_review_candidate_not_continuity_evidence",
+      "C8_requires_independent_preregistered_replication_and_governance_review"
+    ],
+    "immediate_stop_triggers": [
+      "research_interference_or_serious_device_related_safety_event",
+      "authority_withdrawal",
+      "unauthorized_identifiable_data_disclosure_or_uncontained_high_risk_privacy_breach",
+      "unauthorized_truth_access_premature_unblinding_or_key_custody_compromise",
+      "fabricated_forged_substituted_or_replayed_evidence",
+      "systematic_denominator_suppression",
+      "uncommissioned_device_room_or_software_configuration"
+    ],
+    "anomaly_interpretation_blockers": [
+      "metadata_or_interface_truth_distinguishability_above_frozen_tolerance",
+      "prespecified_systematic_negative_control_correspondence",
+      "association_with_contamination_ordinary_access_timing_uncertainty_or_access_log_anomaly",
+      "failure_of_mandatory_neutral_missing_participant_cluster_or_leave_one_site_out_analysis",
+      "irreproducible_decoy_exchangeability_or_transcript_independent_generation",
+      "unresolved_critical_leakage_route"
+    ],
+    "replication_requires": [
+      "independent_team_and_sponsor",
+      "prospective_registration_before_recruitment",
+      "separate_participants_and_independently_commissioned_sites",
+      "same_or_stricter_compatible_primary_contract",
+      "independent_target_assets_and_analysis_implementation",
+      "C7_result_without_unresolved_critical_failure",
+      "complete_denominator_and_all_null_contradictory_invalid_records",
+      "independent_statistical_clinical_ethics_privacy_and_security_review"
+    ],
+    "prohibited_claims": [
+      "proved_consciousness",
+      "proved_survival",
+      "falsified_consciousness",
+      "evidence_of_afterlife",
+      "verified_NDE"
+    ],
+    "unresolved_before_freeze": [
+      "independent_statistical_review_of_C4_compatibility_bound",
+      "simulation_of_classification_error_and_stopping_behaviour",
+      "quantitative_negative_control_tolerances",
+      "ethics_approved_event_and_calendar_burden_cap",
+      "adjudication_charter_and_appeal_path",
+      "executable_prose_JSON_coverage_and_controlled_vocabulary_validation",
+      "prospective_registration_and_external_domain_signoff"
+    ]
+  },
+  "target_record_integrity": {
+    "unsigned_payload_excludes": [
+      "current_record_digest",
+      "digital_signature"
+    ],
+    "unsigned_payload_includes": [
+      "prior_record_digest"
+    ],
+    "digest_input": "canonicalize_unsigned_payload",
+    "signature_input": "current_record_digest",
+    "verification": "recompute_digest_compare_verify_signature_and_prior_link",
+    "closing_digest": "immediately_preceding_record_digest",
+    "closing_count": "preceding_records_only",
+    "profile_freeze_required": true
+  }
+}
