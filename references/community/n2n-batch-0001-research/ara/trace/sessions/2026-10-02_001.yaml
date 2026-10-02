@@ -1,0 +1,25 @@
+session:
+  id: 2026-10-02_001
+  date: '2026-10-02'
+  turn_count: 1
+  summary: Staged pinned N2N offline metadata review batch; no knowledge promotion.
+events_logged:
+  - id: N01
+    type: decision
+    provenance: ai-suggested
+    routing: direct
+    summary: Prioritize 997 uncurated annotated records and three lexical-ID unannotated records.
+    evidence: [../../../n2n-metadata-batch-0001.json]
+  - id: N02
+    type: experiment
+    provenance: ai-executed
+    routing: direct
+    summary: Fifteen focused tests passed, including mutation checks.
+    evidence: [../../evidence/validation.txt]
+ai_actions:
+  - action: Added deterministic generator, pinned machine-readable queue, method and focused tests.
+    provenance: ai-executed
+claims_touched: []
+logic_revisions: []
+open_threads:
+  - Future metadata capture requires inspectable authorized sources; live access remains HOLD.
