@@ -37,3 +37,7 @@ entries:
     notes:
       - Added requested 1000-record staging tranche, preserving previous manifests and receipt pilot.
       - Captured validation as process evidence only; no metadata, rights or maturity promotion.
+  - turn: 2026-10-02_001-staging8
+    notes:
+      - Completed the structural queue with the requested final 396; exact archive-set equality tested.
+      - No title, current verification, rights, evidence or maturity promotion; descriptive enrichment remains incomplete.

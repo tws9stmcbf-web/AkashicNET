@@ -64,7 +64,7 @@ class SecondBatchTests(unittest.TestCase):
 
     def test_batch_one_unchanged_and_unreviewed_batches_rejected(self):
         self.assertEqual((ROOT / BATCH).read_text(), encode(self.first))
-        for number in (0, 8, -1, True, 1.0):
+        for number in (0, 9, -1, True, 1.0):
             with self.subTest(number=number), self.assertRaises(ValueError):
                 build(batch_number=number)
 

@@ -161,3 +161,20 @@ continuation_staging_batch_0007:
       evidence: [../../evidence/batch-0007-validation.txt, ../../evidence/batch-0007-counts.json]
   claims_touched: []
   logic_revisions: []
+continuation_staging_batch_0008:
+  direction:
+    provenance: user
+    excerpt: Next 396
+  events:
+    - id: N19
+      type: decision
+      provenance: user
+      choice: Stage the final 396 eligible archive records.
+      evidence: [../../../n2n-metadata-batch-0008-method.md]
+    - id: N20
+      type: experiment
+      provenance: ai-executed
+      result: Five tests passed; 7396 staged plus three curated exactly covers7399 archive IDs; zero remaining or overlap.
+      evidence: [../../evidence/batch-0008-validation.txt, ../../evidence/batch-0008-counts.json]
+  claims_touched: []
+  logic_revisions: []

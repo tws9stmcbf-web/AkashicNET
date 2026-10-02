@@ -24,8 +24,8 @@ URI, META = list(PINS)[:2]
 
 
 def build(root=ROOT, batch_number=1):
-    if type(batch_number) is not int or batch_number not in (1, 2, 3, 4, 5, 6, 7):
-        raise ValueError("only reviewed batches 1 through 7 are supported")
+    if type(batch_number) is not int or batch_number not in (1, 2, 3, 4, 5, 6, 7, 8):
+        raise ValueError("only reviewed batches 1 through 8 are supported")
     previous = None
     earlier = []
     if batch_number > 1:
@@ -64,7 +64,8 @@ def build(root=ROOT, batch_number=1):
         'new_curated_records': 0, 'curated_after': 3,
     }
     expected_annotations = 997 if batch_number == 1 else 0
-    if list(counts.values()) != [7399, 3, 7396, 1000, expected_annotations, 1000 - expected_annotations, 6396, 0, 3]:
+    expected_size = 396 if batch_number == 8 else 1000
+    if list(counts.values()) != [7399, 3, 7396, expected_size, expected_annotations, expected_size - expected_annotations, 7396 - expected_size, 0, 3]:
         raise ValueError(f'count drift: {counts}')
     result = []
     for rank, r in enumerate(selected, 1):
@@ -102,7 +103,7 @@ def build(root=ROOT, batch_number=1):
     if previous is not None:
         prior_ids = {r['post_id'] for prior in earlier for r in prior['records']}
         selected_ids = {r['post_id'] for r in result}
-        if prior_ids & selected_ids or len(prior_ids | selected_ids) != batch_number * 1000:
+        if prior_ids & selected_ids or len(prior_ids | selected_ids) != min(batch_number * 1000, 7396):
             raise ValueError('cross-batch overlap or count drift')
         manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude its 1000 validated IDs and take the next 1000 (global eligible ranks 1001-2000). No chronological, evidential or representative-sample claim.' if batch_number == 2 else 'Use the same eligible ordering as batch 0001; exclude all 2000 validated IDs in batches 0001 and 0002 and take the next 1000 (global eligible ranks 2001-3000). No chronological, evidential or representative-sample claim.'
         if batch_number == 4:
@@ -113,6 +114,10 @@ def build(root=ROOT, batch_number=1):
             manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 5000 validated IDs in batches 0001 through 0005 and take the next 1000 (global eligible ranks 5001-6000). No chronological, evidential or representative-sample claim.'
         if batch_number == 7:
             manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 6000 validated IDs in batches 0001 through 0006 and take the next 1000 (global eligible ranks 6001-7000). No chronological, evidential or representative-sample claim.'
+        if batch_number == 8:
+            manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 7000 validated IDs in batches 0001 through 0007 and take the final 396 (global eligible ranks 7001-7396). Complete structural queue only; no descriptive metadata, evidence or rights promotion.'
+            if prior_ids | selected_ids != {r['post_id'] for r in eligible}:
+                raise ValueError('final queue does not cover eligible archive exactly')
         prior_path = f'references/community/n2n-metadata-batch-{batch_number - 1:04d}.json'
         manifest['previous_batch'] = {'path': prior_path, 'sha256': hashlib.sha256((root / prior_path).read_bytes()).hexdigest()}
         manifest['counts'].update(previously_staged=len(prior_ids), overlap_with_previous=0,
@@ -135,7 +140,7 @@ def validate(value, root=ROOT, batch_number=1):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
-    parser.add_argument('--batch', type=int, choices=(1, 2, 3, 4, 5, 6, 7), default=1)
+    parser.add_argument('--batch', type=int, choices=(1, 2, 3, 4, 5, 6, 7, 8), default=1)
     args = parser.parse_args()
     expected = build(batch_number=args.batch)
     path = ROOT / f'references/community/n2n-metadata-batch-{args.batch:04d}.json'
