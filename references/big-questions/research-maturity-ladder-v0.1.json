@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "ladder_id": "AKASHICNET-BQ-RESEARCH-MATURITY-V0.1",
+  "status": "CANONICAL",
+  "maximum_level": 10,
+  "meaning": "A level records completed governed research work. It is not a truth probability, evidence-strength grade, confidence score or promotion decision.",
+  "stages": [
+    {"level": 1, "id": "QUESTION_FRAMED", "label": "Frame the question"},
+    {"level": 2, "id": "SOURCES_MAPPED", "label": "Map sources"},
+    {"level": 3, "id": "REVIEW_CANDIDATE_REACHED", "label": "Reach review-candidate status"},
+    {"level": 4, "id": "MODELS_SEPARATED", "label": "Separate models"},
+    {"level": 5, "id": "EVIDENCE_MAPPED", "label": "Map evidence"},
+    {"level": 6, "id": "METHODS_STRESS_TESTED", "label": "Stress-test methods"},
+    {"level": 7, "id": "PREDICTIONS_DEFINED", "label": "Define predictions"},
+    {"level": 8, "id": "GOVERNED_TESTS_RUN", "label": "Run tests"},
+    {"level": 9, "id": "FINDINGS_TRIANGULATED", "label": "Triangulate findings"},
+    {"level": 10, "id": "RESOLUTION_REVIEW_ENTERED", "label": "Enter resolution review"}
+  ],
+  "fail_closed_rules": {
+    "levels_are_cumulative": true,
+    "asserted_level_must_equal_highest_completed_stage": true,
+    "missing_or_unvalidated_stage_blocks_higher_assertions": true,
+    "level_8_requires_governed_test_execution": true,
+    "unresolved_is_allowed_at_every_level": true,
+    "level_change_does_not_promote_truth_evidence_rights_public_synthesis_or_website": true
+  }
+}
