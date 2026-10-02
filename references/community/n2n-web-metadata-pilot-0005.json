@@ -1,0 +1,363 @@
+{
+  "schema": "akashicnet.n2n.web-metadata-observations.v1",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "archive_sha256": {
+    "references/community/reddit-uri-index.csv": "3a6a702061cff7ae9e8d555b1de32b17cba9401f59451fce739f7f8411804b80",
+    "references/community/n2n-index.csv": "6d6ea88cbeda0a14b281246201e9cc711d74b28898531951da57dcdfdd36595a",
+    "scripts/reddit_corpus_census.py": "5377d0454e8f22c4684becd611a6136549ddba8e1c21be7d75dfce5d1b5e3845",
+    "tools/search_reddit.py": "1e8286abff822f2edfc34f180aa5c0bf7b88eaa5df85bd1e8d6857208330f8d4"
+  },
+  "selection_rule": "Related-post links 26-31 on Aghori page turn7view0, then the first fourteen remaining uncurated archive IDs in descending lexical order after excluding prior overlays and these six. Lexical order is not chronology. Twenty distinct archive IDs attempted.",
+  "excluded": [],
+  "counts": {
+    "accessible_posts_examined": 6,
+    "archive_records_enriched_in_overlay": 6,
+    "observed_field_values": 18,
+    "outside_archive_excluded": 0,
+    "new_canonical_curated_records": 0,
+    "canonical_curated_records": 3,
+    "previously_enriched_in_overlays": 16,
+    "cumulative_unique_enriched_in_overlays": 22,
+    "overlap_with_previous": 0,
+    "cumulative_observed_field_values": 66,
+    "attempted_archive_records": 20,
+    "unresolved_fetches": 14
+  },
+  "authorization": {
+    "live_reddit_metadata_read": "AUTHORIZED_BY_USER",
+    "user_instruction": "Lift the restrictions",
+    "scope": "Metadata observations staged; no merge or deployment"
+  },
+  "boundaries": {
+    "bodies_stored": 0,
+    "comments_stored": 0,
+    "media_stored": 0,
+    "rights_gate": "CLOSED",
+    "evidence_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "canonical_metadata_write": false,
+    "website_updated": false
+  },
+  "limitations": [
+    "Returned pages may be cached; retrieval day is not the crawl date.",
+    "Displayed usernames do not independently verify real-world identity or ownership.",
+    "Relative post ages and title date suffixes are not exact creation timestamps.",
+    "No historical archive annotation was promoted to current flair.",
+    "Titles reproduce source wording; embedded medical or scientific claims are not endorsed or independently assessed."
+  ],
+  "records": [
+    {
+      "post_id": "1vlt7al",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlt7al/born_13_living_13_coincidence_or_synchronicity_13/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlt7al/born_13_living_13_coincidence_or_synchronicity_13/"
+      ],
+      "observed_metadata": {
+        "title": "Born 13. Living 13. Coincidence or Synchronicity? 🌀 — “13 Is Unlucky for Some, But Not All.” [Truth is Timeless]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "🔎 Synchronicity 🌀"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlt7al/born_13_living_13_coincidence_or_synchronicity_13/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn15view4",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vmam4h",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmam4h/what_if_humanity_could_build_a_library_without/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmam4h/what_if_humanity_could_build_a_library_without/"
+      ],
+      "observed_metadata": {
+        "title": "🌌 What If Humanity Could Build a Library Without Walls — Infinite Knowledge, Loving Awareness, Shared for the Benefit of All Beings? ♾️💓",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "#BeInspired 💡"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmam4h/what_if_humanity_could_build_a_library_without/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn15view3",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vmweht",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmweht/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmweht/"
+      ],
+      "observed_metadata": {
+        "title": "A playful visual exploration of meta-awareness, higher-dimensional geometry and the possibility that reality contains connections our ordinary 3D minds cannot yet perceive. 🧠♾️🌌 [Sat Sri Akal — Truth is the timeless key 🔑]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "🆘 ☯️ InterDimensional🌀💡LightWorkers 🕉️"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmweht/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn15view2",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vmwrpg",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmwrpg/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmwrpg/"
+      ],
+      "observed_metadata": {
+        "title": "🪷🦋 “Buddhafly: Float Like a Butterfly, Awaken Like a Buddha” — From Solipse 1999 to Sarnath & the Full Moon at O.Z.O.R.A. 2026 🌑🌕",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "⊙ O.Z.O.R.A Festival  🌀"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmwrpg/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn15view1",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vmxf4q",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmxf4q/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmxf4q/"
+      ],
+      "observed_metadata": {
+        "title": "🪝 What if humanity’s greatest breakthrough isn’t a new technology… but learning to become symbiotic with the living universe? ♾️🌍[⚡ 3:33 AM, Tesla strikes again…]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "🆘 ☯️ InterDimensional🌀💡LightWorkers 🕉️"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmxf4q/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn15view0",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vmyapw",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmyapw/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmyapw/"
+      ],
+      "observed_metadata": {
+        "title": "🧠 N2N Signal & Synthesis 🧬🚀 — A Human-Specific Gene May Help Explain Our Extraordinary Brainpower: What If Evolution’s Secret Was Keeping the Brain Unfinished? 🌱🌀 (4 min read) | SciTechDaily: Biology [Aug 2026]",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "🧬#HumanEvolution ☯️🏄🏽❤️🕉"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmyapw/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn14view0",
+        "reported_crawl_age": "last month",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    }
+  ],
+  "previous_batch": {
+    "path": "references/community/n2n-web-metadata-pilot-0004.json",
+    "sha256": "3ef4091c2711774e4ec6f63fee98a47ecf271e0241922aaa09f87a8ca540bafd"
+  },
+  "unresolved_fetches": [
+    {
+      "post_id": "zzrhma",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn22view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zzrhma/why_microdosing_is_taking_over_medical_marijuana/"
+    },
+    {
+      "post_id": "zzqlva",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn23view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zzqlva/love_is_the_path_to_enlightenment_me_epiphany/"
+    },
+    {
+      "post_id": "zzp5x4",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn20view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zzp5x4/effects_of_cannabis_marijuana_on_adolescent_young/"
+    },
+    {
+      "post_id": "zzoy9y",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn19view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zzoy9y/why_is_the_fly_agaric_psychedelic_muscimol_is_the/"
+    },
+    {
+      "post_id": "zz5kq1",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn28view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zz5kq1/does_cannabis_marijuana_use_increase_creativity/"
+    },
+    {
+      "post_id": "zyxab5",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn16view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zyxab5/a_neurophenomenological_np_approach_to/"
+    },
+    {
+      "post_id": "zyvss2",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn29view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zyvss2/psychedelics_and_spirituality_including_more_than/"
+    },
+    {
+      "post_id": "zyvl9h",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn26view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zyvl9h/silencing_the_brains_default_mode_network_dmn_has/"
+    },
+    {
+      "post_id": "zxr7rn",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn21view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zxr7rn/fig_2_pharmacological_neural_and_psychological/"
+    },
+    {
+      "post_id": "zxqqz2",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn17view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zxqqz2/fig_2_singledose_psilocybinassisted_therapy_in/"
+    },
+    {
+      "post_id": "zx9gsy",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn18view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zx9gsy/peace_is_not_won_by_those_who_fiercely_guard/"
+    },
+    {
+      "post_id": "zx9a0g",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn25view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zx9a0g/as_with_life_when_you_should_learn_from_your_past/"
+    },
+    {
+      "post_id": "zx3tqv",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn24view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zx3tqv/associations_between_mdmaecstasy_classic/"
+    },
+    {
+      "post_id": "zx2dsk",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn27view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Unresolved retrieval failure; not evidence of deletion.",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/zx2dsk/figure_1_singledose_psilocybin_for/"
+    }
+  ]
+}

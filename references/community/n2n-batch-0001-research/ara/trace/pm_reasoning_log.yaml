@@ -1,0 +1,48 @@
+entries:
+  - turn: 2026-10-02_001
+    notes:
+      - Recorded local staging and validation as journey facts only.
+      - No evidence, rights, publication, maturity or other knowledge promotion.
+  - turn: 2026-10-02_001-batch2
+    notes:
+      - Continued the staged archive review queue with a bounded 1000-record tranche.
+      - Recorded validation as an execution result; no knowledge or governance promotion.
+  - turn: 2026-10-02_001-batch3
+    notes:
+      - User requested another bounded 1000 while batch 2 was being saved; added batch 3.
+      - Prior JSON manifests remain unchanged; validation covers the full prior-batch chain.
+      - No scientific, rights or maturity promotion.
+  - turn: 2026-10-02_001-batch4
+    notes:
+      - Added a fourth bounded tranche on user request; earlier JSON manifests unchanged.
+      - Recorded 25-test validation as process evidence; no governance or knowledge promotion.
+  - turn: 2026-10-02_001-batch5
+    notes:
+      - Fifth bounded tranche requested; five targeted checks cover the additional selection and dependency.
+      - Prior manifests unchanged; no new curated metadata or governance promotion.
+  - turn: 2026-10-02_001-provenance-pilot
+    notes:
+      - Existing pinned audit says upstream pilot provenance unresolved; historical feed receipts provide a bounded alternative.
+      - Kept historical status separate from current verification; recorded process result without evidence or rights promotion.
+  - turn: 2026-10-02_001-provenance-pilot2
+    notes:
+      - Continued the most recent 25-record provenance pilot on request; no larger staging batch implied.
+      - Historical observation fields remain separate from current verification; no promotion.
+  - turn: 2026-10-02_001-staging6
+    notes:
+      - User explicitly selected the staging queue; added eligible ranks 5001-6000.
+      - Preserved earlier manifests and receipt pilot; its queue count remains a historical checkpoint.
+      - No curated metadata, rights, evidence or maturity promotion.
+  - turn: 2026-10-02_001-staging7
+    notes:
+      - Added requested 1000-record staging tranche, preserving previous manifests and receipt pilot.
+      - Captured validation as process evidence only; no metadata, rights or maturity promotion.
+  - turn: 2026-10-02_001-staging8
+    notes:
+      - Completed the structural queue with the requested final 396; exact archive-set equality tested.
+      - No title, current verification, rights, evidence or maturity promotion; descriptive enrichment remains incomplete.
+  - turn: 2026-10-02_001-provenance-completion
+    notes:
+      - Completed historical feed linkage on enrichment request; process evidence only.
+      - Pinned feed population exhausted. Further descriptive enrichment requires attributable source snapshots.
+      - No rights, evidence, publication or maturity promotion; Reddit remains HOLD.

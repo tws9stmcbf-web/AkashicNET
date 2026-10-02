@@ -1,0 +1,34 @@
+{
+  "validation": "PASS",
+  "archive_unique_n2n_records": 7399,
+  "curated_before": 3,
+  "eligible_uncurated": 7396,
+  "selected": 1000,
+  "selected_with_historical_annotations": 0,
+  "selected_without_historical_annotations": 1000,
+  "remaining_uncurated_outside_batch": 6396,
+  "new_curated_records": 0,
+  "curated_after": 3,
+  "previously_staged": 3000,
+  "overlap_with_previous": 0,
+  "cumulative_staged_unique": 4000,
+  "remaining_uncurated_outside_all_batches": 3396,
+  "archive_csv_status_counts": {
+    "annotation_derived": 2042,
+    "candidate": 7459,
+    "non_post_subreddit": 1
+  },
+  "archive_annotation_count_histogram": {
+    "0": 6399,
+    "2": 972,
+    "3": 14,
+    "4": 14
+  },
+  "curated_post_ids_excluded": [
+    "1l26ks1",
+    "1qll7jj",
+    "1uoneax"
+  ],
+  "selected_archive_row_references": 1000,
+  "selected_historical_annotation_values": 0
+}

@@ -1,0 +1,11 @@
+{
+  "validation": "PASS",
+  "historical_feed_ids": 125,
+  "selected": 25,
+  "selected_staging_overlap": 0,
+  "staging_queue_unchanged": 5000,
+  "curated_unchanged": 3,
+  "new_curated_titles": 0,
+  "new_authorship_verifications": 0,
+  "current_reddit_requests": 0
+}
