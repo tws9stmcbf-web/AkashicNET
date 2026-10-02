@@ -10,7 +10,7 @@ const questions = [
     id: "BQ001",
     title: "Does consciousness continue beyond the individual?",
     href: "/big-questions/bq001",
-    status: "UNRESOLVED · DEEPENING ↗",
+    status: "UNRESOLVED · DEEPENING · LEVEL 6/10",
     colour: "🩵",
     evidence: "🟠 LIMITED · MIXED",
     direction: "⚪ NOT YET DETERMINED",
@@ -23,7 +23,7 @@ const questions = [
     id: "BQ002",
     title: "Where do thoughts come from?",
     href: "/big-questions/bq002",
-    status: "UNRESOLVED · DEEPENING ↗",
+    status: "UNRESOLVED · DEEPENING · LEVEL 4/10",
     colour: "🩵",
     evidence: "🟢 SUBSTANTIAL FOR NEURAL MECHANISMS",
     direction: "🟠 TRANSPERSONAL CLAIMS SPECULATIVE",
@@ -63,7 +63,8 @@ export default function BigQuestionsPage() {
       <section style={{ ...shell, paddingBottom: 36 }} aria-labelledby="key-title">
         <div style={panel}>
           <h2 id="key-title" style={{ marginTop: 0 }}>One shared colour language</h2>
-          <p style={{ color: "#c8c4bb", lineHeight: 1.9, marginBottom: 0 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited, emerging or speculative</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within the named axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>
+          <p style={{ color: "#c8c4bb", lineHeight: 1.9 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited, emerging or speculative</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within the named axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.8, marginBottom: 0 }}><strong>Deepening level:</strong> a 1–10 research-maturity marker, not a truth probability or evidence grade. 1 frames the question; 2 maps sources; 3 reaches review-candidate status; 4 separates models; 5 maps evidence; 6 stress-tests methods; 7 defines predictions; 8 runs tests; 9 triangulates findings; 10 enters resolution review. A question may remain unresolved at every level.</p>
         </div>
       </section>
 
@@ -90,7 +91,7 @@ export default function BigQuestionsPage() {
         <div style={{ ...panel, borderColor: "rgba(216,185,92,.38)", textAlign: "center" }}>
           <p style={{ color: "#d8b95c", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>HOW RATINGS CHANGE</p>
           <h2 style={{ fontSize: "clamp(1.8rem,4vw,3.2rem)" }}>Scheduled review—not scheduled belief.</h2>
-          <p style={{ maxWidth: 850, margin: "0 auto", color: "#d1cdc4", lineHeight: 1.8 }}>A rating changes only when new evidence, stronger methods, independent replication or meaningful counter-evidence changes a named axis. Time alone never upgrades a claim. Some questions may deepen for decades while remaining unresolved.</p>
+          <p style={{ maxWidth: 850, margin: "0 auto", color: "#d1cdc4", lineHeight: 1.8 }}>An evidence rating changes only when evidence changes a named axis. A deepening level changes when its defined research work is completed, even when a null result leaves every evidence-strength axis unchanged. Time and source volume alone never upgrade either measure. Some questions may deepen for decades while remaining unresolved.</p>
           <p style={{ color: "#c8c4bb", lineHeight: 1.8 }}><strong>Typical pathway:</strong> ⚪ Unresolved → 🩵 Deepening → 🟠 Signal detected → 🟢 Converging evidence → 💜 Provisional support for a clearly defined model</p>
         </div>
       </section>

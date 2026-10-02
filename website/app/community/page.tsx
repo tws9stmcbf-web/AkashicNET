@@ -93,8 +93,8 @@ export default function CommunityPage() {
       <aside className="page-quotation community-quotation" aria-label="Community compass">
         <span>Community compass</span><blockquote>“Curiosity over certainty. Dialogue over polarisation. Stewardship over extraction.”</blockquote>
       </aside>
-      <aside className="page-provenance" aria-label="Page version and update date">
-        <span>Community page · Iteration 04</span><span>AkashicNET v0.10 · Pre-alpha</span><span>Updated 30 August 2026</span>
+      <aside className="page-provenance" aria-label="Page iteration and update date">
+        <span>Community page · Iteration 04</span><span>Updated 30 August 2026</span>
       </aside>
       <footer><div><img className="footer-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><p className="brand-name">AKASHICNET.ORG</p></div><p>Unity through neurodiversity.</p><p>Awaken within · Serve without · 2026</p></footer>
     </main>
