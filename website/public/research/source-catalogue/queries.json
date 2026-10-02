@@ -1,0 +1,335 @@
+{
+  "version": "0.2",
+  "source_boundary": "53-record catalogue through batch 12",
+  "queries": [
+    {
+      "query_id": "Q001",
+      "parent_bq": "BQ001",
+      "title": "Verifiable awareness during cardiac arrest",
+      "query": "Which prospective cardiac-arrest studies test independently verifiable awareness, and when could the reported information have been acquired?",
+      "source_record_ids": [
+        "SRC-SPR-PE-0001",
+        "CM-PSI-001",
+        "CM-PSI-006"
+      ],
+      "competing_explanations_to_assess": [
+        "Sensory access during resuscitation",
+        "Timing uncertainty",
+        "Recall and selection effects"
+      ],
+      "next_review_steps": [
+        "Retrieve original AWARE papers",
+        "Extract target exposure and interview denominators",
+        "Compare corroboration with blinded target identification"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Discovery links, not accepted evidence."
+    },
+    {
+      "query_id": "Q002",
+      "parent_bq": "BQ001",
+      "title": "Reincarnation reports and information transfer",
+      "query": "How well do documented childhood past-life reports distinguish prior information access, cultural influence and chance from a continuity interpretation?",
+      "source_record_ids": [
+        "SRC-SPR-PE-0002",
+        "SRC-SPR-PE-0003",
+        "CM-PSI-013",
+        "CM-PSI-014",
+        "CM-PSI-017",
+        "CM-PSI-026"
+      ],
+      "competing_explanations_to_assess": [
+        "Information leakage and family contact",
+        "Selective matching and retrospective reconstruction",
+        "Living-agent psi as a competing hypothesis, itself unestablished"
+      ],
+      "next_review_steps": [
+        "Locate records made before identification",
+        "Assess unsuccessful matches and controls",
+        "Deduplicate children and case collections"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Discovery links, not accepted evidence."
+    },
+    {
+      "query_id": "Q003",
+      "parent_bq": "BQ002",
+      "title": "Spontaneous thought and dreams",
+      "query": "Which mechanisms and first-person measures connect waking spontaneous thought with dream content?",
+      "source_record_ids": [
+        "CM-OA-010",
+        "CM-OA-011",
+        "CM-PSI-009",
+        "CM-PSI-010"
+      ],
+      "competing_explanations_to_assess": [
+        "Memory recombination",
+        "Neural dynamics and state differences",
+        "Reporting and recall limitations"
+      ],
+      "next_review_steps": [
+        "Extract primary neuroimaging studies",
+        "Separate proposed mechanisms from observed associations",
+        "Define meta-awareness and dream awareness separately"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Discovery links, not accepted evidence."
+    },
+    {
+      "query_id": "Q004",
+      "parent_bq": "BQ003",
+      "title": "Loving-kindness outcomes",
+      "query": "Compared with active controls, how does loving-kindness practice affect compassion, positive emotion and wellbeing?",
+      "source_record_ids": [
+        "CM-OA-002",
+        "CM-OA-003",
+        "CM-OA-004",
+        "CM-OA-009"
+      ],
+      "competing_explanations_to_assess": [
+        "Expectancy and attention",
+        "Group support and concurrent CBT",
+        "Differences between interventions and outcome measures"
+      ],
+      "next_review_steps": [
+        "Separate wait-list from active-control comparisons",
+        "Compare protocol with reported outcomes",
+        "Extract attrition, follow-up and uncertainty"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "BQ003 queries address measurable contemplative outcomes; they do not directly test cosmic love ontology."
+    },
+    {
+      "query_id": "Q005",
+      "parent_bq": "BQ003",
+      "title": "Meditation experiences and measurement",
+      "query": "How are extraordinary meditation experiences defined, measured and distinguished from their interpretations?",
+      "source_record_ids": [
+        "CM-IONS-003",
+        "CM-IONS-004",
+        "CM-IONS-005",
+        "CM-OA-001",
+        "CM-PSI-007"
+      ],
+      "competing_explanations_to_assess": [
+        "Self-selection and recall",
+        "Question wording and construct overlap",
+        "Belief endorsement versus independently verified events"
+      ],
+      "next_review_steps": [
+        "Resolve the 1120/1130 survey discrepancy",
+        "Inspect dataset access and file licences",
+        "Assess measurement validity and cohort overlap"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "BQ003 queries address measurable contemplative outcomes; they do not directly test cosmic love ontology."
+    },
+    {
+      "query_id": "Q006",
+      "parent_bq": null,
+      "title": "Replication and research quality",
+      "query": "Which study designs make reported anomalous effects more reproducible and less vulnerable to bias?",
+      "source_record_ids": [
+        "SRC-SPR-PE-0006",
+        "SRC-SPR-PE-0007",
+        "CM-PSI-015",
+        "CM-PSI-016",
+        "CM-PSI-018",
+        "CM-PSI-019"
+      ],
+      "competing_explanations_to_assess": [
+        "Analytical flexibility",
+        "Expectancy, leakage and artefacts",
+        "Publication bias and chance variation"
+      ],
+      "next_review_steps": [
+        "Locate registered protocols and primary replications",
+        "Compare preregistered with exploratory analyses",
+        "Record null findings and deviations"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Discovery links, not accepted evidence."
+    },
+    {
+      "query_id": "Q007",
+      "parent_bq": "BQ001",
+      "title": "Terminal lucidity and clinical documentation",
+      "query": "What kinds of contemporaneous clinical observations could distinguish terminal lucidity from ordinary fluctuations, medication effects or retrospective interpretation?",
+      "source_record_ids": [
+        "CM-PSI-002",
+        "CM-PSI-022",
+        "CM-PSI-023"
+      ],
+      "competing_explanations_to_assess": [
+        "Fluctuating cognition and arousal",
+        "Medication or care changes",
+        "Observer expectations and retrospective selection"
+      ],
+      "next_review_steps": [
+        "Define lucidity and baseline impairment",
+        "Locate prospectively documented cases",
+        "Separate improved communication from evidence of postmortem continuity"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Source links are a starting reading list; primary research and further critical sources may be needed. No evidence weight assigned."
+    },
+    {
+      "query_id": "Q008",
+      "parent_bq": "BQ001",
+      "title": "Bereavement experiences and corroboration",
+      "query": "Which features of reported encounters with the deceased can be independently checked, and which concern their meaning or subjective qualities?",
+      "source_record_ids": [
+        "CM-PSI-004",
+        "CM-PSI-024",
+        "CM-PSI-023",
+        "SRC-SPR-PE-0004"
+      ],
+      "competing_explanations_to_assess": [
+        "Grief-related perception and memory",
+        "Coincidence and selective matching",
+        "Prior knowledge, suggestion and ordinary information access"
+      ],
+      "next_review_steps": [
+        "Identify reports recorded before verification",
+        "Assess controls and base rates",
+        "Separate comfort, conviction and verifiable information"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Source links are a starting reading list; primary research and further critical sources may be needed. No evidence weight assigned."
+    },
+    {
+      "query_id": "Q009",
+      "parent_bq": "BQ001",
+      "title": "Birthmarks and physical correspondences",
+      "query": "How are claimed correspondences between birthmarks and a deceased person\u2019s injuries documented and compared with chance or ordinary developmental explanations?",
+      "source_record_ids": [
+        "CM-PSI-026",
+        "CM-PSI-027",
+        "SRC-SPR-PE-0003",
+        "CM-PSI-014"
+      ],
+      "competing_explanations_to_assess": [
+        "Common mark locations and broad matching criteria",
+        "Selection after a deceased person is identified",
+        "Developmental causes and incomplete medical records"
+      ],
+      "next_review_steps": [
+        "Locate original photographs and medical records",
+        "Check whether matching rules preceded identification",
+        "Count unmatched cases and overlapping case reports"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Source links are a starting reading list; primary research and further critical sources may be needed. No evidence weight assigned."
+    },
+    {
+      "query_id": "Q010",
+      "parent_bq": "BQ002",
+      "title": "Dream information and prospective testing",
+      "query": "Do prospectively recorded dream reports match concealed targets more accurately than appropriate controls under blinded scoring?",
+      "source_record_ids": [
+        "CM-PSI-008",
+        "CM-PSI-010",
+        "CM-PSI-028",
+        "CM-PSI-015",
+        "CM-PSI-019"
+      ],
+      "competing_explanations_to_assess": [
+        "Chance matching across many details",
+        "Sensory leakage and flexible scoring",
+        "Recall after an event and selective reporting"
+      ],
+      "next_review_steps": [
+        "Find registered protocols and timestamped dream records",
+        "Inspect randomization, blinding and target pools",
+        "Separate retrospective anecdotes from prospective tests"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Source links are a starting reading list; primary research and further critical sources may be needed. No evidence weight assigned."
+    },
+    {
+      "query_id": "Q011",
+      "parent_bq": "BQ002",
+      "title": "Lucid dreaming and awareness",
+      "query": "How do studies measure awareness during dreaming and distinguish it from recall or interpretation after waking?",
+      "source_record_ids": [
+        "CM-PSI-009",
+        "CM-OA-010",
+        "CM-OA-011"
+      ],
+      "competing_explanations_to_assess": [
+        "Retrospective reconstruction",
+        "Differences between sleep states",
+        "Measurement limits of reports and physiology"
+      ],
+      "next_review_steps": [
+        "Locate primary studies with verified sleep-state measures",
+        "Define the aspect of awareness being tested",
+        "Compare behavioural signals with first-person reports"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Source links are a starting reading list; primary research and further critical sources may be needed. No evidence weight assigned."
+    },
+    {
+      "query_id": "Q012",
+      "parent_bq": "BQ001",
+      "title": "Belief, experience and evidential judgement",
+      "query": "What does a survey of beliefs about survival measure, and how does that differ from independently testing a survival-related claim?",
+      "source_record_ids": [
+        "CM-IONS-001",
+        "CM-IONS-007",
+        "CM-OA-001",
+        "CM-PSI-003",
+        "CM-PSI-017"
+      ],
+      "competing_explanations_to_assess": [
+        "Prior worldview and professional background",
+        "Selection into the survey",
+        "Question framing and perceived persuasiveness"
+      ],
+      "next_review_steps": [
+        "Extract recruitment and response denominators",
+        "Separate belief measures from event verification",
+        "Assess how respondents were shown competing interpretations"
+      ],
+      "status": "PROPOSED_QUERY",
+      "provenance": "ai-suggested",
+      "synthesis_status": "NOT_STARTED",
+      "evidence_status_changed": false,
+      "scope_note": "Source links are a starting reading list; primary research and further critical sources may be needed. No evidence weight assigned."
+    }
+  ],
+  "new_query_count": 6
+}
