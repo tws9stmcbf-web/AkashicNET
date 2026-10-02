@@ -1,0 +1,249 @@
+{
+  "enrichment_id": "ENRICHMENT-18",
+  "date": "2026-10-02",
+  "records_total": 91,
+  "new_records_added": 0,
+  "independent_studies_promoted": 0,
+  "accepted_edges_added": 0,
+  "original_batch_snapshots_modified": false,
+  "changes": [
+    {
+      "record_id": "SRC-B15-0003",
+      "study_metadata": {
+        "design": "Single mentalist and matched-control fMRI case comparison",
+        "sample": {
+          "scanned_participants": 2,
+          "mentalist_cases": 1,
+          "matched_controls": 1
+        },
+        "sensory_conditions": {
+          "classification": "CLAIMED_TELEPATHY_TASK_ISOLATION_NOT_APPRAISED"
+        },
+        "controls": "Matched comparison participant under similar task conditions.",
+        "analysis": "1.5 T fMRI; exact statistical thresholds and multiplicity correction not verified from abstract.",
+        "reported_findings": "Authors report right parahippocampal activation in mentalist and left inferior frontal activation in control.",
+        "limitations": [
+          "Activation differences do not establish a communication mechanism.",
+          "Full methods retrieval blocked; behavioral scoring and information shielding not independently appraised."
+        ],
+        "references": [
+          {
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/21829287/",
+            "sections": [
+              "Abstract",
+              "Authors",
+              "Publication details"
+            ],
+            "retrieval_refs": [
+              "turn40view0"
+            ]
+          }
+        ],
+        "inspection_scope": "PUBMED_ABSTRACT_AND_METADATA",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "data": {
+          "status": "NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B15-0005",
+      "study_metadata": {
+        "design": "Systematic review with qualitative methodological evaluation",
+        "sample": {
+          "new_participants": 0,
+          "reports_reviewed": 143,
+          "studies_reviewed": 129,
+          "participant_total": null
+        },
+        "sensory_conditions": {
+          "classification": "VARIES_ACROSS_INCLUDED_STUDIES"
+        },
+        "controls": null,
+        "analysis": "Separates explicit behavioral-response paradigms from implicit neurophysiology-only paradigms. EEG accounts for 91%; fMRI 5%, as reported in abstract.",
+        "reported_findings": "Authors identify small samples, weak multiplicity control, analytical flexibility, heterogeneous findings and sparse replication; definitive conclusions remain premature.",
+        "limitations": [
+          "129 reviewed studies are not newly ingested independent evidence.",
+          "Search protocol, risk-of-bias details and study-level estimates not inspected."
+        ],
+        "references": [
+          {
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42009267/",
+            "sections": [
+              "Abstract",
+              "Publication details"
+            ],
+            "retrieval_refs": [
+              "turn38view1"
+            ]
+          }
+        ],
+        "inspection_scope": "PUBMED_ABSTRACT_AND_METADATA",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "data": {
+          "status": "NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B16-0001",
+      "study_metadata": {
+        "design": "Opinion and methodological criticism of six earlier neuroimaging studies",
+        "sample": {
+          "new_participants": 0,
+          "studies_discussed": 6
+        },
+        "sensory_conditions": {
+          "classification": "CRITICISM_OF_INFORMATION_SHIELDING"
+        },
+        "controls": null,
+        "analysis": "Discusses cue counterbalancing, trial-order randomization, information shielding and small samples.",
+        "reported_findings": "Authors judge the available corpus insufficient for firm conclusions about psi.",
+        "limitations": [
+          "Criticisms are attributed commentary, not newly tested defects.",
+          "No new cohort or systematic-review protocol."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00893/full",
+            "sections": [
+              "Main text: four methodological categories",
+              "Conclusion"
+            ],
+            "retrieval_refs": [
+              "turn39view0"
+            ]
+          }
+        ],
+        "inspection_scope": "PUBLISHER_MAIN_TEXT",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "data": {
+          "status": "NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B16-0004",
+      "study_metadata": {
+        "design": "Narrative overview of distant-healing intention research",
+        "sample": {
+          "new_participants": 0,
+          "participant_total": null
+        },
+        "sensory_conditions": {
+          "classification": "DISTANT_INTENTION_DESIGNS_DISCUSSION"
+        },
+        "controls": null,
+        "analysis": "Separates experimental effects from efficacy as a healing therapy.",
+        "reported_findings": "Authors state that observed experimental effects do not yet establish confidence in clinical efficacy.",
+        "limitations": [
+          "Full-page retrieval blocked; synthesis methods and study-level data not inspected.",
+          "Article licence does not grant dataset reuse rights."
+        ],
+        "references": [
+          {
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4654780/",
+            "sections": [
+              "Indexed article summary",
+              "Indexed licence notice"
+            ],
+            "retrieval_refs": [
+              "turn39search2",
+              "turn40search1"
+            ]
+          }
+        ],
+        "inspection_scope": "PRIMARY_SOURCE_INDEXED_EXCERPTS_ONLY",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "data": {
+          "status": "NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "SRC-B16-0005",
+      "study_metadata": {
+        "design": "Experimental fMRI comparison of psi and non-psi stimuli",
+        "sample": {
+          "scanned_participants": null,
+          "count_status": "NOT_VERIFIED_FROM_INSPECTED_EXCERPTS"
+        },
+        "sensory_conditions": {
+          "classification": "NOT_VERIFIED_FROM_INSPECTED_EXCERPTS"
+        },
+        "controls": "Non-psi stimulus contrast; stimulus-arousal differences provide an activation comparator.",
+        "analysis": "Exact model, thresholds, statistical sensitivity and multiplicity control not verified.",
+        "reported_findings": "Authors report no neural-response distinction between psi and non-psi stimuli; arousal differences produced expected activation differences.",
+        "limitations": [
+          "Null finding concerns this design; does not establish universal absence.",
+          "Full methods and participant count remain unverified."
+        ],
+        "references": [
+          {
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/18095790/",
+            "sections": [
+              "Indexed abstract"
+            ],
+            "retrieval_refs": [
+              "turn42search0",
+              "turn39search0"
+            ]
+          }
+        ],
+        "inspection_scope": "PRIMARY_SOURCE_INDEXED_ABSTRACT_ONLY",
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "data": {
+          "status": "NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
+    }
+  ],
+  "bibliographic_corrections": [
+    {
+      "record_id": "SRC-B15-0003",
+      "fields": [
+        "authors",
+        "authors_complete",
+        "publication_date",
+        "date_semantics"
+      ],
+      "reference": "turn40view0"
+    },
+    {
+      "record_id": "SRC-B15-0005",
+      "fields": [
+        "date_semantics"
+      ],
+      "reference": "turn38view1"
+    },
+    {
+      "record_id": "SRC-B16-0005",
+      "fields": [
+        "lineage_note"
+      ],
+      "reason": "Experimental cohort; remove inherited review-only wording"
+    }
+  ],
+  "source_snapshot_sha256": "12c6e0e8510c4d8a35af4314f782122c932900583f2bc4470d221c7a08211b3f",
+  "limitations": "Extraction depth varies by inspection_scope; null is unknown or inapplicable as explained in the adjacent metadata, never zero participants. No complete evidence appraisal."
+}

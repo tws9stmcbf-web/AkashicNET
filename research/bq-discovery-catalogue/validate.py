@@ -36,15 +36,21 @@ def validate():
         for item in batch_records:
             match = next(r for r in records if r['record_id'] == item['record_id'])
             assert match['title'] == item['title'] and match['doi'] == item['doi']
-    enrichment = json.loads((ROOT / 'enrichment-17.json').read_text())
     enriched = {r['record_id']: r for r in records if 'study_metadata' in r}
-    assert len(enriched) == len(enrichment['changes']) == 5
-    assert enrichment['new_records_added'] == enrichment['independent_studies_promoted'] == 0
-    for change in enrichment['changes']:
-        metadata = enriched[change['record_id']]['study_metadata']
-        assert metadata == change['study_metadata']
-        assert metadata['appraisal_status'] == 'NOT_INDEPENDENTLY_APPRAISED'
-        assert metadata['references'] and all(ref['source_url'].startswith('https://') and ref['sections'] for ref in metadata['references'])
+    audit_ids = []
+    for audit in sorted(ROOT.glob('enrichment-*.json')):
+        enrichment = json.loads(audit.read_text())
+        assert enrichment['new_records_added'] == enrichment['independent_studies_promoted'] == 0
+        for change in enrichment['changes']:
+            audit_ids.append(change['record_id'])
+            metadata = enriched[change['record_id']]['study_metadata']
+            assert metadata == change['study_metadata']
+            assert metadata['appraisal_status'] == 'NOT_INDEPENDENTLY_APPRAISED'
+            assert metadata['references'] and all(ref['source_url'].startswith('https://') and ref['sections'] for ref in metadata['references'])
+    assert set(audit_ids) == set(enriched) and len(audit_ids) == len(set(audit_ids))
+    review = enriched['SRC-B15-0005']['study_metadata']['sample']
+    assert review['reports_reviewed'] >= review['studies_reviewed'] and review['new_participants'] == 0
+    assert enriched['SRC-B16-0005']['study_metadata']['sample']['scanned_participants'] is None
     twin = enriched['SRC-B15-0001']['study_metadata']['sample']
     assert twin['condition_level_observations'] == sum(twin['receiver_recordings_by_session']) * 2
     assert twin['unique_participants'] == twin['dyads'] * 2
