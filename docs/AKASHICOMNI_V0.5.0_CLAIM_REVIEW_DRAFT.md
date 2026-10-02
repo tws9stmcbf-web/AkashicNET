@@ -75,3 +75,63 @@ python -m unittest discover -s tests -p 'test_akashicomni_claim_review_v050.py'
 ```
 
 The validator also accepts one packet path as a positional argument. Malformed, missing or invalid input fails. It never writes to the packet, a registry or a website.
+
+## Full candidate reconciliation · 2 October 2026
+
+This dated engineering and scope receipt supplements this slice; it neither adopts the full candidate nor changes the historical acceptance checklist above. AkashicOMNI v0.5.0 remains UNRELEASED / REVIEW_REQUIRED. The PR remains draft.
+
+### Version and evidence anchors
+
+- Pilot: PR #367 at `e7efb9266e265f229623e37fd320abde8f1fe74a`. Its `framework_baseline: 0.4.0` describes the historical pilot origin and remains unchanged.
+- Current main reference inspected: `1b9ec981233fec78fde8d3099fc9ce71f14eea25`; `website/lib/akashicomni-release.ts` identifies v0.4.5 PRE-ALPHA. The broader candidate builds on that documentation baseline.
+- Full candidate source: `AkashicOMNI-v0.5.0-Candidate-Specification.md`, saved version 14, operative rc.4 A, 28 September 2026; SHA-256 `243679e2930942ef0225fa8a26079924a5e4ac5974857a0a00ab7f49a4fd6729`. Source locator: https://chatgpt.com/api/library/files/libfile_a4632c9dcf88819196ed307679005ead/download . This authenticated locator may require access; preserve the cited version and digest. A mutable download URL alone is not a version pin.
+- October 2 component audit, recovered-source receipts and T06S comparison are supplementary design/test records. They do not populate the pilot or the trust registry. Later public-method wording is not a separately accepted release.
+
+### What is complete at this head
+
+The closed schema, validator, five-claim pilot, editorial artifact/digest check, deterministic decision comparison and repository-held attestation authentication are implemented. Fresh local verification using Python 3.12 and jsonschema 4.26.0 passes the pilot and all 24 focused tests. All 15 returned exact-head pull-request workflows succeed; the connector returns the first page only. All seven returned inline threads are resolved. The 28 September exact-head Codex comment reports no major issues. Owner engineering sign-off is bounded to this correction, not human verification or release acceptance.
+
+These dated results supersede earlier engineering-status summaries for this head only. Preserve the old 20-test and ancestry-failure receipts with their original commit scope. Any subsequent commit, including application of this addendum, needs its own applicable checks/review; the above approval does not carry forward automatically.
+
+### Broader method represented, not certified
+
+The baseline is ten analytical families, twelve analytical entries and one separately counted AkashicNET synthesis. CUT contributes three temporal views within one family. A claimed full reading records APPLIED, NOT_RELEVANT or INSUFFICIENT_INFORMATION for every analytical entry, with reasons and inspected source scope. Missing sources must not be described as irrelevant. An explicitly narrower user request may reduce scope with disclosure.
+
+EXPAND² remains DISCERN plus DEEPEN, followed by synthesis. Synthesis is an output, not a third review pass. NOTICE, QUESTION, INTEGRATE, SYNTHESISE, CHOOSE, ACT, REFLECT, SHARE and CULTIVATE are optional inquiry/practice prompts: they may be skipped, combined, reordered or revisited. They are not nine mandatory stages, new perspectives, proven capabilities or executed real-world actions. Omitting the explicit SYNTHESISE prompt does not remove the full reading's synthesis output. Perspectives describe where attention goes; prompts describe how inquiry proceeds.
+
+HOMESENSE Phase 8 is the current perspective. HOMESENSE700 v1.1 plus its v1.1.1 addendum supplies charter context; it does not replace Phase 8 or add another family. HOMESENSE enriches what AkashicOMNI considers; AkashicOMNI helps examine, organise and apply those contributions. A cross-post synthesis must identify each inspected post/version, distinguish repeated material from independent sources, preserve disagreements and limits, and disclose omissions. Future posts are candidate inputs, not automatic changes to the framework or evidence status.
+
+Keep experience, accuracy, usefulness and proposed source distinct. Advice requires situational assessment; a prediction requires its own outcome and timeframe. Added test conditions must be labelled as added. Meaning, coherence, usefulness or a later favourable outcome does not establish the experience's proposed origin.
+
+The rc.4 A source-plus-addendum manifest is retained: ACTC v2.0 + v2.0.1, METAD v2.1 + v2.1.1, UMASC v7.2 + v7.2.1, CUT header v4.0.3 + v4.0.4, HOMESENSE700 v1.1 + v1.1.1, optional PP v1.0 + v1.0.1, and separately attributed QMM with its dated correction. These represent six historical clarification locations (ACTC/PP share one), not fresh verification of current mutable text. Do not overwrite source-defined names with abbreviated companion descriptions or relabel original post headers as rewritten.
+
+DARK is optional and adds one analytical entry: fourteen entries including synthesis when used. QM, MM and PP are optional ACTC modules, not additional numbered families. QM means Quantum Mechanics Interface and MM means Meaning & Memory Module in their source context. QMM is a distinct external hypothesis, not QM plus MM, a numbered OMNI family, or an established bridge to PP or personal survival. PP non-use is valid.
+
+The inspected Jigsaw contains 47 theme/question entries (seven groups of six plus five connectors), not 47 OMNI frameworks or implemented modules. Living Spectrum, Jigsaw and Flourishing Matrix retain distinct identities. New links require source/target identifiers, source versions, relation type, provenance, limits and PROPOSED/UNRESOLVED status. No mapping is forced. Historical route/status label drift must be checked against current publication receipts before any later correction; route existence does not certify a framework. This reconciliation performs no website change or mapping admission.
+
+### Existing manual gates and missing implementation
+
+The full candidate already defines M01–M12. Retain those identifiers. This receipt does not replace their evidence records or mark them passed.
+
+| Gate | Smallest representation now | Remaining acceptance work |
+|---|---|---|
+| M01 | Keep candidate revision, exact inputs and source digests in a separate manual record | Adopt one canonical full-candidate revision; bind each reading to it |
+| M02 | Preserve candidate domain/support labels alongside pilot kind/decision | Review semantics; no automatic enum equivalence |
+| M03 | Preserve access dates, inspected scope, dependence and rights limitations | Primary-source reinspection and actual rights assessment; historical receipts are not fresh inspection |
+| M04 | Preserve alternatives, contrary information and unfinished searches | Semantic adequacy review; empty lists do not prove absence |
+| M05 | Separate twelve-entry coverage ledger and one synthesis | Full-candidate coverage review; no pilot coverage fields |
+| M06 | Separate optional-module and relationship records | Verify source-specific relationships; no default QMM–PP bridge |
+| M07 | Separate narrative/record consistency review and revision conditions | Check two passes, alternatives, optional action and caveats |
+| M08 | Keep actual assessments and both trusted arrays empty | Real independent assessments, identity/independence and source verification; AI cannot supply them |
+| M09 | Keep pending comparisons empty; preserve prior records | Actual disagreements and review history; single-packet validation is not append-only storage |
+| M10 | Preserve eight false gates, empty edges/models and fixed draft statuses | Separate explicit release decision; engineering checks are not promotion authority |
+| M11 | Retain existing manual exercises and T06S at their disclosed scope | Equal-input version acceptance and actual human editorial feedback; no demonstrated superiority |
+| M12 | State that no full-record adapter or deployment is supplied here | Validate a PRISM adapter or website only if that capability is later claimed |
+
+The pilot rejects additional top-level `candidate_revision`, `perspective_coverage` and `optional_modules` fields. This is intended scope protection. Do not relax `additionalProperties`, silently discard fields or coerce candidate enums to make a full record pass. Keep manual records separate; unknown mappings stop interchange for manual review. A future machine-readable full contract or adapter requires a separately reviewed change.
+
+### Release remains blocked
+
+Canonical full-spec adoption, primary-source reinspection and rights limits, real independent assessments, independent methodological review, complete applicable manual-gate evidence, human editorial acceptance and a separate owner release decision remain absent or pending. Existing manual comparisons are AI self-review, not completed independent acceptance. Any full-candidate validation claim is unsupported by this pilot.
+
+All five pilot claims remain UNRESOLVED / REVIEW_REQUIRED; assessments and comparison results remain empty. The trust registry's reviewer_attestations and source_inspections remain empty. accepted_edges=[] and supports_models=[]. Truth, evidence, rights, privacy, cultural_authority, public_synthesis, website and bq_resolution promotion remain false. No merge, deployment, publication authorization, scientific promotion or release is supplied by this record.
