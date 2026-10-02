@@ -8,6 +8,7 @@ The catalogue links research on consciousness, spontaneous thought, compassion, 
 
 - `catalogue.json`: consolidated current metadata through Batch 16.
 - `batch-13.json` through `batch-16.json`: additive batch snapshots.
+- `enrichment-17.json`: method-enrichment audit for five existing records; batch snapshots remain unchanged.
 - `validate.py`: repeatable integrity and governance checks.
 - `validation.json`: result of the checked export.
 
@@ -28,3 +29,7 @@ python3 validate.py
 ```
 
 This research snapshot is not connected to a public website route or ingestion pipeline. Repository storage does not itself validate or publish a scientific finding.
+
+## Method metadata
+
+Five records now distinguish unique participants, repeated observations, exclusions, sensory conditions, analysis and data availability. Each extraction links primary-source sections and retrieval references. Reported methods are not independently appraised. `input_record_sha256` still identifies the originating record before enrichment; the enrichment audit identifies its input snapshot. Reanalysis sampling rates describe digitisation, not verified original acquisition. Reviews and trace reanalyses add no new cohorts.

@@ -4501,7 +4501,7 @@
       ],
       "authors_complete": true,
       "publication_date": "2024-04-10",
-      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "date_semantics": "Publisher-displayed original publication date.",
       "doi": "10.3389/fnhum.2024.1388049",
       "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1388049/full",
       "journal": "Frontiers in Human Neuroscience",
@@ -4543,7 +4543,54 @@
         "reference": "turn27view2",
         "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
       },
-      "input_record_sha256": "07a93dd9f3e72daaf65400693aaf11cae32be805600426b838e4b937fc9daea7"
+      "input_record_sha256": "07a93dd9f3e72daaf65400693aaf11cae32be805600426b838e4b937fc9daea7",
+      "study_metadata": {
+        "design": "Repeated-session paired EEG experiment",
+        "sample": {
+          "unique_participants": 10,
+          "dyads": 5,
+          "sessions": 2,
+          "receiver_recordings_by_session": [
+            10,
+            9
+          ],
+          "condition_level_observations": 38,
+          "selection": "Female monozygotic twins reporting prior anomalous shared experiences",
+          "missingness": "One second-session recording lost to equipment malfunction"
+        },
+        "sensory_conditions": {
+          "classification": "AUTHOR_REPORTED_ISOLATION_WITH_SHARED_FLICKER",
+          "description": "Separate rooms about 8 m apart; both participants received synchronized 13 Hz flicker."
+        },
+        "controls": "Static-image control; general and personal image conditions; roles randomly assigned.",
+        "analysis": "SSVEP-ERPC over 190 electrode pairs; 10,000 surrogate timings; temporal-autocorrelation adjustment and aggregate trinomial test reported.",
+        "data": {
+          "status": "AUTHOR_REQUEST_ONLY",
+          "public_repository_verified": false
+        },
+        "limitations": [
+          "Repeated condition results are not independent participants.",
+          "Selection and shared stimulation require appraisal; reported statistical corrections not independently validated."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1388049/full",
+            "sections": [
+              "Materials and methods",
+              "Results",
+              "Data availability statement"
+            ],
+            "retrieval_refs": [
+              "turn36view0",
+              "turn28view2"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED"
+      }
     },
     {
       "record_id": "SRC-B15-0002",
@@ -4560,7 +4607,7 @@
       ],
       "authors_complete": true,
       "publication_date": "2015-08-03",
-      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "date_semantics": "Original publication 2015-08-03; version 3 dated 2016-01-14.",
       "doi": "10.12688/f1000research.6755.3",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4770988/",
       "journal": "F1000Research",
@@ -4609,7 +4656,49 @@
         "doi_family": "10.12688/f1000research.6755",
         "version_note": "All versions remain one publication/study lineage."
       },
-      "input_record_sha256": "3a667f31a998130887b453eb5edbf2a996148fdfd39a6667056d45ef9505e5c5"
+      "input_record_sha256": "3a667f31a998130887b453eb5edbf2a996148fdfd39a6667056d45ef9505e5c5",
+      "study_metadata": {
+        "design": "Repeated paired EEG recordings, article version 3",
+        "sample": {
+          "unique_participants": 6,
+          "paired_recordings": 25,
+          "stimulations_per_recording": 128,
+          "selection": "Five men and one woman; longstanding friends with meditation/concentration experience"
+        },
+        "sensory_conditions": {
+          "classification": "AUTHOR_REPORTED_SENSORY_ISOLATION",
+          "description": "Receiver in soundproof room; synchronized headset recordings; isolation not independently verified."
+        },
+        "controls": "Stimulated sender compared with unstimulated receiver; randomized intervals between stimuli.",
+        "analysis": "Conventional ERP averaging detected sender response only; new electrode-correlation method reported weak receiver signal at 9–10 Hz using bootstrap/Monte Carlo analysis.",
+        "data": {
+          "status": "ARTICLE_LINKED_REPOSITORY_NOT_INSPECTED",
+          "repository_url": "https://doi.org/10.6084/m9.figshare.1466876",
+          "dataset_licence_verified": false
+        },
+        "limitations": [
+          "25 recordings are not 25 independent dyads.",
+          "Receiver finding depends on analysis method; reviewer reservations require appraisal."
+        ],
+        "references": [
+          {
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4770988/",
+            "sections": [
+              "Methods",
+              "Results",
+              "Data and software availability"
+            ],
+            "retrieval_refs": [
+              "turn25view1",
+              "turn35view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED"
+      }
     },
     {
       "record_id": "SRC-B15-0003",
@@ -4671,7 +4760,7 @@
       ],
       "authors_complete": true,
       "publication_date": "2024-10-08",
-      "date_semantics": "Original publication date; F1000 version 3 dated 2016-01-14; review online date with June 2026 issue date; other dates at displayed precision.",
+      "date_semantics": "Publisher-displayed original publication date.",
       "doi": "10.3389/fnhum.2024.1476944",
       "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1476944/full",
       "journal": "Frontiers in Human Neuroscience",
@@ -4713,7 +4802,48 @@
         "reference": "turn25view2",
         "inspection_scope": "Selected metadata, abstract and where accessible methods, limitations and access notice; not complete evidence appraisal."
       },
-      "input_record_sha256": "c241c5d13348e6e6b58cc88a2d51664192705ae612f62f013cfabc67c4e4d96c"
+      "input_record_sha256": "c241c5d13348e6e6b58cc88a2d51664192705ae612f62f013cfabc67c4e4d96c",
+      "study_metadata": {
+        "design": "Digitisation and reanalysis of selected published EEG traces",
+        "sample": {
+          "new_participants": 0,
+          "original_study_dyads": 15,
+          "digitised_traces": 4,
+          "seconds_per_trace": 30,
+          "derived_samples_per_trace": 3000,
+          "derived_sampling_hz": 100
+        },
+        "sensory_conditions": {
+          "classification": "HISTORICAL_SOURCE_DESIGN",
+          "description": "Comparisons include twins and a twin/unrelated person; original conditions not independently reconstructed."
+        },
+        "controls": "Shuffled-segment surrogate comparisons, 1,000 iterations.",
+        "analysis": "Manual Engauge digitisation; Welch/multitaper spectra and magnitude-squared coherence using overlapping one-second segments.",
+        "data": {
+          "status": "PUBLISHED_TRACE_DERIVATIVE",
+          "original_raw_data_acquired": false,
+          "public_repository_verified": false
+        },
+        "limitations": [
+          "Derived 100 Hz grid is not a verified original acquisition rate.",
+          "Selected printed traces do not represent a new cohort or complete original dataset."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1476944/full",
+            "sections": [
+              "Materials and methods"
+            ],
+            "retrieval_refs": [
+              "turn35view3"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED"
+      }
     },
     {
       "record_id": "SRC-B15-0005",
@@ -4973,7 +5103,44 @@
           "accepted": false
         }
       ],
-      "input_record_sha256": "2e1ce5e8d4318b40f9bf805bba3b450d37c0f7023bede3d6e3c7972c2a1b0686"
+      "input_record_sha256": "2e1ce5e8d4318b40f9bf805bba3b450d37c0f7023bede3d6e3c7972c2a1b0686",
+      "study_metadata": {
+        "design": "Narrative mini review of social cognition and hyperscanning",
+        "sample": {
+          "new_participants": 0,
+          "new_experimental_cohort": false
+        },
+        "sensory_conditions": {
+          "classification": "CONVENTIONAL_SOCIAL_COMMUNICATION_CONTEXT",
+          "description": "Examples include games, music, imitation, speech and facial affect."
+        },
+        "controls": null,
+        "analysis": "Conceptual taxonomy; no new participant-level analysis.",
+        "data": {
+          "status": "NOT_APPLICABLE_NO_NEW_EXPERIMENT",
+          "cited_study_data_assessed": false
+        },
+        "terminology": "Non-local refers to operations across interacting brains sharing information; does not establish quantum nonlocality or sensory-isolated transfer.",
+        "limitations": [
+          "Cited studies retain their original evidence lineages."
+        ],
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00107/full",
+            "sections": [
+              "Box 1",
+              "Social cognition and hyperscanning discussion"
+            ],
+            "retrieval_refs": [
+              "turn37view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED"
+      }
     },
     {
       "record_id": "SRC-B16-0003",
@@ -5010,7 +5177,7 @@
       "original_summary": "Reports interbrain synchronisation during spontaneous imitation of hand movements viewed via a video connection.",
       "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
       "quality_flags": [
-        "Abstract reports 18 analysed participants in nine dyads; methods lists 22 recruited participants. Recruitment and analysis counts must remain distinct. Visual communication is part of the design; this is a conventional-interaction comparator, not a distant-intention test.",
+        "22 participants recruited; two dyads excluded by reported role-symmetry criterion; 18 participants analysed. Visual communication was part of the design; conventional-interaction comparator.",
         "Full appraisal, independent replication and correction/retraction clearance pending."
       ],
       "review_state": "REVIEW_REQUIRED",
@@ -5019,7 +5186,7 @@
       "independent_studies_added": 0,
       "accepted_edges_added": 0,
       "lineage_group": "PUBLICATION:10.1371/journal.pone.0012166",
-      "lineage_note": "Reviews and opinion papers inherit cited study lineages; no independent experiment added through synthesis. Cohort independence not adjudicated.",
+      "lineage_note": "Publication identifier; recruited and analysed cohorts distinguished; cohort overlap with other publications not adjudicated.",
       "article_text_retained": false,
       "raw_data_collected": false,
       "data_availability": "Not verified in this batch.",
@@ -5033,7 +5200,50 @@
       "cited_study_identifiers": [],
       "cited_study_identifiers_status": "SELECTED_REFERENCES_ONLY",
       "suggested_relations": [],
-      "input_record_sha256": "b76207172c6274f9f0a8dadf9506190a6fb50c5b5e5820e5c3403e016f56d24f"
+      "input_record_sha256": "b76207172c6274f9f0a8dadf9506190a6fb50c5b5e5820e5c3403e016f56d24f",
+      "study_metadata": {
+        "design": "Dual EEG during spontaneous imitation via video",
+        "sample": {
+          "recruited_participants": 22,
+          "recruited_dyads": 11,
+          "excluded_dyads": 2,
+          "analysed_participants": 18,
+          "analysed_dyads": 9,
+          "exclusion_reason": "Role-symmetry index more than three standard deviations from the mean"
+        },
+        "sensory_conditions": {
+          "classification": "VISUAL_COMMUNICATION_ALLOWED",
+          "description": "Participants viewed partner hand movements through video."
+        },
+        "controls": "Synchronized versus nonsynchronized interaction episodes; imitation contrasts.",
+        "analysis": "Phase-locking values; cluster permutation/bootstrap maximum statistic across electrode pairs and frequency bands, reported familywise threshold 0.05.",
+        "data": {
+          "status": "NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "limitations": [
+          "Participant exclusions require appraisal.",
+          "Conventional interaction comparator; synchronization does not establish causation or sensory-isolated communication."
+        ],
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012166",
+            "sections": [
+              "Participants",
+              "Experimental setup",
+              "Statistical analysis"
+            ],
+            "retrieval_refs": [
+              "turn35view2",
+              "turn33view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED"
+      }
     },
     {
       "record_id": "SRC-B16-0004",
@@ -5152,6 +5362,21 @@
       ],
       "doi_alias_note": "Alternative DOI seen in secondary discovery sources; PubMed DOI retained as canonical metadata. Resolve before future deduplication.",
       "input_record_sha256": "f4907a56fa13ac363191926836293977449fe85e9f2714476c31ae0ed186d51d"
+    }
+  ],
+  "metadata_enrichments": [
+    {
+      "id": "ENRICHMENT-17",
+      "date": "2026-10-02",
+      "record_ids": [
+        "SRC-B15-0001",
+        "SRC-B15-0002",
+        "SRC-B15-0004",
+        "SRC-B16-0002",
+        "SRC-B16-0003"
+      ],
+      "new_records_added": 0,
+      "evidence_promoted": false
     }
   ]
 }
