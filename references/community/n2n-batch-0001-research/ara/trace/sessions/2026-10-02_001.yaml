@@ -57,3 +57,37 @@ continuation_batch_0003:
       evidence: [../../evidence/batch-0003-validation.txt, ../../evidence/batch-0003-counts.json]
   claims_touched: []
   logic_revisions: []
+continuation_batch_0004:
+  direction:
+    provenance: user
+    excerpt: Next 1,000
+  events:
+    - id: N07
+      type: decision
+      provenance: ai-suggested
+      choice: Continue eligible ranks 3001-4000 after validating and excluding all earlier batches.
+      evidence: [../../../n2n-metadata-batch-0004.json]
+    - id: N08
+      type: experiment
+      provenance: ai-executed
+      result: 25 focused tests passed; 4000 cumulative unique staged, zero overlap, 3396 remaining.
+      evidence: [../../evidence/batch-0004-validation.txt, ../../evidence/batch-0004-counts.json]
+  claims_touched: []
+  logic_revisions: []
+continuation_batch_0005:
+  direction:
+    provenance: user
+    excerpt: Next batch?
+  events:
+    - id: N09
+      type: decision
+      provenance: ai-suggested
+      choice: Continue eligible ranks 4001-5000 after validating and excluding all earlier batches.
+      evidence: [../../../n2n-metadata-batch-0005.json]
+    - id: N10
+      type: experiment
+      provenance: ai-executed
+      result: Five targeted checks passed after prior full 25-test run; 5000 unique staged, zero overlap, 2396 remaining.
+      evidence: [../../evidence/batch-0005-validation.txt, ../../evidence/batch-0005-counts.json]
+  claims_touched: []
+  logic_revisions: []

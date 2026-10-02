@@ -24,8 +24,8 @@ URI, META = list(PINS)[:2]
 
 
 def build(root=ROOT, batch_number=1):
-    if type(batch_number) is not int or batch_number not in (1, 2, 3):
-        raise ValueError("only reviewed batches 1, 2 and 3 are supported")
+    if type(batch_number) is not int or batch_number not in (1, 2, 3, 4, 5):
+        raise ValueError("only reviewed batches 1 through 5 are supported")
     previous = None
     earlier = []
     if batch_number > 1:
@@ -105,6 +105,10 @@ def build(root=ROOT, batch_number=1):
         if prior_ids & selected_ids or len(prior_ids | selected_ids) != batch_number * 1000:
             raise ValueError('cross-batch overlap or count drift')
         manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude its 1000 validated IDs and take the next 1000 (global eligible ranks 1001-2000). No chronological, evidential or representative-sample claim.' if batch_number == 2 else 'Use the same eligible ordering as batch 0001; exclude all 2000 validated IDs in batches 0001 and 0002 and take the next 1000 (global eligible ranks 2001-3000). No chronological, evidential or representative-sample claim.'
+        if batch_number == 4:
+            manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 3000 validated IDs in batches 0001 through 0003 and take the next 1000 (global eligible ranks 3001-4000). No chronological, evidential or representative-sample claim.'
+        if batch_number == 5:
+            manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude all 4000 validated IDs in batches 0001 through 0004 and take the next 1000 (global eligible ranks 4001-5000). No chronological, evidential or representative-sample claim.'
         prior_path = f'references/community/n2n-metadata-batch-{batch_number - 1:04d}.json'
         manifest['previous_batch'] = {'path': prior_path, 'sha256': hashlib.sha256((root / prior_path).read_bytes()).hexdigest()}
         manifest['counts'].update(previously_staged=len(prior_ids), overlap_with_previous=0,
@@ -127,7 +131,7 @@ def validate(value, root=ROOT, batch_number=1):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
-    parser.add_argument('--batch', type=int, choices=(1, 2, 3), default=1)
+    parser.add_argument('--batch', type=int, choices=(1, 2, 3, 4, 5), default=1)
     args = parser.parse_args()
     expected = build(batch_number=args.batch)
     path = ROOT / f'references/community/n2n-metadata-batch-{args.batch:04d}.json'

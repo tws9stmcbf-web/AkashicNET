@@ -12,3 +12,11 @@ entries:
       - User requested another bounded 1000 while batch 2 was being saved; added batch 3.
       - Prior JSON manifests remain unchanged; validation covers the full prior-batch chain.
       - No scientific, rights or maturity promotion.
+  - turn: 2026-10-02_001-batch4
+    notes:
+      - Added a fourth bounded tranche on user request; earlier JSON manifests unchanged.
+      - Recorded 25-test validation as process evidence; no governance or knowledge promotion.
+  - turn: 2026-10-02_001-batch5
+    notes:
+      - Fifth bounded tranche requested; five targeted checks cover the additional selection and dependency.
+      - Prior manifests unchanged; no new curated metadata or governance promotion.
