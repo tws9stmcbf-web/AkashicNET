@@ -330,7 +330,7 @@
   },
   {
     "id": "CM-PSI-006",
-    "title": "Children\u2019s Near-Death Experiences",
+    "title": "Children’s Near-Death Experiences",
     "authors": [
       "Donna M Thomas"
     ],
@@ -491,7 +491,7 @@
     "id": "CM-IONS-004",
     "title": "Transformative, Noetic, and Transpersonal Experiences During Personal Development Workshops",
     "authors": [
-      "Helan\u00e9 Wahbeh",
+      "Helané Wahbeh",
       "Cassandra Vieten",
       "Garrett Yount",
       "Agnes Cartry-Jacobsen",
@@ -534,7 +534,7 @@
     "title": "Future directions in meditation research: Recommendations for expanding the field of contemplative science",
     "authors": [
       "Cassandra Vieten",
-      "Helan\u00e9 Wahbeh",
+      "Helané Wahbeh",
       "B. Rael Cahn",
       "Katherine MacLean",
       "Mica Estrada",
@@ -599,7 +599,7 @@
     "id": "CM-IONS-007",
     "title": "What Survives Death?",
     "authors": [
-      "Helan\u00e9 Wahbeh"
+      "Helané Wahbeh"
     ],
     "partial_authors": null,
     "url": "https://noetic.org/research/what-survives-death/",
@@ -626,7 +626,7 @@
     "id": "CM-OA-001",
     "title": "The Noetic Signature Inventory: Development, Exploration, and Initial Validation",
     "authors": [
-      "Helan\u00e9 Wahbeh",
+      "Helané Wahbeh",
       "Nina Fry",
       "Paolo Speirn"
     ],
@@ -671,16 +671,53 @@
     ],
     "licence": "CC BY 4.0",
     "rights": "Named article only; unrelated websites and raw datasets excluded.",
-    "note": "Topic relevance only.",
+    "note": "Combined-treatment trial; linked protocol and publisher update checked. Preliminary appraisal available.",
     "lineage": "ISRCTN97264476",
-    "flags": [
-      "Page says updated; link returned same article without separate update details. Nature of update remains unverified."
-    ],
+    "flags": [],
     "limits": [
-      "Earlier update-link observation not reproduced in current text; no separate update notice resolved. Shares trial registration ISRCTN97264476 with protocol."
+      "Trial and protocol share ISRCTN97264476; not two independent experiments.",
+      "Current OSF file access and reuse permission remain unverified."
     ],
     "checked": "2026-10-02",
-    "aliases": []
+    "aliases": [],
+    "research_metadata": {
+      "record_type": "trial_report",
+      "registration": {
+        "id": "ISRCTN97264476",
+        "url": "https://www.isrctn.com/ISRCTN97264476",
+        "verification": "Identifier verified in article; registry content blocked by JavaScript/cookie holding page."
+      },
+      "related_records": [
+        {
+          "id": "CM-OA-003",
+          "relation": "protocol_for_same_trial"
+        }
+      ],
+      "update": {
+        "date": "2022-02-28",
+        "type": "open_access_funding_notice",
+        "description": "Change history identifies Projekt DEAL funding; no result correction identified in this notice."
+      },
+      "data_access": {
+        "url": "https://osf.io/erswt/",
+        "statement_source": "Published article",
+        "access_check": "OSF project text returned from an old crawl; current file access and file licence unverified.",
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s12671-021-01753-y"
+      ],
+      "checked": "2026-10-02"
+    },
+    "resolved_metadata_flags": {
+      "previous_flags": [
+        "Page says updated; link returned same article without separate update details. Nature of update remains unverified."
+      ],
+      "previous_limits": [
+        "Earlier update-link observation not reproduced in current text; no separate update notice resolved. Shares trial registration ISRCTN97264476 with protocol."
+      ],
+      "resolution": "Publisher change history inspected: 28 February 2022 open-access funding notice."
+    }
   },
   {
     "id": "CM-OA-003",
@@ -708,7 +745,32 @@
       "Protocol, not additional results; shares ISRCTN97264476 with results record."
     ],
     "checked": "2026-10-02",
-    "aliases": []
+    "aliases": [],
+    "research_metadata": {
+      "record_type": "study_protocol",
+      "registration": {
+        "id": "ISRCTN97264476",
+        "url": "https://www.isrctn.com/ISRCTN97264476",
+        "reported_date": "2018-03-29",
+        "timing": "retrospective, as stated in protocol",
+        "verification": "Protocol statement verified; registry content not retrieved."
+      },
+      "related_records": [
+        {
+          "id": "CM-OA-002",
+          "relation": "results_report_for_same_trial"
+        }
+      ],
+      "data_access": {
+        "statement": "Protocol planned committee-approved access with a signed data agreement; current availability and permission not established.",
+        "statement_source": "Protocol, Availability of data and materials",
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://link.springer.com/article/10.1186/s13063-019-3815-4"
+      ],
+      "checked": "2026-10-02"
+    }
   },
   {
     "id": "CM-OA-004",
@@ -1546,7 +1608,7 @@
     "title": "Assessing the effect of Loving-Kindness Meditation on pain and social well-being using a randomized controlled trial design",
     "authors": [
       "Olivia Young",
-      "Katherine O\u2019Connell",
+      "Katherine O’Connell",
       "Naomi Nero",
       "Melinda C. Somers",
       "Paige A. Freeburg",
@@ -1559,7 +1621,7 @@
     "doi": "10.1371/journal.pone.0357888",
     "published": "2026-09-16",
     "dates": {
-      "data_collection_period": "December 2020\u2013July 2021"
+      "data_collection_period": "December 2020–July 2021"
     },
     "bq": [
       "BQ003"
@@ -1573,6 +1635,31 @@
     ],
     "limits": [],
     "checked": "2026-10-02",
-    "aliases": []
+    "aliases": [],
+    "research_metadata": {
+      "record_type": "trial_report",
+      "registration": {
+        "id": "NCT04632875",
+        "url": "https://clinicaltrials.gov/study/NCT04632875",
+        "reported_date": "2020-11-17",
+        "verification": "Article statement verified; registry page returned no study content and API retrieval failed."
+      },
+      "preregistration": {
+        "url": "https://osf.io/hz3nv/",
+        "reported_date": "2021-02-19",
+        "verification": "Article statement only; OSF contents not retrieved.",
+        "timing_note": "Article places data collection from December 2020; full chronology comparison pending."
+      },
+      "data_access": {
+        "url": "https://osf.io/hz3nv/",
+        "statement_source": "Published article",
+        "access_check": "Repository retrieval failed; files and file licence unverified.",
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888"
+      ],
+      "checked": "2026-10-02"
+    }
   }
 ]
