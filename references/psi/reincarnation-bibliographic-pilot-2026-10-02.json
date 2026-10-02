@@ -1,0 +1,422 @@
+{
+  "schema_version": "0.1",
+  "packet_id": "REINCARNATION-BIBLIOGRAPHIC-PILOT-2026-10-02",
+  "status": "REVIEW_REQUIRED",
+  "scope": "Four already identified DOI-bearing publications; not the 78-study included list or a literature census. Bibliographic enrichment only.",
+  "source_boundaries": {
+    "pr321_head": "ab572472e1cb9c52c3e16538e81addd98ed6966c",
+    "pr392_head": "c54a946f7f4abef3ad2a7f2a70102c801b697d09"
+  },
+  "retrieval_summary": {
+    "crossref_records_verified": 4,
+    "pubmed_records_verified": 2,
+    "pubmed_exact_doi_queries_with_no_match": 2,
+    "new_source_identities_added": 0,
+    "independent_studies_added": 0
+  },
+  "interpretation_notes": [
+    "DOI matches identify publications, not independent datasets or validation of conclusions.",
+    "No PubMed match means only no result for the exact DOI query on this date, not absence, lack of peer review or falsity.",
+    "Deposited licence links are provenance metadata, not rights clearance.",
+    "Crossref titles differ from existing shortened temporal and xenoglossy titles; original records remain unchanged. Title variations do not create new publications.",
+    "Scoping review Crossref issue date: May 2022. PubMed issue date: May-Jun 2022; online date: June 5 2021. Date semantics preserved.",
+    "Scoping review included-study list was not extracted. This pilot does not add 78 records."
+  ],
+  "governance": {
+    "BQ001_status": "UNRESOLVED",
+    "supports_models": [],
+    "accepted_edges_added": 0,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "public_export_allowed": false,
+    "rights_promotion_allowed": false,
+    "publication_promotion_allowed": false,
+    "privacy_gate": "FAIL_CLOSED",
+    "original_evidence_batch_modified": false,
+    "psi_pilot_modified": false
+  },
+  "retained_content": {
+    "bibliographic_metadata": true,
+    "abstracts": false,
+    "article_text": false,
+    "bibliographies": false,
+    "case_data": false,
+    "publisher_summaries": false
+  },
+  "api_access_notes": {
+    "direct_requests": "Successful standard public HTTPS requests; no credentials or access bypass.",
+    "web_tool_api_attempt": "Web tool could not retrieve API URLs; direct HTTPS succeeded.",
+    "pubmed_rate": "Sequential exact DOI searches separated by 0.4 seconds, followed by one batched summary request; maximum 3 requests per second.",
+    "policies": [
+      "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "https://www.ncbi.nlm.nih.gov/home/about/policies/"
+    ]
+  },
+  "records": [
+    {
+      "existing_source_id": "MORAES-ET-AL-2022-PLM-SCOPING",
+      "doi": "10.1016/j.explore.2021.05.006",
+      "retrieved_date": "2026-10-02",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "crossref": {
+        "endpoint": "https://api.crossref.org/works/10.1016%2Fj.explore.2021.05.006",
+        "status": "SUCCESS",
+        "doi_match": "EXACT_NORMALIZED_DOI",
+        "metadata": {
+          "DOI": "10.1016/j.explore.2021.05.006",
+          "title": [
+            "Academic studies on claimed past-life memories: A scoping review"
+          ],
+          "container-title": [
+            "EXPLORE"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                5
+              ]
+            ]
+          },
+          "published-online": null,
+          "published-print": {
+            "date-parts": [
+              [
+                2022,
+                5
+              ]
+            ]
+          },
+          "volume": "18",
+          "issue": "3",
+          "page": "371-378",
+          "article-number": null,
+          "URL": "https://doi.org/10.1016/j.explore.2021.05.006",
+          "authors": [
+            {
+              "given": "Lucam J.",
+              "family": "Moraes"
+            },
+            {
+              "given": "Gabrielle S.",
+              "family": "Barbosa"
+            },
+            {
+              "given": "João Pedro G.B.",
+              "family": "Castro"
+            },
+            {
+              "given": "Jim B.",
+              "family": "Tucker"
+            },
+            {
+              "given": "Alexander",
+              "family": "Moreira-Almeida"
+            }
+          ],
+          "deposited_license_links": [
+            {
+              "url": "https://www.elsevier.com/tdm/userlicense/1.0/",
+              "content_version": "tdm"
+            },
+            {
+              "url": "https://www.elsevier.com/legal/tdmrep-license",
+              "content_version": "tdm"
+            },
+            {
+              "url": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+              "content_version": "vor"
+            }
+          ]
+        }
+      },
+      "pubmed": {
+        "search_endpoint": null,
+        "search_count": null,
+        "lookup": "KNOWN_PMID_ESUMMARY",
+        "summary_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=34147343&retmode=json&tool=AkashicNETMetadataPilot",
+        "match_status": "EXACT_NORMALIZED_DOI",
+        "records": [
+          {
+            "uid": "34147343",
+            "title": "Academic studies on claimed past-life memories: A scoping review.",
+            "fulljournalname": "Explore (New York, N.Y.)",
+            "pubdate": "2022 May-Jun",
+            "epubdate": "2021 Jun 5",
+            "volume": "18",
+            "issue": "3",
+            "pages": "371-378",
+            "pubtype": [
+              "Case Reports",
+              "Journal Article",
+              "Scoping Review"
+            ],
+            "doi": "10.1016/j.explore.2021.05.006",
+            "authors": [
+              "Moraes LJ",
+              "Barbosa GS",
+              "Castro JPGB",
+              "Tucker JB",
+              "Moreira-Almeida A"
+            ]
+          }
+        ]
+      },
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "existing_source_id": "SRC-BQ001-SADEGHI-2026-TEMPORAL",
+      "doi": "10.1037/cns0000493",
+      "retrieved_date": "2026-10-02",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "crossref": {
+        "endpoint": "https://api.crossref.org/works/10.1037%2Fcns0000493",
+        "status": "SUCCESS",
+        "doi_match": "EXACT_NORMALIZED_DOI",
+        "metadata": {
+          "DOI": "10.1037/cns0000493",
+          "title": [
+            "A large-scale analysis of temporal patterns in children’s purported past-life memories: Shorter intervals following unexpected deaths."
+          ],
+          "container-title": [
+            "Psychology of Consciousness: Theory, Research, and Practice"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                13
+              ]
+            ]
+          },
+          "published-online": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                13
+              ]
+            ]
+          },
+          "published-print": null,
+          "volume": null,
+          "issue": null,
+          "page": null,
+          "article-number": null,
+          "URL": "https://doi.org/10.1037/cns0000493",
+          "authors": [
+            {
+              "given": "Saeedeh",
+              "family": "Sadeghi",
+              "ORCID": "https://orcid.org/0000-0002-0668-8147"
+            },
+            {
+              "given": "Marieta",
+              "family": "Pehlivanova",
+              "ORCID": "https://orcid.org/0000-0002-3853-1267"
+            },
+            {
+              "given": "Philip J.",
+              "family": "Cozzolino",
+              "ORCID": "https://orcid.org/0000-0001-9834-4933"
+            }
+          ],
+          "deposited_license_links": []
+        }
+      },
+      "pubmed": {
+        "search_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=10.1037%2Fcns0000493%5BDOI%5D&retmode=json&tool=AkashicNETMetadataPilot&retmax=10",
+        "search_count": 0,
+        "lookup": "EXACT_DOI_QUERY",
+        "summary_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39649781&retmode=json&tool=AkashicNETMetadataPilot",
+        "match_status": "NO_MATCH_RETURNED_FOR_EXACT_DOI_QUERY",
+        "records": []
+      },
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "existing_source_id": "SRC-BQ001-COZZOLINO-2025-XENOGLOSSY",
+      "doi": "10.31156/jaex.27464",
+      "retrieved_date": "2026-10-02",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "crossref": {
+        "endpoint": "https://api.crossref.org/works/10.31156%2Fjaex.27464",
+        "status": "SUCCESS",
+        "doi_match": "EXACT_NORMALIZED_DOI",
+        "metadata": {
+          "DOI": "10.31156/jaex.27464",
+          "title": [
+            "Past-life Memories and Foreign Languages"
+          ],
+          "container-title": [
+            "Journal of Anomalous Experience and Cognition"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                30
+              ]
+            ]
+          },
+          "published-online": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                30
+              ]
+            ]
+          },
+          "published-print": null,
+          "volume": "5",
+          "issue": "2",
+          "page": "111-135",
+          "article-number": null,
+          "URL": "https://doi.org/10.31156/jaex.27464",
+          "authors": [
+            {
+              "given": "Philip",
+              "family": "Cozzolino",
+              "ORCID": "https://orcid.org/0000-0001-9834-4933"
+            },
+            {
+              "given": "Marieta",
+              "family": "Pehlivanova",
+              "ORCID": "https://orcid.org/0000-0002-3853-1267"
+            },
+            {
+              "given": "Jim B.",
+              "family": "Tucker",
+              "ORCID": "https://orcid.org/0009-0003-1895-4291"
+            }
+          ],
+          "deposited_license_links": [
+            {
+              "url": "https://creativecommons.org/licenses/by/4.0",
+              "content_version": "unspecified"
+            }
+          ]
+        }
+      },
+      "pubmed": {
+        "search_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=10.31156%2Fjaex.27464%5BDOI%5D&retmode=json&tool=AkashicNETMetadataPilot&retmax=10",
+        "search_count": 0,
+        "lookup": "EXACT_DOI_QUERY",
+        "summary_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39649781&retmode=json&tool=AkashicNETMetadataPilot",
+        "match_status": "NO_MATCH_RETURNED_FOR_EXACT_DOI_QUERY",
+        "records": []
+      },
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "existing_source_id": "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP",
+      "doi": "10.3389/fpsyg.2024.1473340",
+      "retrieved_date": "2026-10-02",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "crossref": {
+        "endpoint": "https://api.crossref.org/works/10.3389%2Ffpsyg.2024.1473340",
+        "status": "SUCCESS",
+        "doi_match": "EXACT_NORMALIZED_DOI",
+        "metadata": {
+          "DOI": "10.3389/fpsyg.2024.1473340",
+          "title": [
+            "Impact of children’s purported past-life memories: a follow-up investigation of American cases"
+          ],
+          "container-title": [
+            "Frontiers in Psychology"
+          ],
+          "type": "journal-article",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                22
+              ]
+            ]
+          },
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                22
+              ]
+            ]
+          },
+          "published-print": null,
+          "volume": "15",
+          "issue": null,
+          "page": null,
+          "article-number": "1473340",
+          "URL": "https://doi.org/10.3389/fpsyg.2024.1473340",
+          "authors": [
+            {
+              "given": "Marieta",
+              "family": "Pehlivanova"
+            },
+            {
+              "given": "Philip J.",
+              "family": "Cozzolino"
+            },
+            {
+              "given": "Jim B.",
+              "family": "Tucker"
+            }
+          ],
+          "deposited_license_links": [
+            {
+              "url": "https://creativecommons.org/licenses/by/4.0/",
+              "content_version": "vor"
+            }
+          ]
+        }
+      },
+      "pubmed": {
+        "search_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=10.3389%2Ffpsyg.2024.1473340%5BDOI%5D&retmode=json&tool=AkashicNETMetadataPilot&retmax=10",
+        "search_count": 1,
+        "lookup": "EXACT_DOI_QUERY",
+        "summary_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39649781&retmode=json&tool=AkashicNETMetadataPilot",
+        "match_status": "EXACT_NORMALIZED_DOI",
+        "records": [
+          {
+            "uid": "39649781",
+            "title": "Impact of children's purported past-life memories: a follow-up investigation of American cases.",
+            "fulljournalname": "Frontiers in psychology",
+            "pubdate": "2024",
+            "epubdate": "2024 Nov 22",
+            "volume": "15",
+            "issue": "",
+            "pages": "1473340",
+            "pubtype": [
+              "Journal Article"
+            ],
+            "doi": "10.3389/fpsyg.2024.1473340",
+            "authors": [
+              "Pehlivanova M",
+              "Cozzolino PJ",
+              "Tucker JB"
+            ]
+          }
+        ]
+      },
+      "supports_models": [],
+      "independent_studies_added": 0
+    }
+  ]
+}
