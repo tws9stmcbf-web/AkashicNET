@@ -1,0 +1,534 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/global-topic-v0.1.schema.json",
+  "title": "AkashicNET Global Topic Record v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "slug",
+    "label",
+    "domain",
+    "status",
+    "origin",
+    "connections",
+    "sources",
+    "rights",
+    "summary",
+    "aliases",
+    "entities",
+    "open_questions",
+    "review"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^TOPIC-[0-9]{3,}$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "domain": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "stub",
+        "discovery",
+        "reviewed",
+        "public"
+      ]
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentary_trace",
+        "ultimate_status",
+        "claimed_origins",
+        "evidence_note"
+      ],
+      "properties": {
+        "documentary_trace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ultimate_status": {
+          "enum": [
+            "known",
+            "partly-known",
+            "plural",
+            "contested",
+            "unresolved",
+            "unknown"
+          ]
+        },
+        "claimed_origins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "evidence_note": {
+          "type": "string"
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "entity_status",
+          "ontological_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "entity_status": {
+            "enum": [
+              "verified-person-or-organisation",
+              "documented-claimed-entity",
+              "unnamed-reported-presence",
+              "unknown-agent",
+              "not-applicable"
+            ]
+          },
+          "ontological_status": {
+            "enum": [
+              "established",
+              "contested",
+              "unresolved",
+              "not-applicable"
+            ]
+          }
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target",
+          "relation",
+          "edge_status",
+          "source_ids"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "edge_status": {
+            "enum": [
+              "documented",
+              "taxonomic",
+              "co-occurrence",
+              "hypothesised",
+              "contested",
+              "unknown"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "edge_status": {
+                  "enum": [
+                    "documented",
+                    "taxonomic",
+                    "co-occurrence"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "source_ids": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url",
+          "source_type",
+          "evidence_role"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source_type": {
+            "enum": [
+              "controlled-vocabulary",
+              "institutional-record",
+              "scholarly-index",
+              "primary-source",
+              "archive",
+              "declassified-record",
+              "testimony",
+              "other"
+            ]
+          },
+          "evidence_role": {
+            "enum": [
+              "definition",
+              "documentary-origin",
+              "context",
+              "claim",
+              "criticism",
+              "replication",
+              "rights"
+            ]
+          },
+          "retrieved_on": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "note"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "metadata-only",
+            "link-only",
+            "licensed-reuse",
+            "public-domain",
+            "unknown"
+          ]
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "human_reviewed": {
+          "type": "boolean"
+        },
+        "last_reviewed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "human_reviewed",
+        "last_reviewed",
+        "notes"
+      ]
+    },
+    "solution_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "quality_dimensions",
+        "candidates"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not-assessed",
+            "discovery",
+            "reviewed"
+          ]
+        },
+        "quality_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "level",
+              "evidence_status",
+              "potential_benefits",
+              "tradeoffs",
+              "source_ids"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "level": {
+                "enum": [
+                  "individual",
+                  "community",
+                  "institutional",
+                  "policy",
+                  "ecological",
+                  "multi-level"
+                ]
+              },
+              "evidence_status": {
+                "enum": [
+                  "supported",
+                  "mixed",
+                  "hypothesised",
+                  "traditional-practice",
+                  "unassessed"
+                ],
+                "description": "Established is unavailable in v0.1: independent reviewed evidence and replication are not represented."
+              },
+              "potential_benefits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tradeoffs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "evidence_status": {
+                      "enum": [
+                        "supported",
+                        "mixed"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "source_ids": {
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "public_clearance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "reviewed_on",
+        "decision_ref",
+        "privacy_checked",
+        "rights_checked",
+        "cultural_sovereignty_checked"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "HOLD",
+            "CLEARED"
+          ]
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "decision_ref": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "privacy_checked": {
+          "const": true
+        },
+        "rights_checked": {
+          "const": true
+        },
+        "cultural_sovereignty_checked": {
+          "const": true
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "reviewed",
+              "public"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "human_reviewed": {
+                "const": true
+              },
+              "last_reviewed": {
+                "type": "string",
+                "format": "date",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "human_reviewed",
+              "last_reviewed"
+            ]
+          },
+          "sources": {
+            "minItems": 1
+          },
+          "rights": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "metadata-only",
+                  "link-only",
+                  "licensed-reuse",
+                  "public-domain"
+                ]
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "public"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "rights": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "link-only",
+                  "licensed-reuse",
+                  "public-domain"
+                ]
+              }
+            }
+          },
+          "public_clearance": {
+            "properties": {
+              "decision": {
+                "const": "CLEARED"
+              }
+            }
+          }
+        },
+        "required": [
+          "public_clearance"
+        ]
+      }
+    }
+  ]
+}
