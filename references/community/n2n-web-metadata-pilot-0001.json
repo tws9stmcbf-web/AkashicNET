@@ -1,0 +1,169 @@
+{
+  "schema": "akashicnet.n2n.web-metadata-observations.v1",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "archive_sha256": {
+    "references/community/reddit-uri-index.csv": "3a6a702061cff7ae9e8d555b1de32b17cba9401f59451fce739f7f8411804b80",
+    "references/community/n2n-index.csv": "6d6ea88cbeda0a14b281246201e9cc711d74b28898531951da57dcdfdd36595a",
+    "scripts/reddit_corpus_census.py": "5377d0454e8f22c4684becd611a6136549ddba8e1c21be7d75dfce5d1b5e3845",
+    "tools/search_reddit.py": "1e8286abff822f2edfc34f180aa5c0bf7b88eaa5df85bd1e8d6857208330f8d4"
+  },
+  "selection_rule": "Accessibility pilot: welcome post plus community highlight links 13,14,15,17 from the returned N2N landing page; retain only IDs in the pinned uncurated archive. Not representative or chronological.",
+  "excluded": [
+    {
+      "post_id": "1vznd25",
+      "reason": "OUTSIDE_PINNED_ARCHIVE"
+    }
+  ],
+  "counts": {
+    "accessible_posts_examined": 5,
+    "archive_records_enriched_in_overlay": 4,
+    "observed_field_values": 12,
+    "outside_archive_excluded": 1,
+    "new_canonical_curated_records": 0,
+    "canonical_curated_records": 3
+  },
+  "authorization": {
+    "live_reddit_metadata_read": "AUTHORIZED_BY_USER",
+    "user_instruction": "Lift the restrictions",
+    "scope": "Metadata observations staged; no merge or deployment"
+  },
+  "boundaries": {
+    "bodies_stored": 0,
+    "comments_stored": 0,
+    "media_stored": 0,
+    "rights_gate": "CLOSED",
+    "evidence_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "canonical_metadata_write": false,
+    "website_updated": false
+  },
+  "limitations": [
+    "Returned pages may be cached; retrieval day is not the crawl date.",
+    "Displayed usernames do not independently verify real-world identity or ownership.",
+    "Relative post ages and title date suffixes are not exact creation timestamps.",
+    "No historical archive annotation was promoted to current flair."
+  ],
+  "records": [
+    {
+      "post_id": "10a8yeh",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10a8yeh/rneuronstonirvana_a_welcome_message_from_the/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10a8yeh/rneuronstonirvana_a_welcome_message_from_the/"
+      ],
+      "observed_metadata": {
+        "title": "r/#NeuronsToNirvana: A Welcome Message from the #Curator 🙏❤️🖖☮️ | #Matrix ❇️ #Enlightenment ☀️ #Library 📚 | #N2NMEL",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "#BeInspired 💡"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10a8yeh/rneuronstonirvana_a_welcome_message_from_the/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn4view0",
+        "reported_crawl_age": "2 days ago",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1szaa2n",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1szaa2n/n2n_insight_brief_hawkins_psytrance_forests_pure/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1szaa2n/n2n_insight_brief_hawkins_psytrance_forests_pure/"
+      ],
+      "observed_metadata": {
+        "title": "💡N2N Insight Brief 🔬🌿🌀 | 💭🌲🎶 Hawkins, Psytrance, Forests & Pure Love⚡💚 | Neuroscience / Behavioural Insight [Apr 2026]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "🧠 #Consciousness2.0 Explorer 📡"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1szaa2n/n2n_insight_brief_hawkins_psytrance_forests_pure/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn6view1",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 18,
+          "author_display": 16,
+          "flair_in_returned_copy": 20
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1u3dsw6",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u3dsw6/hapé_vows_of_truth_protection_and_accountability/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u3dsw6/hapé_vows_of_truth_protection_and_accountability/"
+      ],
+      "observed_metadata": {
+        "title": "🪶 Hapé Vows Of Truth, Protection And Accountability [Jun 2026]",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "🔎 Synchronicity 🌀"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u3dsw6/hapé_vows_of_truth_protection_and_accountability/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn6view0",
+        "reported_crawl_age": "last week",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1u49cm7",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u49cm7/rneuronstonirvana_disclaimer_shamanic_humble/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1u49cm7/rneuronstonirvana_disclaimer_shamanic_humble/"
+      ],
+      "observed_metadata": {
+        "title": "🧠r/NeuronsToNirvana🪷 Disclaimer & 🪶Shamanic Humble Reflections [🤞🏽➕♾️💞🟰☮️➕🤗]",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "🙏 In-My-Humble-Non-Dualistic-Subjective-Opinion 🖖"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1u49cm7/rneuronstonirvana_disclaimer_shamanic_humble/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn5view0",
+        "reported_crawl_age": "last month",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    }
+  ]
+}
