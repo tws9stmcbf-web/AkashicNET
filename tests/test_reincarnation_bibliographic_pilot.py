@@ -1,0 +1,87 @@
+"""Offline provenance checks; no retrieval, evidence appraisal or promotion."""
+
+import copy
+import json
+from pathlib import Path
+import unittest
+from urllib.parse import parse_qs, urlsplit
+
+
+PILOT = Path(__file__).resolve().parents[1] / "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json"
+
+
+def validate_pubmed(record):
+    pubmed = record["pubmed"]
+    returned = pubmed["records"]
+    endpoint = pubmed["summary_endpoint"]
+    if pubmed["match_status"] == "NO_MATCH_RETURNED_FOR_EXACT_DOI_QUERY":
+        assert returned == [], "No-match result must have no returned records"
+        assert pubmed["search_count"] == 0, "No-match result must have zero search count"
+    if not returned:
+        assert endpoint is None, "Empty PubMed result must have a null summary endpoint"
+        return
+    assert pubmed["match_status"] == "EXACT_NORMALIZED_DOI", "Returned records require verified DOI matches"
+    assert isinstance(endpoint, str), "Returned records require a summary endpoint"
+    url = urlsplit(endpoint)
+    assert (url.scheme, url.netloc, url.path) == (
+        "https", "eutils.ncbi.nlm.nih.gov", "/entrez/eutils/esummary.fcgi"
+    ), "Invalid PubMed summary endpoint"
+    query = parse_qs(url.query)
+    assert query.get("db") == ["pubmed"], "Summary endpoint must query PubMed"
+    assert len(query.get("id", [])) == 1, "Summary endpoint requires one PMID list"
+    ids = query["id"][0].split(",")
+    uids = [item["uid"] for item in returned]
+    assert all(isinstance(uid, str) and uid.isdigit() for uid in uids), "Invalid returned PMID"
+    assert len(ids) == len(uids) and set(ids) == set(uids), "Summary PMIDs must equal returned record PMIDs"
+    for item in returned:
+        assert item["doi"].strip().lower() == record["doi"].strip().lower(), "Returned DOI must match source DOI"
+
+
+class PubMedProvenanceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.records = json.loads(PILOT.read_text(encoding="utf-8"))["records"]
+
+    def test_current_pilot(self):
+        for record in self.records:
+            with self.subTest(doi=record["doi"]):
+                validate_pubmed(record)
+
+    def test_original_unrelated_endpoints_are_rejected(self):
+        no_matches = [r for r in self.records if not r["pubmed"]["records"]]
+        self.assertEqual(len(no_matches), 2)
+        for record in no_matches:
+            with self.subTest(doi=record["doi"]):
+                broken = copy.deepcopy(record)
+                broken["pubmed"]["summary_endpoint"] = self.records[-1]["pubmed"]["summary_endpoint"]
+                with self.assertRaisesRegex(AssertionError, "null summary endpoint"):
+                    validate_pubmed(broken)
+
+    def test_empty_result_cannot_bypass_guard_by_changing_match_status(self):
+        broken = copy.deepcopy(self.records[1])
+        broken["pubmed"]["match_status"] = "EXACT_NORMALIZED_DOI"
+        broken["pubmed"]["summary_endpoint"] = self.records[-1]["pubmed"]["summary_endpoint"]
+        with self.assertRaisesRegex(AssertionError, "null summary endpoint"):
+            validate_pubmed(broken)
+
+    def test_matched_record_cannot_use_another_publications_summary(self):
+        broken = copy.deepcopy(self.records[0])
+        broken["pubmed"]["summary_endpoint"] = self.records[-1]["pubmed"]["summary_endpoint"]
+        with self.assertRaisesRegex(AssertionError, "Summary PMIDs"):
+            validate_pubmed(broken)
+
+    def test_matched_record_requires_source_doi(self):
+        broken = copy.deepcopy(self.records[0])
+        broken["pubmed"]["records"][0]["doi"] = self.records[-1]["doi"]
+        with self.assertRaisesRegex(AssertionError, "Returned DOI"):
+            validate_pubmed(broken)
+
+    def test_no_match_cannot_carry_returned_records(self):
+        broken = copy.deepcopy(self.records[1])
+        broken["pubmed"]["records"] = copy.deepcopy(self.records[-1]["pubmed"]["records"])
+        with self.assertRaisesRegex(AssertionError, "no returned records"):
+            validate_pubmed(broken)
+
+
+if __name__ == "__main__":
+    unittest.main()
