@@ -91,3 +91,39 @@ continuation_batch_0005:
       evidence: [../../evidence/batch-0005-validation.txt, ../../evidence/batch-0005-counts.json]
   claims_touched: []
   logic_revisions: []
+continuation_provenance_pilot:
+  direction:
+    provenance: user
+    excerpt: Next step
+  events:
+    - id: N11
+      type: decision
+      provenance: ai-suggested
+      choice: Exclude unresolved pilot titles; create separate historical receipt overlay for 25 uncurated records.
+      evidence: [../../../n2n-historical-observation-pilot-method.md]
+    - id: N12
+      type: experiment
+      provenance: ai-executed
+      result: Three tests passed; 25 row-backed historical observation records; no new titles or current verification.
+      evidence: [../../evidence/provenance-pilot-validation.txt, ../../evidence/provenance-pilot-counts.json]
+  claims_touched: []
+  logic_revisions: []
+  open_threads:
+    - Authorized inspectable snapshots or field-level retrieval receipts are needed for descriptive metadata capture.
+continuation_provenance_pilot_0002:
+  direction:
+    provenance: user
+    excerpt: Next batch
+  events:
+    - id: N13
+      type: decision
+      provenance: ai-suggested
+      choice: Continue provenance overlay at eligible ranks 26-50; preserve staging batches.
+      evidence: [../../../n2n-historical-observation-pilot-0002-method.md]
+    - id: N14
+      type: experiment
+      provenance: ai-executed
+      result: Six focused tests passed; 50 unique historical receipt records, zero overlap, 75 remaining.
+      evidence: [../../evidence/provenance-pilot-0002-validation.txt, ../../evidence/provenance-pilot-0002-counts.json]
+  claims_touched: []
+  logic_revisions: []

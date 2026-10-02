@@ -1,0 +1,928 @@
+{
+  "boundaries": {
+    "accepted_canonical_edges": 0,
+    "archive_wide_authorship_verified": false,
+    "comments_ingested": 0,
+    "evidence_gate": "CLOSED",
+    "live_reddit_access": "HOLD",
+    "media_ingested": 0,
+    "post_existence_verified": false,
+    "privacy_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "rights_gate": "CLOSED",
+    "source_bodies_ingested": 0,
+    "supports_models": [],
+    "truth_inference": false,
+    "website_updated": false
+  },
+  "counts": {
+    "curated_unchanged": 3,
+    "current_reddit_requests": 0,
+    "historical_feed_ids": 125,
+    "new_authorship_verifications": 0,
+    "new_curated_titles": 0,
+    "selected": 25,
+    "selected_staging_overlap": 0,
+    "staging_queue_unchanged": 5000
+  },
+  "limitations": [
+    "Historical observation status is not a current public-visibility or API verification claim.",
+    "Unverified pilot CSV titles/summaries are not imported.",
+    "Archive origin remains unresolved in the pinned provenance audit; structural counts do not establish authenticity.",
+    "No public search/index integration or evidence, rights or maturity promotion."
+  ],
+  "records": [
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vk0hxc/this_post_includes_the_4_major_frameworks_i_am/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 26,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vk0hxc/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "25",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vk0hxc",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vk0hxc",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vk0hxc/this_post_includes_the_4_major_frameworks_i_am/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkdy9m/n2n_signal_synthesis_what_could_earth_be/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 25,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkdy9m/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "24",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vkdy9m",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vkdy9m",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkdy9m/n2n_signal_synthesis_what_could_earth_be/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkfm28/homesense790_the_evidence_commons_living_vision/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 24,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkfm28/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "23",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vkfm28",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vkfm28",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkfm28/homesense790_the_evidence_commons_living_vision/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkjf42/wtf_synchronicity_random_coincidences_or_an/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 23,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkjf42/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "22",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vkjf42",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vkjf42",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkjf42/wtf_synchronicity_random_coincidences_or_an/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkr9j7/a_multisynchronicity_journey_dancing_under_a/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 22,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkr9j7/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "21",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vkr9j7",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vkr9j7",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkr9j7/a_multisynchronicity_journey_dancing_under_a/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkx8q7/zentura_ace_ventura_zen_mechanics_ozora_festival/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 21,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkx8q7/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "20",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vkx8q7",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vkx8q7",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkx8q7/zentura_ace_ventura_zen_mechanics_ozora_festival/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vky84t/my_consciousness_dashboard_hawkins_map_secular/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 20,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vky84t/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "19",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vky84t",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vky84t",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vky84t/my_consciousness_dashboard_hawkins_map_secular/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkz869/hieratic011_service_before_self_meaning_through/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 19,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkz869/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "18",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vkz869",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vkz869",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkz869/hieratic011_service_before_self_meaning_through/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl08jo/ozora_dust_got_me_lookin_like_a_victorian_chimney/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 18,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl08jo/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "17",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vl08jo",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vl08jo",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl08jo/ozora_dust_got_me_lookin_like_a_victorian_chimney/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl0ztn/the_living_path_to_boundless_awareness_awaken/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 17,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl0ztn/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "16",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vl0ztn",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vl0ztn",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl0ztn/the_living_path_to_boundless_awareness_awaken/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl5rma/ozora_2047_uss_enterprise_dhamma_technology_what/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 16,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl5rma/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "15",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vl5rma",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vl5rma",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vl5rma/ozora_2047_uss_enterprise_dhamma_technology_what/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlbeuy/hieratic_book_ii_living_wisdom_from_reincarnation/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 15,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlbeuy/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "14",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vlbeuy",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vlbeuy",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlbeuy/hieratic_book_ii_living_wisdom_from_reincarnation/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vldd7i/special_buddha_lucidly_hyperaware_at_ozora/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 14,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vldd7i/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "13",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vldd7i",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vldd7i",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vldd7i/special_buddha_lucidly_hyperaware_at_ozora/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleddp/need_help_building_a_structurally_sound_pyramid/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 13,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleddp/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "12",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vleddp",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vleddp",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleddp/need_help_building_a_structurally_sound_pyramid/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleml8/many_pyramids_one_blueprint_an_interchangeable/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 12,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleml8/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "11",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vleml8",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vleml8",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vleml8/many_pyramids_one_blueprint_an_interchangeable/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlez86/hieratic031040_where_ancient_wisdom_meets_the/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 11,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlez86/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "10",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vlez86",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vlez86",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlez86/hieratic031040_where_ancient_wisdom_meets_the/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlgwnc/building_the_noetic_sciences_toolkit_on_github/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 10,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlgwnc/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "9",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vlgwnc",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vlgwnc",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlgwnc/building_the_noetic_sciences_toolkit_on_github/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vljcue/from_naturalistic_reports_to_testable_microdosing/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 9,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vljcue/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "8",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vljcue",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vljcue",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vljcue/from_naturalistic_reports_to_testable_microdosing/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vllwq6/noetic_sciences_toolkit_questions_for_the_akashic/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 8,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vllwq6/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "7",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vllwq6",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vllwq6",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vllwq6/noetic_sciences_toolkit_questions_for_the_akashic/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlr4s2/float_like_a_butterfly_sting_like_a_bee_love_like/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 7,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlr4s2/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "6",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vlr4s2",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vlr4s2",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlr4s2/float_like_a_butterfly_sting_like_a_bee_love_like/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vls2iv/rmicrodjpanpsychic/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 6,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vls2iv/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "5",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vls2iv",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vls2iv",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vls2iv/rmicrodjpanpsychic/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlt7al/born_13_living_13_coincidence_or_synchronicity_13/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 5,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlt7al/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "4",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vlt7al",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vlt7al",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlt7al/born_13_living_13_coincidence_or_synchronicity_13/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vluise/last_day_in_varanasi/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 4,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vluise/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "3",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vluise",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vluise",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vluise/last_day_in_varanasi/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmam4h/what_if_humanity_could_build_a_library_without/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 3,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmam4h/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "existing_historical_record",
+            "feed_rank": "2",
+            "historical_index_match": "true",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vmam4h",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vmam4h",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmam4h/what_if_humanity_could_build_a_library_without/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmweht/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 2,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmweht/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "1",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "5",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vmweht",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0006.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vmweht",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vmweht/"
+      ],
+      "title": null
+    }
+  ],
+  "schema": "akashicnet.n2n.historical-observation-pilot.v1",
+  "selection_rule": "First 25 lowercase post IDs in lexical order from uncurated archive records with a historical N2N feed observation in manual delta batches 0002-0006. Separate provenance review overlay; not a sixth staging batch.",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "source_sha256": {
+    "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md": "9fcfce2e31ecafddefe69c388017d71d2c4d02887ed9ef7262f95aab8f4b653b",
+    "references/community/n2n-metadata-batch-0001.json": "23bcb5a4cceec77a123946174ad068a93474aaa5e342e21c6a66f0ef9b8ead57",
+    "references/community/n2n-metadata-batch-0002.json": "f8c982e63c8cf7bd52803d6dad8b275a7afaec4b47f98800d5fe93c578f23893",
+    "references/community/n2n-metadata-batch-0003.json": "dd1401ea856f4a4ebb99e02713c0711807eaac38a4455877e69f2f8265419e28",
+    "references/community/n2n-metadata-batch-0004.json": "8f2f3e076e35235fb7ac9baca00b8dba851ff779e23169321e50b61b1d3cee2c",
+    "references/community/n2n-metadata-batch-0005.json": "c9e44a7bc50c185de9c10f54c2688fdccfaeb57e37be4876f07f6beecebba9b7",
+    "references/community/reddit-manual-delta-batch-0002.csv": "d97011b3ab2bd7e542f62ff17da0b2545f983decd3450871ca87d7f76be05193",
+    "references/community/reddit-manual-delta-batch-0003.csv": "cd314cc22775a98c1d3e1423671c964b09ab6b5fa287a918658a7b3552f0b61b",
+    "references/community/reddit-manual-delta-batch-0004.csv": "e39b755c86b38c61b678300406354bc7aeb78482a487d65ccc5e8031fa0aadd5",
+    "references/community/reddit-manual-delta-batch-0005.csv": "5ea83c66119a31df795143a6ecaecfc984bd5e7f10589a36302808b503bb8997",
+    "references/community/reddit-manual-delta-batch-0006.csv": "08172bf3cda9264f3c49b66a8ef1a7661c847bf5576e1cb7e0949085184d59b6"
+  }
+}
