@@ -75,6 +75,14 @@ def validate():
     assert correction['correction_metadata']['target_doi'] == enriched['CM-OA-007']['doi']
     assert enriched['CM-OA-007']['study_metadata']['correction_notice']['doi'] == enriched['CM-OA-008']['doi']
     assert enriched['CM-OA-007']['lineage_group'] == enriched['CM-OA-008']['lineage_group']
+    therapy = enriched['CM-OA-002']['study_metadata']['sample']
+    assert therapy['randomized_analysis_sample'] - therapy['post_test_dropouts_treatment'] - therapy['post_test_dropouts_waitlist'] == therapy['post_test_completers']
+    assert enriched['CM-OA-002']['lineage_group'] == enriched['CM-OA-003']['study_metadata']['trial_registration']
+    assert enriched['CM-OA-003']['study_metadata']['sample']['participants_reported_as_results'] == 0
+    survey = enriched['CM-IONS-005']['study_metadata']['sample']
+    assert survey['abstract_participants'] != survey['results_completers']
+    assert survey['reconciled_analysed_participants'] is None
+    assert enriched['CM-OA-004']['study_metadata']['sample']['new_participants'] == 0
     return {'passed': True, 'records': len(records), 'method_enriched_records': len(enriched), 'duplicate_ids_titles_dois_urls': 0,
             'independent_studies_promoted': 0, 'accepted_edges': 0,
             'website_updated': False, 'scientific_claims_validated': False,

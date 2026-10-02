@@ -1,0 +1,277 @@
+{
+  "enrichment_id": "ENRICHMENT-22",
+  "date": "2026-10-02",
+  "records_total": 91,
+  "new_records_added": 0,
+  "independent_studies_promoted": 0,
+  "accepted_edges_added": 0,
+  "original_batch_snapshots_modified": false,
+  "changes": [
+    {
+      "record_id": "CM-OA-002",
+      "study_metadata": {
+        "design": "Single-center randomized parallel-group trial; assessor blinded",
+        "sample": {
+          "randomized_analysis_sample": 48,
+          "post_test_dropouts_treatment": 4,
+          "post_test_dropouts_waitlist": 4,
+          "post_test_completers": 40,
+          "allocation_replacements_before_baseline": 2,
+          "replacement_note": "Two allocated individuals declined and were replaced; 48 is the reported analysis sample."
+        },
+        "intervention": "Eight group meditation sessions plus eight individual therapy sessions; half-day retreat.",
+        "controls": "Wait list with usual medication permitted; six-month follow-up treatment group only.",
+        "outcomes": [
+          "Clinician-rated depression primary (QIDS-C)",
+          "Self-rated depression and other secondary measures including compassion"
+        ],
+        "reported_findings": "Authors report depression improvement; compassion scale group-by-time interaction was not significant.",
+        "limitations": [
+          "Combined intervention does not isolate meditation effects.",
+          "Small sample; no active psychotherapy comparator."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PUBLIC_OSF",
+          "repository_url": "https://osf.io/erswt/",
+          "public_repository_verified": false,
+          "inspection_note": "OSF retrieval failed; files, licence and completeness unverified."
+        },
+        "update_metadata": {
+          "date": "2022-02-28",
+          "displayed_change": "Open Access funding enabled and organized by Projekt DEAL",
+          "scope": "FUNDING_NOTICE",
+          "inspection": "Displayed publisher change history only"
+        },
+        "references": [
+          {
+            "source_url": "https://link.springer.com/article/10.1007/s12671-021-01753-y",
+            "sections": [
+              "Trial Design",
+              "Attrition",
+              "Treatment Effects",
+              "Data Availability",
+              "Change history"
+            ],
+            "retrieval_refs": [
+              "turn56view0",
+              "turn59view4",
+              "turn57view4"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS"
+      }
+    },
+    {
+      "record_id": "CM-OA-003",
+      "study_metadata": {
+        "design": "Protocol for randomized metta/CBT trial; not a separate outcome report",
+        "sample": {
+          "planned_participants": 48,
+          "participants_reported_as_results": 0,
+          "new_experimental_cohort": false
+        },
+        "trial_registration": "ISRCTN97264476",
+        "linked_results_record": "CM-OA-002",
+        "intervention": "Group meditation followed by individual cognitive behavioral therapy.",
+        "controls": "Planned wait-list comparison with blinded assessment.",
+        "outcomes": [
+          "Planned clinician-rated depression primary",
+          "Secondary psychological and social measures"
+        ],
+        "limitations": [
+          "Planned numbers are not achieved sample counts.",
+          "Component sequence does not identify separate treatment contributions."
+        ],
+        "data": {
+          "status": "PROTOCOL_DESCRIBES_CONDITIONAL_FUTURE_ACCESS",
+          "public_repository_verified": false,
+          "source_statement": "Approved proposals, data access agreement and a stated publication-relative access window; current access unverified."
+        },
+        "references": [
+          {
+            "source_url": "https://link.springer.com/article/10.1186/s13063-019-3815-4",
+            "sections": [
+              "Sample size",
+              "Randomization",
+              "Discussion",
+              "Trial status",
+              "Availability of data and materials"
+            ],
+            "retrieval_refs": [
+              "turn57view0",
+              "turn59view5"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS"
+      }
+    },
+    {
+      "record_id": "CM-OA-004",
+      "study_metadata": {
+        "design": "Systematic review with meta-analysis, subgroups and meta-regression",
+        "sample": {
+          "articles_reviewed": 24,
+          "studies_distinguished_in_results": 25,
+          "aggregate_participants_reported_in_abstract": 1759,
+          "new_participants": 0,
+          "new_experimental_cohort": false
+        },
+        "count_note": "Results distinguish multiple interventions and a repeat longitudinal publication; counts are source-reported, not independently deduplicated.",
+        "outcomes": [
+          "Self-reported daily positive emotions",
+          "Immediate positive emotions during practice"
+        ],
+        "controls": "Separate randomized and nonrandomized designs with differing comparators.",
+        "reported_findings": "Authors report positive-emotion increases; effect sizes vary by design and comparison.",
+        "limitations": [
+          "Positive emotion does not measure altruistic behavior.",
+          "Mixed interventions and study risks of bias; primary cohorts require separate appraisal."
+        ],
+        "data": {
+          "status": "UNDERLYING_STUDY_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.01693/full",
+            "sections": [
+              "Abstract",
+              "Search Results and Characteristic of Studies"
+            ],
+            "retrieval_refs": [
+              "turn61view0",
+              "turn57view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS"
+      }
+    },
+    {
+      "record_id": "CM-IONS-003",
+      "study_metadata": {
+        "design": "Association study with questionnaires/tasks before and after personal-growth workshops; abstract-level extraction",
+        "sample": {
+          "participants_reported_in_abstract": 725,
+          "attrition_details": null
+        },
+        "controls": "Abstract compares meditators/non-meditators and meditation/non-meditation workshops; allocation not established.",
+        "outcomes": [
+          "Noetic experience and belief reports",
+          "Synchronistic-experience reports",
+          "Online tasks unspecified in abstract"
+        ],
+        "reported_findings": "Authors report associations with meditation frequency and statistical mediation by noetic experiences.",
+        "limitations": [
+          "Association and mediation do not establish causal direction.",
+          "Reported experiences do not independently verify anomalous capacities.",
+          "Full publisher methods unavailable; cohort overlap unverified."
+        ],
+        "data": {
+          "status": "DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://noetic.org/publication/an-exploration-of-the-associations-between-meditation-extended-human-capacities-and-synchronistic-experiences/",
+            "sections": [
+              "IONS reproduced article abstract and citation"
+            ],
+            "retrieval_refs": [
+              "turn58view0",
+              "turn60search0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "IONS_REPRODUCED_ABSTRACT_AND_PUBLISHER_INDEXED_ABSTRACT"
+      }
+    },
+    {
+      "record_id": "CM-IONS-005",
+      "study_metadata": {
+        "design": "Nonrandom cross-sectional online meditation survey informing research recommendations",
+        "sample": {
+          "survey_started": 1856,
+          "eligible_respondents": 1793,
+          "abstract_participants": 1120,
+          "results_completers": 1130,
+          "reconciled_analysed_participants": null
+        },
+        "count_note": "Abstract/results discrepancy retained; no reconciled denominator assigned.",
+        "outcomes": [
+          "Adapted MEQ30",
+          "Study-developed extraordinary-experience items",
+          "Perceived salience, valence and teacher responses"
+        ],
+        "analysis": "Descriptive prevalence statistics from completers.",
+        "limitations": [
+          "Nonrandom recruitment and completer selection constrain prevalence generalization.",
+          "Self-reported anomalous experiences are not independent verification."
+        ],
+        "data": {
+          "status": "PUBLISHER_REPORTS_PUBLIC_OSF",
+          "repository_url": "https://osf.io/wubza/",
+          "source_statement": "Anonymized raw data and codebook publicly available on OSF.",
+          "public_repository_verified": false,
+          "inspection_note": "OSF retrieval failed; files, licence and denominator reconciliation unverified."
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205740",
+            "sections": [
+              "Abstract",
+              "Participants",
+              "Online survey",
+              "Statistical analysis",
+              "Demographics",
+              "Data Availability"
+            ],
+            "retrieval_refs": [
+              "turn58view1",
+              "turn59view3",
+              "turn57view3"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_MAIN_TEXT_SECTIONS"
+      }
+    }
+  ],
+  "additional_record_updates": [
+    {
+      "record_id": "CM-OA-002",
+      "field": "quality_flags",
+      "before": [
+        "Page says updated; link returned same article without separate update details. Nature of update remains unverified."
+      ],
+      "after": [
+        "Displayed 2022-02-28 change history concerns Open Access funding; not a comprehensive correction/retraction clearance."
+      ],
+      "reason": "Publisher displayed funding change history resolved earlier update-scope uncertainty."
+    }
+  ],
+  "source_snapshot_sha256": "8a49a771a79656fab03219bca3f2349d7680c7685dbd57e52874bde53b58a507",
+  "limitations": "Selected sections and abstract-level extraction. OSF links reported by publishers but repository files and rights not verified; survey denominator remains unresolved; no scientific appraisal or evidence promotion."
+}
