@@ -1,0 +1,263 @@
+{
+  "enrichment_id": "ENRICHMENT-19",
+  "date": "2026-10-02",
+  "records_total": 91,
+  "new_records_added": 0,
+  "independent_studies_promoted": 0,
+  "accepted_edges_added": 0,
+  "original_batch_snapshots_modified": false,
+  "changes": [
+    {
+      "record_id": "SRC-B13-0004",
+      "study_metadata": {
+        "design": "Randomized app-based mindfulness versus active cognitive-training control",
+        "sample": {
+          "recruited_participants": 69,
+          "dropouts": 6,
+          "excluded_noncompliance": 7,
+          "analysed_participants": 56
+        },
+        "intervention": "14 sessions over three weeks; mindfulness sessions average 12 minutes; no explicit compassion instruction.",
+        "controls": "Lumosity cognitive training, approximately 10 minutes per session.",
+        "outcomes": [
+          "Seat offered to confederate displaying pain",
+          "Emotion Recognition Index"
+        ],
+        "reported_findings": "More seat-giving after mindfulness; empathic accuracy did not increase.",
+        "limitations": [
+          "Undergraduate sample; attrition and adherence exclusions require appraisal.",
+          "One observed helping opportunity is not a general compassion measure."
+        ],
+        "data": {
+          "status": "ARTICLE_AND_SUPPORTING_INFORMATION_REPORTED",
+          "files_inspected": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118221",
+            "sections": [
+              "Abstract",
+              "Participants",
+              "Procedure",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn43view0",
+              "turn44view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_METHODS_AND_AVAILABILITY"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0005",
+      "study_metadata": {
+        "design": "Expert-novice comparison with within-person meditation/rest fMRI conditions",
+        "sample": {
+          "recruited_participants": 32,
+          "recruited_experts": 16,
+          "recruited_novices": 16,
+          "excluded_motion": 2,
+          "analysed_participants": 30,
+          "analysed_per_group": 15
+        },
+        "intervention": "Experts estimated 10,000–50,000 prior practice hours; novices practiced three meditations for one week before scanning.",
+        "controls": "Resting state; expert versus novice groups; positive, neutral and negative auditory stimuli.",
+        "outcomes": [
+          "fMRI responses to emotional sounds during meditation and rest"
+        ],
+        "analysis": "Block design on two separate days; complete statistical appraisal pending.",
+        "limitations": [
+          "Expertise was not randomly assigned; cultural and language differences may confound groups.",
+          "Neural measures do not directly establish altruistic behavior."
+        ],
+        "data": {
+          "status": "PUBLIC_DATASET_NOT_VERIFIED"
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001897",
+            "sections": [
+              "Participants",
+              "Meditative instruction",
+              "Protocol",
+              "Discussion"
+            ],
+            "retrieval_refs": [
+              "turn44view1",
+              "turn45view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_METHODS_AND_AVAILABILITY"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0006",
+      "study_metadata": {
+        "design": "Four-group focused-attention/loving-kindness expert-novice fMRI comparison",
+        "sample": {
+          "recruited_participants": 44,
+          "recruited_experts": 22,
+          "recruited_novices": 22,
+          "recruited_per_group": 11,
+          "selection": "Chinese men; experts recruited through Buddhist network",
+          "analysed_participants": null
+        },
+        "intervention": "Novices randomized to practice type and instructed to practice one hour daily for seven days.",
+        "controls": "Matched novice groups; meditation versus baseline; expert training not randomized.",
+        "outcomes": [
+          "fMRI BOLD signals",
+          "Continuous performance task",
+          "Affective-picture ratings",
+          "Mindfulness questionnaires"
+        ],
+        "limitations": [
+          "Loving-kindness experts had prior focused-attention experience.",
+          "Recruitment count verified; analysis exclusions not checked."
+        ],
+        "data": {
+          "status": "PUBLIC_DATASET_NOT_VERIFIED"
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040054",
+            "sections": [
+              "Study aims",
+              "Participants"
+            ],
+            "retrieval_refs": [
+              "turn44view2",
+              "turn45view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_METHODS_AND_AVAILABILITY"
+      }
+    },
+    {
+      "record_id": "SRC-B13-0007",
+      "study_metadata": {
+        "design": "Four-arm randomized trial of brief practices before acute cold-pressor stress",
+        "sample": {
+          "recruited_participants": 166,
+          "excluded_before_onset": 4,
+          "excluded_from_analysis": 6,
+          "analysed_participants": 156,
+          "planned_participants": 350
+        },
+        "intervention": "Approximately 12-minute guided breath awareness, loving-kindness, gratitude or attention-control practice.",
+        "controls": "Attention-control arm and between-practice contrasts.",
+        "outcomes": [
+          "Implicit and explicit affect",
+          "Cold-pressor completion and aversiveness",
+          "Neutral-face likability",
+          "Unrewarded time donation"
+        ],
+        "analysis": "Regression with baseline covariates; exploratory tests FDR-corrected at 0.05.",
+        "trial_registration": "NCT02214264",
+        "limitations": [
+          "Recruitment fell short of planned moderation-power sample.",
+          "Brief laboratory stress response does not establish lasting wellbeing."
+        ],
+        "data": {
+          "status": "ARTICLE_LINKED_OSF_NOT_INSPECTED",
+          "repository_url": "https://doi.org/10.17605/OSF.IO/GV5RC",
+          "dataset_licence_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207765",
+            "sections": [
+              "Participants",
+              "Interventions",
+              "Analytical approach",
+              "Power analyses",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn44view3",
+              "turn45view2",
+              "turn45view5"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_METHODS_AND_AVAILABILITY"
+      }
+    },
+    {
+      "record_id": "SRC-B14-0014",
+      "study_metadata": {
+        "design": "Secondary wellbeing analysis of three-arm Age-Well randomized trial",
+        "sample": {
+          "randomized_participants": 137,
+          "excluded_after_randomization": 2,
+          "died_before_end": 1,
+          "included_participants": 134,
+          "age_range_years": [
+            65,
+            84
+          ]
+        },
+        "intervention": "18 months: weekly two-hour groups, daily practice at least 20 minutes, one retreat day; mindfulness and compassion modules.",
+        "controls": "English-language training and no-intervention arms.",
+        "outcomes": [
+          "Psychological Well-being Scale",
+          "WHO quality-of-life psychological subscale",
+          "Awareness/connection/insight composite"
+        ],
+        "reported_findings": "Composite improved; PWBS total showed no between-group difference; QoL difference did not survive multiplicity adjustment.",
+        "trial_registration": "NCT02977819",
+        "limitations": [
+          "Secondary analysis retains original trial lineage.",
+          "Benefits varied by measure and comparator."
+        ],
+        "data": {
+          "status": "CONTROLLED_ACCESS_APPROVAL_AND_AGREEMENT",
+          "request_information_url": "https://silversantestudy.eu/2020/09/25/data-sharing",
+          "public_repository_verified": false
+        },
+        "references": [
+          {
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294753",
+            "sections": [
+              "Abstract",
+              "Participants",
+              "Interventions",
+              "Data availability"
+            ],
+            "retrieval_refs": [
+              "turn44view4",
+              "turn44view5"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_PRIMARY_SOURCE_METADATA",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_PUBLISHER_METHODS_AND_AVAILABILITY",
+        "study_lineage_identifier": "TRIAL:NCT02977819"
+      }
+    }
+  ],
+  "source_snapshot_sha256": "d677e19844a241ead6b5aad6bfac8722c82c5963a9c2c735ff95c32a192b69e6",
+  "limitations": "Selected primary-source methods extraction; analysis counts not inferred from recruitment counts. No complete statistical appraisal or dataset licence verification."
+}

@@ -51,6 +51,14 @@ def validate():
     review = enriched['SRC-B15-0005']['study_metadata']['sample']
     assert review['reports_reviewed'] >= review['studies_reviewed'] and review['new_participants'] == 0
     assert enriched['SRC-B16-0005']['study_metadata']['sample']['scanned_participants'] is None
+    for rid, recruited_key, lost_keys, analysed_key in (
+        ('SRC-B13-0004', 'recruited_participants', ['dropouts', 'excluded_noncompliance'], 'analysed_participants'),
+        ('SRC-B13-0005', 'recruited_participants', ['excluded_motion'], 'analysed_participants'),
+        ('SRC-B13-0007', 'recruited_participants', ['excluded_before_onset', 'excluded_from_analysis'], 'analysed_participants'),
+        ('SRC-B14-0014', 'randomized_participants', ['excluded_after_randomization', 'died_before_end'], 'included_participants'),
+    ):
+        sample = enriched[rid]['study_metadata']['sample']
+        assert sample[recruited_key] - sum(sample[key] for key in lost_keys) == sample[analysed_key]
     twin = enriched['SRC-B15-0001']['study_metadata']['sample']
     assert twin['condition_level_observations'] == sum(twin['receiver_recordings_by_session']) * 2
     assert twin['unique_participants'] == twin['dyads'] * 2
