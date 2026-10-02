@@ -1,0 +1,2129 @@
+{
+  "schema": "akashicnet.n2n.metadata-fetch-batch.v1",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "batch_id": "2026-10-02-0006",
+  "selection_rule": "First 100 post IDs in ascending lexicographic order from the pinned uncurated N2N archive, excluding 22 previously observed IDs, 3 curated IDs and 14 prior unresolved fetch IDs. Ordering is deterministic, not chronological.",
+  "retrieved_on": "2026-10-02",
+  "counts": {
+    "selected": 100,
+    "attempted": 100,
+    "metadata_observed": 0,
+    "fetch_failed": 100,
+    "new_field_values": 0,
+    "cumulative_observed_records": 22,
+    "cumulative_observed_field_values": 66,
+    "canonical_curated_records": 3
+  },
+  "boundaries": {
+    "source_bodies_stored": 0,
+    "comments_stored": 0,
+    "media_stored": 0,
+    "canonical_metadata_write": false,
+    "rights_status_assigned": false,
+    "evidence_status_assigned": false,
+    "current_flair_assigned": false,
+    "website_updated": false
+  },
+  "records": [
+    {
+      "post_id": "10001c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10001c/research_thread_on_meaning_and_repetition/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10001c/research_thread_on_meaning_and_repetition/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10001d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10001d/community_signal_mapping_in_reflective_practice/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10001d/community_signal_mapping_in_reflective_practice/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view1",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10001e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10001e/question_design_for_altered_states/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10001e/question_design_for_altered_states/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view2",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10001f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10001f/the_value_of_community_hypotheses/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10001f/the_value_of_community_hypotheses/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view3",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100020",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100020/what_patterns_survive_inquiry_over_time/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100020/what_patterns_survive_inquiry_over_time/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view4",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100021",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100021/methods_for_comparing_lived_reports/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100021/methods_for_comparing_lived_reports/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view5",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100022",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100022/shared_themes_in_public_discourse/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100022/shared_themes_in_public_discourse/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view6",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100023",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100023/research_design_notes_from_a_community_forum/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100023/research_design_notes_from_a_community_forum/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view7",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100024",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100024/signal_quality_and_narrative_drift/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100024/signal_quality_and_narrative_drift/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view8",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100025",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100025/mapping_recurring_motifs_in_reflection/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100025/mapping_recurring_motifs_in_reflection/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn31view9",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100026",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100026/question_production_as_a_research_method/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100026/question_production_as_a_research_method/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100027",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100027/patterns_worth_formal_study/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100027/patterns_worth_formal_study/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "Research"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view1",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100028",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100028/awareness_and_the_felt_boundary_1/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100028/awareness_and_the_felt_boundary_1/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view2",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100029",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100029/the_continuity_of_attention_in_ordinary_life_2/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100029/the_continuity_of_attention_in_ordinary_life_2/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view3",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10002a",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10002a/selfhood_as_a_temporary_configuration_3/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10002a/selfhood_as_a_temporary_configuration_3/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view4",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10002b",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10002b/the_role_of_attention_in_identity_4/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10002b/the_role_of_attention_in_identity_4/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view5",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10002c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10002c/what_remains_when_narratives_soften_5/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10002c/what_remains_when_narratives_soften_5/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view6",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10002d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10002d/language_and_the_felt_shape_of_awareness_6/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10002d/language_and_the_felt_shape_of_awareness_6/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view7",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10002e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10002e/consciousness_as_layered_experience_7/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10002e/consciousness_as_layered_experience_7/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view8",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10002f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10002f/the_edge_between_knowing_and_being_8/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10002f/the_edge_between_knowing_and_being_8/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view9",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100030",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100030/turning_inward_and_the_collapse_of_narrative_9/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100030/turning_inward_and_the_collapse_of_narrative_9/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view10",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100031",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100031/the_self_as_process_rather_than_object_10/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100031/the_self_as_process_rather_than_object_10/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view11",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100032",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100032/continuity_without_a_stable_observer_11/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100032/continuity_without_a_stable_observer_11/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view12",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100033",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100033/awareness_under_environmental_change_12/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100033/awareness_under_environmental_change_12/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view13",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100034",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100034/subjectivity_and_context_13/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100034/subjectivity_and_context_13/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view14",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100035",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100035/the_horizon_of_internal_experience_14/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100035/the_horizon_of_internal_experience_14/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view15",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100036",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100036/locating_the_sense_of_self_15/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100036/locating_the_sense_of_self_15/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view16",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100037",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100037/the_inner_field_as_an_evolving_map_16/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100037/the_inner_field_as_an_evolving_map_16/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view17",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100038",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100038/a_changing_relation_to_the_witness_17/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100038/a_changing_relation_to_the_witness_17/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view18",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100039",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100039/seeing_without_grasping_18/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100039/seeing_without_grasping_18/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view19",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10003a",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10003a/consciousness_through_practice_and_reflection_19/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10003a/consciousness_through_practice_and_reflection_19/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view20",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10003b",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10003b/the_field_of_attention_and_its_contours_20/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10003b/the_field_of_attention_and_its_contours_20/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view21",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10003c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10003c/the_changing_boundary_of_the_self_21/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10003c/the_changing_boundary_of_the_self_21/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view22",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10003d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10003d/awareness_as_relation_rather_than_possession_22/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10003d/awareness_as_relation_rather_than_possession_22/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view23",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10003e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10003e/meaning_from_the_interplay_of_states_23/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10003e/meaning_from_the_interplay_of_states_23/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view24",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10003f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10003f/awareness_and_the_felt_boundary_24/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10003f/awareness_and_the_felt_boundary_24/"
+      ],
+      "historical_annotations": [
+        "HIERATIC,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view25",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100040",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100040/the_role_of_paradox_in_inquiry/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100040/the_role_of_paradox_in_inquiry/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view26",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100041",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100041/what_counts_as_a_self/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100041/what_counts_as_a_self/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view27",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100042",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100042/meaning_without_metaphysics/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100042/meaning_without_metaphysics/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view28",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100043",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100043/the_ethics_of_opening_to_uncertainty/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100043/the_ethics_of_opening_to_uncertainty/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn32view29",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100044",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100044/beyond_fixed_identity/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100044/beyond_fixed_identity/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100045",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100045/metaphor_and_ontology/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100045/metaphor_and_ontology/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view1",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100046",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100046/reflection_without_dogma/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100046/reflection_without_dogma/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view2",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100047",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100047/the_symbolic_life_of_the_mind/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100047/the_symbolic_life_of_the_mind/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view3",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100048",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100048/a_philosophy_of_becoming/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100048/a_philosophy_of_becoming/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view4",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100049",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100049/inquiry_beyond_certainty/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100049/inquiry_beyond_certainty/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view5",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10004a",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10004a/the_architecture_of_meaning/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10004a/the_architecture_of_meaning/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view6",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10004b",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10004b/questioning_the_stable_observer/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10004b/questioning_the_stable_observer/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view7",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10004c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10004c/relating_knowledge_and_intimacy/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10004c/relating_knowledge_and_intimacy/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view8",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10004d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10004d/ways_of_being_in_relation/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10004d/ways_of_being_in_relation/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view9",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10004e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10004e/the_frame_of_the_horizon/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10004e/the_frame_of_the_horizon/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view10",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10004f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10004f/the_container_of_experience/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10004f/the_container_of_experience/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view11",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100050",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100050/meaning_as_an_ongoing_negotiation/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100050/meaning_as_an_ongoing_negotiation/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view12",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100051",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100051/the_burden_of_a_fixed_narrative/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100051/the_burden_of_a_fixed_narrative/"
+      ],
+      "historical_annotations": [
+        "Original",
+        "QMM,What"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view13",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100052",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100052/tradition_as_map_not_doctrine/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100052/tradition_as_map_not_doctrine/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view14",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100053",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100053/the_function_of_symbolic_practice/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100053/the_function_of_symbolic_practice/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view15",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100054",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100054/the_value_of_perennial_language/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100054/the_value_of_perennial_language/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view16",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100055",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100055/contemplative_methods_and_attention/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100055/contemplative_methods_and_attention/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view17",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100056",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100056/cognitive_maps_in_spiritual_practice/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100056/cognitive_maps_in_spiritual_practice/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view18",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100057",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100057/compassion_as_a_social_map/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100057/compassion_as_a_social_map/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view19",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100058",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100058/the_role_of_ritual_in_meaning/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100058/the_role_of_ritual_in_meaning/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view20",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100059",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100059/transmission_and_reinterpretation/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100059/transmission_and_reinterpretation/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view21",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10005a",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10005a/tradition_and_the_revision_of_insight/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10005a/tradition_and_the_revision_of_insight/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view22",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10005b",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10005b/attunement_across_lineages/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10005b/attunement_across_lineages/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view23",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10005c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10005c/what_common_symbols_reveal/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10005c/what_common_symbols_reveal/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view24",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10005d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10005d/the_edge_between_practice_and_worldview/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10005d/the_edge_between_practice_and_worldview/"
+      ],
+      "historical_annotations": [
+        "Knowledge",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view25",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10005e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10005e/integration_after_non_ordinary_experience/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10005e/integration_after_non_ordinary_experience/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view26",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10005f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10005f/the_language_of_altered_states/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10005f/the_language_of_altered_states/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view27",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100060",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100060/meaning_making_after_psychedelic_insight/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100060/meaning_making_after_psychedelic_insight/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view28",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100061",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100061/self_and_structure_after_immersion/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100061/self_and_structure_after_immersion/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn33view29",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100062",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100062/states_stories_and_integration/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100062/states_stories_and_integration/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view0",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100063",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100063/the_challenge_of_expression_after_a_shift/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100063/the_challenge_of_expression_after_a_shift/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view1",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100064",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100064/the_role_of_context_in_reforming_insight/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100064/the_role_of_context_in_reforming_insight/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view2",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100065",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100065/what_remains_after_the_peak/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100065/what_remains_after_the_peak/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view3",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100066",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100066/psychedelic_insight_and_ordinary_attention/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100066/psychedelic_insight_and_ordinary_attention/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view4",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100067",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100067/meaning_after_the_experience_fades/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100067/meaning_after_the_experience_fades/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view5",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100068",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100068/altered_states_as_interpretive_catalysts/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100068/altered_states_as_interpretive_catalysts/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view6",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100069",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100069/the_felt_texture_of_change/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100069/the_felt_texture_of_change/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view7",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10006a",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10006a/pattern_recognition_across_states/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10006a/pattern_recognition_across_states/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view8",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10006b",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10006b/the_ethics_of_retrospective_meaning/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10006b/the_ethics_of_retrospective_meaning/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view9",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10006c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10006c/what_changes_in_the_afterimage/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10006c/what_changes_in_the_afterimage/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view10",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10006d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10006d/the_relation_between_symbol_and_state/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10006d/the_relation_between_symbol_and_state/"
+      ],
+      "historical_annotations": [
+        "METAD,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view11",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10006e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10006e/sudden_clarity_in_the_ordinary_room/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10006e/sudden_clarity_in_the_ordinary_room/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view12",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10006f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10006f/a_shift_in_how_the_world_feels/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10006f/a_shift_in_how_the_world_feels/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view13",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100070",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100070/experiencing_time_as_elastic/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100070/experiencing_time_as_elastic/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view14",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100071",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100071/the_environment_as_a_living_mirror/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100071/the_environment_as_a_living_mirror/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view15",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100072",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100072/a_break_in_self_construal/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100072/a_break_in_self_construal/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view16",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100073",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100073/familiar_sounds_becoming_sacred/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100073/familiar_sounds_becoming_sacred/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view17",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100074",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100074/a_moment_of_unbounded_attention/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100074/a_moment_of_unbounded_attention/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view18",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100075",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100075/the_softening_of_personal_narrative/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100075/the_softening_of_personal_narrative/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view19",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100076",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100076/the_body_as_a_context_for_meaning/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100076/the_body_as_a_context_for_meaning/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view20",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100077",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100077/a_quieter_form_of_agency/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100077/a_quieter_form_of_agency/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view21",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100078",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100078/different_textures_of_attention/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100078/different_textures_of_attention/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view22",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "100079",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100079/seeing_the_habitual_fade/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/100079/seeing_the_habitual_fade/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view23",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10007a",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10007a/a_felt_shift_in_relationality/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10007a/a_felt_shift_in_relationality/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view24",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10007b",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10007b/sensing_the_world_as_more_alive/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10007b/sensing_the_world_as_more_alive/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view25",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10007c",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10007c/the_body_as_a_carrier_of_insight/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10007c/the_body_as_a_carrier_of_insight/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view26",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10007d",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10007d/the_room_became_a_different_kind_of_map/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10007d/the_room_became_a_different_kind_of_map/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view27",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10007e",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10007e/noticing_the_pattern_in_ordinary_motion/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10007e/noticing_the_pattern_in_ordinary_motion/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view28",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    },
+    {
+      "post_id": "10007f",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10007f/a_reduction_in_the_need_to_hold_the_self/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/10007f/a_reduction_in_the_need_to_hold_the_self/"
+      ],
+      "historical_annotations": [
+        "HOMESENSE,What",
+        "Original"
+      ],
+      "observed_metadata": {},
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "tool_reference": "turn34view29",
+      "retrieved_on": "2026-10-02",
+      "interpretation": "Reader access failure; does not establish deletion, nonexistence or source availability.",
+      "current_flair": null,
+      "authorship_verified": null,
+      "rights_status": null,
+      "evidence_status": null
+    }
+  ]
+}
