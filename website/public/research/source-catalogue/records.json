@@ -1540,5 +1540,39 @@
     "aliases": [
       "https://psi-encyclopedia.spr.ac.uk/articles/announcing-dreams-and-related-experiences/"
     ]
+  },
+  {
+    "id": "CM-OA-012",
+    "title": "Assessing the effect of Loving-Kindness Meditation on pain and social well-being using a randomized controlled trial design",
+    "authors": [
+      "Olivia Young",
+      "Katherine O\u2019Connell",
+      "Naomi Nero",
+      "Melinda C. Somers",
+      "Paige A. Freeburg",
+      "Mary Ann Dutton",
+      "Abigail A. Marsh"
+    ],
+    "partial_authors": false,
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+    "source": "PLOS One",
+    "doi": "10.1371/journal.pone.0357888",
+    "published": "2026-09-16",
+    "dates": {
+      "data_collection_period": "December 2020\u2013July 2021"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Article links to CC BY 4.0; dataset/file permissions not verified.",
+    "note": "Active-control comparison relevant to Q004; preliminary appraisal available.",
+    "lineage": "NCT04632875",
+    "flags": [
+      "Preliminary appraisal; full assessment pending."
+    ],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": []
   }
 ]

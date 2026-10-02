@@ -1,6 +1,6 @@
 {
-  "version": "0.2",
-  "source_boundary": "53-record catalogue through batch 12",
+  "version": "0.3",
+  "source_boundary": "53 records through batch 12 plus CM-OA-012 active-control follow-up; 54 total",
   "queries": [
     {
       "query_id": "Q001",
@@ -93,7 +93,8 @@
         "CM-OA-002",
         "CM-OA-003",
         "CM-OA-004",
-        "CM-OA-009"
+        "CM-OA-009",
+        "CM-OA-012"
       ],
       "competing_explanations_to_assess": [
         "Expectancy and attention",
@@ -109,7 +110,7 @@
       "provenance": "ai-suggested",
       "synthesis_status": "NOT_STARTED",
       "evidence_status_changed": false,
-      "scope_note": "BQ003 queries address measurable contemplative outcomes; they do not directly test cosmic love ontology."
+      "scope_note": "Discovery links; two initial appraisals available. Pain/social outcomes are adjacent to the query; no evidence weight assigned."
     },
     {
       "query_id": "Q005",
