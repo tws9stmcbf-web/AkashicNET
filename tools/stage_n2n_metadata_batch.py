@@ -23,13 +23,24 @@ PINS = {
 URI, META = list(PINS)[:2]
 
 
-def build(root=ROOT):
+def build(root=ROOT, batch_number=1):
+    if type(batch_number) is not int or batch_number not in (1, 2, 3):
+        raise ValueError("only reviewed batches 1, 2 and 3 are supported")
+    previous = None
+    earlier = []
+    if batch_number > 1:
+        for number in range(1, batch_number):
+            prior_path = f'references/community/n2n-metadata-batch-{number:04d}.json'
+            prior = json.loads((root / prior_path).read_text(encoding='utf-8'))
+            validate(prior, root, number)
+            earlier.append(prior)
+        previous = earlier[-1]
     for path, digest in PINS.items():
         if hashlib.sha256((root / path).read_bytes()).hexdigest() != digest:
             raise ValueError(f'pinned source drift: {path}')
     records = load_records(root / URI, root / META)
     eligible = [r for r in records if not r['metadata']]
-    selected = sorted(eligible, key=lambda r: (not bool(r['historical_annotations']), r['post_id']))[:1000]
+    selected = sorted(eligible, key=lambda r: (not bool(r['historical_annotations']), r['post_id']))[(batch_number - 1) * 1000:batch_number * 1000]
     provenance = defaultdict(list)
     statuses = Counter()
     with (root / URI).open(encoding='utf-8-sig', newline='') as handle:
@@ -52,7 +63,8 @@ def build(root=ROOT):
         'remaining_uncurated_outside_batch': len(eligible) - len(selected),
         'new_curated_records': 0, 'curated_after': 3,
     }
-    if list(counts.values()) != [7399, 3, 7396, 1000, 997, 3, 6396, 0, 3]:
+    expected_annotations = 997 if batch_number == 1 else 0
+    if list(counts.values()) != [7399, 3, 7396, 1000, expected_annotations, 1000 - expected_annotations, 6396, 0, 3]:
         raise ValueError(f'count drift: {counts}')
     result = []
     for rank, r in enumerate(selected, 1):
@@ -65,8 +77,8 @@ def build(root=ROOT):
             'title': None, 'current_flair': None, 'author': None,
             'evidence_status': None, 'rights_status': None, 'metadata': {},
         })
-    return {
-        'schema': 'akashicnet.n2n.metadata-review-batch.v1', 'batch_id': 'N2N-METADATA-0001',
+    manifest = {
+        'schema': 'akashicnet.n2n.metadata-review-batch.v1', 'batch_id': f'N2N-METADATA-{batch_number:04d}',
         'source_boundary': {'repository': 'tws9stmcbf-web/AkashicNET', 'pull_request': 376,
                             'head': HEAD, 'sha256': PINS},
         'selection_rule': 'Exclude records with curated metadata; sort annotated records first, then lowercase post_id in ascending lexical order; take first 1000. No chronological, evidential or representative-sample claim.',
@@ -87,27 +99,41 @@ def build(root=ROOT):
         'records': result,
     }
 
+    if previous is not None:
+        prior_ids = {r['post_id'] for prior in earlier for r in prior['records']}
+        selected_ids = {r['post_id'] for r in result}
+        if prior_ids & selected_ids or len(prior_ids | selected_ids) != batch_number * 1000:
+            raise ValueError('cross-batch overlap or count drift')
+        manifest['selection_rule'] = 'Use the same eligible ordering as batch 0001; exclude its 1000 validated IDs and take the next 1000 (global eligible ranks 1001-2000). No chronological, evidential or representative-sample claim.' if batch_number == 2 else 'Use the same eligible ordering as batch 0001; exclude all 2000 validated IDs in batches 0001 and 0002 and take the next 1000 (global eligible ranks 2001-3000). No chronological, evidential or representative-sample claim.'
+        prior_path = f'references/community/n2n-metadata-batch-{batch_number - 1:04d}.json'
+        manifest['previous_batch'] = {'path': prior_path, 'sha256': hashlib.sha256((root / prior_path).read_bytes()).hexdigest()}
+        manifest['counts'].update(previously_staged=len(prior_ids), overlap_with_previous=0,
+                                  cumulative_staged_unique=len(prior_ids | selected_ids),
+                                  remaining_uncurated_outside_all_batches=len(eligible) - len(prior_ids | selected_ids))
+    return manifest
+
 
 def encode(value):
     return json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + '\n'
 
 
-def validate(value, root=ROOT):
+def validate(value, root=ROOT, batch_number=1):
     # Canonical byte-level comparison also rejects extra keys, null substitutions,
     # bool/int confusion, changes in order, provenance, fields or closed gates.
-    if encode(value) != encode(build(root)):
+    if encode(value) != encode(build(root, batch_number)):
         raise ValueError('batch differs from pinned deterministic review queue')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--batch', type=int, choices=(1, 2, 3), default=1)
     args = parser.parse_args()
-    expected = build()
-    path = ROOT / BATCH
+    expected = build(batch_number=args.batch)
+    path = ROOT / f'references/community/n2n-metadata-batch-{args.batch:04d}.json'
     if args.write:
         path.write_text(encode(expected), encoding='utf-8')
-    validate(json.loads(path.read_text(encoding='utf-8')))
+    validate(json.loads(path.read_text(encoding='utf-8')), batch_number=args.batch)
     print(json.dumps({'validation': 'PASS', **expected['counts'], **expected['distribution']}, indent=2))
 
 

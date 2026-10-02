@@ -3,3 +3,12 @@ entries:
     notes:
       - Recorded local staging and validation as journey facts only.
       - No evidence, rights, publication, maturity or other knowledge promotion.
+  - turn: 2026-10-02_001-batch2
+    notes:
+      - Continued the staged archive review queue with a bounded 1000-record tranche.
+      - Recorded validation as an execution result; no knowledge or governance promotion.
+  - turn: 2026-10-02_001-batch3
+    notes:
+      - User requested another bounded 1000 while batch 2 was being saved; added batch 3.
+      - Prior JSON manifests remain unchanged; validation covers the full prior-batch chain.
+      - No scientific, rights or maturity promotion.

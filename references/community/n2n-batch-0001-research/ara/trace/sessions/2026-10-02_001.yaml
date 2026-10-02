@@ -23,3 +23,37 @@ claims_touched: []
 logic_revisions: []
 open_threads:
   - Future metadata capture requires inspectable authorized sources; live access remains HOLD.
+continuation_batch_0002:
+  direction:
+    provenance: user
+    excerpt: Stage more.
+  events:
+    - id: N03
+      type: decision
+      provenance: ai-suggested
+      choice: Continue with eligible ranks 1001-2000, excluding the validated first batch.
+      evidence: [../../../n2n-metadata-batch-0002.json]
+    - id: N04
+      type: experiment
+      provenance: ai-executed
+      result: 19 focused tests passed; 2000 cumulative unique staged, zero overlap, 5396 remaining.
+      evidence: [../../evidence/batch-0002-validation.txt, ../../evidence/batch-0002-counts.json]
+  claims_touched: []
+  logic_revisions: []
+continuation_batch_0003:
+  direction:
+    provenance: user
+    excerpt: Next 1,000
+  events:
+    - id: N05
+      type: decision
+      provenance: ai-suggested
+      choice: Continue eligible ranks 2001-3000 after validating and excluding both earlier batches.
+      evidence: [../../../n2n-metadata-batch-0003.json]
+    - id: N06
+      type: experiment
+      provenance: ai-executed
+      result: 22 focused tests passed; 3000 cumulative unique staged, zero overlap, 4396 remaining.
+      evidence: [../../evidence/batch-0003-validation.txt, ../../evidence/batch-0003-counts.json]
+  claims_touched: []
+  logic_revisions: []
