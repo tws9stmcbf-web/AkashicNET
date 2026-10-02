@@ -8,7 +8,7 @@ The catalogue links research on consciousness, spontaneous thought, compassion, 
 
 - `catalogue.json`: consolidated current metadata through Batch 16.
 - `batch-13.json` through `batch-16.json`: additive batch snapshots.
-- `enrichment-17.json` through `enrichment-19.json`: method-enrichment audits covering fifteen existing records; batch snapshots remain unchanged.
+- `enrichment-17.json` through `enrichment-20.json`: method-enrichment audits covering twenty existing records; batch snapshots remain unchanged.
 - `validate.py`: repeatable integrity and governance checks.
 - `validation.json`: result of the checked export.
 
@@ -32,8 +32,10 @@ This research snapshot is not connected to a public website route or ingestion p
 
 ## Method metadata
 
-Fifteen records now distinguish unique participants, repeated observations, exclusions, sensory conditions, analysis and data availability. Each extraction links primary-source sections and retrieval references. Reported methods are not independently appraised. `input_record_sha256` still identifies the originating record before enrichment; the enrichment audit identifies its input snapshot. Reanalysis sampling rates describe digitisation, not verified original acquisition. Reviews and trace reanalyses add no new cohorts.
+Twenty records now distinguish unique participants, repeated observations, exclusions, sensory conditions, analysis and data availability. Each extraction links primary-source sections and retrieval references. Reported methods are not independently appraised. `input_record_sha256` still identifies the originating record before enrichment; the enrichment audit identifies its input snapshot. Reanalysis sampling rates describe digitisation, not verified original acquisition. Reviews and trace reanalyses add no new cohorts.
 
 Enrichment 18 includes null findings and critical syntheses. Inspection depth is recorded per entry: publisher main text, PubMed abstract/metadata, or primary-source indexed excerpts. Unverified sample counts stay null; review study counts are kept separate from participant counts. The case-comparison author list and issue-month date were completed from PubMed.
 
 Enrichment 19 distinguishes behavioral helping, neural responses and wellbeing outcomes across meditation designs. Recruitment, attrition, analyzed samples and planned samples remain separate. Age-Well is a secondary trial analysis with controlled data access; an open article does not imply an open participant dataset.
+
+Enrichment 20 covers five secondary reincarnation/survival entries. Source-reported topics and methods are separated from AI-suggested appraisal questions. Primary-report leads remain unchecked, hypothetical cases are not experiments, and physical-correspondence interpretations are attributed rather than adopted. No new case or cohort is counted.

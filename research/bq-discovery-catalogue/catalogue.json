@@ -173,7 +173,64 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary overview and case-discovery index",
+        "source_scope": "SECONDARY_CASE_SUMMARIES",
+        "topics": [
+          "Childhood statements",
+          "Behavioral features",
+          "Physical features",
+          "Cultural inventories"
+        ],
+        "primary_source_leads": [
+          {
+            "citation": "Ian Stevenson, Twenty Cases Suggestive of Reincarnation (1966/1974)",
+            "status": "ORIGINAL_REPORTS_NOT_APPRAISED"
+          },
+          {
+            "citation": "Ian Stevenson, Cases of the Reincarnation Type (1975–1983)",
+            "status": "ORIGINAL_REPORTS_NOT_APPRAISED"
+          }
+        ],
+        "review_questions": [
+          "When were claims first recorded relative to search, identification and family contact?",
+          "Which cases repeat across summaries?"
+        ],
+        "limitations": [
+          "Overview and underlying cases are separate publication levels.",
+          "Reported correspondences and recurrent patterns have not been independently verified here."
+        ],
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/children-past-life-memories-overview/",
+            "sections": [
+              "Preface",
+              "General and introductory articles",
+              "Stevenson’s cases"
+            ],
+            "retrieval_refs": [
+              "turn46view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_SECTIONS",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_count": null
+        },
+        "data": {
+          "status": "UNDERLYING_CASE_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      },
+      "lineage_note": "Secondary source; cited original reports and cases require separate appraisal and deduplication. Enrichment adds no new experimental cohort."
     },
     {
       "record_id": "SRC-SPR-PE-0003",
@@ -250,7 +307,61 @@
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary critical discussion with author rebuttals",
+        "source_scope": "ATTRIBUTED_ARGUMENTS_NOT_ADJUDICATED",
+        "topics": [
+          "Witness memory",
+          "Ordinary information transfer",
+          "Matching flexibility",
+          "Fraud allegations",
+          "Living-agent psi"
+        ],
+        "primary_source_leads": [
+          {
+            "citation": "Critic and investigator publications in article reference list",
+            "status": "PAIRED_ORIGINAL_ARGUMENTS_NOT_APPRAISED"
+          }
+        ],
+        "review_questions": [
+          "Do investigator and critic chronologies agree?",
+          "Are incorrect statements and failed identifications retained?"
+        ],
+        "limitations": [
+          "Author defends interpretations; rebuttals are not neutral adjudication.",
+          "Fraud allegations must remain attributed and unproven unless separately established."
+        ],
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/criticisms-reincarnation-case-studies/",
+            "sections": [
+              "Researcher fraud",
+              "Living-agent psi",
+              "Criticisms by case"
+            ],
+            "retrieval_refs": [
+              "turn47view5"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_SECTIONS",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_count": null
+        },
+        "data": {
+          "status": "UNDERLYING_CASE_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      },
+      "lineage_note": "Secondary source; cited original reports and cases require separate appraisal and deduplication. Enrichment adds no new experimental cohort."
     },
     {
       "record_id": "SRC-SPR-PE-0004",
@@ -2594,13 +2705,64 @@
       "supports_models": [],
       "independent_studies_added": 0,
       "evidence_status_change": false,
-      "lineage_note": "Secondary source; underlying studies/cases require separate appraisal and deduplication.",
+      "lineage_note": "Secondary source; cited original reports and cases require separate appraisal and deduplication. Enrichment adds no new experimental cohort.",
       "input_record_sha256": "491351398af0d5a4078a790c6290afee06c20d43457e86fab1b59b6a428f6976",
       "rights_status": "LINK_AND_METADATA_ONLY",
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Philosophical proposal of ideal survival-case criteria",
+        "source_scope": "HYPOTHETICAL_CRITERIA_NOT_EMPIRICAL_COHORT",
+        "topics": [
+          "Early documentation",
+          "Specific personal details",
+          "Skills",
+          "Ordinary and anomalous alternatives"
+        ],
+        "primary_source_leads": [
+          {
+            "citation": "Braude (2003), as cited by entry",
+            "status": "ORIGINAL_ARGUMENT_NOT_APPRAISED"
+          }
+        ],
+        "review_questions": [
+          "Does accurate information establish personal identity, rather than information access alone?",
+          "Which proposed criteria can be tested without assumptions about psychiatric diagnosis?"
+        ],
+        "limitations": [
+          "Illustrative ideal cases are hypothetical.",
+          "Absence of psychiatric history is not itself a truth criterion."
+        ],
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/survival-what-makes-ideal-case/",
+            "sections": [
+              "Introduction",
+              "What makes a case ideal"
+            ],
+            "retrieval_refs": [
+              "turn47view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_SECTIONS",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_count": null
+        },
+        "data": {
+          "status": "UNDERLYING_CASE_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-021",
@@ -2822,13 +2984,68 @@
       "supports_models": [],
       "independent_studies_added": 0,
       "evidence_status_change": false,
-      "lineage_note": "Secondary overview; possible overlap with existing NDE, after-death communication or reincarnation sources. No independent study count assigned.",
+      "lineage_note": "Secondary source; cited original reports and cases require separate appraisal and deduplication. Enrichment adds no new experimental cohort.",
       "input_record_sha256": "440710c2b74d9542afd331835dad5242a9b8e36dd67455ff986e522676901538",
       "rights_status": "LINK_AND_METADATA_ONLY",
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary review of birthmark and wound-correspondence cases",
+        "source_scope": "SECONDARY_PHYSICAL_CASE_REPORTS",
+        "topics": [
+          "Photographs",
+          "Family history",
+          "Autopsy versus witness documentation",
+          "Environmental exposures"
+        ],
+        "source_reported_methods": "Describes child examination, photography, interviews with both families, and attempts to obtain medical records.",
+        "primary_source_leads": [
+          {
+            "citation": "Stevenson (1993), as cited by entry",
+            "status": "ORIGINAL_REPORT_NOT_APPRAISED"
+          },
+          {
+            "citation": "Haraldsson (2000), Purnima Ekanayake case, as cited by entry",
+            "status": "ORIGINAL_REPORT_NOT_APPRAISED"
+          }
+        ],
+        "review_questions": [
+          "Were photographs and matching rules fixed before the deceased person was selected?",
+          "How common are comparable marks in an appropriate reference population?"
+        ],
+        "limitations": [
+          "Medical-record and witness-based cases require different documentation labels.",
+          "Correspondence alone does not establish medical causation."
+        ],
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/birthmarks-reincarnation-cases/",
+            "sections": [
+              "Birthmarks: investigation methods and examples"
+            ],
+            "retrieval_refs": [
+              "turn47view1"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_SECTIONS",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_count": null
+        },
+        "data": {
+          "status": "UNDERLYING_CASE_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-027",
@@ -2860,13 +3077,71 @@
       "supports_models": [],
       "independent_studies_added": 0,
       "evidence_status_change": false,
-      "lineage_note": "Secondary overview; possible overlap with existing NDE, after-death communication or reincarnation sources. No independent study count assigned.",
+      "lineage_note": "Secondary source; cited original reports and cases require separate appraisal and deduplication. Enrichment adds no new experimental cohort.",
       "input_record_sha256": "2b56868671a8cdc47cc03c249297adb0a79f56680759d8198556af2884d0b2d0",
       "rights_status": "LINK_AND_METADATA_ONLY",
       "article_text_retained": false,
       "raw_data_collected": false,
       "accepted_edges_added": 0,
-      "evidence_assessed": false
+      "evidence_assessed": false,
+      "study_metadata": {
+        "design": "Secondary, non-exhaustive review of other physical correspondences",
+        "source_scope": "SECONDARY_CASE_REPORTS_AND_INTERPRETATION",
+        "topics": [
+          "Congenital anomalies",
+          "Disease reports",
+          "Facial similarities",
+          "Heredity",
+          "Chance correspondence"
+        ],
+        "primary_source_leads": [
+          {
+            "citation": "Stevenson, Reincarnation and Biology (1997)",
+            "status": "ORIGINAL_REPORTS_NOT_APPRAISED"
+          },
+          {
+            "citation": "Pasricha, Keil, Tucker and Stevenson (2005), as cited by entry",
+            "status": "ORIGINAL_REPORT_NOT_APPRAISED"
+          }
+        ],
+        "review_questions": [
+          "What clinical diagnoses and dated documents exist?",
+          "Were genetic and developmental explanations assessed independently of a reincarnation interpretation?"
+        ],
+        "limitations": [
+          "Author favors a reincarnation interpretation; causal claims not adopted.",
+          "Physical resemblance and gender expression are not validated tests of reincarnation."
+        ],
+        "references": [
+          {
+            "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/physical-signs-reincarnation-cases/",
+            "sections": [
+              "Overview",
+              "Physical signs related to death",
+              "Facial and other personal features",
+              "Accounting for physical signs headings"
+            ],
+            "retrieval_refs": [
+              "turn51view0"
+            ]
+          }
+        ],
+        "metadata_schema": "study-methods-0.1",
+        "checked_on": "2026-10-02",
+        "provenance": "AI_EXTRACTED_SOURCE_METADATA",
+        "review_questions_provenance": "AI_SUGGESTED_APPRAISAL_QUESTIONS",
+        "appraisal_status": "NOT_INDEPENDENTLY_APPRAISED",
+        "inspection_scope": "SELECTED_ENCYCLOPEDIA_SECTIONS",
+        "sample": {
+          "new_experimental_cohort": false,
+          "new_participants": 0,
+          "underlying_case_count": null
+        },
+        "data": {
+          "status": "UNDERLYING_CASE_DATA_ACCESS_NOT_VERIFIED",
+          "public_repository_verified": false
+        }
+      }
     },
     {
       "record_id": "CM-PSI-028",
@@ -5835,6 +6110,19 @@
         "SRC-B13-0006",
         "SRC-B13-0007",
         "SRC-B14-0014"
+      ],
+      "new_records_added": 0,
+      "evidence_promoted": false
+    },
+    {
+      "id": "ENRICHMENT-20",
+      "date": "2026-10-02",
+      "record_ids": [
+        "SRC-SPR-PE-0002",
+        "SRC-SPR-PE-0003",
+        "CM-PSI-020",
+        "CM-PSI-026",
+        "CM-PSI-027"
       ],
       "new_records_added": 0,
       "evidence_promoted": false
