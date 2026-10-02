@@ -127,3 +127,20 @@ continuation_provenance_pilot_0002:
       evidence: [../../evidence/provenance-pilot-0002-validation.txt, ../../evidence/provenance-pilot-0002-counts.json]
   claims_touched: []
   logic_revisions: []
+continuation_staging_batch_0006:
+  direction:
+    provenance: user
+    excerpt: NeXT 1,000 for staging queue….enrich staging branch
+  events:
+    - id: N15
+      type: decision
+      provenance: user
+      choice: Resume 1000-record staging queue, not the 25-record provenance pilot.
+      evidence: [../../../n2n-metadata-batch-0006-method.md]
+    - id: N16
+      type: experiment
+      provenance: ai-executed
+      result: Five targeted tests passed; 6000 cumulative unique staged, zero overlap, 1396 remaining.
+      evidence: [../../evidence/batch-0006-validation.txt, ../../evidence/batch-0006-counts.json]
+  claims_touched: []
+  logic_revisions: []

@@ -28,3 +28,8 @@ entries:
     notes:
       - Continued the most recent 25-record provenance pilot on request; no larger staging batch implied.
       - Historical observation fields remain separate from current verification; no promotion.
+  - turn: 2026-10-02_001-staging6
+    notes:
+      - User explicitly selected the staging queue; added eligible ranks 5001-6000.
+      - Preserved earlier manifests and receipt pilot; its queue count remains a historical checkpoint.
+      - No curated metadata, rights, evidence or maturity promotion.
