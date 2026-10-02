@@ -1,0 +1,69 @@
+{
+  "schema": "akashicnet.n2n.access-diagnostic.v1",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "selection_rule": "Previously successful welcome-post control 10a8yeh plus first four ascending uncurated archive IDs excluding all previously observed and attempted IDs, including fetch batch 0006.",
+  "request_mode": "Five separate single-URL web-reader calls",
+  "counts": {
+    "requested": 5,
+    "readable_control": 1,
+    "readable_new_records": 0,
+    "failed_new_records": 4,
+    "new_metadata_fields": 0
+  },
+  "records": [
+    {
+      "post_id": "10a8yeh",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/10a8yeh/rneuronstonirvana_a_welcome_message_from_the/",
+      "role": "control",
+      "retrieved_on": "2026-10-02",
+      "tool_reference": "turn38view0",
+      "status": "READABLE_RETURNED_COPY",
+      "error": null,
+      "reported_crawl_age": "2 days ago"
+    },
+    {
+      "post_id": "100080",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100080/a_more_porous_sense_of_identity/",
+      "role": "unread",
+      "retrieved_on": "2026-10-02",
+      "tool_reference": "turn39view0",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "reported_crawl_age": null
+    },
+    {
+      "post_id": "100081",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100081/the_everyday_becoming_unfamiliar/",
+      "role": "unread",
+      "retrieved_on": "2026-10-02",
+      "tool_reference": "turn40view0",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "reported_crawl_age": null
+    },
+    {
+      "post_id": "100082",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100082/the_disappearance_of_mental_commentary/",
+      "role": "unread",
+      "retrieved_on": "2026-10-02",
+      "tool_reference": "turn41view0",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "reported_crawl_age": null
+    },
+    {
+      "post_id": "100083",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/100083/a_new_relation_to_silence/",
+      "role": "unread",
+      "retrieved_on": "2026-10-02",
+      "tool_reference": "turn42view0",
+      "status": "FETCH_FAILED",
+      "error": "DisabledError",
+      "reported_crawl_age": null
+    }
+  ],
+  "conclusion": "Single-URL requests did not restore access for these four unread records. The previously readable cached control still worked. This is consistent with URL-specific or cached-copy availability; it does not establish the underlying block cause or source existence.",
+  "stored_source_bodies": 0,
+  "stored_comments": 0,
+  "stored_media": 0
+}
