@@ -1163,12 +1163,45 @@
       "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
       "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100045",
+      "status": "BLOCKED",
+      "review_date": "2026-10-03",
+      "review_scope": "Repository-only pilot metadata at the exact PR head and URI rows at the pinned queue commit; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot title is Metaphor and ontology, with unknown date, source type discussion, category Philosophy, toolkit framework QMM and evidence status speculation. Its summary describes a non-evidential catalogue signal, attribution is generic, and the external-source URL repeats the same Reddit post URL. The pinned URI archive contains three variants for this one ID, including Original and QMM,What suffix fragments. These fields establish archive membership only, not post existence, authorship, arguments or independently attributable underlying sources. Recurring metadata does not prove fabrication; title-level routing is not substantive analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "topic_candidate": "Philosophy; metaphor and ontology (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "access_limitations": [
+        "Post body, comments, media and underlying external sources were not accessed. Live Reddit access remains HOLD.",
+        "No claim is made that substantive material is absent outside the inspected repository rows; upstream construction provenance remains unresolved."
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with authorised, attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 41,
-    "next_pending_post_id": "100045",
+    "blocked": 42,
+    "next_pending_post_id": "100046",
     "next_action": "Continue pending repository-only assessment. Keep PR #378 substantive-reading counts separate."
   },
   "repository_verification_events": [
@@ -1200,12 +1233,12 @@
   ],
   "investigation_register": {
     "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
-    "counting": "Four open investigation groups: three overlapping metadata groups concern 41 inspected IDs; one CLI dependency group adds no post IDs. No completed post reads in this ledger.",
+    "counting": "Four open investigation groups: three overlapping metadata groups concern 42 inspected IDs; one CLI dependency group adds no post IDs. No completed post reads in this ledger.",
     "items": [
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T21:04:36.088Z",
+        "last_checked_at": "2026-10-03T12:19:06.173Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -1247,7 +1280,8 @@
           "100041",
           "100042",
           "100043",
-          "100044"
+          "100044",
+          "100045"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -1448,13 +1482,23 @@
             "scope": "Repository pilot/URI assessment of 100040–100044.",
             "finding": "Five Philosophy/QMM records repeat the catalogue-only, self-referential source and three-row URI-variant pattern. No source content read.",
             "decision": "Keep OPEN; provisional philosophical routing only."
+          },
+          {
+            "review_date": "2026-10-03",
+            "source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+            "affected_post_ids": [
+              "100045"
+            ],
+            "scope": "Repository-only pilot metadata and pinned URI rows for 100045.",
+            "finding": "100045 repeats the unknown-date, generic-attribution and catalogue-summary pattern; upstream identity and construction remain unresolved.",
+            "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
           }
         ]
       },
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T21:04:36.088Z",
+        "last_checked_at": "2026-10-03T12:19:06.178Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -1496,7 +1540,8 @@
           "100041",
           "100042",
           "100043",
-          "100044"
+          "100044",
+          "100045"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -1623,13 +1668,23 @@
             "scope": "Repository pilot/URI assessment of 100040–100044.",
             "finding": "Five Philosophy/QMM records repeat the catalogue-only, self-referential source and three-row URI-variant pattern. No source content read.",
             "decision": "Keep OPEN; provisional philosophical routing only."
+          },
+          {
+            "review_date": "2026-10-03",
+            "source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+            "affected_post_ids": [
+              "100045"
+            ],
+            "scope": "Repository-only pilot metadata and pinned URI rows for 100045.",
+            "finding": "The pilot external-source URL for 100045 repeats its own Reddit URL and provides no independently attributable underlying source.",
+            "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
           }
         ]
       },
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-09-22T21:04:36.088Z",
+        "last_checked_at": "2026-10-03T12:19:06.178Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -1671,7 +1726,8 @@
           "100041",
           "100042",
           "100043",
-          "100044"
+          "100044",
+          "100045"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -1838,6 +1894,16 @@
             "scope": "Repository pilot/URI assessment of 100040–100044.",
             "finding": "Five Philosophy/QMM records repeat the catalogue-only, self-referential source and three-row URI-variant pattern. No source content read.",
             "decision": "Keep OPEN; provisional philosophical routing only."
+          },
+          {
+            "review_date": "2026-10-03",
+            "source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+            "affected_post_ids": [
+              "100045"
+            ],
+            "scope": "Repository-only pilot metadata and pinned URI rows for 100045.",
+            "finding": "Three pinned URI rows map to 100045: one unannotated variant and variants with Original and QMM,What suffix fragments; no independent sources or downstream impact established.",
+            "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
           }
         ]
       },
