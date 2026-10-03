@@ -1,0 +1,1951 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent N2N research quality and discovery review; separate from TSC",
+  "created_on": "2026-09-22",
+  "queue": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "source_path": "references/community/reddit-uri-index.csv",
+    "source_commit": "201ab5326a08d25a7cbef62dca099153f634a98e",
+    "unique_n2n_post_ids": 7399,
+    "identity": "Lowercase post ID parsed from a valid NeuronsToNirvana Reddit URL; deduplicate alternate slugs, trailing slashes and annotations.",
+    "order": "ASCII lexicographic ascending post_id (0-9 then a-z); Reddit IDs are base36, not hexadecimal. This is not chronological/numeric ordering.",
+    "resume_rule": "Recompute sorted IDs from the pinned source; absent records are PENDING. Select smallest PENDING ID. Leave BLOCKED records visible for retry; never count them complete. On an explicit retry, revisit BLOCKED entries first. Reconcile a new source snapshot explicitly, including newly inserted lower IDs; never rely solely on last_id."
+  },
+  "statuses": [
+    "PENDING",
+    "IN_PROGRESS",
+    "PARTIAL",
+    "BLOCKED",
+    "COMPLETE"
+  ],
+  "completion_definition": {
+    "scope": "Post and its directly relevant cited sources; comments excluded unless explicitly included. Linked-source recursion is bounded and documented.",
+    "requirements": [
+      "Record actual post access and version/retrieval date without committing source bodies or personal data.",
+      "Identify claims and distinguish research, interpretation, testimony and creative material.",
+      "Examine available primary sources and document methods, limitations, relevant counterevidence and inaccessible material.",
+      "Record duplicate-source relationships and candidate topic/Big Question mappings.",
+      "Save a review artifact and explicit scope/limitations. Unexamined material central to the assessment means PARTIAL or BLOCKED."
+    ],
+    "meaning": "COMPLETE means complete for documented scope, never proof of claims, rights clearance, or publication approval."
+  },
+  "history_note": "No prior review is marked COMPLETE without locating its assessment artifact. Earlier discovery, indexing and metadata enrichment are not full analyses.",
+  "boundaries": {
+    "reddit_live_access": "HOLD",
+    "source_bodies_committed": false,
+    "comments_or_usernames_committed": false,
+    "website_integration": "HOLD",
+    "rights_promotion": false,
+    "evidence_promotion": false,
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "big_questions": "UNRESOLVED",
+    "publication": "No automatic publication or integration. This draft records workflow state only."
+  },
+  "records": [
+    {
+      "post_id": "10001c",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Archived record/provenance only; post content and external sources not accessed.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "The historical provenance audit identifies the 1000... sequence as a provenance anomaly. It does not prove generation or fabrication. Archive membership and dry-run processing do not establish post existence or substantiate any claim. No substantive scientific assessment is possible from this URL record alone.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md",
+        "data/reddit/README.md"
+      ],
+      "blocker": "No verified post content or primary-source links available in inspected records; live Reddit intake remains HOLD.",
+      "next_action": "Obtain authorised source access or owner-provided material with sufficient provenance; then examine the post and directly relevant primary sources.",
+      "integration_status": "HOLD",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ]
+    },
+    {
+      "post_id": "10001d",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Archived URI and pilot metadata plus existing historical provenance audit; no live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "Pilot labels this record community_observation/research_discussion, with unknown date and generic attribution. Its external-source field links back to the same Reddit post, so it supplies no independently identifiable primary study. The summary describes cataloguing rather than substantive findings. Neither methods nor scientific claims can be evaluated from these fields. The existing sequence anomaly is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
+      ],
+      "access_limitations": [
+        "reddit-semantic-index.csv could not be read through the connector because of file size/support limits; no claim that it contains no further information.",
+        "Live Reddit access remains HOLD; post body and linked sources were not examined."
+      ],
+      "blocker": "Available metadata is insufficient for substantive analysis; verified post content and primary-source links are missing from inspected records.",
+      "next_action": "Obtain authorised source access or owner-provided material with provenance; resolve the post's identity before substantive assessment.",
+      "integration_status": "HOLD",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ]
+    },
+    {
+      "post_id": "10001e",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only URI and pilot metadata assessment against the existing historical provenance audit; no live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "The pilot labels this record research_discussion/community_observation, with unknown date and generic attribution. Its external-source URL points back to the same Reddit post and supplies no independently identifiable primary study. Its summary describes cataloguing for later review, not substantive findings. Repository metadata does not establish post existence, authorship, or scientific support. The historical sequence anomaly is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md",
+        "data/reddit/README.md"
+      ],
+      "assessment_source_commit": "2d63ddc66f6b21e0151947325e21bb6276c3c040",
+      "access_limitations": [
+        "The semantic-index fetch returned no usable text; no claim is made that the file is empty or lacks further information.",
+        "Post content, comments, media and external primary sources were not accessed; live Reddit access remains HOLD."
+      ],
+      "blocker": "Inspected metadata is insufficient for substantive analysis; verified post content and independently identifiable primary-source links are unavailable within the inspected scope.",
+      "next_action": "Resolve source identity using authorised material with provenance before substantive assessment; keep live access on HOLD.",
+      "integration_status": "HOLD",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ]
+    },
+    {
+      "post_id": "10001f",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T19:39:49.566Z",
+      "review_scope": "Repository-only URI, pilot and semantic-index metadata; no live Reddit retrieval or post-content read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "The pilot classifies the record as research_discussion/community_observation with unknown date and generic attribution. Its summary describes cataloguing, and its external-source URL points back to the same Reddit post. The semantic index provides three URL variants for the same ID, not three independent posts or sources. These inspected fields supply no independently identifiable primary study or verified post content; they do not establish existence, authorship or scientific support. Historical sequence anomalies remain unproven as fabrication.",
+      "assessment_sources": [
+        "references/community/reddit-uri-index.csv",
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
+      ],
+      "assessment_source_commit": "9ae8821f9824bc5d03550e9f894d27c82536deb9",
+      "access_limitations": [
+        "Post text, comments, media and external research sources were not accessed; live Reddit access remains HOLD."
+      ],
+      "blocker": "Inspected repository metadata is insufficient for substantive analysis or source identity verification.",
+      "next_action": "Obtain authorised material with provenance to resolve identity and examine substantive content; preserve the live-access HOLD.",
+      "integration_status": "HOLD",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ]
+    },
+    {
+      "post_id": "100020",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T19:43:24.883Z",
+      "review_scope": "Repository-only pilot and semantic-index metadata plus pinned queue membership; no live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; suspicious_pattern",
+      "assessment": "Pilot metadata has an unknown date, generic attribution and a catalogue-only summary. The external-source field points to the same Reddit post. Three semantic-index URL variants map to this ID, including variants with apparent catalogue-field fragments. These fields neither verify post identity nor supply post content or an independently identifiable primary study. Pattern similarity is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-semantic-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+      "access_limitations": [
+        "Live Reddit access remains HOLD; post body, comments, media and research sources were not reviewed."
+      ],
+      "blocker": "Verified source identity and substantive content are missing from the inspected metadata.",
+      "next_action": "Investigate shared provenance and URL-field anomalies through repository history before substantive review.",
+      "integration_status": "HOLD",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ]
+    },
+    {
+      "post_id": "100021",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:36:22.957Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata. No post-content read or live Reddit retrieval.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved",
+      "assessment": "The pilot title is Methods for comparing lived reports. Its date is unknown, attribution is generic, and the summary describes cataloguing for later synthesis rather than substantive findings. The external-source URL repeats the Reddit post URL. The URI and semantic indexes each contain three variants for this ID: a clean-looking URL and variants ending in comma-delimited Original and Research tokens. These are one queue identity, not independent posts or evidence. Inspected fields do not verify post existence, authorship, post content or an independently identifiable primary study. Metadata repetition does not prove fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "related_investigations": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "access_limitations": [
+        "Post text, comments, media, abstracts, papers and supplements were not accessed. Live Reddit access remains HOLD.",
+        "No upstream construction provenance is inferred for this record from the five-ID historical investigation."
+      ],
+      "blocker": "Inspected metadata lacks verified source identity and substantive content for assessment.",
+      "next_action": "Revisit when authorised material with attributable source provenance is available; preserve the live-access HOLD.",
+      "integration_status": "HOLD",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ]
+    },
+    {
+      "post_id": "100022",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100023",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100024",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100025",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The inspected pilot row has an unknown date, generic attribution and a catalogue-summary template rather than substantive findings. Its external-source field repeats its own Reddit URL. Three URI rows represent this single ID, two with catalogue annotations. These records establish archive membership only; they do not establish post existence, authorship or scientific support. Repeated metadata is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100026",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:39:17.630Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Question production as a research method\" as research_discussion in Research, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this one ID; two variants carry apparent catalogue fragments (Original and Research). These records establish archive membership only. They do not verify post existence, authorship, substantive content or scientific support. The repeated metadata pattern is an investigation signal, not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100027",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:39:17.630Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Patterns worth formal study\" as research_discussion in Research, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this one ID; two variants carry apparent catalogue fragments (Original and Research). These records establish archive membership only. They do not verify post existence, authorship, substantive content or scientific support. The repeated metadata pattern is an investigation signal, not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100028",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:39:17.630Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Awareness and the felt boundary (1)\" as discussion in Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this one ID; two variants carry apparent catalogue fragments (HIERATIC,What and Original). These records establish archive membership only. They do not verify post existence, authorship, substantive content or scientific support. The repeated metadata pattern is an investigation signal, not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100029",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:39:17.630Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"The continuity of attention in ordinary life (2)\" as discussion in Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this one ID; two variants carry apparent catalogue fragments (HIERATIC,What and Original). These records establish archive membership only. They do not verify post existence, authorship, substantive content or scientific support. The repeated metadata pattern is an investigation signal, not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10002a",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:39:17.630Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Selfhood as a temporary configuration (3)\" as discussion in Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this one ID; two variants carry apparent catalogue fragments (HIERATIC,What and Original). These records establish archive membership only. They do not verify post existence, authorship, substantive content or scientific support. The repeated metadata pattern is an investigation signal, not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable source material becomes available; do not repeat the exhausted provenance search without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10002b",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:40:29.325Z",
+      "review_scope": "Repository-only pilot metadata and pinned URI archive; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The repository labels this record The role of attention in identity (4), discussion/Consciousness. The date is unknown, attribution is generic and the summary describes cataloguing rather than substantive findings. The external-source URL repeats the post URL. Three URI rows represent this ID: one unannotated URL and two variants ending in HIERATIC,What and Original. Metadata alone does not establish post existence, authorship, scientific claims or support. Repetition is not proof of fabrication.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "7c5884402481eeac48bb45108409dca2489c4a12",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified substantive post content and independently identifiable primary sources are unavailable in inspected metadata.",
+      "next_action": "Revisit on receipt of attributable authorised source material; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10002c",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:43:10.787Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"What remains when narratives soften (5)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles form a numbered sequence from (5) through (9). This is a templating signal for investigation, not proof of fabrication. The repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10002d",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:43:10.787Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Language and the felt shape of awareness (6)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles form a numbered sequence from (5) through (9). This is a templating signal for investigation, not proof of fabrication. The repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10002e",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:43:10.787Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Consciousness as layered experience (7)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles form a numbered sequence from (5) through (9). This is a templating signal for investigation, not proof of fabrication. The repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10002f",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:43:10.787Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"The edge between knowing and being (8)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles form a numbered sequence from (5) through (9). This is a templating signal for investigation, not proof of fabrication. The repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100030",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:43:10.787Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Turning inward and the collapse of narrative (9)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles form a numbered sequence from (5) through (9). This is a templating signal for investigation, not proof of fabrication. The repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100031",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:46:32.202Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"The self as process rather than object (10)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles continue the numbered sequence from (10) through (14). This extends the existing templating signal without establishing its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100032",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:46:32.202Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Continuity without a stable observer (11)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles continue the numbered sequence from (10) through (14). This extends the existing templating signal without establishing its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100033",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:46:32.202Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Awareness under environmental change (12)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles continue the numbered sequence from (10) through (14). This extends the existing templating signal without establishing its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100034",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:46:32.202Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Subjectivity and context (13)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles continue the numbered sequence from (10) through (14). This extends the existing templating signal without establishing its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100035",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T20:46:32.202Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"The horizon of internal experience (14)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. Across this batch, titles continue the numbered sequence from (10) through (14). This extends the existing templating signal without establishing its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100036",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post, comments, media or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot describes this as a non-evidential community observation with unknown date and generic attribution. Its external-source field repeats the Reddit URL and provides no independently identifiable study. Three URI rows map to this ID, including two catalogue-fragment variants. The title suggests a consciousness/practice theme, but title text alone cannot support substantive or scientific analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+      "topic_candidate": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100037",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post, comments, media or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot describes this as a non-evidential community observation with unknown date and generic attribution. Its external-source field repeats the Reddit URL and provides no independently identifiable study. Three URI rows map to this ID, including two catalogue-fragment variants. The title suggests a consciousness/practice theme, but title text alone cannot support substantive or scientific analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+      "topic_candidate": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100038",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post, comments, media or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot describes this as a non-evidential community observation with unknown date and generic attribution. Its external-source field repeats the Reddit URL and provides no independently identifiable study. Three URI rows map to this ID, including two catalogue-fragment variants. The title suggests a consciousness/practice theme, but title text alone cannot support substantive or scientific analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+      "topic_candidate": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100039",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post, comments, media or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot describes this as a non-evidential community observation with unknown date and generic attribution. Its external-source field repeats the Reddit URL and provides no independently identifiable study. Three URI rows map to this ID, including two catalogue-fragment variants. The title suggests a consciousness/practice theme, but title text alone cannot support substantive or scientific analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+      "topic_candidate": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10003a",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post, comments, media or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot describes this as a non-evidential community observation with unknown date and generic attribution. Its external-source field repeats the Reddit URL and provides no independently identifiable study. Three URI rows map to this ID, including two catalogue-fragment variants. The title suggests a consciousness/practice theme, but title text alone cannot support substantive or scientific analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+      "topic_candidate": "Consciousness; contemplative practice; self/witness (title-level routing only)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable source material are unavailable in the inspected repository records.",
+      "next_action": "Revisit only when attributable post/source material is available; retain title-derived topic mapping as provisional.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10003b",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T21:04:36.088Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"The field of attention and its contours (20)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. The batch continues the numbered title sequence from (20) through (24). This extends the existing templating signal without identifying its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10003c",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T21:04:36.088Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"The changing boundary of the self (21)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. The batch continues the numbered title sequence from (20) through (24). This extends the existing templating signal without identifying its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10003d",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T21:04:36.088Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Awareness as relation rather than possession (22)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. The batch continues the numbered title sequence from (20) through (24). This extends the existing templating signal without identifying its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10003e",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T21:04:36.088Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Meaning from the interplay of states (23)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. The batch continues the numbered title sequence from (20) through (24). This extends the existing templating signal without identifying its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "10003f",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "accessed_at": "2026-09-22T21:04:36.088Z",
+      "review_scope": "Repository-only pilot, URI and semantic-index metadata; no live post or primary-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this record \"Awareness and the felt boundary (24)\" as discussion/Consciousness, with an unknown date, generic attribution and a catalogue-only summary. Its external-source field repeats its own Reddit URL. Three URI rows and three semantic rows map to this single ID: one clean-looking URL and variants ending in HIERATIC,What and Original. The batch continues the numbered title sequence from (20) through (24). This extends the existing templating signal without identifying its cause. Repository metadata does not verify post existence, authorship, substantive content or scientific support.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "Verified post content and independently identifiable primary-source material are unavailable in the inspected rows.",
+      "next_action": "Revisit when attributable authorised source material becomes available; do not repeat exhausted provenance searches without a new lead.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100040",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this Philosophy/QMM record as speculation and a non-evidential community signal. It has an unknown date, generic attribution and a self-referential external-source field. Three URI rows map to one post ID, including catalogue fragments. Its title supports provisional topic routing only; no argument, evidence or source can be assessed without the post.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+      "topic_candidate": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100041",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this Philosophy/QMM record as speculation and a non-evidential community signal. It has an unknown date, generic attribution and a self-referential external-source field. Three URI rows map to one post ID, including catalogue fragments. Its title supports provisional topic routing only; no argument, evidence or source can be assessed without the post.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+      "topic_candidate": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100042",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this Philosophy/QMM record as speculation and a non-evidential community signal. It has an unknown date, generic attribution and a self-referential external-source field. Three URI rows map to one post ID, including catalogue fragments. Its title supports provisional topic routing only; no argument, evidence or source can be assessed without the post.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+      "topic_candidate": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100043",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this Philosophy/QMM record as speculation and a non-evidential community signal. It has an unknown date, generic attribution and a self-referential external-source field. Three URI rows map to one post ID, including catalogue fragments. Its title supports provisional topic routing only; no argument, evidence or source can be assessed without the post.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+      "topic_candidate": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100044",
+      "status": "BLOCKED",
+      "review_date": "2026-09-22",
+      "review_scope": "Repository-only pilot metadata and URI rows; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot labels this Philosophy/QMM record as speculation and a non-evidential community signal. It has an unknown date, generic attribution and a self-referential external-source field. Three URI rows map to one post ID, including catalogue fragments. Its title supports provisional topic routing only; no argument, evidence or source can be assessed without the post.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+      "topic_candidate": "Philosophy; self and identity; uncertainty and meaning (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100045",
+      "status": "BLOCKED",
+      "review_date": "2026-10-03",
+      "review_scope": "Repository-only pilot metadata at the exact PR head and URI rows at the pinned queue commit; no live post or cited-source read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot title is Metaphor and ontology, with unknown date, source type discussion, category Philosophy, toolkit framework QMM and evidence status speculation. Its summary describes a non-evidential catalogue signal, attribution is generic, and the external-source URL repeats the same Reddit post URL. The pinned URI archive contains three variants for this one ID, including Original and QMM,What suffix fragments. These fields establish archive membership only, not post existence, authorship, arguments or independently attributable underlying sources. Recurring metadata does not prove fabrication; title-level routing is not substantive analysis.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/reddit-uri-index.csv"
+      ],
+      "assessment_source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "topic_candidate": "Philosophy; metaphor and ontology (title-level routing only)",
+      "evidence_classification": "speculation (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "access_limitations": [
+        "Post body, comments, media and underlying external sources were not accessed. Live Reddit access remains HOLD.",
+        "No claim is made that substantive material is absent outside the inspected repository rows; upstream construction provenance remains unresolved."
+      ],
+      "blocker": "No verified post body, argument or independently identifiable source in inspected records.",
+      "next_action": "Revisit with authorised, attributable post/source material; do not promote title-derived themes into claims.",
+      "integration_status": "HOLD"
+    }
+  ],
+  "checkpoint": {
+    "complete_in_this_ledger": 0,
+    "blocked": 42,
+    "next_pending_post_id": "100046",
+    "next_action": "Continue pending repository-only assessment. Keep PR #378 substantive-reading counts separate."
+  },
+  "repository_verification_events": [
+    {
+      "checked_at": "2026-09-22T19:39:49.566Z",
+      "source_commit": "9ae8821f9824bc5d03550e9f894d27c82536deb9",
+      "source_path": "references/community/reddit-semantic-index.csv",
+      "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
+      "scope": "CSV header and matching rows for 10001c, 10001d, 10001e and 10001f only.",
+      "method": "The file-content fetch returned no usable text. An authorised Git blob read recovered the repository file; no live Reddit request was made.",
+      "finding": "The header contains source, reddit_url, subreddit, url_type and post_id. Each of the four inspected IDs has three URL variants. These rows provide URL classification, not post bodies, independently identifiable primary studies or independent corroboration.",
+      "historical_reconciliation": "Earlier access-limit statements are retained as historical observations. This follow-up resolves that retrieval limitation for the inspected rows only; all four records remain BLOCKED.",
+      "counting": "No new completed post reads, scientific appraisals or canonical edges; URL variants are deduplicated by ID."
+    },
+    {
+      "checked_at": "2026-09-22T22:53:11.066Z",
+      "source_commit_before_correction": "931eb6ea2a0c2dbeca41f9f249cc7b9d74af76ad",
+      "scope": "Row-to-register investigation-link consistency for the 41 BLOCKED records at the 100045 checkpoint; repository metadata only.",
+      "finding": "N2N-INV-001 through N2N-INV-003 list all 41 post IDs, while six record rows lacked the canonical investigation_ids backlink. Record 100021 retained equivalent links under related_investigations; the other five had no row-level backlink.",
+      "correction": "Added investigation_ids [N2N-INV-001, N2N-INV-002, N2N-INV-003] to 10001c, 10001d, 10001e, 10001f, 100020 and 100021. Preserved related_investigations and every historical assessment.",
+      "boundary": "Metadata consistency repair only. No source content read, completed assessment, evidence or rights promotion, canonical edge, publication action or live Reddit access.",
+      "counters_preserved": {
+        "blocked": 41,
+        "complete_in_this_ledger": 0,
+        "open_investigation_groups": 4,
+        "next_pending_post_id": "100045"
+      }
+    }
+  ],
+  "investigation_register": {
+    "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
+    "counting": "Four open investigation groups: three overlapping metadata groups concern 42 inspected IDs; one CLI dependency group adds no post IDs. No completed post reads in this ledger.",
+    "items": [
+      {
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-10-03T12:19:06.173Z",
+        "affected_post_ids": [
+          "10001c",
+          "10001d",
+          "10001e",
+          "10001f",
+          "100020",
+          "100021",
+          "100022",
+          "100023",
+          "100024",
+          "100025",
+          "100026",
+          "100027",
+          "100028",
+          "100029",
+          "10002a",
+          "10002b",
+          "10002c",
+          "10002d",
+          "10002e",
+          "10002f",
+          "100030",
+          "100031",
+          "100032",
+          "100033",
+          "100034",
+          "100035",
+          "100036",
+          "100037",
+          "100038",
+          "100039",
+          "10003a",
+          "10003b",
+          "10003c",
+          "10003d",
+          "10003e",
+          "10003f",
+          "100040",
+          "100041",
+          "100042",
+          "100043",
+          "100044",
+          "100045"
+        ],
+        "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+        "classification": "repository_metadata_investigation_signal",
+        "scientific_outlier": false,
+        "issue_id": "N2N-INV-001",
+        "title": "Templated metadata with unresolved provenance",
+        "priority": "high",
+        "priority_reason": "Source identity must be established before substantive assessment.",
+        "observation": "All five inspected pilot rows have unknown dates, generic attribution, the same catalogue-summary template and the same research-question wording.",
+        "assessment_sources": [
+          "references/community/n2n-pilot-index.csv",
+          "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md"
+        ],
+        "uncertainty": "Standardised curation may explain the repetition; origin and source existence remain unresolved. This is not evidence of fabricated posts.",
+        "next_action": "Repository-only receipt search is exhausted for now. Seek owner-provided or otherwise authorised provenance if available; meanwhile resume repository-only assessment at checkpoint.next_pending_post_id, after confirming it is the smallest PENDING ID under queue.resume_rule. If no pending ID remains, stop queue continuation.",
+        "resolution_criterion": "Record attributable construction provenance or explicit remaining limits; source verification remains a separate requirement.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T20:12:50.716Z",
+            "source_commit": "7241a321f77fea73a341e60418aefcd7c6651c91",
+            "status": "GIT_INTRODUCTION_IDENTIFIED_UPSTREAM_PROVENANCE_OPEN",
+            "scope": "Path-specific pilot CSV history (first page, limit 10; four commits returned), all four historical CSV blobs inspected for the five previously flagged IDs, immediate Stage 1 parent blob check, current blob comparison, accompanying commit file lists/status patches and current archive documentation. Repository metadata only.",
+            "affected_post_ids": [
+              "10001c",
+              "10001d",
+              "10001e",
+              "10001f",
+              "100020"
+            ],
+            "findings": [
+              "The five flagged URL-bearing record lines are absent from the initial pilot dc644d56370a70816e7150e6cad0b509342b3394 and refined pilot f84c507e66363e04614d83d92ad06291979ef20d.",
+              "Stage 1 commit f3e964ea513821a22e5292692d8370a457ba7ca7 (2026-08-12T01:16:07Z) contains all five in CSV blob bed1d0e866738f0b51a0d69b39b2a0ecb1fccdac. Its immediate parent 8317b2eaf4455260fae7c3a47cb396b7c52217a9 has the earlier refined-pilot blob 5d76c949228d21d42265c1b244bc56ddc7338f8c, which lacks those five URL IDs. This identifies their introduction into this CSV.",
+              "The five record lines are byte-identical after line-ending removal between Stage 1 and Stage 2 commit 0bee17d1e8093705330fb3786a17052080128237 (2026-08-12T01:20:55Z). The Stage 2 CSV blob 20ef9b76ab327b996a0959856c5fa1d5e7acb0e4 also matches the current-head CSV blob.",
+              "The Stage 1 commit changes only the pilot CSV, pilot Markdown index and archive status document. Its message and inspected status patch describe expansion to 250 indexed records; they do not identify an upstream retrieval receipt or construction program. The Stage 2 status patch describes expansion to 1000 indexed records. Those historical catalogue counts are not completed-read counts."
+            ],
+            "source_refs": [
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/f3e964ea513821a22e5292692d8370a457ba7ca7",
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/0bee17d1e8093705330fb3786a17052080128237",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/8317b2eaf4455260fae7c3a47cb396b7c52217a9/references/community/n2n-pilot-index.csv",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/7241a321f77fea73a341e60418aefcd7c6651c91/references/community/n2n-pilot-index.csv"
+            ],
+            "validation": "Exact-line comparison passed for the five scoped records; absence checked in both earlier complete blobs. Immediate-parent and current blob SHAs agree with the inspected historical versions. No synthetic result is used as source provenance.",
+            "uncertainty": "This establishes a Git insertion point, not pre-Git origin, post existence, authorship or scientific support. Standardised curation or other construction processes remain possible; repetition does not prove fabrication. No exhaustive repository-wide receipt search was performed.",
+            "decision": "Keep OPEN. Preserve historical records and all gates; no new record assessment, completed read, independent evidence or canonical edge.",
+            "next_action": "Inspect any repository-linked PR discussion or documented input receipt for the Stage 1 introducing commit; if none is available within authorised evidence, record that limit rather than infer origin."
+          },
+          {
+            "checked_at": "2026-09-22T20:28:44.344Z",
+            "source_commit": "55e67b747b0fa71621434bf85a3a98b4c1677a83",
+            "status": "BOUNDED_DISCUSSION_SEARCH_NO_UPSTREAM_RECEIPT_FOUND",
+            "scope": "GitHub associated-PR and commit-comment endpoints for f3e964ea513821a22e5292692d8370a457ba7ca7; four repository-scoped issue/PR searches for the full commit SHA and exact phrase Expand N2N community archive, page size 100.",
+            "findings": [
+              "The associated-PR endpoint returned an empty array; the commit-comment endpoint returned an empty array.",
+              "The full-SHA issue search returned zero results. The full-SHA PR search returned only PR #377, whose current description repeats this audit's finding and is not independent corroboration.",
+              "Exact-phrase searches returned zero issues and zero PRs. All four successful searches reported incomplete_results=false."
+            ],
+            "source_refs": [
+              "https://api.github.com/repos/tws9stmcbf-web/AkashicNET/commits/f3e964ea513821a22e5292692d8370a457ba7ca7/pulls?per_page=100",
+              "https://api.github.com/repos/tws9stmcbf-web/AkashicNET/commits/f3e964ea513821a22e5292692d8370a457ba7ca7/comments?per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Aissue%20f3e964ea513821a22e5292692d8370a457ba7ca7&per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Apull-request%20f3e964ea513821a22e5292692d8370a457ba7ca7&per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Aissue%20%22Expand%20N2N%20community%20archive%22&per_page=100",
+              "https://api.github.com/search/issues?q=repo%3Atws9stmcbf-web%2FAkashicNET%20is%3Apull-request%20%22Expand%20N2N%20community%20archive%22&per_page=100"
+            ],
+            "limitations": "Search results are limited by accessible GitHub records and query matching; no universal absence claim is made. Initial searches lacking an issue/PR type qualifier returned HTTP 422 and were corrected; failed queries were not counted as negative findings. No Reddit access, source text, private historical data or external input receipt was obtained.",
+            "uncertainty": "A separately held export, manual curation record or other input could explain the insertion. Git history and negative search results do not establish post existence or fabrication.",
+            "decision": "Keep INV-001 OPEN, awaiting new attributable upstream material. Do not repeat this exact search without new evidence or a changed repository reference. No post status or count changes.",
+            "next_action": "If an authorised input receipt becomes available, match it to the five stable post IDs and Stage 1 commit; otherwise continue the pending repository-only queue at 100021."
+          },
+          {
+            "checked_at": "2026-09-22T20:22:00Z",
+            "source_commit": "f3e964ea513821a22e5292692d8370a457ba7ca7",
+            "status": "BOUNDED_REPOSITORY_RECEIPT_SEARCH_COMPLETE_UPSTREAM_PROVENANCE_OPEN",
+            "scope": "Repository-linked provenance search for the Stage 1 introducing commit: exact commit SHA in pull requests; exact Stage 1 expansion phrase in pull requests; exact SHA in issues; repository code/document searches for Stage 1 pilot/input-receipt language and affected ID 10001c; introducing commit metadata and available diff.",
+            "findings": [
+              "The exact introducing commit SHA search returned only the current audit PR #377; no historical PR discussion tied to the Stage 1 introduction was found in that bounded PR search.",
+              "The Stage 1 expansion phrase search did not identify a provenance receipt for the introducing commit. Repository search located the published pilot Markdown, which repeats the indexed records but does not document their upstream construction.",
+              "The introducing commit metadata names the expansion and changes the pilot CSV, Markdown index and archive status. Its available diff documents counts and safeguards, not an input receipt, retrieval log or independently attributable source for the five flagged records.",
+              "No repository-linked receipt was located within this bounded authorised evidence. This is an explicit search limit, not proof that no external or private receipt exists."
+            ],
+            "source_refs": [
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/f3e964ea513821a22e5292692d8370a457ba7ca7",
+              "https://github.com/tws9stmcbf-web/AkashicNET/pull/377",
+              "references/community/n2n-pilot-index.md"
+            ],
+            "search_limits": "GitHub connector searches are bounded and index-dependent. Private, deleted, unlinked or external records were not searched. No live Reddit access or removed private data was used.",
+            "uncertainty": "The repository does not establish the pre-Git construction path for these records. Standardised curation, imported catalogue material or another process remain possible; no fabrication inference is justified.",
+            "decision": "Keep INV-001 OPEN for owner-provided or otherwise authorised provenance. Treat the repository search branch as exhausted for now and resume the record queue.",
+            "next_action": "Assess pending post ID 100021 using repository-only evidence, or attach an authorised provenance receipt if one becomes available."
+          },
+          {
+            "checked_at": "2026-09-22T20:36:22.957Z",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "status": "ADDITIONAL_METADATA_INSTANCE_STILL_OPEN",
+            "affected_post_ids": [
+              "100021"
+            ],
+            "scope": "Pilot row and matching URI/semantic rows for 100021 only; repository metadata.",
+            "finding": "Unknown date, generic attribution and catalogue-only summary recur in 100021. Its individual introducing commit was not traced.",
+            "source_refs": [
+              "references/community/n2n-pilot-index.csv",
+              "references/community/reddit-uri-index.csv",
+              "references/community/reddit-semantic-index.csv"
+            ],
+            "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "scope": "Repository pilot/URI assessment of 100022–100025; concurrent 100021 assessment preserved.",
+            "finding": "The four additional IDs share the recorded metadata/source-link/annotation pattern. Twelve URI rows map to four IDs. No live source reads.",
+            "decision": "Keep OPEN; no independent evidence added."
+          },
+          {
+            "checked_at": "2026-09-22T20:39:17.630Z",
+            "source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "100026",
+              "100027",
+              "100028",
+              "100029",
+              "10002a"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 100026–10002a; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five have unknown dates, generic attribution and catalogue-only summaries; titles and category labels vary, but source identity remains unresolved.",
+            "uncertainty": "Repository metadata alone cannot establish the underlying post, work, evidence or pre-Git construction process.",
+            "decision": "Add the five observed instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "checked_at": "2026-09-22T20:40:29.325Z",
+            "source_commit": "7c5884402481eeac48bb45108409dca2489c4a12",
+            "affected_post_ids": [
+              "10002b"
+            ],
+            "scope": "Pilot metadata and pinned URI archive only.",
+            "finding": "Unknown date, generic attribution and catalogue-only summary recur. No new upstream provenance.",
+            "decision": "Remain OPEN. No scientific appraisal, completed read or gate change."
+          },
+          {
+            "checked_at": "2026-09-22T20:43:10.787Z",
+            "source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "10002c",
+              "10002d",
+              "10002e",
+              "10002f",
+              "100030"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for five IDs 10002c–10002f and 100030; 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five retain unknown dates, generic attribution and catalogue-only summaries. Their titles form a consecutive parenthetical sequence (5)–(9), continuing 10002b's (4). This supports the existing templating signal but does not identify construction provenance.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "checked_at": "2026-09-22T20:46:32.202Z",
+            "source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "100031",
+              "100032",
+              "100033",
+              "100034",
+              "100035"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 100031–100035; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five retain unknown dates, generic attribution and catalogue-only summaries. Titles continue the consecutive parenthetical sequence (10)–(14), extending the existing templating signal. Construction provenance remains unidentified.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+            "scope": "Repository pilot/URI assessment of 100036–10003a.",
+            "finding": "Five title-routed Consciousness/HIERATIC records repeat the existing catalogue-only, self-referential source-link and three-row URI-variant pattern. Fifteen URI rows map to five IDs; no live source reads.",
+            "decision": "Keep OPEN. Topic routing is provisional and no evidence status changes."
+          },
+          {
+            "checked_at": "2026-09-22T21:04:36.088Z",
+            "source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "10003b",
+              "10003c",
+              "10003d",
+              "10003e",
+              "10003f"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 10003b–10003f; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five retain unknown dates, generic attribution and catalogue-only summaries. Titles extend the consecutive parenthetical sequence through (24). Construction provenance remains unidentified.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+            "scope": "Repository pilot/URI assessment of 100040–100044.",
+            "finding": "Five Philosophy/QMM records repeat the catalogue-only, self-referential source and three-row URI-variant pattern. No source content read.",
+            "decision": "Keep OPEN; provisional philosophical routing only."
+          },
+          {
+            "review_date": "2026-10-03",
+            "source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+            "affected_post_ids": [
+              "100045"
+            ],
+            "scope": "Repository-only pilot metadata and pinned URI rows for 100045.",
+            "finding": "100045 repeats the unknown-date, generic-attribution and catalogue-summary pattern; upstream identity and construction remain unresolved.",
+            "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
+          }
+        ]
+      },
+      {
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-10-03T12:19:06.178Z",
+        "affected_post_ids": [
+          "10001c",
+          "10001d",
+          "10001e",
+          "10001f",
+          "100020",
+          "100021",
+          "100022",
+          "100023",
+          "100024",
+          "100025",
+          "100026",
+          "100027",
+          "100028",
+          "100029",
+          "10002a",
+          "10002b",
+          "10002c",
+          "10002d",
+          "10002e",
+          "10002f",
+          "100030",
+          "100031",
+          "100032",
+          "100033",
+          "100034",
+          "100035",
+          "100036",
+          "100037",
+          "100038",
+          "100039",
+          "10003a",
+          "10003b",
+          "10003c",
+          "10003d",
+          "10003e",
+          "10003f",
+          "100040",
+          "100041",
+          "100042",
+          "100043",
+          "100044",
+          "100045"
+        ],
+        "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+        "classification": "repository_metadata_investigation_signal",
+        "scientific_outlier": false,
+        "issue_id": "N2N-INV-002",
+        "title": "Self-referential external-source links",
+        "priority": "high",
+        "priority_reason": "The inspected links cannot support primary-study verification.",
+        "observation": "In each of five inspected pilot rows, external_source_url repeats the row's Reddit post URL.",
+        "assessment_sources": [
+          "references/community/n2n-pilot-index.csv"
+        ],
+        "uncertainty": "The schema may permit post URLs in this field. Missing independent citations in metadata does not prove the original post had no sources.",
+        "next_action": "Check field semantics in repository documentation and seek existing authorised source-link receipts.",
+        "resolution_criterion": "Document intended field semantics and any independently identifiable primary source; retain unknown where unavailable.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T20:36:22.957Z",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "status": "ADDITIONAL_METADATA_INSTANCE_STILL_OPEN",
+            "affected_post_ids": [
+              "100021"
+            ],
+            "scope": "Pilot row and matching URI/semantic rows for 100021 only; repository metadata.",
+            "finding": "The external_source_url repeats this record's Reddit URL; no independent primary study is identified in that field.",
+            "source_refs": [
+              "references/community/n2n-pilot-index.csv",
+              "references/community/reddit-uri-index.csv",
+              "references/community/reddit-semantic-index.csv"
+            ],
+            "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "scope": "Repository pilot/URI assessment of 100022–100025; concurrent 100021 assessment preserved.",
+            "finding": "The four additional IDs share the recorded metadata/source-link/annotation pattern. Twelve URI rows map to four IDs. No live source reads.",
+            "decision": "Keep OPEN; no independent evidence added."
+          },
+          {
+            "checked_at": "2026-09-22T20:39:17.630Z",
+            "source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "100026",
+              "100027",
+              "100028",
+              "100029",
+              "10002a"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 100026–10002a; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five external_source_url values repeat their own Reddit URLs; no independent primary study is identified in those fields.",
+            "uncertainty": "Repository metadata alone cannot establish the underlying post, work, evidence or pre-Git construction process.",
+            "decision": "Add the five observed instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "checked_at": "2026-09-22T20:40:29.325Z",
+            "source_commit": "7c5884402481eeac48bb45108409dca2489c4a12",
+            "affected_post_ids": [
+              "10002b"
+            ],
+            "scope": "Pilot metadata and pinned URI archive only.",
+            "finding": "External-source URL repeats the post URL; original post citations remain unexamined.",
+            "decision": "Remain OPEN. No scientific appraisal, completed read or gate change."
+          },
+          {
+            "checked_at": "2026-09-22T20:43:10.787Z",
+            "source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "10002c",
+              "10002d",
+              "10002e",
+              "10002f",
+              "100030"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for five IDs 10002c–10002f and 100030; 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five external_source_url values repeat their own Reddit URLs; no independently identifiable primary study is present in those fields.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "checked_at": "2026-09-22T20:46:32.202Z",
+            "source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "100031",
+              "100032",
+              "100033",
+              "100034",
+              "100035"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 100031–100035; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five external_source_url values repeat their own Reddit URLs; those fields identify no independent primary study.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+            "scope": "Repository pilot/URI assessment of 100036–10003a.",
+            "finding": "Five title-routed Consciousness/HIERATIC records repeat the existing catalogue-only, self-referential source-link and three-row URI-variant pattern. Fifteen URI rows map to five IDs; no live source reads.",
+            "decision": "Keep OPEN. Topic routing is provisional and no evidence status changes."
+          },
+          {
+            "checked_at": "2026-09-22T21:04:36.088Z",
+            "source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "10003b",
+              "10003c",
+              "10003d",
+              "10003e",
+              "10003f"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 10003b–10003f; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "All five external_source_url values repeat their own Reddit URLs; those fields identify no independent primary study.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+            "scope": "Repository pilot/URI assessment of 100040–100044.",
+            "finding": "Five Philosophy/QMM records repeat the catalogue-only, self-referential source and three-row URI-variant pattern. No source content read.",
+            "decision": "Keep OPEN; provisional philosophical routing only."
+          },
+          {
+            "review_date": "2026-10-03",
+            "source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+            "affected_post_ids": [
+              "100045"
+            ],
+            "scope": "Repository-only pilot metadata and pinned URI rows for 100045.",
+            "finding": "The pilot external-source URL for 100045 repeats its own Reddit URL and provides no independently attributable underlying source.",
+            "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
+          }
+        ]
+      },
+      {
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:43:24.883Z",
+        "last_checked_at": "2026-10-03T12:19:06.178Z",
+        "affected_post_ids": [
+          "10001c",
+          "10001d",
+          "10001e",
+          "10001f",
+          "100020",
+          "100021",
+          "100022",
+          "100023",
+          "100024",
+          "100025",
+          "100026",
+          "100027",
+          "100028",
+          "100029",
+          "10002a",
+          "10002b",
+          "10002c",
+          "10002d",
+          "10002e",
+          "10002f",
+          "100030",
+          "100031",
+          "100032",
+          "100033",
+          "100034",
+          "100035",
+          "100036",
+          "100037",
+          "100038",
+          "100039",
+          "10003a",
+          "10003b",
+          "10003c",
+          "10003d",
+          "10003e",
+          "10003f",
+          "100040",
+          "100041",
+          "100042",
+          "100043",
+          "100044",
+          "100045"
+        ],
+        "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
+        "classification": "repository_metadata_investigation_signal",
+        "scientific_outlier": false,
+        "issue_id": "N2N-INV-003",
+        "title": "URL variants carrying apparent catalogue-field fragments",
+        "priority": "medium",
+        "priority_reason": "Could confuse downstream URL handling or duplicate counts.",
+        "observation": "For each inspected ID the semantic index includes a clean-looking URL and two variants with trailing comma-delimited catalogue tokens. Fifteen rows represent five IDs in this inspected sample.",
+        "assessment_sources": [
+          "references/community/reddit-semantic-index.csv"
+        ],
+        "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uncertainty": "The inspected URL strings already existed at first URI import. The pre-import extraction/export process is not identified in the inspected history or code. Current census deduplication is demonstrated only for the five-ID sample; downstream consumers and corpus-wide coverage remain unchecked.",
+        "next_action": "Identify the intended public-safe search input and its consumers before proposing ID-based search deduplication; retain source variants as provenance and keep counts separately named.",
+        "resolution_criterion": "Identify the transformation and verify a minimal correction against affected examples without changing unique-post or evidence counts.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T19:54:24.979Z",
+            "status": "PARTIALLY_EXPLAINED_STILL_OPEN",
+            "scope": "Five previously flagged IDs only: 10001c, 10001d, 10001e, 10001f, 100020.",
+            "findings": [
+              "Commit af0555d26abcd90d1dac685f67290cfdd772d1f9 added the URI archive on 2026-08-12. Its blob 6b6184b0f981928abb34f4b7d8bd262f3b5b48ca already contains all 15 inspected URL strings, including comma-suffixed variants.",
+              "Commit 5dc2700c182a489a8488414d863b69ee142178f2 added the semantic index on 2026-08-14 at blob 56be9ed9e89226c808ef1de4287056ee359187be. Matching variants were therefore present in the earlier URI archive; semantic metadata supplies no independent source corroboration.",
+              "At assessed head f95579d6c0cf3d392c3420a279c9137ab565ef08, scripts/reddit_corpus_census.py splits comma annotations and groups structural candidates by subreddit and post ID. tools/n2n/ingest_n2n.py reads pre-existing CSV fields; scripts/reddit_topic_audit_v078.py audits existing files. These inspected functions do not establish the original URI construction process.",
+              "Executing the existing census canonicalise function on the 15 historical sample rows yielded five candidate rows, ten annotation_derived rows, five unique IDs and five canonical URLs. Assertions passed; no network calls or source changes."
+            ],
+            "source_refs": [
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/af0555d26abcd90d1dac685f67290cfdd772d1f9",
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/5dc2700c182a489a8488414d863b69ee142178f2",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/f95579d6c0cf3d392c3420a279c9137ab565ef08/scripts/reddit_corpus_census.py",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/f95579d6c0cf3d392c3420a279c9137ab565ef08/tools/n2n/ingest_n2n.py",
+              "https://github.com/tws9stmcbf-web/AkashicNET/blob/f95579d6c0cf3d392c3420a279c9137ab565ef08/scripts/reddit_topic_audit_v078.py"
+            ],
+            "search_limits": "Path-specific commit lists at the assessed head returned one semantic-index commit and two URI-index commits (page size 10). Default-branch code searches used reddit-semantic-index (top 10) and reddit-uri-index (top 20); these are discovery searches, not proof that no other construction code exists.",
+            "decision": "Retain OPEN. No parser fix justified for the tested census behavior. Preserve raw archive; investigate upstream provenance and downstream handling separately."
+          },
+          {
+            "checked_at": "2026-09-22T19:57:52.653Z",
+            "status": "DOWNSTREAM_ROW_BEHAVIOR_CONFIRMED_LIVE_IMPACT_UNVERIFIED",
+            "source_commit": "c4843a20590fd5010abc9347fb7a0c43ecdbd9b2",
+            "scope": "tools/akashic-search.py and scripts/validate_unified_index_rebuild_v02.py; synthetic three-variant search test only.",
+            "findings": [
+              "The CLI appends each matching CSV row to results, sorts and prints len(results), with no post-ID deduplication.",
+              "Executing the unchanged CLI against an in-memory synthetic fixture containing three URL variants for one post ID returned three results. This proves conditional row-based behavior, not actual corpus or website inflation.",
+              "The referenced master CSV is absent at this head; commit 48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8 removed it under the public/private data separation change. Removed data was not recovered.",
+              "The count-only rebuild validator counts URI CSV rows, not unique post IDs. Its arithmetic does not validate unique-source counts or rebuild the absent search CSV."
+            ],
+            "source_refs": [
+              "tools/akashic-search.py",
+              "scripts/validate_unified_index_rebuild_v02.py",
+              "https://github.com/tws9stmcbf-web/AkashicNET/commit/48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8"
+            ],
+            "limits": "No live-site behavior, present production search dataset, original pre-import extraction process or private data assessed.",
+            "decision": "Keep OPEN; distinguish input rows from unique posts. Coordinate with N2N-INV-004 before preparing any functional search change."
+          },
+          {
+            "checked_at": "2026-09-22T20:36:22.957Z",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "status": "ADDITIONAL_METADATA_INSTANCE_STILL_OPEN",
+            "affected_post_ids": [
+              "100021"
+            ],
+            "scope": "Pilot row and matching URI/semantic rows for 100021 only; repository metadata.",
+            "finding": "Each inspected URL index supplies three variants for one ID, including Original and Research comma suffixes; no additional independent evidence.",
+            "source_refs": [
+              "references/community/n2n-pilot-index.csv",
+              "references/community/reddit-uri-index.csv",
+              "references/community/reddit-semantic-index.csv"
+            ],
+            "decision": "Add this observed instance to the existing group, with no new investigation flag, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "87cd67d7df8e8820c4d0c68ffed0541943a7c0ac",
+            "scope": "Repository pilot/URI assessment of 100022–100025; concurrent 100021 assessment preserved.",
+            "finding": "The four additional IDs share the recorded metadata/source-link/annotation pattern. Twelve URI rows map to four IDs. No live source reads.",
+            "decision": "Keep OPEN; no independent evidence added."
+          },
+          {
+            "checked_at": "2026-09-22T20:39:17.630Z",
+            "source_commit": "4fd322298d7c4ad28a78421fd4f81609eb7df961",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "100026",
+              "100027",
+              "100028",
+              "100029",
+              "10002a"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 100026–10002a; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "Each ID has one clean-looking URL plus two comma-suffixed variants. The fragment pair changes from Original/Research for 100026–100027 to HIERATIC,What/Original for 100028–10002a, further indicating field-boundary contamination while the upstream transformation remains unresolved.",
+            "uncertainty": "Repository metadata alone cannot establish the underlying post, work, evidence or pre-Git construction process.",
+            "decision": "Add the five observed instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "checked_at": "2026-09-22T20:40:29.325Z",
+            "source_commit": "7c5884402481eeac48bb45108409dca2489c4a12",
+            "affected_post_ids": [
+              "10002b"
+            ],
+            "scope": "Pilot metadata and pinned URI archive only.",
+            "finding": "Three URI rows map to one ID, including HIERATIC,What and Original suffix fragments. No downstream or live-site impact tested.",
+            "decision": "Remain OPEN. No scientific appraisal, completed read or gate change."
+          },
+          {
+            "checked_at": "2026-09-22T20:43:10.787Z",
+            "source_commit": "159831c5f509fce6d98695e7c2effa6d4b047a93",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "10002c",
+              "10002d",
+              "10002e",
+              "10002f",
+              "100030"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for five IDs 10002c–10002f and 100030; 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "Each ID has one clean-looking URL and two variants carrying HIERATIC,What and Original fragments. Fifteen rows represent five IDs; downstream/live impact remains unverified.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "checked_at": "2026-09-22T20:46:32.202Z",
+            "source_commit": "84a101c10bd0d799dbc027f98f9abf0b356e8b7c",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "100031",
+              "100032",
+              "100033",
+              "100034",
+              "100035"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 100031–100035; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "Each ID has one clean-looking URL plus HIERATIC,What and Original suffixed variants. Fifteen rows represent five IDs; actual downstream and live-site impact remains unverified.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "15930a8315dce5d20f1839b631594a51ea31acb0",
+            "scope": "Repository pilot/URI assessment of 100036–10003a.",
+            "finding": "Five title-routed Consciousness/HIERATIC records repeat the existing catalogue-only, self-referential source-link and three-row URI-variant pattern. Fifteen URI rows map to five IDs; no live source reads.",
+            "decision": "Keep OPEN. Topic routing is provisional and no evidence status changes."
+          },
+          {
+            "checked_at": "2026-09-22T21:04:36.088Z",
+            "source_commit": "21ad7c08b1fc28d79425b7be9bb385fb436c0e24",
+            "status": "ADDITIONAL_METADATA_INSTANCES_STILL_OPEN",
+            "affected_post_ids": [
+              "10003b",
+              "10003c",
+              "10003d",
+              "10003e",
+              "10003f"
+            ],
+            "scope": "Repository pilot, URI and semantic-index rows for 10003b–10003f; five IDs, 15 URI rows and 15 semantic rows; no live source reads.",
+            "finding": "Each ID has one clean-looking URL plus HIERATIC,What and Original suffixed variants. Fifteen rows represent five IDs; actual downstream and live-site impact remains unverified.",
+            "uncertainty": "Repository metadata cannot establish the underlying post, work, evidence, authorship or pre-Git construction process.",
+            "decision": "Add these instances to the existing group. Keep OPEN; no new flag, completed read, scientific appraisal or fabrication inference."
+          },
+          {
+            "review_date": "2026-09-22",
+            "source_commit": "597f9c428c08537d2cb3da8c9f9ba02de993be39",
+            "scope": "Repository pilot/URI assessment of 100040–100044.",
+            "finding": "Five Philosophy/QMM records repeat the catalogue-only, self-referential source and three-row URI-variant pattern. No source content read.",
+            "decision": "Keep OPEN; provisional philosophical routing only."
+          },
+          {
+            "review_date": "2026-10-03",
+            "source_commit": "b4d574f7efa7fd9443d501f0c708c2069033b72d",
+            "affected_post_ids": [
+              "100045"
+            ],
+            "scope": "Repository-only pilot metadata and pinned URI rows for 100045.",
+            "finding": "Three pinned URI rows map to 100045: one unannotated variant and variants with Original and QMM,What suffix fragments; no independent sources or downstream impact established.",
+            "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
+          }
+        ]
+      },
+      {
+        "issue_id": "N2N-INV-004",
+        "title": "Legacy search CLI references a privacy-removed input",
+        "status": "OPEN",
+        "first_recorded_at": "2026-09-22T19:57:52.653Z",
+        "last_checked_at": "2026-09-22T20:01:00.341Z",
+        "source_commit": "c4843a20590fd5010abc9347fb7a0c43ecdbd9b2",
+        "classification": "repository_tool_dependency_investigation_signal",
+        "scientific_outlier": false,
+        "priority": "medium",
+        "priority_reason": "The CLI cannot read its default input from the inspected checkout; intended supported use is unknown.",
+        "affected_post_ids": [],
+        "observation": "tools/akashic-search.py opens references/community/akashic-master-index.csv unconditionally after argument parsing. That path returns 404 at the assessed head; commit 48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8 lists it as removed in the privacy separation change.",
+        "assessment_sources": [
+          "tools/akashic-search.py",
+          "scripts/check_public_data_boundary.py",
+          "https://github.com/tws9stmcbf-web/AkashicNET/commit/48e1c7ca93acecc60ed3cf3dca4edf056e7d57a8"
+        ],
+        "uncertainty": "The tool may be intentionally historical or require a separately supplied private/local input. No website outage or supported runtime use is inferred.",
+        "next_action": "Establish whether the CLI is supported or retained as historical tooling before adding input provisioning or changing search semantics; diagnostic correction awaits draft review.",
+        "resolution_criterion": "Document supported use and verify behavior when permitted input is absent, with the public/private boundary preserved.",
+        "follow_ups": [
+          {
+            "checked_at": "2026-09-22T20:01:00.341Z",
+            "source_commit": "a40e289da30905b75d940e3b25a9fc7faed90b82",
+            "status": "MISSING_INPUT_DIAGNOSTIC_FIXED_IN_DRAFT_SUPPORT_STATUS_OPEN",
+            "scope": "Default-branch GitHub code searches for akashic-search.py and akashic-search, top 20 each; current-head CLI inspection; synthetic behavior tests.",
+            "finding": "Both searches returned only the CLI's own usage string. No documented callers were found in these bounded searches; this is not an exhaustive absence claim. The original script's usage advertises local search over a fixed CSV; no authorised replacement input or active service integration was established.",
+            "change": "Catch FileNotFoundError when opening the fixed master index, print a privacy-aware missing-input diagnostic to stderr, and exit 2. No data restored or network fallback added. No search deduplication or input schema changes.",
+            "validation": [
+              "Missing-input simulation: exit 2 with explanatory diagnostic, no traceback.",
+              "No-argument behavior matches the original usage output and exit status.",
+              "Synthetic valid Reddit input: output and exit status match original code."
+            ],
+            "limits": "The CLI's intended support status and documented input provisioning remain unresolved; no production or live-site execution was tested.",
+            "decision": "Keep OPEN for support-status clarification; the missing-input traceback is addressed in this draft."
+          }
+        ]
+      }
+    ]
+  }
+}
