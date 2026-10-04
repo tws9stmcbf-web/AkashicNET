@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.1",
+  "packet_id": "AWARE-UNDERLYING-IDENTITY-2026-10-03",
+  "record_type": "bounded_existing_publication_identity_crosswalk",
+  "provenance": "ai-executed",
+  "checked_at": "2026-10-03",
+  "source_boundary": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "pull_request": 392,
+    "commit": "c54a946f7f4abef3ad2a7f2a70102c801b697d09",
+    "path": "references/psi/psi-encyclopedia-metadata-pilot-v0.1.json",
+    "source_id": "SRC-SPR-PE-0001",
+    "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/",
+    "original_identifier_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+    "original_pilot_modified": false
+  },
+  "scope": {
+    "candidate_publications": 2,
+    "site_wide_crawl_performed": false,
+    "methodological_appraisal_performed": false,
+    "new_source_ids_minted": false,
+    "relationship_status": "PROPOSED_DISCOVERY_LINKS_REVIEW_REQUIRED",
+    "limitations": [
+      "Identity matching does not establish independent evidence or participant-level non-overlap.",
+      "This separate follow-up does not retroactively change what the seven-entry pilot extracted.",
+      "No blanket content, dataset or bulk extraction permission is inferred."
+    ]
+  },
+  "catalogue_snapshot": {
+    "pull_request": 394,
+    "commit": "c2262f8df8e800478e3f7abfd5407cbc9069173a",
+    "path": "website/public/research/source-catalogue/records.json",
+    "sha256": "7357cfc33435988d87f6dc285ea4d30ea6f2ac3ef6a1f5acc1ac658783a7f30f",
+    "record_count": 70,
+    "modified": false
+  },
+  "governance": {
+    "review_state": "REVIEW_REQUIRED",
+    "rights_status": "LINK_AND_METADATA_ONLY",
+    "supports_models": [],
+    "independent_studies_added": 0,
+    "accepted_edges_added": 0,
+    "new_publication_records_added": 0,
+    "big_question_status_changes": false,
+    "article_text_retained": false,
+    "extended_quotations_retained": false,
+    "evidence_gate": "CLOSED",
+    "canonical_gate": "CLOSED",
+    "rights_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "privacy_gate": "CLOSED"
+  },
+  "records": [
+    {
+      "catalogue_record_id": "CM-LEAD-001",
+      "existing_source_id": "SRC-BQ001-AWARE-2014",
+      "community_source_id": "BQ001-SRC-AWARE-2014",
+      "discovered_from": "SRC-SPR-PE-0001",
+      "title": "AWARE-AWAreness during REsuscitation-a prospective study",
+      "authors_short": "Parnia et al.",
+      "year": 2014,
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2014.09.004",
+      "pmid": "25301715",
+      "doi_url": "https://doi.org/10.1016/j.resuscitation.2014.09.004",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25301715/",
+      "identity_status": "MATCHED_EXISTING_PUBLICATION_REVIEW_REQUIRED",
+      "deduplication": {
+        "action": "LINK_EXISTING_ONLY",
+        "match_basis": [
+          "NORMALIZED_DOI_EXACT",
+          "EXISTING_BQ001_PMID_EXACT",
+          "TITLE_AUTHOR_YEAR_CONSISTENT"
+        ],
+        "catalogue_pmid_status": "ABSENT_NO_CONFLICT",
+        "existing_source_path": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+        "existing_source_pointer": "/sources/0",
+        "catalogue_pointer": "/54",
+        "community_source_path": "references/community/bq001-scientific-baseline-batch1.json",
+        "related_ledger_path": null,
+        "related_ledger_work_id": null
+      },
+      "provenance": {
+        "checked_at": "2026-10-03",
+        "performed_by": "ai-executed",
+        "discovery_locator": "Works Cited; Parnia et al. (2014); AWARE programme sections",
+        "bibliographic_verification_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:25301715%20AND%20SRC:MED&format=json",
+        "bibliographic_verification_status": "EXACT_DOI_PMID_TITLE_YEAR_MATCH",
+        "retained_fields": [
+          "title",
+          "authors_short",
+          "year",
+          "journal",
+          "doi",
+          "pmid"
+        ],
+        "pubmed_direct_retrieval": "NO_USABLE_METADATA_RETURNED_EUROPE_PMC_USED",
+        "publisher_body_retrieved": false
+      },
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "article_text_retained": false
+    },
+    {
+      "catalogue_record_id": "CM-LEAD-002",
+      "existing_source_id": "SRC-BQ001-AWARE2-2023",
+      "community_source_id": "BQ001-SRC-AWARE2-2023",
+      "discovered_from": "SRC-SPR-PE-0001",
+      "title": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+      "authors_short": "Parnia et al.",
+      "year": 2023,
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2023.109903",
+      "pmid": "37423492",
+      "doi_url": "https://doi.org/10.1016/j.resuscitation.2023.109903",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37423492/",
+      "identity_status": "MATCHED_EXISTING_PUBLICATION_REVIEW_REQUIRED",
+      "deduplication": {
+        "action": "LINK_EXISTING_ONLY",
+        "match_basis": [
+          "NORMALIZED_DOI_EXACT",
+          "EXISTING_BQ001_PMID_EXACT",
+          "TITLE_AUTHOR_YEAR_CONSISTENT"
+        ],
+        "catalogue_pmid_status": "EXACT_MATCH",
+        "existing_source_path": "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+        "existing_source_pointer": "/sources/1",
+        "catalogue_pointer": "/55",
+        "community_source_path": "references/community/bq001-scientific-baseline-batch1.json",
+        "related_ledger_path": "references/big-questions/BQ001/issue-343-source-dedup-ledger-v0.1.json",
+        "related_ledger_work_id": "WORK-343-AWARE2-2023"
+      },
+      "provenance": {
+        "checked_at": "2026-10-03",
+        "performed_by": "ai-executed",
+        "discovery_locator": "Works Cited; Parnia et al. (2023); AWARE programme sections",
+        "bibliographic_verification_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:37423492%20AND%20SRC:MED&format=json",
+        "bibliographic_verification_status": "EXACT_DOI_PMID_TITLE_YEAR_MATCH",
+        "retained_fields": [
+          "title",
+          "authors_short",
+          "year",
+          "journal",
+          "doi",
+          "pmid"
+        ],
+        "pubmed_direct_retrieval": "METADATA_AVAILABLE",
+        "publisher_body_retrieved": false
+      },
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "supports_models": [],
+      "independent_studies_added": 0,
+      "article_text_retained": false
+    }
+  ]
+}
