@@ -7,6 +7,7 @@ on:
       - "tests/test_prepare_semantic_link_candidates_v020.py"
       - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
       - "references/community/semantic-link-candidates-v0.2.0.json"
+      - "references/community/semantic-link-candidates-v0.2.1.json"
       - ".github/workflows/prepare-semantic-link-candidates.yml"
       - ".github/workflows/validate-semantic-link-candidates.yml"
       - ".github/workflows/merge-audited-cross-source-review.yml"
@@ -17,6 +18,7 @@ on:
       - "tests/test_prepare_semantic_link_candidates_v020.py"
       - "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json"
       - "references/community/semantic-link-candidates-v0.2.0.json"
+      - "references/community/semantic-link-candidates-v0.2.1.json"
       - ".github/workflows/prepare-semantic-link-candidates.yml"
       - ".github/workflows/validate-semantic-link-candidates.yml"
       - ".github/workflows/merge-audited-cross-source-review.yml"
@@ -34,15 +36,23 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.11"
-      - name: Build or confirm deterministic candidate packet
+      - name: Preserve current v0.2.0 bytes and validate structure
         run: |
-          if [ -f references/community/semantic-link-candidates-v0.2.0.json ]; then
-            python scripts/prepare_semantic_link_candidates_v020.py --check
-          else
-            output="$(mktemp)"
-            python scripts/prepare_semantic_link_candidates_v020.py --output "$output"
-            python -m json.tool "$output" >/dev/null
-          fi
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from scripts.prepare_semantic_link_candidates_v020 import validate_packet
+          raw = Path('references/community/semantic-link-candidates-v0.2.0.json').read_bytes()
+          if hashlib.sha256(raw).hexdigest() != '41b178b5aeca1fc66e8036a0403d4b520225bbe3d61fa2e199f522d089358c6f':
+              raise SystemExit('v0.2.0 packet changed; historical review required')
+          packet = json.loads(raw)
+          errors = validate_packet(packet, '0.2.0')
+          if errors:
+              raise SystemExit('v0.2.0 historical packet invalid: ' + ', '.join(errors))
+          PY
+      - name: Rebuild and validate current review packet
+        run: python scripts/prepare_semantic_link_candidates_v020.py --version 0.2.1 --check
       - name: Run fail-closed tests
         run: python -m unittest -v tests/test_prepare_semantic_link_candidates_v020.py
       - name: Compile generator and tests

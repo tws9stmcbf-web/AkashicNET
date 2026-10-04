@@ -1,0 +1,173 @@
+{
+  "schema": "akashicnet.n2n.web-metadata-observations.v1",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "archive_sha256": {
+    "references/community/reddit-uri-index.csv": "3a6a702061cff7ae9e8d555b1de32b17cba9401f59451fce739f7f8411804b80",
+    "references/community/n2n-index.csv": "6d6ea88cbeda0a14b281246201e9cc711d74b28898531951da57dcdfdd36595a",
+    "scripts/reddit_corpus_census.py": "5377d0454e8f22c4684becd611a6136549ddba8e1c21be7d75dfce5d1b5e3845",
+    "tools/search_reddit.py": "1e8286abff822f2edfc34f180aa5c0bf7b88eaa5df85bd1e8d6857208330f8d4"
+  },
+  "selection_rule": "Continue related-post links 18 through 21 on the previously returned Aghori page (turn7view0); retain uncurated pinned archive IDs absent from overlays 0001 and 0002. Accessibility sample only.",
+  "excluded": [],
+  "counts": {
+    "accessible_posts_examined": 4,
+    "archive_records_enriched_in_overlay": 4,
+    "observed_field_values": 12,
+    "outside_archive_excluded": 0,
+    "new_canonical_curated_records": 0,
+    "canonical_curated_records": 3,
+    "previously_enriched_in_overlays": 8,
+    "cumulative_unique_enriched_in_overlays": 12,
+    "overlap_with_previous": 0,
+    "cumulative_observed_field_values": 36
+  },
+  "authorization": {
+    "live_reddit_metadata_read": "AUTHORIZED_BY_USER",
+    "user_instruction": "Lift the restrictions",
+    "scope": "Metadata observations staged; no merge or deployment"
+  },
+  "boundaries": {
+    "bodies_stored": 0,
+    "comments_stored": 0,
+    "media_stored": 0,
+    "rights_gate": "CLOSED",
+    "evidence_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "canonical_metadata_write": false,
+    "website_updated": false
+  },
+  "limitations": [
+    "Returned pages may be cached; retrieval day is not the crawl date.",
+    "Displayed usernames do not independently verify real-world identity or ownership.",
+    "Relative post ages and title date suffixes are not exact creation timestamps.",
+    "No historical archive annotation was promoted to current flair.",
+    "Titles reproduce source wording; embedded medical or scientific claims are not endorsed or independently assessed."
+  ],
+  "records": [
+    {
+      "post_id": "1vismlx",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vismlx/n2n_signal_synthesis_psilocybin_helps_75_of/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vismlx/n2n_signal_synthesis_psilocybin_helps_75_of/"
+      ],
+      "observed_metadata": {
+        "title": "🧠 N2N Signal & Synthesis | 🍄 Psilocybin Helps 75% of Veterans With Severe PTSD Achieve Remission (12 min read) | Neuroscience News [Jul 2026]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "Psychopharmacology 🧠💊"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vismlx/n2n_signal_synthesis_psilocybin_helps_75_of/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn11view2",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vj0417",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vj0417/n2n_signal_synthesis_exceptional_experience_dmt/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vj0417/n2n_signal_synthesis_exceptional_experience_dmt/"
+      ],
+      "observed_metadata": {
+        "title": "🧠🔎 N2N Signal & Synthesis · Exceptional Experience, DMT Entities & The Frontiers of Consciousness 🌌🌀 | Meet the Professor of Paranormal Consciousness – DMT Entities, Telepathy Tapes & OBE’s (1h:47m) | Giant’s Shoulder [May 2026]",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "🧠 #Consciousness2.0 Explorer 📡"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vj0417/n2n_signal_synthesis_exceptional_experience_dmt/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn11view1",
+        "reported_crawl_age": "last week",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vjslod",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vjslod/the_harmonic_singularity_v_from_quantum_fields/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vjslod/the_harmonic_singularity_v_from_quantum_fields/"
+      ],
+      "observed_metadata": {
+        "title": "💡🌀 The Harmonic Singularity V♾️ — From Quantum Fields ⚛️ Through Life 🌱, Earth 🌍 & the Cosmos 🌌 | Vibration 🌊 → Resonance 🌀 → Coupling 🔗 → Coherence 💞 → Emergence 🌱 → Unity ♾️ [Aug ♾️th, 2026]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "ℹ️ InfoGraphic"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vjslod/the_harmonic_singularity_v_from_quantum_fields/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn11view0",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vkx8q7",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkx8q7/zentura_ace_ventura_zen_mechanics_ozora_festival/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkx8q7/zentura_ace_ventura_zen_mechanics_ozora_festival/"
+      ],
+      "observed_metadata": {
+        "title": "🎶 Zentura (Ace Ventura & Zen Mechanics) @ Ozora Festival 2025 [Full Set Movie] ♪",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "🔎 Synchronicity 🌀"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vkx8q7/zentura_ace_ventura_zen_mechanics_ozora_festival/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn10view0",
+        "reported_crawl_age": "last month",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    }
+  ],
+  "previous_batch": {
+    "path": "references/community/n2n-web-metadata-pilot-0002.json",
+    "sha256": "1a132983449c1e95e4744698a460ea4717701ec1a049c949cec6f5e0331e7273"
+  }
+}

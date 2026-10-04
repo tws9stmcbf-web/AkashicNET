@@ -1,0 +1,11 @@
+test_each_new_pinned_source_drift_rejected (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_each_new_pinned_source_drift_rejected) ... ok
+test_inventions_temporal_promotion_and_gate_mutations_rejected (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_inventions_temporal_promotion_and_gate_mutations_rejected) ... ok
+test_reproduction_counts_and_every_receipt (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_reproduction_counts_and_every_receipt) ... ok
+test_missing_previous_and_unreviewed_batch_rejected (tests.test_n2n_provenance_pilot_0002.SecondProvenancePilotTests.test_missing_previous_and_unreviewed_batch_rejected) ... ok
+test_overlap_and_current_verification_rejected (tests.test_n2n_provenance_pilot_0002.SecondProvenancePilotTests.test_overlap_and_current_verification_rejected) ... ok
+test_reproduction_and_cumulative_nonoverlap (tests.test_n2n_provenance_pilot_0002.SecondProvenancePilotTests.test_reproduction_and_cumulative_nonoverlap) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.702s
+
+OK

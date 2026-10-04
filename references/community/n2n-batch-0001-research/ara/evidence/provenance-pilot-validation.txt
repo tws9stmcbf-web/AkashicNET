@@ -1,0 +1,8 @@
+test_each_new_pinned_source_drift_rejected (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_each_new_pinned_source_drift_rejected) ... ok
+test_inventions_temporal_promotion_and_gate_mutations_rejected (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_inventions_temporal_promotion_and_gate_mutations_rejected) ... ok
+test_reproduction_counts_and_every_receipt (tests.test_n2n_provenance_pilot.ProvenancePilotTests.test_reproduction_counts_and_every_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.950s
+
+OK
