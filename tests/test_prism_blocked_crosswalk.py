@@ -21,6 +21,34 @@ class CrosswalkTests(unittest.TestCase):
     def test_current_checkpoint_passes(self):
         self.assertEqual(validator.validate(self.data), [])
 
+    def test_extra_payload_fields_fail_closed_at_each_object_boundary(self):
+        paths = [(), ('architecture',), ('source_checkpoint',),
+                 ('derivation_branch_context',), ('admission_rule',),
+                 ('assessment_summary',), ('safeguards',),
+                 ('doi_enrichment_followup',),
+                 ('doi_enrichment_followup', 'metadata_check'),
+                 ('doi_enrichment_followup', 'counter_effect'),
+                 ('records', 0), ('records', 0, 'subject_ref'),
+                 ('records', 0, 'promotion_permissions'),
+                 ('records', 0, 'paper_link_resolution')]
+        for path in paths:
+            for field in ('source_body', 'username', 'comments'):
+                with self.subTest(path=path, field=field):
+                    data = copy.deepcopy(self.data)
+                    obj = data
+                    for part in path:
+                        obj = obj[part]
+                    obj[field] = 'Synthetic prohibited payload, not real user data.'
+                    self.assertTrue(validator.validate(data))
+
+    def test_crosswalk_identity_and_draft_status_are_pinned(self):
+        for field, value in [('schema_version', '9.9'),
+                             ('crosswalk_id', 'PRISM-OTHER'),
+                             ('status', 'PUBLISHED')]:
+            data = copy.deepcopy(self.data)
+            data[field] = value
+            self.assertTrue(validator.validate(data))
+
     def test_every_summary_count_is_required_and_pinned_or_derived(self):
         for field in self.data['assessment_summary']:
             for value in (999, None, False, '0', 'missing'):
@@ -66,7 +94,7 @@ class CrosswalkTests(unittest.TestCase):
         section = faq.split('id: "prism-architecture"', 1)[1].split('\n      }', 1)[0]
         self.assertIn('proposed AkashicOMNI v0.5.0', section)
         self.assertIn('twelve analytical perspectives', section)
-        self.assertIn('v0.4.3 remains current', section)
+        self.assertIn('v${akashicOmniRelease.version} remains current', section)
         self.assertIn('three temporal CUT views of one framework', section)
         self.assertNotIn('twelve frameworks', section)
 

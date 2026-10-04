@@ -59,6 +59,54 @@ class GovernanceTests(unittest.TestCase):
                 record['governance']['publication_status'] = 'hold'
                 self.assertEqual(validator.validate(record), [])
 
+    def test_all_supplied_source_references_resolve_without_mutation(self):
+        record = self.candidate()
+        record['perspectives'][0]['source_ids'] = ['SRC-TEST']
+        record['practice_outcomes'] = [{
+            'outcome_id': 'OUT-TEST', 'description': 'Synthetic only.',
+            'report_basis': 'self_report', 'timeframe': 'Synthetic interval',
+            'verification_status': 'reported_only', 'source_ids': ['SRC-TEST'],
+        }]
+        record['state_observations'] = [{
+            'state_observation_id': 'STATE-TEST', 'state': 'ordinary_waking',
+            'report_basis': 'first_person', 'phenomenology': ['Synthetic only.'],
+            'source_ids': ['SRC-TEST'], 'uncertainty': 'Synthetic only.',
+        }]
+        record['comparative_correspondences'] = [{
+            'correspondence_id': 'CORR-TEST',
+            'terms': [{'term': 'A', 'context': 'Synthetic A'},
+                      {'term': 'B', 'context': 'Synthetic B'}],
+            'relation': 'hypothesised_correspondence', 'status': 'unresolved',
+            'cultural_authority_status': 'confirmed',
+            'non_equivalence_note': 'Not equivalent.', 'source_ids': ['SRC-TEST'],
+        }]
+        event = self.pending_event('privacy')
+        event.update(gates_pending=[], source_ids=['SRC-TEST'])
+        record['assessment_history'] = [event]
+        self.assertEqual(validator.validate(record), [])
+        for section in ('perspectives', 'practice_outcomes', 'state_observations',
+                        'comparative_correspondences', 'assessment_history'):
+            for publication, mutation in itertools.product(
+                    ('hold', 'review_candidate'), ('missing', 'blank', 'duplicate')):
+                with self.subTest(section=section, publication=publication, mutation=mutation):
+                    bad = copy.deepcopy(record)
+                    bad['governance']['publication_status'] = publication
+                    if mutation == 'missing':
+                        bad[section][0]['source_ids'] = ['SRC-MISSING']
+                    else:
+                        node = copy.deepcopy(bad['source_network']['nodes'][0])
+                        node['source_id'] = 'SRC-SECOND'
+                        bad[section][0]['source_ids'] = ['SRC-SECOND']
+                        if mutation == 'blank':
+                            node['locator'] = ' \t'
+                        bad['source_network']['nodes'].append(node)
+                        if mutation == 'duplicate':
+                            bad['source_network']['nodes'].append(copy.deepcopy(node))
+                    before = copy.deepcopy(bad)
+                    self.assertTrue(validator.VALIDATOR.is_valid(bad))
+                    self.assertIn(section, ' '.join(validator.validate(bad)))
+                    self.assertEqual(bad, before)
+
     def test_superseded_pending_event_requires_current_clearance(self):
         for gate in ('privacy', 'cultural_authority'):
             with self.subTest(gate=gate):

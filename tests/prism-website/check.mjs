@@ -14,6 +14,8 @@ const temp = await mkdtemp(path.join(tmpdir(), 'prism-review-'));
 const next = path.join(here, 'node_modules/next/dist/bin/next');
 let server, browser;
 const routes = ['/faq', '/insights/akashicprism-big-questions', '/insights/akashicprism-plug-and-play-consciousness'];
+const releaseSource = await readFile(path.join(root, 'website/lib/akashicomni-release.ts'), 'utf8');
+const currentOmniVersion = releaseSource.match(/version:\s*"([^"]+)"/)[1];
 const builtRoutes = new Set(['/', '/about', '/akashicomni', ...routes]);
 // Existing logo is hash-only in website/assets/MANIFEST.md, not in the snapshot.
 // Do not recover/publish an external binary merely to satisfy this review harness.
@@ -117,7 +119,7 @@ try {
         await item.locator('summary').focus();await page.keyboard.press('Enter');
         assert(await item.evaluate(e=>e.open),'FAQ keyboard activation');
         assert.match(await item.innerText(),/proposed AkashicOMNI v0\.5\.0/);
-        assert.match(await item.innerText(),/v0\.4\.3 remains current/);
+        assert((await item.innerText()).includes(`v${currentOmniVersion} remains current`));
         await page.keyboard.press('Enter');assert.equal(await item.evaluate(e=>e.open),false);
       }
       if(route.includes('plug-and-play')) {

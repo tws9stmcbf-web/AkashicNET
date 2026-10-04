@@ -72,7 +72,7 @@ A record may be meaningful in several ways at once. A teaching may be literal wi
 
 Each proposed connection records its target, domains, relationship, evidence lane, current strength, sources, uncertainty, alternative explanations and next discriminating step. Resonance or resemblance begins as descriptive or suggestive. It can later become better supported only when new authorised material, appropriate evidence and independent review justify that change. The dated earlier assessment remains in history.
 
-Connection source traceability: `established_evidence` and every strength except `descriptive_only` or `unresolved` require nonempty `source_ids`. A source-free descriptive or unresolved connection is only a held inquiry record: its evidence lane cannot be `established_evidence`, and record-level `publication_status` must remain `hold`. Every supplied connection source ID must resolve to exactly one node with a nonblank locator. Run `python scripts/validate_prism_connections.py RECORD.json` to check the schema and these references. Passing establishes structural traceability only, not source verification, independent corroboration, cultural authority, privacy clearance, rights, publication approval or promotion. Other PRISM review findings remain separate.
+Connection source traceability: `established_evidence` and every strength except `descriptive_only` or `unresolved` require nonempty `source_ids`. A source-free descriptive or unresolved connection is only a held inquiry record: its evidence lane cannot be `established_evidence`, and record-level `publication_status` must remain `hold`. Every supplied source ID in connections, perspectives, practice outcomes, state observations, comparative correspondences and assessment history must resolve to exactly one source-network node with a nonblank locator. Optional or empty source lists remain governed by their existing schema rules; supplying a dangling ID is not an unresolved-source representation. Run `python scripts/validate_prism_connections.py RECORD.json` to check the schema and these references. Passing establishes structural traceability only, not source verification, independent corroboration, cultural authority, privacy clearance, rights, publication approval or promotion. Other PRISM review findings remain separate.
 
 A BLOCKED record may therefore mature into evidence, but not merely because it was preserved or reinterpreted. The specific blocker must be resolved, the relevant source must be examined, provenance and rights must be adequate, and the claim must satisfy the standard of its evidence lane. Other interpretations of the same record may remain metaphorical, contested or unresolved.
 
@@ -115,7 +115,7 @@ Every review is append-only. It records the earlier and new evidence lane, direc
 
 ## Relationship to AkashicOMNI versioning
 
-The current released framework is AkashicOMNI v0.4.3. The proposed architecture assigns four distinct levels:
+At the 22 September 2026 drafting checkpoint, the released framework was AkashicOMNI v0.4.3. Current website release metadata is maintained separately in `website/lib/akashicomni-release.ts`. The proposed architecture assigns four distinct levels:
 
 1. **AkashicNET** — the encompassing knowledge ecosystem, corpus, graph, ledgers and publication surfaces.
 2. **AkashicOMNI** — the meta-framework coordinating twelve analytical frameworks.

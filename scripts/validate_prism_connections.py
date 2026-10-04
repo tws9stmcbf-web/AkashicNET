@@ -44,15 +44,18 @@ def validate(record):
     nodes = defaultdict(list)
     for node in record['source_network']['nodes']:
         nodes[node['source_id']].append(node)
-    for index, connection in enumerate(record.get('connections', [])):
-        for source_id in connection.get('source_ids', []):
-            matches = nodes[source_id]
-            if len(matches) != 1:
-                errors.append(f'connections[{index}]: {source_id} must resolve '
-                              'to exactly one source_network node')
-            elif not matches[0]['locator'].strip():
-                errors.append(f'connections[{index}]: {source_id} requires '
-                              'a nonblank locator')
+    for section in ('connections', 'perspectives', 'practice_outcomes',
+                    'state_observations', 'comparative_correspondences',
+                    'assessment_history'):
+        for index, item in enumerate(record.get(section, [])):
+            for source_id in item.get('source_ids', []):
+                matches = nodes.get(source_id, [])
+                if len(matches) != 1:
+                    errors.append(f'{section}[{index}]: {source_id} must resolve '
+                                  'to exactly one source_network node')
+                elif not matches[0]['locator'].strip():
+                    errors.append(f'{section}[{index}]: {source_id} requires '
+                                  'a nonblank locator')
     # Count only explicitly independent, verified work identities. Equivalence
     # and derivation links (plus repeated identity fields) collapse aliases.
     parent = {source_id: source_id for source_id in nodes}

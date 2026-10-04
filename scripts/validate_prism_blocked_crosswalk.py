@@ -239,11 +239,31 @@ def validate(data):
         require(isinstance(obj, dict) and key in obj and same(obj[key], expected),
                 f'{where}.{key}: violates pinned metadata-only contract')
 
+    def fields(obj, expected, where):
+        require(isinstance(obj, dict) and set(obj) == set(expected),
+                f'{where}: missing or unknown fields in metadata-only contract')
+
     if not isinstance(data, dict):
         return ['crosswalk: expected object']
+    fields(data, ('schema_version', 'crosswalk_id', 'status', 'assessed_on',
+                  'purpose', 'architecture', 'source_checkpoint',
+                  'derivation_branch_context', 'admission_rule',
+                  'assessment_summary', 'safeguards', 'doi_enrichment_followup',
+                  'records'), 'crosswalk')
+    fixed(data, 'schema_version', '0.1', 'crosswalk')
+    fixed(data, 'crosswalk_id', 'PRISM-N2N-BLOCKED-ADMISSION-20260922', 'crosswalk')
+    fixed(data, 'status', 'DRAFT_METADATA_ONLY', 'crosswalk')
+    fields(data.get('architecture'), ('ecosystem', 'orchestration_framework',
+           'epistemic_interface', 'flow', 'note'), 'architecture')
+    fields(data.get('derivation_branch_context'),
+           ('pull_request', 'branch', 'head_before_crosswalk'), 'derivation_branch_context')
+    fields(data.get('admission_rule'), ('admitted_means', 'admitted_does_not_mean'),
+           'admission_rule')
     fixed(data, 'source_checkpoint', SOURCE_CHECKPOINT, 'crosswalk')
     fixed(data, 'safeguards', SAFEGUARDS, 'crosswalk')
     follow = data.get('doi_enrichment_followup')
+    fields(follow, ('recorded_on', 'scope', 'metadata_check', 'workflow',
+                    'counter_effect', 'restrictions'), 'doi_enrichment_followup')
     fixed(follow, 'metadata_check', METADATA_CHECK, 'doi_enrichment_followup')
     fixed(follow, 'counter_effect', COUNTER_EFFECT, 'doi_enrichment_followup')
     records = data.get('records')
@@ -255,6 +275,9 @@ def validate(data):
         if not isinstance(record, dict):
             errors.append(f'{where}: expected object')
             continue
+        fields(record, set(RECORD_BOUNDARY) | {
+            'subject_ref', 'blocker', 'next_action', 'linked_investigations',
+            'topic_routing', 'source_metadata_label', 'paper_link_resolution'}, where)
         subject = record.get('subject_ref')
         if (not isinstance(subject, dict)
                 or set(subject) != {'subject_id', 'subject_type'}
@@ -280,6 +303,13 @@ def validate(data):
     require(len(ids) == len(EXPECTED_IDS) and sorted(ids) == sorted(EXPECTED_IDS),
             'records: stable IDs must match the 41 pinned BLOCKED records exactly once')
     summary = data.get('assessment_summary')
+    fields(summary, ('source_records', 'original_blocked', 'original_complete',
+                     'prism_registered_metadata_only', 'substantive_interpretation_eligible',
+                     'scientific_evidence_promotion_eligible', 'canonical_edge_eligible',
+                     'publication_eligible', 'provisional_topic_routing_records',
+                     'source_metadata_speculation_labels', 'open_investigation_groups',
+                     'shared_post_investigation_groups', 'tool_only_investigation_groups'),
+           'assessment_summary')
     # Counts are computed from actual record dispositions, then constrained by
     # the pinned membership and per-record boundary checks above.
     mappings = {

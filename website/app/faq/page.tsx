@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { akashicOmniRelease } from "../../lib/akashicomni-release";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions — AKASHICNET.ORG",
@@ -153,12 +154,12 @@ const faqGroups: FAQGroup[] = [
         id: "prism-architecture",
         question: "Where does PRISM sit between AkashicNET and AkashicOMNI?",
         answer: "AkashicNET is the encompassing ecosystem; the proposed AkashicOMNI v0.5.0 architecture would coordinate twelve analytical perspectives; AkashicPRISM is the shared epistemic interface between their analysis and AkashicNET’s corpus, graph, ledgers and publication system.",
-        analysis: "Detailed analysis: AkashicOMNI v0.4.3 remains current. In the proposed v0.5.0 architecture, PRISM would belong to AkashicNET organisationally and serve AkashicOMNI functionally. It would receive outputs from twelve analytical perspectives, including three temporal CUT views of one framework, and record interpretive mode, evidence lane, connection strength, uncertainty, alternative explanations, cultural authority and revision history. It is not a thirteenth peer framework, and AkashicNET is not one of the twelve. The concise architecture is: AkashicNET contains the system; AkashicOMNI coordinates the inquiry; twelve perspectives would examine; PRISM would discriminate; the NET would preserve.",
+        analysis: `Detailed analysis: AkashicOMNI v${akashicOmniRelease.version} remains current. In the proposed v0.5.0 architecture, PRISM would belong to AkashicNET organisationally and serve AkashicOMNI functionally. It would receive outputs from twelve analytical perspectives, including three temporal CUT views of one framework, and record interpretive mode, evidence lane, connection strength, uncertainty, alternative explanations, cultural authority and revision history. It is not a thirteenth peer framework, and AkashicNET is not one of the twelve. The concise architecture is: AkashicNET contains the system; AkashicOMNI coordinates the inquiry; twelve perspectives would examine; PRISM would discriminate; the NET would preserve.`,
       },
       {
         id: "prism-omni-version",
         question: "Does AkashicPRISM advance the AkashicOMNI version?",
-        answer: "Yes—as a proposed compatible expansion. Under AkashicOMNI’s version rules, PRISM supports a MINOR advance from the current v0.4.3 to candidate v0.5.0.",
+        answer: `Yes—as a proposed compatible expansion. Under AkashicOMNI’s version rules, PRISM supports a MINOR advance from the current v${akashicOmniRelease.version} to candidate v0.5.0.`,
         analysis: "Detailed analysis: PRISM adds a reusable epistemic layer, plural interpretive modes, typed connection assessments and append-only classification history while preserving existing evidence boundaries. The candidate version does not become current merely because it is drafted: review, merge and publication remain separate. Historical assessments retain the AkashicOMNI version they originally cited and are not automatically recalculated.",
       },
       {
