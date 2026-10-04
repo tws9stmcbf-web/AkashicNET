@@ -11,6 +11,9 @@ BATCH = ROOT / 'references/psi/aware-underlying-publication-identity-2026-10-03.
 SOURCE_HEAD = 'c54a946f7f4abef3ad2a7f2a70102c801b697d09'
 CATALOGUE_HEAD = 'c2262f8df8e800478e3f7abfd5407cbc9069173a'
 CATALOGUE_PATH = 'website/public/research/source-catalogue/records.json'
+SOURCE_PATH = 'references/big-questions/BQ001/evidence-batch1-v0.1.json'
+COMMUNITY_PATH = 'references/community/bq001-scientific-baseline-batch1.json'
+LEDGER_PATH = 'references/big-questions/BQ001/issue-343-source-dedup-ledger-v0.1.json'
 EXPECTED = {
     'CM-LEAD-001': ('10.1016/j.resuscitation.2014.09.004', '25301715', 'SRC-BQ001-AWARE-2014'),
     'CM-LEAD-002': ('10.1016/j.resuscitation.2023.109903', '37423492', 'SRC-BQ001-AWARE2-2023'),
@@ -55,11 +58,28 @@ def validate(packet, catalogue):
     require(len(records) == 2, 'batch must contain exactly two links')
     require({r['catalogue_record_id'] for r in records} == set(EXPECTED), 'duplicate or unexpected identity')
     require(len({normalize_doi(r['doi']) for r in records}) == 2, 'duplicate DOI')
-    sources = json.loads((ROOT / 'references/big-questions/BQ001/evidence-batch1-v0.1.json').read_text())['sources']
-    community = json.loads((ROOT / 'references/community/bq001-scientific-baseline-batch1.json').read_text())['sources']
+    sources = json.loads((ROOT / SOURCE_PATH).read_text())['sources']
+    community = json.loads((ROOT / COMMUNITY_PATH).read_text())['sources']
     for r in records:
         cid = r['catalogue_record_id']
         doi, pmid, sid = EXPECTED[cid]
+        d = r['deduplication']
+        require(d['existing_source_path'] == SOURCE_PATH, 'existing source path mismatch')
+        require(d['community_source_path'] == COMMUNITY_PATH, 'community source path mismatch')
+        source_index, catalogue_index = (0, 54) if cid == 'CM-LEAD-001' else (1, 55)
+        require(d['existing_source_pointer'] == f'/sources/{source_index}', 'existing source pointer mismatch')
+        require(d['catalogue_pointer'] == f'/{catalogue_index}', 'catalogue pointer mismatch')
+        if cid == 'CM-LEAD-001':
+            require(d['related_ledger_path'] is None and d['related_ledger_work_id'] is None, 'unexpected related ledger')
+        else:
+            require(d['related_ledger_path'] == LEDGER_PATH, 'related ledger path mismatch')
+            require(d['related_ledger_work_id'] == 'WORK-343-AWARE2-2023', 'related ledger work mismatch')
+            works = json.loads((ROOT / LEDGER_PATH).read_text())['works']
+            matches = [w for w in works if w['work_id'] == d['related_ledger_work_id']]
+            require(len(matches) == 1, 'missing or duplicate ledger work')
+            work = matches[0]
+            require((work['doi'], work['pmid'], work['existing_source_id']) == (doi, pmid, sid), 'ledger identity mismatch')
+            require(work['identity_status'] == 'EXISTING_GOVERNED_RECORD' and SOURCE_PATH in work['existing_paths'], 'ledger source mismatch')
         require((normalize_doi(r['doi']), r['pmid'], r['existing_source_id']) == (doi, pmid, sid), 'DOI/PMID/source mismatch')
         matches = [c for c in catalogue if normalize_doi(c.get('doi')) == doi]
         require(len(matches) == 1 and matches[0]['id'] == cid, 'catalogue duplicate or wrong identity')
