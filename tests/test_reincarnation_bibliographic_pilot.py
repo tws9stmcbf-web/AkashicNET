@@ -4,7 +4,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import parse_qs, urlencode, urlsplit
 
 
 PILOT = Path(__file__).resolve().parents[1] / "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json"
@@ -19,7 +19,13 @@ def validate_pubmed(record):
         assert (search.scheme, search.netloc, search.path) == (
             "https", "eutils.ncbi.nlm.nih.gov", "/entrez/eutils/esearch.fcgi"
         ), "Invalid PubMed search endpoint"
-        search_query = parse_qs(search.query)
+        try:
+            search_query = parse_qs(search.query, keep_blank_values=True, strict_parsing=True)
+        except ValueError as exc:
+            raise AssertionError("Malformed PubMed search query") from exc
+        # Extra filters/history can manufacture a null result for an indexed DOI.
+        assert set(search_query) <= {"db", "term", "retmode", "tool", "retmax"}, "Unsupported PubMed search parameters"
+        assert all(len(values) == 1 and values[0].strip() for values in search_query.values()), "Search parameters must be single nonblank values"
         assert search_query.get("db") == ["pubmed"], "Search endpoint must query PubMed"
         assert [term.strip().lower() for term in search_query.get("term", [])] == [
             record["doi"].strip().lower() + "[doi]"
@@ -103,6 +109,40 @@ class PubMedProvenanceTests(unittest.TestCase):
         broken["pubmed"]["lookup"] = "KNOWN_PMID_ESUMMARY"
         with self.assertRaisesRegex(AssertionError, "requires an exact DOI query"):
             validate_pubmed(broken)
+
+    def test_exact_search_rejects_filters_and_malformed_parameters(self):
+        suffixes = (
+            "&mindate=1900&maxdate=1901&datetype=pdat",
+            "&reldate=1",
+            "&query_key=1&WebEnv=other_search&usehistory=y",
+            "&db=", "&term=", "&db", "&term",
+            "&db=pubmed", "&term=unrelated",
+            "&retmode=", "&retmax=", "&tool=",
+            "&unexpected=value", "&",
+        )
+        for record in self.records:
+            if record["pubmed"]["lookup"] != "EXACT_DOI_QUERY":
+                continue
+            for suffix in suffixes:
+                with self.subTest(doi=record["doi"], suffix=suffix):
+                    broken = copy.deepcopy(record)
+                    broken["pubmed"]["search_endpoint"] += suffix
+                    with self.assertRaises(AssertionError):
+                        validate_pubmed(broken)
+
+    def test_exact_search_accepts_equivalent_query_encoding(self):
+        for record in self.records:
+            if record["pubmed"]["lookup"] != "EXACT_DOI_QUERY":
+                continue
+            with self.subTest(doi=record["doi"]):
+                equivalent = copy.deepcopy(record)
+                search = urlsplit(equivalent["pubmed"]["search_endpoint"])
+                query = parse_qs(search.query)
+                query["term"] = [" " + record["doi"].upper() + "[doi] "]
+                equivalent["pubmed"]["search_endpoint"] = search._replace(
+                    query=urlencode(list(reversed(list(query.items()))), doseq=True)
+                ).geturl()
+                validate_pubmed(equivalent)
 
     def test_matched_record_cannot_use_another_publications_summary(self):
         broken = copy.deepcopy(self.records[0])
