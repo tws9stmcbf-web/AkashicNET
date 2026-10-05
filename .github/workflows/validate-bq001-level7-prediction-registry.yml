@@ -7,6 +7,7 @@ on:
       - "references/big-questions/BQ001/spec-v0.1.json"
       - "references/big-questions/BQ001/evidence-batch1-v0.1.json"
       - "references/big-questions/BQ001/evidence-batch3-v0.1.json"
+      - "references/big-questions/BQ001/public-synthesis-v0.1.json"
       - "scripts/validate_bq001_level7_prediction_registry.py"
       - "tests/test_bq001_level7_prediction_registry.py"
       - ".github/workflows/validate-bq001-level7-prediction-registry.yml"
