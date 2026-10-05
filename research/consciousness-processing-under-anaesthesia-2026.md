@@ -20,6 +20,13 @@ The Reddit post serves as a secondary/community entry point to the underlying sc
 **Primary source:**  
 https://doi.org/10.1038/s41586-026-10448-0
 
+## Source Corrections Checked · 27 September 2026
+
+- [11 June 2026 author correction](https://www.nature.com/articles/s41586-026-10784-1.pdf): Figure 1e's time scale was incorrect by a factor of ten. The corrected x-axis values are 0, 0.67, 1.33 and 2 milliseconds. The publisher reports that HTML and PDF were corrected.
+- [1 September 2026 author correction](https://www.nature.com/articles/s41586-026-11071-9): the y-axis of Figure 2k was corrected in HTML and PDF.
+
+Use the corrected figures for any quantitative interpretation. These notices concern figure axes; this check is not an independent replication or validation of the study. The existing evidence status and consciousness caveats are unchanged.
+
 ## ❓ Research Question
 
 Can sophisticated neural processing continue when conscious awareness is substantially reduced or absent under general anaesthesia?
@@ -39,9 +46,9 @@ Evidence of structured neural processing during anaesthesia raises questions abo
 
 ## 📊 Key Finding
 
-The research reported neural activity associated with language processing, prediction and plasticity in the human hippocampus during general anaesthesia.
+The research reported neural activity associated with language processing, prediction and plasticity in the human hippocampus during general anaesthesia. [Source: paper abstract, findings on tone responses and language stimuli](https://www.nature.com/articles/s41586-026-10448-0#Abs1).
 
-This suggests that complex neural processing can persist during anaesthesia.
+**Interpretation:** This suggests that complex neural processing can persist during anaesthesia. [Source: paper abstract, concluding statement](https://www.nature.com/articles/s41586-026-10448-0#Abs1).
 
 However, this **does not by itself demonstrate conscious subjective experience**.
 

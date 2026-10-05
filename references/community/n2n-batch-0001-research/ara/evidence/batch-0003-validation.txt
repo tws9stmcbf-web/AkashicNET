@@ -1,0 +1,27 @@
+test_all_three_reproduce_without_overlap (tests.test_n2n_metadata_batch_0003.ThirdBatchTests.test_all_three_reproduce_without_overlap) ... ok
+test_missing_or_changed_second_batch_blocks_third (tests.test_n2n_metadata_batch_0003.ThirdBatchTests.test_missing_or_changed_second_batch_blocks_third) ... ok
+test_overlap_with_either_previous_batch_and_gate_changes_rejected (tests.test_n2n_metadata_batch_0003.ThirdBatchTests.test_overlap_with_either_previous_batch_and_gate_changes_rejected) ... ok
+test_batch_one_unchanged_and_unreviewed_batches_rejected (tests.test_n2n_metadata_batch_0002.SecondBatchTests.test_batch_one_unchanged_and_unreviewed_batches_rejected) ... ok
+test_previous_batch_required_and_validated (tests.test_n2n_metadata_batch_0002.SecondBatchTests.test_previous_batch_required_and_validated) ... ok
+test_rejects_overlap_inventions_and_open_gate (tests.test_n2n_metadata_batch_0002.SecondBatchTests.test_rejects_overlap_inventions_and_open_gate) ... ok
+test_reproduction_and_exact_nonoverlap (tests.test_n2n_metadata_batch_0002.SecondBatchTests.test_reproduction_and_exact_nonoverlap) ... ok
+test_checked_in_batch_reproduces (tests.test_n2n_metadata_batch.MetadataBatchTests.test_checked_in_batch_reproduces) ... ok
+test_exact_selection_and_preserved_source_values (tests.test_n2n_metadata_batch.MetadataBatchTests.test_exact_selection_and_preserved_source_values) ... ok
+test_rejects_each_pinned_source_drift (tests.test_n2n_metadata_batch.MetadataBatchTests.test_rejects_each_pinned_source_drift) ... ok
+test_rejects_every_boundary_change (tests.test_n2n_metadata_batch.MetadataBatchTests.test_rejects_every_boundary_change) ... ok
+test_rejects_inventions_and_provenance_damage (tests.test_n2n_metadata_batch.MetadataBatchTests.test_rejects_inventions_and_provenance_damage) ... ok
+test_annotations_deduplicate_and_metadata_enriches (tests.test_search_reddit_archive.ArchiveSearchTests.test_annotations_deduplicate_and_metadata_enriches) ... ok
+test_full_archive_coverage (tests.test_search_reddit_archive.ArchiveSearchTests.test_full_archive_coverage) ... ok
+test_text_explains_annotation_match_without_inventing_metadata (tests.test_search_reddit_archive.ArchiveSearchTests.test_text_explains_annotation_match_without_inventing_metadata) ... ok
+test_text_explains_each_curated_field_match (tests.test_search_reddit_archive.ArchiveSearchTests.test_text_explains_each_curated_field_match) ... ok
+test_annotation_row_is_not_independent_post (tests.test_reddit_corpus_census.RedditCorpusCensusTests.test_annotation_row_is_not_independent_post) ... ok
+test_audit_counts_duplicates (tests.test_reddit_corpus_census.RedditCorpusCensusTests.test_audit_counts_duplicates) ... ok
+test_candidate_post (tests.test_reddit_corpus_census.RedditCorpusCensusTests.test_candidate_post) ... ok
+test_historical_archive_exact_structural_denominators (tests.test_reddit_corpus_census.RedditCorpusCensusTests.test_historical_archive_exact_structural_denominators) ... ok
+test_qmm_composite_annotation_is_not_independent_post (tests.test_reddit_corpus_census.RedditCorpusCensusTests.test_qmm_composite_annotation_is_not_independent_post) ... ok
+test_subreddit_root_and_malformed (tests.test_reddit_corpus_census.RedditCorpusCensusTests.test_subreddit_root_and_malformed) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 16.173s
+
+OK

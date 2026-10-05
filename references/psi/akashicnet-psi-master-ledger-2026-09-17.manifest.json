@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "artifact": {
+    "path": "references/psi/AkashicNET_PSI_Master_Ledger_2026-09-17.xlsx",
+    "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "size_bytes": 29160,
+    "sha256": "2c59e13f76aa341576d4e9a18b50f308170d2b49230bddf739976c78b0b11341",
+    "git_blob_sha": "87393ffa2c4af1e006639c1de367c72c99fed836"
+  },
+  "inventory": {
+    "governed_case_packets": 8,
+    "unique_source_records": 49,
+    "source_manifestations": 40,
+    "hold_records": 8,
+    "review_required_or_candidate_records": 17,
+    "promoted_records": 0,
+    "accepted_edges": 0
+  },
+  "scope": {
+    "status": "REVIEW_CANDIDATE",
+    "complete_historical_subreddit_census": false,
+    "description": "Collates records found in the currently governed packets and manifests; inaccessible, private and unindexed material is outside scope."
+  },
+  "governance": {
+    "big_question_statuses": {
+      "BQ001": "UNRESOLVED",
+      "BQ002": "UNRESOLVED",
+      "BQ003": "UNRESOLVED"
+    },
+    "supports_models": [],
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "public_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "privacy_gate": "FAIL_CLOSED",
+    "sealed_baselines_unchanged": [
+      "v0.14",
+      "v0.15"
+    ]
+  },
+  "provenance": {
+    "recorded_date": "2026-09-17",
+    "related_github_issues": [
+      343,
+      350,
+      354
+    ],
+    "first_case_id": "BIO-PK-001",
+    "first_case_legacy_alias": "TEL-008"
+  }
+}

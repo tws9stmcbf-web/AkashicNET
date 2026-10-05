@@ -80,7 +80,9 @@ def validate(registry, spec, batch1, batch3):
 
     maturity = registry.get("maturity", {})
     if (
-        maturity.get("current_level") != 6
+        type(maturity.get("current_level")) is not int
+        or maturity.get("current_level") != 6
+        or type(maturity.get("candidate_level")) is not int
         or maturity.get("candidate_level") != 7
         or maturity.get("candidate_level_name") != "PREDICTIONS_DEFINED"
     ):
@@ -162,8 +164,14 @@ def validate(registry, spec, batch1, batch3):
         fail("child privacy and cultural safeguards must remain enabled")
 
     source_scope = registry.get("source_scope", {})
-    canonical_inputs = set(source_scope.get("canonical_inputs", []))
-    if canonical_inputs != EXPECTED_CANONICAL_INPUTS or any(not (ROOT / path).is_file() for path in canonical_inputs):
+    canonical_inputs = source_scope.get("canonical_inputs", [])
+    if (
+        not isinstance(canonical_inputs, list)
+        or any(not isinstance(path, str) for path in canonical_inputs)
+        or len(canonical_inputs) != len(EXPECTED_CANONICAL_INPUTS)
+        or set(canonical_inputs) != EXPECTED_CANONICAL_INPUTS
+        or any(not (ROOT / path).is_file() for path in canonical_inputs)
+    ):
         fail("canonical provenance inputs changed or do not exist")
     known_ids = {item.get("source_id") for item in batch1.get("sources", []) + batch3.get("sources", [])}
     source_ids = source_scope.get("source_ids_used_for_design_context_only", [])
@@ -200,7 +208,11 @@ def validate(registry, spec, batch1, batch3):
     governance = registry.get("governance", {})
     if governance.get("question_status") != "UNRESOLVED":
         fail("governed question status changed")
-    if governance.get("accepted_canonical_edges") != 0 or governance.get("supports_models") != []:
+    if (
+        type(governance.get("accepted_canonical_edges")) is not int
+        or governance.get("accepted_canonical_edges") != 0
+        or governance.get("supports_models") != []
+    ):
         fail("canonical/model edges must remain empty")
     for key in FALSE_GUARDS:
         if governance.get(key) is not False:

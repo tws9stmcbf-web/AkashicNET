@@ -147,6 +147,36 @@ class BQ001Level7PredictionRegistryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(candidate)
 
+    def test_canonical_inputs_require_exact_list_cardinality(self):
+        original = self.registry["source_scope"]["canonical_inputs"]
+        for value in (original + [original[0]], dict.fromkeys(original), None, ""):
+            with self.subTest(value=value):
+                candidate = copy.deepcopy(self.registry)
+                candidate["source_scope"]["canonical_inputs"] = value
+                with self.assertRaisesRegex(ValueError, "canonical provenance"):
+                    self.validate(candidate)
+
+    def test_canonical_input_order_is_irrelevant(self):
+        candidate = copy.deepcopy(self.registry)
+        candidate["source_scope"]["canonical_inputs"].reverse()
+        self.validate(candidate)
+
+    def test_maturity_levels_require_exact_integer_types(self):
+        for key, value in (("current_level", 6.0), ("candidate_level", 7.0)):
+            with self.subTest(key=key):
+                candidate = copy.deepcopy(self.registry)
+                candidate["maturity"][key] = value
+                with self.assertRaisesRegex(ValueError, "Level 6 to Level 7"):
+                    self.validate(candidate)
+
+    def test_accepted_edge_count_requires_exact_integer_type(self):
+        for value in (False, 0.0):
+            with self.subTest(value=value):
+                candidate = copy.deepcopy(self.registry)
+                candidate["governance"]["accepted_canonical_edges"] = value
+                with self.assertRaisesRegex(ValueError, "canonical/model edges"):
+                    self.validate(candidate)
+
     def test_question_resolution_rejected(self):
         candidate = copy.deepcopy(self.registry)
         candidate["question_status"] = "RESOLVED"

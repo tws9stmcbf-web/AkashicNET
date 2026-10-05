@@ -1,0 +1,10 @@
+test_all_fifth_batch_provenance_matches_raw_csv (tests.test_n2n_metadata_batch_0005.FifthBatchTests.test_all_fifth_batch_provenance_matches_raw_csv) ... ok
+test_exact_selection_cumulative_counts_and_reproduction (tests.test_n2n_metadata_batch_0005.FifthBatchTests.test_exact_selection_cumulative_counts_and_reproduction) ... ok
+test_missing_fourth_batch_blocks_generation (tests.test_n2n_metadata_batch_0005.FifthBatchTests.test_missing_fourth_batch_blocks_generation) ... ok
+test_prior_overlap_rejected (tests.test_n2n_metadata_batch_0005.FifthBatchTests.test_prior_overlap_rejected) ... ok
+test_batch_one_unchanged_and_unreviewed_batches_rejected (tests.test_n2n_metadata_batch_0002.SecondBatchTests.test_batch_one_unchanged_and_unreviewed_batches_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 9.009s
+
+OK

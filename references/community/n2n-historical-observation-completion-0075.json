@@ -1,0 +1,2695 @@
+{
+  "boundaries": {
+    "accepted_canonical_edges": 0,
+    "archive_wide_authorship_verified": false,
+    "comments_ingested": 0,
+    "evidence_gate": "CLOSED",
+    "live_reddit_access": "HOLD",
+    "media_ingested": 0,
+    "post_existence_verified": false,
+    "privacy_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "rights_gate": "CLOSED",
+    "source_bodies_ingested": 0,
+    "supports_models": [],
+    "truth_inference": false,
+    "website_updated": false
+  },
+  "counts": {
+    "cumulative_provenance_records": 125,
+    "curated_unchanged": 3,
+    "current_reddit_requests": 0,
+    "historical_feed_ids": 125,
+    "new_authorship_verifications": 0,
+    "new_curated_titles": 0,
+    "overlap_with_previous": 0,
+    "previous_provenance_records": 50,
+    "remaining_historical_feed_candidates": 0,
+    "selected": 75
+  },
+  "limitations": [
+    "Historical observation status is not a current public-visibility or API verification claim.",
+    "Unverified pilot CSV titles/summaries are not imported.",
+    "Archive origin remains unresolved in the pinned provenance audit; structural counts do not establish authenticity.",
+    "No public search/index integration or evidence, rights or maturity promotion."
+  ],
+  "original_pilot_checkpoint": {
+    "scope": "Pinned first five staging manifests only; not current queue coverage.",
+    "selected_overlap": 0,
+    "staged_records": 5000
+  },
+  "previous_pilots": [
+    {
+      "path": "references/community/n2n-historical-observation-pilot-0025.json",
+      "sha256": "85507e3c9fd13f641945358c1237ce7ce143a04e06e2a663c6cf0d5e26d5d281"
+    },
+    {
+      "path": "references/community/n2n-historical-observation-pilot-0025-batch-0002.json",
+      "sha256": "9cad2d203a94fb379db0e0aa5739d310f045d1acdba81e70d79b2b92283839dc"
+    }
+  ],
+  "records": [
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vpp5v8/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 26,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vpp5v8/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "25",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vpp5v8",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vpp5v8",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vpp5v8/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vq2pu9/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 25,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vq2pu9/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "24",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vq2pu9",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vq2pu9",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vq2pu9/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqbqn4/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 24,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqbqn4/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "23",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqbqn4",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqbqn4",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqbqn4/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqc81m/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 23,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqc81m/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "22",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqc81m",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqc81m",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqc81m/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqe66p/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 22,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqe66p/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "21",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqe66p",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqe66p",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqe66p/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqg96w/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 21,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqg96w/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "20",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqg96w",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqg96w",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqg96w/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqi3sr/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 20,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqi3sr/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "19",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqi3sr",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqi3sr",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqi3sr/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqli9l/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 19,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqli9l/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "18",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqli9l",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqli9l",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqli9l/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqm3wx/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 18,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqm3wx/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "17",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqm3wx",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqm3wx",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqm3wx/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqsqzp/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 17,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqsqzp/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "16",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqsqzp",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqsqzp",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqsqzp/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqv4yi/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 16,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqv4yi/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "15",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vqv4yi",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vqv4yi",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vqv4yi/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vr7i7x/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 15,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vr7i7x/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "14",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vr7i7x",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vr7i7x",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vr7i7x/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrisdn/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 14,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrisdn/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "13",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vrisdn",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vrisdn",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrisdn/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrnx4i/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 13,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrnx4i/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "12",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vrnx4i",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vrnx4i",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrnx4i/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrpywj/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 12,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrpywj/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "11",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vrpywj",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vrpywj",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrpywj/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrt80y/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 11,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrt80y/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "10",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vrt80y",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vrt80y",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrt80y/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrwp5r/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 10,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrwp5r/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "duplicate_existing_hold",
+            "feed_rank": "9",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "true",
+            "reddit_post_id": "1vrwp5r",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vrwp5r",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vrwp5r/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vs71u5/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 9,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vs71u5/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "8",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vs71u5",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vs71u5",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vs71u5/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vsohu0/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 8,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vsohu0/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "7",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vsohu0",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vsohu0",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vsohu0/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vssvtl/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 7,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vssvtl/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "6",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vssvtl",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vssvtl",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vssvtl/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vsyihv/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 6,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vsyihv/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "5",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vsyihv",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vsyihv",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vsyihv/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtgfjp/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 5,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtgfjp/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "4",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vtgfjp",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vtgfjp",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtgfjp/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtnjer/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 4,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtnjer/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "3",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vtnjer",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vtnjer",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtnjer/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtua7y/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 3,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtua7y/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "2",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vtua7y",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vtua7y",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtua7y/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtwh2m/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 2,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtwh2m/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "1",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "3",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vtwh2m",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0004.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vtwh2m",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtwh2m/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtwt3t/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 26,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtwt3t/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "25",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vtwt3t",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vtwt3t",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vtwt3t/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vvwvgd/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 25,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vvwvgd/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "24",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vvwvgd",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vvwvgd",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vvwvgd/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vvzco2/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 24,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vvzco2/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "23",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vvzco2",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vvzco2",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vvzco2/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vx8spq/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 23,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vx8spq/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "22",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vx8spq",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vx8spq",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vx8spq/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxbf91/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 22,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxbf91/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "21",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vxbf91",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxbf91",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxbf91/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxc05t/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 21,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxc05t/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "20",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vxc05t",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxc05t",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxc05t/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxi30u/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 20,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxi30u/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "19",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vxi30u",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxi30u",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxi30u/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxmjoc/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 19,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxmjoc/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "duplicate_existing_hold",
+            "feed_rank": "18",
+            "historical_index_match": "false",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "true",
+            "reddit_post_id": "1vxmjoc",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxmjoc",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxmjoc/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxsnp4/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 18,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxsnp4/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "17",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vxsnp4",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxsnp4",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxsnp4/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxt7y7/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 17,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxt7y7/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "16",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vxt7y7",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxt7y7",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxt7y7/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxv5kg/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 16,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxv5kg/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "15",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vxv5kg",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vxv5kg",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vxv5kg/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vy1mcn/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 15,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vy1mcn/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "14",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vy1mcn",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vy1mcn",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vy1mcn/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyhd2m/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 14,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyhd2m/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "13",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vyhd2m",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vyhd2m",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyhd2m/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyn02t/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 13,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyn02t/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "12",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vyn02t",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vyn02t",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyn02t/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyngfa/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 12,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyngfa/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "11",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vyngfa",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vyngfa",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyngfa/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyquht/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 11,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyquht/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "10",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vyquht",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vyquht",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyquht/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 10,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "9",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vyr82r",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vyr82r",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vyr82r/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vz8oyb/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 9,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vz8oyb/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "8",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vz8oyb",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vz8oyb",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vz8oyb/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzatdl/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 8,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzatdl/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "7",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzatdl",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzatdl",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzatdl/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzegb9/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 7,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzegb9/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "6",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzegb9",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzegb9",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzegb9/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzfhwd/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 6,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzfhwd/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "duplicate_existing_hold",
+            "feed_rank": "5",
+            "historical_index_match": "false",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "true",
+            "reddit_post_id": "1vzfhwd",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzfhwd",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzfhwd/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzjevx/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 5,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzjevx/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "4",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzjevx",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzjevx",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzjevx/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzlneq/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 4,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzlneq/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "3",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzlneq",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzlneq",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzlneq/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vznd25/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 3,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vznd25/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "2",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vznd25",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vznd25",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vznd25/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzoa3j/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 2,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzoa3j/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "1",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "2",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzoa3j",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0003.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzoa3j",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzoa3j/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzph25/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 26,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzph25/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "25",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzph25",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzph25",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzph25/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzqdl1/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 25,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzqdl1/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "24",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzqdl1",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzqdl1",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzqdl1/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzrutr/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 24,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzrutr/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "23",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzrutr",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzrutr",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzrutr/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzsfzv/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 23,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzsfzv/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "22",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzsfzv",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzsfzv",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzsfzv/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzszu4/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 22,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzszu4/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "21",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzszu4",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzszu4",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzszu4/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vztbnl/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 21,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vztbnl/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "duplicate_existing_hold",
+            "feed_rank": "20",
+            "historical_index_match": "false",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "true",
+            "reddit_post_id": "1vztbnl",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vztbnl",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vztbnl/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzxlk8/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 20,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzxlk8/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "19",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1vzxlk8",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1vzxlk8",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vzxlk8/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w00b46/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 19,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w00b46/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "18",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w00b46",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w00b46",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w00b46/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0ipcx/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 18,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0ipcx/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "17",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w0ipcx",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w0ipcx",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0ipcx/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0lku3/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 17,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0lku3/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "16",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w0lku3",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w0lku3",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0lku3/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0qegc/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 16,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0qegc/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "15",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w0qegc",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w0qegc",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0qegc/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0r1jv/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 15,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0r1jv/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "14",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w0r1jv",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w0r1jv",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0r1jv/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0rk3l/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 14,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0rk3l/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "13",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w0rk3l",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w0rk3l",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0rk3l/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0svvv/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 13,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0svvv/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "12",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w0svvv",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w0svvv",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w0svvv/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w11ui6/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 12,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w11ui6/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "11",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w11ui6",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w11ui6",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w11ui6/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w13n1p/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 11,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w13n1p/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "10",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w13n1p",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w13n1p",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w13n1p/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1d8h8/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 10,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1d8h8/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "9",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w1d8h8",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w1d8h8",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1d8h8/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1fcdx/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 9,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1fcdx/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "duplicate_existing_hold",
+            "feed_rank": "8",
+            "historical_index_match": "false",
+            "import_status": "NO_ACTION",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "true",
+            "reddit_post_id": "1w1fcdx",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w1fcdx",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1fcdx/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1ksy1/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 8,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1ksy1/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "7",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w1ksy1",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w1ksy1",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1ksy1/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1u8ym/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 7,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1u8ym/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "6",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w1u8ym",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w1u8ym",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1u8ym/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1w7xf/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 6,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1w7xf/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "5",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w1w7xf",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w1w7xf",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w1w7xf/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w2awju/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 5,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w2awju/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "4",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w2awju",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w2awju",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w2awju/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3erja/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 4,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3erja/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "3",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w3erja",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w3erja",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3erja/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3h7y6/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 3,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3h7y6/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "2",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w3h7y6",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w3h7y6",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3h7y6/"
+      ],
+      "title": null
+    },
+    {
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3jv17/",
+      "author": null,
+      "canonical_metadata_write": false,
+      "current_flair": null,
+      "current_verification": "NOT_PERFORMED",
+      "evidence_status": null,
+      "historical_observation_receipts": [
+        {
+          "csv_record_ordinal": 2,
+          "historical_observation": {
+            "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3jv17/",
+            "discovery_source": "public_subreddit_new_feed",
+            "disposition": "new_manual_candidate",
+            "feed_rank": "1",
+            "historical_index_match": "false",
+            "import_status": "HOLD",
+            "live_verification_status": "publicly_accessible",
+            "observed_at": "2026-09-01",
+            "pagination_page": "1",
+            "prior_manual_batch_match": "false",
+            "reddit_post_id": "1w3jv17",
+            "subreddit": "NeuronsToNirvana"
+          },
+          "source_path": "references/community/reddit-manual-delta-batch-0002.csv"
+        }
+      ],
+      "observation_interpretation": "Repository-recorded past observation only; not reverified now.",
+      "post_id": "1w3jv17",
+      "rights_status": null,
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1w3jv17/"
+      ],
+      "title": null
+    }
+  ],
+  "schema": "akashicnet.n2n.historical-observation-pilot.v1",
+  "selection_rule": "Remaining 75 lowercase post IDs in lexical order after the two validated 25-record pilots; eligible ranks 51-125 from pinned historical feeds. Separate provenance overlay, not additional staging records.",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "source_sha256": {
+    "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md": "9fcfce2e31ecafddefe69c388017d71d2c4d02887ed9ef7262f95aab8f4b653b",
+    "references/community/n2n-metadata-batch-0001.json": "23bcb5a4cceec77a123946174ad068a93474aaa5e342e21c6a66f0ef9b8ead57",
+    "references/community/n2n-metadata-batch-0002.json": "f8c982e63c8cf7bd52803d6dad8b275a7afaec4b47f98800d5fe93c578f23893",
+    "references/community/n2n-metadata-batch-0003.json": "dd1401ea856f4a4ebb99e02713c0711807eaac38a4455877e69f2f8265419e28",
+    "references/community/n2n-metadata-batch-0004.json": "8f2f3e076e35235fb7ac9baca00b8dba851ff779e23169321e50b61b1d3cee2c",
+    "references/community/n2n-metadata-batch-0005.json": "c9e44a7bc50c185de9c10f54c2688fdccfaeb57e37be4876f07f6beecebba9b7",
+    "references/community/reddit-manual-delta-batch-0002.csv": "d97011b3ab2bd7e542f62ff17da0b2545f983decd3450871ca87d7f76be05193",
+    "references/community/reddit-manual-delta-batch-0003.csv": "cd314cc22775a98c1d3e1423671c964b09ab6b5fa287a918658a7b3552f0b61b",
+    "references/community/reddit-manual-delta-batch-0004.csv": "e39b755c86b38c61b678300406354bc7aeb78482a487d65ccc5e8031fa0aadd5",
+    "references/community/reddit-manual-delta-batch-0005.csv": "5ea83c66119a31df795143a6ecaecfc984bd5e7f10589a36302808b503bb8997",
+    "references/community/reddit-manual-delta-batch-0006.csv": "08172bf3cda9264f3c49b66a8ef1a7661c847bf5576e1cb7e0949085184d59b6"
+  }
+}

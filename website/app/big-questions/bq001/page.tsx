@@ -123,7 +123,8 @@ const openQuestions = [
   "Can prospective cardiac-arrest studies establish tighter temporal links between reported experience and measurable brain state?",
   "Can reincarnation-type research produce prospectively documented, independently verified cases with information pathways tightly controlled?",
   "What would count as continuity of an individual rather than continuity of information, resemblance or influence?",
-  "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",\n  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
+  "Which philosophy-of-mind claims can be translated into empirically discriminating predictions?",
+  "Could transdimensional temporal mettā-awareness—loving awareness considered across states and experiences of time—remain coherent beyond ordinary embodiment, and what evidence could distinguish that possibility from metaphor, altered-state phenomenology, memory reconstruction or cultural interpretation?",
 ];
 
 const researchTrail = [
@@ -232,7 +233,7 @@ export default function BQ001Page() {
         <p style={{ color: "#d8b95c", letterSpacing: ".18em", fontWeight: 800, fontSize: 13 }}>BIG QUESTION 001 · PUBLIC INVESTIGATION</p>
         <h1 style={{ margin: "16px auto", maxWidth: 900, fontSize: "clamp(2.7rem, 8vw, 6.6rem)", lineHeight: .96, letterSpacing: "-.045em" }}>Does consciousness continue beyond the individual?</h1>
         <p style={{ maxWidth: 760, margin: "26px auto", color: "#c8c4bb", fontSize: "clamp(1.05rem, 2vw, 1.3rem)", lineHeight: 1.7 }}>AkashicNET maps the evidence without purchasing a conclusion. Neuroscience, cardiac-arrest research, memory and identity, reincarnation-type cases, contemplative traditions and philosophy of mind are kept visible together without flattening their evidential differences.</p>
-        <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED</div>
+        <div role="status" aria-label="Current conclusion" style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(227,190,87,.52)", borderRadius: 999, padding: "10px 18px", background: "rgba(227,190,87,.08)", color: "#f1d47b", fontWeight: 900, letterSpacing: ".12em" }}>CURRENT STATUS · UNRESOLVED · DEEPENING · LEVEL 6/10</div>
       </section>
 
       <section style={{ ...shell, paddingBottom: 44 }} aria-labelledby="legend-title">
@@ -281,13 +282,13 @@ export default function BQ001Page() {
       <section style={{ ...shell, paddingTop: 34, paddingBottom: 26 }} aria-labelledby="profile-title">
         <div style={{ ...panel, borderColor: "rgba(159,216,255,.38)" }}>
           <p style={{ color: "#9fd8ff", fontWeight: 900, letterSpacing: ".14em", fontSize: 13 }}>PROVISIONAL EVIDENCE PROFILE · BEFORE THE QUESTIONS</p>
-          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved does not mean motionless.</h2>
-          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>The inquiry is deepening, but its conclusion is not being pulled toward a predetermined yes or no. Each colour describes one axis only.</p>
+          <h2 id="profile-title" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", lineHeight: 1.15 }}>Unresolved · Deepening · Level 6/10</h2>
+          <p style={{ color: "#d1cdc4", lineHeight: 1.75 }}>Level 6 means the inquiry has progressed through source mapping, model separation and evidence mapping into methodological stress-testing. It measures completed research work, not truth probability, confidence in survival, or readiness for promotion. The conclusion remains open.</p>
           <p aria-label="Rating colour key" style={{ color: "#c8c4bb", lineHeight: 1.9 }}><strong>🔴 Caution or weak support</strong> · <strong>🟠 Limited or emerging</strong> · <strong>⚪ Unresolved or undetermined</strong> · <strong>🩵 Deepening inquiry</strong> · <strong>🟢 Substantial within this axis</strong> · <strong>💜 Philosophical or interpretive potential</strong></p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 12, marginTop: 24 }}>
             {[
               ["⚪", "Overall conclusion", "UNRESOLVED", "Changes only when converging evidence discriminates among competing models."],
-              ["🩵", "Inquiry momentum", "DEEPENING ↗", "Rises as sources, testimonies, counter-evidence and definitions are systematically audited."],
+              ["🩵", "Inquiry momentum", "DEEPENING · LEVEL 6/10", "Advances toward Level 7 only when competing models gain explicit predictions and falsifiers."],
               ["⚪", "Direction of conclusion", "NOT YET DETERMINED", "Moves only after the evidence profile changes—not because more material supports a preferred answer."],
               ["🟠", "Evidence strength", "LIMITED · MIXED", "Could rise through prospective documentation, better controls and independent corroboration."],
               ["🟠", "Mechanistic feasibility", "SPECULATIVE", "Could rise if a coherent mechanism generates testable, successful predictions."],
@@ -352,7 +353,8 @@ export default function BQ001Page() {
             <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Courage makes the invisible visible.</strong></article>
             <article style={{ padding: 18, border: "1px solid rgba(255,255,255,.10)", borderRadius: 16 }}><strong>Love moves humanity forward.</strong></article>
           </div>
-          <p style={{ marginTop: 28, color: "#f1d47b", fontSize: "1.15rem", lineHeight: 1.7 }}><strong>Keep the faith.</strong> Bon Jovi and Armin van Buuren carried that message from rock into trance at Ultra Miami 2024: a cultural expression of perseverance and shared hope, not evidence for either conclusion.</p>\n          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
+          <p style={{ marginTop: 28, color: "#f1d47b", fontSize: "1.15rem", lineHeight: 1.7 }}><strong>Keep the faith.</strong> Bon Jovi and Armin van Buuren carried that message from rock into trance at Ultra Miami 2024: a cultural expression of perseverance and shared hope, not evidence for either conclusion.</p>
+          <p style={{ marginTop: 28, color: "#c8c4bb", lineHeight: 1.75 }}><strong>Hopes, wishes, prayers and dreams matter.</strong> They can sustain meaning, connection and compassionate action without being counted as empirical evidence or promises that a desired conclusion is true.</p>
         </div>
       </section>
 
@@ -368,10 +370,11 @@ export default function BQ001Page() {
       <section id="sources" style={{ ...shell, paddingBottom: 72 }}>
         <p style={{ color: "#d8b95c", fontWeight: 800, letterSpacing: ".14em", fontSize: 13 }}>PROVENANCE</p>
         <p style={{ color: "#c8c4bb", lineHeight: 1.7 }}>This page is a public adaptation of the validated BQ001 synthesis in the AkashicNET repository. Every evidence card above is constrained by the underlying claim/source records; uncertainty and evidence class are preserved rather than converted into a confidence score.</p>
-        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.1 · Page expanded September 2026 · AkashicNET PRE-ALPHA v0.10.x engine</p>
+        <p style={{ color: "#c8c4bb" }}>BQ001 · Public synthesis v0.1.1 · Page expanded September 2026</p>
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,255,255,.08)", padding: "30px 22px", textAlign: "center", color: "#9f9c95" }}>AKASHICNET.ORG · Open Heart · Open Mind · Open Knowledge · Awaken within · Serve without ♾️</footer>
     </main>
   );
 }
+

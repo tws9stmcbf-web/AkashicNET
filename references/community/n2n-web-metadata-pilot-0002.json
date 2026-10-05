@@ -1,0 +1,181 @@
+{
+  "schema": "akashicnet.n2n.web-metadata-observations.v1",
+  "source_head": "808564658800a1ab230bbb837aa3b228911d671f",
+  "archive_sha256": {
+    "references/community/reddit-uri-index.csv": "3a6a702061cff7ae9e8d555b1de32b17cba9401f59451fce739f7f8411804b80",
+    "references/community/n2n-index.csv": "6d6ea88cbeda0a14b281246201e9cc711d74b28898531951da57dcdfdd36595a",
+    "scripts/reddit_corpus_census.py": "5377d0454e8f22c4684becd611a6136549ddba8e1c21be7d75dfce5d1b5e3845",
+    "tools/search_reddit.py": "1e8286abff822f2edfc34f180aa5c0bf7b88eaa5df85bd1e8d6857208330f8d4"
+  },
+  "selection_rule": "Next landing-page links 18,19,22,25, followed by related-post links 16,17 on the Aghori post; retain uncurated pinned archive IDs absent from the previous overlay. Accessibility sample only.",
+  "excluded": [
+    {
+      "post_id": "1w45ekl",
+      "reason": "OUTSIDE_PINNED_ARCHIVE"
+    },
+    {
+      "post_id": "1w44ups",
+      "reason": "OUTSIDE_PINNED_ARCHIVE"
+    }
+  ],
+  "counts": {
+    "accessible_posts_examined": 6,
+    "archive_records_enriched_in_overlay": 4,
+    "observed_field_values": 12,
+    "outside_archive_excluded": 2,
+    "new_canonical_curated_records": 0,
+    "canonical_curated_records": 3,
+    "previously_enriched_in_overlays": 4,
+    "cumulative_unique_enriched_in_overlays": 8,
+    "overlap_with_previous": 0,
+    "cumulative_observed_field_values": 24
+  },
+  "authorization": {
+    "live_reddit_metadata_read": "AUTHORIZED_BY_USER",
+    "user_instruction": "Lift the restrictions",
+    "scope": "Metadata observations staged; no merge or deployment"
+  },
+  "boundaries": {
+    "bodies_stored": 0,
+    "comments_stored": 0,
+    "media_stored": 0,
+    "rights_gate": "CLOSED",
+    "evidence_gate": "CLOSED",
+    "publication_gate": "CLOSED",
+    "promotion_gate": "CLOSED",
+    "canonical_metadata_write": false,
+    "website_updated": false
+  },
+  "limitations": [
+    "Returned pages may be cached; retrieval day is not the crawl date.",
+    "Displayed usernames do not independently verify real-world identity or ownership.",
+    "Relative post ages and title date suffixes are not exact creation timestamps.",
+    "No historical archive annotation was promoted to current flair."
+  ],
+  "records": [
+    {
+      "post_id": "1rbjttp",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1rbjttp/i_gave_an_aghori_dmt_and_he_laughed_at_it_12m17s/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1rbjttp/i_gave_an_aghori_dmt_and_he_laughed_at_it_12m17s/"
+      ],
+      "observed_metadata": {
+        "title": "I gave an Aghori DMT and he laughed at it (12m:17s) | dakota 2 earth [Feb 2026]",
+        "author_display": "NeuronsToNirvana",
+        "flair_in_returned_copy": "Spirit (Entheogens) 🧘"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1rbjttp/i_gave_an_aghori_dmt_and_he_laughed_at_it_12m17s/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn7view0",
+        "reported_crawl_age": "last month",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vhivzm",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vhivzm/you_contain_a_universe_inside_yourself_theres_no/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vhivzm/you_contain_a_universe_inside_yourself_theres_no/"
+      ],
+      "observed_metadata": {
+        "title": "“You contain a universe inside yourself. There’s no end to it—your conscious, your subconscious. There is no limit to what’s inside you. We are very much connected. There’s no end to it.” ~ Ann Shulgin | Interview Magazine [Aug 2010]",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "❝Quote Me❞ 💬"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vhivzm/you_contain_a_universe_inside_yourself_theres_no/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn8view0",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vlgwnc",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlgwnc/building_the_noetic_sciences_toolkit_on_github/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlgwnc/building_the_noetic_sciences_toolkit_on_github/"
+      ],
+      "observed_metadata": {
+        "title": "🧠 Building the Noetic Sciences Toolkit on GitHub — Knowledge → Practice → Growth 🔬🌱",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "☑️ ToDo A Deep-Dive 🤿"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vlgwnc/building_the_noetic_sciences_toolkit_on_github/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn9view1",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 17,
+          "author_display": 16,
+          "flair_in_returned_copy": 19
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    },
+    {
+      "post_id": "1vluise",
+      "archived_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vluise/last_day_in_varanasi/",
+      "source_locations": [
+        "https://www.reddit.com/r/NeuronsToNirvana/comments/1vluise/last_day_in_varanasi/"
+      ],
+      "observed_metadata": {
+        "title": "last day in varanasi",
+        "author_display": "u/NeuronsToNirvana",
+        "flair_in_returned_copy": "🎨 The Arts 🎭"
+      },
+      "provenance": {
+        "source_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1vluise/last_day_in_varanasi/",
+        "retrieved_on": "2026-10-02",
+        "retrieval_method": "web_reader",
+        "tool_reference": "turn9view0",
+        "reported_crawl_age": "today",
+        "exact_crawl_timestamp": null,
+        "field_line_numbers": {
+          "title": 18,
+          "author_display": 16,
+          "flair_in_returned_copy": 20
+        }
+      },
+      "current_flair": null,
+      "created_at": null,
+      "rights_status": null,
+      "evidence_status": null,
+      "review_status": "SOURCE_OBSERVED_STAGING_ONLY"
+    }
+  ],
+  "previous_batch": {
+    "path": "references/community/n2n-web-metadata-pilot-0001.json",
+    "sha256": "6608a823360f4d2bc4ec7d991d6d8bca4fa8a0508d0a17c5529769124955d092"
+  }
+}

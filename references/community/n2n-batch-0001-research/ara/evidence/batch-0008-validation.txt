@@ -1,0 +1,10 @@
+test_all_final_rows_retain_original_provenance_and_null_fields (tests.test_n2n_metadata_batch_0008.FinalBatchTests.test_all_final_rows_retain_original_provenance_and_null_fields) ... ok
+test_final_batch_reproduces_and_revalidates_prior_chain (tests.test_n2n_metadata_batch_0008.FinalBatchTests.test_final_batch_reproduces_and_revalidates_prior_chain) ... ok
+test_full_queue_plus_curated_exactly_covers_archive (tests.test_n2n_metadata_batch_0008.FinalBatchTests.test_full_queue_plus_curated_exactly_covers_archive) ... ok
+test_missing_prior_and_unreviewed_batches_rejected (tests.test_n2n_metadata_batch_0008.FinalBatchTests.test_missing_prior_and_unreviewed_batches_rejected) ... ok
+test_prior_overlap_rejected (tests.test_n2n_metadata_batch_0008.FinalBatchTests.test_prior_overlap_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 54.800s
+
+OK
