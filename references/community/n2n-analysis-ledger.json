@@ -1369,6 +1369,21 @@
         "open_investigation_groups": 4,
         "next_pending_post_id": "100045"
       }
+    },
+    {
+      "checked_at": "2026-10-05T21:10:09.555Z",
+      "source_commit": "56dd2c4bbc47fea9479e8f605e34fec596b1eeaf",
+      "source_path": "references/community/reddit-semantic-index.csv",
+      "source_blob_sha": "56be9ed9e89226c808ef1de4287056ee359187be",
+      "scope": "100049 reconciliation across pilot CSV/Markdown, pinned URI archive and complete exact-head semantic-index blob, with 100048 as a positive comparison.",
+      "method": "Retrieved the complete semantic Git blob and independently fetched the contents path at the exact head; the two contents were byte-identical. Recomputed Git blob SHA matched the exact-head tree. Parsed all 9,401 semantic data rows by explicit post_id and URL-derived ID. Verified the current URI blob is byte-identical to queue.source_commit.",
+      "finding": "100049 is present in the pilot CSV at line 75 and pilot Markdown at lines 866-875. Both URI and semantic indexes contain three matching variants at lines 138-140: plain, Original and QMM,What. Semantic post_id and URL-derived ID agree for all three rows. The preceding 100048 likewise has three semantic rows, at lines 135-137. All three variants represent one structural archive ID, not three independent sources.",
+      "historical_reconciliation": "The earlier bounded no-match observation reported when selecting this task is superseded by this successful complete-blob check. No semantic-index absence or new coverage-gap investigation is justified at this head. The cause of that earlier retrieval result is unknown; no truncation, omission or parser fault is inferred.",
+      "counting": "The concurrent commit f8c5d47f098fa3f44e2e4acea719f3ea652f5a10 already records 100049 as BLOCKED. This verification adds no assessment or source-read count: preserve 46 BLOCKED, 0 COMPLETE, four OPEN investigation groups and next pending 10004a. Source files and all gates remain unchanged.",
+      "reconciliation_recorded_after_commit": "f8c5d47f098fa3f44e2e4acea719f3ea652f5a10",
+      "affected_post_ids": [
+        "100049"
+      ]
     }
   ],
   "investigation_register": {
