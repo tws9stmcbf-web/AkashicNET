@@ -1,0 +1,557 @@
+{
+  "schema_version": "0.1",
+  "packet_id": "MORAES-TABLE-S2-PROVENANCE-2026-10-06",
+  "status": "REVIEW_REQUIRED",
+  "provenance": "ai-executed",
+  "created_on": "2026-10-06",
+  "scope": "Blocked Table S2 recovery and existing-source lookup seed only. No included-study extraction or included-study deduplication has been completed.",
+  "source_boundaries": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "pr": 395,
+    "pr_head": "500dac3dd55a40c0e213bb98f8d7ca58551cb3ad",
+    "main_snapshot": "60683acdc67ea0f37028603972c41975b2ff58e1",
+    "pr321_head": "ab572472e1cb9c52c3e16538e81addd98ed6966c",
+    "pr392_head": "c54a946f7f4abef3ad2a7f2a70102c801b697d09"
+  },
+  "parent_publication": {
+    "title": "Academic studies on claimed past-life memories: A scoping review",
+    "doi": "10.1016/j.explore.2021.05.006",
+    "pmid": "34147343",
+    "online_year": 2021,
+    "issue_year": 2022,
+    "existing_source_ids": [
+      "MORAES-ET-AL-2022-PLM-SCOPING",
+      "SRC-BQ001-SCOPING-2021"
+    ]
+  },
+  "authoritative_table": {
+    "label": "Table S2: Summary of studies",
+    "status": "NOT_RECOVERED",
+    "download_url": null,
+    "sha256": null,
+    "observed_row_count": null,
+    "article_reported_included_count": 78,
+    "count_unit": "INCLUDED_PUBLICATIONS_REPORTED_BY_REVIEW_NOT_INDEPENDENT_REPLICATIONS",
+    "fields_described_by_article": [
+      "authors",
+      "year",
+      "country_or_territory",
+      "design",
+      "sample",
+      "method"
+    ],
+    "field_schema_verified_against_s2": false,
+    "description_source": {
+      "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/12/Academic-Studies-on-Claimed-Past-life-memories-A-scoping-Review-Jim-2021-1-s2.0-S1550830721000951-main-1.pdf",
+      "locator": "PDF page 2 Methods and page 3 Results",
+      "type": "AUTHOR_INSTITUTION_HOSTED_MAIN_ARTICLE_NOT_SUPPLEMENT"
+    }
+  },
+  "recovery_attempts": [
+    {
+      "route": "publisher_article",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1550830721000951",
+      "outcome": "WEB_FETCH_403_DIRECT_REQUEST_SITE_UNAVAILABLE_HTML",
+      "http_status_direct": 200,
+      "payload_bytes_direct": 195,
+      "usable_s2": false
+    },
+    {
+      "route": "crossref_metadata",
+      "url": "https://api.crossref.org/works/10.1016%2Fj.explore.2021.05.006",
+      "outcome": "PARENT_DOI_METADATA_RECOVERED_WITH_PUBLISHER_API_LINKS_NOT_S2",
+      "usable_s2": false
+    },
+    {
+      "route": "publisher_article_api",
+      "url": "https://api.elsevier.com/content/article/PII:S1550830721000951?httpAccept=text/xml",
+      "outcome": "SITE_UNAVAILABLE_HTML",
+      "http_status_direct": 200,
+      "payload_bytes_direct": 195,
+      "usable_s2": false
+    },
+    {
+      "route": "publisher_attachment_metadata",
+      "url": "https://api.elsevier.com/content/object/pii/S1550830721000951?view=META",
+      "outcome": "SITE_UNAVAILABLE_HTML",
+      "http_status_direct": 200,
+      "payload_bytes_direct": 195,
+      "usable_s2": false
+    },
+    {
+      "route": "inferred_cdn_candidates",
+      "urls": [
+        "https://ars.els-cdn.com/content/image/1-s2.0-S1550830721000951-mmc1.docx",
+        "https://ars.els-cdn.com/content/image/1-s2.0-S1550830721000951-mmc2.docx"
+      ],
+      "url_basis": "INFERRED_FILENAME_PATTERNS_NOT_OBSERVED_OR_AUTHENTICATED_ATTACHMENT_LINKS",
+      "outcome": "HTTP_403_BOTH",
+      "usable_s2": false
+    },
+    {
+      "route": "author_figshare_record",
+      "url": "https://api.figshare.com/v2/articles/13234907",
+      "outcome": "S1_ONLY_NOT_S2",
+      "author": "Lucam Justo de Moraes",
+      "file_name": "Table S1.docx",
+      "file_id": 25491170,
+      "file_size": 15998,
+      "usable_s2": false
+    },
+    {
+      "route": "figshare_search",
+      "url": "https://api.figshare.com/v2/articles/search",
+      "method": "POST",
+      "queries": [
+        {
+          "search_for": "Academic Studies on Claimed Past-Life Memories",
+          "limit": 100,
+          "returned_ids": [
+            33330264,
+            13234907
+          ]
+        },
+        {
+          "search_for": "Lucam Justo de Moraes",
+          "limit": 100,
+          "returned_ids": [
+            13234907
+          ]
+        },
+        {
+          "search_for": "\"Past-Life\" \"Table S2\"",
+          "limit": 100,
+          "returned_ids": []
+        }
+      ],
+      "outcome": "NO_S2_IN_RETURNED_RESULTS",
+      "usable_s2": false
+    },
+    {
+      "route": "figshare_related_doi",
+      "url": "https://api.figshare.com/v2/articles?resource_doi=10.1016%2Fj.explore.2021.05.006&page_size=100",
+      "outcome": "EMPTY_RESULT_ARRAY",
+      "usable_s2": false
+    },
+    {
+      "route": "author_institution_publications",
+      "url": "https://med.virginia.edu/perceptual-studies/publications/academic-publications/",
+      "outcome": "ARTICLE_ENTRY_LINKS_EIGHT_PAGE_MAIN_PDF_NOT_S2",
+      "usable_s2": false
+    }
+  ],
+  "included_study_rows": [],
+  "reconciliation": {
+    "status": "BLOCKED_PENDING_AUTHORITATIVE_S2",
+    "rows_extracted": 0,
+    "rows_compared_to_existing_records": 0,
+    "matched_existing_publications": null,
+    "unmatched_publications": null,
+    "unresolved_included_study_identifiers": null,
+    "note": "Null counts mean not assessable without S2, not zero matches, zero missing identifiers or no duplicates. No synthetic 78-row placeholder list."
+  },
+  "existing_source_lookup_seed": {
+    "status": "PREPARATION_ONLY_NOT_S2_MEMBERSHIP",
+    "selection": "Recursive source_id+title objects matching reincarn|past.life|previous.li(fe|ves)|HARALDSSON, plus all four existing_source_id records in the bibliographic pilot. Case-insensitive title/ID filter; a lookup seed, not a complete repository identifier census.",
+    "inputs": [
+      {
+        "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+        "pr_head_git_blob": "44ab4a1bb7dc941a52c9d7529e719ed7e91cc3f5",
+        "sha256": "6bad05da5b4ee8b7a633fa730cc19a8646ccbd203bb7cfe390af029605ef1e0b",
+        "main_git_blob": "44ab4a1bb7dc941a52c9d7529e719ed7e91cc3f5",
+        "main_status": "IDENTICAL_BLOB"
+      },
+      {
+        "path": "references/consciousness/karma-reincarnation-outliers-source-crawl-v0.1.json",
+        "pr_head_git_blob": "c091a0cdcb0a4c157b35cf84c72cc2afffb5f618",
+        "sha256": "e72d9e212dd06fa9c05a9fedf7e0ee39c14f8f5f8ab447d448803028e0f69a14",
+        "main_git_blob": "c091a0cdcb0a4c157b35cf84c72cc2afffb5f618",
+        "main_status": "IDENTICAL_BLOB"
+      },
+      {
+        "path": "references/big-questions/BQ001/issue-343-leininger-chronology-dispute-packet-v0.1.json",
+        "pr_head_git_blob": "8d09c7a90f016c78a478ed787b50c1aa8adc5b57",
+        "sha256": "ee9a32c58e16b4ae7ea4ed165b42eaff9cd25130a85dcf6e4fca47602dc699ee",
+        "main_git_blob": "8d09c7a90f016c78a478ed787b50c1aa8adc5b57",
+        "main_status": "IDENTICAL_BLOB"
+      },
+      {
+        "path": "references/psi/psi-encyclopedia-metadata-pilot-v0.1.json",
+        "pr_head_git_blob": "954636cac44bd82512c0a9d6c167db1cb9ce0759",
+        "sha256": "04c4cd25d907af8738909232623e2271863e68f31fcb622fd050182620a4b419",
+        "main_git_blob": null,
+        "main_status": "NOT_PRESENT"
+      },
+      {
+        "path": "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json",
+        "pr_head_git_blob": "397340bdf59d76d10a23ca2614923df0663b2c63",
+        "sha256": "72e8af5acfed93229e3ae5775dcc587b5bab2c65cb8208411ff6afc4d3ac7dc8",
+        "main_git_blob": null,
+        "main_status": "NOT_PRESENT"
+      }
+    ],
+    "records": [
+      {
+        "existing_source_id": "KEIL-TUCKER-2005-WRITTEN-RECORDS",
+        "titles": [
+          "Children Who Claim to Remember Previous Lives: Cases with Written Records Made before the Previous Personality Was Identified"
+        ],
+        "doi": null,
+        "pmid": null,
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/consciousness/karma-reincarnation-outliers-source-crawl-v0.1.json",
+            "json_pointer": "/sources/5"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      },
+      {
+        "existing_source_id": "LEININGER-TUCKER-2016",
+        "titles": [
+          "The Case of James Leininger: An American Case of the Reincarnation Type"
+        ],
+        "doi": "10.1016/j.explore.2016.02.003",
+        "pmid": "27079216",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/issue-343-leininger-chronology-dispute-packet-v0.1.json",
+            "json_pointer": "/source_chain/0"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "MORAES-ET-AL-2022-PLM-SCOPING",
+        "titles": [
+          "Academic studies on claimed past-life memories: A scoping review"
+        ],
+        "doi": "10.1016/j.explore.2021.05.006",
+        "pmid": "34147343",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/consciousness/karma-reincarnation-outliers-source-crawl-v0.1.json",
+            "json_pointer": "/sources/4"
+          },
+          {
+            "path": "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json",
+            "json_pointer": "/records/0"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "PASRICHA-2011-FAMILY-ATTITUDES",
+        "titles": [
+          "Do attitudes of families concerned influence features of children who claim to remember previous lives?"
+        ],
+        "doi": "10.4103/0019-5545.75554",
+        "pmid": null,
+        "pmcid": "PMC3056182",
+        "source_loci": [
+          {
+            "path": "references/consciousness/karma-reincarnation-outliers-source-crawl-v0.1.json",
+            "json_pointer": "/sources/6"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      },
+      {
+        "existing_source_id": "PEHLIVANOVA-COZZOLINO-TUCKER-2024-FOLLOWUP",
+        "titles": [
+          "Impact of children's purported past-life memories: a follow-up investigation of American cases"
+        ],
+        "doi": "10.3389/fpsyg.2024.1473340",
+        "pmid": null,
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/consciousness/karma-reincarnation-outliers-source-crawl-v0.1.json",
+            "json_pointer": "/sources/8"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-ALLAN-2025",
+        "titles": [
+          "New methodological directions for involving children in past life memories research"
+        ],
+        "doi": "10.1016/j.explore.2025.103283",
+        "pmid": "41265055",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+            "json_pointer": "/sources/5"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-COZZOLINO-2025-XENOGLOSSY",
+        "titles": [
+          "Past-life Memories and Foreign Languages"
+        ],
+        "doi": "10.31156/jaex.27464",
+        "pmid": null,
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json",
+            "json_pointer": "/records/2"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-HARALDSSON-2003",
+        "titles": [
+          "Children who speak of past-life experiences: is there a psychological explanation?"
+        ],
+        "doi": "10.1348/14760830260569256",
+        "pmid": "12689435",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+            "json_pointer": "/sources/2"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-MORAES-2024",
+        "titles": [
+          "Children who claim previous life memories: A case report and literature review"
+        ],
+        "doi": "10.1016/j.explore.2024.103063",
+        "pmid": "39341119",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+            "json_pointer": "/sources/3"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP",
+        "titles": [
+          "Impact of children’s purported past-life memories: a follow-up investigation of American cases"
+        ],
+        "doi": "10.3389/fpsyg.2024.1473340",
+        "pmid": "39649781",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json",
+            "json_pointer": "/records/3"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-SADEGHI-2026-TEMPORAL",
+        "titles": [
+          "A large-scale analysis of temporal patterns in children’s purported past-life memories: Shorter intervals following unexpected deaths."
+        ],
+        "doi": "10.1037/cns0000493",
+        "pmid": null,
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/psi/reincarnation-bibliographic-pilot-2026-10-02.json",
+            "json_pointer": "/records/1"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-SCOPING-2021",
+        "titles": [
+          "Academic studies on claimed past-life memories: A scoping review"
+        ],
+        "doi": "10.1016/j.explore.2021.05.006",
+        "pmid": "34147343",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+            "json_pointer": "/sources/1"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-TUCKER-2008",
+        "titles": [
+          "Children's reports of past-life memories: a review"
+        ],
+        "doi": "10.1016/j.explore.2008.04.001",
+        "pmid": "18602617",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+            "json_pointer": "/sources/0"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-BQ001-TUCKER-2025",
+        "titles": [
+          "What do the cases of the reincarnation type tell us about the mind beyond the brain?"
+        ],
+        "doi": "10.1080/09540261.2025.2466484",
+        "pmid": "40627512",
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+            "json_pointer": "/sources/4"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "STORED_IDENTIFIER",
+        "pmid_status": "STORED_IDENTIFIER"
+      },
+      {
+        "existing_source_id": "SRC-SPR-PE-0002",
+        "titles": [
+          "Children with Past-Life Memories (overview)"
+        ],
+        "doi": null,
+        "pmid": null,
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/psi/psi-encyclopedia-metadata-pilot-v0.1.json",
+            "json_pointer": "/records/1"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      },
+      {
+        "existing_source_id": "SRC-SPR-PE-0003",
+        "titles": [
+          "Criticisms of Reincarnation Case Studies"
+        ],
+        "doi": null,
+        "pmid": null,
+        "pmcid": null,
+        "source_loci": [
+          {
+            "path": "references/psi/psi-encyclopedia-metadata-pilot-v0.1.json",
+            "json_pointer": "/records/2"
+          }
+        ],
+        "table_s2_membership": "UNVERIFIED",
+        "doi_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS",
+        "pmid_status": "UNRESOLVED_NOT_IN_SELECTED_RECORDS"
+      }
+    ]
+  },
+  "confirmed_existing_identity_aliases": [
+    {
+      "source_ids": [
+        "MORAES-ET-AL-2022-PLM-SCOPING",
+        "SRC-BQ001-SCOPING-2021"
+      ],
+      "basis": "EXACT_NORMALIZED_DOI_AND_PMID",
+      "doi": "10.1016/j.explore.2021.05.006",
+      "pmid": "34147343",
+      "canonical_merge_applied": false
+    },
+    {
+      "source_ids": [
+        "PEHLIVANOVA-COZZOLINO-TUCKER-2024-FOLLOWUP",
+        "SRC-BQ001-PEHLIVANOVA-2024-FOLLOWUP"
+      ],
+      "basis": "EXACT_NORMALIZED_DOI",
+      "doi": "10.3389/fpsyg.2024.1473340",
+      "pmid": "39649781",
+      "pmid_scope": "STORED_ONLY_IN_BIBLIOGRAPHIC_PILOT; NOT_BOTH_ALIAS_RECORDS",
+      "canonical_merge_applied": false
+    }
+  ],
+  "continuation_rules": [
+    "Obtain the publisher-linked S2 payload or an attributable author/institution copy; record URL, retrieval date, file hash and row/page locators. Authenticate inferred URLs before treating them as provenance.",
+    "Preserve supplied fields and original row order. Do not assume the main article bibliography, Crossref reference list, S1, or a topical source catalogue equals S2.",
+    "Reconcile observed rows with the article-reported 78; preserve any discrepancy as unresolved rather than padding, truncating or inventing rows.",
+    "Normalize DOI prefixes/URL encoding/case and compare exact DOI and PMID across repository source records and URL inventories at pinned heads. Check contradictory identifiers before merging; title/author/year similarities are candidate matches only.",
+    "Add verified identity-resolution endpoints per row. Leave unknown DOI/PMID null with an explicit unresolved status; a failed or empty lookup is not proof no identifier exists.",
+    "Retain only bibliographic and aggregate study descriptors. Do not copy participant names, individual case narratives, medical details or other case identifiers into the ledger; log necessary privacy omissions.",
+    "Keep publication deduplication separate from shared datasets, case reuse, author/investigator overlap and independent replication; these require their own appraisal."
+  ],
+  "limitations": [
+    "S2 payload inaccessible in this bounded session; this is not a finding that S2 is absent or unavailable to everyone.",
+    "Existing lookup seed is non-exhaustive, not a completed comparison of the 78 included entries.",
+    "Main and PR snapshots are separate; no rebasing or transfer of main changes was performed.",
+    "Article reports sample overlap whose extent it could not measure. Publication counts are not independent case, dataset or replication counts.",
+    "Open access and licence metadata do not change any existing reuse or publication gate."
+  ],
+  "governance": {
+    "BQ001_status": "UNRESOLVED",
+    "supports_models": [],
+    "accepted_edges_added": 0,
+    "new_source_identities_added": 0,
+    "independent_studies_added": 0,
+    "replications_added": 0,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "public_export_allowed": false,
+    "rights_promotion_allowed": false,
+    "publication_promotion_allowed": false,
+    "privacy_gate": "FAIL_CLOSED",
+    "original_evidence_batch_modified": false,
+    "psi_pilot_modified": false,
+    "bibliographic_pilot_modified": false,
+    "merge_performed": false,
+    "deployment_performed": false
+  },
+  "retained_content": {
+    "existing_bibliographic_metadata": true,
+    "recovery_provenance": true,
+    "supplement_payload": false,
+    "article_text": false,
+    "abstracts": false,
+    "case_data": false,
+    "images": false
+  }
+}
