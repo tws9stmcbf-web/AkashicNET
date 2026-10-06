@@ -24,6 +24,11 @@ class IonsPresentationRightsTests(unittest.TestCase):
             "reproduce": False, "display": False,
             "platforms": ["AkashicNET", "r/NeuronsToNirvana"]})
 
+    def test_official_slide_deck_linking_preference(self):
+        self.assertEqual(self.record["conditions"]["official_slide_deck"],
+                         "IONS prefers linking directly to the official slide deck within the existing "
+                         "link-and-commentary treatment; individual slide images must not be reproduced or displayed.")
+
     def test_required_notice_and_specific_presentation_link(self):
         conditions = self.record["conditions"]
         self.assertEqual(conditions["non_endorsement"], {
