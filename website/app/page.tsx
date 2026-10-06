@@ -126,7 +126,7 @@ export default function Home() {
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
         <nav aria-label="Primary navigation">
-          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashic-symbiosis">Symbiosis</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/about">About</a>
+          <a href="#start-here">Start here</a><a href="#latest-highlights">Highlights</a><a href="/akashic-symbiosis">Symbiosis</a><a href="/akashicomni">AkashicOMNI</a><a href="/akashicvision">AkashicVISION</a><a href="#vision">Vision</a><a href="/big-questions">Big questions</a><a href="#architecture">Architecture</a><a href="#ethics">Ethics</a><a href="#roadmap">Roadmap</a><a href="/community">Community</a><a href="/support-impact">Support</a><a href="/faq">FAQ</a><a href="/about">About</a>
         </nav>
       </header>
 
@@ -245,6 +245,7 @@ export default function Home() {
           <h2>What is being built behind this doorway?</h2>
           <p className="plain-lede">Imagine a library that looks like one simple website from the outside, but becomes vastly larger once you step through it—a <strong>TARDIS-like knowledge space</strong>, used here as a playful metaphor rather than a scientific claim.</p>
           <p>AkashicNET is a long-term <strong>citizen data-science project</strong>: human curiosity and community knowledge, organised with computational tools and AI assistance, while provenance, uncertainty, privacy and human judgement remain visible.</p>
+          <p className="project-attribution"><strong>Original vision and editorial direction:</strong> the AkashicNET founder. Developed and formalised through human–AI collaboration.</p>
         </div>
         <div className="living-tree" aria-label="The living library model">
           <div className="tree-crown"><span>CANOPY</span><h3>Ideas, frameworks and new questions</h3><p>Connections can grow, branch, be reviewed and change.</p></div>
@@ -273,6 +274,7 @@ export default function Home() {
         <div className="process-grid">
           {steps.map(([title,text],index)=><article key={title}><span>{String(index+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p>{index<steps.length-1&&<b aria-hidden="true">→</b>}</article>)}
         </div>
+        <p><a className="text-link" href="/insights/akashicprism-plug-and-play-consciousness">Explore the PRISM inquiry jigsaw →</a> <span>Draft conceptual exploration · proposed AkashicOMNI v0.5.0</span></p>
         <div className="architecture-note"><span>Source</span><i>→</i><span>Provenance</span><i>→</i><span>Canonical record</span><i>→</i><span>Typed relationship</span><i>→</i><span>Human review</span></div>
       </section>
 

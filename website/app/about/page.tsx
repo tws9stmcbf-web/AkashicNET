@@ -37,7 +37,7 @@ export default function AboutPage() {
     <main className="about-page">
       <header className="nav-shell about-nav">
         <a className="wordmark" href="/" aria-label="Return to AkashicNET.org home"><img className="brand-symbol" src="/images/akashicnet-toroidal-love-logo.png" alt=""/><span className="brand-name">AKASHICNET.ORG</span></a>
-        <nav aria-label="About navigation"><a href="/">Home</a><a href="/community">Community</a><a href="#mission">Mission</a><a href="#constellation">Human thread</a></nav>
+        <nav aria-label="About navigation"><a href="/">Home</a><a href="/faq">FAQ</a><a href="/community">Community</a><a href="#mission">Mission</a><a href="#constellation">Human thread</a></nav>
       </header>
 
       <section className="about-hero">
@@ -46,6 +46,7 @@ export default function AboutPage() {
           <h1>A living library.<br/><em>A long-term human mission.</em></h1>
           <p>AkashicNET is an independent knowledge-stewardship and citizen data-science project exploring difficult questions across consciousness, science, ecology, philosophy, contemplative traditions and human–AI collaboration.</p>
           <p>The public identity remains intentionally anonymous. The work should be judged by its sources, methods, provenance and willingness to remain uncertain—not by the biography of one person.</p>
+          <p className="project-attribution"><strong>Original vision and editorial direction:</strong> the AkashicNET founder. Developed and formalised through human–AI collaboration.</p>
         </div>
         <figure className="author-seal">
           <img src="/images/akashicnet-toroidal-love-logo.png" alt=""/>

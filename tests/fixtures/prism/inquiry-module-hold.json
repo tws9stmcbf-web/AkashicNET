@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "module_id": "PRISM-MOD-SYNTHETIC",
+  "name": "Synthetic review fixture, not a real module",
+  "status": "draft",
+  "domain_focus": [
+    "consciousness"
+  ],
+  "subject_classes": [
+    "human"
+  ],
+  "definitions": [
+    {
+      "term": "consciousness",
+      "working_definition": "Synthetic operational placeholder.",
+      "source_or_framework": "Synthetic test",
+      "contested": true
+    }
+  ],
+  "compatible_omni_frameworks": [
+    "AWAKEN"
+  ],
+  "claims": [],
+  "interface_contract": {
+    "input_contract": "Attributed sources, definitions, observations, claims, limitations and applicable cultural or ethical context.",
+    "prism_output_contract": "Separated interpretations, evidence lanes, typed connections, uncertainty, alternatives, investigation state and append-only assessment history.",
+    "net_storage_contract": "Stable identifiers, provenance-linked records and gated graph relationships; no automatic evidence, rights, canonical or publication promotion.",
+    "revision_cycle": "New authorised evidence may return the module through AkashicOMNI and AkashicPRISM without erasing earlier assessments."
+  },
+  "ethical_governance": {
+    "welfare_relevance": "unknown",
+    "cultural_authority_required": true,
+    "privacy_review_required": true,
+    "rights_review_required": true,
+    "automatic_subject_status_inference_allowed": false,
+    "publication_status": "hold"
+  },
+  "module_boundary": "This module supports inquiry into awareness, consciousness or sentience. Module compatibility, behavioural performance, testimony, biological similarity or computational complexity does not by itself establish subjective experience."
+}

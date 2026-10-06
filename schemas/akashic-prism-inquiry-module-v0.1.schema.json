@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/akashic-prism-inquiry-module-v0.1.schema.json",
+  "title": "AkashicPRISM Inquiry Module Interface v0.1",
+  "description": "A plug-in contract for governed inquiry into awareness, consciousness and sentience. It structures comparison and revision; it does not establish that a subject is conscious or sentient.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "module_id",
+    "name",
+    "status",
+    "domain_focus",
+    "subject_classes",
+    "definitions",
+    "compatible_omni_frameworks",
+    "claims",
+    "interface_contract",
+    "ethical_governance",
+    "module_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "module_id": {
+      "type": "string",
+      "pattern": "^PRISM-MOD-[A-Z0-9][A-Z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "concept",
+        "draft",
+        "review_candidate",
+        "active",
+        "deprecated"
+      ]
+    },
+    "domain_focus": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "awareness",
+          "consciousness",
+          "sentience",
+          "overlap",
+          "other"
+        ]
+      }
+    },
+    "subject_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "human",
+          "nonhuman_animal",
+          "plant_or_ecosystem",
+          "artificial_system",
+          "collective_or_social_system",
+          "altered_state",
+          "contemplative_state",
+          "near_death_or_boundary_state",
+          "other"
+        ]
+      }
+    },
+    "definitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "term",
+          "working_definition",
+          "source_or_framework",
+          "contested"
+        ],
+        "properties": {
+          "term": {
+            "type": "string",
+            "minLength": 1
+          },
+          "working_definition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_or_framework": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contested": {
+            "type": "boolean"
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "compatible_omni_frameworks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "AWAKEN",
+          "HIERATIC",
+          "HOMESENSE",
+          "ADAPT",
+          "REGENERATE",
+          "TRANSCEND",
+          "#METAD",
+          "ACTC",
+          "MultidimensionalCUT_PAST",
+          "MultidimensionalCUT_PRESENT",
+          "MultidimensionalCUT_FUTURE",
+          "UMASC"
+        ]
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "statement",
+          "claim_type",
+          "evidence_lane",
+          "testability",
+          "predictions",
+          "alternative_explanations",
+          "disconfirming_conditions",
+          "uncertainty",
+          "source_ids"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^CLAIM-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_type": {
+            "enum": [
+              "phenomenological",
+              "functional",
+              "behavioural",
+              "biological",
+              "computational",
+              "ethical",
+              "cultural",
+              "metaphysical",
+              "predictive",
+              "mixed_separated"
+            ]
+          },
+          "evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "testability": {
+            "enum": [
+              "currently_testable",
+              "partially_testable",
+              "operationalisation_needed",
+              "not_empirically_testable_as_stated"
+            ]
+          },
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "disconfirming_conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "interface_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_contract",
+        "prism_output_contract",
+        "net_storage_contract",
+        "revision_cycle"
+      ],
+      "properties": {
+        "input_contract": {
+          "const": "Attributed sources, definitions, observations, claims, limitations and applicable cultural or ethical context."
+        },
+        "prism_output_contract": {
+          "const": "Separated interpretations, evidence lanes, typed connections, uncertainty, alternatives, investigation state and append-only assessment history."
+        },
+        "net_storage_contract": {
+          "const": "Stable identifiers, provenance-linked records and gated graph relationships; no automatic evidence, rights, canonical or publication promotion."
+        },
+        "revision_cycle": {
+          "const": "New authorised evidence may return the module through AkashicOMNI and AkashicPRISM without erasing earlier assessments."
+        }
+      }
+    },
+    "ethical_governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "welfare_relevance",
+        "cultural_authority_required",
+        "privacy_review_required",
+        "rights_review_required",
+        "automatic_subject_status_inference_allowed",
+        "publication_status"
+      ],
+      "properties": {
+        "welfare_relevance": {
+          "enum": [
+            "none_identified",
+            "possible",
+            "material",
+            "unknown"
+          ]
+        },
+        "cultural_authority_required": {
+          "type": "boolean"
+        },
+        "privacy_review_required": {
+          "type": "boolean"
+        },
+        "rights_review_required": {
+          "const": true
+        },
+        "automatic_subject_status_inference_allowed": {
+          "const": false
+        },
+        "publication_status": {
+          "enum": [
+            "hold",
+            "review_candidate"
+          ],
+          "description": "Draft contract only. Publication approval requires a separately verified approval mechanism; schema validation does not authorize publication."
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "module_boundary": {
+      "const": "This module supports inquiry into awareness, consciousness or sentience. Module compatibility, behavioural performance, testimony, biological similarity or computational complexity does not by itself establish subjective experience."
+    }
+  }
+}

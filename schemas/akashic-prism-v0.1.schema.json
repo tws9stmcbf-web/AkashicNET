@@ -1,0 +1,1645 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/akashic-prism-v0.1.schema.json",
+  "title": "AkashicPRISM — Epistemic Perspective Layer v0.1",
+  "description": "Pluralistic Research & Inquiry across States and Meaning: multiple ways of knowing around one subject, with attribution, cultural authority, source relationships, uncertainty and investigation boundaries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "layer_id",
+    "subject_ref",
+    "perspectives",
+    "state_observations",
+    "comparative_correspondences",
+    "source_network",
+    "investigation",
+    "synthesis_boundary",
+    "governance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "layer_id": {
+      "type": "string",
+      "pattern": "^PRISM-[A-Z0-9][A-Z0-9-]+$"
+    },
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id",
+        "subject_type"
+      ],
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_type": {
+          "enum": [
+            "spiritual_knowledge_encounter",
+            "community_post",
+            "work",
+            "claim_group",
+            "big_question",
+            "other"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "perspectives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "perspective_id",
+          "lens",
+          "attributed_to",
+          "statement",
+          "epistemic_basis",
+          "claim_scope",
+          "evidence_lane",
+          "uncertainty"
+        ],
+        "properties": {
+          "perspective_id": {
+            "type": "string",
+            "pattern": "^EPI-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "lens": {
+            "enum": [
+              "first_person",
+              "contemplative",
+              "lineage",
+              "cultural",
+              "shamanic",
+              "bodhisattva_ethical",
+              "trance_channelled",
+              "philosophical",
+              "empirical_scientific",
+              "clinical_psychological",
+              "historical",
+              "comparative",
+              "other"
+            ]
+          },
+          "attributed_to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "epistemic_basis": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "direct_experience",
+                "ritual_practice",
+                "lineage_transmission",
+                "community_attestation",
+                "traditional_text",
+                "historical_record",
+                "philosophical_argument",
+                "observation",
+                "measurement",
+                "experiment",
+                "inference",
+                "other"
+              ]
+            }
+          },
+          "claim_scope": {
+            "enum": [
+              "phenomenological",
+              "personal_meaning",
+              "communal_meaning",
+              "ethical",
+              "spiritual",
+              "metaphysical",
+              "empirical",
+              "predictive",
+              "mixed"
+            ]
+          },
+          "evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "cultural_authority": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "community_or_lineage": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "\\S"
+              },
+              "authority_to_share": {
+                "enum": [
+                  "confirmed",
+                  "public_with_attribution",
+                  "review_required",
+                  "restricted",
+                  "unknown"
+                ]
+              },
+              "speaker_position": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "community_or_lineage",
+              "speaker_position",
+              "authority_to_share"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "externally_testable_elements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "interpretive_modes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "How this perspective presents the subject. Multiple modes may coexist; mixed modes must remain separated where their evidential roles differ.",
+            "items": {
+              "enum": [
+                "literal_claim",
+                "metaphorical",
+                "allegorical",
+                "symbolic",
+                "conceptual_model",
+                "phenomenological_description",
+                "cultural_teaching",
+                "philosophical_argument",
+                "scientific_hypothesis",
+                "artistic_expression",
+                "open_question",
+                "mixed_separated",
+                "other"
+              ]
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "$ref": "#/$defs/culturally_scoped_perspective"
+            },
+            "then": {
+              "$ref": "#/$defs/explicit_cultural_authority"
+            }
+          }
+        ]
+      }
+    },
+    "practice_outcomes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "outcome_id",
+          "description",
+          "report_basis",
+          "timeframe",
+          "verification_status"
+        ],
+        "properties": {
+          "outcome_id": {
+            "type": "string",
+            "pattern": "^OUT-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "report_basis": {
+            "enum": [
+              "self_report",
+              "community_report",
+              "behavioural_observation",
+              "clinical_measure",
+              "physiological_measure",
+              "other"
+            ]
+          },
+          "timeframe": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification_status": {
+            "enum": [
+              "reported_only",
+              "partially_documented",
+              "independently_documented",
+              "contested",
+              "unknown"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          }
+        }
+      }
+    },
+    "source_network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodes",
+        "edges",
+        "counting_boundary"
+      ],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_id",
+              "source_type",
+              "locator",
+              "provenance_state",
+              "rights_state"
+            ],
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "source_type": {
+                "enum": [
+                  "community_post",
+                  "comment",
+                  "peer_reviewed_paper",
+                  "preprint",
+                  "book",
+                  "chapter",
+                  "traditional_teaching",
+                  "lineage_statement",
+                  "participant_account",
+                  "media",
+                  "archive_record",
+                  "dataset",
+                  "other"
+                ]
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "doi": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+              },
+              "post_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "work_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "provenance_state": {
+                "enum": [
+                  "verified",
+                  "partially_verified",
+                  "unresolved",
+                  "unavailable"
+                ]
+              },
+              "rights_state": {
+                "enum": [
+                  "cleared",
+                  "link_only",
+                  "quotation_limited",
+                  "restricted",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "edge_id",
+              "from_source_id",
+              "to_source_id",
+              "relation",
+              "independent_evidence"
+            ],
+            "properties": {
+              "edge_id": {
+                "type": "string",
+                "pattern": "^EDGE-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "from_source_id": {
+                "type": "string",
+                "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "to_source_id": {
+                "type": "string",
+                "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+              },
+              "relation": {
+                "enum": [
+                  "cites",
+                  "interprets",
+                  "supports",
+                  "contradicts",
+                  "contextualises",
+                  "derived_from",
+                  "same_work_as",
+                  "responds_to",
+                  "other"
+                ]
+              },
+              "independent_evidence": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "counting_boundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "url_rows",
+            "unique_post_ids",
+            "unique_works",
+            "independent_evidence_sources"
+          ],
+          "properties": {
+            "url_rows": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_post_ids": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_works": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "independent_evidence_sources": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "synthesis_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "neutral_description",
+        "convergences",
+        "disagreements",
+        "unverified_claims",
+        "remaining_uncertainty"
+      ],
+      "properties": {
+        "neutral_description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "convergences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disagreements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unverified_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "remaining_uncertainty": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "next_discriminating_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_inference_allowed",
+        "testimony_auto_promotion_allowed",
+        "tradition_auto_promotion_allowed",
+        "cultural_review_required",
+        "publication_status",
+        "privacy_disposition"
+      ],
+      "properties": {
+        "truth_inference_allowed": {
+          "const": false
+        },
+        "testimony_auto_promotion_allowed": {
+          "const": false
+        },
+        "tradition_auto_promotion_allowed": {
+          "const": false
+        },
+        "cultural_review_required": {
+          "type": "boolean"
+        },
+        "publication_status": {
+          "enum": [
+            "hold",
+            "review_candidate"
+          ],
+          "description": "Draft contract only. Publication approval requires a separately verified approval mechanism; schema validation does not authorize publication."
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "privacy_disposition": {
+          "enum": [
+            "review_required",
+            "cleared",
+            "restricted"
+          ],
+          "description": "Explicit privacy review disposition. Pending or restricted records stay on HOLD; cleared records still require every other gate. Validation does not perform or approve a review."
+        },
+        "cultural_review_status": {
+          "enum": [
+            "review_required",
+            "cleared",
+            "restricted"
+          ],
+          "description": "Required when cultural review applies. A cleared status does not override individual authority-to-share restrictions or authorize publication."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "cultural_review_required"
+            ],
+            "properties": {
+              "cultural_review_required": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "cultural_review_status"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "privacy_disposition"
+            ],
+            "properties": {
+              "privacy_disposition": {
+                "enum": [
+                  "review_required",
+                  "restricted"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "hold"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "cultural_review_status"
+            ],
+            "properties": {
+              "cultural_review_status": {
+                "enum": [
+                  "review_required",
+                  "restricted"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "hold"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "review_candidate"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "privacy_disposition": {
+                "const": "cleared"
+              }
+            },
+            "if": {
+              "required": [
+                "cultural_review_required"
+              ],
+              "properties": {
+                "cultural_review_required": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "cultural_review_status"
+              ],
+              "properties": {
+                "cultural_review_status": {
+                  "const": "cleared"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "investigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "investigation_id",
+        "status",
+        "classification",
+        "observed_facts",
+        "alternative_explanations",
+        "uncertainty",
+        "priority",
+        "next_action",
+        "resolution_criterion"
+      ],
+      "properties": {
+        "investigation_id": {
+          "type": "string",
+          "pattern": "^INV-[A-Z0-9][A-Z0-9-]+$"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "monitoring",
+            "evidence_needed",
+            "resolved",
+            "closed_no_basis"
+          ]
+        },
+        "classification": {
+          "enum": [
+            "experiential_outlier",
+            "statistical_outlier",
+            "scientific_contradiction",
+            "cultural_or_traditional_claim",
+            "predictive_claim",
+            "source_or_metadata_anomaly",
+            "promising_research_lead",
+            "other"
+          ]
+        },
+        "observed_facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternative_explanations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ]
+        },
+        "priority_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution_criterion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "access_state": {
+          "enum": [
+            "available",
+            "partially_available",
+            "access_limited",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "access_limit_does_not_close_investigation": {
+          "const": true
+        }
+      }
+    },
+    "state_observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "state_observation_id",
+          "state",
+          "report_basis",
+          "phenomenology",
+          "source_ids",
+          "uncertainty"
+        ],
+        "properties": {
+          "state_observation_id": {
+            "type": "string",
+            "pattern": "^STATE-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "state": {
+            "enum": [
+              "ordinary_waking",
+              "mind_wandering",
+              "hypnagogic",
+              "dream",
+              "lucid_dream",
+              "hypnopompic",
+              "meditation",
+              "ritual_trance",
+              "psychedelic_ayahuasca",
+              "psychedelic_other",
+              "reported_out_of_body_or_astral",
+              "near_death",
+              "mediumship_or_channelled",
+              "other"
+            ]
+          },
+          "transition_from": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transition_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "induction_context": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "report_basis": {
+            "enum": [
+              "first_person",
+              "community_attestation",
+              "traditional_teaching",
+              "historical_record",
+              "behavioural_observation",
+              "physiological_measurement",
+              "mixed_separated"
+            ]
+          },
+          "phenomenology": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "timing_or_sequence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "comparative_correspondences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "correspondence_id",
+          "terms",
+          "relation",
+          "status",
+          "cultural_authority_status",
+          "non_equivalence_note",
+          "source_ids"
+        ],
+        "properties": {
+          "correspondence_id": {
+            "type": "string",
+            "pattern": "^CORR-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "terms": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "term",
+                "context"
+              ],
+              "properties": {
+                "term": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "context": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "community_or_lineage": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "relation": {
+            "enum": [
+              "reported_similarity",
+              "phenomenological_overlap",
+              "shared_practice_context",
+              "historical_contact",
+              "hypothesised_correspondence",
+              "documented_difference",
+              "contested"
+            ]
+          },
+          "status": {
+            "enum": [
+              "observed_in_sources",
+              "described_by_holders",
+              "hypothesised",
+              "contested",
+              "unresolved"
+            ]
+          },
+          "cultural_authority_status": {
+            "enum": [
+              "confirmed",
+              "public_with_attribution",
+              "review_required",
+              "restricted",
+              "unknown"
+            ]
+          },
+          "non_equivalence_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "next_comparison_step": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "description": "Typed, independently assessable connections from this record to other concepts, traditions, claims, works or observations. A record may carry many connections at different strengths and evidence lanes.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "connection_id",
+          "target_ref",
+          "domains",
+          "relationship",
+          "evidence_lane",
+          "current_strength",
+          "uncertainty",
+          "alternative_explanations",
+          "next_discriminating_step"
+        ],
+        "properties": {
+          "connection_id": {
+            "type": "string",
+            "pattern": "^CONN-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "target_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domains": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "spiritual",
+                "scientific",
+                "esoteric",
+                "indigenous_or_traditional",
+                "ancient_or_historical",
+                "metaphysical",
+                "philosophical",
+                "psychological",
+                "phenomenological",
+                "artistic",
+                "other"
+              ]
+            }
+          },
+          "relationship": {
+            "enum": [
+              "describes",
+              "resembles",
+              "interprets",
+              "symbolises",
+              "contextualises",
+              "supports",
+              "contradicts",
+              "predicts",
+              "may_share_mechanism",
+              "historically_influenced",
+              "other"
+            ]
+          },
+          "evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "current_strength": {
+            "enum": [
+              "descriptive_only",
+              "suggestive",
+              "hypothesised",
+              "partially_supported",
+              "well_supported",
+              "contested",
+              "unresolved"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            },
+            "description": "Required and nonempty unless current_strength is descriptive_only or unresolved and evidence_lane is not established_evidence. Source-free connections require publication HOLD. Every supplied ID must resolve to exactly one source_network node with a nonblank locator; this does not approve evidence or publication."
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_discriminating_step": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "anyOf": [
+                {
+                  "required": [
+                    "evidence_lane"
+                  ],
+                  "properties": {
+                    "evidence_lane": {
+                      "const": "established_evidence"
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "current_strength"
+                  ],
+                  "properties": {
+                    "current_strength": {
+                      "not": {
+                        "enum": [
+                          "descriptive_only",
+                          "unresolved"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "then": {
+              "required": [
+                "source_ids"
+              ],
+              "properties": {
+                "source_ids": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "assessment_history": {
+      "type": "array",
+      "description": "Append-only history of classification reviews. New inputs may strengthen, weaken or reclassify an assessment, but never erase its prior state.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assessment_event_id",
+          "recorded_at",
+          "affected_ref",
+          "input_type",
+          "independence_status",
+          "prior_evidence_lane",
+          "new_evidence_lane",
+          "effect",
+          "rationale",
+          "uncertainty",
+          "reviewer_role",
+          "source_ids"
+        ],
+        "properties": {
+          "assessment_event_id": {
+            "type": "string",
+            "pattern": "^ASSESS-[A-Z0-9][A-Z0-9-]+$"
+          },
+          "recorded_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "affected_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_type": {
+            "enum": [
+              "anecdotal_experience",
+              "community_recurrence_signal",
+              "citizen_science_observation",
+              "citizen_science_study",
+              "controlled_study",
+              "peer_reviewed_study",
+              "replication",
+              "systematic_review",
+              "meta_analysis",
+              "cultural_authority_review",
+              "source_correction",
+              "access_or_rights_change",
+              "other"
+            ]
+          },
+          "independence_status": {
+            "enum": [
+              "same_source",
+              "related_source",
+              "independent",
+              "partially_independent",
+              "unknown"
+            ]
+          },
+          "prior_evidence_lane": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated",
+              null
+            ]
+          },
+          "new_evidence_lane": {
+            "enum": [
+              "established_evidence",
+              "interpretation",
+              "lived_experience_or_testimony",
+              "traditional_knowledge",
+              "hypothesis",
+              "speculation",
+              "mixed_separated"
+            ]
+          },
+          "effect": {
+            "enum": [
+              "strengthened",
+              "weakened",
+              "reclassified",
+              "no_change",
+              "split_into_components"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[A-Z0-9][A-Z0-9-]+$"
+            }
+          },
+          "gates_passed": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "source_access",
+                "provenance",
+                "method_review",
+                "independence_review",
+                "rights",
+                "cultural_authority",
+                "privacy",
+                "publication"
+              ]
+            }
+          },
+          "gates_pending": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "source_access",
+                "provenance",
+                "method_review",
+                "independence_review",
+                "rights",
+                "cultural_authority",
+                "privacy",
+                "publication"
+              ]
+            }
+          },
+          "supersedes_event_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^ASSESS-[A-Z0-9][A-Z0-9-]+$"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "connections"
+        ],
+        "properties": {
+          "connections": {
+            "contains": {
+              "not": {
+                "required": [
+                  "source_ids"
+                ],
+                "properties": {
+                  "source_ids": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "properties": {
+              "publication_status": {
+                "const": "hold"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "anyOf": [
+          {
+            "required": [
+              "perspectives"
+            ],
+            "properties": {
+              "perspectives": {
+                "contains": {
+                  "$ref": "#/$defs/culturally_scoped_perspective"
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "investigation"
+            ],
+            "properties": {
+              "investigation": {
+                "required": [
+                  "classification"
+                ],
+                "properties": {
+                  "classification": {
+                    "const": "cultural_or_traditional_claim"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "source_network"
+            ],
+            "properties": {
+              "source_network": {
+                "required": [
+                  "nodes"
+                ],
+                "properties": {
+                  "nodes": {
+                    "contains": {
+                      "required": [
+                        "source_type"
+                      ],
+                      "properties": {
+                        "source_type": {
+                          "enum": [
+                            "traditional_teaching",
+                            "lineage_statement"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "state_observations"
+            ],
+            "properties": {
+              "state_observations": {
+                "contains": {
+                  "required": [
+                    "report_basis"
+                  ],
+                  "properties": {
+                    "report_basis": {
+                      "enum": [
+                        "traditional_teaching",
+                        "community_attestation"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "comparative_correspondences"
+            ],
+            "properties": {
+              "comparative_correspondences": {
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "required": [
+              "connections"
+            ],
+            "properties": {
+              "connections": {
+                "contains": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "evidence_lane"
+                      ],
+                      "properties": {
+                        "evidence_lane": {
+                          "const": "traditional_knowledge"
+                        }
+                      }
+                    },
+                    {
+                      "required": [
+                        "domains"
+                      ],
+                      "properties": {
+                        "domains": {
+                          "contains": {
+                            "const": "indigenous_or_traditional"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "perspectives": {
+                "contains": {
+                  "required": [
+                    "cultural_authority"
+                  ],
+                  "properties": {
+                    "cultural_authority": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "required": [
+              "cultural_review_status"
+            ],
+            "properties": {
+              "cultural_review_required": {
+                "const": true
+              }
+            }
+          },
+          "perspectives": {
+            "contains": {
+              "$ref": "#/$defs/explicit_cultural_authority"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "governance"
+        ],
+        "properties": {
+          "governance": {
+            "required": [
+              "publication_status"
+            ],
+            "properties": {
+              "publication_status": {
+                "const": "review_candidate"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "perspectives": {
+            "items": {
+              "properties": {
+                "cultural_authority": {
+                  "type": "object",
+                  "properties": {
+                    "authority_to_share": {
+                      "enum": [
+                        "confirmed",
+                        "public_with_attribution"
+                      ]
+                    },
+                    "community_or_lineage": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "speaker_position": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "comparative_correspondences": {
+            "items": {
+              "properties": {
+                "cultural_authority_status": {
+                  "enum": [
+                    "confirmed",
+                    "public_with_attribution"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "culturally_scoped_perspective": {
+      "anyOf": [
+        {
+          "required": [
+            "lens"
+          ],
+          "properties": {
+            "lens": {
+              "enum": [
+                "cultural",
+                "shamanic",
+                "lineage"
+              ]
+            }
+          }
+        },
+        {
+          "required": [
+            "evidence_lane"
+          ],
+          "properties": {
+            "evidence_lane": {
+              "const": "traditional_knowledge"
+            }
+          }
+        },
+        {
+          "required": [
+            "claim_scope"
+          ],
+          "properties": {
+            "claim_scope": {
+              "const": "communal_meaning"
+            }
+          }
+        },
+        {
+          "required": [
+            "interpretive_modes"
+          ],
+          "properties": {
+            "interpretive_modes": {
+              "contains": {
+                "const": "cultural_teaching"
+              }
+            }
+          }
+        },
+        {
+          "required": [
+            "epistemic_basis"
+          ],
+          "properties": {
+            "epistemic_basis": {
+              "contains": {
+                "enum": [
+                  "lineage_transmission",
+                  "community_attestation",
+                  "traditional_text"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "explicit_cultural_authority": {
+      "required": [
+        "cultural_authority"
+      ],
+      "properties": {
+        "cultural_authority": {
+          "type": "object",
+          "required": [
+            "community_or_lineage",
+            "speaker_position",
+            "authority_to_share"
+          ],
+          "properties": {
+            "community_or_lineage": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "\\S"
+            },
+            "speaker_position": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "\\S"
+            }
+          },
+          "description": "Unknown community or speaker position must be explicit null and remains on HOLD. Never infer authority from a lens or source label."
+        }
+      }
+    }
+  }
+}
