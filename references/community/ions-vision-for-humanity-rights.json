@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "presentation": {
+    "title": "A Vision for Humanity: Convergent Themes Across Trance-Channeled ETI Communication",
+    "presenter": "Dr. Helané Wahbeh",
+    "date": "2026-09-18",
+    "series": "ConnectIONS Live",
+    "review_url": "https://akashicnet.org/noetic-sciences/vision-for-humanity"
+  },
+  "provenance": {
+    "authority": "IONS Programs Team",
+    "permission_email_date": "2026-10-05",
+    "verified_date": "2026-10-06",
+    "basis": "Private email reviewed directly; conditions paraphrased here. The October 6 sent reply reports live-page compliance but is not a repository or deployment verification."
+  },
+  "conditions": {
+    "treatment": "link-and-commentary-only",
+    "individual_slide_images": {
+      "reproduce": false,
+      "display": false,
+      "platforms": [
+        "AkashicNET",
+        "r/NeuronsToNirvana"
+      ]
+    },
+    "non_endorsement": {
+      "required": true,
+      "placement": "top-of-page",
+      "statement": "The Institute of Noetic Sciences (IONS) does not endorse this review or commentary."
+    },
+    "presentation_link": {
+      "required": true,
+      "placement": "bottom-of-page",
+      "target": "specific official ConnectIONS Live presentation recording/page",
+      "general_page_sufficient": false
+    },
+    "official_slide_deck": "IONS prefers linking directly to the official slide deck within the existing link-and-commentary treatment; individual slide images must not be reproduced or displayed."
+  },
+  "scope": {
+    "applies_only_to": "This presentation and the reviewed AkashicNET treatment",
+    "broader_reuse_granted": false,
+    "third_party_image_rights_granted": false,
+    "ions_endorsement": false
+  },
+  "enforcement_note": "This record preserves the email conditions. Its regression check guards the record, not rendered pages or image contents. No live-page source was positively located in this repository during the bounded check; do not infer publication compliance from this record."
+}
