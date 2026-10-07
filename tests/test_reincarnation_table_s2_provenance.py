@@ -50,6 +50,21 @@ def validate_blocked_packet(packet):
         assert gates[key] is False
 
 
+def validate_existing_aliases(packet):
+    records = {r['existing_source_id']: r
+               for r in packet['existing_source_lookup_seed']['records']}
+    for alias in packet['confirmed_existing_identity_aliases']:
+        assert alias['canonical_merge_applied'] is False
+        # A DOI-only match may have a PMID on just one source record.
+        source_pmids = {records[sid]['pmid'] for sid in alias['source_ids']
+                        if records[sid]['pmid'] is not None}
+        assert source_pmids == ({alias['pmid']} if alias['pmid'] is not None else set())
+        for sid in alias['source_ids']:
+            assert records[sid]['doi'] == alias['doi']
+            if alias['basis'] == 'EXACT_NORMALIZED_DOI_AND_PMID':
+                assert records[sid]['pmid'] == alias['pmid']
+
+
 class TableS2ProvenanceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -109,14 +124,16 @@ class TableS2ProvenanceTests(unittest.TestCase):
                 self.assertEqual(values[key], {record[key]} if record[key] else set())
 
     def test_aliases_use_matching_identifiers_without_merges(self):
-        records = {r['existing_source_id']: r
-                   for r in self.packet['existing_source_lookup_seed']['records']}
-        for alias in self.packet['confirmed_existing_identity_aliases']:
-            self.assertIs(alias['canonical_merge_applied'], False)
-            for sid in alias['source_ids']:
-                self.assertEqual(records[sid]['doi'], alias['doi'])
-                if alias['basis'] == 'EXACT_NORMALIZED_DOI_AND_PMID':
-                    self.assertEqual(records[sid]['pmid'], alias['pmid'])
+        validate_existing_aliases(self.packet)
+
+    def test_alias_pmid_cannot_be_invented_or_dropped(self):
+        for index, alias in enumerate(self.packet['confirmed_existing_identity_aliases']):
+            for pmid in ('99999999', None):
+                with self.subTest(basis=alias['basis'], pmid=pmid):
+                    changed = copy.deepcopy(self.packet)
+                    changed['confirmed_existing_identity_aliases'][index]['pmid'] = pmid
+                    with self.assertRaises(AssertionError):
+                        validate_existing_aliases(changed)
 
     def test_promotion_is_rejected(self):
         for key in ('rights_promotion_allowed', 'scientific_evidence_promotion_allowed',
