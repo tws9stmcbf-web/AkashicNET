@@ -1,0 +1,163 @@
+{
+  "registry_id": "BQ001-PREDICTION-REGISTRY-LEVEL7-V0.1",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-09-17",
+  "maturity": {
+    "current_level": 6,
+    "candidate_level": 7,
+    "candidate_level_name": "PREDICTIONS_DEFINED",
+    "candidate_level_applied": false,
+    "meaning": "Research-method maturity only; not truth probability, evidence strength, model support, or readiness for canonical or public promotion."
+  },
+  "source_scope": {
+    "new_evidence_added": false,
+    "canonical_inputs": [
+      "references/big-questions/BQ001/spec-v0.1.json",
+      "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+      "references/big-questions/BQ001/evidence-batch3-v0.1.json",
+      "references/big-questions/BQ001/public-synthesis-v0.1.json"
+    ],
+    "source_ids_used_for_design_context_only": [
+      "SRC-BQ001-AWARE-2014",
+      "SRC-BQ001-AWARE2-2023",
+      "SRC-BQ001-MASCHKE-2024",
+      "SRC-BQ001-SCOPING-2021"
+    ],
+    "design_context_does_not_create_model_support": true
+  },
+  "models": [
+    {
+      "model_id": "MODEL-BQ001-BIOLOGICAL-DEPENDENCE",
+      "status": "UNRESOLVED",
+      "operational_scope": "Individual conscious experience and report depend on functioning biological cognitive systems under the conditions tested.",
+      "predictions": [
+        {
+          "prediction_id": "PRED-BQ001-BD-01",
+          "statement": "Across prospectively monitored perturbations, recoverable conscious experience and later report should covary with measurable preservation or restoration of relevant brain function.",
+          "boundary": "Covariation under tested conditions does not prove metaphysical impossibility of continuity."
+        },
+        {
+          "prediction_id": "PRED-BQ001-BD-02",
+          "statement": "Claims of veridical information acquired during apparent unresponsiveness should be explainable by residual physiology, ordinary information pathways, timing uncertainty, memory reconstruction, chance, bias, or error when those alternatives are adequately measured.",
+          "boundary": "Failure to identify an explanation in one case does not falsify biological dependence."
+        }
+      ],
+      "potential_disconfirming_observations": [
+        {
+          "observation_id": "CHALLENGE-BQ001-BD-01",
+          "statement": "Independent, preregistered replications of time-specific veridical perception during intervals with sufficiently sensitive monitoring showing no relevant capacity for perception or memory formation would materially challenge the model.",
+          "not_decisive_alone": true
+        },
+        {
+          "observation_id": "CHALLENGE-BQ001-BD-02",
+          "statement": "Repeated prospective identification of private target information under blinded conditions, with leakage and ordinary acquisition routes excluded, would materially challenge the model.",
+          "not_decisive_alone": true
+        }
+      ],
+      "supports_models": []
+    },
+    {
+      "model_id": "MODEL-BQ001-CONTINUITY",
+      "status": "UNRESOLVED",
+      "operational_scope": "Some individually meaningful conscious information may remain available beyond ordinary biological functioning.",
+      "predictions": [
+        {
+          "prediction_id": "PRED-BQ001-CT-01",
+          "statement": "Prospective studies should obtain independently verified information that was unavailable through ordinary sensory, mnemonic, inferential, technological, interpersonal, or documentary pathways.",
+          "boundary": "An anomalous result must not be equated with survival or reincarnation without discriminating personal continuity from information continuity, resemblance, influence, or fraud."
+        },
+        {
+          "prediction_id": "PRED-BQ001-CT-02",
+          "statement": "Any genuine continuity effect should recur under preregistered protocols across independent teams and should survive matched-decoy, blinding, leakage, multiple-comparison, selective-reporting, and fraud controls.",
+          "boundary": "Replication of an anomaly would still require separate causal and identity interpretation."
+        }
+      ],
+      "potential_disconfirming_observations": [
+        {
+          "observation_id": "CHALLENGE-BQ001-CT-01",
+          "statement": "Well-powered, independent prospective programmes that repeatedly produce null results under protocols capable of detecting the claimed effect would weaken the defined continuity model.",
+          "not_decisive_alone": true
+        },
+        {
+          "observation_id": "CHALLENGE-BQ001-CT-02",
+          "statement": "If apparent effects reliably disappear as leakage, retrospective reconstruction, cueing, optional analysis and publication bias are controlled, the defined continuity model would be weakened.",
+          "not_decisive_alone": true
+        }
+      ],
+      "supports_models": []
+    }
+  ],
+  "discriminating_tests": [
+    {
+      "test_id": "TEST-BQ001-RESUSCITATION-TIMELOCK",
+      "domain": "cardiac_arrest_and_nde_research",
+      "design": "Multicentre prospective resuscitation protocol using concealed randomized audiovisual targets, continuous time-synchronized physiology where feasible, staged interviews, preregistration and publication of target exposures, hits, misses and uninterpretable cases.",
+      "outcome_rules": {
+        "biological_dependence_strengthened": "Reports and verified details track recoverable physiology or ordinary information pathways across adequately observed cases.",
+        "continuity_strengthened": "Independent replications obtain time-specific target information while ordinary access routes are excluded and monitoring sensitivity is adequate.",
+        "neutral_or_ambiguous": "No target exposure occurred, monitoring was incomplete, timing cannot be established, or results are compatible with multiple models."
+      }
+    },
+    {
+      "test_id": "TEST-BQ001-PASTLIFE-PROSPECTIVE",
+      "domain": "reincarnation_case_research_and_critiques",
+      "design": "Timestamp statements before matching; separate interview, search and scoring teams; use blinded candidate sets and matched decoys; document prior exposure, misses and all tested candidates.",
+      "outcome_rules": {
+        "biological_dependence_strengthened": "Performance returns to chance or is explained by exposure, cueing, reconstruction, flexible matching or selective reporting under stronger controls.",
+        "continuity_strengthened": "Independent replications show preregistered above-chance identification with leakage and ordinary acquisition routes excluded.",
+        "neutral_or_ambiguous": "A striking retrospective match lacks prospective timestamps, complete candidate accounting, blinding or an adequate comparison distribution."
+      },
+      "safeguards": {
+        "guardian_consent_required": true,
+        "child_assent_when_developmentally_possible": true,
+        "data_minimisation_required": true,
+        "public_identification_forbidden": true,
+        "family_contact_pressure_forbidden": true,
+        "culturally_situated_interpretation_required": true
+      }
+    },
+    {
+      "test_id": "TEST-BQ001-INDEPENDENT-REPLICATION",
+      "domain": "alternative_hypotheses_and_unresolved_models",
+      "design": "Run the same preregistered protocol across independent teams, publish null and positive outcomes, audit deviations, and evaluate whether any effect survives correction for multiple testing and analytic flexibility.",
+      "outcome_rules": {
+        "biological_dependence_strengthened": "Putative effects fail to replicate or are accounted for by measured ordinary mechanisms.",
+        "continuity_strengthened": "A model-specific anomaly replicates with comparable magnitude under independent controls.",
+        "neutral_or_ambiguous": "Power, adherence, measurement sensitivity or cross-site comparability is insufficient for model discrimination."
+      }
+    }
+  ],
+  "method_rules": {
+    "null_results_retained": true,
+    "misses_retained": true,
+    "protocol_deviations_retained": true,
+    "exploratory_analyses_labelled": true,
+    "absence_of_explanation_is_not_positive_evidence": true,
+    "failure_of_one_model_does_not_prove_another": true,
+    "anomaly_is_not_identity_continuity": true,
+    "source_count_does_not_advance_level": true
+  },
+  "rights": {
+    "record_type": "methodology_metadata_and_bounded_summary",
+    "full_text_republished": false,
+    "audio_or_transcript_republished": false,
+    "quotations_republished": false
+  },
+  "governance": {
+    "question_status": "UNRESOLVED",
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "canonical_promotion_applied": false,
+    "evidence_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "privacy_posture_changed": false,
+    "cultural_safeguarding_relaxed": false
+  }
+}
