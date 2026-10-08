@@ -22,8 +22,18 @@ if not clean_args:
 
 query = " ".join(clean_args).lower().split()
 
-with open(INDEX, encoding="utf-8") as f:
-    rows = list(csv.DictReader(f))
+try:
+    with open(INDEX, encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+except FileNotFoundError:
+    print(
+        "Search input unavailable: " + INDEX + ". "
+        "The historical master index was removed from the public repository "
+        "during privacy separation. This CLI requires a separately authorised "
+        "local input; do not restore removed private data to the public repository.",
+        file=sys.stderr,
+    )
+    sys.exit(2)
 
 results = []
 
