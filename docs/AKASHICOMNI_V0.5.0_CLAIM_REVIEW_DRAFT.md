@@ -221,3 +221,16 @@ verification arrays remain empty, primary-source reinspection remains outstandin
 and all eight promotion flags remain false. This addendum changes documentation only.
 The new documentation head requires its own applicable checks and review. No earlier
 approval transfers, and PR #367 remains draft, unmerged and unreleased.
+
+### 8 October 2026: bounded coverage companion implementation
+
+The separate coverage record recommended in the preceding dated map now has a
+[draft contract and read-only validator](AKASHICOMNI_COVERAGE_RECORD_V0.1.md),
+synthetic fixture, regression tests, and scoped CI checks. This represents only
+the first engineering slice: exact-packet binding, declared perspective coverage,
+source context, and separate synthesis. It does not complete the manual method,
+authenticate authorship or source access, or satisfy M01–M12. No real coverage
+record or assessment is added. The original pilot packet, claim-review schema
+and validator, attestation registry, historical versions, and promotion gates
+remain unchanged. PR #367 remains draft and UNRELEASED / REVIEW_REQUIRED;
+the public manual specification remains separately available.

@@ -1,0 +1,506 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AkashicOMNI separate perspective-coverage record (draft; structural validation only)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "record_id",
+    "record_provenance",
+    "author",
+    "recorded_at",
+    "method",
+    "packet_binding",
+    "scope",
+    "source_context",
+    "coverage",
+    "reading_status",
+    "synthesis",
+    "release_status",
+    "review_state",
+    "independent_review_status",
+    "manual_gates",
+    "accepted_edges",
+    "supports_models",
+    "promotion_allowed"
+  ],
+  "properties": {
+    "format_version": {
+      "const": "0.1.0-draft.1"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+    },
+    "record_provenance": {
+      "enum": [
+        "REAL_RECORD",
+        "SYNTHETIC_FIXTURE"
+      ]
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "author_id",
+        "author_type",
+        "attribution_status",
+        "note"
+      ],
+      "properties": {
+        "author_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+        },
+        "author_type": {
+          "enum": [
+            "HUMAN",
+            "AI"
+          ]
+        },
+        "attribution_status": {
+          "const": "UNVERIFIED_SELF_REPORT"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "specification_url",
+        "clarification_date"
+      ],
+      "properties": {
+        "version": {
+          "const": "0.5.0"
+        },
+        "specification_url": {
+          "const": "https://akashicnet.org/akashicomni/v0-5-0"
+        },
+        "clarification_date": {
+          "const": "2026-10-02"
+        }
+      }
+    },
+    "packet_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_id",
+        "sha256"
+      ],
+      "properties": {
+        "packet_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "claim_ids",
+        "rationale",
+        "excluded_perspectives"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "FULL",
+            "NARROW"
+          ]
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "excluded_perspectives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "perspective_id",
+              "reason"
+            ],
+            "properties": {
+              "perspective_id": {
+                "enum": [
+                  "AWAKEN",
+                  "HIERATIC",
+                  "HOMESENSE",
+                  "ADAPT",
+                  "REGENERATE",
+                  "TRANSCEND",
+                  "#METAD",
+                  "ACTC",
+                  "MultidimensionalCUT_PAST",
+                  "MultidimensionalCUT_PRESENT",
+                  "MultidimensionalCUT_FUTURE",
+                  "UMASC"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          },
+          "minItems": 0
+        }
+      }
+    },
+    "source_context": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "access_status",
+          "inspected_scope"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+          },
+          "access_status": {
+            "enum": [
+              "NOT_REINSPECTED",
+              "ABSTRACT_ONLY",
+              "FULL_TEXT_INSPECTED"
+            ]
+          },
+          "inspected_scope": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "access_status": {
+                  "const": "NOT_REINSPECTED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "inspected_scope": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "inspected_scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 1
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "perspective_id",
+          "state",
+          "reason",
+          "contribution",
+          "source_ids"
+        ],
+        "properties": {
+          "perspective_id": {
+            "enum": [
+              "AWAKEN",
+              "HIERATIC",
+              "HOMESENSE",
+              "ADAPT",
+              "REGENERATE",
+              "TRANSCEND",
+              "#METAD",
+              "ACTC",
+              "MultidimensionalCUT_PAST",
+              "MultidimensionalCUT_PRESENT",
+              "MultidimensionalCUT_FUTURE",
+              "UMASC"
+            ]
+          },
+          "state": {
+            "enum": [
+              "APPLIED",
+              "NOT_RELEVANT",
+              "INSUFFICIENT_INFORMATION"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "contribution": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z0-9-]{2,79}$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "state": {
+                  "const": "APPLIED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "contribution": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "source_ids": {
+                  "minItems": 1
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "contribution": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 1
+    },
+    "reading_status": {
+      "enum": [
+        "IN_PROGRESS",
+        "RECORDED"
+      ]
+    },
+    "synthesis": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "summary",
+            "uncertainty"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "uncertainty": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "release_status": {
+      "const": "UNRELEASED"
+    },
+    "review_state": {
+      "const": "REVIEW_REQUIRED"
+    },
+    "independent_review_status": {
+      "const": "PENDING"
+    },
+    "manual_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "properties": {
+        "M01": {
+          "const": "PENDING"
+        },
+        "M02": {
+          "const": "PENDING"
+        },
+        "M03": {
+          "const": "PENDING"
+        },
+        "M04": {
+          "const": "PENDING"
+        },
+        "M05": {
+          "const": "PENDING"
+        },
+        "M06": {
+          "const": "PENDING"
+        },
+        "M07": {
+          "const": "PENDING"
+        },
+        "M08": {
+          "const": "PENDING"
+        },
+        "M09": {
+          "const": "PENDING"
+        },
+        "M10": {
+          "const": "PENDING"
+        },
+        "M11": {
+          "const": "PENDING"
+        },
+        "M12": {
+          "const": "PENDING"
+        }
+      }
+    },
+    "accepted_edges": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "supports_models": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "promotion_allowed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth",
+        "evidence",
+        "rights",
+        "public_synthesis",
+        "website",
+        "bq_resolution",
+        "privacy",
+        "cultural_authority"
+      ],
+      "properties": {
+        "truth": {
+          "const": false
+        },
+        "evidence": {
+          "const": false
+        },
+        "rights": {
+          "const": false
+        },
+        "public_synthesis": {
+          "const": false
+        },
+        "website": {
+          "const": false
+        },
+        "bq_resolution": {
+          "const": false
+        },
+        "privacy": {
+          "const": false
+        },
+        "cultural_authority": {
+          "const": false
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "reading_status": {
+            "const": "RECORDED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "synthesis": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ]
+}
