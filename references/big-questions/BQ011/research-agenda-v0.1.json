@@ -1,0 +1,167 @@
+{
+  "agenda_id": "BQ011-RESEARCH-AGENDA-V0.1",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ011",
+  "question_status": "UNRESOLVED",
+  "purpose": "Identify research capable of testing when experiences of interconnection become durable compassionate action, just institutions and ecological flourishing.",
+  "priorities": [
+    {
+      "priority_id": "BQ011-P01",
+      "rank": 1,
+      "title": "Compassion at scale",
+      "question": "Which practices reliably convert empathy, compassion or metta into sustained helping, generosity and nonviolence?",
+      "required_outcomes": [
+        "observed_behavior",
+        "durability",
+        "harms"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P02",
+      "rank": 2,
+      "title": "States into traits into service",
+      "question": "When do psychedelic, contemplative, mystical or collective experiences produce lasting humility, care and ethical action?",
+      "required_outcomes": [
+        "self_report",
+        "observed_behavior",
+        "longitudinal_follow_up"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P03",
+      "rank": 3,
+      "title": "Flexible selfhood and prejudice",
+      "question": "Does safely loosening rigid self-models reduce dehumanisation, prejudice and tribal hostility?",
+      "required_outcomes": [
+        "validated_attitudes",
+        "observed_intergroup_behavior",
+        "adverse_effects"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P04",
+      "rank": 4,
+      "title": "Ecological connectedness",
+      "question": "Does felt connection with nature predict or cause measurable stewardship and lower-impact behaviour?",
+      "required_outcomes": [
+        "observed_ecological_behavior",
+        "material_footprint",
+        "durability"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P05",
+      "rank": 5,
+      "title": "Collective synchrony without metaphysical assumptions",
+      "question": "How do music, dance, ritual and shared attention affect trust, cooperation and belonging?",
+      "required_outcomes": [
+        "behavioral_cooperation",
+        "inclusion_and_exclusion",
+        "physiological_or_temporal_synchrony"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P06",
+      "rank": 6,
+      "title": "Trauma and intergenerational repair",
+      "question": "Which combinations of therapy, embodiment, community and meaning-making interrupt cycles of harm safely?",
+      "required_outcomes": [
+        "clinical_and_functional_change",
+        "relationship_outcomes",
+        "adverse_events"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P07",
+      "rank": 7,
+      "title": "Death awareness and compassionate priorities",
+      "question": "Can death contemplation or end-of-life engagement reduce fear and increase care without requiring survival beliefs?",
+      "required_outcomes": [
+        "death_anxiety",
+        "prosocial_behavior",
+        "worldview_coercion_checks"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P08",
+      "rank": 8,
+      "title": "Wisdom across cultures",
+      "question": "Which ethical insights recur across traditions, and which meanings must remain culturally and lineage specific?",
+      "required_outcomes": [
+        "community_authority",
+        "attribution",
+        "non_extractive_benefit"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P09",
+      "rank": 9,
+      "title": "Community care and mutual witnessing",
+      "question": "Which forms of listening and moderated experience-sharing improve belonging without amplifying dogma, delusion or misinformation?",
+      "required_outcomes": [
+        "belonging",
+        "epistemic_humility",
+        "safety_incidents"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P10",
+      "rank": 10,
+      "title": "Attention and information ecology",
+      "question": "How do platforms, algorithms and AI alter agency, empathy and collective reality formation?",
+      "required_outcomes": [
+        "attention_and_agency",
+        "polarisation",
+        "wellbeing",
+        "manipulation_risk"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P11",
+      "rank": 11,
+      "title": "Institutions of care",
+      "question": "Which organisational, educational and economic structures reward cooperation, sufficiency and stewardship rather than extraction?",
+      "required_outcomes": [
+        "policy_and_incentive_change",
+        "distributional_effects",
+        "implementation_durability"
+      ]
+    },
+    {
+      "priority_id": "BQ011-P12",
+      "rank": 12,
+      "title": "Measuring flourishing",
+      "question": "Which indicators capture meaning, belonging, compassion, justice and ecological health beyond narrow economic output?",
+      "required_outcomes": [
+        "cross_cultural_validity",
+        "distributional_equity",
+        "ecological_indicators"
+      ]
+    }
+  ],
+  "methodological_requirements": [
+    "Prospective and longitudinal designs where feasible.",
+    "Preregistered outcomes and transparent deviations.",
+    "Behavioural, third-party, institutional or ecological measures alongside self-report.",
+    "Null results, adverse effects and heterogeneous responses retained.",
+    "Selection, expectancy, demand-characteristic and social-desirability alternatives assessed.",
+    "No metaphysical conclusion inferred from psychological or social outcomes.",
+    "Community-led cultural governance, permission and benefit sharing where applicable.",
+    "No individual-level change presented as institutional or planetary change without direct measurement."
+  ],
+  "community_role": {
+    "n2n_function": "Generate questions, lived-experience signals, counterexamples and candidate patterns for formal review.",
+    "evidence_boundary": "Community recurrence and testimony can motivate research but cannot establish causation, efficacy or universal truth.",
+    "consent_boundary": "Do not extract personal narratives, cultural material or identifying information without permission."
+  },
+  "governance": {
+    "accepted_evidence_batch": false,
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false
+  }
+}

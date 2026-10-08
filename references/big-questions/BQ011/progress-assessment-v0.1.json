@@ -1,0 +1,135 @@
+{
+  "assessment_id": "BQ011-PROGRESS-ASSESSMENT-V0.1",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "question_id": "BQ011",
+  "question_status": "UNRESOLVED",
+  "assessed_on": "2026-09-16",
+  "overall_progress": {
+    "level": 3,
+    "maximum": 10,
+    "label": "COMPETING_MODELS_AND_CAUSAL_CHAIN_DOCUMENTED",
+    "meaning": "The problem, causal chain, competing models, outcome families and research priorities are documented. This level does not estimate whether any intervention works or whether planetary transformation will occur."
+  },
+  "scale": [
+    {
+      "level": 1,
+      "label": "QUESTION_FRAMED"
+    },
+    {
+      "level": 2,
+      "label": "OUTCOMES_OPERATIONALISED"
+    },
+    {
+      "level": 3,
+      "label": "COMPETING_MODELS_AND_CAUSAL_CHAIN_DOCUMENTED"
+    },
+    {
+      "level": 4,
+      "label": "BOUNDED_EVIDENCE_BATCH_REVIEWED"
+    },
+    {
+      "level": 5,
+      "label": "PROSPECTIVE_MULTI_METHOD_SIGNAL"
+    },
+    {
+      "level": 6,
+      "label": "INDEPENDENT_REPLICATION"
+    },
+    {
+      "level": 7,
+      "label": "CROSS_CULTURAL_AND_LONGITUDINAL_ROBUSTNESS"
+    },
+    {
+      "level": 8,
+      "label": "CAUSAL_AND_IMPLEMENTATION_EVIDENCE"
+    },
+    {
+      "level": 9,
+      "label": "INSTITUTIONAL_AND_ECOLOGICAL_OUTCOMES_REPLICATED"
+    },
+    {
+      "level": 10,
+      "label": "DURABLE_BENEFIT_WITH_KNOWN_LIMITS"
+    }
+  ],
+  "axis_assessments": [
+    {
+      "axis": "inner_experience_to_self_change",
+      "level": 2,
+      "maximum": 10,
+      "boundary": "Candidate mechanisms are framed, but no evidence batch has been accepted."
+    },
+    {
+      "axis": "self_change_to_observable_behavior",
+      "level": 2,
+      "maximum": 10,
+      "boundary": "Self-report must remain separate from observed helping, nonviolence, generosity or stewardship."
+    },
+    {
+      "axis": "behavior_to_community_change",
+      "level": 1,
+      "maximum": 10,
+      "boundary": "No reviewed causal pathway from individual change to community outcomes is established."
+    },
+    {
+      "axis": "community_to_institutional_change",
+      "level": 1,
+      "maximum": 10,
+      "boundary": "No reviewed evidence shows that transformative experiences alter durable institutional incentives or policy."
+    },
+    {
+      "axis": "institutional_to_ecological_flourishing",
+      "level": 1,
+      "maximum": 10,
+      "boundary": "Planetary and ecological outcomes remain an untested research horizon."
+    },
+    {
+      "axis": "harms_equity_and_cultural_governance",
+      "level": 2,
+      "maximum": 10,
+      "boundary": "Risks and governance requirements are named but require source-led review and affected-community participation."
+    }
+  ],
+  "advancement_requirements": {
+    "level_4": [
+      "Review at least one bounded evidence batch for each major transition in the causal chain.",
+      "Separate self-report, observed behavior, community indicators, institutional change and ecological outcomes.",
+      "Record null findings, adverse effects, spiritual bypassing, coercion and moral licensing."
+    ],
+    "level_5": [
+      "Use prospective designs with preregistered outcomes and follow-up beyond the immediate experience.",
+      "Include behavioural and third-party measures alongside self-report.",
+      "Measure mediators, moderators and baseline differences."
+    ],
+    "level_6": [
+      "Achieve independent replication across research groups and intervention contexts.",
+      "Replicate benefits and harms with adequate power and transparent exclusions."
+    ],
+    "level_7": [
+      "Test cross-cultural validity with community-led governance and measurement adaptation.",
+      "Demonstrate durability across months or years and across socioeconomic settings."
+    ],
+    "level_8": [
+      "Use designs capable of distinguishing intervention effects from selection, expectancy and social reinforcement.",
+      "Evaluate implementation fidelity, access, equity and unintended consequences."
+    ],
+    "level_9": [
+      "Replicate community, institutional or ecological outcomes rather than inferring them from individual reports.",
+      "Show that benefits do not depend on exploitation, cultural extraction or displaced harms."
+    ],
+    "level_10": [
+      "Demonstrate durable net benefit with clearly bounded generalisability and known failure modes.",
+      "Preserve uncertainty and monitoring rather than declaring a final universal solution."
+    ]
+  },
+  "governance": {
+    "canonical_promotion_applied": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "model_edges_upgrade_evidence": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false
+  }
+}

@@ -63,6 +63,18 @@
       "canonical_registration_applied": false,
       "accepted_evidence_batches": [],
       "public_beta_gate": false
+    },
+    "BQ011": {
+      "candidate_path": "references/big-questions/BQ011",
+      "spec": "references/big-questions/BQ011/spec-v0.1.json",
+      "review_candidates": [
+        "references/big-questions/BQ011/progress-assessment-v0.1.json",
+        "references/big-questions/BQ011/research-agenda-v0.1.json"
+      ],
+      "registration_status": "REVIEW_CANDIDATE",
+      "canonical_registration_applied": false,
+      "accepted_evidence_batches": [],
+      "public_beta_gate": false
     }
   }
 }
