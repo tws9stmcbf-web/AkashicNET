@@ -1,0 +1,159 @@
+{
+  "schema": "akashicnet.reddit.canonical-delta-import.v0.2",
+  "import_date": "2026-09-08",
+  "extends_schema": "akashicnet.reddit.canonical-delta-import.v0.1",
+  "source_description": "Manually verified public listing metadata for r/NeuronsToNirvana observed on 2026-09-08. Reddit's API was not called; no credentials were used; REDDIT_API_APPROVED was not enabled; no crawling or pagination occurred.",
+  "approval": "Focused, human-supplied candidate set reviewed against the canonical index; count promotion deliberately deferred pending a later validated merged checkpoint.",
+  "scope": {
+    "subreddit": "NeuronsToNirvana",
+    "candidates_reviewed": 10,
+    "already_present_in_canonical_index": 0,
+    "accepted_new_records": 10,
+    "rejected_records": 0,
+    "held_records": 0,
+    "coverage": "partial_manual",
+    "coverage_note": "This is a small, manually curated candidate set, not an exhaustive or paginated scan of r/NeuronsToNirvana. It does not claim full subreddit completeness."
+  },
+  "gates": {
+    "direct_public_accessibility_at_observation": true,
+    "historical_index_absence": true,
+    "unique_reddit_post_ids": true,
+    "unique_canonical_urls": true,
+    "reddit_api_called": false,
+    "reddit_api_verification": false,
+    "credentials_used": false,
+    "reddit_api_approved_enabled": false,
+    "crawled_or_paginated": false,
+    "permanent_availability_verified": false,
+    "authorship_verified": false,
+    "rights_promoted": false,
+    "scientific_evidence_promoted": false,
+    "truth_inference": false,
+    "public_count_promoted": false
+  },
+  "public_count_impact": {
+    "source_rows": {
+      "before": 9502,
+      "after": 9502,
+      "change": 0
+    },
+    "unified_index_records": {
+      "before": 12159,
+      "after": 12159,
+      "change": 0
+    },
+    "note": "No change to public 9,502 / 12,159 figures in this PR. Promotion into reddit-uri-index.csv, reddit-semantic-index.csv and public counts requires a later, separately validated merged checkpoint."
+  },
+  "records": [
+    {
+      "reddit_post_id": "1wa2p67",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1wa2p67/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🐢🚪 The AkashicNET Portals 🌅♾️ — Follow the Tortoise, Question the White Rabbit & Explore One Living Network Through Many Doorways 🐇🐣✨",
+      "created_utc": "2026-09-07T19:59:00.655Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w9vyai",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w9vyai/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🌅 AWAKEN000 🧠🪷♾️ — Paths to Shared Wonder: Keep the Wonder • Check the Claims • Integrate What Survives (10 min read) [7 Sep 2026]",
+      "created_utc": "2026-09-07T15:53:51.051Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w9r4ck",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w9r4ck/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🍅 The Invisible Ingredient in Tomatoes That Protected Mice From Fatty Liver Disease (4 min read) | Emerging Evidence • Animal Study | SciTechDaily: Health / Nutrition & Liver Health [Sep 2026]",
+      "created_utc": "2026-09-07T12:42:41.562Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w92g5v",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w92g5v/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🚀💓 From Psychedelic Science to Bodhisattva Service — 12 Living Principles for a More Conscious, Kinder, Brighter World (12 min read) | #HOMESENSE♾️💓 × AkashicNET [ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ 🙏🏽 — Truth is the Timeless One]",
+      "created_utc": "2026-09-06T17:31:15.844Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w8w5y5",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w8w5y5/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "“Wisdom grows when truth and compassion are held together.”",
+      "created_utc": "2026-09-06T13:25:33.543Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w8v885",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w8v885/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🔥💓 Beneath Anger Lies Understanding — Hurt, Fear, Boundaries, Compassion & the Search for a Wiser Response | #HOMESENSE♾️💓 × r/NeuronsToNirvana [September 2026]",
+      "created_utc": "2026-09-06T12:44:24.888Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w8qkcy",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w8qkcy/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🧠🥽 What If the Hard Problem Is Backwards? — Donald Hoffman🌀on Consciousness First, Recursive Trace Logic, Spacetime as a VR Interface, Disembodied Mind & the Mathematics of Oneness (10 min read) | AkashicNET × r/NeuronsToNirvana Deep Dive [September 2026]",
+      "created_utc": "2026-09-06T08:36:15.079Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w8660u",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w8660u/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🧩🪞💡 The Physics of Hidden Order — Aperiodic Geometry, Chirality & Light | How the Smith Hat Monotile Turned a Mathematical Curiosity Into a New Optical Platform | SciTechDaily: Physics [3 Sep 2026]",
+      "created_utc": "2026-09-05T17:01:18.012Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w74zae",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w74zae/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "🎶 Antinomy - Around Us | 🛰️Mutant Disco🌀Records ♪",
+      "created_utc": "2026-09-04T13:50:24.489Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    },
+    {
+      "reddit_post_id": "1w73h3c",
+      "canonical_url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1w73h3c/",
+      "subreddit": "NeuronsToNirvana",
+      "title": "♻️🌍 Reincarnation🌀Across Cultures — Ancient Beliefs, Religious Traditions & the Enduring Question of Consciousness Beyond One Lifetime | IONS “Exploring the History of Reincarnation Beliefs” (15 min read) [26 Aug 2026]",
+      "created_utc": "2026-09-04T12:48:35.678Z",
+      "availability_status": "publicly_accessible",
+      "retrieved_at_utc": "2026-09-08",
+      "provenance": "manual_observation_of_public_subreddit_listing",
+      "import_status": "ACCEPTED_PENDING_COUNT_MERGE"
+    }
+  ]
+}
