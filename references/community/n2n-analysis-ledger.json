@@ -1904,12 +1904,80 @@
         ],
         "finding": "Both inventories contain URL-e2c13292d48e860c with nine repeated URL occurrences referencing the same four catalogue files, retrieval_status UNASSESSED and retrieved_on, observed_title and redirect_target null. No attributable substantive body or independent underlying source established in inspected files; external/private material and non-text assets not examined."
       }
+    },
+    {
+      "post_id": "100052",
+      "status": "BLOCKED",
+      "review_date": "2026-10-08",
+      "accessed_at": "2026-10-08T11:43:15.295Z",
+      "review_scope": "Repository-only pilot CSV/Markdown and URI/semantic reconciliation at the exact PR head, complete v0.14/v0.15 inventory cross-check, plus separately pinned current-main metadata/receipt comparison. No live Reddit or source-body read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot catalogue title is Tradition as map, not doctrine. Its date is unknown, source type discussion, category Wisdom Traditions, toolkit framework Knowledge Commons and evidence status creative_cultural_material. Attribution is generic, the summary is explicitly a non-evidential catalogue signal, and external_source_url equals reddit_url. URI and semantic indexes each contain the same three variants: plain, Knowledge and Original. The category change from the preceding Philosophy/QMM records does not supply substantive content. These fields establish structural catalogue membership, not post existence, authorship, an attributable argument or an independently identifiable underlying source. No title-derived claim or fabrication inference is made.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "7baad5eff5c00c05d340101fa66865f6047bf82d",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "pilot_markdown_blob": "8b3da9025a5e52338bbd1eea9dd8e02b16fb1ad4",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "evidence_classification": "creative_cultural_material (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "source_reconciliation": {
+        "pilot_csv_lines": [
+          84
+        ],
+        "pilot_markdown_lines": [
+          965,
+          974
+        ],
+        "uri_lines": [
+          165,
+          166,
+          167
+        ],
+        "semantic_lines": [
+          165,
+          166,
+          167
+        ],
+        "method": "Read complete exact-head Git blobs, independently recomputed their local Git blob SHAs, and parsed 1,000 pilot, 9,502 URI and 9,401 semantic rows. Pinned URI contents endpoint reports the same blob SHA. Verified exact target URL-set agreement and explicit semantic post_id agreement.",
+        "finding": "One pilot record and three matching URI/semantic variants map to one structural queue ID; no semantic coverage gap. The external-source field repeats the post URL."
+      },
+      "additional_source_check": {
+        "scope": "All 32 v0.14/v0.15 inventory shards, registry/governance records, bounded recent GitHub discussions and 16 current-main metadata/receipt JSON files; see the appended repository verification event for immutable source bindings and cohort scope.",
+        "paths": [
+          "references/community/source-url-inventory-v0.14/shard-1.json",
+          "references/community/source-url-inventory-v0.15/shard-1.json",
+          "references/community/n2n-metadata-batch-0001.json"
+        ],
+        "finding": "Inventory source URL-1c2545d993d58320 is UNASSESSED in both inventories, with nine URL occurrences referring to the four catalogue files and null retrieval date/title/redirect. On separately pinned main bcfd82b2d4ce6d69ff8384b11477089e0c21afeb, target rank 55 is ARCHIVED_URL_ONLY: title, author, evidence_status and rights_status null; metadata empty. No target match in 125 historical-observation records or 22 web-observed overlay records."
+      },
+      "access_limitations": [
+        "Live Reddit access remains HOLD; post bodies, comments, media and external primary sources were not accessed.",
+        "Searches and crossmatches are bounded to inspected repository/API artifacts; no exhaustive repository-wide text search or external/private/non-text examination.",
+        "Link-only provenance does not establish reproduction rights. Prior record statuses and all evidence, rights, canonical, publication and promotion boundaries remain unchanged."
+      ],
+      "blocker": "No attributable substantive post/source material or independent underlying source established in the inspected trails.",
+      "next_action": "Revisit only with new authorised, attributable source material or a changed provenance lead. Continue pending queue from its recomputed checkpoint.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 54,
-    "next_pending_post_id": "100052",
+    "blocked": 55,
+    "next_pending_post_id": "100053",
     "next_action": "Continue pending repository-only assessment. Keep PR #378 substantive-reading counts separate."
   },
   "repository_verification_events": [
@@ -1952,16 +2020,386 @@
       "affected_post_ids": [
         "100049"
       ]
+    },
+    {
+      "checked_at": "2026-10-08T11:43:15.295Z",
+      "event_id": "N2N-PARALLEL-PROVENANCE-20261008",
+      "source_commit": "7baad5eff5c00c05d340101fa66865f6047bf82d",
+      "comparison_main_commit": "bcfd82b2d4ce6d69ff8384b11477089e0c21afeb",
+      "affected_post_ids": [
+        "10001c",
+        "10001d",
+        "10001e",
+        "10001f",
+        "100020",
+        "100021",
+        "100022",
+        "100023",
+        "100024",
+        "100025",
+        "100026",
+        "100027",
+        "100028",
+        "100029",
+        "10002a",
+        "10002b",
+        "10002c",
+        "10002d",
+        "10002e",
+        "10002f",
+        "100030",
+        "100031",
+        "100032",
+        "100033",
+        "100034",
+        "100035",
+        "100036",
+        "100037",
+        "100038",
+        "100039",
+        "10003a",
+        "10003b",
+        "10003c",
+        "10003d",
+        "10003e",
+        "10003f",
+        "100040",
+        "100041",
+        "100042",
+        "100043",
+        "100044",
+        "100045",
+        "100046",
+        "100047",
+        "100048",
+        "100049",
+        "10004a",
+        "10004b",
+        "10004c",
+        "10004d",
+        "10004e",
+        "10004f",
+        "100050",
+        "100051",
+        "100052"
+      ],
+      "scope": "Parallel, repository-only crossmatch of the 54 previously BLOCKED IDs and newly assessed 100052. Coverage counts describe inspected artifacts and matching metadata, not independent sources or completed substantive reviews.",
+      "trails": [
+        {
+          "name": "exact-head catalogues",
+          "paths": [
+            "references/community/n2n-pilot-index.csv",
+            "references/community/n2n-pilot-index.md",
+            "references/community/reddit-uri-index.csv",
+            "references/community/reddit-semantic-index.csv"
+          ],
+          "blob_shas": {
+            "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+            "pilot_markdown_blob": "8b3da9025a5e52338bbd1eea9dd8e02b16fb1ad4",
+            "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+            "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+            "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+          },
+          "finding": "100052 reconciled across all four full catalogues; generic attribution and self-referential external-source URL."
+        },
+        {
+          "name": "complete URL inventories",
+          "files": [
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-0.json",
+              "blob_sha": "ce9b2ecd23340c49311ec69105c60a1988db754c"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-1.json",
+              "blob_sha": "10dfe0c59ed40ca70b9d5b3237e173e9536974f3"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-2.json",
+              "blob_sha": "4ede6ed61d6b5620e9c09fa0155fa8a12ee79212"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-3.json",
+              "blob_sha": "82bab7c9af19020fec8a79d0c703e54e3d983d82"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-4.json",
+              "blob_sha": "233008a241b6ae4b0e214799fd8919445ae2eb10"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-5.json",
+              "blob_sha": "e0ac1d386ef4c92f57681d0c8d6dd30f68c7ec4c"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-6.json",
+              "blob_sha": "ad8ccb52c21012ee2bca3c61d132c3fbff7cec01"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-7.json",
+              "blob_sha": "5dd3e6ddf2bee82bad2c3d45ef210ec17cc58072"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-8.json",
+              "blob_sha": "476cccd1dfc5009ef77409d06e7c758d48de42a6"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-9.json",
+              "blob_sha": "53bb3c916538203c0156a15409fdc3db5ffe7f9d"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-a.json",
+              "blob_sha": "9b644756e8ac74f2565e2499d3704a198c08358b"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-b.json",
+              "blob_sha": "d30d51b4dd0087782392d5fff4bffe70fcfe2d6e"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-c.json",
+              "blob_sha": "bb2f240669c9894aaa45f42fed3a6d1f4dd6f1f0"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-d.json",
+              "blob_sha": "b9b5e320f8e257d41bdb1d08a71b6364601583ac"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-e.json",
+              "blob_sha": "ee492b6003b138c6de3095eb0089efa6e114c9c0"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.14/shard-f.json",
+              "blob_sha": "a343bde60cfd5252d62bffb5a6fe1591f8a128f8"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-0.json",
+              "blob_sha": "78328561ccd205ceae425bc2509df12b324957c7"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-1.json",
+              "blob_sha": "3f13eea3eaca7ea11e556f443f72e1d3f27f0da4"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-2.json",
+              "blob_sha": "f25c0900551ba4f9081581796f208ece8b7d704b"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-3.json",
+              "blob_sha": "cffcc6f44d96b82c9145b6013e7047e38d4e5c9c"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-4.json",
+              "blob_sha": "becb33331597f452021c990e3090fef58ad26964"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-5.json",
+              "blob_sha": "6c944370f2f0b6d99482a1cf7d0f75e8071a72fb"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-6.json",
+              "blob_sha": "e154bc3daeb749512dff80e75113c39cc44c0e91"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-7.json",
+              "blob_sha": "eaf26e337c7e459269610b9d98ec51be7968148f"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-8.json",
+              "blob_sha": "33e555660416a86529f57873c6010b99be90085f"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-9.json",
+              "blob_sha": "d775a79ebcb9290f4bf768589ca35230b5572091"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-a.json",
+              "blob_sha": "21496de63c8a87c4cb86d9238cd70d8a6d1ac6b0"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-b.json",
+              "blob_sha": "770f1a1b68210a34c7344f70dabc55ef916cbce7"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-c.json",
+              "blob_sha": "99bc8a451273d403ec186379c74a0e046671eda0"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-d.json",
+              "blob_sha": "fcd7fc0a77550538a9fa837d98f165e089306d4b"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-e.json",
+              "blob_sha": "4a8fbf3d590614faac91fc51adc5c1806d56e9f5"
+            },
+            {
+              "path": "references/community/source-url-inventory-v0.15/shard-f.json",
+              "blob_sha": "a14650f5a7fb2beda3be4ba41bd6032c2b6b463c"
+            }
+          ],
+          "shards_read": 32,
+          "matched_inventory_entries": 110,
+          "unique_scoped_ids": 55,
+          "finding": "Every scoped ID appears once per inventory; all 110 entries are UNASSESSED. Every occurrence points only to the same four catalogue paths; repeated inventory versions are not independent corroboration."
+        },
+        {
+          "name": "source registry and retrieval governance",
+          "files": [
+            {
+              "path": "references/community/reddit-source-registry.json",
+              "blob_sha": "da3c570e88bf225769a3a6b8581ae4c1faa4a7c9"
+            },
+            {
+              "path": "references/community/REDDIT_HISTORICAL_PROVENANCE_AUDIT_V0.7.md",
+              "blob_sha": "d4cf3b36abe570c20b8da1d12757191cc19d1df4"
+            },
+            {
+              "path": "data/reddit/README.md",
+              "blob_sha": "345e31487b1386787e3647e833027d09da5da348"
+            },
+            {
+              "path": "references/community/source-integrity-v014-batch3c-reddit-retrieval-provenance-v0.1.json",
+              "blob_sha": "cfa7beeb89d3625278d262551e201bb569664ff4"
+            },
+            {
+              "path": "references/public-metadata-source-registry-2026-09-10.json",
+              "blob_sha": "dae202414f01ee898c7620f10b9536a6888dbe5c"
+            },
+            {
+              "path": "scripts/build_public_source_url_inventory_v015.py",
+              "blob_sha": "7c54db5a874b8eb9e04f2ac857143adc8b29ca0c"
+            }
+          ],
+          "finding": "Registry lists source configuration, not access receipts. Existing retrieval-provenance artifact concerns other IDs. Public metadata registry supplies no identified linkage to scoped IDs. Inventory generator derives occurrences from checked-in files."
+        },
+        {
+          "name": "path history and recent GitHub discussions",
+          "queries": [
+            {
+              "kind": "issue",
+              "query": "100052",
+              "limit": 20,
+              "returned": 0
+            },
+            {
+              "kind": "issue",
+              "query": "provenance updated:>=2026-09-23",
+              "limit": 30,
+              "returned": 2
+            },
+            {
+              "kind": "pull_request",
+              "query": "100052",
+              "limit": 20,
+              "returned": 1
+            },
+            {
+              "kind": "pull_request",
+              "query": "\"receipt\" updated:>=2026-09-23",
+              "limit": 30,
+              "returned": 4
+            }
+          ],
+          "source_refs": [
+            "https://github.com/tws9stmcbf-web/AkashicNET/pull/393",
+            "https://api.github.com/repos/tws9stmcbf-web/AkashicNET/commits?path=references/community/n2n-pilot-index.csv&sha=7baad5eff5c00c05d340101fa66865f6047bf82d&per_page=100"
+          ],
+          "finding": "Pilot path history returns the four known commits. This turn did not inspect target-specific historical insertion blobs. Target PR search returns only #377 self-reference. Recent receipt search exposes #393 and newer main artifacts, checked separately below; other returned issue/PR descriptions supply no target provenance receipt. Searches are index-dependent and bounded; previously exhausted exact Stage 1 searches were not repeated."
+        },
+        {
+          "name": "newer main staging and observation receipts",
+          "files": [
+            {
+              "path": "references/community/n2n-historical-observation-completion-0075.json",
+              "blob_sha": "419154157eafd25dc3f6108d5419977d946cda1f"
+            },
+            {
+              "path": "references/community/n2n-historical-observation-pilot-0025-batch-0002.json",
+              "blob_sha": "90ef948bf5c620a4749bf3779cce579565f8b82f"
+            },
+            {
+              "path": "references/community/n2n-historical-observation-pilot-0025.json",
+              "blob_sha": "c78daa8524475546b98679eb32435b1d9d6c5af6"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0001.json",
+              "blob_sha": "ccf70d3a854e1095678a2f9acdfd3230bfd6b870"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0002.json",
+              "blob_sha": "e301b8162593dfe365ff19d1bb7ff9058d1da870"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0003.json",
+              "blob_sha": "bc4d761013faf190ff795026fb569865f7f271a8"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0004.json",
+              "blob_sha": "fa369e4d4791297f2e4185433e56def36a77a568"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0005.json",
+              "blob_sha": "6886185c5dee27dac4f4feea4f010e2892feb3da"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0006.json",
+              "blob_sha": "817c0c55a9ccaf04c24b286d4827ef209dd57115"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0007.json",
+              "blob_sha": "12f98bb7f56a5bd27ac6889a86c98a4e4dee7cc6"
+            },
+            {
+              "path": "references/community/n2n-metadata-batch-0008.json",
+              "blob_sha": "844b6b7011a480e5b2865e911006ecf02215805c"
+            },
+            {
+              "path": "references/community/n2n-web-metadata-pilot-0001.json",
+              "blob_sha": "e85404d25da9f8feeffd5b31253f43f7951ea42a"
+            },
+            {
+              "path": "references/community/n2n-web-metadata-pilot-0002.json",
+              "blob_sha": "e2ef951920a7536068224401b78ca8310216b515"
+            },
+            {
+              "path": "references/community/n2n-web-metadata-pilot-0003.json",
+              "blob_sha": "3c21843a43a101cde66915763ae71df7ef515cba"
+            },
+            {
+              "path": "references/community/n2n-web-metadata-pilot-0004.json",
+              "blob_sha": "ebde8e0397e49c44a1fd02e723b31d818b986b78"
+            },
+            {
+              "path": "references/community/n2n-web-metadata-pilot-0005.json",
+              "blob_sha": "aa8a4116ca0221b3e30d99719bc5ac1d156e1c94"
+            }
+          ],
+          "staging_batches": 8,
+          "historical_receipt_files": 3,
+          "historical_unique_ids": 125,
+          "web_overlay_files": 5,
+          "web_overlay_unique_ids": 22,
+          "scoped_ids_in_staging": 55,
+          "scoped_ids_in_historical_receipts": 0,
+          "scoped_ids_in_web_overlays": 0,
+          "finding": "All 55 scoped IDs occur in metadata batch 0001 as ARCHIVED_URL_ONLY, with title, author, evidence_status and rights_status null and metadata empty. No scoped ID occurs in the three historical-receipt files or five web-observation overlays. Existing receipts are metadata provenance, not source-body verification."
+        }
+      ],
+      "decision": "Add 100052 as BLOCKED and preserve all 54 prior record assessments. No source body or independently attributable underlying source recovered within this scope. Four investigation groups remain OPEN; no completed-review count or gate changes.",
+      "limitations": [
+        "No live Reddit request, body/comment/media read, private-data recovery or external primary-source assessment.",
+        "No exhaustive search of all repository text or non-text assets; unlinked external/owner-held material remains unexamined.",
+        "Current-main comparison is pinned separately; no branch merge, source-file update or canonical metadata overlay import."
+      ],
+      "next_action": "Use a new attributable owner-provided/import source or other genuinely changed lead before repeating these same cohort checks; otherwise continue the pending review queue.",
+      "validation": "Eight existing offline ledger/census tests passed. Complete local catalogue/test blobs match exact-head Git SHAs. Recomputed 7,399 queue IDs and smallest pending ID 100053; all 54 prior assessments, prior verification events and boundaries preserved."
     }
   ],
   "investigation_register": {
     "purpose": "Track anomalies, discrepancies and potentially important exceptions for bounded follow-up. Flags are not proof of falsehood, scientific significance or rights clearance.",
-    "counting": "Four open investigation groups: three overlapping metadata groups concern 54 inspected IDs; one CLI dependency group adds no post IDs. No completed post reads in this ledger.",
+    "counting": "Four open investigation groups: three overlapping metadata groups concern 55 inspected IDs; one CLI dependency group adds no post IDs. No completed post reads in this ledger.",
     "items": [
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-10-05T21:09:34.861Z",
+        "last_checked_at": "2026-10-08T11:43:15.295Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -2016,7 +2454,8 @@
           "10004e",
           "10004f",
           "100050",
-          "100051"
+          "100051",
+          "100052"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -2323,7 +2762,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-10-05T21:09:34.861Z",
+        "last_checked_at": "2026-10-08T11:43:15.295Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -2378,7 +2817,8 @@
           "10004e",
           "10004f",
           "100050",
-          "100051"
+          "100051",
+          "100052"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -2611,7 +3051,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-10-05T21:09:34.861Z",
+        "last_checked_at": "2026-10-08T11:43:15.295Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -2666,7 +3106,8 @@
           "10004e",
           "10004f",
           "100050",
-          "100051"
+          "100051",
+          "100052"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
