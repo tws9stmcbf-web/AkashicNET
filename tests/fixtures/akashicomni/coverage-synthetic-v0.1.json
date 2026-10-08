@@ -1,0 +1,197 @@
+{
+  "format_version": "0.1.0-draft.1",
+  "record_id": "OMNI-COVERAGE-SYNTHETIC-001",
+  "record_provenance": "SYNTHETIC_FIXTURE",
+  "author": {
+    "author_id": "TEST-GENERATOR",
+    "author_type": "AI",
+    "attribution_status": "UNVERIFIED_SELF_REPORT",
+    "note": "Synthetic structural fixture only. No human review or real perspective reading is represented."
+  },
+  "recorded_at": "2026-10-08T05:20:00Z",
+  "method": {
+    "version": "0.5.0",
+    "specification_url": "https://akashicnet.org/akashicomni/v0-5-0",
+    "clarification_date": "2026-10-02"
+  },
+  "packet_binding": {
+    "packet_id": "OMNI-MEDITATION-CRIME-PILOT",
+    "sha256": "180b6c8fbabcd930ab0e808dd4a5f26255c4a3dcceb28a16c5f7fc5a8e9177c1"
+  },
+  "scope": {
+    "mode": "FULL",
+    "claim_ids": [
+      "OMNI-MC-001"
+    ],
+    "rationale": "Synthetic full-perspective coverage shape for one explicitly selected claim; not an assessment of the complete pilot.",
+    "excluded_perspectives": []
+  },
+  "source_context": [
+    {
+      "source_id": "SOURCE-HAGELIN-1999",
+      "access_status": "NOT_REINSPECTED",
+      "inspected_scope": null
+    },
+    {
+      "source_id": "SOURCE-EDITORIAL-20260919",
+      "access_status": "FULL_TEXT_INSPECTED",
+      "inspected_scope": "SYNTHETIC: context copied from the packet for shape validation; no new inspection."
+    }
+  ],
+  "coverage": [
+    {
+      "perspective_id": "AWAKEN",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "HIERATIC",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "HOMESENSE",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "ADAPT",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "REGENERATE",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "TRANSCEND",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "#METAD",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "ACTC",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "MultidimensionalCUT_PAST",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "MultidimensionalCUT_PRESENT",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "MultidimensionalCUT_FUTURE",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    },
+    {
+      "perspective_id": "UMASC",
+      "state": "INSUFFICIENT_INFORMATION",
+      "reason": "Synthetic placeholder: no perspective analysis performed.",
+      "contribution": null,
+      "source_ids": [
+        "SOURCE-HAGELIN-1999",
+        "SOURCE-EDITORIAL-20260919"
+      ]
+    }
+  ],
+  "reading_status": "RECORDED",
+  "synthesis": {
+    "summary": "SYNTHETIC fixture exercises the recorded-synthesis shape only. No real reading was completed.",
+    "uncertainty": "No factual conclusion or human assessment follows from structural validation."
+  },
+  "release_status": "UNRELEASED",
+  "review_state": "REVIEW_REQUIRED",
+  "independent_review_status": "PENDING",
+  "manual_gates": {
+    "M01": "PENDING",
+    "M02": "PENDING",
+    "M03": "PENDING",
+    "M04": "PENDING",
+    "M05": "PENDING",
+    "M06": "PENDING",
+    "M07": "PENDING",
+    "M08": "PENDING",
+    "M09": "PENDING",
+    "M10": "PENDING",
+    "M11": "PENDING",
+    "M12": "PENDING"
+  },
+  "accepted_edges": [],
+  "supports_models": [],
+  "promotion_allowed": {
+    "truth": false,
+    "evidence": false,
+    "rights": false,
+    "public_synthesis": false,
+    "website": false,
+    "bq_resolution": false,
+    "privacy": false,
+    "cultural_authority": false
+  }
+}

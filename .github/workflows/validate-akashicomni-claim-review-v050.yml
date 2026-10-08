@@ -1,0 +1,50 @@
+name: Validate AkashicOMNI claim-review draft
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/AKASHICOMNI_V0.5.0_CLAIM_REVIEW_DRAFT.md'
+      - 'docs/AKASHICOMNI_COVERAGE_RECORD_V0.1.md'
+      - 'schemas/akashicomni-perspective-coverage-v0.1.schema.json'
+      - 'scripts/validate_akashicomni_coverage_v01.py'
+      - 'tests/test_akashicomni_coverage_v01.py'
+      - 'tests/fixtures/akashicomni/**'
+      - 'schemas/akashicomni-claim-review-v0.5.0.schema.json'
+      - 'data/akashicomni/**'
+      - 'references/akashicomni/**'
+      - 'scripts/validate_akashicomni_claim_review_v050.py'
+      - 'tests/test_akashicomni_claim_review_v050.py'
+      - '.github/workflows/validate-akashicomni-claim-review-v050.yml'
+  pull_request:
+    paths:
+      - 'docs/AKASHICOMNI_V0.5.0_CLAIM_REVIEW_DRAFT.md'
+      - 'docs/AKASHICOMNI_COVERAGE_RECORD_V0.1.md'
+      - 'schemas/akashicomni-perspective-coverage-v0.1.schema.json'
+      - 'scripts/validate_akashicomni_coverage_v01.py'
+      - 'tests/test_akashicomni_coverage_v01.py'
+      - 'tests/fixtures/akashicomni/**'
+      - 'schemas/akashicomni-claim-review-v0.5.0.schema.json'
+      - 'data/akashicomni/**'
+      - 'references/akashicomni/**'
+      - 'scripts/validate_akashicomni_claim_review_v050.py'
+      - 'tests/test_akashicomni_claim_review_v050.py'
+      - '.github/workflows/validate-akashicomni-claim-review-v050.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  draft-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install jsonschema==4.26.0
+      - run: python scripts/validate_akashicomni_claim_review_v050.py
+      - run: python -m unittest discover -s tests -p 'test_akashicomni_claim_review_v050.py'
+      - run: python scripts/validate_akashicomni_coverage_v01.py tests/fixtures/akashicomni/coverage-synthetic-v0.1.json data/akashicomni/meditation-crime-pilot-v0.5.0.json
+      - run: python -m unittest discover -s tests -p 'test_akashicomni_coverage_v01.py'
