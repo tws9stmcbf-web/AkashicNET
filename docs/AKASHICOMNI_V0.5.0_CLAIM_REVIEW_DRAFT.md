@@ -135,3 +135,89 @@ The pilot rejects additional top-level `candidate_revision`, `perspective_covera
 Canonical full-spec adoption, primary-source reinspection and rights limits, real independent assessments, independent methodological review, complete applicable manual-gate evidence, human editorial acceptance and a separate owner release decision remain absent or pending. Existing manual comparisons are AI self-review, not completed independent acceptance. Any full-candidate validation claim is unsupported by this pilot.
 
 All five pilot claims remain UNRESOLVED / REVIEW_REQUIRED; assessments and comparison results remain empty. The trust registry's reviewer_attestations and source_inspections remain empty. accepted_edges=[] and supports_models=[]. Truth, evidence, rights, privacy, cultural_authority, public_synthesis, website and bq_resolution promotion remain false. No merge, deployment, publication authorization, scientific promotion or release is supplied by this record.
+
+## Public specification implementation map · 8 October 2026 UTC
+
+Assessment scope: the engineering files at `3ec6369f4025204924ec79cc233bf159a3eb40c4`,
+compared with the [public manual specification](https://akashicnet.org/akashicomni/v0-5-0)
+as retrieved on 8 October UTC (7 October in Los Angeles). This extends the existing
+M01–M12 table above; it does not replace those gates or assert that any gate passed.
+
+The public v0.5.0 manual specification is available for human-reviewed use. It was
+published 1 October, clarified 2 October and updated with a researcher starter kit
+7 October. [PR #398](https://github.com/tws9stmcbf-web/AkashicNET/pull/398), merged as
+`bcfd82b2d4ce6d69ff8384b11477089e0c21afeb`, records that distinction in the website
+mirror. The UNRELEASED statements in this engineering slice apply to its software
+packet and acceptance process, not to availability of the public manual method.
+The dated September/October 2 receipts and historical v0.4.0 baseline remain intact.
+
+### Executable coverage versus remaining work
+
+Paths below are relative to this repository. `S` means
+`schemas/akashicomni-claim-review-v0.5.0.schema.json`; `V` means
+`scripts/validate_akashicomni_claim_review_v050.py`. Presence of a field is not proof
+that its content is adequate, independently reviewed or scientifically supported.
+
+| Public specification area | Existing executable representation at the inspected head | Remaining gap / existing gate |
+| --- | --- | --- |
+| Claim wording, origin and separated claim kinds (§5) | S: `claims[].wording`, `kind`, `source_ids`, `lineage_source_id`; V checks references and editorial artifact digest | Candidate domain/evidence labels are not equivalent to pilot kinds or reviewer decisions; M02 remains manual |
+| Method/record versions and scope (§5) | S fixes `format_version`, historical `framework_baseline` and target; packet/claim IDs and dated revisions exist | No public-method revision binding or reading-scope record; M01 |
+| Source access and dependencies (§§4–5) | S has three access states, locations and provenance notes; V checks registered inspection attestations and blocks support without trusted full-text inspection | No typed source-dependency graph, inspection date or full set of public access states; primary source remains NOT_REINSPECTED and rights NOT_ASSESSED; M03 |
+| Alternatives and contrary information (§§3–5) | S requires competing explanations and tracks unfinished counter-evidence searches and missing evidence | Adequacy and dependency-aware interpretation are not machine verified; M04 |
+| Twelve-perspective coverage and synthesis (§§2–3) | No coverage or synthesis fields in S; EXPAND² is documented but not executed by V | Cannot record APPLIED / NOT_RELEVANT / INSUFFICIENT_INFORMATION for a reading or its synthesis; M05 and M07 |
+| Optional lenses and relationships (§6) | No optional-module or relation representation in S | Source-specific mapping remains manual; PRISM compatibility declarations are not executed OMNI readings; M06 and M12 |
+| Reviewers and disagreement (§5) | V: `verification_record`, `trusted_verification`, `compare_assessments`; real registry arrays and pilot assessments are empty | Software checks are implemented; actual source/human verification, independent assessments and methodological review are pending; M08–M09 |
+| Revision conditions and history (§§3,5) | S stores sequential dated `revision_history`; V checks numbering and dates | No dedicated conditions-for-revision field or cross-snapshot append-only enforcement; M07–M09 |
+| Governance and effectiveness (evidence, record and review sections) | S fixes unresolved/draft states, empty edges/model support and eight false promotion flags | Privacy/cultural/rights decisions, equal-input evaluation, human acceptance and release authorization remain separate; M10–M12 |
+
+### Smallest recommended next capability: a separate coverage record
+
+Recommendation, not implemented or accepted: add a narrowly scoped, machine-readable
+companion record for M01/M05, with a separate schema and read-only validator. Preserve
+the existing claim packet and closed schema unchanged. This would make missing
+perspective coverage inspectable without claiming full specification implementation.
+
+- Bind the companion to the exact packet ID and SHA-256 of its file bytes, explicit
+  claim IDs and the public method's version/revision reference. Binding must fail if
+  the packet changes. Record the actual author type and date; never invent human review.
+- Distinguish a full twelve-perspective reading from disclosed narrower scope.
+  For full scope require each baseline perspective exactly once, its coverage state,
+  nonblank reason and source-access context. For narrow scope identify exclusions and
+  reasons explicitly. Missing material is insufficient information, not irrelevance.
+- Keep synthesis separate from the perspective list. Require a synthesis with visible
+  uncertainty for a record claiming a completed reading, without interpreting its
+  presence as correctness, independent validation or permission to publish.
+- Keep optional modules, source-dependency modelling and PRISM conversion outside this
+  first slice. Unknown fields or mappings must fail, never be silently dropped/coerced.
+- Return structural errors and unresolved manual checks only. Do not write to packets,
+  trust registries, claim decisions, evidence/rights records, graph edges or websites.
+  No coverage state may satisfy a human-verification or release gate.
+
+Before defining new perspective identifiers, reconcile the existing twelve values in
+[`compatible_omni_frameworks` on PR #379](https://github.com/tws9stmcbf-web/AkashicNET/blob/570aee1632fc036d8f114c0fa584ad6c198575a2/schemas/akashic-prism-inquiry-module-v0.1.schema.json).
+That field describes module compatibility, not which perspectives were applied to an
+exact claim packet. Its presence does not supply this missing coverage contract.
+PR #379 also has `disconfirming_conditions`; that separate format is not automatically
+interchangeable with this pilot. Neither branch is integrated by this recommendation.
+
+Acceptance for that future engineering slice should exercise a complete structural
+fixture, disclosed narrow scope, missing/duplicate/unknown perspectives, blank reasons,
+unknown source/claim references, packet-digest mismatch and attempted promotion or
+registry mutation. Fixtures must be explicitly synthetic and never populate governed
+human assessments. Semantic adequacy of reasons, source access and synthesis remains
+manual; structural success must not mark M01/M05 or other acceptance gates passed.
+
+### Bounded verification of this map
+
+At the inspected head, Python 3.12 with jsonschema 4.26.0 passed the unchanged pilot
+validator and all 24 existing focused tests. Five in-memory extension probes were
+rejected as unknown fields: top-level `candidate_revision`, `perspective_coverage`,
+`optional_modules`, source `dependencies`, and claim `revision_conditions`. These
+probes establish the closed-contract boundary, not an implementation of those features.
+The original packet still validates; no probe was written into repository data.
+
+The five claims remain UNRESOLVED / REVIEW_REQUIRED, actual assessments and trusted
+verification arrays remain empty, primary-source reinspection remains outstanding,
+and all eight promotion flags remain false. This addendum changes documentation only.
+The new documentation head requires its own applicable checks and review. No earlier
+approval transfers, and PR #367 remains draft, unmerged and unreleased.
