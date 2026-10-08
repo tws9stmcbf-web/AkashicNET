@@ -1,0 +1,13 @@
+{
+  "name": "living-library-interaction-tests",
+  "private": true,
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.51.1",
+    "esbuild": "0.28.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

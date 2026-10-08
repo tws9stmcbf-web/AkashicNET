@@ -1,0 +1,43 @@
+name: Test Living Library interactions
+
+on:
+  pull_request:
+    paths:
+      - 'website/app/living-library-map/**'
+      - 'website/public/images/akashicnet-living-library-tree.webp'
+      - 'tests/living-library-interactions/**'
+      - 'tests/test_living_library_touch_activation.py'
+      - '.github/workflows/test-living-library-interactions.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'website/app/living-library-map/**'
+      - 'website/public/images/akashicnet-living-library-tree.webp'
+      - 'tests/living-library-interactions/**'
+      - 'tests/test_living_library_touch_activation.py'
+      - '.github/workflows/test-living-library-interactions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  interactions:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tests/living-library-interactions
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact tested commit
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Install test dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Execute rendered-component interactions
+        run: npm test
