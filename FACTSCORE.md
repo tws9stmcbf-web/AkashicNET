@@ -1,0 +1,97 @@
+# FActScore: optional research environment and credits
+
+## Scope
+
+FActScore 0.2.0 is an optional, isolated research dependency for investigating claim-level source support. It is not connected to the website, public synthesis, exports, or evidence promotion. This installation does not establish evaluation accuracy or end-to-end scoring readiness.
+
+All Big Questions remain UNRESOLVED; supports_models=[]; accepted canonical edges remain 0; Reddit live access remains HOLD. Every privacy, provenance, evidence, rights, publication and promotion gate remains closed. No corpus or credentials are committed or sent to a model as part of installation.
+
+## Reproduce installation
+
+Use a separate Python 3.10 environment. The upstream torch>=1.13,<2 requirement cannot resolve in the tested Python 3.12 environment.
+
+```sh
+uv venv --python 3.10 .venv-factscore
+uv pip install --python .venv-factscore/bin/python --torch-backend cpu -r requirements-factscore.txt
+uv pip install --python .venv-factscore/bin/python https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
+uv pip check --python .venv-factscore/bin/python
+# Prepare a new disposable overlay without importing or modifying upstream.
+.venv-factscore/bin/python scripts/prepare_factscore_compat.py /tmp/akn-factscore-review
+PYTHONPATH=/tmp/akn-factscore-review .venv-factscore/bin/python -c 'from factscore.factscorer import FactScorer; print("FActScorer import OK")'
+```
+
+Keep environments, overlays, model files, caches, API keys and private source data outside version control. Unpatched upstream imports can attempt NLTK downloads; use the overlay for review checks. No paid inference is required for these installation checks. Delete the disposable overlay to undo the patch; the installed environment is unchanged.
+
+## Local compatibility patch (review only)
+
+The overlay checks the installed version and SHA-256 of the three modified upstream files before writing anything. Changed upstream content fails closed and requires fresh review. The copied upstream code remains covered by [FACTSCORE-LICENSE.txt](FACTSCORE-LICENSE.txt).
+
+Before constructing a model, explicitly set `FACTSCORE_VERIFY_MODEL` and `FACTSCORE_ATOMIC_MODEL`. Verification uses the chat endpoint; also set `FACTSCORE_ATOMIC_ENDPOINT` to `chat` or `completion`. There is no default model, automatic fallback, or retry loop. Atomic chat output is returned as the same text/metadata tuple used by upstream. The client retains the installed OpenAI 0.x SDK interface and `max_tokens`/`temperature` parameters; a model requiring different parameters or an endpoint such as Responses is **not** supported by this patch. Model access and actual API compatibility remain unverified.
+
+Model and endpoint selections are captured when each model is constructed; their digest namespaces its cache. Never reuse untrusted upstream pickle caches. Use a new cache directory for every reviewed pilot configuration, record model IDs, endpoint, source collection, tokenizer provenance and evaluation settings, and rebuild model objects after configuration changes. Fixed upstream monetary estimates are suppressed because they refer to legacy models. This patch does not quote current prices or authorize inference.
+
+The import-time `nltk.download("punkt")` call is removed. Before atomic-fact generator initialization, the overlay probes the installed English sentence tokenizer. Provision trusted tokenizer data through an approved route separately, and set `NLTK_DATA` before starting Python. NLTK versions may require `punkt` or `punkt_tab`; the actual tokenizer loader determines readiness. Missing data raises an actionable error. No fallback splitter, proxy override, TLS bypass, or downloader monkeypatch is installed by the compatibility layer.
+
+Offline tests (no credentials or model calls):
+
+```sh
+python -m unittest discover -s tests -p test_factscore_compat.py -v
+.venv-factscore/bin/python -m unittest discover -s tests -p test_factscore_compat.py -v
+```
+
+The dependency-free run covers eight tests and skips the installed-package integration test. With the optional environment installed, the ninth test builds the real overlay, blocks network connections and NLTK downloads, imports `FactScorer`, checks missing-data failure before spaCy/demo/key access, exercises synthetic local `punkt_tab` loading, and intercepts SDK calls to verify dispatch. Synthetic tokenizer data tests the loading path only, not segmentation accuracy. No private corpus is accessed.
+
+## Remaining scoring work
+
+The unpatched upstream client hard-codes gpt-3.5-turbo for verification and text-davinci-003 for atomic-fact generation. The local overlay now parameterizes these selections, but review, approved tokenizer provisioning, model/API compatibility checks and a small human-labelled evaluation are still needed before claiming a working AkashicNET scoring module. No scoring result was generated by this installation or the offline tests.
+
+A future pilot should use approved source material, retain claim/source/passage provenance, and keep hypotheses, testimony and interpretations distinguishable. Source support is not truth, scientific consensus, causal proof, or evidence-promotion permission. Changing models or the source collection requires recording the configuration and rechecking performance.
+
+## Attribution
+
+FActScore was created by **Sewon Min, Kalpesh Krishna, Xinxi Lyu, Mike Lewis, Wen-tau Yih, Pang Wei Koh, Mohit Iyyer, Luke Zettlemoyer, and Hannaneh Hajishirzi**.
+
+- Project: https://github.com/shmsw25/FActScore
+- Paper: *FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation*, EMNLP 2023, pp. 12076–12100.
+- Published paper: https://aclanthology.org/2023.emnlp-main.741/
+- DOI: https://doi.org/10.18653/v1/2023.emnlp-main.741
+- Software: MIT License; Copyright (c) 2023 Sewon Min.
+- Full upstream notice: [FACTSCORE-LICENSE.txt](FACTSCORE-LICENSE.txt).
+
+AkashicNET's installation and compatibility configuration are separate from the original research. No affiliation or endorsement by the authors is implied. The software license does not grant rights to third-party corpora or models.
+
+```bibtex
+@inproceedings{min-etal-2023-factscore,
+  title = "{FActScore}: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+  author = "Min, Sewon and Krishna, Kalpesh and Lyu, Xinxi and Lewis, Mike and Yih, Wen-tau and Koh, Pang Wei and Iyyer, Mohit and Zettlemoyer, Luke and Hajishirzi, Hannaneh",
+  booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+  year = "2023",
+  pages = "12076--12100",
+  doi = "10.18653/v1/2023.emnlp-main.741",
+  url = "https://aclanthology.org/2023.emnlp-main.741/"
+}
+```
+
+## Epistemic boundary
+
+FActScore uses analytic decomposition to evaluate factual support. It does not adjudicate spiritual meaning, subjective experience, cultural authority, or metaphysical truth. Its output depends on source selection and evaluator behaviour; a source-support score must not be presented as a probability that a spiritual or scientific worldview is true.
+
+An attributed report (for example, "the participant reported a sense of unity") is distinct from the ontological claim that the report proves universal consciousness. A pilot must preserve that distinction and must not score spiritual interpretation as false merely because it falls outside the selected reference collection.
+
+## Installation verification: 2026-09-27
+
+- Isolated CPython 3.10.21 environment: installation succeeded.
+- factscore 0.2.0; torch 1.13.1+cpu; en_core_web_sm 3.5.0 installed.
+- Import of FactScorer succeeded.
+- uv pip check: all 64 installed packages compatible.
+- Upstream import attempted to download NLTK punkt. NLTK refused the proxied request under its own security policy. That policy was not overridden; tokenizer data readiness is unresolved.
+- Model inference, atomic-claim extraction, retrieval against an approved corpus and end-to-end scoring were NOT tested.
+- No API credentials, paid model calls, evidence promotions or publication changes.
+- The temporary installed environment is not a deployed service. The committed installation recipe and attribution are durable; dependency transitive versions are not fully locked.
+
+### Compatibility follow-up: 2026-09-27
+
+- Nine offline tests passed in the existing CPython 3.10.21 environment (NLTK 3.10.3), including the real installed-package overlay check.
+- Dependency-free run: eight passed; one optional integration check skipped.
+- Original installed source files remain unchanged; no tokenizer download, API credentials, paid inference or private corpus access was used.
+- Real tokenizer quality, extraction quality, retrieval and end-to-end scoring remain untested. The spiritual-context boundary and every governance gate above are unchanged.

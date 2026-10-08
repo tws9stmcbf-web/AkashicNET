@@ -1,0 +1,8 @@
+# Optional research environment only; Python 3.10. Not website/runtime dependencies.
+# Install with uv pip install --python .venv-factscore/bin/python --torch-backend cpu -r requirements-factscore.txt
+factscore==0.2.0
+numpy==1.26.4
+transformers==4.29.2
+sentence-transformers==2.2.2
+huggingface-hub==0.25.2
+spacy==3.5.4
