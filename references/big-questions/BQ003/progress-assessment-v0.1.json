@@ -1,131 +1,89 @@
 {
   "assessment_id": "BQ003-PROGRESS-ASSESSMENT-V0.1",
-  "version": "0.1.0",
-  "assessed_on": "2026-09-16",
+  "version": "0.2.0",
+  "assessed_on": "2026-09-18",
   "status": "REVIEW_CANDIDATE",
   "question_id": "BQ003",
   "question_status": "UNRESOLVED",
   "overall_progress": {
-    "level": 3,
+    "level": 4,
     "maximum": 10,
-    "label": "COMPETING_MODELS_DOCUMENTED",
-    "meaning": "The question has bounded definitions, competing explanations and candidate evidence pathways. The rating does not estimate truth or the probability that a field exists."
+    "stage_id": "MODELS_SEPARATED",
+    "meaning": "Six competing models are separated in a governed authoring candidate. This level records completed research work under the canonical ladder; it does not estimate truth, evidence strength or the probability that a field exists.",
+    "completed_stages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "next_stage": 5,
+    "next_gate": "Complete a governed claim-by-claim evidence and counter-evidence map."
   },
-  "level_semantics": [
-    {
-      "level": 1,
-      "label": "QUESTION_DEFINED"
-    },
-    {
-      "level": 2,
-      "label": "TERMS_AND_BOUNDARIES_CLARIFIED"
-    },
-    {
-      "level": 3,
-      "label": "COMPETING_MODELS_DOCUMENTED"
-    },
-    {
-      "level": 4,
-      "label": "TESTABLE_PREDICTIONS_IDENTIFIED"
-    },
-    {
-      "level": 5,
-      "label": "RELEVANT_EVIDENCE_ACCUMULATING"
-    },
-    {
-      "level": 6,
-      "label": "INDEPENDENT_REPLICATION_ACHIEVED"
-    },
-    {
-      "level": 7,
-      "label": "ALTERNATIVES_MEANINGFULLY_CONSTRAINED"
-    },
-    {
-      "level": 8,
-      "label": "PROVISIONAL_CONCLUSION_REACHED"
-    },
-    {
-      "level": 9,
-      "label": "CONCLUSION_SURVIVES_SUSTAINED_CHALLENGE"
-    },
-    {
-      "level": 10,
-      "label": "RESOLVED_OR_PRESENTLY_UNDECIDABLE_WITH_JUSTIFICATION"
-    }
-  ],
   "axis_assessments": [
     {
       "axis": "personal_regulation",
-      "level": 5,
-      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
       "bounded_finding": "Kindness and loving-kindness practices have evidence for some positive-emotion and wellbeing outcomes.",
       "boundary": "Effects vary and do not establish access to an external field.",
       "source_ids": [
         "SRC-BQ003-ZENG-LKM-2015",
         "SRC-BQ003-KREPLIN-MEDITATION-2018"
-      ]
+      ],
+      "evidence_state": "RELEVANT_EVIDENCE_MAPPED"
     },
     {
       "axis": "interpersonal_harmony",
-      "level": 5,
-      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
       "bounded_finding": "A meta-analysis of 60 experiments reported a medium effect of interpersonal synchrony on prosocial attitudes and behaviours.",
       "boundary": "The synthesis spans multiple experiments, but this assessment has not independently verified a Level 6 replication threshold; social coordination also does not demonstrate nonlocal consciousness or a cosmic field.",
       "source_ids": [
         "SRC-BQ003-MOGAN-SYNCHRONY-2017"
-      ]
+      ],
+      "evidence_state": "RELEVANT_EVIDENCE_MAPPED"
     },
     {
       "axis": "compassionate_behaviour",
-      "level": 5,
-      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
       "bounded_finding": "Meditation interventions show qualified effects on compassion and empathy.",
       "boundary": "Methodological quality moderates findings; effects were not general across aggression, connectedness or prejudice.",
       "source_ids": [
         "SRC-BQ003-KREPLIN-MEDITATION-2018"
-      ]
+      ],
+      "evidence_state": "RELEVANT_EVIDENCE_MAPPED"
     },
     {
       "axis": "ecological_relationship",
-      "level": 5,
-      "label": "RELEVANT_EVIDENCE_ACCUMULATING",
       "bounded_finding": "Nature connectedness is associated with pro-environmental behaviour.",
       "boundary": "Association with ecological care does not show communion with a conscious cosmos.",
       "source_ids": [
         "SRC-BQ003-WHITBURN-NATURE-2020"
-      ]
+      ],
+      "evidence_state": "RELEVANT_EVIDENCE_MAPPED"
     },
     {
       "axis": "altered_state_and_mystical_phenomenology",
-      "level": 3,
-      "label": "COMPETING_MODELS_DOCUMENTED",
       "bounded_finding": "Reports of unity, sacred relatedness and encompassing love provide phenomenological and testimonial research targets.",
       "boundary": "A reported experience does not by itself establish an external field or authenticate perceived beings.",
-      "source_ids": []
+      "source_ids": [],
+      "evidence_state": "MODEL_SEPARATION_CONTEXT"
     },
     {
       "axis": "nonlocal_consciousness",
-      "level": 2,
-      "label": "TERMS_AND_BOUNDARIES_CLARIFIED",
       "bounded_finding": "Nonlocal access is a distinguishable hypothesis requiring prospective information-verification tests.",
       "boundary": "No source in this assessment is accepted as replicated evidence of nonlocal access.",
-      "source_ids": []
+      "source_ids": [],
+      "evidence_state": "HYPOTHESIS_BOUNDARY_DEFINED"
     },
     {
       "axis": "literal_cosmic_ontology",
-      "level": 1,
-      "label": "QUESTION_DEFINED",
       "bounded_finding": "The pre-existing love-field model is now accurately stated.",
       "boundary": "Its independent existence and intrinsic quality remain unconfirmed.",
-      "source_ids": []
+      "source_ids": [],
+      "evidence_state": "QUESTION_FRAMED"
     },
     {
       "axis": "philosophical_and_contemplative_coherence",
-      "level": 3,
-      "label": "COMPETING_MODELS_DOCUMENTED",
       "bounded_finding": "Receiver/filter, fundamental-consciousness and love-field interpretations can be compared without treating coherence as empirical confirmation.",
       "boundary": "Philosophical or contemplative coherence is Interpretation, Hypothesis or Speculation according to the claim.",
-      "source_ids": []
+      "source_ids": [],
+      "evidence_state": "MODEL_SEPARATION_CONTEXT"
     }
   ],
   "sources": [
@@ -176,20 +134,25 @@
     }
   ],
   "advancement_requirements": {
-    "level_4": [
-      "Operationalise love, access, alignment and field without collapsing distinct meanings.",
-      "Specify model-discriminating predictions before data collection.",
-      "Define prospective tests for independently verifiable information and durable behavioural effects.",
-      "Include neutral, negative and failed outcomes."
+    "stage_5": [
+      "Complete a claim-by-claim evidence and counter-evidence map.",
+      "Include neutral, negative and failed outcomes.",
+      "Preserve model-specific boundaries and counter-sources."
     ],
-    "level_5": [
-      "Complete preregistered studies with active controls.",
-      "Measure behaviour alongside self-report.",
-      "Accumulate relevant evidence across cultures and research groups.",
-      "Test expectation, suggestion, sensory leakage and cultural-exposure explanations."
+    "stage_6": [
+      "Stress-test methods for expectation, suggestion, sensory leakage, cultural exposure and measurement validity."
     ],
-    "level_6": [
-      "Achieve independent replication across cultures and research groups."
+    "stage_7": [
+      "Define preregistered model-discriminating predictions and falsifiers."
+    ],
+    "stage_8": [
+      "Run governed tests with active controls and behavioural measures alongside self-report."
+    ],
+    "stage_9": [
+      "Triangulate findings across cultures, methods and independent research groups."
+    ],
+    "stage_10": [
+      "Enter resolution review only after earlier stages are complete; unresolved remains permitted."
     ]
   },
   "governance": {
@@ -200,5 +163,6 @@
     "scientific_evidence_promotion_allowed": false,
     "rights_promotion_allowed": false,
     "model_edges_upgrade_evidence": false
-  }
+  },
+  "ladder_ref": "references/big-questions/research-maturity-ladder-v0.1.json"
 }
