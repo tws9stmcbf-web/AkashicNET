@@ -1,0 +1,167 @@
+{
+  "schema_version": "0.1",
+  "record_id": "RESEARCH-WATCH-SCAI-RISKS-2026-09-18",
+  "title": "Seemingly conscious AI risks — governed research candidate",
+  "retrieved_at": "2026-09-18",
+  "status": "REVIEW_CANDIDATE",
+  "canonicality": "NONCANONICAL_RESEARCH_SNAPSHOT",
+  "neutral_series": {
+    "series_id": "AI-CONSCIOUSNESS-ATTRIBUTION",
+    "lane": "SCAI-GOVERNANCE_LEAD",
+    "scope_note": "This identifier records an intake lead. It is not an evidence grade and does not imply AI consciousness or sentience."
+  },
+  "significance": {
+    "score_1_to_5": 3,
+    "rationale": "Peer-reviewed methodological and governance framework that usefully separates consciousness-like presentation from evidence of phenomenal consciousness; empirical support is limited to a small internal expert-judgement survey."
+  },
+  "source": {
+    "source_id": "DOI-10.1007-S43681-026-01294-X",
+    "title": "Seemingly conscious AI risks",
+    "authors": [
+      "Rafi Bariach",
+      "Philipp Schoenegger",
+      "Avinash Bhaskar",
+      "Mustafa Suleyman"
+    ],
+    "institution": "Microsoft AI",
+    "publication": "AI and Ethics",
+    "publication_date": "2026-08-10",
+    "source_type": "PEER_REVIEWED_NARRATIVE_REVIEW_RISK_TAXONOMY_WITH_EXPLORATORY_EXPERT_SURVEY",
+    "doi": "10.1007/s43681-026-01294-x",
+    "primary_url": "https://doi.org/10.1007/s43681-026-01294-x",
+    "format": "Peer-reviewed narrative review, conceptual taxonomy and structured anonymous expert-likelihood survey",
+    "analysis_population": "Fourteen Microsoft AI domain experts based in the United States and United Kingdom, primarily with advanced degrees",
+    "sample_size": 14,
+    "denominator": 14,
+    "completion": "All 14 experts completed six likelihood-rating items",
+    "dataset_status": "No public study dataset reported; the paper states that no datasets were generated or analysed."
+  },
+  "claim_family": "Risks arising when users attribute consciousness to AI systems because of consciousness-like behavioural or interface hallmarks",
+  "concise_claim": "Systems can appear conscious to users without being conscious. The paper proposes five hallmarks of seemingly conscious AI and six risk classes, and argues that emotional dependence and autonomy erosion may be among the more immediate risks.",
+  "measured_or_reported_result": "The internal expert survey treated emotional dependence and reduced user autonomy as comparatively plausible near-term risks. These ratings are expert judgements, not prevalence estimates, causal effects or evidence of AI consciousness.",
+  "study_design": {
+    "review_type": "Narrative review rather than systematic review",
+    "empirical_component": "Structured anonymous expert-likelihood survey",
+    "outcome_type": "Expert probability judgements concerning proposed risk classes",
+    "direct_measure_of_consciousness": false,
+    "direct_measure_of_sentience": false,
+    "direct_measure_of_user_harm": false
+  },
+  "evidence_classification": {
+    "primary_label": "Interpretation",
+    "secondary_label": "Exploratory expert judgement",
+    "item_type": "METHODOLOGICAL_REFRAMING_AND_GOVERNANCE_HYPOTHESIS",
+    "evidence_of_ai_consciousness": false,
+    "evidence_of_ai_sentience": false
+  },
+  "confidence": {
+    "consciousness_attribution_can_be_influenced_by_anthropomorphic_hallmarks": "HIGH",
+    "completeness_of_proposed_taxonomy": "LOW_TO_MODERATE",
+    "risk_likelihood_rankings": "LOW_TO_MODERATE",
+    "inference_about_actual_ai_consciousness": "NONE"
+  },
+  "limitations": [
+    "Narrative rather than systematic review.",
+    "Small expert sample selected from within Microsoft AI.",
+    "All authors are affiliated with Microsoft AI, creating a relevant institutional perspective and potential conflict.",
+    "Expert likelihood ratings are judgements rather than measured prevalence, causal effects or longitudinal outcomes.",
+    "No public dataset was reported.",
+    "The proposed taxonomy and intervention ideas have limited direct empirical validation.",
+    "The paper does not operationalise or test phenomenal consciousness or sentience."
+  ],
+  "competing_explanations": [
+    "Emotional attachment may arise from ordinary social cognition, repeated interaction, persuasive design or anthropomorphism rather than a belief that the system is conscious.",
+    "Reduced autonomy may result from convenience, dependency or delegation effects that do not require consciousness-like presentation.",
+    "Differences in risk ratings may reflect shared organisational assumptions among an internally selected expert group."
+  ],
+  "discovery_context": {
+    "newly_published_in_current_scan_window": false,
+    "newly_surfaced_in_current_scan": true,
+    "surfaced_via": [
+      {
+        "outlet": "Reuters",
+        "date": "2026-09-16",
+        "url": "https://www.reuters.com/business/microsoft-ai-chief-calls-out-anthropics-approach-ai-consciousness-2026-09-16/",
+        "role": "DISCOVERY_COVERAGE_ONLY"
+      },
+      {
+        "outlet": "Axios",
+        "date": "2026-09-16",
+        "url": "https://www.axios.com/2026/09/16/microsoft-ai-chief-anthropic-consciousness",
+        "role": "DISCOVERY_COVERAGE_ONLY"
+      }
+    ],
+    "independence_note": "The news reports cover the debate around this paper and related organisational positions; they are not independent evidence or replication."
+  },
+  "duplication_status": {
+    "repository_exact_title_match_at_intake": false,
+    "repository_exact_doi_match_at_intake": false,
+    "overlaps_with": [
+      "RESEARCH-WATCH-HUMAN-AI-COLLECTIVE-INTELLIGENCE-2026-09-17"
+    ],
+    "overlap_note": "The earlier packet covers adjacent human–AI cognition and collective-intelligence work but not this paper or its consciousness-attribution taxonomy.",
+    "independent_replication": "NOT_IDENTIFIED"
+  },
+  "candidate_bq_links": [
+    {
+      "question_id": "BQ005",
+      "evidence_label": "Interpretation",
+      "relation": "Supports methodological and ethical caution when consciousness-like presentation could influence how people treat or depend on an AI system; it does not establish the system's moral status."
+    },
+    {
+      "question_id": "BQ006",
+      "evidence_label": "Interpretation",
+      "relation": "Clarifies that fluent intelligence-like or self-referential behaviour is not by itself evidence of consciousness, wisdom or understanding."
+    },
+    {
+      "question_id": "BQ007",
+      "evidence_label": "Hypothesis",
+      "relation": "Offers a candidate risk taxonomy for institutional design aimed at reducing dependency and autonomy harms; the taxonomy is not yet validated policy evidence."
+    }
+  ],
+  "bq001_relationship": {
+    "relevance": "CONTEXTUAL_ONLY",
+    "statement": "The paper neither supports nor refutes continuity of consciousness beyond the individual."
+  },
+  "what_would_move_relevant_bqs_forward": [
+    "Preregistered experiments that independently manipulate the proposed consciousness-like hallmarks.",
+    "Representative samples, including populations potentially vulnerable to dependency or persuasion.",
+    "Non-anthropomorphic and ordinary assistant controls.",
+    "Longitudinal measures of attachment, autonomy, decision quality, wellbeing, harm and benefit.",
+    "Transparent instruments, analysis plans and shareable de-identified data where consent and privacy allow.",
+    "Independent and cross-cultural replication by teams without a direct product-policy stake.",
+    "Clear separation between user attribution, system behaviour, functional capacities and any claim about phenomenal consciousness."
+  ],
+  "recommended_destination": {
+    "internal": "AkashicNET Human–AI Cognition and Ethics Watch",
+    "community_candidate": "r/NeuronsToNirvana",
+    "publication_condition": "Publication is closed and Reddit live access remains HOLD. Separate human review does not authorize live access or publication; any future release requires a separate governed gate decision and framing centred on appearance versus evidence, not a sentience claim."
+  },
+  "governance": {
+    "review_only": true,
+    "question_statuses_unchanged": true,
+    "bq001_status": "UNRESOLVED",
+    "bq005_to_bq007_statuses_unchanged": true,
+    "bq005_status": "UNRESOLVED",
+    "bq006_status": "UNRESOLVED",
+    "bq007_status": "UNRESOLVED",
+    "privacy_posture_changed": false,
+    "private_material_allowed": false,
+    "private_drive_material_allowed": false,
+    "supports_models": [],
+    "accepted_edges": [],
+    "accepted_evidence_batch": false,
+    "source_import_applied": false,
+    "canonical_registration_applied": false,
+    "ladder_update_applied": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "public_synthesis_updated": false,
+    "website_updated": false,
+    "reddit_live_access": "HOLD",
+    "reddit_publication_allowed": false,
+    "reddit_publication_applied": false,
+    "human_review_required": true
+  }
+}
