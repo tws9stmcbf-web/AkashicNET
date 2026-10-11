@@ -1,0 +1,376 @@
+{
+  "schema_version": "0.1",
+  "record_type": "psi_encyclopedia_metadata_pilot",
+  "packet_id": "SPR-PE-METADATA-PILOT-2026-10-01",
+  "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+  "parent_source_registry": "references/public-metadata-source-registry-2026-09-10.json",
+  "created_at": "2026-10-01",
+  "scope": {
+    "article_records": 7,
+    "selection": "Purposive small sample spanning topic overviews, methods and critical explanations within one publisher; not random or representative.",
+    "discovery_index_url": "https://psi-encyclopedia.spr.ac.uk/articles-a-z/",
+    "complete_site_census": false,
+    "site_wide_crawl_performed": false,
+    "underlying_studies_appraised": false,
+    "bibliographies_extracted": false,
+    "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+    "bulk_extraction_authorized": false,
+    "robots_check": {
+      "url": "https://psi-encyclopedia.spr.ac.uk/robots.txt",
+      "checked_at": "2026-10-01",
+      "http_status": 403,
+      "status": "UNVERIFIED_ACCESS_DENIED",
+      "interpretation": "No crawler authorization inferred; no retry with alternate identities or access bypass. Selected public pages inspected through web retrieval."
+    }
+  },
+  "rights": {
+    "rights_status": "LINK_AND_METADATA_ONLY",
+    "publisher_notice": "All rights reserved",
+    "open_licence_verified": false,
+    "content_reuse_permission_verified": false,
+    "bulk_metadata_permission_verified": false,
+    "article_text_retained": false,
+    "publisher_summaries_copied": false,
+    "publisher_highlights_copied": false,
+    "images_retained": false,
+    "pdfs_retained": false,
+    "reuse_boundary": "This pilot is attributed factual metadata plus original AI-written descriptions. It does not clear republication of source content or authorize collection-wide extraction. Check terms, database rights and a licensed or permission-based route before expansion.",
+    "rights_sources": [
+      "https://psi-encyclopedia.spr.ac.uk/about/",
+      "https://psi-encyclopedia.spr.ac.uk/articles/psi-encyclopedia-style-guide/"
+    ]
+  },
+  "governance": {
+    "review_state": "REVIEW_REQUIRED",
+    "privacy_gate": "FAIL_CLOSED",
+    "private_material_allowed": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "public_promotion_allowed": false,
+    "supports_models": [],
+    "accepted_edges_added": 0,
+    "independent_studies_added": 0,
+    "big_question_status_changes": false,
+    "evidence_lineage_rule": "These are seven encyclopedia manifestations, not seven studies or replications. Entries, cited studies and derivative summaries must be linked and deduplicated before any independent-evidence count. A critical entry from the same publisher is not automatically independent external review."
+  },
+  "records": [
+    {
+      "source_id": "SRC-SPR-PE-0001",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "AWARE NDE Studies",
+      "authors": [
+        "KM Wehrstein"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/",
+      "date_created_displayed": "2026-03-02",
+      "date_updated_displayed": "2026-09-02",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "research_overview",
+      "topic_tags": [
+        "near-death experiences",
+        "cardiac arrest",
+        "prospective research"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Introduces the AWARE research programmes, their hospital-based methods, reported experiences and discussions of awareness during resuscitation.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "Background; Methods and Results; AWARE II; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "source_id": "SRC-SPR-PE-0002",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Children with Past-Life Memories (overview)",
+      "authors": [
+        "Robert McLuhan",
+        "James G Matlock"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/children-past-life-memories-overview/",
+      "date_created_displayed": "2015-03-27",
+      "date_updated_displayed": "2026-09-04",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "topic_overview_and_navigation",
+      "topic_tags": [
+        "reincarnation",
+        "childhood memory",
+        "case investigations"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Organises entries about reported childhood past-life memories, case features, cultural contexts and investigations associated with Ian Stevenson and other researchers.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "Introduction; Contents; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/children-past-life-memories-overview/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "source_id": "SRC-SPR-PE-0003",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Criticisms of Reincarnation Case Studies",
+      "authors": [
+        "James G Matlock"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/criticisms-reincarnation-case-studies/",
+      "date_created_displayed": "2022-11-01",
+      "date_updated_displayed": "2026-09-08",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "critical_discussion_with_author_responses",
+      "topic_tags": [
+        "reincarnation",
+        "alternative explanations",
+        "research criticism"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Discusses objections to reincarnation interpretations, including psychosocial and methodological explanations, alongside responses from the article's author.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "Contents; introductory section; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/criticisms-reincarnation-case-studies/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "source_id": "SRC-SPR-PE-0004",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Cold Reading",
+      "authors": [
+        "Chris Roe"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/cold-reading/",
+      "date_created_displayed": "2025-11-19",
+      "date_updated_displayed": "2026-09-05",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "explanatory_reference",
+      "topic_tags": [
+        "mediumship",
+        "cold reading",
+        "alternative explanations"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Describes reading techniques involving general statements, feedback and prior information, and considers their relevance when evaluating apparently paranormal communications.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "Introduction; Contents; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/cold-reading/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "source_id": "SRC-SPR-PE-0005",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Altered States of Consciousness and Psi",
+      "authors": [
+        "David Luke"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/altered-states-consciousness-and-psi/",
+      "date_created_displayed": "2015-06-05",
+      "date_updated_displayed": "2026-09-01",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "topic_overview",
+      "topic_tags": [
+        "altered states",
+        "psi research",
+        "research methods"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Surveys research linking altered states and reported psi experiences, including distinctions between induction procedures, measured states and possible cognitive errors.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "General Discussion; Contents; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/altered-states-consciousness-and-psi/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "source_id": "SRC-SPR-PE-0006",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Presentiment Research Methods",
+      "authors": [
+        "James E Kennedy"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/presentiment-research-methods/",
+      "date_created_displayed": "2026-07-23",
+      "date_updated_displayed": "2026-07-31",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "methodological_discussion",
+      "topic_tags": [
+        "presentiment",
+        "preregistration",
+        "confirmatory research"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Discusses study design for testing physiological anticipation, with attention to prediction on new data, preregistration and exploratory versus confirmatory analyses.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "Presentiment Research; A study design for confirmatory research; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/presentiment-research-methods/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    },
+    {
+      "source_id": "SRC-SPR-PE-0007",
+      "parent_source_id": "SRC-SPR-PSI-ENCYCLOPEDIA",
+      "title": "Researcher Fraud in Experimental Parapsychology",
+      "authors": [
+        "James E Kennedy"
+      ],
+      "publisher": "Society for Psychical Research",
+      "source_url": "https://psi-encyclopedia.spr.ac.uk/articles/researcher-fraud-in-experimental-parapsychology/",
+      "date_created_displayed": "2026-09-23",
+      "date_updated_displayed": "2026-09-25",
+      "date_semantics": "Publisher's displayed Created and Last updated fields; not independently verified first publication dates or dates of cited studies.",
+      "retrieved_date": "2026-10-01",
+      "source_type": "specialist encyclopedia entry",
+      "entry_role": "historical_and_methodological_discussion",
+      "topic_tags": [
+        "research integrity",
+        "parapsychology",
+        "fraud prevention"
+      ],
+      "topic_tags_provenance": "AI_ASSIGNED_FROM_INSPECTED_HEADINGS_AND_INTRODUCTORY_MATERIAL",
+      "original_summary": "Reviews research-integrity concerns and historical cases, distinguishes levels of fraud allegations, and discusses preventive methods and institutional responses.",
+      "summary_provenance": "ORIGINAL_AI_WRITTEN_DISCOVERY_DESCRIPTION",
+      "summary_is_publisher_text": false,
+      "inspection_scope": "Introduction; Classification of Researcher Fraud; Contents; Addenda / Article Information",
+      "metadata_provenance": {
+        "title": "Article heading",
+        "authors": "Addenda / Article Information",
+        "dates": "Addenda / Article Information",
+        "locator_url": "https://psi-encyclopedia.spr.ac.uk/articles/researcher-fraud-in-experimental-parapsychology/"
+      },
+      "publisher_ai_disclosure": {
+        "editing_ai_assisted": true,
+        "summaries_ai_generated": true,
+        "highlights_ai_generated": true,
+        "basis": "Article Addenda / AI acknowledgement; publisher Style Guide"
+      },
+      "cited_study_identifiers": [],
+      "cited_study_identifiers_status": "NOT_EXTRACTED_IN_THIS_PILOT",
+      "review_state": "REVIEW_REQUIRED",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "article_text_retained": false,
+      "supports_models": [],
+      "independent_studies_added": 0
+    }
+  ]
+}
