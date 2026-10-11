@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 
 import pytest
@@ -47,3 +48,28 @@ def test_non_evidence_artifacts_do_not_count_as_batches(tmp_path):
     (canonical / 'PUBLIC_SYNTHESIS.md').write_text('UNRESOLVED', encoding='utf-8')
     (canonical / 'public-synthesis-v0.1.json').write_text('{}', encoding='utf-8')
     mod.assert_canonical_batch_registry('BQ001', canonical, registered, tmp_path)
+
+
+def test_unregistered_review_candidate_fails_closed(tmp_path):
+    canonical = tmp_path / 'references' / 'big-questions' / 'BQ002'
+    canonical.mkdir(parents=True)
+    atlas = canonical / 'evidence-atlas-level5-review-candidate-v0.1.json'
+    atlas.write_text(json.dumps({"status": "REVIEW_CANDIDATE"}), encoding='utf-8')
+    with pytest.raises(AssertionError, match='review-artifact registry drift'):
+        mod.assert_review_artifact_registry('BQ002', canonical, [], tmp_path)
+
+
+@pytest.mark.parametrize('field,value', [
+    ('question_id', 'BQ001'), ('question_id', None),
+    ('question_status', 'RESOLVED'), ('question_status', None),
+])
+def test_review_artifact_question_boundary_fails_closed(tmp_path, field, value):
+    canonical = tmp_path / 'references' / 'big-questions' / 'BQ002'
+    canonical.mkdir(parents=True)
+    relative = 'references/big-questions/BQ002/evidence-atlas-level5-review-candidate-v0.1.json'
+    payload = json.loads((ROOT / relative).read_text(encoding='utf-8'))
+    payload[field] = value
+    (tmp_path / relative).write_text(json.dumps(payload), encoding='utf-8')
+    artifacts = [{'path': relative, 'status': 'REVIEW_CANDIDATE'}]
+    with pytest.raises(AssertionError, match='review artifact question'):
+        mod.assert_review_artifact_registry('BQ002', canonical, artifacts, tmp_path)
