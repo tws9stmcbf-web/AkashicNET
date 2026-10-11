@@ -145,7 +145,7 @@ footer div { display:flex; align-items:center; gap:.8rem; color:var(--ink); font
 .boundary-intro { max-width:30rem; color:var(--muted); line-height:1.7; }
 .boundary-list strong { color:var(--ink); }
 
-.phase-pill { padding:.55rem .8rem; border:1px solid var(--gold); border-radius:100px; color:var(--gold); font-size:.68rem; text-transform:uppercase; letter-spacing:.11em; white-space:nowrap; }
+.phase-pill { padding:.55rem .8rem; border:1px solid var(--gold); border-radius:100px; color:var(--gold); font-size:.68rem; text-transform:uppercase; letter-spacing:.11em; min-width:0; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
 .roadmap-grid { display:grid; grid-template-columns:repeat(4,1fr); margin-top:4rem; border-top:1px solid var(--line); border-left:1px solid var(--line); }
 .roadmap-grid article { min-height:20rem; position:relative; padding:1.7rem; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
 .roadmap-grid article>span { color:var(--muted); font-size:.67rem; text-transform:uppercase; letter-spacing:.14em; }

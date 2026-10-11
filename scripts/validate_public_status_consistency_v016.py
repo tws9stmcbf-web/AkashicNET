@@ -7,7 +7,30 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = "website/data/public-status.json"
 MANIFEST = "manifests/v0.16-release-candidate.json"
-EXPECTED = {'schema_version': 1, 'product_stage': 'PUBLIC_BETA', 'sealed_baseline': {'version': 'v0.15', 'status': 'SEALED_BASELINE'}, 'candidate': {'version': 'v0.16.0-beta.2', 'status': 'GOVERNED_CANDIDATE', 'sealed': False}, 'site_checkpoint': {'version': 'v0.16.7', 'status': 'SITE_CHECKPOINT', 'is_release': False}, 'target': {'version': 'v0.17.0', 'status': 'NEXT_MINOR', 'released': False}, 'bq001': {'status': 'UNRESOLVED', 'accepted_edges': 0}, 'reddit_live_access': 'HOLD', 'promotion_allowed': False}
+# Reviewed snapshot: readiness (#295) and GitHub release 397503809/tag were
+# independently verified. This offline contract neither publishes nor approves main.
+EXPECTED = {'schema_version': 1,
+ 'product_stage': 'PUBLIC_BETA',
+ 'sealed_baseline': {'version': 'v0.15', 'status': 'SEALED_BASELINE'},
+ 'candidate': {'version': 'v0.16.0-beta.2', 'status': 'GOVERNED_CANDIDATE', 'sealed': False},
+ 'site_checkpoint': {'version': 'v0.16.7', 'status': 'SITE_CHECKPOINT', 'is_release': False},
+ 'target': {'version': 'v0.17.0',
+            'status': 'READY',
+            'released': True,
+            'readiness': {'commit': '677abddc472322621adf54697ac31c383be3b3c3',
+                          'approved_at': '2026-09-27T06:01:56+02:00',
+                          'issue_url': 'https://github.com/tws9stmcbf-web/AkashicNET/issues/295',
+                          'scope': 'BOUNDED_REVIEW_ONLY'},
+            'github_release': {'id': 397503809,
+                               'tag': 'v0.17.0',
+                               'commit': '677abddc472322621adf54697ac31c383be3b3c3',
+                               'url': 'https://github.com/tws9stmcbf-web/AkashicNET/releases/tag/v0.17.0',
+                               'published_at': '2026-09-27T04:06:55Z',
+                               'draft': False,
+                               'prerelease': True}},
+ 'bq001': {'status': 'UNRESOLVED', 'accepted_edges': 0},
+ 'reddit_live_access': 'HOLD',
+ 'promotion_allowed': False}
 SURFACES = {
     "website/app/page.tsx": ("website/status-templates/home.tsx.in", {"CURRENT_LABEL"}),
     "website/app/development-progress/page.tsx": (
@@ -54,14 +77,27 @@ def fragments(data):
     candidate = data["candidate"]["version"]
     checkpoint = data["site_checkpoint"]["version"]
     target = data["target"]["version"]
-    rows = 'const checkpoints = [\n  ["{baseline}", "SEALED BASELINE", "Public Sync & Observability Beta. Immutable release evidence remains governed by its exact commit and manifest."],\n  ["{candidate}", "GOVERNED CANDIDATE", "The second prerelease candidate, registered in the governed release-candidate manifest. Validation and exact-head review remain required; this is not a sealed release."],\n  ["{checkpoint}", "SITE CHECKPOINT", "A presentation and integration marker. It is not a release, a percentage, or a claim that seven formal patch releases occurred."],\n  ["{target}", "NEXT MINOR", "Reached only after intended scope, executable exact-head checks, review closure and release-integrity verification."],\n];'
-    for name, value in (("baseline", baseline), ("candidate", candidate), ("checkpoint", checkpoint), ("target", target)):
-        rows = rows.replace("{" + name + "}", value)
-    intro = 'AkashicNET distinguishes an immutable sealed release from an active development checkpoint. The governed candidate is <strong style={{ color: "#f1d47b" }}>@candidate@</strong>. The separate <strong style={{ color: "#f1d47b" }}>@checkpoint@ site checkpoint</strong> records presentation and integration progress toward @target@.'
-    for name, value in (("candidate", candidate), ("checkpoint", checkpoint), ("target", target)):
-        intro = intro.replace("@" + name + "@", value)
+    readiness = data["target"]["readiness"]
+    release = data["target"]["github_release"]
+    rows = "const checkpoints = " + json.dumps([
+        [baseline, "SEALED BASELINE", "Public Sync & Observability Beta. Immutable release evidence remains governed by its exact commit and manifest."],
+        [candidate, "HISTORICAL GOVERNED CANDIDATE", "The second v0.16 prerelease candidate remains recorded in its unchanged governed manifest; this is not a sealed release."],
+        [checkpoint, "SITE CHECKPOINT", "A presentation and integration marker. It is not a release, a percentage, or a claim that seven formal patch releases occurred."],
+        [target, "READY / GITHUB PRERELEASE PUBLISHED", "Evidence Intelligence Beta. Bounded review-only readiness and GitHub publication are separate records for exact commit " + readiness["commit"] + ". Neither approves later main changes or establishes website deployment."],
+    ], indent=2) + ";"
+    intro = (
+        f'{target} Evidence Intelligence Beta is READY for bounded review-only use at '
+        f'<code>{readiness["commit"]}</code>. '
+        f'<a href="{readiness["issue_url"]}">Owner readiness approval</a>: '
+        f'<time dateTime="{readiness["approved_at"]}">27 September 2026 at 06:01:56 Europe/Berlin</time>. '
+        f'The separate <a href="{release["url"]}">GitHub prerelease</a> was published at '
+        f'<time dateTime="{release["published_at"]}">06:06:55 Europe/Berlin</time> on the same date, '
+        'and its tag points to that same commit. Approval does not extend to later main changes. '
+        'GitHub publication does not establish website deployment. '
+        f'The {candidate} governed candidate and {checkpoint} site checkpoint remain historical records.'
+    )
     return {
-        "CURRENT_LABEL": f"Public Beta · {baseline} sealed · {candidate} governed candidate",
+        "CURRENT_LABEL": f"Public Beta · {baseline} sealed · {target} READY · bounded review only · {readiness['commit']} · GitHub prerelease published",
         "CHECKPOINT_ROWS": rows,
         "PROGRESS_INTRO": intro,
         "BQ001_BOUNDARY": "BQ001 remains " + data["bq001"]["status"] + "; no testimony, hypothesis or inference is silently promoted to established evidence.",
@@ -105,3 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
