@@ -1972,12 +1972,88 @@
       "blocker": "No attributable substantive post/source material or independent underlying source established in the inspected trails.",
       "next_action": "Revisit only with new authorised, attributable source material or a changed provenance lead. Continue pending queue from its recomputed checkpoint.",
       "integration_status": "HOLD"
+    },
+    {
+      "post_id": "100053",
+      "status": "BLOCKED",
+      "review_date": "2026-10-11",
+      "accessed_at": "2026-10-11T22:38:25Z",
+      "review_scope": "Repository-only reconciliation of complete pilot CSV/Markdown and URI/semantic catalogues at the exact PR head, the pinned queue URI snapshot, and the target v0.14/v0.15 source-URL inventory shards. No live Reddit or source-body read.",
+      "analysis_complete": false,
+      "source_state": "origin_unresolved; recurring_metadata_pattern",
+      "assessment": "The pilot catalogue title is The function of symbolic practice. Its date is unknown, source type discussion, category Wisdom Traditions, toolkit framework Knowledge Commons and evidence status creative_cultural_material. Attribution is generic, the summary explicitly describes a non-evidential catalogue signal, and external_source_url equals reddit_url. The pilot Markdown repeats that metadata. URI and semantic indexes each contain the same plain, Knowledge and Original variants for one structural archive ID. Original is an annotation fragment, not verified authorship or proof of an original contribution. The research-question field is a generic synthesis prompt, not an identifiable empirical claim. No attributable substantive argument, research methods/results or independently identifiable underlying publication is established by these records. Symbolic/cultural routing remains provisional catalogue interpretation and supplies no scientific evidence. Recurring metadata does not prove fabrication or that a post is nonexistent.",
+      "assessment_sources": [
+        "references/community/n2n-pilot-index.csv",
+        "references/community/n2n-pilot-index.md",
+        "references/community/reddit-uri-index.csv",
+        "references/community/reddit-semantic-index.csv"
+      ],
+      "assessment_source_commit": "783307beaea9ab3c09915bc6827d4c5def32928b",
+      "source_versions": {
+        "pilot_blob": "20ef9b76ab327b996a0959856c5fa1d5e7acb0e4",
+        "pilot_markdown_blob": "8b3da9025a5e52338bbd1eea9dd8e02b16fb1ad4",
+        "uri_blob": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+        "semantic_blob": "56be9ed9e89226c808ef1de4287056ee359187be",
+        "uri_commit": "201ab5326a08d25a7cbef62dca099153f634a98e"
+      },
+      "topic_candidate": "Wisdom Traditions / Knowledge Commons; symbolic practice (catalogue/title-level routing only). No model support or Big Question resolution inferred.",
+      "evidence_classification": "creative_cultural_material (archive metadata; unverified)",
+      "investigation_ids": [
+        "N2N-INV-001",
+        "N2N-INV-002",
+        "N2N-INV-003"
+      ],
+      "source_reconciliation": {
+        "pilot_csv_lines": [
+          85
+        ],
+        "pilot_markdown_lines": [
+          976,
+          985
+        ],
+        "uri_lines": [
+          168,
+          169,
+          170
+        ],
+        "semantic_lines": [
+          168,
+          169,
+          170
+        ],
+        "method": "Fetched complete exact-head Git blobs and independently recomputed their Git blob SHAs locally. Parsed all 1,000 pilot, 9,502 URI and 9,401 semantic data rows. Retrieved the URI file at queue.source_commit and verified byte identity with the exact-head URI blob. Target URI/semantic URL sets agree exactly, and all explicit semantic post_id values agree with URL-derived IDs.",
+        "finding": "One pilot record and three matching URI/semantic variants map to one structural queue ID, not three independent sources. The external-source field repeats the post URL; catalogues supply no substantive body or independent underlying publication.",
+        "historical_reconciliation": "The bounded semantic retrieval failure described in the task is superseded for 100053 by this complete-blob check. Semantic coverage is established; no coverage-gap finding is justified. The cause of the earlier no-usable-text result remains unknown; no truncation, omission or parser fault is inferred."
+      },
+      "additional_source_check": {
+        "scope": "Target-specific check of the complete v0.14 and v0.15 shard-1 files, selected by the source-ID sharding rule in scripts/build_public_source_url_inventory_v015.py. Other inventory shards and newer-main receipt overlays were not inspected in this assessment.",
+        "paths": [
+          "references/community/source-url-inventory-v0.14/shard-1.json",
+          "references/community/source-url-inventory-v0.15/shard-1.json"
+        ],
+        "source_commit": "783307beaea9ab3c09915bc6827d4c5def32928b",
+        "blob_shas": {
+          "references/community/source-url-inventory-v0.14/shard-1.json": "10dfe0c59ed40ca70b9d5b3237e173e9536974f3",
+          "references/community/source-url-inventory-v0.15/shard-1.json": "3f13eea3eaca7ea11e556f443f72e1d3f27f0da4"
+        },
+        "inventory_generator_blob": "7c54db5a874b8eb9e04f2ac857143adc8b29ca0c",
+        "finding": "Both inventories contain source URL-18c2ceda651cd04f with nine URL occurrences referencing only the four catalogue files: pilot CSV line 85 twice, Markdown line 977, and URI/semantic lines 168-170. Both entries are UNASSESSED, with retrieved_on, observed_title and redirect_target null. Repeated versions and repeated self-links are not independent corroboration or source-access receipts."
+      },
+      "access_limitations": [
+        "Live Reddit access remains HOLD; no post body, comments, media, username or external primary source was retrieved or committed.",
+        "No exhaustive repository-wide text/non-text search or external/private material examination. No assertion that attributable material is absent outside the inspected catalogues and target inventory shards.",
+        "The historical provenance audit supplies context about unresolved archive origin, not target-specific source verification. No placeholder/fabrication classification is inferred.",
+        "Link-only provenance does not establish reproduction rights. All evidence, rights, canonical, publication and promotion boundaries remain unchanged."
+      ],
+      "blocker": "No attributable substantive post/source material, identifiable research claim or independent underlying publication established within the inspected scope.",
+      "next_action": "Revisit with new authorised, attributable post/source material or a changed provenance lead; do not repeat the same catalogue checks without new input. Continue pending queue from its recomputed checkpoint.",
+      "integration_status": "HOLD"
     }
   ],
   "checkpoint": {
     "complete_in_this_ledger": 0,
-    "blocked": 55,
-    "next_pending_post_id": "100053",
+    "blocked": 56,
+    "next_pending_post_id": "100054",
     "next_action": "Continue pending repository-only assessment. Keep PR #378 substantive-reading counts separate."
   },
   "repository_verification_events": [
@@ -2399,7 +2475,7 @@
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-10-08T11:43:15.295Z",
+        "last_checked_at": "2026-10-11T22:38:25Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -2455,7 +2531,8 @@
           "10004f",
           "100050",
           "100051",
-          "100052"
+          "100052",
+          "100053"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -2756,13 +2833,24 @@
             "scope": "Repository-only pilot CSV, pilot Markdown, semantic-index metadata and pinned URI rows for 10004e.",
             "finding": "10004e repeats the unknown-date, generic-attribution and catalogue-summary pattern; upstream identity and construction remain unresolved.",
             "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
+          },
+          {
+            "review_date": "2026-10-11",
+            "checked_at": "2026-10-11T22:38:25Z",
+            "source_commit": "783307beaea9ab3c09915bc6827d4c5def32928b",
+            "affected_post_ids": [
+              "100053"
+            ],
+            "scope": "Repository-only reconciliation of complete pilot CSV/Markdown and URI/semantic catalogues at the exact PR head, the pinned queue URI snapshot, and the target v0.14/v0.15 source-URL inventory shards. No live Reddit or source-body read.",
+            "finding": "100053 repeats the unknown-date, generic-attribution and non-evidential catalogue-summary pattern. Original annotation and title-level symbolic/cultural routing do not establish authorship or a substantive original contribution; upstream identity and construction remain unresolved.",
+            "decision": "Keep OPEN. Add this instance to the existing group; no new flag, completed source review, scientific appraisal, evidence promotion or gate change."
           }
         ]
       },
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-10-08T11:43:15.295Z",
+        "last_checked_at": "2026-10-11T22:38:25Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -2818,7 +2906,8 @@
           "10004f",
           "100050",
           "100051",
-          "100052"
+          "100052",
+          "100053"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -3045,13 +3134,24 @@
             "scope": "Repository-only pilot CSV, pilot Markdown, semantic-index metadata and pinned URI rows for 10004e.",
             "finding": "The pilot external-source URL for 10004e repeats its own Reddit URL and provides no independently attributable underlying source.",
             "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
+          },
+          {
+            "review_date": "2026-10-11",
+            "checked_at": "2026-10-11T22:38:25Z",
+            "source_commit": "783307beaea9ab3c09915bc6827d4c5def32928b",
+            "affected_post_ids": [
+              "100053"
+            ],
+            "scope": "Repository-only reconciliation of complete pilot CSV/Markdown and URI/semantic catalogues at the exact PR head, the pinned queue URI snapshot, and the target v0.14/v0.15 source-URL inventory shards. No live Reddit or source-body read.",
+            "finding": "The pilot external_source_url for 100053 exactly repeats reddit_url. Both target source-URL inventories are UNASSESSED and refer only to the same catalogues. No independently identifiable underlying publication or source-access receipt is established within this scope.",
+            "decision": "Keep OPEN. Add this instance to the existing group; no new flag, completed source review, scientific appraisal, evidence promotion or gate change."
           }
         ]
       },
       {
         "status": "OPEN",
         "first_recorded_at": "2026-09-22T19:43:24.883Z",
-        "last_checked_at": "2026-10-08T11:43:15.295Z",
+        "last_checked_at": "2026-10-11T22:38:25Z",
         "affected_post_ids": [
           "10001c",
           "10001d",
@@ -3107,7 +3207,8 @@
           "10004f",
           "100050",
           "100051",
-          "100052"
+          "100052",
+          "100053"
         ],
         "source_commit": "1f12be6324b4ccccbb5d785226f551a403fe0857",
         "classification": "repository_metadata_investigation_signal",
@@ -3374,6 +3475,17 @@
             "scope": "Repository-only pilot CSV, pilot Markdown, semantic-index metadata and pinned URI rows for 10004e.",
             "finding": "Three pinned URI rows map to 10004e: one unannotated variant and variants with Original and QMM,What suffix fragments; the semantic index repeats these variants; no independent sources or downstream impact established.",
             "decision": "Keep OPEN. Record remains BLOCKED; no completed source read, evidence promotion or gate change."
+          },
+          {
+            "review_date": "2026-10-11",
+            "checked_at": "2026-10-11T22:38:25Z",
+            "source_commit": "783307beaea9ab3c09915bc6827d4c5def32928b",
+            "affected_post_ids": [
+              "100053"
+            ],
+            "scope": "Repository-only reconciliation of complete pilot CSV/Markdown and URI/semantic catalogues at the exact PR head, the pinned queue URI snapshot, and the target v0.14/v0.15 source-URL inventory shards. No live Reddit or source-body read.",
+            "finding": "Complete pinned URI and exact-head semantic catalogues each contain three matching 100053 variants at lines 168-170: plain, Knowledge and Original. They represent one structural archive ID. Semantic coverage is established; earlier bounded retrieval failure is not absence evidence. Annotation fragments provide no independent source or verified authorship.",
+            "decision": "Keep OPEN. Add this instance to the existing group; no new flag, completed source review, scientific appraisal, evidence promotion or gate change."
           }
         ]
       },
