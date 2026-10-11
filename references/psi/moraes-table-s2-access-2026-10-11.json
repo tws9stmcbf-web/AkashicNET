@@ -1,0 +1,278 @@
+{
+  "schema_version": "0.1",
+  "packet_id": "MORAES-S2-ACCESS-2026-10-11",
+  "status": "REVIEW_REQUIRED",
+  "provenance": "ai-executed",
+  "created_on": "2026-10-11",
+  "scope": "Access-route observations and contact preparation only; not an included-study extraction, registry census or scientific appraisal.",
+  "source_boundaries": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "pr": 395,
+    "checked_head": "3dda93a3dc1c235431bd3c522e101d815510dcdd",
+    "historical_ledger": "references/psi/moraes-table-s2-provenance-2026-10-06.json"
+  },
+  "parent_doi": "10.1016/j.explore.2021.05.006",
+  "parent_pmid": "34147343",
+  "authoritative_table": {
+    "label": "Table S2",
+    "status": "NOT_RECOVERED",
+    "download_url": null,
+    "sha256": null,
+    "observed_row_count": null,
+    "article_reported_included_count": 78,
+    "count_unit": "REPORTED_INCLUDED_PUBLICATIONS_NOT_INDEPENDENT_REPLICATIONS"
+  },
+  "included_study_rows": [],
+  "reconciliation": {
+    "status": "BLOCKED_PENDING_AUTHORITATIVE_S2",
+    "rows_extracted": 0,
+    "rows_compared_to_existing_records": 0,
+    "matched_existing_publications": null,
+    "unmatched_publications": null,
+    "unresolved_included_study_identifiers": null
+  },
+  "retrieval_attempts": [
+    {
+      "id": "figshare-13234907",
+      "url": "https://api.figshare.com/v2/articles/13234907",
+      "final_url": "https://api.figshare.com/v2/articles/13234907",
+      "accessed_at": "2026-10-11T18:50:12.363433+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 3018,
+      "sha256": "0c5981d091f6877b4b94cefe09b5c60c1a9d22746d3f3b3ef5bde149a616ea82"
+    },
+    {
+      "id": "publisher-article",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1550830721000951",
+      "final_url": "https://www.sciencedirect.com/science/article/pii/S1550830721000951",
+      "accessed_at": "2026-10-11T18:50:11.709976+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 195,
+      "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7"
+    },
+    {
+      "id": "publisher-meta",
+      "url": "https://api.elsevier.com/content/object/pii/S1550830721000951?view=META",
+      "final_url": "https://api.elsevier.com/content/object/pii/S1550830721000951?view=META",
+      "accessed_at": "2026-10-11T18:50:11.657416+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 195,
+      "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7"
+    },
+    {
+      "id": "publisher-xml",
+      "url": "https://api.elsevier.com/content/article/PII:S1550830721000951?httpAccept=text/xml",
+      "final_url": "https://api.elsevier.com/content/article/PII:S1550830721000951?httpAccept=text/xml",
+      "accessed_at": "2026-10-11T18:50:11.657572+00:00",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 195,
+      "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7"
+    },
+    {
+      "id": "crossref",
+      "url": "https://api.crossref.org/works/10.1016%2Fj.explore.2021.05.006",
+      "final_url": "https://api.crossref.org/works/10.1016%2Fj.explore.2021.05.006",
+      "accessed_at": "2026-10-11T18:50:13.456265+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 21952,
+      "sha256": "ba674270685bf4b41733947099c6816754f59eead6b2dee17ba37e9b5fc32969"
+    },
+    {
+      "id": "uva-main",
+      "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/12/Academic-Studies-on-Claimed-Past-life-memories-A-scoping-Review-Jim-2021-1-s2.0-S1550830721000951-main-1.pdf",
+      "final_url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/12/Academic-Studies-on-Claimed-Past-life-memories-A-scoping-Review-Jim-2021-1-s2.0-S1550830721000951-main-1.pdf",
+      "accessed_at": "2026-10-11T18:50:11.951469+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 737471,
+      "sha256": "317271510edd5f7b1fda353a5ebf4331b98f10aa2aabcf40b1a68c89d09e1aaa"
+    },
+    {
+      "id": "figshare-versions",
+      "url": "https://api.figshare.com/v2/articles/13234907/versions",
+      "method": "GET",
+      "request_json": null,
+      "accessed_at": "2026-10-11T18:51:05.813429+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 83,
+      "sha256": "fa8ab233b0e4cf353f93613a88aa8c6142944450c2c5d68b965a98abd5f9f27e"
+    },
+    {
+      "id": "figshare-author-search",
+      "url": "https://api.figshare.com/v2/articles/search",
+      "method": "POST",
+      "request_json": {
+        "search_for": "Lucam Justo de Moraes",
+        "limit": 100
+      },
+      "accessed_at": "2026-10-11T18:51:05.779074+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 1053,
+      "sha256": "b96ffa9992fad124996e4beee7bf78583fb82b877007ca7aaf715315198b97b9"
+    },
+    {
+      "id": "figshare-title-search",
+      "url": "https://api.figshare.com/v2/articles/search",
+      "method": "POST",
+      "request_json": {
+        "search_for": "Academic Studies on Claimed Past-Life Memories",
+        "limit": 100
+      },
+      "accessed_at": "2026-10-11T18:51:05.887325+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 1897,
+      "sha256": "366e2ddde1e594c2440417fd3736728dcb7afcab737a72d5bee495eeeb22115f"
+    },
+    {
+      "id": "figshare-s2-search",
+      "url": "https://api.figshare.com/v2/articles/search",
+      "method": "POST",
+      "request_json": {
+        "search_for": "\"Past-Life\" \"Table S2\"",
+        "limit": 100
+      },
+      "accessed_at": "2026-10-11T18:51:05.981674+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "ufjf-author",
+      "url": "https://repositorio.ufjf.br/jspui/handle/ufjf/5620",
+      "method": "GET",
+      "request_json": null,
+      "accessed_at": "2026-10-11T18:51:06.194537+00:00",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 45740,
+      "sha256": "d8307d7747e40839081d71d2a53f52c45f9b32fe93b9323786d9e6f9c9a8ae34"
+    },
+    {
+      "id": "figshare-s1-file",
+      "url": "https://ndownloader.figshare.com/files/25491170",
+      "accessed_at": "2026-10-11T18:52:07.296954+00:00",
+      "status": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 15998,
+      "sha256": "9ba970a20ea4d9d1b96ae03ee684578e299f8075a50c8b312aa7c34d9f503387",
+      "md5": "d635ff2c3ce5419965aedbcc15a0b516",
+      "tables": 1,
+      "table_rows": 8
+    },
+    {
+      "id": "figshare-other-hit",
+      "url": "https://api.figshare.com/v2/articles/33330264",
+      "accessed_at": "2026-10-11T18:52:06.721654+00:00",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 11958,
+      "sha256": "30934cf5c2125b3dd61bd078f091d95a9b66cdfbfd8fe6501fc01729b4655d22"
+    },
+    {
+      "id": "ufjf-author-browse",
+      "url": "https://repositorio.ufjf.br/jspui/browse?type=author&value=Moraes%2C+Lucam+Justo+de",
+      "accessed_at": "2026-10-11T18:52:04.756873+00:00",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 29569,
+      "sha256": "8545f32a029b4a3a81bde48c125f8eb25445ba76da3da11102d18efd36b08006"
+    }
+  ],
+  "figshare_checks": {
+    "article_id": 13234907,
+    "version": 1,
+    "versions_returned": [
+      1
+    ],
+    "file_id": 25491170,
+    "file_name": "Table S1.docx",
+    "file_bytes": 15998,
+    "md5_matches_deposit": true,
+    "md5": "d635ff2c3ce5419965aedbcc15a0b516",
+    "content_verified_as": "SEARCH_STRATEGY_NOT_S2",
+    "xml_table_count": 1,
+    "xml_row_count": 8,
+    "xml_row_count_is_s2_count": false,
+    "author_search_returned_ids": [
+      13234907
+    ],
+    "title_search_returned_ids": [
+      33330264,
+      13234907
+    ],
+    "s2_search_returned_ids": [],
+    "rejected_title_hit": {
+      "id": 33330264,
+      "reason": "Different author and migration/kinship subject; no authenticated relationship to target supplement."
+    }
+  },
+  "institutional_checks": {
+    "uva_main_article_pages": 8,
+    "uva_embedded_files": 0,
+    "ufjf_exact_author_browse_results": 1,
+    "ufjf_result_relevance": "2017 dissertation on different topic, not S2"
+  },
+  "contacts": [
+    {
+      "role": "corresponding_author",
+      "name": "Lucam J. Moraes",
+      "email": "lucam.justo@estudante.ufjf.br",
+      "identity_status": "VERIFIED_PUBLISHED_CORRESPONDENCE",
+      "delivery_status": "NOT_TESTED",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+          "locator": "Affiliation 1"
+        },
+        {
+          "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/12/Academic-Studies-on-Claimed-Past-life-memories-A-scoping-Review-Jim-2021-1-s2.0-S1550830721000951-main-1.pdf",
+          "locator": "PDF page 1 correspondence"
+        },
+        {
+          "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2024/09/Moraes2024_Children-who-claim-previous-life-memories_A-case-report-and-literature-review.pdf",
+          "locator": "PDF page 2 correspondence"
+        }
+      ],
+      "request_status": "DRAFT_NOT_SENT"
+    },
+    {
+      "role": "publisher_support",
+      "observed_route": "https://service.elsevier.com/app/contact/supporthub/sciencedirect/",
+      "observed_redirect": "https://www.elsevier.support/sciencedirect/contact",
+      "request_status": "DRAFT_NOT_SUBMITTED"
+    }
+  ],
+  "governance": {
+    "bq001": "UNRESOLVED",
+    "privacy": "FAIL_CLOSED",
+    "supports_models": [],
+    "new_source_identities": 0,
+    "new_accepted_edges": 0,
+    "scientific_promotion": false,
+    "canonical_merge": false,
+    "public_synthesis_promotion": false,
+    "rights_clearance_changed": false,
+    "export_gate_changed": false,
+    "publication_gate_changed": false,
+    "review_required": true,
+    "pr_must_remain_draft": true,
+    "merge_authorized": false,
+    "deployment_authorized": false
+  },
+  "limitations": [
+    "Publisher access failures are specific to the retrieval environment; universal absence is not established.",
+    "Negative searches and exact-author browse do not exhaust all public deposits or institutional holdings.",
+    "No S2 identifiers, membership, case overlap or independent replication counts assessed.",
+    "No messages sent, delivery tested, or replies received.",
+    "Response hashes identify retrieved bytes; they do not authenticate any missing S2 or historical response."
+  ]
+}
