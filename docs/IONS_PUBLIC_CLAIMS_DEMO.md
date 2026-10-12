@@ -4,6 +4,10 @@
 
 This four-claim sample demonstrates traceable extraction and visible evidence gaps using the unchanged engineering contract from [draft PR #367](https://github.com/tws9stmcbf-web/AkashicNET/pull/367), pinned at `7df1de8272b1a03623f8b7d57c258896273f5764`. It does not import the Telepathy Evidence Map, supply a private IONS database, validate a telepathy mechanism or release AkashicOMNI v0.5.0.
 
+## New: a real reproducibility gap
+
+The [telephone data check](IONS_TELEPHONE_DATA_CHECK.md) found that the public workbook's Completer label yields 228/666 pre/post-selected trials rather than the abstract's 210/630. Two parsers agree. The publication-specific subset remains unresolved; no p-values or mechanism are reproduced. This provides a concrete review question for the demo.
+
 ## Show this in three minutes
 
 1. Open the [claim packet](../data/akashicomni/ions-public-claims-demo-v0.5.0.json). Choose `OMNI-IONS-M2M-001`: follow its source URL and named passage, then inspect the outcome definition and missing evidence. The missing numerical test details stay missing.
@@ -30,7 +34,7 @@ Full bibliographic metadata, source locations, access date, dependencies, limita
 |---|---|---|
 | [TSC workshop](https://tsc2026.org/workshops.html) | Brinsmead and Taddeo abstract entries | Claim-description source; not full methods |
 | [Telephone paper](https://pubmed.ncbi.nlm.nih.gov/37709571/) | Author abstract and bibliography, checked against IONS | Abstract only; publisher full text returned 403 |
-| [Telephone data deposit](https://doi.org/10.6084/m9.figshare.21521235) | Figshare metadata, linked from PubMed | Public deposit identified; no rows inspected/imported; license displayed as CC BY 4.0 |
+| [Telephone data deposit](https://doi.org/10.6084/m9.figshare.21521235) | Versioned workbook legend and three analytical columns | Local aggregate recount found a subset mismatch; no participant rows committed; license displayed as CC BY 4.0 |
 | [Exceptional-experiences paper](https://pubmed.ncbi.nlm.nih.gov/30415782/) | Author abstract and bibliography, checked against IONS | Self-report source; no full-text or item-level analysis |
 | [IONS telepathy page](https://noetic.org/telepathy/) | Map status and links | Map still labelled “Coming Soon”; no export identified in this bounded check |
 | [Mind2Mind recruitment](https://noetic.org/mind2mind/) | Eligibility, phases, privacy statement | Recruitment target is distinct from observed sample; no trial data obtained |
@@ -48,7 +52,7 @@ python -m unittest discover -s tests -p 'test_ions_public_claims_demo.py' -v
 python -m unittest discover -s tests -p 'test_akashicomni_*.py' -v
 ```
 
-The new path-scoped workflow tests the PR merge result using default checkout behavior and read-only permissions. It validates the packet and tests gate mutations, invented reviews, fabricated attestations, broken lineage and out-of-contract participant data. There is no deploy step. Tests cannot detect every misleading sentence or authenticate source content; semantic review remains essential.
+The telephone audit and its synthetic tests are described in the linked check. The new path-scoped workflow tests the PR merge result using default checkout behavior and read-only permissions. It validates the packet and tests gate mutations, invented reviews, fabricated attestations, broken lineage and out-of-contract participant data. There is no deploy step. Tests cannot detect every misleading sentence or authenticate source content; semantic review remains essential.
 
 ## Schema compatibility and review gates
 
@@ -61,7 +65,7 @@ All claims remain `UNRESOLVED`; assessments are empty and comparisons `PENDING`.
 - Check exact wording, source passage, units and denominator: dyads, receivers, trials and survey respondents must remain distinct.
 - Inspect original methods and protocol history. Check randomization, blinding, ordinary cue exclusion, clustering, selection/attrition, multiplicity and registration timing.
 - For Mind2Mind, obtain a citable report, exact binomial specification and privacy-safe data/access terms before reproducing the result. Do not infer an alpha level or borrow the phone study's chance rate.
-- For the telephone study, inspect the public data/legend and applicable rights/privacy before a separate reanalysis; inspect the full text to reconcile the genetic-relatedness wording noted in the extraction record.
+- For the telephone study, reconcile the deposited Completer label with the published subset before inferential reanalysis; inspect the full text to reconcile the genetic-relatedness wording noted in the extraction record.
 - Review contrary evidence and independent replications. Proposed conventional alternatives are possibilities for testing, not allegations of observed failures.
 - Use the existing trusted-registry process for actual human source inspections and independent assessments. AI authoring, passing CI and owner engineering approval do not substitute for independent review.
 
