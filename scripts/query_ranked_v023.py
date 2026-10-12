@@ -42,11 +42,7 @@ def profile(result):
         'not_safety_or_efficacy_score':True,
     }
 
-def main():
-    p=argparse.ArgumentParser(); p.add_argument('query'); p.add_argument('--accepted-only',action='store_true'); a=p.parse_args()
-    cmd=['python','scripts/query_multihop_v022.py',a.query]
-    if a.accepted_only: cmd.append('--accepted-only')
-    base=json.loads(subprocess.check_output(cmd,text=True))
+def retrieve(query, base, dedup, accepted_only=False):
     ranked=[]; seen=set()
     for r in base['results']:
         x=dict(r); x['evidence_profile']=profile(r); ranked.append(x)
@@ -54,8 +50,7 @@ def main():
 
     # Direct canonical-family / manifestation fallback is retrieval only. It does
     # not create a semantic concept edge and therefore cannot increase topical evidence.
-    dedup=json.load(DEDUP.open(encoding='utf-8'))
-    q=a.query.lower().strip()
+    q=query.lower().strip()
     for u in dedup['retrieval_units']:
         labels=' '.join(u.get('labels',[])).lower()
         fams=' '.join(u.get('family_ids',[])).lower()
@@ -74,7 +69,7 @@ def main():
 
     ranked.sort(key=lambda r:(-r['evidence_profile']['provenance_rank'], r.get('domain',''), str(r.get('source',{}))))
     out={
-        'version':'0.23','query':a.query,'accepted_only':a.accepted_only,'matched_concepts':base['matched_concepts'],
+        'version':'0.23','query':query,'accepted_only':accepted_only,'matched_concepts':base['matched_concepts'],
         'result_count':len(ranked),'ranking_scope':'provenance and retrieval support only',
         'ranking_order':['P3_SHA256_IDENTITY_PROVENANCE','P2_MANIFESTATION_PROVENANCE','P1_REVIEWED_TOPICAL','P0_TOPICAL_CANDIDATE'],
         'truth_inference_allowed':False,'rights_promotion_allowed':False,'scientific_evidence_promotion_allowed':False,
@@ -82,6 +77,15 @@ def main():
         'semantic_decisions_changed_by_ranking':False,
         'results':ranked,
     }
-    print(json.dumps(out,ensure_ascii=False,indent=2))
+    return out
+
+
+def main():
+    p=argparse.ArgumentParser(); p.add_argument('query'); p.add_argument('--accepted-only',action='store_true'); a=p.parse_args()
+    cmd=['python','scripts/query_multihop_v022.py',a.query]
+    if a.accepted_only: cmd.append('--accepted-only')
+    base=json.loads(subprocess.check_output(cmd,text=True))
+    dedup=json.load(DEDUP.open(encoding='utf-8'))
+    print(json.dumps(retrieve(a.query, base, dedup, a.accepted_only),ensure_ascii=False,indent=2))
 
 if __name__=='__main__': main()

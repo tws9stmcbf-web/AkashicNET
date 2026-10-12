@@ -18,12 +18,8 @@ def unit_payload(u):
     }
 
 
-def main():
-    p=argparse.ArgumentParser(); p.add_argument('query'); p.add_argument('--accepted-only',action='store_true'); a=p.parse_args()
-    graph=json.load(GRAPH.open(encoding='utf-8'))
-    concept=json.load(CONCEPT.open(encoding='utf-8'))
-    dedup=json.load(DEDUP.open(encoding='utf-8'))
-    q=a.query.lower().strip()
+def retrieve(query, graph, concept, dedup, accepted_only=False):
+    q=query.lower().strip()
     concepts={c['node_id']:c for c in concept['concept_nodes']}
     matched={cid for cid,c in concepts.items() if q in c['label'].lower() or q in c['definition'].lower() or q==cid.lower()}
 
@@ -40,7 +36,7 @@ def main():
     results=[]
     for e in concept['reddit_edges']:
         if e['target_concept'] not in matched: continue
-        if a.accepted_only and not e.get('accepted_edge'): continue
+        if accepted_only and not e.get('accepted_edge'): continue
         results.append({
             'domain':'reddit','query_path':'reviewed_concept','concept':concepts[e['target_concept']]['label'],
             'source':{'type':'reddit_record','ref':e['source_ref'],'rights_status':'LINK_ONLY_METADATA','scientific_evidence_default':False},
@@ -50,7 +46,7 @@ def main():
 
     for e in concept['library_edges']:
         if e['target_concept'] not in matched: continue
-        if a.accepted_only and not e.get('accepted_edge'): continue
+        if accepted_only and not e.get('accepted_edge'): continue
         fid=e['logical_family_id']
         units=units_by_family.get(fid,[])
         r={
@@ -62,12 +58,20 @@ def main():
         if units: r['logical_retrieval_units']=[unit_payload(u) for u in units]
         results.append(r)
 
-    print(json.dumps({
-        'version':'0.22','query':a.query,'matched_concepts':sorted(matched),'accepted_only':a.accepted_only,
+    return {
+        'version':'0.22','query':query,'matched_concepts':sorted(matched),'accepted_only':accepted_only,
         'result_count':len(results),'logical_units_returned':sum(len(r.get('logical_retrieval_units',[])) for r in results),
         'physical_manifestations_returned':sum(sum(u['physical_manifestation_count'] for u in r.get('logical_retrieval_units',[])) for r in results),
         'truth_inference_allowed':False,'rights_promotion_allowed':False,'scientific_evidence_promotion_allowed':False,
         'semantic_strength_from_representation_count':False,'results':results
-    },ensure_ascii=False,indent=2))
+    }
+
+
+def main():
+    p=argparse.ArgumentParser(); p.add_argument('query'); p.add_argument('--accepted-only',action='store_true'); a=p.parse_args()
+    graph=json.load(GRAPH.open(encoding='utf-8'))
+    concept=json.load(CONCEPT.open(encoding='utf-8'))
+    dedup=json.load(DEDUP.open(encoding='utf-8'))
+    print(json.dumps(retrieve(a.query, graph, concept, dedup, a.accepted_only),ensure_ascii=False,indent=2))
 
 if __name__=='__main__': main()

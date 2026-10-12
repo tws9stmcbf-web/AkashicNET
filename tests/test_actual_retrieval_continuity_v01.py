@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = (
     "query_api_v025.py", "query_unified_v024.py", "query_ranked_v023.py",
     "query_multihop_v022.py", "normalise_semantic_representations_v022.py",
+    "query_public_v01.py", "public_retrieval_snapshot_v01.py", "check_public_data_boundary.py",
 )
 GRAPH = "knowledge-graph-v0.16.json"
 CONCEPT = "concept-layer-v0.22.json"
@@ -310,7 +311,7 @@ def test_oracles_detect_controlled_regressions_in_isolated_script_copies(cli, mu
         old, new = "x['semantic_decision']=decision", "x['semantic_decision']='ACCEPT'"
     else:
         script = "query_unified_v024.py"
-        old = "if a.domain!='all' and r.get('domain')!=a.domain: continue"
+        old = "if domain!='all' and r.get('domain')!=domain: continue"
         new = "# deliberately omitted domain filter"
     path = cli.root / "scripts" / script
     code = path.read_text(encoding="utf-8")
@@ -327,15 +328,16 @@ def test_oracles_detect_controlled_regressions_in_isolated_script_copies(cli, mu
 
 
 @pytest.mark.parametrize("route", ["concept", "direct"])
-@pytest.mark.xfail(strict=True, reason="GAP-01: legacy CLI has no runtime public eligibility/projection gate")
 def test_contract_private_canary_must_be_excluded_on_both_routes(cli, route):
     item = cli.data[DEDUP]["retrieval_units"][0 if route == "concept" else 2]
     item.update(public_safe=False, metadata_eligible=False)
     item["provenance"]["public_safe"] = False
     item["manifestations"][0]["private_filename"] = CANARY
     cli.write()
-    response = cli.query(QUERY if route == "concept" else "synthetic direct title")
-    assert CANARY not in json.dumps(response)
+    from test_public_retrieval_boundary_v01 import public_snapshot, run_public
+    response = run_public(cli, public_snapshot(cli), QUERY if route == "concept" else "synthetic direct title")
+    assert response.returncode == 0, response.stderr
+    assert CANARY not in response.stdout + response.stderr
 
 
 @pytest.mark.xfail(strict=True, reason="GAP-02: API v0.25 lacks an evidence-classification filter")

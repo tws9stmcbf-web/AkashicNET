@@ -1,5 +1,11 @@
 # Actual retrieval continuity investigation
 
+Follow-up: [Draft public retrieval boundary v0.1](public-retrieval-boundary-v0.1.md)
+implements a separate opt-in public snapshot interface and records the current
+test outcomes. The investigation below preserves the original checkpoint;
+its five runtime gaps and test-only change scope are historical. The trusted
+private-local CLI remains separate, with its existing behavior.
+
 Date: 2026-10-12. Status: **DRAFT / REVIEW REQUIRED; continuity contract not satisfied**.
 
 Investigated PR #400 at `bfa5b94bf483cb2c2c8b641700b7b8e2731943ee`, based on
