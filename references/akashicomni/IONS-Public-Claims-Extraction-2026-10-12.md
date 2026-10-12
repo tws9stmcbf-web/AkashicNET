@@ -4,7 +4,7 @@ AI-executed extraction, 12 October 2026 (America/Los_Angeles). Independent Akash
 
 ## Initial inspection snapshot
 
-The sections below record the initial abstract/metadata-only inspection. The appended follow-up supersedes the telephone-dataset access statements only.
+The sections below record the initial abstract/metadata-only inspection. The dated follow-ups supersede the telephone-dataset and full-text access statements only; the initial snapshot is retained as history.
 
 ## Scope and source locations
 
@@ -37,3 +37,7 @@ Revise source access and provenance when an authoritative full paper or versione
 Later on 12 October 2026, Figshare v1 file 38149656 was downloaded and its size/MD5 verified; SHA-256 83231d102887e6faae295afca161419cefce606c8463ed07e3246c6feeb03097 pins the bytes. The legend and three analytical columns (Status, Trialtype, Hit) were inspected locally. Using the source Completer label returned pre-selected 115/228 (50.4%) and post-selected 216/666 (32.4%). A separate read-only parser confirmed these counts. They do not reproduce the abstract's 210/630 denominators. No additional exclusion rule was inferred.
 
 The data-to-publication mapping remains unresolved; this is not evidence of misconduct or proof of a wrong publication. The core claims continue to describe author-reported results, not verified experimental findings. See docs/IONS_TELEPHONE_DATA_CHECK.md and references/akashicomni/ions-telephone-data-check-2026-10-12.json for method, exact input, limited privacy/rights handling, interpretation and next review question. No participant rows or workbook are committed. No p-values or mechanistic conclusions are reproduced.
+
+## Further follow-up: methods, amendments and supplementary outputs
+
+The source investigation is recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md and its hash-pinned source receipt. Full-text recovery supersedes the earlier access limitation: an article-in-press mirror and an author preprint with embedded supplementary outputs were inspected, along with KPU1062 and all three revisions. The final publisher-formatted copy remains unavailable. These manifestations are one research lineage. Partial numerical matches do not establish the final selection/recoding pipeline. The core claims retain the original abstract wording, with explicit unresolved source-passage differences; no endpoint is silently substituted. No row-level content, human attestation, inference or promotion was added. Author clarification is prepared for approval; no contact sent.

@@ -35,7 +35,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37709571/",
       "location": "Abstract > pre-selected and post-selected completer accuracy; protocol amendments",
       "access_status": "ABSTRACT_ONLY",
-      "provenance_note": "AI inspection on 2026-10-12. Wahbeh et al., Explore 20(2):239-247 (2024), DOI 10.1016/j.explore.2023.08.008; online 2023-08-25. Author abstract indexed by PubMed; mirrored at https://noetic.org/publication/telephone/ . One work, two manifestations. Publisher full text inaccessible; a separate descriptive check of the public data deposit found a completer-subset mismatch. Article access remains abstract-only; see the editorial follow-up and docs/IONS_TELEPHONE_DATA_CHECK.md.",
+      "provenance_note": "AI inspection on 2026-10-12. This source record identifies the PubMed abstract of Wahbeh et al., DOI 10.1016/j.explore.2023.08.008; the IONS abstract is the same work. Separate article-in-press and author-preprint full-text copies, embedded supplementary outputs and KPU1062 revisions were subsequently inspected: see docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md. Final publisher copy unavailable; analysis-population mapping and abstract/Table 3 differences unresolved. ABSTRACT_ONLY describes this URL, not the entire follow-up. No independent human verification.",
       "rights_status": "NOT_ASSESSED",
       "source_kind": "PRIMARY",
       "inspection_verification": null
@@ -61,7 +61,7 @@
       "inspection_verification": null,
       "artifact": {
         "repository_path": "references/akashicomni/IONS-Public-Claims-Extraction-2026-10-12.md",
-        "sha256": "2c32fd56d095fdb47b2687df645c5139f7ca57c80e0c987aaeffbb804862f44c"
+        "sha256": "298df340197d2af7eac512e21ff9cfc71dad4be1946d60d5eda3635e032db186"
       }
     }
   ],
@@ -109,6 +109,11 @@
           "revision": 2,
           "date": "2026-10-12",
           "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
         }
       ],
       "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
@@ -134,9 +139,10 @@
         "Conventional cues, protocol amendments, selection and repeated observations are alternative concerns requiring methods/data review."
       ],
       "missing_evidence": [
-        "The inspected abstract reports protocol changes during recruitment; their effect on inference cannot be resolved from the abstract.",
-        "Complete methods, prespecified analysis and clustered-trial handling need inspection.",
-        "Public telephone deposit v1 has been counted using Status=Completer; counts do not match the published denominators. The publication-specific inclusion/exclusion mapping and full analysis remain needed (docs/IONS_TELEPHONE_DATA_CHECK.md).",
+        "Full-text copies, preprint supplementary output and KPU1062 revisions are now inspected by AI. Independent methodological review of protocol changes, dependence, selection and null-model choice remains pending.",
+        "The final selection/recoding pipeline linking Figshare v1 to the publication analysis population is absent from recovered materials; deposited headers/legend do not document chronology for the first-six rule.",
+        "Abstract, Table 3 and randomization-method endpoints differ; partial numerical agreements are recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md, without replacing the author-reported abstract claim.",
+        "Latest publisher-formatted full text/supplement and any definitive correction or author clarification remain needed. No inferential reanalysis was performed.",
         "Independent human source verification and methodological review remain pending."
       ],
       "decision": "REVIEW_REQUIRED",
@@ -158,6 +164,11 @@
           "revision": 2,
           "date": "2026-10-12",
           "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
         }
       ],
       "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
@@ -183,10 +194,10 @@
         "A small or heterogeneous effect could remain undetected; nonsignificance is not proof of no effect."
       ],
       "missing_evidence": [
-        "The inspected abstract reports protocol changes during recruitment; their effect on inference cannot be resolved from the abstract.",
-        "Complete methods, prespecified analysis and clustered-trial handling need inspection.",
-        "Public telephone deposit v1 has been counted using Status=Completer; counts do not match the published denominators. The publication-specific inclusion/exclusion mapping and full analysis remain needed (docs/IONS_TELEPHONE_DATA_CHECK.md).",
-        "No interaction test or power calculation has been inspected; different p-values do not establish a significant difference between conditions.",
+        "Full-text copies, preprint supplementary output and KPU1062 revisions are now inspected by AI. Independent methodological review of protocol changes, dependence, selection and null-model choice remains pending.",
+        "The final selection/recoding pipeline linking Figshare v1 to the publication analysis population is absent from recovered materials; deposited headers/legend do not document chronology for the first-six rule.",
+        "Abstract, Table 3 and randomization-method endpoints differ; partial numerical agreements are recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md, without replacing the author-reported abstract claim.",
+        "Latest publisher-formatted full text/supplement and any definitive correction or author clarification remain needed. No inferential reanalysis was performed.",
         "Independent human source verification and methodological review remain pending."
       ],
       "decision": "REVIEW_REQUIRED",
@@ -208,6 +219,11 @@
           "revision": 2,
           "date": "2026-10-12",
           "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
         }
       ],
       "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
@@ -254,6 +270,11 @@
           "revision": 2,
           "date": "2026-10-12",
           "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
         }
       ],
       "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"

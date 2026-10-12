@@ -6,7 +6,7 @@ This four-claim sample demonstrates traceable extraction and visible evidence ga
 
 ## New: a real reproducibility gap
 
-The [telephone data check](IONS_TELEPHONE_DATA_CHECK.md) found that the public workbook's Completer label yields 228/666 pre/post-selected trials rather than the abstract's 210/630. Two parsers agree. The publication-specific subset remains unresolved; no p-values or mechanism are reproduced. This provides a concrete review question for the demo.
+The [telephone data check](IONS_TELEPHONE_DATA_CHECK.md) found that the public workbook's Completer label yields 228/666 pre/post-selected trials rather than the abstract's 210/630. Two parsers agree. The publication-specific subset remains unresolved; no p-values or mechanism are reproduced. This provides a concrete review question for the demo. The [later methods follow-up](IONS_TELEPHONE_METHODS_FOLLOWUP.md) recovers full-text copies, all four registrations and preprint supplemental output, identifies partial numerical agreement, and narrows the unresolved analysis-population mapping.
 
 ## Show this in three minutes
 
@@ -20,7 +20,7 @@ The [telephone data check](IONS_TELEPHONE_DATA_CHECK.md) found that the public w
 | Claim | Source type | Reported outcome | Boundary |
 |---|---|---|---|
 | M2M-001 | TSC2026 abstract | Above-chance receiver-count result in 100 screened dyads | Exact statistic and participant data not obtained |
-| PHONE-001 | Published-paper abstract | Pre-selected: 50.0% / 210 trials; p<.001 against 33.3% chance | Repeated trials; full methods and reanalysis pending |
+| PHONE-001 | Published-paper abstract | Pre-selected: 50.0% / 210 trials; p<.001 against 33.3% chance | Repeated responses; final subset and independent methodological review pending |
 | PHONE-002 | Same paper | Post-selected: 31.9% / 630 trials; p=.61 against 33.3% chance | Nonsignificance does not establish absence; no condition-difference test inferred |
 | EHE-001 | Published survey abstract | 93.2% of 175 scientist/engineer respondents endorsed ≥1 exceptional experience | Any of 25 categories, not telepathy-specific prevalence |
 
@@ -33,7 +33,7 @@ Full bibliographic metadata, source locations, access date, dependencies, limita
 | Resource | Inspected scope on 12 October 2026 | Status in this sample |
 |---|---|---|
 | [TSC workshop](https://tsc2026.org/workshops.html) | Brinsmead and Taddeo abstract entries | Claim-description source; not full methods |
-| [Telephone paper](https://pubmed.ncbi.nlm.nih.gov/37709571/) | Author abstract and bibliography, checked against IONS | Abstract only; publisher full text returned 403 |
+| [Telephone paper](https://pubmed.ncbi.nlm.nih.gov/37709571/) | Abstract plus article-in-press copy, author preprint/supplement and KPU registrations | Version-specific methods inspected by AI; final publisher copy unavailable; mapping unresolved |
 | [Telephone data deposit](https://doi.org/10.6084/m9.figshare.21521235) | Versioned workbook legend and three analytical columns | Local aggregate recount found a subset mismatch; no participant rows committed; license displayed as CC BY 4.0 |
 | [Exceptional-experiences paper](https://pubmed.ncbi.nlm.nih.gov/30415782/) | Author abstract and bibliography, checked against IONS | Self-report source; no full-text or item-level analysis |
 | [IONS telepathy page](https://noetic.org/telepathy/) | Map status and links | Map still labelled “Coming Soon”; no export identified in this bounded check |
@@ -56,7 +56,7 @@ The telephone audit and its synthetic tests are described in the linked check. T
 
 ## Schema compatibility and review gates
 
-The existing schema, validators, historical meditation packet, coverage fixture and trusted registry are unchanged. `framework_baseline: 0.4.0` is retained because it is the draft contract's historical constant; it is not a claim that the current public manual remains v0.4.0. `source_kind: PRIMARY` denotes the original author-report source, not access to primary observations. Sources remain `ABSTRACT_ONLY`; only the original AI editorial lineage artifact is `FULL_TEXT_INSPECTED`, with no human attestation.
+The existing schema, validators, historical meditation packet, coverage fixture and trusted registry are unchanged. `framework_baseline: 0.4.0` is retained because it is the draft contract's historical constant; it is not a claim that the current public manual remains v0.4.0. `source_kind: PRIMARY` denotes the original author-report source, not access to primary observations. The original claim-source URLs remain `ABSTRACT_ONLY` because those records point to abstract pages. The separate full-text follow-up is documented in the editorial lineage and source receipt, with no human attestation. This does not mean the entire telephone work is still abstract-only.
 
 All claims remain `UNRESOLVED`; assessments are empty and comparisons `PENDING`. Both source and reviewer attestation arrays remain unchanged. `accepted_edges` and `supports_models` are empty; truth, evidence, rights, public_synthesis, website, bq_resolution, privacy and cultural_authority flags remain false. Counter-evidence search is `NOT_COMPLETED` throughout. M01–M12 remain pending. This is a bounded claim-record sample, not the full v0.5.0 methodology or a demonstrated IONS adapter.
 
@@ -65,7 +65,7 @@ All claims remain `UNRESOLVED`; assessments are empty and comparisons `PENDING`.
 - Check exact wording, source passage, units and denominator: dyads, receivers, trials and survey respondents must remain distinct.
 - Inspect original methods and protocol history. Check randomization, blinding, ordinary cue exclusion, clustering, selection/attrition, multiplicity and registration timing.
 - For Mind2Mind, obtain a citable report, exact binomial specification and privacy-safe data/access terms before reproducing the result. Do not infer an alpha level or borrow the phone study's chance rate.
-- For the telephone study, reconcile the deposited Completer label with the published subset before inferential reanalysis; inspect the full text to reconcile the genetic-relatedness wording noted in the extraction record.
+- For the telephone study, reconcile the deposited Completer label with the published subset before inferential reanalysis; obtain the final selection/recoding pipeline and reconcile the abstract, Table 3 and randomization populations. Full-text copies and a preprint supplement are now available; inferential review, including the excluded genetic-relatedness endpoint, remains pending.
 - Review contrary evidence and independent replications. Proposed conventional alternatives are possibilities for testing, not allegations of observed failures.
 - Use the existing trusted-registry process for actual human source inspections and independent assessments. AI authoring, passing CI and owner engineering approval do not substitute for independent review.
 

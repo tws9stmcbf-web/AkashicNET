@@ -11,6 +11,8 @@ The public workbook's own `Completer` label does **not** reproduce the two compl
 
 The source contains 1,051 trial rows. Its remaining Dropout rows total 61 pre-selected trials with 32 hits and 96 post-selected trials with 27 hits. These are trial counts, not independent participant counts. No p-values, confidence intervals, regression models or between-condition tests are reproduced.
 
+**Later methods follow-up:** [Full text, registration history and supplementary analysis output recovered](IONS_TELEPHONE_METHODS_FOLLOWUP.md). There is partial numerical agreement with other passages of the paper, but the final subset remains unresolved. The original recount below remains unchanged.
+
 ## Sources and exact input
 
 - Wahbeh, Cannard, Radin and Delorme, *Who's calling? Evaluating the accuracy of guessing who is on the phone*, Explore 20(2), 239–247 (2024), online 25 August 2023. [DOI](https://doi.org/10.1016/j.explore.2023.08.008), [PubMed author abstract](https://pubmed.ncbi.nlm.nih.gov/37709571/), [IONS abstract](https://noetic.org/publication/telephone/).
