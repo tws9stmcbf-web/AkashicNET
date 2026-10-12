@@ -1,0 +1,251 @@
+{
+  "schema": "akashicnet.test.filtered-retrieval-continuity.v0.1",
+  "baseline": "9cf967a7a9ed7921e6220189e46f4dc51c845a88",
+  "scope": "Synthetic exact-reference contract only; not a deployed backend or an API v0.25 extension.",
+  "scoring": "max dot product over a record's vectors; then stable ID; vector multiplicity has no semantic significance",
+  "policy": {
+    "archive_mode": "metadata_and_links_only",
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "ranking_changes_semantic_decision": false,
+    "automated_acceptance_allowed": false,
+    "direct_metadata_lookup_is_not_semantic_acceptance": true,
+    "hold_results_are_explicitly_addressable": true
+  },
+  "protected_edges": [
+    {
+      "edge_id": "synthetic:existing-reviewed",
+      "accepted_edge": true,
+      "assertion_class": "HUMAN_ADJUDICATED",
+      "adjudication_ref": "synthetic:review-001"
+    },
+    {
+      "edge_id": "synthetic:proposal",
+      "accepted_edge": false,
+      "assertion_class": "INFERRED_CANDIDATE"
+    }
+  ],
+  "defaults": {
+    "public_safe": true,
+    "metadata_eligible": true,
+    "source": "library",
+    "evidence": "SOURCE_CLASSIFICATION_ONLY",
+    "concept": "synthetic-rare-concept",
+    "semantic_decision": "ACCEPT",
+    "rights_state": "METADATA_LINK_ONLY",
+    "label": "Synthetic public metadata",
+    "provenance": {
+      "artifact_id": "synthetic:fixture",
+      "record_id": "synthetic:record",
+      "independence_key": "synthetic:source",
+      "public_safe": true
+    },
+    "vectors": [
+      [
+        0.8,
+        0
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "synthetic:public-a"
+    },
+    {
+      "id": "synthetic:public-b",
+      "source": "reddit",
+      "vectors": [
+        [
+          0.7,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:multivector",
+      "vectors": [
+        [
+          0,
+          1
+        ],
+        [
+          0.9,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:hold",
+      "semantic_decision": "HOLD",
+      "vectors": [
+        [
+          0.6,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:direct",
+      "semantic_decision": "DIRECT_METADATA_LOOKUP",
+      "vectors": [
+        [
+          0.5,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:other-evidence",
+      "evidence": "UNASSESSED",
+      "vectors": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:private",
+      "public_safe": false,
+      "label": "SYNTHETIC_PRIVATE_CANARY_PAYLOAD",
+      "vectors": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:unknown-public",
+      "public_safe": null,
+      "label": "SYNTHETIC_UNKNOWN_CANARY_PAYLOAD",
+      "vectors": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:ineligible",
+      "metadata_eligible": false,
+      "rights_state": "METADATA_WITHHELD",
+      "label": "SYNTHETIC_INELIGIBLE_CANARY_PAYLOAD",
+      "vectors": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "synthetic:other-concept",
+      "concept": "synthetic-common-concept",
+      "vectors": [
+        [
+          1,
+          0
+        ]
+      ]
+    }
+  ],
+  "distractors": {
+    "count": 12,
+    "id_prefix": "synthetic:distractor-",
+    "source": "reddit",
+    "evidence": "UNASSESSED",
+    "vectors": [
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "query_vector": [
+    1,
+    0
+  ],
+  "raw_candidate_window": 4,
+  "cases": [
+    {
+      "id": "source-and-evidence",
+      "filters": {
+        "source": "library",
+        "evidence": "SOURCE_CLASSIFICATION_ONLY",
+        "concept": "synthetic-rare-concept",
+        "state": "accepted"
+      },
+      "expected_ids": [
+        "synthetic:multivector",
+        "synthetic:public-a",
+        "synthetic:direct"
+      ]
+    },
+    {
+      "id": "source-only",
+      "filters": {
+        "source": "library",
+        "concept": "synthetic-rare-concept",
+        "state": "accepted"
+      },
+      "expected_ids": [
+        "synthetic:other-evidence",
+        "synthetic:multivector",
+        "synthetic:public-a",
+        "synthetic:direct"
+      ]
+    },
+    {
+      "id": "evidence-only",
+      "filters": {
+        "evidence": "SOURCE_CLASSIFICATION_ONLY",
+        "concept": "synthetic-rare-concept",
+        "state": "accepted"
+      },
+      "expected_ids": [
+        "synthetic:multivector",
+        "synthetic:public-a",
+        "synthetic:public-b",
+        "synthetic:direct"
+      ]
+    },
+    {
+      "id": "hold",
+      "filters": {
+        "source": "library",
+        "evidence": "SOURCE_CLASSIFICATION_ONLY",
+        "concept": "synthetic-rare-concept",
+        "state": "hold"
+      },
+      "expected_ids": [
+        "synthetic:hold"
+      ]
+    },
+    {
+      "id": "direct-and-hold",
+      "filters": {
+        "source": "library",
+        "evidence": "SOURCE_CLASSIFICATION_ONLY",
+        "concept": "synthetic-rare-concept",
+        "state": "all"
+      },
+      "expected_ids": [
+        "synthetic:multivector",
+        "synthetic:public-a",
+        "synthetic:hold",
+        "synthetic:direct"
+      ]
+    },
+    {
+      "id": "no-match",
+      "filters": {
+        "source": "library",
+        "evidence": "SOURCE_CLASSIFICATION_ONLY",
+        "concept": "synthetic-absent-concept",
+        "state": "all"
+      },
+      "expected_ids": []
+    }
+  ]
+}
