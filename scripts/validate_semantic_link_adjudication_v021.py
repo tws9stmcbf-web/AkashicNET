@@ -10,8 +10,10 @@ from validate_cross_source_edge_provenance_v01 import validate as validate_prove
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "references/community/semantic-link-adjudication-v0.2.1.json"
 LEDGER = ROOT / "references/community/semantic-link-adjudication-v0.2.1.md"
-PACKET = ROOT / "references/community/semantic-link-candidates-v0.2.0.json"
-PACKET_SHA256 = "41b178b5aeca1fc66e8036a0403d4b520225bbe3d61fa2e199f522d089358c6f"
+# Immutable bytes reviewed by the historical v0.2.1 adjudication.
+# The live candidate packet may refresh lineage; that does not transfer approval.
+PACKET = ROOT / "references/community/review-snapshots/semantic-link-candidates-v0.2.0-adjudicated.json"
+PACKET_SHA256 = "551bbe430be78226dc1005e99b28aeea2b21ac6cf98abd96917fa65d1c99da28"
 EXPECTED_IDS = [
   "candidate:semantic:191f4ddea1a78d584166",
   "candidate:semantic:19c4d2c70c48b2d04cf2",

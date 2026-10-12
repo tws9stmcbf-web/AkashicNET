@@ -4,10 +4,13 @@ import copy
 import json
 import sys
 import unittest
+import tempfile
+from unittest.mock import patch
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+import validate_semantic_link_adjudication_v021 as adjudication
 from validate_semantic_link_adjudication_v021 import ARTIFACT, validate
 
 def load():
@@ -16,6 +19,21 @@ def load():
 class SemanticLinkAdjudicationV021Tests(unittest.TestCase):
     def test_baseline_passes(self):
         self.assertEqual(validate(load()), [])
+
+    def test_historical_packet_digest_is_immutable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            altered = Path(directory) / "packet.json"
+            altered.write_bytes(adjudication.PACKET.read_bytes() + b"\n")
+            with patch.object(adjudication, "PACKET", altered):
+                self.assertIn("review packet digest changed", validate(load()))
+
+    def test_live_packet_does_not_inherit_historical_approval(self):
+        live = ROOT / "references/community/semantic-link-candidates-v0.2.0.json"
+        self.assertNotEqual(live, adjudication.PACKET)
+        packet = json.loads(live.read_text())
+        self.assertEqual(packet["accepted_edges"], [])
+        self.assertTrue(all(c["review_state"] == "REVIEW_REQUIRED" and c["accepted_edge"] is False
+                            for c in packet["proposed_candidates"]))
 
     def test_accepted_edge_requires_parent(self):
         data = load()
