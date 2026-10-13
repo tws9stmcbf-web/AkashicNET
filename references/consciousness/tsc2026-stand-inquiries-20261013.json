@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "id": "TSC2026-STAND-INQUIRIES-20261013",
+  "prepared_date": "2026-10-13",
+  "status": "editorial_research_proposal",
+  "provenance": "ai-executed, human-directed",
+  "method_status": "AkashicOMNI manual framework application; no automated evaluation or independent effectiveness validation claimed",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.my-big-toe.com/about/quantum-physics-experiments/",
+      "scope": "Author's description of proposed experiments; not an independent results audit",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S2",
+      "url": "https://cosmointel.com/",
+      "scope": "Organisation's account of Taheri's concepts",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S3",
+      "url": "https://cosmointel.com/areas-of-interests-and-collaboration/",
+      "scope": "Stated research interests and invitation to collaborate",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S4",
+      "url": "https://tsc2026.org/abstracts_html/donald-hoffman.html",
+      "scope": "Conference abstract; mathematical and physical proposals not independently checked",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S5",
+      "url": "https://tsc2026.org/program_details.html",
+      "scope": "Programme and exhibitor listing",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S6",
+      "url": "https://akashicnet.org/tsc2026",
+      "scope": "Existing independent Campbell editorial and pilot proposal",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S7",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/main/docs/AKASHICOMNI_V050_PUBLIC_STATUS.md",
+      "scope": "Manual method versus engineering implementation status",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S8",
+      "url": "https://cosmointel.com/about-founder/",
+      "scope": "Organisation's own biography; spiritual origin account attributed, not independently verified",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S9",
+      "url": "https://www.amnesty.org/en/documents/mde13/7024/2017/en/",
+      "scope": "Independent human-rights reporting on imprisonment and death sentence",
+      "accessed_date": "2026-10-13"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.uscirf.gov/religious-prisoners-conscience/released-rpocs/mohammad-ali-taheri",
+      "scope": "Independent chronology of imprisonment, overturned death sentences, release and asylum",
+      "accessed_date": "2026-10-13"
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "campbell-mbt",
+      "name": "Thomas Campbell / My Big TOE",
+      "evidence_class": "attributed_proposal",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "summary": "A simulation account with proposed experiments distinguishing detection from information available to an observer.",
+      "question": "For one experiment, what numerical outcome differs from a specified comparison model, and what result would revise the account?",
+      "possible_contribution": "Source map linking claim, operational definitions, protocol, alternatives and eventual results.",
+      "unknowns": [
+        "Selected protocol",
+        "Raw data access",
+        "Independent replication",
+        "Quantitative comparator"
+      ]
+    },
+    {
+      "id": "cosmointel",
+      "name": "Cosmointel / Taheri's T-consciousness fields",
+      "evidence_class": "attributed_proposal",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "summary": "Consciousness is described as distinct from matter, energy and information; research interests include brain activity, cells, microorganisms, plants and materials.",
+      "question": "Which study is the best starting point, are its methods and raw data accessible, and has an independent team replicated it?",
+      "possible_contribution": "Review one selected study, its controls, provenance and replication status before broader synthesis.",
+      "unknowns": [
+        "Selected study",
+        "Operational definition of exposure",
+        "Blinding and sham control",
+        "Raw data access",
+        "Independent replication"
+      ]
+    },
+    {
+      "id": "hoffman",
+      "name": "Donald Hoffman / Recursive Trace Logic",
+      "evidence_class": "conference_abstract_proposal",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "summary": "Observers are modelled using Markov matrices and a recursive trace operation; connections to spacetime and artificial intelligence are proposed.",
+      "question": "Which mathematical result is established within the model, and which physical prediction could distinguish it from alternative models?",
+      "possible_contribution": "Separate definitions and theorems from interpretations and empirically testable conjectures.",
+      "unknowns": [
+        "Full derivation",
+        "Independent mathematical checking",
+        "Quantitative empirical prediction"
+      ],
+      "session": {
+        "date": "2026-10-15",
+        "start": "11:10",
+        "end": "12:30",
+        "timezone": "America/Los_Angeles",
+        "room": "Paradise Ballroom",
+        "individual_start_time": null
+      }
+    }
+  ],
+  "integration": {
+    "insights": "Shared terminology does not establish shared mechanisms.",
+    "intelligence": "Use contrasting explanations and explicit revision conditions.",
+    "knowledge": "Preserve source, attribution, date, scope and evidence class.",
+    "wisdom": "Listen respectfully, accept correction, and separate compassion as a value from claims about physics."
+  },
+  "pilot": {
+    "status": "proposed_not_agreed",
+    "deliverable": "One jointly selected claim and a reviewable source-to-prediction record",
+    "required_fields": [
+      "claim",
+      "original_source",
+      "operational_definitions",
+      "comparison_model",
+      "predicted_outcome",
+      "controls",
+      "data_access",
+      "analysis_plan",
+      "revision_condition",
+      "replication_status",
+      "consent_for_attribution"
+    ],
+    "team_contact": null,
+    "conversation_occurred": false
+  },
+  "boundaries": [
+    "No partnership or endorsement claimed",
+    "No experiments or software evaluations executed",
+    "No theory promoted to established evidence",
+    "No inference that matching metaphysical language means models are equivalent",
+    "No private conversations or contact details published"
+  ],
+  "founder": {
+    "name": "Mohammad Ali Taheri",
+    "organisation": "Cosmointel",
+    "source_ids": [
+      "S8",
+      "S9",
+      "S10"
+    ],
+    "biography": "Cosmointel gives his birthplace as Kermanshah, Iran, in 1956 and describes engineering interests and a spiritual turning point in 1978. Amnesty identified him as a prisoner of conscience. USCIRF documents imprisonment from 2011, overturned death sentences, release in 2019 and arrival in Canada with asylum in March 2020.",
+    "interpretation": "Respect for freedom of belief is compatible with independent scrutiny of scientific claims.",
+    "boundary": "Biography, rights advocacy and scientific validation answer different questions."
+  }
+}
