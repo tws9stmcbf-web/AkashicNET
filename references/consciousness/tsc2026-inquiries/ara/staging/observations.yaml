@@ -14,6 +14,21 @@
       "promoted_to": null,
       "crystallized_via": null,
       "stale": false
+    },
+    {
+      "id": "O02",
+      "timestamp": "2026-10-13T08:23:46Z",
+      "provenance": "ai-suggested",
+      "content": "An openly documented reanalysis of one existing plant dataset is a candidate first collaboration, conditional on access and existing-code review.",
+      "context": "External papers cite public datasets; no data files retrieved, no team agreement. See evidence/cosmointel-symbiosis-20261013.md.",
+      "potential_type": "heuristic",
+      "bound_to": [
+        "N02"
+      ],
+      "promoted": false,
+      "promoted_to": null,
+      "crystallized_via": null,
+      "stale": false
     }
   ]
 }

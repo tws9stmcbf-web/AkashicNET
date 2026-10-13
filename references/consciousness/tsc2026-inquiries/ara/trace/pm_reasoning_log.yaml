@@ -15,6 +15,14 @@
         "No closure signal for proposed collaboration; O01 remains staged.",
         "Preserved publication timestamp disagreement without choosing an authoritative instant."
       ]
+    },
+    {
+      "turn": "2026-10-13_001#3",
+      "notes": [
+        "Staged O02 as heuristic; no endorsement, experiment or adopted collaboration, so no promotion.",
+        "Journal-specific review status must not be generalized to external publications. No existing logic claims contradict the new evidence.",
+        "Distinguished article review from dataset reanalysis and independent experimental replication; preserved blocked-access limit."
+      ]
     }
   ]
 }

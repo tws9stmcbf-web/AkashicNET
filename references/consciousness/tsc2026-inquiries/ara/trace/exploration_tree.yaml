@@ -8,6 +8,16 @@
       "timestamp": "2026-10-13T00:50",
       "description": "User requested integration of insights, intelligence, knowledge and wisdom; then requested Cosmointel and founder visuals.",
       "status": "open"
+    },
+    {
+      "id": "N02",
+      "type": "question",
+      "title": "Deepen Cosmointel evidence review and potential symbiosis",
+      "provenance": "user",
+      "timestamp": "2026-10-13T08:23:46Z",
+      "description": "User requested deeper analysis and potential mutual contribution.",
+      "parent": "N01",
+      "status": "open"
     }
   ]
 }
