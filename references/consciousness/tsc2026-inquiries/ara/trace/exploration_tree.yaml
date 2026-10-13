@@ -18,6 +18,23 @@
       "description": "User requested deeper analysis and potential mutual contribution.",
       "parent": "N01",
       "status": "open"
+    },
+    {
+      "id": "N03",
+      "type": "decision",
+      "title": "Build the pavilion-themed sponsor hub and conference navigation",
+      "provenance": "user",
+      "timestamp": "2026-10-13T08:54:23Z",
+      "choice": "Make this the headline article; create individual profiles, provenance, climate specification, metadata import and day/room structure on the AkashicNET TSC homepage.",
+      "alternatives": [
+        "Standalone concept image only",
+        "Unstructured sponsor list"
+      ],
+      "evidence": [
+        "evidence/tsc-symbiosis-publication-20261013.md"
+      ],
+      "parent": "N01",
+      "status": "resolved"
     }
   ]
 }
