@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse,json,subprocess
 from pathlib import Path
+from retrieval_evidence_v01 import classification
 
 DEDUP=Path('data/dedup-retrieval-view-v0.17.json')
 LEVELS={
@@ -57,6 +58,7 @@ def retrieve(query, base, dedup, accepted_only=False):
         if not q or (q not in labels and q not in fams):
             continue
         r={
+            'evidence_classification':classification(u),
             'domain':'library','query_path':'canonical_family_label','concept':None,
             'source':{'type':'canonical_family','family_id':u.get('family_ids',[None])[0],'label':u.get('labels',[None])[0]},
             'logical_retrieval_units':[u],

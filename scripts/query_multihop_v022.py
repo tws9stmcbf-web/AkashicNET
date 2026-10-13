@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse,json
 from pathlib import Path
+from retrieval_evidence_v01 import classification, edge_classification
 
 GRAPH=Path('data/knowledge-graph-v0.16.json')
 CONCEPT=Path('data/concept-layer-v0.22.json')
@@ -10,6 +11,7 @@ DEDUP=Path('data/dedup-retrieval-view-v0.17.json')
 
 def unit_payload(u):
     return {
+        'evidence_status':classification(u),
         'retrieval_unit_id':u['retrieval_unit_id'],'collapse_basis':u['collapse_basis'],
         'deduplicated':u['deduplicated'],'physical_manifestation_count':u['physical_manifestation_count'],
         'labels':u['labels'],'sha256':u.get('sha256'),'manifestations':u['manifestations'],
@@ -38,6 +40,7 @@ def retrieve(query, graph, concept, dedup, accepted_only=False):
         if e['target_concept'] not in matched: continue
         if accepted_only and not e.get('accepted_edge'): continue
         results.append({
+            'evidence_classification':classification(e),
             'domain':'reddit','query_path':'reviewed_concept','concept':concepts[e['target_concept']]['label'],
             'source':{'type':'reddit_record','ref':e['source_ref'],'rights_status':'LINK_ONLY_METADATA','scientific_evidence_default':False},
             'concept_hop':{'from':e['source_ref'],'relationship':e['relationship'],'to':e['target_concept'],'review_state':e.get('review_state'),'decision':e.get('v021_decision') or e.get('v020_decision') or e.get('v011_decision'),'basis':e.get('basis'),'not_truth_claim':True},
@@ -50,6 +53,7 @@ def retrieve(query, graph, concept, dedup, accepted_only=False):
         fid=e['logical_family_id']
         units=units_by_family.get(fid,[])
         r={
+            'evidence_classification':edge_classification(e),
             'domain':'library','query_path':'normalised_reviewed_concept','concept':concepts[e['target_concept']]['label'],
             'source':{'type':'canonical_family','family_id':fid,'label':family_labels.get(fid)},
             'concept_hop':{'from':fid,'relationship':e['relationship'],'to':e['target_concept'],'review_state':e.get('review_state'),'basis_set':e.get('basis_set',[]),'matched_terms':e.get('matched_terms',[]),'representation_count':e.get('representation_count',1),'representation_sources':e.get('representation_sources',[]),'representation_multiplicity_not_semantic_strength':True,'not_truth_claim':True},

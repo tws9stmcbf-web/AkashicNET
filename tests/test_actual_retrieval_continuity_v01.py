@@ -18,7 +18,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = (
-    "query_api_v025.py", "query_unified_v024.py", "query_ranked_v023.py",
+    "retrieval_evidence_v01.py", "query_api_v025.py", "query_unified_v024.py", "query_ranked_v023.py",
     "query_multihop_v022.py", "normalise_semantic_representations_v022.py",
     "query_public_v01.py", "public_retrieval_snapshot_v01.py", "check_public_data_boundary.py",
 )
@@ -289,7 +289,7 @@ def test_missing_or_malformed_inputs_emit_no_success_response_or_writes(cli, nam
 
 @pytest.mark.parametrize("args", [
     ("--domain", "unknown"), ("--state", "approve"), ("--limit", "0"),
-    ("--limit", "-1"), ("--evidence", "UNASSESSED"), ("--source", "library"),
+    ("--limit", "-1"), ("--evidence", "UNKNOWN_CLASSIFICATION"), ("--source", "library"),
 ])
 def test_unsupported_or_invalid_requests_are_rejected_before_data_access(cli, args):
     shutil.rmtree(cli.root / "data")
@@ -340,7 +340,6 @@ def test_contract_private_canary_must_be_excluded_on_both_routes(cli, route):
     assert CANARY not in response.stdout + response.stderr
 
 
-@pytest.mark.xfail(strict=True, reason="GAP-02: API v0.25 lacks an evidence-classification filter")
 def test_contract_evidence_filter_must_be_executable_and_independent_of_provenance(cli):
     result = cli.run(QUERY, "--evidence", "SOURCE_CLASSIFICATION_ONLY", "--domain", "reddit")
     assert result.returncode == 0, "Evidence filter is not executable"

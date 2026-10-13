@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 from check_public_data_boundary import validate_entry
+from retrieval_evidence_v01 import classification, edge_classification
 
 
 class InvalidPublicSnapshot(ValueError):
@@ -100,8 +101,12 @@ def decision_fields(row):
 def project_representation(row):
     review_id = identifier(row["review_id"])
     provenance = approve(row, review_id)
-    return {"original_source_ref": identifier(row["original_source_ref"]),
-            "review_id": review_id, "provenance": provenance, **decision_fields(row)}
+    result = {"original_source_ref": identifier(row["original_source_ref"]),
+            "review_id": review_id, "provenance": provenance,
+            **decision_fields(row)}
+    if any(key in row for key in ("evidence_status", "evidence")):
+        result["evidence_status"] = classification(row)
+    return result
 
 
 def project_edge(row, library=False):
@@ -130,6 +135,7 @@ def project_edge(row, library=False):
         # Public stable source reference, not a private file link or pathname.
         result["source_ref"] = identifier(row["source_ref"])
         result["basis"] = text(row["basis"])
+    result["evidence_status"] = edge_classification(row) if library else classification(row)
     return result
 
 
@@ -147,6 +153,7 @@ def project_unit(row):
             "labels": strings(row["labels"]), "collapse_basis": row["collapse_basis"],
             "deduplicated": row["deduplicated"],
             "physical_manifestation_count": integer(row["physical_manifestation_count"], 1),
+            "evidence_status": classification(row),
             "rights_states": rights, "sha256": None, "manifestations": [],
             "not_truth_claim": True, "rights_promotion_allowed": False,
             "scientific_evidence_promotion_allowed": False}

@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 
 from public_retrieval_snapshot_v01 import load_snapshot
+from retrieval_evidence_v01 import EVIDENCE_STATUSES
 from query_multihop_v022 import retrieve as multihop
 from query_ranked_v023 import retrieve as ranked
 from query_unified_v024 import retrieve as unified
@@ -25,6 +26,7 @@ def main():
     parser.add_argument("--snapshot", type=Path, required=True)
     parser.add_argument("--domain", choices=["all", "reddit", "library"], default="all")
     parser.add_argument("--state", choices=["all", "accepted", "hold"], default="all")
+    parser.add_argument("--evidence", choices=sorted(EVIDENCE_STATUSES), default=None)
     parser.add_argument("--limit", type=int, default=100)
     args = parser.parse_args()
     if args.limit < 1:
@@ -32,7 +34,7 @@ def main():
     try:
         graph, concept, dedup = load_snapshot(args.snapshot)
         response = unified(args.query, ranked(args.query, multihop(args.query, graph, concept, dedup), dedup),
-                           args.domain, args.state, args.limit)
+                           args.domain, args.state, args.limit, args.evidence)
         response.update(contract="AKASHICNET_PUBLIC_RETRIEVAL", version="0.1")
         response["result_schema"]["result_order"] = "descending provenance tier; equal keys retain input order (GAP-04)"
         response["policy"]["public_projection"] = "explicit_eligible_metadata_allowlist_v0.1"

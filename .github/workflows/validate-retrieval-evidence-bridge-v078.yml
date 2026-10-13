@@ -14,6 +14,8 @@ on:
       - 'scripts/public_retrieval_snapshot_v01.py'
       - 'tests/fixtures/filtered-retrieval-continuity-v0.1.json'
       - 'scripts/check_public_data_boundary.py'
+      - 'scripts/retrieval_evidence_v01.py'
+      - 'tests/test_retrieval_evidence_filter_v01.py'
       - 'scripts/query_api_v025.py'
       - 'scripts/query_unified_v024.py'
       - 'scripts/query_ranked_v023.py'
@@ -38,6 +40,8 @@ on:
       - 'scripts/public_retrieval_snapshot_v01.py'
       - 'tests/fixtures/filtered-retrieval-continuity-v0.1.json'
       - 'scripts/check_public_data_boundary.py'
+      - 'scripts/retrieval_evidence_v01.py'
+      - 'tests/test_retrieval_evidence_filter_v01.py'
       - 'scripts/query_api_v025.py'
       - 'scripts/query_unified_v024.py'
       - 'scripts/query_ranked_v023.py'
@@ -61,4 +65,4 @@ jobs:
       - run: python scripts/validate_retrieval_api_compat_v026.py
       - run: python -m pip install pytest
       # Strict xfails expose unmet real-CLI requirements; green is not backend certification.
-      - run: pytest -q -rx tests/test_retrieval_evidence_bridge_v078.py tests/test_retrieval_api_compat_v026.py tests/test_filtered_retrieval_continuity_v01.py tests/test_actual_retrieval_continuity_v01.py tests/test_public_retrieval_boundary_v01.py tests/test_public_data_boundary.py
+      - run: pytest -q -rx tests/test_retrieval_evidence_bridge_v078.py tests/test_retrieval_api_compat_v026.py tests/test_filtered_retrieval_continuity_v01.py tests/test_actual_retrieval_continuity_v01.py tests/test_public_retrieval_boundary_v01.py tests/test_public_data_boundary.py tests/test_retrieval_evidence_filter_v01.py
