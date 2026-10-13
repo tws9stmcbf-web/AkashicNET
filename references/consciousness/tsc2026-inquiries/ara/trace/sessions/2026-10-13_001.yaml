@@ -1,0 +1,49 @@
+{
+  "session": {
+    "id": "2026-10-13_001",
+    "date": "2026-10-13",
+    "started": "2026-10-13T00:50",
+    "last_turn": "2026-10-13T01:08",
+    "turn_count": 1,
+    "summary": "Created three visuals, source-linked comparison record, GitHub PR and published conference entry."
+  },
+  "events_logged": [
+    {
+      "turn": 1,
+      "type": "question",
+      "id": "N01",
+      "routing": "direct",
+      "provenance": "user",
+      "summary": "Integrate conference leads and explain Cosmointel founder."
+    },
+    {
+      "turn": 1,
+      "type": "observation",
+      "id": "O01",
+      "routing": "staged",
+      "provenance": "ai-suggested",
+      "summary": "First-pilot candidate remains unagreed."
+    }
+  ],
+  "ai_actions": [
+    {
+      "turn": 1,
+      "action": "Inspected official theory pages, conference abstract, Amnesty and USCIRF reporting; generated symbolic visuals; created PR #401; published Site version 953 after reconciling concurrent source changes.",
+      "provenance": "ai-executed",
+      "files_changed": [
+        "../../../../tsc2026-stand-inquiries-20261013.md",
+        "../../../../tsc2026-stand-inquiries-20261013.json"
+      ]
+    }
+  ],
+  "claims_touched": [],
+  "logic_revisions": [],
+  "open_threads": [
+    "Select a primary Cosmointel study and assess replication.",
+    "Obtain a Campbell comparison prediction.",
+    "Check Hoffman's derivation and distinguish mathematical from empirical claims."
+  ],
+  "ai_suggestions_pending": [
+    "Offer a bounded source-map pilot, subject to team interest."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "observations": [
+    {
+      "id": "O01",
+      "timestamp": "2026-10-13T01:08",
+      "provenance": "ai-suggested",
+      "content": "A single jointly selected claim with traceable source, comparison model and revision criterion is a candidate first contribution.",
+      "context": "Proposed public pilot; no team has selected a claim or agreed to collaborate.",
+      "potential_type": "heuristic",
+      "bound_to": [
+        "N01"
+      ],
+      "promoted": false,
+      "promoted_to": null,
+      "crystallized_via": null,
+      "stale": false
+    }
+  ]
+}
