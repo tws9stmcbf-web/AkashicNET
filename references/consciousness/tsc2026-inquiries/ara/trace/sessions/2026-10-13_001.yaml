@@ -3,9 +3,9 @@
     "id": "2026-10-13_001",
     "date": "2026-10-13",
     "started": "2026-10-13T00:50",
-    "last_turn": "2026-10-13T01:08",
-    "turn_count": 1,
-    "summary": "Created three visuals, source-linked comparison record, GitHub PR and published conference entry."
+    "last_turn": "2026-10-13T01:16",
+    "turn_count": 2,
+    "summary": "Created three visuals, source-linked comparison record, GitHub PR and published conference entry. Inspected Cosmointel HTML and journal metadata."
   },
   "events_logged": [
     {
@@ -34,6 +34,14 @@
         "../../../../tsc2026-stand-inquiries-20261013.md",
         "../../../../tsc2026-stand-inquiries-20261013.json"
       ]
+    },
+    {
+      "turn": 2,
+      "action": "Extracted public HTML metadata, compared timestamp fields, checked both journal About pages, and inspected one article's bibliographic record. No full-paper review.",
+      "provenance": "ai-executed",
+      "files_changed": [
+        "../../evidence/cosmointel-metadata-20261013.md"
+      ]
     }
   ],
   "claims_touched": [],
@@ -41,7 +49,8 @@
   "open_threads": [
     "Select a primary Cosmointel study and assess replication.",
     "Obtain a Campbell comparison prediction.",
-    "Check Hoffman's derivation and distinguish mathematical from empirical claims."
+    "Check Hoffman's derivation and distinguish mathematical from empirical claims.",
+    "Ask about independent review and request methods/raw data for the selected article."
   ],
   "ai_suggestions_pending": [
     "Offer a bounded source-map pilot, subject to team interest."

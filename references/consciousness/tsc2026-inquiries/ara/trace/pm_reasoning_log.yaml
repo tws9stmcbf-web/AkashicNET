@@ -7,6 +7,14 @@
         "Publication commits to an editorial artefact, not the claim that the proposed pilot is effective; no scientific promotion.",
         "Founder self-account and independent rights reporting kept separate."
       ]
+    },
+    {
+      "turn": "2026-10-13_001#2",
+      "notes": [
+        "Metadata inspection recorded as ai-action with evidence pointer; self-declared fields are not validation.",
+        "No closure signal for proposed collaboration; O01 remains staged.",
+        "Preserved publication timestamp disagreement without choosing an authoritative instant."
+      ]
     }
   ]
 }
