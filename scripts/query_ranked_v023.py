@@ -12,6 +12,33 @@ LEVELS={
     'P3_SHA256_IDENTITY_PROVENANCE':3,
 }
 
+def canonical_json(value):
+    # Source dictionaries are metadata, not ordered sequences. Never use their
+    # Python repr (or a randomized hash) as a ranking key.
+    return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True)
+
+
+def stable_result_identity(result):
+    """Exact source/concept/unit identifiers; no input position or promotion."""
+    source=result.get('source') or {}
+    hop=result.get('concept_hop') or {}
+    return canonical_json([
+        source.get('type'),source.get('family_id'),source.get('ref'),
+        result.get('query_path'),hop.get('to'),hop.get('relationship'),
+        sorted(u['retrieval_unit_id'] for u in result.get('logical_retrieval_units',[])),
+        result.get('concept'),
+    ])
+
+
+def ordering_key(r):
+    # Keep provenance/domain precedence and canonicalize source metadata.
+    # Only ties use record identity,
+    # then the canonical returned payload for conflicting duplicate identities.
+    # Exact duplicate payloads remain separate but are indistinguishable.
+    return (-r['evidence_profile']['provenance_rank'],r.get('domain',''),
+            canonical_json(r.get('source',{})),stable_result_identity(r),canonical_json(r))
+
+
 def profile(result):
     accepted=(result.get('concept_hop') or {}).get('review_state')=='ACCEPTED'
     direct=result.get('query_path')=='canonical_family_label'
@@ -46,13 +73,18 @@ def profile(result):
 def retrieve(query, base, dedup, accepted_only=False):
     ranked=[]; seen=set()
     for r in base['results']:
-        x=dict(r); x['evidence_profile']=profile(r); ranked.append(x)
+        x=dict(r)
+        if 'logical_retrieval_units' in r:
+            x['logical_retrieval_units']=sorted(r['logical_retrieval_units'],key=lambda u:(u['retrieval_unit_id'],canonical_json(u)))
+        x['evidence_profile']=profile(r); ranked.append(x)
         src=x.get('source',{}); seen.add((x.get('domain'),src.get('family_id') or src.get('ref'),x.get('concept')))
 
     # Direct canonical-family / manifestation fallback is retrieval only. It does
     # not create a semantic concept edge and therefore cannot increase topical evidence.
     q=query.lower().strip()
-    for u in dedup['retrieval_units']:
+    # The existing direct-route duplicate suppression must also choose the same
+    # representative when a trusted local input repeats a unit identity.
+    for u in sorted(dedup['retrieval_units'],key=lambda u:(u['retrieval_unit_id'],canonical_json(u))):
         labels=' '.join(u.get('labels',[])).lower()
         fams=' '.join(u.get('family_ids',[])).lower()
         if not q or (q not in labels and q not in fams):
@@ -69,7 +101,7 @@ def retrieve(query, base, dedup, accepted_only=False):
         if key in seen: continue
         seen.add(key); r['evidence_profile']=profile(r); ranked.append(r)
 
-    ranked.sort(key=lambda r:(-r['evidence_profile']['provenance_rank'], r.get('domain',''), str(r.get('source',{}))))
+    ranked.sort(key=ordering_key)
     out={
         'version':'0.23','query':query,'accepted_only':accepted_only,'matched_concepts':base['matched_concepts'],
         'result_count':len(ranked),'ranking_scope':'provenance and retrieval support only',

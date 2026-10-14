@@ -352,7 +352,6 @@ def test_contract_reddit_adjudication_reference_must_reach_response(cli):
     assert row["concept_hop"].get("review_id") == "synthetic:review:synthetic:r-accept"
 
 
-@pytest.mark.xfail(strict=True, reason="GAP-04: equal provenance/domain/source rank keys retain input order")
 def test_contract_equal_rank_keys_require_stable_tie_break(cli):
     second = edge("synthetic:r-accept", "ACCEPTED", concept="synthetic:c2")
     cli.data[CONCEPT]["reddit_edges"].append(second)

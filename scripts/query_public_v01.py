@@ -36,7 +36,6 @@ def main():
         response = unified(args.query, ranked(args.query, multihop(args.query, graph, concept, dedup), dedup),
                            args.domain, args.state, args.limit, args.evidence)
         response.update(contract="AKASHICNET_PUBLIC_RETRIEVAL", version="0.1")
-        response["result_schema"]["result_order"] = "descending provenance tier; equal keys retain input order (GAP-04)"
         response["policy"]["public_projection"] = "explicit_eligible_metadata_allowlist_v0.1"
         response["policy"]["private_local_interface"] = False
         # These aggregates describe approved public units, not public object
