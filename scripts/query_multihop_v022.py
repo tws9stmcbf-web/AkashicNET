@@ -43,7 +43,7 @@ def retrieve(query, graph, concept, dedup, accepted_only=False):
             'evidence_classification':classification(e),
             'domain':'reddit','query_path':'reviewed_concept','concept':concepts[e['target_concept']]['label'],
             'source':{'type':'reddit_record','ref':e['source_ref'],'rights_status':'LINK_ONLY_METADATA','scientific_evidence_default':False},
-            'concept_hop':{'from':e['source_ref'],'relationship':e['relationship'],'to':e['target_concept'],'review_state':e.get('review_state'),'decision':e.get('v021_decision') or e.get('v020_decision') or e.get('v011_decision'),'basis':e.get('basis'),'not_truth_claim':True},
+            'concept_hop':{'from':e['source_ref'],'relationship':e['relationship'],'to':e['target_concept'],'review_state':e.get('review_state'),'decision':e.get('v021_decision') or e.get('v020_decision') or e.get('v011_decision'),'basis':e.get('basis'),'review_id':e.get('review_id'),'not_truth_claim':True},
             'retrieval_resolution':'REDDIT_CANONICAL_URL'
         })
 

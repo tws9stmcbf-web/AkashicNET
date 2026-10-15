@@ -124,8 +124,10 @@ or represent scientific evidence.
 Review-state/accepted-flag/explicit-decision contradictions fail closed on the
 public path. Retrieval creates no reviews or accepted edges and does not alter
 stored proposal parents/children. Stable public review references are required
-at ingestion; the legacy Reddit hop still fails to forward its review ID,
-retained as GAP-03. This draft does not claim complete adjudication lineage.
+at ingestion. [GAP-03 review-reference forwarding](reddit-review-reference-v0.1.md)
+now preserves the approved Reddit review ID through the shared retrieval path.
+This does not establish complete upstream adjudication lineage. GAP-03 failure
+counts and status entries below describe the earlier boundary checkpoint.
 
 ## Errors and diagnostics
 

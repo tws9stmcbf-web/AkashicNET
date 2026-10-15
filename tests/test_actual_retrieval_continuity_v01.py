@@ -1,7 +1,7 @@
 """Run the real v0.25 -> v0.24 -> v0.23 -> v0.22 CLI on synthetic data.
 
 No production corpus, mocked subprocess, alternate ranker, or SQLite adapter.
-Strict xfails are unmet contract requirements, NOT successful validation.
+The original gap contracts are ordinary regressions after their bounded fixes.
 """
 from __future__ import annotations
 
@@ -346,7 +346,6 @@ def test_contract_evidence_filter_must_be_executable_and_independent_of_provenan
     assert ids(json.loads(result.stdout)) == ["synthetic:r-accept", "synthetic:r-hold", "synthetic:r-reject"]
 
 
-@pytest.mark.xfail(strict=True, reason="GAP-03: v0.22 drops Reddit review_id while forwarding its decision")
 def test_contract_reddit_adjudication_reference_must_reach_response(cli):
     row = cli.query(QUERY, "--domain", "reddit", "--state", "accepted")["results"][0]
     assert row["concept_hop"].get("review_id") == "synthetic:review:synthetic:r-accept"

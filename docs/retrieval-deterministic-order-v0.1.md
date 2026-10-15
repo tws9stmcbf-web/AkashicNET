@@ -1,5 +1,10 @@
 # Deterministic retrieval ordering (GAP-04)
 
+Follow-up: [GAP-03 review-reference forwarding](reddit-review-reference-v0.1.md)
+restores Reddit review IDs. Its distinct review-only observations now use the
+existing final payload tie-break. GAP-03 statements below describe this earlier
+GAP-04 checkpoint.
+
 Scope: draft PR #400, continuing from `4f8bf09146dcdc26011a402854f11897e32d2b95`.
 No merge, release, deployment or change to human adjudication is authorized by
 this engineering checkpoint.
