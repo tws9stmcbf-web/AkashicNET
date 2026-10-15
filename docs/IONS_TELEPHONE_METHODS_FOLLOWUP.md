@@ -55,6 +55,22 @@ The verified corresponding author is **Dr Helané Wahbeh, hwahbeh@noetic.org**, 
 
 Request: (1) the authoritative final analysis file/version and selection/recoding script or privacy-safe exclusion summary; (2) how the first-six rule and excess-trial removal map to Figshare v1; (3) which abstract/Table 3/randomization endpoints should be treated as definitive; and (4) a link to the final supplement or correction, if applicable. Do not request identities or unredacted participant records. No author contact has been sent at this checkpoint.
 
+## Contact-status verification — 15 October 2026 UTC
+
+The original statement above, “No author contact has been sent at this checkpoint,” is preserved as the historical 12 October source-investigation checkpoint at `b1e3646fdb15b995c32f26963e39aa1e36074435`; it is not a current delivery-status assertion.
+
+**Contact status: DRAFT_PRESENT / SEND_STATUS_UNVERIFIED.** A clarification message addressed to Dr Helané Wahbeh (the verified institutional recipient above) has a Date header of 12 October 2026, 15:47:46 UTC, after the PR update at 15:42:35 UTC. Authenticated Gmail reads currently return it with a DRAFT label. The Date/Received headers alone do not establish dispatch. The inspected thread contains only that draft; bounded sent-mail searches returned no matching sent copy. On 14 October 2026 (America/Los_Angeles; 15 October UTC), the user clarified that they are unsure whether it sent. Sending and delivery are therefore unverified; this is not recorded as confirmed author contact.
+
+The verified draft content prepares these methodological questions; their submission is unverified:
+1. The authoritative final analysis script or a privacy-safe selection/recoding summary connecting Figshare v1 to the published completer population.
+2. How the first-six-trials rule and removal of excess trials map to the deposited observations.
+3. Which published endpoints are definitive where the abstract, Table 3 and randomization-method passage differ.
+4. A link to the final supplement or any applicable correction.
+
+**Outstanding:** confirmed send provenance, the final dataset/version-to-analysis-population mapping, operational row-selection and recoding rules, and authoritative endpoint/supplement clarification. No substantive author response was found in the inspected thread or the bounded mailbox searches. This does not establish that no response exists under another address or through another channel.
+
+Communication provenance is summarized in [the contact-status receipt](../references/akashicomni/ions-telephone-contact-status-2026-10-15.json). Private Gmail links, message identifiers, sender details and correspondence text are omitted from the public record. No verified methodological clarification has been incorporated. Preparing or sending an author inquiry does not constitute scientific endorsement or experimental confirmation. PARTIAL_NUMERICAL_RECONCILIATION / FINAL_SUBSET_UNRESOLVED, scientific classifications, independent review PENDING, engineering UNRELEASED / REVIEW_REQUIRED and false promotion flags remain unchanged.
+
 ## Provenance and boundaries
 
 Exact source URLs, versions, hashes and inspection locations are in [the source receipt](../references/akashicomni/ions-telephone-methods-followup-2026-10-12.json). PDF tables and supplementary commands were visually checked against their text extraction. All literature copies and workbook bytes remain outside the repository and research-note archive. No inferential test, confidence interval, regression or mechanism was independently reproduced. Scientific claims, independent review and release remain unresolved/pending; all promotion flags stay false.
@@ -64,3 +80,4 @@ Exact source URLs, versions, hashes and inspection locations are in [the source 
 - S3: [Author preprint](https://osf.io/preprints/psyarxiv/hxj5n_v1), DOI [10.31234/osf.io/hxj5n](https://doi.org/10.31234/osf.io/hxj5n); [primary PDF](https://osf.io/download/kdc8u/); [file metadata](https://api.osf.io/v2/files/64fa5853989de6390ddd154b/).
 - S4: [Official registered-study index](https://koestlerunit.wordpress.com/study-registry/registered-studies/), entry 1062, with [original](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062.pdf), [revision 2](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_2.pdf), [revision 3](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_3.pdf), [revision 4](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_4.pdf).
 - S5: [PubMed](https://pubmed.ncbi.nlm.nih.gov/37709571/); [current IONS profile](https://noetic.org/profile/helane-wahbeh/); [BIAL author summary](https://assets.ctfassets.net/osaht2ckekgb/3lYdh88xc54P1NjcJEJHzs/b79c86e2178241cff6b25a1b236ac6ca/APOIOS-2020-a-telephone-telepathy-study.pdf).
+

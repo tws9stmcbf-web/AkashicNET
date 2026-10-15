@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-15",
+  "provenance": "ai-executed",
+  "historical_checkpoint": {
+    "head": "b1e3646fdb15b995c32f26963e39aa1e36074435",
+    "pr_updated_at": "2026-10-12T15:42:35Z",
+    "author_contact_sent": false,
+    "preserved": true
+  },
+  "contact_status": "DRAFT_PRESENT_SEND_STATUS_UNVERIFIED",
+  "recipient": {
+    "name": "Dr Helané Wahbeh",
+    "institutional_email": "hwahbeh@noetic.org"
+  },
+  "reported_contact": {
+    "provenance": "user",
+    "reported_sent_at": "2026-10-12T15:47:00Z",
+    "timestamp_precision": "minute",
+    "verified_sent": false,
+    "superseded_by_user_clarification": {
+      "provenance": "user",
+      "date_local": "2026-10-14",
+      "timezone": "America/Los_Angeles",
+      "date_utc": "2026-10-15",
+      "send_status": "UNSURE_WHETHER_SENT"
+    }
+  },
+  "current_email_check": {
+    "source_kind": "Authenticated private Gmail thread and bounded mailbox searches",
+    "message_date_header": "2026-10-12T15:47:46Z",
+    "returned_labels": [
+      "DRAFT"
+    ],
+    "thread_messages_returned": 1,
+    "matching_sent_copy_found": false,
+    "substantive_reply_found": false,
+    "scope": "Thread read and in:anywhere/from/to/subject plus in:sent searches after 2026/10/11; result pagination closed",
+    "limits": "Does not exclude another address or channel. Date and Received headers are not proof of sending.",
+    "private_correspondence_published": false
+  },
+  "outstanding": [
+    "Confirmed send provenance",
+    "Final dataset/version-to-completer-population mapping",
+    "Operational selection and recoding rules",
+    "Definitive endpoints and supplement/correction provenance",
+    "Independent scientific review"
+  ],
+  "scientific_status": "PARTIAL_NUMERICAL_RECONCILIATION_FINAL_SUBSET_UNRESOLVED",
+  "independent_review": "PENDING",
+  "engineering_status": "UNRELEASED / REVIEW_REQUIRED",
+  "scientific_endorsement_inferred": false,
+  "experimental_confirmation_inferred": false,
+  "scientific_flags_changed": false,
+  "questions_prepared_in_draft": [
+    "Authoritative final analysis script or privacy-safe selection/recoding summary",
+    "First-six-trials rule and excess-trial removal relative to Figshare v1",
+    "Definitive abstract/Table 3/randomization-method endpoints",
+    "Final supplement or correction link"
+  ],
+  "question_submission_verified": false
+}
