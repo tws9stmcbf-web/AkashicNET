@@ -55,7 +55,28 @@ The verified corresponding author is **Dr Helané Wahbeh, hwahbeh@noetic.org**, 
 
 Request: (1) the authoritative final analysis file/version and selection/recoding script or privacy-safe exclusion summary; (2) how the first-six rule and excess-trial removal map to Figshare v1; (3) which abstract/Table 3/randomization endpoints should be treated as definitive; and (4) a link to the final supplement or correction, if applicable. Do not request identities or unredacted participant records. No author contact has been sent at this checkpoint.
 
+## Confirmed transmission update — 15 October 2026 UTC
+
+**Current contact status: SENT_CONFIRMED / DELIVERY_UNVERIFIED.** Authenticated Gmail Sent records and the complete returned inquiry thread were rechecked on 15 October 2026. Both outgoing messages carry the SENT label; their Date headers and Gmail timestamps agree after timezone normalization.
+
+| Communication | America/Los_Angeles (PDT) | UTC | Institutional recipients |
+|---|---|---|---|
+| Methodological clarification inquiry | 14 October 2026, 20:56:46 | 15 October 2026, 03:56:46 | To Dr Helané Wahbeh, hwahbeh@noetic.org; CC IONS Programs team, programs@noetic.org |
+| AI-transparency follow-up | 14 October 2026, 20:58:20 | 15 October 2026, 03:58:20 | Same To and CC; same conversation |
+
+The inquiry submits the questions listed below about the final analysis population, selection/recoding rules, first-six-trials and excess-trial handling, definitive endpoints, and final supplement/correction provenance. The separate follow-up discloses that the inquiry was generated with AI assistance for AkashicNET from its research record and source comparisons. It describes the comparison as provisional and independent scientific review as pending.
+
+Two IONS Programs automated acknowledgements were returned at 03:56:49 and 03:58:24 UTC, both marked as automated replies. Neither provides substantive methodological clarification. These replies evidence automated processing by the copied Programs channel; they do not establish delivery to or reading by Dr Wahbeh, personal author acknowledgement, or scientific endorsement.
+
+**Evidence boundary:** Gmail transmission is confirmed. Delivery to Dr Wahbeh and recipient reading remain unverified. No human author acknowledgement or substantive response was found in the inspected thread and bounded reply searches, whose pagination was closed; other addresses or channels are not excluded. Final subset mapping and methodological clarification remain unresolved; independent review remains PENDING.
+
+This update supersedes only the current send-status assessment at `e3b400f7d1e1979a1d16e446594d8430fb31ceed`. The original 12 October no-contact checkpoint and the earlier draft/send-unverified checkpoint below remain intact as history. The draft's 12 October Date header must not be used as the actual sending date. [The contact-status receipt](../references/akashicomni/ions-telephone-contact-status-2026-10-15.json) retains the complete earlier receipt under `previous_verification_checkpoint`.
+
+Only public-safe contact metadata and summaries are included. Private correspondence bodies, Gmail links, mailbox/message identifiers, sender details and raw headers remain excluded. Scientific classifications remain UNRESOLVED; PARTIAL_NUMERICAL_RECONCILIATION / FINAL_SUBSET_UNRESOLVED, independent review PENDING, engineering UNRELEASED / REVIEW_REQUIRED and false promotion flags are unchanged. PR #399 remains draft; no merge or release is implied.
+
 ## Contact-status verification — 15 October 2026 UTC
+
+**Historical checkpoint at `e3b400f7d1e1979a1d16e446594d8430fb31ceed`:** the following section is retained verbatim as the earlier verification result and is superseded for present contact status by the update above.
 
 The original statement above, “No author contact has been sent at this checkpoint,” is preserved as the historical 12 October source-investigation checkpoint at `b1e3646fdb15b995c32f26963e39aa1e36074435`; it is not a current delivery-status assertion.
 
