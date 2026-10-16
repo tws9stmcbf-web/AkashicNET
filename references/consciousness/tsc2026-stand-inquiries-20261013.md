@@ -2,6 +2,8 @@
 
 Prepared 13 October 2026. Human-directed, AI-assisted editorial research proposal.
 
+The sections through **Source Record and Limits** and the linked structured record preserve the original 13 October checkpoint. Dated progress is recorded in **Follow-up** below.
+
 ## Purpose
 
 Turn the conference encounter into a small, reviewable contribution. No conversation with a team, agreement, endorsement, experimental result or software evaluation is claimed.
@@ -60,9 +62,21 @@ No trust-registry entry, canonical edge, scientific-promotion flag or evidence r
 
 ## Follow-up
 
+### Verified 15 October 2026 Progress
+
+- **Hoffman presentation and research inquiry:** Attendance at the 15 October presentation is reported in the curator's subsequent outgoing email (source E1). This replaces the prospective attendance action in the 13 October checkpoint, which listed the shared session as 11:10 am–12:30 pm PDT in Paradise Ballroom, without an individual start time. At **19:48:36 UTC (12:48:36 pm PDT)** on 15 October, the curator emailed Professor Donald Hoffman with the [AkashicNET research companion](https://akashicnet.org/tsc2026/donald-hoffman). The inquiry proposes an independent, reproducible benchmark: construct different underlying chains with the same visible trace and ask which waiting-time measurements or additional observer windows distinguish them. It acknowledges the group's work on raw versus visible time and hidden padding, and requests corrections and pointers to existing papers or implementations. This records attendance as reported by the curator and an outgoing research proposal, not a recipient response or an independently reviewed result.
+- **Cosmointel dataset request:** Separately, at **17:37:34 UTC (10:37:34 am PDT)** on 15 October, the curator emailed the Cosmointel managing editor with the [organisation's AkashicNET profile](https://akashicnet.org/tsc2026/symbiosis/cosmointel) (source E2). The request asks the research team to identify a documented plant dataset suitable for independently reproducing its analysis, including a data dictionary, analysis code and who can confirm reuse conditions. **Contact initiated; receipt of data, code or reuse permission is not established by this outgoing message.**
+
+**Source attribution:** E1 is the authenticated Gmail Sent record titled “TSC2026 follow-up: trace logic, observer clocks and a proposed benchmark”, dated 15 October 2026 at 19:48:36 UTC. E2 is the authenticated Gmail Sent record titled “TSC2026: your Cosmointel page on AkashicNET”, dated 15 October 2026 at 17:37:34 UTC. These are correspondence-status sources, not scientific evidence; private message bodies and contact details are not reproduced.
+
+**Reply and review check (16 October 2026 UTC):** Both original Gmail threads and a targeted connected-Gmail search since 13 October returned only the outgoing messages. No reply or supplied material was found in that bounded check. Both messages direct replies to a separate preferred research mailbox, which this check does not cover; absence from Gmail is not evidence that no reply arrived elsewhere. PR #401 remained open at head `a54943cbbe6d13396038d37f15e52554faf70756`, with no recorded review submissions, before this documentation correction.
+
+The correspondence establishes outgoing follow-up only. It does not establish scientific agreement, recipient endorsement or completed collaboration. Independent mathematical checking, empirical testing, data/reuse verification and replication requirements remain open; no scientific finding or evidence rating is promoted.
+
+### Remaining Actions
+
 - Ask Campbell’s team which documentation task is useful.
-- Ask Cosmointel for one primary study and its replication record.
-- Attend Hoffman’s shared session on 15 October, 11:10 am–12:30 pm PDT, Paradise Ballroom; the individual start time is not listed.
+- Assess any Cosmointel dataset, documentation, code and reuse conditions received; the primary-study and independent-replication questions remain open.
 - Record actual responses separately with consent and attribution.
 
 ## Research Trace
