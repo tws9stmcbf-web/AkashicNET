@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse,json,subprocess
+from retrieval_evidence_v01 import EVIDENCE_STATUSES
 
 VALID_DOMAINS={'all','reddit','library'}
 VALID_STATES={'all','accepted','hold'}
@@ -16,22 +17,16 @@ def decision_of(r):
     return 'UNSPECIFIED'
 
 
-def main():
-    p=argparse.ArgumentParser(description='AkashicNET unified retrieval contract v0.24')
-    p.add_argument('query')
-    p.add_argument('--domain',choices=sorted(VALID_DOMAINS),default='all')
-    p.add_argument('--state',choices=sorted(VALID_STATES),default='all',help='semantic edge state; direct metadata lookups remain visible unless --state hold')
-    p.add_argument('--limit',type=int,default=100)
-    a=p.parse_args()
-    if a.limit < 1: p.error('--limit must be >= 1')
-
-    base=json.loads(subprocess.check_output(['python','scripts/query_ranked_v023.py',a.query],text=True))
+def retrieve(query, base, domain='all', state='all', limit=100, evidence=None):
+    if evidence is not None and evidence not in EVIDENCE_STATUSES:
+        raise ValueError('invalid evidence filter')
     rows=[]
     for r in base['results']:
         decision=decision_of(r)
-        if a.domain!='all' and r.get('domain')!=a.domain: continue
-        if a.state=='accepted' and decision not in {'ACCEPT','DIRECT_METADATA_LOOKUP'}: continue
-        if a.state=='hold' and decision!='HOLD': continue
+        if domain!='all' and r.get('domain')!=domain: continue
+        if state=='accepted' and decision not in {'ACCEPT','DIRECT_METADATA_LOOKUP'}: continue
+        if state=='hold' and decision!='HOLD': continue
+        if evidence is not None and r.get('evidence_classification') != evidence: continue
         x=dict(r)
         x['semantic_decision']=decision
         x['contract_guards']={
@@ -44,7 +39,7 @@ def main():
         rows.append(x)
 
     total_before_limit=len(rows)
-    rows=rows[:a.limit]
+    rows=rows[:limit]
     counts={}
     tiers={}
     domains={}
@@ -55,7 +50,7 @@ def main():
 
     out={
         'contract':'AKASHICNET_UNIFIED_RETRIEVAL','version':'0.24',
-        'request':{'query':a.query,'domain':a.domain,'state':a.state,'limit':a.limit},
+        'request':{'query':query,'domain':domain,'state':state,'limit':limit},
         'policy':{
             'archive_mode':'metadata_and_links_only',
             'truth_inference_allowed':False,
@@ -81,6 +76,21 @@ def main():
         },
         'results':rows,
     }
-    print(json.dumps(out,ensure_ascii=False,indent=2))
+    if evidence is not None: out['request']['evidence']=evidence
+    return out
+
+
+def main():
+    p=argparse.ArgumentParser(description='AkashicNET unified retrieval contract v0.24')
+    p.add_argument('query')
+    p.add_argument('--domain',choices=sorted(VALID_DOMAINS),default='all')
+    p.add_argument('--state',choices=sorted(VALID_STATES),default='all',help='semantic edge state; direct metadata lookups remain visible unless --state hold')
+    p.add_argument('--evidence',choices=sorted(EVIDENCE_STATUSES),default=None)
+    p.add_argument('--limit',type=int,default=100)
+    a=p.parse_args()
+    if a.limit < 1: p.error('--limit must be >= 1')
+
+    base=json.loads(subprocess.check_output(['python','scripts/query_ranked_v023.py',a.query],text=True))
+    print(json.dumps(retrieve(a.query, base, a.domain, a.state, a.limit, a.evidence),ensure_ascii=False,indent=2))
 
 if __name__=='__main__': main()

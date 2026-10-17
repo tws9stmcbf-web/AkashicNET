@@ -2,6 +2,12 @@
 
 Status: PRE-ALPHA consumer interface documented in v0.26.
 
+Access boundary: this is the trusted **private-local** interface. It does not
+enforce public eligibility on its input files and must not be exposed as a
+public service. The separate draft [public snapshot interface](public-retrieval-boundary-v0.1.md)
+requires explicit eligibility and applies a metadata allowlist before retrieval.
+It does not change this API's schema or private-local behavior.
+
 ## Purpose
 
 `query_api_v025.py` is the stable machine-readable boundary for retrieval consumers. Clients should depend on its documented JSON fields and schema identifier, not on internal knowledge-graph files or intermediate build scripts.

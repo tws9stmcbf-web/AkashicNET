@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse,json,subprocess
 from pathlib import Path
+from retrieval_evidence_v01 import classification
 
 DEDUP=Path('data/dedup-retrieval-view-v0.17.json')
 LEVELS={
@@ -10,6 +11,33 @@ LEVELS={
     'P2_MANIFESTATION_PROVENANCE':2,
     'P3_SHA256_IDENTITY_PROVENANCE':3,
 }
+
+def canonical_json(value):
+    # Source dictionaries are metadata, not ordered sequences. Never use their
+    # Python repr (or a randomized hash) as a ranking key.
+    return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True)
+
+
+def stable_result_identity(result):
+    """Exact source/concept/unit identifiers; no input position or promotion."""
+    source=result.get('source') or {}
+    hop=result.get('concept_hop') or {}
+    return canonical_json([
+        source.get('type'),source.get('family_id'),source.get('ref'),
+        result.get('query_path'),hop.get('to'),hop.get('relationship'),
+        sorted(u['retrieval_unit_id'] for u in result.get('logical_retrieval_units',[])),
+        result.get('concept'),
+    ])
+
+
+def ordering_key(r):
+    # Keep provenance/domain precedence and canonicalize source metadata.
+    # Only ties use record identity,
+    # then the canonical returned payload for conflicting duplicate identities.
+    # Exact duplicate payloads remain separate but are indistinguishable.
+    return (-r['evidence_profile']['provenance_rank'],r.get('domain',''),
+            canonical_json(r.get('source',{})),stable_result_identity(r),canonical_json(r))
+
 
 def profile(result):
     accepted=(result.get('concept_hop') or {}).get('review_state')=='ACCEPTED'
@@ -42,26 +70,27 @@ def profile(result):
         'not_safety_or_efficacy_score':True,
     }
 
-def main():
-    p=argparse.ArgumentParser(); p.add_argument('query'); p.add_argument('--accepted-only',action='store_true'); a=p.parse_args()
-    cmd=['python','scripts/query_multihop_v022.py',a.query]
-    if a.accepted_only: cmd.append('--accepted-only')
-    base=json.loads(subprocess.check_output(cmd,text=True))
+def retrieve(query, base, dedup, accepted_only=False):
     ranked=[]; seen=set()
     for r in base['results']:
-        x=dict(r); x['evidence_profile']=profile(r); ranked.append(x)
+        x=dict(r)
+        if 'logical_retrieval_units' in r:
+            x['logical_retrieval_units']=sorted(r['logical_retrieval_units'],key=lambda u:(u['retrieval_unit_id'],canonical_json(u)))
+        x['evidence_profile']=profile(r); ranked.append(x)
         src=x.get('source',{}); seen.add((x.get('domain'),src.get('family_id') or src.get('ref'),x.get('concept')))
 
     # Direct canonical-family / manifestation fallback is retrieval only. It does
     # not create a semantic concept edge and therefore cannot increase topical evidence.
-    dedup=json.load(DEDUP.open(encoding='utf-8'))
-    q=a.query.lower().strip()
-    for u in dedup['retrieval_units']:
+    q=query.lower().strip()
+    # The existing direct-route duplicate suppression must also choose the same
+    # representative when a trusted local input repeats a unit identity.
+    for u in sorted(dedup['retrieval_units'],key=lambda u:(u['retrieval_unit_id'],canonical_json(u))):
         labels=' '.join(u.get('labels',[])).lower()
         fams=' '.join(u.get('family_ids',[])).lower()
         if not q or (q not in labels and q not in fams):
             continue
         r={
+            'evidence_classification':classification(u),
             'domain':'library','query_path':'canonical_family_label','concept':None,
             'source':{'type':'canonical_family','family_id':u.get('family_ids',[None])[0],'label':u.get('labels',[None])[0]},
             'logical_retrieval_units':[u],
@@ -72,9 +101,9 @@ def main():
         if key in seen: continue
         seen.add(key); r['evidence_profile']=profile(r); ranked.append(r)
 
-    ranked.sort(key=lambda r:(-r['evidence_profile']['provenance_rank'], r.get('domain',''), str(r.get('source',{}))))
+    ranked.sort(key=ordering_key)
     out={
-        'version':'0.23','query':a.query,'accepted_only':a.accepted_only,'matched_concepts':base['matched_concepts'],
+        'version':'0.23','query':query,'accepted_only':accepted_only,'matched_concepts':base['matched_concepts'],
         'result_count':len(ranked),'ranking_scope':'provenance and retrieval support only',
         'ranking_order':['P3_SHA256_IDENTITY_PROVENANCE','P2_MANIFESTATION_PROVENANCE','P1_REVIEWED_TOPICAL','P0_TOPICAL_CANDIDATE'],
         'truth_inference_allowed':False,'rights_promotion_allowed':False,'scientific_evidence_promotion_allowed':False,
@@ -82,6 +111,15 @@ def main():
         'semantic_decisions_changed_by_ranking':False,
         'results':ranked,
     }
-    print(json.dumps(out,ensure_ascii=False,indent=2))
+    return out
+
+
+def main():
+    p=argparse.ArgumentParser(); p.add_argument('query'); p.add_argument('--accepted-only',action='store_true'); a=p.parse_args()
+    cmd=['python','scripts/query_multihop_v022.py',a.query]
+    if a.accepted_only: cmd.append('--accepted-only')
+    base=json.loads(subprocess.check_output(cmd,text=True))
+    dedup=json.load(DEDUP.open(encoding='utf-8'))
+    print(json.dumps(retrieve(a.query, base, dedup, a.accepted_only),ensure_ascii=False,indent=2))
 
 if __name__=='__main__': main()

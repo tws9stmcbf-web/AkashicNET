@@ -42,3 +42,10 @@ run_dependencies functions, preserving manifest values, artifact hashes and all
 mutation tests. It does not retarget any Git ref or alter the historical validator.
 The v0.17 exact checkout and integration/inherited ancestry checks above replace
 that obsolete repository-position assumption for this forward candidate only.
+
+PR #400's [historical preservation reconciliation](v016-preservation-reconciliation.md)
+adds an explicit descendant-preservation entry point for the separate two-runner
+v0.16 workflow. The original v0.16 CLI, manifest and tests remain unchanged; the
+new entry point additionally checks the historical base in main and candidate
+history, current-main integration and a mandatory exact head. This does not
+change this v0.17 workflow's integration pins or imply a release decision.
