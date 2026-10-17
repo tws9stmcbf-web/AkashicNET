@@ -1,0 +1,111 @@
+{
+  "session": {
+    "id": "2026-10-13_001",
+    "date": "2026-10-13",
+    "started": "2026-10-13T00:50",
+    "last_turn": "2026-10-13T08:54:23Z",
+    "turn_count": 4,
+    "summary": "Created three visuals, source-linked comparison record, GitHub PR and published conference entry. Inspected Cosmointel HTML and journal metadata. Deeper review found external plant papers, open reviews and dataset pointers; proposed bounded reanalysis. Published pavilion-themed hub, twelve profiles, metadata and climate specification, with conference navigation."
+  },
+  "events_logged": [
+    {
+      "turn": 1,
+      "type": "question",
+      "id": "N01",
+      "routing": "direct",
+      "provenance": "user",
+      "summary": "Integrate conference leads and explain Cosmointel founder."
+    },
+    {
+      "turn": 1,
+      "type": "observation",
+      "id": "O01",
+      "routing": "staged",
+      "provenance": "ai-suggested",
+      "summary": "First-pilot candidate remains unagreed."
+    },
+    {
+      "turn": 3,
+      "type": "question",
+      "id": "N02",
+      "routing": "direct",
+      "provenance": "user",
+      "summary": "Deep dive and potential symbiosis."
+    },
+    {
+      "turn": 3,
+      "type": "observation",
+      "id": "O02",
+      "routing": "staged",
+      "provenance": "ai-suggested",
+      "summary": "Plant-data reanalysis proposed; no agreement or validation."
+    },
+    {
+      "turn": 4,
+      "type": "decision",
+      "id": "N03",
+      "routing": "direct",
+      "provenance": "user",
+      "summary": "User expanded scope to headline article, sponsor pages, provenance, climate specification, metadata import and spatial/temporal homepage."
+    }
+  ],
+  "ai_actions": [
+    {
+      "turn": 1,
+      "action": "Inspected official theory pages, conference abstract, Amnesty and USCIRF reporting; generated symbolic visuals; created PR #401; published Site version 953 after reconciling concurrent source changes.",
+      "provenance": "ai-executed",
+      "files_changed": [
+        "../../../../tsc2026-stand-inquiries-20261013.md",
+        "../../../../tsc2026-stand-inquiries-20261013.json"
+      ]
+    },
+    {
+      "turn": 2,
+      "action": "Extracted public HTML metadata, compared timestamp fields, checked both journal About pages, and inspected one article's bibliographic record. No full-paper review.",
+      "provenance": "ai-executed",
+      "files_changed": [
+        "../../evidence/cosmointel-metadata-20261013.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "action": "Inspected complete cell study with figures, issue-wide methods, external plant papers via XML, open review reports and data pointers; dataset retrieval blocked; kept append-only research notebook.",
+      "provenance": "ai-executed",
+      "files_changed": [
+        "../../evidence/cosmointel-symbiosis-20261013.md",
+        "../../evidence/cosmointel-fuzz-notebook-20261013.jsonl"
+      ]
+    },
+    {
+      "turn": 4,
+      "action": "Verified six sponsors and seven exhibitors; created twelve unique profiles and concept artwork; imported twelve public metadata records and six-day programme with concurrent talk slots; built and published Sites version 954. Type, route, asset, capacity and sitemap checks passed; browser visual QA unavailable.",
+      "provenance": "ai-executed",
+      "files_changed": [
+        "../../evidence/tsc-symbiosis-publication-20261013.md",
+        "../../evidence/tsc2026-participant-metadata-20261013.json"
+      ]
+    }
+  ],
+  "claims_touched": [],
+  "logic_revisions": [],
+  "open_threads": [
+    "Select a primary Cosmointel study and assess replication.",
+    "Obtain a Campbell comparison prediction.",
+    "Check Hoffman's derivation and distinguish mathematical from empirical claims.",
+    "Ask about independent review and request methods/raw data for the selected article.",
+    "Retrieve plant dataset files and existing code; audit experimental units and allocation.",
+    "Invite team to nominate one independently reproducible result; no contact sent.",
+    "Confirm Alvin Clark sponsor identity; do not infer from same-name profiles.",
+    "Obtain any partner agreement separately; climate concept needs site, engineering and performance verification."
+  ],
+  "ai_suggestions_pending": [
+    "Offer a bounded source-map pilot, subject to team interest.",
+    "Plant-data reanalysis candidate O02, conditional on access and existing-code check."
+  ],
+  "key_context": [
+    {
+      "turn": 4,
+      "excerpt": "User asked for a page for each sponsor, useful questions and overlap; requested how/why/where/who/when provenance, climate specification, headline placement, metadata and conference structure in space and time."
+    }
+  ]
+}

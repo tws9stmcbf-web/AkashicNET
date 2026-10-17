@@ -1,0 +1,36 @@
+{
+  "entries": [
+    {
+      "turn": "2026-10-13_001#1",
+      "notes": [
+        "Recorded user integration request directly; kept candidate collaboration staged.",
+        "Publication commits to an editorial artefact, not the claim that the proposed pilot is effective; no scientific promotion.",
+        "Founder self-account and independent rights reporting kept separate."
+      ]
+    },
+    {
+      "turn": "2026-10-13_001#2",
+      "notes": [
+        "Metadata inspection recorded as ai-action with evidence pointer; self-declared fields are not validation.",
+        "No closure signal for proposed collaboration; O01 remains staged.",
+        "Preserved publication timestamp disagreement without choosing an authoritative instant."
+      ]
+    },
+    {
+      "turn": "2026-10-13_001#3",
+      "notes": [
+        "Staged O02 as heuristic; no endorsement, experiment or adopted collaboration, so no promotion.",
+        "Journal-specific review status must not be generalized to external publications. No existing logic claims contradict the new evidence.",
+        "Distinguished article review from dataset reanalysis and independent experimental replication; preserved blocked-access limit."
+      ]
+    },
+    {
+      "turn": "2026-10-13_001#4",
+      "notes": [
+        "Recorded explicit user editorial/implementation directions as resolved N03.",
+        "No new scientific or climate-performance claim crystallized. Publishing profiles is not validation of proposed collaborations O01/O02.",
+        "Retained sponsor/exhibitor distinctions, unverified identity, self-declared metadata and pending physical engineering."
+      ]
+    }
+  ]
+}
