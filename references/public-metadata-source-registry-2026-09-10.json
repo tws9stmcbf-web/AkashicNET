@@ -158,6 +158,28 @@
       "truth_inference_allowed": false,
       "scientific_evidence_promotion_allowed": false,
       "review_state": "CONTEXT_ONLY"
+    },
+    {
+      "source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "title": "The Consciousness Library",
+      "source_type": "attributed research-discovery aggregator",
+      "original_url": "https://consciousnesslibrary.org/",
+      "operator_as_stated": "Mindscape Collective",
+      "retrieved_at": "2026-10-16",
+      "classification": "RESEARCH_DISCOVERY_NOT_PRIMARY_EVIDENCE",
+      "rights_status": "LINK_AND_METADATA_ONLY",
+      "metadata_licence": "No blanket platform metadata or bulk-reuse licence verified; selected bibliographic facts independently checked at Crossref or original-publication records.",
+      "reuse_boundary": "No abstracts, AI summaries, syntheses, full texts, images or database export imported. Attribution does not grant content rights.",
+      "review_state": "AI_ASSISTED_SOURCE_CHECK_HUMAN_REVIEW_PENDING",
+      "source_review_ref": "references/consciousness/consciousness-library-source-review-20261016.json",
+      "claim_boundary": "Discovery and candidate links cannot change any Big Question conclusion.",
+      "content_ingested": false,
+      "truth_inference_allowed": false,
+      "rights_promotion_allowed": false,
+      "scientific_evidence_promotion_allowed": false,
+      "canonical_identity_promotion_allowed": false,
+      "public_synthesis_updated": false,
+      "human_review_completed": false
     }
   ]
 }

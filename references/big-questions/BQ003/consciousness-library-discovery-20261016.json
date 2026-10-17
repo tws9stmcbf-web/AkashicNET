@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1",
+  "record_type": "DISCOVERY_PROVENANCE_OVERLAY_NOT_EVIDENCE_BATCH",
+  "checked_on": "2026-10-16",
+  "source_review_ref": "references/consciousness/consciousness-library-source-review-20261016.json",
+  "question_id": "BQ003",
+  "records": [
+    {
+      "question_id": "BQ003",
+      "source_id": "SRC-BQ003-ASHAR-2021-COMPASSION",
+      "operation": "STAGE_NEW_REVIEW_CANDIDATE",
+      "existing_record_ref": null,
+      "title": "Effects of compassion training on brain responses to suffering others",
+      "authors_short": "Ashar et al.",
+      "doi": "10.1093/scan/nsab052",
+      "year": 2021,
+      "journal": "Social Cognitive and Affective Neuroscience",
+      "original_url": "https://doi.org/10.1093/scan/nsab052",
+      "verification_url": "https://academic.oup.com/scan/article/16/10/1036/6265002",
+      "discovery_url": "https://consciousnesslibrary.org/research/49312-effects-of-compassion-training-on-brain-responses-to",
+      "dates": {
+        "publisher_online": "2021-05-05",
+        "crossref_online": "2021-05-05",
+        "crossref_print": "2021-09-30",
+        "library_display": "2021-09-30",
+        "publisher_issue": "2021-10",
+        "publisher_corrected_and_typeset": "2021-09-28",
+        "note": "Retain distinct online, typesetting and issue events; displayed dates are not interchangeable."
+      },
+      "design": "Three-arm randomised trial with longitudinal fMRI",
+      "scope_note": "57 adults; four weeks of compassion meditation compared with a familiarity control and a placebo framed as oxytocin.",
+      "limitations": "The medial orbitofrontal result survived correction versus familiarity; the placebo comparison was reported only at an uncorrected threshold. Small sample and short follow-up limit generalisation.",
+      "bq_contribution": "Candidate for personal regulation and neural mechanisms of compassion. Does not test a cosmic love field, nonlocal access or survival.",
+      "verification_depth": "Publisher bibliographic information and abstract, Crossref version relation, and full erratum text checked; full-paper critical appraisal and independent replication review pending.",
+      "correction_check": {
+        "status": "TITLE_ERRATUM_VERIFIED",
+        "notice_doi": "10.1093/scan/nsab068",
+        "notice_url": "https://doi.org/10.1093/scan/nsab068",
+        "verified_text_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8483276/fullTextXML",
+        "notice_online_date": "2021-06-12",
+        "scope": "Title changed from singular other to plural others; no results correction stated in this notice.",
+        "human_review_required": true
+      },
+      "version_relationships": [
+        {
+          "relation": "has_preprint",
+          "doi": "10.1101/616029",
+          "basis": "Crossref relation",
+          "independent_replication": false
+        }
+      ],
+      "question_registration_status": "REVIEW_CANDIDATE",
+      "public_beta_gate_changed": false,
+      "deduplication": {
+        "method": "case-folded DOI plus NFKC alphanumeric title over tracked text files",
+        "checked_on": "2026-10-16",
+        "matches": {
+          "github": [],
+          "sites": []
+        },
+        "independence_key": "doi:10.1093/scan/nsab052",
+        "new_independent_evidence_count": 0,
+        "title_similarity_auto_merge": false
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "question_status": "UNRESOLVED",
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "metadata_verification": {
+        "provider": "Crossref",
+        "url": "https://api.crossref.org/works/10.1093/scan/nsab052",
+        "checked_on": "2026-10-16",
+        "title": "Effects of compassion training on brain responses to suffering others",
+        "authors": [
+          "Yoni K Ashar",
+          "Jessica R Andrews-Hanna",
+          "Joan Halifax",
+          "Sona Dimidjian",
+          "Tor D Wager"
+        ],
+        "publication_dates": {
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                5,
+                5
+              ]
+            ]
+          },
+          "published-online": {
+            "date-parts": [
+              [
+                2021,
+                5,
+                5
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2021,
+                9,
+                30
+              ]
+            ]
+          }
+        },
+        "relation": {
+          "has-preprint": [
+            {
+              "id-type": "doi",
+              "id": "10.1101/616029",
+              "asserted-by": "object"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "boundaries": {
+    "content_ingested": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "public_synthesis_updated": false,
+    "human_review_completed": false
+  }
+}
