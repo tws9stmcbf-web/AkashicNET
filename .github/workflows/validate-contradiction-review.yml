@@ -1,0 +1,40 @@
+name: Validate contradiction review tool
+
+on:
+  pull_request:
+    paths:
+      - "scripts/review_contradictions.py"
+      - "scripts/quantum_order_demo.py"
+      - "tests/test_contradiction_review.py"
+      - "examples/contradiction_review_input.json"
+      - "tools/contradiction-review.md"
+      - ".github/workflows/validate-contradiction-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/review_contradictions.py"
+      - "scripts/quantum_order_demo.py"
+      - "tests/test_contradiction_review.py"
+      - "examples/contradiction_review_input.json"
+      - "tools/contradiction-review.md"
+      - ".github/workflows/validate-contradiction-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Run review and quantum illustration tests
+        run: python -m unittest discover -s tests -p 'test_contradiction_review.py' -v
+      - name: Exercise documented commands
+        run: |
+          python scripts/review_contradictions.py examples/contradiction_review_input.json --budget 5
+          python scripts/quantum_order_demo.py --state 0 --a 0 --b 45

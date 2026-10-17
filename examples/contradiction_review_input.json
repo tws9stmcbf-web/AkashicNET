@@ -1,0 +1,45 @@
+{
+  "claims": [
+    {
+      "id": "A",
+      "text": "Synthetic example: an improvement was observed.",
+      "scope": {
+        "population": "synthetic adult cohort",
+        "conditions": "synthetic controlled comparison",
+        "definition": "outcome X",
+        "time": "week 4"
+      },
+      "sources": [
+        {
+          "ref": "synthetic:A",
+          "passage": "Synthetic example: an improvement was observed."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Synthetic example: no improvement was observed.",
+      "scope": {
+        "population": "synthetic adult cohort",
+        "conditions": "synthetic controlled comparison",
+        "definition": "outcome X",
+        "time": "week 4"
+      },
+      "sources": [
+        {
+          "ref": "synthetic:B",
+          "passage": "Synthetic example: no improvement was observed."
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "claims": [
+        "A",
+        "B"
+      ],
+      "next_test": "Compare effect estimates, uncertainty intervals and methods before concluding incompatibility."
+    }
+  ]
+}
