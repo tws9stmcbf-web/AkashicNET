@@ -1,10 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { tscResearchHighlights } from "../lib/tsc-research-highlights";
 
 type TickerItem = { label: string; href: string };
 
 const latest: TickerItem[] = [
+  ...tscResearchHighlights.map(item => ({
+    label: `TSC2026 · Published ${item.date} · ${item.title}`,
+    href: `https://akashicnet.org${item.href}`,
+  })),
   { label: "🌍 Akashic Symbiosis", href: "/akashic-symbiosis" },
   { label: "🧠 AkashicOMNI Update", href: "/akashicomni" },
   { label: "🌌 Big Questions Expand", href: "/big-questions" },
