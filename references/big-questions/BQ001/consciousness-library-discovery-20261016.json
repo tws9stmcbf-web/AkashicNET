@@ -1,0 +1,91 @@
+{
+  "schema_version": "0.1",
+  "record_type": "DISCOVERY_PROVENANCE_OVERLAY_NOT_EVIDENCE_BATCH",
+  "checked_on": "2026-10-16",
+  "source_review_ref": "references/consciousness/consciousness-library-source-review-20261016.json",
+  "question_id": "BQ001",
+  "records": [
+    {
+      "question_id": "BQ001",
+      "source_id": "SRC-BQ001-AWARE-2014",
+      "operation": "ADD_DISCOVERY_PROVENANCE_TO_EXISTING_WORK",
+      "existing_record_ref": "references/big-questions/BQ001/evidence-batch1-v0.1.json#SRC-BQ001-AWARE-2014",
+      "title": "AWARE-AWAreness during REsuscitation-a prospective study",
+      "authors_short": "Parnia et al.",
+      "doi": "10.1016/j.resuscitation.2014.09.004",
+      "year": 2014,
+      "journal": "Resuscitation",
+      "original_url": "https://doi.org/10.1016/j.resuscitation.2014.09.004",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/25301715/",
+      "discovery_url": "https://consciousnesslibrary.org/research/78768-aware-awareness-during-resuscitation-a-prospective-study",
+      "dates": {
+        "online": "2014-10-07",
+        "issue": "2014-12",
+        "library_display": "2014-10-07"
+      },
+      "design": "Multicentre prospective observational study",
+      "scope_note": "2060 cardiac-arrest events; 140 first-stage and 101 second-stage interviews. Relevant to how experience reports can be tested during resuscitation.",
+      "limitations": "Survivor selection and retrospective recall limit timing inferences. Cardiac arrest during attempted resuscitation is not irreversible death.",
+      "bq_contribution": "Reuse the existing BQ001 baseline and its limitations; the discovery link adds no independent study.",
+      "verification_depth": "PubMed bibliographic record and author abstract checked; existing canonical assessment retained. Crossref request rate-limited; no successful Crossref check claimed.",
+      "correction_check": {
+        "status": "BOUNDED_CHECK_NO_RETRACTION_NOTICE_OBSERVED",
+        "basis": "PubMed comments inspected; no new full-text/Crossmark audit. Prior repository audit is dated 2026-09-23.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI plus NFKC alphanumeric title over tracked text files",
+        "checked_on": "2026-10-16",
+        "matches": {
+          "github": [
+            "docs/audits/manual-corpus-reading-2026-09-22.md",
+            "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+            "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+            "references/community/bq001-scientific-baseline-batch1.json",
+            "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json",
+            "references/source-integrity-v014-assessment-batch1-review-v0.1.json"
+          ],
+          "sites": [
+            "public/data/bq001-near-death-primary-source-ledger-v0.1.0.json",
+            "public/research/source-catalogue/index.html",
+            "public/research/source-catalogue/records.json"
+          ]
+        },
+        "independence_key": "doi:10.1016/j.resuscitation.2014.09.004",
+        "new_independent_evidence_count": 0,
+        "title_similarity_auto_merge": false
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "question_status": "UNRESOLVED",
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      }
+    }
+  ],
+  "boundaries": {
+    "content_ingested": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "public_synthesis_updated": false,
+    "human_review_completed": false
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "0.1",
+  "record_type": "discovery_source_due_diligence",
+  "source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+  "checked_on": "2026-10-16",
+  "provenance": "ai-executed; user requested bounded source integration",
+  "source_urls": {
+    "home": "https://consciousnesslibrary.org/",
+    "methods": "https://consciousnesslibrary.org/methods",
+    "terms": "https://consciousnesslibrary.org/terms",
+    "pipeline": "https://consciousnesslibrary.org/docs/article-pipeline.html",
+    "research": "https://consciousnesslibrary.org/research",
+    "contact": "https://consciousnesslibrary.org/contact"
+  },
+  "upstream_sources_as_stated": [
+    "PubMed",
+    "Europe PMC",
+    "OpenAlex",
+    "Crossref",
+    "Semantic Scholar",
+    "Scopus",
+    "Springer Nature",
+    "DOAJ",
+    "bioRxiv",
+    "medRxiv",
+    "arXiv",
+    "PsyArXiv"
+  ],
+  "trials_source_as_stated": "ClinicalTrials.gov",
+  "provenance_boundary": "The provider list describes the service. The importing provider for each selected library record is not exposed and remains null; independent verification providers are recorded separately.",
+  "field_dictionary": [
+    {
+      "fields": [
+        "title",
+        "authors",
+        "journal",
+        "publication_date",
+        "doi",
+        "original_publication_url"
+      ],
+      "origin": "source-supplied bibliographic fields; verify independently"
+    },
+    {
+      "fields": [
+        "citation_count"
+      ],
+      "origin": "OpenAlex as stated; time-dependent; not used as evidence weight"
+    },
+    {
+      "fields": [
+        "study_design",
+        "sample_size",
+        "population",
+        "intervention",
+        "dose",
+        "duration",
+        "outcomes",
+        "key_points"
+      ],
+      "origin": "AI extraction from abstract; not accepted without primary-source check"
+    },
+    {
+      "fields": [
+        "topic",
+        "keyword",
+        "related_record"
+      ],
+      "origin": "discovery labels; no equivalence or evidence promotion implied"
+    },
+    {
+      "fields": [
+        "synthesis",
+        "evidence_rating"
+      ],
+      "origin": "automated synthesis/rating; no individual human synthesis review; excluded from import"
+    }
+  ],
+  "deduplication_as_stated": "DOI and title matching; versions can be merged. AkashicNET separately preserves version and shared-study relationships.",
+  "coverage": {
+    "authoritative_min_publication_date": null,
+    "authoritative_max_publication_date": null,
+    "complete_historical_coverage_verified": false,
+    "ui_year_min": 1900,
+    "ui_year_max": 2027,
+    "ui_note": "Observed input bounds only; not holdings endpoints or proof of completeness.",
+    "observed_historical_record": {
+      "discovery_url": "https://consciousnesslibrary.org/research/23251-mescaline-and-the-psychology-of-optic-hallucinations",
+      "doi": "10.1097/00005053-191306000-00009",
+      "title": "Mescaline and the Psychology of Optic Hallucinations",
+      "crossref_publication_date": "1913-06",
+      "library_display_date": "1913-06-01",
+      "precision_note": "Crossref specifies month only; do not promote the displayed first day to a verified exact publication day."
+    },
+    "observed_recent_record": {
+      "discovery_url": "https://consciousnesslibrary.org/research/82540-the-perceptual-geometry-and-chromaticity-of-near-death",
+      "doi": "10.3389/fpsyg.2026.1760389",
+      "publication_date": "2026-10-15",
+      "existing_site_record": "/data/spiritual-science-sources-2026-10-16.json#nde-geometry"
+    },
+    "bounded_statement": "Observed dated records include 1913 and 2026. This is not an authoritative catalogue date range.",
+    "queries": [
+      "https://consciousnesslibrary.org/research?from_year=1900&to_year=1913",
+      "https://consciousnesslibrary.org/research?from_year=1900&sort=date_asc"
+    ],
+    "checks_not_completed": [
+      "complete pagination",
+      "undated holdings",
+      "pre-1900 holdings",
+      "authoritative provider coverage declaration"
+    ],
+    "count_policy": "No catalogue total frozen into this integration; displayed counts vary with page and time."
+  },
+  "reuse": {
+    "terms_updated": "2026-07-15",
+    "terms_url": "https://consciousnesslibrary.org/terms",
+    "platform_content_licence": "No open republication grant verified",
+    "bulk_harvest_permission": "UNVERIFIED_NOT_ENABLED",
+    "api_or_export_contract": "UNVERIFIED_NOT_ENABLED",
+    "bibliographic_basis_url": "https://www.crossref.org/documentation/retrieve-metadata/",
+    "permitted_in_this_update": [
+      "attributed source links",
+      "independently verified bibliographic facts",
+      "original AkashicNET candidate annotations"
+    ],
+    "excluded": [
+      "abstracts",
+      "AI study cards",
+      "AI syntheses",
+      "full texts",
+      "figures",
+      "bulk catalogue extraction"
+    ]
+  },
+  "corrections": {
+    "source_procedure": "Report the page URL and error to admin@consciousnesslibrary.org or the contact page. No message sent in this task.",
+    "source_monitoring_as_stated": "Crossref notices and PubPeer counts; retracted records remain visible but are excluded from syntheses.",
+    "akashicnet_procedure": [
+      "Retain original source identity and DOI.",
+      "Record notice DOI, relationship, date and review scope separately.",
+      "Preserve the previous assessment in version history.",
+      "Require human review before changing evidence labels or model links."
+    ],
+    "critical_observation": "Crossref returned no update-to/updated-by for nsab052 although a primary erratum exists at nsab068. Empty update metadata is not a clean bill of health."
+  },
+  "existing_work": {
+    "github_main": "9cf967a7a9ed7921e6220189e46f4dc51c845a88",
+    "sites_base": "33ee7ba3af8af69de5cbaeab9d586016dc27b79c",
+    "existing_source_guide": "https://akashicnet.org/noetic-sciences/research-sources",
+    "existing_record_count": 8,
+    "earlier_context": "https://akashicnet.org/tsc2026/knowledge-commons",
+    "decision": "Extend the existing source guide and add an AkashicLIBRARY pathway; retain its eight records."
+  },
+  "selection_policy": "Three bounded examples spanning survival research, dream cognition and compassion. Two canonical works are reused; one new publication is staged. This is not a systematic review.",
+  "bq_metadata_refs": [
+    "references/big-questions/BQ001/consciousness-library-discovery-20261016.json",
+    "references/big-questions/BQ002/consciousness-library-discovery-20261016.json",
+    "references/big-questions/BQ003/consciousness-library-discovery-20261016.json"
+  ],
+  "boundaries": {
+    "content_ingested": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "public_synthesis_updated": false,
+    "human_review_completed": false
+  },
+  "remaining_human_review": [
+    "source registration and reuse scope",
+    "BQ003 candidate study appraisal",
+    "any future evidence promotion"
+  ],
+  "automation_changed": false
+}
