@@ -1,0 +1,819 @@
+{
+  "schema_version": "0.1",
+  "record_type": "DISCOVERY_PROVENANCE_OVERLAY_NOT_EVIDENCE_BATCH",
+  "checked_on": "2026-10-16",
+  "scope": "Seven selected additional works; two existing identities reused and five new discovery candidates. Not a systematic review.",
+  "source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+  "new_accepted_evidence_count": 0,
+  "existing_source_ids_reused": [
+    "SRC-BQ001-AWARE2-2023",
+    "CM-LEAD-012"
+  ],
+  "rights_scope": "Selected bibliographic facts, links and original bounded review notes only. No abstracts, full text, figures or platform AI summaries reproduced.",
+  "human_review_completed": false,
+  "records": [
+    {
+      "question_id": "BQ001",
+      "source_id": "SRC-BQ001-AWARE2-2023",
+      "existing_record_ref": "references/big-questions/BQ001/evidence-batch1-v0.1.json#SRC-BQ001-AWARE2-2023",
+      "authors_short": "Parnia et al.",
+      "design": "Prospective multicentre observational study during in-hospital resuscitation",
+      "scope_note": "567 cardiac arrests; 53 survivors and 28 interviews. Eleven interviewees reported memories or perceptions; none identified the visual target and one identified the auditory stimulus.",
+      "limitations": "Survivor selection, low interview numbers and uncertain timing constrain interpretation. EEG during CPR does not establish that a recalled experience occurred during absent brain activity or irreversible death.",
+      "bq_contribution": "Extends the existing resuscitation comparison without resolving survival beyond death.",
+      "verification_depth": "Crossref, Europe PMC indexed author abstract and existing BQ001 record checked; full methods and EEG adjudication remain pending.",
+      "sample": {
+        "events": 567,
+        "survivors": 53,
+        "interviewed": 28
+      },
+      "related_publications": [
+        {
+          "doi": "10.1016/j.resuscitation.2023.110080",
+          "title": "Reply to AWAreness during REsuscitation and EEG activity",
+          "relation": "Author reply; not a correction or independent study. Metadata checked, reply text not appraised."
+        }
+      ],
+      "title": "AWAreness during REsuscitation - II: A multi-center study of consciousness and awareness in cardiac arrest",
+      "doi": "10.1016/j.resuscitation.2023.109903",
+      "year": 2023,
+      "journal": "Resuscitation",
+      "original_url": "https://doi.org/10.1016/j.resuscitation.2023.109903",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/37423492/",
+      "discovery_url": "https://consciousnesslibrary.org/research/14873-awareness-during-resuscitation-ii-a-multi-center-study-of",
+      "operation": "ADD_DISCOVERY_PROVENANCE_TO_EXISTING_WORK",
+      "dates": {
+        "europe_pmc_first_publication": "2023-07-07",
+        "crossref_online": null,
+        "crossref_print": [
+          [
+            2023,
+            10
+          ]
+        ],
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1016/j.resuscitation.2023.109903",
+        "europe_pmc_id": "37423492",
+        "pmcid": null,
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {},
+        "europe_pmc_comment_corrections": {
+          "commentCorrection": [
+            {
+              "source": "MED",
+              "id": "38097107",
+              "reference": "Resuscitation. 2024 Jan;194:110080. doi: 10.1016/j.resuscitation.2023.110080",
+              "type": "Comment in",
+              "orderIn": 1
+            }
+          ]
+        },
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {
+          "github": [
+            "docs/audits/manual-corpus-reading-2026-09-22.md",
+            "references/big-questions/BQ001/evidence-batch1-v0.1.json",
+            "references/big-questions/BQ001/issue-343-source-dedup-ledger-v0.1.json",
+            "references/big-questions/BQ001/source-integrity-batch6-review-v0.1.json",
+            "references/community/bq001-scientific-baseline-batch1.json",
+            "references/community/public-safe-semantic-endpoint-registry-v0.1.9.json",
+            "references/community/semantic-link-adjudication-v0.2.1.md",
+            "references/community/semantic-link-candidates-v0.2.0.json",
+            "references/community/semantic-link-candidates-v0.2.1.json",
+            "references/source-integrity-v014-assessment-batch1-review-v0.1.json",
+            "scripts/validate_bq001_scientific_baseline_batch1.py"
+          ],
+          "sites": [
+            "public/data/bq001-near-death-primary-source-ledger-v0.1.0.json",
+            "public/research/source-catalogue/index.html",
+            "public/research/source-catalogue/records.json"
+          ]
+        },
+        "independence_key": "doi:10.1016/j.resuscitation.2023.109903",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY",
+      "related_questions": []
+    },
+    {
+      "question_id": "BQ002",
+      "source_id": "SRC-BQ002-KONKOLY-2021-DIALOGUE",
+      "existing_record_ref": null,
+      "authors_short": "Konkoly et al.",
+      "design": "Four-laboratory proof-of-concept study of communication during REM sleep",
+      "scope_note": "36 participants; 29 correct responses across six people. Of 158 attempts during signal-verified lucid dreams, 18.4% were correct and 60.1% received no response.",
+      "limitations": "Selected lucid-dream conditions, differing protocols and many non-responses limit generalisation. Ordinary sensory cues were used; this is not evidence of telepathy.",
+      "bq_contribution": "Offers a way to probe reported awareness and simple cognition during dreams without relying entirely on later recall.",
+      "verification_depth": "Crossref, Europe PMC and primary full-text methods/results inspected; no raw-data or independent replication appraisal.",
+      "sample": {
+        "participants": 36,
+        "successful_participants": 6,
+        "attempts_in_signal_verified_lucid_dreams": 158
+      },
+      "related_questions": [
+        "BQ010"
+      ],
+      "title": "Real-time dialogue between experimenters and dreamers during REM sleep",
+      "doi": "10.1016/j.cub.2021.01.026",
+      "year": 2021,
+      "journal": "Current Biology",
+      "original_url": "https://doi.org/10.1016/j.cub.2021.01.026",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/33607035/",
+      "discovery_url": "https://consciousnesslibrary.org/research/14002-real-time-dialogue-between-experimenters-and-dreamers-during",
+      "operation": "STAGE_NEW_DISCOVERY_CANDIDATE",
+      "dates": {
+        "europe_pmc_first_publication": "2021-02-18",
+        "crossref_online": null,
+        "crossref_print": [
+          [
+            2021,
+            4
+          ]
+        ],
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1016/j.cub.2021.01.026",
+        "europe_pmc_id": "33607035",
+        "pmcid": "PMC8162929",
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {},
+        "europe_pmc_comment_corrections": {
+          "commentCorrection": [
+            {
+              "source": "MED",
+              "id": "33848493",
+              "reference": "Curr Biol. 2021 Apr 12;31(7):R352-R353. doi: 10.1016/j.cub.2021.02.016",
+              "type": "Comment in",
+              "orderIn": 1
+            },
+            {
+              "source": "MED",
+              "id": "33879421",
+              "reference": "Trends Cogn Sci. 2021 Jun;25(6):427-428. doi: 10.1016/j.tics.2021.04.004",
+              "type": "Comment in",
+              "orderIn": 2
+            }
+          ]
+        },
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {},
+        "independence_key": "doi:10.1016/j.cub.2021.01.026",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY",
+      "related_publications": []
+    },
+    {
+      "question_id": "BQ002",
+      "source_id": "SRC-BQ002-SICLARI-2017-DREAMING",
+      "existing_record_ref": null,
+      "authors_short": "Siclari et al.",
+      "design": "High-density EEG with serial awakenings during REM and NREM sleep",
+      "scope_note": "Posterior EEG activity was associated with subsequent reports of dreaming and aspects of reported content.",
+      "limitations": "Correlates of a later report may partly reflect memory or reporting rather than experience itself. The EEG claim has been challenged; neither association nor prediction establishes a complete mechanism.",
+      "bq_contribution": "Pairs a positive neural-correlate proposal with a blinded challenge and a methodological commentary.",
+      "verification_depth": "Crossref and indexed author abstract checked. Primary full-text retrieval failed; sample appraisal remains pending. Ruby commentary inspected separately.",
+      "sample": null,
+      "related_publications": [
+        {
+          "doi": "10.1093/nc/niaa006",
+          "title": "The Dream Catcher experiment",
+          "relation": "Methodological challenge in a different sample and analysis; not an identical replication."
+        },
+        {
+          "doi": "10.3389/fnins.2020.585470",
+          "title": "The Neural Correlates of Dreaming Have Not Been Identified Yet",
+          "relation": "Ruby 2020 commentary on dream-versus-recall interpretation; not a new experiment."
+        },
+        {
+          "doi": "10.1101/012443",
+          "title": "Related preprint",
+          "relation": "Crossref version relationship; do not count as another study."
+        }
+      ],
+      "title": "The neural correlates of dreaming",
+      "doi": "10.1038/nn.4545",
+      "year": 2017,
+      "journal": "Nature Neuroscience",
+      "original_url": "https://doi.org/10.1038/nn.4545",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/28394322/",
+      "discovery_url": "https://consciousnesslibrary.org/research/76108-the-neural-correlates-of-dreaming",
+      "operation": "STAGE_NEW_DISCOVERY_CANDIDATE",
+      "dates": {
+        "europe_pmc_first_publication": "2017-04-10",
+        "crossref_online": [
+          [
+            2017,
+            4,
+            10
+          ]
+        ],
+        "crossref_print": [
+          [
+            2017,
+            6
+          ]
+        ],
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1038/nn.4545",
+        "europe_pmc_id": "28394322",
+        "pmcid": "PMC5462120",
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {
+          "has-preprint": [
+            {
+              "id-type": "doi",
+              "id": "10.1101/012443",
+              "asserted-by": "object"
+            }
+          ]
+        },
+        "europe_pmc_comment_corrections": {
+          "commentCorrection": [
+            {
+              "source": "MED",
+              "id": "29221226",
+              "reference": "J Thorac Dis. 2017 Sep;9(9):2732-2735. doi: 10.21037/jtd.2017.07.103",
+              "type": "Comment in",
+              "orderIn": 1
+            },
+            {
+              "source": "PPR",
+              "id": "PPR33612",
+              "type": "Preprint in",
+              "note": "CrossRef Pre-print loader",
+              "orderIn": 10002
+            }
+          ]
+        },
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {},
+        "independence_key": "doi:10.1038/nn.4545",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY",
+      "related_questions": []
+    },
+    {
+      "question_id": "BQ007",
+      "source_id": "SRC-BQ007-GOYAL-2014-MEDITATION",
+      "existing_record_ref": null,
+      "authors_short": "Goyal et al.",
+      "design": "Systematic review and meta-analysis of randomised trials with active controls",
+      "scope_note": "47 trials and 3,515 participants. The review reported small to moderate improvements in some negative stress outcomes; findings varied by outcome and comparator.",
+      "limitations": "Searches ended in November 2012. No demonstrated superiority to other active treatments is not proof of equivalence. This clinical review cannot establish societal flourishing or a metaphysical account of suffering.",
+      "bq_contribution": "Supplies a bounded intervention-outcome reference for reducing suffering, with attention and wellbeing questions kept distinct.",
+      "verification_depth": "Crossref and journal-record author abstract checked. The related AHRQ report has different trial totals and is not merged as an independent study; full-text appraisal pending.",
+      "sample": {
+        "trials": 47,
+        "participants": 3515
+      },
+      "related_questions": [
+        "BQ010"
+      ],
+      "related_publications": [
+        {
+          "doi": null,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24501780/",
+          "title": "Meditation Programs for Psychological Stress and Well-Being: AHRQ report",
+          "relation": "Related review report returned by DOI search; different scope/totals. Do not pool or count as independent evidence."
+        }
+      ],
+      "title": "Meditation programs for psychological stress and well-being: a systematic review and meta-analysis",
+      "doi": "10.1001/jamainternmed.2013.13018",
+      "year": 2014,
+      "journal": "JAMA Internal Medicine",
+      "original_url": "https://doi.org/10.1001/jamainternmed.2013.13018",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+      "discovery_url": "https://consciousnesslibrary.org/research/25968-meditation-programs-for-psychological-stress-and-well-being",
+      "operation": "STAGE_NEW_DISCOVERY_CANDIDATE",
+      "dates": {
+        "europe_pmc_first_publication": "2014-03-01",
+        "crossref_online": null,
+        "crossref_print": [
+          [
+            2014,
+            3,
+            1
+          ]
+        ],
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1001/jamainternmed.2013.13018",
+        "europe_pmc_id": "24395196",
+        "pmcid": "PMC4142584",
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {},
+        "europe_pmc_comment_corrections": {
+          "commentCorrection": [
+            {
+              "source": "MED",
+              "id": "24395188",
+              "reference": "JAMA Intern Med. 2014 Mar;174(3):368-9. doi: 10.1001/jamainternmed.2013.12995.",
+              "type": "Comment in",
+              "orderIn": 1
+            },
+            {
+              "source": "MED",
+              "id": "25003876",
+              "reference": "JAMA Intern Med. 2014 Jul;174(7):1193. doi: 10.1001/jamainternmed.2014.1419.",
+              "type": "Comment in",
+              "orderIn": 2
+            },
+            {
+              "source": "MED",
+              "id": "25003877",
+              "reference": "JAMA Intern Med. 2014 Jul;174(7):1193-4. doi: 10.1001/jamainternmed.2014.1422.",
+              "type": "Comment in",
+              "orderIn": 3
+            },
+            {
+              "source": "MED",
+              "id": "25003878",
+              "reference": "JAMA Intern Med. 2014 Jul;174(7):1194-5. doi: 10.1001/jamainternmed.2014.1924.",
+              "type": "Comment in",
+              "orderIn": 4
+            },
+            {
+              "source": "MED",
+              "id": "25003880",
+              "reference": "JAMA Intern Med. 2014 Jul;174(7):1195. doi: 10.1001/jamainternmed.2014.1393.",
+              "type": "Comment in",
+              "orderIn": 5
+            }
+          ]
+        },
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {},
+        "independence_key": "doi:10.1001/jamainternmed.2013.13018",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY"
+    },
+    {
+      "question_id": "BQ003",
+      "source_id": "CM-LEAD-012",
+      "existing_record_ref": "sites:public/research/source-catalogue/records.json#CM-LEAD-012",
+      "authors_short": "Weng et al.",
+      "design": "Randomised compassion versus reappraisal training study",
+      "scope_note": "Two weeks of training; 56 completed the protocol and 41 were analysed after excluding those who disbelieved the economic game. Compassion trainees redistributed more money than reappraisal trainees.",
+      "limitations": "Selected analysis sample, short follow-up and a laboratory game limit generalisation to enduring real-world conduct. Neural associations do not establish a cosmic mechanism.",
+      "bq_contribution": "Reuses the existing discovery lead to compare trainable compassion with behavioural outcomes and later, more cautious review evidence.",
+      "verification_depth": "Crossref, Europe PMC and primary full-text methods/results inspected; supplements and independent replication remain pending.",
+      "sample": {
+        "protocol_completers": 56,
+        "analysed": 41,
+        "compassion": 20,
+        "reappraisal": 21
+      },
+      "related_questions": [
+        "BQ011"
+      ],
+      "related_publications": [
+        {
+          "doi": "10.1038/s41598-018-20299-z",
+          "title": "The limited prosocial effects of meditation: A systematic review and meta-analysis",
+          "relation": "Already curated in the source guide; broader critical context, not an additional independent experiment."
+        }
+      ],
+      "title": "Compassion training alters altruism and neural responses to suffering",
+      "doi": "10.1177/0956797612469537",
+      "year": 2013,
+      "journal": "Psychological Science",
+      "original_url": "https://doi.org/10.1177/0956797612469537",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/23696200/",
+      "discovery_url": "https://consciousnesslibrary.org/research/76822-compassion-training-alters-altruism-and-neural-responses-to",
+      "operation": "ADD_DISCOVERY_PROVENANCE_TO_EXISTING_WORK",
+      "dates": {
+        "europe_pmc_first_publication": "2013-05-21",
+        "crossref_online": [
+          [
+            2013,
+            5,
+            21
+          ]
+        ],
+        "crossref_print": [
+          [
+            2013,
+            7
+          ]
+        ],
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1177/0956797612469537",
+        "europe_pmc_id": "23696200",
+        "pmcid": "PMC3713090",
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {},
+        "europe_pmc_comment_corrections": {},
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {
+          "sites": [
+            "public/research/source-catalogue/index.html",
+            "public/research/source-catalogue/records.json"
+          ]
+        },
+        "independence_key": "doi:10.1177/0956797612469537",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY"
+    },
+    {
+      "question_id": "BQ010",
+      "source_id": "SRC-BQ010-SCHLOSSER-2019-EXPERIENCES",
+      "existing_record_ref": null,
+      "authors_short": "Schlosser et al.",
+      "design": "Cross-sectional online survey of regular meditators",
+      "scope_note": "315 of 1,232 respondents (25.6%) recalled a particularly unpleasant experience they attributed to meditation.",
+      "limitations": "Self-selection, recall and one broad question preclude a causal incidence estimate. Severity, duration and impairment were not characterised; unpleasant experiences are not interchangeable with lasting harm.",
+      "bq_contribution": "Adds adverse-experience measurement to attention and wellbeing pathways rather than presenting contemplative practice as uniformly beneficial.",
+      "verification_depth": "Crossref, Europe PMC and primary full-text limitations inspected; no longitudinal causal or clinical appraisal.",
+      "sample": {
+        "respondents": 1232,
+        "reported_unpleasant_experience": 315
+      },
+      "related_questions": [
+        "BQ007"
+      ],
+      "title": "Unpleasant meditation-related experiences in regular meditators: Prevalence, predictors, and conceptual considerations",
+      "doi": "10.1371/journal.pone.0216643",
+      "year": 2019,
+      "journal": "PLOS ONE",
+      "original_url": "https://doi.org/10.1371/journal.pone.0216643",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/31071152/",
+      "discovery_url": "https://consciousnesslibrary.org/research/42266-unpleasant-meditation-related-experiences-in-regular",
+      "operation": "STAGE_NEW_DISCOVERY_CANDIDATE",
+      "dates": {
+        "europe_pmc_first_publication": "2019-05-09",
+        "crossref_online": [
+          [
+            2019,
+            5,
+            9
+          ]
+        ],
+        "crossref_print": null,
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1371/journal.pone.0216643",
+        "europe_pmc_id": "31071152",
+        "pmcid": "PMC6508707",
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {},
+        "europe_pmc_comment_corrections": {},
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {},
+        "independence_key": "doi:10.1371/journal.pone.0216643",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY",
+      "related_publications": []
+    },
+    {
+      "question_id": "BQ002",
+      "source_id": "SRC-BQ002-WONG-2020-DREAM-CATCHER",
+      "existing_record_ref": null,
+      "authors_short": "Wong et al.",
+      "design": "Blinded EEG classification challenge with separate data and analysis teams",
+      "scope_note": "54 one-minute NREM recordings from nine participants. Across five stages of progressively reduced blinding, classification did not perform significantly above chance.",
+      "limitations": "Small sample and specific spectral-power features limit the result. It challenges this detection approach, not every possible neural marker of dreaming; it is not an identical replication of Siclari et al.",
+      "bq_contribution": "Makes the disagreement about identifying dream experience from brain signals explicit alongside the positive study.",
+      "verification_depth": "Crossref and Europe PMC indexed author abstract checked; full analytic pipeline and reanalysis remain pending.",
+      "sample": {
+        "participants": 9,
+        "recordings": 54
+      },
+      "related_publications": [
+        {
+          "doi": "10.1038/nn.4545",
+          "title": "The neural correlates of dreaming",
+          "relation": "Positive comparator with different methods; retain both results and their scope."
+        }
+      ],
+      "title": "The Dream Catcher experiment: blinded analyses failed to detect markers of dreaming consciousness in EEG spectral power",
+      "doi": "10.1093/nc/niaa006",
+      "year": 2020,
+      "journal": "Neuroscience of Consciousness",
+      "original_url": "https://doi.org/10.1093/nc/niaa006",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/32695475/",
+      "discovery_url": "https://consciousnesslibrary.org/research/29679-the-dream-catcher-experiment-blinded-analyses-failed-to",
+      "operation": "STAGE_NEW_DISCOVERY_CANDIDATE",
+      "dates": {
+        "europe_pmc_first_publication": "2020-07-15",
+        "crossref_online": [
+          [
+            2020,
+            7,
+            15
+          ]
+        ],
+        "crossref_print": [
+          [
+            2020,
+            1,
+            1
+          ]
+        ],
+        "date_precision_note": "Provider roles and precision retained; an index-derived first-of-month date is not silently treated as a verified publication day."
+      },
+      "bibliographic_provenance": {
+        "crossref_url": "https://api.crossref.org/works/10.1093/nc/niaa006",
+        "europe_pmc_id": "32695475",
+        "pmcid": "PMC7362719",
+        "checked_on": "2026-10-16",
+        "library_doi_match": true,
+        "library_importing_provider": null
+      },
+      "correction_check": {
+        "status": "BOUNDED_PROVIDER_CHECK_NOT_A_CLEAN_BILL",
+        "crossref_update_to": null,
+        "crossref_relation": {
+          "has-preprint": [
+            {
+              "id-type": "doi",
+              "id": "10.1101/643593",
+              "asserted-by": "object"
+            }
+          ]
+        },
+        "europe_pmc_comment_corrections": {
+          "commentCorrection": [
+            {
+              "source": "PPR",
+              "id": "PPR80431",
+              "type": "Preprint in",
+              "note": "CrossRef Pre-print loader",
+              "orderIn": 10002
+            }
+          ]
+        },
+        "note": "Commentary and author replies are not automatically corrections. Empty provider fields do not establish absence of corrections or retractions.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI and NFKC alphanumeric title across tracked text of PR 404 head and current Sites source before additions",
+        "github_commit": "3498c4a14266f4b575b96aaf39c2e527b847c2b8",
+        "sites_commit": "2e98f68753c4b5a2af8e165c94dda86fe3adcec1",
+        "checked_on": "2026-10-16",
+        "matches": {},
+        "independence_key": "doi:10.1093/nc/niaa006",
+        "new_independent_evidence_count": 0,
+        "scope_limit": "No audit of all unmerged/private branches; secondary citations are not independent studies."
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "question_status": "UNRESOLVED",
+      "question_mapping_status": "DISCOVERY_PATHWAY_ONLY",
+      "related_questions": []
+    }
+  ],
+  "open_gaps": [
+    "Full study appraisal and independent replication are incomplete.",
+    "Catalogue endpoints and bulk/API permission remain unverified.",
+    "Related review reports and preprints are not independent studies."
+  ]
+}
