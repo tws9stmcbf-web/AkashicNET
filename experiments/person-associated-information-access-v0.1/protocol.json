@@ -14,7 +14,7 @@
   "participants_recruited": 0,
   "participant_data_collected": false,
   "experiment_executed": false,
-  "hypothesis_origin": "User-attributed 17 October 2026 hypothesis; operationalization proposed by AI, not yet endorsed",
+  "hypothesis_origin": "User-attributed 17 October 2026 hypothesis; AI-proposed operationalization with narrow proponent agreement to the hidden-symbol bridge on 18 October 2026",
   "base_commit": "e920533004eb8b7a10031c0b38ec20576250a665",
   "governance": {
     "accepted_canonical_edges": 0,
@@ -91,7 +91,18 @@
   "bridge": {
     "statement": "New random symbol associated with a person dossier is accessible despite not belonging to the person's lifetime knowledge",
     "required_proponent_acceptance": true,
-    "proponent_acceptance_recorded": false
+    "proponent_acceptance_recorded": true,
+    "acceptance_record": {
+      "date": "2026-10-18",
+      "user_reply": "Yes",
+      "context": "Reply to the preceding draft summary identifying the random-association bridge as the open decision",
+      "scope": "Agreement to use person-associated hidden symbols as a pilot design assumption",
+      "interpretation": "Narrow contextual assent; not a separate empirical construct-validity finding or blanket protocol approval",
+      "necessary_conditions_approved": false,
+      "minimum_effect_approved": false,
+      "instruction_fidelity_approved": false,
+      "experimental_execution_authorized": false
+    }
   },
   "outcomes": {
     "primary": [
@@ -141,7 +152,7 @@
     "unresolved_critical_breaches_allowed": 0
   },
   "blockers": [
-    "proponent bridge and minimum-effect agreement",
+    "proponent instruction-fidelity, necessary-condition and minimum-effect specification",
     "final independent stimulus appendix",
     "independent statistical review and joint simulations",
     "acquisition and custody implementation plus adversarial audit",
@@ -155,4 +166,3 @@
     "real_data_input_supported": false
   }
 }
-

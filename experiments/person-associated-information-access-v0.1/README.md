@@ -10,7 +10,7 @@ This candidate asks whether a specified contemplative instruction changes ordina
 
 ## 1. Origin, scope and relationship to existing work
 
-The curator proposed that contemplation associated with a past, present or future individual, described in terms of mettā awareness, might yield informative insights when the participant already has person-related representations in long-term memory. This is a paraphrase of the user-attributed hypothesis from the 17 October discussion, not an observation or a verbatim transcript. The experimental choices below are AI-assisted proposals; the curator has not yet endorsed their operational equivalence.
+The curator proposed that contemplation associated with a past, present or future individual, described in terms of mettā awareness, might yield informative insights when the participant already has person-related representations in long-term memory. This is a paraphrase of the user-attributed hypothesis from the 17 October discussion, not an observation or a verbatim transcript. The experimental choices below are AI-assisted proposals. On 18 October 2026, the curator replied “Yes” to the draft summary highlighting the hidden-symbol bridge as the open decision. This is recorded as narrow agreement to use that surrogate in the pilot design; it does not establish construct validity, endorse every methodological detail or authorize experimental execution.
 
 Use MultidimensionalCUT as a framework for examining prior knowledge, present conditions and future predictions. Treating it as a framework does not establish a physical channel or a seven-dimensional storage mechanism. Sacred geometry may provide context, but cannot serve as evidence by visual resemblance.
 
@@ -36,9 +36,9 @@ Baseline main: e920533004eb8b7a10031c0b38ec20576250a665. Bounded checks covered 
 | Source identity | The actual named historical individual supplied information. | Not identified by this pilot, even if all performance predictions succeed. |
 | Physical 7D store | A defined physical model predicts a measurable effect different from specified rivals. | No such quantitative coupling is supplied here; physical test remains unspecified. |
 
-**Bridge assumption requiring proponent approval:** A newly randomized symbol stored in a record associated with a person's dossier is predicted to be accessible through the proposed process, although it was not part of that person's lifetime knowledge. The original hypothesis does not logically entail this assumption. A random symbol is a deliberately stringent surrogate, not a faithful model of an Einstein insight by default.
+**Bridge assumption accepted for pilot design on 18 October 2026:** A newly randomized symbol stored in a record associated with a person's dossier is predicted to be accessible through the proposed process, although it was not part of that person's lifetime knowledge. The original hypothesis does not logically entail this assumption. A random symbol is a deliberately stringent surrogate, not a faithful model of an Einstein insight by default.
 
-Before registration, the proponent must accept or reject that bridge and specify necessary conditions and a minimum effect. If rejected, retain the psychological module and redesign the information module before data collection. Do not reinterpret a null symbol result as disproving all forms of the original hypothesis.
+The proponent's agreement to use the bridge is now recorded. Necessary conditions, instruction fidelity and a minimum meaningful effect still require explicit specification and review before registration. Agreement makes the assumption part of the proposed design; it does not show that a random symbol faithfully represents historical knowledge. If the proponent later limits the hypothesis to information possessed during the person's lifetime, redesign the information module before data collection. Do not reinterpret a null symbol result as disproving all forms of the original hypothesis.
 
 An alternative historical-information module would require independently authenticated, prospectively chosen archival facts, dated access records and appropriate rights. Unpublished does not mean inaccessible: relatives, archivists, investigators or training corpora may already contain the answer. Such a module has no guaranteed 25% null and needs a separate protocol. No archived secret, bereaved participant or historical contact claim is tested here.
 
@@ -266,7 +266,8 @@ python -m unittest -v test_reference_analysis.py
 
 Before a v0.2 registration can be frozen:
 
-- [ ] Proponent accepts or revises the random-association bridge, instruction fidelity, necessary conditions and minimum effect.
+- [x] Proponent agrees to use the random-association bridge for the pilot design, recorded 18 October 2026 from the reply “Yes” to the preceding draft summary.
+- [ ] Proponent specifies instruction fidelity, necessary conditions and a minimum meaningful effect for independent review.
 - [ ] Eight dossier packets, answer keys, distractors and source/rights records are finalized independently of responses.
 - [ ] Named independent statistician reviews estimands, withdrawal handling, joint operating characteristics and participant-level uncertainty.
 - [ ] Independent security reviewer approves the implemented acquisition, randomization, custody, lock ordering and leakage tests.
@@ -275,7 +276,7 @@ Before a v0.2 registration can be frozen:
 - [ ] Protocol, code and materials receive an immutable timestamp before any real data.
 - [ ] A separate replication plan is funded and registered before scientific promotion is considered.
 
-No box is checked by creating this candidate. The strongest current deliverable is an inspectable design, not evidence that its hypothesis is true.
+The bridge-design agreement is the only completed item in this launch checklist. No methods, security or ethics approval is implied. The strongest current deliverable is an inspectable design, not evidence that its hypothesis is true.
 
 ## Primary references
 

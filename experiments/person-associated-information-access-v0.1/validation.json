@@ -146,5 +146,25 @@
     "test_reference_analysis.py": "bc1682213c6af25a58d0165bd98c042081cf2e43fad5ecc6ce9f3b5a148070a9"
   },
   "independent_human_review": "NOT_COMPLETED",
-  "ci_claim": "NOT_RUN"
+  "ci_claim": "NOT_RUN",
+  "metadata_followups": [
+    {
+      "date": "2026-10-18",
+      "type": "BRIDGE_DESIGN_AGREEMENT_ONLY",
+      "base_commit": "876cbb6938eb1e2a292233b8c70348e1c67ecbb5",
+      "checks": [
+        "JSON parses",
+        "bridge agreement recorded with limited scope",
+        "remaining conditions/effect/instruction approval false",
+        "execution and evidence gates remain false",
+        "scoring and test code hashes unchanged"
+      ],
+      "numeric_tests_rerun": false,
+      "note": "Original numeric validation above remains an initial-candidate record; hashes below identify the updated documentation only. No new study result.",
+      "updated_document_sha256": {
+        "README.md": "12bab395c507f3fa3aace3560f83bd9edced5f78dc2cb0c4566b15c97283560f",
+        "protocol.json": "eebd772d680caacc993875fa68a69379c43651f12f8af6c2ee461a323f321206"
+      }
+    }
+  ]
 }
