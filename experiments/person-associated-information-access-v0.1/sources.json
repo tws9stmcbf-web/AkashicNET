@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-18",
+  "scope": "Selected primary sources; original summaries, no full-text import. Interpretive limits are protocol authors' inferences.",
+  "sources": [
+    {
+      "id": "N1",
+      "authors": "Roy et al.",
+      "year": 2022,
+      "title": "Brain-wide mapping reveals that engrams for a single memory are distributed across multiple brain regions",
+      "doi": "10.1038/s41467-022-29384-4",
+      "url": "https://www.nature.com/articles/s41467-022-29384-4",
+      "type": "primary experimental neuroscience",
+      "access": "Publisher and indexed primary text/abstract and methods excerpts inspected; not systematic review",
+      "supports": "Distributed engram evidence in mouse fear-memory paradigm",
+      "does_not_support": "Complete human memory localization, historical memory decoding, source identity or 7D storage",
+      "access_date": "2026-10-18",
+      "review_state": "SCOPED_SOURCE_CHECK",
+      "full_systematic_review": false
+    },
+    {
+      "id": "N2",
+      "authors": "Quian Quiroga et al.",
+      "year": 2005,
+      "title": "Invariant visual representation by single neurons in the human brain",
+      "doi": "10.1038/nature03687",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15973409/",
+      "type": "primary experimental neuroscience",
+      "access": "Indexed PubMed abstract inspected; full publisher retrieval blocked",
+      "supports": "Selective MTL neuron responses across pictures/names of individuals or concepts",
+      "does_not_support": "A neuron storing an entire person's identity, transferable memories or byte capacity",
+      "access_date": "2026-10-18",
+      "review_state": "SCOPED_SOURCE_CHECK",
+      "full_systematic_review": false
+    },
+    {
+      "id": "N3",
+      "authors": "St. Jacques, Olm and Schacter",
+      "year": 2013,
+      "title": "Neural mechanisms of reactivation-induced updating that enhance and distort memory",
+      "doi": "10.1073/pnas.1319630110",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3856820/",
+      "type": "primary experimental neuroscience",
+      "access": "Primary full-text introduction, methods-context and findings inspected",
+      "supports": "Human memory reactivation associated with enhancement and distortion in controlled museum paradigm",
+      "does_not_support": "All subjective experiences are false or any particular participant's report is explained",
+      "access_date": "2026-10-18",
+      "review_state": "SCOPED_SOURCE_CHECK",
+      "full_systematic_review": false
+    },
+    {
+      "id": "N4",
+      "authors": "Tang, LeBel, Jain and Huth",
+      "year": 2023,
+      "title": "Semantic reconstruction of continuous language from non-invasive brain recordings",
+      "doi": "10.1038/s41593-023-01304-9",
+      "url": "https://www.nature.com/articles/s41593-023-01304-9",
+      "type": "primary experimental neuroscience",
+      "access": "Publisher abstract and extended-data/methods details inspected",
+      "supports": "Constrained semantic reconstruction from trained cooperative subjects' fMRI; poor cross-subject transfer in reported tests",
+      "does_not_support": "Unrestricted mind reading or reading historical tissue without a learned decoder",
+      "access_date": "2026-10-18",
+      "review_state": "SCOPED_SOURCE_CHECK",
+      "full_systematic_review": false
+    },
+    {
+      "id": "N5",
+      "authors": "Falk, Lepore and Noe",
+      "year": 2013,
+      "online_year": 2012,
+      "title": "The cerebral cortex of Albert Einstein: a description and preliminary analysis of unpublished photographs",
+      "doi": "10.1093/brain/aws295",
+      "url": "https://academic.oup.com/brain/article-abstract/136/4/1304/356614",
+      "type": "primary descriptive neuroanatomy",
+      "access": "Primary bibliographic/abstract-index record inspected; PMC captcha and publisher full-text retrieval blocked. No complete paper appraisal claimed.",
+      "supports": "Historical photograph-based cortical anatomy study",
+      "does_not_support": "Complete synaptic map, decoded memory content, memory capacity or reconstruction of Einstein's knowledge",
+      "access_date": "2026-10-18",
+      "review_state": "SCOPED_SOURCE_CHECK",
+      "full_systematic_review": false
+    },
+    {
+      "id": "N6",
+      "authors": "Barker and Kelsey",
+      "year": 2015,
+      "title": "NIST SP 800-90A Revision 1",
+      "doi": "10.6028/NIST.SP.800-90Ar1",
+      "url": "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final",
+      "type": "official technical guidance",
+      "access": "Official publication record inspected",
+      "supports": "Reference for reviewed deterministic random-bit generation mechanisms",
+      "does_not_support": "Certification of the unimplemented target system",
+      "access_date": "2026-10-18",
+      "review_state": "SCOPED_SOURCE_CHECK",
+      "full_systematic_review": false
+    }
+  ],
+  "internal_provenance": {
+    "governance_issue": 354,
+    "census_pr": 361,
+    "related_clinical_pr": 357,
+    "baseline_main": "e920533004eb8b7a10031c0b38ec20576250a665",
+    "prior_study_plan": {
+      "title": "AkashicOMNI-Fundamental-Consciousness-Study-Plan-v0.1.md",
+      "date": "2026-09-26",
+      "access": "Complete current file read, including operational appendix. Private file identifiers/content not copied to GitHub.",
+      "distinction": "Future-target task; no metta-by-familiarity factorial; no approval inherited"
+    }
+  },
+  "publication_scope": "Review candidate only; no canonical source ingestion or evidence promotion"
+}
+

@@ -1,0 +1,158 @@
+{
+  "schema_version": "candidate-1",
+  "study_slug": "person-associated-information-access",
+  "version": "0.1",
+  "date": "2026-10-18",
+  "status": "DRAFT",
+  "stage": 0,
+  "review_state": "REVIEW_REQUIRED",
+  "evidence_lane": "Hypothesis",
+  "toolkit_status": "working hypothesis",
+  "preregistered": false,
+  "preregistration_uri": null,
+  "independent_review_completed": false,
+  "participants_recruited": 0,
+  "participant_data_collected": false,
+  "experiment_executed": false,
+  "hypothesis_origin": "User-attributed 17 October 2026 hypothesis; operationalization proposed by AI, not yet endorsed",
+  "base_commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+  "governance": {
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "all_big_questions_status": "UNRESOLVED",
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "model_support_promotion": false,
+    "rights_promotion": false,
+    "public_synthesis": false,
+    "website_promotion": false,
+    "recruitment_authorized": false,
+    "live_processing_authorized": false,
+    "experimental_execution_authorized": false
+  },
+  "classification": {
+    "tested_claim_series": [
+      "RV"
+    ],
+    "optional_attribution_only": [
+      "CHN",
+      "MED"
+    ],
+    "not_tested": [
+      "TEL",
+      "PRE",
+      "PRE-PHY",
+      "PK",
+      "BIO-PK"
+    ],
+    "protocol_tags": [
+      "FORCED-CHOICE",
+      "FREE-RESPONSE"
+    ],
+    "context_tags": [
+      "MEDITATION"
+    ],
+    "canonical_claim_ids": []
+  },
+  "design": {
+    "purpose": "Feasibility pilot with prespecified signal tests; not a definitive confirmatory experiment",
+    "participants_randomized": 48,
+    "arms": {
+      "M": 24,
+      "R": 24
+    },
+    "arm_allocation": "uniform 24-of-48 participant allocation concealed before enrollment",
+    "person_count": 8,
+    "trained_persons_per_participant": 4,
+    "minimal_persons_per_participant": 4,
+    "trials_per_person": 2,
+    "trials_per_participant": 16,
+    "planned_trials": 768,
+    "trained_trials_per_arm": 192,
+    "learning_delay_hours": [
+      20,
+      28
+    ],
+    "study_duration_cap_weeks": 8,
+    "replace_withdrawals": false,
+    "target_selection_time": "before_response",
+    "target_sampling": "independent uniform with replacement for every unique participant-person-trial",
+    "target_labels": [
+      "circle",
+      "triangle",
+      "square",
+      "plus"
+    ],
+    "chance_probability": 0.25,
+    "sender_present": false,
+    "final_stimuli_status": "MISSING_REVIEW_BLOCKER",
+    "einstein_role": "public-knowledge calibration only, excluded from primary targets"
+  },
+  "bridge": {
+    "statement": "New random symbol associated with a person dossier is accessible despite not belonging to the person's lifetime knowledge",
+    "required_proponent_acceptance": true,
+    "proponent_acceptance_recorded": false
+  },
+  "outcomes": {
+    "primary": [
+      "MT exact matching above 0.25",
+      "MT minus RT participant-level randomized instruction contrast"
+    ],
+    "secondary_exploratory": [
+      "MT-MU-RT+RU interaction",
+      "all four cell estimates",
+      "ordinary recall",
+      "ordinary inference",
+      "confidence",
+      "felt connection",
+      "familiarity",
+      "AI exposure"
+    ],
+    "free_text_hit_scoring": false,
+    "source_identity_tested": false,
+    "physical_7d_model_tested": false
+  },
+  "analysis": {
+    "alpha_one_sided_per_primary": 0.025,
+    "joint_signal_rule": "both primary tests pass and integrity/feasibility gates pass",
+    "primary_combination": "intersection-union",
+    "h1_test": "exact upper-tail binomial under iid secret-target null",
+    "h2_test": "participant-level 24-of-48 allocation randomization; sharp no-instruction-effect null",
+    "permutation_draws": 100000,
+    "permutation_seed": 20261018,
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 20261019,
+    "bootstrap_unit": "participant within arm, preserve all within-participant pairings",
+    "interval_level": 0.95,
+    "missing_primary_rule": "zero verified success, fixed randomized denominators if lawful; also report bounds",
+    "stopping_rule": "48 randomized or eight weeks, whichever first; no interim accuracy; no efficacy stopping",
+    "planning_h1": {
+      "n": 192,
+      "critical_hits": 61,
+      "null_tail": 0.020521926725779824,
+      "power_at_0_30": 0.321014470488504,
+      "power_at_0_35": 0.8447225963713894,
+      "assumptions": "ideal homogeneous independent-hit model only; not joint, heterogeneous, attrition or interaction power"
+    }
+  },
+  "feasibility": {
+    "completed_participant_fraction_min": 0.9,
+    "verified_planned_opportunity_fraction_min": 0.95,
+    "unresolved_critical_breaches_allowed": 0
+  },
+  "blockers": [
+    "proponent bridge and minimum-effect agreement",
+    "final independent stimulus appendix",
+    "independent statistical review and joint simulations",
+    "acquisition and custody implementation plus adversarial audit",
+    "ethics determination and consent/data-management decisions",
+    "cultural/accessibility review",
+    "independent analysis reproduction",
+    "prospective registration"
+  ],
+  "artifacts": {
+    "reference_code_scope": "synthetic calculations only; does not implement recruitment, acquisition, target generation or cryptographic custody",
+    "real_data_input_supported": false
+  }
+}
+
