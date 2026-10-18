@@ -1,0 +1,95 @@
+{
+  "assessment_id": "BQ003-BOUNDED-REASSESSMENT-2026-10-02",
+  "status": "REVIEW_CANDIDATE",
+  "provenance": "ai-executed",
+  "assessed_on": "2026-10-02",
+  "baseline": {
+    "path": "references/big-questions/BQ003/progress-assessment-v0.1.json",
+    "blob_sha": "5e4805414d3c6ac042c49cb18617bd496c85edb0",
+    "overall_level": 3,
+    "maximum": 10
+  },
+  "scope": "Bounded review of two trials plus baseline review findings; not a systematic review, pooled reanalysis or completed risk-of-bias audit.",
+  "decision": {
+    "overall_level": 3,
+    "overall_action": "RETAIN_CANDIDATE_LEVEL",
+    "rationale": "Clinical and social outcomes do not distinguish cosmic-field models. No new prospective model-discriminating test or independent replication established."
+  },
+  "axes": [
+    {
+      "axis": "personal_regulation",
+      "baseline_level": 5,
+      "recommended_level": 5,
+      "decision": "RETAIN_WITH_QUALIFIED_SUMMARY",
+      "proposed_summary": "Relevant outcome-specific evidence is accumulating. Positive-emotion review findings, depression outcomes and experimental pain findings must remain separate.",
+      "rationale": "Mixed outcomes refine scope; neither one positive result nor one null comparison warrants advancing or lowering this maturity rating.",
+      "next_gate": "Independent replication of the same bounded claim with suitable active controls, uncertainty estimates and comparable interventions."
+    },
+    {
+      "axis": "compassionate_behaviour",
+      "baseline_level": 5,
+      "recommended_level": 5,
+      "decision": "RETAIN_WITH_MEASUREMENT_CAVEAT",
+      "proposed_summary": "Compassion/empathy evidence is methodologically qualified. Self-report compassion and reported helping are separate from independently observed durable behaviour.",
+      "rationale": "The new trials do not establish a general compassionate-behaviour benefit. Maturity level 5 denotes an investigable evidence base, not established efficacy.",
+      "next_gate": "Independent studies of preregistered behavioural outcomes, with blinded observation, active controls and follow-up."
+    }
+  ],
+  "source_observations": [
+    {
+      "source_id": "CM-OA-002",
+      "doi": "10.1007/s12671-021-01753-y",
+      "lineage": "ISRCTN97264476",
+      "url": "https://link.springer.com/article/10.1007/s12671-021-01753-y",
+      "finding": "Combined programme improved depression relative to waitlist; compassion scale change was not significant.",
+      "limits": "Cannot isolate metta; no active treatment comparator; follow-up uncontrolled."
+    },
+    {
+      "source_id": "CM-OA-012",
+      "doi": "10.1371/journal.pone.0357888",
+      "lineage": "NCT04632875",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+      "finding": "No significant group-by-time effect on reported helping (p=.767) or pain tolerance (p=.103).",
+      "reporting_issue": "Results report pooled pain-tolerance time effect +8.46 seconds (p=.037), despite abstract/discussion wording of no improvement. Public appraisal wording corrected.",
+      "limits": "Healthy pandemic-era volunteers; self-reported helping; full preregistration and missing-data review pending. Social-support multiplicity unresolved."
+    },
+    {
+      "source_id": "SRC-BQ003-ZENG-LKM-2015",
+      "doi": "10.3389/fpsyg.2015.01693",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.01693/full",
+      "finding": "Positive-emotion synthesis includes waitlist comparisons and varied interventions; does not establish compassionate behaviour.",
+      "review_depth": "Selected primary-paper sections rechecked; study-level overlap not fully audited."
+    },
+    {
+      "source_id": "SRC-BQ003-KREPLIN-MEDITATION-2018",
+      "doi": "10.1038/s41598-018-20299-z",
+      "url": "https://www.nature.com/articles/s41598-018-20299-z",
+      "finding": "Published abstract/indexed primary-paper text qualifies compassion effects by control type, teacher role and study quality.",
+      "review_depth": "Indexed primary-paper text available; full-page retrieval unreliable, PMC challenge and PubMed 429 encountered. No fresh full-text audit claimed."
+    }
+  ],
+  "lineage_policy": "Trial and protocol remain one lineage; reviews are syntheses, not additional independent experiments. No study-overlap count inferred.",
+  "unassessed_axes": [
+    "interpersonal_harmony",
+    "ecological_relationship",
+    "altered_state_and_mystical_phenomenology",
+    "nonlocal_consciousness",
+    "literal_cosmic_ontology",
+    "philosophical_and_contemplative_coherence"
+  ],
+  "other_questions": {
+    "BQ001": "No reassessment of continuity evidence completed in this scope.",
+    "BQ002": "No reassessment of thought-origin evidence completed in this scope."
+  },
+  "governance": {
+    "canonical_promotion_applied": false,
+    "baseline_levels_changed": false,
+    "accepted_evidence_added": 0,
+    "accepted_edges_added": 0,
+    "model_support_added": 0,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "website_correction_only": true,
+    "public_maturity_status_changed": false
+  }
+}

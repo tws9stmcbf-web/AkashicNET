@@ -1,0 +1,3157 @@
+[
+  {
+    "id": "SRC-SPR-PE-0001",
+    "title": "AWARE NDE Studies",
+    "authors": [
+      "KM Wehrstein"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2026-03-02",
+      "date_updated_displayed": "2026-09-02"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Continuity discovery context",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "related_records": [
+        {
+          "id": "CM-LEAD-001",
+          "relation": "cited_publication_lead"
+        },
+        {
+          "id": "CM-LEAD-002",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/aware-nde-study/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "SRC-SPR-PE-0002",
+    "title": "Children with Past-Life Memories (overview)",
+    "authors": [
+      "Robert McLuhan",
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/children-past-life-memories-overview/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2015-03-27",
+      "date_updated_displayed": "2026-09-04"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Continuity discovery context",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "review_priority": "Separate statements recorded before identification from retrospective matching.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-005",
+          "relation": "topic_followup_not_verified_citation"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/children-past-life-memories-overview/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "SRC-SPR-PE-0003",
+    "title": "Criticisms of Reincarnation Case Studies",
+    "authors": [
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/criticisms-reincarnation-case-studies/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2022-11-01",
+      "date_updated_displayed": "2026-09-08"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Continuity discovery context",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "review_priority": "Information leakage, documentation timing, selection and researcher fraud controls.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-005",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/criticisms-reincarnation-case-studies/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "SRC-SPR-PE-0004",
+    "title": "Cold Reading",
+    "authors": [
+      "Chris Roe"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/cold-reading/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2025-11-19",
+      "date_updated_displayed": "2026-09-05"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Continuity discovery context",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "SRC-SPR-PE-0005",
+    "title": "Altered States of Consciousness and Psi",
+    "authors": [
+      "David Luke"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/altered-states-consciousness-and-psi/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2015-06-05",
+      "date_updated_displayed": "2026-09-01"
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Cross-question methods/context; no specific question assignment.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "SRC-SPR-PE-0006",
+    "title": "Presentiment Research Methods",
+    "authors": [
+      "James E Kennedy"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/presentiment-research-methods/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2026-07-23",
+      "date_updated_displayed": "2026-07-31"
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Cross-question methods/context; no specific question assignment.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "SRC-SPR-PE-0007",
+    "title": "Researcher Fraud in Experimental Parapsychology",
+    "authors": [
+      "James E Kennedy"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/researcher-fraud-in-experimental-parapsychology/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "date_created_displayed": "2026-09-23",
+      "date_updated_displayed": "2026-09-25"
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Cross-question methods/context; no specific question assignment.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-001",
+    "title": "Near-Death Experiences (Overview)",
+    "authors": [
+      "Penny Sartori"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/near-death-experience/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2015-11-14",
+      "page_updated_displayed": "2026-06-26",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-002",
+    "title": "Terminal Lucidity",
+    "authors": [
+      "Michael Nahm"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/terminal-lucidity/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2017-03-10",
+      "page_updated_displayed": "2026-04-13",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "review_priority": "Distinguish terminal from paradoxical lucidity and retrospective from prospective observation.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-003",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/terminal-lucidity/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-003",
+    "title": "Post-mortem Survival",
+    "authors": [
+      "Stephen E Braude"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/postmortem-survival/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2016-02-29",
+      "page_updated_displayed": "2026-09-11",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-004",
+    "title": "After-Death Communications (Overview)",
+    "authors": [
+      "Emiliana Embrogno"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/after-death-communications-overview/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2026-08-26",
+      "page_updated_displayed": "2026-09-29",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-005",
+    "title": "Distressing Near-Death Experiences",
+    "authors": [
+      "Nancy Evans Bush"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/distressing-near-death-experience/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2015-02-14",
+      "page_updated_displayed": "2026-09-06",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-006",
+    "title": "Children’s Near-Death Experiences",
+    "authors": [
+      "Donna M Thomas"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/childrens-near-death-experiences/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2026-07-13",
+      "page_updated_displayed": "2026-09-04",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-007",
+    "title": "Meditation and Psi",
+    "authors": [
+      "Serena Roney-Dougal"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/meditation-and-psi/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_created_displayed": "2015-03-10",
+      "page_updated_displayed": "2026-09-25",
+      "underlying_publication_date": null,
+      "semantics": "Displayed Article Information dates; not assumed study dates or first publication dates."
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-001",
+    "title": "Rating the Persuasiveness of Empirical Evidence for the Survival of Consciousness After Bodily Death: A cross-sectional study",
+    "authors": [
+      "Helane Wahbeh",
+      "Arnaud Delorme",
+      "Dean Radin"
+    ],
+    "partial_authors": null,
+    "url": "https://journals.lub.lu.se/jaex/article/view/24125",
+    "source": "Journal / repository",
+    "doi": "10.31156/jaex.24125",
+    "published": "2023-04-03",
+    "dates": {
+      "page_date_displayed": "2023-04-03",
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Named journal article only; not IONS or Psi Encyclopedia site-wide, nor uninspected raw datasets.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "cross_sectional_belief_survey",
+      "measurement_context": "Academic professionals rated confidence in survival and persuasiveness of proposed experiments.",
+      "limitations": [
+        "Ratings of evidence are distinct from performing the proposed survival experiments."
+      ],
+      "sample_reported": "442 respondents",
+      "identifiers": {
+        "doi": "10.31156/jaex.24125"
+      },
+      "source_urls": [
+        "https://journals.lub.lu.se/jaex/article/view/24125"
+      ]
+    },
+    "source_role": "cross_sectional_belief_survey",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-002",
+    "title": "I to We: The Role of Consciousness Transformation in Compassion and Altruism",
+    "authors": [
+      "Vieten, C.",
+      "Amorok, T.",
+      "Schlitz, M."
+    ],
+    "partial_authors": null,
+    "url": "https://noetic.org/publication/i-to-we-the-role-of-consciousness-transformation-in-compassion-and-altruism/",
+    "source": "IONS",
+    "doi": "10.1111/j.1467-9744.2006.00788.x",
+    "published": null,
+    "dates": {
+      "page_date_displayed": "2007-01-16",
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [
+      [
+        {
+          "field": "publication_year",
+          "ions_citation": 2007,
+          "original_publisher": 2006,
+          "resolution": "Keep displayed page date and cited year; use publisher year for proposed bibliographic identity after review."
+        }
+      ]
+    ],
+    "limits": [
+      "IONS citation says 2007; original journal year discrepancy remains unresolved in this recheck. Earlier author field contained only one author."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "qualitative_interview_report",
+      "measurement_context": "Interviews with teachers and scholars about transformation, compassion and altruism.",
+      "limitations": [
+        "Interpretive interviews; not a randomized compassion intervention.",
+        "Publisher lists issue year 2006 and online publication 2007; preserve both date roles."
+      ],
+      "sample_reported": "47 interviewees",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9744.2006.00788.x",
+      "identifiers": {
+        "doi": "10.1111/j.1467-9744.2006.00788.x"
+      },
+      "date_roles": {
+        "publisher_issue_year": "2006",
+        "first_online": "2007-01-16",
+        "IONS_displayed": "2007-01-16"
+      },
+      "source_urls": [
+        "https://noetic.org/publication/i-to-we-the-role-of-consciousness-transformation-in-compassion-and-altruism/",
+        "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9744.2006.00788.x"
+      ]
+    },
+    "source_role": "qualitative_interview_report",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-003",
+    "title": "An Exploration of the Associations Between Meditation, Extended Human Capacities and Synchronistic Experiences",
+    "authors": [
+      "Butzer, B.",
+      "Kriegsman, M.",
+      "Yount, G.",
+      "Wahbeh, H."
+    ],
+    "partial_authors": null,
+    "url": "https://noetic.org/publication/an-exploration-of-the-associations-between-meditation-extended-human-capacities-and-synchronistic-experiences/",
+    "source": "IONS",
+    "doi": "10.1080/02604027.2024.2330289",
+    "published": null,
+    "dates": {
+      "page_date_displayed": "2024-03-11",
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "Confirmed citation on IONS; publisher itself not revalidated. Earlier author field omitted Butzer and Kriegsman."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "observational_association_report",
+      "measurement_context": "Meditation frequency, self-reported noetic experiences and workshop synchronicity.",
+      "limitations": [
+        "Associations and mediation models do not establish causal effects.",
+        "Publisher full text retrieval failed; IONS bibliographic details checked."
+      ],
+      "publisher_url": "https://www.tandfonline.com/doi/full/10.1080/02604027.2024.2330289",
+      "identifiers": {
+        "doi": "10.1080/02604027.2024.2330289"
+      },
+      "source_urls": [
+        "https://noetic.org/publication/an-exploration-of-the-associations-between-meditation-extended-human-capacities-and-synchronistic-experiences/",
+        "https://www.tandfonline.com/doi/full/10.1080/02604027.2024.2330289"
+      ]
+    },
+    "source_role": "observational_association_report",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-004",
+    "title": "Transformative, Noetic, and Transpersonal Experiences During Personal Development Workshops",
+    "authors": [
+      "Helané Wahbeh",
+      "Cassandra Vieten",
+      "Garrett Yount",
+      "Agnes Cartry-Jacobsen",
+      "Dean Radin",
+      "Arnaud Delorme"
+    ],
+    "partial_authors": null,
+    "url": "https://digitalcommons.ciis.edu/ijts-transpersonalstudies/vol41/iss1/6/",
+    "source": "Journal / repository",
+    "doi": "10.24972/ijts.2022.41.1.20",
+    "published": null,
+    "dates": {
+      "page_date_displayed": "2022-09-01",
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY-NC-ND 4.0",
+    "rights": "Named journal article only; no extension to IONS, Psi Encyclopedia, or dataset files.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [
+      [
+        {
+          "field": "author_name",
+          "ions_citation": "Young, Garret",
+          "advance_archive": "Garret Young",
+          "final_journal_page": "Garrett Yount",
+          "resolution": "Final journal metadata preferred provisionally; retain variants without promoting canonical person identity."
+        }
+      ]
+    ],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "secondary_analysis",
+      "measurement_context": "Workshop post-survey records describing transformative, noetic and transpersonal experiences.",
+      "limitations": [
+        "Secondary analysis; overlap with related workshop papers needs auditing.",
+        "Post-survey records are not automatically unique participants."
+      ],
+      "identifiers": {
+        "doi": "10.24972/ijts.2022.41.1.20"
+      },
+      "source_urls": [
+        "https://digitalcommons.ciis.edu/ijts-transpersonalstudies/vol41/iss1/6/"
+      ]
+    },
+    "source_role": "secondary_analysis",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-005",
+    "title": "Future directions in meditation research: Recommendations for expanding the field of contemplative science",
+    "authors": [
+      "Cassandra Vieten",
+      "Helané Wahbeh",
+      "B. Rael Cahn",
+      "Katherine MacLean",
+      "Mica Estrada",
+      "Paul Mills"
+    ],
+    "partial_authors": "partial; first six citation authors only",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205740",
+    "source": "Journal / repository",
+    "doi": "10.1371/journal.pone.0205740",
+    "published": "2018-11-07",
+    "dates": {
+      "page_date_displayed": null,
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Named journal article only; no extension to IONS, Psi Encyclopedia, or dataset files.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [
+      {
+        "field": "sample_size",
+        "abstract": 1120,
+        "results_demographics_completed": 1130,
+        "resolution": "Unresolved discrepancy within publisher article; do not assign a reconciled sample size."
+      }
+    ],
+    "limits": [
+      "Author list remains explicitly partial; 1120 abstract versus 1130 completers discrepancy reconfirmed; OSF files and dataset licence not accessed in this pass."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "research_recommendations_and_cross_sectional_survey",
+      "measurement_context": "Research agenda with a survey of meditators' reported experiences.",
+      "limitations": [
+        "Self-report survey; not objective verification of anomalous experiences.",
+        "Earlier 1120/1130 discrepancy remains unresolved outside this abstract."
+      ],
+      "sample_reported": "1120 in article abstract",
+      "data_access": {
+        "url": "https://osf.io/wubza/",
+        "statement": "Article reports anonymized raw data and a codebook.",
+        "current_files_verified": false,
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205740"
+      ]
+    },
+    "source_role": "research_recommendations_and_cross_sectional_survey",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-006",
+    "title": "Living Deeply",
+    "authors": [],
+    "partial_authors": null,
+    "url": "https://noetic.org/experience/living-deeply-practices/",
+    "source": "IONS",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_date_displayed": null,
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "practice_resource",
+      "measurement_context": "Online course describing practices across traditions, including loving-kindness.",
+      "limitations": [
+        "Educational resource, not a clinical trial or published efficacy dataset."
+      ],
+      "source_urls": [
+        "https://noetic.org/experience/living-deeply-practices/"
+      ]
+    },
+    "source_role": "practice_resource",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-IONS-007",
+    "title": "What Survives Death?",
+    "authors": [
+      "Helané Wahbeh"
+    ],
+    "partial_authors": null,
+    "url": "https://noetic.org/research/what-survives-death/",
+    "source": "IONS",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "page_date_displayed": null,
+      "semantics": "IONS displayed page date, where present; stored separately from journal publication date."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only; compassion records do not establish cosmic ontology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "research_participation_page",
+      "measurement_context": "Survey invitation about beliefs concerning survival after physical death.",
+      "limitations": [
+        "Recruitment page, not a results publication.",
+        "Do not treat belief-survey participation as survival evidence."
+      ],
+      "source_urls": [
+        "https://noetic.org/research/what-survives-death/"
+      ]
+    },
+    "source_role": "research_participation_page",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-001",
+    "title": "The Noetic Signature Inventory: Development, Exploration, and Initial Validation",
+    "authors": [
+      "Helané Wahbeh",
+      "Nina Fry",
+      "Paolo Speirn"
+    ],
+    "partial_authors": null,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9240696/",
+    "source": "Journal / repository",
+    "doi": "10.3389/fpsyg.2022.838582",
+    "published": "2022-06-15",
+    "dates": {},
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "CC BY (version not specified in inspected notice)",
+    "rights": "Named article only; unrelated websites and raw datasets excluded.",
+    "note": "NSI is indirect phenomenology context, not a survival test.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [
+      "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.838582/full"
+    ],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "instrument_development_and_validation",
+      "measurement_context": "Self-report Noetic Signature Inventory developed through qualitative and statistical studies.",
+      "limitations": [
+        "Construct validation is distinct from verifying paranormal abilities.",
+        "PMC challenge resolved through publisher page; datasets not accessed."
+      ],
+      "publisher_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.838582/full",
+      "identifiers": {
+        "doi": "10.3389/fpsyg.2022.838582",
+        "pmid": "35783759",
+        "pmcid": "PMC9240696"
+      },
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9240696/",
+        "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.838582/full"
+      ]
+    },
+    "source_role": "instrument_development_and_validation",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-002",
+    "title": "Metta-Based Therapy for Chronic Depression: a Wait List Control Trial",
+    "authors": [
+      "Ulrich Stangier",
+      "Artjom Frick",
+      "Isabel Thinnes",
+      "Elisabeth A. Arens",
+      "Stefan G. Hofmann"
+    ],
+    "partial_authors": null,
+    "url": "https://link.springer.com/article/10.1007/s12671-021-01753-y",
+    "source": "Journal / repository",
+    "doi": "10.1007/s12671-021-01753-y",
+    "published": "2021-10-08",
+    "dates": {},
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Named article only; unrelated websites and raw datasets excluded.",
+    "note": "Combined-treatment trial; linked protocol and publisher update checked. Preliminary appraisal available.",
+    "lineage": "ISRCTN97264476",
+    "flags": [],
+    "limits": [
+      "Trial and protocol share ISRCTN97264476; not two independent experiments.",
+      "Current OSF file access and reuse permission remain unverified."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "research_metadata": {
+      "record_type": "trial_report",
+      "registration": {
+        "id": "ISRCTN97264476",
+        "url": "https://www.isrctn.com/ISRCTN97264476",
+        "verification": "Identifier verified in article; registry content blocked by JavaScript/cookie holding page."
+      },
+      "related_records": [
+        {
+          "id": "CM-OA-003",
+          "relation": "protocol_for_same_trial"
+        }
+      ],
+      "update": {
+        "date": "2022-02-28",
+        "type": "open_access_funding_notice",
+        "description": "Change history identifies Projekt DEAL funding; no result correction identified in this notice."
+      },
+      "data_access": {
+        "url": "https://osf.io/erswt/",
+        "statement_source": "Published article",
+        "access_check": "OSF project text returned from an old crawl; current file access and file licence unverified.",
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s12671-021-01753-y"
+      ],
+      "checked": "2026-10-02"
+    },
+    "resolved_metadata_flags": {
+      "previous_flags": [
+        "Page says updated; link returned same article without separate update details. Nature of update remains unverified."
+      ],
+      "previous_limits": [
+        "Earlier update-link observation not reproduced in current text; no separate update notice resolved. Shares trial registration ISRCTN97264476 with protocol."
+      ],
+      "resolution": "Publisher change history inspected: 28 February 2022 open-access funding notice."
+    },
+    "source_role": "trial_report",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-003",
+    "title": "Metta-based group meditation and individual cognitive behavioral therapy (MeCBT) for chronic depression: study protocol for a randomized controlled trial",
+    "authors": [
+      "Artjom Frick",
+      "Isabel Thinnes",
+      "Ulrich Stangier"
+    ],
+    "partial_authors": null,
+    "url": "https://link.springer.com/article/10.1186/s13063-019-3815-4",
+    "source": "Journal / repository",
+    "doi": "10.1186/s13063-019-3815-4",
+    "published": "2020-01-06",
+    "dates": {},
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Named article only; unrelated websites and raw datasets excluded.",
+    "note": "Topic relevance only.",
+    "lineage": "ISRCTN97264476",
+    "flags": [],
+    "limits": [
+      "Protocol, not additional results; shares ISRCTN97264476 with results record."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "research_metadata": {
+      "record_type": "study_protocol",
+      "registration": {
+        "id": "ISRCTN97264476",
+        "url": "https://www.isrctn.com/ISRCTN97264476",
+        "reported_date": "2018-03-29",
+        "timing": "retrospective, as stated in protocol",
+        "verification": "Protocol statement verified; registry content not retrieved."
+      },
+      "related_records": [
+        {
+          "id": "CM-OA-002",
+          "relation": "results_report_for_same_trial"
+        }
+      ],
+      "data_access": {
+        "statement": "Protocol planned committee-approved access with a signed data agreement; current availability and permission not established.",
+        "statement_source": "Protocol, Availability of data and materials",
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://link.springer.com/article/10.1186/s13063-019-3815-4"
+      ],
+      "checked": "2026-10-02"
+    },
+    "source_role": "study_protocol",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-004",
+    "title": "The effect of loving-kindness meditation on positive emotions: a meta-analytic review",
+    "authors": [
+      "Xianglong Zeng",
+      "Cleo P. K. Chiu",
+      "Rong Wang",
+      "Tian P. S. Oei",
+      "Freedom Y. K. Leung"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.01693/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fpsyg.2015.01693",
+    "published": "2015-11-03",
+    "dates": {},
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY; version not verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "meta_analytic_review",
+      "measurement_context": "Self-reported positive emotions after loving-kindness interventions.",
+      "limitations": [
+        "Review is a synthesis; its included reports are not additional experiments in this catalogue.",
+        "Comparator and intervention differences require study-level appraisal."
+      ],
+      "source_urls": [
+        "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.01693/full"
+      ]
+    },
+    "source_role": "meta_analytic_review",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-005",
+    "title": "Near-death experiences in non-life-threatening events and coma of different etiologies",
+    "authors": [
+      "Charland-Verville V",
+      "Jourdan J-P",
+      "Thonnard M",
+      "Ledoux D",
+      "Donneau A-F",
+      "Quertemont E",
+      "Laureys S"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00203/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fnhum.2014.00203",
+    "published": "2014-05-27",
+    "dates": {},
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "CC BY",
+    "rights": "Named article only; version not resolved and raw datasets not covered by this check.",
+    "note": "Topic relevance only.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "retrospective_observational_study",
+      "measurement_context": "NDE reports assessed using the Greyson scale; life-threatening and non-life-threatening contexts.",
+      "limitations": [
+        "Retrospective recruitment and historical prospective comparators.",
+        "Sample overlap with other Liège reports not audited."
+      ],
+      "sample_reported": "190 reports meeting the study's NDE criteria",
+      "source_urls": [
+        "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00203/full"
+      ]
+    },
+    "source_role": "retrospective_observational_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-006",
+    "title": "Near-Death Experience Memories Include More Episodic Components Than Flashbulb Memories",
+    "authors": [
+      "Cassol H",
+      "Bonin EAC",
+      "Bastin C",
+      "Puttaert N",
+      "Charland-Verville V",
+      "Laureys S",
+      "Martial C"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.00888/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fpsyg.2020.00888",
+    "published": "2020-05-13",
+    "dates": {},
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "CC BY",
+    "rights": "Named article only; version not resolved and raw datasets not covered by this check.",
+    "note": "Topic relevance only.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "retrospective_memory_comparison",
+      "measurement_context": "Interviewed NDE memories compared with flashbulb and other autobiographical memories.",
+      "limitations": [
+        "Memory detail is separate from independently verified event accuracy.",
+        "Selected retrospective participants; cohort overlap not audited."
+      ],
+      "sample_reported": "25 participants",
+      "source_urls": [
+        "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.00888/full"
+      ]
+    },
+    "source_role": "retrospective_memory_comparison",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-007",
+    "title": "Temporality of Features in Near-Death Experience Narratives",
+    "authors": [
+      "Martial C",
+      "Cassol H",
+      "Antonopoulos G",
+      "Charlier T",
+      "Heros J",
+      "Donneau A-F",
+      "Charland-Verville V",
+      "Laureys S"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00311/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fnhum.2017.00311",
+    "published": "2017-06-13",
+    "dates": {},
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "CC BY",
+    "rights": "Named article only; version not resolved and raw datasets not covered by this check.",
+    "note": "Topic relevance only.",
+    "lineage": "10.3389/fnhum.2017.00311",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "retrospective_narrative_analysis",
+      "measurement_context": "Ordering and frequency of features in written French NDE narratives.",
+      "limitations": [
+        "Narrative order is not real-time physiological event timing.",
+        "Correction belongs to this report; no new study."
+      ],
+      "sample_reported": "154 narratives",
+      "related_records": [
+        {
+          "id": "CM-OA-008",
+          "relation": "has_corrigendum"
+        }
+      ],
+      "source_urls": [
+        "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00311/full"
+      ]
+    },
+    "source_role": "retrospective_narrative_analysis",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-008",
+    "title": "Corrigendum: Temporality of Features in Near-Death Experience Narratives",
+    "authors": [
+      "Martial C",
+      "Cassol H",
+      "Antonopoulos G",
+      "Charlier T",
+      "Heros J",
+      "Donneau A-F",
+      "Charland-Verville V",
+      "Laureys S"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00435/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fnhum.2017.00435",
+    "published": "2017-08-22",
+    "dates": {},
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "CC BY",
+    "rights": "Named article only; version not resolved and raw datasets not covered by this check.",
+    "note": "Topic relevance only.",
+    "lineage": "10.3389/fnhum.2017.00311",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "corrigendum",
+      "measurement_context": "Correction of an editor's surname in a cited reference.",
+      "limitations": [
+        "Authors state scientific conclusions are unchanged.",
+        "Not an additional experiment."
+      ],
+      "related_records": [
+        {
+          "id": "CM-OA-007",
+          "relation": "corrects_reference_in"
+        }
+      ],
+      "source_urls": [
+        "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2017.00435/full"
+      ]
+    },
+    "source_role": "corrigendum",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-009",
+    "title": "The neurophysiology of the intervention strategies of Awareness Training Program on emotion regulation",
+    "authors": [
+      "Gao J",
+      "Leung HK",
+      "Fan J",
+      "Wu BWY",
+      "Sik HH"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.891656/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fpsyg.2022.891656",
+    "published": "2022-07-22",
+    "dates": {},
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY",
+    "rights": "Named article only; version not resolved and raw datasets not covered by this check.",
+    "note": "Topic relevance only.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "trial_cohort_neurophysiology_report",
+      "measurement_context": "ERP/EEG, heart-rate variability and subjective responses to compassion/wisdom picture-viewing cues.",
+      "limitations": [
+        "Participants came from an earlier ATP randomized trial; not a wholly independent cohort.",
+        "Reported willingness to help is distinct from observed helping."
+      ],
+      "sample_reported": "85 participants from the earlier ATP trial",
+      "lineage_review": "Earlier trial identified as Wu et al. (2019) in paper; full linkage audit pending.",
+      "source_urls": [
+        "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.891656/full"
+      ]
+    },
+    "source_role": "trial_cohort_neurophysiology_report",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-010",
+    "title": "Dreaming as mind wandering: evidence from functional neuroimaging and first-person content reports",
+    "authors": [
+      "Fox KCR",
+      "Nijeboer S",
+      "Solomonova E",
+      "Domhoff GW",
+      "Christoff K"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00412/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fnhum.2013.00412",
+    "published": "2013-07-30",
+    "dates": {},
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "CC BY; version not verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "meta_analytic_and_content_synthesis",
+      "measurement_context": "Published first-person reports and neuroimaging meta-analyses of mind wandering and REM dreaming.",
+      "limitations": [
+        "Publisher labels Original Research; analytic work synthesizes prior studies.",
+        "Neural overlap does not locate an external origin of thought."
+      ],
+      "source_urls": [
+        "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2013.00412/full"
+      ]
+    },
+    "source_role": "meta_analytic_and_content_synthesis",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-011",
+    "title": "Not all minds that wander are lost: the importance of a balanced perspective on the mind-wandering state",
+    "authors": [
+      "Smallwood J",
+      "Andrews-Hanna J"
+    ],
+    "partial_authors": null,
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2013.00441/full",
+    "source": "Journal / repository",
+    "doi": "10.3389/fpsyg.2013.00441",
+    "published": "2013-08-16",
+    "dates": {},
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "CC BY; version not verified",
+    "rights": "No blanket reuse permission verified; keep existing metadata and links only.",
+    "note": "Topic relevance only.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [
+      "CC BY notice reconfirmed; licence version not resolved."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "hypothesis_and_theory",
+      "measurement_context": "Context and thought content as possible moderators of mind-wandering costs and benefits.",
+      "limitations": [
+        "Conceptual article; not a new intervention experiment."
+      ],
+      "source_urls": [
+        "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2013.00441/full"
+      ]
+    },
+    "source_role": "hypothesis_and_theory",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-008",
+    "title": "Dreams and ESP",
+    "authors": [
+      "David Saunders"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/dreams-and-esp/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2015-09-06",
+      "updated": "2026-09-06",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for examining dream reports and claimed anomalous information.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "review_priority": "Compare syntheses with primary experiments and unsuccessful replications.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-010",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/dreams-and-esp/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-009",
+    "title": "Lucid Dreaming",
+    "authors": [
+      "Annekatrin Puhle"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/lucid-dreaming/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-01-08",
+      "updated": "2026-09-20",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for awareness of dreaming and conscious experience.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-010",
+    "title": "Dream Incubation",
+    "authors": [
+      "Annekatrin Puhle"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/dream-incubation/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2020-05-18",
+      "updated": "2026-09-06",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for intention and dream content.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-011",
+    "title": "Thoughtforms",
+    "authors": [
+      "Adrian Parker",
+      "Annekatrin Puhle"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/thoughtforms/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2018-04-21",
+      "updated": "2026-08-03",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Historical/conceptual lead; no validation of externally existing thoughtforms implied.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-012",
+    "title": "Psychology and Parapsychology",
+    "authors": [
+      "Carlos S Alvarado"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/psychology-and-parapsychology/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-10-31",
+      "updated": "2026-07-02",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Historical/methodological context for psychology and parapsychology.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-013",
+    "title": "Reincarnation: An Introduction",
+    "authors": [
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-overview/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2018-08-03",
+      "updated": "2026-07-27",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Overview lead for continuity, identity and competing reincarnation interpretations.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-014",
+    "title": "Patterns in Reincarnation Cases",
+    "authors": [
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/patterns-reincarnation-cases/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-02-21",
+      "updated": "2026-08-24",
+      "semantics": "Displayed webpage dates, not dates of underlying studies."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for patterns discussed across reincarnation reports; independent case lineage requires review.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-015",
+    "title": "Experimenter Effects in Psi Research",
+    "authors": [
+      "John Palmer"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/experimenter-effects/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-07-21",
+      "updated": "2026-09-08",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Methodological lead for experimenter behaviour, expectancy and competing explanations.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-016",
+    "title": "Decline Effect in Psi Research",
+    "authors": [
+      "Matthew Colborn"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/decline-effect-parapsychology/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2018-08-24",
+      "updated": "2026-09-06",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Methodological lead for changes in reported effects and reproducibility.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-017",
+    "title": "The Super-Psi Hypothesis",
+    "authors": [
+      "Stephen E Braude"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/super-psi-hypothesis/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2016-10-10",
+      "updated": "2026-04-11",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Competing explanatory hypothesis in survival debates; not established evidence for living-agent psi.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-018",
+    "title": "JB Rhine and the Replication Crisis in Research",
+    "authors": [
+      "James E Kennedy"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/jb-rhine-and-the-replication-crisis-in-research/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2026-06-26",
+      "updated": "2026-09-16",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Historical and methodological lead for replication and research design.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-019",
+    "title": "Transparent Psi Project",
+    "authors": [
+      "Michael Duggan"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/transparent-psi-project/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2023-02-07",
+      "updated": "2026-07-09",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead to primary replication research; encyclopedia account is secondary.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support.",
+        "TPP reference year 2022 conflicts with original article publication in 2023; correction content needs review."
+      ],
+      "review_priority": "Read original replication, its correction and later AMP replication separately.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-007",
+          "relation": "cited_publication_lead"
+        },
+        {
+          "id": "CM-LEAD-008",
+          "relation": "cited_publication_lead"
+        },
+        {
+          "id": "CM-LEAD-009",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/transparent-psi-project/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-020",
+    "title": "Postmortem Survival: What Makes an Ideal Case?",
+    "authors": [
+      "Stephen E Braude"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/survival-what-makes-ideal-case/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-11-10",
+      "updated": "2026-04-11",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Conceptual lead for evaluating evidential criteria in survival cases.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-021",
+    "title": "Is Xenoglossy Evidence of Survival?",
+    "authors": [
+      "Stephen E Braude"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/xenoglossy-evidence-survival/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-11-11",
+      "updated": "2026-09-12",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for evaluating language-related claims and alternative explanations.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-022",
+    "title": "Deathbed Visions Research",
+    "authors": [
+      "Erlendur Haraldsson"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/deathbed-visions-research/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-05-22",
+      "updated": "2026-09-06",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for research on reported end-of-life visions.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-023",
+    "title": "Phenomena Related to Danger, Death, and Bereavement",
+    "authors": [
+      "Patricia Pearson"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/phenomena-relating-danger-death-bereavement/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2015-01-31",
+      "updated": "2026-04-13",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Broad overview lead spanning danger, bereavement and end-of-life reports.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-024",
+    "title": "Encounters with the Deceased",
+    "authors": [
+      "Annekatrin Puhle"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/encounters-deceased/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2022-07-05",
+      "updated": "2026-09-07",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for reported encounters during bereavement and related contexts.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-025",
+    "title": "Reincarnation Intermission Memories",
+    "authors": [
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-intermission-memories/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2017-05-06",
+      "updated": "2026-05-10",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for reported memories of intervals between lives.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "review_priority": "Separate cultural framing, case selection and independently documented statements.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-006",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/reincarnation-intermission-memories/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-026",
+    "title": "Birthmarks in Reincarnation Cases",
+    "authors": [
+      "Jim B Tucker"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/birthmarks-reincarnation-cases/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2015-11-14",
+      "updated": "2026-09-03",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for reported birthmark correspondences; requires original case documentation.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Selected page sections and bibliographic metadata; not a full methodological appraisal.",
+      "role": "encyclopedia_discovery_overview",
+      "measurement_context": "Bibliography and topic coverage inspected; cited papers are discovery leads.",
+      "limitations": [
+        "Encyclopedia entry is not an independent experiment.",
+        "Reference identification does not complete study appraisal or establish model support."
+      ],
+      "review_priority": "Medical documentation, comparison criteria and alternative explanations.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-004",
+          "relation": "cited_publication_lead"
+        }
+      ],
+      "source_urls": [
+        "https://psi-encyclopedia.spr.ac.uk/articles/birthmarks-reincarnation-cases/"
+      ]
+    },
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-027",
+    "title": "Physical Signs in Reincarnation Cases",
+    "authors": [
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/physical-signs-reincarnation-cases/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2018-06-19",
+      "updated": "2026-05-10",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for other reported physical correspondences in reincarnation cases.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-PSI-028",
+    "title": "Announcing and Departure Dreams",
+    "authors": [
+      "James G Matlock"
+    ],
+    "partial_authors": null,
+    "url": "https://psi-encyclopedia.spr.ac.uk/articles/announcing-and-departure_dreams/",
+    "source": "Psi Encyclopedia",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "created": "2018-01-30",
+      "updated": "2026-06-06",
+      "semantics": "Displayed webpage dates, not underlying study dates."
+    },
+    "bq": [
+      "BQ001",
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Copyright Society for Psychical Research. All rights reserved.",
+    "note": "Lead for dream reports associated with birth and death; also relevant to dream-content inquiry.",
+    "lineage": "Not resolved",
+    "flags": [],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [
+      "https://psi-encyclopedia.spr.ac.uk/articles/announcing-dreams-and-related-experiences/"
+    ],
+    "source_role": "encyclopedia_discovery_overview",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-OA-012",
+    "title": "Assessing the effect of Loving-Kindness Meditation on pain and social well-being using a randomized controlled trial design",
+    "authors": [
+      "Olivia Young",
+      "Katherine O’Connell",
+      "Naomi Nero",
+      "Melinda C. Somers",
+      "Paige A. Freeburg",
+      "Mary Ann Dutton",
+      "Abigail A. Marsh"
+    ],
+    "partial_authors": false,
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888",
+    "source": "PLOS One",
+    "doi": "10.1371/journal.pone.0357888",
+    "published": "2026-09-16",
+    "dates": {
+      "data_collection_period": "December 2020–July 2021"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Article links to CC BY 4.0; dataset/file permissions not verified.",
+    "note": "Active-control comparison relevant to Q004; preliminary appraisal available.",
+    "lineage": "NCT04632875",
+    "flags": [
+      "Preliminary appraisal; full assessment pending."
+    ],
+    "limits": [],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "research_metadata": {
+      "record_type": "trial_report",
+      "registration": {
+        "id": "NCT04632875",
+        "url": "https://clinicaltrials.gov/study/NCT04632875",
+        "reported_date": "2020-11-17",
+        "verification": "Article statement verified; registry page returned no study content and API retrieval failed."
+      },
+      "preregistration": {
+        "url": "https://osf.io/hz3nv/",
+        "reported_date": "2021-02-19",
+        "verification": "Article statement only; OSF contents not retrieved.",
+        "timing_note": "Article places data collection from December 2020; full chronology comparison pending."
+      },
+      "data_access": {
+        "url": "https://osf.io/hz3nv/",
+        "statement_source": "Published article",
+        "access_check": "Repository retrieval failed; files and file licence unverified.",
+        "reuse_permission_verified": false
+      },
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357888"
+      ],
+      "checked": "2026-10-02"
+    },
+    "source_role": "trial_report",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-001",
+    "title": "AWARE—AWAreness during REsuscitation—A prospective study",
+    "authors": [
+      "Sam Parnia"
+    ],
+    "partial_authors": true,
+    "url": "https://doi.org/10.1016/j.resuscitation.2014.09.004",
+    "source": "Journal / repository",
+    "doi": "10.1016/j.resuscitation.2014.09.004",
+    "published": null,
+    "dates": {
+      "publication_year": "2014"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "10.1016/j.resuscitation.2014.09.004",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Citation and DOI checked in primary Journal of Anomalous Experience and Cognition paper; publisher retrieval failed.",
+      "role": "prospective_observational_study",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "SRC-SPR-PE-0001"
+      ],
+      "source_urls": [
+        "https://doi.org/10.1016/j.resuscitation.2014.09.004"
+      ]
+    },
+    "source_role": "prospective_observational_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-002",
+    "title": "AWAreness during REsuscitation—II: A multi-center study of consciousness and awareness in cardiac arrest",
+    "authors": [
+      "Sam Parnia"
+    ],
+    "partial_authors": true,
+    "url": "https://doi.org/10.1016/j.resuscitation.2023.109903",
+    "source": "Journal / repository",
+    "doi": "10.1016/j.resuscitation.2023.109903",
+    "published": null,
+    "dates": {
+      "publication_year": "2023"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "10.1016/j.resuscitation.2023.109903",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Indexed PubMed and publisher metadata checked; full methods appraisal pending.",
+      "role": "prospective_multicentre_study",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "SRC-SPR-PE-0001"
+      ],
+      "identifiers": {
+        "pmid": "37423492"
+      },
+      "source_urls": [
+        "https://doi.org/10.1016/j.resuscitation.2023.109903"
+      ]
+    },
+    "source_role": "prospective_multicentre_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-003",
+    "title": "Spontaneous Remission of Dementia Before Death: Results From a Study on Paradoxical Lucidity",
+    "authors": [
+      "Alexander Batthyány",
+      "Bruce Greyson"
+    ],
+    "partial_authors": false,
+    "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/04/terminal-lucidity-PC.pdf",
+    "source": "Journal / repository",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "publication_year": "2021"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/04/terminal-lucidity-PC.pdf",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "University-hosted paper front page checked; no DOI confidently identified.",
+      "role": "retrospective_caregiver_survey",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-002"
+      ],
+      "source_urls": [
+        "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/04/terminal-lucidity-PC.pdf"
+      ]
+    },
+    "source_role": "retrospective_caregiver_survey",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-004",
+    "title": "Some Bodily Malformations Attributed to Previous Lives",
+    "authors": [
+      "S. K. Pasricha",
+      "J. Keil",
+      "J. B. Tucker",
+      "I. Stevenson"
+    ],
+    "partial_authors": false,
+    "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/REI34.pdf",
+    "source": "Journal / repository",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "publication_year": "2005"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/REI34.pdf",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "University-hosted article and encyclopedia bibliography checked; case appraisal pending.",
+      "role": "case_series",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-026"
+      ],
+      "source_urls": [
+        "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/REI34.pdf"
+      ]
+    },
+    "source_role": "case_series",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-005",
+    "title": "Children Who Claim to Remember Previous Lives: Cases with Written Records Made before the Previous Personality Was Identified",
+    "authors": [
+      "H. H. J. Keil",
+      "J. B. Tucker"
+    ],
+    "partial_authors": false,
+    "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/REI32-Tucker_keil-1.pdf",
+    "source": "Journal / repository",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "publication_year": "2005"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/REI32-Tucker_keil-1.pdf",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "University-hosted paper identified from criticism bibliography; full case-level review pending.",
+      "role": "case_series",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "SRC-SPR-PE-0003"
+      ],
+      "source_urls": [
+        "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/REI32-Tucker_keil-1.pdf"
+      ],
+      "coverage_related_to": [
+        "SRC-SPR-PE-0002"
+      ]
+    },
+    "source_role": "case_series",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-006",
+    "title": "Cases of the Reincarnation Type with Memories from the Intermission Between Lives",
+    "authors": [
+      "Poonam Sharma",
+      "Jim B. Tucker"
+    ],
+    "partial_authors": false,
+    "url": "https://digital.library.unt.edu/ark:/67531/metadc799278/",
+    "source": "Journal / repository",
+    "doi": "10.17514/JNDS-2004-23-2-p101-118",
+    "published": null,
+    "dates": {
+      "publication_year": "2004"
+    },
+    "bq": [
+      "BQ001"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "10.17514/JNDS-2004-23-2-p101-118",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "UNT repository title/authors/year/DOI and original paper front-page OCR checked.",
+      "role": "case_comparison",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-025"
+      ],
+      "aliases_verified": [
+        "https://digital.library.unt.edu/ark:/67531/metadc799278/m1/1/"
+      ],
+      "source_urls": [
+        "https://digital.library.unt.edu/ark:/67531/metadc799278/"
+      ]
+    },
+    "source_role": "case_comparison",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-007",
+    "title": "Raising the value of research studies in psychological science by increasing the credibility of research reports: the transparent Psi project",
+    "authors": [
+      "Zoltan Kekecs"
+    ],
+    "partial_authors": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9890107/",
+    "source": "Journal / repository",
+    "doi": "10.1098/rsos.191375",
+    "published": null,
+    "dates": {
+      "publication_year": "2023"
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "10.1098/rsos.191375",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Primary article metadata and data-availability section checked; methodological appraisal pending.",
+      "role": "preregistered_replication",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-019"
+      ],
+      "related_records": [
+        {
+          "id": "CM-LEAD-008",
+          "relation": "has_correction"
+        }
+      ],
+      "data_access": {
+        "url": "https://osf.io/3e9rg/",
+        "statement": "Article reports data, code and materials at OSF; software at GitLab.",
+        "current_files_verified": false,
+        "reuse_permission_verified": false
+      },
+      "date_discrepancy": "Encyclopedia reference gives 2022; primary article gives 2023-02-01.",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9890107/"
+      ]
+    },
+    "source_role": "preregistered_replication",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-008",
+    "title": "Correction to: ‘Raising the value of research studies in psychological science by increasing the credibility of research reports: The Transparent Psi Project’ (2023) by Kekecs et al.",
+    "authors": [
+      "Zoltan Kekecs"
+    ],
+    "partial_authors": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10427810/",
+    "source": "Journal / repository",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "publication_year": "2023"
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10427810/",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Primary repository indexed title checked; direct retrieval returned browser challenge; correction content not appraised.",
+      "role": "correction",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-019"
+      ],
+      "related_records": [
+        {
+          "id": "CM-LEAD-007",
+          "relation": "corrects"
+        }
+      ],
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10427810/"
+      ]
+    },
+    "source_role": "correction",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-009",
+    "title": "Metascientific replication project with the advanced meta-experimental protocol of the transparent psi project procedures for testing the precognitive effect claimed by Bem",
+    "authors": [
+      "Jan Walleczek"
+    ],
+    "partial_authors": true,
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0335330",
+    "source": "Journal / repository",
+    "doi": "10.1371/journal.pone.0335330",
+    "published": null,
+    "dates": {
+      "publication_year": "2025"
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "CC BY 4.0",
+    "rights": "Publisher records an article-specific CC BY 4.0 notice; dataset permissions remain unverified.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "10.1371/journal.pone.0335330",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Primary publisher title, DOI, date and licence notice checked; full appraisal pending.",
+      "role": "replication_report",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-019"
+      ],
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0335330"
+      ]
+    },
+    "source_role": "replication_report",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-010",
+    "title": "On the correspondence between dream content and target material under laboratory conditions: A meta-analysis of dream-ESP studies, 1966–2016",
+    "authors": [
+      "L. Storm",
+      "S. J. Sherwood",
+      "C. A. Roe",
+      "P. E. Tressoldi",
+      "A. J. Rock",
+      "L. Di Risio"
+    ],
+    "partial_authors": false,
+    "url": "https://journals.ub.uni-heidelberg.de/index.php/IJoDR/article/view/34888",
+    "source": "Journal / repository",
+    "doi": null,
+    "published": null,
+    "dates": {
+      "publication_year": "2017"
+    },
+    "bq": [
+      "BQ002"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Links and bibliographic metadata only; article body and dataset reuse permissions not established.",
+    "note": "Publication lead located from an existing catalogue source; appraisal pending.",
+    "lineage": "https://journals.ub.uni-heidelberg.de/index.php/IJoDR/article/view/34888",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Title/year/authors checked in encyclopedia bibliography; publisher URL identified via university publication references. Publisher access denied; full paper not appraised.",
+      "role": "meta_analytic_review",
+      "measurement_context": "Original publication or scholarly synthesis identified as a discovery lead.",
+      "limitations": [
+        "Methodological appraisal and cross-catalogue deduplication pending."
+      ],
+      "discovered_from": [
+        "CM-PSI-008"
+      ],
+      "source_urls": [
+        "https://journals.ub.uni-heidelberg.de/index.php/IJoDR/article/view/34888"
+      ]
+    },
+    "source_role": "meta_analytic_review",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-011",
+    "title": "Short-Term Compassion Training Increases Prosocial Behavior in a Newly Developed Prosocial Game",
+    "authors": [
+      "Susanne Leiberg",
+      "Olga Klimecki",
+      "Tania Singer"
+    ],
+    "partial_authors": false,
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017798",
+    "source": "PLOS One",
+    "doi": "10.1371/journal.pone.0017798",
+    "published": null,
+    "dates": {
+      "publication_year": "2011",
+      "published": "2011-03-09"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY (version not verified in inspected notice)",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1371/journal.pone.0017798",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Publisher metadata, licence and selected methods checked.",
+      "role": "nonrandomized_controlled_training_study",
+      "measurement_context": "Game validation followed by compassion versus memory training; outcome is helping in the Zurich Prosocial Game. Training assignment depended on participant timing and available slots, not randomization.",
+      "limitations": [
+        "Short follow-up and female-only sample; game helping does not establish durable everyday behaviour.",
+        "Allocation, attrition and cohort overlap require full appraisal."
+      ],
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017798"
+      ],
+      "identifiers": {
+        "doi": "10.1371/journal.pone.0017798"
+      },
+      "sample_reported": "Experiment 1: 68; Experiment 2: 69 entered, 60 completed, one missing-game exclusion.",
+      "date_roles": {
+        "published": "2011-03-09"
+      }
+    },
+    "source_role": "nonrandomized_controlled_training_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-012",
+    "title": "Compassion training alters altruism and neural responses to suffering",
+    "authors": [
+      "Helen Y Weng",
+      "Andrew S Fox",
+      "Alexander J Shackman",
+      "Diane E Stodola",
+      "Jessica Z K Caldwell",
+      "Matthew C Olson",
+      "Gregory M Rogers",
+      "Richard J Davidson"
+    ],
+    "partial_authors": false,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23696200/",
+    "source": "Journal / repository",
+    "doi": "10.1177/0956797612469537",
+    "published": null,
+    "dates": {
+      "publication_year": "2013",
+      "online": "2013-05-21",
+      "issue": "2013-07-01"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1177/0956797612469537",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Primary indexed metadata and abstract checked; repository body blocked by browser challenge.",
+      "role": "randomized_training_study",
+      "measurement_context": "PubMed indexes a randomized controlled trial in healthy adults using redistribution of money and neural responses to suffering.",
+      "limitations": [
+        "Full methods, denominators and comparator appraisal pending.",
+        "Neural associations do not establish a distinct compassion mechanism or cosmic interpretation."
+      ],
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/23696200/"
+      ],
+      "identifiers": {
+        "doi": "10.1177/0956797612469537"
+      },
+      "date_roles": {
+        "online": "2013-05-21",
+        "issue": "2013-07-01"
+      }
+    },
+    "source_role": "randomized_training_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-013",
+    "title": "Meditation Increases Compassionate Responses to Suffering",
+    "authors": [
+      "Paul Condon",
+      "Gaëlle Desbordes",
+      "Willa B. Miller",
+      "David DeSteno"
+    ],
+    "partial_authors": false,
+    "url": "https://paulcondon.org/wp-content/uploads/2014/10/condon-et-al-2013-meditation-increases-compassion.pdf",
+    "source": "Journal / repository",
+    "doi": "10.1177/0956797613485603",
+    "published": null,
+    "dates": {
+      "publication_year": "2013",
+      "online": "2013-08-21"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1177/0956797613485603",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Author-hosted original paper and selected supplemental methods checked.",
+      "role": "randomized_waitlist_training_study",
+      "measurement_context": "Eight-week mindfulness or compassion training versus wait-list; observed outcome is offering a seat to a confederate presenting discomfort. Confederates were blind to condition and hypothesis.",
+      "limitations": [
+        "Wait-list does not match instructor contact or class participation.",
+        "One staged encounter; attrition and exclusions constrain generalization."
+      ],
+      "source_urls": [
+        "https://paulcondon.org/wp-content/uploads/2014/10/condon-et-al-2013-meditation-increases-compassion.pdf"
+      ],
+      "identifiers": {
+        "doi": "10.1177/0956797613485603"
+      },
+      "sample_reported": "67 initially recruited; 26 dropped out and two excluded; 39 final participants.",
+      "date_roles": {
+        "online": "2013-08-21"
+      }
+    },
+    "source_role": "randomized_waitlist_training_study",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-014",
+    "title": "Effects of compassion meditation on a psychological model of charitable donation",
+    "authors": [
+      "Yoni K Ashar",
+      "Jessica R Andrews-Hanna",
+      "Tal Yarkoni",
+      "Jenifer Sills",
+      "Joan Halifax",
+      "Sona Dimidjian",
+      "Tor D Wager"
+    ],
+    "partial_authors": false,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27018610/",
+    "source": "Journal / repository",
+    "doi": "10.1037/emo0000119",
+    "published": null,
+    "dates": {
+      "publication_year": "2016",
+      "online": "2016-03-28",
+      "issue": "2016-08"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1037/emo0000119",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "PubMed metadata plus author-hosted paper selected methods and results checked.",
+      "role": "model_development_and_randomized_trial",
+      "measurement_context": "Two studies: donation-model development and a four-week trial versus placebo oxytocin and familiarity training. Donation choices use real experimental earnings. Results qualify the abstract: donation change differs from familiarity and pooled controls, but not placebo oxytocin alone; familiarity donations decrease while compassion changes are nonsignificant.",
+      "limitations": [
+        "Post-intervention assessors were not blind; full risk-of-bias appraisal pending.",
+        "Later imaging reports may reuse this cohort; no additional independent study inferred."
+      ],
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/27018610/",
+        "https://www.talyarkoni.org/pdf/Ashar_Emotion_2016.pdf"
+      ],
+      "identifiers": {
+        "doi": "10.1037/emo0000119"
+      },
+      "sample_reported": "Study 2: 58 randomized; one donation-task exclusion reported.",
+      "date_roles": {
+        "online": "2016-03-28",
+        "issue": "2016-08"
+      }
+    },
+    "source_role": "model_development_and_randomized_trial",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-015",
+    "title": "The limited prosocial effects of meditation: A systematic review and meta-analysis",
+    "authors": [
+      "Ute Kreplin",
+      "Miguel Farias",
+      "Inti A. Brazil"
+    ],
+    "partial_authors": false,
+    "url": "https://pureportal.coventry.ac.uk/en/publications/the-limited-prosocial-effects-of-meditation-a-systematic-review-a/",
+    "source": "Journal / repository",
+    "doi": "10.1038/s41598-018-20299-z",
+    "published": null,
+    "dates": {
+      "publication_year": "2018",
+      "published": "2018-02-05"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "CC BY 4.0 (article notice in university deposit); repository boilerplate also present",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1038/s41598-018-20299-z",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "University metadata, deposited paper licence and selected sections checked; publisher page failed.",
+      "role": "systematic_meta_analytic_review",
+      "measurement_context": "Review of randomized meditation studies in healthy adults; examines prosocial outcome types and methodological moderators. Its abstract qualifies compassion findings by passive controls and teacher-author involvement.",
+      "limitations": [
+        "Review estimates are not new participant cohorts.",
+        "Reconcile inclusion criteria, outcome coding and study overlap with CM-LEAD-016 before synthesis."
+      ],
+      "source_urls": [
+        "https://pureportal.coventry.ac.uk/en/publications/the-limited-prosocial-effects-of-meditation-a-systematic-review-a/"
+      ],
+      "identifiers": {
+        "doi": "10.1038/s41598-018-20299-z"
+      },
+      "publisher_url": "https://www.nature.com/articles/s41598-018-20299-z",
+      "related_records": [
+        {
+          "id": "CM-LEAD-016",
+          "relation": "overlapping_topic_review_not_independent_replication"
+        }
+      ],
+      "date_roles": {
+        "published": "2018-02-05"
+      }
+    },
+    "source_role": "systematic_meta_analytic_review",
+    "role_provenance": "ai-suggested"
+  },
+  {
+    "id": "CM-LEAD-016",
+    "title": "A Systematic Review and Meta-analysis of the Effects of Meditation on Empathy, Compassion, and Prosocial Behaviors",
+    "authors": [
+      "Christina M. Luberto",
+      "Nina Shinday",
+      "Rhayun Song",
+      "Lisa L. Philpotts",
+      "Elyse R. Park",
+      "Gregory L. Fricchione",
+      "Gloria Y. Yeh"
+    ],
+    "partial_authors": false,
+    "url": "https://link.springer.com/article/10.1007/s12671-017-0841-8",
+    "source": "Journal / repository",
+    "doi": "10.1007/s12671-017-0841-8",
+    "published": null,
+    "dates": {
+      "publication_year": "2018",
+      "online": "2017-10-23",
+      "issue_year": "2018"
+    },
+    "bq": [
+      "BQ003"
+    ],
+    "licence": "No open article licence verified",
+    "rights": "Bibliographic metadata, links and original notes only; dataset reuse permissions unverified.",
+    "note": "Compassion and prosocial measurement discovery lead; appraisal pending.",
+    "lineage": "10.1007/s12671-017-0841-8",
+    "flags": [
+      "REVIEW_REQUIRED; discovery lead only."
+    ],
+    "limits": [
+      "Not accepted as independent BQ evidence."
+    ],
+    "checked": "2026-10-02",
+    "aliases": [],
+    "catalogue_review": {
+      "status": "REVIEW_REQUIRED",
+      "provenance": "ai-executed",
+      "checked": "2026-10-02",
+      "review_depth": "Publisher metadata, abstract and bibliography checked; subscription body not appraised.",
+      "role": "systematic_meta_analytic_review",
+      "measurement_context": "Publisher abstract separates self-reported and observed prosocial outcomes and reports an active-control subgroup. Broader population inclusion differs from CM-LEAD-015; reconcile eligibility and trial overlap before comparing conclusions.",
+      "limitations": [
+        "Pooled review findings do not add independent studies beyond included trials.",
+        "Full subgroup, bias and study-level overlap audit pending."
+      ],
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s12671-017-0841-8"
+      ],
+      "identifiers": {
+        "doi": "10.1007/s12671-017-0841-8"
+      },
+      "sample_reported": "26 studies, 1714 participants reported in abstract.",
+      "related_records": [
+        {
+          "id": "CM-LEAD-015",
+          "relation": "overlapping_topic_review_not_independent_replication"
+        }
+      ],
+      "date_roles": {
+        "online": "2017-10-23",
+        "issue_year": "2018"
+      }
+    },
+    "source_role": "systematic_meta_analytic_review",
+    "role_provenance": "ai-suggested"
+  }
+]
