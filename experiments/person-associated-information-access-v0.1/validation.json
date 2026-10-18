@@ -166,5 +166,27 @@
         "protocol.json": "eebd772d680caacc993875fa68a69379c43651f12f8af6c2ee461a323f321206"
       }
     }
+  ],
+  "materials_followups": [
+    {
+      "date": "2026-10-18",
+      "type": "DRAFT_MATERIALS_AND_REVIEW_PACKET",
+      "materials_version": "0.2-candidate",
+      "base_commit": "436c60048ccbe752b4e205f1a133f236e91cbcda",
+      "checks": [
+        "JSON syntax, eight distinct F01–F08 identities and valid source references",
+        "48 unique ordinary-task item IDs; each multiple-choice item has four unique options and one valid key",
+        "T and U learning slots both total 180 seconds",
+        "Relative links in new/updated prose resolve in candidate (manifest generated below; pre-existing repository links excluded)",
+        "Protocol version 0.1 and closed evidence/recruitment/experiment gates retained",
+        "Bridge agreement retained; instruction, necessary-condition and effect approvals remain false",
+        "Analysis and test code hashes unchanged; numerical tests not rerun",
+        "Same-assistant factual/key and script consistency review; no independent review claimed"
+      ],
+      "numeric_tests_rerun": false,
+      "note": "Original synthetic results remain the initial-candidate record. This is document/structure validation, not an experiment or independent review.",
+      "manifest_path": "materials/manifest.json",
+      "manifest_sha256": "68a525850a078f90abd8a2c79a60d3012e216ca193c3bc98d20eca59e18f0d05"
+    }
   ]
 }

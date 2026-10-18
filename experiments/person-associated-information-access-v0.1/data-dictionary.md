@@ -17,6 +17,14 @@ Draft specification; no real dataset exists. Public files in this candidate cont
 
 Identity deduplication is performed by an authorized custodian before randomization, with minimum necessary data. No browser fingerprinting or undeclared tracking is prescribed. Eight person IDs appear twice each per participant; four remain T and four U throughout. Trial IDs cannot encode the selected symbol. Every retry remains linked to the first attempt. Never overwrite raw text with a cleaned or AI-assisted version.
 
+## Proposed review materials and ordinary-task fields
+
+materials/stimulus-set.json fixes a draft F01–F08 mapping and ordinary answer keys; materials/manifest.json identifies exact review files. These are not registered or approved. No concealed symbol key exists in them. The full reviewer JSON must never be preloaded into a participant client: use a reviewed, stage-specific allowlist with future items, keys, rationales and source metadata excluded.
+
+For a future approved acquisition export, additionally record material and audio hashes; item ID and stage (baseline, learning retrieval, delayed recognition, final recall, final inference); displayed option-ID order; locked option ID or original text; missing/abstention status; exposure duration; and timing deviation. Log optional between-session outside-exposure reports by source class only. Recognition offers candidate award years to both T/U; record that common exposure instead of treating U as zero knowledge.
+
+Ordinary tasks have their own denominators and keys. Baseline/free retrieval uses a separately frozen human coding rubric; no AI similarity hit scoring. Final recall precedes all fictional inference items. Missing optional ratings never change a hidden response. Material exposure, recognition failure and prior AI use cannot become post hoc exclusion rules.
+
 ## Planned-slot status vocabulary
 
 - observed: one timely locked choice and a verified concealed pre-response target.

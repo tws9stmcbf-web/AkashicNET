@@ -1,0 +1,1085 @@
+{
+  "schema_version": "stimulus-review-1",
+  "materials_version": "0.2-candidate",
+  "protocol_version": "0.1",
+  "status": "DRAFT_NOT_FOR_PARTICIPANT_USE",
+  "authoring": "AI-assisted original text; no independent stimulus review completed",
+  "selected_date": "2026-10-18",
+  "selection": "Purposive public-figure set chosen before any participant responses. Fixed for this review candidate, not an immutable registration.",
+  "selection_limitations": [
+    "Not sampled from all historical people; all are Nobel laureates, with substantial science and prestige cues.",
+    "Fame, culture, topic, prior knowledge, readability and emotional valence are not matched or psychometrically validated.",
+    "No claimed representation of all cultures, traditions or populations; no generalization beyond the approved fixed set."
+  ],
+  "concealed_target_assignments_present": false,
+  "answer_keys_scope": "Public ordinary-memory and fictional-inference answers only; not the concealed symbol key.",
+  "independent_source_verification": false,
+  "rights_review_completed": false,
+  "approved_for_collection": false,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Marie Curie – Facts",
+      "url": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/?trk=public_post_comment-text",
+      "inspected_scope": "Life and Work indexed text; Warsaw, education, Becquerel, polonium and radium.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S02",
+      "title": "Marie Curie – Biographical",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/biographical/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/biographical/?print=1",
+      "inspected_scope": "Indexed biographical text; Sorbonne role, naming polonium, research context.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S03",
+      "title": "Nobel Prize facts",
+      "url": "https://www.nobelprize.org/prizes/lists/nobel-prize-facts/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/lists/nobel-prize-facts/",
+      "inspected_scope": "Indexed award record for Curie's 1911 chemistry award and radium/polonium.",
+      "type": "Official award record",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S04",
+      "title": "The Nobel Prize in Physics 1930",
+      "url": "https://data.nobelprize.org/resource/nobelprize/Physics/1930",
+      "retrieval_locator": "https://data.nobelprize.org/resource/nobelprize/Physics/1930",
+      "inspected_scope": "Indexed official award record for Raman and light scattering.",
+      "type": "Official award record",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S05",
+      "title": "The Nobel Prizes in Physics 1901–2000",
+      "url": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "inspected_scope": "Indexed passage on Raman: scattered light includes frequency-shifted components.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S06",
+      "title": "Dorothy Crowfoot Hodgkin",
+      "url": "https://www.nobelprize.org/stories/women-who-changed-science/dorothy-hodgkin/",
+      "retrieval_locator": "https://www.nobelprize.org/stories/women-who-changed-science/dorothy-hodgkin/?gallery_style=page",
+      "inspected_scope": "Indexed account of crystallography, penicillin, vitamin B12, insulin and 1964 chemistry award.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S07",
+      "title": "Barbara McClintock",
+      "url": "https://www.nobelprize.org/stories/women-who-changed-science/barbara-mcclintock/",
+      "retrieval_locator": "https://www.nobelprize.org/womenwhochangedscience/stories/barbara-mcclintock?keyword=genetics",
+      "inspected_scope": "Indexed account of maize, transposition, traits and 1983 medicine award.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S08",
+      "title": "Niels Bohr – Facts",
+      "url": "https://www.nobelprize.org/prizes/physics/1922/bohr/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/laureate/27",
+      "inspected_scope": "Indexed Life and Work text; Copenhagen, 1913 hydrogen model, discrete energies, radiation, 1922 award.",
+      "type": "Official award record and institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S09",
+      "title": "Rabindranath Tagore – Facts",
+      "url": "https://www.nobelprize.org/prizes/literature/1913/tagore/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/laureate/583%26lang%3Den",
+      "inspected_scope": "Indexed Life and Work text; Calcutta, Bengali/English, Shantiniketan school, writing forms and 1913 award.",
+      "type": "Official award record and institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S10",
+      "title": "Wangari Maathai – Facts",
+      "url": "https://www.nobelprize.org/prizes/peace/2004/maathai/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/peace/2004/maathai/facts/?trk=public_post_comment-text",
+      "inspected_scope": "Indexed text; Kenya, biology, 1977 Green Belt Movement, tree planting and 2004 award.",
+      "type": "Official award record and institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S11",
+      "title": "Exploring life's smallest details",
+      "url": "https://www.nobelprize.org/stories/cells-nerves-genes/",
+      "retrieval_locator": "https://www.nobelprize.org/stories/cells-nerves-genes/",
+      "inspected_scope": "Indexed Structure of the nervous system passage; staining, distinct neurons, Golgi/Cajal 1906 award.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    },
+    {
+      "id": "S12",
+      "title": "The structure and connexions of neurons",
+      "url": "https://www.nobelprize.org/uploads/2018/06/cajal-lecture.pdf",
+      "retrieval_locator": "https://www.nobelprize.org/uploads/2018/06/cajal-lecture.pdf",
+      "inspected_scope": "Indexed opening of Cajal's 12 December 1906 Nobel lecture; distinct neurons and Golgi's method. Full lecture not appraised.",
+      "type": "Historical primary lecture",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING"
+    }
+  ],
+  "persons": [
+    {
+      "person_id": "F01",
+      "name": "Marie Curie",
+      "award_year": "1911",
+      "award_category": "Chemistry",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "dossier": "Marie Curie investigated radioactivity through physics and chemistry. Born in Warsaw, she later worked in Paris. Research with Pierre Curie identified polonium and radium. The name polonium referred to the country of her birth. She later held a physics professorship at the Sorbonne. Her Nobel Prize in Chemistry was awarded in 1911. This passage concerns publicly documented research and professional life; it does not describe private memories or provide a hidden symbol.",
+      "recall": {
+        "id": "F01-R",
+        "prompt": "Which pair of elements did the passage associate with Curie's research?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Radium and polonium"
+          },
+          {
+            "id": "o2",
+            "text": "Selenium and tellurium"
+          },
+          {
+            "id": "o3",
+            "text": "Neon and argon"
+          },
+          {
+            "id": "o4",
+            "text": "Nickel and cobalt"
+          }
+        ],
+        "correct_option_id": "o1",
+        "rationale": "The dossier explicitly names radium and polonium."
+      },
+      "inference": {
+        "id": "F01-I",
+        "prompt": "Fictional exercise, not a historical notebook: every sample in tray L is labelled blue. Sample Q is in tray L. Which statement must follow?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Every blue sample is in tray L."
+          },
+          {
+            "id": "o2",
+            "text": "Sample Q is labelled blue."
+          },
+          {
+            "id": "o3",
+            "text": "No sample outside tray L is blue."
+          },
+          {
+            "id": "o4",
+            "text": "Sample Q is the only blue sample."
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "Apply the stated rule to Q; its converse and uniqueness do not follow."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F01-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Marie Curie? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "physics",
+          "chemistry",
+          "radioactivity"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F01-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1911"
+        },
+        {
+          "id": "F01-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Chemistry"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F01-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1902"
+          },
+          {
+            "id": "o2",
+            "text": "1911"
+          },
+          {
+            "id": "o3",
+            "text": "1917"
+          },
+          {
+            "id": "o4",
+            "text": "1923"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1911. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "person_id": "F02",
+      "name": "C. V. Raman",
+      "award_year": "1930",
+      "award_category": "Physics",
+      "sources": [
+        "S04",
+        "S05"
+      ],
+      "dossier": "C. V. Raman investigated the scattering of light. His work examined light after it interacted with matter. Some scattered light has a different frequency from the incoming light. This frequency change is associated with the Raman effect. The incoming light can have a single frequency while the scattered light includes shifted components. Raman received the Nobel Prize in Physics in 1930. This passage describes public observations about light, not private thoughts or a hidden symbol.",
+      "recall": {
+        "id": "F02-R",
+        "prompt": "Which property changes in the Raman effect as described in the passage?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "The polarization of the light"
+          },
+          {
+            "id": "o2",
+            "text": "The intensity of the light"
+          },
+          {
+            "id": "o3",
+            "text": "The frequency of the light"
+          },
+          {
+            "id": "o4",
+            "text": "The direction of the light"
+          }
+        ],
+        "correct_option_id": "o3",
+        "rationale": "The passage describes a frequency shift; this item does not assess all possible scattering properties."
+      },
+      "inference": {
+        "id": "F02-I",
+        "prompt": "Fictional measurement exercise: record A has a value of 8 units. Record B is 3 units lower than A. What is B's value?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "3 units"
+          },
+          {
+            "id": "o2",
+            "text": "11 units"
+          },
+          {
+            "id": "o3",
+            "text": "8 units"
+          },
+          {
+            "id": "o4",
+            "text": "5 units"
+          }
+        ],
+        "correct_option_id": "o4",
+        "rationale": "8 minus 3 equals 5; no historical or hidden fact is needed."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F02-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with C. V. Raman? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "physics",
+          "optics",
+          "light scattering"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F02-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1930"
+        },
+        {
+          "id": "F02-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Physics"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F02-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1921"
+          },
+          {
+            "id": "o2",
+            "text": "1930"
+          },
+          {
+            "id": "o3",
+            "text": "1936"
+          },
+          {
+            "id": "o4",
+            "text": "1942"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1930. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "person_id": "F03",
+      "name": "Dorothy Crowfoot Hodgkin",
+      "award_year": "1964",
+      "award_category": "Chemistry",
+      "sources": [
+        "S06"
+      ],
+      "dossier": "Dorothy Crowfoot Hodgkin studied the structures of important biochemical molecules. Her work used X-ray crystallography to investigate how atoms were arranged. Molecules examined in her research included penicillin, vitamin B12 and insulin. These studies connected chemistry with the structures of substances relevant to biology. She received the Nobel Prize in Chemistry in 1964. The passage describes publicly documented molecular research; it does not claim to reproduce her private experience or identify any hidden symbol.",
+      "recall": {
+        "id": "F03-R",
+        "prompt": "Which vitamin did the passage name among Hodgkin's research subjects?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Vitamin B12"
+          },
+          {
+            "id": "o2",
+            "text": "Vitamin C"
+          },
+          {
+            "id": "o3",
+            "text": "Vitamin D"
+          },
+          {
+            "id": "o4",
+            "text": "Vitamin K"
+          }
+        ],
+        "correct_option_id": "o1",
+        "rationale": "Vitamin B12 is explicitly named; the distractors are not named in this dossier."
+      },
+      "inference": {
+        "id": "F03-I",
+        "prompt": "Fictional indexing rule: a model is filed in cabinet R only if it has a red label. Model K has no red label. Which statement follows?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Model K must be in cabinet R."
+          },
+          {
+            "id": "o2",
+            "text": "Model K cannot be in cabinet R."
+          },
+          {
+            "id": "o3",
+            "text": "Every red model is in cabinet R."
+          },
+          {
+            "id": "o4",
+            "text": "Model K has a blue label."
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "A red label is a necessary condition for cabinet R; no other colour is specified."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F03-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Dorothy Crowfoot Hodgkin? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "chemistry",
+          "crystallography",
+          "x-ray crystallography"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F03-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1964"
+        },
+        {
+          "id": "F03-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Chemistry"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F03-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1955"
+          },
+          {
+            "id": "o2",
+            "text": "1964"
+          },
+          {
+            "id": "o3",
+            "text": "1970"
+          },
+          {
+            "id": "o4",
+            "text": "1976"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1964. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S06"
+      ]
+    },
+    {
+      "person_id": "F04",
+      "name": "Barbara McClintock",
+      "award_year": "1983",
+      "award_category": "Physiology or Medicine",
+      "sources": [
+        "S07"
+      ],
+      "dossier": "Barbara McClintock studied genetics using maize plants. She followed inherited traits across successive generations. Her research showed that some genetic elements could move to different positions within chromosomes. Such movement can influence the expression of traits. These findings challenged the idea that genetic elements always remain in fixed positions. McClintock received the Nobel Prize in Physiology or Medicine in 1983. This passage concerns public research findings, not access to her private thoughts or a hidden symbol.",
+      "recall": {
+        "id": "F04-R",
+        "prompt": "Which crop did the passage associate with McClintock's research?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Rice"
+          },
+          {
+            "id": "o2",
+            "text": "Wheat"
+          },
+          {
+            "id": "o3",
+            "text": "Maize"
+          },
+          {
+            "id": "o4",
+            "text": "Barley"
+          }
+        ],
+        "correct_option_id": "o3",
+        "rationale": "Maize is explicitly named in the first sentence."
+      },
+      "inference": {
+        "id": "F04-I",
+        "prompt": "Fictional sorting exercise: all packets in drawer A are dry. Some dry packets are in drawer B. Which statement must be true?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "All packets in drawer B are dry."
+          },
+          {
+            "id": "o2",
+            "text": "No dry packets are in drawer A."
+          },
+          {
+            "id": "o3",
+            "text": "Every dry packet is in drawer B."
+          },
+          {
+            "id": "o4",
+            "text": "At least one dry packet is in drawer B."
+          }
+        ],
+        "correct_option_id": "o4",
+        "rationale": "The second premise explicitly asserts the existence of a dry packet in B."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F04-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Barbara McClintock? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "genetics",
+          "cytogenetics",
+          "plant genetics",
+          "biology"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F04-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1983"
+        },
+        {
+          "id": "F04-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Physiology or Medicine"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F04-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1974"
+          },
+          {
+            "id": "o2",
+            "text": "1983"
+          },
+          {
+            "id": "o3",
+            "text": "1989"
+          },
+          {
+            "id": "o4",
+            "text": "1995"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1983. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S07"
+      ]
+    },
+    {
+      "person_id": "F05",
+      "name": "Niels Bohr",
+      "award_year": "1922",
+      "award_category": "Physics",
+      "sources": [
+        "S08"
+      ],
+      "dossier": "Niels Bohr worked on atomic structure and the radiation emitted by atoms. In 1913 he proposed a model of the hydrogen atom. In that model electrons occupy prescribed energy states, and a transition to a lower energy releases radiation. The model helped explain distinct wavelengths in atomic light. Bohr directed an institute for theoretical physics in Copenhagen. He received the Nobel Prize in Physics in 1922. These are public scientific facts, not a record of private thoughts.",
+      "recall": {
+        "id": "F05-R",
+        "prompt": "Which atom was the subject of the 1913 model mentioned in the passage?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Helium"
+          },
+          {
+            "id": "o2",
+            "text": "Hydrogen"
+          },
+          {
+            "id": "o3",
+            "text": "Lithium"
+          },
+          {
+            "id": "o4",
+            "text": "Carbon"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The passage specifically identifies hydrogen."
+      },
+      "inference": {
+        "id": "F05-I",
+        "prompt": "Fictional energy exercise: a model moves from a level of 9 units to a level of 4 units and emits the difference. How much does it emit?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "4 units"
+          },
+          {
+            "id": "o2",
+            "text": "9 units"
+          },
+          {
+            "id": "o3",
+            "text": "13 units"
+          },
+          {
+            "id": "o4",
+            "text": "5 units"
+          }
+        ],
+        "correct_option_id": "o4",
+        "rationale": "9 minus 4 equals 5; the units and levels are supplied fictional premises."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F05-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Niels Bohr? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "physics",
+          "atomic physics",
+          "quantum physics"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F05-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1922"
+        },
+        {
+          "id": "F05-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Physics"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F05-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1913"
+          },
+          {
+            "id": "o2",
+            "text": "1922"
+          },
+          {
+            "id": "o3",
+            "text": "1928"
+          },
+          {
+            "id": "o4",
+            "text": "1934"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1922. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S08"
+      ]
+    },
+    {
+      "person_id": "F06",
+      "name": "Rabindranath Tagore",
+      "award_year": "1913",
+      "award_category": "Literature",
+      "sources": [
+        "S09"
+      ],
+      "dossier": "Rabindranath Tagore wrote poetry, songs, stories and plays. He originally wrote in Bengali and later recast poetry in English, reaching additional readers. His work also addressed philosophy and social questions. In 1901 he founded an experimental school at Shantiniketan, bringing Indian and Western learning traditions together. Tagore received the Nobel Prize in Literature in 1913. This passage describes public writing and educational activity; it does not reproduce private memories or reveal a hidden symbol.",
+      "recall": {
+        "id": "F06-R",
+        "prompt": "Which language did the passage say Tagore originally wrote in?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Hindi"
+          },
+          {
+            "id": "o2",
+            "text": "Bengali"
+          },
+          {
+            "id": "o3",
+            "text": "Urdu"
+          },
+          {
+            "id": "o4",
+            "text": "Tamil"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The dossier explicitly names Bengali."
+      },
+      "inference": {
+        "id": "F06-I",
+        "prompt": "Fictional catalogue rule: every item in collection P is a poem. Item W is a poem. Which conclusion is justified?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Item W must belong to collection P."
+          },
+          {
+            "id": "o2",
+            "text": "Item W cannot belong to collection P."
+          },
+          {
+            "id": "o3",
+            "text": "The premises do not establish whether W belongs to P."
+          },
+          {
+            "id": "o4",
+            "text": "Every poem belongs to collection P."
+          }
+        ],
+        "correct_option_id": "o3",
+        "rationale": "The rule gives a necessary property of P items, not membership for every poem."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F06-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Rabindranath Tagore? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "literature",
+          "poetry",
+          "writing",
+          "education"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F06-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1913"
+        },
+        {
+          "id": "F06-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Literature"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F06-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1904"
+          },
+          {
+            "id": "o2",
+            "text": "1913"
+          },
+          {
+            "id": "o3",
+            "text": "1919"
+          },
+          {
+            "id": "o4",
+            "text": "1925"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1913. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S09"
+      ]
+    },
+    {
+      "person_id": "F07",
+      "name": "Wangari Maathai",
+      "award_year": "2004",
+      "award_category": "Peace",
+      "sources": [
+        "S10"
+      ],
+      "dossier": "Wangari Maathai worked in Kenya on environmental protection and public life. She had academic training in biology. In 1977 she started the Green Belt Movement, encouraging women to plant trees in local communities. The movement responded to deforestation and linked ecological work with wider social concerns. Maathai received the Nobel Peace Prize in 2004. This passage describes public activities and an organization; it does not establish contact with her or identify a hidden symbol.",
+      "recall": {
+        "id": "F07-R",
+        "prompt": "What was the name of the movement identified in the passage?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tree Ring Movement"
+          },
+          {
+            "id": "o2",
+            "text": "Forest Canopy Movement"
+          },
+          {
+            "id": "o3",
+            "text": "Seed Network Movement"
+          },
+          {
+            "id": "o4",
+            "text": "Green Belt Movement"
+          }
+        ],
+        "correct_option_id": "o4",
+        "rationale": "The passage names the Green Belt Movement; other names are constructed distractors."
+      },
+      "inference": {
+        "id": "F07-I",
+        "prompt": "Fictional planting record: group A planted 6 trees and group B planted 4. The groups' trees do not overlap. How many trees were planted in total?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "10"
+          },
+          {
+            "id": "o2",
+            "text": "2"
+          },
+          {
+            "id": "o3",
+            "text": "24"
+          },
+          {
+            "id": "o4",
+            "text": "6"
+          }
+        ],
+        "correct_option_id": "o1",
+        "rationale": "Add the disjoint counts: 6 plus 4 equals 10."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F07-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Wangari Maathai? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "environmental work",
+          "environmental activism",
+          "conservation",
+          "biology",
+          "sustainable development",
+          "peace"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F07-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "2004"
+        },
+        {
+          "id": "F07-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Peace"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F07-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1995"
+          },
+          {
+            "id": "o2",
+            "text": "2004"
+          },
+          {
+            "id": "o3",
+            "text": "2010"
+          },
+          {
+            "id": "o4",
+            "text": "2016"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 2004. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S10"
+      ]
+    },
+    {
+      "person_id": "F08",
+      "name": "Santiago Ramón y Cajal",
+      "award_year": "1906",
+      "award_category": "Physiology or Medicine",
+      "sources": [
+        "S11",
+        "S12"
+      ],
+      "dossier": "Santiago Ramón y Cajal investigated the structure of the nervous system. He used staining methods to make nerve cells visible for study. His account treated neurons as distinct cells that contact one another, rather than as one continuous network of cell material. He used and developed methods associated with Camillo Golgi. Cajal and Golgi shared the Nobel Prize in Physiology or Medicine in 1906. These public anatomical findings do not provide a readout of Cajal's memories.",
+      "recall": {
+        "id": "F08-R",
+        "prompt": "Who shared the 1906 prize with Cajal, according to the passage?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Camillo Golgi"
+          },
+          {
+            "id": "o2",
+            "text": "Ivan Pavlov"
+          },
+          {
+            "id": "o3",
+            "text": "Charles Sherrington"
+          },
+          {
+            "id": "o4",
+            "text": "Edgar Adrian"
+          }
+        ],
+        "correct_option_id": "o1",
+        "rationale": "The dossier directly identifies Camillo Golgi."
+      },
+      "inference": {
+        "id": "F08-I",
+        "prompt": "Fictional slide rule: every slide in box N shows a stained sample. Slide Z does not show a stained sample. Which conclusion follows?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Slide Z must be in box N."
+          },
+          {
+            "id": "o2",
+            "text": "No slide is in box N."
+          },
+          {
+            "id": "o3",
+            "text": "Slide Z cannot be in box N."
+          },
+          {
+            "id": "o4",
+            "text": "Every stained sample is in box N."
+          }
+        ],
+        "correct_option_id": "o3",
+        "rationale": "The rule excludes Z from N; it does not imply the converse or an empty box."
+      },
+      "minimal_cue": "Public historical figure.",
+      "baseline_item": {
+        "id": "F08-B",
+        "prompt": "Before today, what field or kind of work, if any, did you associate with Santiago Ramón y Cajal? You may answer 'do not know'.",
+        "format": "free response",
+        "accepted_examples": [
+          "neuroscience",
+          "neuroanatomy",
+          "histology",
+          "nervous system"
+        ],
+        "scoring": "Blinded descriptive 0/1 coding: a supported field counts 1, otherwise 0. Accept clear synonyms under a frozen codebook; retain disagreements. No answer feedback, no selection by this score."
+      },
+      "learning_retrieval": [
+        {
+          "id": "F08-L1",
+          "prompt": "What year did the passage give for this person's Nobel award?",
+          "accepted": "1906"
+        },
+        {
+          "id": "F08-L2",
+          "prompt": "What Nobel prize category did the passage name?",
+          "accepted": "Physiology or Medicine"
+        }
+      ],
+      "delayed_recognition": {
+        "id": "F08-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1897"
+          },
+          {
+            "id": "o2",
+            "text": "1906"
+          },
+          {
+            "id": "o3",
+            "text": "1912"
+          },
+          {
+            "id": "o4",
+            "text": "1918"
+          }
+        ],
+        "correct_option_id": "o2",
+        "rationale": "The stated year is 1906. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "allow_do_not_know": true
+      },
+      "factual_support": [
+        "S11",
+        "S12"
+      ]
+    }
+  ]
+}

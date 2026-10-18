@@ -6,6 +6,8 @@
 **Registration:** Not preregistered. No independent methods, security or ethics approval.  
 **Activity:** Protocol design and synthetic arithmetic checks only. No recruitment, participant processing, target acquisition or experiment has occurred.
 
+**Review-material update:** [Materials 0.2-candidate](materials/README.md) now supplies proposed scripts, eight source-linked dossiers and ordinary-task keys. The [independent review packet](review/review-packet.md) makes remaining decisions and audits explicit. Protocol and synthetic-code version remain 0.1; these materials are not independently finalized or approved for participants.
+
 This candidate asks whether a specified contemplative instruction changes ordinary cognition or correspondence with concealed, independently randomized information. It does not assume a higher-dimensional store, contact with a historical individual, anomalous transfer, or reproducible psychic ability.
 
 ## 1. Origin, scope and relationship to existing work
@@ -63,11 +65,11 @@ Under the intended null, for each committed trial, P(target = k | dossier, cultu
 
 **Sample:** 48 consenting adults, one enrollment each, randomly assigned 24 to mettā contemplation (M) and 24 to ordinary analytical reflection (R). A custodian generates a uniformly random 24/24 allocation before enrollment, concealed from enrollment staff. Stop at 48 randomized participants or eight weeks after first enrollment, whichever comes first. No replacement of withdrawals and no outcome-based extension. Failure to reach 48 is an incomplete feasibility pilot with descriptive results only under this version.
 
-**Person materials:** eight fixed, rights-reviewed historical public-person dossiers, selected and hashed by a stimulus team before recruitment. Avoid relatives, recently deceased personal contacts, restricted sacred knowledge and distressing material. Einstein is reserved for a separately labeled public-knowledge calibration example, excluded from hidden-target inference. The eight dossiers, fact/inference keys, accessibility versions and source locators are a required missing stimulus appendix; this candidate is not launch-ready.
+**Person materials:** eight fixed, rights-reviewed historical public-person dossiers, selected and hashed by a stimulus team before recruitment. Avoid relatives, recently deceased personal contacts, restricted sacred knowledge and distressing material. Einstein is reserved for a separately labeled public-knowledge calibration example, excluded from hidden-target inference. The [draft stimulus appendix](materials/README.md) now contains eight proposed dossiers, fact/inference keys and source locators. Independent source/rights review, workload and accessibility checks and final stimulus approval remain launch blockers. Its purposive Nobel-laureate set is not culturally or psychometrically matched.
 
 Each participant receives enriched learning for a uniformly selected four of the eight people, independently of arm and hidden targets. These are the trained condition (T); the remaining four receive name plus one neutral cue (U). U means minimally cued, not absence of neural representation. The fixed eight-person set limits generalization; figures are not eight independent study replications.
 
-**Day 0:** complete consent and the open-target comprehension screening described below before randomization. Then measure baseline person familiarity (0–4), a brief fixed knowledge inventory using items distinct from the final test, and optional general AI/reading exposure. Give no correct-answer feedback on the inventory. Give each T dossier three minutes of study and a two-item retrieval exercise without repeated coaching. U receives its brief cue and an equal-duration unrelated filler task. Do not assign U statements about the person to fill the time. Failed learning remains in intention-to-treat analysis.
+**Day 0:** complete consent and the open-target comprehension screening described below before randomization. Then measure baseline person familiarity (0–4), a brief fixed knowledge inventory using items distinct from the final test, and optional general AI/reading exposure. Give no correct-answer feedback on the inventory. Each T learning slot is three minutes total: 150 seconds of dossier study followed by two 15-second retrieval items, without feedback or coaching. Each U slot is 15 seconds of name/cue followed by 165 seconds of unrelated filler. Do not assign U statements about the person to fill the time. These timing choices are proposals for review; failed learning remains in intention-to-treat analysis.
 
 **Day 1, 24 ± 4 hours later:** measure delayed recognition without corrective feedback, administer the assigned five-minute instruction, and conduct 16 hidden trials. Each person appears twice with a fresh target per trial: eight T and eight U trials. Use a recorded independent random permutation of the multiset of person IDs. Targets are never balanced within sessions: exact balancing could make later answers predictable. The learning–test delay is a pragmatic proxy for retained knowledge, not proof of long-term neuronal changes. Out-of-window sessions remain in the ledger and planned-denominator analysis, with a prespecified timing-deviation flag.
 
@@ -77,7 +79,7 @@ No designated human sender attends to the target. Classification is RV for the e
 
 ## 5. Instructions, trial order and controls
 
-Candidate scripts for cultural, accessibility and methods review:
+Candidate scripts for cultural, accessibility and methods review follow. [session-scripts.md](materials/session-scripts.md) specifies the full proposed timed tracks, questionnaires, trial prompts and neutral debrief. Text is drafted; actual audio and the participant application are not implemented or approved.
 
 **Shared opening:** “This task compares two ways of attending to information about people. Neither method is known to reveal hidden targets. Please follow your assigned instruction, record any impressions without embellishment, and make one choice. You may report no impression or stop.”
 
@@ -97,9 +99,9 @@ Each hidden trial:
 2. Allow up to 60 seconds of free response, explicitly allowing “no impression.” Lock original text before displaying the response alternatives.
 3. Display all four symbols in an independently randomized spatial order. Allow 15 seconds for exactly one choice or abstention; timeout is recorded.
 4. Record confidence (0–100), source attribution (memory / inference / spontaneous impression / other / unsure) and felt connection (0–10), without leading source-identity suggestions. Preserve the locked answer.
-5. Give no correctness feedback. After every four trials, offer a fixed break and a one-minute reminder of the assigned method.
+5. Give no correctness feedback. After trials 4, 8 and 12, offer a scheduled two-minute break and a one-minute reminder of the assigned method. Additional breaks are logged, not grounds for selective exclusion.
 
-After hidden trials, administer eight fixed dossier-recall items and eight fixed inference items, one of each per person. Present four plausible alternatives for each; precommit answer keys and distractors independently of participant responses. Distinguish supplied-fact recall from inference about newly supplied premises. Randomize answer positions independently. These tasks characterize ordinary cognition and manipulation quality; their scores are not pooled with hidden-target scores.
+After hidden trials, administer all eight fixed dossier-recall items, then all eight fixed inference items, one of each per person. Present four alternatives for each plus a do-not-know route; precommit answer keys and distractors independently of participant responses. Distinguish supplied-fact recall from inference about newly supplied fictional premises. Randomize answer positions independently. The proposed distractors and difficulty still require independent review. These tasks characterize ordinary cognition and manipulation quality; their scores are not pooled with hidden-target scores.
 
 At the start of Day 0, two **open-target calibration** trials visibly present the correct symbol, followed by the same response interface. They test comprehension and coding, not psi. Failures prompt one standardized explanation and two fresh calibration examples before arm exposure; persistently unable participants are screened out before randomization. Record all screened exclusions. No hidden calibration trials are used to select “gifted” participants.
 
@@ -256,6 +258,8 @@ Files here:
 - test_reference_analysis.py: checks exact scoring, denominators, clustering and rejection of malformed fixtures.
 - validation.json: recorded synthetic checks; never study results.
 - sources.json: scoped primary sources and access limitations.
+- materials/: review candidate with eight dossiers, ordinary answer keys, source/rights records, timed scripts and file hashes; no hidden assignments.
+- review/review-packet.md: unresolved proponent decisions, independent-review questions, proposed joint-simulation scenarios and security acceptance exercises.
 
 Run from this folder:
 
@@ -268,7 +272,7 @@ Before a v0.2 registration can be frozen:
 
 - [x] Proponent agrees to use the random-association bridge for the pilot design, recorded 18 October 2026 from the reply “Yes” to the preceding draft summary.
 - [ ] Proponent specifies instruction fidelity, necessary conditions and a minimum meaningful effect for independent review.
-- [ ] Eight dossier packets, answer keys, distractors and source/rights records are finalized independently of responses.
+- [ ] Eight dossier packets, answer keys, distractors and source/rights records are independently reviewed and finalized. A complete draft set is now available; indexed source checks and matching by word count are not sufficient approval.
 - [ ] Named independent statistician reviews estimands, withdrawal handling, joint operating characteristics and participant-level uncertainty.
 - [ ] Independent security reviewer approves the implemented acquisition, randomization, custody, lock ordering and leakage tests.
 - [ ] Ethics, cultural review where applicable, consent, compensation and data-management decisions are documented.
@@ -276,7 +280,7 @@ Before a v0.2 registration can be frozen:
 - [ ] Protocol, code and materials receive an immutable timestamp before any real data.
 - [ ] A separate replication plan is funded and registered before scientific promotion is considered.
 
-The bridge-design agreement is the only completed item in this launch checklist. No methods, security or ethics approval is implied. The strongest current deliverable is an inspectable design, not evidence that its hypothesis is true.
+The bridge-design agreement is the only completed item in this launch checklist. Drafting review materials does not check off independent review. No methods, security or ethics approval is implied. The strongest current deliverable is an inspectable design, not evidence that its hypothesis is true.
 
 ## Primary references
 

@@ -85,8 +85,14 @@
     ],
     "chance_probability": 0.25,
     "sender_present": false,
-    "final_stimuli_status": "MISSING_REVIEW_BLOCKER",
-    "einstein_role": "public-knowledge calibration only, excluded from primary targets"
+    "final_stimuli_status": "DRAFT_APPENDIX_AWAITING_INDEPENDENT_REVIEW",
+    "einstein_role": "public-knowledge calibration only, excluded from primary targets",
+    "learning_slot_seconds": 180,
+    "trained_study_seconds": 150,
+    "trained_retrieval_seconds_per_item": 15,
+    "minimal_cue_seconds": 15,
+    "minimal_filler_seconds": 165,
+    "learning_timing_status": "AI_PROPOSED_REVIEW_REQUIRED"
   },
   "bridge": {
     "statement": "New random symbol associated with a person dossier is accessible despite not belonging to the person's lifetime knowledge",
@@ -163,6 +169,13 @@
   ],
   "artifacts": {
     "reference_code_scope": "synthetic calculations only; does not implement recruitment, acquisition, target generation or cryptographic custody",
-    "real_data_input_supported": false
+    "real_data_input_supported": false,
+    "review_materials_version": "0.2-candidate",
+    "review_materials_path": "materials/README.md",
+    "review_packet_path": "review/review-packet.md",
+    "review_materials_independently_finalized": false,
+    "participant_audio_created": false,
+    "acquisition_implemented": false,
+    "materials_sources_access": "Indexed institutional source text; canonical facts-page access returned 403; independent verification pending"
   }
 }
