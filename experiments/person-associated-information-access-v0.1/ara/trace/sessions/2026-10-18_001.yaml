@@ -2,10 +2,10 @@ session:
   id: 2026-10-18_001
   date: '2026-10-18'
   started: 2026-10-18T07:23+00:00
-  last_turn: 2026-10-18T07:23+00:00
-  turn_count: 1
-  summary: Created review-only person-information pilot in draft PR 405; synthetic
-    checks only; all launch gates closed.
+  last_turn: 2026-10-18T07:30+00:00
+  turn_count: 2
+  summary: Draft PR 405 records narrow bridge-design assent; substantive prediction
+    remains untested and experimental approval remains closed.
 events_logged:
 - turn: 1
   type: question
@@ -45,6 +45,18 @@ events_logged:
   provenance: ai-suggested
   summary: Fresh random symbols associated with historical-person dossiers may serve
     as a surrogate for the proposed information-access claim.
+- turn: 2
+  type: decision
+  id: N05
+  routing: direct
+  provenance: user-revised
+  summary: Accept the hidden-symbol bridge for pilot design only
+- turn: 2
+  type: constraint
+  id: CON01
+  routing: crystallized
+  provenance: user-revised
+  summary: O02 adopted as a scoped design assumption, not a supported scientific claim.
 ai_actions:
 - turn: 1
   action: Retrieved governance and prior protocols; inspected scoped primary sources;
@@ -59,17 +71,38 @@ ai_actions:
   - ../reference_analysis.py
   - ../test_reference_analysis.py
   - ../validation.json
+- turn: 2
+  action: Updated README, protocol metadata and validation follow-up; checked unchanged
+    code hashes and closed execution/evidence gates. Numeric tests not rerun.
+  provenance: ai-executed
+  files_changed:
+  - ../README.md
+  - ../protocol.json
+  - ../validation.json
 claims_touched: []
-logic_revisions: []
+logic_revisions:
+- turn: 2
+  entry: CON01
+  field: created
+  before: null
+  after: Adopt the hidden person-associated symbol task as a pilot design assumption
+    only; construct validity and mechanism remain unestablished.
+  signal: verbal-declaration
+  provenance: user-revised
+  note: Contextual Yes refers to the explicit bridge decision; does not endorse other
+    protocol details or launch.
 key_context:
 - turn: 1
   excerpt: User explicitly requires separation of ordinary knowledge, source identity
     and physical seven-dimensional claims; no experiment without appropriate review.
+- turn: 2
+  excerpt: 'User: Yes. Recorded as narrow assent to the open bridge assumption, with
+    limits made explicit in the assistant response and protocol.'
 open_threads:
-- Proponent bridge and minimum-effect agreement
+- Proponent instruction fidelity, necessary conditions and minimum meaningful effect
 - Final eight-dossier stimulus appendix
 - Independent statistics, security and ethics review
 - Acquisition/custody implementation and prospective registration
 ai_suggestions_pending:
-- Operational random-association bridge
-- Pilot size, scripts and effect thresholds pending independent review
+- Pilot size, scripts and effect thresholds pending review
+- Construct validity of the adopted surrogate remains unestablished

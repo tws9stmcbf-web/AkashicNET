@@ -57,3 +57,20 @@ tree:
   also_depends_on:
   - N03
   status: resolved
+- id: N05
+  type: decision
+  title: Accept the hidden-symbol bridge for pilot design only
+  provenance: user-revised
+  timestamp: 2026-10-18T07:30+00:00
+  choice: Record the user reply Yes as narrow agreement to the person-associated random-symbol
+    pilot assumption, without empirical validation or blanket study approval.
+  alternatives:
+  - Information module could be redesigned if the hypothesis is later restricted to
+    lifetime knowledge
+  evidence:
+  - User reply Yes at 2026-10-18T00:26:48-07:00 to prior draft summary
+  - ../protocol.json:bridge.acceptance_record
+  - https://github.com/tws9stmcbf-web/AkashicNET/commit/3fa1de1e4e6f7f104cc383725611bec1d41f68f6
+  also_depends_on:
+  - N02
+  status: resolved

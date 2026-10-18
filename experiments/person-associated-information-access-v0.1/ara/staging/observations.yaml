@@ -25,7 +25,7 @@ observations:
   potential_type: constraint
   bound_to:
   - N02
-  promoted: false
-  promoted_to: null
-  crystallized_via: null
+  promoted: true
+  promoted_to: logic/solution/constraints.md:CON01
+  crystallized_via: verbal-affirmation; design acceptance only
   stale: false

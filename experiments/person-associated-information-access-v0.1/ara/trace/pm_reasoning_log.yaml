@@ -8,3 +8,12 @@ entries:
     claim.'
   - No logic layer upgrade; all scientific and execution gates remain closed. No independent
     review claimed.
+- turn: 2026-10-18_001#2
+  notes:
+  - Verbal affirmation closes O02 as a design constraint only; no empirical result
+    exists. Original staged text/provenance preserved, only promotion pointers changed.
+  - O01 remains untested/staged. No approval inferred for minimum effect, instruction
+    fidelity, recruitment, participant processing, ethics or physical/source-identity
+    claims.
+  - Numeric tests not repeated because only metadata/documentation changed and source
+    code hashes match the checked version.

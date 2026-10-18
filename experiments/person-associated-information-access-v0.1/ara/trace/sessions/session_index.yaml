@@ -1,9 +1,9 @@
 sessions:
 - id: 2026-10-18_001
   date: '2026-10-18'
-  summary: Created review-only person-information pilot in draft PR 405; synthetic
-    checks only; all launch gates closed.
-  turn_count: 1
-  events_count: 6
+  summary: Draft PR 405 records narrow bridge-design assent; substantive prediction
+    remains untested and experimental approval remains closed.
+  turn_count: 2
+  events_count: 8
   claims_touched: []
   open_threads: 4
