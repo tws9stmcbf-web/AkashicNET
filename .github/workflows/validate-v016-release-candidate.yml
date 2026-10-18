@@ -1,4 +1,4 @@
-name: Validate v0.16 composite release candidate
+name: Validate v0.16 historical candidate preservation
 
 on:
   pull_request:
@@ -19,9 +19,11 @@ on:
       - 'scripts/validate_source_status_v016.py'
       - 'scripts/validate_v016_readiness.py'
       - 'scripts/validate_v016_release_candidate.py'
+      - 'scripts/validate_v016_preservation.py'
       - 'tests/test_knowledge_graph_beta_v016.py'
       - 'tests/test_source_status_v016.py'
       - 'tests/test_v016_release_candidate.py'
+      - 'tests/test_v016_preservation.py'
       - '.github/workflows/validate-knowledge-graph-beta-v016.yml'
       - '.github/workflows/validate-source-status-v016.yml'
       - '.github/workflows/validate-v016-readiness.yml'
@@ -67,10 +69,12 @@ jobs:
           cache: pip
       - name: Install test dependency
         run: python -m pip install pytest
-      - name: Validate composite candidate
+      - name: Validate historical candidate preservation on exact integrated head
         env:
           CANDIDATE_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
-        run: python scripts/validate_v016_release_candidate.py
+        run: |
+          python -m unittest tests.test_v016_preservation
+          python -m scripts.validate_v016_preservation
       - name: Verify deterministic governed artifacts
         run: |
           git diff --exit-code --             manifests/v0.16-release-candidate.json             references/big-questions/BQ001/knowledge-graph-beta-fixture-v0.16.json             references/source-status-fixture-v0.16.json             references/source-status-fixture-v0.16-slice2.json             references/source-status-fixture-v0.16-synthetic.json
