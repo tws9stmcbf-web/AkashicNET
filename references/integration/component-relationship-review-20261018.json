@@ -1,0 +1,1050 @@
+{
+  "record_type": "metadata_only_integration_review",
+  "version": "0.1",
+  "status": "DRAFT_REVIEW_REQUIRED",
+  "review_date": "2026-10-18",
+  "created_at": "2026-10-18T13:32:41+00:00",
+  "baseline": "e920533004eb8b7a10031c0b38ec20576250a665",
+  "authorship": {
+    "author_type": "AI",
+    "name": "Codex",
+    "independent_human_review": "PENDING"
+  },
+  "source_register": [
+    {
+      "source_id": "SRC-JIGSAW",
+      "title": "Living Jigsaw human-review record",
+      "repository_path": "docs/LIVING_JIGSAW_INTEGRATION_DRAFT.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/docs/LIVING_JIGSAW_INTEGRATION_DRAFT.md",
+      "sha256": "52039cddb71a0c269b53ef8d90f76c4ffc93f10c4562b789b7cc09e434c32c4a",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Consolidation decision 03; definition gate; source IDs J39 and J40",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-HH-MAPPING",
+      "title": "HIERATIC–HOMESENSE integration framework",
+      "repository_path": "experiments/integration-hieratic-homesense.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/experiments/integration-hieratic-homesense.md",
+      "sha256": "a7fa882e426a33b270e6e66c34a46e88f9654af25a00c474e13c638ce3c7afb7",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Per-concept mapping template; integration principles; workflow",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-BQ011",
+      "title": "BQ011 compassionate-action authoring candidate",
+      "repository_path": "references/big-questions/BQ011/spec-v0.1.json",
+      "commit": "084f86069285f7f53bb165f0942a308d969dd832",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/084f86069285f7f53bb165f0942a308d969dd832/references/big-questions/BQ011/spec-v0.1.json",
+      "sha256": "8cbb0442f40e736737c5f2cb6b1037bb1ad05f3f050aeb9ec01c62c8fb298542",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "/outcome_families; /models; /causal_boundary; /promotion_guards",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-OMNI-CLAIMS",
+      "title": "OMNI claim-review closed schema",
+      "repository_path": "schemas/akashicomni-claim-review-v0.5.0.schema.json",
+      "commit": "7df1de8272b1a03623f8b7d57c258896273f5764",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/7df1de8272b1a03623f8b7d57c258896273f5764/schemas/akashicomni-claim-review-v0.5.0.schema.json",
+      "sha256": "dbaeb27545c10d1f149a7aa9e9ebc9a925ec0eb660747357c5ba749a3c6c65d6",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "/properties/claims/items/properties; /properties/sources/items/properties",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-CONTRADICTION",
+      "title": "Bounded contradiction-review utility",
+      "repository_path": "tools/contradiction-review.md",
+      "commit": "bc68dfc3aa5d3929034643504022d798bd3f270e",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/bc68dfc3aa5d3929034643504022d798bd3f270e/tools/contradiction-review.md",
+      "sha256": "d2552104e7363818208359869998e640ffd9666c749ab927ce0b905b4de5a647",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Input contract; Research workflow; Provenance and evaluation",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-OMNI-COVERAGE",
+      "title": "OMNI coverage companion",
+      "repository_path": "docs/AKASHICOMNI_COVERAGE_RECORD_V0.1.md",
+      "commit": "7df1de8272b1a03623f8b7d57c258896273f5764",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/7df1de8272b1a03623f8b7d57c258896273f5764/docs/AKASHICOMNI_COVERAGE_RECORD_V0.1.md",
+      "sha256": "a7815da56b3b2f2192f50df2d5a8aeaa7e68661ce49af2fd7d539a570d858790",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Contract and boundaries; source context; validation scope",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-OMNI-GATES",
+      "title": "OMNI engineering pilot and M01–M12",
+      "repository_path": "docs/AKASHICOMNI_V0.5.0_CLAIM_REVIEW_DRAFT.md",
+      "commit": "7df1de8272b1a03623f8b7d57c258896273f5764",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/7df1de8272b1a03623f8b7d57c258896273f5764/docs/AKASHICOMNI_V0.5.0_CLAIM_REVIEW_DRAFT.md",
+      "sha256": "8e47de1de6849db136478a41b89e68d55594c7c9280502e4ece336c0238e57e0",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Full candidate reconciliation; manual gates; dated coverage implementation",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-PRISM",
+      "title": "PRISM perspective and investigation layer",
+      "repository_path": "references/knowledge-governance/EPISTEMIC_PERSPECTIVE_LAYER_V0.1.md",
+      "commit": "570aee1632fc036d8f114c0fa584ad6c198575a2",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/570aee1632fc036d8f114c0fa584ad6c198575a2/references/knowledge-governance/EPISTEMIC_PERSPECTIVE_LAYER_V0.1.md",
+      "sha256": "1b50e9743a06f199ea96aa65fcc00e6780c5e1b8250e8047aa795bfa05bfcf53",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Source network; interpretation; connection assessments; cultural boundaries",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-PRISM-MODULE",
+      "title": "PRISM inquiry-module schema",
+      "repository_path": "schemas/akashic-prism-inquiry-module-v0.1.schema.json",
+      "commit": "570aee1632fc036d8f114c0fa584ad6c198575a2",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/570aee1632fc036d8f114c0fa584ad6c198575a2/schemas/akashic-prism-inquiry-module-v0.1.schema.json",
+      "sha256": "1cec17f2b2291aa42d5973fbbe5adc6acee5d3ba2e21a717a2284d488e9850a7",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Closed interchange fields and compatible_omni_frameworks",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-SKER",
+      "title": "Spiritual Knowledge and Encounter Record",
+      "repository_path": "schemas/spiritual-knowledge-encounter-record-v0.1.schema.json",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/schemas/spiritual-knowledge-encounter-record-v0.1.schema.json",
+      "sha256": "ad2c82401a7e51a5b55f24b94a1573b9b49570dddcae819e09c383447858205e",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "evidence_lane; provenance; cultural_governance; claims; verification",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-LINEAGE",
+      "title": "Reddit crosspost lineage",
+      "repository_path": "tools/reddit_bridge/lineage.py",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/tools/reddit_bridge/lineage.py",
+      "sha256": "0ce09f5139b44145fc915bb511642a1f7f9fd9fa70e8fadf6e77f6973325f703",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "extract_crosspost_lineage; canonical_parent_url",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-EDGE",
+      "title": "Existing cross-source relationship schema",
+      "repository_path": "references/community/cross-source-edge-provenance-schema-v0.1.json",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/references/community/cross-source-edge-provenance-schema-v0.1.json",
+      "sha256": "6fa82a509734922ca44a86f90392679e4e4baad016e7dcfd6dc75b79dfc8e8d8",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Artifacts, independence keys, inferred candidates and acceptance boundaries",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-N2N",
+      "title": "N2N community index",
+      "repository_path": "references/community/n2n-index.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/references/community/n2n-index.md",
+      "sha256": "7f3e53b9de6388f5142dc90de03782ef61e273a4a461d8c1a6a333b1f24be586",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Schema; classification; rights; public seed records",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-N2N-AUDIT",
+      "title": "Bounded public corpus audit",
+      "repository_path": "docs/audits/manual-corpus-reading-2026-09-22.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/docs/audits/manual-corpus-reading-2026-09-22.md",
+      "sha256": "db0795fd21278cbbbaa8a8c46270fe48f873e9c1482a15fbfab173e6dfa1b86d",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "1u8aspz; 1w92g5v; 1vzsh2d; source-access limitations",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-CL",
+      "title": "Consciousness Library integration",
+      "repository_path": "references/consciousness/consciousness-library-integration-20261016.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/references/consciousness/consciousness-library-integration-20261016.md",
+      "sha256": "a79dc69f01a6aee3e0ae9cd547afac88aae1be67934fc32a1c9689dc460e9113",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Selected source IDs; erratum; discovery-only reuse and licence limits",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-CL-EXPANSION",
+      "title": "Seven-work bibliographic expansion",
+      "repository_path": "references/consciousness/consciousness-library-expansion-20261016.json",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/references/consciousness/consciousness-library-expansion-20261016.json",
+      "sha256": "e3e53059909834eca5e7d53fe8096472919bb613e048eee50fe5caf55a6ef637",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Work identities; dates; DOI provenance; candidate-only status",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-INFORMATION",
+      "title": "Person-associated information-access protocol",
+      "repository_path": "experiments/person-associated-information-access-v0.1/README.md",
+      "commit": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157/experiments/person-associated-information-access-v0.1/README.md",
+      "sha256": "42ed19b19057cf794e649498baa3ddd20d3f7839159a1507e6f965e96e6f1fe9",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Design-only scope, hidden targets, review requirements and interpretation limits",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-STARGATE",
+      "title": "STARGATE metadata index",
+      "repository_path": "docs/STARGATE_PRIMARY_SOURCE_INDEX_V0.1.md",
+      "commit": "ea83e35da0e6406d0cec77a19b438747a45da835",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/ea83e35da0e6406d0cec77a19b438747a45da835/docs/STARGATE_PRIMARY_SOURCE_INDEX_V0.1.md",
+      "sha256": "ba5a0b2be393af6c8ee99c3454757b01877543b45418b112959908c230a7eb0c",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Source identities, reading-copy limitations, study dependence and bounded RV relation",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-SECURITY",
+      "title": "Repository security policy",
+      "repository_path": "SECURITY.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/SECURITY.md",
+      "sha256": "ffbcf3112bc91ebc17474fd7f4e4479700bae5cd836f518efb0c2898df0f7861",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "Public/private boundary and publication gate",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-DATA-BOUNDARY",
+      "title": "Public data boundary",
+      "repository_path": "docs/DATA_SECURITY_BOUNDARY.md",
+      "commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/e920533004eb8b7a10031c0b38ec20576250a665/docs/DATA_SECURITY_BOUNDARY.md",
+      "sha256": "ddf4d115bcf15c9e4c93ab932f7ef2500e640dd3568be157dcc53e408b4f4462",
+      "hash_scope": "complete exact Git blob bytes",
+      "inspected_passage": "PUBLIC_VERIFIED and ELIGIBLE metadata requirements",
+      "access": "repository source inspected by AI; not independent human review",
+      "attribution": "AkashicNET project record; individual authorship not inferred from Git identity",
+      "rights": "Link and original metadata/paraphrase only; no blanket external-content reuse licence inferred",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "reviewed_on": "2026-10-18",
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-OMNI-PUBLIC",
+      "title": "AkashicOMNI v0.5.0 Public Review Specification",
+      "url": "https://akashicnet.org/akashicomni/v0-5-0",
+      "access": "Current public extracted text inspected; twelve perspectives, synthesis, EXPAND², component references and source rules",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-CUT-403",
+      "title": "CUT source post headed v4.0.3",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/",
+      "access": "Source header and clarification context inspected; source-defined framework is broader than OMNI temporal roles",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-CUT-404",
+      "title": "CUT v4.0.4 clarification, 28 September 2026",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/comment/pck0jk6/",
+      "access": "Complete dated clarification inspected; retain as separate addendum, not a rewritten header",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-H809",
+      "title": "HOMESENSE809: A New Octave of Coherence",
+      "url": "https://akashicnet.org/homesense809",
+      "access": "Public page inspected; reflective interpretation and existing practice themes",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged",
+      "inherited_source_id": "SRC-HOMESENSE-809"
+    },
+    {
+      "source_id": "SRC-H858",
+      "title": "HOMESENSE858: Gift Economy and Reciprocity",
+      "url": "https://akashicnet.org/homesense858",
+      "access": "Public page inspected; essentials, voluntary participation, alternatives and proposed pilots",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged",
+      "inherited_source_id": "SRC-HOMESENSE-858"
+    },
+    {
+      "source_id": "SRC-BARNES-REVIEW",
+      "title": "Barnes primary-source review companion",
+      "url": "https://akashicnet.org/research/barnes-primary-sources-20261018.json",
+      "access": "Inherited from the earlier integration map; not fetched or re-appraised in this pass",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-N2N-LEDGER",
+      "title": "N2N review ledger, PR377",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/pull/377",
+      "access": "Current PR metadata inspected at head a5f06f02151204e245cba3a3a61a2d0b38323627; full ledger not reread",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-RETRIEVAL",
+      "title": "Permission-filtered retrieval, PR400",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/pull/400",
+      "access": "Current PR metadata inspected at head 28887d591b8c8bee52c4901d16437e5d0c8f2f20; runtime not tested",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    },
+    {
+      "source_id": "SRC-7D",
+      "title": "7D Realm source synthesis",
+      "url": "https://akashicnet.org/7d",
+      "access": "Inherited from the earlier integration map; source packet not reread in this pass",
+      "reviewed_on": "2026-10-18",
+      "attribution": "Original public source and named creators retained; AkashicNET commentary is separate",
+      "rights": "Link-only and original paraphrase; no media, abstracts or source bodies imported",
+      "sha256": null,
+      "hash_scope": null,
+      "source_identifier_scope": "Review-local alias; original work, post, claim and question IDs remain unchanged"
+    }
+  ],
+  "candidate_relations": [
+    {
+      "id": "REL-001",
+      "source": "SRC-JIGSAW",
+      "source_record": "J39/J40",
+      "target": "SRC-HH-MAPPING",
+      "target_record": "Per-concept mapping template",
+      "relation": "APPLIES_TO_APPLICATION_DESIGN_CANDIDATE",
+      "candidate": "IC-013",
+      "mapping": "Use the already combined learning-to-action question to frame a HOMESENSE proposition. Carry J39 and J40, their publication history and inherited J38/J41 links. A separate mapping records outcomes, confounders and revision conditions.",
+      "dependencies": [
+        "Existing Jigsaw human decision remains the authority for J39/J40 only.",
+        "A named concept_id and an explicit proposition must be chosen before any mapping is populated.",
+        "Independent methods, ethics, consent and preregistration gates apply before a study."
+      ],
+      "boundary": "Navigation and protocol-design context only; no new piece, merge, outcome or efficacy finding.",
+      "reject_if": "A same-direction crosswalk is located, the question adds no decision value, or the mapping conflates a reflective question with an intervention."
+    },
+    {
+      "id": "REL-002",
+      "source": "SRC-BQ011",
+      "source_record": "/outcome_families",
+      "target": "SRC-HH-MAPPING",
+      "target_record": "measurable_variables_outcomes; possible_confounders; falsification_criteria",
+      "relation": "OUTCOME_TAXONOMY_REUSE_CANDIDATE",
+      "candidate": "IC-014",
+      "mapping": "Use BQ011 outcome families as a menu for application mappings, paired with its alternative models and causal boundaries. Select and operationalise only relevant outcomes; do not require all seven or collapse levels. This can later inform the existing HOMESENSE809→858 care case.",
+      "dependencies": [
+        "PR345 remains an open review candidate; no BQ011 canonical registration or maturity change.",
+        "Select validated measures, units, timing, burden and adverse outcomes for the actual question.",
+        "Use the existing template and care proposal, not another research axis or allocation engine."
+      ],
+      "boundary": "Methods vocabulary only. No evidence is transferred from BQ011 or from a published HOMESENSE proposal.",
+      "reject_if": "Outcome categories lack relevance or operational definitions, existing equivalent mappings are found, or a causal level is silently substituted."
+    },
+    {
+      "id": "REL-003",
+      "source": "SRC-OMNI-CLAIMS",
+      "source_record": "/properties/claims/items/properties",
+      "target": "SRC-CONTRADICTION",
+      "target_record": "Input contract",
+      "relation": "MANUAL_INTERFACE_MAPPING_CANDIDATE",
+      "candidate": "IC-015",
+      "mapping": "Manually map claim_id→claims[].id and wording→claims[].text. Resolve source_ids through the packet sources to refs. The source location is not an exact passage: verified extraction is a separate prerequisite. Scope population/conditions/definition/time and nominated pairs need explicit review. Preserve original packet, access states, lanes, alternatives, missing evidence, assessments and revision history in a companion; the triage tool is a reduced view.",
+      "dependencies": [
+        "PR367 and PR402 remain separate unreleased drafts; no code is copied or schema loosened.",
+        "Block actual transfer when passages, scope or source identity are unavailable; unknown is not not-applicable.",
+        "M02, M03, M04, M07 and M12 are relevant; this mapping satisfies none of M01–M12."
+      ],
+      "boundary": "No executable adapter, source authentication, contradiction verdict, evidence ranking, reviewer attestation or release approval.",
+      "reject_if": "Mapping drops context silently, invents passages, coerces epistemic types, changes source access, or an existing reviewed adapter already covers this path."
+    }
+  ],
+  "matrix": [
+    {
+      "id": "IC-013",
+      "priority": "P0",
+      "classification": "missing_connection",
+      "title": "Jigsaw reflection → application mapping",
+      "verified_state": "J39/J40 is the only approved merger in the inspected Jigsaw record; the application-mapping template already exists.",
+      "next_contribution": "Stage REL-001: apply the combined question to an optional, measurable application design. Preserve J39, J40, J38 and J41; do not create a new Jigsaw piece.",
+      "evidence_boundary": "An approved editorial merger does not validate an intervention or confer approval on this proposed link.",
+      "source_ids": [
+        "SRC-JIGSAW",
+        "SRC-HH-MAPPING"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-014",
+      "priority": "P0",
+      "classification": "missing_connection",
+      "title": "BQ011 outcomes → HOMESENSE design",
+      "verified_state": "PR345 already defines seven outcome families, five alternative models and distinct causal levels.",
+      "next_contribution": "Stage REL-002: reuse outcome and alternative-explanation fields in the existing mapping template; later apply to the prepared care case.",
+      "evidence_boundary": "BQ011 is an unaccepted authoring candidate; intention, behaviour, institutions and ecological outcomes remain distinct.",
+      "source_ids": [
+        "SRC-BQ011",
+        "SRC-HH-MAPPING",
+        "SRC-H858"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-015",
+      "priority": "P0",
+      "classification": "missing_connection",
+      "title": "OMNI claims → contradiction review",
+      "verified_state": "PR402 already implements nominated-pair triage; PR367 already has strict claim and coverage records.",
+      "next_contribution": "Stage REL-003: document a manual field crosswalk, preserve the complete packet, require verified passage extraction and explicit pair nomination.",
+      "evidence_boundary": "No adapter or automatic contradiction discovery is implemented. Queue output cannot alter claims, reviewers, evidence or release gates.",
+      "source_ids": [
+        "SRC-CONTRADICTION",
+        "SRC-OMNI-CLAIMS",
+        "SRC-OMNI-GATES"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-001",
+      "priority": "P0",
+      "classification": "existing_capability",
+      "title": "Source identity and correction lineage",
+      "verified_state": "Main has crosspost lineage and a provenance contract. CUT plus its dated correction is already registered by OMNI and prepared as PILOT-A.",
+      "next_contribution": "Reuse the source bundle and original post/comment IDs. Add only newly verified manifestations; no second CUT integration proposal.",
+      "evidence_boundary": "Representations and dated corrections of one work are not independent corroboration.",
+      "source_ids": [
+        "SRC-LINEAGE",
+        "SRC-EDGE",
+        "SRC-CUT-403",
+        "SRC-CUT-404",
+        "SRC-OMNI-PUBLIC"
+      ],
+      "prior_candidate_id": "IC-001"
+    },
+    {
+      "id": "IC-017",
+      "priority": "P0",
+      "classification": "reusable_component",
+      "title": "Provenance blockers as intake filters",
+      "verified_state": "N2N indexes mix review depths; PR377 records blocked repository-only reviews. PR379 already has a blocked-admission crosswalk.",
+      "next_contribution": "Carry access, attribution and blocker state into every proposed reuse. Use verified original records before broad topic associations.",
+      "evidence_boundary": "Indexed does not mean read, attributable, licensed or evidence-rated. A failed fetch does not refute a source.",
+      "source_ids": [
+        "SRC-N2N",
+        "SRC-N2N-AUDIT",
+        "SRC-PRISM",
+        "SRC-N2N-LEDGER"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-002",
+      "priority": "P1",
+      "classification": "reusable_component",
+      "title": "Versioned ACTC, METAD, UMASC and CUT definitions",
+      "verified_state": "Public component references already include source-plus-clarification bundles.",
+      "next_contribution": "Reuse the exact bundles and limited role descriptions; retain definitions, disanalogies and relationship direction.",
+      "evidence_boundary": "A source-level framework is not exhausted by its OMNI role. Conceptual coherence is not causal or empirical support.",
+      "source_ids": [
+        "SRC-OMNI-PUBLIC",
+        "SRC-CUT-404"
+      ],
+      "prior_candidate_id": "IC-002"
+    },
+    {
+      "id": "IC-003",
+      "priority": "P1",
+      "classification": "missing_connection",
+      "title": "Full-record transfer and loss reporting",
+      "verified_state": "Earlier PILOT-A/B/C paired records have reduced PRISM projections; native Thinking Space import remains untested. PR367 already has a coverage companion.",
+      "next_contribution": "Specify round-trip invariants for sources, corrections, disagreements, coverage, optional modules and review history before any adapter code.",
+      "evidence_boundary": "This was already proposed earlier; it is new engineering work still needed, not a newly discovered module or validated interchange.",
+      "source_ids": [
+        "SRC-PRISM-MODULE",
+        "SRC-OMNI-COVERAGE",
+        "SRC-OMNI-GATES"
+      ],
+      "prior_candidate_id": "IC-003"
+    },
+    {
+      "id": "IC-011",
+      "priority": "P1",
+      "classification": "missing_connection",
+      "title": "Independent usefulness and accessibility evaluation",
+      "verified_state": "M08, M11 and other manual acceptance work remain pending; the earlier map already proposed matched-source evaluations.",
+      "next_contribution": "Compare the three prepared cases with a simpler review using predefined fidelity, omitted-alternative, comprehension and effort criteria.",
+      "evidence_boundary": "No participants, recruitment, independent assessment or superiority result is supplied here.",
+      "source_ids": [
+        "SRC-OMNI-GATES",
+        "SRC-OMNI-PUBLIC"
+      ],
+      "prior_candidate_id": "IC-011"
+    },
+    {
+      "id": "IC-005",
+      "priority": "P1",
+      "classification": "reusable_component",
+      "title": "Model → prediction → measurement → alternatives",
+      "verified_state": "Barnes PILOT-B is already prepared with separate version-specific claims in the earlier map.",
+      "next_contribution": "Reuse that template and exact source IDs; validate each new theory’s observable and confounders before considering experiments.",
+      "evidence_boundary": "The earlier map is inherited context, not a fresh paper appraisal; QDR and Colinear are theoretical proposals, not confirmations.",
+      "source_ids": [
+        "SRC-BARNES-REVIEW",
+        "SRC-OMNI-GATES"
+      ],
+      "prior_candidate_id": "IC-005"
+    },
+    {
+      "id": "IC-007",
+      "priority": "P1",
+      "classification": "reusable_component",
+      "title": "HOMESENSE/HIERATIC cross-post synthesis",
+      "verified_state": "The public specification already defines the method; 809→858 is prepared as PILOT-C.",
+      "next_contribution": "Expand only a bounded post selection, recording distinct contribution, disagreement and optional practice prompts.",
+      "evidence_boundary": "No whole-series synthesis is claimed; repetition, phase and edition numbers do not strengthen evidence.",
+      "source_ids": [
+        "SRC-HH-MAPPING",
+        "SRC-H809",
+        "SRC-H858",
+        "SRC-OMNI-PUBLIC"
+      ],
+      "prior_candidate_id": "IC-007"
+    },
+    {
+      "id": "IC-004",
+      "priority": "P1",
+      "classification": "existing_capability",
+      "title": "Discovery records, corrections and publication dates",
+      "verified_state": "Consciousness Library integration and seven-work expansion are on main. Existing BQ source IDs and a title erratum are preserved.",
+      "next_contribution": "Reuse discovery overlays; keep news date, online date, issue date, corrections and upstream work identity separate.",
+      "evidence_boundary": "AI summaries are discovery aids. Empty correction fields are not evidence of no correction. No bulk export or copying rights inferred.",
+      "source_ids": [
+        "SRC-CL",
+        "SRC-CL-EXPANSION"
+      ],
+      "prior_candidate_id": "IC-004"
+    },
+    {
+      "id": "IC-006",
+      "priority": "P1",
+      "classification": "existing_draft",
+      "title": "Information-access research controls",
+      "verified_state": "PR405 already contains a protocol, materials and synthetic analysis checks, building on PSI governance.",
+      "next_contribution": "Reuse prospective targets, leakage controls, blinded scoring, nulls and source-identity separation. Follow its pending review process.",
+      "evidence_boundary": "No experiment, recruitment, extraordinary access or historical-person identity is established. Do not create a second protocol.",
+      "source_ids": [
+        "SRC-INFORMATION"
+      ],
+      "prior_candidate_id": "IC-006"
+    },
+    {
+      "id": "IC-016",
+      "priority": "P1",
+      "classification": "existing_draft",
+      "title": "STARGATE source and assessment provenance",
+      "verified_state": "PR406 already stages six document records plus two reviewer contributions. PR361 is a bounded Reddit census.",
+      "next_contribution": "Reuse archival IDs, distinct reviewer attributions and shared-source warnings; verify the census record’s outbound source before linking it to specific reports.",
+      "evidence_boundary": "Eight entries are not eight independent experiments. CIA custody and declassification do not validate remote viewing.",
+      "source_ids": [
+        "SRC-STARGATE"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-008",
+      "priority": "P2",
+      "classification": "reusable_component",
+      "title": "Observation and synchronicity journal",
+      "verified_state": "SKER is on main; PRISM already adds states, interpretations, outliers and revision history.",
+      "next_contribution": "Design a compact private-first entry view against existing fields; preserve the first account and later explanations separately.",
+      "evidence_boundary": "No new journal schema is needed. Experiences do not authenticate psychic ability or external sources.",
+      "source_ids": [
+        "SRC-SKER",
+        "SRC-PRISM"
+      ],
+      "prior_candidate_id": "IC-008"
+    },
+    {
+      "id": "IC-009",
+      "priority": "P2",
+      "classification": "reusable_component",
+      "title": "Cultural and creative reference atlas",
+      "verified_state": "Existing encounter and PRISM fields already preserve context, authority, interpretation and restrictions.",
+      "next_contribution": "Reuse attributed concepts and licensed asset metadata. Treat cultural motifs and visual analogies as distinct relationships.",
+      "evidence_boundary": "Shared motifs do not establish common ontology, physical mechanisms or authority to represent a tradition.",
+      "source_ids": [
+        "SRC-SKER",
+        "SRC-PRISM",
+        "SRC-N2N-AUDIT"
+      ],
+      "prior_candidate_id": "IC-009"
+    },
+    {
+      "id": "IC-010",
+      "priority": "P2",
+      "classification": "missing_connection",
+      "title": "Care-action feasibility record",
+      "verified_state": "HOMESENSE858 is a published design proposal; the earlier PILOT-C is an optional action record.",
+      "next_contribution": "Connect the existing prototype to REL-001/002, then cost and co-design a limited offer before any commitment.",
+      "evidence_boundary": "No operating commons, secured funding, benefit guarantee or participant data. Essential support remains independent of credits.",
+      "source_ids": [
+        "SRC-H858",
+        "SRC-H809",
+        "SRC-BQ011"
+      ],
+      "prior_candidate_id": "IC-010"
+    },
+    {
+      "id": "IC-012",
+      "priority": "P2",
+      "classification": "prior_proposal",
+      "title": "Portable research bundle standards",
+      "verified_state": "Earlier map already proposed PROV, SKOS and RO-Crate crosswalks; existing packets preserve source and revision records.",
+      "next_contribution": "Choose one versioned public-metadata package and evaluate a lossless mapping only after core source identity work.",
+      "evidence_boundary": "No standard conformance or adapter tested here; formal mappings must preserve uncertainty and per-file rights.",
+      "source_ids": [
+        "SRC-EDGE",
+        "SRC-PRISM-MODULE"
+      ],
+      "prior_candidate_id": "IC-012"
+    },
+    {
+      "id": "IC-018",
+      "priority": "P2",
+      "classification": "existing_draft",
+      "title": "Permission-filtered retrieval",
+      "verified_state": "PR400 is a separate draft with public-retrieval boundaries and unresolved production/review requirements.",
+      "next_contribution": "Reuse its work after its own gates pass; avoid presenting source discovery as a deployed, permission-cleared retrieval service.",
+      "evidence_boundary": "No deployed authorization, actual source permission or production readiness verified by this matrix.",
+      "source_ids": [
+        "SRC-DATA-BOUNDARY",
+        "SRC-RETRIEVAL"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-019",
+      "priority": "HOLD",
+      "classification": "speculative_proposal",
+      "title": "QMM–PP or physical-dimension bridge",
+      "verified_state": "The public component record and CUT clarification explicitly leave this bridge unestablished.",
+      "next_contribution": "Keep separately attributed hypotheses and optional philosophical modules; require a precise, discriminating claim before empirical linkage.",
+      "evidence_boundary": "No automatic same-entity, mechanism, memory-survival or dimensional-access edge.",
+      "source_ids": [
+        "SRC-CUT-404",
+        "SRC-OMNI-PUBLIC"
+      ],
+      "prior_candidate_id": null
+    },
+    {
+      "id": "IC-020",
+      "priority": "HOLD",
+      "classification": "speculative_proposal",
+      "title": "Historical-person or 7D information mechanism",
+      "verified_state": "Earlier discussion motivated a design question; PR405 deliberately separates hidden-target accuracy from source and ontology.",
+      "next_contribution": "Retain as a hypothesis with ordinary recall, inference, cueing and leakage alternatives. Use the existing protocol for any permitted accuracy question.",
+      "evidence_boundary": "Brain geometry, semantic resemblance or accurate content cannot identify a historical person or higher-dimensional information store.",
+      "source_ids": [
+        "SRC-INFORMATION",
+        "SRC-7D"
+      ],
+      "prior_candidate_id": null
+    }
+  ],
+  "new_module_finding": "No genuinely new core module is established by this review. The strongest additions are three missing crosswalks. A loss-reporting adapter would be new implementation of an already recorded proposal.",
+  "method": {
+    "name": "AkashicOMNI",
+    "version": "0.5.0 Public Review Specification",
+    "scope": "Manual comparison using all twelve public role descriptions; not execution of complete constituent frameworks or PR367 packet conformance",
+    "historical_label": "13 perspectives / 13D included the synthesis",
+    "analytical_perspectives": 12,
+    "synthesis_outputs": 1,
+    "passes": [
+      "DISCERN",
+      "DEEPEN"
+    ],
+    "optional_modules_invoked": [],
+    "perspective_coverage": [
+      {
+        "perspective_id": "AWAKEN",
+        "state": "APPLIED",
+        "reason": "Distinguish inspected records from appealing associations and catalogue presence.",
+        "source_ids": [
+          "SRC-N2N",
+          "SRC-N2N-AUDIT"
+        ]
+      },
+      {
+        "perspective_id": "HIERATIC",
+        "state": "APPLIED",
+        "reason": "Retain symbolic meaning, cultural attribution and limits in application mappings.",
+        "source_ids": [
+          "SRC-HH-MAPPING",
+          "SRC-SKER"
+        ]
+      },
+      {
+        "perspective_id": "HOMESENSE",
+        "state": "APPLIED",
+        "reason": "Ground care proposals in needs, practical constraints and embodied experience.",
+        "source_ids": [
+          "SRC-H809",
+          "SRC-H858"
+        ]
+      },
+      {
+        "perspective_id": "ADAPT",
+        "state": "APPLIED",
+        "reason": "Use reversible candidate records and explicit reject/revise conditions.",
+        "source_ids": [
+          "SRC-HH-MAPPING",
+          "SRC-JIGSAW"
+        ]
+      },
+      {
+        "perspective_id": "REGENERATE",
+        "state": "APPLIED",
+        "reason": "Separate repair and ecological outcomes from intention or transaction counts.",
+        "source_ids": [
+          "SRC-BQ011",
+          "SRC-H858"
+        ]
+      },
+      {
+        "perspective_id": "TRANSCEND",
+        "state": "APPLIED",
+        "reason": "Allow unfamiliar hypotheses while preventing an experience-to-cause inference.",
+        "source_ids": [
+          "SRC-INFORMATION",
+          "SRC-PRISM"
+        ]
+      },
+      {
+        "perspective_id": "#METAD",
+        "state": "APPLIED",
+        "reason": "Expose schema mismatches, causal levels, assumptions and duplicate implementations.",
+        "source_ids": [
+          "SRC-OMNI-CLAIMS",
+          "SRC-CONTRADICTION"
+        ]
+      },
+      {
+        "perspective_id": "ACTC",
+        "state": "APPLIED",
+        "reason": "Review conceptual compatibility without claiming empirical validation of ACTC.",
+        "source_ids": [
+          "SRC-OMNI-PUBLIC",
+          "SRC-H858"
+        ]
+      },
+      {
+        "perspective_id": "MultidimensionalCUT_PAST",
+        "state": "APPLIED",
+        "reason": "Preserve old versions, corrections and original Jigsaw IDs.",
+        "source_ids": [
+          "SRC-CUT-404",
+          "SRC-JIGSAW"
+        ]
+      },
+      {
+        "perspective_id": "MultidimensionalCUT_PRESENT",
+        "state": "APPLIED",
+        "reason": "Pin repository heads and separate public manual status from draft engineering.",
+        "source_ids": [
+          "SRC-OMNI-PUBLIC",
+          "SRC-OMNI-COVERAGE"
+        ]
+      },
+      {
+        "perspective_id": "MultidimensionalCUT_FUTURE",
+        "state": "APPLIED",
+        "reason": "Specify tests, dependencies, rejection conditions and proportionate next work.",
+        "source_ids": [
+          "SRC-OMNI-GATES",
+          "SRC-CONTRADICTION"
+        ]
+      },
+      {
+        "perspective_id": "UMASC",
+        "state": "APPLIED",
+        "reason": "Keep personal, interpersonal, institutional and ecological claims at their stated levels.",
+        "source_ids": [
+          "SRC-OMNI-PUBLIC",
+          "SRC-BQ011"
+        ]
+      }
+    ],
+    "synthesis": "Reuse existing source and review machinery; nominate three precise, reversible crosswalks. Defer interfaces, experiments and broader merges until separate acceptance and source review.",
+    "disagreements_and_tensions": [
+      "A meaningful conceptual connection may add burden without improving decisions.",
+      "Public manual availability does not release the engineering pilot.",
+      "Useful care practices and their spiritual explanations require separate evaluation."
+    ]
+  },
+  "generator_parameters": {
+    "generator": "Codex manual metadata synthesis",
+    "version": "2026-10-18.1",
+    "baseline": "e920533004eb8b7a10031c0b38ec20576250a665",
+    "selection": "Three explicit crosswalks after bounded duplicate screen",
+    "policy": "All inferred, unaccepted, no evidence or rights transfer",
+    "candidate_ids": [
+      "REL-001",
+      "REL-002",
+      "REL-003"
+    ]
+  },
+  "public_metadata_disposition": {
+    "visibility": "PUBLIC_VERIFIED for the five exact public Git endpoint artifacts",
+    "sensitivity_review": "Completed AI metadata review: no private correspondence, provider identifiers, medical details, participant records or source bodies included",
+    "reuse_disposition": "Original relationship notes and links/digests to public project documentation only; no content republication grant implied",
+    "manifest_decision": "ELIGIBLE_METADATA_ONLY_REVIEW_CANDIDATE",
+    "decision_scope": "This new review metadata may be proposed in a public draft PR under the current task authorization; this is not graph-edge acceptance, evidence promotion, source-content import or website publication",
+    "reviewer": "Codex AI; no independent human sign-off claimed"
+  },
+  "governance": {
+    "accepted_edges": [],
+    "supports_models": [],
+    "engineering_release": "UNRELEASED",
+    "pr367_must_remain_draft": true,
+    "M01_M12_waived": false,
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "privacy_expansion_allowed": false,
+    "cultural_authority_promotion_allowed": false,
+    "public_synthesis_promotion_allowed": false,
+    "website_promotion_allowed": false,
+    "bq_resolution_promotion_allowed": false,
+    "runtime_integration_allowed": false
+  },
+  "duplicate_screen": [
+    {
+      "ref": "HEAD",
+      "sha": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "tracked_files": 1024,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    },
+    {
+      "ref": "origin/omni-review",
+      "sha": "7df1de8272b1a03623f8b7d57c258896273f5764",
+      "tracked_files": 952,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    },
+    {
+      "ref": "origin/prism-review",
+      "sha": "570aee1632fc036d8f114c0fa584ad6c198575a2",
+      "tracked_files": 976,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    },
+    {
+      "ref": "origin/bq011-review",
+      "sha": "084f86069285f7f53bb165f0942a308d969dd832",
+      "tracked_files": 938,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    },
+    {
+      "ref": "origin/contradiction-review",
+      "sha": "bc68dfc3aa5d3929034643504022d798bd3f270e",
+      "tracked_files": 1023,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    },
+    {
+      "ref": "origin/information-review",
+      "sha": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
+      "tracked_files": 1052,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    },
+    {
+      "ref": "origin/stargate-review",
+      "sha": "ea83e35da0e6406d0cec77a19b438747a45da835",
+      "tracked_files": 1027,
+      "pair_hits": {
+        "jigsaw/application": [],
+        "bq011/application": [],
+        "contradiction/omni": [],
+        "bq011/homesense858": [],
+        "n2n-practice/jigsaw": []
+      }
+    }
+  ],
+  "limitations": [
+    "Bounded review of current main and six selected draft trees; 35 open PR metadata records inspected. No exhaustive history, every branch, chat, social account, private message or archive survey.",
+    "The existing integration map was read and reused. Its three cases remain draft companions; earlier structural checks were not rerun and native Thinking Space transfer was not tested.",
+    "N2N record 1w92g5v failed direct retrieval in this pass; its repository audit remains inherited evidence of review scope only and is not an endpoint in the three candidate edges.",
+    "Other N2N audit entries are inherited checkpoints, not fresh whole-source reviews. Broader catalogue provenance blockers remain unresolved.",
+    "The three relationships are AI-inferred design candidates; no human adjudication, scientific effectiveness, software interoperability or source-rights clearance is certified.",
+    "Duplicate screen uses endpoint co-occurrence queries plus manual reading; absence is scoped, not a universal novelty claim."
+  ]
+}

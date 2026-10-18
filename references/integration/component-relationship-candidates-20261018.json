@@ -1,0 +1,138 @@
+{
+  "schema_version": "0.1",
+  "policy": {
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "confidence_from_representation_count_allowed": false,
+    "circular_confidence_allowed": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "artifact:integration-20261018:bq011",
+      "version": "git:084f86069285f7f53bb165f0942a308d969dd832",
+      "sha256": "8cbb0442f40e736737c5f2cb6b1037bb1ad05f3f050aeb9ec01c62c8fb298542",
+      "source_domain": "github-public-project-documentation",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:integration-20261018:contradiction",
+      "version": "git:bc68dfc3aa5d3929034643504022d798bd3f270e",
+      "sha256": "d2552104e7363818208359869998e640ffd9666c749ab927ce0b905b4de5a647",
+      "source_domain": "github-public-project-documentation",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:integration-20261018:hh-mapping",
+      "version": "git:e920533004eb8b7a10031c0b38ec20576250a665",
+      "sha256": "a7fa882e426a33b270e6e66c34a46e88f9654af25a00c474e13c638ce3c7afb7",
+      "source_domain": "github-public-project-documentation",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:integration-20261018:jigsaw",
+      "version": "git:e920533004eb8b7a10031c0b38ec20576250a665",
+      "sha256": "52039cddb71a0c269b53ef8d90f76c4ffc93f10c4562b789b7cc09e434c32c4a",
+      "source_domain": "github-public-project-documentation",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "public_safe": true
+    },
+    {
+      "artifact_id": "artifact:integration-20261018:omni-claims",
+      "version": "git:7df1de8272b1a03623f8b7d57c258896273f5764",
+      "sha256": "dbaeb27545c10d1f149a7aa9e9ebc9a925ec0eb660747357c5ba749a3c6c65d6",
+      "source_domain": "github-public-project-documentation",
+      "independence_key": "AKASHICNET-PROJECT-DOCUMENTATION",
+      "public_safe": true
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge:integration-20261018:rel-001",
+      "source": {
+        "artifact_id": "artifact:integration-20261018:jigsaw",
+        "record_id": "J39/J40"
+      },
+      "target": {
+        "artifact_id": "artifact:integration-20261018:hh-mapping",
+        "record_id": "Per-concept mapping template"
+      },
+      "relationship": "APPLIES_TO_APPLICATION_DESIGN_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-10-18T13:32:41+00:00",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:integration-20261018:jigsaw"
+      ],
+      "generator": {
+        "name": "Codex manual metadata synthesis",
+        "version": "2026-10-18.1",
+        "parameters_digest": "767f6ccfb447efd16843f23fe27a308ba474722923baee684958284bbb2dec7f"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:integration-20261018:rel-002",
+      "source": {
+        "artifact_id": "artifact:integration-20261018:bq011",
+        "record_id": "/outcome_families"
+      },
+      "target": {
+        "artifact_id": "artifact:integration-20261018:hh-mapping",
+        "record_id": "measurable_variables_outcomes; possible_confounders; falsification_criteria"
+      },
+      "relationship": "OUTCOME_TAXONOMY_REUSE_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-10-18T13:32:41+00:00",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:integration-20261018:bq011"
+      ],
+      "generator": {
+        "name": "Codex manual metadata synthesis",
+        "version": "2026-10-18.1",
+        "parameters_digest": "767f6ccfb447efd16843f23fe27a308ba474722923baee684958284bbb2dec7f"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    },
+    {
+      "edge_id": "edge:integration-20261018:rel-003",
+      "source": {
+        "artifact_id": "artifact:integration-20261018:omni-claims",
+        "record_id": "/properties/claims/items/properties"
+      },
+      "target": {
+        "artifact_id": "artifact:integration-20261018:contradiction",
+        "record_id": "Input contract"
+      },
+      "relationship": "MANUAL_INTERFACE_MAPPING_CANDIDATE",
+      "assertion_class": "INFERRED_CANDIDATE",
+      "observed_at": "2026-10-18T13:32:41+00:00",
+      "review_state": "REVIEW_REQUIRED",
+      "accepted_edge": false,
+      "parent_edge_ids": [],
+      "confidence_source_artifact_ids": [
+        "artifact:integration-20261018:omni-claims"
+      ],
+      "generator": {
+        "name": "Codex manual metadata synthesis",
+        "version": "2026-10-18.1",
+        "parameters_digest": "767f6ccfb447efd16843f23fe27a308ba474722923baee684958284bbb2dec7f"
+      },
+      "not_truth_claim": true,
+      "not_scientific_evidence": true,
+      "not_rights_clearance": true
+    }
+  ]
+}
