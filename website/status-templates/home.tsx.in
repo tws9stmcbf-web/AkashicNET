@@ -1,3 +1,4 @@
+import { tscResearchHighlights } from "../lib/tsc-research-highlights";
 import { akashicOmniRelease } from "../lib/akashicomni-release";
 import PsyNationRadio from "./PsyNationRadio";
 import { NewsTicker } from "./NewsTicker";
@@ -24,6 +25,11 @@ const domains = [
 
 
 const latestHighlights = [
+  ...tscResearchHighlights.map(item => ({
+    ...item,
+    href: `https://akashicnet.org${item.href}`,
+    image: `https://akashicnet.org${item.image}`,
+  })),
   {
     category: "The Arts · Interactive Gallery",
     date: "20 Sep 2026",
@@ -220,7 +226,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="latest-highlights-note">Publication dates describe AkashicNET releases. Evidence labels distinguish established evidence, interpretation, lived experience/testimony, hypothesis and speculation.</p>
+        <p className="latest-highlights-note">Publication dates describe AkashicNET releases. TSC2026 publication dates use San Diego time; these companions open on the canonical public site. Evidence labels distinguish established evidence, interpretation, lived experience/testimony, hypothesis and speculation.</p>
       </section>
 
       <PsyNationRadio />
