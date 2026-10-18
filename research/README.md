@@ -50,6 +50,12 @@ This repository also includes foundational guidance for the Toolkit's research p
 - [`research/open-research-questions.md`](open-research-questions.md) — documenting open questions and gaps
 - [`research/research-landscape.md`](research-landscape.md) — structured overview of established, emerging, mixed and speculative evidence
 
+## Microdosing Source Records
+
+- [Human survey and community research](microdosing-research-2026.md): historical input to the v0.16 source-status fixture; preserve its audited bytes. Record later research in separate files.
+- [Rat psilocybin and delayed 5-HT2A protein findings](rat-psilocybin-5ht2a-2026.md): the 11 October 2026 editorial note, preserved verbatim from the former appendix; controlled animal evidence, with rebound explicitly a hypothesis.
+- [Petranker digest reconciliation](../docs/petranker-source-digest-reconciliation-v0.1.md): source history, binding decision and validation procedure.
+
 ## Research Questions
 
 This directory can also contain questions that do not yet have satisfactory answers.
