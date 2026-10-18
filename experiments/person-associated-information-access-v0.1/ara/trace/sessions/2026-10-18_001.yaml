@@ -1,0 +1,75 @@
+session:
+  id: 2026-10-18_001
+  date: '2026-10-18'
+  started: 2026-10-18T07:23+00:00
+  last_turn: 2026-10-18T07:23+00:00
+  turn_count: 1
+  summary: Created review-only person-information pilot in draft PR 405; synthetic
+    checks only; all launch gates closed.
+events_logged:
+- turn: 1
+  type: question
+  id: N01
+  routing: direct
+  provenance: user
+  summary: Operationalize person-associated information access
+- turn: 1
+  type: decision
+  id: N02
+  routing: direct
+  provenance: ai-suggested
+  summary: Separate psychology, hidden targets, source identity and physical models
+- turn: 1
+  type: experiment
+  id: N03
+  routing: direct
+  provenance: ai-executed
+  summary: Synthetic reference-analysis verification only
+- turn: 1
+  type: decision
+  id: N04
+  routing: direct
+  provenance: ai-executed
+  summary: Create review-only GitHub draft
+- turn: 1
+  type: observation
+  id: O01
+  routing: staged
+  provenance: ai-suggested
+  summary: A metta-versus-reflection difference in hidden-target correspondence may
+    depend on experimentally enriched person knowledge.
+- turn: 1
+  type: observation
+  id: O02
+  routing: staged
+  provenance: ai-suggested
+  summary: Fresh random symbols associated with historical-person dossiers may serve
+    as a surrogate for the proposed information-access claim.
+ai_actions:
+- turn: 1
+  action: Retrieved governance and prior protocols; inspected scoped primary sources;
+    authored protocol/reference files; ran synthetic checks; opened and verified draft
+    PR.
+  provenance: ai-executed
+  files_changed:
+  - ../README.md
+  - ../protocol.json
+  - ../data-dictionary.md
+  - ../sources.json
+  - ../reference_analysis.py
+  - ../test_reference_analysis.py
+  - ../validation.json
+claims_touched: []
+logic_revisions: []
+key_context:
+- turn: 1
+  excerpt: User explicitly requires separation of ordinary knowledge, source identity
+    and physical seven-dimensional claims; no experiment without appropriate review.
+open_threads:
+- Proponent bridge and minimum-effect agreement
+- Final eight-dossier stimulus appendix
+- Independent statistics, security and ethics review
+- Acquisition/custody implementation and prospective registration
+ai_suggestions_pending:
+- Operational random-association bridge
+- Pilot size, scripts and effect thresholds pending independent review

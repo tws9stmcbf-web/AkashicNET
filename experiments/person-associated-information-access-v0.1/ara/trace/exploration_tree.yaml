@@ -1,0 +1,59 @@
+tree:
+- id: N01
+  type: question
+  title: Operationalize person-associated information access
+  provenance: user
+  timestamp: 2026-10-18T07:23+00:00
+  description: Develop a reproducible, cautious protocol using PSI governance; create
+    a reviewable candidate without initiating experiments.
+  status: open
+- id: N02
+  type: decision
+  title: Separate psychology, hidden targets, source identity and physical models
+  provenance: ai-suggested
+  timestamp: 2026-10-18T07:23+00:00
+  choice: Propose a present-hidden-target pilot with trained/minimal knowledge and
+    metta/reflection conditions; retain explicit bridge approval and independent review
+    requirements.
+  alternatives:
+  - Public historical facts alone cannot establish unavailable information
+  - Prior future-target task tests a different timing claim
+  evidence:
+  - ../README.md#2-separate-the-claims-before-testing-them
+  - https://github.com/tws9stmcbf-web/AkashicNET/issues/354
+  also_depends_on:
+  - N01
+  status: unresolved
+- id: N03
+  type: experiment
+  title: Synthetic reference-analysis verification only
+  provenance: ai-executed
+  timestamp: 2026-10-18T07:23+00:00
+  result: Nine tests passed; exact threshold and power agree with SciPy to 1e-12;
+    deterministic fixture executed 100000 participant permutations and 20000 cluster
+    bootstrap resamples. No participant data or biological experiment.
+  evidence:
+  - evidence/validation-at-candidate-commit.json
+  - ../test_reference_analysis.py
+  - ../reference_analysis.py
+  also_depends_on:
+  - N02
+  status: resolved
+  tests_scope: Software correctness examples; does not test the staged substantive
+    hypotheses.
+- id: N04
+  type: decision
+  title: Create review-only GitHub draft
+  provenance: ai-executed
+  timestamp: 2026-10-18T07:23+00:00
+  choice: Created draft PR 405 at 07067a6ea0fe1a051a1c2419f8808dd30bcc12ca; remote
+    hashes of seven candidate files matched local versions. No merge or experimental
+    authorization.
+  alternatives:
+  - No website or experimental execution in this task
+  evidence:
+  - https://github.com/tws9stmcbf-web/AkashicNET/pull/405
+  - evidence/remote-verification.json
+  also_depends_on:
+  - N03
+  status: resolved
