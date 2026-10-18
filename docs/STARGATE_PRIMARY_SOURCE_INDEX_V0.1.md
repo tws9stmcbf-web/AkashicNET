@@ -56,6 +56,12 @@ The audit records selected passages from the AIR final, reviewer contributions, 
 
 No claim is made to have read the complete CIA collection, every programme series, all operational sessions, raw data, training manuals, foreign assessments, all four edited books or the full modern replication literature. Book descriptions and retrospective accounts do not substitute for original records. The SAIC database memorandum `CIA-RDP96-00791R000200190076-4` is a deferred lead based on selected indexed text, not a ninth indexed research finding.
 
+## Follow-up source-text review
+
+A second pass on 18 October rechecked selected bibliographic and interpretation passages for all eight entries. The audit records the exact pages and remaining limits. It corrected the DIA feedback **receipt** date and restored **approximately** for the JCS partial-correlation count. It also distinguishes SRI trial counts from judging items, clarifies Hyman's statistical agreement versus cross-programme consistency objections, and gives Utts's date a direct title-page reference.
+
+This remains an AI-assisted text/OCR review. Page-image retrieval returned placeholders and a direct mirror download returned HTTP 403. Independent visual authentication, complete version reconciliation and human review remain pending. No new documents, controlled hit rates or evidence promotions were added.
+
 ## Access, rights and next review
 
 Official metadata/indexed excerpts, author text and mirrored scans are distinguished in the audit. A redirect is a dated retrieval result, not proof of universal unavailability. Mirror identity checks used legible identifiers and bibliographic details; official-byte equivalence and complete visual authentication remain unverified. Handwritten feedback ratings and obscured identities were not inferred.

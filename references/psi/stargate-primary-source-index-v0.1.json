@@ -200,7 +200,7 @@
       "institution": "Commissioned expert contribution to AIR evaluation; author copy now hosted by UC Irvine",
       "document_date": "1995-09-01",
       "date_precision": "day",
-      "date_basis": "Date identified in the contemporaneous AIR reviewer-response sequence",
+      "date_basis": "Dated heading of Utts's contribution in the AIR final, printed page 3-2 (file page 32); corroborated by the later reviewer-response sequence.",
       "source_kind": "commissioned_expert_assessment",
       "evidentiary_role": "Primary record of Utts's assessment; secondary synthesis of experiments",
       "parent_record_id": "SG-AIR-1995",
@@ -211,7 +211,7 @@
       "release_stamp_date": null,
       "historical_markings": "Standalone archival release stamp not freshly verified",
       "access_ref": "A-UTTS",
-      "review_scope": "Author-hosted abstract, introduction and statistical-methods sections; AIR attribution and contents",
+      "review_scope": "Author-hosted abstract, introduction and statistical-methods sections; AIR contents and dated contribution heading.",
       "reviewed_locations": [
         {
           "url": "https://ics.uci.edu/~jutts/air",
@@ -224,6 +224,17 @@
         {
           "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf#page=4",
           "printed_pages": "Contents: review 1 begins at 3-2"
+        },
+        {
+          "access_ref": "A-AIR",
+          "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf",
+          "pdf_pages_1_based": [
+            32
+          ],
+          "printed_pages": "3-2",
+          "sections": [
+            "Dated contribution heading and abstract"
+          ]
         }
       ],
       "research_methods": "Statistical synthesis and assessment of existing laboratory findings, controls and effect-size consistency.",
@@ -276,7 +287,7 @@
       "release_stamp_date": "2002-05-22",
       "historical_markings": "Release stamp belongs to the AIR container",
       "access_ref": "A-AIR",
-      "review_scope": "Contribution title/date, introduction and selected recommendations",
+      "review_scope": "Contribution title/date, introduction, selected statistical discussion, conclusions and recommendations.",
       "reviewed_locations": [
         {
           "pdf_pages_1_based": [
@@ -290,15 +301,25 @@
             107
           ],
           "printed_pages": "Recommendations, including independent judging and replication"
+        },
+        {
+          "pdf_pages_1_based": [
+            83,
+            105,
+            106
+          ],
+          "sections": [
+            "Statistical departures, methodological improvements and cross-programme consistency caveats"
+          ]
         }
       ],
       "research_methods": "Critical appraisal of SAIC designs, judging, statistical findings and alternative explanations.",
       "reported_outcomes": {
         "attributed_to": "Ray Hyman",
-        "summary": "Hyman acknowledged improved controls and consistent statistical effects, while rejecting established paranormal causation."
+        "summary": "Hyman accepted statistical departures from chance in the reviewed SAIC work and methodological improvements, while withholding a paranormal explanation. He disputed interpreting similar mean effect sizes across programmes as evidence of a consistent phenomenon."
       },
       "limitations": "Shared laboratory evidence; not a separate replication.",
-      "competing_interpretations": "He called for independent rejudging and replication; Utts considered the evidence sufficient.",
+      "competing_interpretations": "Utts considered psychic functioning established. Hyman distinguished statistical effects from their cause and called for independent blind rejudging followed, if successful, by replication.",
       "related_records": [
         {
           "id": "SG-UTTS-1995",
@@ -361,6 +382,12 @@
             "Client target work",
             "Costa Rica target-person exercise",
             "Feedback and training"
+          ],
+          "pdf_pages_1_based": [
+            5,
+            6,
+            10,
+            11
           ]
         }
       ],
@@ -460,14 +487,23 @@
           "sections": [
             "Replication recommendation and programme summary"
           ]
+        },
+        {
+          "pdf_pages_1_based": [
+            64
+          ],
+          "printed_pages": "57",
+          "sections": [
+            "Table 12 summary; selected rows only"
+          ]
         }
       ],
       "research_methods": "Reported random target selection, remote descriptions and blind rank-matching by judges; other exploratory protocols are also included.",
       "reported_outcomes": {
         "attributed_to": "Puthoff and Targ",
-        "summary": "Authors report favourable results in some series; the combined S5/S6 learner/control series was nonsignificant (reported p = .08). They call for further controlled replication."
+        "summary": "Authors report favourable results in some series; the combined S5/S6 learner/control series was nonsignificant (reported p = .08). Eight trials were judged as seven items because one target repeated. They call for further controlled replication."
       },
-      "limitations": "No raw-data or randomisation audit here. Shared project, participants and reporting period may overlap the 1974 progress report.",
+      "limitations": "No raw-data or randomisation audit here. Trial count and judging-item count differ in the S5/S6 series. Shared project, participants and reporting period may overlap the 1974 progress report.",
       "competing_interpretations": "The authors' interpretation must be weighed against judging, cueing, selection and replication concerns; statistical scores alone do not identify a mechanism.",
       "related_records": [
         {
@@ -520,7 +556,7 @@
       "report_identifier": "RV-79-1; Final Technical Report, Part 2; contract 77F104420",
       "reporting_period": "Earlier remote-viewing literature assessed by the authors; Part 1 not reviewed",
       "release_stamp_date": "2000-08-10",
-      "historical_markings": "Public release stamp on scan",
+      "historical_markings": "SECRET appears on the historical cover; public release stamp on scan. This is not a current classification determination.",
       "access_ref": "A-SNYDER",
       "review_scope": "Cover, contents, summary lists and selected case critiques from Part 2",
       "reviewed_locations": [
@@ -614,9 +650,9 @@
       "research_methods": "Retrospective comparison of 202 reports with returning-hostage debriefs.",
       "reported_outcomes": {
         "attributed_to": "Joint Staff evaluation",
-        "summary": "Reports were classified as 7 positive, 59 possible/partial, 16 inconclusive, 8 procedural and 112 incorrect. The evaluation judged the material insufficiently reliable for operational use."
+        "summary": "Reports were classified as 7 positively correlated, approximately 59 possible/partial correlations, 16 inconclusive, 8 procedural and 112 incorrect. The evaluation judged the material insufficiently reliable for operational use."
       },
-      "limitations": "Retrospective matching, possible media/intelligence contamination and unequal categories; these counts are not controlled hit probabilities.",
+      "limitations": "The report flags media/intelligence contamination and subjective retrospective matching; partially correlated reports often included errors. The approximate category and unequal categories do not support a controlled hit probability.",
       "competing_interpretations": "The report notes that correspondences can appear stronger after facts are known. Its operational judgement does not establish the impossibility of every laboratory RV claim.",
       "related_records": [
         {
@@ -649,7 +685,7 @@
       "work_group": "WG-DIA-1993",
       "archival_identifier": "CIA-RDP96-00789R002600180010-4",
       "report_identifier": "S-28,118/PAG-TA; projects 93-210-0 and 93-212-0",
-      "reporting_period": "Taskings 1993-10-21 and 1993-10-29; feedback dated 1993-11-30",
+      "reporting_period": "Taskings dated 1993-10-21 and 1993-10-29; feedback received on 1993-11-30 according to the cover memorandum, not a verified feedback-completion date.",
       "release_stamp_date": "2000-08-08",
       "historical_markings": "SECRET / NOFORN / LIMDIS and reproduction warnings on historical pages",
       "access_ref": "A-DIA",
@@ -677,7 +713,7 @@
           ]
         }
       ],
-      "research_methods": "Two related vessel taskings with symbolic coordinates; viewer-selected methods and subsequent customer feedback.",
+      "research_methods": "Vessel tasking followed by a self-initiated related task, each allowing the viewer's method of choice and assigned coordinate cues; subsequent customer feedback.",
       "reported_outcomes": {
         "attributed_to": "DIA memorandum",
         "summary": "The memorandum describes favourable feedback and customer satisfaction for the test case."
