@@ -1,0 +1,428 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "stargate_access_and_scope_audit",
+  "checked_on": "2026-10-18",
+  "index": "stargate-primary-source-index-v0.1.json",
+  "review_state": "REVIEW_REQUIRED",
+  "verification_standard": {
+    "verified_here": "Identifier, title/attribution/date where legible, document role, selected source passages and observed endpoint behaviour.",
+    "not_verified": "Complete scan authenticity, official-to-mirror byte identity, handwritten markings, every experiment, raw data, reproduction rights or exhaustive corpus coverage.",
+    "retrieval_method": "Public web retrieval and official search-indexed excerpts; current repository and website source inspection.",
+    "no_live_page_equivalence_claim": true,
+    "pdf_page_convention": "1-based file pages, including inserted wrapper pages; printed page labels recorded separately. Counts refer to these specific files, not a universal report edition.",
+    "screenshot_limitation": "Screenshot retrieval did not provide inspectable image pixels in this environment; conclusions rely on available text/OCR. No handwriting, redaction recovery or visual completeness judgement is made.",
+    "failure_interpretation": "A redirect or failed retrieval is an environment/date-specific observation, not proof that the document no longer exists or is unavailable to everyone.",
+    "http_status_codes": "Not recorded where the retrieval tool did not expose them."
+  },
+  "accesses": [
+    {
+      "access_id": "A-AIR",
+      "archival_identifier": "CIA-RDP96-00791R000200180006-4",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000200180006-4.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 207,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": false,
+          "byte_equivalence_to_official_copy_verified": false
+        }
+      ],
+      "identity_basis": "AIR title/date/authors on covers; CIA identifier and 2002-05-22 release stamp in scan text.",
+      "scope": "Selected AIR and Hyman passages specified in index; 207-page file not read in full."
+    },
+    {
+      "access_id": "A-AIR-DRAFT",
+      "archival_identifier": "CIA-RDP96-00791R000200180005-5",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000200180005-5.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180005-5.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 179,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": false,
+          "byte_equivalence_to_official_copy_verified": false
+        }
+      ],
+      "identity_basis": "Draft label, AIR attribution, 1995-09-22 date and archive ID on cover.",
+      "scope": "Cover and opening summary only; cover notes corrected page order. Full draft/final comparison remains open."
+    },
+    {
+      "access_id": "A-UTTS",
+      "archival_identifier": "CIA-RDP96-00791R000200070001-9",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000200070001-9.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://ics.uci.edu/~jutts/air",
+          "role": "author_hosted_primary_text",
+          "host": "University of California, Irvine",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_HTML",
+          "full_document_read": false
+        }
+      ],
+      "identity_basis": "Author's own titled assessment; attribution and relationship confirmed in AIR contents/reviewer exchange.",
+      "scope": "Abstract, introduction and statistical-methods sections. UCI hosting is not a claim about Utts's 1995 affiliation.",
+      "rights": "Copyright 1995 Jessica Utts explicitly stated; not licensed here for republication."
+    },
+    {
+      "access_id": "A-SRI74",
+      "archival_identifier": "CIA-RDP96-00791R000100430001-0",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000100430001-0.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%231%20173/Part0002/CIA-RDP96-00791R000100430001-0.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 86,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": false,
+          "byte_equivalence_to_official_copy_verified": false
+        },
+        {
+          "url": "https://www.cia.gov/readingroom/document-type/crest?page=87998",
+          "role": "official_indexed_catalogue",
+          "checked_on": "2026-10-18",
+          "observed_result": "SEARCH_INDEXED_METADATA",
+          "full_document_access_verified": false
+        }
+      ],
+      "identity_basis": "Cover title/authors/report period and CIA stamp; official indexed metadata corroborates ID, title, date and reported 85 archival pages.",
+      "scope": "Selected report passages only; 86 mirror pages include a wrapper, not an extra research document."
+    },
+    {
+      "access_id": "A-SRI75",
+      "archival_identifier": "CIA-RDP96-00791R000100410001-2",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000100410001-2.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%231%20173/Part0002/CIA-RDP96-00791R000100410001-2.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 155,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": false,
+          "byte_equivalence_to_official_copy_verified": false
+        }
+      ],
+      "identity_basis": "Cover and title page identify Puthoff/Targ, Project 3183, period and date; CIA ID and release stamp repeated. Cover describes 153 pages.",
+      "scope": "Selected methods/results/discussion; 155 file pages do not establish two additional original pages or a complete scan audit."
+    },
+    {
+      "access_id": "A-SRI75-ALT",
+      "archival_identifier": "CIA-RDP96-00791R000300030003-0",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/document/cia-rdp96-00791r000300030003-0",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000300030003-0.pdf",
+          "role": "official_search_index_reference",
+          "checked_on": "2026-10-18",
+          "observed_result": "SEARCH_INDEXED_METADATA_AND_EXCERPTS",
+          "full_document_access_verified": false
+        }
+      ],
+      "identity_basis": "Official indexed title, authors and date agree with the same bibliographic work; existing source notes already cite this ID.",
+      "scope": "Metadata comparison only. Not byte-matched and not counted as an independent work."
+    },
+    {
+      "access_id": "A-SNYDER",
+      "archival_identifier": "CIA-RDP96-00787R000100260003-2",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00787R000100260003-2.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%231%20173/Part0001/CIA-RDP96-00787R000100260003-2.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 120,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": false,
+          "byte_equivalence_to_official_copy_verified": false
+        },
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00787R000100260003-2.pdf",
+          "role": "official_search_index_reference",
+          "checked_on": "2026-10-18",
+          "observed_result": "SEARCH_INDEXED_TEXT",
+          "full_document_access_verified": false
+        }
+      ],
+      "identity_basis": "Final Part 2 cover gives both Snyder authors, RV-79-1 and 1979-06-01; CIA ID/release stamp in text.",
+      "scope": "Selected Part 2 passages; institutional author remains unconfirmed in this pass."
+    },
+    {
+      "access_id": "A-SNYDER-DRAFT",
+      "archival_identifier": "CIA-RDP96-00791R000100440001-9",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00791R000100440001-9.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        }
+      ],
+      "identity_basis": "Related draft working copy already identified in earlier source notes.",
+      "scope": "No newly readable full primary text; relationship to final Part 2 requires comparison."
+    },
+    {
+      "access_id": "A-JCS",
+      "archival_identifier": "CIA-RDP96-00788R001000340002-3",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00788R001000340002-3.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00788R001000340002-3.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 3,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": true,
+          "byte_equivalence_to_official_copy_verified": false,
+          "read_mode": "OCR of both substantive pages; no complete visual review"
+        },
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00788R001000340002-3.pdf",
+          "role": "official_search_index_reference",
+          "checked_on": "2026-10-18",
+          "observed_result": "SEARCH_INDEXED_TEXT",
+          "full_document_access_verified": false
+        }
+      ],
+      "identity_basis": "Joint Staff heading, 1981-02-11 date and CIA ID; individual signature and exact release date unresolved.",
+      "scope": "Both substantive pages read; no interpretation of handwriting or signatures."
+    },
+    {
+      "access_id": "A-DIA",
+      "archival_identifier": "CIA-RDP96-00789R002600180010-4",
+      "locations": [
+        {
+          "url": "https://www.cia.gov/readingroom/docs/CIA-RDP96-00789R002600180010-4.pdf",
+          "role": "official_archival_endpoint",
+          "checked_on": "2026-10-18",
+          "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+          "final_url": "https://www.cia.gov/readingroom/",
+          "full_document_access_verified": false
+        },
+        {
+          "url": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%236%20178/Part0010/CIA-RDP96-00789R002600180010-4.pdf",
+          "role": "non_government_archival_mirror",
+          "host": "The Black Vault",
+          "checked_on": "2026-10-18",
+          "observed_result": "READABLE_PDF_TEXT",
+          "pdf_pages": 25,
+          "pages_include_mirror_wrapper": true,
+          "full_document_read": false,
+          "byte_equivalence_to_official_copy_verified": false
+        }
+      ],
+      "identity_basis": "DIA memorandum date/number, project IDs, archival identifier and release stamp in mirror text; no independently downloadable official copy verified.",
+      "scope": "Memo and selected tasking/feedback text; session bundle not completely reviewed. Circled scores not inferred."
+    }
+  ],
+  "contextual_sources": [
+    {
+      "title": "Ask Molly: Did CIA Really Study Psychic Powers?",
+      "author": "Central Intelligence Agency",
+      "date": "2021-10-27",
+      "url": "https://www.cia.gov/stories/story/ask-molly-did-cia-really-study-psychic-powers",
+      "source_kind": "official_retrospective",
+      "observed_result": "READABLE_OFFICIAL_HTML",
+      "use": "Historical programme and declassification/custody context, including DIA and US Army records; not an original experiment or scientific consensus statement."
+    },
+    {
+      "title": "CIA STARGATE collection landing page",
+      "url": "https://www.cia.gov/readingroom/collection/stargate",
+      "source_kind": "official_archival_collection",
+      "observed_result": "REDIRECTED_TO_GENERAL_READING_ROOM",
+      "use": "Historical collection location; full holdings not enumerated or read."
+    },
+    {
+      "title": "AIR alternate scan at the National Security Archive",
+      "url": "https://nsarchive2.gwu.edu/NSAEBB/NSAEBB438/docs/doc_57.pdf",
+      "source_kind": "non_government_university_archive_mirror",
+      "observed_result": "READABLE_PDF_TEXT",
+      "pdf_pages": 183,
+      "use": "Title/file metadata check only; not used as an additional evidence item or certified byte-identical copy."
+    },
+    {
+      "title": "AIR copy at Federation of American Scientists",
+      "url": "https://irp.fas.org/program/collect/air1995.pdf",
+      "source_kind": "non_government_mirror",
+      "observed_result": "JAVASCRIPT_OR_ANTI_BOT_INTERSTITIAL",
+      "use": "No document content verified through this endpoint; access barrier not bypassed."
+    }
+  ],
+  "existing_source_comparison": {
+    "repository": {
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET",
+      "base_commit": "e920533004eb8b7a10031c0b38ec20576250a665",
+      "tree_sha": "3150f158916171be49e5a12f02674e2f57ab8d36",
+      "inspected": "Complete recursive path inventory, scoped code searches for STARGATE, remote viewing, 00791 and 00788; relevant PSI and Big Question metadata; repository contribution guidance.",
+      "finding": "No dedicated STARGATE document index identified in the inspected main snapshot. This is not a proof that all content or other branches lack historical RV research.",
+      "search_limits": "GitHub search indexing and these strings delimit the content check; full repository text and every attachment were not independently read."
+    },
+    "census": {
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/pull/361",
+      "state_at_review": "OPEN",
+      "head_commit": "d2e91637fff143c5e4128923de98f476fbced584",
+      "finding": "Bounded metadata census reports one RV Reddit manifestation and one provisional lineage. It is not a historical-source inventory.",
+      "post_id": "1g1layl",
+      "source_lineage_id": "RSL-1G1LAYL",
+      "underlying_source_urls_present": false,
+      "action": "Retain category association only. No underlying source, independent corroboration or cross-lane transfer asserted; census files untouched."
+    },
+    "website_source": {
+      "url": "https://akashicnet.org",
+      "source_commit": "9ae3b80ed400943c85fbcf2df4be5c6604fe94b7",
+      "version_label": 1020,
+      "inspection_method": "Read-only source checkout supplied for the current Sites project; no deployment or file modification.",
+      "live_rendered_bytes_verified": false,
+      "pages": [
+        {
+          "route": "/tsc2026/stargate-to-tsc2026",
+          "source_path": "app/tsc2026/stargate-to-tsc2026/page.tsx",
+          "sha256": "a8c123ebb28a13278123e94f4d4ecf4a75c7d461859e36168c706a050bdd3c05",
+          "review": "Full page source",
+          "finding": "Existing 17 October companion uses selected historical/editorial sources and proposes a future report register; no document-level CIA ID register."
+        },
+        {
+          "route": "/akashiclibrary/remote-viewing",
+          "source_path": "app/akashiclibrary/remote-viewing/page.tsx",
+          "sha256": "6341be90ee50e8526834f7a8980858f6762b9f847b067d397c8440b371c74f0d",
+          "review": "Full page source",
+          "finding": "Existing RV guide already cites the AIR archival link ending 180005-5; that is the 22 September draft, distinct from the 29 September final indexed here. A later editorial correction can label both versions."
+        },
+        {
+          "route": "/insights/remote-viewing-above-chance",
+          "source_path": "app/insights/remote-viewing-above-chance/page.tsx",
+          "sha256": "f7daa7acbec3e3aa66c927fda598918225d3bb416560b881a462e2d35386cd95",
+          "review": "Scoped link/identifier extraction only",
+          "finding": "Contemporary meta-analysis link identified; no source-level overlap inferred without a separate review."
+        }
+      ],
+      "interpretation": "The separately maintained website already has RV historical coverage. Main-branch code-search absence must not be presented as website absence."
+    },
+    "prior_source_notes": {
+      "method": "Exact archival-identifier searches across two existing AkashicNET research ledgers, with relevant passages read; not complete ledger review.",
+      "already_identified": [
+        "CIA-RDP96-00791R000200180006-4",
+        "CIA-RDP96-00791R000200180005-5",
+        "CIA-RDP96-00791R000200070001-9",
+        "CIA-RDP96-00791R000300030003-0",
+        "CIA-RDP96-00791R000100440001-9",
+        "CIA-RDP96-00788R001000340002-3"
+      ],
+      "exact_identifiers_not_found_in_those_two_ledgers": [
+        "CIA-RDP96-00791R000100430001-0",
+        "CIA-RDP96-00787R000100260003-2",
+        "CIA-RDP96-00789R002600180010-4",
+        "CIA-RDP96-00791R000200190076-4"
+      ],
+      "action": "Consolidate earlier citations, preserve manifestation/version relations and avoid claiming these well-known records are new scientific discoveries.",
+      "limits": "No exhaustive deduplication of all notes, books, attachments, PRISM records or external websites. Private ledger text and internal locators are not republished."
+    }
+  },
+  "coverage_accounting": {
+    "examined": [
+      "AIR 1995 final: selected passages and two separately attributed reviewer contributions",
+      "AIR 1995 draft: cover and opening summary only",
+      "SRI Project 3183: selected passages from one 1974 progress report and one 1975 final Part 2",
+      "Snyder RV-79-1 final Part 2: selected methodological passages",
+      "GRILL FLAME: one two-page 1981 Joint Staff evaluation",
+      "STAR GATE: selected passages in one 1993 DIA feedback bundle",
+      "Official retrospective, selected catalogue/indexed excerpts and bounded existing-source comparison"
+    ],
+    "outside_review": [
+      "Complete CIA STARGATE/CREST holdings; no total-archive denominator or percentage claimed",
+      "Complete SCANATE, GRILL FLAME, CENTER LANE and SUN STREAK series",
+      "Full operational session corpus, training manuals, foreign assessments and administrative holdings",
+      "Original SAIC experiment reports, full database-memo verification and raw data",
+      "All four edited historical volumes and their source-to-chapter correspondence",
+      "Full modern RV replication/meta-analysis literature and all existing AkashicNET source stores"
+    ],
+    "distinct_records_not_independent_studies": true,
+    "archive_exhaustiveness_claim": false
+  },
+  "validation_expectations": {
+    "unique_record_ids": 8,
+    "parent_components": 2,
+    "valid_access_references": true,
+    "required_metadata_present": true,
+    "source_pdfs_imported": 0,
+    "canonical_evidence_edges": 0,
+    "all_question_statuses": "UNRESOLVED",
+    "all_promotion_flags": false
+  }
+}
