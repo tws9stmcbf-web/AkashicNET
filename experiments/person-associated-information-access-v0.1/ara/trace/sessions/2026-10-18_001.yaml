@@ -2,10 +2,10 @@ session:
   id: 2026-10-18_001
   date: '2026-10-18'
   started: 2026-10-18T07:23+00:00
-  last_turn: 2026-10-18T07:30+00:00
-  turn_count: 2
-  summary: Draft PR 405 records narrow bridge-design assent; substantive prediction
-    remains untested and experimental approval remains closed.
+  last_turn: 2026-10-18T00:46-07:00
+  turn_count: 3
+  summary: Draft PR 405 now includes materials 0.2-candidate and an independent-review
+    packet; all substantive hypotheses remain untested and execution gates closed.
 events_logged:
 - turn: 1
   type: question
@@ -79,6 +79,25 @@ ai_actions:
   - ../README.md
   - ../protocol.json
   - ../validation.json
+- turn: 3
+  action: Prepared eight proposed public-person dossiers and 48 ordinary-task items,
+    timed scripts, source-access records, review questions and a material hash manifest.
+    Checked keys/identifiers/timing/gates and verified nine remote Git blobs at fda2902fab698f5cb770a4418995808bf6211ec0.
+    Numerical analysis code unchanged; no numerical rerun or participant work.
+  provenance: ai-executed
+  files_changed:
+  - ../README.md
+  - ../protocol.json
+  - ../data-dictionary.md
+  - ../validation.json
+  - ../materials/README.md
+  - ../materials/stimulus-set.json
+  - ../materials/session-scripts.md
+  - ../materials/manifest.json
+  - ../review/review-packet.md
+  evidence:
+  - ../materials/manifest.json
+  - evidence/materials-remote-verification-2026-10-18.json
 claims_touched: []
 logic_revisions:
 - turn: 2
@@ -98,11 +117,17 @@ key_context:
 - turn: 2
   excerpt: 'User: Yes. Recorded as narrow assent to the open bridge assumption, with
     limits made explicit in the assistant response and protocol.'
+- turn: 3
+  excerpt: User repeated Next steps after the next-step sequence. Assistant continued
+    authorized candidate preparation, without interpreting that request as approval
+    of scripts, effect thresholds or experimental execution.
 open_threads:
 - Proponent instruction fidelity, necessary conditions and minimum meaningful effect
-- Final eight-dossier stimulus appendix
-- Independent statistics, security and ethics review
+- Independent verification/finalization of draft eight-dossier appendix, audio and
+  accessible materials
+- Independent statistics including joint simulations, security and ethics review
 - Acquisition/custody implementation and prospective registration
 ai_suggestions_pending:
-- Pilot size, scripts and effect thresholds pending review
+- Pilot size, proposed script/learning timings, fixed figure set and meaningful-effect
+  thresholds pending review
 - Construct validity of the adopted surrogate remains unestablished

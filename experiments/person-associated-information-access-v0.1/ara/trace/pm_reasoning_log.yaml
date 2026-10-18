@@ -17,3 +17,14 @@ entries:
     claims.
   - Numeric tests not repeated because only metadata/documentation changed and source
     code hashes match the checked version.
+- turn: 2026-10-18_001#3
+  notes:
+  - Recorded material authoring and bounded source verification as AI actions in the
+    session record, not a new information-access experiment or independent review.
+  - The preceding status-only next-steps turn was skipped under the routine-read/restatement
+    filter. This entry is the next recorded substantive turn.
+  - 'No promotion or logic-layer revision: repetition of Next steps authorizes preparation
+    but does not affirm script fidelity, necessity, numerical effects or the staged
+    substantive hypothesis.'
+  - O01 remains staged; CON01 retains only the earlier narrow bridge-design agreement.
+    Material hashes identify a draft, not registration.

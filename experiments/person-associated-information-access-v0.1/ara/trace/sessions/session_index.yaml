@@ -1,9 +1,9 @@
 sessions:
 - id: 2026-10-18_001
   date: '2026-10-18'
-  summary: Draft PR 405 records narrow bridge-design assent; substantive prediction
-    remains untested and experimental approval remains closed.
-  turn_count: 2
+  summary: Draft PR 405 now includes materials 0.2-candidate and an independent-review
+    packet; all substantive hypotheses remain untested and execution gates closed.
+  turn_count: 3
   events_count: 8
   claims_touched: []
   open_threads: 4
