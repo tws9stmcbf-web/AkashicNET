@@ -8,6 +8,7 @@ on:
       - 'manifests/v0.16-release-candidate.json'
       - 'docs/public-status-contract.md'
       - 'website/app/page.tsx'
+      - 'website/app/globals.css'
       - 'website/app/development-progress/page.tsx'
       - 'website/app/**/*.tsx'
       - 'scripts/validate_public_status_consistency_v016.py'

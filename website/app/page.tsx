@@ -325,7 +325,7 @@ export default function Home() {
       </section>
 
       <section className="roadmap" id="roadmap">
-        <div className="section-heading"><div><p className="section-label">07 · Public roadmap</p><h2>Build slowly enough to build wisely.</h2></div><a className="phase-pill" href="/development-progress">Public Beta · v0.15 sealed · v0.16.0-beta.2 governed candidate →</a></div>
+        <div className="section-heading"><div><p className="section-label">07 · Public roadmap</p><h2>Build slowly enough to build wisely.</h2></div><a className="phase-pill" href="/development-progress">Public Beta · v0.15 sealed · v0.17.0 READY · bounded review only · 677abddc472322621adf54697ac31c383be3b3c3 · GitHub prerelease published →</a></div>
         <div className="roadmap-grid">
           <article className="complete"><span>Foundation</span><h3>Public-source indexing</h3><p>Deduplication, basic provenance and initial evidence boundaries.</p><b>Established</b></article>
           <article className="active"><span>Now</span><h3>Corpus canonicalisation</h3><p>Resolve identity, structure and relationships without overclaiming.</p><b>In progress</b></article>
