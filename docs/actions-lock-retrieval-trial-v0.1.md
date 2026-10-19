@@ -12,17 +12,17 @@ The lockfile was generated and verified by the official
 `github/gh-actions-lock` v0.2.0 Linux AMD64 release. The downloaded binary's
 SHA-256 was checked as
 `79ec84c191667fd935a277e6fd3662cf5d3669cccc9e99998731d8f306f373b6`
-before execution. Read-only generation run 39256106888 produced artifact
-12188022370 with SHA-256
-`fb345d13426ec9346f206e09a35dddfef05f41257f537d3425c5c161a19a7d42`.
+before execution. Read-only generation run 39257116800 used the supported
+`--no-narrow` mode and produced artifact 12187424960 with SHA-256
+`7ff87497e412a67156084cfcd3ec72b09f7813e6d40cd364b29237e6c46566c0`.
 
-The generator rewrote readable symbolic references while preserving the exact
-commits already reviewed on PR #400:
+The generator preserved AkashicNET's immutable inline SHA references while
+recording their readable release tags and exact commits in the lockfile:
 
-- `actions/checkout@v4.4.0` → `11d5960a326750d5838078e36cf38b85af677262`.
-- `actions/setup-python@v5.6.0` → `a26af69be951a213d495a4c3e4e4022e16d87065`.
+- `actions/checkout@11d5960a326750d5838078e36cf38b85af677262` (`v4.4.0`).
+- `actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065` (`v5.6.0`).
 
-Run 39256419255 also removed the setup-python workflow entry in a temporary
+Run 39257116800 also removed the setup-python workflow entry in a temporary
 copy and required `gh actions-lock --verify-local` to fail. The valid lockfile
 was restored and verified online before the artifact was staged. The temporary
 generator workflow is deliberately absent from the final proposed tree.
