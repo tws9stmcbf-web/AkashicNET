@@ -85,7 +85,8 @@ jobs:
       - run: python scripts/validate_retrieval_evidence_bridge_v078.py
       - run: python scripts/validate_retrieval_api_compat_v026.py
       - name: Install locked retrieval test dependencies
-        run: python -m pip --isolated install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: --no-cache-dir -r .github/dependency-records/retrieval-validation-python-v078.txt
+        run: >-
+          python -m pip --isolated install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: --no-cache-dir -r .github/dependency-records/retrieval-validation-python-v078.txt
       - run: python -m pip check
       - run: python -m pip freeze --all
       # Bounded synthetic regressions; green is not backend certification.

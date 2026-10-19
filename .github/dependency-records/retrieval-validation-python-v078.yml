@@ -3,7 +3,8 @@ status: REVIEW_ONLY
 workflow: .github/workflows/validate-retrieval-evidence-bridge-v078.yml
 previous_checkpoint: 02a13dfe923df9dd662e87e38135eacc3398333d
 previous_install_command: python -m pip install pytest jsonschema==4.25.1
-install_command: python -m pip --isolated install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: --no-cache-dir -r .github/dependency-records/retrieval-validation-python-v078.txt
+install_command: >-
+  python -m pip --isolated install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: --no-cache-dir -r .github/dependency-records/retrieval-validation-python-v078.txt
 requirements_input: .github/dependency-records/retrieval-validation-python-v078.in
 requirements_lock: .github/dependency-records/retrieval-validation-python-v078.txt
 target:
