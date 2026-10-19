@@ -1,0 +1,52 @@
+name: Experiment scoped Actions lockfile generation
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/experiment-actions-lock-generation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    name: Generate and verify retrieval workflow lockfile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.2.0
+
+      - name: Download verified gh-actions-lock v0.2.0
+        env:
+          ACTIONS_LOCK_SHA256: 79ec84c191667fd935a277e6fd3662cf5d3669cccc9e99998731d8f306f373b6
+        run: |
+          curl --fail --location --silent --show-error \
+            https://github.com/github/gh-actions-lock/releases/download/v0.2.0/linux-amd64 \
+            --output "$RUNNER_TEMP/gh-actions-lock"
+          echo "$ACTIONS_LOCK_SHA256  $RUNNER_TEMP/gh-actions-lock" | sha256sum --check --strict
+          chmod 0755 "$RUNNER_TEMP/gh-actions-lock"
+          "$RUNNER_TEMP/gh-actions-lock" --version
+
+      - name: Generate and verify one scoped lockfile
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          "$RUNNER_TEMP/gh-actions-lock" \
+            .github/workflows/validate-retrieval-evidence-bridge-v078.yml
+          "$RUNNER_TEMP/gh-actions-lock" --verify \
+            .github/workflows/validate-retrieval-evidence-bridge-v078.yml
+          git diff --check
+          mkdir -p "$RUNNER_TEMP/actions-lock-trial/.github/workflows"
+          cp .github/workflows/actions.lock \
+            "$RUNNER_TEMP/actions-lock-trial/.github/workflows/actions.lock"
+          cp .github/workflows/validate-retrieval-evidence-bridge-v078.yml \
+            "$RUNNER_TEMP/actions-lock-trial/.github/workflows/validate-retrieval-evidence-bridge-v078.yml"
+          git diff -- .github/workflows/validate-retrieval-evidence-bridge-v078.yml \
+            > "$RUNNER_TEMP/actions-lock-trial/retrieval-workflow.patch"
+
+      - name: Upload generated files for review
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: scoped-actions-lock-trial
+          path: ${{ runner.temp }}/actions-lock-trial
+          if-no-files-found: error
+          retention-days: 7
