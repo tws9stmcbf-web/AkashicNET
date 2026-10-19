@@ -34,6 +34,25 @@ jobs:
             .github/workflows/validate-retrieval-evidence-bridge-v078.yml
           "$RUNNER_TEMP/gh-actions-lock" --verify \
             .github/workflows/validate-retrieval-evidence-bridge-v078.yml
+          cp .github/workflows/actions.lock "$RUNNER_TEMP/actions.lock.valid"
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/actions.lock')
+          text = path.read_text()
+          needle = "        - 'actions/setup-python@v5.6.0'\n"
+          if text.count(needle) != 1:
+              raise SystemExit('negative-control precondition failed')
+          path.write_text(text.replace(needle, ''))
+          PY
+          if "$RUNNER_TEMP/gh-actions-lock" --verify-local \
+            .github/workflows/validate-retrieval-evidence-bridge-v078.yml; then
+            echo "missing-entry negative control was not detected" >&2
+            exit 1
+          fi
+          mv "$RUNNER_TEMP/actions.lock.valid" .github/workflows/actions.lock
+          "$RUNNER_TEMP/gh-actions-lock" --verify \
+            .github/workflows/validate-retrieval-evidence-bridge-v078.yml
           git diff --check
           mkdir -p "$RUNNER_TEMP/actions-lock-trial"
           cp .github/workflows/actions.lock \
