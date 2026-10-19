@@ -35,11 +35,11 @@ jobs:
           "$RUNNER_TEMP/gh-actions-lock" --verify \
             .github/workflows/validate-retrieval-evidence-bridge-v078.yml
           git diff --check
-          mkdir -p "$RUNNER_TEMP/actions-lock-trial/.github/workflows"
+          mkdir -p "$RUNNER_TEMP/actions-lock-trial"
           cp .github/workflows/actions.lock \
-            "$RUNNER_TEMP/actions-lock-trial/.github/workflows/actions.lock"
+            "$RUNNER_TEMP/actions-lock-trial/generated-actions.lock"
           cp .github/workflows/validate-retrieval-evidence-bridge-v078.yml \
-            "$RUNNER_TEMP/actions-lock-trial/.github/workflows/validate-retrieval-evidence-bridge-v078.yml"
+            "$RUNNER_TEMP/actions-lock-trial/generated-retrieval-workflow.yml"
           git diff -- .github/workflows/validate-retrieval-evidence-bridge-v078.yml \
             > "$RUNNER_TEMP/actions-lock-trial/retrieval-workflow.patch"
 
