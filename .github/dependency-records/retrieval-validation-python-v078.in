@@ -1,0 +1,4 @@
+# Scope: retrieval evidence bridge validation only; CPython 3.12 / Linux x86_64.
+# Direct versions retained from successful job 118077763101, run 39257543519.
+pytest==9.1.1
+jsonschema==4.25.1

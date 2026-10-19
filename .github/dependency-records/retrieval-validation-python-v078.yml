@@ -1,19 +1,35 @@
-version: '0.1'
+version: '0.2'
 status: REVIEW_ONLY
 workflow: .github/workflows/validate-retrieval-evidence-bridge-v078.yml
-install_command: python -m pip install pytest jsonschema==4.25.1
-packages:
-  - name: pytest
-    specifier: '*'
-    exact: false
-  - name: jsonschema
-    specifier: '==4.25.1'
-    exact: true
+previous_checkpoint: 02a13dfe923df9dd662e87e38135eacc3398333d
+previous_install_command: python -m pip install pytest jsonschema==4.25.1
+install_command: python -m pip --isolated install --index-url https://pypi.org/simple --require-hashes --only-binary=:all: --no-cache-dir -r .github/dependency-records/retrieval-validation-python-v078.txt
+requirements_input: .github/dependency-records/retrieval-validation-python-v078.in
+requirements_lock: .github/dependency-records/retrieval-validation-python-v078.txt
+target:
+  python: CPython 3.12
+  platform: Linux x86_64 (Ubuntu hosted runner)
+  isolation: fresh venv without system site packages
+generator:
+  name: pip-tools
+  version: 7.6.2
+  pip_version: 25.0.1
+  python_version: 3.12.14
+  resolver: backtracking
+  index: https://pypi.org/simple
+baseline:
+  workflow_run: 39257543519
+  job: 118077763101
+  pull_request_head: 02a13dfe923df9dd662e87e38135eacc3398333d
+  actual_checkout: 24ed1d3b08da71a5a1d7def7ceba0905ede31aea
+  policy: retain all eleven successful package versions; no dependency upgrade
 coverage:
-  github_actions: .github/workflows/actions.lock
-  python_packages: this record only; no resolved transitive lock
+  github_actions: .github/workflows/actions.lock (unchanged)
+  python_packages: exact direct and transitive versions with SHA-256 distribution allowlists
+  installation: require hashes; wheels only; dependency resolution remains enabled
 limitations:
-  - pytest remains unpinned in the workflow.
-  - Transitive Python dependencies and distribution hashes are not locked.
-  - A green run is validation evidence, not release, deployment, rights, or evidence promotion.
-
+  - Resolution is committed for the target environment; regenerating from roots against a changing index is not time-independent.
+  - Hashes constrain accepted distributions, not package safety or publisher authenticity.
+  - Python patch release, pip bootstrap, runner image and OS libraries remain outside this package lock.
+  - The lock is not an offline mirror, cross-platform guarantee or hermetic build.
+  - A green run is engineering evidence, not release, deployment, rights, or scientific-evidence promotion.

@@ -27,10 +27,11 @@ copy and required `gh actions-lock --verify-local` to fail. The valid lockfile
 was restored and verified online before the artifact was staged. The temporary
 generator workflow is deliberately absent from the final proposed tree.
 
-Python package specifiers are recorded separately in
+At the initial checkpoint `02a13dfe923df9dd662e87e38135eacc3398333d`,
+Python package specifiers were recorded separately in
 `.github/dependency-records/retrieval-validation-python-v078.yml` because
-`actions.lock` does not cover shell-installed packages. This record is not a
-resolved Python lock: `pytest` and transitive packages remain unpinned, so the
+`actions.lock` does not cover shell-installed packages. That initial record was not a
+resolved Python lock: `pytest` and transitive packages remained unpinned, so the
 trial must not be described as hermetic dependency reproduction.
 
 All AkashicNET governance boundaries remain unchanged: review-only edge
@@ -38,3 +39,7 @@ acceptance, fail-closed privacy, evidence/provenance separation, rights gates,
 disabled truth inference, and disabled scientific-evidence promotion. Passing
 CI is engineering evidence only; it does not authorize merge, release,
 deployment, publication, source use, or promotion.
+
+The separate [Python lock follow-up](retrieval-python-lock-trial-v0.1.md) records
+the bounded improvement and remaining limitations. It preserves this Actions
+lockfile and the original trial evidence.
