@@ -1,0 +1,19 @@
+version: '0.1'
+status: REVIEW_ONLY
+workflow: .github/workflows/validate-retrieval-evidence-bridge-v078.yml
+install_command: python -m pip install pytest jsonschema==4.25.1
+packages:
+  - name: pytest
+    specifier: '*'
+    exact: false
+  - name: jsonschema
+    specifier: '==4.25.1'
+    exact: true
+coverage:
+  github_actions: .github/workflows/actions.lock
+  python_packages: this record only; no resolved transitive lock
+limitations:
+  - pytest remains unpinned in the workflow.
+  - Transitive Python dependencies and distribution hashes are not locked.
+  - A green run is validation evidence, not release, deployment, rights, or evidence promotion.
+
