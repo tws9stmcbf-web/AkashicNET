@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse,json,subprocess
+from retrieval_evidence_v01 import EVIDENCE_STATUSES
 
 API_NAME='AKASHICNET_RETRIEVAL_API'
 API_VERSION='0.25'
@@ -12,12 +13,14 @@ def main():
     p.add_argument('query')
     p.add_argument('--domain',choices=['all','reddit','library'],default='all')
     p.add_argument('--state',choices=['all','accepted','hold'],default='all')
+    p.add_argument('--evidence',choices=sorted(EVIDENCE_STATUSES),default=None,help='exact source evidence status, independent of provenance and review state')
     p.add_argument('--limit',type=int,default=100)
     a=p.parse_args()
     if a.limit < 1:
         p.error('--limit must be >= 1')
 
     cmd=['python','scripts/query_unified_v024.py',a.query,'--domain',a.domain,'--state',a.state,'--limit',str(a.limit)]
+    if a.evidence is not None: cmd.extend(['--evidence',a.evidence])
     upstream=json.loads(subprocess.check_output(cmd,text=True))
 
     out={

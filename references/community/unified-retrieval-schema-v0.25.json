@@ -14,7 +14,8 @@
         "query": {"type": "string"},
         "domain": {"enum": ["all", "reddit", "library"]},
         "state": {"enum": ["all", "accepted", "hold"]},
-        "limit": {"type": "integer", "minimum": 1}
+        "limit": {"type": "integer", "minimum": 1},
+        "evidence": {"enum": ["NOT_APPLICABLE", "UNASSESSED", "SOURCE_CLASSIFICATION_ONLY"]}
       }
     },
     "policy": {
@@ -31,6 +32,7 @@
         "type": "object",
         "required": ["semantic_decision", "evidence_profile", "contract_guards"],
         "properties": {
+          "evidence_classification": {"enum": [null, "NOT_APPLICABLE", "UNASSESSED", "SOURCE_CLASSIFICATION_ONLY"]},
           "semantic_decision": {"enum": ["ACCEPT", "HOLD", "REJECT", "DIRECT_METADATA_LOOKUP", "UNSPECIFIED"]},
           "evidence_profile": {
             "type": "object",

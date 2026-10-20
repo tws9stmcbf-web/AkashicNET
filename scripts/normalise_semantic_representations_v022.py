@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json
 from pathlib import Path
+from retrieval_evidence_v01 import EVIDENCE_FIELDS, edge_classification
 
 CONCEPT=Path('data/concept-layer-v0.21.json')
 GRAPH=Path('data/knowledge-graph-v0.16.json')
@@ -64,6 +65,7 @@ def main():
              'v011_decision':e.get('v011_decision'),
              'v020_decision':e.get('v020_decision'),
              'v021_decision':e.get('v021_decision')}
+        rep.update({key: e[key] for key in EVIDENCE_FIELDS if key in e})
         # Prevent exact representation duplicates in provenance list.
         sig=json.dumps(rep,sort_keys=True,ensure_ascii=False)
         if all(json.dumps(x,sort_keys=True,ensure_ascii=False)!=sig for x in rec['representation_sources']):
@@ -71,6 +73,7 @@ def main():
 
     norm=[]
     for rec in grouped.values():
+        rec['evidence_status']=edge_classification(rec)
         rec['basis_set']=sorted(rec['basis_set'])
         rec['matched_terms']=sorted(rec['matched_terms'])
         rec['representation_count']=len(rec['representation_sources'])

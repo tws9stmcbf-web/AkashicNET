@@ -11,11 +11,13 @@ REQUIRED_TOP_LEVEL = {
 }
 
 
-def retrieve(query: str, domain: str = 'all', state: str = 'all', limit: int = 20) -> dict:
+def retrieve(query: str, domain: str = 'all', state: str = 'all', limit: int = 20, evidence: str | None = None) -> dict:
     cmd = [
         'python', 'scripts/query_api_v025.py', query,
         '--domain', domain, '--state', state, '--limit', str(limit),
     ]
+    if evidence is not None:
+        cmd.extend(['--evidence', evidence])
     payload = json.loads(subprocess.check_output(cmd, text=True))
     missing = REQUIRED_TOP_LEVEL - set(payload)
     if missing:
@@ -32,10 +34,11 @@ def main() -> None:
     p.add_argument('query')
     p.add_argument('--domain', choices=['all','reddit','library'], default='all')
     p.add_argument('--state', choices=['all','accepted','hold'], default='all')
+    p.add_argument('--evidence', choices=['NOT_APPLICABLE','UNASSESSED','SOURCE_CLASSIFICATION_ONLY'], default=None)
     p.add_argument('--limit', type=int, default=20)
     a = p.parse_args()
 
-    data = retrieve(a.query, a.domain, a.state, a.limit)
+    data = retrieve(a.query, a.domain, a.state, a.limit, a.evidence)
     compact = {
         'api_version': data['api_version'],
         'schema_id': data['schema_id'],

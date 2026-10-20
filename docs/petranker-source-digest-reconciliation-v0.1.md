@@ -82,3 +82,25 @@ See [the existing contract](v017-combined-validation.md).
 Exact tested commit, local outcomes and live Actions results are recorded in
 the PR validation update after the correction commit exists. A successful run
 does not authorize release or scientific promotion. Retrieval-contract changes in PR #400 are outside this isolated correction. Historical test counts from that PR do not describe this new candidate.
+
+
+## PR #400 integration checkpoint, 20 October 2026 UTC
+
+The text above records the earlier investigation and isolated extraction. PR #407
+was subsequently merged as `85af5b6eb7a086a0a330575552b7eb1b82b92abf`;
+PR #406 then brought the STARGATE metadata index into main at
+`e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4`. Earlier draft/pending wording is
+historical and is not a statement of those merged PRs' current status.
+
+This reconciliation brings that main into draft PR #400 without rewriting its
+history. The existing source split, historical validator, preservation entry
+point, associated tests, workflows and governed pins are unchanged. This note
+retains main's extraction record; the original PR #400 version remains available
+at [`28887d591b8c8bee52c4901d16437e5d0c8f2f20`](https://github.com/tws9stmcbf-web/AkashicNET/blob/28887d591b8c8bee52c4901d16437e5d0c8f2f20/docs/petranker-source-digest-reconciliation-v0.1.md).
+
+The retrieval improvements are retained from PR #400 and require fresh validation
+against the integrated head. Earlier test counts are historical evidence only.
+PR #409's dependency-locking experiment remains separate. See the
+[reconciliation scope and stack plan](pr400-main-reconciliation-20261020.md).
+No merge to main, release, deployment, scientific or rights promotion is approved
+by this reconciliation; PR #400 remains draft pending independent review.
