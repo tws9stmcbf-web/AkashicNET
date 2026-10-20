@@ -26,12 +26,20 @@ def require(condition):
 def text(value):
     require(isinstance(value, str) and bool(value.strip()) and len(value) <= 2048)
     require(not any(ord(c) < 32 for c in value))
+    # JSON permits escaped lone surrogates, but they are not Unicode scalar
+    # values and cannot be safely encoded into the public UTF-8 response.
+    require(not any(0xD800 <= ord(c) <= 0xDFFF for c in value))
     # Supplement the repository scanner: it deliberately allows some synthetic
     # and short object references that a runtime public interface must reject.
-    require(not any(marker in value.casefold() for marker in (
+    normalized = value.replace("\\", "/").casefold()
+    require(not any(marker in normalized for marker in (
         "drive.google.com", "docs.google.com", "drive:file:", "drive:folder:",
         "/my drive/", "file://", "/home/", "/users/", "akm-",
     )))
+    require(not re.search(r"(?<![\w:/])/(?:root|tmp|var|etc|workspace|mnt|media)(?:/|$)", normalized))
+    # Drive-rooted/UNC Windows paths and home-relative paths are recognizable
+    # even when their directory names are not in the marker list above.
+    require(not re.search(r"(?<![A-Za-z0-9])[A-Za-z]:[\\/]|\\\\[^\\\s]+\\|~[\\/]", value))
     return value
 
 
@@ -146,10 +154,14 @@ def project_unit(row):
     approve(row, unit_id)
     require(row["collapse_basis"] in {"SHA256_MATCH_VERIFIED", "NOT_COLLAPSED_NO_HASH_IDENTITY"})
     require(type(row["deduplicated"]) is bool)
+    families = strings(row["family_ids"], identifier)
+    # A repeated family would join this same unit twice and inflate provenance
+    # counts. Reject the malformed row rather than repair asserted lineage.
+    require(len(families) == len(set(families)))
     rights = strings(row["rights_states"], identifier)
     # Metadata eligibility does not grant redistribution rights. The asserted
     # states are preserved verbatim, and no content or object links are exposed.
-    return {"retrieval_unit_id": unit_id, "family_ids": strings(row["family_ids"], identifier),
+    return {"retrieval_unit_id": unit_id, "family_ids": families,
             "labels": strings(row["labels"]), "collapse_basis": row["collapse_basis"],
             "deduplicated": row["deduplicated"],
             "physical_manifestation_count": integer(row["physical_manifestation_count"], 1),
