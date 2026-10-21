@@ -1,0 +1,776 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_type": "stargate_primary_source_metadata_index",
+  "generated_on": "2026-10-18",
+  "review_state": "REVIEW_REQUIRED",
+  "coverage_label": "BOUNDED_NON_EXHAUSTIVE",
+  "source_content_imported": false,
+  "purpose": "Provide a reviewable document register for AkashicNET RV and TSC2026 research, with attributed findings, access limits and version relationships.",
+  "scope": {
+    "indexed_records": 8,
+    "standalone_document_records": 6,
+    "embedded_reviewer_records": 2,
+    "bibliographic_work_groups": 6,
+    "independent_study_count": null,
+    "counting_rule": "Eight index entries are not eight experiments. Utts and Hyman share the AIR container/evidence; SRI reports overlap. Different archival manifestations are not independent corroboration.",
+    "selection": "One programme evaluation with two contrasting expert contributions; two original SRI experimental reports; one methodological assessment; one unfavourable and one favourable operational record.",
+    "completion": "Selected OCR/text passages only, except the two substantive pages of the short JCS evaluation. No full-archive, full-book or raw-data review."
+  },
+  "governance": {
+    "review_state": "REVIEW_REQUIRED",
+    "bq_statuses": {
+      "BQ001": "UNRESOLVED",
+      "BQ002": "UNRESOLVED",
+      "BQ003": "UNRESOLVED"
+    },
+    "accepted_canonical_edges": 0,
+    "supports_models": [],
+    "truth_inference_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "model_support_promotion_allowed": false,
+    "rights_promotion_allowed": false,
+    "public_synthesis_allowed": false,
+    "website_promotion_allowed": false,
+    "source_import_allowed": false,
+    "content_import_allowed": false,
+    "privacy_gate": "FAIL_CLOSED",
+    "rights_gate": "FAIL_CLOSED"
+  },
+  "integration": {
+    "category": "RV",
+    "category_basis": "Existing PSI research lane: inaccessible-target information without an identified sender. This is a discovery mapping, not an accepted evidence edge.",
+    "sender_boundary": "Target-person/sender protocols require TEL review; heterogeneous reports do not transfer wholesale to RV.",
+    "proposed_contextual_links": [
+      {
+        "question_id": "BQ001",
+        "title": "Does consciousness continue beyond the individual?",
+        "status": "UNRESOLVED",
+        "relation": "boundary_question",
+        "rationale": "These living-person information tasks do not test postmortem survival.",
+        "accepted_canonical_edge": false
+      },
+      {
+        "question_id": "BQ002",
+        "title": "Where do thoughts come from?",
+        "status": "UNRESOLVED",
+        "relation": "methodological_context",
+        "rationale": "Cueing, memory, inference and judging controls inform how claimed information sources would need to be distinguished; no mechanism is established.",
+        "accepted_canonical_edge": false
+      }
+    ],
+    "excluded_question": {
+      "question_id": "BQ003",
+      "title": "Can Love Harmonise Consciousness With the Cosmos?",
+      "status": "UNRESOLVED",
+      "reason": "No examined protocol tests a love intervention; no direct evidentiary mapping proposed."
+    },
+    "canonical_question_files_changed": false,
+    "existing_census_changed": false,
+    "reddit_connection": {
+      "pull_request": 361,
+      "post_id": "1g1layl",
+      "source_lineage_id": "RSL-1G1LAYL",
+      "relation": "same_discovery_category_only",
+      "underlying_source_connection": "UNVERIFIED",
+      "note": "The single RV Reddit manifestation belongs to a bounded census, not to a count of AkashicNET historical coverage."
+    }
+  },
+  "rights_and_access": {
+    "permission_basis": "Reviewable metadata-only repository contribution; no merge or website publication performed.",
+    "public_release_is_reuse_license": false,
+    "historical_markings_are_current_restrictions": false,
+    "current_restrictions": "Direct CIA document URLs redirected in this environment; some records have redactions. Third-party scans and author copies have independent terms. Publication rights for source text/images were not cleared.",
+    "handling": "Links, identifiers and short attributed paraphrases only. No PDF, page image, source OCR or recovered redactions imported. Do not reidentify redacted personnel.",
+    "mirror_authenticity": "Identifiers, title/author/date and release markings were checked in available text; no byte-for-byte comparison with a currently downloadable official file or complete visual authentication."
+  },
+  "records": [
+    {
+      "id": "SG-AIR-1995",
+      "title": "An Evaluation of Remote Viewing: Research and Applications",
+      "authors": [
+        {
+          "name": "Michael D. Mumford",
+          "affiliation_at_document_date": "American Institutes for Research",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        },
+        {
+          "name": "Andrew M. Rose",
+          "affiliation_at_document_date": "American Institutes for Research",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        },
+        {
+          "name": "David A. Goslin",
+          "affiliation_at_document_date": "American Institutes for Research",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        }
+      ],
+      "institution": "American Institutes for Research; commissioned by CIA",
+      "document_date": "1995-09-29",
+      "date_precision": "day",
+      "source_kind": "commissioned_evaluation",
+      "evidentiary_role": "Primary record of the 1995 evaluation; synthesis of earlier experiments and operational material, not a new experiment",
+      "parent_record_id": null,
+      "work_group": "WG-AIR-1995",
+      "archival_identifier": "CIA-RDP96-00791R000200180006-4",
+      "report_identifier": null,
+      "reporting_period": "Selected historical laboratory research and operational material available to the 1995 evaluators",
+      "release_stamp_date": "2002-05-22",
+      "historical_markings": "Public release stamp on archived copy; no current classification inference",
+      "access_ref": "A-AIR",
+      "review_scope": "Selected cover, contents, executive summary, scope/methods and synthesis passages; not the entire scan",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            1,
+            4
+          ],
+          "printed_pages": "Cover and contents"
+        },
+        {
+          "pdf_pages_1_based": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "printed_pages": "E-1 to E-5"
+        },
+        {
+          "pdf_pages_1_based": [
+            17,
+            26
+          ],
+          "printed_pages": "Scope and operational-review methods"
+        },
+        {
+          "pdf_pages_1_based": [
+            113,
+            114
+          ],
+          "printed_pages": "3-83 to 3-84"
+        }
+      ],
+      "research_methods": "Commissioned laboratory reviews plus an operational review of supplied records and interviews with then-current programme personnel.",
+      "reported_outcomes": {
+        "attributed_to": "AIR authors",
+        "summary": "Statistical laboratory departures were acknowledged, but paranormal causation remained unresolved. The operational review found no demonstrated actionable utility and advised against continuation."
+      },
+      "limitations": "Supplied materials and interview coverage were bounded; this was not a census of all historical operations or a new replication.",
+      "competing_interpretations": "Utts and Hyman differed on whether the laboratory evidence established psychic functioning; their contributions are indexed separately.",
+      "related_records": [
+        {
+          "id": "SG-UTTS-1995",
+          "relation": "contains_review"
+        },
+        {
+          "id": "SG-HYMAN-1995",
+          "relation": "contains_review"
+        }
+      ],
+      "related_manifestations": [
+        {
+          "archival_identifier": "CIA-RDP96-00791R000200180005-5",
+          "relation": "earlier_draft",
+          "date": "1995-09-22",
+          "access_ref": "A-AIR-DRAFT",
+          "comparison_status": "Cover and opening summary checked; no complete version comparison"
+        }
+      ],
+      "protocol_boundary": "Review spans heterogeneous protocols; no trial-level RV/TEL allocation performed.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf"
+    },
+    {
+      "id": "SG-UTTS-1995",
+      "title": "An Assessment of the Evidence for Psychic Functioning",
+      "authors": [
+        {
+          "name": "Jessica Utts",
+          "affiliation_at_document_date": "University of California, Davis",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        }
+      ],
+      "institution": "Commissioned expert contribution to AIR evaluation; author copy now hosted by UC Irvine",
+      "document_date": "1995-09-01",
+      "date_precision": "day",
+      "date_basis": "Dated heading of Utts's contribution in the AIR final, printed page 3-2 (file page 32); corroborated by the later reviewer-response sequence.",
+      "source_kind": "commissioned_expert_assessment",
+      "evidentiary_role": "Primary record of Utts's assessment; secondary synthesis of experiments",
+      "parent_record_id": "SG-AIR-1995",
+      "work_group": "WG-AIR-1995",
+      "archival_identifier": "CIA-RDP96-00791R000200070001-9",
+      "report_identifier": "AIR laboratory review 1",
+      "reporting_period": "Earlier SRI, SAIC and other laboratory research discussed by the reviewer",
+      "release_stamp_date": null,
+      "historical_markings": "Standalone archival release stamp not freshly verified",
+      "access_ref": "A-UTTS",
+      "review_scope": "Author-hosted abstract, introduction and statistical-methods sections; AIR contents and dated contribution heading.",
+      "reviewed_locations": [
+        {
+          "url": "https://ics.uci.edu/~jutts/air",
+          "sections": [
+            "Abstract",
+            "1. Introduction",
+            "2.1 to 2.3"
+          ]
+        },
+        {
+          "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf#page=4",
+          "printed_pages": "Contents: review 1 begins at 3-2"
+        },
+        {
+          "access_ref": "A-AIR",
+          "url": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf",
+          "pdf_pages_1_based": [
+            32
+          ],
+          "printed_pages": "3-2",
+          "sections": [
+            "Dated contribution heading and abstract"
+          ]
+        }
+      ],
+      "research_methods": "Statistical synthesis and assessment of existing laboratory findings, controls and effect-size consistency.",
+      "reported_outcomes": {
+        "attributed_to": "Jessica Utts",
+        "summary": "Utts judged psychic functioning established on statistical grounds and argued that research should address how it works."
+      },
+      "limitations": "An attributed expert conclusion, not scientific consensus or an independent experiment. This index neither recalculates results nor establishes a mechanism.",
+      "competing_interpretations": "Hyman rejected the inference from statistical departures to demonstrated paranormal causation; AIR retained causal uncertainty.",
+      "related_records": [
+        {
+          "id": "SG-HYMAN-1995",
+          "relation": "contrasting_assessment_of_shared_evidence"
+        }
+      ],
+      "related_manifestations": [],
+      "protocol_boundary": "Broad psychic-functioning review; do not transfer every discussed result to the RV lane.",
+      "rights_exception": "Author copy explicitly states Copyright 1995 Jessica Utts; link and metadata only.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://ics.uci.edu/~jutts/air"
+    },
+    {
+      "id": "SG-HYMAN-1995",
+      "title": "Evaluation of Program on Anomalous Mental Phenomena",
+      "authors": [
+        {
+          "name": "Ray Hyman",
+          "affiliation_at_document_date": "University of Oregon",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        }
+      ],
+      "institution": "Commissioned expert contribution to AIR evaluation",
+      "document_date": "1995-09-11",
+      "date_precision": "day",
+      "source_kind": "commissioned_expert_assessment",
+      "evidentiary_role": "Primary record of Hyman's assessment; secondary synthesis of experiments",
+      "parent_record_id": "SG-AIR-1995",
+      "work_group": "WG-AIR-1995",
+      "archival_identifier": null,
+      "container_archival_identifier": "CIA-RDP96-00791R000200180006-4",
+      "report_identifier": "AIR laboratory review 2",
+      "identifier_note": "No standalone archival identifier verified; use the parent identifier and section, not an invented document number.",
+      "reporting_period": "Focused assessment of ten SAIC studies in the AIR review",
+      "release_stamp_date": "2002-05-22",
+      "historical_markings": "Release stamp belongs to the AIR container",
+      "access_ref": "A-AIR",
+      "review_scope": "Contribution title/date, introduction, selected statistical discussion, conclusions and recommendations.",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            73,
+            74
+          ],
+          "printed_pages": "3-43 to 3-44"
+        },
+        {
+          "pdf_pages_1_based": [
+            107
+          ],
+          "printed_pages": "Recommendations, including independent judging and replication"
+        },
+        {
+          "pdf_pages_1_based": [
+            83,
+            105,
+            106
+          ],
+          "sections": [
+            "Statistical departures, methodological improvements and cross-programme consistency caveats"
+          ]
+        }
+      ],
+      "research_methods": "Critical appraisal of SAIC designs, judging, statistical findings and alternative explanations.",
+      "reported_outcomes": {
+        "attributed_to": "Ray Hyman",
+        "summary": "Hyman accepted statistical departures from chance in the reviewed SAIC work and methodological improvements, while withholding a paranormal explanation. He disputed interpreting similar mean effect sizes across programmes as evidence of a consistent phenomenon."
+      },
+      "limitations": "Shared laboratory evidence; not a separate replication.",
+      "competing_interpretations": "Utts considered psychic functioning established. Hyman distinguished statistical effects from their cause and called for independent blind rejudging followed, if successful, by replication.",
+      "related_records": [
+        {
+          "id": "SG-UTTS-1995",
+          "relation": "contrasting_assessment_of_shared_evidence"
+        }
+      ],
+      "related_manifestations": [],
+      "protocol_boundary": "Assessment-level RV relevance; no automatic allocation of all ten studies to RV.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00791R000200180006-4.pdf"
+    },
+    {
+      "id": "SG-SRI-1974-P3",
+      "title": "Perceptual Augmentation Techniques, Progress Report No. 3",
+      "authors": [
+        {
+          "name": "Harold E. Puthoff",
+          "affiliation_at_document_date": "Stanford Research Institute",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        },
+        {
+          "name": "Russell Targ",
+          "affiliation_at_document_date": "Stanford Research Institute",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        }
+      ],
+      "institution": "Stanford Research Institute",
+      "document_date": "1974-10-31",
+      "date_precision": "day",
+      "source_kind": "original_experimental_progress_report",
+      "evidentiary_role": "Primary investigator report of experimental and exploratory work",
+      "parent_record_id": null,
+      "work_group": "WG-SRI-1974-P3",
+      "archival_identifier": "CIA-RDP96-00791R000100430001-0",
+      "report_identifier": "SRI Project 3183; Progress Report No. 3",
+      "reporting_period": {
+        "start": "1974-04-01",
+        "end": "1974-08-01"
+      },
+      "release_stamp_date": "2000-08-10",
+      "historical_markings": "Client Private appears on cover",
+      "access_ref": "A-SRI74",
+      "review_scope": "Cover, contents and selected early experimental descriptions; not all experiments or appendices",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            1
+          ],
+          "printed_pages": "Cover"
+        },
+        {
+          "printed_pages": "1-2 and 6-7",
+          "sections": [
+            "Client target work",
+            "Costa Rica target-person exercise",
+            "Feedback and training"
+          ],
+          "pdf_pages_1_based": [
+            5,
+            6,
+            10,
+            11
+          ]
+        }
+      ],
+      "research_methods": "Coordinate/client-target trials, travelling target-person exercises and local training with feedback.",
+      "reported_outcomes": {
+        "attributed_to": "Puthoff and Targ",
+        "summary": "Interim descriptions include apparent correspondences, partial matches and misses; client evaluation was incomplete. The report distinguishes feedback training from an ability test."
+      },
+      "limitations": "Mixed protocols and incomplete evaluation prevent a uniform success measure; feedback trials cannot be treated as blind validation.",
+      "competing_interpretations": "Claimed anomalous information requires protocol-specific scrutiny of ordinary cues, judging and feedback; this index makes no causal adjudication.",
+      "related_records": [
+        {
+          "id": "SG-SRI-1975-P2",
+          "relation": "overlapping_project_and_reporting_period_not_independent_replication"
+        }
+      ],
+      "related_manifestations": [],
+      "protocol_boundary": "RV discovery category; target-person/sender protocols need TEL review before any evidence-level lane allocation.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%231%20173/Part0002/CIA-RDP96-00791R000100430001-0.pdf"
+    },
+    {
+      "id": "SG-SRI-1975-P2",
+      "title": "Perceptual Augmentation Techniques, Part Two: Research Report",
+      "authors": [
+        {
+          "name": "Harold E. Puthoff",
+          "affiliation_at_document_date": "Stanford Research Institute",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        },
+        {
+          "name": "Russell Targ",
+          "affiliation_at_document_date": "Stanford Research Institute",
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        }
+      ],
+      "institution": "Stanford Research Institute",
+      "document_date": "1975-12-01",
+      "date_precision": "day",
+      "source_kind": "original_experimental_final_report",
+      "evidentiary_role": "Primary investigator report; multiple protocols, not one homogeneous trial",
+      "parent_record_id": null,
+      "work_group": "WG-SRI-1975-P2",
+      "archival_identifier": "CIA-RDP96-00791R000100410001-2",
+      "report_identifier": "SRI Project 3183; Part Two",
+      "reporting_period": {
+        "start": "1974-01",
+        "end": "1975-02"
+      },
+      "release_stamp_date": "2000-08-10",
+      "historical_markings": "SECRET compilation marking with some individual pages marked UNCLASSIFIED; release stamp 2000-08-10. These are historical labels, not current classification claims.",
+      "access_ref": "A-SRI75",
+      "review_scope": "Cover, abstract, selected natural-target methods/results and concluding discussion; not the whole report",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            1,
+            3
+          ],
+          "printed_pages": "Covers"
+        },
+        {
+          "pdf_pages_1_based": [
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "printed_pages": "36-40",
+          "sections": [
+            "Natural-target methods"
+          ]
+        },
+        {
+          "pdf_pages_1_based": [
+            49,
+            56
+          ],
+          "printed_pages": "42 and 49",
+          "sections": [
+            "Favourable series and nonsignificant S5/S6 group"
+          ]
+        },
+        {
+          "pdf_pages_1_based": [
+            138,
+            139
+          ],
+          "printed_pages": "131-132",
+          "sections": [
+            "Replication recommendation and programme summary"
+          ]
+        },
+        {
+          "pdf_pages_1_based": [
+            64
+          ],
+          "printed_pages": "57",
+          "sections": [
+            "Table 12 summary; selected rows only"
+          ]
+        }
+      ],
+      "research_methods": "Reported random target selection, remote descriptions and blind rank-matching by judges; other exploratory protocols are also included.",
+      "reported_outcomes": {
+        "attributed_to": "Puthoff and Targ",
+        "summary": "Authors report favourable results in some series; the combined S5/S6 learner/control series was nonsignificant (reported p = .08). Eight trials were judged as seven items because one target repeated. They call for further controlled replication."
+      },
+      "limitations": "No raw-data or randomisation audit here. Trial count and judging-item count differ in the S5/S6 series. Shared project, participants and reporting period may overlap the 1974 progress report.",
+      "competing_interpretations": "The authors' interpretation must be weighed against judging, cueing, selection and replication concerns; statistical scores alone do not identify a mechanism.",
+      "related_records": [
+        {
+          "id": "SG-SRI-1974-P3",
+          "relation": "overlapping_project_and_reporting_period_not_independent_replication"
+        }
+      ],
+      "related_manifestations": [
+        {
+          "archival_identifier": "CIA-RDP96-00791R000300030003-0",
+          "relation": "candidate_same_bibliographic_work_different_archival_manifestation",
+          "access_ref": "A-SRI75-ALT",
+          "comparison_status": "Same title, authors and date in official indexed metadata and earlier source notes; byte equivalence and complete version identity unverified"
+        }
+      ],
+      "protocol_boundary": "RV discovery category; mixed protocols require trial-level sender and feedback assessment before RV/TEL evidence assignment.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%231%20173/Part0002/CIA-RDP96-00791R000100410001-2.pdf"
+    },
+    {
+      "id": "SG-SNYDER-1979-P2",
+      "title": "Summary and Critical Evaluation of Research in Remote Viewing",
+      "authors": [
+        {
+          "name": "Harry L. Snyder",
+          "affiliation_at_document_date": null,
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        },
+        {
+          "name": "Arlene G. Snyder",
+          "affiliation_at_document_date": null,
+          "attribution_basis": "Named in the reviewed primary text or cover"
+        }
+      ],
+      "institution": null,
+      "institution_note": "Author names verified on the reviewed cover; institutional attribution not independently confirmed in this pass.",
+      "document_date": "1979-06-01",
+      "date_precision": "day",
+      "source_kind": "methodological_assessment",
+      "evidentiary_role": "Primary historical assessment of earlier research; not a new experiment",
+      "parent_record_id": null,
+      "work_group": "WG-SNYDER-1979-P2",
+      "archival_identifier": "CIA-RDP96-00787R000100260003-2",
+      "report_identifier": "RV-79-1; Final Technical Report, Part 2; contract 77F104420",
+      "reporting_period": "Earlier remote-viewing literature assessed by the authors; Part 1 not reviewed",
+      "release_stamp_date": "2000-08-10",
+      "historical_markings": "SECRET appears on the historical cover; public release stamp on scan. This is not a current classification determination.",
+      "access_ref": "A-SNYDER",
+      "review_scope": "Cover, contents, summary lists and selected case critiques from Part 2",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            1
+          ],
+          "printed_pages": "Cover"
+        },
+        {
+          "pdf_pages_1_based": [
+            17,
+            18,
+            19
+          ],
+          "sections": [
+            "Summary of claimed properties and methodological concerns"
+          ]
+        },
+        {
+          "pdf_pages_1_based": [
+            31,
+            32,
+            33,
+            34,
+            35
+          ],
+          "sections": [
+            "Selected case critiques"
+          ]
+        }
+      ],
+      "research_methods": "Literature and protocol critique, including reporting quality, judging and ordinary explanations.",
+      "reported_outcomes": {
+        "attributed_to": "Harry L. Snyder and Arlene G. Snyder",
+        "summary": "The assessment lists favourable claimed properties alongside weaknesses in reporting, controls and judging."
+      },
+      "limitations": "Only selected Part 2 passages examined; neither an audit of every reviewed experiment nor a fresh null experiment.",
+      "competing_interpretations": "Apparent correspondences and methodological objections are both recorded; neither is converted into a universal verdict on RV.",
+      "related_records": [],
+      "related_manifestations": [
+        {
+          "archival_identifier": "CIA-RDP96-00791R000100440001-9",
+          "relation": "related_draft_working_copy",
+          "access_ref": "A-SNYDER-DRAFT",
+          "comparison_status": "Previously catalogued draft; full relation to this final Part 2 requires version comparison. Do not silently transfer this cover's coauthor/date to the draft."
+        }
+      ],
+      "protocol_boundary": "Methodological relevance to RV; no experiment-level lane assignment.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%231%20173/Part0001/CIA-RDP96-00787R000100260003-2.pdf"
+    },
+    {
+      "id": "SG-JCS-1981",
+      "title": "Grill Flame Evaluation (U)",
+      "authors": [],
+      "author_status": "Individual signatory not reliably resolved from available OCR; not guessed",
+      "institution": "Joint Chiefs of Staff / Joint Staff",
+      "document_date": "1981-02-11",
+      "date_precision": "day",
+      "source_kind": "contemporaneous_operational_evaluation",
+      "evidentiary_role": "Primary operational assessment of reports against later debrief information",
+      "parent_record_id": null,
+      "work_group": "WG-JCS-1981",
+      "archival_identifier": "CIA-RDP96-00788R001000340002-3",
+      "report_identifier": null,
+      "reporting_period": {
+        "start": "1979-11-23",
+        "end": "1981-01-13"
+      },
+      "release_stamp_date": null,
+      "release_stamp_note": "2004 release marking visible in OCR; exact day/month not reliably resolved",
+      "historical_markings": "SECRET / NOFORN on historical record; not an assertion of current classification",
+      "access_ref": "A-JCS",
+      "review_scope": "Text of both document pages; wrapper excluded; no reliable visual inspection of scan",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            1,
+            3
+          ],
+          "printed_pages": "Both substantive pages"
+        }
+      ],
+      "research_methods": "Retrospective comparison of 202 reports with returning-hostage debriefs.",
+      "reported_outcomes": {
+        "attributed_to": "Joint Staff evaluation",
+        "summary": "Reports were classified as 7 positively correlated, approximately 59 possible/partial correlations, 16 inconclusive, 8 procedural and 112 incorrect. The evaluation judged the material insufficiently reliable for operational use."
+      },
+      "limitations": "The report flags media/intelligence contamination and subjective retrospective matching; partially correlated reports often included errors. The approximate category and unequal categories do not support a controlled hit probability.",
+      "competing_interpretations": "The report notes that correspondences can appear stronger after facts are known. Its operational judgement does not establish the impossibility of every laboratory RV claim.",
+      "related_records": [
+        {
+          "id": "SG-DIA-1993",
+          "relation": "contrasting_operational_assessment_different_cases_not_a_direct_replication"
+        }
+      ],
+      "related_manifestations": [],
+      "protocol_boundary": "Operational RV discovery category; actual access to prior intelligence requires case-level checking.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents3.theblackvault.com/documents/stargate/pdfs/CIA-RDP96-00788R001000340002-3.pdf"
+    },
+    {
+      "id": "SG-DIA-1993",
+      "title": "Feedback on STAR GATE Projects 93-210-0 and 93-212-0 (S)",
+      "authors": [],
+      "author_status": "Personal author redacted; do not infer identity",
+      "institution": "Defense Intelligence Agency, PAG-TA",
+      "document_date": "1993-12-03",
+      "date_precision": "day",
+      "source_kind": "contemporaneous_operational_feedback",
+      "evidentiary_role": "Primary memorandum and tasking/feedback bundle; customer assessment is not a controlled experiment",
+      "parent_record_id": null,
+      "work_group": "WG-DIA-1993",
+      "archival_identifier": "CIA-RDP96-00789R002600180010-4",
+      "report_identifier": "S-28,118/PAG-TA; projects 93-210-0 and 93-212-0",
+      "reporting_period": "Taskings dated 1993-10-21 and 1993-10-29; feedback received on 1993-11-30 according to the cover memorandum, not a verified feedback-completion date.",
+      "release_stamp_date": "2000-08-08",
+      "historical_markings": "SECRET / NOFORN / LIMDIS and reproduction warnings on historical pages",
+      "access_ref": "A-DIA",
+      "review_scope": "Cover memorandum and selected tasking/feedback text; not every enclosed session",
+      "reviewed_locations": [
+        {
+          "pdf_pages_1_based": [
+            1
+          ],
+          "sections": [
+            "Cover memorandum"
+          ]
+        },
+        {
+          "pdf_pages_1_based": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "sections": [
+            "Tasking and feedback text"
+          ]
+        }
+      ],
+      "research_methods": "Vessel tasking followed by a self-initiated related task, each allowing the viewer's method of choice and assigned coordinate cues; subsequent customer feedback.",
+      "reported_outcomes": {
+        "attributed_to": "DIA memorandum",
+        "summary": "The memorandum describes favourable feedback and customer satisfaction for the test case."
+      },
+      "limitations": "Redactions, related taskings, retrospective ratings and incomplete session review limit evaluation. Handwritten/circled form ratings were not reliably readable and are not transcribed.",
+      "competing_interpretations": "Favourable customer feedback is distinct from verified actionable intelligence or controlled accuracy. Compare the less favourable JCS and AIR assessments without conflating their cases.",
+      "related_records": [
+        {
+          "id": "SG-JCS-1981",
+          "relation": "contrasting_operational_assessment_different_cases_not_a_direct_replication"
+        },
+        {
+          "id": "SG-AIR-1995",
+          "relation": "later_programme_evaluation_context_not_same_case_reanalysis"
+        }
+      ],
+      "related_manifestations": [],
+      "protocol_boundary": "Operational RV discovery category; target details remain redacted and no source identity is inferred.",
+      "review_state": "METADATA_ONLY_REVIEW_REQUIRED",
+      "scientific_status": "NOT_ADJUDICATED",
+      "supports_models": [],
+      "independent_corroboration": false,
+      "evidence_transfer_allowed": false,
+      "rights_status": "NOT_CLEARED_FOR_CONTENT_REPUBLICATION",
+      "archival_custodian": "CIA Freedom of Information Act Reading Room / STARGATE collection",
+      "primary_text_access": "https://documents2.theblackvault.com/documents/cia/stargate/STARGATE%20%236%20178/Part0010/CIA-RDP96-00789R002600180010-4.pdf"
+    }
+  ],
+  "further_review": [
+    {
+      "lead": "SAIC original trial reports and database memorandum",
+      "archival_identifier": "CIA-RDP96-00791R000200190076-4",
+      "status": "DEFERRED_METADATA_LEAD",
+      "examined": "Selected official search-indexed database table only; direct official PDF redirected and mirror retrieval failed.",
+      "needed": "Verify memo date/author against a readable primary copy, then locate original 1993 and 1994 reports; classify each experiment separately."
+    },
+    {
+      "lead": "AIR final/draft and SRI manifestation reconciliation",
+      "status": "DEFERRED_VERSION_REVIEW",
+      "needed": "Compare complete scans before equating page sequences, text or archival manifestations."
+    },
+    {
+      "lead": "Snyder final Part 1 and draft comparison",
+      "status": "OUTSIDE_CURRENT_REVIEW",
+      "needed": "Resolve complete report structure, institutional authorship and draft/final differences."
+    },
+    {
+      "lead": "Independent scan and protocol review",
+      "status": "PENDING",
+      "needed": "Inspect original page images, redactions and handwritten ratings; audit target selection, blinding, scoring and data lineage if raw material is available."
+    },
+    {
+      "lead": "Full programme collections and edited books",
+      "status": "OUTSIDE_CURRENT_REVIEW",
+      "needed": "No claim to have examined all SCANATE, GRILL FLAME, CENTER LANE, SUN STREAK or STARGATE holdings, all operational files, foreign assessments or the four edited volumes."
+    }
+  ],
+  "provenance_audit": "stargate-access-review-2026-10-18.json",
+  "reading_guide": "../../docs/STARGATE_PRIMARY_SOURCE_INDEX_V0.1.md"
+}
