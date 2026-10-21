@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-21",
+  "kind": "AI_ASSISTED_REVIEW_PROPOSAL_REMOTE_VERIFICATION",
+  "proposal_id": "FC04-P2",
+  "baseline_commit": "2ccb4e2a254c3e5ed604e4b8fc5869fbdde695e3",
+  "proposal_commit": "8f298bfea026f81b94ab5fa5b2acbe31b462c1bc",
+  "repository": "tws9stmcbf-web/AkashicNET",
+  "pull_request": 405,
+  "open": true,
+  "draft": true,
+  "merged": false,
+  "files": [
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/fc04-review-handoff-2026-10-21.md",
+      "blob": "db7f91cf6561481676b6a7c9fe6a7911c71191ae",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/fc04-distractor-candidate-2026-10-21.json",
+      "blob": "e1cd746e15404eb4066c52c1e0c1f59442ff778e",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/fc04-discarded-p1-2026-10-21.json",
+      "blob": "6c0f1051c5f320456d8c68bd4b342647c0ae4fb7",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/build_fc04_candidate.py",
+      "blob": "245e922b704d5b23fe1ed48262b969eef801a05f",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/audit_fc04_candidate.py",
+      "blob": "4d2a11f06a03ffad73d748b1884113ae570bb2e1",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/fc04-candidate-audit-2026-10-21.json",
+      "blob": "f2aa2f02308bf9e4936bd0a21ca1b9c92561be16",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/fc04-review-manifest-2026-10-21.json",
+      "blob": "73a8ffa1992cf79d0f2100d324ee3293d7012ec3",
+      "match": true
+    }
+  ],
+  "existing_material_files_changed": false,
+  "independent_review_completed": false,
+  "participant_use_authorized": false,
+  "fc04_closed": false,
+  "ci_status": "NOT_ASSESSED"
+}

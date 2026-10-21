@@ -1,0 +1,31 @@
+observations:
+- id: O01
+  timestamp: 2026-10-18T07:23+00:00
+  provenance: ai-suggested
+  content: A metta-versus-reflection difference in hidden-target correspondence may
+    depend on experimentally enriched person knowledge.
+  context: Proposed observable refinement of the user-attributed hypothesis; no results,
+    proponent acceptance or independent review.
+  potential_type: claim
+  bound_to:
+  - N01
+  - N02
+  promoted: false
+  promoted_to: null
+  crystallized_via: null
+  stale: false
+- id: O02
+  timestamp: 2026-10-18T07:23+00:00
+  provenance: ai-suggested
+  content: Fresh random symbols associated with historical-person dossiers may serve
+    as a surrogate for the proposed information-access claim.
+  context: Explicit bridge assumption awaiting proponent endorsement; historical individuals
+    need not have possessed these symbols. Candidate gates require review rather than
+    asserting equivalence.
+  potential_type: constraint
+  bound_to:
+  - N02
+  promoted: true
+  promoted_to: logic/solution/constraints.md:CON01
+  crystallized_via: verbal-affirmation; design acceptance only
+  stale: false

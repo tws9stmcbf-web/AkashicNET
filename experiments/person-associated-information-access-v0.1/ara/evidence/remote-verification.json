@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-18",
+  "pr": 405,
+  "url": "https://github.com/tws9stmcbf-web/AkashicNET/pull/405",
+  "head": "07067a6ea0fe1a051a1c2419f8808dd30bcc12ca",
+  "draft": true,
+  "merged": false,
+  "files": [
+    {
+      "path": "experiments/person-associated-information-access-v0.1/README.md",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/protocol.json",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/sources.json",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/validation.json",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/data-dictionary.md",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/test_reference_analysis.py",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/reference_analysis.py",
+      "match": true
+    }
+  ],
+  "scope": "Initial seven candidate files match remote Git blobs; research-record epilogue appended separately."
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-21",
+  "reviewed_commit": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
+  "status": "PASS_LOCAL_SCOPE_AND_INTEGRITY_CHECKS",
+  "figures": 8,
+  "historical_assertions": 44,
+  "ordinary_items": 48,
+  "manifest_hashes_checked": 10,
+  "original_sources_preserved": 12,
+  "sources_added": 14,
+  "all_answer_keys_and_option_sets_unchanged": true,
+  "markdown_json_dossiers_and_recall_prompts_match": true,
+  "original_manifest_preserved": true,
+  "independent_review_rows_still_not_started": 7,
+  "protocol_scripts_analysis_and_historical_evidence_unchanged": true,
+  "numerical_tests_rerun": false,
+  "independent_human_review": false,
+  "open_finding": "FC04: second-earliest-year shortcut scores 8/8; not fixed or approved",
+  "recognition_correct_year_ranks": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "protected_sha256": {
+    "protocol.json": "22505cf72574ddc82090d6dfacbb5fb77c28eeea375bc2196080d6272494fbbb",
+    "reference_analysis.py": "8994e694166588df53a642ef802897fdcc6b6d7da9daa7af0e067a9d1ccaedb0",
+    "test_reference_analysis.py": "bc1682213c6af25a58d0165bd98c042081cf2e43fad5ecc6ce9f3b5a148070a9",
+    "data-dictionary.md": "2b93a0ed75e823981f69051a83187ffb7ee8fecfe99d0e6586d0698e3f857025",
+    "materials/session-scripts.md": "711649eae4039a12dbeef913ff45b5f960131cf713f7f112f34cc60764a64321",
+    "validation.json": "0d318347d3776ce9fdc34f563d0098d3451f075b1a9db9a184703a3f32d88694",
+    "sources.json": "557c73f5d26dfddb6b99211796031d5c6c2fef6c51bbdfe885fefeb79ff61baa"
+  },
+  "limitations": [
+    "Factual support includes 14 indexed-only assertion records; not full original-page verification.",
+    "Local structural checks are AI-assisted and do not grant stimulus, methods, rights or participant-use approval."
+  ]
+}

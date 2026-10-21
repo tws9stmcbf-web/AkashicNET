@@ -1,0 +1,433 @@
+{
+  "kind": "DISCARDED_AI_DRAFT_NOT_FOR_ADOPTION",
+  "proposal": {
+    "schema_version": "recognition-distractor-proposal-1",
+    "proposal_id": "FC04-P1",
+    "date": "2026-10-21",
+    "provenance": "AI_SUGGESTED_WITH_AI_EXECUTED_STATIC_AUDIT",
+    "status": "REVIEW_ONLY_NOT_ADOPTED_NOT_FOR_PARTICIPANT_USE",
+    "finding_status": "FC04_OPEN_PENDING_INDEPENDENT_DISPOSITION",
+    "baseline_commit": "2ccb4e2a254c3e5ed604e4b8fc5869fbdde695e3",
+    "baseline_stimulus_path": "materials/stimulus-set.json",
+    "baseline_stimulus_sha256": "db1294bd3faf91bea86716178116d4e1f05d594056f7b3e4ef5a74ebd5c4dc85",
+    "baseline_materials_version": "0.2-candidate",
+    "protocol_version": "0.1",
+    "rule": {
+      "within_item_ascending_offsets": [
+        0,
+        3,
+        7,
+        11
+      ],
+      "correct_rank_by_person": {
+        "F01": 2,
+        "F02": 4,
+        "F03": 1,
+        "F04": 3,
+        "F05": 1,
+        "F06": 3,
+        "F07": 4,
+        "F08": 2
+      },
+      "purpose": "Equal item spacing geometry with two keyed years at each chronological rank; removes the previously observed universal second-earliest rule in this proposed set.",
+      "selection_basis": "Constructed before participant data; no participant calibration or psychometric validation.",
+      "reviewer_serialization": "Options are sorted by year for inspection; the runtime must independently randomize displayed positions as already specified in session-scripts.md.",
+      "do_not_know": "Preserved outside the four substantive options; no timing or scoring change."
+    },
+    "adoption_gates": {
+      "independent_stimulus_review": "NOT_STARTED",
+      "methods_review": "NOT_STARTED",
+      "rights_review": "PENDING",
+      "psychometric_validation": "NOT_PERFORMED",
+      "participant_use_authorized": false,
+      "approved_for_collection": false,
+      "active_materials_replaced": false,
+      "new_material_freeze_completed": false
+    },
+    "limits": [
+      "Equal rank counts do not establish equal difficulty, distractor plausibility, chance-level performance or freedom from all heuristics.",
+      "All proposed spans are 11 years versus the original 21 years; this could change difficulty and needs independent disposition.",
+      "Known rank balancing can support cross-item elimination when some answers are known; no feedback alone does not remove that possibility.",
+      "Historical-era, last-digit, cross-item and prior-knowledge cues may remain; no participant data were collected.",
+      "Only reviewer-side static permutations were enumerated; no runtime randomization, projection or security implementation was tested.",
+      "Human source, rights, methods, statistical, ethics, cultural, accessibility and security reviews remain outstanding."
+    ],
+    "items": [
+      {
+        "person_id": "F01",
+        "name": "Marie Curie",
+        "source_item_id": "F01-D",
+        "prompt": "Which Nobel award year was explicitly stated in the detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1908"
+          },
+          {
+            "id": "o2",
+            "text": "1911"
+          },
+          {
+            "id": "o3",
+            "text": "1915"
+          },
+          {
+            "id": "o4",
+            "text": "1919"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1911",
+        "correct_chronological_rank": 2,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1911. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S13",
+          "S14"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F02",
+        "name": "C. V. Raman",
+        "source_item_id": "F02-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1919"
+          },
+          {
+            "id": "o3",
+            "text": "1922"
+          },
+          {
+            "id": "o4",
+            "text": "1926"
+          },
+          {
+            "id": "o2",
+            "text": "1930"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1930",
+        "correct_chronological_rank": 4,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1930. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S04",
+          "S05",
+          "S15"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F03",
+        "name": "Dorothy Crowfoot Hodgkin",
+        "source_item_id": "F03-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o2",
+            "text": "1964"
+          },
+          {
+            "id": "o1",
+            "text": "1967"
+          },
+          {
+            "id": "o3",
+            "text": "1971"
+          },
+          {
+            "id": "o4",
+            "text": "1975"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1964",
+        "correct_chronological_rank": 1,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1964. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S06",
+          "S16"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F04",
+        "name": "Barbara McClintock",
+        "source_item_id": "F04-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1976"
+          },
+          {
+            "id": "o3",
+            "text": "1979"
+          },
+          {
+            "id": "o2",
+            "text": "1983"
+          },
+          {
+            "id": "o4",
+            "text": "1987"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1983",
+        "correct_chronological_rank": 3,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1983. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S07",
+          "S17"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F05",
+        "name": "Niels Bohr",
+        "source_item_id": "F05-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o2",
+            "text": "1922"
+          },
+          {
+            "id": "o1",
+            "text": "1925"
+          },
+          {
+            "id": "o3",
+            "text": "1929"
+          },
+          {
+            "id": "o4",
+            "text": "1933"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1922",
+        "correct_chronological_rank": 1,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1922. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S08",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F06",
+        "name": "Rabindranath Tagore",
+        "source_item_id": "F06-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1906"
+          },
+          {
+            "id": "o3",
+            "text": "1909"
+          },
+          {
+            "id": "o2",
+            "text": "1913"
+          },
+          {
+            "id": "o4",
+            "text": "1917"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1913",
+        "correct_chronological_rank": 3,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1913. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S09",
+          "S21",
+          "S22"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F07",
+        "name": "Wangari Maathai",
+        "source_item_id": "F07-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1993"
+          },
+          {
+            "id": "o3",
+            "text": "1996"
+          },
+          {
+            "id": "o4",
+            "text": "2000"
+          },
+          {
+            "id": "o2",
+            "text": "2004"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "2004",
+        "correct_chronological_rank": 4,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 2004. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S10",
+          "S23",
+          "S24",
+          "S25"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      },
+      {
+        "person_id": "F08",
+        "name": "Santiago Ramón y Cajal",
+        "source_item_id": "F08-D",
+        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "1903"
+          },
+          {
+            "id": "o2",
+            "text": "1906"
+          },
+          {
+            "id": "o3",
+            "text": "1910"
+          },
+          {
+            "id": "o4",
+            "text": "1914"
+          }
+        ],
+        "correct_option_id": "o2",
+        "correct_year": "1906",
+        "correct_chronological_rank": 2,
+        "allow_do_not_know": true,
+        "rationale": "The stated year is 1906. Recognition supplies candidate years to both T and U, without feedback; this limited common exposure is recorded.",
+        "historical_source_ids": [
+          "S11",
+          "S12",
+          "S26"
+        ],
+        "distractor_status": "SYNTHETIC_INCORRECT_OPTIONS_NOT_HISTORICAL_ASSERTIONS"
+      }
+    ]
+  },
+  "diagnostics": {
+    "earliest": {
+      "correct_items_with_uniform_tie_breaking": 2.0,
+      "exact_fraction_of_items_correct": "1/4",
+      "correct_items_tie_resolution_bounds": [
+        2,
+        2
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "second_earliest": {
+      "correct_items_with_uniform_tie_breaking": 2.0,
+      "exact_fraction_of_items_correct": "1/4",
+      "correct_items_tie_resolution_bounds": [
+        2,
+        2
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "third_earliest": {
+      "correct_items_with_uniform_tie_breaking": 2.0,
+      "exact_fraction_of_items_correct": "1/4",
+      "correct_items_tie_resolution_bounds": [
+        2,
+        2
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "latest": {
+      "correct_items_with_uniform_tie_breaking": 2.0,
+      "exact_fraction_of_items_correct": "1/4",
+      "correct_items_tie_resolution_bounds": [
+        2,
+        2
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "closest_to_midrange": {
+      "correct_items_with_uniform_tie_breaking": 2.0,
+      "exact_fraction_of_items_correct": "1/4",
+      "correct_items_tie_resolution_bounds": [
+        2,
+        2
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "closest_to_mean": {
+      "correct_items_with_uniform_tie_breaking": 2.0,
+      "exact_fraction_of_items_correct": "1/4",
+      "correct_items_tie_resolution_bounds": [
+        2,
+        2
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "closest_to_multiple_of_ten": {
+      "correct_items_with_uniform_tie_breaking": 1.5,
+      "exact_fraction_of_items_correct": "3/16",
+      "correct_items_tie_resolution_bounds": [
+        1,
+        2
+      ],
+      "tied_items": 1,
+      "total_items": 8
+    },
+    "smallest_last_digit": {
+      "correct_items_with_uniform_tie_breaking": 5.0,
+      "exact_fraction_of_items_correct": "5/8",
+      "correct_items_tie_resolution_bounds": [
+        5,
+        5
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    },
+    "largest_last_digit": {
+      "correct_items_with_uniform_tie_breaking": 1.0,
+      "exact_fraction_of_items_correct": "1/8",
+      "correct_items_tie_resolution_bounds": [
+        1,
+        1
+      ],
+      "tied_items": 0,
+      "total_items": 8
+    }
+  },
+  "reason": "Smallest-last-digit rule scores 5/8. Preserved as development history; no participant data or approval."
+}

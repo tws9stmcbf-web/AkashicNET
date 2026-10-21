@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-18",
+  "head": "fda2902fab698f5cb770a4418995808bf6211ec0",
+  "draft": true,
+  "merged": false,
+  "verified_git_blobs": {
+    "README.md": "ae98095e15e8d475a1cabef531d2642b8f387412",
+    "protocol.json": "827210a4298cd6f1146d9115a8c263935f04f842",
+    "data-dictionary.md": "d7c6f5c38415691361c6c1111a18d604e474dbc8",
+    "validation.json": "77e61e05ceffc41fcd275e46d188c7332868274c",
+    "materials/README.md": "1491b46db1f34f2352d569fa72dde97d28d88093",
+    "materials/session-scripts.md": "e6444eec9fbea5abc0eda675d425280b4909e487",
+    "materials/stimulus-set.json": "6f6d981f267360f1dfe0f90d2516f4bba1e7204b",
+    "materials/manifest.json": "c7792a3e587527119485e7724aee905b25e94a3e",
+    "review/review-packet.md": "d737cc0f2dc75a80c85322b44a14043d4884f1b1"
+  },
+  "scope": "Nine changed files match local bytes. No CI or independent review claimed."
+}

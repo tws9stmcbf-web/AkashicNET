@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-18",
+  "kind": "SYNTHETIC_VALIDATION_NOT_STUDY_RESULTS",
+  "python": "3.12.14",
+  "unit_tests": {
+    "passed": 9,
+    "failed": 0,
+    "output": "test_discrete_planning_boundary (test_reference_analysis.ReferenceChecks.test_discrete_planning_boundary) ... ok\ntest_duplicate_missing_and_invalid_codes_rejected (test_reference_analysis.ReferenceChecks.test_duplicate_missing_and_invalid_codes_rejected) ... ok\ntest_early_open_or_late_commit_rejected (test_reference_analysis.ReferenceChecks.test_early_open_or_late_commit_rejected) ... ok\ntest_equal_cluster_fixture_has_no_arm_difference (test_reference_analysis.ReferenceChecks.test_equal_cluster_fixture_has_no_arm_difference) ... ok\ntest_integrity_failure_never_scores_a_hit (test_reference_analysis.ReferenceChecks.test_integrity_failure_never_scores_a_hit) ... ok\ntest_missing_and_wrong_answers_retain_denominator (test_reference_analysis.ReferenceChecks.test_missing_and_wrong_answers_retain_denominator) ... ok\ntest_permutation_detects_extreme_synthetic_separation (test_reference_analysis.ReferenceChecks.test_permutation_detects_extreme_synthetic_separation) ... ok\ntest_real_data_and_imbalanced_allocation_rejected (test_reference_analysis.ReferenceChecks.test_real_data_and_imbalanced_allocation_rejected) ... ok\ntest_tail_matches_exhaustive_four_symbol_assignments (test_reference_analysis.ReferenceChecks.test_tail_matches_exhaustive_four_symbol_assignments) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.071s\n\nOK\n"
+  },
+  "planning": {
+    "kind": "MODEL_CALCULATION_NOT_STUDY_DATA",
+    "n": 192,
+    "alpha": 0.025,
+    "critical_hits": 61,
+    "null_tail": 0.020521926725779824,
+    "h1_only_power_at_0_30": 0.321014470488504,
+    "h1_only_power_at_0_35": 0.8447225963713894,
+    "scope": "Homogeneous independent-hit model; not joint or interaction power."
+  },
+  "independent_implementation_crosscheck": {
+    "method": "scipy.stats.binom.sf",
+    "values": {
+      "tail": 0.020521926725779873,
+      "power30": 0.32101447048850823,
+      "power35": 0.8447225963713891
+    },
+    "tolerance": 1e-12,
+    "note": "Separate software calculation by same assistant; not independent human/statistical review"
+  },
+  "synthetic_demo": {
+    "kind": "SYNTHETIC_ONLY_NOT_STUDY_RESULTS",
+    "participants": 48,
+    "planned_trials": 768,
+    "cells": {
+      "MT": {
+        "planned": 192,
+        "observed": 192,
+        "hits": 48,
+        "zero_scored_statuses": {},
+        "rate": 0.25,
+        "valid_observation_rate": 0.25,
+        "missing_bounds": [
+          0.25,
+          0.25
+        ]
+      },
+      "MU": {
+        "planned": 192,
+        "observed": 192,
+        "hits": 48,
+        "zero_scored_statuses": {},
+        "rate": 0.25,
+        "valid_observation_rate": 0.25,
+        "missing_bounds": [
+          0.25,
+          0.25
+        ]
+      },
+      "RT": {
+        "planned": 192,
+        "observed": 192,
+        "hits": 48,
+        "zero_scored_statuses": {},
+        "rate": 0.25,
+        "valid_observation_rate": 0.25,
+        "missing_bounds": [
+          0.25,
+          0.25
+        ]
+      },
+      "RU": {
+        "planned": 192,
+        "observed": 192,
+        "hits": 48,
+        "zero_scored_statuses": {},
+        "rate": 0.25,
+        "valid_observation_rate": 0.25,
+        "missing_bounds": [
+          0.25,
+          0.25
+        ]
+      }
+    },
+    "h1": {
+      "n": 192,
+      "hits": 48,
+      "p_value": 0.5276820748833531,
+      "null": "iid concealed uniform targets; .25 conditional match probability"
+    },
+    "h2": {
+      "p_value": 1.0,
+      "draws": 100000,
+      "seed": 20261018,
+      "monte_carlo_se": 0.0,
+      "difference": 0.0,
+      "unit": "participant",
+      "clusters": 48,
+      "null": "sharp no-instruction-effect; uniform 24-of-48 allocation"
+    },
+    "participant_intervals": {
+      "draws": 20000,
+      "seed": 20261019,
+      "unit": "participant within arm",
+      "interval_type": "two-sided 95% percentile; small-pilot approximation",
+      "intervals": {
+        "MT": [
+          0.25,
+          0.25
+        ],
+        "MU": [
+          0.25,
+          0.25
+        ],
+        "RT": [
+          0.25,
+          0.25
+        ],
+        "RU": [
+          0.25,
+          0.25
+        ],
+        "trained_difference": [
+          0.0,
+          0.0
+        ],
+        "interaction": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "trained_difference_missing_bounds": [
+      0.0,
+      0.0
+    ],
+    "integrity_failure_slots": 0,
+    "scientific_interpretation": "NONE: synthetic software check only",
+    "independent_review": "NOT_COMPLETED"
+  },
+  "sha256": {
+    "README.md": "b307fbbdf1ce57a5f71ceda8880814e7349260bbbd1b83f4b0c4253e3e06ae35",
+    "protocol.json": "809669a0d5a37b1f7e880c413e8f2184a8f60ef09f305c88397f23828de491f4",
+    "data-dictionary.md": "2468201dfeb5e5589741d17a76d86700a412abbc4d28db1ae1f386eae8839765",
+    "sources.json": "557c73f5d26dfddb6b99211796031d5c6c2fef6c51bbdfe885fefeb79ff61baa",
+    "reference_analysis.py": "8994e694166588df53a642ef802897fdcc6b6d7da9daa7af0e067a9d1ccaedb0",
+    "test_reference_analysis.py": "bc1682213c6af25a58d0165bd98c042081cf2e43fad5ecc6ce9f3b5a148070a9"
+  },
+  "independent_human_review": "NOT_COMPLETED",
+  "ci_claim": "NOT_RUN",
+  "metadata_followups": [
+    {
+      "date": "2026-10-18",
+      "type": "BRIDGE_DESIGN_AGREEMENT_ONLY",
+      "base_commit": "876cbb6938eb1e2a292233b8c70348e1c67ecbb5",
+      "checks": [
+        "JSON parses",
+        "bridge agreement recorded with limited scope",
+        "remaining conditions/effect/instruction approval false",
+        "execution and evidence gates remain false",
+        "scoring and test code hashes unchanged"
+      ],
+      "numeric_tests_rerun": false,
+      "note": "Original numeric validation above remains an initial-candidate record; hashes below identify the updated documentation only. No new study result.",
+      "updated_document_sha256": {
+        "README.md": "12bab395c507f3fa3aace3560f83bd9edced5f78dc2cb0c4566b15c97283560f",
+        "protocol.json": "eebd772d680caacc993875fa68a69379c43651f12f8af6c2ee461a323f321206"
+      }
+    }
+  ],
+  "materials_followups": [
+    {
+      "date": "2026-10-18",
+      "type": "DRAFT_MATERIALS_AND_REVIEW_PACKET",
+      "materials_version": "0.2-candidate",
+      "base_commit": "436c60048ccbe752b4e205f1a133f236e91cbcda",
+      "checks": [
+        "JSON syntax, eight distinct F01–F08 identities and valid source references",
+        "48 unique ordinary-task item IDs; each multiple-choice item has four unique options and one valid key",
+        "T and U learning slots both total 180 seconds",
+        "Relative links in new/updated prose resolve in candidate (manifest generated below; pre-existing repository links excluded)",
+        "Protocol version 0.1 and closed evidence/recruitment/experiment gates retained",
+        "Bridge agreement retained; instruction, necessary-condition and effect approvals remain false",
+        "Analysis and test code hashes unchanged; numerical tests not rerun",
+        "Same-assistant factual/key and script consistency review; no independent review claimed"
+      ],
+      "numeric_tests_rerun": false,
+      "note": "Original synthetic results remain the initial-candidate record. This is document/structure validation, not an experiment or independent review.",
+      "manifest_path": "materials/manifest.json",
+      "manifest_sha256": "68a525850a078f90abd8a2c79a60d3012e216ca193c3bc98d20eca59e18f0d05"
+    }
+  ]
+}

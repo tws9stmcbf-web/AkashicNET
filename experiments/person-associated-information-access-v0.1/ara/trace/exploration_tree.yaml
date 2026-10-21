@@ -1,0 +1,136 @@
+tree:
+- id: N01
+  type: question
+  title: Operationalize person-associated information access
+  provenance: user
+  timestamp: 2026-10-18T07:23+00:00
+  description: Develop a reproducible, cautious protocol using PSI governance; create
+    a reviewable candidate without initiating experiments.
+  status: open
+- id: N02
+  type: decision
+  title: Separate psychology, hidden targets, source identity and physical models
+  provenance: ai-suggested
+  timestamp: 2026-10-18T07:23+00:00
+  choice: Propose a present-hidden-target pilot with trained/minimal knowledge and
+    metta/reflection conditions; retain explicit bridge approval and independent review
+    requirements.
+  alternatives:
+  - Public historical facts alone cannot establish unavailable information
+  - Prior future-target task tests a different timing claim
+  evidence:
+  - ../README.md#2-separate-the-claims-before-testing-them
+  - https://github.com/tws9stmcbf-web/AkashicNET/issues/354
+  also_depends_on:
+  - N01
+  status: unresolved
+- id: N03
+  type: experiment
+  title: Synthetic reference-analysis verification only
+  provenance: ai-executed
+  timestamp: 2026-10-18T07:23+00:00
+  result: Nine tests passed; exact threshold and power agree with SciPy to 1e-12;
+    deterministic fixture executed 100000 participant permutations and 20000 cluster
+    bootstrap resamples. No participant data or biological experiment.
+  evidence:
+  - evidence/validation-at-candidate-commit.json
+  - ../test_reference_analysis.py
+  - ../reference_analysis.py
+  also_depends_on:
+  - N02
+  status: resolved
+  tests_scope: Software correctness examples; does not test the staged substantive
+    hypotheses.
+- id: N04
+  type: decision
+  title: Create review-only GitHub draft
+  provenance: ai-executed
+  timestamp: 2026-10-18T07:23+00:00
+  choice: Created draft PR 405 at 07067a6ea0fe1a051a1c2419f8808dd30bcc12ca; remote
+    hashes of seven candidate files matched local versions. No merge or experimental
+    authorization.
+  alternatives:
+  - No website or experimental execution in this task
+  evidence:
+  - https://github.com/tws9stmcbf-web/AkashicNET/pull/405
+  - evidence/remote-verification.json
+  also_depends_on:
+  - N03
+  status: resolved
+- id: N05
+  type: decision
+  title: Accept the hidden-symbol bridge for pilot design only
+  provenance: user-revised
+  timestamp: 2026-10-18T07:30+00:00
+  choice: Record the user reply Yes as narrow agreement to the person-associated random-symbol
+    pilot assumption, without empirical validation or blanket study approval.
+  alternatives:
+  - Information module could be redesigned if the hypothesis is later restricted to
+    lifetime knowledge
+  evidence:
+  - User reply Yes at 2026-10-18T00:26:48-07:00 to prior draft summary
+  - ../protocol.json:bridge.acceptance_record
+  - https://github.com/tws9stmcbf-web/AkashicNET/commit/3fa1de1e4e6f7f104cc383725611bec1d41f68f6
+  also_depends_on:
+  - N02
+  status: resolved
+- id: N06
+  type: experiment
+  title: Static dossier, key and distractor audit
+  provenance: ai-executed
+  timestamp: 2026-10-21T13:52+00:00
+  result: AI-assisted audit covered 44 historical assertions and 48 ordinary-task
+    items. All eight delayed recognition keys are the second-earliest year; rank-only
+    selection yields 8/8 without historical recall. Local integrity checks passed;
+    no wrong award-year/category key or fictional-inference key found.
+  evidence:
+  - ../materials/fact-check-2026-10-21.json
+  - ../materials/fact-check-2026-10-21.md
+  - evidence/dossier-fact-check-validation-2026-10-21.json
+  also_depends_on:
+  - N04
+  status: resolved
+  tests_scope: Static educational-material audit only; no participant experiment or
+    statistical, rights, cultural, security or independent human review. FC04 remains
+    unresolved; option sets and experimental design unchanged.
+- id: N07
+  type: experiment
+  title: Static construction and audit of unadopted FC04 distractor proposal
+  provenance: ai-executed
+  timestamp: 2026-10-21T15:00+00:00
+  result: P1 rejected after smallest-last-digit rule scored 5/8. FC04-P2 preserves
+    correct years and key IDs; each chronological rank appears twice. The second-earliest
+    rule scores 2/8; all nine construction rules have tie-resolution upper bounds
+    no greater than 2/8. Builder and audit reproduce their committed JSON exactly.
+  evidence:
+  - ../review/fc04-review-handoff-2026-10-21.md
+  - ../review/fc04-distractor-candidate-2026-10-21.json
+  - ../review/fc04-discarded-p1-2026-10-21.json
+  - ../review/fc04-candidate-audit-2026-10-21.json
+  - evidence/fc04-proposal-remote-2026-10-21.json
+  also_depends_on:
+  - N06
+  status: resolved
+  tests_scope: Public reviewer-material static checks only. Diagnostic rules also
+    informed candidate construction, so they are not held-out or independent validation.
+    FC04 remains open; active materials, design, versions and all review gates unchanged.
+- id: N08
+  type: experiment
+  title: Residual exclusion-rule check and independent-review handoff
+  provenance: ai-executed
+  timestamp: 2026-10-21T08:15-07:00
+  result: 'FC04-ELIM01 reproduced: the unique largest-last-digit option is wrong in
+    all eight baseline and all eight FC04-P2 items. Excluding it leaves three options
+    containing the key for every item; a subsequent uniform choice has mathematical
+    probability 1/3. No participant use of this rule was observed.'
+  evidence:
+  - ../review/fc04-p2-elimination-check-2026-10-21.json
+  - ../review/independent-stimulus-review-form-2026-10-21.md
+  - ../review/independent-stimulus-review-form-manifest-2026-10-21.json
+  - evidence/independent-review-form-remote-2026-10-21.json
+  also_depends_on:
+  - N07
+  status: resolved
+  tests_scope: Static public option check only. FC04-P2 remains unadopted and FC04
+    open; independent methods disposition is pending. No new candidate, active-material
+    change or human approval.
