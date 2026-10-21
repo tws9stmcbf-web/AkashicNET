@@ -1,0 +1,277 @@
+{
+  "kind": "AI_ASSISTED_STATIC_RESIDUAL_CUE_CHECK",
+  "date": "2026-10-21",
+  "inspected_commit": "2110e7459577634606e9d3b77d9feed060598f3e",
+  "finding_id": "FC04-ELIM01",
+  "status": "OPEN_FOR_INDEPENDENT_DISPOSITION",
+  "rule": "Exclude the option with the largest final decimal digit; choose uniformly among the remaining options.",
+  "scope": "Public ordinary year-recognition options only; no hidden-symbol inference or participant result.",
+  "results": {
+    "baseline": {
+      "items": [
+        {
+          "person_id": "F01",
+          "options": [
+            "1902",
+            "1911",
+            "1917",
+            "1923"
+          ],
+          "correct_year": "1911",
+          "excluded_year": "1917",
+          "largest_final_digit": 7,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F02",
+          "options": [
+            "1921",
+            "1930",
+            "1936",
+            "1942"
+          ],
+          "correct_year": "1930",
+          "excluded_year": "1936",
+          "largest_final_digit": 6,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F03",
+          "options": [
+            "1955",
+            "1964",
+            "1970",
+            "1976"
+          ],
+          "correct_year": "1964",
+          "excluded_year": "1976",
+          "largest_final_digit": 6,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F04",
+          "options": [
+            "1974",
+            "1983",
+            "1989",
+            "1995"
+          ],
+          "correct_year": "1983",
+          "excluded_year": "1989",
+          "largest_final_digit": 9,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F05",
+          "options": [
+            "1913",
+            "1922",
+            "1928",
+            "1934"
+          ],
+          "correct_year": "1922",
+          "excluded_year": "1928",
+          "largest_final_digit": 8,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F06",
+          "options": [
+            "1904",
+            "1913",
+            "1919",
+            "1925"
+          ],
+          "correct_year": "1913",
+          "excluded_year": "1919",
+          "largest_final_digit": 9,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F07",
+          "options": [
+            "1995",
+            "2004",
+            "2010",
+            "2016"
+          ],
+          "correct_year": "2004",
+          "excluded_year": "2016",
+          "largest_final_digit": 6,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F08",
+          "options": [
+            "1897",
+            "1906",
+            "1912",
+            "1918"
+          ],
+          "correct_year": "1906",
+          "excluded_year": "1918",
+          "largest_final_digit": 8,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        }
+      ],
+      "correct_keys_excluded": 0,
+      "total_items": 8,
+      "sum_uniform_remaining_choice_expectations": "8/3"
+    },
+    "FC04-P2": {
+      "items": [
+        {
+          "person_id": "F01",
+          "options": [
+            "1911",
+            "1914",
+            "1918",
+            "1922"
+          ],
+          "correct_year": "1911",
+          "excluded_year": "1918",
+          "largest_final_digit": 8,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F02",
+          "options": [
+            "1923",
+            "1926",
+            "1930",
+            "1934"
+          ],
+          "correct_year": "1930",
+          "excluded_year": "1926",
+          "largest_final_digit": 6,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F03",
+          "options": [
+            "1957",
+            "1960",
+            "1964",
+            "1968"
+          ],
+          "correct_year": "1964",
+          "excluded_year": "1968",
+          "largest_final_digit": 8,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F04",
+          "options": [
+            "1980",
+            "1983",
+            "1987",
+            "1991"
+          ],
+          "correct_year": "1983",
+          "excluded_year": "1987",
+          "largest_final_digit": 7,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F05",
+          "options": [
+            "1919",
+            "1922",
+            "1926",
+            "1930"
+          ],
+          "correct_year": "1922",
+          "excluded_year": "1919",
+          "largest_final_digit": 9,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F06",
+          "options": [
+            "1902",
+            "1905",
+            "1909",
+            "1913"
+          ],
+          "correct_year": "1913",
+          "excluded_year": "1909",
+          "largest_final_digit": 9,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F07",
+          "options": [
+            "1993",
+            "1996",
+            "2000",
+            "2004"
+          ],
+          "correct_year": "2004",
+          "excluded_year": "1996",
+          "largest_final_digit": 6,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        },
+        {
+          "person_id": "F08",
+          "options": [
+            "1906",
+            "1909",
+            "1913",
+            "1917"
+          ],
+          "correct_year": "1906",
+          "excluded_year": "1909",
+          "largest_final_digit": 9,
+          "key_excluded": false,
+          "remaining_count": 3,
+          "uniform_remaining_choice_probability": "1/3"
+        }
+      ],
+      "correct_keys_excluded": 0,
+      "total_items": 8,
+      "sum_uniform_remaining_choice_expectations": "8/3"
+    }
+  },
+  "interpretation": "For each of the eight fixed baseline and proposed items, the unique largest-last-digit option is wrong. The exclusion rule leaves three options containing the correct year, giving a mathematical 1/3 success probability for a uniform choice among them. This does not show participants would discover or use the rule.",
+  "qualification": "The earlier direct-choice checks do not test exclusion rules. A zero-success direct-choice rule can supply an exclusion cue.",
+  "construction_changes_made": false,
+  "fc04_closed": false,
+  "independent_human_review": false,
+  "participant_data_used": false,
+  "participant_use_authorized": false,
+  "reproduction": "For each options list, compute int(text) % 10, exclude options attaining its maximum, check that exactly three remain and that correct_option_id belongs to those three.",
+  "input_sha256": {
+    "materials/stimulus-set.json": "db1294bd3faf91bea86716178116d4e1f05d594056f7b3e4ef5a74ebd5c4dc85",
+    "review/fc04-distractor-candidate-2026-10-21.json": "707cb787a1a8795531f6b189480dc56f5789c6ad80faa63f46119e9fcaa73018"
+  }
+}
