@@ -321,3 +321,86 @@ def test_canary_oracles_detect_deliberate_boundary_regressions(cli, mutation):
             test_affirmative_boolean_eligibility_on_every_public_record(cli, "unit", "public_safe", 1)
         else:
             test_allowlist_drops_arbitrary_fields_and_object_details_on_both_routes(cli)
+
+
+@pytest.mark.parametrize("route", ["concept", "direct"])
+@pytest.mark.parametrize("surrogate", ["\ud800", "\udfff"])
+def test_lone_surrogates_are_excluded_before_output_encoding(cli, route, surrogate):
+    snapshot = public_snapshot(cli)
+    if route == "concept":
+        snapshot["concept"]["concept_nodes"][0]["label"] = QUERY + surrogate
+        query = QUERY
+    else:
+        snapshot["dedup"]["retrieval_units"][2]["labels"] = ["synthetic direct title" + surrogate]
+        query = "synthetic direct title"
+    result = response(run_public(cli, snapshot, query))
+    assert result["results"] == []
+    assert result["summary"]["matched_concepts"] == []
+
+
+def test_output_encoding_error_has_constant_public_diagnostic(cli):
+    snapshot = public_snapshot(cli)
+    snapshot["concept"]["concept_nodes"][0]["label"] = QUERY + " Mettā"
+    cli.env["PYTHONIOENCODING"] = "ascii:strict"
+    result = run_public(cli, snapshot)
+    assert result.returncode == 1
+    assert result.stdout == ""
+    assert result.stderr == "Public retrieval unavailable: invalid snapshot\n"
+
+
+def test_valid_multilingual_and_non_bmp_text_survives_public_projection(cli):
+    snapshot = public_snapshot(cli)
+    label = QUERY + " Mettā ਪੰਜਾਬੀ Deutsch Español 💞"
+    snapshot["concept"]["concept_nodes"][0]["label"] = label
+    result = response(run_public(cli, snapshot))
+    assert result["results"]
+    assert all(row["concept"] == label for row in result["results"])
+
+
+@pytest.mark.parametrize("route", ["concept", "direct"])
+@pytest.mark.parametrize("private_path", [
+    r"C:\Users\private-canary\notes.txt", r"D:\private-canary\notes.txt",
+    "C:/private-canary/notes.txt", r"\\private-canary\share\notes.txt",
+    "/root/private-canary/notes.txt", "/tmp/private-canary/notes.txt",
+    "/workspace/private-canary/notes.txt", "/var/private-canary/notes.txt",
+    "/etc/private-canary/notes.txt", "~/private-canary/notes.txt",
+])
+def test_recognizable_local_paths_are_excluded_from_allowed_text(cli, route, private_path):
+    snapshot = public_snapshot(cli)
+    if route == "concept":
+        snapshot["concept"]["concept_nodes"][0]["label"] = QUERY + " " + private_path
+        query = QUERY
+    else:
+        snapshot["dedup"]["retrieval_units"][2]["labels"] = ["synthetic direct title " + private_path]
+        query = "synthetic direct title"
+    result = run_public(cli, snapshot, query)
+    parsed = response(result)
+    assert parsed["results"] == []
+    assert "private-canary" not in result.stdout + result.stderr
+
+
+@pytest.mark.parametrize("query", [QUERY, "synthetic direct title"])
+def test_duplicate_family_membership_cannot_inflate_provenance(cli, query):
+    snapshot = public_snapshot(cli)
+    index = 0 if query == QUERY else 2
+    unit = snapshot["dedup"]["retrieval_units"][index]
+    unit["family_ids"] *= 2
+    invalid_unit_id = unit["retrieval_unit_id"]
+    expected = copy.deepcopy(snapshot)
+    expected["dedup"]["retrieval_units"].pop(index)
+    baseline = response(run_public(cli, expected, query))
+    result = run_public(cli, snapshot, query)
+    assert response(result) == baseline
+    assert invalid_unit_id not in result.stdout
+
+
+def test_distinct_approved_families_keep_one_unit_per_concept_join(cli):
+    snapshot = public_snapshot(cli)
+    unit = snapshot["dedup"]["retrieval_units"][0]
+    unit["family_ids"].append("synthetic:unresolved")
+    parsed = response(run_public(cli, snapshot))
+    for family in ("synthetic:hash", "synthetic:unresolved"):
+        row = next(row for row in parsed["results"] if row["source"].get("family_id") == family)
+        assert len(row["logical_retrieval_units"]) == 1
+        assert row["evidence_profile"]["physical_manifestation_count"] == 1
+        assert row["semantic_decision"] == "HOLD"

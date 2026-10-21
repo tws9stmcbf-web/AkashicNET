@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.1",
+  "record_type": "DISCOVERY_PROVENANCE_OVERLAY_NOT_EVIDENCE_BATCH",
+  "checked_on": "2026-10-16",
+  "source_review_ref": "references/consciousness/consciousness-library-source-review-20261016.json",
+  "question_id": "BQ002",
+  "records": [
+    {
+      "question_id": "BQ002",
+      "source_id": "SRC-BQ002-HUDACHEK-WAMSLEY-2023",
+      "operation": "ADD_DISCOVERY_PROVENANCE_TO_EXISTING_WORK",
+      "existing_record_ref": "references/big-questions/BQ002/evidence-batch1-review-candidates-v0.1.json#SRC-BQ002-HUDACHEK-WAMSLEY-2023",
+      "title": "A meta-analysis of the relation between dream content and memory consolidation",
+      "authors_short": "Hudachek and Wamsley",
+      "doi": "10.1093/sleep/zsad111",
+      "year": 2023,
+      "journal": "SLEEP",
+      "original_url": "https://doi.org/10.1093/sleep/zsad111",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/37058584/",
+      "discovery_url": "https://consciousnesslibrary.org/research/45603-a-meta-analysis-of-the-relation-between-dream-content-and",
+      "dates": {
+        "crossref_online": "2023-04-14",
+        "crossref_print": "2023-12-11",
+        "library_display": "2023-12-11",
+        "europe_pmc_issue": "2023-12",
+        "europe_pmc_firstPublicationDate": "2023-12-01",
+        "note": "Different date events/precision retained; do not infer earliest online publication from Europe PMC issue metadata."
+      },
+      "design": "Meta-analysis",
+      "scope_note": "16 studies and 45 effects associate learning-related dream content with post-sleep memory performance.",
+      "limitations": "Association does not establish causation or explain all thought. Sleep-stage differences are preliminary and should not be inferred simply from different subgroup significance.",
+      "bq_contribution": "Reuse the existing BQ002 review candidate as a bounded memory-related route into thought content.",
+      "verification_depth": "Crossref metadata plus the author abstract and Comment-in relation via Europe PMC checked; full-text and raw-data appraisal remain pending.",
+      "correction_check": {
+        "status": "BOUNDED_CHECK_NO_RETRACTION_NOTICE_OBSERVED",
+        "comment_doi": "10.1093/sleep/zsad139",
+        "basis": "Europe PMC Comment-in relation; Crossref update fields empty. Commentary is not a correction or independent replication.",
+        "human_review_required": true
+      },
+      "deduplication": {
+        "method": "case-folded DOI plus NFKC alphanumeric title over tracked text files",
+        "checked_on": "2026-10-16",
+        "matches": {
+          "github": [
+            "references/big-questions/BQ002/evidence-batch1-review-candidates-v0.1.json"
+          ],
+          "sites": []
+        },
+        "independence_key": "doi:10.1093/sleep/zsad111",
+        "new_independent_evidence_count": 0,
+        "title_similarity_auto_merge": false
+      },
+      "discovery_source_id": "SRC-CONSCIOUSNESS-LIBRARY",
+      "library_importing_provider": null,
+      "question_status": "UNRESOLVED",
+      "relationship_status": "HUMAN_REVIEW_PENDING",
+      "evidence_label_changed": false,
+      "supports_models": [],
+      "rights": {
+        "scope": "BIBLIOGRAPHIC_METADATA_AND_ORIGINAL_REVIEW_NOTES",
+        "abstract_copied": false,
+        "full_text_republished": false,
+        "ai_summary_copied": false,
+        "bulk_harvest": false
+      },
+      "boundaries": {
+        "content_ingested": false,
+        "truth_inference_allowed": false,
+        "rights_promotion_allowed": false,
+        "scientific_evidence_promotion_allowed": false,
+        "canonical_identity_promotion_allowed": false,
+        "public_synthesis_updated": false,
+        "human_review_completed": false
+      },
+      "metadata_verification": {
+        "provider": "Crossref",
+        "url": "https://api.crossref.org/works/10.1093/sleep/zsad111",
+        "checked_on": "2026-10-16",
+        "title": "A meta-analysis of the relation between dream content and memory consolidation",
+        "authors": [
+          "Lauren Hudachek",
+          "Erin J Wamsley"
+        ],
+        "publication_dates": {
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                4,
+                14
+              ]
+            ]
+          },
+          "published-online": {
+            "date-parts": [
+              [
+                2023,
+                4,
+                14
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2023,
+                12,
+                11
+              ]
+            ]
+          }
+        },
+        "relation": {}
+      }
+    }
+  ],
+  "boundaries": {
+    "content_ingested": false,
+    "truth_inference_allowed": false,
+    "rights_promotion_allowed": false,
+    "scientific_evidence_promotion_allowed": false,
+    "canonical_identity_promotion_allowed": false,
+    "public_synthesis_updated": false,
+    "human_review_completed": false
+  }
+}

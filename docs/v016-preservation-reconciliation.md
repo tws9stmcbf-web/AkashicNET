@@ -1,6 +1,12 @@
-# Historical v0.16 CI reconciliation for PR #400
+# Historical v0.16 CI reconciliation
 
 Status: engineering correction for review; no merge, release or deployment decision.
+
+## Isolated extraction, 18 October 2026
+
+PR #407 reuses the workflow, preservation entry point and tests verbatim from PR #400 at `28887d591b8c8bee52c4901d16437e5d0c8f2f20`. The original diagnosis below is retained as historical context. The extraction is based on main `e920533004eb8b7a10031c0b38ec20576250a665` and follows source-binding repair `17c2f42bd7cad4f685f9193d14a7b203a10c9b69`. Its failed run [39131979989](https://github.com/tws9stmcbf-web/AkashicNET/actions/runs/39131979989), inspected job 117688831189, reports the same actual-candidate-base error.
+
+The current review scope is the source-binding and historical-preservation repairs in #407. PR #400 retrieval/public-boundary work remains outside this extraction. Fresh validation belongs to the new head; previous test counts and CI successes are not reused as current results. No historical validator, manifest, original tests or governed blob pins are modified. Keep #407 draft pending review; no merge or deployment is implied.
 
 ## Diagnosis and ancestry
 
@@ -82,3 +88,25 @@ identity or certify a release.
 The earlier 907-test result belongs to its recorded local commit/tree; it is not
 relabeled as a result for this correction. Current validation evidence and workflow
 links are recorded separately in the PR's reconciliation checkpoint.
+
+
+## PR #400 integration checkpoint, 20 October 2026 UTC
+
+The text above records the earlier investigation and isolated extraction. PR #407
+was subsequently merged as `85af5b6eb7a086a0a330575552b7eb1b82b92abf`;
+PR #406 then brought the STARGATE metadata index into main at
+`e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4`. Earlier draft/pending wording is
+historical and is not a statement of those merged PRs' current status.
+
+This reconciliation brings that main into draft PR #400 without rewriting its
+history. The existing source split, historical validator, preservation entry
+point, associated tests, workflows and governed pins are unchanged. This note
+retains main's extraction record; the original PR #400 version remains available
+at [`28887d591b8c8bee52c4901d16437e5d0c8f2f20`](https://github.com/tws9stmcbf-web/AkashicNET/blob/28887d591b8c8bee52c4901d16437e5d0c8f2f20/docs/v016-preservation-reconciliation.md).
+
+The retrieval improvements are retained from PR #400 and require fresh validation
+against the integrated head. Earlier test counts are historical evidence only.
+PR #409's dependency-locking experiment remains separate. See the
+[reconciliation scope and stack plan](pr400-main-reconciliation-20261020.md).
+No merge to main, release, deployment, scientific or rights promotion is approved
+by this reconciliation; PR #400 remains draft pending independent review.

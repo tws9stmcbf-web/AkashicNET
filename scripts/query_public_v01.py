@@ -42,12 +42,15 @@ def main():
         # identities. Digest values, object links and files are never returned.
         response["policy"]["manifestation_details_exposed"] = False
         rendered = json.dumps(response, ensure_ascii=False, indent=2, allow_nan=False)
+        # Validate the entire output before emitting any bytes. Keep encoding
+        # and immediate write/flush failures inside the public error boundary.
+        rendered.encode(sys.stdout.encoding or "utf-8")
+        print(rendered, flush=True)
     except Exception:
         # This public process must not relay implementation exceptions containing
         # rejected labels, IDs, paths or JSON parser snippets. No fallback.
         print("Public retrieval unavailable: invalid snapshot", file=sys.stderr)
         return 1
-    print(rendered)
     return 0
 
 
