@@ -1,0 +1,69 @@
+session:
+  id: 2026-10-21_001
+  date: '2026-10-21'
+  started: 2026-10-21T13:52+00:00
+  last_turn: 2026-10-21T13:52+00:00
+  turn_count: 1
+  summary: Bounded AI-assisted source, key and distractor check committed to draft
+    PR 405; narrow editorial corrections, preserved provenance history, and unresolved
+    recognition-rank shortcut recorded.
+events_logged:
+- turn: 1
+  type: experiment
+  id: N06
+  routing: direct
+  provenance: ai-executed
+  summary: Static dossier, key and distractor audit
+ai_actions:
+- turn: 1
+  action: Inspected eight dossiers against authoritative institutional records; distinguished
+    full-text retrieval from indexed official evidence and blocked originals. Created
+    source-linked assertion/item/URL records, narrowed one Tagore sentence and clarified
+    three prompts, added 14 source records, archived the old manifest and refreshed
+    current hashes. Preserved all keys/options, design, versions and review/rights
+    gates.
+  provenance: ai-executed
+  evidence:
+  - ../materials/fact-check-2026-10-21.md
+  - ../materials/fact-check-2026-10-21.json
+  - evidence/dossier-fact-check-notebook-2026-10-21.jsonl
+  files_changed:
+  - ../README.md
+  - ../materials/README.md
+  - ../materials/stimulus-set.json
+  - ../materials/manifest.json
+  - ../materials/history/manifest-2026-10-18.json
+  - ../materials/fact-check-2026-10-21.md
+  - ../materials/fact-check-2026-10-21.json
+  - ../review/review-packet.md
+- turn: 1
+  action: Committed corrections at 5f28336413106c847e5892db3aa4c0cc5bd3d15a to the
+    existing PR branch and verified all ten remote file contents against reviewed
+    local bytes. Confirmed PR open, draft and unmerged. Numerical code was unchanged
+    and numerical tests were not rerun.
+  provenance: ai-executed
+  evidence:
+  - evidence/dossier-fact-check-remote-2026-10-21.json
+  - evidence/dossier-fact-check-validation-2026-10-21.json
+claims_touched: []
+logic_revisions: []
+key_context:
+- turn: 1
+  excerpt: User authorized comprehensive factual checking and narrow reviewable corrections,
+    while requiring preservation of experimental design, version history, rights restrictions
+    and all independent review gates; no experiment or recruitment authorized.
+open_threads:
+- Independent source verification and rights review, including indexed-only assertions
+  and inaccessible original Nobel pages/full lecture
+- 'FC04: methods/stimulus review of the second-earliest-year recognition shortcut;
+  any redesign requires a new review and freeze'
+- Proponent instruction fidelity, necessary conditions and minimum meaningful effect
+- Independent statistics including joint simulations; ethics, cultural, accessibility
+  and security review
+- Acquisition/custody and accessible/audio implementation; prospective registration
+  before any participant use
+ai_suggestions_pending:
+- FC04 requires independent methods/stimulus adjudication; no option-set redesign
+  or approval inferred.
+- O01 remains staged and untested; CON01 remains only the earlier scoped bridge-design
+  agreement.

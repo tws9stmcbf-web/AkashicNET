@@ -7,3 +7,12 @@ sessions:
   events_count: 8
   claims_touched: []
   open_threads: 4
+- id: 2026-10-21_001
+  date: '2026-10-21'
+  summary: Bounded AI-assisted source, key and distractor check committed to draft
+    PR 405; narrow editorial corrections, preserved provenance history, and unresolved
+    recognition-rank shortcut recorded.
+  turn_count: 1
+  events_count: 1
+  claims_touched: []
+  open_threads: 5

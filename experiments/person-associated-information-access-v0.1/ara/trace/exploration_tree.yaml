@@ -74,3 +74,22 @@ tree:
   also_depends_on:
   - N02
   status: resolved
+- id: N06
+  type: experiment
+  title: Static dossier, key and distractor audit
+  provenance: ai-executed
+  timestamp: 2026-10-21T13:52+00:00
+  result: AI-assisted audit covered 44 historical assertions and 48 ordinary-task
+    items. All eight delayed recognition keys are the second-earliest year; rank-only
+    selection yields 8/8 without historical recall. Local integrity checks passed;
+    no wrong award-year/category key or fictional-inference key found.
+  evidence:
+  - ../materials/fact-check-2026-10-21.json
+  - ../materials/fact-check-2026-10-21.md
+  - evidence/dossier-fact-check-validation-2026-10-21.json
+  also_depends_on:
+  - N04
+  status: resolved
+  tests_scope: Static educational-material audit only; no participant experiment or
+    statistical, rights, cultural, security or independent human review. FC04 remains
+    unresolved; option sets and experimental design unchanged.

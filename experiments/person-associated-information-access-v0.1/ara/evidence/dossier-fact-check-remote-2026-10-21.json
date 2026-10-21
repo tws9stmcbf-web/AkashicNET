@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-21",
+  "kind": "AI_ASSISTED_REMOTE_CORRECTION_VERIFICATION",
+  "repository": "tws9stmcbf-web/AkashicNET",
+  "pull_request": 405,
+  "baseline_commit": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
+  "correction_commit": "5f28336413106c847e5892db3aa4c0cc5bd3d15a",
+  "branch": "research/person-information-access-protocol-v0.1-20261018",
+  "open": true,
+  "draft": true,
+  "merged": false,
+  "verification": "All ten correction-commit files fetched at the immutable commit and byte-compared with locally reviewed contents.",
+  "files": [
+    {
+      "path": "experiments/person-associated-information-access-v0.1/README.md",
+      "blob": "99f29b095f4e19f605fbc807c16c8ab7fab27b9f",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/materials/README.md",
+      "blob": "3e3eda3ca25d133cbb4a1b5e9967b927cc7dcf73",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/materials/manifest.json",
+      "blob": "4c92c3777153c050a5109a580e2a89e03ef85180",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/materials/stimulus-set.json",
+      "blob": "dfbf4d27d4a6389ccc981e2f67b3ef93b031ac1e",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/review-packet.md",
+      "blob": "58940d72106eb21e2b6a09307ff4bda1a7d100e5",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/ara/evidence/dossier-fact-check-notebook-2026-10-21.jsonl",
+      "blob": "cbefe1e0583dc3d8373978f3d7bdf83572fded74",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/ara/evidence/dossier-fact-check-validation-2026-10-21.json",
+      "blob": "779066d1c7cd008b354035b5d428baf31ae2a227",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/materials/fact-check-2026-10-21.json",
+      "blob": "d055b2ac53e50a68dd15b21df9802a64d48e82e6",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/materials/fact-check-2026-10-21.md",
+      "blob": "b38b379b888f0efa4e3620413e9027946c31b943",
+      "content_matches_local": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/materials/history/manifest-2026-10-18.json",
+      "blob": "c7792a3e587527119485e7724aee905b25e94a3e",
+      "content_matches_local": true
+    }
+  ],
+  "ci_status": "NOT_ASSESSED",
+  "independent_human_review": false,
+  "participant_use_authorized": false,
+  "limitations": [
+    "Publication and byte integrity only; not scientific validation or independent source/rights approval.",
+    "One immediate metadata read was stale; subsequent PR fetch and branch manifest confirmed the correction head."
+  ]
+}
