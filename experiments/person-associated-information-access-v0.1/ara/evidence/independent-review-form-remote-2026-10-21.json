@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-21",
+  "kind": "AI_ASSISTED_REVIEW_FORM_REMOTE_VERIFICATION",
+  "baseline_commit": "2110e7459577634606e9d3b77d9feed060598f3e",
+  "handoff_commit": "802eb458a00f1d67825aa0a68709c31773309ab2",
+  "pull_request": 405,
+  "draft": true,
+  "open": true,
+  "merged": false,
+  "files": [
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/independent-stimulus-review-form-2026-10-21.md",
+      "blob": "829c01646c6c741ee096d64e1ebdb434f2026463",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/fc04-p2-elimination-check-2026-10-21.json",
+      "blob": "f9d7689c2d322c7ae660c01a521bab8144386679",
+      "match": true
+    },
+    {
+      "path": "experiments/person-associated-information-access-v0.1/review/independent-stimulus-review-form-manifest-2026-10-21.json",
+      "blob": "854af69f87270ae83193fd84c9294d81a89be4c8",
+      "match": true
+    }
+  ],
+  "existing_material_files_changed": false,
+  "reviewer_appointed": false,
+  "independent_review_completed": false,
+  "participant_use_authorized": false,
+  "ci_status": "NOT_ASSESSED"
+}

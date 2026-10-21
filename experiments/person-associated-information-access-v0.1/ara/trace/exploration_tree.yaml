@@ -114,3 +114,23 @@ tree:
   tests_scope: Public reviewer-material static checks only. Diagnostic rules also
     informed candidate construction, so they are not held-out or independent validation.
     FC04 remains open; active materials, design, versions and all review gates unchanged.
+- id: N08
+  type: experiment
+  title: Residual exclusion-rule check and independent-review handoff
+  provenance: ai-executed
+  timestamp: 2026-10-21T08:15-07:00
+  result: 'FC04-ELIM01 reproduced: the unique largest-last-digit option is wrong in
+    all eight baseline and all eight FC04-P2 items. Excluding it leaves three options
+    containing the key for every item; a subsequent uniform choice has mathematical
+    probability 1/3. No participant use of this rule was observed.'
+  evidence:
+  - ../review/fc04-p2-elimination-check-2026-10-21.json
+  - ../review/independent-stimulus-review-form-2026-10-21.md
+  - ../review/independent-stimulus-review-form-manifest-2026-10-21.json
+  - evidence/independent-review-form-remote-2026-10-21.json
+  also_depends_on:
+  - N07
+  status: resolved
+  tests_scope: Static public option check only. FC04-P2 remains unadopted and FC04
+    open; independent methods disposition is pending. No new candidate, active-material
+    change or human approval.

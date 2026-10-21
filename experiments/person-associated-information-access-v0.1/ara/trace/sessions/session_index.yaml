@@ -9,10 +9,10 @@ sessions:
   open_threads: 4
 - id: 2026-10-21_001
   date: '2026-10-21'
-  summary: AI source audit and separate unadopted FC04 distractor proposal committed
-    to draft PR 405; source limitations, psychometric questions and all independent
-    reviews remain open.
-  turn_count: 2
-  events_count: 2
+  summary: Source audit, unadopted FC04-P2 and blank independent-review form recorded;
+    residual digit-elimination cue found. Draft PR 405 and all human/participant-use
+    gates remain unchanged.
+  turn_count: 3
+  events_count: 3
   claims_touched: []
-  open_threads: 6
+  open_threads: 7

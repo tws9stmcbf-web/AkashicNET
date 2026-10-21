@@ -2,11 +2,11 @@ session:
   id: 2026-10-21_001
   date: '2026-10-21'
   started: 2026-10-21T13:52+00:00
-  last_turn: 2026-10-21T15:00+00:00
-  turn_count: 2
-  summary: AI source audit and separate unadopted FC04 distractor proposal committed
-    to draft PR 405; source limitations, psychometric questions and all independent
-    reviews remain open.
+  last_turn: 2026-10-21T08:15-07:00
+  turn_count: 3
+  summary: Source audit, unadopted FC04-P2 and blank independent-review form recorded;
+    residual digit-elimination cue found. Draft PR 405 and all human/participant-use
+    gates remain unchanged.
 events_logged:
 - turn: 1
   type: experiment
@@ -20,6 +20,12 @@ events_logged:
   routing: direct
   provenance: ai-executed
   summary: Static construction and audit of unadopted FC04 distractor proposal
+- turn: 3
+  type: experiment
+  id: N08
+  routing: direct
+  provenance: ai-executed
+  summary: Residual exclusion-rule check and independent-review handoff
 ai_actions:
 - turn: 1
   action: Inspected eight dossiers against authoritative institutional records; distinguished
@@ -69,6 +75,16 @@ ai_actions:
   evidence:
   - ../review/fc04-review-manifest-2026-10-21.json
   - evidence/fc04-proposal-remote-2026-10-21.json
+- turn: 3
+  action: Prepared a blank reviewer identity/conflict/decision form with eight-figure
+    coverage, 14 indexed-only assertion rows and exact input hashes. Recorded FC04-ELIM01
+    rather than generating another optimized candidate. Committed three new review
+    files at 802eb458a00f1d67825aa0a68709c31773309ab2; verified all three remote contents
+    and PR draft/open/unmerged state. No reviewer contacted or appointed.
+  provenance: ai-executed
+  evidence:
+  - ../review/independent-stimulus-review-form-manifest-2026-10-21.json
+  - evidence/independent-review-form-remote-2026-10-21.json
 claims_touched: []
 logic_revisions: []
 key_context:
@@ -80,6 +96,11 @@ key_context:
   excerpt: User requested Next step. Interpreted as authorization to prepare a reviewable
     proposal, not to adopt new stimulus options, approve independent reviews, contact
     reviewers, recruit or run an experiment.
+- turn: 3
+  excerpt: User said Next. Continued review preparation without interpreting it as
+    independent approval or authorization to contact an unnamed reviewer. The repository
+    review packet requires a reviewer independent of the proponent and original implementation
+    author.
 open_threads:
 - Independent source verification and rights review, including indexed-only assertions
   and inaccessible original Nobel pages/full lecture
@@ -92,6 +113,8 @@ open_threads:
   before any participant use
 - 'FC04-P2: independent signed accept/revise/reject disposition, including plausibility,
   narrowed span, rank balancing and untested strategy risks; proposal not adopted'
+- Appoint an independent stimulus/methods reviewer and obtain disposition of FC04-ELIM01
+  plus the existing source/rights and candidate questions
 ai_suggestions_pending:
 - FC04 requires independent methods/stimulus adjudication; no option-set redesign
   or approval inferred.
