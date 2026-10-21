@@ -1,0 +1,19 @@
+{
+  "kind": "REVIEW_PROPOSAL_MANIFEST_NOT_PREREGISTRATION",
+  "date": "2026-10-21",
+  "proposal_id": "FC04-P2",
+  "baseline_commit": "2ccb4e2a254c3e5ed604e4b8fc5869fbdde695e3",
+  "baseline_materials_manifest_sha256": "79630f510b7e51f80816d729f7881d1105cf4e73a493284cfde83d523d400cfe",
+  "status": "REVIEW_ONLY_NOT_ADOPTED",
+  "fc04_closed": false,
+  "independent_review_completed": false,
+  "participant_use_authorized": false,
+  "sha256": {
+    "review/fc04-review-handoff-2026-10-21.md": "3b751d8a41e9a5b6afc5d89ebe6386643e2cecb1a823a8612f02f209914fcdf9",
+    "review/fc04-distractor-candidate-2026-10-21.json": "707cb787a1a8795531f6b189480dc56f5789c6ad80faa63f46119e9fcaa73018",
+    "review/fc04-discarded-p1-2026-10-21.json": "29f3b60c86a5570983aa07ff97a08ca0198a122eaf67fec654237e02ea4b88f0",
+    "review/build_fc04_candidate.py": "1ad3f5c49108d976e601d72f82b3fcee96225801a75e22914e59e35b82ce23bd",
+    "review/audit_fc04_candidate.py": "8742980c090776fefae024b3d807cb33caf500fe5b2f551697eba4df6a0df75e",
+    "review/fc04-candidate-audit-2026-10-21.json": "f820c3ef29a0e66db33f03c2e9f1d0e41286135ba7b6b6945e3b48bd115f10d0"
+  }
+}

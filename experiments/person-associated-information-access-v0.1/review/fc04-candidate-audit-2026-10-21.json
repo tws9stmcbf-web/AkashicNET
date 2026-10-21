@@ -1,0 +1,378 @@
+{
+  "status": "PASS_STATIC_PROPOSAL_CHECKS_NOT_APPROVAL",
+  "proposal_id": "FC04-P2",
+  "baseline_commit": "2ccb4e2a254c3e5ed604e4b8fc5869fbdde695e3",
+  "proposal_sha256": "707cb787a1a8795531f6b189480dc56f5789c6ad80faa63f46119e9fcaa73018",
+  "audit_script_sha256": "8742980c090776fefae024b3d807cb33caf500fe5b2f551697eba4df6a0df75e",
+  "baseline_manifest_sha256": "79630f510b7e51f80816d729f7881d1105cf4e73a493284cfde83d523d400cfe",
+  "baseline_manifest_file_hashes_match": {
+    "README.md": "8c5a491231f25bff9f02eef939487d0f5fa10b4ce8459970c5d96d7c923eb824",
+    "protocol.json": "22505cf72574ddc82090d6dfacbb5fb77c28eeea375bc2196080d6272494fbbb",
+    "data-dictionary.md": "2b93a0ed75e823981f69051a83187ffb7ee8fecfe99d0e6586d0698e3f857025",
+    "materials/README.md": "596fa81b692fe342e80c34fde359081646375d3230660d730e129c390b373bce",
+    "materials/session-scripts.md": "711649eae4039a12dbeef913ff45b5f960131cf713f7f112f34cc60764a64321",
+    "materials/stimulus-set.json": "db1294bd3faf91bea86716178116d4e1f05d594056f7b3e4ef5a74ebd5c4dc85",
+    "review/review-packet.md": "284efdbfaa64298662067713574419f83a77538de0a5f08b6fd95c7bdedfe51b",
+    "materials/fact-check-2026-10-21.md": "e897ed2c208c316b79725ec766d6e319167350afaaf937709975fb8584217542",
+    "materials/fact-check-2026-10-21.json": "e34952470f5fc7b74a5a3c4eb720f12df95a7c3f5fa6a8b2612e28e2377fe1ec",
+    "materials/history/manifest-2026-10-18.json": "68a525850a078f90abd8a2c79a60d3012e216ca193c3bc98d20eca59e18f0d05"
+  },
+  "unchanged_correct_years_key_ids_prompts_and_source_mappings": true,
+  "all_independent_source_and_rights_records_pending": true,
+  "independent_review_rows_not_started": 7,
+  "original_rank_counts": {
+    "2": 8
+  },
+  "proposed_rank_counts": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2
+  },
+  "items": [
+    {
+      "person_id": "F01",
+      "key": "1911",
+      "original_rank": 2,
+      "proposed_rank": 1,
+      "sorted_years": [
+        1911,
+        1914,
+        1918,
+        1922
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F02",
+      "key": "1930",
+      "original_rank": 2,
+      "proposed_rank": 3,
+      "sorted_years": [
+        1923,
+        1926,
+        1930,
+        1934
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F03",
+      "key": "1964",
+      "original_rank": 2,
+      "proposed_rank": 3,
+      "sorted_years": [
+        1957,
+        1960,
+        1964,
+        1968
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F04",
+      "key": "1983",
+      "original_rank": 2,
+      "proposed_rank": 2,
+      "sorted_years": [
+        1980,
+        1983,
+        1987,
+        1991
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F05",
+      "key": "1922",
+      "original_rank": 2,
+      "proposed_rank": 2,
+      "sorted_years": [
+        1919,
+        1922,
+        1926,
+        1930
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F06",
+      "key": "1913",
+      "original_rank": 2,
+      "proposed_rank": 4,
+      "sorted_years": [
+        1902,
+        1905,
+        1909,
+        1913
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F07",
+      "key": "2004",
+      "original_rank": 2,
+      "proposed_rank": 4,
+      "sorted_years": [
+        1993,
+        1996,
+        2000,
+        2004
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "person_id": "F08",
+      "key": "1906",
+      "original_rank": 2,
+      "proposed_rank": 1,
+      "sorted_years": [
+        1906,
+        1909,
+        1913,
+        1917
+      ],
+      "permutations_enumerated": 24,
+      "correct_counts_by_display_slot": [
+        6,
+        6,
+        6,
+        6
+      ]
+    }
+  ],
+  "heuristics": {
+    "baseline": {
+      "earliest": {
+        "correct_items_with_uniform_tie_breaking": 0.0,
+        "exact_fraction_of_items_correct": "0",
+        "correct_items_tie_resolution_bounds": [
+          0,
+          0
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "second_earliest": {
+        "correct_items_with_uniform_tie_breaking": 8.0,
+        "exact_fraction_of_items_correct": "1",
+        "correct_items_tie_resolution_bounds": [
+          8,
+          8
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "third_earliest": {
+        "correct_items_with_uniform_tie_breaking": 0.0,
+        "exact_fraction_of_items_correct": "0",
+        "correct_items_tie_resolution_bounds": [
+          0,
+          0
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "latest": {
+        "correct_items_with_uniform_tie_breaking": 0.0,
+        "exact_fraction_of_items_correct": "0",
+        "correct_items_tie_resolution_bounds": [
+          0,
+          0
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "closest_to_midrange": {
+        "correct_items_with_uniform_tie_breaking": 8.0,
+        "exact_fraction_of_items_correct": "1",
+        "correct_items_tie_resolution_bounds": [
+          8,
+          8
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "closest_to_mean": {
+        "correct_items_with_uniform_tie_breaking": 8.0,
+        "exact_fraction_of_items_correct": "1",
+        "correct_items_tie_resolution_bounds": [
+          8,
+          8
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "closest_to_multiple_of_ten": {
+        "correct_items_with_uniform_tie_breaking": 2.5,
+        "exact_fraction_of_items_correct": "5/16",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          3
+        ],
+        "tied_items": 2,
+        "total_items": 8
+      },
+      "smallest_last_digit": {
+        "correct_items_with_uniform_tie_breaking": 5.0,
+        "exact_fraction_of_items_correct": "5/8",
+        "correct_items_tie_resolution_bounds": [
+          5,
+          5
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "largest_last_digit": {
+        "correct_items_with_uniform_tie_breaking": 0.0,
+        "exact_fraction_of_items_correct": "0",
+        "correct_items_tie_resolution_bounds": [
+          0,
+          0
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      }
+    },
+    "proposal": {
+      "earliest": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "second_earliest": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "third_earliest": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "latest": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "closest_to_midrange": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "closest_to_mean": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "closest_to_multiple_of_ten": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "smallest_last_digit": {
+        "correct_items_with_uniform_tie_breaking": 2.0,
+        "exact_fraction_of_items_correct": "1/4",
+        "correct_items_tie_resolution_bounds": [
+          2,
+          2
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      },
+      "largest_last_digit": {
+        "correct_items_with_uniform_tie_breaking": 0.0,
+        "exact_fraction_of_items_correct": "0",
+        "correct_items_tie_resolution_bounds": [
+          0,
+          0
+        ],
+        "tied_items": 0,
+        "total_items": 8
+      }
+    }
+  },
+  "interpretation": "The tested universal second-earliest shortcut is absent in this proposal. This does not establish psychometric validity, equal difficulty, chance-level performance or absence of other shortcuts.",
+  "runtime_randomization_tested": false,
+  "participant_data_used": false,
+  "independent_human_review": false,
+  "participant_use_authorized": false,
+  "fc04_closed": false
+}
