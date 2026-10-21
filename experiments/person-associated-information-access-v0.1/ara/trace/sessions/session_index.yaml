@@ -9,10 +9,10 @@ sessions:
   open_threads: 4
 - id: 2026-10-21_001
   date: '2026-10-21'
-  summary: Bounded AI-assisted source, key and distractor check committed to draft
-    PR 405; narrow editorial corrections, preserved provenance history, and unresolved
-    recognition-rank shortcut recorded.
-  turn_count: 1
-  events_count: 1
+  summary: AI source audit and separate unadopted FC04 distractor proposal committed
+    to draft PR 405; source limitations, psychometric questions and all independent
+    reviews remain open.
+  turn_count: 2
+  events_count: 2
   claims_touched: []
-  open_threads: 5
+  open_threads: 6

@@ -2,11 +2,11 @@ session:
   id: 2026-10-21_001
   date: '2026-10-21'
   started: 2026-10-21T13:52+00:00
-  last_turn: 2026-10-21T13:52+00:00
-  turn_count: 1
-  summary: Bounded AI-assisted source, key and distractor check committed to draft
-    PR 405; narrow editorial corrections, preserved provenance history, and unresolved
-    recognition-rank shortcut recorded.
+  last_turn: 2026-10-21T15:00+00:00
+  turn_count: 2
+  summary: AI source audit and separate unadopted FC04 distractor proposal committed
+    to draft PR 405; source limitations, psychometric questions and all independent
+    reviews remain open.
 events_logged:
 - turn: 1
   type: experiment
@@ -14,6 +14,12 @@ events_logged:
   routing: direct
   provenance: ai-executed
   summary: Static dossier, key and distractor audit
+- turn: 2
+  type: experiment
+  id: N07
+  routing: direct
+  provenance: ai-executed
+  summary: Static construction and audit of unadopted FC04 distractor proposal
 ai_actions:
 - turn: 1
   action: Inspected eight dossiers against authoritative institutional records; distinguished
@@ -45,6 +51,24 @@ ai_actions:
   evidence:
   - evidence/dossier-fact-check-remote-2026-10-21.json
   - evidence/dossier-fact-check-validation-2026-10-21.json
+- turn: 2
+  action: Responded to Next step by preparing a separate reviewer-only candidate,
+    discarded-attempt history, deterministic builder, static audit and manifest. Added
+    conservative year boundaries with linked source-access records. Committed seven
+    new review files at 8f298bfea026f81b94ab5fa5b2acbe31b462c1bc and byte-verified
+    each remote file. Existing material/manifest hashes and all approvals were preserved.
+  provenance: ai-executed
+  files_changed:
+  - review/fc04-review-handoff-2026-10-21.md
+  - review/fc04-distractor-candidate-2026-10-21.json
+  - review/fc04-discarded-p1-2026-10-21.json
+  - review/build_fc04_candidate.py
+  - review/audit_fc04_candidate.py
+  - review/fc04-candidate-audit-2026-10-21.json
+  - review/fc04-review-manifest-2026-10-21.json
+  evidence:
+  - ../review/fc04-review-manifest-2026-10-21.json
+  - evidence/fc04-proposal-remote-2026-10-21.json
 claims_touched: []
 logic_revisions: []
 key_context:
@@ -52,6 +76,10 @@ key_context:
   excerpt: User authorized comprehensive factual checking and narrow reviewable corrections,
     while requiring preservation of experimental design, version history, rights restrictions
     and all independent review gates; no experiment or recruitment authorized.
+- turn: 2
+  excerpt: User requested Next step. Interpreted as authorization to prepare a reviewable
+    proposal, not to adopt new stimulus options, approve independent reviews, contact
+    reviewers, recruit or run an experiment.
 open_threads:
 - Independent source verification and rights review, including indexed-only assertions
   and inaccessible original Nobel pages/full lecture
@@ -62,8 +90,12 @@ open_threads:
   and security review
 - Acquisition/custody and accessible/audio implementation; prospective registration
   before any participant use
+- 'FC04-P2: independent signed accept/revise/reject disposition, including plausibility,
+  narrowed span, rank balancing and untested strategy risks; proposal not adopted'
 ai_suggestions_pending:
 - FC04 requires independent methods/stimulus adjudication; no option-set redesign
   or approval inferred.
 - O01 remains staged and untested; CON01 remains only the earlier scoped bridge-design
   agreement.
+- FC04-P2 option scheme is AI-suggested and unadopted; no new material version or
+  freeze.

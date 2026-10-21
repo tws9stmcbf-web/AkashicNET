@@ -93,3 +93,24 @@ tree:
   tests_scope: Static educational-material audit only; no participant experiment or
     statistical, rights, cultural, security or independent human review. FC04 remains
     unresolved; option sets and experimental design unchanged.
+- id: N07
+  type: experiment
+  title: Static construction and audit of unadopted FC04 distractor proposal
+  provenance: ai-executed
+  timestamp: 2026-10-21T15:00+00:00
+  result: P1 rejected after smallest-last-digit rule scored 5/8. FC04-P2 preserves
+    correct years and key IDs; each chronological rank appears twice. The second-earliest
+    rule scores 2/8; all nine construction rules have tie-resolution upper bounds
+    no greater than 2/8. Builder and audit reproduce their committed JSON exactly.
+  evidence:
+  - ../review/fc04-review-handoff-2026-10-21.md
+  - ../review/fc04-distractor-candidate-2026-10-21.json
+  - ../review/fc04-discarded-p1-2026-10-21.json
+  - ../review/fc04-candidate-audit-2026-10-21.json
+  - evidence/fc04-proposal-remote-2026-10-21.json
+  also_depends_on:
+  - N06
+  status: resolved
+  tests_scope: Public reviewer-material static checks only. Diagnostic rules also
+    informed candidate construction, so they are not held-out or independent validation.
+    FC04 remains open; active materials, design, versions and all review gates unchanged.
