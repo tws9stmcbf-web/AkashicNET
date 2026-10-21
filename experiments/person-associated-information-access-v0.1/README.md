@@ -8,6 +8,8 @@
 
 **Review-material update:** [Materials 0.2-candidate](materials/README.md) now supplies proposed scripts, eight source-linked dossiers and ordinary-task keys. The [independent review packet](review/review-packet.md) makes remaining decisions and audits explicit. Protocol and synthetic-code version remain 0.1; these materials are not independently finalized or approved for participants.
 
+**21 October source check:** The [eight-dossier correction record](materials/fact-check-2026-10-21.md) covers 44 historical assertions and all 48 ordinary items, with access limits and narrowly scoped wording corrections. The shared chronological-rank cue in recognition distractors is an unresolved stimulus-validity issue. Materials remain 0.2-candidate and all independent approval gates stay closed.
+
 This candidate asks whether a specified contemplative instruction changes ordinary cognition or correspondence with concealed, independently randomized information. It does not assume a higher-dimensional store, contact with a historical individual, anomalous transfer, or reproducible psychic ability.
 
 ## 1. Origin, scope and relationship to existing work

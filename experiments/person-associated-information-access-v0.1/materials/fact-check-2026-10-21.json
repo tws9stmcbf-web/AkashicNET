@@ -1,0 +1,2292 @@
+{
+  "kind": "AI_ASSISTED_DOSSIER_FACT_CHECK_NOT_INDEPENDENT_REVIEW",
+  "date": "2026-10-21",
+  "timezone": "America/Los_Angeles",
+  "reviewed_commit": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
+  "pull_request": "https://github.com/tws9stmcbf-web/AkashicNET/pull/405",
+  "materials_version": "0.2-candidate",
+  "protocol_version": "0.1",
+  "editorial_revision": "source-fact-check-2026-10-21",
+  "status": "DRAFT_NOT_FOR_PARTICIPANT_USE",
+  "scope": "All eight dossiers, historical assertions and dates, 12 original canonical source URLs plus seven distinct original retrieval locators, all 48 ordinary items, answer keys, distractors, and displayed Markdown/JSON alignment. No participant data or concealed assignments.",
+  "provenance": "ai-executed in response to the user's explicit fact-check/correction request",
+  "methods": {
+    "page_text": "Relevant official or institutional page text retrieved through web open; not a raw HTTP archive or independent human inspection.",
+    "indexed_text": "Official publisher’s indexed text inspected when page-body retrieval failed. Classified separately and not called full original-page verification.",
+    "logic": "Eight fictional inference items checked against their own premises; these are not historical claims.",
+    "source_hierarchy": "Awarding organization, subject’s institution/archival custodian, university history and learned-society landmark. No third-party summaries used to decide a historical correction.",
+    "limitations": "No full third-party works imported; no licenses, independent sign-offs, translations, psychometric validation or methodological approvals granted."
+  },
+  "guardrails": {
+    "independent_source_verification": false,
+    "rights_review_completed": false,
+    "approved_for_collection": false,
+    "concealed_target_assignments_present": false,
+    "experimental_design_changed": false,
+    "answer_keys_changed": false,
+    "option_sets_changed": false,
+    "reference_analysis_changed": false,
+    "statistical_review_completed": false,
+    "ethics_review_completed": false,
+    "cultural_review_completed": false,
+    "security_review_completed": false
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Marie Curie – Facts",
+      "url": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/?trk=public_post_comment-text",
+      "inspected_scope": "Life and Work indexed text; Warsaw, education, Becquerel, polonium and radium.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view0",
+        "indexed_support_references": [],
+        "scope": "No substantive text from this exact canonical source verified in this pass; see supplementary sources. Historical 18 October record retained.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S02",
+      "title": "Marie Curie – Biographical",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/biographical/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/biographical/?print=1",
+      "inspected_scope": "Indexed biographical text; Sorbonne role, naming polonium, research context.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view1",
+        "indexed_support_references": [
+          "turn8search1"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S03",
+      "title": "Nobel Prize facts",
+      "url": "https://www.nobelprize.org/prizes/lists/nobel-prize-facts/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/lists/nobel-prize-facts/",
+      "inspected_scope": "Indexed award record for Curie's 1911 chemistry award and radium/polonium.",
+      "type": "Official award record",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view2",
+        "indexed_support_references": [],
+        "scope": "No substantive text from this exact canonical source verified in this pass; see supplementary sources. Historical 18 October record retained.",
+        "independent_human_review": false
+      }
+    },
+    {
+      "id": "S04",
+      "title": "The Nobel Prize in Physics 1930",
+      "url": "https://data.nobelprize.org/resource/nobelprize/Physics/1930",
+      "retrieval_locator": "https://data.nobelprize.org/resource/nobelprize/Physics/1930",
+      "inspected_scope": "Indexed official award record for Raman and light scattering.",
+      "type": "Official award record",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "PAGE_SHELL_NO_AWARD_BODY",
+        "retrieval_reference": "turn0view3",
+        "indexed_support_references": [],
+        "scope": "No substantive text from this exact canonical source verified in this pass; see supplementary sources. Historical 18 October record retained.",
+        "independent_human_review": false
+      }
+    },
+    {
+      "id": "S05",
+      "title": "The Nobel Prizes in Physics 1901–2000",
+      "url": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "inspected_scope": "Indexed passage on Raman: scattered light includes frequency-shifted components.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view4",
+        "indexed_support_references": [
+          "turn8search0"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false
+      }
+    },
+    {
+      "id": "S06",
+      "title": "Dorothy Crowfoot Hodgkin",
+      "url": "https://www.nobelprize.org/stories/women-who-changed-science/dorothy-hodgkin/",
+      "retrieval_locator": "https://www.nobelprize.org/stories/women-who-changed-science/dorothy-hodgkin/?gallery_style=page",
+      "inspected_scope": "Indexed account of crystallography, penicillin, vitamin B12, insulin and 1964 chemistry award.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view5",
+        "indexed_support_references": [
+          "turn1search2"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S07",
+      "title": "Barbara McClintock",
+      "url": "https://www.nobelprize.org/stories/women-who-changed-science/barbara-mcclintock/",
+      "retrieval_locator": "https://www.nobelprize.org/womenwhochangedscience/stories/barbara-mcclintock?keyword=genetics",
+      "inspected_scope": "Indexed account of maize, transposition, traits and 1983 medicine award.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view6",
+        "indexed_support_references": [
+          "turn8search3"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S08",
+      "title": "Niels Bohr – Facts",
+      "url": "https://www.nobelprize.org/prizes/physics/1922/bohr/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/laureate/27",
+      "inspected_scope": "Indexed Life and Work text; Copenhagen, 1913 hydrogen model, discrete energies, radiation, 1922 award.",
+      "type": "Official award record and institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view7",
+        "indexed_support_references": [
+          "turn5search0",
+          "turn9search2"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S09",
+      "title": "Rabindranath Tagore – Facts",
+      "url": "https://www.nobelprize.org/prizes/literature/1913/tagore/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/laureate/583%26lang%3Den",
+      "inspected_scope": "Indexed Life and Work text; Calcutta, Bengali/English, Shantiniketan school, writing forms and 1913 award.",
+      "type": "Official award record and institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view8",
+        "indexed_support_references": [
+          "turn5search1",
+          "turn8search7"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S10",
+      "title": "Wangari Maathai – Facts",
+      "url": "https://www.nobelprize.org/prizes/peace/2004/maathai/facts/",
+      "retrieval_locator": "https://www.nobelprize.org/prizes/peace/2004/maathai/facts/?trk=public_post_comment-text",
+      "inspected_scope": "Indexed text; Kenya, biology, 1977 Green Belt Movement, tree planting and 2004 award.",
+      "type": "Official award record and institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view9",
+        "indexed_support_references": [
+          "turn5search10"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
+    },
+    {
+      "id": "S11",
+      "title": "Exploring life's smallest details",
+      "url": "https://www.nobelprize.org/stories/cells-nerves-genes/",
+      "retrieval_locator": "https://www.nobelprize.org/stories/cells-nerves-genes/",
+      "inspected_scope": "Indexed Structure of the nervous system passage; staining, distinct neurons, Golgi/Cajal 1906 award.",
+      "type": "Institutional historical summary",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view10",
+        "indexed_support_references": [
+          "turn10search0"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false
+      }
+    },
+    {
+      "id": "S12",
+      "title": "The structure and connexions of neurons",
+      "url": "https://www.nobelprize.org/uploads/2018/06/cajal-lecture.pdf",
+      "retrieval_locator": "https://www.nobelprize.org/uploads/2018/06/cajal-lecture.pdf",
+      "inspected_scope": "Indexed opening of Cajal's 12 December 1906 Nobel lecture; distinct neurons and Golgi's method. Full lecture not appraised.",
+      "type": "Historical primary lecture",
+      "publisher": "NobelPrize.org / Nobel organizations",
+      "access_date": "2026-10-18",
+      "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
+      "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view11",
+        "indexed_support_references": [
+          "turn10search15"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false
+      }
+    },
+    {
+      "id": "S13",
+      "title": "L’héritage de Marie Curie, perpétuer l’esprit d’une pionnière",
+      "url": "https://curie.fr/lheritage-de-marie-curie-perpetuer-lesprit-dune-pionniere",
+      "retrieval_locator": "https://curie.fr/lheritage-de-marie-curie-perpetuer-lesprit-dune-pionniere",
+      "inspected_scope": "Sections Une femme d’exception and La découverte de la radioactivité; Warsaw/Paris, Sorbonne, joint element research. Do not infer a professorship appointment date from this dossier.",
+      "type": "Institutional historical summary",
+      "publisher": "Institut Curie",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn4view0"
+      }
+    },
+    {
+      "id": "S14",
+      "title": "Prix Nobel de chimie décerné à Marie Curie, 1911",
+      "url": "https://curiotheque.musee.curie.fr/s/fr/item/15332",
+      "retrieval_locator": "https://curiotheque.musee.curie.fr/s/fr/item/15332",
+      "inspected_scope": "Catalogue record MCP141: award identity, Chemistry and 1911; metadata inspected, image not reproduced.",
+      "type": "Institutional collection catalogue",
+      "publisher": "Musée Curie",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn11view0"
+      }
+    },
+    {
+      "id": "S15",
+      "title": "C.V. Raman The Raman Effect - Landmark",
+      "url": "https://www.acs.org/education/whatischemistry/landmarks/ramaneffect.html",
+      "retrieval_locator": "https://www.acs.org/education/whatischemistry/landmarks/ramaneffect.html",
+      "inspected_scope": "Raman Measures the Effect of Light Scattering; Physicist’s Tool; Biography; 1930 Physics award. The indexed S05 passage supplies the explicit monochromatic/frequency formulation.",
+      "type": "Institutional historical summary",
+      "publisher": "American Chemical Society / Indian Association for the Cultivation of Science landmark",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn4view1"
+      }
+    },
+    {
+      "id": "S16",
+      "title": "Modelling the Structure of Penicillin",
+      "url": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/the-structure-of-penicillin/index.html",
+      "retrieval_locator": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/the-structure-of-penicillin/index.html",
+      "inspected_scope": "Model and atom-position discussion; penicillin, vitamin B12, insulin; Chemistry 1964. Insulin structure dated 1969, after the award.",
+      "type": "Institutional historical summary",
+      "publisher": "University of Oxford, Museum of the History of Science",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn2view5"
+      }
+    },
+    {
+      "id": "S17",
+      "title": "Barbara McClintock | About",
+      "url": "https://facultyprofiles.cshl.edu/barbara.mcclintock",
+      "retrieval_locator": "https://facultyprofiles.cshl.edu/barbara.mcclintock",
+      "inspected_scope": "BIO: cytogenetics, maize, transposable elements and Physiology or Medicine 1983. Profile text was readable despite a generic JavaScript warning.",
+      "type": "Institutional historical summary",
+      "publisher": "Cold Spring Harbor Laboratory",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn4view2"
+      }
+    },
+    {
+      "id": "S18",
+      "title": "Bohr’s atomic model",
+      "url": "https://nbi.ku.dk/english/www/niels/bohr/bohratomet/",
+      "retrieval_locator": "https://nbi.ku.dk/english/www/niels/bohr/bohratomet/",
+      "inspected_scope": "Atomic-model narrative: discrete orbits, radiation transitions, Balmer/hydrogen spectrum, three 1913 papers.",
+      "type": "Institutional historical summary",
+      "publisher": "Niels Bohr Institute, University of Copenhagen",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view0"
+      }
+    },
+    {
+      "id": "S19",
+      "title": "The establishment of an institute",
+      "url": "https://nbi.ku.dk/english/www/institute/history/history/",
+      "retrieval_locator": "https://nbi.ku.dk/english/www/institute/history/history/",
+      "inspected_scope": "Bohr’s role in establishing and defining the Copenhagen theoretical-physics institute; 1921 opening.",
+      "type": "Institutional historical summary",
+      "publisher": "Niels Bohr Institute, University of Copenhagen; Finn Aaserud, Niels Bohr Archive",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view1"
+      }
+    },
+    {
+      "id": "S20",
+      "title": "The Nobel Prize",
+      "url": "https://nbi.ku.dk/english/www/niels/bohr/nobelprisen/",
+      "retrieval_locator": "https://nbi.ku.dk/english/www/niels/bohr/nobelprisen/",
+      "inspected_scope": "Opening award paragraph: Bohr’s 1922 Nobel Prize in Physics. Other anecdotes on page outside scope.",
+      "type": "Institutional historical summary",
+      "publisher": "Niels Bohr Institute, University of Copenhagen",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view2"
+      }
+    },
+    {
+      "id": "S21",
+      "title": "History",
+      "url": "https://www.visvabharati.ac.in/history.html",
+      "retrieval_locator": "https://www.visvabharati.ac.in/history.html",
+      "inspected_scope": "Opening history: Tagore’s school at Santiniketan formally began 22 December 1901. No claim that university inauguration occurred in 1901.",
+      "type": "Institutional historical summary",
+      "publisher": "Visva-Bharati",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn6view2"
+      }
+    },
+    {
+      "id": "S22",
+      "title": "Santiniketan & Visva-Bharati: A Brief History",
+      "url": "https://www.visvabharati.ac.in/home/wp-content/uploads/2026/03/AboutVB.pdf",
+      "retrieval_locator": "https://www.visvabharati.ac.in/home/wp-content/uploads/2026/03/AboutVB.pdf",
+      "inspected_scope": "PDF page 1, Brahmacharyashrama section: 1901 school and 1913 Literature award; later international educational aspirations. Text extraction inspected, not a complete scholarly appraisal.",
+      "type": "Institutional history PDF",
+      "publisher": "Visva-Bharati",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn11view1"
+      }
+    },
+    {
+      "id": "S23",
+      "title": "Wangari Maathai",
+      "url": "https://www.greenbeltmovement.org/wangari-maathai/",
+      "retrieval_locator": "https://www.greenbeltmovement.org/wangari-maathai/",
+      "inspected_scope": "Biography: Kenyan background, biological-science education, movement founder, 2004 Nobel Peace Prize.",
+      "type": "Institutional historical summary",
+      "publisher": "Green Belt Movement",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn6view0"
+      }
+    },
+    {
+      "id": "S24",
+      "title": "History",
+      "url": "https://www.greenbeltmovement.org/history/",
+      "retrieval_locator": "https://www.greenbeltmovement.org/history/",
+      "inspected_scope": "Our History and Our Journey of Empowerment: 1977 founding, rural Kenyan women, environment and social/political concerns.",
+      "type": "Institutional historical summary",
+      "publisher": "Green Belt Movement",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view3"
+      }
+    },
+    {
+      "id": "S25",
+      "title": "Taking Root Documentary",
+      "url": "https://www.greenbeltmovement.org/taking-root-documentary/",
+      "retrieval_locator": "https://www.greenbeltmovement.org/taking-root-documentary/",
+      "inspected_scope": "Institutional synopsis below newsletter form: 1977 encouragement of rural women’s tree planting; environment and rights. Film itself not viewed.",
+      "type": "Institutional historical summary",
+      "publisher": "Green Belt Movement",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn11view2"
+      }
+    },
+    {
+      "id": "S26",
+      "title": "The Cajal Legacy",
+      "url": "https://www.csic.es/en/cajal-legacy",
+      "retrieval_locator": "https://www.csic.es/en/cajal-legacy",
+      "inspected_scope": "Opening scientific legacy; individual neurons, contact versus continuity, preserved Golgi-stained slides, 1906 Physiology or Medicine award. No images imported.",
+      "type": "Institutional historical summary",
+      "publisher": "Spanish National Research Council (CSIC)",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn6view3"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "F01-A1",
+      "person_id": "F01",
+      "original_statement": "Marie Curie investigated radioactivity through physics and chemistry.",
+      "reviewed_statement": "Marie Curie investigated radioactivity through physics and chemistry.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S13"
+      ],
+      "reason": "Physics/chemistry research and radioactivity are described in Institut Curie’s history."
+    },
+    {
+      "id": "F01-A2",
+      "person_id": "F01",
+      "original_statement": "Born in Warsaw, she later worked in Paris.",
+      "reviewed_statement": "Born in Warsaw, she later worked in Paris.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S13"
+      ],
+      "reason": "Warsaw birthplace and move to Paris are explicit; Warsaw was then under Russian rule, so homeland wording is not a claim about sovereignty."
+    },
+    {
+      "id": "F01-A3",
+      "person_id": "F01",
+      "original_statement": "Research with Pierre Curie identified polonium and radium.",
+      "reviewed_statement": "Research with Pierre Curie identified polonium and radium.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S13"
+      ],
+      "reason": "Joint work with Pierre and both elements are named."
+    },
+    {
+      "id": "F01-A4",
+      "person_id": "F01",
+      "original_statement": "The name polonium referred to the country of her birth.",
+      "reviewed_statement": "The name polonium referred to the country of her birth.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S02"
+      ],
+      "reason": "The indexed Nobel biography directly links the element name to her birth country; direct page remains inaccessible."
+    },
+    {
+      "id": "F01-A5",
+      "person_id": "F01",
+      "original_statement": "She later held a physics professorship at the Sorbonne.",
+      "reviewed_statement": "She later held a physics professorship at the Sorbonne.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S13"
+      ],
+      "reason": "Sorbonne professorship and Paris physics laboratory are described. No appointment year is added."
+    },
+    {
+      "id": "F01-A6",
+      "person_id": "F01",
+      "original_statement": "Her Nobel Prize in Chemistry was awarded in 1911.",
+      "reviewed_statement": "Her Nobel Prize in Chemistry was awarded in 1911.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S14"
+      ],
+      "reason": "Museum catalogue identifies the 1911 Chemistry award; it is not the separate 1903 Physics award."
+    },
+    {
+      "id": "F01-BOUNDARY",
+      "person_id": "F01",
+      "original_statement": "This passage concerns publicly documented research and professional life; it does not describe private memories or provide a hidden symbol.",
+      "reviewed_statement": "This passage concerns publicly documented research and professional life; it does not describe private memories or provide a hidden symbol.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F02-A1",
+      "person_id": "F02",
+      "original_statement": "C. V. Raman investigated the scattering of light.",
+      "reviewed_statement": "C. V. Raman investigated the scattering of light.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S15"
+      ],
+      "reason": "ACS/IACS landmark describes his light-scattering investigations."
+    },
+    {
+      "id": "F02-A2",
+      "person_id": "F02",
+      "original_statement": "His work examined light after it interacted with matter.",
+      "reviewed_statement": "His work examined light after it interacted with matter.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S15"
+      ],
+      "reason": "Liquid samples and interaction with matter are documented."
+    },
+    {
+      "id": "F02-A3",
+      "person_id": "F02",
+      "original_statement": "Some scattered light has a different frequency from the incoming light.",
+      "reviewed_statement": "Some scattered light has a different frequency from the incoming light.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S05",
+        "S15"
+      ],
+      "reason": "S05 explicitly describes frequency shifts; S15 corroborates changed colour/wavelength and energy."
+    },
+    {
+      "id": "F02-A4",
+      "person_id": "F02",
+      "original_statement": "This frequency change is associated with the Raman effect.",
+      "reviewed_statement": "This frequency change is associated with the Raman effect.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S05",
+        "S15"
+      ],
+      "reason": "The frequency-shift description identifies the Raman effect, not all light scattering."
+    },
+    {
+      "id": "F02-A5",
+      "person_id": "F02",
+      "original_statement": "The incoming light can have a single frequency while the scattered light includes shifted components.",
+      "reviewed_statement": "The incoming light can have a single frequency while the scattered light includes shifted components.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S05"
+      ],
+      "reason": "S05 explicitly contrasts shifted components with incident monochromatic light."
+    },
+    {
+      "id": "F02-A6",
+      "person_id": "F02",
+      "original_statement": "Raman received the Nobel Prize in Physics in 1930.",
+      "reviewed_statement": "Raman received the Nobel Prize in Physics in 1930.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S15"
+      ],
+      "reason": "Institutional landmark records the 1930 Nobel Prize in Physics."
+    },
+    {
+      "id": "F02-BOUNDARY",
+      "person_id": "F02",
+      "original_statement": "This passage describes public observations about light, not private thoughts or a hidden symbol.",
+      "reviewed_statement": "This passage describes public observations about light, not private thoughts or a hidden symbol.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F03-A1",
+      "person_id": "F03",
+      "original_statement": "Dorothy Crowfoot Hodgkin studied the structures of important biochemical molecules.",
+      "reviewed_statement": "Dorothy Crowfoot Hodgkin studied the structures of important biochemical molecules.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S16"
+      ],
+      "reason": "Molecular structures of penicillin, B12 and insulin support this summary."
+    },
+    {
+      "id": "F03-A2",
+      "person_id": "F03",
+      "original_statement": "Her work used X-ray crystallography to investigate how atoms were arranged.",
+      "reviewed_statement": "Her work used X-ray crystallography to investigate how atoms were arranged.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S16"
+      ],
+      "reason": "X-ray crystallography and atom positions are explained."
+    },
+    {
+      "id": "F03-A3",
+      "person_id": "F03",
+      "original_statement": "Molecules examined in her research included penicillin, vitamin B12 and insulin.",
+      "reviewed_statement": "Molecules examined in her research included penicillin, vitamin B12 and insulin.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S16"
+      ],
+      "reason": "All three molecules are listed. Insulin’s structure was resolved in 1969; dossier does not claim it was part of the 1964 award."
+    },
+    {
+      "id": "F03-A4",
+      "person_id": "F03",
+      "original_statement": "These studies connected chemistry with the structures of substances relevant to biology.",
+      "reviewed_statement": "These studies connected chemistry with the structures of substances relevant to biology.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S16"
+      ],
+      "reason": "A concise synthesis of the listed biochemical research, not a new causal claim."
+    },
+    {
+      "id": "F03-A5",
+      "person_id": "F03",
+      "original_statement": "She received the Nobel Prize in Chemistry in 1964.",
+      "reviewed_statement": "She received the Nobel Prize in Chemistry in 1964.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S16"
+      ],
+      "reason": "The 1964 Chemistry award is explicit."
+    },
+    {
+      "id": "F03-BOUNDARY",
+      "person_id": "F03",
+      "original_statement": "The passage describes publicly documented molecular research; it does not claim to reproduce her private experience or identify any hidden symbol.",
+      "reviewed_statement": "The passage describes publicly documented molecular research; it does not claim to reproduce her private experience or identify any hidden symbol.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F04-A1",
+      "person_id": "F04",
+      "original_statement": "Barbara McClintock studied genetics using maize plants.",
+      "reviewed_statement": "Barbara McClintock studied genetics using maize plants.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S17"
+      ],
+      "reason": "Cytogenetics and maize kernel observations are explicit."
+    },
+    {
+      "id": "F04-A2",
+      "person_id": "F04",
+      "original_statement": "She followed inherited traits across successive generations.",
+      "reviewed_statement": "She followed inherited traits across successive generations.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S07"
+      ],
+      "reason": "Indexed Nobel text explicitly describes successive maize generations."
+    },
+    {
+      "id": "F04-A3",
+      "person_id": "F04",
+      "original_statement": "Her research showed that some genetic elements could move to different positions within chromosomes.",
+      "reviewed_statement": "Her research showed that some genetic elements could move to different positions within chromosomes.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S07",
+        "S17"
+      ],
+      "reason": "S07 describes transposition within chromosomes; S17 confirms discovery of transposable elements."
+    },
+    {
+      "id": "F04-A4",
+      "person_id": "F04",
+      "original_statement": "Such movement can influence the expression of traits.",
+      "reviewed_statement": "Such movement can influence the expression of traits.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S07"
+      ],
+      "reason": "Indexed text links mobile controlling elements to trait expression."
+    },
+    {
+      "id": "F04-A5",
+      "person_id": "F04",
+      "original_statement": "These findings challenged the idea that genetic elements always remain in fixed positions.",
+      "reviewed_statement": "These findings challenged the idea that genetic elements always remain in fixed positions.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S07"
+      ],
+      "reason": "Indexed text contrasts mobility with the former fixed-position picture; not a claim that all genes move."
+    },
+    {
+      "id": "F04-A6",
+      "person_id": "F04",
+      "original_statement": "McClintock received the Nobel Prize in Physiology or Medicine in 1983.",
+      "reviewed_statement": "McClintock received the Nobel Prize in Physiology or Medicine in 1983.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S17"
+      ],
+      "reason": "Institutional profile records Physiology or Medicine 1983."
+    },
+    {
+      "id": "F04-BOUNDARY",
+      "person_id": "F04",
+      "original_statement": "This passage concerns public research findings, not access to her private thoughts or a hidden symbol.",
+      "reviewed_statement": "This passage concerns public research findings, not access to her private thoughts or a hidden symbol.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F05-A1",
+      "person_id": "F05",
+      "original_statement": "Niels Bohr worked on atomic structure and the radiation emitted by atoms.",
+      "reviewed_statement": "Niels Bohr worked on atomic structure and the radiation emitted by atoms.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S18",
+        "S20"
+      ],
+      "reason": "Model and radiation narrative, plus Nobel award context, support public atomic-physics work."
+    },
+    {
+      "id": "F05-A2",
+      "person_id": "F05",
+      "original_statement": "In 1913 he proposed a model of the hydrogen atom.",
+      "reviewed_statement": "In 1913 he proposed a model of the hydrogen atom.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S18"
+      ],
+      "reason": "1913 papers and hydrogen spectrum are explicit."
+    },
+    {
+      "id": "F05-A3",
+      "person_id": "F05",
+      "original_statement": "In that model electrons occupy prescribed energy states, and a transition to a lower energy releases radiation.",
+      "reviewed_statement": "In that model electrons occupy prescribed energy states, and a transition to a lower energy releases radiation.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S08",
+        "S18"
+      ],
+      "reason": "S08 explicitly states emission on a downward energy transition; S18 corroborates allowed orbits and radiation transitions."
+    },
+    {
+      "id": "F05-A4",
+      "person_id": "F05",
+      "original_statement": "The model helped explain distinct wavelengths in atomic light.",
+      "reviewed_statement": "The model helped explain distinct wavelengths in atomic light.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S18"
+      ],
+      "reason": "Balmer’s hydrogen spectrum is tied to Bohr’s theoretical prediction; bounded to the historical model."
+    },
+    {
+      "id": "F05-A5",
+      "person_id": "F05",
+      "original_statement": "Bohr directed an institute for theoretical physics in Copenhagen.",
+      "reviewed_statement": "Bohr directed an institute for theoretical physics in Copenhagen.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S19"
+      ],
+      "reason": "Institution’s history describes Bohr establishing and defining the institute’s activities; this supports the general leadership statement."
+    },
+    {
+      "id": "F05-A6",
+      "person_id": "F05",
+      "original_statement": "He received the Nobel Prize in Physics in 1922.",
+      "reviewed_statement": "He received the Nobel Prize in Physics in 1922.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S20"
+      ],
+      "reason": "Opening paragraph records the 1922 Nobel Prize in Physics."
+    },
+    {
+      "id": "F05-BOUNDARY",
+      "person_id": "F05",
+      "original_statement": "These are public scientific facts, not a record of private thoughts.",
+      "reviewed_statement": "These are public scientific facts, not a record of private thoughts.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F06-A1",
+      "person_id": "F06",
+      "original_statement": "Rabindranath Tagore wrote poetry, songs, stories and plays.",
+      "reviewed_statement": "Rabindranath Tagore wrote poetry, songs, stories and plays.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S09"
+      ],
+      "reason": "Indexed official Facts text lists poetry, songs, stories and drama."
+    },
+    {
+      "id": "F06-A2",
+      "person_id": "F06",
+      "original_statement": "He originally wrote in Bengali and later recast poetry in English, reaching additional readers.",
+      "reviewed_statement": "He originally wrote in Bengali and later recast poetry in English, reaching additional readers.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S09"
+      ],
+      "reason": "Indexed official text explicitly states Bengali originals and English recasting."
+    },
+    {
+      "id": "F06-A3",
+      "person_id": "F06",
+      "original_statement": "His work also addressed philosophy and social questions.",
+      "reviewed_statement": "His work also addressed philosophy and social questions.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S09"
+      ],
+      "reason": "Indexed official text names philosophy and social issues."
+    },
+    {
+      "id": "F06-A4",
+      "person_id": "F06",
+      "original_statement": "In 1901 he founded an experimental school at Shantiniketan, bringing Indian and Western learning traditions together.",
+      "reviewed_statement": "In 1901 he founded an experimental school at Shantiniketan, aiming to bring Indian and Western learning traditions together.",
+      "status": "CLARIFIED_AS_STATED_EDUCATIONAL_AIM",
+      "sources": [
+        "S09",
+        "S21",
+        "S22"
+      ],
+      "reason": "1901 and Shantiniketan are supported directly. Nobel S09 describes an attempt/aim to blend traditions, so the outcome-sounding wording was narrowed. Shantiniketan/Santiniketan are spelling variants; 1901 is the school, not the later university."
+    },
+    {
+      "id": "F06-A5",
+      "person_id": "F06",
+      "original_statement": "Tagore received the Nobel Prize in Literature in 1913.",
+      "reviewed_statement": "Tagore received the Nobel Prize in Literature in 1913.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S22"
+      ],
+      "reason": "University history PDF page 1 records the 1913 Literature award."
+    },
+    {
+      "id": "F06-BOUNDARY",
+      "person_id": "F06",
+      "original_statement": "This passage describes public writing and educational activity; it does not reproduce private memories or reveal a hidden symbol.",
+      "reviewed_statement": "This passage describes public writing and educational activity; it does not reproduce private memories or reveal a hidden symbol.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F07-A1",
+      "person_id": "F07",
+      "original_statement": "Wangari Maathai worked in Kenya on environmental protection and public life.",
+      "reviewed_statement": "Wangari Maathai worked in Kenya on environmental protection and public life.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S23",
+        "S24"
+      ],
+      "reason": "Kenyan context, environmental conservation and public/civic work are documented."
+    },
+    {
+      "id": "F07-A2",
+      "person_id": "F07",
+      "original_statement": "She had academic training in biology.",
+      "reviewed_statement": "She had academic training in biology.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S23"
+      ],
+      "reason": "Biological Sciences degree and later study are documented."
+    },
+    {
+      "id": "F07-A3",
+      "person_id": "F07",
+      "original_statement": "In 1977 she started the Green Belt Movement, encouraging women to plant trees in local communities.",
+      "reviewed_statement": "In 1977 she started the Green Belt Movement, encouraging women to plant trees in local communities.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S24",
+        "S25"
+      ],
+      "reason": "S24 dates the movement’s founding to 1977; S25 explicitly describes encouraging rural women to plant trees."
+    },
+    {
+      "id": "F07-A4",
+      "person_id": "F07",
+      "original_statement": "The movement responded to deforestation and linked ecological work with wider social concerns.",
+      "reviewed_statement": "The movement responded to deforestation and linked ecological work with wider social concerns.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S24"
+      ],
+      "reason": "Deforestation and wider social/political concerns are described."
+    },
+    {
+      "id": "F07-A5",
+      "person_id": "F07",
+      "original_statement": "Maathai received the Nobel Peace Prize in 2004.",
+      "reviewed_statement": "Maathai received the Nobel Peace Prize in 2004.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S23"
+      ],
+      "reason": "Biography identifies the 2004 Nobel Peace Prize."
+    },
+    {
+      "id": "F07-BOUNDARY",
+      "person_id": "F07",
+      "original_statement": "This passage describes public activities and an organization; it does not establish contact with her or identify a hidden symbol.",
+      "reviewed_statement": "This passage describes public activities and an organization; it does not establish contact with her or identify a hidden symbol.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    },
+    {
+      "id": "F08-A1",
+      "person_id": "F08",
+      "original_statement": "Santiago Ramón y Cajal investigated the structure of the nervous system.",
+      "reviewed_statement": "Santiago Ramón y Cajal investigated the structure of the nervous system.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S26"
+      ],
+      "reason": "Scientific legacy describes microscopic anatomy of the nervous system."
+    },
+    {
+      "id": "F08-A2",
+      "person_id": "F08",
+      "original_statement": "He used staining methods to make nerve cells visible for study.",
+      "reviewed_statement": "He used staining methods to make nerve cells visible for study.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S26"
+      ],
+      "reason": "Preserved stained slides and Golgi method are described."
+    },
+    {
+      "id": "F08-A3",
+      "person_id": "F08",
+      "original_statement": "His account treated neurons as distinct cells that contact one another, rather than as one continuous network of cell material.",
+      "reviewed_statement": "His account treated neurons as distinct cells that contact one another, rather than as one continuous network of cell material.",
+      "status": "CONFIRMED_IN_RETRIEVED_PAGE_TEXT",
+      "sources": [
+        "S26"
+      ],
+      "reason": "Individual entities and contact rather than continuity are explicit, attributed to Cajal’s account."
+    },
+    {
+      "id": "F08-A4",
+      "person_id": "F08",
+      "original_statement": "He used and developed methods associated with Camillo Golgi.",
+      "reviewed_statement": "He used and developed methods associated with Camillo Golgi.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S11",
+        "S12"
+      ],
+      "reason": "S11 says Golgi and Cajal used/refined staining; S12 indexed lecture opening confirms use. Full lecture not appraised."
+    },
+    {
+      "id": "F08-A5",
+      "person_id": "F08",
+      "original_statement": "Cajal and Golgi shared the Nobel Prize in Physiology or Medicine in 1906.",
+      "reviewed_statement": "Cajal and Golgi shared the Nobel Prize in Physiology or Medicine in 1906.",
+      "status": "SUPPORTED_BY_INDEXED_OFFICIAL_TEXT",
+      "sources": [
+        "S11",
+        "S26"
+      ],
+      "reason": "S11’s 1906 nervous-system timeline explicitly names both laureates and category; S26 corroborates Cajal’s award."
+    },
+    {
+      "id": "F08-BOUNDARY",
+      "person_id": "F08",
+      "original_statement": "These public anatomical findings do not provide a readout of Cajal's memories.",
+      "reviewed_statement": "These public anatomical findings do not provide a readout of Cajal's memories.",
+      "status": "EDITORIAL_SCOPE_BOUNDARY_NOT_HISTORICAL_SOURCE_CLAIM",
+      "sources": [],
+      "reason": "Authorial limitation on this protocol’s interpretation; not an attributed historical testimony or evidence of information transfer."
+    }
+  ],
+  "items": [
+    {
+      "id": "F01-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "physics",
+        "chemistry",
+        "radioactivity"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S13",
+        "S14"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F01-L1",
+      "kind": "learning_retrieval",
+      "key": "1911",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S14"
+      ],
+      "note": "Passage-only prompt clarified without revealing Chemistry (which would give away L2). Curie also won Physics 1903, outside this passage’s answer."
+    },
+    {
+      "id": "F01-L2",
+      "kind": "learning_retrieval",
+      "key": "Chemistry",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S14"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F01-R",
+      "kind": "recall",
+      "correct_option_id": "o1",
+      "key": "Radium and polonium",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Radium and polonium"
+        },
+        {
+          "id": "o2",
+          "text": "Selenium and tellurium"
+        },
+        {
+          "id": "o3",
+          "text": "Neon and argon"
+        },
+        {
+          "id": "o4",
+          "text": "Nickel and cobalt"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S13",
+        "S14"
+      ],
+      "note": "Only radium/polonium are named. Selenium/tellurium, neon/argon and nickel/cobalt are real element pairs but are not the pair in this passage. No assertion about every substance Curie ever studied.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F01-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1911",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1902"
+        },
+        {
+          "id": "o2",
+          "text": "1911"
+        },
+        {
+          "id": "o3",
+          "text": "1917"
+        },
+        {
+          "id": "o4",
+          "text": "1923"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S14"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F01-I",
+      "kind": "inference",
+      "correct_option_id": "o2",
+      "key": "Sample Q is labelled blue.",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Every blue sample is in tray L."
+        },
+        {
+          "id": "o2",
+          "text": "Sample Q is labelled blue."
+        },
+        {
+          "id": "o3",
+          "text": "No sample outside tray L is blue."
+        },
+        {
+          "id": "o4",
+          "text": "Sample Q is the only blue sample."
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "Universal instantiation gives Q blue.",
+      "distractor_review": "Converse fails if a blue sample is outside L; exclusivity and uniqueness fail if another blue sample exists."
+    },
+    {
+      "id": "F02-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "physics",
+        "optics",
+        "light scattering"
+      ],
+      "sources": [
+        "S04",
+        "S05",
+        "S15"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F02-L1",
+      "kind": "learning_retrieval",
+      "key": "1930",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S15"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F02-L2",
+      "kind": "learning_retrieval",
+      "key": "Physics",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S15"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F02-R",
+      "kind": "recall",
+      "correct_option_id": "o3",
+      "key": "The frequency of the light",
+      "options": [
+        {
+          "id": "o1",
+          "text": "The polarization of the light"
+        },
+        {
+          "id": "o2",
+          "text": "The intensity of the light"
+        },
+        {
+          "id": "o3",
+          "text": "The frequency of the light"
+        },
+        {
+          "id": "o4",
+          "text": "The direction of the light"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S04",
+        "S05",
+        "S15"
+      ],
+      "note": "Frequency is named. Polarization, intensity and direction are real scattering properties, so the stem was narrowed to what the passage explicitly compares; no key or option change.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F02-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1930",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1921"
+        },
+        {
+          "id": "o2",
+          "text": "1930"
+        },
+        {
+          "id": "o3",
+          "text": "1936"
+        },
+        {
+          "id": "o4",
+          "text": "1942"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S15"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F02-I",
+      "kind": "inference",
+      "correct_option_id": "o4",
+      "key": "5 units",
+      "options": [
+        {
+          "id": "o1",
+          "text": "3 units"
+        },
+        {
+          "id": "o2",
+          "text": "11 units"
+        },
+        {
+          "id": "o3",
+          "text": "8 units"
+        },
+        {
+          "id": "o4",
+          "text": "5 units"
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "8 − 3 = 5.",
+      "distractor_review": "3, 11 and 8 do not satisfy the specified subtraction."
+    },
+    {
+      "id": "F03-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "chemistry",
+        "crystallography",
+        "x-ray crystallography"
+      ],
+      "sources": [
+        "S06",
+        "S16"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F03-L1",
+      "kind": "learning_retrieval",
+      "key": "1964",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S16"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F03-L2",
+      "kind": "learning_retrieval",
+      "key": "Chemistry",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S16"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F03-R",
+      "kind": "recall",
+      "correct_option_id": "o1",
+      "key": "Vitamin B12",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Vitamin B12"
+        },
+        {
+          "id": "o2",
+          "text": "Vitamin C"
+        },
+        {
+          "id": "o3",
+          "text": "Vitamin D"
+        },
+        {
+          "id": "o4",
+          "text": "Vitamin K"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S06",
+        "S16"
+      ],
+      "note": "Only vitamin B12 is named. C, D and K are not named; this does not establish that Hodgkin never studied other vitamins.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F03-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1964",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1955"
+        },
+        {
+          "id": "o2",
+          "text": "1964"
+        },
+        {
+          "id": "o3",
+          "text": "1970"
+        },
+        {
+          "id": "o4",
+          "text": "1976"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S16"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F03-I",
+      "kind": "inference",
+      "correct_option_id": "o2",
+      "key": "Model K cannot be in cabinet R.",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Model K must be in cabinet R."
+        },
+        {
+          "id": "o2",
+          "text": "Model K cannot be in cabinet R."
+        },
+        {
+          "id": "o3",
+          "text": "Every red model is in cabinet R."
+        },
+        {
+          "id": "o4",
+          "text": "Model K has a blue label."
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "R implies red; not red implies not R.",
+      "distractor_review": "Red need not imply R; blue is not specified; K in R contradicts the necessary condition."
+    },
+    {
+      "id": "F04-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "genetics",
+        "cytogenetics",
+        "plant genetics",
+        "biology"
+      ],
+      "sources": [
+        "S07",
+        "S17"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F04-L1",
+      "kind": "learning_retrieval",
+      "key": "1983",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S17"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F04-L2",
+      "kind": "learning_retrieval",
+      "key": "Physiology or Medicine",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S17"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F04-R",
+      "kind": "recall",
+      "correct_option_id": "o3",
+      "key": "Maize",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Rice"
+        },
+        {
+          "id": "o2",
+          "text": "Wheat"
+        },
+        {
+          "id": "o3",
+          "text": "Maize"
+        },
+        {
+          "id": "o4",
+          "text": "Barley"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S07",
+        "S17"
+      ],
+      "note": "Maize is named. Rice, wheat and barley are not the crop described.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F04-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1983",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1974"
+        },
+        {
+          "id": "o2",
+          "text": "1983"
+        },
+        {
+          "id": "o3",
+          "text": "1989"
+        },
+        {
+          "id": "o4",
+          "text": "1995"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S17"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F04-I",
+      "kind": "inference",
+      "correct_option_id": "o4",
+      "key": "At least one dry packet is in drawer B.",
+      "options": [
+        {
+          "id": "o1",
+          "text": "All packets in drawer B are dry."
+        },
+        {
+          "id": "o2",
+          "text": "No dry packets are in drawer A."
+        },
+        {
+          "id": "o3",
+          "text": "Every dry packet is in drawer B."
+        },
+        {
+          "id": "o4",
+          "text": "At least one dry packet is in drawer B."
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "Some dry packets in B entails at least one dry packet in B.",
+      "distractor_review": "Allow one wet packet in B and a dry packet elsewhere; premises do not force B to contain all/only dry packets or A to contain none."
+    },
+    {
+      "id": "F05-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "physics",
+        "atomic physics",
+        "quantum physics"
+      ],
+      "sources": [
+        "S08",
+        "S18",
+        "S19",
+        "S20"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F05-L1",
+      "kind": "learning_retrieval",
+      "key": "1922",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S20"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F05-L2",
+      "kind": "learning_retrieval",
+      "key": "Physics",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S20"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F05-R",
+      "kind": "recall",
+      "correct_option_id": "o2",
+      "key": "Hydrogen",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Helium"
+        },
+        {
+          "id": "o2",
+          "text": "Hydrogen"
+        },
+        {
+          "id": "o3",
+          "text": "Lithium"
+        },
+        {
+          "id": "o4",
+          "text": "Carbon"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S08",
+        "S18",
+        "S19",
+        "S20"
+      ],
+      "note": "Hydrogen is the atom identified. Helium, lithium and carbon are not answers to the passage-specific question; this is not a statement about the full reach of later atomic theories.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F05-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1922",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1913"
+        },
+        {
+          "id": "o2",
+          "text": "1922"
+        },
+        {
+          "id": "o3",
+          "text": "1928"
+        },
+        {
+          "id": "o4",
+          "text": "1934"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S20"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F05-I",
+      "kind": "inference",
+      "correct_option_id": "o4",
+      "key": "5 units",
+      "options": [
+        {
+          "id": "o1",
+          "text": "4 units"
+        },
+        {
+          "id": "o2",
+          "text": "9 units"
+        },
+        {
+          "id": "o3",
+          "text": "13 units"
+        },
+        {
+          "id": "o4",
+          "text": "5 units"
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "9 − 4 = 5.",
+      "distractor_review": "4, 9 and 13 do not equal the emitted difference."
+    },
+    {
+      "id": "F06-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "literature",
+        "poetry",
+        "writing",
+        "education"
+      ],
+      "sources": [
+        "S09",
+        "S21",
+        "S22"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F06-L1",
+      "kind": "learning_retrieval",
+      "key": "1913",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S22"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F06-L2",
+      "kind": "learning_retrieval",
+      "key": "Literature",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S22"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F06-R",
+      "kind": "recall",
+      "correct_option_id": "o2",
+      "key": "Bengali",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Hindi"
+        },
+        {
+          "id": "o2",
+          "text": "Bengali"
+        },
+        {
+          "id": "o3",
+          "text": "Urdu"
+        },
+        {
+          "id": "o4",
+          "text": "Tamil"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S09",
+        "S21",
+        "S22"
+      ],
+      "note": "Bengali is named. Hindi, Urdu and Tamil are not the language specified; no claim that Tagore never used other languages.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F06-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1913",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1904"
+        },
+        {
+          "id": "o2",
+          "text": "1913"
+        },
+        {
+          "id": "o3",
+          "text": "1919"
+        },
+        {
+          "id": "o4",
+          "text": "1925"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S22"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F06-I",
+      "kind": "inference",
+      "correct_option_id": "o3",
+      "key": "The premises do not establish whether W belongs to P.",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Item W must belong to collection P."
+        },
+        {
+          "id": "o2",
+          "text": "Item W cannot belong to collection P."
+        },
+        {
+          "id": "o3",
+          "text": "The premises do not establish whether W belongs to P."
+        },
+        {
+          "id": "o4",
+          "text": "Every poem belongs to collection P."
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "P membership implies poem; poem does not decide P membership.",
+      "distractor_review": "Both W in P and W outside P fit the premises. Neither membership, exclusion, nor all poems in P is entailed."
+    },
+    {
+      "id": "F07-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "environmental work",
+        "environmental activism",
+        "conservation",
+        "biology",
+        "sustainable development",
+        "peace"
+      ],
+      "sources": [
+        "S10",
+        "S23",
+        "S24",
+        "S25"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F07-L1",
+      "kind": "learning_retrieval",
+      "key": "2004",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S23"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F07-L2",
+      "kind": "learning_retrieval",
+      "key": "Peace",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S23"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F07-R",
+      "kind": "recall",
+      "correct_option_id": "o4",
+      "key": "Green Belt Movement",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Tree Ring Movement"
+        },
+        {
+          "id": "o2",
+          "text": "Forest Canopy Movement"
+        },
+        {
+          "id": "o3",
+          "text": "Seed Network Movement"
+        },
+        {
+          "id": "o4",
+          "text": "Green Belt Movement"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S10",
+        "S23",
+        "S24",
+        "S25"
+      ],
+      "note": "Green Belt Movement is named. Other labels are constructed distractors and not asserted to be nonexistent organizations.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F07-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "2004",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1995"
+        },
+        {
+          "id": "o2",
+          "text": "2004"
+        },
+        {
+          "id": "o3",
+          "text": "2010"
+        },
+        {
+          "id": "o4",
+          "text": "2016"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S23"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F07-I",
+      "kind": "inference",
+      "correct_option_id": "o1",
+      "key": "10",
+      "options": [
+        {
+          "id": "o1",
+          "text": "10"
+        },
+        {
+          "id": "o2",
+          "text": "2"
+        },
+        {
+          "id": "o3",
+          "text": "24"
+        },
+        {
+          "id": "o4",
+          "text": "6"
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "Disjoint counts 6 + 4 = 10.",
+      "distractor_review": "2, 24 and 6 are not the sum of the specified disjoint groups."
+    },
+    {
+      "id": "F08-B",
+      "kind": "baseline_free_response",
+      "accepted_examples": [
+        "neuroscience",
+        "neuroanatomy",
+        "histology",
+        "nervous system"
+      ],
+      "sources": [
+        "S11",
+        "S12",
+        "S26"
+      ],
+      "status": "EXAMPLES_SUPPORTED_CODEBOOK_REVIEW_PENDING",
+      "note": "Examples fit the documented fields and are nonexhaustive. The frozen human synonym codebook, spelling/accent handling and disagreements remain unresolved; no AI similarity scoring introduced."
+    },
+    {
+      "id": "F08-L1",
+      "kind": "learning_retrieval",
+      "key": "1906",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S11",
+        "S26"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F08-L2",
+      "kind": "learning_retrieval",
+      "key": "Physiology or Medicine",
+      "status": "KEY_MATCHES_PASSAGE_AND_AWARD_RECORD",
+      "sources": [
+        "S11",
+        "S26"
+      ],
+      "note": "Key agrees with the explicitly supplied award; human-approved response normalization remains pending."
+    },
+    {
+      "id": "F08-R",
+      "kind": "recall",
+      "correct_option_id": "o1",
+      "key": "Camillo Golgi",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Camillo Golgi"
+        },
+        {
+          "id": "o2",
+          "text": "Ivan Pavlov"
+        },
+        {
+          "id": "o3",
+          "text": "Charles Sherrington"
+        },
+        {
+          "id": "o4",
+          "text": "Edgar Adrian"
+        }
+      ],
+      "status": "KEY_MATCHES_PASSAGE_AND_SOURCE",
+      "sources": [
+        "S11",
+        "S12",
+        "S26"
+      ],
+      "note": "Camillo Golgi is the named 1906 co-laureate. Pavlov, Sherrington and Adrian are real scientists, not co-laureates with Cajal for this award; S11 also identifies Sherrington/Adrian’s distinct 1932 award.",
+      "distractor_review": "Distractors are nonanswers to the explicitly scoped passage question, not universal false biographies."
+    },
+    {
+      "id": "F08-D",
+      "kind": "delayed_recognition",
+      "correct_option_id": "o2",
+      "key": "1906",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1897"
+        },
+        {
+          "id": "o2",
+          "text": "1906"
+        },
+        {
+          "id": "o3",
+          "text": "1912"
+        },
+        {
+          "id": "o4",
+          "text": "1918"
+        }
+      ],
+      "status": "FACTUAL_KEY_CONFIRMED_DISTRACTOR_PATTERN_REVIEW_REQUIRED",
+      "sources": [
+        "S11",
+        "S26"
+      ],
+      "note": "Correct award year appears once; other years are not this specified award. All items share offsets [-9,0,6,12] and second-earliest correctness, which survives position randomization.",
+      "distractor_review": "No alternative correct historical award year within this option set; potential inferential shortcut remains unresolved."
+    },
+    {
+      "id": "F08-I",
+      "kind": "inference",
+      "correct_option_id": "o3",
+      "key": "Slide Z cannot be in box N.",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Slide Z must be in box N."
+        },
+        {
+          "id": "o2",
+          "text": "No slide is in box N."
+        },
+        {
+          "id": "o3",
+          "text": "Slide Z cannot be in box N."
+        },
+        {
+          "id": "o4",
+          "text": "Every stained sample is in box N."
+        }
+      ],
+      "status": "KEY_LOGIC_CONFIRMED_NOT_PSYCHOMETRICALLY_VALIDATED",
+      "sources": [],
+      "note": "N membership implies stained; not stained implies not N.",
+      "distractor_review": "N may contain another stained slide; not every stained slide need be in N; Z in N contradicts the premise."
+    }
+  ],
+  "findings": [
+    {
+      "id": "FC01",
+      "severity": "MODERATE",
+      "kind": "ATTRIBUTION",
+      "location": "F06 dossier, sentence 4",
+      "finding": "Outcome-sounding wording overstates what the cited Nobel account presents as educational intent.",
+      "disposition": "NARROW_CORRECTION_APPLIED",
+      "before": "bringing Indian and Western learning traditions together",
+      "after": "aiming to bring Indian and Western learning traditions together",
+      "sources": [
+        "S09",
+        "S21",
+        "S22"
+      ]
+    },
+    {
+      "id": "FC02",
+      "severity": "MODERATE",
+      "kind": "QUESTION_AMBIGUITY",
+      "location": "F02-R prompt and rationale",
+      "finding": "Distractors are other real scattering properties; a general physical reading could compete with the intended passage-recall reading.",
+      "disposition": "NARROW_CORRECTION_APPLIED",
+      "before": "Which property changes in the Raman effect as described in the passage?",
+      "after": "Which property did the passage explicitly say differs between some scattered light and the incoming light?",
+      "sources": [
+        "S05",
+        "S15"
+      ]
+    },
+    {
+      "id": "FC03",
+      "severity": "LOW",
+      "kind": "QUESTION_SCOPE",
+      "location": "F01-L1 and F01-D prompts",
+      "finding": "Curie has more than one Nobel award. Existing passage context supports 1911; explicit passage-only phrasing reduces ambiguity without exposing the L2 category.",
+      "disposition": "NARROW_CORRECTION_APPLIED_KEYS_UNCHANGED",
+      "before": [
+        "What year did the passage give for this person's Nobel award?",
+        "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'."
+      ],
+      "after": [
+        "What Nobel award year was explicitly stated in the passage? Answer from the passage only.",
+        "Which Nobel award year was explicitly stated in the detailed passage, if you saw one? You may choose 'do not know'."
+      ],
+      "sources": [
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "id": "FC04",
+      "severity": "HIGH_FOR_ORDINARY_MEASURE_VALIDITY",
+      "kind": "DISTRACTOR_PATTERN",
+      "location": "F01-D through F08-D",
+      "finding": "All eight correct keys are o2 and second-earliest year; all option sets have offsets [-9,0,+6,+12] relative to the key. Sorting the years and choosing the second yields 8/8 without historical recall. Shuffling display position does not remove chronological-rank information.",
+      "disposition": "OPEN_METHODS_REVIEW_NO_REDESIGN",
+      "next_step": "Independent stimulus/methods reviewer must approve varied, nonpredictive distractor sets and a new freeze before participant use. This is an ordinary-recognition weakness, not disclosure of a hidden-symbol key."
+    },
+    {
+      "id": "FC05",
+      "severity": "MODERATE",
+      "kind": "SOURCE_ACCESS",
+      "location": "S01–S12 and original retrieval locators",
+      "finding": "Eleven original canonical URLs and all seven distinct alternative locators returned 403 in this session; S04 returned a page shell without award evidence. A response or URL alone does not verify a claim.",
+      "disposition": "SUPPLEMENTED_WITH_14_INSTITUTIONAL_RECORDS_ORIGINAL_ACCESS_HISTORY_PRESERVED",
+      "next_step": "Resolve original-page/full-lecture access or accept signed alternative-source verification; no 403 is treated as proof of a dead or false source."
+    },
+    {
+      "id": "FC06",
+      "severity": "OPEN_REVIEW",
+      "kind": "SCORING_AND_MATERIAL_VALIDATION",
+      "location": "All baseline/open retrieval items and all stimuli",
+      "finding": "Examples are not an exhaustive frozen field/synonym codebook; plausible distractors, reading difficulty, familiarity, accessibility, cultural acceptability and inference ceiling effects remain unvalidated.",
+      "disposition": "NO_APPROVAL_OR_SCORING_CHANGE"
+    },
+    {
+      "id": "FC07",
+      "severity": "INFORMATION",
+      "kind": "SOURCE_AND_DISPLAY_ALIGNMENT",
+      "location": "materials/README.md and stimulus-set.json",
+      "finding": "All eight original displayed dossiers, recall questions/keys, counts and seven manifest hashes agreed. S09’s indexed text does include the 1901 school date; this was not a missing-date citation defect.",
+      "disposition": "MIRRORS_UPDATED_TOGETHER"
+    },
+    {
+      "id": "FC08",
+      "severity": "OPEN_REVIEW",
+      "kind": "RIGHTS_AND_INDEPENDENCE",
+      "location": "All sources and review gates",
+      "finding": "Institutional factual support is not rights clearance or independent human review. Source assertions do not establish the experiment’s hypothesized mechanism.",
+      "disposition": "ALL_PENDING_RIGHTS_AND_REVIEW_FLAGS_RETAINED"
+    }
+  ],
+  "summary": {
+    "figures_reviewed": 8,
+    "historical_assertion_records": 44,
+    "editorial_boundary_records": 8,
+    "ordinary_items_reviewed": 48,
+    "incorrect_award_keys_found": 0,
+    "incorrect_fictional_keys_found": 0,
+    "original_markdown_json_discrepancies_found": 0,
+    "source_records_added": 14,
+    "canonical_url_403_count": 11,
+    "canonical_url_shell_count": 1,
+    "distinct_alternative_locator_403_count": 7,
+    "open_recognition_pattern": "8 of 8 correct answers are second-earliest"
+  }
+}

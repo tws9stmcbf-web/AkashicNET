@@ -29,7 +29,16 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view0",
+        "indexed_support_references": [],
+        "scope": "No substantive text from this exact canonical source verified in this pass; see supplementary sources. Historical 18 October record retained.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S02",
@@ -43,7 +52,18 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view1",
+        "indexed_support_references": [
+          "turn8search1"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S03",
@@ -57,7 +77,15 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view2",
+        "indexed_support_references": [],
+        "scope": "No substantive text from this exact canonical source verified in this pass; see supplementary sources. Historical 18 October record retained.",
+        "independent_human_review": false
+      }
     },
     {
       "id": "S04",
@@ -71,7 +99,15 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "PAGE_SHELL_NO_AWARD_BODY",
+        "retrieval_reference": "turn0view3",
+        "indexed_support_references": [],
+        "scope": "No substantive text from this exact canonical source verified in this pass; see supplementary sources. Historical 18 October record retained.",
+        "independent_human_review": false
+      }
     },
     {
       "id": "S05",
@@ -85,7 +121,17 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view4",
+        "indexed_support_references": [
+          "turn8search0"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false
+      }
     },
     {
       "id": "S06",
@@ -99,7 +145,18 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view5",
+        "indexed_support_references": [
+          "turn1search2"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S07",
@@ -113,7 +170,18 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view6",
+        "indexed_support_references": [
+          "turn8search3"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S08",
@@ -127,7 +195,19 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view7",
+        "indexed_support_references": [
+          "turn5search0",
+          "turn9search2"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S09",
@@ -141,7 +221,19 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view8",
+        "indexed_support_references": [
+          "turn5search1",
+          "turn8search7"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S10",
@@ -155,7 +247,18 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view9",
+        "indexed_support_references": [
+          "turn5search10"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false,
+        "historical_locator_result": "HTTP_403"
+      }
     },
     {
       "id": "S11",
@@ -169,7 +272,17 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view10",
+        "indexed_support_references": [
+          "turn10search0"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false
+      }
     },
     {
       "id": "S12",
@@ -183,7 +296,283 @@
       "access": "Search-index text inspected; canonical facts-page requests returned HTTP 403. No complete-page or full-document verification claimed.",
       "reuse": "Original concise paraphrases of factual material; links only. No photos, figures, audio or copied passages.",
       "independent_verification": "PENDING",
-      "rights_review": "PENDING"
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "canonical_url_result": "HTTP_403",
+        "retrieval_reference": "turn0view11",
+        "indexed_support_references": [
+          "turn10search15"
+        ],
+        "scope": "Relevant indexed official text inspected; original page retrieval failed. See assertion-level record and supplementary sources.",
+        "independent_human_review": false
+      }
+    },
+    {
+      "id": "S13",
+      "title": "L’héritage de Marie Curie, perpétuer l’esprit d’une pionnière",
+      "url": "https://curie.fr/lheritage-de-marie-curie-perpetuer-lesprit-dune-pionniere",
+      "retrieval_locator": "https://curie.fr/lheritage-de-marie-curie-perpetuer-lesprit-dune-pionniere",
+      "inspected_scope": "Sections Une femme d’exception and La découverte de la radioactivité; Warsaw/Paris, Sorbonne, joint element research. Do not infer a professorship appointment date from this dossier.",
+      "type": "Institutional historical summary",
+      "publisher": "Institut Curie",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn4view0"
+      }
+    },
+    {
+      "id": "S14",
+      "title": "Prix Nobel de chimie décerné à Marie Curie, 1911",
+      "url": "https://curiotheque.musee.curie.fr/s/fr/item/15332",
+      "retrieval_locator": "https://curiotheque.musee.curie.fr/s/fr/item/15332",
+      "inspected_scope": "Catalogue record MCP141: award identity, Chemistry and 1911; metadata inspected, image not reproduced.",
+      "type": "Institutional collection catalogue",
+      "publisher": "Musée Curie",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn11view0"
+      }
+    },
+    {
+      "id": "S15",
+      "title": "C.V. Raman The Raman Effect - Landmark",
+      "url": "https://www.acs.org/education/whatischemistry/landmarks/ramaneffect.html",
+      "retrieval_locator": "https://www.acs.org/education/whatischemistry/landmarks/ramaneffect.html",
+      "inspected_scope": "Raman Measures the Effect of Light Scattering; Physicist’s Tool; Biography; 1930 Physics award. The indexed S05 passage supplies the explicit monochromatic/frequency formulation.",
+      "type": "Institutional historical summary",
+      "publisher": "American Chemical Society / Indian Association for the Cultivation of Science landmark",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn4view1"
+      }
+    },
+    {
+      "id": "S16",
+      "title": "Modelling the Structure of Penicillin",
+      "url": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/the-structure-of-penicillin/index.html",
+      "retrieval_locator": "https://www.mhs.ox.ac.uk/backfromthedead/exhibition/the-structure-of-penicillin/index.html",
+      "inspected_scope": "Model and atom-position discussion; penicillin, vitamin B12, insulin; Chemistry 1964. Insulin structure dated 1969, after the award.",
+      "type": "Institutional historical summary",
+      "publisher": "University of Oxford, Museum of the History of Science",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn2view5"
+      }
+    },
+    {
+      "id": "S17",
+      "title": "Barbara McClintock | About",
+      "url": "https://facultyprofiles.cshl.edu/barbara.mcclintock",
+      "retrieval_locator": "https://facultyprofiles.cshl.edu/barbara.mcclintock",
+      "inspected_scope": "BIO: cytogenetics, maize, transposable elements and Physiology or Medicine 1983. Profile text was readable despite a generic JavaScript warning.",
+      "type": "Institutional historical summary",
+      "publisher": "Cold Spring Harbor Laboratory",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn4view2"
+      }
+    },
+    {
+      "id": "S18",
+      "title": "Bohr’s atomic model",
+      "url": "https://nbi.ku.dk/english/www/niels/bohr/bohratomet/",
+      "retrieval_locator": "https://nbi.ku.dk/english/www/niels/bohr/bohratomet/",
+      "inspected_scope": "Atomic-model narrative: discrete orbits, radiation transitions, Balmer/hydrogen spectrum, three 1913 papers.",
+      "type": "Institutional historical summary",
+      "publisher": "Niels Bohr Institute, University of Copenhagen",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view0"
+      }
+    },
+    {
+      "id": "S19",
+      "title": "The establishment of an institute",
+      "url": "https://nbi.ku.dk/english/www/institute/history/history/",
+      "retrieval_locator": "https://nbi.ku.dk/english/www/institute/history/history/",
+      "inspected_scope": "Bohr’s role in establishing and defining the Copenhagen theoretical-physics institute; 1921 opening.",
+      "type": "Institutional historical summary",
+      "publisher": "Niels Bohr Institute, University of Copenhagen; Finn Aaserud, Niels Bohr Archive",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view1"
+      }
+    },
+    {
+      "id": "S20",
+      "title": "The Nobel Prize",
+      "url": "https://nbi.ku.dk/english/www/niels/bohr/nobelprisen/",
+      "retrieval_locator": "https://nbi.ku.dk/english/www/niels/bohr/nobelprisen/",
+      "inspected_scope": "Opening award paragraph: Bohr’s 1922 Nobel Prize in Physics. Other anecdotes on page outside scope.",
+      "type": "Institutional historical summary",
+      "publisher": "Niels Bohr Institute, University of Copenhagen",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view2"
+      }
+    },
+    {
+      "id": "S21",
+      "title": "History",
+      "url": "https://www.visvabharati.ac.in/history.html",
+      "retrieval_locator": "https://www.visvabharati.ac.in/history.html",
+      "inspected_scope": "Opening history: Tagore’s school at Santiniketan formally began 22 December 1901. No claim that university inauguration occurred in 1901.",
+      "type": "Institutional historical summary",
+      "publisher": "Visva-Bharati",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn6view2"
+      }
+    },
+    {
+      "id": "S22",
+      "title": "Santiniketan & Visva-Bharati: A Brief History",
+      "url": "https://www.visvabharati.ac.in/home/wp-content/uploads/2026/03/AboutVB.pdf",
+      "retrieval_locator": "https://www.visvabharati.ac.in/home/wp-content/uploads/2026/03/AboutVB.pdf",
+      "inspected_scope": "PDF page 1, Brahmacharyashrama section: 1901 school and 1913 Literature award; later international educational aspirations. Text extraction inspected, not a complete scholarly appraisal.",
+      "type": "Institutional history PDF",
+      "publisher": "Visva-Bharati",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn11view1"
+      }
+    },
+    {
+      "id": "S23",
+      "title": "Wangari Maathai",
+      "url": "https://www.greenbeltmovement.org/wangari-maathai/",
+      "retrieval_locator": "https://www.greenbeltmovement.org/wangari-maathai/",
+      "inspected_scope": "Biography: Kenyan background, biological-science education, movement founder, 2004 Nobel Peace Prize.",
+      "type": "Institutional historical summary",
+      "publisher": "Green Belt Movement",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn6view0"
+      }
+    },
+    {
+      "id": "S24",
+      "title": "History",
+      "url": "https://www.greenbeltmovement.org/history/",
+      "retrieval_locator": "https://www.greenbeltmovement.org/history/",
+      "inspected_scope": "Our History and Our Journey of Empowerment: 1977 founding, rural Kenyan women, environment and social/political concerns.",
+      "type": "Institutional historical summary",
+      "publisher": "Green Belt Movement",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn7view3"
+      }
+    },
+    {
+      "id": "S25",
+      "title": "Taking Root Documentary",
+      "url": "https://www.greenbeltmovement.org/taking-root-documentary/",
+      "retrieval_locator": "https://www.greenbeltmovement.org/taking-root-documentary/",
+      "inspected_scope": "Institutional synopsis below newsletter form: 1977 encouragement of rural women’s tree planting; environment and rights. Film itself not viewed.",
+      "type": "Institutional historical summary",
+      "publisher": "Green Belt Movement",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn11view2"
+      }
+    },
+    {
+      "id": "S26",
+      "title": "The Cajal Legacy",
+      "url": "https://www.csic.es/en/cajal-legacy",
+      "retrieval_locator": "https://www.csic.es/en/cajal-legacy",
+      "inspected_scope": "Opening scientific legacy; individual neurons, contact versus continuity, preserved Golgi-stained slides, 1906 Physiology or Medicine award. No images imported.",
+      "type": "Institutional historical summary",
+      "publisher": "Spanish National Research Council (CSIC)",
+      "access_date": "2026-10-21",
+      "access": "Relevant page-body text retrieved through web open and inspected; this is an AI-assisted check, not independent human verification.",
+      "reuse": "Links and original concise factual paraphrases only; no images, full pages, recordings or copied passages.",
+      "independent_verification": "PENDING",
+      "rights_review": "PENDING",
+      "ai_assisted_check": {
+        "date": "2026-10-21",
+        "method": "WEB_OPEN_PAGE_TEXT",
+        "retrieval_reference": "turn6view3"
+      }
     }
   ],
   "persons": [
@@ -195,7 +584,9 @@
       "sources": [
         "S01",
         "S02",
-        "S03"
+        "S03",
+        "S13",
+        "S14"
       ],
       "dossier": "Marie Curie investigated radioactivity through physics and chemistry. Born in Warsaw, she later worked in Paris. Research with Pierre Curie identified polonium and radium. The name polonium referred to the country of her birth. She later held a physics professorship at the Sorbonne. Her Nobel Prize in Chemistry was awarded in 1911. This passage concerns publicly documented research and professional life; it does not describe private memories or provide a hidden symbol.",
       "recall": {
@@ -261,7 +652,7 @@
       "learning_retrieval": [
         {
           "id": "F01-L1",
-          "prompt": "What year did the passage give for this person's Nobel award?",
+          "prompt": "What Nobel award year was explicitly stated in the passage? Answer from the passage only.",
           "accepted": "1911"
         },
         {
@@ -272,7 +663,7 @@
       ],
       "delayed_recognition": {
         "id": "F01-D",
-        "prompt": "Which year was given for this person's award in a detailed passage, if you saw one? You may choose 'do not know'.",
+        "prompt": "Which Nobel award year was explicitly stated in the detailed passage, if you saw one? You may choose 'do not know'.",
         "options": [
           {
             "id": "o1",
@@ -298,7 +689,9 @@
       "factual_support": [
         "S01",
         "S02",
-        "S03"
+        "S03",
+        "S13",
+        "S14"
       ]
     },
     {
@@ -308,12 +701,13 @@
       "award_category": "Physics",
       "sources": [
         "S04",
-        "S05"
+        "S05",
+        "S15"
       ],
       "dossier": "C. V. Raman investigated the scattering of light. His work examined light after it interacted with matter. Some scattered light has a different frequency from the incoming light. This frequency change is associated with the Raman effect. The incoming light can have a single frequency while the scattered light includes shifted components. Raman received the Nobel Prize in Physics in 1930. This passage describes public observations about light, not private thoughts or a hidden symbol.",
       "recall": {
         "id": "F02-R",
-        "prompt": "Which property changes in the Raman effect as described in the passage?",
+        "prompt": "Which property did the passage explicitly say differs between some scattered light and the incoming light?",
         "options": [
           {
             "id": "o1",
@@ -333,7 +727,7 @@
           }
         ],
         "correct_option_id": "o3",
-        "rationale": "The passage describes a frequency shift; this item does not assess all possible scattering properties."
+        "rationale": "Frequency is the property explicitly compared in the passage. The other options are real optical properties, not a claim that they cannot change during scattering."
       },
       "inference": {
         "id": "F02-I",
@@ -410,7 +804,8 @@
       },
       "factual_support": [
         "S04",
-        "S05"
+        "S05",
+        "S15"
       ]
     },
     {
@@ -419,7 +814,8 @@
       "award_year": "1964",
       "award_category": "Chemistry",
       "sources": [
-        "S06"
+        "S06",
+        "S16"
       ],
       "dossier": "Dorothy Crowfoot Hodgkin studied the structures of important biochemical molecules. Her work used X-ray crystallography to investigate how atoms were arranged. Molecules examined in her research included penicillin, vitamin B12 and insulin. These studies connected chemistry with the structures of substances relevant to biology. She received the Nobel Prize in Chemistry in 1964. The passage describes publicly documented molecular research; it does not claim to reproduce her private experience or identify any hidden symbol.",
       "recall": {
@@ -520,7 +916,8 @@
         "allow_do_not_know": true
       },
       "factual_support": [
-        "S06"
+        "S06",
+        "S16"
       ]
     },
     {
@@ -529,7 +926,8 @@
       "award_year": "1983",
       "award_category": "Physiology or Medicine",
       "sources": [
-        "S07"
+        "S07",
+        "S17"
       ],
       "dossier": "Barbara McClintock studied genetics using maize plants. She followed inherited traits across successive generations. Her research showed that some genetic elements could move to different positions within chromosomes. Such movement can influence the expression of traits. These findings challenged the idea that genetic elements always remain in fixed positions. McClintock received the Nobel Prize in Physiology or Medicine in 1983. This passage concerns public research findings, not access to her private thoughts or a hidden symbol.",
       "recall": {
@@ -631,7 +1029,8 @@
         "allow_do_not_know": true
       },
       "factual_support": [
-        "S07"
+        "S07",
+        "S17"
       ]
     },
     {
@@ -640,7 +1039,10 @@
       "award_year": "1922",
       "award_category": "Physics",
       "sources": [
-        "S08"
+        "S08",
+        "S18",
+        "S19",
+        "S20"
       ],
       "dossier": "Niels Bohr worked on atomic structure and the radiation emitted by atoms. In 1913 he proposed a model of the hydrogen atom. In that model electrons occupy prescribed energy states, and a transition to a lower energy releases radiation. The model helped explain distinct wavelengths in atomic light. Bohr directed an institute for theoretical physics in Copenhagen. He received the Nobel Prize in Physics in 1922. These are public scientific facts, not a record of private thoughts.",
       "recall": {
@@ -741,7 +1143,10 @@
         "allow_do_not_know": true
       },
       "factual_support": [
-        "S08"
+        "S08",
+        "S18",
+        "S19",
+        "S20"
       ]
     },
     {
@@ -750,9 +1155,11 @@
       "award_year": "1913",
       "award_category": "Literature",
       "sources": [
-        "S09"
+        "S09",
+        "S21",
+        "S22"
       ],
-      "dossier": "Rabindranath Tagore wrote poetry, songs, stories and plays. He originally wrote in Bengali and later recast poetry in English, reaching additional readers. His work also addressed philosophy and social questions. In 1901 he founded an experimental school at Shantiniketan, bringing Indian and Western learning traditions together. Tagore received the Nobel Prize in Literature in 1913. This passage describes public writing and educational activity; it does not reproduce private memories or reveal a hidden symbol.",
+      "dossier": "Rabindranath Tagore wrote poetry, songs, stories and plays. He originally wrote in Bengali and later recast poetry in English, reaching additional readers. His work also addressed philosophy and social questions. In 1901 he founded an experimental school at Shantiniketan, aiming to bring Indian and Western learning traditions together. Tagore received the Nobel Prize in Literature in 1913. This passage describes public writing and educational activity; it does not reproduce private memories or reveal a hidden symbol.",
       "recall": {
         "id": "F06-R",
         "prompt": "Which language did the passage say Tagore originally wrote in?",
@@ -852,7 +1259,9 @@
         "allow_do_not_know": true
       },
       "factual_support": [
-        "S09"
+        "S09",
+        "S21",
+        "S22"
       ]
     },
     {
@@ -861,7 +1270,10 @@
       "award_year": "2004",
       "award_category": "Peace",
       "sources": [
-        "S10"
+        "S10",
+        "S23",
+        "S24",
+        "S25"
       ],
       "dossier": "Wangari Maathai worked in Kenya on environmental protection and public life. She had academic training in biology. In 1977 she started the Green Belt Movement, encouraging women to plant trees in local communities. The movement responded to deforestation and linked ecological work with wider social concerns. Maathai received the Nobel Peace Prize in 2004. This passage describes public activities and an organization; it does not establish contact with her or identify a hidden symbol.",
       "recall": {
@@ -965,7 +1377,10 @@
         "allow_do_not_know": true
       },
       "factual_support": [
-        "S10"
+        "S10",
+        "S23",
+        "S24",
+        "S25"
       ]
     },
     {
@@ -975,7 +1390,8 @@
       "award_category": "Physiology or Medicine",
       "sources": [
         "S11",
-        "S12"
+        "S12",
+        "S26"
       ],
       "dossier": "Santiago Ramón y Cajal investigated the structure of the nervous system. He used staining methods to make nerve cells visible for study. His account treated neurons as distinct cells that contact one another, rather than as one continuous network of cell material. He used and developed methods associated with Camillo Golgi. Cajal and Golgi shared the Nobel Prize in Physiology or Medicine in 1906. These public anatomical findings do not provide a readout of Cajal's memories.",
       "recall": {
@@ -1078,8 +1494,20 @@
       },
       "factual_support": [
         "S11",
-        "S12"
+        "S12",
+        "S26"
       ]
     }
-  ]
+  ],
+  "editorial_revision": "source-fact-check-2026-10-21",
+  "ai_assisted_fact_check": {
+    "date": "2026-10-21",
+    "status": "COMPLETED_BOUNDED_AI_CHECK_WITH_OPEN_LIMITATIONS",
+    "record": "fact-check-2026-10-21.json",
+    "human_readable_record": "fact-check-2026-10-21.md",
+    "reviewed_commit": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
+    "independent_human_review": false,
+    "rights_approval": false,
+    "participant_use_authorized": false
+  }
 }

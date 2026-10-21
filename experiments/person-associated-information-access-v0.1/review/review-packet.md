@@ -36,6 +36,14 @@ A responsible institution/investigator must appoint people and disclose conflict
 
 Reviewers record identity/role, conflict statement, exact commit and file hashes, issues, response to each issue, decision and date. Changes after a sign-off invalidate that sign-off for affected files. Leave all boxes open until an actual signed review exists; no auto-approval by passing software tests.
 
+## AI-assisted stimulus preparation update, 21 October 2026
+
+The [source-linked fact-check](../materials/fact-check-2026-10-21.md) and [assertion/item record](../materials/fact-check-2026-10-21.json) are available for the appointed independent reviewer. They do not change any NOT_STARTED independent-review state above. Historical assertions are classified by retrieved-page versus indexed-only support; pending rights reviews remain pending.
+
+**FC04 requires disposition before use:** all eight recognition items use the same year offsets (-9, 0, +6, +12), so choosing the second-earliest year yields 8/8 without recall. Screen-position randomization does not fix this. The current correction leaves options unchanged to preserve the proposed design; an independent stimulus/methods review must approve a replacement distractor scheme and new material freeze. This concern applies to ordinary recognition, not the independently concealed symbol task.
+
+Other human-review work remains: original-source access/attribution, frozen field/synonym codebook, distractor plausibility, cultural/readability/accessibility checks and inference ceiling effects. No newly completed scientific, statistical, ethics or security review is claimed.
+
 ## Statistical review specification
 
 The existing calculation covers H1 alone under an ideal homogeneous model. It does not establish adequate power for the joint rule or the representation interaction. Do not describe the 48-person pilot as adequately powered from the 61/192 threshold.

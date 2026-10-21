@@ -1,18 +1,21 @@
 {
   "kind": "REVIEW_MATERIAL_MANIFEST_NOT_PREREGISTRATION",
-  "date": "2026-10-18",
+  "date": "2026-10-21",
   "materials_version": "0.2-candidate",
   "protocol_version": "0.1",
-  "base_commit": "436c60048ccbe752b4e205f1a133f236e91cbcda",
+  "base_commit": "9bbbbb3ac6d00f1cf959b9e5f04e0bd218901157",
   "status": "DRAFT_REVIEW_REQUIRED",
   "sha256": {
-    "README.md": "42ed19b19057cf794e649498baa3ddd20d3f7839159a1507e6f965e96e6f1fe9",
+    "README.md": "8c5a491231f25bff9f02eef939487d0f5fa10b4ce8459970c5d96d7c923eb824",
     "protocol.json": "22505cf72574ddc82090d6dfacbb5fb77c28eeea375bc2196080d6272494fbbb",
     "data-dictionary.md": "2b93a0ed75e823981f69051a83187ffb7ee8fecfe99d0e6586d0698e3f857025",
-    "materials/README.md": "7d4624c5cf5a61299403123939a0899fc82260e5c6bd0c6184a431e9e923fccf",
+    "materials/README.md": "596fa81b692fe342e80c34fde359081646375d3230660d730e129c390b373bce",
     "materials/session-scripts.md": "711649eae4039a12dbeef913ff45b5f960131cf713f7f112f34cc60764a64321",
-    "materials/stimulus-set.json": "fb02fba640c2f9114d08e449d167fa7c3076889428fd51c9d85ed28c6df94655",
-    "review/review-packet.md": "14e0578be51c0940f56ece10343602a558ec11bf8506f85189ab4ea535f38817"
+    "materials/stimulus-set.json": "db1294bd3faf91bea86716178116d4e1f05d594056f7b3e4ef5a74ebd5c4dc85",
+    "review/review-packet.md": "284efdbfaa64298662067713574419f83a77538de0a5f08b6fd95c7bdedfe51b",
+    "materials/fact-check-2026-10-21.md": "e897ed2c208c316b79725ec766d6e319167350afaaf937709975fb8584217542",
+    "materials/fact-check-2026-10-21.json": "e34952470f5fc7b74a5a3c4eb720f12df95a7c3f5fa6a8b2612e28e2377fe1ec",
+    "materials/history/manifest-2026-10-18.json": "68a525850a078f90abd8a2c79a60d3012e216ca193c3bc98d20eca59e18f0d05"
   },
   "person_count": 8,
   "ordinary_item_count": 48,
@@ -22,7 +25,7 @@
     "F03": 74,
     "F04": 76,
     "F05": 77,
-    "F06": 74,
+    "F06": 76,
     "F07": 74,
     "F08": 76
   },
@@ -39,7 +42,9 @@
     "Protocol version 0.1 and closed evidence/recruitment/experiment gates retained",
     "Bridge agreement retained; instruction, necessary-condition and effect approvals remain false",
     "Analysis and test code hashes unchanged; numerical tests not rerun",
-    "Same-assistant factual/key and script consistency review; no independent review claimed"
+    "Same-assistant factual/key and script consistency review; no independent review claimed",
+    "21 October: 44 historical assertion records, 48 item records, 12 original canonical URLs and seven distinct alternative locators reviewed; 14 supplementary institutional records; no key or option-set changes.",
+    "Original 18 October manifest preserved byte for byte; protocol, reference analysis, tests, session scripts, data dictionary and historical validation unchanged."
   ],
   "independent_review_completed": false,
   "preregistered": false,
@@ -48,9 +53,12 @@
   "acquisition_implemented": false,
   "numeric_tests_rerun": false,
   "limitations": [
-    "Source verification used indexed institutional text; no independent original-page review",
+    "AI-assisted source check distinguishes retrieved institutional page text from indexed-only official text; original Nobel pages/full lecture and independent human review remain unresolved.",
     "No readability, cultural, accessibility or workload validation",
     "Actual audio/interface/custody implementation absent",
-    "No joint-power simulation completed"
-  ]
+    "No joint-power simulation completed",
+    "All eight delayed-recognition keys are the second-earliest year with the same year-offset pattern; independent stimulus/methods correction and a new freeze are required before participant use."
+  ],
+  "editorial_revision": "source-fact-check-2026-10-21",
+  "previous_manifest": "materials/history/manifest-2026-10-18.json"
 }
