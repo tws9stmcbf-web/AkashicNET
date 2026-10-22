@@ -65,3 +65,7 @@ A useful unanswered question is itself a contribution to the Toolkit.
 ---
 
 **Evidence can inform the framework; the framework must remain open to the evidence.**
+
+## Research Atlas review candidates
+
+- [Grief and dementia-lucidity review, 22 October 2026](atlas-grief-lucidity-review-2026-10-22.md): bounded historical assessments, structured metadata and an AWARE II duplicate receipt. Editorial candidates only; no canonical evidence promotion or PRISM ingestion.
