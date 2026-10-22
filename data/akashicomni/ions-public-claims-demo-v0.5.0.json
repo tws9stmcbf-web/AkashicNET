@@ -35,7 +35,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37709571/",
       "location": "Abstract > pre-selected and post-selected completer accuracy; protocol amendments",
       "access_status": "ABSTRACT_ONLY",
-      "provenance_note": "AI inspection on 2026-10-12. This source record identifies the PubMed abstract of Wahbeh et al., DOI 10.1016/j.explore.2023.08.008; the IONS abstract is the same work. Separate article-in-press and author-preprint full-text copies, embedded supplementary outputs and KPU1062 revisions were subsequently inspected: see docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md. Final publisher copy unavailable; analysis-population mapping and abstract/Table 3 differences unresolved. ABSTRACT_ONLY describes this URL, not the entire follow-up. No independent human verification.",
+      "provenance_note": "22 October update: author confirms Table3 and completion-status mapping; conditional two-reader descriptive recount agrees. Corrected randomization, post-selected abstract explanation, v2/scripts and independent review remain pending. ABSTRACT_ONLY describes this original PubMed URL, whose original abstract figures are preserved as history in the frozen prior packet. Article-in-press Table3 and the dated correction are separately documented; no human verification attestation or inference is asserted.",
       "rights_status": "NOT_ASSESSED",
       "source_kind": "PRIMARY",
       "inspection_verification": null
@@ -62,6 +62,20 @@
       "artifact": {
         "repository_path": "references/akashicomni/IONS-Public-Claims-Extraction-2026-10-12.md",
         "sha256": "298df340197d2af7eac512e21ff9cfc71dad4be1946d60d5eda3635e032db186"
+      }
+    },
+    {
+      "source_id": "SOURCE-EDITORIAL-IONS-CORRECTION-20261022",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/codex/ions-public-claims-demo-20261012/references/akashicomni/IONS-Telephone-Correction-2026-10-22.md",
+      "location": "Author clarification, Table3 correction, conditional descriptive recount, pending statistical review and history",
+      "access_status": "FULL_TEXT_INSPECTED",
+      "provenance_note": "AI-executed inspection of this editorial correction and public Table3/v1. Private author clarification paraphrased with user authorisation. No independent human attestation or scientific review. Recount conditional on author mapping.",
+      "rights_status": "NOT_ASSESSED",
+      "source_kind": "EDITORIAL_DRAFT",
+      "inspection_verification": null,
+      "artifact": {
+        "repository_path": "references/akashicomni/IONS-Telephone-Correction-2026-10-22.md",
+        "sha256": "02a1b6e3d98d036adb8c0c61c5639f2a0724b175d2ee52ccf79ef2cae06ddd70"
       }
     }
   ],
@@ -120,30 +134,31 @@
     },
     {
       "claim_id": "OMNI-IONS-PHONE-001",
-      "wording": "The telephone-study abstract reports 50.0% accuracy over 210 pre-selected completer trials against 33.3% chance, p<.001.",
+      "wording": "Author-confirmed Table 3 gives 101/210 pre-selected completer responses (48.1%); the abstract 50.0% and completer randomization require correction.",
       "kind": "OBSERVATION",
       "source_ids": [
         "SOURCE-PHONE",
-        "SOURCE-EDITORIAL-IONS-20261012"
+        "SOURCE-EDITORIAL-IONS-20261012",
+        "SOURCE-EDITORIAL-IONS-CORRECTION-20261022"
       ],
-      "outcome_definition": "Correct caller guesses among pre-selected completer trials; 210 is a trial count, not a participant count.",
+      "outcome_definition": "Correct pre-selected completer responses after author-specified status correction; 210 responses, not participants.",
       "supporting_observations": [
-        "Author-reported accuracy and significance; no recalculated test."
+        "Author confirms Table3 and three mislabelled completion-status triads; first-six restriction already applied. Two-reader aggregate recount agrees conditional on author mapping; no inferential test reproduced."
       ],
       "counter_evidence": [
-        "The same paper reports a nonsignificant post-selected condition; it is a different timing condition, not a direct replication."
+        "The two timing conditions are parts of the same study, with different response units; not independent replications. Original inferential reports remain historical while corrected analysis and independent review are pending."
       ],
       "counter_evidence_search_status": "NOT_COMPLETED",
       "competing_explanations": [
-        "Authors discuss a psi interpretation; statistical significance alone does not establish telepathy.",
-        "Conventional cues, protocol amendments, selection and repeated observations are alternative concerns requiring methods/data review."
+        "Descriptive accuracy and completion-status correction do not identify a mechanism.",
+        "Response frequencies, target assignment, dependence, leakage, protocol amendments and selection require independent review; none is established as the cause here."
       ],
       "missing_evidence": [
-        "Full-text copies, preprint supplementary output and KPU1062 revisions are now inspected by AI. Independent methodological review of protocol changes, dependence, selection and null-model choice remains pending.",
-        "The final selection/recoding pipeline linking Figshare v1 to the publication analysis population is absent from recovered materials; deposited headers/legend do not document chronology for the first-six rule.",
-        "Abstract, Table 3 and randomization-method endpoints differ; partial numerical agreements are recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md, without replacing the author-reported abstract claim.",
-        "Latest publisher-formatted full text/supplement and any definitive correction or author clarification remain needed. No inferential reanalysis was performed.",
-        "Independent human source verification and methodological review remain pending."
+        "Published corrigendum, public Figshare v2, corrected labels, deidentified trial-level mapping, scripts and documentation are pending.",
+        "Corrected completer randomization, uncertainty and scope of affected analyses unavailable; no corrected statistic inferred.",
+        "The reason for abstract post-selected 31.9% versus Table3 32.5% remains separately unresolved.",
+        "Author confirms first-six restriction already applied; chronological reconstruction and completion-status attribution not independently verified from public trial logs.",
+        "Independent human verification, scientific review and systematic contrary-evidence search pending."
       ],
       "decision": "REVIEW_REQUIRED",
       "status": "UNRESOLVED",
@@ -169,36 +184,42 @@
           "revision": 3,
           "date": "2026-10-12",
           "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
+        },
+        {
+          "revision": 4,
+          "date": "2026-10-22",
+          "change": "Author-informed descriptive correction. Prior wording preserved: The telephone-study abstract reports 50.0% accuracy over 210 pre-selected completer trials against 33.3% chance, p<.001. Corrected inference pending; independent review and promotion gates unchanged."
         }
       ],
-      "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
+      "lineage_source_id": "SOURCE-EDITORIAL-IONS-CORRECTION-20261022"
     },
     {
       "claim_id": "OMNI-IONS-PHONE-002",
-      "wording": "The same abstract reports 31.9% accuracy over 630 post-selected completer trials against 33.3% chance, p=.61.",
+      "wording": "Author-confirmed Table 3 gives 205/630 post-selected completer responses (32.5%); the abstract 31.9% remains separately unreconciled.",
       "kind": "OBSERVATION",
       "source_ids": [
         "SOURCE-PHONE",
-        "SOURCE-EDITORIAL-IONS-20261012"
+        "SOURCE-EDITORIAL-IONS-20261012",
+        "SOURCE-EDITORIAL-IONS-CORRECTION-20261022"
       ],
-      "outcome_definition": "Correct guesses when caller selection followed the guess; distinct from pre-selection.",
+      "outcome_definition": "Correct post-selected completer responses after author-specified status correction; 630 responses, not independent calls or participants.",
       "supporting_observations": [
-        "Author-reported nonsignificant outcome; no recalculated test."
+        "Author confirms Table3 and three mislabelled completion-status triads; first-six restriction already applied. Two-reader aggregate recount agrees conditional on author mapping; no inferential test reproduced."
       ],
       "counter_evidence": [
-        "Pre-selected trials in the same study were reported above chance; the conditions cannot be pooled as one endpoint."
+        "The two timing conditions are parts of the same study, with different response units; not independent replications. Original inferential reports remain historical while corrected analysis and independent review are pending."
       ],
       "counter_evidence_search_status": "NOT_COMPLETED",
       "competing_explanations": [
-        "Results are compatible with chance under the reported analysis.",
-        "A small or heterogeneous effect could remain undetected; nonsignificance is not proof of no effect."
+        "Descriptive accuracy and completion-status correction do not identify a mechanism.",
+        "Response frequencies, target assignment, dependence, leakage, protocol amendments and selection require independent review; none is established as the cause here."
       ],
       "missing_evidence": [
-        "Full-text copies, preprint supplementary output and KPU1062 revisions are now inspected by AI. Independent methodological review of protocol changes, dependence, selection and null-model choice remains pending.",
-        "The final selection/recoding pipeline linking Figshare v1 to the publication analysis population is absent from recovered materials; deposited headers/legend do not document chronology for the first-six rule.",
-        "Abstract, Table 3 and randomization-method endpoints differ; partial numerical agreements are recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md, without replacing the author-reported abstract claim.",
-        "Latest publisher-formatted full text/supplement and any definitive correction or author clarification remain needed. No inferential reanalysis was performed.",
-        "Independent human source verification and methodological review remain pending."
+        "Published corrigendum, public Figshare v2, corrected labels, deidentified trial-level mapping, scripts and documentation are pending.",
+        "Corrected completer randomization, uncertainty and scope of affected analyses unavailable; no corrected statistic inferred.",
+        "The reason for abstract post-selected 31.9% versus Table3 32.5% remains separately unresolved.",
+        "Author confirms first-six restriction already applied; chronological reconstruction and completion-status attribution not independently verified from public trial logs.",
+        "Independent human verification, scientific review and systematic contrary-evidence search pending."
       ],
       "decision": "REVIEW_REQUIRED",
       "status": "UNRESOLVED",
@@ -224,9 +245,14 @@
           "revision": 3,
           "date": "2026-10-12",
           "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
+        },
+        {
+          "revision": 4,
+          "date": "2026-10-22",
+          "change": "Author-informed descriptive correction. Prior wording preserved: The same abstract reports 31.9% accuracy over 630 post-selected completer trials against 33.3% chance, p=.61. Corrected inference pending; independent review and promotion gates unchanged."
         }
       ],
-      "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
+      "lineage_source_id": "SOURCE-EDITORIAL-IONS-CORRECTION-20261022"
     },
     {
       "claim_id": "OMNI-IONS-EHE-001",

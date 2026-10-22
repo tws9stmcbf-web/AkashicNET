@@ -1,3 +1,11 @@
+## Current correction status: 22 October 2026
+
+**AUTHOR_CLARIFIED / DESCRIPTIVE_RECONCILIATION_COMPLETE / INFERENTIAL_REVIEW_PENDING.** See [the dated correction](../references/akashicomni/IONS-Telephone-Correction-2026-10-22.md). Author-confirmed Table 3 gives pre-selected 101/210 (48.1%) and post-selected 205/630 (32.5%). Three completion-status labels caused the v1 completer mismatch; all-status totals are unchanged. The first-six restriction was already applied correctly. Corrected completer randomization, the post-selected abstract explanation, formal corrigendum, public v2/scripts and independent scientific review remain pending. No mechanism inference or evidence promotion. PR #399 remains draft; no merge or release.
+
+The following text is preserved verbatim as historical checkpoints and superseded only on the matters clarified above.
+
+---
+
 # Telephone Study: Methods and Version Follow-up
 
 12 October 2026. AI-executed source investigation. **PARTIAL_NUMERICAL_RECONCILIATION / FINAL_SUBSET_UNRESOLVED. Independent human review pending.**

@@ -1,0 +1,283 @@
+{
+  "format_version": "0.5.0-draft.1",
+  "framework_baseline": "0.4.0",
+  "framework_target": "0.5.0",
+  "release_status": "UNRELEASED",
+  "review_state": "REVIEW_REQUIRED",
+  "packet_id": "OMNI-IONS-PUBLIC-DEMO-20261012",
+  "bq_id": null,
+  "accepted_edges": [],
+  "supports_models": [],
+  "promotion_allowed": {
+    "truth": false,
+    "evidence": false,
+    "rights": false,
+    "public_synthesis": false,
+    "website": false,
+    "bq_resolution": false,
+    "privacy": false,
+    "cultural_authority": false
+  },
+  "independent_review_status": "PENDING",
+  "sources": [
+    {
+      "source_id": "SOURCE-TSC2026",
+      "url": "https://tsc2026.org/workshops.html",
+      "location": "Psi and the Evolution of Consciousness Science > Part 2 > Sitara Taddeo entry",
+      "access_status": "ABSTRACT_ONLY",
+      "provenance_note": "AI inspection on 2026-10-12. First-party conference abstract; no participant observations or complete methods. PRIMARY denotes the original claim source, not primary-data access.",
+      "rights_status": "NOT_ASSESSED",
+      "source_kind": "PRIMARY",
+      "inspection_verification": null
+    },
+    {
+      "source_id": "SOURCE-PHONE",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37709571/",
+      "location": "Abstract > pre-selected and post-selected completer accuracy; protocol amendments",
+      "access_status": "ABSTRACT_ONLY",
+      "provenance_note": "AI inspection on 2026-10-12. This source record identifies the PubMed abstract of Wahbeh et al., DOI 10.1016/j.explore.2023.08.008; the IONS abstract is the same work. Separate article-in-press and author-preprint full-text copies, embedded supplementary outputs and KPU1062 revisions were subsequently inspected: see docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md. Final publisher copy unavailable; analysis-population mapping and abstract/Table 3 differences unresolved. ABSTRACT_ONLY describes this URL, not the entire follow-up. No independent human verification.",
+      "rights_status": "NOT_ASSESSED",
+      "source_kind": "PRIMARY",
+      "inspection_verification": null
+    },
+    {
+      "source_id": "SOURCE-EHE",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30415782/",
+      "location": "Abstract > Participants, Main measures and Results > scientists/engineers group",
+      "access_status": "ABSTRACT_ONLY",
+      "provenance_note": "AI inspection on 2026-10-12. Wahbeh et al., Explore 14(5):329-341 (2018), DOI 10.1016/j.explore.2018.05.002. Author abstract indexed by PubMed; IONS mirror is not independent corroboration. Survey endpoint spans 25 categories, not telepathy alone.",
+      "rights_status": "NOT_ASSESSED",
+      "source_kind": "PRIMARY",
+      "inspection_verification": null
+    },
+    {
+      "source_id": "SOURCE-EDITORIAL-IONS-20261012",
+      "url": "https://github.com/tws9stmcbf-web/AkashicNET/blob/codex/ions-public-claims-demo-20261012/references/akashicomni/IONS-Public-Claims-Extraction-2026-10-12.md",
+      "location": "Entire original extraction record; Scope, Availability, Interpretation and Revision conditions",
+      "access_status": "FULL_TEXT_INSPECTED",
+      "provenance_note": "AI inspection on 2026-10-12. Original AI-authored extraction inspected for lineage only; not independent scientific or human verification. Artifact hash binds local bytes.",
+      "rights_status": "NOT_ASSESSED",
+      "source_kind": "EDITORIAL_DRAFT",
+      "inspection_verification": null,
+      "artifact": {
+        "repository_path": "references/akashicomni/IONS-Public-Claims-Extraction-2026-10-12.md",
+        "sha256": "298df340197d2af7eac512e21ff9cfc71dad4be1946d60d5eda3635e032db186"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "OMNI-IONS-M2M-001",
+      "wording": "The TSC2026 abstract reports an excess of above-chance receivers in 100 screened Mind-to-Mind dyads relative to a binomial null model.",
+      "kind": "OBSERVATION",
+      "source_ids": [
+        "SOURCE-TSC2026",
+        "SOURCE-EDITORIAL-IONS-20261012"
+      ],
+      "outcome_definition": "Reported count of receivers meeting a task-performance criterion versus a binomial expectation; not an overall hit rate and not 100 successful pairs.",
+      "supporting_observations": [
+        "The conference entry reports a positive result without numerical test details."
+      ],
+      "counter_evidence": [],
+      "counter_evidence_search_status": "NOT_COMPLETED",
+      "competing_explanations": [
+        "A reproducible task effect is a candidate interpretation; the abstract does not identify its cause.",
+        "Selection, dependence, criterion choice or ordinary information leakage require evaluation; none is established here."
+      ],
+      "missing_evidence": [
+        "Successful-receiver count, per-receiver trials, null success probability, threshold, test direction, exact p-value and uncertainty are absent from the inspected abstract.",
+        "Complete protocol, preregistration, randomization/blinding logs, exclusions, multiplicity handling and attrition are needed.",
+        "No participant-level Mind2Mind dataset or executable analysis was obtained. Independent replication and a systematic contrary-evidence search are pending.",
+        "Independent human source verification and methodological review remain pending."
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "status": "UNRESOLVED",
+      "assessments": [],
+      "comparison": {
+        "status": "PENDING",
+        "pairs": [],
+        "agreements": [],
+        "disagreements": []
+      },
+      "revision_history": [
+        {
+          "revision": 1,
+          "date": "2026-10-12",
+          "change": "AI-executed public-source extraction for review; not independent verification or evidence promotion."
+        },
+        {
+          "revision": 2,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
+        }
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
+    },
+    {
+      "claim_id": "OMNI-IONS-PHONE-001",
+      "wording": "The telephone-study abstract reports 50.0% accuracy over 210 pre-selected completer trials against 33.3% chance, p<.001.",
+      "kind": "OBSERVATION",
+      "source_ids": [
+        "SOURCE-PHONE",
+        "SOURCE-EDITORIAL-IONS-20261012"
+      ],
+      "outcome_definition": "Correct caller guesses among pre-selected completer trials; 210 is a trial count, not a participant count.",
+      "supporting_observations": [
+        "Author-reported accuracy and significance; no recalculated test."
+      ],
+      "counter_evidence": [
+        "The same paper reports a nonsignificant post-selected condition; it is a different timing condition, not a direct replication."
+      ],
+      "counter_evidence_search_status": "NOT_COMPLETED",
+      "competing_explanations": [
+        "Authors discuss a psi interpretation; statistical significance alone does not establish telepathy.",
+        "Conventional cues, protocol amendments, selection and repeated observations are alternative concerns requiring methods/data review."
+      ],
+      "missing_evidence": [
+        "Full-text copies, preprint supplementary output and KPU1062 revisions are now inspected by AI. Independent methodological review of protocol changes, dependence, selection and null-model choice remains pending.",
+        "The final selection/recoding pipeline linking Figshare v1 to the publication analysis population is absent from recovered materials; deposited headers/legend do not document chronology for the first-six rule.",
+        "Abstract, Table 3 and randomization-method endpoints differ; partial numerical agreements are recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md, without replacing the author-reported abstract claim.",
+        "Latest publisher-formatted full text/supplement and any definitive correction or author clarification remain needed. No inferential reanalysis was performed.",
+        "Independent human source verification and methodological review remain pending."
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "status": "UNRESOLVED",
+      "assessments": [],
+      "comparison": {
+        "status": "PENDING",
+        "pairs": [],
+        "agreements": [],
+        "disagreements": []
+      },
+      "revision_history": [
+        {
+          "revision": 1,
+          "date": "2026-10-12",
+          "change": "AI-executed public-source extraction for review; not independent verification or evidence promotion."
+        },
+        {
+          "revision": 2,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
+        }
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
+    },
+    {
+      "claim_id": "OMNI-IONS-PHONE-002",
+      "wording": "The same abstract reports 31.9% accuracy over 630 post-selected completer trials against 33.3% chance, p=.61.",
+      "kind": "OBSERVATION",
+      "source_ids": [
+        "SOURCE-PHONE",
+        "SOURCE-EDITORIAL-IONS-20261012"
+      ],
+      "outcome_definition": "Correct guesses when caller selection followed the guess; distinct from pre-selection.",
+      "supporting_observations": [
+        "Author-reported nonsignificant outcome; no recalculated test."
+      ],
+      "counter_evidence": [
+        "Pre-selected trials in the same study were reported above chance; the conditions cannot be pooled as one endpoint."
+      ],
+      "counter_evidence_search_status": "NOT_COMPLETED",
+      "competing_explanations": [
+        "Results are compatible with chance under the reported analysis.",
+        "A small or heterogeneous effect could remain undetected; nonsignificance is not proof of no effect."
+      ],
+      "missing_evidence": [
+        "Full-text copies, preprint supplementary output and KPU1062 revisions are now inspected by AI. Independent methodological review of protocol changes, dependence, selection and null-model choice remains pending.",
+        "The final selection/recoding pipeline linking Figshare v1 to the publication analysis population is absent from recovered materials; deposited headers/legend do not document chronology for the first-six rule.",
+        "Abstract, Table 3 and randomization-method endpoints differ; partial numerical agreements are recorded in docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md, without replacing the author-reported abstract claim.",
+        "Latest publisher-formatted full text/supplement and any definitive correction or author clarification remain needed. No inferential reanalysis was performed.",
+        "Independent human source verification and methodological review remain pending."
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "status": "UNRESOLVED",
+      "assessments": [],
+      "comparison": {
+        "status": "PENDING",
+        "pairs": [],
+        "agreements": [],
+        "disagreements": []
+      },
+      "revision_history": [
+        {
+          "revision": 1,
+          "date": "2026-10-12",
+          "change": "AI-executed public-source extraction for review; not independent verification or evidence promotion."
+        },
+        {
+          "revision": 2,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
+        }
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
+    },
+    {
+      "claim_id": "OMNI-IONS-EHE-001",
+      "wording": "The survey abstract reports that 93.2% of 175 scientist/engineer respondents endorsed at least one exceptional experience.",
+      "kind": "TESTIMONY",
+      "source_ids": [
+        "SOURCE-EHE",
+        "SOURCE-EDITORIAL-IONS-20261012"
+      ],
+      "outcome_definition": "Self-report endorsement of any of 25 categories, not telepathy-specific prevalence or experimental performance.",
+      "supporting_observations": [
+        "Reported respondent-group proportion; no item-level verification."
+      ],
+      "counter_evidence": [],
+      "counter_evidence_search_status": "NOT_COMPLETED",
+      "competing_explanations": [
+        "Reports can be meaningful lived experiences without verifying an anomalous mechanism.",
+        "Recall, interpretation and nonresponse selection may affect endorsement; these explanations were not tested here."
+      ],
+      "missing_evidence": [
+        "Full questionnaire, response-rate details, weighting and item-level tables need inspection.",
+        "The inspected abstract does not establish the telepathy-specific 70% figure on the IONS overview; it is not promoted into this record.",
+        "Independent human source verification and methodological review remain pending."
+      ],
+      "decision": "REVIEW_REQUIRED",
+      "status": "UNRESOLVED",
+      "assessments": [],
+      "comparison": {
+        "status": "PENDING",
+        "pairs": [],
+        "agreements": [],
+        "disagreements": []
+      },
+      "revision_history": [
+        {
+          "revision": 1,
+          "date": "2026-10-12",
+          "change": "AI-executed public-source extraction for review; not independent verification or evidence promotion."
+        },
+        {
+          "revision": 2,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage with a bounded telephone-data reconciliation check. Author-reported wording unchanged; human verification, scientific inference and all promotion gates remain pending/closed."
+        },
+        {
+          "revision": 3,
+          "date": "2026-10-12",
+          "change": "Updated shared editorial lineage after full-text, protocol and preprint-supplement recovery. Partial numerical reconciliation documented; final subset unresolved. Abstract wording retained; no human attestation, inference or promotion."
+        }
+      ],
+      "lineage_source_id": "SOURCE-EDITORIAL-IONS-20261012"
+    }
+  ]
+}
