@@ -1,0 +1,511 @@
+diff --git a/app/Akn24EarthNewsroom.tsx b/app/Akn24EarthNewsroom.tsx
+index 3c13646..0e23e05 100644
+--- a/app/Akn24EarthNewsroom.tsx
++++ b/app/Akn24EarthNewsroom.tsx
+@@ -64,7 +64,7 @@ export default function Akn24EarthNewsroom() {
+       </div>
+       <PrivacyYouTube id="4_d2rwACMv4" title="Blue Man Group Best PVC Performances Compilation — official channel" className={styles.player} />
+     </div>
+-    <div className={styles.access}>
++    <div id="newsroom-image-description" className={styles.access}>
+       {canRead && <button type="button" onClick={readDescription} aria-pressed={speaking}>{speaking ? "Stop image description" : "Read image description aloud"}</button>}
+       {speechError && <p role="status">{speechError}</p>}
+       <details><summary>Read the full image description</summary><p>{imageDescription}</p></details>
+diff --git a/app/HomeBroadcastHeader.tsx b/app/HomeBroadcastHeader.tsx
+index 0474b86..0cdea13 100644
+--- a/app/HomeBroadcastHeader.tsx
++++ b/app/HomeBroadcastHeader.tsx
+@@ -8,13 +8,22 @@ import styles from "./home-broadcast-header.module.css";
+ export default function HomeBroadcastHeader() {
+   return <section className={styles.broadcast} aria-label="AkashicNET homepage search, news and radio">
+     <header className={styles.masthead}>
+-      <a className={styles.logo} href="/akashicnet-at-a-glance" aria-label="AkashicNET overview"><BrandLogo /></a>
+       <div className={styles.identity}>
+-        <p>HOMESENSE♾️💗</p>
++        <a className={styles.logo} href="/akashicnet-at-a-glance" aria-label="AkashicNET overview"><BrandLogo /></a>
++        <p>HOMESENSE♾️💗 · AKN24</p>
+         <h2>Your Window Into a Playful Universe</h2>
+-        <span>Search the Living Library · Follow the news · Choose your soundtrack</span>
++        <span>Yesterday’s echoes. Today’s signals. Possible tomorrows.</span>
++        <nav className={styles.entryLinks} aria-label="Newsroom shortcuts">
++          <a className={styles.newsroom} href="#newsroom-stories">Explore the evidence desk →</a>
++          <a href="#psy-radio">Choose your soundtrack ↓</a>
++        </nav>
+       </div>
+-      <a className={styles.newsroom} href="/akn24"><strong>AKN<span>24</span></strong><small>ENTER THE NEWSROOM →</small></a>
++      <figure className={styles.art}>
++        <a href="/akn24" aria-label="Enter AKN24, AkashicNET News 24">
++          <img src="/images/akn24-pachamama-newsroom-v2.webp" width="1279" height="720" fetchPriority="high" decoding="async" alt="A jaguar, owl, frog, fox and elephant present AKN24 from an imagined orbital newsroom above Earth." />
++        </a>
++        <figcaption>AI-generated editorial fantasy inspired by Blue Man Group; no affiliation. Illustrated signing is not a verified interpretation. <a href="#newsroom-image-description">Full image description ↓</a></figcaption>
++      </figure>
+     </header>
+     <MettaSearch />
+     <div className={styles.tickers}><InsightsTicker compact /><NewsTicker archive /></div>
+diff --git a/app/HomeNewsroomStories.tsx b/app/HomeNewsroomStories.tsx
+new file mode 100644
+index 0000000..2960844
+--- /dev/null
++++ b/app/HomeNewsroomStories.tsx
+@@ -0,0 +1,27 @@
++import { newsroomEdition, newsroomStories } from '../lib/newsroom-stories.mjs';
++import styles from './home-newsroom-stories.module.css';
++
++export default function HomeNewsroomStories() {
++  return <section id="newsroom-stories" className={styles.desk} aria-labelledby="newsroom-stories-title">
++    <header className={styles.heading}>
++      <div><p>THE EVIDENCE DESK · <time dateTime={newsroomEdition.dateTime}>{newsroomEdition.label}</time></p>
++        <h2 id="newsroom-stories-title">Three Signals. Room to Think.</h2></div>
++      <a href={newsroomEdition.href}>Read this edition →</a>
++    </header>
++    <p className={styles.note}>A dated editorial selection. Follow each report to its observations, interpretations and unresolved questions.</p>
++    <div className={styles.grid}>
++      {newsroomStories.map((story, index) => <article key={story.href} className={styles.card}>
++        <div className={styles.cardTop}><span aria-hidden="true">0{index + 1}</span><small>{story.evidence}</small></div>
++        <p className={styles.date}>{story.dateLabel}</p>
++        <h3><a href={story.href}>{story.title}</a></h3>
++        <p>{story.description}</p>
++        <footer><a href={story.href}>Read report &amp; limits →</a><a href={story.sourceUrl}>Primary source ↗<span className="sr-only"> for {story.title}</span></a></footer>
++      </article>)}
++    </div>
++    <nav className={styles.links} aria-label="Discover more public articles">
++      <a href="/akn24">All newsroom reports →</a>
++      <a href="#latest-highlights">More Living Library highlights →</a>
++      <a href="/data">How to read the evidence →</a>
++    </nav>
++  </section>;
++}
+diff --git a/app/MettaSearch.tsx b/app/MettaSearch.tsx
+index aaf5f91..ac046bc 100644
+--- a/app/MettaSearch.tsx
++++ b/app/MettaSearch.tsx
+@@ -4,41 +4,19 @@ import { FormEvent, useMemo, useRef, useState } from "react";
+ 
+ import { siteSearchIndex } from "@/lib/site-search.generated";
+ 
+-const fold = (value: string) => value.toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+-const excerptFor = (text: string, query: string) => {
+-  const clean = text.replace(/&(?:amp|quot|apos|nbsp|lt|gt);/g, (entity) =>
+-    ({ "&amp;": "&", "&quot;": '"', "&apos;": "'", "&nbsp;": " ", "&lt;": "<", "&gt;": ">" } as Record<string, string>)[entity] || entity
+-  ).replace(/\s+/g, " ").trim();
+-  const folded = fold(clean);
+-  const positions = fold(query).split(/\s+/).filter(Boolean).map((word) => folded.indexOf(word)).filter((index) => index >= 0);
+-  if (!positions.length) return "";
+-  const hit = Math.min(...positions);
+-  let start = Math.max(0, hit - 45);
+-  let end = Math.min(clean.length, hit + 105);
+-  if (start) start = clean.indexOf(" ", start) + 1 || start;
+-  if (end < clean.length) end = clean.lastIndexOf(" ", end) > hit ? clean.lastIndexOf(" ", end) : end;
+-  return `${start ? "…" : ""}${clean.slice(start, end).trim()}${end < clean.length ? "…" : ""}`;
+-};
+-const searchPages = (query: string) => {
+-  const words = fold(query).split(/\s+/).filter(Boolean);
+-  return siteSearchIndex.map((item) => {
+-    const title = fold(item.title);
+-    const description = fold(item.description);
+-    const route = fold(item.href.replaceAll("-", " ").replaceAll("/", " "));
+-    const text = fold(item.text);
+-    const score = words.every((word) => title.includes(word) || route.includes(word) || description.includes(word) || text.includes(word))
+-      ? words.reduce((total, word) => total + (title.includes(word) ? 10 : 0) + (route.includes(word) ? 5 : 0) + (description.includes(word) ? 3 : 0) + (text.includes(word) ? 1 : 0), 0)
+-      : 0;
+-    return { item, score };
+-  }).filter(({ score }) => score > 0).sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
+-};
++import { fold, excerptFor, searchPages } from "@/lib/public-search.mjs";
++import { newsroomStories } from "@/lib/newsroom-stories.mjs";
++import styles from "./metta-search-controls.module.css";
++
++const publicEntries = [...newsroomStories, ...siteSearchIndex];
+ 
+ export default function MettaSearch() {
++  const [scope, setScope] = useState("all");
+   const [query, setQuery] = useState("");
+   const [expanded, setExpanded] = useState({ query: "", count: 8 });
+   const resultsRef = useRef<HTMLDivElement>(null);
+   const normalized = query.trim();
+-  const ranked = useMemo(() => normalized ? searchPages(normalized) : [], [normalized]);
++  const ranked = useMemo(() => normalized ? searchPages(scope === "newsroom" ? newsroomStories : publicEntries, normalized) : [], [normalized, scope]);
+   const matches = ranked.slice(0, expanded.query === normalized ? expanded.count : 8);
+   const communitySearch = `https://www.reddit.com/r/NeuronsToNirvana/search/?q=${encodeURIComponent(query.trim())}&restrict_sr=1&sort=relevance`;
+   const tribalSearch = `https://www.reddit.com/r/TribalGathering/search/?q=${encodeURIComponent(query.trim())}&restrict_sr=1&sort=relevance`;
+@@ -67,20 +45,30 @@ export default function MettaSearch() {
+             }}
+             placeholder="Consciousness, care, evidence, nature, wisdom…"
+             autoComplete="off"
++            aria-describedby="metta-search-help"
++            maxLength={200}
+           />
+           <button type="submit" disabled={!normalized}>Search site</button>
+         </div>
+       </form>
++      <div className={styles.tools}>
++        <label htmlFor="metta-search-scope">Search in</label>
++        <select id="metta-search-scope" value={scope} onChange={event => { setScope(event.target.value); setExpanded({ query: "", count: 8 }); }}>
++          <option value="all">All public pages &amp; reports</option>
++          <option value="newsroom">Featured newsroom reports</option>
++        </select>
++        {normalized && <button type="button" onClick={() => { setQuery(""); document.getElementById("metta-search-input")?.focus(); }}>Clear search</button>}
++      </div>
+       {normalized ? (
+-        <div className="metta-search-results" ref={resultsRef} tabIndex={-1} aria-live="polite">
+-          <strong>{ranked.length ? `Showing ${matches.length} of ${ranked.length} website ${ranked.length === 1 ? "page" : "pages"}` : `No website pages found for “${query.trim()}”`}</strong>
++        <div className="metta-search-results" ref={resultsRef} tabIndex={-1} aria-label="Search results">
++          <strong role="status" aria-live="polite" aria-atomic="true">{ranked.length ? `Showing ${matches.length} of ${ranked.length} ${ranked.length === 1 ? "result" : "results"}` : `No public results found for “${query.trim()}”`}</strong>
+           <nav aria-label="Mettā search results">
+             {matches.map(({ item }) => {
+               const visibleText = fold(`${item.title} ${item.description}`);
+               const needsExcerpt = fold(normalized).split(/\s+/).some((word) => !visibleText.includes(word));
+               const excerpt = needsExcerpt ? excerptFor(item.text, normalized) : "";
+               return <a href={item.href} key={`${item.href}-${item.title}`}>
+-                <span><b>{item.title}</b><small>{item.description || item.href}</small>{excerpt && <small className="metta-match">Page text: {excerpt}</small>}<em>Open page →</em></span>
++                <span><b>{item.title}</b><small>{item.description || item.href}</small>{item.dateLabel && <span className={styles.metadata}>{item.dateLabel}</span>}{item.evidence && <span className={styles.metadata}>{item.evidence}</span>}{excerpt && <small className="metta-match">Page text: {excerpt}</small>}<em>Read {item.kind === "report" ? "report & limits" : "page"} →</em></span>
+               </a>;
+             })}
+             <a className="metta-community-result" href={communitySearch} target="_blank" rel="noreferrer noopener">
+@@ -91,10 +79,10 @@ export default function MettaSearch() {
+             </a>
+ 
+           </nav>
+-          {ranked.length > matches.length && <button className="metta-show-more" type="button" onClick={() => setExpanded({ query: normalized, count: matches.length + 8 })}>Show more pages ({ranked.length - matches.length} remaining)</button>}
++          {ranked.length > matches.length && <button className="metta-show-more" type="button" onClick={() => setExpanded({ query: normalized, count: matches.length + 8 })}>Show more results ({ranked.length - matches.length} remaining)</button>}
+         </div>
+       ) : null}
+-      <footer>Searches public AkashicNET page titles, summaries and page text on this device. Reddit links open a separate website.</footer>
++      <footer id="metta-search-help">Searches public AkashicNET page titles, summaries, indexed page text and featured newsroom reports on this device. Private and unlisted pages are excluded. Reddit links open a separate website.</footer>
+     </section>
+   );
+ }
+diff --git a/app/home-broadcast-header.module.css b/app/home-broadcast-header.module.css
+index edae3ea..e3dcfea 100644
+--- a/app/home-broadcast-header.module.css
++++ b/app/home-broadcast-header.module.css
+@@ -1,23 +1,22 @@
+-/* Keep the broadcast controls ahead of the homepage's longer features. */
+-:global(.home-header-stack) > :global(.utility-strip){order:-30}
+-:global(.home-header-stack) > :global(.global-header){order:-29}
+-:global(.home-header-stack) > .broadcast{order:-28}
+-.broadcast{width:min(1280px,calc(100% - 28px));min-width:0;margin:14px auto 24px;border:1px solid #72d9d766;border-radius:20px;background:radial-gradient(ellipse at 8% 0,#29666e40,transparent 55%),linear-gradient(130deg,#081b29,#11172f 70%,#182435);color:#eef7fa;box-shadow:0 15px 48px #0005;overflow:hidden}
+-.masthead{display:grid;grid-template-columns:minmax(160px,240px) minmax(0,1fr) 150px;gap:24px;align-items:center;padding:22px 26px;border-bottom:1px solid #8ee9e02b}
+-.logo{display:block;min-width:0;border-radius:12px;overflow:hidden}
+-.logo :global(.akashic-brand-logo){display:block;width:100%;max-width:none}
+-.logo img{display:block;width:100%;height:auto}
+-.identity{min-width:0}
+-.identity p{margin:0 0 7px;color:#e4c574;font-size:.85rem;font-weight:800;letter-spacing:.13em}
+-.identity h2{margin:0 0 8px;font:400 clamp(1.35rem,2.4vw,2rem)/1.18 Georgia,serif;color:#f5f0df}
+-.identity>span{display:block;font-size:.85rem;line-height:1.5;color:#bcd6dc}
+-.newsroom{display:grid;gap:6px;text-align:center;text-decoration:none;color:#edfaff;padding:12px;border:1px solid #8ee9e044;border-radius:12px;background:#071522}
+-.newsroom strong{font:900 2.35rem/1 Arial,sans-serif;letter-spacing:-.05em}.newsroom strong span{color:#e4c574}
+-.newsroom small{font-size:.62rem;letter-spacing:.1em;line-height:1.5;color:#a2ece3}
+-.broadcast a:focus-visible{outline:3px solid #e4c574;outline-offset:3px}
++/* Preserve the controls ahead of the homepage's longer features. */
++:global(.home-header-stack)>:global(.utility-strip){order:-30}
++:global(.home-header-stack)>:global(.global-header){order:-29}
++:global(.home-header-stack)>.broadcast{order:-28}
++.broadcast{width:min(1280px,calc(100% - 28px));min-width:0;margin:14px auto 32px;border:1px solid #72d9d766;border-radius:20px;background:radial-gradient(ellipse at 8% 0,#29666e40,transparent 55%),linear-gradient(130deg,#081b29,#11172f 70%,#182435);color:#eef7fa;box-shadow:0 15px 48px #0005;overflow:hidden}
++.masthead{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;border-bottom:1px solid #8ee9e02b}
++.identity{min-width:0;padding:clamp(20px,3vw,38px)}
++.logo{display:block;width:min(220px,100%);border-radius:10px;overflow:hidden;margin-bottom:22px}
++.logo :global(.akashic-brand-logo){display:block;width:100%;max-width:none}.logo img{display:block;width:100%;height:auto}
++.identity p{margin:0 0 10px;color:#e4c574;font-size:.8rem;font-weight:800;letter-spacing:.13em}
++.identity h2{margin:0 0 15px;font:400 clamp(1.65rem,3.1vw,2.8rem)/1.12 Georgia,serif;color:#fff1d7;max-width:18ch}
++.identity>span{display:block;font-size:.9rem;line-height:1.6;color:#c5d9dc}
++.entryLinks{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:18px}.entryLinks a{display:inline-flex;align-items:center;min-height:44px;font-size:.8rem;color:#b5eee4;text-underline-offset:4px}
++.entryLinks .newsroom{padding:10px 14px;border:1px solid #dabb78;border-radius:7px;background:#e9ce8f;color:#10202b;font-weight:700;text-decoration:none}
++.art{min-width:0;margin:0;background:#07131e}.art>a{display:block}.art img{display:block;width:100%;height:auto;aspect-ratio:1279/720}.art figcaption{padding:12px 18px;font-size:.72rem;line-height:1.6;color:#c8d5d9}.art figcaption a{color:#b7efe3;text-underline-offset:3px}
++.broadcast a:focus-visible{outline:3px solid #f8db94;outline-offset:-3px}
+ .broadcast :global(.metta-search){width:100%;margin:0;border:0;border-radius:0;box-shadow:none;background:#07172566;padding:18px 26px}
+-.tickers{min-width:0;border-block:1px solid #8ee9e02b}
+-.tickers>:global(.ticker-stack){margin:0}
++.tickers{min-width:0;border-block:1px solid #8ee9e02b}.tickers>:global(.ticker-stack){margin:0}
+ .broadcast :global(.psy-radio){margin:0;border:0;border-radius:0;background:linear-gradient(100deg,#11192e,#211536);padding:14px 26px}
+-@media(max-width:800px){.masthead{grid-template-columns:180px minmax(0,1fr);gap:14px;padding:18px}.newsroom{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:10px 14px}.newsroom strong{font-size:1.55rem}.newsroom small{font-size:.75rem}.broadcast :global(.metta-search),.broadcast :global(.psy-radio){padding:16px 18px}}
+-@media(max-width:480px){.broadcast{width:calc(100% - 20px);border-radius:14px}.masthead{grid-template-columns:1fr}.logo{max-width:210px}.identity h2{font-size:1.6rem}.identity>span{font-size:.85rem}.newsroom{grid-column:1}.broadcast :global(.metta-search-intro h2){font-size:1.3rem}}
++@media(max-width:800px){.masthead{grid-template-columns:1fr}.identity h2{max-width:25ch}.identity{padding:22px}.logo{width:180px;margin-bottom:16px}.art{border-top:1px solid #8ee9e02b}.broadcast :global(.metta-search),.broadcast :global(.psy-radio){padding:16px 18px}}
++@media(max-width:480px){.broadcast{width:calc(100% - 20px);border-radius:14px}.identity h2{font-size:1.9rem}.broadcast :global(.metta-search-intro h2){font-size:1.3rem}}
++@media(forced-colors:active){.broadcast,.entryLinks .newsroom{border:1px solid CanvasText}}
+diff --git a/app/home-newsroom-stories.module.css b/app/home-newsroom-stories.module.css
+new file mode 100644
+index 0000000..1747e97
+--- /dev/null
++++ b/app/home-newsroom-stories.module.css
+@@ -0,0 +1,18 @@
++.desk{width:min(1280px,calc(100% - 28px));min-width:0;margin:0 auto 36px;color:#edf7f4;scroll-margin-top:100px}
++:global(.home-header-stack)>.desk{order:-27}
++.heading{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;border-bottom:1px solid #739a9b66;padding-bottom:18px}
++.heading p{font-size:.74rem;letter-spacing:.12em;color:#e8c982;line-height:1.6;margin:0 0 8px}
++.heading h2{font:400 clamp(1.8rem,3vw,2.8rem)/1.15 Georgia,serif;margin:0}
++.desk a{color:#b0f1e4;text-underline-offset:4px}
++.desk a:focus-visible{outline:3px solid #f5d88f;outline-offset:4px;border-radius:2px}
++.note{max-width:80ch;color:#b8cdd0;font-size:.92rem;line-height:1.6;margin:16px 0 22px}
++.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
++.card{min-width:0;display:flex;flex-direction:column;padding:24px;background:linear-gradient(145deg,#102a33,#101c2a);border:1px solid #749da355;border-radius:14px;overflow-wrap:anywhere}
++.cardTop{display:flex;align-items:start;gap:14px}.cardTop>span{font:400 2.6rem/1 Georgia,serif;color:#e9c57b}.cardTop small{color:#a4e9db;font-size:.7rem;letter-spacing:.08em;line-height:1.6}
++.card .date{color:#d4c8a2;font-size:.72rem;line-height:1.7;letter-spacing:.035em;margin:18px 0 8px}
++.card h3{font:400 clamp(1.3rem,2vw,1.7rem)/1.25 Georgia,serif;margin:0 0 14px}.card h3 a{color:#fff4dd;text-decoration:none}.card h3 a:hover{text-decoration:underline}
++.card>p:not(.date){color:#c8d6d9;font-size:.94rem;line-height:1.7;margin:0 0 22px}
++.card footer{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:12px;border-top:1px solid #72989c40}.card footer a{display:inline-flex;align-items:center;min-height:44px;font-size:.82rem}
++.links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:16px}.links a,.heading>a{display:inline-flex;align-items:center;min-height:44px;font-size:.86rem}
++@media(max-width:850px){.grid{grid-template-columns:1fr}.card{padding:20px}.card h3{font-size:1.65rem}.cardTop{align-items:center}.desk{width:calc(100% - 28px)}}
++@media(forced-colors:active){.card{border:1px solid CanvasText}}
+diff --git a/app/metta-search-controls.module.css b/app/metta-search-controls.module.css
+new file mode 100644
+index 0000000..54d75d7
+--- /dev/null
++++ b/app/metta-search-controls.module.css
+@@ -0,0 +1,5 @@
++.tools{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:#cddfe1;font-size:.85rem}
++.tools select,.tools button{font:inherit;min-height:44px;max-width:100%;border:1px solid #81acae;border-radius:7px;background:#102b35;color:#eaf8f4;padding:8px 12px}.tools button{cursor:pointer}
++.tools select:focus-visible,.tools button:focus-visible{outline:3px solid #efd08d;outline-offset:3px}
++.metadata{display:block!important;padding:0!important;margin-top:9px;color:#f4db9a;font-size:.76rem;line-height:1.6;letter-spacing:.03em;white-space:normal}
++@media(max-width:500px){.tools label{width:100%}.tools select{flex:1;min-width:0}}
+diff --git a/app/page.tsx b/app/page.tsx
+index a2b6191..1e42eca 100644
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -12,6 +12,7 @@ import "./psy-radio.css";
+ import PossibleFuturesStargate from "./PossibleFuturesStargate";
+ import HomeSacredFire from "./HomeSacredFire";
+ import HomeBroadcastHeader from "./HomeBroadcastHeader";
++import HomeNewsroomStories from "./HomeNewsroomStories";
+ import Akn24EarthNewsroom from "./Akn24EarthNewsroom";
+ import ParadicePortal from "./ParadicePortal";
+ import { CURRENT_RELEASE_LABEL, RouteRelease } from "./ReleaseMark";
+@@ -206,6 +207,7 @@ export default function Home() {
+         </div>
+         <GlobalHeader className="home-global-header" />
+         <HomeBroadcastHeader />
++        <HomeNewsroomStories />
+         <AkashicPsiHero />
+         <LivingResearchCommons />
+         <div className="home-conference-entry" id="tsc2026">
+@@ -247,7 +249,6 @@ export default function Home() {
+             <b><i className="signal-dot signal-blue is-pulsing" aria-hidden="true"/>● CONCEPT BRIEF ACTIVE</b>
+           </span>
+         </a>
+-        <section className="tsc-programme-update" style={{padding:"clamp(20px,4vw,34px)",margin:"24px 0",border:"1px solid rgba(109,237,220,.55)",borderRadius:24,background:"rgba(13,36,36,.65)",overflowWrap:"anywhere"}} aria-label="Latest AKN24 briefing"><p className="section-label">AKN24 · 21 OCTOBER 2026 · 4 MIN BRIEFING</p><h2>Microdosing Methods, Brain Prediction &amp; a NOAA Forecast Check</h2><p>A microdosing methods correction, a new cognitive-prediction review and an explicit caveat about NOAA’s conflicting forecast text.</p><p><a href="/akn24#briefing-2026-10-21">Read the 21 October Briefing →</a> · <a href="https://news.akashicnet.org/#briefing-2026-10-21">Open the Report Cards ↗</a></p></section>
+         <section id="latest-highlights" className="home-latest-highlights" aria-labelledby="latest-highlights-title">
+           <header>
+             <div>
+diff --git a/docs/operations/homepage-newsroom-source-map-2026-10-22.md b/docs/operations/homepage-newsroom-source-map-2026-10-22.md
+new file mode 100644
+index 0000000..ed678a1
+--- /dev/null
++++ b/docs/operations/homepage-newsroom-source-map-2026-10-22.md
+@@ -0,0 +1,29 @@
++# Homepage newsroom source map
++
++This change continues the existing homepage newsroom, rather than replacing its current editorial collection. Inspection began at Sites version 1071, commit `862014ab6edb2510093124cc806c4d6fc78fc529`. The live homepage already contained HomeBroadcastHeader, MettaSearch, InsightsTicker, NewsTicker and PsyNationRadio. The publishing source is the Sites repository for project `appgprj_6a93c8c170388191b89b2d90a544c0b1`; its current public domain is https://akashicnet.org.
++
++During the work, version 1072 / `b37723f30fb68e102f4e104911e9145d9b5d9867` added QCI content. Preserve that source when integrating this change.
++
++## Source authority
++
++The GitHub repository `tws9stmcbf-web/AkashicNET` was inspected at main `e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4`. Its `website/` tree is a historical review snapshot. It has no current package manifest and its homepage is generated from `website/status-templates/home.tsx.in`. It is not the source used by the verified current Sites deployment. The earlier route ledger, `references/sites/akashicnet-org-route-sync-2026-09-14.json`, records the same separation. Open PR #403 also records later Sites publication separately from its proposed GitHub snapshot changes.
++
++Edit this checkout's `app/HomeBroadcastHeader.tsx`, `app/HomeNewsroomStories.tsx`, `app/MettaSearch.tsx` and associated modules for this feature. There is no homepage status-template generator in the authoritative Sites checkout. Do not copy the historical GitHub homepage over the deployed homepage or assume a GitHub merge publishes Sites. GitHub review can preserve the exact Sites patch and a deployment receipt without migrating unrelated routes, protected content or runtime configuration.
++
++## What changes
++
++- Reuse the existing branded logo and Pachamama newsroom artwork in a responsive lead panel. Retain the AI-art attribution and image-description access.
++- Keep InsightsTicker, the archive NewsTicker and the opt-in PsyNationRadio in the top broadcast panel. Their controls and privacy behaviour are unchanged.
++- Add a finite three-report evidence desk immediately after the broadcast panel, fed by the already-public `lib/newsroom-oct21.json` records. Retain report source, correction and bulletin dates and evidence/status wording verbatim. The selection is explicitly dated, without a real-time-news claim.
++- Extend the existing public page search with these report bodies. Support the public-page-and-report scope or featured-report-only scope. Preserve ranking, accent folding, additional results, clear-search focus and a focused results region. Announce only the result count, not the entire changing result list.
++- Preserve original article pages, source records, classifications and public-discovery exclusions. Search runs locally; no query telemetry or external search API is added.
++
++## Maintenance and checks
++
++The featured report adapter is an explicit public allowlist, not a crawl of all local files. When changing editions, update the adapter, its edition label and source record import together; confirm target anchors in the public newsroom. Keep source labels distinct from publication or correction dates. Do not treat selection for the homepage as evidence promotion.
++
++Run `npm run typecheck`, `node --test tests/home-newsroom.test.mjs`, the normal production build and `node --test tests/home-newsroom-rendered.test.mjs tests/akn24-rendered.test.mjs`. The build runs generated-ledger checks, public-route/asset checks, media capacity checks and sitemap privacy checks.
++
++Use a complete Git history before running the page-history generator. A shallow checkout makes the pre-existing generator misidentify the root commit as every page's first publication; those generated changes must not be released. Full history was retrieved for this work.
++
++The managed browser preview timed out at Vite startup twice. Browser interactions and phone/tablet screenshots are not verified by the production build or rendered HTML tests. CSS uses bounded grids and a single-column breakpoint; this is not a substitute for browser QA.
+diff --git a/lib/newsroom-stories.mjs b/lib/newsroom-stories.mjs
+new file mode 100644
+index 0000000..1d2f1e7
+--- /dev/null
++++ b/lib/newsroom-stories.mjs
+@@ -0,0 +1,16 @@
++import cards from './newsroom-oct21.json' with { type: 'json' };
++
++// Public report records already rendered in /akn24/BriefingOct21.
++// Keep these labels verbatim: source, publication, correction and bulletin dates differ.
++export const newsroomEdition = { label: '21 October 2026', dateTime: '2026-10-21', href: '/akn24#briefing-2026-10-21' };
++export const newsroomStories = Object.entries(cards).map(([id, card]) => ({
++  href: `/akn24#${id === 'forecast' ? 'space-weather-2026-10-21' : id}`,
++  title: card.title,
++  description: card.summary,
++  dateLabel: card.date,
++  evidence: card.tag,
++  sourceUrl: card.url,
++  source: card.source,
++  text: [card.observed, card.interpretation, card.hypothesis, card.testimony, card.speculation, card.unresolved, card.source].join(' '),
++  kind: 'report',
++}));
+diff --git a/lib/page-history.generated.ts b/lib/page-history.generated.ts
+index b30ad58..78c187f 100644
+--- a/lib/page-history.generated.ts
++++ b/lib/page-history.generated.ts
+@@ -4,10 +4,10 @@ export const siteSourceUpdated = "2026-10-22";
+ export const pageHistory = [
+   {
+     "route": "/",
+-    "iteration": 209,
++    "iteration": 210,
+     "firstTracked": "2026-08-30",
+     "updated": "2026-10-22",
+-    "commit": "862014a"
++    "commit": "4cd6fa6"
+   },
+   {
+     "route": "/7d",
+@@ -1348,10 +1348,10 @@ export const pageHistory = [
+   },
+   {
+     "route": "/qci",
+-    "iteration": 2,
++    "iteration": 3,
+     "firstTracked": "2026-10-22",
+     "updated": "2026-10-22",
+-    "commit": "dadf90d"
++    "commit": "b37723f"
+   },
+   {
+     "route": "/question-reality",
+diff --git a/lib/public-search.mjs b/lib/public-search.mjs
+new file mode 100644
+index 0000000..2221726
+--- /dev/null
++++ b/lib/public-search.mjs
+@@ -0,0 +1,34 @@
++/** @typedef {{href: string, title: string, description: string, text: string, evidence?: string, dateLabel?: string, source?: string, kind?: string}} SearchEntry */
++/** @param {string} value */
++export const fold = value => value.toLocaleLowerCase('en-GB').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
++
++/** @param {ReadonlyArray<SearchEntry>} entries @param {string} query */
++export function searchPages(entries, query) {
++  const words = fold(query.trim()).split(/\s+/).filter(Boolean);
++  if (!words.length) return [];
++  return entries.map(item => {
++    const title = fold(item.title);
++    const description = fold(item.description);
++    const route = fold(item.href.replaceAll('-', ' ').replaceAll('/', ' '));
++    const text = fold([item.text, item.evidence || '', item.dateLabel || '', item.source || ''].join(' '));
++    const score = words.every(word => title.includes(word) || route.includes(word) || description.includes(word) || text.includes(word))
++      ? words.reduce((total, word) => total + (title.includes(word) ? 10 : 0) + (route.includes(word) ? 5 : 0) + (description.includes(word) ? 3 : 0) + (text.includes(word) ? 1 : 0), 0)
++      : 0;
++    return { item, score };
++  }).filter(({ score }) => score > 0).sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
++}
++
++/** @param {string} text @param {string} query */
++export function excerptFor(text, query) {
++  const clean = text.replace(/&(?:amp|quot|apos|nbsp|lt|gt);/g, entity =>
++    ({ '&amp;': '&', '&quot;': '"', '&apos;': "'", '&nbsp;': ' ', '&lt;': '<', '&gt;': '>' })[entity] || entity
++  ).replace(/\s+/g, ' ').trim();
++  const positions = fold(query).split(/\s+/).filter(Boolean).map(word => fold(clean).indexOf(word)).filter(index => index >= 0);
++  if (!positions.length) return '';
++  const hit = Math.min(...positions);
++  let start = Math.max(0, hit - 45);
++  let end = Math.min(clean.length, hit + 105);
++  if (start) start = clean.indexOf(' ', start) + 1 || start;
++  if (end < clean.length) end = clean.lastIndexOf(' ', end) > hit ? clean.lastIndexOf(' ', end) : end;
++  return `${start ? '…' : ''}${clean.slice(start, end).trim()}${end < clean.length ? '…' : ''}`;
++}
+diff --git a/lib/site-search.generated.ts b/lib/site-search.generated.ts
+index 23dd417..587bd15 100644
+--- a/lib/site-search.generated.ts
++++ b/lib/site-search.generated.ts
+@@ -4,7 +4,7 @@ export const siteSearchIndex = [
+     "href": "/",
+     "title": "AkashicNET home",
+     "description": "",
+-    "text": "ACCESS WISDOM ACROSS SPACE &amp; TIME · REACH YOUR INFINITE POTENTIAL Start Here Our mission Explore Find a question Check the Evidence Sources &amp; limits Join In Meet the communities Support Help the project grow HIGH-PRIORITY PROTOTYPE · CARE GATEWAY Harm &amp; Risk Reduction + Support Urgent help, altered-state grounding, mental wellbeing and safer community support. Compassion first. Safety before interpretation. OPEN THE CARE GATEWAY → COMMUNITY SAFETY BOUNDARY · Educational information and lived experience are not personalised medical advice. No drug sourcing or vendor links. Check local law, interactions and individual risks; seek qualified help when needed. In an emergency, use local emergency services. Read the full care guidance → After Hours · Deeper Inquiry From €7/month · Members’ content &amp; selected downloads. View pricing &amp; join → FEATURED NEXT BIG QUESTION · BQ003 Can Love Harmonise Consciousness With the Cosmos? “We may not need to merge with the cosmos. We may need to remember that we were never separate.” Exploring the sacred relatedness of all conscious beings—and the cosmos itself. ● UNASSESSED / UNRESOLVED ● CONCEPT BRIEF ACTIVE AKN24 · 21 OCTOBER 2026 · 4 MIN BRIEFING Microdosing Methods, Brain Prediction &amp; a NOAA Forecast Check A microdosing methods correction, a new cognitive-prediction review and an explicit caveat about NOAA’s conflicting forecast text. Read the 21 October Briefing → Open the Report Cards ↗ AKN24 · ANTI-DOOMSCROLL SCREEN · NEW PUBLICATIONS Fresh Paths Through the Living Library highlights Scroll with intention, not panic → READ THE PUBLICATION → TSC2026 publication dates use San Diego time. Evidence labels describe the status of claims, not their importance. Try finite phone mode → Enter the AKN24 Newsroom → · What’s new → AKASHICNET PORTAL TO INFINITY A Living Multidimensional Library of Consciousness Consciousness Meta-Awareness Mettā Possible Futures Explore Understand Evolve Serve Enter the Paradigm Stargate → AkashicNET is the front end to my whole universe—across the interweb, space and time, branching timelines and incarnations. Founder vision · poetic orientation, not an empirical claim Press to enter the Living Library ✨ ASK A BIG QUESTION Noetic Sciences Door of Wonder AkashicVISION Sacred Spaces Stargate Climate Adaptation 🛸 AKN24 · Interstellar News Friendly alien hosts. Real research topics. A playful universe. Browse 21 published highlights → Toroidal imagery is an artistic interpretation of recurring field patterns. A toroidal universe remains a hypothesis. Fund the question — not the answer. Support the open Living Library → AWE → CURIOSITY PORTAL SIGNAL · 12-SECOND ORIGINAL What is your BIG Question? A rapid journey through the Portal to Infinity: toroidal light, living worlds, BuddhaFly and AKN24 arriving from a possible 2100. Press play to hear the original cosmic psytrance signal. Intelligence solves. Meta-intelligence evolves. Mettā-intelligence serves. Creative boundary: original artistic visual and sound design. The dimensional imagery is metaphor, not scientific evidence or a prediction of the future. Explore the Big Questions → Download the Reel ↓ Your browser does not support embedded video. Open the Portal Signal video. Sound starts only when you press Play · 12 seconds · vertical 9:16 Stargate imagery is an artistic and contemplative metaphor, not scientific evidence. A contemplative threshold Beyond the veil “The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.” — AkashicNET interpretation Māyā is used here as contemplative language for apparent separation. It invites us to examine the boundaries created by perception, identity and inherited frames, without claiming that physical boundaries are unreal. Toroidal metaphor Awareness flows inward through reflection and outward through relationship and service. Meta-intelligence Intelligence examines the frames, biases and uncertainties shaping how it learns. Mettā-intelligence Growing capability is directed towards loving-kindness, non-harm, dignity and flourishing. Enter Akashic♾️🗝️ · The Infinity Key Search Māyā on r/NeuronsToNirvana NEW · SPIRITUAL SCI-FI · HOMESENSE VR What survives when everything changes? Two sacred toroidal hearts. One metadimensional blue box. Enter the time vortex where regeneration, resurrection and reincarnation become an identity puzzle. OPEN THE POWER OF THE DOCTOR → Editorial and experiential themes—not scientific claims. Tap or click the image to view it full size. Explore these themes as links FLOW · Be in the Current AWE · Expand Beyond Belief CHILLS · Transcend the Ordinary LIVING LIBRARY · Connect the Knowledge Commons WE ARE ONE · One Planet • One Consciousness AkashicNET.org · Love for all beings Sacred love is the highest frequency in the cosmos. 😉♾️ May the toroidal force be with you. ♾️✨ A poetic expression of boundless compassion, inspired by the bodhisattva vow. “Frequency” and “toroidal force” are metaphors here, not physical claims. Future AkashicNET project HELP BUILD THE LIVING FUTURES LAB FUND THE QUESTION — NOT THE ANSWER. Future development requires support for evidence curation, research infrastructure, interactive visualisation, the Possible Futures simulator, hosting, accessibility, and scientific / interdisciplinary collaboration. Support the project → Scan to support Begin with wonder WHAT QUESTION BROUGHT YOU HERE? Choose a doorway into evidence, interpretation and open inquiry—not a promise of final answers. Choose one clear doorway Two ways inward. One living inquiry. Begin with the measurable and embodied, or with meaning and lived experience. The distinction guides attention without separating the whole person. RESEARCH · HEALTH · EMBODIMENT Mind &amp; Body Neuroscience, psychopharmacology, perception, ecology and the conditions that help human beings recover and flourish. Explore Mind &amp; Body → WHOLE PERSON Measured signals · lived meaning MEANING · PRACTICE · RELATIONSHIP Heart &amp; Spirit Contemplation, wisdom traditions, creativity, compassion and first-person experience—held with context and discernment. Explore Heart &amp; Spirit → All subjects Big Questions Frameworks Possible Futures Guided experience · Evidence-aware QUESTION YOUR REALITY Have you ever questioned the nature of your reality? Explore Māyā, psychedelic perception, neuroscience, music, Pachamama, the toroidal heart and the limits of everyday models. 🎭 Cultural Metaphor · 🌿 Contemplati"
++    "text": "ACCESS WISDOM ACROSS SPACE &amp; TIME · REACH YOUR INFINITE POTENTIAL Start Here Our mission Explore Find a question Check the Evidence Sources &amp; limits Join In Meet the communities Support Help the project grow HIGH-PRIORITY PROTOTYPE · CARE GATEWAY Harm &amp; Risk Reduction + Support Urgent help, altered-state grounding, mental wellbeing and safer community support. Compassion first. Safety before interpretation. OPEN THE CARE GATEWAY → COMMUNITY SAFETY BOUNDARY · Educational information and lived experience are not personalised medical advice. No drug sourcing or vendor links. Check local law, interactions and individual risks; seek qualified help when needed. In an emergency, use local emergency services. Read the full care guidance → After Hours · Deeper Inquiry From €7/month · Members’ content &amp; selected downloads. View pricing &amp; join → FEATURED NEXT BIG QUESTION · BQ003 Can Love Harmonise Consciousness With the Cosmos? “We may not need to merge with the cosmos. We may need to remember that we were never separate.” Exploring the sacred relatedness of all conscious beings—and the cosmos itself. ● UNASSESSED / UNRESOLVED ● CONCEPT BRIEF ACTIVE AKN24 · ANTI-DOOMSCROLL SCREEN · NEW PUBLICATIONS Fresh Paths Through the Living Library highlights Scroll with intention, not panic → READ THE PUBLICATION → TSC2026 publication dates use San Diego time. Evidence labels describe the status of claims, not their importance. Try finite phone mode → Enter the AKN24 Newsroom → · What’s new → AKASHICNET PORTAL TO INFINITY A Living Multidimensional Library of Consciousness Consciousness Meta-Awareness Mettā Possible Futures Explore Understand Evolve Serve Enter the Paradigm Stargate → AkashicNET is the front end to my whole universe—across the interweb, space and time, branching timelines and incarnations. Founder vision · poetic orientation, not an empirical claim Press to enter the Living Library ✨ ASK A BIG QUESTION Noetic Sciences Door of Wonder AkashicVISION Sacred Spaces Stargate Climate Adaptation 🛸 AKN24 · Interstellar News Friendly alien hosts. Real research topics. A playful universe. Browse 21 published highlights → Toroidal imagery is an artistic interpretation of recurring field patterns. A toroidal universe remains a hypothesis. Fund the question — not the answer. Support the open Living Library → AWE → CURIOSITY PORTAL SIGNAL · 12-SECOND ORIGINAL What is your BIG Question? A rapid journey through the Portal to Infinity: toroidal light, living worlds, BuddhaFly and AKN24 arriving from a possible 2100. Press play to hear the original cosmic psytrance signal. Intelligence solves. Meta-intelligence evolves. Mettā-intelligence serves. Creative boundary: original artistic visual and sound design. The dimensional imagery is metaphor, not scientific evidence or a prediction of the future. Explore the Big Questions → Download the Reel ↓ Your browser does not support embedded video. Open the Portal Signal video. Sound starts only when you press Play · 12 seconds · vertical 9:16 Stargate imagery is an artistic and contemplative metaphor, not scientific evidence. A contemplative threshold Beyond the veil “The illusion of Māyā creates boundaries. Beyond the veil lies the Boundless.” — AkashicNET interpretation Māyā is used here as contemplative language for apparent separation. It invites us to examine the boundaries created by perception, identity and inherited frames, without claiming that physical boundaries are unreal. Toroidal metaphor Awareness flows inward through reflection and outward through relationship and service. Meta-intelligence Intelligence examines the frames, biases and uncertainties shaping how it learns. Mettā-intelligence Growing capability is directed towards loving-kindness, non-harm, dignity and flourishing. Enter Akashic♾️🗝️ · The Infinity Key Search Māyā on r/NeuronsToNirvana NEW · SPIRITUAL SCI-FI · HOMESENSE VR What survives when everything changes? Two sacred toroidal hearts. One metadimensional blue box. Enter the time vortex where regeneration, resurrection and reincarnation become an identity puzzle. OPEN THE POWER OF THE DOCTOR → Editorial and experiential themes—not scientific claims. Tap or click the image to view it full size. Explore these themes as links FLOW · Be in the Current AWE · Expand Beyond Belief CHILLS · Transcend the Ordinary LIVING LIBRARY · Connect the Knowledge Commons WE ARE ONE · One Planet • One Consciousness AkashicNET.org · Love for all beings Sacred love is the highest frequency in the cosmos. 😉♾️ May the toroidal force be with you. ♾️✨ A poetic expression of boundless compassion, inspired by the bodhisattva vow. “Frequency” and “toroidal force” are metaphors here, not physical claims. Future AkashicNET project HELP BUILD THE LIVING FUTURES LAB FUND THE QUESTION — NOT THE ANSWER. Future development requires support for evidence curation, research infrastructure, interactive visualisation, the Possible Futures simulator, hosting, accessibility, and scientific / interdisciplinary collaboration. Support the project → Scan to support Begin with wonder WHAT QUESTION BROUGHT YOU HERE? Choose a doorway into evidence, interpretation and open inquiry—not a promise of final answers. Choose one clear doorway Two ways inward. One living inquiry. Begin with the measurable and embodied, or with meaning and lived experience. The distinction guides attention without separating the whole person. RESEARCH · HEALTH · EMBODIMENT Mind &amp; Body Neuroscience, psychopharmacology, perception, ecology and the conditions that help human beings recover and flourish. Explore Mind &amp; Body → WHOLE PERSON Measured signals · lived meaning MEANING · PRACTICE · RELATIONSHIP Heart &amp; Spirit Contemplation, wisdom traditions, creativity, compassion and first-person experience—held with context and discernment. Explore Heart &amp; Spirit → All subjects Big Questions Frameworks Possible Futures Guided experience · Evidence-aware QUESTION YOUR REALITY Have you ever questioned the nature of your reality? Explore Māyā, psychedelic perception, neuroscience, music, Pachamama, the toroidal heart and the limits of everyday models. 🎭 Cultural Metaphor · 🌿 Contemplative Perspective · 🔬 Established Evidence · ⚙️ Emerging Science · 🧠 Hypothesis · 🌀 Speculation 🚪 ENTER THE REALITY STARGATE NEW REALM · Mathematical structure → speculative analogy ENTER THE 7D REALM Explore hypercube projections, vacuum-perspective imagery, perception, spirituality and pro"
+   },
+   {
+     "href": "/7d",
+diff --git a/tests/home-newsroom-rendered.test.mjs b/tests/home-newsroom-rendered.test.mjs
+new file mode 100644
+index 0000000..4b76101
+--- /dev/null
++++ b/tests/home-newsroom-rendered.test.mjs
+@@ -0,0 +1,28 @@
++import assert from 'node:assert/strict';
++import test from 'node:test';
++import { createTestWorker } from './worker-runtime.mjs';
++import { newsroomStories } from '../lib/newsroom-stories.mjs';
++
++test('homepage renders the newsroom, dated reports and source links before longer features', async t => {
++  const worker = createTestWorker();
++  t.after(() => worker.dispose());
++  const response = await worker.dispatchFetch('https://akashicnet.org/', { headers: { accept: 'text/html' } });
++  assert.equal(response.status, 200);
++  const html = await response.text();
++  const desk = html.match(/<section id="newsroom-stories"[\s\S]*?<\/section>/)?.[0];
++  assert.ok(desk);
++  assert.ok(html.indexOf('id="psy-radio"') < html.indexOf('id="newsroom-stories"'));
++  assert.ok(html.indexOf('id="newsroom-stories"') < html.indexOf('id="latest-highlights"'));
++  assert.match(html, /<img[^>]+src="\/images\/akn24-pachamama-newsroom-v2.webp"[^>]+fetchPriority="high"/i);
++  for (const story of newsroomStories) {
++    assert.ok(desk.includes(`href="${story.href}"`));
++    assert.ok(desk.includes(`href="${story.sourceUrl}"`));
++    assert.ok(desk.includes(story.dateLabel));
++    assert.ok(desk.includes(story.evidence));
++  }
++  assert.doesNotMatch(html, /<iframe[^>]+(?:youtube|soundcloud|mixcloud|podcasts\.apple)/i, 'players require an explicit choice');
++  const newsroomResponse = await worker.dispatchFetch('https://akashicnet.org/akn24', { headers: { accept: 'text/html' } });
++  assert.equal(newsroomResponse.status, 200);
++  const newsroom = await newsroomResponse.text();
++  for (const story of newsroomStories) assert.ok(newsroom.includes(`id="${story.href.split('#')[1]}"`));
++});
+diff --git a/tests/home-newsroom.test.mjs b/tests/home-newsroom.test.mjs
+new file mode 100644
+index 0000000..bfabe8d
+--- /dev/null
++++ b/tests/home-newsroom.test.mjs
+@@ -0,0 +1,43 @@
++import assert from 'node:assert/strict';
++import test from 'node:test';
++import { readFile } from 'node:fs/promises';
++import { searchPages } from '../lib/public-search.mjs';
++import { newsroomStories } from '../lib/newsroom-stories.mjs';
++import { publicPages, unlistedRoutes } from '../scripts/site-routes.mjs';
++
++test('search finds report body terms that are absent from page-only titles', () => {
++  const results = searchPages(newsroomStories, 'multiplicity');
++  assert.equal(results.length, 1);
++  assert.equal(results[0].item.href, '/akn24#microdosingcorrectionoct21');
++  assert.equal(results[0].item.dateLabel, 'SOURCE 12 OCT · CORRECTED 21 OCT 2026');
++  assert.match(results[0].item.evidence, /CONFERENCE REANALYSIS/);
++  assert.equal(results[0].item.sourceUrl, 'https://www.ecnp.eu/media/wn0lxtb5/lsd-microdosing.pdf');
++});
++
++test('search requires every term and handles blank, absent and accent-insensitive queries', () => {
++  const entries = [{ title: 'Mettā', description: 'Compassion and care', text: '', href: '/metta' }];
++  assert.equal(searchPages(entries, 'metta care').length, 1);
++  assert.equal(searchPages(entries, 'metta missing').length, 0);
++  assert.deepEqual(searchPages(entries, '  '), []);
++  assert.deepEqual(searchPages(entries, 'zzzxxyy'), []);
++});
++
++test('title matches rank above body-only matches without changing source records', () => {
++  const entries = [{ title: 'Other', description: '', text: 'NOAA', href: '/other' }, { title: 'NOAA', description: '', text: '', href: '/noaa' }];
++  const before = JSON.stringify(entries);
++  assert.equal(searchPages(entries, 'NOAA')[0].item.href, '/noaa');
++  assert.equal(JSON.stringify(entries), before);
++});
++
++test('search index only contains the public route inventory', async () => {
++  const source = await readFile(new URL('../lib/site-search.generated.ts', import.meta.url), 'utf8');
++  const entries = JSON.parse(source.slice(source.indexOf(' = ') + 3).replace(/ as const;\s*$/, ''));
++  const routes = new Set((await publicPages()).map(page => page.route));
++  assert.equal(entries.length, routes.size);
++  for (const entry of entries) {
++    assert.ok(routes.has(entry.href));
++    assert.ok(!unlistedRoutes.has(entry.href));
++    assert.doesNotMatch(entry.href, /^\/(?:private|sandbox|contact-inbox)(?:\/|$)/);
++  }
++  for (const entry of newsroomStories) assert.ok(routes.has(entry.href.split('#')[0]));
++});

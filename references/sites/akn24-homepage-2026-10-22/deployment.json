@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "source_authority": "ChatGPT Sites repository",
+  "site_project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+  "public_url": "https://akashicnet.org",
+  "verified_deployment_url": "https://akashicnet-public.vocal-crow-3599.chatgpt.site",
+  "baseline": {
+    "commit_sha": "b37723f30fb68e102f4e104911e9145d9b5d9867",
+    "version_number": 1072
+  },
+  "implementation_commit": "4cd6fa6b9f468e490e36b9f8eb54b0b8fa53caac",
+  "deployed_commit": "8a15ad5d83b493eeff71a52bfcef1eae7140a9cb",
+  "saved_version_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1~appgver_1e01867f710c8191ae53b1db26adbe2d",
+  "version_number": 1073,
+  "deployment": {
+    "id": "appgdep_6ad9ad4fe08c81918ae51700620b1c22",
+    "status": "succeeded",
+    "updated_at": "2026-10-22T06:29:55.868738+00:00"
+  },
+  "archive_sha256": "sha256:a1d2569766b08d53209c2189fff59e729a1e4b0805983d6ba12951ff8804e652",
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "public_routes": 283,
+    "public_routes_assets": "passed",
+    "media_capacity": "passed",
+    "sitemap_privacy": "passed",
+    "focused_tests": {
+      "passed": 6,
+      "failed": 0
+    },
+    "git_diff_check": "passed",
+    "browser_qa": "unverified: managed preview timed out twice during Vite startup"
+  },
+  "preserved": [
+    "Newer QCI edit at baseline",
+    "Original article and source dates",
+    "Correction and bulletin date distinctions",
+    "Existing evidence/status labels and source links",
+    "Public search exclusions",
+    "Ticker motion controls and opt-in radio"
+  ],
+  "github_relationship": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "main_at_inspection": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+    "role": "historical review snapshot; merging this review record does not deploy Sites",
+    "homepage_template": "website/status-templates/home.tsx.in",
+    "existing_related_pull_request": 403
+  },
+  "review_limit": "Phone/tablet visual appearance, browser keyboard interactions and reduced-motion behaviour remain unverified."
+}
