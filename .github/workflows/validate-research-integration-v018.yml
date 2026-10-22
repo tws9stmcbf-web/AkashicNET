@@ -54,3 +54,9 @@ jobs:
           cmp "$RUNNER_TEMP/before.json" tests/fixtures/research_integration_v018/before-public.json
           cmp "$RUNNER_TEMP/after.json" tests/fixtures/research_integration_v018/after-public.json
           git diff --exit-code
+      - name: Replay append-only input revision history
+        run: |
+          python scripts/research_integration_v018.py --contract tests/fixtures/research_integration_v018/revision-current.json --previous-contract tests/fixtures/research_integration_v018/revision-previous.json --previous-sha256 a145a99ee2538448ac1da6b2478456ad36bad60c133c9d2e74056249c265f2e2 --recorded-on 2026-10-22 --private-out "$RUNNER_TEMP/revision-private.json" --public-out "$RUNNER_TEMP/revision-public.json"
+          cmp "$RUNNER_TEMP/revision-private.json" tests/fixtures/research_integration_v018/revision-merged.json
+          cmp "$RUNNER_TEMP/revision-public.json" tests/fixtures/research_integration_v018/revision-public.json
+          git diff --exit-code

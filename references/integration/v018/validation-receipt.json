@@ -23,5 +23,16 @@
     "OMNI full manual/component original-byte pins incomplete",
     "Local review records are trusted input, not authenticated human identities",
     "Native history validation exists; cross-packet primary history requires curated append-only observations"
-  ]
+  ],
+  "followup": {
+    "date": "2026-10-22",
+    "status": "CROSS_REVISION_HISTORY_IMPLEMENTED_DRAFT",
+    "passed": 74,
+    "failed": 0,
+    "new_real_packet": "NONE_ADMITTED_R190_LOCK_UNCHANGED",
+    "synthetic_revision_replay": "PRIVATE_AND_PUBLIC_BYTE_COMPARISON_PASS",
+    "human_review": "PENDING",
+    "independent_review": "PENDING",
+    "exact_commit_ci": "TRACK_IN_DRAFT_PR"
+  }
 }

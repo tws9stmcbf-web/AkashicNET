@@ -122,8 +122,8 @@ an appended, dated locator correction with the original stable source ID retaine
 The old approval becomes stale and yields HOLD. Only a new simulated review bound
 to the new observation restores the synthetic projection. The original observation
 and prior review remain in the file; evidence status and BQ001 do not change.
-Native assessment chains are also validated; cross-packet primary metadata history
-still requires curated append-only observations rather than automatic reconciliation.
+Native assessment chains are also validated. The follow-up below adds bounded
+reconciliation between two complete, trusted pinned input snapshots.
 
 ## Reproduce offline
 
@@ -156,3 +156,53 @@ Rollback: remove this additive pilot or discard generated previews; retain pinne
 inputs and earlier observations. No database, accepted graph edge, source evidence
 label, live Site, release tag or sealed checkpoint is changed. Offline green tests
 prove bounded mechanical behavior, not scientific validity or release readiness.
+
+## Follow-up: append-only input revision history
+
+The optional `--previous-contract`, `--previous-sha256` and `--recorded-on` arguments
+continue from an exact prior private contract. All three are required together.
+The checksum pins exact prior bytes; it does not authenticate their author. The
+new snapshot must advance the dataset revision and input digest and retain the same
+source identities, contract version, source kinds and relationship decisions. A new
+URL-based primary key or work-family decision requires separate adjudication; the
+importer never silently matches, merges or remaps it. Production packet import still
+requires the committed r190 lock. No later real packet has been admitted; adopting
+a later revision requires a reviewed lock update and rerun.
+
+Reconciliation preserves every old observation and review byte-for-byte as JSON
+values. Unchanged sources do not acquire duplicate observations just because the
+packet revision changed. Changed primary metadata appends an observation. Community
+assessment IDs must extend the previous ordered chain, preserving all mapped old
+assessment values and observation fingerprints; removal, reorder or rewrite fails.
+Restrictions remain attached to the actual observation. Visibility is taken from
+the incoming context, so a newly restricted source stays blocked.
+
+Each revision creates a deterministic, dated **PENDING_HUMAN_REVIEW** record, bound
+to the complete reconciled histories, with no reviewer identity, permissions or
+scientific findings copied from a prior review. The earlier review
+record is retained as history; the tool does not imply its acceptance of the new
+input. Current imports with pre-existing approval or drafted scientific findings
+are rejected by reconciliation; this entry point accepts a fresh adapter worksheet.
+
+The checked-in `revision-*` examples are **invented synthetic revisions 1 and 2**,
+not an r191 export or any new scientific result. Their checksum manifest pins the
+prior/current/merged fixture bytes. The example appends a primary metadata scope
+correction and native community assessment 2, keeps assessment 1 and the previous
+simulated review, then returns HOLD pending a new review. CI reproduces both the
+private merged contract and public status byte-for-byte.
+
+```bash
+python scripts/research_integration_v018.py --contract tests/fixtures/research_integration_v018/revision-current.json --previous-contract tests/fixtures/research_integration_v018/revision-previous.json --previous-sha256 a145a99ee2538448ac1da6b2478456ad36bad60c133c9d2e74056249c265f2e2 --recorded-on 2026-10-22 --private-out /tmp/v018-revision-private.json --public-out /tmp/v018-revision-public.json
+```
+
+This is a consistency checker over trusted local contracts, not authenticated
+review, full-corpus historical reconciliation or a permissive merge engine. Primary
+metadata reverting to an older identical observation ID is held for manual review
+rather than assigned a new identity automatically. Historical URL rewrites across
+existing assessments are also rejected. Original source observation dates remain
+unchanged; the new review records the reconciliation date. No claim, rights or
+canonical relationship is promoted, and no release requirement changes.
+
+Follow-up validation: **74 local tests passed**, including 15 new revision-history
+cases. The synthetic merged private contract and public HOLD status replay
+byte-for-byte. CI evidence for the updated commit is tracked in draft PR #413.

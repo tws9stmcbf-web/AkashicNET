@@ -3,7 +3,6 @@ import argparse
 import copy
 import hashlib
 import json
-import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -168,6 +167,69 @@ def adapt(packet_bytes, lock):
     return document
 
 
+
+def reconcile(previous, current, recorded_on):
+    """Append a fresh pinned snapshot; never rewrite history or transfer approval.
+
+    Both contracts are private trusted inputs. This verifies consistency, not
+    authentic authorship. Production packets still require the committed lock.
+    """
+    validate(previous)
+    validate(current)
+    require(current['dataset_revision'] > previous['dataset_revision'], 'revision must advance')
+    require(current['input_sha256'] != previous['input_sha256'], 'new input digest required')
+    require(current['fixture_kind'] == previous['fixture_kind'], 'fixture/real boundary')
+    require(current['contract_version'] == previous['contract_version'], 'contract migration requires review')
+    fresh = current['reviews']
+    require(len(fresh) == 1 and fresh[0]['state'] == 'PENDING_HUMAN_REVIEW'
+            and fresh[0]['reviewer'] is None and fresh[0]['disclosures'] == []
+            and all(fresh[0][k] == [] for k in ['direct_evidence', 'interpretation', 'synthesis',
+                                              'hypothesis', 'counter_evidence']), 'fresh unreviewed import required')
+    old_sources = {s['source_id']: s for s in previous['sources']}
+    require(set(old_sources) == {s['source_id'] for s in current['sources']},
+            'identity change requires separate adjudication')
+    result = copy.deepcopy(current)
+    ignored = {'input_sha256', 'input_path', 'supersedes', 'correction_reason'}
+
+    def meaning(o):
+        return {k: v for k, v in o.items() if k not in ignored}
+
+    for source in result['sources']:
+        old = old_sources[source['source_id']]
+        require(all(source[k] == old[k] for k in ['kind', 'work_family', 'relationships']),
+                'source relationship change requires separate adjudication')
+        history = copy.deepcopy(old['observations'])
+        incoming = source['observations']
+        if source['kind'] == 'community_citation':
+            old_ids = [o['upstream_assessment_id'] for o in history]
+            new_ids = [o['upstream_assessment_id'] for o in incoming]
+            require(None not in old_ids + new_ids and len(set(old_ids)) == len(old_ids),
+                    'native assessment identity required')
+            require(new_ids[:len(old_ids)] == old_ids, 'upstream assessment history removed or reordered')
+            require(all(meaning(a) == meaning(b) for a, b in zip(history, incoming)),
+                    'immutable upstream assessment was rewritten')
+            additions = incoming[len(history):]
+        else:
+            require(len(incoming) == 1, 'fresh primary snapshot required')
+            additions = [] if meaning(history[-1]) == meaning(incoming[0]) else incoming
+        for observation in additions:
+            observation = copy.deepcopy(observation)
+            require(observation['observed_at'] <= recorded_on, 'future observation')
+            require(observation['observation_id'] not in {o['observation_id'] for o in history},
+                    'observation identity collision')
+            observation.update(supersedes=history[-1]['observation_id'],
+                               correction_reason='Appended from later pinned PRISM input; no evidence promotion')
+            history.append(observation)
+        source['observations'] = history
+    result['reviews'] = copy.deepcopy(previous['reviews'])
+    review = pending_review(result, 'OMNI-BQ001-IMPORT-' + digest(
+        [current['input_sha256'], bindings(result), previous['reviews'][-1]['review_id'], recorded_on])[:24])
+    review.update(supersedes=result['reviews'][-1]['review_id'], recorded_at=recorded_on)
+    result['reviews'].append(review)
+    validate(result)
+    return result
+
+
 def bindings(document):
     return {s['source_id']: digest(s) for s in document['sources']}
 
@@ -273,24 +335,33 @@ def main():
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--packet', type=Path)
     group.add_argument('--contract', type=Path)
+    parser.add_argument('--previous-contract', type=Path, help='Private prior contract; append history, invalidate approval')
+    parser.add_argument('--previous-sha256', help='Trusted SHA-256 of the exact previous contract bytes')
+    parser.add_argument('--recorded-on', help='ISO date of this reconciliation, required with --previous-contract')
     parser.add_argument('--private-out', type=Path)
     parser.add_argument('--public-out', type=Path, required=True)
     args = parser.parse_args()
     # Remove stale approved projection before a failing validation can leave it available.
-    paths = [p.resolve() for p in [args.packet, args.contract, args.private_out, args.public_out] if p]
+    paths = [p.resolve() for p in [args.packet, args.contract, args.previous_contract, args.private_out, args.public_out] if p]
     require(len(paths) == len(set(paths)), 'input/private/public paths must differ')
     require(not any(p.is_relative_to(ROOT) for p in paths[-(2 if args.private_out else 1):]),
             'runtime outputs must stay outside the repository')
     args.public_out.unlink(missing_ok=True)
     document = (adapt(args.packet.read_bytes(), json.loads(LOCK.read_text())) if args.packet
                 else validate(json.loads(args.contract.read_text())))
+    require(bool(args.previous_contract) == bool(args.recorded_on) == bool(args.previous_sha256),
+            'previous contract, checksum and recorded date required together')
+    if args.previous_contract:
+        previous_bytes = args.previous_contract.read_bytes()
+        require(hashlib.sha256(previous_bytes).hexdigest() == args.previous_sha256, 'previous contract checksum mismatch')
+        document = reconcile(json.loads(previous_bytes), document, args.recorded_on)
     result = project(document)
     if args.private_out:
         import os
         fd = os.open(args.private_out, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
         os.fchmod(fd, 0o600)
         with os.fdopen(fd, 'w') as handle:
-            handle.write(json.dumps(document, indent=2, ensure_ascii=False) + '\n')
+            handle.write(json.dumps(document, indent=2, ensure_ascii=False, sort_keys=True) + '\n')
     args.public_out.write_bytes(canonical(result) + b'\n')
     print(result['status'])
 

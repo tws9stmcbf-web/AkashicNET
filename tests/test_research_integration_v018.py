@@ -228,3 +228,131 @@ def test_promotion_guards_are_not_shared_between_runs():
     assert sample()['promotion_guards']['rights'] is False
     out=m.project(sample());out['promotion_guards']['rights']=True
     assert m.project(sample())['promotion_guards']['rights'] is False
+
+
+def revision_pair(change_primary=True, add_assessment=True):
+    data, lock = packet_and_lock()
+    previous = m.adapt(data, lock)
+    previous['fixture_kind'] = 'SYNTHETIC'
+    previous['reviews'][0].update(state='SIMULATED_REVIEW', reviewer='SIMULATED_NOT_A_HUMAN')
+    packet = json.loads(data)
+    packet['dataset_revision'] = 2
+    lock['dataset_revision'] = 2
+    rows = packet['collections']
+    if change_primary:
+        rows['source_metadata'][0].update(access_scope='Synthetic corrected metadata scope', observed_at='2026-10-21')
+    if add_assessment:
+        assessment = copy.deepcopy(rows['assessments'][0])
+        assessment.update(assessment_id=2, supersedes=1, assessment_date='2026-10-21',
+                          scope='Synthetic corrected post scope')
+        rows['assessments'].append(assessment)
+        rows['current_assessments'] = [copy.deepcopy(assessment)]
+        rows['restrictions'] += [dict(r, assessment_id=2) for r in list(rows['restrictions'])]
+    data, lock = repin(packet, lock)
+    current = m.adapt(data, lock)
+    current['fixture_kind'] = 'SYNTHETIC'
+    return previous, current
+
+
+def test_cross_revision_preserves_history_and_requires_fresh_review():
+    old, new = revision_pair()
+    old_bytes, new_bytes = m.canonical(old), m.canonical(new)
+    merged = m.reconcile(old, new, '2026-10-22')
+    assert m.canonical(old) == old_bytes and m.canonical(new) == new_bytes
+    assert merged['reviews'][:-1] == old['reviews']
+    review = merged['reviews'][-1]
+    assert review['state'] == 'PENDING_HUMAN_REVIEW' and review['reviewer'] is None
+    assert review['disclosures'] == [] and review['source_bindings'] == m.bindings(merged)
+    assert review['supersedes'] == old['reviews'][-1]['review_id']
+    for prior, source in zip(old['sources'], merged['sources']):
+        assert source['source_id'] == prior['source_id']
+        assert source['observations'][:-1] == prior['observations']
+        assert source['observations'][-1]['input_sha256'] == new['input_sha256']
+    assert merged['sources'][1]['observations'][-1]['upstream_assessment_id'] == 2
+    assert m.project(merged)['status'] == 'HOLD'
+    assert m.canonical(m.reconcile(old, new, '2026-10-22')) == m.canonical(merged)
+
+
+def test_cross_revision_unchanged_sources_are_not_duplicate_observations():
+    old, new = revision_pair(False, False)
+    merged = m.reconcile(old, new, '2026-10-22')
+    assert [s['observations'] for s in merged['sources']] == [s['observations'] for s in old['sources']]
+    assert len(merged['reviews']) == 2 and merged['input_sha256'] == new['input_sha256']
+
+
+@pytest.mark.parametrize('mutation', ['scope', 'native_id', 'remove', 'relationship', 'identity', 'revision', 'digest', 'fixture'])
+def test_cross_revision_rejects_immutable_or_boundary_changes(mutation):
+    old, new = revision_pair()
+    if mutation == 'scope': new['sources'][1]['observations'][0]['access_scope'] = 'Unrecorded rewrite'
+    if mutation == 'native_id': new['sources'][1]['observations'][0]['upstream_assessment_id'] = 99
+    if mutation == 'remove':
+        new['sources'][1]['observations'].pop(0)
+        new['sources'][1]['observations'][0]['supersedes'] = None
+    if mutation == 'relationship': new['sources'][0]['work_family'] = 'UNREVIEWED_FAMILY'
+    if mutation == 'identity':
+        source = new['sources'][0]; original = source['source_id']; source['source_id'] = 'CHANGED'
+        new['reviews'][0]['source_bindings']['CHANGED'] = new['reviews'][0]['source_bindings'].pop(original)
+    if mutation == 'revision': new['dataset_revision'] = old['dataset_revision']
+    if mutation == 'digest': new['input_sha256'] = old['input_sha256']
+    if mutation == 'fixture': new['fixture_kind'] = 'REAL_PRIVATE_INPUT'
+    with pytest.raises(ValueError): m.reconcile(old, new, '2026-10-22')
+
+
+def test_cross_revision_current_review_cannot_smuggle_approval():
+    old, new = revision_pair()
+    new['reviews'][0].update(state='SIMULATED_REVIEW', reviewer='SIMULATED_NOT_A_HUMAN')
+    with pytest.raises(ValueError): m.reconcile(old, new, '2026-10-22')
+
+
+def test_cross_revision_dates_and_restrictions_stay_closed():
+    old, new = revision_pair()
+    with pytest.raises((ValueError, ValidationError)): m.reconcile(old, new, '2026-10-19')
+    r = next(r for r in new['sources'][1]['observations'][-1]['restrictions'] if r['category'] == 'rights')
+    r['status'] = 'unknown'
+    merged = m.reconcile(old, new, '2026-10-22')
+    assert next(r for r in merged['sources'][1]['observations'][-1]['restrictions'] if r['category'] == 'rights')['status'] == 'unknown'
+    assert m.project(merged)['sources'] == []
+
+
+def test_cross_revision_cli_replay_and_prior_path_alias(tmp_path):
+    old, new = revision_pair()
+    previous, current = tmp_path/'previous.json', tmp_path/'current.json'
+    previous.write_bytes(m.canonical(old)); current.write_bytes(m.canonical(new))
+    public, private = tmp_path/'public.json', tmp_path/'private.json'
+    command = [sys.executable, str(m.ROOT/'scripts/research_integration_v018.py'),
+               '--contract', str(current), '--previous-contract', str(previous),
+               '--previous-sha256', hashlib.sha256(previous.read_bytes()).hexdigest(),
+               '--recorded-on', '2026-10-22', '--private-out', str(private), '--public-out', str(public)]
+    result = subprocess.run(command, capture_output=True)
+    assert result.returncode == 0, result.stderr
+    assert json.loads(private.read_bytes()) == m.reconcile(old, new, '2026-10-22')
+    assert private.read_text() == json.dumps(m.reconcile(old, new, '2026-10-22'), indent=2, ensure_ascii=False, sort_keys=True)+'\n'
+    assert json.loads(public.read_bytes())['status'] == 'HOLD'
+    prior_bytes = previous.read_bytes()
+    command[-1] = str(previous)
+    assert subprocess.run(command, capture_output=True).returncode != 0
+    assert previous.read_bytes() == prior_bytes
+
+
+def test_cross_revision_cli_previous_checksum_mismatch_clears_stale_preview(tmp_path):
+    old, new = revision_pair()
+    previous, current = tmp_path/'previous.json', tmp_path/'current.json'
+    previous.write_bytes(m.canonical(old)); current.write_bytes(m.canonical(new))
+    public = tmp_path/'public.json'; public.write_text('STALE_PREVIEW')
+    result = subprocess.run([sys.executable, str(m.ROOT/'scripts/research_integration_v018.py'),
+                            '--contract', str(current), '--previous-contract', str(previous),
+                            '--previous-sha256', '0'*64, '--recorded-on', '2026-10-22',
+                            '--public-out', str(public)], capture_output=True)
+    assert result.returncode != 0 and not public.exists()
+    assert b'PRIVATE' not in result.stderr
+
+
+def test_cross_revision_checked_in_replay_and_checksums():
+    lock=json.loads((FIX/'revision-replay-lock.json').read_bytes())
+    for name, key in [('revision-previous.json','previous_sha256'),('revision-current.json','current_sha256'),('revision-merged.json','merged_sha256')]:
+        assert hashlib.sha256((FIX/name).read_bytes()).hexdigest()==lock[key]
+    old=json.loads((FIX/'revision-previous.json').read_bytes())
+    current=json.loads((FIX/'revision-current.json').read_bytes())
+    merged=m.reconcile(old,current,lock['recorded_on'])
+    assert merged==json.loads((FIX/'revision-merged.json').read_bytes())
+    assert m.canonical(m.project(merged))+b'\n'==(FIX/'revision-public.json').read_bytes()
