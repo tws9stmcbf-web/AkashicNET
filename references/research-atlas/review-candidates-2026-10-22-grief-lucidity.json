@@ -1,0 +1,224 @@
+{
+  "batch_id": "ATLAS-20261022-GRIEF-LUCIDITY-REVIEW",
+  "version": "0.1.0",
+  "status": "REVIEW_CANDIDATE",
+  "assessed_on": "2026-10-22",
+  "schema_note": "Editorial extension of research/research-database-framework.md; not a canonical graph or PRISM import schema.",
+  "question_status": "UNRESOLVED",
+  "sources": [
+    {
+      "source_id": "SRC-ATLAS-LYGHT-2025",
+      "title": "We Need a Safe Place to Talk About How We Feel: A Randomized Controlled Trial of a Peer Grief Support Intervention for Youth in Foster Care",
+      "doi": "10.1177/00302228251362661",
+      "authors_short": "Mitchell, Schuurman, Beam and Martinez",
+      "original_date": "2025-07-27",
+      "lane": "grief-care intervention",
+      "curation_label": "REASSESSMENT",
+      "design": "Randomized waitlist trial",
+      "population": "Foster-care youth aged 12–20",
+      "sample": {
+        "randomized": 78,
+        "intervention": 40,
+        "waitlist": 38,
+        "six_month_respondents": 21
+      },
+      "findings": [
+        "Abstract reports positive six-month hope, social-support and self-worth outcomes."
+      ],
+      "limitations": [
+        "Waitlist could join after eight weeks; six-month observations are not an untreated randomized comparison.",
+        "Institutional report conditions short-term treatment analyses on attending at least one session.",
+        "Attrition, attendance selection, expectancy and changing placements limit causal interpretation."
+      ],
+      "access_scope": "Publisher abstract/disclosures; selected design, results and funding pages of 2024 institutional report. Journal full text not read.",
+      "references": [
+        "https://doi.org/10.1177/00302228251362661",
+        "https://www.dougy.org/assets/uploads/LYGHT-Research-Findings-Second-RCT.pdf"
+      ],
+      "funding": "Duke Endowment (institutional report)",
+      "conflicts": "Full journal declaration not verified; programme affiliations recorded",
+      "data_code_preregistration": "Data not public; code and preregistration unknown",
+      "relevance": {
+        "score": 4,
+        "reason": "Direct grief-care context; applicability to other formats untested"
+      },
+      "quality": {
+        "score": 2,
+        "reason": "Provisional: analysis selection and follow-up limits"
+      },
+      "confidence": "High in extracted facts; moderate in bounded interpretation",
+      "next_review_action": "Obtain full text, intention-to-treat results, missing-data methods and uncertainty estimates.",
+      "framework_connections": [
+        "HOMESENSE",
+        "#METAD",
+        "ADAPT"
+      ],
+      "bq_ids": [],
+      "assessment_added": "Attendance-conditioned and follow-up analyses distinguished; report and journal article grouped as one study.",
+      "reviewed_on": "2026-10-22",
+      "first_discovered_on": null,
+      "status": "REVIEW_CANDIDATE",
+      "evidence_type": "empirical research",
+      "editorial_evidence_label": "preliminary",
+      "canonical_evidence_status": "NOT_PROMOTED",
+      "replication_status": "Independent replication not established by this review",
+      "supports_models": [],
+      "public_integration": false,
+      "rights": "Bibliographic metadata and limited original summary only; no participant data or source full text reproduced"
+    },
+    {
+      "source_id": "SRC-ATLAS-LYGHT-2022",
+      "title": "The L.Y.G.H.T. Program: An Evaluation of a Peer Grief Support Intervention for Youth in Foster Care",
+      "doi": "10.1007/s10560-022-00843-7",
+      "authors_short": "Mitchell, Schuurman, Shapiro, Sattler, Sorensen and Martinez",
+      "original_date": "2022-04-02",
+      "issue_date": "2024-02",
+      "lane": "grief-care intervention",
+      "curation_label": "REASSESSMENT",
+      "design": "Randomized waitlist mixed-method study; six-week assessments",
+      "population": "Youth in three foster-care group homes",
+      "sample": {
+        "participants": 42
+      },
+      "findings": [
+        "Publisher abstract reports improved social support, hopefulness and self-worth; total problem behaviours remained unchanged."
+      ],
+      "limitations": [
+        "Small selected setting; controlled estimates and their uncertainty not extracted from full text.",
+        "Shared programme authors do not establish independent replication."
+      ],
+      "access_scope": "Publisher abstract, dates, data/code and funding/conflict declarations; full text not read.",
+      "references": [
+        "https://doi.org/10.1007/s10560-022-00843-7"
+      ],
+      "funding": "Duke Endowment",
+      "conflicts": "Authors declare none; programme affiliations recorded",
+      "data_code_preregistration": "Data not public; analysis information available on request; preregistration unknown",
+      "relevance": {
+        "score": 4,
+        "reason": "Direct care-context fit"
+      },
+      "quality": {
+        "score": 2,
+        "reason": "Provisional abstract-level appraisal; major methods still unverified"
+      },
+      "confidence": "High in dates and abstract claims; low in complete risk-of-bias assessment",
+      "next_review_action": "Obtain controlled outcome table and full methods; retain null endpoint.",
+      "framework_connections": [
+        "HOMESENSE",
+        "#METAD"
+      ],
+      "bq_ids": [],
+      "assessment_added": "Null total-problems outcome and online-versus-issue dates preserved.",
+      "reviewed_on": "2026-10-22",
+      "first_discovered_on": null,
+      "status": "REVIEW_CANDIDATE",
+      "evidence_type": "empirical research",
+      "editorial_evidence_label": "preliminary",
+      "canonical_evidence_status": "NOT_PROMOTED",
+      "replication_status": "Independent replication not established by this review",
+      "supports_models": [],
+      "public_integration": false,
+      "rights": "Bibliographic metadata and limited original summary only; no participant data or source full text reproduced"
+    },
+    {
+      "source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+      "title": "A prospective observational study of lucid episodes in advanced dementia",
+      "doi": "10.1093/geront/gnaf178",
+      "pmid": "40748700",
+      "pmcid": "PMC12871080",
+      "authors_short": "Gilmore-Bykovskyi et al.",
+      "institution": "University of Wisconsin–Madison",
+      "original_date": null,
+      "issue_date": "2025-09-08",
+      "original_date_note": "Exact first-online date not independently verified; issue citation is 8 September 2025.",
+      "lane": "lucidity in advanced dementia",
+      "curation_label": "HISTORICAL BACKLOG",
+      "design": "Prospective audiovisual observations; multi-informant validation; within-person baseline comparison",
+      "population": "People living with advanced dementia",
+      "sample": {
+        "participants": 20,
+        "observations": 539,
+        "validated_episodes": 9,
+        "participants_with_validated_episodes": 3
+      },
+      "findings": [
+        "Directly observed episodes included increased meaningful vocalizations; features varied between people."
+      ],
+      "limitations": [
+        "Events cluster within three people: nine episodes are not nine independent participants.",
+        "Small observational cohort cannot establish population prevalence or a survival mechanism.",
+        "Full methods, confounder handling and neural measures not reviewed."
+      ],
+      "access_scope": "PubMed abstract and funding/conflict metadata; PMC header only before CAPTCHA; publisher full-text access failed.",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/40748700/",
+        "https://doi.org/10.1093/geront/gnaf178",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12871080/"
+      ],
+      "funding": "NIA R33AG069827",
+      "conflicts": "Authors declare none",
+      "data_code_preregistration": "Not verified",
+      "relevance": {
+        "score": 4,
+        "reason": "Direct lucidity measurement gap; contextual only to BQ001"
+      },
+      "quality": {
+        "score": 3,
+        "reason": "Provisional: prospective observation and validation, but small cohort and abstract-only appraisal"
+      },
+      "confidence": "High in abstract counts; limited in mechanism or complete methodological appraisal",
+      "next_review_action": "Read full methods and event definitions; audit comparator sampling, independent replication and cohort overlap.",
+      "framework_connections": [
+        "AWAKEN",
+        "HOMESENSE",
+        "#METAD"
+      ],
+      "bq_ids": [
+        "BQ001"
+      ],
+      "assessment_added": "Participant and episode denominators kept separate; lucidity not equated with terminal lucidity or post-mortem survival.",
+      "reviewed_on": "2026-10-22",
+      "first_discovered_on": null,
+      "status": "REVIEW_CANDIDATE",
+      "evidence_type": "empirical research",
+      "editorial_evidence_label": "preliminary",
+      "canonical_evidence_status": "NOT_PROMOTED",
+      "replication_status": "Independent replication not established by this review",
+      "supports_models": [],
+      "public_integration": false,
+      "rights": "Bibliographic metadata and limited original summary only; no participant data or source full text reproduced"
+    }
+  ],
+  "deduplication": {
+    "scope": "Visible conversation receipts; available local prior reports; GitHub BQ001 evidence batches 1–6 and consciousness-library expansion/review; targeted GitHub searches. Global cross-task completeness not established.",
+    "excluded_existing": [
+      {
+        "doi": "10.1016/j.resuscitation.2023.109903",
+        "source_id": "SRC-BQ001-AWARE2-2023",
+        "existing_record_ref": "references/big-questions/BQ001/evidence-batch1-v0.1.json#SRC-BQ001-AWARE2-2023",
+        "decision": "SUPPRESS_DUPLICATE",
+        "reason": "Denominators already recorded; no verified material update."
+      }
+    ],
+    "prior_grief_assessment": "RA-20261022-04 institutional overview and 22 October next-rotation report",
+    "new_research_claim": false
+  },
+  "correction_check": {
+    "scope": "Targeted DOI searches for AWARE II and gnaf178; no primary correction/retraction verified. Not a complete Crossmark audit."
+  },
+  "governance": {
+    "supports_models": [],
+    "accepted_edges": [],
+    "truth_inference": false,
+    "scientific_evidence_promotion": false,
+    "prism_imported": false,
+    "website_publication": false,
+    "privacy": "No participant-level data"
+  },
+  "next_rotation": [
+    "Full-text lucidity methods and comparator audit",
+    "Grief trial intention-to-treat and attrition audit",
+    "NDE correction and target-exposure denominators using existing source IDs"
+  ]
+}
