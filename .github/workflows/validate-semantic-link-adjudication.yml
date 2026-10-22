@@ -6,6 +6,7 @@ on:
       - "references/community/semantic-link-adjudication-v0.2.1.json"
       - "references/community/semantic-link-adjudication-v0.2.1.md"
       - "references/community/semantic-link-candidates-v0.2.0.json"
+      - "references/community/review-snapshots/semantic-link-candidates-v0.2.0-adjudicated.json"
       - "scripts/validate_semantic_link_adjudication_v021.py"
       - "scripts/validate_cross_source_edge_provenance_v01.py"
       - "tests/test_semantic_link_adjudication_v021.py"
