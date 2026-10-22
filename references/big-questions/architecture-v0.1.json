@@ -39,7 +39,13 @@
       "evidence_batches": [
         "references/big-questions/BQ002/evidence-batch1-review-candidates-v0.1.json"
       ],
-      "legacy_parallel_records": []
+      "legacy_parallel_records": [],
+      "review_artifacts": [
+        {
+          "path": "references/big-questions/BQ002/evidence-atlas-level5-review-candidate-v0.1.json",
+          "status": "REVIEW_CANDIDATE"
+        }
+      ]
     }
   },
   "release_invariants": {

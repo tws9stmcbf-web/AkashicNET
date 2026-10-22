@@ -1,0 +1,39 @@
+name: Validate BQ002 Level 5 evidence atlas
+
+on:
+  pull_request:
+    paths:
+      - "references/big-questions/BQ002/evidence-atlas-level5-review-candidate-v0.1.json"
+      - "references/big-questions/BQ002/spec-v0.1.json"
+      - "references/big-questions/architecture-v0.1.json"
+      - "scripts/validate_bq002_level5_evidence_atlas.py"
+      - "tests/test_bq002_level5_evidence_atlas.py"
+      - "scripts/validate_big_question_architecture_v01.py"
+      - "tests/test_big_question_architecture_v01.py"
+      - "scripts/validate_big_questions_registry_v013.py"
+      - ".github/workflows/validate-bq002-level5-evidence-atlas.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact tested commit
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "Tested commit: $EXPECTED_HEAD" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_bq002_level5_evidence_atlas.py
+      - run: python -m unittest tests/test_bq002_level5_evidence_atlas.py
+      - run: python scripts/validate_big_questions_registry_v013.py
+      - run: python scripts/validate_big_question_architecture_v01.py
