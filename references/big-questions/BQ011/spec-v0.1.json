@@ -1,0 +1,147 @@
+{
+  "id": "BQ011",
+  "version": "0.1.0",
+  "title": "What transforms experiences of interconnection into enduring compassionate action and planetary flourishing?",
+  "status": "UNRESOLVED",
+  "authoring_status": "REVIEW_CANDIDATE",
+  "public_beta_gate": false,
+  "conclusion_policy": "UNDETERMINED_AT_INGESTION",
+  "taxonomy_ref": "references/community/evidence-taxonomy-v0.10.json",
+  "scope": "inner_transformation_to_durable_behavior_institutional_change_and_ecological_outcomes",
+  "causal_chain": [
+    "TRANSFORMATIVE_EXPERIENCE",
+    "SELF_AND_VALUE_CHANGE",
+    "DURABLE_COMPASSIONATE_BEHAVIOR",
+    "COMMUNITY_AND_INSTITUTIONAL_CHANGE",
+    "HUMAN_AND_ECOLOGICAL_FLOURISHING"
+  ],
+  "causal_boundary": {
+    "transformative_experience_is_sufficient_cause": false,
+    "correlation_implies_transformation": false,
+    "self_report_is_behavioral_outcome": false,
+    "individual_change_implies_institutional_change": false,
+    "compassionate_intention_guarantees_benefit": false
+  },
+  "domains": [
+    "compassion_empathy_and_prosocial_behavior",
+    "psychedelic_and_contemplative_integration",
+    "selfhood_identity_and_prejudice_reduction",
+    "collective_intelligence_ritual_and_synchrony",
+    "trauma_repair_and_community_care",
+    "ecological_connectedness_and_stewardship",
+    "institutions_incentives_and_systemic_change",
+    "attention_media_ai_and_information_ecology",
+    "flourishing_measurement_and_long_term_follow_up"
+  ],
+  "models": [
+    {
+      "model_id": "MODEL-BQ011-TRANSIENT-STATE",
+      "name": "transient_state_model",
+      "position": "Experiences of interconnection may be meaningful yet fade without producing durable behavioural or institutional change.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ011-INTEGRATION",
+      "name": "integration_and_practice_model",
+      "position": "Durable change depends on repeated practice, psychological integration, supportive relationships and opportunities for action.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ011-SOCIAL-REINFORCEMENT",
+      "name": "social_reinforcement_model",
+      "position": "Communities and social norms determine whether compassionate intentions become stable habits or dissipate.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ011-STRUCTURAL-CONSTRAINT",
+      "name": "structural_constraint_model",
+      "position": "Institutional incentives, inequality and material conditions may dominate individual intentions and limit compassionate outcomes.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "model_id": "MODEL-BQ011-MULTILEVEL",
+      "name": "multilevel_transformation_model",
+      "position": "Lasting planetary benefit may require interacting individual, relational, institutional and ecological changes rather than a single intervention.",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-BQ011-FRAMEWORK-001",
+      "claim_type": "PROJECT_STATE",
+      "text": "BQ011 currently has no adjudicated substantive answer or accepted evidence batch.",
+      "domain": "flourishing_measurement_and_long_term_follow_up",
+      "evidence_label": "Established Evidence",
+      "provenance": [
+        "references/big-questions/BQ011/spec-v0.1.json"
+      ],
+      "source_ids": [],
+      "reviewed_support": true,
+      "scope": "project_state_only",
+      "uncertainty": "No causal, clinical, social or metaphysical conclusion is implied.",
+      "supports_models": []
+    }
+  ],
+  "outcome_families": [
+    "observable_helping_and_generosity",
+    "nonviolence_and_conflict_reduction",
+    "prejudice_and_dehumanization_reduction",
+    "community_care_and_belonging",
+    "ecological_stewardship_behavior",
+    "institutional_policy_and_incentive_change",
+    "durability_and_adverse_effects"
+  ],
+  "open_questions": [
+    "Which experiences of interconnection predict durable compassionate action rather than temporary self-report?",
+    "Which integration practices, relationships and material conditions mediate lasting change?",
+    "What adverse effects, spiritual bypassing, coercion or moral licensing can accompany transformation narratives?",
+    "How do individual changes interact with institutions, inequality, culture and ecological constraints?",
+    "Which outcomes can be measured prospectively across months or years?",
+    "How can Indigenous and culturally situated knowledge inform inquiry without extraction or flattening?",
+    "Which indicators capture flourishing without treating one culture's values as universal?"
+  ],
+  "graph": {
+    "node_types": [
+      "QUESTION",
+      "SOURCE",
+      "CLAIM",
+      "MODEL",
+      "OUTCOME",
+      "MEDIATOR",
+      "MODERATOR",
+      "UNCERTAINTY",
+      "OPEN_QUESTION"
+    ],
+    "edge_types": [
+      "SUPPORTED_BY",
+      "INTERPRETS",
+      "SUPPORTS_MODEL",
+      "CONTRADICTS",
+      "QUALIFIED_BY",
+      "MEDIATED_BY",
+      "MODERATED_BY",
+      "RAISES"
+    ],
+    "truth_inference_allowed": false,
+    "edge_state_may_upgrade_evidence": false
+  },
+  "cultural_governance": {
+    "indigenous_and_lineage_knowledge_is_not_generic_evidence": true,
+    "community_authority_permission_and_care_required": true,
+    "restricted_knowledge_must_remain_restricted": true,
+    "benefit_sharing_and_non_extractive_research_required": true,
+    "traditions_must_not_be_collapsed_into_one_path": true
+  },
+  "promotion_guards": {
+    "testimony_may_not_auto_promote_to_established_evidence": true,
+    "transformative_state_may_not_be_presented_as_durable_trait": true,
+    "compassionate_intention_may_not_be_presented_as_observed_benefit": true,
+    "individual_change_may_not_be_presented_as_system_change": true,
+    "correlation_may_not_be_presented_as_causation": true,
+    "source_count_may_not_upgrade_evidence": true,
+    "semantic_similarity_may_not_upgrade_evidence": true,
+    "ai_synthesis_may_not_be_primary_source": true,
+    "rights_promotion_allowed": false,
+    "scientific_truth_inference_allowed": false
+  }
+}
