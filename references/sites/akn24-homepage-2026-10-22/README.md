@@ -8,6 +8,7 @@ This PR records the exact patch implemented in the authoritative repository. It 
 
 - Baseline Sites commit: `b37723f30fb68e102f4e104911e9145d9b5d9867` (version 1072).
 - Implementation commit: `4cd6fa6b9f468e490e36b9f8eb54b0b8fa53caac`.
+- Deployed commit, including generated ledgers: `8a15ad5d83b493eeff71a52bfcef1eae7140a9cb` (Sites version 1073).
 - Source patch: [source.patch](source.patch). Paths are relative to the Sites checkout.
 - Source project: `appgprj_6a93c8c170388191b89b2d90a544c0b1`.
 - Public site: https://akashicnet.org.
@@ -22,7 +23,7 @@ The explicit featured-report adapter reuses the already-published 21 October sou
 
 ## Validation
 
-TypeScript checking passed. The initial production build, public route/media/sitemap gates, four focused search tests and two rendered page tests passed. Final reconciliation/build and deployment status are recorded separately in `deployment.json` when complete.
+TypeScript checking passed. The reconciled production build, public route/media/sitemap gates, four focused search tests and two rendered page tests passed. Sites version 1073 deployed successfully at 2026-10-22T06:29:55.868738+00:00. See `deployment.json` for the source commit, archive digest and native deployment receipt. The patch includes the regenerated search and history ledgers; historical first-publication dates are preserved.
 
 The managed browser preview timed out twice during Vite startup. Phone/tablet visual appearance, keyboard interaction and reduced-motion behaviour were not verified in a browser. Responsive CSS and retained controls are source-level safeguards, not proof of browser QA.
 
