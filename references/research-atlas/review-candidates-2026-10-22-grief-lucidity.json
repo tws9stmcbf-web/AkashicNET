@@ -1,6 +1,6 @@
 {
   "batch_id": "ATLAS-20261022-GRIEF-LUCIDITY-REVIEW",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "REVIEW_CANDIDATE",
   "assessed_on": "2026-10-22",
   "schema_note": "Editorial extension of research/research-database-framework.md; not a canonical graph or PRISM import schema.",
@@ -129,13 +129,13 @@
       "pmcid": "PMC12871080",
       "authors_short": "Gilmore-Bykovskyi et al.",
       "institution": "University of Wisconsin–Madison",
-      "original_date": null,
+      "original_date": "2025-08-01",
       "issue_date": "2025-09-08",
-      "original_date_note": "Exact first-online date not independently verified; issue citation is 8 September 2025.",
+      "original_date_note": "First-online date confirmed in publisher-indexed article history; issue citation retained separately.",
       "lane": "lucidity in advanced dementia",
       "curation_label": "HISTORICAL BACKLOG",
       "design": "Prospective audiovisual observations; multi-informant validation; within-person baseline comparison",
-      "population": "People living with advanced dementia",
+      "population": "Advanced dementia participants recruited from one 12-bed dementia hospice unit.",
       "sample": {
         "participants": 20,
         "observations": 539,
@@ -146,11 +146,13 @@
         "Directly observed episodes included increased meaningful vocalizations; features varied between people."
       ],
       "limitations": [
-        "Events cluster within three people: nine episodes are not nine independent participants.",
-        "Small observational cohort cannot establish population prevalence or a survival mechanism.",
-        "Full methods, confounder handling and neural measures not reviewed."
+        "Events cluster within three people; nine episodes are not nine independent participants.",
+        "Single hospice unit, limited demographic diversity, irregular observations and unequal follow-up restrict prevalence and generalisability.",
+        "Observation window was 08:00–18:00, so coverage was not continuous.",
+        "Non-English speech could not be coded for multilingual participants, including one with a lucid episode.",
+        "Physiological correlates remain a proposed research direction; this observational study does not establish a survival mechanism."
       ],
-      "access_scope": "PubMed abstract and funding/conflict metadata; PMC header only before CAPTCHA; publisher full-text access failed.",
+      "access_scope": "PubMed abstract/disclosures plus publisher-indexed methods and limitations excerpts. Direct publisher retrieval failed and PMC returned CAPTCHA. Selected text review, not complete full-text/supplement review.",
       "references": [
         "https://pubmed.ncbi.nlm.nih.gov/40748700/",
         "https://doi.org/10.1093/geront/gnaf178",
@@ -158,17 +160,17 @@
       ],
       "funding": "NIA R33AG069827",
       "conflicts": "Authors declare none",
-      "data_code_preregistration": "Not verified",
+      "data_code_preregistration": "A prior design publication is cited; prospective registration not verified. Future data sharing is mentioned, not verified as delivered. Code availability unknown.",
       "relevance": {
         "score": 4,
         "reason": "Direct lucidity measurement gap; contextual only to BQ001"
       },
       "quality": {
         "score": 3,
-        "reason": "Provisional: prospective observation and validation, but small cohort and abstract-only appraisal"
+        "reason": "Provisional: prospective observation and structured validation, with selected methods now inspected; small selected cohort and uneven surveillance."
       },
       "confidence": "High in abstract counts; limited in mechanism or complete methodological appraisal",
-      "next_review_action": "Read full methods and event definitions; audit comparator sampling, independent replication and cohort overlap.",
+      "next_review_action": "Audit complete event-validation criteria, comparator selection and statistical uncertainty; compare related analyses for shared participants before counting replication.",
       "framework_connections": [
         "AWAKEN",
         "HOMESENSE",
@@ -177,7 +179,7 @@
       "bq_ids": [
         "BQ001"
       ],
-      "assessment_added": "Participant and episode denominators kept separate; lucidity not equated with terminal lucidity or post-mortem survival.",
+      "assessment_added": "Confirmed first-online date and sampled hospice setting; documented surveillance and language-coding limits. No change to evidence promotion.",
       "reviewed_on": "2026-10-22",
       "first_discovered_on": null,
       "status": "REVIEW_CANDIDATE",
@@ -220,5 +222,19 @@
     "Full-text lucidity methods and comparator audit",
     "Grief trial intention-to-treat and attrition audit",
     "NDE correction and target-exposure denominators using existing source IDs"
+  ],
+  "review_updates": [
+    {
+      "date": "2026-10-22",
+      "source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+      "change": "Partial methods review replaces abstract-only access description; no complete-review claim.",
+      "source_url": "https://academic.oup.com/gerontologist/article/65/9/gnaf178/8220917",
+      "discovery_lead": {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13225770/",
+        "title": "Data-Driven Detection of Lucid Episodes in Advanced Dementia: Application of Latent Class Analysis to Observational Data",
+        "status": "UNASSESSED_LEAD",
+        "next_action": "Check shared cohort and identifiers before creating any source record or replication claim."
+      }
+    }
   ]
 }
