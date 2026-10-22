@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-22",
+  "status": "IMPLEMENTED_DRAFT_REAL_PILOT_HOLD",
+  "packet_revision": 190,
+  "packet_sha256_verified": "cbce536a124f0170b6d93ed8974cbe2c0110dc5409b986ddfb594cce91a7e71a",
+  "table_contracts_verified": 14,
+  "tests": {
+    "command": "python -m pytest -q tests/test_research_integration_v018.py tests/test_search_reddit_archive.py tests/test_bq001_public_status_boundary.py",
+    "passed": 59,
+    "failed": 0
+  },
+  "synthetic_before_after_byte_replay": "PASS",
+  "real_projection": "HOLD_NO_SOURCE_ROWS",
+  "human_review": "PENDING_NOT_INVENTED",
+  "independent_review": "PENDING",
+  "exact_commit_ci": "TRACK_IN_DRAFT_PR",
+  "release": "NOT_AUTHORIZED",
+  "primary_link_check": "2026-10-22 retrieval returned 404; not proof of deletion",
+  "reddit_link_check": "Pinned archive only; no live access",
+  "limitations": [
+    "No full primary appraisal",
+    "No rights or cultural-authority acceptance",
+    "OMNI full manual/component original-byte pins incomplete",
+    "Local review records are trusted input, not authenticated human identities",
+    "Native history validation exists; cross-packet primary history requires curated append-only observations"
+  ]
+}

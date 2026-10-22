@@ -1,0 +1,56 @@
+name: Bounded Research Integration pilot v018
+on:
+  pull_request:
+    paths:
+      - 'scripts/research_integration_v018.py'
+      - 'schemas/research-integration-v0.18.schema.json'
+      - 'schemas/research-integration-public-v0.18.schema.json'
+      - 'references/integration/v018/**'
+      - 'tests/test_research_integration_v018.py'
+      - 'tests/fixtures/research_integration_v018/**'
+      - 'docs/research-integration-v018.md'
+      - '.github/workflows/validate-research-integration-v018.yml'
+      - 'tools/search_reddit.py'
+      - 'scripts/reddit_corpus_census.py'
+      - 'references/community/reddit-uri-index.csv'
+      - 'references/community/n2n-index.csv'
+      - 'schemas/source-status-v0.16.schema.json'
+      - 'docs/AKASHICOMNI_V050_PUBLIC_STATUS.md'
+      - 'docs/v017-combined-validation.md'
+  push:
+    branches: [main, codex/v018-bounded-prism-integration]
+    paths:
+      - 'scripts/research_integration_v018.py'
+      - 'schemas/research-integration-v0.18.schema.json'
+      - 'schemas/research-integration-public-v0.18.schema.json'
+      - 'references/integration/v018/**'
+      - 'tests/test_research_integration_v018.py'
+      - 'tests/fixtures/research_integration_v018/**'
+      - 'docs/research-integration-v018.md'
+      - '.github/workflows/validate-research-integration-v018.yml'
+permissions:
+  contents: read
+jobs:
+  offline-pilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: '3.12'
+      - name: Record tested commit
+        run: git rev-parse HEAD
+      - name: Install fixed test dependencies
+        run: python -m pip install --disable-pip-version-check pytest==8.3.5 jsonschema==4.23.0
+      - name: Offline bounded pilot and inherited archive boundaries
+        run: python -m pytest -q tests/test_research_integration_v018.py tests/test_search_reddit_archive.py tests/test_bq001_public_status_boundary.py
+      - name: Replay synthetic correction export
+        run: |
+          python scripts/research_integration_v018.py --contract tests/fixtures/research_integration_v018/before.json --public-out "$RUNNER_TEMP/before.json"
+          python scripts/research_integration_v018.py --contract tests/fixtures/research_integration_v018/after.json --public-out "$RUNNER_TEMP/after.json"
+          cmp "$RUNNER_TEMP/before.json" tests/fixtures/research_integration_v018/before-public.json
+          cmp "$RUNNER_TEMP/after.json" tests/fixtures/research_integration_v018/after-public.json
+          git diff --exit-code
