@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 
+import NewsDeskTicker from "./NewsDeskTicker";
+import {
+  getKindnessAcrossSpeciesItems,
+  getPublishableNewsroomItems,
+  INSIGHTS_DIMENSIONS,
+  NEWSROOM_SNAPSHOT_TIMESTAMP,
+} from "./newsroom";
+
 export const metadata: Metadata = {
   title: "Schumann Activity Window · AkashicNET Interstellar Weather Report",
   description: "A dated AkashicNET 13D analysis of the Schumann-resonance activity visible across 11–12 September 2026, its cofactors, testimony and open questions.",
@@ -18,22 +26,7 @@ const evidence = [
   ["Lived Experience/Testimony", "Many people report disrupted sleep, vivid dreams, fatigue, mood changes or somatic sensitivity during solar, geomagnetic, lunar or Schumann-resonance events. Testimony is preserved without universalising it."],
   ["Hypothesis", "Circadian, melatonin, autonomic, electromagnetic, nutritional and neurodiversity-related pathways can be investigated using synchronized and blinded observations."],
   ["Speculation", "Collective-consciousness, societal-conflict and wider interstellar-field interpretations remain possibilities for inquiry, not established explanations of this event."],
-];
-const dimensions = [
-  ["01", "AWAKEN", "Notice the disturbance without deciding what it means."],
-  ["02", "HIERATIC", "Explore Earth as a living resonant symbol and preserve spiritual meaning as interpretation."],
-  ["03", "HOMESENSE", "Listen to sleep, mood, dream and somatic testimony as lived experience."],
-  ["04", "ADAPT", "Separate source signal, explanatory story and plausible confounders."],
-  ["05", "REGENERATE", "Respond with rest, grounding, reflection and compassionate care."],
-  ["06", "TRANSCEND", "Place Sun, Pachamama, biosphere and consciousness within a wider system."],
-  ["07", "#METAD v2.1", "Compare competing explanations and search for contradictions."],
-  ["08", "ACTC v2.0", "Map agency, context, temporal order and candidate causal pathways."],
-  ["09", "MultidimensionalCUT v4.0.0 · PAST", "Compare prior solar, geomagnetic, lunar and resonance patterns."],
-  ["10", "MultidimensionalCUT v4.0.0 · PRESENT", "Describe the dated 11–12 September activity window precisely."],
-  ["11", "MultidimensionalCUT v4.0.0 · FUTURE", "Pre-register what to measure during the next comparable event."],
-  ["12", "UMASC v7.2", "Relate matter, awareness, systems and culture without collapsing their differences."],
-  ["13", "AKASHICNET", "Synthesize the whole field while leaving unresolved questions open."],
-];
+] as const;
 const sources = [
   ["MeteoAgent live Schumann forecast", "https://meteoagent.com/schumann-resonance-forecast"],
   ["NOAA Space Weather Prediction Center", "https://www.spaceweather.gov/"],
@@ -43,9 +36,19 @@ const sources = [
   ["Synchronization of human sleep with the Moon cycle · Science Advances (2021)", "https://www.science.org/doi/10.1126/sciadv.abe0465"],
   ["Solar activity and spontaneous social processes · 2014", "https://doi.org/10.1134/S0001433814040045"],
   ["N2N · solar maximum and historic planetary shifts", "https://www.reddit.com/r/NeuronsToNirvana/comments/1jvtj6p/why_global_conflict_is_rising_due_to_solar/"],
-];
+] as const;
+const contextPanels = [
+  ["Schumann resonance", "Lightning-excited Earth–ionosphere modes remain distinct from later interpretations. Amplitude ≠ frequency, and a visible widget shape does not by itself reveal calibrated field strength."],
+  ["Geomagnetic Kp context", "Kp and related geomagnetic conditions are neighboring Earth-space-weather indicators, not synonyms for Schumann resonance. Quiet or unsettled geomagnetism can be recorded without claiming a direct biological effect."],
+  ["Solar context", "Coronal-hole solar wind and minor radio-blackout conditions belong to the wider dated context. They do not by themselves explain the source-plot pattern or a person’s sleep."],
+  ["Moon and body", "The event occurred near the new-Moon threshold, at roughly 1–3% illumination—not a full Moon. Sleep timing, artificial light, stress, weather, medication and baseline health remain separate cofactors to log."],
+  ["Symbolic OM imagery", "Any OM, orb or other spiritual artwork in adjacent AkashicNET surfaces is symbolic interpretation, not instrument telemetry. Correlation ≠ causation, and symbolic resonance does not establish a space-weather mechanism."],
+] as const;
 
 export default function InterstellarWeatherReport() {
+  const publishableItems = getPublishableNewsroomItems(NEWSROOM_SNAPSHOT_TIMESTAMP);
+  const kindnessItems = getKindnessAcrossSpeciesItems(NEWSROOM_SNAPSHOT_TIMESTAMP);
+
   return (
     <main style={{ minHeight: "100vh", color: "#f5f0e7", background: "radial-gradient(circle at 50% 8%, #17315a 0, #0a1026 34%, #050711 78%)" }}>
       <header className="nav-shell">
@@ -55,10 +58,11 @@ export default function InterstellarWeatherReport() {
 
       <article>
         <section style={{ ...shell, padding: "clamp(70px,10vw,132px) 0 50px", textAlign: "center" }}>
-          <p className="section-label">INSIGHTS NEWS DESK · INTERDIMENSIONAL LIGHTEXPLORERS HOTLINE</p>
+          <p className="section-label">AKASHICNET INSIGHTS NEWSROOM · INTERDIMENSIONAL LIGHTEXPLORERS HOTLINE</p>
           <h1 style={{ margin: "18px auto", maxWidth: 1060, fontSize: "clamp(3rem,7.5vw,7rem)", lineHeight: .94 }}>Schumann<br/><em style={{ color: "#d8b95c" }}>Activity Window</em></h1>
           <p style={{ color: "#e7cd7e", fontWeight: 800, letterSpacing: ".08em" }}>11–12 SEPTEMBER 2026 UTC · QUIET BY 13 SEPTEMBER · STARDATE 2026.09.12</p>
           <p style={{ maxWidth: 850, margin: "24px auto 0", color: "#d7d9e4", fontSize: "clamp(1.1rem,2.2vw,1.42rem)", lineHeight: 1.75 }}>A 13D spiritual-science exploration of a visible source-plot disturbance, its solar, geomagnetic, lunar and human cofactors, and the difference between meaningful connection and demonstrated causality.</p>
+          <NewsDeskTicker items={publishableItems} kindnessItems={kindnessItems} snapshotTimestamp={NEWSROOM_SNAPSHOT_TIMESTAMP} />
         </section>
 
         <figure style={{ ...shell, ...panel, overflow: "hidden", padding: 0 }}>
@@ -70,8 +74,9 @@ export default function InterstellarWeatherReport() {
           <p className="section-label">THE OBSERVATION</p>
           <div style={{ ...panel, padding: "clamp(26px,5vw,52px)" }}>
             <h2 style={{ fontSize: "clamp(2.2rem,5vw,4.4rem)", marginTop: 0 }}>What appeared on the chart?</h2>
-            <p style={{ color: "#d7d9e4", lineHeight: 1.85, fontSize: "1.08rem" }}>The MeteoAgent widget showed visibly stronger activity across 11–12 September, concentrated mainly across the lower displayed harmonic bands. By the time of review on 13 September, the widget labelled conditions <strong>Quiet</strong>. Because the accessible display did not supply a calibrated amplitude, named station, uncertainty interval or exact event peak, this report does not assign one.</p>
-            <p style={{ color: "#d7d9e4", lineHeight: 1.85 }}>The source page correctly distinguishes frequency from amplitude and notes that Schumann resonances are excited primarily by global lightning. It then moves from geophysics into proposed health explanations. AkashicNET preserves that shift as a question boundary: the physical signal is established; the claimed biological pathway remains under investigation.</p>
+            <p style={{ color: "#d7d9e4", lineHeight: 1.85, fontSize: "1.08rem" }}>The MeteoAgent widget showed visibly stronger activity across 11–12 September, concentrated mainly across the lower displayed harmonic bands. By the time of review on 13 September, the widget labelled conditions <strong>Quiet</strong>. Because the accessible display did not supply a calibrated amplitude, named station, uncertainty interval or exact event peak, this report does not assign one. Amplitude ≠ frequency.</p>
+            <p style={{ color: "#d7d9e4", lineHeight: 1.85 }}>The source page correctly distinguishes frequency from amplitude and notes that Schumann resonances are excited primarily by global lightning. It then moves from geophysics into proposed health explanations. AkashicNET preserves that shift as a question boundary: the physical signal is established; the claimed biological pathway remains under investigation. Correlation ≠ causation.</p>
+            <p style={{ color: "#c2c8d8", lineHeight: 1.8 }}>This newsroom surface remains a static build snapshot. It does not fetch live data, scrape sources client-side, or promote AkashicOMNI, AkashicONE or any evidence label beyond the provenance already present.</p>
             <p style={{ marginBottom: 0 }}><a href="https://meteoagent.com/schumann-resonance-forecast">Open the originating live forecast ↗</a></p>
           </div>
         </section>
@@ -80,12 +85,7 @@ export default function InterstellarWeatherReport() {
           <p className="section-label">INTERSTELLAR WEATHER CONTEXT</p>
           <h2 style={{ maxWidth: 940, fontSize: "clamp(2.2rem,5vw,4.5rem)", lineHeight: 1.04 }}>One event. Many possible pathways.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16, marginTop: 28 }}>
-            {[
-              ["Sun and heliosphere", "Coronal-hole solar wind and minor radio-blackout conditions belong to the wider dated context. They do not by themselves explain the source-plot pattern or a person’s sleep."],
-              ["Earth and ionosphere", "Lightning, ionospheric conductivity, station geometry, season, time of day and local interference can all shape a Schumann-resonance record."],
-              ["Moon and light", "The event occurred near the new-Moon threshold, at roughly 1–3% illumination—not a full Moon. Lunar phase remains a cofactor to record rather than a presumed cause."],
-              ["Body and environment", "Sleep timing, artificial light, stress, weather, medication, substances and baseline health may interact with any environmental sensitivity."],
-            ].map(([title,text]) => <article key={title} style={{ ...panel, padding: 24 }}><h3 style={{ color: "#e7cd7e", fontSize: "1.45rem" }}>{title}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.7 }}>{text}</p></article>)}
+            {contextPanels.map(([title, text]) => <article key={title} style={{ ...panel, padding: 24 }}><h3 style={{ color: "#e7cd7e", fontSize: "1.45rem" }}>{title}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.7 }}>{text}</p></article>)}
           </div>
         </section>
 
@@ -93,20 +93,20 @@ export default function InterstellarWeatherReport() {
           <p className="section-label">TRUE 13D ANALYSIS</p>
           <h2 style={{ maxWidth: 900, fontSize: "clamp(2.2rem,5vw,4.5rem)", lineHeight: 1.04 }}>Thirteen lenses. No premature closure.</h2>
           <figure style={{ ...panel, overflow: "hidden", padding: 0, marginTop: 30 }}>
-            <img src="/images/interstellar-weather-schumann-13d-2026-09-12.png" alt="Thirteen-dimensional AkashicNET analysis displaying AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, METAD v2.1, ACTC v2.0, three MultidimensionalCUT v4.0.0 time lenses, UMASC v7.2 and AkashicNET synthesis." style={{ display: "block", width: "100%", height: "auto" }} />
+            <img src="/images/interstellar-weather-schumann-13d-2026-09-12.png" alt="Thirteen-dimensional AkashicNET analysis displaying AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, #METAD v2.1, ACTC, three MultidimensionalCUT time lenses, UMASC and AkashicNET synthesis." style={{ display: "block", width: "100%", height: "auto" }} />
             <figcaption style={{ padding: "16px 20px", color: "#b9bfd0", lineHeight: 1.65 }}><strong style={{ color: "#f3dc96" }}>The 13D architecture.</strong> “Dimensions” means analytical perspectives, not a claim that thirteen additional physical dimensions have been demonstrated.</figcaption>
           </figure>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(245px,1fr))", gap: 16, marginTop: 26 }}>
-            {dimensions.map(([number,title,text]) => <article key={number} style={{ ...panel, padding: 22 }}><span style={{ color: "#d8b95c", fontWeight: 900 }}>{number}</span><h3 style={{ fontSize: "1.25rem", margin: "8px 0" }}>{title}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.65, marginBottom: 0 }}>{text}</p></article>)}
+            {INSIGHTS_DIMENSIONS.map(([number, title, text]) => <article key={number} style={{ ...panel, padding: 22 }}><span style={{ color: "#d8b95c", fontWeight: 900 }}>{number}</span><h3 style={{ fontSize: "1.25rem", margin: "8px 0" }}>{title}</h3><p style={{ color: "#cbd0dd", lineHeight: 1.65, marginBottom: 0 }}>{text}</p></article>)}
           </div>
-          <p style={{ color: "#aeb5c6", lineHeight: 1.75, marginTop: 22 }}><strong>r/NeuronsToNirvana is the integrated Evidence and Source Commons.</strong> It supplies research, testimony and competing perspectives across the dimensions rather than becoming an additional fourteenth dimension.</p>
+          <p style={{ color: "#aeb5c6", lineHeight: 1.75, marginTop: 22 }}><strong>r/NeuronsToNirvana is the integrated Evidence and Source Commons.</strong> It supplies research, testimony and competing perspectives across the dimensions rather than becoming an additional fourteenth dimension. AkashicOMNI remains the field-level orchestration frame; AkashicONE is a coherent assessment within it, not a higher evidence tier.</p>
         </section>
 
         <section id="evidence" style={{ ...shell, padding: "78px 0 22px" }}>
           <p className="section-label">EVIDENCE MAP</p>
           <h2 style={{ maxWidth: 860, fontSize: "clamp(2.2rem,5vw,4.4rem)", lineHeight: 1.04 }}>Wonder and discernment belong together.</h2>
           <div style={{ display: "grid", gap: 14, marginTop: 30 }}>
-            {evidence.map(([title,text],index) => <article key={title} style={{ ...panel, padding: "22px clamp(22px,4vw,42px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: 22 }}><h3 style={{ margin: 0, color: ["#8de6ff","#8fcfff","#a7f0c1","#e7cd7e","#d9a6ff"][index] }}>{title}</h3><p style={{ margin: 0, color: "#cbd0dd", lineHeight: 1.72 }}>{text}</p></article>)}
+            {evidence.map(([title, text], index) => <article key={title} style={{ ...panel, padding: "22px clamp(22px,4vw,42px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,240px),1fr))", gap: 22 }}><h3 style={{ margin: 0, color: ["#8de6ff", "#8fcfff", "#a7f0c1", "#e7cd7e", "#d9a6ff"][index] }}>{title}</h3><p style={{ margin: 0, color: "#cbd0dd", lineHeight: 1.72 }}>{text}</p></article>)}
           </div>
         </section>
 
@@ -123,7 +123,7 @@ export default function InterstellarWeatherReport() {
           <p className="section-label">SOURCES AND FURTHER PORTALS</p>
           <h2 style={{ fontSize: "clamp(2.1rem,5vw,4rem)" }}>Follow the evidence trail.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))", gap: 14 }}>
-            {sources.map(([title,href]) => <a key={href} href={href} style={{ ...panel, padding: 20, display: "block", color: "inherit", textDecoration: "none" }}><span style={{ color: "#d8b95c", fontWeight: 900 }}>SOURCE ↗</span><h3 style={{ lineHeight: 1.35 }}>{title}</h3></a>)}
+            {sources.map(([title, href]) => <a key={href} href={href} style={{ ...panel, padding: 20, display: "block", color: "inherit", textDecoration: "none" }}><span style={{ color: "#d8b95c", fontWeight: 900 }}>SOURCE ↗</span><h3 style={{ lineHeight: 1.35 }}>{title}</h3></a>)}
           </div>
           <p style={{ color: "#9fa7ba", lineHeight: 1.7, marginTop: 22 }}>Sources have different designs and evidential strengths. Their inclusion maps the inquiry; it does not imply AkashicNET endorsement of every claim they contain. The 2024 vitamin study reports cohort-level associations and does not establish that this event altered anyone’s vitamin status. Solar–social correlations do not demonstrate that the Sun caused a conflict.</p>
         </section>
