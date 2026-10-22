@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-15",
+  "provenance": "ai-executed",
+  "historical_checkpoint": {
+    "head": "b1e3646fdb15b995c32f26963e39aa1e36074435",
+    "pr_updated_at": "2026-10-12T15:42:35Z",
+    "author_contact_sent": false,
+    "preserved": true
+  },
+  "contact_status": "SENT_CONFIRMED_DELIVERY_UNVERIFIED",
+  "recipient": {
+    "name": "Dr Helané Wahbeh",
+    "institutional_email": "hwahbeh@noetic.org"
+  },
+  "copied_recipient": {
+    "name": "IONS Programs team",
+    "institutional_email": "programs@noetic.org"
+  },
+  "inquiry": {
+    "sent_at": "2026-10-15T03:56:46Z",
+    "sent_at_local": "2026-10-14T20:56:46-07:00",
+    "timezone": "America/Los_Angeles",
+    "returned_labels": [
+      "SENT"
+    ],
+    "question_submission_verified": true,
+    "questions_submitted": [
+      "Authoritative final analysis script or privacy-safe selection/recoding summary",
+      "First-six-trials rule and excess-trial removal relative to Figshare v1",
+      "Definitive abstract/Table 3/randomization-method endpoints",
+      "Final supplement or correction link"
+    ]
+  },
+  "ai_transparency_disclosure": {
+    "sent_at": "2026-10-15T03:58:20Z",
+    "sent_at_local": "2026-10-14T20:58:20-07:00",
+    "timezone": "America/Los_Angeles",
+    "returned_labels": [
+      "SENT"
+    ],
+    "same_thread_as_inquiry": true,
+    "same_to_and_cc": true,
+    "summary": "Follow-up disclosed that the inquiry was generated with AI assistance for AkashicNET from its research record and source comparisons; the comparison remains provisional and independent scientific review is pending."
+  },
+  "current_email_check": {
+    "checked_at_utc": "2026-10-15T07:01:36.677Z",
+    "repository_head_checked": "e3b400f7d1e1979a1d16e446594d8430fb31ceed",
+    "source_kind": "Authenticated Gmail message/thread read and bounded mailbox searches",
+    "sent_messages_verified": 2,
+    "to_and_cc_verified": true,
+    "timestamps_verified": "Gmail internalDate and Date headers agree after timezone normalization",
+    "thread_messages_returned": 4,
+    "matching_sent_copy_found": true,
+    "automated_acknowledgements": {
+      "count": 2,
+      "from_institution": "IONS Programs",
+      "received_at_utc": [
+        "2026-10-15T03:56:49Z",
+        "2026-10-15T03:58:24Z"
+      ],
+      "auto_submitted": "auto-replied",
+      "substantive_methodological_content": false,
+      "interpretation": "Evidence of automated processing by the copied IONS Programs channel; not proof of delivery to or reading by Dr Wahbeh, human acknowledgement, or scientific clarification."
+    },
+    "author_delivery_verified": false,
+    "recipient_read_verified": false,
+    "human_author_acknowledgement_found": false,
+    "substantive_reply_found": false,
+    "scope": "Complete returned inquiry thread plus recipient/correspondence searches for 13–16 October 2026 and an in:anywhere reply search after 14 October 2026 for the author and IONS Programs addresses with telephone/analysis-subset/clarification subject terms; result pagination closed.",
+    "limits": "Sent records confirm Gmail transmission, not recipient delivery or reading. No substantive response was found within the inspected scope; other addresses or channels are not excluded.",
+    "private_correspondence_published": false
+  },
+  "previous_verification_checkpoint": {
+    "head": "e3b400f7d1e1979a1d16e446594d8430fb31ceed",
+    "superseded_as_current_status": true,
+    "preservation": "The following receipt is retained without alteration as the earlier draft/send-unverified checkpoint; its fields are historical, not present-status assertions. The 12 October draft Date header is not the actual sending date.",
+    "receipt": {
+      "date": "2026-10-15",
+      "provenance": "ai-executed",
+      "historical_checkpoint": {
+        "head": "b1e3646fdb15b995c32f26963e39aa1e36074435",
+        "pr_updated_at": "2026-10-12T15:42:35Z",
+        "author_contact_sent": false,
+        "preserved": true
+      },
+      "contact_status": "DRAFT_PRESENT_SEND_STATUS_UNVERIFIED",
+      "recipient": {
+        "name": "Dr Helané Wahbeh",
+        "institutional_email": "hwahbeh@noetic.org"
+      },
+      "reported_contact": {
+        "provenance": "user",
+        "reported_sent_at": "2026-10-12T15:47:00Z",
+        "timestamp_precision": "minute",
+        "verified_sent": false,
+        "superseded_by_user_clarification": {
+          "provenance": "user",
+          "date_local": "2026-10-14",
+          "timezone": "America/Los_Angeles",
+          "date_utc": "2026-10-15",
+          "send_status": "UNSURE_WHETHER_SENT"
+        }
+      },
+      "current_email_check": {
+        "source_kind": "Authenticated private Gmail thread and bounded mailbox searches",
+        "message_date_header": "2026-10-12T15:47:46Z",
+        "returned_labels": [
+          "DRAFT"
+        ],
+        "thread_messages_returned": 1,
+        "matching_sent_copy_found": false,
+        "substantive_reply_found": false,
+        "scope": "Thread read and in:anywhere/from/to/subject plus in:sent searches after 2026/10/11; result pagination closed",
+        "limits": "Does not exclude another address or channel. Date and Received headers are not proof of sending.",
+        "private_correspondence_published": false
+      },
+      "outstanding": [
+        "Confirmed send provenance",
+        "Final dataset/version-to-completer-population mapping",
+        "Operational selection and recoding rules",
+        "Definitive endpoints and supplement/correction provenance",
+        "Independent scientific review"
+      ],
+      "scientific_status": "PARTIAL_NUMERICAL_RECONCILIATION_FINAL_SUBSET_UNRESOLVED",
+      "independent_review": "PENDING",
+      "engineering_status": "UNRELEASED / REVIEW_REQUIRED",
+      "scientific_endorsement_inferred": false,
+      "experimental_confirmation_inferred": false,
+      "scientific_flags_changed": false,
+      "questions_prepared_in_draft": [
+        "Authoritative final analysis script or privacy-safe selection/recoding summary",
+        "First-six-trials rule and excess-trial removal relative to Figshare v1",
+        "Definitive abstract/Table 3/randomization-method endpoints",
+        "Final supplement or correction link"
+      ],
+      "question_submission_verified": false
+    }
+  },
+  "outstanding": [
+    "Final dataset/version-to-completer-population mapping",
+    "Operational selection and recoding rules",
+    "Definitive endpoints and supplement/correction provenance",
+    "Independent scientific review"
+  ],
+  "scientific_status": "PARTIAL_NUMERICAL_RECONCILIATION_FINAL_SUBSET_UNRESOLVED",
+  "independent_review": "PENDING",
+  "engineering_status": "UNRELEASED / REVIEW_REQUIRED",
+  "scientific_endorsement_inferred": false,
+  "experimental_confirmation_inferred": false,
+  "scientific_flags_changed": false,
+  "question_submission_verified": true,
+  "methodological_questions_resolved": false,
+  "privacy": "Only contact-status metadata and summaries are recorded. No private correspondence body, Gmail links, message/thread identifiers, sender address or raw headers are published."
+}

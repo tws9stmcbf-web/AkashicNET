@@ -1,0 +1,198 @@
+{
+  "record_id": "AKN-IONS-PHONE-CORRECTION-20261022",
+  "record_version": 1,
+  "date": "2026-10-22",
+  "date_timezone": "America/Los_Angeles",
+  "publication_doi": "10.1016/j.explore.2023.08.008",
+  "correction_url": "https://akashicnet.org/noetic-sciences/telephone-study-correction",
+  "status": "AUTHOR_CLARIFIED_DESCRIPTIVE_RECONCILIATION_INFERENCE_PENDING",
+  "author_clarification": {
+    "date": "2026-10-22",
+    "author": "Dr Helané Wahbeh",
+    "source_kind": "PRIVATE_RESEARCH_CORRESPONDENCE",
+    "access": "AUTHENTICATED_REPLY_REVIEWED",
+    "public_representation": "USER_AUTHORISED_PARAPHRASE_ONLY",
+    "completion_status_correction_triads": 3,
+    "table3_confirmed": true,
+    "first_six_rule_already_applied": true,
+    "abstract_preselected_correction_percent": "48.1",
+    "completer_randomization_requires_correction": true
+  },
+  "original_recording": {
+    "preselected_abstract": {
+      "responses": 210,
+      "accuracy_percent": "50.0",
+      "reported_binomial_p": "<.001"
+    },
+    "postselected_abstract": {
+      "responses": 630,
+      "accuracy_percent": "31.9",
+      "reported_binomial_p": ".61"
+    },
+    "completer_randomization_p": ".054",
+    "scope": "HISTORICAL_REPORTING_ONLY_NOT_CORRECTED_INFERENCE"
+  },
+  "descriptive_recount": {
+    "record_version": 1,
+    "checked_date": "2026-10-22",
+    "provenance": "ai-executed; conditional on author-provided completion-status mapping",
+    "source_doi": "10.6084/m9.figshare.21521235.v1",
+    "source_sha256": "83231d102887e6faae295afca161419cefce606c8463ed07e3246c6feeb03097",
+    "source_size_bytes": 87755,
+    "source_bytes_unchanged": true,
+    "independent_parser_agreement": true,
+    "completion_status_correction_triads": 3,
+    "retained_completer_triads": 35,
+    "expected_response_counts_per_retained_triad_confirmed": true,
+    "groups": {
+      "all_status": {
+        "pre_selected": {
+          "hits": 147,
+          "responses": 289,
+          "accuracy_percent": "50.9"
+        },
+        "post_selected": {
+          "hits": 243,
+          "responses": 762,
+          "accuracy_percent": "31.9"
+        }
+      },
+      "v1_label_completers": {
+        "pre_selected": {
+          "hits": 115,
+          "responses": 228,
+          "accuracy_percent": "50.4"
+        },
+        "post_selected": {
+          "hits": 216,
+          "responses": 666,
+          "accuracy_percent": "32.4"
+        }
+      },
+      "author_corrected_completers": {
+        "pre_selected": {
+          "hits": 101,
+          "responses": 210,
+          "accuracy_percent": "48.1"
+        },
+        "post_selected": {
+          "hits": 205,
+          "responses": 630,
+          "accuracy_percent": "32.5"
+        }
+      }
+    },
+    "first_six_rule_reapplied": false,
+    "completion_status_independently_verified": false,
+    "chronological_selection_independently_reproduced": false,
+    "inferential_tests_reproduced": false,
+    "corrected_randomization_p_value": null,
+    "independent_scientific_review": "PENDING",
+    "mechanism_verified": false,
+    "participant_identifiers_exported": false,
+    "row_level_records_exported": false
+  },
+  "pending": {
+    "corrigendum": {
+      "status": "AUTHOR_REPORTS_BEING_SUBMITTED",
+      "url": null
+    },
+    "figshare_v2": {
+      "status": "AUTHOR_REPORTS_PREPARATION; PUBLIC_API_LISTS_ONLY_V1_AT_CHECK",
+      "url": null,
+      "expected_contents": [
+        "corrected labels",
+        "deidentified trial-level data",
+        "analysis scripts",
+        "documentation"
+      ]
+    },
+    "corrected_randomization": {
+      "p_value": null,
+      "uncertainty_interval": null,
+      "significance_conclusion": null,
+      "status": "AWAITING_RELEASE_AND_REPRODUCTION"
+    },
+    "postselected_abstract_31_9_explanation": "UNRESOLVED_SEPARATELY_FROM_TABLE3_32_5",
+    "independent_scientific_review": "PENDING",
+    "chronological_selection_verification": "PENDING_PUBLIC_TRIAL_LEVEL_MAPPING"
+  },
+  "sources": [
+    {
+      "kind": "ARTICLE_IN_PRESS_COPY",
+      "url": "https://www.sheldrake.org/files/pdfs/papers/Whos-calling-evaluating-the-accuracy-of-guessing-who-is-on-the-phone.pdf",
+      "locations": [
+        "abstract p1",
+        "first-six rule p4",
+        "randomization methods p5",
+        "Table3/result p6"
+      ],
+      "access_limit": "CORRECTED_PUBLISHER_EDITION_AND_SUPPLEMENT_NOT_RETRIEVED"
+    },
+    {
+      "kind": "PUBLIC_DATASET_V1",
+      "doi": "10.6084/m9.figshare.21521235.v1",
+      "url": "https://figshare.com/articles/dataset/Dataset_to_accompany_telephone_telepathy_manuscript/21521235/1",
+      "size_bytes": 87755,
+      "sha256": "83231d102887e6faae295afca161419cefce606c8463ed07e3246c6feeb03097",
+      "md5": "07158e08d430cd17345428cf76728382",
+      "license": "CC BY 4.0"
+    },
+    {
+      "kind": "PUBLIC_VERSION_HISTORY",
+      "url": "https://api.figshare.com/v2/articles/21521235/versions",
+      "observed_versions": [
+        1
+      ]
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-09-21",
+      "event": "PUBLIC_SUMMARIES_CARRIED_ABSTRACT_FIGURES"
+    },
+    {
+      "date": "2026-10-12",
+      "event": "MISMATCH_AND_PARTIAL_TABLE3_RECONCILIATION_RECORDED",
+      "record": "https://github.com/tws9stmcbf-web/AkashicNET/pull/399"
+    },
+    {
+      "date": "2026-10-14",
+      "event": "METHODOLOGICAL_INQUIRY_AND_AI_TRANSPARENCY_DISCLOSURE_SENT"
+    },
+    {
+      "date": "2026-10-22",
+      "event": "AUTHOR_CLARIFICATION_AND_CONDITIONAL_DESCRIPTIVE_RECONCILIATION"
+    }
+  ],
+  "preserved_originals": [
+    {
+      "url": "https://akashicnet.org/downloads/AkashicPSI-Part-2-Magazine.pdf",
+      "sha256": "3da10ea1a905b68ca2331e10fd9015c2b9f08f785268c525f73dcd6aef86d2b8",
+      "preserved_unchanged": true,
+      "status": "HISTORICAL_EDITION_READ_WITH_CORRECTION"
+    },
+    {
+      "url": "https://akashicnet.org/downloads/AkashicPSI-TSC2026-IONS-Special-Edition.pdf",
+      "sha256": "78b5558e19e15c855beb1d734dd6fbe9f3e48e63d8fc846e63d3bfdacf4515db",
+      "preserved_unchanged": true,
+      "status": "HISTORICAL_EDITION_READ_WITH_CORRECTION"
+    }
+  ],
+  "website_source_baseline_commit": "8241c5a0b167c87a063b5eff9ac5e45addfa091c",
+  "privacy": {
+    "correspondence_body_published": false,
+    "private_links_published": false,
+    "participant_identifiers_published": false,
+    "row_level_records_published": false,
+    "raw_workbook_published": false
+  },
+  "scientific_boundary": {
+    "mechanism_established": false,
+    "evidence_for_or_against_telepathy_inferred": false,
+    "independent_review_status": "PENDING",
+    "bq001": "UNRESOLVED",
+    "evidence_promotion_allowed": false,
+    "model_support_promotion_allowed": false
+  }
+}
