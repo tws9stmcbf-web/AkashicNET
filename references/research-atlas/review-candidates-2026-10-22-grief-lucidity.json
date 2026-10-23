@@ -1,6 +1,6 @@
 {
   "batch_id": "ATLAS-20261022-GRIEF-LUCIDITY-REVIEW",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "REVIEW_CANDIDATE",
   "assessed_on": "2026-10-22",
   "schema_note": "Editorial extension of research/research-database-framework.md; not a canonical graph or PRISM import schema.",
@@ -152,9 +152,11 @@
         "Single hospice unit, limited demographic diversity, irregular observations and unequal follow-up restrict prevalence and generalisability.",
         "Observation window was 08:00–18:00, so coverage was not continuous.",
         "Non-English speech could not be coded for multilingual participants, including one with a lucid episode.",
-        "Physiological correlates remain a proposed research direction; this observational study does not establish a survival mechanism."
+        "Physiological correlates remain a proposed research direction; this observational study does not establish a survival mechanism.",
+        "Original GEE analyses cluster segments within days and use jackknife standard errors, but make many exploratory comparisons without multiplicity correction; reported p values are nominal.",
+        "Power/sample-size section reports 556 observation days, while audiovisual results report 539 observations. Their mapping is not established here; do not silently replace or combine denominators."
       ],
-      "access_scope": "PubMed abstract/disclosures plus publisher-indexed methods and limitations excerpts. Direct publisher retrieval failed and PMC returned CAPTCHA. Selected text review, not complete full-text/supplement review.",
+      "access_scope": "Complete main author manuscript read via NCBI PMC EFetch XML, including main tables, methods and discussion; publisher version and supplement not independently compared. Earlier selected-text access history retained. No participant data accessed.",
       "references": [
         "https://pubmed.ncbi.nlm.nih.gov/40748700/",
         "https://doi.org/10.1093/geront/gnaf178",
@@ -162,7 +164,7 @@
       ],
       "funding": "NIA R33AG069827",
       "conflicts": "Authors declare none",
-      "data_code_preregistration": "A prior design publication is cited; prospective registration not verified. Future data sharing is mentioned, not verified as delivered. Code availability unknown.",
+      "data_code_preregistration": "Main manuscript explicitly states not preregistered. Audiovisual, coding and interview data require IRB-approved procedures and data-sharing agreements. Code availability unverified.",
       "relevance": {
         "score": 4,
         "reason": "Direct lucidity measurement gap; contextual only to BQ001"
@@ -172,7 +174,7 @@
         "reason": "Provisional: prospective observation and structured validation, with selected methods now inspected; small selected cohort and uneven surveillance."
       },
       "confidence": "High in abstract counts; limited in mechanism or complete methodological appraisal",
-      "next_review_action": "Complete original event-validation, GEE uncertainty and comparator audit; independently review the related secondary analysis and its supplement. Do not count it as replication.",
+      "next_review_action": "Reconcile power-model observation-day denominator with audiovisual observations; audit original supplement, coding/code and uncertainty; independently review the related secondary analysis.",
       "framework_connections": [
         "AWAKEN",
         "HOMESENSE",
@@ -251,9 +253,11 @@
         "Presence/absence encoding discards intensity and segment duration; more speech or longer segments can affect indicators. Reported continuous, duration-normalised sensitivity analyses do not establish external validity.",
         "Class labels are interpretations of behavioural clusters. A high-engagement segment is not automatically a validated lucid episode; some validated episodes need not have much speech.",
         "No preregistration. Complete supplement, uncertainty estimates, reproducible code and independent external validation remain review requirements.",
-        "No neural measurements or test of post-mortem survival is established by this behavioural analysis; mechanism and consciousness claims remain hypotheses."
+        "No neural measurements or test of post-mortem survival is established by this behavioural analysis; mechanism and consciousness claims remain hypotheses.",
+        "Some prior episode labels were applied across entire days after selected representative segments were reviewed. Segment-level sensitivity can therefore reflect label propagation across periods of different activity.",
+        "Authors caution that the apparent preference for individual class definitions may depend on the small sample; larger cohorts might support shared-class subgroups. This does not establish universal need for person-specific models."
       ],
-      "access_scope": "Publisher abstract, publication history and data-availability statement; search-indexed primary PMC methods, results Tables 2–5 and validation passages. Direct PMC retrieval returned a browser check and publisher main text was restricted. Focused selected-text appraisal; complete full text and supplement not read, no participant data accessed.",
+      "access_scope": "Complete main author manuscript read via NCBI PMC EFetch XML, including main tables, methods and discussion. Publisher metadata/data statement checked; publisher version and supplement not independently compared. Publisher supplement returned403; PMC supplement returned a browser challenge. No participant data accessed.",
       "references": [
         "https://pubmed.ncbi.nlm.nih.gov/42081117/",
         "https://doi.org/10.1177/13872877261445464",
@@ -271,7 +275,7 @@
         "reason": "Provisional focused editorial appraisal; tiny selected sample, imperfect reference standard, incomplete supplement and code audit"
       },
       "confidence": "High in bibliographic identity and shared-cohort relationship; bounded confidence in detection performance and generalisation",
-      "next_review_action": "Independent reviewer to inspect complete text/supplement, LOOCV unit and nested preprocessing, temporal dependence, uncertainty and code; require new participants and independently verified reference labels for external validation.",
+      "next_review_action": "Independent reviewer to obtain supplement/code; verify LOOCV hold-out unit, temporal separation and preprocessing within folds; audit propagated labels and uncertainty; reconcile original power-model denominator. External validation requires new people and independently verified reference labels.",
       "framework_connections": [
         "AWAKEN",
         "HOMESENSE",
@@ -351,6 +355,14 @@
       },
       "related_source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
       "appraisal_ref": "research/atlas-lucidity-secondary-analysis-2026-10-23.md"
+    },
+    {
+      "date": "2026-10-23",
+      "source_id": "SRC-ATLAS-LUCIDITY-LCA-2026",
+      "related_source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+      "change": "Main author manuscripts now read via NCBI EFetch; appended methods, source hashes and structured identifier/notice checks. Supplement/code and539/556 denominator mapping remain open. No independent review or promotion.",
+      "audit_id": "ATLAS-LUCIDITY-MAIN-TEXT-20261023",
+      "appraisal_ref": "research/atlas-lucidity-secondary-analysis-2026-10-23.md"
     }
   ],
   "last_reviewed_on": "2026-10-23",
@@ -380,6 +392,16 @@
       "result": "No primary correction or retraction verified in targeted DOI/title correction, erratum and corrigendum searches; this is not proof of absence. Publisher follow-up page displayed an online-first version dated 4 May 2026.",
       "scope": "Targeted primary-source checks only; complete Crossmark, PubMed linked-notice and version-content audit not completed. Prior correction_check and review_updates preserved.",
       "follow_up": "Repeat notice checks during independent full-text review; append any correction without erasing the original record."
+    },
+    {
+      "checked_on": "2026-10-23",
+      "dois": [
+        "10.1093/geront/gnaf178",
+        "10.1177/13872877261445464"
+      ],
+      "result": "Inspected PubMed article records have zero CommentsCorrections entries; Crossref article records have empty relation objects and no update-to/updated-by entries. Bibliographic identifiers match PMC XML.",
+      "scope": "Article-level fields only, with URL/hash/byte receipts under methods_audit. No proof of absence of corrections; reverse notice search, publisher version comparison and complete Crossmark audit remain outstanding.",
+      "follow_up": "Reconcile539/556 denominator mapping without asserting an author error; append any future notice without deleting prior history."
     }
   ],
   "amendment_provenance": {
@@ -413,5 +435,107 @@
         ]
       }
     ]
+  },
+  "methods_audit": {
+    "audit_id": "ATLAS-LUCIDITY-MAIN-TEXT-20261023",
+    "base_commit": "5879b6daedf1096beabf2a168f474f5fb504bfe6",
+    "checked_on": "2026-10-23",
+    "assessment_provenance": "ai-executed",
+    "access": {
+      "original_main_manuscript_read": true,
+      "secondary_main_manuscript_read": true,
+      "publisher_version_compared": false,
+      "supplement_read": false,
+      "code_audited": false,
+      "participant_data_accessed": false
+    },
+    "source_snapshots": [
+      {
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40748700,42081117&retmode=xml",
+        "sha256": "da760fe9c7930687548d0854ad1c8cf3c9845651c93efc9e15b2e7cc71d79992",
+        "bytes": 48091,
+        "content_scope": "Public bibliographic or author-manuscript response; snapshot body not redistributed in repository"
+      },
+      {
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=12871080&retmode=xml",
+        "sha256": "e97c4789f166cfb00bba6338fd523a8c8cec5dad1cde2b1f87d27634a65da991",
+        "bytes": 97722,
+        "content_scope": "Public bibliographic or author-manuscript response; snapshot body not redistributed in repository"
+      },
+      {
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=13225770&retmode=xml",
+        "sha256": "4102826360bf87dc2bb6a47ef5d4ad97d4e3904ac9fa76fc4c2bca17b8d9d714",
+        "bytes": 92312,
+        "content_scope": "Public bibliographic or author-manuscript response; snapshot body not redistributed in repository"
+      },
+      {
+        "url": "https://api.crossref.org/works/10.1093/geront/gnaf178",
+        "sha256": "24bf71da7893cf93da86bd1a10f95efaeef1395f2f66f1178ecb09791a7bbc7c",
+        "bytes": 21980,
+        "content_scope": "Public bibliographic or author-manuscript response; snapshot body not redistributed in repository"
+      },
+      {
+        "url": "https://api.crossref.org/works/10.1177/13872877261445464",
+        "sha256": "1dbfc9a448f0532109b7adb4c6e8b72477b9a67e238626cac95c89be0fbcecfb",
+        "bytes": 11329,
+        "content_scope": "Public bibliographic or author-manuscript response; snapshot body not redistributed in repository"
+      }
+    ],
+    "source_identity_and_notice_checks": [
+      {
+        "source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+        "doi": "10.1093/geront/gnaf178",
+        "pubmed_comments_corrections_count": 0,
+        "crossref_relation": {},
+        "crossref_update_to": [],
+        "crossref_updated_by": [],
+        "pmc_version": "PMC12871080.1",
+        "result": "No correction/retraction links in these inspected article-level fields. Absence here is not proof that no notice exists."
+      },
+      {
+        "source_id": "SRC-ATLAS-LUCIDITY-LCA-2026",
+        "doi": "10.1177/13872877261445464",
+        "pubmed_comments_corrections_count": 0,
+        "crossref_relation": {},
+        "crossref_update_to": [],
+        "crossref_updated_by": [],
+        "pmc_version": "PMC13225770.1",
+        "result": "No correction/retraction links in these inspected article-level fields. Absence here is not proof that no notice exists."
+      }
+    ],
+    "original_analysis": {
+      "method": "Per-person GEE comparisons, day-level clusters, independent working correlation, jackknife standard errors; count outcomes use Poisson links and segment-duration offsets, continuous outcomes Gamma/log links.",
+      "multiplicity": "No multiple-comparison correction; authors describe p values as nominal and exploratory.",
+      "source_locator": "PMC12871080.1 > Methods > Statistical Analysis"
+    },
+    "secondary_analysis": {
+      "software": "MPlus8.11 with MLR estimator; 3000 random starts. Individual-model LOOCV automation uses R poLCA.",
+      "selection": "Model fit includes BIC/AIC, interpretability, minimum posterior probability and entropy thresholds. Pooled preprocessing is reported; fold-wise repetition not established without supplement/code.",
+      "label_review": "Only suspected episodes were informant reviewed; some representative validated segments led to whole-day episode labels. Unreviewed segments remain within the comparison negative category.",
+      "robustness": "Main text reports similar LOOCV sensitivity/specificity and class-count stability, while one case favours four classes. Exact supplement procedure, preprocessing isolation and uncertainty remain unverified.",
+      "source_locator": "PMC13225770.1 > Method > Analysis; Results > Validation of Classes; Discussion"
+    },
+    "denominator_questions": [
+      {
+        "source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+        "audiovisual_observations": 539,
+        "power_analysis_days_reported": 556,
+        "status": "OPEN_MAPPING_NOT_ESTABLISHED",
+        "source_locators": [
+          "PMC12871080.1 > Results > Participants and Audiovisual Data Collected",
+          "PMC12871080.1 > Results > Power and Sample Size Analysis"
+        ],
+        "interpretation": "These are separately reported denominators. No author error or correction is asserted; do not substitute either for the other without clarification."
+      }
+    ],
+    "remaining_requirements": [
+      "Complete supplement and code audit",
+      "LOOCV fold unit, temporal isolation and preprocessing nesting",
+      "Independent scientific review",
+      "Original539/556 denominator mapping",
+      "Complete reverse-notice/Crossmark audit beyond inspected fields"
+    ],
+    "independent_review_status": "REQUIRED_NOT_COMPLETED",
+    "scientific_evidence_promotion": false
   }
 }

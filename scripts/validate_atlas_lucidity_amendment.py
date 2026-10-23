@@ -5,15 +5,19 @@ Requires the amendment's recorded baseline commit in the local Git history.
 DOI ownership is checked in research/reference JSON, not across every external
 publication or unrelated branch. Repeated citations with the same owner are OK.
 """
+import argparse
+import hashlib
 import json
 import re
 import subprocess
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = "references/research-atlas/review-candidates-2026-10-22-grief-lucidity.json"
 BASE = "fe130ec0df56f72decaf8c7aa026cb9bee7c0af3"
+AUDIT_BASE = "5879b6daedf1096beabf2a168f474f5fb504bfe6"
 ORIGINAL = "SRC-ATLAS-LUCIDITY-GNAF178-2025"
 SECONDARY = "SRC-ATLAS-LUCIDITY-LCA-2026"
 ALLOWED = {
@@ -61,7 +65,7 @@ def objects(value):
 
 def validate(record, baseline):
     require(record["amendment_provenance"]["base_commit"] == BASE, "Baseline changed")
-    require(record["version"] == "0.1.2", "Unexpected amendment version")
+    require(record["version"] in {"0.1.2", "0.1.3"}, "Unexpected amendment version")
     require(record["status"] == "REVIEW_CANDIDATE", "Batch promoted")
     require(record["question_status"] == baseline["question_status"] == "UNRESOLVED", "BQ status changed")
     require(record["governance"] == baseline["governance"], "Governance changed")
@@ -95,11 +99,12 @@ def validate(record, baseline):
 
     original, secondary = by_id[ORIGINAL], by_id[SECONDARY]
     prior = baseline["sources"][2]
-    mutable = {"sample", "reviewed_on", "assessment_added", "next_review_action"}
+    mutable = {"sample", "reviewed_on", "assessment_added", "next_review_action", "access_scope", "data_code_preregistration", "limitations"}
     for key, value in prior.items():
         if key not in mutable:
             require(original[key] == value, f"Original field unexpectedly changed: {key}")
     require(all(original["sample"][k] == v for k, v in prior["sample"].items()), "Original denominators overwritten")
+    require(original["limitations"][:len(prior["limitations"])] == prior["limitations"], "Original limitations erased")
     require(original["sample"]["enrolled_participants"] == 20, "Enrolled denominator changed")
     require(original["sample"]["participants_with_audiovisual_observations"] == 19, "Recorded denominator changed")
     require(secondary["sample"] == {"participants": 3, "audiovisual_segments": 1283, "newly_recruited_participants": 0}, "Secondary denominators or recruitment changed")
@@ -117,7 +122,9 @@ def validate(record, baseline):
         require(group[key] == value, f"Cohort double counting: {key}")
     for row, target, relation in [(original, SECONDARY, "HAS_SECONDARY_ANALYSIS"), (secondary, ORIGINAL, "SECONDARY_ANALYSIS_OF")]:
         require(row["related_publications"] == [{"source_id": target, "relationship": relation, "same_cohort": True}], "Nonreciprocal publication relationship")
-    receipt = record["review_updates"][-1]
+    receipts = [item for item in record["review_updates"] if "resolves_lead" in item]
+    require(len(receipts) == 1, "Expected exactly one lead-resolution receipt")
+    receipt = receipts[0]
     require(receipt["source_id"] == SECONDARY and receipt["related_source_id"] == ORIGINAL, "Receipt source mismatch")
     require(receipt["resolves_lead"]["url"] == history[0]["discovery_lead"]["url"], "Lead resolution mismatch")
     require((ROOT / receipt["appraisal_ref"]).is_file(), "Appraisal link missing")
@@ -125,10 +132,69 @@ def validate(record, baseline):
     require(record["amendment_provenance"]["source_identity_checks"] == [{"source_id": row["source_id"], "doi": row["doi"], "pmid": row["pmid"], "pmcid": row["pmcid"], "verified_against": row["references"]} for row in (original, secondary)], "Identity receipt mismatch")
 
 
+def validate_main_text_audit(record, prior):
+    require(record["review_updates"][:len(prior["review_updates"])] == prior["review_updates"], "Earlier review receipts changed")
+    require(record["correction_check_updates"][:len(prior["correction_check_updates"])] == prior["correction_check_updates"], "Earlier correction receipts changed")
+    require(record["amendment_provenance"] == prior["amendment_provenance"], "Initial amendment provenance changed")
+    for current, previous in zip(record["sources"], prior["sources"]):
+        require(current["limitations"][:len(previous["limitations"])] == previous["limitations"], "Prior limitations removed")
+        require(current["sample"] == previous["sample"], "Audit changed cohort/segment denominators")
+    audit = record["methods_audit"]
+    require(audit["base_commit"] == AUDIT_BASE, "Audit baseline changed")
+    require(audit["access"] == {"original_main_manuscript_read": True, "secondary_main_manuscript_read": True, "publisher_version_compared": False, "supplement_read": False, "code_audited": False, "participant_data_accessed": False}, "Access scope overstated or participant data accessed")
+    require(audit["independent_review_status"] == "REQUIRED_NOT_COMPLETED" and audit["scientific_evidence_promotion"] is False, "Audit bypassed review/promotion gate")
+    questions = audit["denominator_questions"]
+    require(len(questions) == 1 and questions[0]["source_id"] == ORIGINAL, "Denominator question source invalid")
+    require((questions[0]["audiovisual_observations"], questions[0]["power_analysis_days_reported"], questions[0]["status"]) == (539, 556, "OPEN_MAPPING_NOT_ESTABLISHED"), "Distinct denominator mapping silently resolved")
+    snapshots = audit["source_snapshots"]
+    require(len(snapshots) == 5 and len({item["url"] for item in snapshots}) == 5, "Source receipt count/URL uniqueness invalid")
+    for item in snapshots:
+        require(re.fullmatch(r"[0-9a-f]{64}", item["sha256"]) and item["bytes"] > 0, "Invalid source fingerprint")
+    checks = audit["source_identity_and_notice_checks"]
+    require([item["source_id"] for item in checks] == [ORIGINAL, SECONDARY], "Notice source identities invalid")
+    for item, row in zip(checks, record["sources"][2:4]):
+        require(item["doi"] == row["doi"] and item["pmc_version"] == row["pmcid"] + ".1", "Notice/version identity mismatch")
+        require(item["pubmed_comments_corrections_count"] == 0 and item["crossref_relation"] == {} and item["crossref_update_to"] == [] and item["crossref_updated_by"] == [], "Notice fields differ; requires fresh audit")
+
+
+def validate_source_cache(record, cache):
+    names = ["pubmed-records.xml", "pmc-original.xml", "pmc-secondary.xml", "crossref-original.json", "crossref-secondary.json"]
+    snapshots = record["methods_audit"]["source_snapshots"]
+    for name, receipt in zip(names, snapshots):
+        raw = (cache / name).read_bytes()
+        require(len(raw) == receipt["bytes"] and hashlib.sha256(raw).hexdigest() == receipt["sha256"], f"Source response changed: {name}")
+    pubmed = ET.fromstring((cache / names[0]).read_bytes())
+    for label, check, row in zip(["original", "secondary"], record["methods_audit"]["source_identity_and_notice_checks"], record["sources"][2:4]):
+        articles = [article for article in pubmed.findall("PubmedArticle") if article.findtext("./MedlineCitation/PMID") == row["pmid"]]
+        require(len(articles) == 1, "Missing or duplicate article PMID")
+        article = articles[0]
+        # Only the article's IDs: .//ArticleId would also include cited works.
+        ids = {item.attrib["IdType"]: item.text for item in article.findall("./PubmedData/ArticleIdList/ArticleId")}
+        require((ids["pubmed"], ids["pmc"], ids["doi"]) == (row["pmid"], row["pmcid"], row["doi"]), "PubMed article identity mismatch")
+        notices = article.findall("./MedlineCitation/CommentsCorrectionsList/CommentsCorrections")
+        require(len(notices) == check["pubmed_comments_corrections_count"], "PubMed notice fields changed")
+        pmc = ET.fromstring((cache / f"pmc-{label}.xml").read_bytes())
+        ids = {item.attrib["pub-id-type"]: item.text for item in pmc.findall("./article/front/article-meta/article-id")}
+        require((ids["pmid"], ids["pmcid"], ids["doi"], ids["pmcid-ver"]) == (row["pmid"], row["pmcid"], row["doi"], check["pmc_version"]), "PMC article identity/version mismatch")
+        crossref = parse((cache / f"crossref-{label}.json").read_text())["message"]
+        require(crossref["DOI"].lower() == row["doi"].lower(), "Crossref DOI mismatch")
+        for key, receipt_key, default in [("relation", "crossref_relation", {}), ("update-to", "crossref_update_to", []), ("updated-by", "crossref_updated_by", [])]:
+            require(crossref.get(key, default) == check[receipt_key], f"Crossref {key} changed")
+    print("PASS: 5 source-cache fingerprints; article-level PMID/PMCID/DOI/version and inspected notice fields match")
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-cache", type=Path, help="Check five saved public source responses against the audit receipts")
+    args = parser.parse_args()
     record = parse((ROOT / RECORD).read_text())
     baseline = parse(git("show", f"{BASE}:{RECORD}"))
     validate(record, baseline)
+    if record["version"] == "0.1.3":
+        prior = parse(git("show", f"{AUDIT_BASE}:{RECORD}"))
+        validate_main_text_audit(record, prior)
+        if args.source_cache:
+            validate_source_cache(record, args.source_cache)
     ownership = {}
     for directory in ("references", "research"):
         for path in (ROOT / directory).rglob("*.json"):
@@ -150,6 +216,6 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except (ValueError, KeyError, TypeError, subprocess.CalledProcessError) as error:
+    except (ValueError, KeyError, TypeError, OSError, ET.ParseError, subprocess.CalledProcessError) as error:
         print(f"FAIL: {error}", file=sys.stderr)
         sys.exit(1)

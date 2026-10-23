@@ -36,13 +36,13 @@ Binary encoding loses information about intensity and duration. The reported con
 
 **Editorial assessment:** this is a useful candidate method for directing human attention to changes in communication relative to a person's baseline. The shared cases and label-selection process limit its evidential independence. Behavioural clustering alone cannot decide whether the underlying change reflects attention, cognition, conscious experience or another mechanism. Neither paper tests survival after death. The record adds no support edge to a consciousness model and leaves BQ001 UNRESOLVED.
 
-Access was limited to publisher bibliographic material, abstract and data statement, plus search-indexed primary methods/results passages. Direct PMC retrieval returned a browser check; publisher main text was restricted. This is a focused selected-text appraisal, **not a completed full-text, supplement, code or independent scientific review**. No participant-level records, audiovisual material or clinical narratives were copied into the repository. Data access requires IRB-approved procedures and sharing agreements; the follow-up explicitly states it was not preregistered.
+The initial appraisal used publisher bibliographic material, abstract and data statement, plus search-indexed primary methods/results passages. A subsequent audit below obtained both complete main author manuscripts through NCBI EFetch. The supplement, code, publisher-version comparison and independent scientific review remain incomplete. No participant-level records, audiovisual material or clinical narratives were copied into the repository. Data access requires IRB-approved procedures and sharing agreements; both main manuscripts explicitly state that the research was not preregistered.
 
 Targeted DOI/title searches did not verify a correction or retraction. This is not a complete Crossmark or linked-notice audit. The previous correction-check scope and 22 October lead entry remain unchanged as history; the 23 October receipt resolves the lead by reference rather than rewriting it.
 
 ## Reproducible amendment
 
-[Metadata and history](../references/research-atlas/review-candidates-2026-10-22-grief-lucidity.json), version 0.1.2, records reciprocal publication links and a shared cohort identifier. Existing grief records and the AWARE II duplicate receipt remain intact. The amendment baseline is commit `fe130ec0df56f72decaf8c7aa026cb9bee7c0af3`.
+[Metadata and history](../references/research-atlas/review-candidates-2026-10-22-grief-lucidity.json), version 0.1.3, records reciprocal publication links, a shared cohort identifier and an appended main-manuscript audit. Existing grief records and the AWARE II duplicate receipt remain intact. The initial amendment baseline is commit `fe130ec0df56f72decaf8c7aa026cb9bee7c0af3`; the subsequent audit preserves the history at `5879b6daedf1096beabf2a168f474f5fb504bfe6`.
 
 Run from the repository root:
 
@@ -56,3 +56,30 @@ python scripts/validate_bq001_public_status_boundary.py
 The focused validator checks identifiers, normalised DOI ownership in repository reference/research JSON, reciprocal cohort links, denominators, retained history and governance, and limits changed paths relative to the amendment baseline. It validates the metadata amendment; it does not reproduce LCA or certify scientific validity.
 
 Independent review must inspect the complete papers and supplement, verify validation labels and LOOCV isolation, evaluate uncertainty and temporal dependence, and audit code if obtainable. External evaluation needs new people and appropriately verified reference labels. Publication, PRISM import, canonical evidence promotion and accepted model edges remain disabled. Draft PR #412 stays draft.
+
+## Subsequent main-manuscript and notice audit
+
+NCBI EFetch returned the complete main author manuscripts, identified as `PMC12871080.1` and `PMC13225770.1`. Their identifiers match the article-level PubMed and Crossref records. Five response URL, SHA-256 and byte-count receipts are recorded under `methods_audit.source_snapshots`; source text and sensitive research data are not redistributed.
+
+The original GEE analyses account for day-level clusters and use jackknife standard errors. However, the authors explicitly retain unadjusted nominal p values across many exploratory comparisons. The new LCA analysis is a different analytical question, so its class separation cannot be counted as a second independent confirmation of those tests.
+
+The follow-up main text confirms that selected representative segments sometimes led to entire days being labelled lucid. The resulting reference labels include quieter periods as well as highly communicative periods. This makes an apparent missed segment partly a question of temporal episode boundaries, rather than necessarily a failed observation of communicative change. The authors also caution that a larger cohort could favour shared-class subgroups. Better fit for individual models here does not establish a universal modelling rule.
+
+The original Results reports **539 audiovisual observations**, while its power/sample-size subsection uses **556 observation days**. Their mapping is not established here. The metadata records both with different labels and an open reconciliation question; it neither substitutes one for the other nor asserts an author error. The original cohort and the secondary-analysis segment denominators remain unchanged.
+
+| Check | Verified scope | Remaining boundary |
+| --- | --- | --- |
+| Main manuscripts | Both complete main XML texts and main tables read | Publisher-version equivalence not compared |
+| Identification | PMID, PMCID and DOI agree across article-level records | These checks do not validate scientific conclusions |
+| Notice links | No CommentsCorrections entries in inspected PubMed articles; empty Crossref relation objects and no update-to/updated-by entries | Reverse notice search and complete Crossmark audit remain open; no proof of absence |
+| LOOCV | Main text reports robustness results and automated class selection | Exact fold unit, temporal isolation and nested preprocessing still require supplement/code |
+| Supplement access | Publisher request returned 403; PMC asset returned a browser challenge | Supplement not read; no complete supplement-review claim |
+| Independent review | Still required | AI-assisted main-text review does not fulfil it |
+
+The source-cache option checks saved public responses against the recorded fingerprints and extracts article-level identifiers and notice fields independently of bibliography reference lists:
+
+```sh
+python scripts/validate_atlas_lucidity_amendment.py --source-cache /path/to/source-cache
+```
+
+Use the five recorded URLs to retrieve `pubmed-records.xml`, `pmc-original.xml`, `pmc-secondary.xml`, `crossref-original.json` and `crossref-secondary.json` respectively. The validator reports a mismatch if a response changes; that calls for a new dated audit receipt, not silent replacement of the historical fingerprint. This does not reproduce the statistical analyses.
