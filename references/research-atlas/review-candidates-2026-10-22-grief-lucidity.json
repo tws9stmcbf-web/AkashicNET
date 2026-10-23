@@ -1,6 +1,6 @@
 {
   "batch_id": "ATLAS-20261022-GRIEF-LUCIDITY-REVIEW",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "REVIEW_CANDIDATE",
   "assessed_on": "2026-10-22",
   "schema_note": "Editorial extension of research/research-database-framework.md; not a canonical graph or PRISM import schema.",
@@ -140,7 +140,9 @@
         "participants": 20,
         "observations": 539,
         "validated_episodes": 9,
-        "participants_with_validated_episodes": 3
+        "participants_with_validated_episodes": 3,
+        "enrolled_participants": 20,
+        "participants_with_audiovisual_observations": 19
       },
       "findings": [
         "Directly observed episodes included increased meaningful vocalizations; features varied between people."
@@ -170,7 +172,7 @@
         "reason": "Provisional: prospective observation and structured validation, with selected methods now inspected; small selected cohort and uneven surveillance."
       },
       "confidence": "High in abstract counts; limited in mechanism or complete methodological appraisal",
-      "next_review_action": "Audit complete event-validation criteria, comparator selection and statistical uncertainty; compare related analyses for shared participants before counting replication.",
+      "next_review_action": "Complete original event-validation, GEE uncertainty and comparator audit; independently review the related secondary analysis and its supplement. Do not count it as replication.",
       "framework_connections": [
         "AWAKEN",
         "HOMESENSE",
@@ -179,14 +181,115 @@
       "bq_ids": [
         "BQ001"
       ],
-      "assessment_added": "Confirmed first-online date and sampled hospice setting; documented surveillance and language-coding limits. No change to evidence promotion.",
-      "reviewed_on": "2026-10-22",
+      "assessment_added": "Enrolled versus observed denominator clarified; related LCA paper linked as a secondary analysis of the same three validated cases. Prior access/history entries retained; no evidence promotion.",
+      "reviewed_on": "2026-10-23",
       "first_discovered_on": null,
       "status": "REVIEW_CANDIDATE",
       "evidence_type": "empirical research",
       "editorial_evidence_label": "preliminary",
       "canonical_evidence_status": "NOT_PROMOTED",
       "replication_status": "Independent replication not established by this review",
+      "supports_models": [],
+      "public_integration": false,
+      "rights": "Bibliographic metadata and limited original summary only; no participant data or source full text reproduced",
+      "sample_note": "The original participants=20 is the enrolled denominator; one died before audiovisual recording. Observations, episodes and segments are different units.",
+      "cohort_id": "COHORT-ATLAS-LUCIDITY-GNAF178",
+      "related_publications": [
+        {
+          "source_id": "SRC-ATLAS-LUCIDITY-LCA-2026",
+          "relationship": "HAS_SECONDARY_ANALYSIS",
+          "same_cohort": true
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-ATLAS-LUCIDITY-LCA-2026",
+      "title": "Data-driven detection of lucid episodes in advanced dementia: Application of latent class analysis to observational data",
+      "doi": "10.1177/13872877261445464",
+      "pmid": "42081117",
+      "pmcid": "PMC13225770",
+      "authors_short": "Kottler, Gilmore-Bykovskyi, Cochran and Mueller",
+      "original_date": "2026-05-04",
+      "issue_date": "2026-06",
+      "journal": "Journal of Alzheimer’s Disease",
+      "volume": "111",
+      "issue": "4",
+      "pages": "1862–1871",
+      "lane": "lucidity in advanced dementia",
+      "curation_label": "RELATED SECONDARY ANALYSIS",
+      "design": "Exploratory latent class analysis of existing audiovisual coding; within-person model development and internal robustness checks",
+      "research_question": "Can coded communication patterns help detect within-person lucid episodes, and must class definitions be individualised?",
+      "population": "The three people with informant-validated lucid episodes in the original advanced-dementia hospice cohort; selected on prior episode validation.",
+      "sample": {
+        "participants": 3,
+        "audiovisual_segments": 1283,
+        "newly_recruited_participants": 0
+      },
+      "cohort_id": "COHORT-ATLAS-LUCIDITY-GNAF178",
+      "related_publications": [
+        {
+          "source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+          "relationship": "SECONDARY_ANALYSIS_OF",
+          "same_cohort": true
+        }
+      ],
+      "analytical_methods": [
+        "All episode-containing segments plus a random 20% of communicative segments were coded. Segments are repeated measurements, not independent people or episodes.",
+        "Pooled variable filtering, zero-inflation handling, binarisation and correlation screening reduced 68 variables to 14 presence/absence indicators.",
+        "Compared latent class counts and shared versus person-specific response probabilities using model-fit criteria, particularly BIC; interpreted classes as communication engagement levels.",
+        "Compared candidate high-engagement class against previous informant labels; individual models also used leave-one-out cross-validation (LOOCV). Supplement implementation and fold isolation not independently audited."
+      ],
+      "findings": [
+        "Three-class unconstrained model had lowest BIC among the compared pooled/grouped solutions; sharing class response probabilities worsened BIC. One individually fitted case preferred four classes, but three were retained for comparison.",
+        "The high-engagement class contained most previously validated lucid segments; published main-analysis sensitivity ranged from 53% to 100% and specificity from 56% to 97% across three cases. These are segment-label comparisons, not independently validated clinical accuracy.",
+        "The analysis provides a candidate way to screen observed communication changes while preserving personal baselines; it adds no independent replication cohort."
+      ],
+      "limitations": [
+        "Only three previously positive cases from one hospice setting; outcome-based selection excludes the other cohort members and limits transportability and prevalence inference.",
+        "Only suspected episodes underwent informant validation. The comparison negative category includes unreviewed segments; specificity and apparent false positives do not use a fully verified reference standard.",
+        "Repeated segments share individuals, days and episodes. LOOCV is internal validation; without supplement/code audit, temporal separation and nesting of variable selection remain unverified.",
+        "Presence/absence encoding discards intensity and segment duration; more speech or longer segments can affect indicators. Reported continuous, duration-normalised sensitivity analyses do not establish external validity.",
+        "Class labels are interpretations of behavioural clusters. A high-engagement segment is not automatically a validated lucid episode; some validated episodes need not have much speech.",
+        "No preregistration. Complete supplement, uncertainty estimates, reproducible code and independent external validation remain review requirements.",
+        "No neural measurements or test of post-mortem survival is established by this behavioural analysis; mechanism and consciousness claims remain hypotheses."
+      ],
+      "access_scope": "Publisher abstract, publication history and data-availability statement; search-indexed primary PMC methods, results Tables 2–5 and validation passages. Direct PMC retrieval returned a browser check and publisher main text was restricted. Focused selected-text appraisal; complete full text and supplement not read, no participant data accessed.",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/42081117/",
+        "https://doi.org/10.1177/13872877261445464",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13225770/"
+      ],
+      "funding": "NIA R33AG069827",
+      "conflicts": "Authors declare no potential conflicts",
+      "data_code_preregistration": "Not preregistered. Audiovisual, coding and interview data may be shared only via IRB-approved procedures and data-sharing agreements; no unrestricted public dataset inferred. Code availability unverified.",
+      "relevance": {
+        "score": 4,
+        "reason": "Measurement development for observed dementia lucidity; contextual only to BQ001"
+      },
+      "quality": {
+        "score": 2,
+        "reason": "Provisional focused editorial appraisal; tiny selected sample, imperfect reference standard, incomplete supplement and code audit"
+      },
+      "confidence": "High in bibliographic identity and shared-cohort relationship; bounded confidence in detection performance and generalisation",
+      "next_review_action": "Independent reviewer to inspect complete text/supplement, LOOCV unit and nested preprocessing, temporal dependence, uncertainty and code; require new participants and independently verified reference labels for external validation.",
+      "framework_connections": [
+        "AWAKEN",
+        "HOMESENSE",
+        "#METAD"
+      ],
+      "bq_ids": [
+        "BQ001"
+      ],
+      "assessment_added": "Focused editorial appraisal links the prior lead to its original cohort; no participant double-counting or replication credit.",
+      "reviewed_on": "2026-10-23",
+      "first_discovered_on": null,
+      "status": "REVIEW_CANDIDATE",
+      "appraisal_status": "FOCUSED_EDITORIAL_APPRAISAL_PENDING_INDEPENDENT_REVIEW",
+      "independent_review_status": "REQUIRED_NOT_COMPLETED",
+      "evidence_type": "empirical research",
+      "editorial_evidence_label": "preliminary",
+      "canonical_evidence_status": "NOT_PROMOTED",
+      "replication_status": "NOT_INDEPENDENT_REPLICATION_SAME_COHORT",
       "supports_models": [],
       "public_integration": false,
       "rights": "Bibliographic metadata and limited original summary only; no participant data or source full text reproduced"
@@ -235,6 +338,80 @@
         "status": "UNASSESSED_LEAD",
         "next_action": "Check shared cohort and identifiers before creating any source record or replication claim."
       }
+    },
+    {
+      "date": "2026-10-23",
+      "source_id": "SRC-ATLAS-LUCIDITY-LCA-2026",
+      "change": "Resolved the prior discovery lead into a focused editorial secondary-analysis record; original review update and correction-check scope retained verbatim. Independent review outstanding.",
+      "resolves_lead": {
+        "review_update_index": 0,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13225770/",
+        "historical_status": "UNASSESSED_LEAD",
+        "current_status": "FOCUSED_EDITORIAL_APPRAISAL_PENDING_INDEPENDENT_REVIEW"
+      },
+      "related_source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+      "appraisal_ref": "research/atlas-lucidity-secondary-analysis-2026-10-23.md"
     }
-  ]
+  ],
+  "last_reviewed_on": "2026-10-23",
+  "cohort_groups": [
+    {
+      "cohort_id": "COHORT-ATLAS-LUCIDITY-GNAF178",
+      "primary_source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+      "source_ids": [
+        "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+        "SRC-ATLAS-LUCIDITY-LCA-2026"
+      ],
+      "enrolled_unique_participants": 20,
+      "participants_with_audiovisual_observations": 19,
+      "secondary_analysis_subset_participants": 3,
+      "new_participants_from_secondary_analysis": 0,
+      "independent_cohorts": 1,
+      "counting_rule": "Two publications from one cohort. Do not add 20+3, 539+1283, or nine episodes to segment counts. This is a cohort-accounting receipt, not a meta-analysis."
+    }
+  ],
+  "correction_check_updates": [
+    {
+      "checked_on": "2026-10-23",
+      "dois": [
+        "10.1093/geront/gnaf178",
+        "10.1177/13872877261445464"
+      ],
+      "result": "No primary correction or retraction verified in targeted DOI/title correction, erratum and corrigendum searches; this is not proof of absence. Publisher follow-up page displayed an online-first version dated 4 May 2026.",
+      "scope": "Targeted primary-source checks only; complete Crossmark, PubMed linked-notice and version-content audit not completed. Prior correction_check and review_updates preserved.",
+      "follow_up": "Repeat notice checks during independent full-text review; append any correction without erasing the original record."
+    }
+  ],
+  "amendment_provenance": {
+    "base_commit": "fe130ec0df56f72decaf8c7aa026cb9bee7c0af3",
+    "pr_number": 412,
+    "branch": "research/atlas-grief-lucidity-20261022",
+    "review_date": "2026-10-23",
+    "assessment_provenance": "ai-executed",
+    "independent_review_status": "REQUIRED_NOT_COMPLETED",
+    "source_identity_checks": [
+      {
+        "source_id": "SRC-ATLAS-LUCIDITY-GNAF178-2025",
+        "doi": "10.1093/geront/gnaf178",
+        "pmid": "40748700",
+        "pmcid": "PMC12871080",
+        "verified_against": [
+          "https://pubmed.ncbi.nlm.nih.gov/40748700/",
+          "https://doi.org/10.1093/geront/gnaf178",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12871080/"
+        ]
+      },
+      {
+        "source_id": "SRC-ATLAS-LUCIDITY-LCA-2026",
+        "doi": "10.1177/13872877261445464",
+        "pmid": "42081117",
+        "pmcid": "PMC13225770",
+        "verified_against": [
+          "https://pubmed.ncbi.nlm.nih.gov/42081117/",
+          "https://doi.org/10.1177/13872877261445464",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC13225770/"
+        ]
+      }
+    ]
+  }
 }
