@@ -1,0 +1,29 @@
+# Pilot data handling
+
+The app runs on Reddit's Devvit infrastructure. It has no external HTTP permission
+or external analytics integration. Reddit's own infrastructure and developer tooling
+remain governed by Reddit's terms and privacy notices.
+
+| Data | Purpose | App retention |
+| --- | --- | --- |
+| Current Reddit user ID and username | Verify moderator identity and `posts`/`all` permission | Used during the request; the username is not persisted by app code |
+| Moderator's user ID, source-post ID, destination, draft and preview ID | Bind a reviewed preview to its owner and installation | One replaceable draft per moderator/source post, with a ten-minute Redis expiry |
+| Published title, summary, source URLs, claim labels, research status and boundary | Preserve the exact public discussion snapshot | Stored in installation-scoped Redis for the lifetime of the publication/installation |
+| Content digest, publication state, Reddit post ID and public URL | Prevent duplicate posts and reconcile uncertain outcomes | Persistent in the installation; contains no moderator identity |
+| Launcher post ID and public URL | Reopen one companion per installation | Persistent in the installation |
+
+Reader browsing does not create an app-stored history, profile or draft. Request
+responses are marked `Cache-Control: no-store`. The app does not log draft content,
+usernames, user IDs, secrets or stack traces. Platform logs may still record request
+metadata independently of this code.
+
+Only public, reviewed-for-publication prose belongs in the composer. Do not enter
+private correspondence, personal case records, medical details, credentials or
+restricted corpus material. Submitted discussion snapshots are public community
+content and include a link to their canonical article.
+
+This pilot has no public data-export, deletion or claim-reset endpoint. Normal
+Reddit post controls apply to published posts. Operator reconciliation of saved
+snapshots/receipts must preserve duplicate protection and the repository's existing
+public/private boundary. Uninstalling the app is not claimed here to delete Redis
+data; verify Reddit's current platform retention behavior before making that promise.
