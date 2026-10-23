@@ -1,0 +1,523 @@
+{
+  "schema": "akashicnet.omni-method-provenance.v1",
+  "recorded_on": "2026-10-22",
+  "recorded_timezone": "America/Los_Angeles",
+  "target_pr": 413,
+  "validated_base_commit": "9382394d0a0ab5aa896613a1b8c7b5409bd22eea",
+  "status": "VERIFIED_FIRST_PARTY_PINS_COMPONENT_BUNDLES_INCOMPLETE",
+  "method_version": "0.5.0 Public Review Specification",
+  "candidate_basis": "rc.4 A",
+  "declared_dates": {
+    "first_published": "2026-10-01",
+    "method_clarified": "2026-10-02",
+    "availability_clarified": "2026-10-07",
+    "worked_example_clarified": "2026-10-12",
+    "page_file_last_changed": "2026-10-13"
+  },
+  "authority": "Publisher public manual and its linked component register; first-party provenance, not independent scientific validation",
+  "http_assets": [
+    {
+      "id": "manual",
+      "url": "https://akashicnet.org/akashicomni/v0-5-0",
+      "retrieved_at_utc": "2026-10-23T01:34:30.370929+00:00",
+      "final_url": "https://akashicnet.org/akashicomni/v0-5-0",
+      "status": 200,
+      "sha256": "dca4484d7572ff81050a7da21eb16eecbf84fe2d3684478f38fcb797784d3953",
+      "size_bytes": 110871,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:36 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "manual.html",
+      "bundled_path": "references/integration/v018/omni/manual-v0.5.0.html"
+    },
+    {
+      "id": "overview",
+      "url": "https://akashicnet.org/akashicomni",
+      "retrieved_at_utc": "2026-10-23T01:34:30.372154+00:00",
+      "final_url": "https://akashicnet.org/akashicomni",
+      "status": 200,
+      "sha256": "c46743b3d6b2c00be53df0f388690d5f804324690b0b825dd88210e8cf30f387",
+      "size_bytes": 129900,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:36 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "overview.html"
+    },
+    {
+      "id": "research-kit",
+      "url": "https://akashicnet.org/akashicomni/research-kit",
+      "retrieved_at_utc": "2026-10-23T01:34:30.372820+00:00",
+      "final_url": "https://akashicnet.org/akashicomni/research-kit",
+      "status": 200,
+      "sha256": "1b4614311b3f58b5afaa99ac6f58f62448f2cccb9fa0e8e2ccd47d2b57370444",
+      "size_bytes": 92780,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:36 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "research-kit.html"
+    },
+    {
+      "id": "review-template",
+      "url": "https://akashicnet.org/downloads/akashicomni-v0-5-0-review-template.md",
+      "retrieved_at_utc": "2026-10-23T01:34:30.373590+00:00",
+      "final_url": "https://akashicnet.org/downloads/akashicomni-v0-5-0-review-template.md",
+      "status": 200,
+      "sha256": "42582351dfc2efd39865f5725aa222c65a1a63614bcdd2093b15525512ea06d5",
+      "size_bytes": 3205,
+      "content_type": "text/markdown",
+      "etag": "\"64dda3b5b78d9f97ab59ed710c97a554\"",
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:35 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "review-template.txt",
+      "bundled_path": "references/integration/v018/omni/review-template.md"
+    },
+    {
+      "id": "research-prompt",
+      "url": "https://akashicnet.org/downloads/akashicomni-v0-5-0-research-prompt.txt",
+      "retrieved_at_utc": "2026-10-23T01:34:30.374984+00:00",
+      "final_url": "https://akashicnet.org/downloads/akashicomni-v0-5-0-research-prompt.txt",
+      "status": 200,
+      "sha256": "6085392f6aee86d9c0e35b3a25e7399956fdd69f87c1d1ce00f23ee90af61d42",
+      "size_bytes": 2427,
+      "content_type": "text/plain",
+      "etag": "\"e711a13041ae143a7c0a3726ee1a6dbb\"",
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:35 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "research-prompt.txt",
+      "bundled_path": "references/integration/v018/omni/research-prompt.txt"
+    },
+    {
+      "id": "gap-card",
+      "url": "https://akashicnet.org/downloads/akashicomni-v0-5-0-gap-card.md",
+      "retrieved_at_utc": "2026-10-23T01:34:30.376940+00:00",
+      "final_url": "https://akashicnet.org/downloads/akashicomni-v0-5-0-gap-card.md",
+      "status": 200,
+      "sha256": "e0a9212524b42d66b595b342f8c8349c8e79ca533deed8ba3bd2f3df5fa48d3a",
+      "size_bytes": 1320,
+      "content_type": "text/markdown",
+      "etag": "\"1646740d346373765ba3b5f5e3c31a91\"",
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:35 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "gap-card.txt",
+      "bundled_path": "references/integration/v018/omni/gap-card.md"
+    },
+    {
+      "id": "AWAKEN",
+      "url": "https://akashicnet.org/awaken",
+      "retrieved_at_utc": "2026-10-23T01:34:35.131362+00:00",
+      "final_url": "https://akashicnet.org/awaken",
+      "status": 200,
+      "sha256": "d1d569e949ed42f32ab422e9e3b5ab50dac7ce7c3bf87db186b4bd49761b8c7d",
+      "size_bytes": 75478,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:38 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "AWAKEN.html"
+    },
+    {
+      "id": "ADAPT001",
+      "url": "https://akashicnet.org/adapt001",
+      "retrieved_at_utc": "2026-10-23T01:34:35.138546+00:00",
+      "final_url": "https://akashicnet.org/adapt001",
+      "status": 200,
+      "sha256": "382f046f10507a6ec496dd4189e4709bd50d264c34d91a2ebd3610fffe3d95ea",
+      "size_bytes": 59214,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:38 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "ADAPT001.html"
+    },
+    {
+      "id": "REGENERATE000",
+      "url": "https://akashicnet.org/insights/regenerate000",
+      "retrieved_at_utc": "2026-10-23T01:34:35.373708+00:00",
+      "final_url": "https://akashicnet.org/insights/regenerate000",
+      "status": 200,
+      "sha256": "8c8840917d2e71c1819825563650f6e559eb02ba38c64cd8ea98733f76cce0c6",
+      "size_bytes": 37894,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:38 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "REGENERATE000.html"
+    },
+    {
+      "id": "TRANSCEND001",
+      "url": "https://akashicnet.org/transcend001",
+      "retrieved_at_utc": "2026-10-23T01:34:36.423531+00:00",
+      "final_url": "https://akashicnet.org/transcend001",
+      "status": 200,
+      "sha256": "c11a180415ecb6ff154ce20373582c56bd1154cfa5cb04c755a4a1fe32786038",
+      "size_bytes": 66648,
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:38 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "TRANSCEND001.html"
+    },
+    {
+      "id": "HIERATIC-Book-I",
+      "url": "https://akashicnet.org/publications/HIERATIC-Book-I-Editorial-Edition-1.1.pdf",
+      "retrieved_at_utc": "2026-10-23T01:34:36.430868+00:00",
+      "final_url": "https://akashicnet.org/publications/HIERATIC-Book-I-Editorial-Edition-1.1.pdf",
+      "status": 200,
+      "sha256": "9761bd4b2a90efc507f8eac9ae1b242cccea044c63949241d69874ee28839ee8",
+      "size_bytes": 5732036,
+      "content_type": "application/pdf",
+      "etag": "\"53ed7c4d87d61ec159c14c427710635c\"",
+      "last_modified": null,
+      "http_date": "Fri, 23 Oct 2026 01:34:38 GMT",
+      "content_encoding": null,
+      "representation": "http_response_body_identity",
+      "capture_filename": "HIERATIC-Book-I.pdf"
+    }
+  ],
+  "source_provenance": {
+    "project_id": "appgprj_6a93c8c170388191b89b2d90a544c0b1",
+    "sites_version": 1090,
+    "commit_sha": "afa553074bf4552684564cbd3aeea0bd33b7f2c7",
+    "deployment_status": "succeeded",
+    "deployment_updated_at": "2026-10-22T23:52:45.149088+00:00",
+    "previous_pin_commit": "79f1087bdcda4f3f832f0e76b7a694f4e47fcf7a",
+    "previous_sites_version": 1087,
+    "selected_blobs_identical_between_commits": true,
+    "verification": "ALL_15_SELECTED_GIT_BLOBS_INDEPENDENTLY_REHASHED",
+    "archive_sha256_provider_reported_not_recomputed": "c0bde3700fe73c305e0bb2e863e3bf56da105432594891c54f32a445745aa0b3",
+    "inspected_representation": "SOURCE_GIT_BLOBS_SEPARATE_FROM_HTTP_BODIES"
+  },
+  "source_pins": [
+    {
+      "path": "app/akashicomni/v0-5-0/page.tsx",
+      "role": "manual_specification_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 35767,
+      "git_blob_sha": "526c94c9a75ba1d0c9f92d69475c7c25d208e757",
+      "sha256": "a6b95d8b0d0c02adb3d488657318efad176a3ed3bf053c1585934bbc18ad121f"
+    },
+    {
+      "path": "app/akashicomni/page.tsx",
+      "role": "overview_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 32030,
+      "git_blob_sha": "223c2a4515f543d842cce5432c0c42e204a15e11",
+      "sha256": "413482683be423fbf66e238681f4cf76c431d11cedffd7235ef3887954ae62e1"
+    },
+    {
+      "path": "lib/akashicomni-method.ts",
+      "role": "method_role_descriptions",
+      "representation": "git_blob_bytes",
+      "size_bytes": 991,
+      "git_blob_sha": "fafb1e8d9c5c7189c7d4d7f77924e92a127bcc02",
+      "sha256": "e8e25e096c0f895a4fc0709437381b8a8b33ef808c58af00dd296c31abc23dfb"
+    },
+    {
+      "path": "lib/akashicomni-release.ts",
+      "role": "method_release_labels",
+      "representation": "git_blob_bytes",
+      "size_bytes": 2504,
+      "git_blob_sha": "19fc9445f8d5ff1911c5d184cf43d52b6765bb8b",
+      "sha256": "5dc13272efafbae0416363ae21a32426883cecbd1ec3ada9dee58f72a6804bda"
+    },
+    {
+      "path": "app/akashicomni/research-kit/page.tsx",
+      "role": "research_kit_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 24411,
+      "git_blob_sha": "4f1db8d417e135ecef2715dcb05ad5024cd02fef",
+      "sha256": "5512510fe9e6aa450c76ef50f072e5abedac498dd34545f7f185f6baafd0cce3"
+    },
+    {
+      "path": "lib/akashicomni-research-kit.ts",
+      "role": "research_kit_content",
+      "representation": "git_blob_bytes",
+      "size_bytes": 7439,
+      "git_blob_sha": "47441920b448fe70c98437251d0022a2e0146389",
+      "sha256": "af07fd516097e50ebad4adf1a3f957e7fd13042c2412a78b05e9428193ab5807"
+    },
+    {
+      "path": "public/downloads/akashicomni-v0-5-0-review-template.md",
+      "role": "review_template",
+      "representation": "git_blob_bytes",
+      "size_bytes": 3205,
+      "git_blob_sha": "7030ece7742872586b65e0d9ba6b57666db3b969",
+      "sha256": "42582351dfc2efd39865f5725aa222c65a1a63614bcdd2093b15525512ea06d5"
+    },
+    {
+      "path": "public/downloads/akashicomni-v0-5-0-research-prompt.txt",
+      "role": "research_prompt",
+      "representation": "git_blob_bytes",
+      "size_bytes": 2427,
+      "git_blob_sha": "4361a66ebfb6f0aa02addbc0a4becf6ddfea6706",
+      "sha256": "6085392f6aee86d9c0e35b3a25e7399956fdd69f87c1d1ce00f23ee90af61d42"
+    },
+    {
+      "path": "public/downloads/akashicomni-v0-5-0-gap-card.md",
+      "role": "gap_card",
+      "representation": "git_blob_bytes",
+      "size_bytes": 1320,
+      "git_blob_sha": "0598de863bb7563343fa5dc1c45df937de27e32e",
+      "sha256": "e0a9212524b42d66b595b342f8c8349c8e79ca533deed8ba3bd2f3df5fa48d3a"
+    },
+    {
+      "path": "app/awaken/page.tsx",
+      "role": "AWAKEN_public_entry_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 9348,
+      "git_blob_sha": "09d5c66292c307ea8d960fbe919b7e0590360449",
+      "sha256": "50a673968683a06675aa7c8a9cdc405a145c356fa57854ff64c711d1bf7bfe2a"
+    },
+    {
+      "path": "app/adapt001/page.tsx",
+      "role": "ADAPT001_public_entry_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 15356,
+      "git_blob_sha": "b8228842f760be3f5905a3ef61c86dcd63b647f3",
+      "sha256": "cc601a5fffc5d2baf3f687515ec0208a9bf4e262238a95f9559b2c1e4989a40c"
+    },
+    {
+      "path": "app/insights/regenerate000/page.tsx",
+      "role": "REGENERATE000_public_entry_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 8327,
+      "git_blob_sha": "f65eaa98e7591d0867800cbd253ca973f4f357ac",
+      "sha256": "17a0ff8afa096d93f53093d72bdb68736c619afa1ae2fe0c9f5e29f7319ced59"
+    },
+    {
+      "path": "app/transcend001/page.tsx",
+      "role": "TRANSCEND001_public_entry_source",
+      "representation": "git_blob_bytes",
+      "size_bytes": 7526,
+      "git_blob_sha": "532c4fc434d07f2aa3099fd42c2e4e780cc03300",
+      "sha256": "2ac68944b7a29e3cdf185de5211b76cd12feac3d34fd97b49504af1b9a77e513"
+    },
+    {
+      "path": "app/transcend001/article.json",
+      "role": "TRANSCEND001_content",
+      "representation": "git_blob_bytes",
+      "size_bytes": 7989,
+      "git_blob_sha": "b13cbcf933d9eb00b78bc4ad2880ee52ea133826",
+      "sha256": "62465046b43672c5072267376e94ed7433a797491bc17516c0075d500f49857c"
+    },
+    {
+      "path": "public/publications/HIERATIC-Book-I-Editorial-Edition-1.1.pdf",
+      "role": "HIERATIC_Book_I_edition_1.1_bytes",
+      "representation": "git_blob_bytes",
+      "size_bytes": 5732036,
+      "git_blob_sha": "ec9fd7bd2d41914d1b20968daab0fc5ad4b59422",
+      "sha256": "9761bd4b2a90efc507f8eac9ae1b242cccea044c63949241d69874ee28839ee8"
+    }
+  ],
+  "component_register": [
+    {
+      "component": "ACTC",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/",
+          "version_label": "v2.0",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/pcjwo7y/",
+          "version_label": "v2.0.1",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "Conceptual axioms; not an evidence hierarchy."
+    },
+    {
+      "component": "METAD",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ukdnzu/",
+          "version_label": "v2.1",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ukdnzu/comment/pcjx6eb/",
+          "version_label": "v2.1.1",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "Architecture and attribution; not a verified execution graph."
+    },
+    {
+      "component": "UMASC",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uk9qdp/",
+          "version_label": "v7.2",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uk9qdp/comment/pck0cro/",
+          "version_label": "v7.2.1",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "Classification does not establish empirical equivalence."
+    },
+    {
+      "component": "CUT",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/",
+          "version_label": "v4.0.3",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/comment/pck0jk6/",
+          "version_label": "v4.0.4",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "Three temporal views of a broader symbolic source."
+    },
+    {
+      "component": "HOMESENSE700",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ul49l9/",
+          "version_label": "Working Draft v1.1",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ul49l9/comment/pck09dt/",
+          "version_label": "Working Draft v1.1.1",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "Charter context; distinct from the Phase 8 perspective."
+    },
+    {
+      "component": "PP",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/ovc6qyw/",
+          "version_label": "v1.0 nested draft",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/pcjwo7y/",
+          "version_label": "v1.0.1 within ACTC addendum",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "Optional philosophical module."
+    },
+    {
+      "component": "QMM",
+      "references": [
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1peyo0j/",
+          "version_label": "Community interpretation",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        },
+        {
+          "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1peyo0j/comment/pck0vdo/",
+          "version_label": "Dated attribution correction",
+          "original_bytes_sha256": null,
+          "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+        }
+      ],
+      "scope": "External hypothesis; no established PP bridge."
+    }
+  ],
+  "historical_text": {
+    "sha256": "31de87154185e932b4c4205ae1e8c920d4f9263097f5644fccecfc0884d3ecd8",
+    "representation": "EARLIER_RETRIEVED_TEXT_NOT_ORIGINAL_HTML",
+    "comparison": "BYTES_NOT_AVAILABLE_FOR_EQUIVALENCE_CHECK_CHECKSUM_PRESERVED"
+  },
+  "historical_retrieval": {
+    "earlier_review": "AkashicNET-OMNI-Source-Pin-Review-2026-10-22.zip",
+    "original_html_result_reported": "HTTP_403",
+    "current_result": "HTTP_200_ORIGINAL_BODY_CAPTURED",
+    "prior_claim_not_rewritten": true
+  },
+  "repository_comparison": {
+    "commit": "9382394d0a0ab5aa896613a1b8c7b5409bd22eea",
+    "status_reference": "docs/AKASHICOMNI_V050_PUBLIC_STATUS.md",
+    "status_reference_scope": "VERIFIED_7_OCTOBER_REFERENCE_NOT_COMPLETE_MANUAL",
+    "perspective_identifiers": "ALL_12_MATCH_AFTER_CUT_SEPARATOR_NORMALIZATION",
+    "repository_ACTC_role": "Agency, context, temporal order and candidate causes.",
+    "manual_ACTC_role": "Coherence and explanatory relationships, treated conceptually",
+    "role_equivalence": "NOT_ASSERTED_OLDER_REPOSITORY_ROLE_NOT_USED_AS_CURRENT_COMPONENT_SPEC",
+    "pilot_method_coverage": "PENDING_WORKSHEET_NOT_FULL_METHOD_EXECUTION"
+  },
+  "coverage_limits": [
+    "HTTP URLs are mutable; SHA-256 pins these captured response bodies, not every future response. Drift must be reviewed, never silently repinned.",
+    "Four HTTP bodies are bundled for offline verification. The other seven can be independently refetched and verified, but are not vendored.",
+    "HTML bodies include the served page and shared markup; they are not the same representation as TSX, normalized text, linked media or an offline-renderable complete website.",
+    "The 15 selected Git blobs are not a complete build/runtime dependency lock. Archive hash is a provider receipt, not a downloaded/recomputed archive hash.",
+    "Seven registered component rows contain fourteen reference entries and thirteen distinct URLs; ACTC and PP share one clarification URL. These are six recorded clarification publication units, not independent studies.",
+    "All registered Reddit original/addendum bytes remain unverified. Authorized archived representations are needed. No live Reddit request was made; archive URL metadata is not a captured original.",
+    "HIERATIC Book I bytes are verified; full PDF appraisal or representation of every HIERATIC post is not claimed.",
+    "Method identity and source-byte identity do not establish genuine human appraisal, scope-specific rights/cultural decisions, reviewer authentication, independent review or release acceptance."
+  ],
+  "gates": {
+    "original_html_pin_complete": true,
+    "components_individually_pinned": false,
+    "method_pin_gate_complete": false,
+    "real_pilot_status": "HOLD",
+    "question_status": "UNRESOLVED",
+    "v018_release_status": "PLANNED_NOT_RELEASE_READY",
+    "promotion_guards": {
+      "truth": false,
+      "evidence": false,
+      "rights": false,
+      "identity": false,
+      "edge_acceptance": false
+    }
+  }
+}

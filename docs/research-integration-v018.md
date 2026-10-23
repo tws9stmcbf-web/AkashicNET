@@ -58,8 +58,10 @@ Earlier preparation reused: `AkashicNET-v018-Offline-Review-2026-10-22.zip`, ver
 Its eight synthetic tests and unsigned candidate worksheet were preparation, not
 real import or human acceptance. This adapter adds actual r190 import and native
 integrity validation. Its OMNI retrieved-text checksum is retained in the lock as
-representation-specific provenance; original HTML and linked component bytes
-remain unpinned. The main-branch public-status document is a reference, not the
+representation-specific provenance. The follow-up [method provenance inventory](omni-method-provenance-v018.md)
+pins the original HTTP manual, starter downloads and selected source blobs. The
+registered Reddit originals/addenda remain unpinned; full component provenance
+is still incomplete. The main-branch public-status document is a reference, not the
 complete current manual. PR #367 remains separate, open, unreleased work.
 
 The ambiguous collection-release label is explicitly **deprecated as an integration
@@ -87,7 +89,7 @@ again failed with 404; the prior bundle also records a direct 403. These respons
 do not prove deletion. The community locator was found in the pinned archive;
 current availability was not tested, respecting the live Reddit HOLD. Links are
 not labelled currently verified. Full primary text, rights/cultural review,
-complete method pins and a genuine human assessment remain outstanding.
+complete original component pins and a genuine human assessment remain outstanding.
 
 ## Public projection and corrections
 
@@ -206,3 +208,25 @@ canonical relationship is promoted, and no release requirement changes.
 Follow-up validation: **74 local tests passed**, including 15 new revision-history
 cases. The synthetic merged private contract and public HOLD status replay
 byte-for-byte. CI evidence for the updated commit is tracked in draft PR #413.
+
+## Follow-up: verified manual provenance, incomplete component bundles
+
+The [method provenance review](omni-method-provenance-v018.md) compares the current
+public manual with this exact pilot baseline. Its checksum-bound inventory includes
+11 independently retrieved first-party HTTP bodies and 15 independently rehashed
+Sites source blobs. Four HTTP bodies (manual and starter files) are bundled for
+offline replay. The original HTML pin is complete for this dated representation;
+`components_individually_pinned` and the complete method-pin gate remain **false**.
+
+The new offline verifier checks the manifest binding, captured bytes, original
+component/version/URL register and the twelve perspective identities. Fourteen new
+adversarial cases cover drift, missing bytes, false gate completion, incorrect
+component versions, path escape and immutable Git commit selection. The existing
+74 tests and correction/revision fixtures remain the engineering baseline. New
+exact-head CI is required for this change; earlier green checks do not transfer.
+
+This adds provenance validation without changing the adapter, trusted review model,
+real input packet, foundation bytes, historical text hash or real public HOLD output.
+The old GitHub ACTC role description differs from the current manual and remains
+a dated reference; it is not silently substituted for the current specification.
+No full OMNI execution, genuine human appraisal or independent validation follows.

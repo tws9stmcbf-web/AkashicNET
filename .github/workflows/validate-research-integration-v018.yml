@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'scripts/research_integration_v018.py'
+      - 'scripts/verify_omni_method_pins_v018.py'
+      - 'tests/test_omni_method_pins_v018.py'
       - 'schemas/research-integration-v0.18.schema.json'
       - 'schemas/research-integration-public-v0.18.schema.json'
       - 'references/integration/v018/**'
@@ -21,6 +23,8 @@ on:
     branches: [main, codex/v018-bounded-prism-integration]
     paths:
       - 'scripts/research_integration_v018.py'
+      - 'scripts/verify_omni_method_pins_v018.py'
+      - 'tests/test_omni_method_pins_v018.py'
       - 'schemas/research-integration-v0.18.schema.json'
       - 'schemas/research-integration-public-v0.18.schema.json'
       - 'references/integration/v018/**'
@@ -46,7 +50,9 @@ jobs:
       - name: Install fixed test dependencies
         run: python -m pip install --disable-pip-version-check pytest==8.3.5 jsonschema==4.23.0
       - name: Offline bounded pilot and inherited archive boundaries
-        run: python -m pytest -q tests/test_research_integration_v018.py tests/test_search_reddit_archive.py tests/test_bq001_public_status_boundary.py
+        run: python -m pytest -q tests/test_research_integration_v018.py tests/test_search_reddit_archive.py tests/test_bq001_public_status_boundary.py tests/test_omni_method_pins_v018.py
+      - name: Verify pinned OMNI method representations offline
+        run: python scripts/verify_omni_method_pins_v018.py
       - name: Replay synthetic correction export
         run: |
           python scripts/research_integration_v018.py --contract tests/fixtures/research_integration_v018/before.json --public-out "$RUNNER_TEMP/before.json"

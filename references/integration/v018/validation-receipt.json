@@ -34,5 +34,29 @@
     "human_review": "PENDING",
     "independent_review": "PENDING",
     "exact_commit_ci": "TRACK_IN_DRAFT_PR"
+  },
+  "method_provenance_followup": {
+    "date": "2026-10-22",
+    "status": "ORIGINAL_HTML_AND_SELECTED_ASSETS_PINNED_COMPONENT_BUNDLES_INCOMPLETE",
+    "validated_baseline_commit": "9382394d0a0ab5aa896613a1b8c7b5409bd22eea",
+    "tests": {
+      "passed": 88,
+      "failed": 0,
+      "new_provenance_cases": 14
+    },
+    "inherited_correction_and_revision_byte_replay": "PASS",
+    "verified_original_http_bodies": 11,
+    "bundled_http_bodies": 4,
+    "independently_rehashed_selected_source_blobs": 15,
+    "original_component_bundles": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+    "original_html_pin": "VERIFIED_HTTP_200_SNAPSHOT",
+    "components_individually_pinned": false,
+    "full_method_pin_gate_complete": false,
+    "historical_text_checksum_preserved": true,
+    "real_projection": "UNCHANGED_HOLD_NO_SOURCE_ROWS",
+    "human_review": "PENDING",
+    "independent_review": "PENDING",
+    "exact_commit_ci": "TRACK_NEW_EXACT_HEAD_IN_DRAFT_PR_AND_ISSUE_411",
+    "release": "NOT_AUTHORIZED"
   }
 }

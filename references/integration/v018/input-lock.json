@@ -293,10 +293,15 @@
   "inherited_v017_release_commit": "677abddc472322621adf54697ac31c383be3b3c3",
   "manual_method": {
     "version": "0.5.0 Public Review Specification",
-    "original_html_pin": "PENDING",
+    "original_html_pin": "VERIFIED_HTTP_200_SNAPSHOT",
     "components_individually_pinned": false,
     "retrieved_text_sha256": "31de87154185e932b4c4205ae1e8c920d4f9263097f5644fccecfc0884d3ecd8",
-    "implementation": "REFERENCE_ONLY_NOT_FULL_METHOD"
+    "implementation": "REFERENCE_ONLY_NOT_FULL_METHOD",
+    "original_html_sha256": "dca4484d7572ff81050a7da21eb16eecbf84fe2d3684478f38fcb797784d3953",
+    "provenance_manifest": {
+      "path": "references/integration/v018/omni/method-provenance.json",
+      "sha256": "2436242474bb5bf05c9be49168da19f5a180bc3c1875ba33135023eb02a1e60b"
+    }
   },
   "collection_release": "DEPRECATED_AMBIGUOUS_NOT_A_RELEASE"
 }
