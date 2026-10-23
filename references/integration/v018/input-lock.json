@@ -1,0 +1,307 @@
+{
+  "contract_version": "0.18.0-pilot.1",
+  "packet_sha256": "cbce536a124f0170b6d93ed8974cbe2c0110dc5409b986ddfb594cce91a7e71a",
+  "dataset_revision": 190,
+  "packet_schema": "akashicprism.framework-input.v1",
+  "source_database_sha256_reported_not_recomputed": "f0b1e44abea87bb2d6842f1ac695c1e9cea2c02a5a0c834fa80d015d545d2600",
+  "table_contracts": {
+    "source_metadata": {
+      "primary_key": [
+        "source_url"
+      ],
+      "foreign_keys": [],
+      "row_count": 851,
+      "sha256": "6288a4320483e78e4f46c0964313efb718ffb24041768f3471bc0fabff0c63e2"
+    },
+    "bq_registry_snapshot": {
+      "primary_key": [
+        "question_id"
+      ],
+      "foreign_keys": [],
+      "row_count": 3,
+      "sha256": "25cfeae592cbb42f9487837e3cd63e456dde6dcebbd9bb101ce7417fda3bcb4a"
+    },
+    "bq_discovery_links": {
+      "primary_key": [
+        "source_url",
+        "question_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "bq_registry_snapshot",
+          "from": "question_id",
+          "to": "question_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "source_metadata",
+          "from": "source_url",
+          "to": "source_url",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 823,
+      "sha256": "cb8433208fe6e8fc7121622a736afcc4683131a6f40bc904cb7629da3ee5e101"
+    },
+    "records": {
+      "primary_key": [
+        "record_id"
+      ],
+      "foreign_keys": [],
+      "row_count": 154,
+      "sha256": "6c3d61f7f9315df2113ff47db7f804bbab6f3b80a1b956344a3a6b243b19af0e"
+    },
+    "assessments": {
+      "primary_key": [
+        "assessment_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "assessments",
+          "from": "supersedes",
+          "to": "assessment_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "records",
+          "from": "record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 161,
+      "sha256": "04d8dabfdf41a989601b328b6b0006c346550e0065683aebe36190e394deac8e"
+    },
+    "current_assessments": {
+      "primary_key": [],
+      "foreign_keys": [],
+      "row_count": 154,
+      "sha256": "9091efe36bb0a25c3367cf81389ca301eb7fffbcde266315648240bc07b64bf2"
+    },
+    "topics": {
+      "primary_key": [
+        "topic_id"
+      ],
+      "foreign_keys": [],
+      "row_count": 42,
+      "sha256": "135c80238a874e3761d8f2965ec7738b9cc26a7cafacc6cb8795295f27b85505"
+    },
+    "record_topics": {
+      "primary_key": [
+        "record_id",
+        "topic_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "topics",
+          "from": "topic_id",
+          "to": "topic_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "records",
+          "from": "record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 545,
+      "sha256": "dc7f8fce28483295a4cd22ba67c0203be9f6ff90f8c96f6fb3a7790209599b30"
+    },
+    "discovery_candidates": {
+      "primary_key": [
+        "source_system",
+        "source_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "discovery_imports",
+          "from": "first_import_id",
+          "to": "import_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "records",
+          "from": "linked_record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 7521,
+      "sha256": "04e6141f8f7413567ef3b27ab5c78adb496d6c40ebc06423111b60e8d4ea37b8"
+    },
+    "discovery_imports": {
+      "primary_key": [
+        "import_id"
+      ],
+      "foreign_keys": [],
+      "row_count": 2,
+      "sha256": "0ac605598af3c136c557c2b3e5c4c15e6da7d38a31a145fa7bbd9c88c30bc9a5"
+    },
+    "author_discovery": {
+      "primary_key": [
+        "source_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "records",
+          "from": "linked_record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 8,
+      "sha256": "e9ea1ad19267184996ebf30885553c8273dfd406f96f11689d329c15d42ca3ad"
+    },
+    "record_context": {
+      "primary_key": [
+        "record_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "records",
+          "from": "record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 154,
+      "sha256": "1cf1f71384f3253ec2240699b07bfd642530e226951890c69852c2718e1d4a23"
+    },
+    "restrictions": {
+      "primary_key": [
+        "assessment_id",
+        "category"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "assessments",
+          "from": "assessment_id",
+          "to": "assessment_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 805,
+      "sha256": "649992696c3cd625c0533fd0659a9234eb1f0832f2b20cfe06006f978b903f6d"
+    },
+    "content_types": {
+      "primary_key": [
+        "assessment_id",
+        "content_type"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "assessments",
+          "from": "assessment_id",
+          "to": "assessment_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 239,
+      "sha256": "9487e351e76c4147cb7d55193d3c697b5b9104ac3da957fcbf51a3dfbc32daa9"
+    }
+  },
+  "selection": {
+    "primary_id": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/STE23.pdf",
+    "community_id": "PRISM-REDDIT-1tlcanb"
+  },
+  "foundation_pins": {
+    "schemas/source-status-v0.16.schema.json": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "cfaac1688ec06819bc62b9ae0b5bfa5eb882ce21",
+      "sha256": "690568abbf72eb7efafb3502def4a0f2044f94385177abd13499962b59c21c03"
+    },
+    "docs/AKASHICOMNI_V050_PUBLIC_STATUS.md": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "a6fa9ad0ed09aecedfb01b4bb974ca2201b6e492",
+      "sha256": "b08c9b8765dedf7a43436fe1e560331d741ceb5ade74e2d74b4d98825be2589c"
+    },
+    "docs/v017-combined-validation.md": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "26e01c830668da85c13a6f5b7305cefbe1d4953f",
+      "sha256": "8ff578bfbdfe1f8fc4a870e8d5755e2da8064aae62bd8779b955e0cfa0026577"
+    },
+    "tools/search_reddit.py": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "b5348c8f71ad5a9dbaac7dd1c9732a55de0cd254",
+      "sha256": "1e8286abff822f2edfc34f180aa5c0bf7b88eaa5df85bd1e8d6857208330f8d4"
+    },
+    "scripts/reddit_corpus_census.py": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "f5d93f27f3ac67b7fc1246076c6a2aa91a935c09",
+      "sha256": "5377d0454e8f22c4684becd611a6136549ddba8e1c21be7d75dfce5d1b5e3845"
+    },
+    "references/community/reddit-uri-index.csv": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "7bfebfc5f347844aeccf5f338eb0f61a800de9e8",
+      "sha256": "3a6a702061cff7ae9e8d555b1de32b17cba9401f59451fce739f7f8411804b80"
+    },
+    "references/community/n2n-index.csv": {
+      "commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+      "git_blob_sha": "0d8d3275b82c8ce1d3afca3d13a389e5069ad99f",
+      "sha256": "6d6ea88cbeda0a14b281246201e9cc711d74b28898531951da57dcdfdd36595a"
+    }
+  },
+  "inherited_v017_release_commit": "677abddc472322621adf54697ac31c383be3b3c3",
+  "manual_method": {
+    "version": "0.5.0 Public Review Specification",
+    "original_html_pin": "VERIFIED_HTTP_200_SNAPSHOT",
+    "components_individually_pinned": false,
+    "retrieved_text_sha256": "31de87154185e932b4c4205ae1e8c920d4f9263097f5644fccecfc0884d3ecd8",
+    "implementation": "REFERENCE_ONLY_NOT_FULL_METHOD",
+    "original_html_sha256": "dca4484d7572ff81050a7da21eb16eecbf84fe2d3684478f38fcb797784d3953",
+    "provenance_manifest": {
+      "path": "references/integration/v018/omni/method-provenance.json",
+      "sha256": "2436242474bb5bf05c9be49168da19f5a180bc3c1875ba33135023eb02a1e60b"
+    }
+  },
+  "collection_release": "DEPRECATED_AMBIGUOUS_NOT_A_RELEASE"
+}

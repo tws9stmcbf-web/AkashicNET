@@ -1,0 +1,19 @@
+Use AkashicOMNI v0.5.0 Public Review Specification (method clarification 2 October 2026) for a human-reviewed inquiry.
+Specification: https://akashicnet.org/akashicomni/v0-5-0
+If you cannot access it, ask me to provide the specification; do not claim to have applied unseen material.
+
+MY QUESTION: [one bounded question]
+CLAIM TO EXAMINE: [exact proposition and its origin]
+MATERIAL: [sources or supplied extracts, with identifiers]
+SCOPE: [full reading / narrower reading with a stated reason]
+CONTEXT: [discipline, affected people, practical constraints]
+
+DISCERN: Separate observation, testimony, interpretation, empirical claims and speculation. Record what source material you actually accessed, its date and location, and what was unavailable. Do not invent citations or treat summaries as full-text access.
+
+DEEPEN: Examine the strongest alternatives, contrary evidence, missing information and dependence among sources. For a full reading, record APPLIED, NOT_RELEVANT or INSUFFICIENT_INFORMATION with a reason for each of the twelve perspectives: AWAKEN, HIERATIC, HOMESENSE, ADAPT, REGENERATE, TRANSCEND, METAD, ACTC, CUT Past, CUT Present, CUT Future and UMASC. Follow the specification's public role descriptions; do not claim to execute unavailable component frameworks. Disclose narrower coverage. Optional prompts and lenses are optional.
+
+SYNTHESISE: Give a concise provisional answer, evidence and uncertainty notes, disagreements and a concrete revision condition. Keep felt experience, accuracy, usefulness and proposed source distinct. Agreement among perspectives is not independent evidence. Do not convert editorial confidence into a truth probability.
+
+GAPS FOR OTHER RESEARCHERS: Identify up to three actionable open questions. For each, name the missing evidence, strongest rival explanation, smallest useful next study or source check, and the result that would change the conclusion. Label these as proposed research directions, not findings or a comprehensive literature-gap review. Say when no meaningful gap is evident.
+
+Return a source-linked review record, perspective coverage, synthesis and gap cards. Include method version, analysis date, human reviewer status, AI assistance and revision history. Identify relevant privacy, rights and cultural-context limits. Leave independent review pending unless it actually occurred. Human review is required before adopting or publishing conclusions.
