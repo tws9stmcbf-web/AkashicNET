@@ -64,3 +64,30 @@ Keep the pilot in a development community until those results are recorded and
 Reddit's review requirements for the intended community have been satisfied.
 
 No message or post was sent to r/NeuronsToNirvana or r/microdosing during this build.
+
+## Private-playtest preflight follow-up
+
+Checked 22 October 2026 America/Los_Angeles (23 October UTC), against implementation
+commit `ca6ef2135dfeef3b930e066c7a3ed99863731c74`. PR #414 remained open and draft;
+all 14 returned PR-triggered workflow runs for that commit had succeeded,
+including Reddit Research Companion run `39890457937`. No PR comments recorded
+a subsequent hosted installation when checked.
+
+A fresh checkout and locked install under Node 24.19.0/npm 11.9.0 passed all
+20 tests, strict typecheck and production build. Installed CLI: 0.15.0.
+`devvit whoami` reported that it was not logged in. No CLI token file or
+DEVVIT environment variables were present before setup; no credentials were read.
+The production audit again reported zero vulnerabilities; the full audit still
+reported 12 high-severity affected-package entries. `npm view braces version`
+returned 3.0.3; the upstream advisory still listed no patched version.
+
+The developer-browser request first timed out. Recovery exposed Reddit's login
+page with a site-served network-security block and no usable sign-in form.
+Developer identity, app registration/name availability, private community,
+moderator roles and current flair options could not be verified.
+
+No registration, upload, installation, Reddit post, review submission or launch
+was performed. All hosted behavior, old-Reddit fallback and mobile acceptance
+checks remain NOT RUN. See [HOSTED-PLAYTEST.md](HOSTED-PLAYTEST.md) for a bounded
+continuation, including the CLI's automatic-community/content side effects and
+approval stop points. The follow-up changes documentation only.

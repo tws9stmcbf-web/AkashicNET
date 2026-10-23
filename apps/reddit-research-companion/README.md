@@ -45,6 +45,11 @@ The GitHub workflow runs the same checks and audits production dependencies.
 
 ## Connect and playtest
 
+Follow [HOSTED-PLAYTEST.md](HOSTED-PLAYTEST.md) for the private-community
+preflight, approval stop points, reproducible commands and hosted test record.
+Devvit can automatically create a development community and test content; the
+absence of an app installation trigger does not disable CLI/platform behavior.
+
 1. Sign into the intended Reddit account at
    [Reddit for Developers](https://developers.reddit.com/new).
 2. In this app directory, run `npm run login`. For a remote terminal that cannot
@@ -55,10 +60,11 @@ The GitHub workflow runs the same checks and audits production dependencies.
    updates the registered app name while retaining the custom source. If the
    proposed name is unavailable, choose another name in the official wizard.
    Review the resulting metadata/lockfile changes and rerun `npm run check`.
-4. Run `npm run dev`. The CLI supplies the development subreddit and playtest URL.
-   Choose a small development community, with the intended moderator account;
-   private visibility must be verified in Reddit rather than assumed. Do not
-   start the pilot in r/NeuronsToNirvana or r/microdosing.
+4. Verify a dedicated private community and the intended moderator account first.
+   Use the explicit-target upload and playtest sequence in HOSTED-PLAYTEST.md;
+   do not run bare `npm run dev` on a newly registered app. Obtain approval for
+   platform-created test content before starting the playtest. Do not start the
+   pilot in r/NeuronsToNirvana or r/microdosing.
 5. Use the subreddit menu **Open AkashicNET Research Companion** to create its
    launcher post. Installation itself has no posting trigger. Reopening the menu
    returns the existing launcher instead of creating a second one.
@@ -76,6 +82,9 @@ hosted playtest succeeds. No authentication secrets belong in that record.
 validates, uploads and requests Reddit review. These are explicit operator actions;
 neither CI nor app installation runs them. Reddit's quickstart says apps require
 review before installation in communities with more than 200 members.
+An unconfigured upload can also bootstrap a default development community. Use
+the bounded sequence in HOSTED-PLAYTEST.md for this private pilot. Do not run
+`npm run launch` or `devvit publish` as part of the playtest.
 
 Complete the hosted tests and review the open dependency-tooling note in
 [VALIDATION.md](VALIDATION.md) before deciding on broader rollout. A working local
