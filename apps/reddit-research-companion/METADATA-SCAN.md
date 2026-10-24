@@ -89,10 +89,10 @@ it is not a live-content export or a scientific bibliography.
 ### Validate copied packets for review
 
 After the required external-retention/deletion process is established, keep
-authorised copied packets in the ignored `captures/` directory and run:
+authorised copied packets outside Git in private managed storage and run:
 
 ```sh
-npm run metadata:stage -- captures/part-1.json captures/part-2.json --out staging/n2n-review.json
+npm run metadata:stage -- /absolute/private/part-1.json /absolute/private/part-2.json --out /absolute/private/n2n-review.json
 ```
 
 This offline command validates the known-ID fingerprint, exact ID/cursor
@@ -102,9 +102,9 @@ reports the first unresolved cursor. Transient retries remain unresolved.
 Observations older than 24 hours or in the future are refused; 24 hours is
 this tool's conservative freshness setting, not a statement of Reddit policy.
 
-Only the latest supplied observation for an ID enters staging. A newer
-suppressed/unavailable outcome carries no metadata and supersedes the earlier
-payload. Contradictory records with the same timestamp require explicit
+Only one supplied observation per ID enters staging. Unavailable, suppressed
+and out-of-scope outcomes carry no metadata and dominate observed payloads in
+the same import regardless of timestamp order. Otherwise the latest wins. Contradictory records with the same timestamp require explicit
 resolution. No older title history is retained in the staged file. Raw input
 files remain unchanged, so their deletion/refresh is the operator's separate
 responsibility.
@@ -119,8 +119,21 @@ truncated or falsely completed batches are rejected.
 The tool writes a new local review file with owner-only permissions and
 refuses to overwrite existing outputs. `captures/` and `staging/` are ignored
 by Git. These are working data, not files to commit to public Git history.
-This provides validated staging; it does not implement deletion propagation
-or clear the external-content integration gate.
+Staging refuses input/output paths inside Git and symlink aliases. Stand-alone
+exports and raw inputs still require external lifecycle management.
+
+### Offline retention controls
+
+[RETENTION.md](RETENTION.md) defines the minimum activation contract and remaining
+infrastructure dependencies. The new `metadata:retain` command reconciles one
+private state file outside Git, purges 24-hour-old metadata and dependent
+projections, and persists contentless suppression tokens against replay.
+Requests and contentless outcomes never automatically reinstate. Every CLI
+operation sweeps expiry; a stopped CLI is not an automatic TTL service.
+Hook/CI checks reject capture schemas in the index and proposed history.
+Synthetic tests cover deletion, unavailable sources, replay, provenance, expiry
+and path protections. Origin stays UNVERIFIED_OPERATOR_EXPORT, public eligibility
+HOLD. No live capture or public graph integration is enabled.
 
 Primary references: [Reddit client](https://developers.reddit.com/docs/api/redditapi/RedditClient/classes/RedditClient),
 [API overview](https://developers.reddit.com/docs/capabilities/server/reddit-api),

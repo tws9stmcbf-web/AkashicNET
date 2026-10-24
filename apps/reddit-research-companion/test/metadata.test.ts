@@ -111,7 +111,7 @@ test('inaccessible posts are accounted for separately from transient failures', 
 });
 
 test('removed, deleted, mature and quarantined posts never leak their metadata', async () => {
-  for (const patch of [{ isRemoved: () => true }, { removedByCategory: 'deleted' }, { isNsfw: () => true }, { isQuarantined: () => true }, { isSpam: () => true }]) {
+  for (const patch of [{ isRemoved: () => true }, { removedByCategory: 'deleted' }, { isNsfw: () => true }, { isQuarantined: () => true }, { isSpam: () => true }, { title: '[deleted]' }, { title: ' [REMOVED] ' }]) {
     const f = fixture(); f.alter(post => ({ ...post, ...patch }));
     const packet = await f.scanner.batch(input());
     assert.ok(packet.records.every(record => record.lookup_status === 'suppressed' && record.metadata === null));

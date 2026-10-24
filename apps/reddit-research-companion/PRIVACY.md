@@ -42,3 +42,17 @@ a short-lived installation-wide cooldown marker in Redis. No external service
 receives packets automatically. External reuse requires a separate reviewed
 deletion, refresh and provenance workflow. See METADATA-SCAN.md.
 
+
+## Offline retention safeguards · 24 October 2026
+
+The synthetic-only continuation in [RETENTION.md](RETENTION.md) adds a private
+local reconciler, 24-hour expiry checks, removal/suppression, dependent-projection
+purging, persistent replay blocking and Git publication barriers. It never
+authenticates packets or makes them publicly eligible. A private suppression
+token only prevents re-import; it is not anonymous data or retained deleted
+content. Its necessity and duration require operating-policy review. No TTL
+scheduler, removal inbox, encryption service or hosted deletion propagation is
+deployed. Real copied metadata remains blocked from external storage and
+incorporation until those dependencies and approvals are satisfied. Earlier
+public-discussion snapshot/receipt retention needs its own review; this patch
+does not certify that separate workflow.

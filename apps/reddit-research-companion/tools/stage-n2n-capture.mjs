@@ -2,9 +2,10 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assertOutsideGit } from './private-metadata-files.mjs';
 
 const TARGET = 'NeuronsToNirvana';
-const MAX_AGE_MS = 24 * 60 * 60 * 1000;
+export const MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const hash = value => createHash('sha256').update(value).digest('hex');
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const fail = message => { throw new Error(message); };
@@ -29,7 +30,7 @@ export function loadManifest() {
   return JSON.parse(match[1]);
 }
 
-function normaliseRecord(value, expectedId, now) {
+export function normaliseRecord(value, expectedId, now) {
   if (typeof expectedId !== 'string') fail('Observation is outside the known-ID manifest');
   exactKeys(value, ['post_id', 'observed_at', 'lookup_status', 'metadata'], 'observation');
   if (value.post_id !== expectedId) fail('Observation ID does not match its manifest position');
@@ -96,7 +97,11 @@ export function stageCaptures(captures, manifest, { now = Date.now() } = {}) {
       observationCount++;
       const prior = latest.get(record.post_id);
       if (prior?.observed_at === record.observed_at && JSON.stringify(prior) !== JSON.stringify(record)) fail('Conflicting observations have the same timestamp; resolve the conflict explicitly');
-      if (!prior || record.observed_at > prior.observed_at) latest.set(record.post_id, record);
+      // Contentless safety outcomes dominate all supplied observations. A later
+      // copied title is not permission to undo a removal/unavailability signal.
+      const blocked = item => item && ['unavailable', 'suppressed', 'out_of_scope'].includes(item.lookup_status);
+      if (!prior || (blocked(record) && !blocked(prior)) ||
+          (blocked(record) === blocked(prior) && record.observed_at > prior.observed_at)) latest.set(record.post_id, record);
       if (record.lookup_status === 'retry') {
         if (i !== packet.records.length - 1) fail('A transient failure must end its batch');
       } else expectedCursor++;
@@ -138,6 +143,7 @@ function main(args) {
   if (index < 1 || index !== args.length - 2) fail('Usage: node tools/stage-n2n-capture.mjs capture.json [more-captures.json] --out staging/review.json');
   const inputs = args.slice(0, index).map(file => path.resolve(file));
   const output = path.resolve(args[index + 1]);
+  for (const file of [...inputs, output]) assertOutsideGit(file);
   if (!output.endsWith('.json') || existsSync(output) || inputs.includes(output)) fail('Choose a new .json output file; existing files are never overwritten');
   let totalBytes = 0;
   const captures = inputs.map(file => {
@@ -146,7 +152,7 @@ function main(args) {
     return JSON.parse(readFileSync(file, 'utf8'));
   });
   const staged = stageCaptures(captures, loadManifest());
-  mkdirSync(path.dirname(output), { recursive: true });
+  mkdirSync(path.dirname(output), { recursive: true, mode: 0o700 });
   writeFileSync(output, JSON.stringify(staged, null, 2) + '\n', { flag: 'wx', mode: 0o600 });
   console.log(JSON.stringify({ status: 'STAGED_FOR_REVIEW', known_ids: staged.coverage.known_ids,
     staged_ids: staged.coverage.unique_ids, outcomes: staged.coverage.outcomes,

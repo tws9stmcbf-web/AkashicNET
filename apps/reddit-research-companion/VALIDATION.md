@@ -141,3 +141,36 @@ page showed a signed-out permission screen; its normal Log in link led to a
 Reddit-served network-security block without usable credential fields. No
 attempt was made to evade the block, and app ownership/installation remains
 unverified. No upload, hosted scan or live Reddit change occurred.
+
+## Offline retention continuation · 24 October 2026
+
+Adds a private local retention reconciler/CLI and 22 synthetic regression tests
+(**68 total**), a shared non-Git path barrier, an index/history publication guard,
+optional pre-commit hook and CI range check. `RETENTION.md` records the primary
+Reddit requirements, minimum operating contract, suppression-token justification
+and external activation gate. Staging makes safety outcomes dominate observed
+payloads; the scanner additionally suppresses deleted/removed title sentinels.
+
+Node 24.22.1/npm 11.9.0: locked install, application strict TypeScript checks,
+68 tests, production client/CommonJS-server build and standalone JavaScript
+syntax checks pass. Production dependency audit reports zero vulnerabilities.
+Dependency versions and lockfile are unchanged; the prior tooling-advisory note
+is not cleared by this production-only audit.
+
+Synthetic checks cover exact expiry boundaries, deletion requests, unavailable/
+suppressed/out-of-scope/transient outcomes, dependent-content purging, older and
+newer replay after suppression, restart persistence, fixed TTL, forged origin,
+extended expiry, wrong source IDs, unexpected account fields, missing keys,
+clock rollback, private modes, symlink/hardlink rejection, concurrent-operation
+locks, interrupted transaction recovery and expiry purging before malformed
+import failure. Git checks cover renamed/minified/nested JSON/JSONL, index
+objects and an intermediate unsafe commit followed by deletion. Fixtures and
+throwaway Git histories are created under temporary directories and removed.
+
+No real capture was stored or scanned. No Reddit authentication, installation,
+private playtest, source-status event delivery or external deletion propagation
+was performed. The local CLI sweeps only when invoked: continuously enforced
+TTL, authenticated signals/provenance, encryption/RBAC, request intake and
+purge acknowledgements for all external copies remain dependencies. Public
+eligibility stays HOLD and origin UNVERIFIED_OPERATOR_EXPORT. Offline tests
+establish local behaviour only, not Reddit compliance or deployment readiness.

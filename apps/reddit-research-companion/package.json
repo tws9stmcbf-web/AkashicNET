@@ -14,7 +14,9 @@
     "metadata:stage": "node tools/stage-n2n-capture.mjs",
     "register": "devvit init --force",
     "deploy": "npm run check && devvit upload",
-    "launch": "npm run deploy && devvit publish"
+    "launch": "npm run deploy && devvit publish",
+    "metadata:retain": "node tools/retain-n2n-metadata.mjs",
+    "metadata:git-check": "node tools/check-metadata-publication.mjs"
   },
   "engines": {
     "node": ">=24.18.0"

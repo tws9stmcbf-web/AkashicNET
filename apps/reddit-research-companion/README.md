@@ -155,3 +155,12 @@ Primary documentation consulted:
 - [App configuration](https://developers.reddit.com/docs/capabilities/devvit-web/devvit_web_configuration)
 
 Where prose examples differ, the installed SDK's schema and types are used.
+
+## Offline metadata retention
+
+[RETENTION.md](RETENTION.md) covers deletion/expiry controls, the private local
+reconciler, Git barriers and minimum external operating contract. Use synthetic
+captures until that gate is satisfied. These controls do not scan, authenticate
+packets, deploy infrastructure or enable public metadata incorporation. Install
+the optional pre-commit safeguard with `git config core.hooksPath .githooks`
+from the repository root.

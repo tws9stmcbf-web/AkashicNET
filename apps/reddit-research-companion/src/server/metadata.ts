@@ -58,7 +58,8 @@ export const createMetadataScanner = (deps: MetadataDependencies) => {
         const post = await deps.readPost(`t3_${id}`);
         if (post.id !== `t3_${id}` || post.subredditName.toLowerCase() !== actor.subredditName.toLowerCase()) {
           observation.lookup_status = 'out_of_scope';
-        } else if (post.isRemoved() || post.isSpam() || post.isNsfw() || post.isQuarantined() || post.removedByCategory === 'deleted') {
+        } else if (post.isRemoved() || post.isSpam() || post.isNsfw() || post.isQuarantined() || post.removedByCategory === 'deleted' ||
+            (typeof post.title === 'string' && ['[deleted]', '[removed]'].includes(post.title.trim().toLowerCase()))) {
           observation.lookup_status = 'suppressed';
         } else {
           let submittedUrl: string | null = null;
