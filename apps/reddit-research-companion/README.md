@@ -123,6 +123,12 @@ All returned packets require review; none are automatically merged into the
 website or promoted to scientific evidence. Hosted and native mobile checks
 remain pending alongside authentication and app registration verification.
 
+An offline `npm run metadata:stage -- ... --out staging/review.json` command
+checks copied packets, missing ranges, retries, freshness and conflicting
+observations. Its output remains a private review candidate with unverified
+operator-export provenance. See METADATA-SCAN.md for the complete command and
+integration boundary. It makes no live requests or automatic archive changes.
+
 ## Data and permissions
 
 See [PRIVACY.md](PRIVACY.md). The app requests Reddit API and installation-scoped

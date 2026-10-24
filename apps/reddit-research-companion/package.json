@@ -11,6 +11,7 @@
     "test": "node --import tsx --test test/*.test.ts",
     "check": "npm run type-check && npm test && npm run build",
     "login": "devvit login",
+    "metadata:stage": "node tools/stage-n2n-capture.mjs",
     "register": "devvit init --force",
     "deploy": "npm run check && devvit upload",
     "launch": "npm run deploy && devvit publish"

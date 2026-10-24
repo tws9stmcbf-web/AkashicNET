@@ -121,3 +121,23 @@ The installed CLI still reports **Not currently logged in**. No registration,
 upload, installation, live lookup or Reddit publication was performed. The
 expanded native mobile UI and real Reddit-hosted capture remain unverified.
 External retention/deletion handling must precede any live-content integration.
+
+## Offline metadata staging continuation · 24 October 2026
+
+Added `tools/stage-n2n-capture.mjs` and 14 adversarial/staging/CLI tests.
+Strict application TypeScript checks, **46 total tests**, and the production
+build pass. The importer validates manifests, community/URL identity, bounded
+packet sequences, gaps, retries, timestamps, content suppression, same-time
+conflicts, unknown fields and review gates. It preserves input files, refuses
+output overwrite and writes the new review file with mode 0600.
+
+All capture examples used in these tests are explicitly synthetic. No live
+Reddit metadata was acquired or imported. Staging marks a supplied packet as
+UNVERIFIED_OPERATOR_EXPORT: structural validity is not authentication. Public
+eligibility remains HOLD; rights/evidence promotion and canonical writes are OFF.
+
+A fresh access check still found an unauthenticated CLI. The developer app
+page showed a signed-out permission screen; its normal Log in link led to a
+Reddit-served network-security block without usable credential fields. No
+attempt was made to evade the block, and app ownership/installation remains
+unverified. No upload, hosted scan or live Reddit change occurred.

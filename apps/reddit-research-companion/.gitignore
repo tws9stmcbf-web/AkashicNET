@@ -5,3 +5,5 @@ dist/
 .env.*
 *.tsbuildinfo
 docs/n2n-source-citation-register-*.jsonl
+captures/
+staging/

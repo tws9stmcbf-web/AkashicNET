@@ -86,6 +86,42 @@ the latest version. Do not add these packets directly to public Git history.
 The source-citation register contains contextual IDs and archive citations;
 it is not a live-content export or a scientific bibliography.
 
+### Validate copied packets for review
+
+After the required external-retention/deletion process is established, keep
+authorised copied packets in the ignored `captures/` directory and run:
+
+```sh
+npm run metadata:stage -- captures/part-1.json captures/part-2.json --out staging/n2n-review.json
+```
+
+This offline command validates the known-ID fingerprint, exact ID/cursor
+sequence, metadata fields, community, source links and timestamps. It detects
+missing ranges, handles repeated packets without duplicating records, and
+reports the first unresolved cursor. Transient retries remain unresolved.
+Observations older than 24 hours or in the future are refused; 24 hours is
+this tool's conservative freshness setting, not a statement of Reddit policy.
+
+Only the latest supplied observation for an ID enters staging. A newer
+suppressed/unavailable outcome carries no metadata and supersedes the earlier
+payload. Contradictory records with the same timestamp require explicit
+resolution. No older title history is retained in the staged file. Raw input
+files remain unchanged, so their deletion/refresh is the operator's separate
+responsibility.
+
+A well-formed JSON packet does not prove it came from Reddit. The output is
+marked `UNVERIFIED_OPERATOR_EXPORT`, `public_eligibility: HOLD`, with evidence
+and rights promotion OFF. It records input fingerprints and makes no live
+request, website update or canonical-archive change. Bodies, author fields,
+private-playtest packets, invented review approvals, unsafe URL schemes and
+truncated or falsely completed batches are rejected.
+
+The tool writes a new local review file with owner-only permissions and
+refuses to overwrite existing outputs. `captures/` and `staging/` are ignored
+by Git. These are working data, not files to commit to public Git history.
+This provides validated staging; it does not implement deletion propagation
+or clear the external-content integration gate.
+
 Primary references: [Reddit client](https://developers.reddit.com/docs/api/redditapi/RedditClient/classes/RedditClient),
 [API overview](https://developers.reddit.com/docs/capabilities/server/reddit-api),
 [Devvit privacy and deletion rules](https://developers.reddit.com/docs/devvit_rules).
