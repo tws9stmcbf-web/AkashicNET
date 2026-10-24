@@ -5,6 +5,7 @@ import { navigateTo } from '@devvit/web/client';
 import { loadSession, request } from './api.js';
 import type { Article, Preview, Published, Session, Snapshot } from '../shared/model.js';
 import { EVIDENCE_LABELS } from '../shared/model.js';
+import MetadataScanner from './MetadataScanner.js';
 
 const ArticleView = ({ snapshot }: { snapshot: Snapshot }) => <section className="panel published">
   <p className="eyebrow">PUBLISHED DISCUSSION · SAVED SNAPSHOT</p>
@@ -92,6 +93,7 @@ export const Companion = () => {
       </section>}
       {published && <div className="success" role="status"><p>{published.duplicate ? 'This exact post already exists.' : 'Your discussion was published.'}</p><button onClick={() => navigateTo(published.url)}>Open Reddit post ↗</button>{!published.receiptSaved && <p>The post exists, but its receipt could not be saved. Keep this link and check the subreddit before any further attempt.</p>}</div>}
     </section>}
+    {session.isModerator && <MetadataScanner />}
     {error && <p role="alert" className="error">{error}</p>}
     <footer><p>Catalog {session.catalogVersion} · Public-page descriptions, not independent scientific appraisals.</p><p>Community discussion and vivid experiences do not establish a mechanism or settle an open question.</p><button onClick={() => navigateTo('https://akashicnet.org')}>Explore AkashicNET ↗</button></footer>
   </main>;

@@ -3,7 +3,7 @@ import { isRecord } from '../shared/model.js';
 import { CATALOG_VERSION } from '../shared/catalog.js';
 
 export class AppError extends Error {
-  constructor(public readonly status: 400 | 403 | 404 | 409 | 410 | 413 | 503, message: string) {
+  constructor(public readonly status: 400 | 403 | 404 | 409 | 410 | 413 | 429 | 503, message: string) {
     super(message);
   }
 }

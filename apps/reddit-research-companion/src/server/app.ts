@@ -2,8 +2,9 @@ import { Hono } from 'hono';
 import { bodyLimit } from 'hono/body-limit';
 import { AppError } from './policy.js';
 import { createService, type Dependencies } from './service.js';
+import { createMetadataScanner, type MetadataDependencies } from './metadata.js';
 
-export const createApp = (deps: Dependencies) => {
+export const createApp = (deps: Dependencies, metadataDeps?: MetadataDependencies) => {
   const app = new Hono();
   const service = createService(deps);
   app.use('*', async (c, next) => { c.header('Cache-Control', 'no-store'); await next(); });
@@ -17,6 +18,11 @@ export const createApp = (deps: Dependencies) => {
   app.get('/api/session', async (c) => c.json(await service.session()));
   app.post('/api/preview', async (c) => c.json(await service.preview(await c.req.json<unknown>())));
   app.post('/api/publish', async (c) => c.json(await service.publish(await c.req.json<unknown>())));
+  if (metadataDeps) {
+    const scanner = createMetadataScanner(metadataDeps);
+    app.get('/api/metadata/plan', async (c) => c.json(await scanner.plan()));
+    app.post('/api/metadata/batch', async (c) => c.json(await scanner.batch(await c.req.json<unknown>())));
+  }
   app.post('/internal/menu/companion', async (c) => {
     try {
       const post = await service.launcher();

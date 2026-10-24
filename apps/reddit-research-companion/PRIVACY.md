@@ -27,3 +27,18 @@ Reddit post controls apply to published posts. Operator reconciliation of saved
 snapshots/receipts must preserve duplicate protection and the repository's existing
 public/private boundary. Uninstalling the app is not claimed here to delete Redis
 data; verify Reddit's current platform retention behavior before making that promise.
+# Metadata capture addition · 24 October 2026
+
+The optional moderator metadata scanner reads known post IDs only after an
+explicit action. It returns dated title, flair, creation date, submitted-link
+and engagement snapshots to the open app view. It does not capture post
+bodies, comments, author identities or user flair. Removed, deleted, mature,
+quarantined, wrong-community and unavailable responses have no content payload.
+
+Captured packets remain in the open view's memory until explicitly copied;
+closing or reloading loses unsaved packets. The scanner stores no captured
+post content on its server, logs none of the returned content, and uses only
+a short-lived installation-wide cooldown marker in Redis. No external service
+receives packets automatically. External reuse requires a separate reviewed
+deletion, refresh and provenance workflow. See METADATA-SCAN.md.
+

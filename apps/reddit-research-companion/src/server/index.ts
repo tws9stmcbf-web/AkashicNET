@@ -51,5 +51,9 @@ const deps: Dependencies = {
   snapshotId: () => typeof context.postData?.snapshotId === 'string' ? context.postData.snapshotId : undefined,
 };
 
-const app = createApp(deps);
+const app = createApp(deps, {
+  actor: deps.actor,
+  store: deps.store,
+  readPost: (id) => reddit.getPostById(id),
+});
 serve({ fetch: app.fetch, createServer, port: getServerPort() });

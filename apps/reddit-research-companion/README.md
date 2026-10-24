@@ -108,6 +108,21 @@ build does not mean the app is registered, approved or installed on N2N.
 - Public snapshots are stored before submission. Reddit post data contains only
   their short identifier, within the SDK's two-kilobyte post-data limit.
 
+## N2N metadata scanner · 24 October addition
+
+The moderator workspace includes bounded read-only capture of 7,463 known N2N
+post IDs, with cursor continuation and a private-test mode limited to the
+current companion post. Captured fields include dated titles, flair, creation
+dates, submitted links and engagement snapshots. It creates no Reddit posts.
+The source archive has been checked offline; **no live scan has run**.
+
+See [METADATA-SCAN.md](METADATA-SCAN.md) for exact fingerprints, source citations,
+capture controls, memory-only packet saving and the external-integration
+boundary. The scanner retains no captured post content in server storage.
+All returned packets require review; none are automatically merged into the
+website or promoted to scientific evidence. Hosted and native mobile checks
+remain pending alongside authentication and app registration verification.
+
 ## Data and permissions
 
 See [PRIVACY.md](PRIVACY.md). The app requests Reddit API and installation-scoped

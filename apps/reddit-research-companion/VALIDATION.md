@@ -91,3 +91,33 @@ was performed. All hosted behavior, old-Reddit fallback and mobile acceptance
 checks remain NOT RUN. See [HOSTED-PLAYTEST.md](HOSTED-PLAYTEST.md) for a bounded
 continuation, including the CLI's automatic-community/content side effects and
 approval stop points. The follow-up changes documentation only.
+
+## Known-ID metadata scanner · 24 October 2026
+
+Added a server-only manifest for 7,463 saved N2N IDs, an offline structural
+preflight/citation generator, moderator-only metadata plan and batch endpoints,
+and a cursor-continuation UI. Private playtests can read only their current
+companion post; the N2N manifest is refused in other installations.
+
+Node 24.19.0/npm 11.9.0: strict TypeScript checks, **32 automated tests** and
+the production client/CommonJS-server build pass. The 12 added tests cover
+manifest integrity, bounded capture, permission checks, private isolation,
+invalid cursors/fingerprints, shared cooldown, transient/unavailable outcomes,
+content suppression, wrong-community responses, final batches and actual HTTP
+authorization/request-size/cache headers. No dependency versions changed.
+
+The saved export was fully processed offline: 7,463 unique matching IDs,
+3 curated titles, 22 prior observed titles, 7,438 uncaptured titles, 237
+site-cited records and 7,226 remaining discovery citations. Fingerprints and
+zero-live-retrieval status are in the preflight JSON. These are structural
+checks, not confirmation that the posts exist or are currently available.
+
+The metadata scanner stores no captured post content on the server and makes
+no automatic website/export calls. Captures remain in the open view's memory
+until the operator copies them. Saving packets and a resume cursor is manual;
+unattended operation and durable result storage are not implemented.
+
+The installed CLI still reports **Not currently logged in**. No registration,
+upload, installation, live lookup or Reddit publication was performed. The
+expanded native mobile UI and real Reddit-hosted capture remain unverified.
+External retention/deletion handling must precede any live-content integration.
