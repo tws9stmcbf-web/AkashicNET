@@ -1,0 +1,180 @@
+{
+  "schema_version": "0.1",
+  "packet_id": "MORAES-METHODS-2026-10-25",
+  "created_on": "2026-10-25",
+  "status": "APPRAISAL_DRAFT_INDEPENDENT_REVIEW_REQUIRED",
+  "provenance": {
+    "scope": "user",
+    "retrieval": "ai-executed",
+    "appraisal": "ai-suggested"
+  },
+  "parent_doi": "10.1016/j.explore.2021.05.006",
+  "parent_pmid": "34147343",
+  "source_boundaries": {
+    "repository": "tws9stmcbf-web/AkashicNET",
+    "pr": 395,
+    "checked_head": "6714ccb1de3f8f0a88851c097e8c40355a4fbd57",
+    "prior_access_manifest": "references/psi/moraes-table-s2-access-2026-10-11.json"
+  },
+  "reading_depth": {
+    "main_article": "Selected full-text sections: methods, results, discussion/conclusion, disclosures and extracted Table3 totals; public coauthor-uploaded PDF and HTML extraction",
+    "main_article_pages": 8,
+    "main_pdf_local_bytes_retrieved": false,
+    "main_pdf_fresh_sha256": null,
+    "figure1_visually_verified": false,
+    "reference_list_audited": false,
+    "s1": "All six database rows inspected as DOCX text",
+    "s2": "NOT_RECOVERED",
+    "included_publications_full_texts_appraised": 0,
+    "case_files_appraised": 0,
+    "independent_review_completed": false,
+    "searches_rerun": false
+  },
+  "sources": [
+    {
+      "id": "pubmed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34147343/",
+      "access_date": "2026-10-25",
+      "route": "web",
+      "result": "ABSTRACT_AND_METADATA_READ"
+    },
+    {
+      "id": "coauthor-upload",
+      "url": "https://www.researchgate.net/publication/352165527_Academic_Studies_on_Claimed_Past-Life_Memories_A_Scoping_Review",
+      "access_date": "2026-10-25",
+      "route": "web",
+      "result": "PUBLIC_AUTHOR_CONTENT_EXTRACTED",
+      "attributed_uploader": "Alexander Moreira-Almeida",
+      "attributed_upload_date": "2022-05-30"
+    },
+    {
+      "id": "coauthor-pdf",
+      "url": "https://www.researchgate.net/profile/Alexander-Moreira-Almeida/publication/352165527_Academic_Studies_on_Claimed_Past-Life_Memories_A_Scoping_Review/links/6294b61d8d19206823e7875e/Academic-Studies-on-Claimed-Past-Life-Memories-A-Scoping-Review.pdf",
+      "access_date": "2026-10-25",
+      "route": "web PDF extraction",
+      "result": "EIGHT_PAGE_MAIN_ARTICLE_SECTIONS_READ",
+      "local_download_http_status": 403,
+      "sha256": null,
+      "displayed_license": "CC BY-NC-ND 4.0",
+      "raw_file_committed": false
+    },
+    {
+      "id": "publisher",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1550830721000951",
+      "access_date": "2026-10-25",
+      "route": "web",
+      "http_status": 403
+    },
+    {
+      "id": "uva-historical-pdf",
+      "url": "https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2021/12/Academic-Studies-on-Claimed-Past-life-memories-A-scoping-Review-Jim-2021-1-s2.0-S1550830721000951-main-1.pdf",
+      "access_date": "2026-10-25",
+      "web_reported_http_status": 404,
+      "local_http_status": 403,
+      "fresh_sha256": null,
+      "historical_hash_not_reauthenticated": true
+    },
+    {
+      "id": "figshare-deposit",
+      "url": "https://api.figshare.com/v2/articles/13234907",
+      "access_date": "2026-10-25",
+      "route": "local HTTPS GET",
+      "http_status": 200,
+      "bytes": 3018,
+      "sha256": "0c5981d091f6877b4b94cefe09b5c60c1a9d22746d3f3b3ef5bde149a616ea82",
+      "version": 1,
+      "doi": "10.6084/m9.figshare.13234907.v1",
+      "files_observed": [
+        "Table S1.docx"
+      ],
+      "s2_observed": false
+    },
+    {
+      "id": "s1",
+      "url": "https://ndownloader.figshare.com/files/25491170",
+      "access_date": "2026-10-25",
+      "route": "local HTTPS GET following deposit-linked redirect",
+      "http_status": 200,
+      "bytes": 15998,
+      "sha256": "9ba970a20ea4d9d1b96ae03ee684578e299f8075a50c8b312aa7c34d9f503387",
+      "md5": "d635ff2c3ce5419965aedbcc15a0b516",
+      "deposit_md5_matches": true,
+      "table_rows_xml": 8,
+      "database_rows": 6,
+      "locator": "single search-strategy table; database-specific rows",
+      "raw_file_committed": false
+    },
+    {
+      "id": "prisma-scr",
+      "url": "https://www.prisma-statement.org/s/PRISMA-ScR-Fillable-Checklist_11Sept2019.pdf",
+      "access_date": "2026-10-25",
+      "route": "web PDF extraction",
+      "reading_depth": "Checklist methods/results items; no formal compliance score"
+    },
+    {
+      "id": "source-monitoring-primary-experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2725271/",
+      "doi": "10.3758/bf03198473",
+      "access_date": "2026-10-25",
+      "reading_depth": "ABSTRACT_AND_METADATA_ONLY",
+      "role": "methodological background, not a PLM sample or rate estimate"
+    }
+  ],
+  "authoritative_table": {
+    "label": "Table S2",
+    "status": "NOT_RECOVERED",
+    "observed_row_count": null,
+    "download_url": null,
+    "sha256": null,
+    "article_reported_included_count": 78,
+    "count_unit": "REPORTED_PUBLICATIONS_NOT_INDEPENDENT_REPLICATIONS"
+  },
+  "reconciliation": {
+    "rows_extracted": 0,
+    "rows_compared_to_existing_records": 0,
+    "matched_existing_publications": null,
+    "unmatched_publications": null,
+    "unresolved_included_study_identifiers": null,
+    "independent_cases": null,
+    "independent_replications": null
+  },
+  "outreach": {
+    "prior_request_date": "2026-10-11",
+    "current_status": "SENT_RECORD_FOUND",
+    "fresh_bounded_mail_search": "Sent author request found; no matching reply returned; not proof no reply exists under other terms/accounts",
+    "new_messages_sent": 0,
+    "private_identifiers_retained": false,
+    "historical_draft_note_preserved": true
+  },
+  "open_questions": [
+    "Reconcile late-added paper with textual screening arithmetic using rendered Figure1 and original ledger",
+    "Clarify S1 executed syntax and database interfaces with native logs",
+    "Authenticate S2 and reconstruct included-publication identities and overlapping cases",
+    "Independent review of appraisal and case-level verification"
+  ],
+  "governance": {
+    "bq001": "UNRESOLVED",
+    "privacy": "FAIL_CLOSED",
+    "supports_models": [],
+    "new_source_identities": 0,
+    "new_accepted_edges": 0,
+    "scientific_promotion": false,
+    "canonical_merge": false,
+    "public_synthesis_promotion": false,
+    "rights_clearance_changed": false,
+    "export_gate_changed": false,
+    "publication_gate_changed": false,
+    "review_required": true,
+    "independent_review_required": true,
+    "pr_must_remain_draft": true,
+    "merge_authorized": false,
+    "deployment_authorized": false
+  },
+  "limitations": [
+    "Author-upload identity verified bibliographically; fresh main PDF byte equivalence with historical UVA copy not established",
+    "Figure screenshots returned only textual image placeholders; no visual audit claimed",
+    "No complete systematic-review rerun, S2 extraction, original case review or quantitative evidence grading",
+    "Alternative explanations are proposed checks, not established diagnoses or universal explanations",
+    "No website change; guide retrieved as v0.5.0 with abstract-only Moraes entry"
+  ]
+}
