@@ -28,7 +28,9 @@
     "included_publications_full_texts_appraised": 0,
     "case_files_appraised": 0,
     "independent_review_completed": false,
-    "searches_rerun": false
+    "searches_rerun": false,
+    "figure1_indexed_description_read": true,
+    "database_documentation": "Current official Core Collection field definitions and NLM search-field/wildcard guidance; not historical execution logs"
   },
   "sources": [
     {
@@ -118,6 +120,28 @@
       "access_date": "2026-10-25",
       "reading_depth": "ABSTRACT_AND_METADATA_ONLY",
       "role": "methodological background, not a PLM sample or rate estimate"
+    },
+    {
+      "id": "figure1-indexed-description",
+      "url": "https://www.researchgate.net/profile/Alexander-Moreira-Almeida/publication/352165527_Academic_Studies_on_Claimed_Past-Life_Memories_A_Scoping_Review/links/6294b61d8d19206823e7875e/Academic-Studies-on-Claimed-Past-Life-Memories-A-Scoping-Review.pdf",
+      "access_date": "2026-10-25",
+      "route": "web search indexed visual-element description",
+      "locator": "Figure 1, printed p.372 / PDF page 2",
+      "reading_depth": "Machine-extracted diagram description, not visual or independent transcription"
+    },
+    {
+      "id": "clarivate-current-field-definitions",
+      "url": "https://webofscience.zendesk.com/hc/en-us/articles/26916347018257-Web-of-Science-Core-Collection-Advanced-Search-Field-Tags",
+      "access_date": "2026-10-25",
+      "document_updated": "2026-01-16",
+      "reading_depth": "TI and TS field definitions; current rules only"
+    },
+    {
+      "id": "nlm-current-search-guide",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/help/",
+      "access_date": "2026-10-25",
+      "document_updated": "2026-09-30",
+      "reading_depth": "Field tags, wildcards, automatic term mapping, Search Details; current rules only"
     }
   ],
   "authoritative_table": {
@@ -147,7 +171,7 @@
     "historical_draft_note_preserved": true
   },
   "open_questions": [
-    "Reconcile late-added paper with textual screening arithmetic using rendered Figure1 and original ledger",
+    "Reconcile prose versus diagram screening-stage labels and locate the later-added publication within the balanced figure counts; obtain rendered Figure1 and original selection ledger",
     "Clarify S1 executed syntax and database interfaces with native logs",
     "Authenticate S2 and reconstruct included-publication identities and overlapping cases",
     "Independent review of appraisal and case-level verification"
@@ -175,6 +199,36 @@
     "Figure screenshots returned only textual image placeholders; no visual audit claimed",
     "No complete systematic-review rerun, S2 extraction, original case review or quantitative evidence grading",
     "Alternative explanations are proposed checks, not established diagnoses or universal explanations",
-    "No website change; guide retrieved as v0.5.0 with abstract-only Moraes entry"
-  ]
+    "No website change; guide retrieved as v0.5.0 with abstract-only Moraes entry",
+    "Indexed Figure1 description is machine-extracted and has not been checked visually; current database docs do not authenticate 2020 execution"
+  ],
+  "follow_up": {
+    "date": "2026-10-25",
+    "status": "AI_AUTHORED_CONTINUATION_NOT_INDEPENDENT_REVIEW",
+    "starting_head": "b99706e37ab29d63817e9b38ad0dfb1792eb389f",
+    "figure1": {
+      "access_mode": "MACHINE_EXTRACTED_INDEXED_DESCRIPTION_OF_ORIGINAL_PDF",
+      "direct_visual_verification": false,
+      "database_records": 1784,
+      "additional_records": 6,
+      "screened": 1790,
+      "excluded_document_types": 482,
+      "duplicates_removed": 290,
+      "eligibility_assessments": 1018,
+      "eligibility_exclusions": 940,
+      "included_publications": 78,
+      "arithmetic_balances": true,
+      "reported_eligibility_stage": "full-text",
+      "prose_stage": "title/abstract",
+      "late_addition_placement": "UNRESOLVED",
+      "interpretation": "Reporting reconciliation needed; final count not demonstrated erroneous"
+    },
+    "search_interpretation": {
+      "wos_scope": "Current Core Collection documentation; actual historical product/collection unverified",
+      "literal_same_term_title_and_topic": "Requires title hit, not a separate abstract hit",
+      "historical_execution_verified": false,
+      "missed_eligible_publications_demonstrated": false,
+      "new_hit_counts_reported": false
+    }
+  }
 }
