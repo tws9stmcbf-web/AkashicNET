@@ -1,0 +1,48 @@
+tree:
+- id: N01
+  type: question
+  title: Assess provisional joint-test design
+  provenance: user
+  timestamp: '2026-10-26'
+  description: Develop reproducible synthetic assessment; preserve public history
+    and untested status.
+  status: open
+- id: N02
+  type: experiment
+  title: Run declared power, null, omission and randomisation grid
+  provenance: ai-executed
+  timestamp: '2026-10-26'
+  also_depends_on:
+  - N01
+  evidence:
+  - ../../results/power.csv
+  - ../../results/calibration.csv
+  - ../../results/missing-allocation.csv
+  - ../../results/randomization.csv
+  result: Declared factorial and trial-level synthetic runs completed; intervals and
+    assumptions retained.
+  status: resolved
+- id: N03
+  type: experiment
+  title: Challenge pair t test using skewed population Delta null
+  provenance: ai-executed
+  timestamp: '2026-10-26'
+  also_depends_on:
+  - N01
+  evidence:
+  - ../../results/skew-calibration.csv
+  - ../../stress.py
+  result: Candidate rejection exceeds nominal level in the declared skewed weak-null
+    model; general primary calibration not established.
+  status: resolved
+- id: N04
+  type: question
+  title: Select and independently review final primary inference
+  provenance: ai-suggested
+  timestamp: '2026-10-26'
+  also_depends_on:
+  - N02
+  - N03
+  description: Settle weak-versus-sharp null and final test before freezing sample
+    size. No method or sample adopted.
+  status: open
