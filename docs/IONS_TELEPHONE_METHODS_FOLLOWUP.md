@@ -110,3 +110,8 @@ Exact source URLs, versions, hashes and inspection locations are in [the source 
 - S4: [Official registered-study index](https://koestlerunit.wordpress.com/study-registry/registered-studies/), entry 1062, with [original](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062.pdf), [revision 2](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_2.pdf), [revision 3](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_3.pdf), [revision 4](https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_4.pdf).
 - S5: [PubMed](https://pubmed.ncbi.nlm.nih.gov/37709571/); [current IONS profile](https://noetic.org/profile/helane-wahbeh/); [BIAL author summary](https://assets.ctfassets.net/osaht2ckekgb/3lYdh88xc54P1NjcJEJHzs/b79c86e2178241cff6b25a1b236ac6ca/APOIOS-2020-a-telephone-telepathy-study.pdf).
 
+
+
+## Cross-study appraisal added — 25 October 2026
+
+See [the focused Stedall–Tressoldi / Wahbeh comparison](../references/akashicomni/Telephone-Cross-Study-Appraisal-2026-10-25.md). Primary publications and KPU1048/KPU1062 registrations support classification as related experiments with substantially different methods; pooled inference is not currently justified. Registration fidelity, leakage controls, null calibration and exploratory strategy findings require independent review. The completed 22 October correction and all prior checkpoints above are preserved unchanged. No revised inference, evidence promotion, merge or deployment.
