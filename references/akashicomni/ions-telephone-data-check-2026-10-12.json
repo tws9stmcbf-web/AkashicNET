@@ -1,0 +1,84 @@
+{
+  "total_rows": 1051,
+  "groups": [
+    {
+      "status": "Completer",
+      "condition": "post_selected",
+      "trials": 666,
+      "hits": 216,
+      "accuracy_percent": "32.4"
+    },
+    {
+      "status": "Completer",
+      "condition": "pre_selected",
+      "trials": 228,
+      "hits": 115,
+      "accuracy_percent": "50.4"
+    },
+    {
+      "status": "Dropout",
+      "condition": "post_selected",
+      "trials": 96,
+      "hits": 27,
+      "accuracy_percent": "28.1"
+    },
+    {
+      "status": "Dropout",
+      "condition": "pre_selected",
+      "trials": 61,
+      "hits": 32,
+      "accuracy_percent": "52.5"
+    }
+  ],
+  "published_completer_endpoints": {
+    "pre_selected": {
+      "trials": 210,
+      "accuracy_percent": "50.0"
+    },
+    "post_selected": {
+      "trials": 630,
+      "accuracy_percent": "31.9"
+    }
+  },
+  "reproduction_status": "MISMATCH_REQUIRES_RECONCILIATION",
+  "p_values_reproduced": false,
+  "mechanism_verified": false,
+  "independent_human_review": "PENDING",
+  "promotion_allowed": false,
+  "source": {
+    "doi": "10.6084/m9.figshare.21521235.v1",
+    "figshare_file_id": 38149656,
+    "sha256": "83231d102887e6faae295afca161419cefce606c8463ed07e3246c6feeb03097",
+    "md5": "07158e08d430cd17345428cf76728382",
+    "size_bytes": 87755,
+    "authors": [
+      "Helane Wahbeh",
+      "Arnaud Delorme",
+      "Cedric Cannard",
+      "Dean Radin"
+    ],
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved_date": "2026-10-12",
+    "publication_doi": "10.1016/j.explore.2023.08.008"
+  },
+  "method": {
+    "columns": [
+      "Status",
+      "Trialtype",
+      "Hit"
+    ],
+    "filter": "Status exactly equals Completer",
+    "trialtype_mapping": {
+      "0": "post_selected",
+      "1": "pre_selected"
+    },
+    "hit_mapping": {
+      "0": "incorrect",
+      "1": "correct"
+    },
+    "source_of_mapping": "Workbook Legend rows 1, 4, 5",
+    "exclusions": "None beyond the source Status label; no outcome-driven filtering",
+    "scope": "Descriptive counts only. Publication-specific analysis subset is unresolved."
+  }
+}
