@@ -300,7 +300,7 @@
     "original_html_sha256": "dca4484d7572ff81050a7da21eb16eecbf84fe2d3684478f38fcb797784d3953",
     "provenance_manifest": {
       "path": "references/integration/v018/omni/method-provenance.json",
-      "sha256": "2436242474bb5bf05c9be49168da19f5a180bc3c1875ba33135023eb02a1e60b"
+      "sha256": "354600636db83f7bd50f72aa4e63b506808a87a509bbe027616f7ce72ad29c4a"
     }
   },
   "collection_release": "DEPRECATED_AMBIGUOUS_NOT_A_RELEASE"

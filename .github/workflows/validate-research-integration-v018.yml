@@ -11,6 +11,7 @@ on:
       - 'tests/test_research_integration_v018.py'
       - 'tests/fixtures/research_integration_v018/**'
       - 'docs/research-integration-v018.md'
+      - 'docs/omni-method-provenance-v018.md'
       - '.github/workflows/validate-research-integration-v018.yml'
       - 'tools/search_reddit.py'
       - 'scripts/reddit_corpus_census.py'
@@ -31,6 +32,7 @@ on:
       - 'tests/test_research_integration_v018.py'
       - 'tests/fixtures/research_integration_v018/**'
       - 'docs/research-integration-v018.md'
+      - 'docs/omni-method-provenance-v018.md'
       - '.github/workflows/validate-research-integration-v018.yml'
 permissions:
   contents: read

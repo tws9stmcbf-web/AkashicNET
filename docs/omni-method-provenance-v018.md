@@ -162,3 +162,119 @@ review content, and v0.18 remains PLANNED / not release-ready. Full primary acce
 scope-specific rights/cultural decisions, genuine human appraisal, authenticated
 review, independent review and separate release approval remain outstanding.
 No merge, tag, deployment, accepted edge or promotion control changes here.
+
+## Component Archive Follow-Up · 27 October 2026
+
+PR #413 was still draft and unchanged at `9ed741ced3fdf4338abdd988367368df6bd238c8`
+when this follow-up began. The earlier 88-test/16-check receipt remains historical.
+The integration adapter, pinned packet, foundation pins, original manual and
+starter bytes were not changed by this follow-up.
+
+[`component-archive-review.json`](../references/integration/v018/omni/component-archive-review.json)
+records a bounded search of preserved first-party audit/publication packages,
+the candidate specification, the larger Reddit metadata archive, connected Drive
+and two public search indexes. No direct live Reddit or Reddit API retrieval was
+performed. No complete original or clarification representation was recovered.
+Internet Archive CDX requests for all six original post URL prefixes were
+inaccessible through available retrieval; capture existence remains unknown.
+Other archive providers and authorised private backups were not exhausted.
+This is not an exhaustive census of every possible archive.
+
+One package contains `patches-pinned-20260928.jpg`: a **partial** ACTC v2.0.1
+screenshot, 132,193 bytes, SHA-256
+`17f0c45efac072e1d9b9611357c5be8d9c8db6475e760a7cadab13a9757c17fe`.
+The heading and visible QM/MM/QMM distinctions are consistent with the manual's
+scoped naming and non-equivalence rules. This does not establish the unseen
+remainder or PP clarification. The URL is not visible, the bottom is cut off and
+there is no EXIF or absolute capture time. Its attribution to the shared ACTC/PP
+locator depends on the accompanying narrative receipt. The filename's September
+date, ZIP member's 1 October local timestamp and provider's 1 October package
+creation metadata are different kinds of evidence; none independently
+authenticates the source's capture time, publication time or edit history.
+
+The package's SHA-256 is
+`31f67efa8c24900abaf4d5d0342609cb30632b7c9169bd0c901fae812bd62d4b`.
+The review records exact byte lengths and checksums for this container, its
+partial image, the rc.4 A candidate, the applied-addendum receipt, the earlier
+component audit and the larger metadata archive. These are **supporting artifact
+pins, not original Reddit source pins**. The archive has six matching original
+post IDs, all with null stored titles and summaries, and no post/comment bodies.
+The prior reports describe publication and inspection but do not preserve the
+complete published source representations. Prepared draft wording is not proof
+of what was published.
+
+### Exact Outstanding Dependencies
+
+The machine-readable inventory deduplicates the shared comment while retaining
+both component/version bindings. All rows below remain
+`PENDING_AUTHORIZED_ARCHIVED_BYTES`, with null original-source checksums.
+
+| Dependency | Component / Declared Version | Preserved Support / Missing Source |
+| --- | --- | --- |
+| `t3_1uld5ws` | ACTC v2.0 | Candidate and metadata only; full original absent |
+| `t1_pcjwo7y` | ACTC v2.0.1 and PP v1.0.1 | Partial ACTC screenshot and receipt; complete shared comment including PP absent |
+| `t3_1ukdnzu` | METAD v2.1 | Candidate and metadata only; full original absent |
+| `t1_pcjx6eb` | METAD v2.1.1 | Narrative receipt only; full addendum absent |
+| `t3_1uk9qdp` | UMASC v7.2 | Candidate and metadata only; full original absent |
+| `t1_pck0cro` | UMASC v7.2.1 | Narrative receipt only; full addendum absent |
+| `t3_1nlqn3o` | CUT v4.0.3 | Candidate and metadata only; full original absent |
+| `t1_pck0jk6` | CUT v4.0.4 | Narrative receipt only; full addendum absent |
+| `t3_1ul49l9` | HOMESENSE700 Working Draft v1.1 | Candidate and metadata only; full charter absent |
+| `t1_pck09dt` | HOMESENSE700 Working Draft v1.1.1 | Narrative receipt only; full addendum absent |
+| `t1_ovc6qyw` | PP v1.0 nested draft | Candidate/receipt context only; full nested comment absent |
+| `t3_1peyo0j` | QMM community interpretation | Candidate and metadata only; full interpretation absent |
+| `t1_pck0vdo` | QMM dated attribution correction | Narrative receipt only; full correction absent |
+
+For **each** dependency, the outstanding input is a legitimately retained,
+complete representation tied to the exact post/comment, with capture time and
+version evidence, reproducible checksum, scope-specific permission and a
+retention/deletion/suppression plan. Do not recover material from an unauthorised
+copy or bypass a deletion. A current capture, if separately authorised, would be
+a new representation with its own date and rights review, not historical proof.
+Do not infer ownership or perpetual storage rights from moderator access,
+public visibility, a previous receipt or a checksum. If deletion or a retention
+restriction is established, suppress the affected representation and invalidate
+dependent verification; an immutable Git copy cannot implement that lifecycle.
+Raw copies and the screenshot are therefore **not added to public Git**.
+
+All fourteen declared version/URL bindings and seven scope labels were reconciled
+with the unchanged manual register and earlier rc.4 A candidate. Complete source
+semantics remain unverified for all seven components. ACTC remains conceptual
+axioms, METAD architecture/attribution and UMASC classification without empirical
+equivalence. CUT's three temporal views remain a subset; HOMESENSE700 remains
+charter context distinct from Phase 8; PP remains optional; QMM has no established
+PP bridge. This is consistency of the declared integration contract, not a full
+component compatibility pass or independent scientific appraisal.
+
+### Reproduce The Follow-Up
+
+The existing offline verifier now checks the checksum chain from input lock to
+method manifest to archive review, all thirteen dependency identities and fourteen
+bindings, partial-capture boundaries and unchanged HOLD classifications. It also
+rejects attempted source/rights/time/independence promotion and source payloads
+inserted into dependency records. CI needs no private source content or network.
+
+The optional command below rechecks the five supporting artifact bodies and
+the partial image directly within its ZIP. The directory must be outside the
+checkout and contain the exact filenames listed in the review. Missing or changed
+bytes fail; nothing is fetched, copied, written or promoted by this check:
+
+```bash
+python scripts/verify_omni_method_pins_v018.py
+python scripts/verify_omni_method_pins_v018.py --private-component-evidence-directory /path/to/authorised/preserved-artifacts
+python -m pytest -q tests/test_research_integration_v018.py tests/test_search_reddit_archive.py tests/test_bq001_public_status_boundary.py tests/test_omni_method_pins_v018.py
+```
+
+An offline run reports zero supporting bodies rechecked; the optional private
+run reports five. Both report **zero complete original component references**,
+thirteen pending dependencies and incomplete component/method gates. Input
+permission for task inspection does not grant redistribution or new permanent
+retention. Existing private artifacts remain subject to their own lifecycle;
+this verifier is not a deletion monitor or retention service.
+
+The follow-up adds 22 regression cases to the inherited 88 tests (110 total).
+Validation applies to the exact changed files and later CI head reported in the
+draft PR; it does not reopen or repeat the completed integration implementation.
+Human appraisal, rights/cultural decisions, independent review and separate
+release approval remain outstanding. BQ001 stays UNRESOLVED, public output HOLD,
+v0.18 PLANNED / not release-ready and PR #413 draft and unmerged.

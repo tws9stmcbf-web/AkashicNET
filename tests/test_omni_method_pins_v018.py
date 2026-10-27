@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import zipfile
 
 import pytest
 
@@ -16,7 +17,7 @@ def workspace(tmp_path):
     """Copy only the bounded verification inputs, never private packet bytes."""
     lock = json.loads((v.ROOT / v.LOCK_PATH).read_bytes())
     manifest = json.loads((v.ROOT / v.MANIFEST_PATH).read_bytes())
-    paths = [v.LOCK_PATH, v.MANIFEST_PATH, 'scripts/research_integration_v018.py']
+    paths = [v.LOCK_PATH, v.MANIFEST_PATH, v.COMPONENT_REVIEW_PATH, 'scripts/research_integration_v018.py']
     paths.extend(p['bundled_path'] for p in manifest['http_assets'] if p.get('bundled_path'))
     for relative in paths:
         target = tmp_path / relative
@@ -148,3 +149,122 @@ def test_source_verification_uses_immutable_commit_not_head(tmp_path):
     manifest['source_provenance']['commit_sha'] = git('rev-parse', 'HEAD')
     with pytest.raises(ValueError):
         v.verify_source_checkout(root, manifest)
+
+
+def repin_review(workspace, review):
+    root, lock, manifest = workspace
+    raw = (json.dumps(review, indent=2) + '\n').encode()
+    (root / v.COMPONENT_REVIEW_PATH).write_bytes(raw)
+    manifest['component_archive_review']['sha256'] = hashlib.sha256(raw).hexdigest()
+    repin(root, lock, manifest)
+
+
+def read_review(workspace):
+    return json.loads((workspace[0] / v.COMPONENT_REVIEW_PATH).read_bytes())
+
+
+def test_offline_review_reports_pending_sources_not_private_reinspection():
+    result = v.verify_repository()
+    assert result['component_archive_dependencies_pending'] == 13
+    assert result['complete_original_component_references_verified'] == 0
+    assert result['supporting_artifact_bodies_verified'] == 0
+
+
+def test_component_review_is_checksum_bound(workspace):
+    with (workspace[0] / v.COMPONENT_REVIEW_PATH).open('ab') as f:
+        f.write(b' ')
+    with pytest.raises(ValueError, match='component review checksum'):
+        v.verify_repository(workspace[0])
+
+
+@pytest.mark.parametrize('change', ['missing_target', 'duplicate_target', 'wrong_binding', 'wrong_manual'])
+def test_archive_dependency_reconciliation_rejects_drift(workspace, change):
+    review = read_review(workspace)
+    if change == 'missing_target':
+        review['dependencies'].pop()
+    elif change == 'duplicate_target':
+        review['dependencies'][-1] = copy.deepcopy(review['dependencies'][0])
+    elif change == 'wrong_binding':
+        review['dependencies'][1]['bindings'][1]['version_label'] = 'v1.0.2'
+    else:
+        review['manual_sha256'] = '0' * 64
+    repin_review(workspace, review)
+    with pytest.raises(ValueError, match='coverage|binding|manual mismatch'):
+        v.verify_repository(workspace[0])
+
+
+@pytest.mark.parametrize('field,value', [
+    ('original_bytes_sha256', 'a' * 64),
+    ('historical_capture_timestamp', '2026-09-28T12:00:00Z'),
+    ('current_reddit_equivalence', 'VERIFIED_CURRENT'),
+    ('rights_clearance', 'CLEARED'),
+    ('retention_and_deletion', 'PERMANENT_PUBLIC_GIT'),
+])
+def test_receipts_cannot_fill_source_or_permission_gaps(workspace, field, value):
+    review = read_review(workspace)
+    review['dependencies'][0][field] = value
+    repin_review(workspace, review)
+    with pytest.raises(ValueError, match='historical source promoted|access or retention boundary'):
+        v.verify_repository(workspace[0])
+
+
+@pytest.mark.parametrize('field', ['complete_source', 'capture_timestamp_verified', 'target_url_visible'])
+def test_partial_screenshot_cannot_acquire_unobserved_properties(workspace, field):
+    review = read_review(workspace)
+    review['artifacts'][0]['member'][field] = True
+    repin_review(workspace, review)
+    with pytest.raises(ValueError, match='partial capture'):
+        v.verify_repository(workspace[0])
+
+
+@pytest.mark.parametrize('field', ['body', 'selftext', 'data_base64'])
+def test_source_content_cannot_be_embedded_in_dependency_record(workspace, field):
+    review = read_review(workspace)
+    review['dependencies'][0][field] = 'SYNTHETIC UNAPPROVED SOURCE'
+    repin_review(workspace, review)
+    with pytest.raises(ValueError, match='unapproved component source content'):
+        v.verify_repository(workspace[0])
+
+
+def test_private_artifact_recheck_is_read_only_and_does_not_promote(workspace, tmp_path):
+    review = read_review(workspace)
+    directory = tmp_path.parent / (tmp_path.name + '-private')
+    directory.mkdir()
+    for a in review['artifacts']:
+        path = directory / a['filename']
+        if 'member' in a:
+            raw = b'SYNTHETIC PARTIAL PIXELS'
+            with zipfile.ZipFile(path, 'w') as archive:
+                archive.writestr(a['member']['filename'], raw)
+            a['member'].update(sha256=hashlib.sha256(raw).hexdigest(), size_bytes=len(raw))
+        else:
+            path.write_bytes(b'SYNTHETIC FIRST PARTY RECEIPT')
+        raw = path.read_bytes()
+        a.update(sha256=hashlib.sha256(raw).hexdigest(), size_bytes=len(raw))
+    repin_review(workspace, review)
+    before = {p.name: p.read_bytes() for p in directory.iterdir()}
+    result = v.verify_repository(workspace[0], private_component_evidence_directory=directory)
+    assert result['supporting_artifact_bodies_verified'] == 5
+    assert result['complete_original_component_references_verified'] == 0
+    assert result['component_bundles_complete'] is False and result['real_pilot_status'] == 'HOLD'
+    assert before == {p.name: p.read_bytes() for p in directory.iterdir()}
+    target = directory / review['artifacts'][1]['filename']
+    target.write_bytes(b'CHANGED')
+    with pytest.raises(ValueError, match='byte length|SHA-256'):
+        v.verify_repository(workspace[0], private_component_evidence_directory=directory)
+
+
+def test_private_evidence_must_stay_outside_checkout(workspace):
+    with pytest.raises(ValueError, match='private evidence inside checkout'):
+        v.verify_repository(workspace[0], private_component_evidence_directory=workspace[0])
+
+
+@pytest.mark.parametrize('field,value', [('reviewer_type', 'INDEPENDENT_HUMAN'),
+                                       ('content_committed', True), ('public_status', 'PASS')])
+def test_archive_review_cannot_promote_authority_or_public_status(workspace, field, value):
+    review = read_review(workspace)
+    review[field] = value
+    repin_review(workspace, review)
+    with pytest.raises(ValueError, match='authority boundary|promotion boundary'):
+        v.verify_repository(workspace[0])
+

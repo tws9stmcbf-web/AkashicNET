@@ -341,14 +341,16 @@
           "version_label": "v2.0",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t3_1uld5ws"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/pcjwo7y/",
           "version_label": "v2.0.1",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pcjwo7y"
         }
       ],
       "scope": "Conceptual axioms; not an evidence hierarchy."
@@ -361,14 +363,16 @@
           "version_label": "v2.1",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t3_1ukdnzu"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ukdnzu/comment/pcjx6eb/",
           "version_label": "v2.1.1",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pcjx6eb"
         }
       ],
       "scope": "Architecture and attribution; not a verified execution graph."
@@ -381,14 +385,16 @@
           "version_label": "v7.2",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t3_1uk9qdp"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uk9qdp/comment/pck0cro/",
           "version_label": "v7.2.1",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pck0cro"
         }
       ],
       "scope": "Classification does not establish empirical equivalence."
@@ -401,14 +407,16 @@
           "version_label": "v4.0.3",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t3_1nlqn3o"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/comment/pck0jk6/",
           "version_label": "v4.0.4",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pck0jk6"
         }
       ],
       "scope": "Three temporal views of a broader symbolic source."
@@ -421,14 +429,16 @@
           "version_label": "Working Draft v1.1",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t3_1ul49l9"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ul49l9/comment/pck09dt/",
           "version_label": "Working Draft v1.1.1",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pck09dt"
         }
       ],
       "scope": "Charter context; distinct from the Phase 8 perspective."
@@ -441,14 +451,16 @@
           "version_label": "v1.0 nested draft",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_ovc6qyw"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/pcjwo7y/",
           "version_label": "v1.0.1 within ACTC addendum",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pcjwo7y"
         }
       ],
       "scope": "Optional philosophical module."
@@ -461,14 +473,16 @@
           "version_label": "Community interpretation",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t3_1peyo0j"
         },
         {
           "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1peyo0j/comment/pck0vdo/",
           "version_label": "Dated attribution correction",
           "original_bytes_sha256": null,
           "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
-          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD"
+          "live_retrieval": "NOT_ATTEMPTED_REDDIT_HOLD",
+          "archive_dependency_id": "reddit:t1_pck0vdo"
         }
       ],
       "scope": "External hypothesis; no established PP bridge."
@@ -519,5 +533,9 @@
       "identity": false,
       "edge_acceptance": false
     }
+  },
+  "component_archive_review": {
+    "path": "references/integration/v018/omni/component-archive-review.json",
+    "sha256": "f44ecd04fe666978de8a1add0f9e434be425507e1443870134ddab33794a71cf"
   }
 }
