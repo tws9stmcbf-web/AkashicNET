@@ -1,0 +1,8 @@
+sessions:
+- id: 2026-10-26_002
+  date: '2026-10-26'
+  summary: Bounded follow-up primary-method comparison, synthetic only.
+  turn_count: 1
+  events_count: 6
+  claims_touched: []
+  open_threads: 5

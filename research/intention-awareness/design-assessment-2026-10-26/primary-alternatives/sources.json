@@ -1,0 +1,13 @@
+{
+  "access_date_local": "2026-10-26",
+  "source_commit": "5647ea0f86d8c2ad2abaf2db063377b200f9ca5a",
+  "primary_sources": [
+    {"authors": "Waudby-Smith and Ramdas", "title": "Estimating means of bounded random variables by betting", "journal_doi": "10.1093/jrsssb/qkad009", "url": "https://arxiv.org/pdf/2010.09686", "locator": "Section 4, Proposition 2 and method of mixtures", "use": "Nonnegative capital products and fixed mixtures; implemented simple fixed mixture is an AI-suggested specialization, not the authors' optimized strategy"},
+    {"authors": "Maurer and Pontil", "title": "Empirical Bernstein Bounds and Sample Variance Penalization", "url": "https://www.cs.mcgill.ca/~colt2009/papers/012.pdf", "locator": "Theorem 4, reflected for a lower bound and rescaled to known score range", "use": "Explicit one-sided finite-sample empirical Bernstein comparator"},
+    {"authors": "Owen", "title": "Better bootstrap t confidence intervals for the mean", "url": "https://arxiv.org/html/2508.10083v1", "locator": "Section 2.2 and Appendix C", "use": "Ordinary multinomial bootstrap-t definition and discrete/small-sample limitations. New beta-weight variant in that preprint is not implemented"},
+    {"authors": "Wu and Ding", "title": "Randomization Tests for Weak Null Hypotheses in Randomized Experiments", "doi": "10.1080/01621459.2020.1750415", "url": "https://arxiv.org/abs/1809.07419", "locator": "Abstract; stratified/clustered design extensions", "use": "Review lead only: studentization gives asymptotic weak-null control under conditions, not automatic finite-sample control or a turnkey solution for these two estimands"},
+    {"authors": "Chung and Romano", "title": "Exact and asymptotically robust permutation tests", "url": "https://arxiv.org/abs/1304.5939", "use": "Review lead only: equality of parameters differs from identical distributions; studentization does not create finite-sample weak-null exactness"}
+  ],
+  "excluded": ["private email contents", "participant data", "unavailable forthcoming IONS methods", "unreviewed changes to October 20/22 addenda"],
+  "access_limit": "Publisher full text for betting paper inaccessible through web retrieval; full author arXiv PDF inspected instead. No endorsement by cited authors implied."
+}
