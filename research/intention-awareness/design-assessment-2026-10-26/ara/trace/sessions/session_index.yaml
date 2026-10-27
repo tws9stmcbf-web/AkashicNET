@@ -1,0 +1,8 @@
+sessions:
+- id: 2026-10-26_001
+  date: '2026-10-26'
+  summary: Synthetic design assessment, primary calibration unresolved
+  turn_count: 1
+  events_count: 5
+  claims_touched: []
+  open_threads: 5

@@ -1,0 +1,58 @@
+session:
+  id: 2026-10-26_001
+  date: '2026-10-26'
+  turn_count: 1
+  summary: Completed synthetic design assessment; provisional primary calibration
+    fails skew stress; final method and sample remain open.
+events_logged:
+- turn: 1
+  type: question
+  id: N01
+  routing: direct
+  provenance: user
+- turn: 1
+  type: experiment
+  id: N02
+  routing: direct
+  provenance: ai-executed
+- turn: 1
+  type: experiment
+  id: N03
+  routing: direct
+  provenance: ai-executed
+- turn: 1
+  type: observation
+  id: O01
+  routing: staged
+  provenance: ai-suggested
+- turn: 1
+  type: observation
+  id: O02
+  routing: staged
+  provenance: ai-suggested
+ai_actions:
+- turn: 1
+  action: Checked dated public proposal/addenda and bounded repository workflow state;
+    created offline code, synthetic results, review note, figure and focused checks.
+  provenance: ai-executed
+  files_changed:
+  - README.md
+  - assessment.py
+  - stress.py
+  - results/
+  - test_assessment.py
+claims_touched: []
+logic_revisions: []
+key_context:
+- turn: 1
+  excerpt: User requested synthetic statistical design work, preserving public website/history
+    and UNTESTED status; no recruitment, validation or IONS endorsement.
+open_threads:
+- Final primary test and weak-versus-sharp estimand
+- Independent statistical review
+- Smallest worthwhile effect and final sample
+- Empirical dependence/completion, session and carryover assumptions
+- Consent-removal and unrecoverable-log contingencies
+ai_suggestions_pending:
+- Use 100 pairs × 100 trials only as a hypothetical planning reference, not an approved
+  confirmatory sample.
