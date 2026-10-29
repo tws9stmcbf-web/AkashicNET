@@ -1,5 +1,12 @@
 # Private Reddit-hosted playtest continuation
 
+**iPad continuation, 28 October 2026:** see [IPAD-CODESPACES.md](IPAD-CODESPACES.md)
+for a pinned Codespaces/Node setup, remote copy-and-paste login and conditional
+private-target sequence. Commit `9014cb37b67d4e84c7f5a49886106aec78f7daa8` freshly
+passes 68 local tests and its production build; the 20-test baseline below is
+historical. No Codespace, authenticated Reddit session or hosted result was
+established by that follow-up. Preserve the hosted approval and retention gates.
+
 Prepared 22 October 2026 America/Los_Angeles (23 October UTC).
 Implementation checked: `ca6ef2135dfeef3b930e066c7a3ed99863731c74`, PR #414.
 
