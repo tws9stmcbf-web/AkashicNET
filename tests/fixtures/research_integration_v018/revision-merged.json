@@ -1,0 +1,294 @@
+{
+  "collection_release_policy": "DEPRECATED_AMBIGUOUS_NOT_A_RELEASE",
+  "contract_version": "0.18.0-pilot.1",
+  "dataset_revision": 2,
+  "fixture_kind": "SYNTHETIC",
+  "input_sha256": "83e62bd9bce8b82eb0b79d4afffb0c91f6237184f1a7470f2f083e37a60d616e",
+  "promotion_guards": {
+    "edge_acceptance": false,
+    "evidence": false,
+    "identity": false,
+    "rights": false,
+    "truth": false
+  },
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "reviews": [
+    {
+      "counter_evidence": [],
+      "direct_evidence": [],
+      "disclosures": [],
+      "hypothesis": [],
+      "interpretation": [],
+      "method": "OMNI-0.5.0-manual-reference",
+      "missing_information": [
+        "Original source appraisal, contrary evidence, rights and human review pending"
+      ],
+      "perspectives": {
+        "#METAD": "INSUFFICIENT_INFORMATION",
+        "ACTC": "INSUFFICIENT_INFORMATION",
+        "ADAPT": "INSUFFICIENT_INFORMATION",
+        "AWAKEN": "INSUFFICIENT_INFORMATION",
+        "CUT Future": "INSUFFICIENT_INFORMATION",
+        "CUT Past": "INSUFFICIENT_INFORMATION",
+        "CUT Present": "INSUFFICIENT_INFORMATION",
+        "HIERATIC": "INSUFFICIENT_INFORMATION",
+        "HOMESENSE": "INSUFFICIENT_INFORMATION",
+        "REGENERATE": "INSUFFICIENT_INFORMATION",
+        "TRANSCEND": "INSUFFICIENT_INFORMATION",
+        "UMASC": "INSUFFICIENT_INFORMATION"
+      },
+      "recorded_at": "2026-10-22",
+      "review_id": "OMNI-BQ001-PILOT-1",
+      "reviewer": "SIMULATED_NOT_A_HUMAN",
+      "source_bindings": {
+        "SYNTHETIC-COMMUNITY": "011e986e51cb029d5766cf07851aba912a7d33964c1371ce4a7376a6bde1e7c9",
+        "https://example.invalid/primary": "645f8c708ca2f85ef6ecc27ea084d128509736163c30a1d799fb784a0800eb4f"
+      },
+      "state": "SIMULATED_REVIEW",
+      "supersedes": null,
+      "synthesis": [],
+      "uncertainty": [
+        "No BQ001 inference is justified by metadata integration"
+      ]
+    },
+    {
+      "counter_evidence": [],
+      "direct_evidence": [],
+      "disclosures": [],
+      "hypothesis": [],
+      "interpretation": [],
+      "method": "OMNI-0.5.0-manual-reference",
+      "missing_information": [
+        "Original source appraisal, contrary evidence, rights and human review pending"
+      ],
+      "perspectives": {
+        "#METAD": "INSUFFICIENT_INFORMATION",
+        "ACTC": "INSUFFICIENT_INFORMATION",
+        "ADAPT": "INSUFFICIENT_INFORMATION",
+        "AWAKEN": "INSUFFICIENT_INFORMATION",
+        "CUT Future": "INSUFFICIENT_INFORMATION",
+        "CUT Past": "INSUFFICIENT_INFORMATION",
+        "CUT Present": "INSUFFICIENT_INFORMATION",
+        "HIERATIC": "INSUFFICIENT_INFORMATION",
+        "HOMESENSE": "INSUFFICIENT_INFORMATION",
+        "REGENERATE": "INSUFFICIENT_INFORMATION",
+        "TRANSCEND": "INSUFFICIENT_INFORMATION",
+        "UMASC": "INSUFFICIENT_INFORMATION"
+      },
+      "recorded_at": "2026-10-22",
+      "review_id": "OMNI-BQ001-IMPORT-3c679fe8846752221e5fa2c2",
+      "reviewer": null,
+      "source_bindings": {
+        "SYNTHETIC-COMMUNITY": "2cefb5f582182b006be29f9a4b4994a2053149ac2176ed9e6012f79ed09de971",
+        "https://example.invalid/primary": "8cca9e8f73b1eac7f0f708dc76c62a101e085b4edca097746cfa370420ace4c2"
+      },
+      "state": "PENDING_HUMAN_REVIEW",
+      "supersedes": "OMNI-BQ001-PILOT-1",
+      "synthesis": [],
+      "uncertainty": [
+        "No BQ001 inference is justified by metadata integration"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "kind": "primary_research",
+      "observations": [
+        {
+          "access_scope": "Synthetic metadata only",
+          "correction_reason": null,
+          "evidence_status": "unassessed",
+          "input_path": "collections.source_metadata",
+          "input_sha256": "0cf6d760b13a3600c964dc6752242c2ad6d70ab9c4fab9d13e92650ac126e277",
+          "observation_id": "obs-1e8a3e4c47332e91cf4f9439",
+          "observed_at": "2026-10-20",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "privacy",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "provenance",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "rights",
+              "scope": "No scope-specific clearance recorded",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": null,
+          "uncertainty": null,
+          "upstream_assessment_id": null,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/primary"
+        },
+        {
+          "access_scope": "Synthetic corrected metadata scope",
+          "correction_reason": "Appended from later pinned PRISM input; no evidence promotion",
+          "evidence_status": "unassessed",
+          "input_path": "collections.source_metadata",
+          "input_sha256": "83e62bd9bce8b82eb0b79d4afffb0c91f6237184f1a7470f2f083e37a60d616e",
+          "observation_id": "obs-e998fb5f17b864ec04ccecb6",
+          "observed_at": "2026-10-21",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "privacy",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "provenance",
+              "scope": "No scope-specific clearance recorded",
+              "status": "unknown"
+            },
+            {
+              "category": "rights",
+              "scope": "No scope-specific clearance recorded",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": "obs-1e8a3e4c47332e91cf4f9439",
+          "uncertainty": null,
+          "upstream_assessment_id": null,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/primary"
+        }
+      ],
+      "relationships": [],
+      "source_id": "https://example.invalid/primary",
+      "visibility": "unknown",
+      "work_family": null
+    },
+    {
+      "kind": "community_citation",
+      "observations": [
+        {
+          "access_scope": "Synthetic metadata only",
+          "correction_reason": null,
+          "evidence_status": "unassessed",
+          "input_path": "collections.assessments",
+          "input_sha256": "0cf6d760b13a3600c964dc6752242c2ad6d70ab9c4fab9d13e92650ac126e277",
+          "observation_id": "obs-443de07879a2cbe16f74873c",
+          "observed_at": "2026-10-20",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "privacy",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "provenance",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "rights",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": null,
+          "uncertainty": null,
+          "upstream_assessment_id": 1,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/community"
+        },
+        {
+          "access_scope": "Synthetic corrected post scope",
+          "correction_reason": "Appended from later pinned PRISM input; no evidence promotion",
+          "evidence_status": "unassessed",
+          "input_path": "collections.assessments",
+          "input_sha256": "83e62bd9bce8b82eb0b79d4afffb0c91f6237184f1a7470f2f083e37a60d616e",
+          "observation_id": "obs-fbbb5333a02f795174139b60",
+          "observed_at": "2026-10-21",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "privacy",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "provenance",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "rights",
+              "scope": "SYNTHETIC fixtures only",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": "obs-443de07879a2cbe16f74873c",
+          "uncertainty": null,
+          "upstream_assessment_id": 2,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/community"
+        }
+      ],
+      "relationships": [],
+      "source_id": "SYNTHETIC-COMMUNITY",
+      "visibility": "public",
+      "work_family": null
+    }
+  ]
+}

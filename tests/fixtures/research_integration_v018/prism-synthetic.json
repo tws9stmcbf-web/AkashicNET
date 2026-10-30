@@ -1,0 +1,225 @@
+{
+  "schema": "akashicprism.framework-input.v1",
+  "dataset_revision": 1,
+  "table_contracts": {
+    "source_metadata": {
+      "primary_key": [
+        "source_url"
+      ],
+      "foreign_keys": [],
+      "row_count": 1,
+      "sha256": "a1035dc307819c03161c488cce9c83873d0775844631fb14b699715efacecbfa"
+    },
+    "records": {
+      "primary_key": [
+        "record_id"
+      ],
+      "foreign_keys": [],
+      "row_count": 1,
+      "sha256": "90c5f1226d3b46802fb409c92f5e5ec21b12673ecfa93e6aaf344eb2aa4be27d"
+    },
+    "bq_registry_snapshot": {
+      "primary_key": [
+        "question_id"
+      ],
+      "foreign_keys": [],
+      "row_count": 1,
+      "sha256": "d5fa8e3acdf2a6625a243e188ba2365582ede2edab5fdde5ae90d8d5459330b0"
+    },
+    "bq_discovery_links": {
+      "primary_key": [
+        "source_url",
+        "question_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "source_metadata",
+          "from": "source_url",
+          "to": "source_url",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "bq_registry_snapshot",
+          "from": "question_id",
+          "to": "question_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 1,
+      "sha256": "b1f83c44b1913fc3b986c38a4710204aba8c233a061201b3322d5fa27ce8444f"
+    },
+    "assessments": {
+      "primary_key": [
+        "assessment_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "records",
+          "from": "record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "assessments",
+          "from": "supersedes",
+          "to": "assessment_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 1,
+      "sha256": "b14980046c1d8006064f0761333ea376916613489a2558f99de946e3b58c3071"
+    },
+    "record_context": {
+      "primary_key": [
+        "record_id"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "records",
+          "from": "record_id",
+          "to": "record_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 1,
+      "sha256": "9a0a9b053d992b7982d68c2753691a9e6e684e5db165c5c8ff37430b52b54279"
+    },
+    "restrictions": {
+      "primary_key": [
+        "assessment_id",
+        "category"
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "assessments",
+          "from": "assessment_id",
+          "to": "assessment_id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION",
+          "match": "NONE"
+        }
+      ],
+      "row_count": 5,
+      "sha256": "d287cbc80df8c4bbb22d9571cdcb882d0b24c492e89fdaf1442809ec26438cfc"
+    },
+    "current_assessments": {
+      "primary_key": [],
+      "foreign_keys": [],
+      "row_count": 1,
+      "sha256": "b14980046c1d8006064f0761333ea376916613489a2558f99de946e3b58c3071"
+    }
+  },
+  "collections": {
+    "source_metadata": [
+      {
+        "source_url": "https://example.invalid/primary",
+        "observed_at": "2026-10-20",
+        "rights_status": "cleared_for_scope",
+        "evidence_status": "unassessed",
+        "access_scope": "Synthetic metadata only",
+        "provenance": "SYNTHETIC fixture"
+      }
+    ],
+    "records": [
+      {
+        "record_id": "SYNTHETIC-COMMUNITY",
+        "canonical_url": "https://example.invalid/community"
+      }
+    ],
+    "bq_registry_snapshot": [
+      {
+        "question_id": "BQ001"
+      }
+    ],
+    "bq_discovery_links": [
+      {
+        "source_url": "https://example.invalid/primary",
+        "question_id": "BQ001"
+      }
+    ],
+    "assessments": [
+      {
+        "assessment_id": 1,
+        "record_id": "SYNTHETIC-COMMUNITY",
+        "supersedes": null,
+        "assessment_date": "2026-10-20",
+        "evidence_status": "unassessed",
+        "review_depth": "metadata_only",
+        "scope": "Synthetic metadata only",
+        "provenance": "SYNTHETIC fixture"
+      }
+    ],
+    "record_context": [
+      {
+        "record_id": "SYNTHETIC-COMMUNITY",
+        "visibility": "public"
+      }
+    ],
+    "restrictions": [
+      {
+        "assessment_id": 1,
+        "category": "access",
+        "status": "cleared_for_scope",
+        "scope": "SYNTHETIC fixtures only"
+      },
+      {
+        "assessment_id": 1,
+        "category": "cultural_authority",
+        "status": "cleared_for_scope",
+        "scope": "SYNTHETIC fixtures only"
+      },
+      {
+        "assessment_id": 1,
+        "category": "privacy",
+        "status": "cleared_for_scope",
+        "scope": "SYNTHETIC fixtures only"
+      },
+      {
+        "assessment_id": 1,
+        "category": "provenance",
+        "status": "cleared_for_scope",
+        "scope": "SYNTHETIC fixtures only"
+      },
+      {
+        "assessment_id": 1,
+        "category": "rights",
+        "status": "cleared_for_scope",
+        "scope": "SYNTHETIC fixtures only"
+      }
+    ],
+    "current_assessments": [
+      {
+        "assessment_id": 1,
+        "record_id": "SYNTHETIC-COMMUNITY",
+        "supersedes": null,
+        "assessment_date": "2026-10-20",
+        "evidence_status": "unassessed",
+        "review_depth": "metadata_only",
+        "scope": "Synthetic metadata only",
+        "provenance": "SYNTHETIC fixture"
+      }
+    ]
+  }
+}
