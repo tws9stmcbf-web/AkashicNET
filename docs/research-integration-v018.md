@@ -83,13 +83,27 @@ representative of the literature. Exclude source bodies, participant files,
 posting-account identities, comments, media and uninspected lectures. No same-case,
 cohort-independence, cultural-authority or canonical identity conclusion follows.
 
-Recorded access is partial primary reading and a prior AI-assisted visible-post
-read, not fresh full-source appraisal. Fresh primary URL retrieval on 22 October
+The 22 October baseline records partial primary reading and a prior AI-assisted
+visible-post read, not fresh full-source appraisal. Primary URL retrieval that day
 again failed with 404; the prior bundle also records a direct 403. These responses
 do not prove deletion. The community locator was found in the pinned archive;
 current availability was not tested, respecting the live Reddit HOLD. Links are
-not labelled currently verified. Full primary text, rights/cultural review,
-complete original component pins and a genuine human assessment remain outstanding.
+not labelled currently verified. At that baseline, full primary text, rights/cultural
+review, complete original component pins and a genuine human assessment were outstanding.
+
+**30 October source-access reconciliation:** PR #416 at
+`7625004ccbf4efc4e0b7ef0f457b5007fb3ac8a8` records recovery on 28 October of a
+31-page archived representation of this same selected UVA publication, with a
+byte checksum, full AI OCR reading and a bounded methodological draft. See the
+[BQ001 human-review handoff](../references/integration/v018/bq001-source-recovery-2026-10-30.md)
+for the exact representation, existing-contract field instructions and page-specific
+review prompts. The earlier route failures and r190 metadata-only import remain
+historical records. This resolves documented published-scan access, not reuse
+permission, authenticated human appraisal, independent review or original-case
+verification. The contextual community ID and history remain separate; no direct
+citation or shared cases are established. No later real input is admitted, and the
+adapter, input lock, source restrictions, public HOLD and 13 remaining historical
+OMNI dependencies are unchanged.
 
 ## Public projection and corrections
 
