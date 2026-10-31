@@ -1,0 +1,3 @@
+#!/bin/sh
+set -eu
+node "$(git rev-parse --show-toplevel)/apps/reddit-research-companion/tools/check-metadata-publication.mjs"

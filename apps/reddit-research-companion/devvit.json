@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "akashicnet-research",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": { "inline": true, "entry": "splash.html" },
+      "companion": { "entry": "companion.html" }
+    }
+  },
+  "server": { "dir": "dist/server", "entry": "index.cjs" },
+  "permissions": {
+    "reddit": { "enable": true },
+    "redis": true,
+    "http": { "enable": false },
+    "media": false,
+    "payments": false,
+    "realtime": false
+  },
+  "menu": {
+    "items": [{
+      "label": "Open AkashicNET Research Companion",
+      "description": "Create or open this community's research companion post",
+      "location": "subreddit",
+      "forUserType": "moderator",
+      "endpoint": "/internal/menu/companion"
+    }]
+  },
+  "scripts": { "dev": "vite build --watch", "build": "vite build" }
+}

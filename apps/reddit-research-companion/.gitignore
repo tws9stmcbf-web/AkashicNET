@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.devvit/
+.env
+.env.*
+*.tsbuildinfo
+docs/n2n-source-citation-register-*.jsonl
+captures/
+staging/
+retention-data/
+state.json
+state.json.next
+suppression.key

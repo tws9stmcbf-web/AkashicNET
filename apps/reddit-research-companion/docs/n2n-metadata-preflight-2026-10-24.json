@@ -1,0 +1,39 @@
+{
+  "schema": "akashicnet.n2n.metadata-preflight.v1",
+  "prepared_on": "2026-10-24",
+  "source": "n2n-metadata-curation-2026-10-22.json",
+  "source_sha256": "0104e285d8bacfa5dc898932beef892b6b4326d8dc40172576ecdd7741d6f121",
+  "ids_sha256": "b2967e5e262c5eaf81564f7514fcc90a4f5b71e234b9c77651d471bf9fae6a1e",
+  "counts": {
+    "known_ids": 7463,
+    "unique_ids": 7463,
+    "curated_titles": 3,
+    "previously_observed_titles": 22,
+    "uncaptured_titles": 7438,
+    "site_cited_records": 237,
+    "remaining_discovery_citations": 7226,
+    "current_live_retrievals": 0,
+    "invalid_id_or_url_records": 0
+  },
+  "live_status": "NOT_RUN_AUTHENTICATION_AND_HOSTED_TESTING_REQUIRED",
+  "scope": "The complete saved ID set; not a census of all Reddit history.",
+  "capture_fields": [
+    "post_id",
+    "canonical_permalink",
+    "subreddit",
+    "title",
+    "flair",
+    "created_at",
+    "submitted_url",
+    "score_snapshot",
+    "comment_count_snapshot",
+    "observed_at",
+    "lookup_status"
+  ],
+  "boundaries": [
+    "No reconstructed titles",
+    "No post bodies, comments, media or author identities",
+    "No automatic evidence or reuse-rights promotion",
+    "No automatic external export or website merge"
+  ]
+}
