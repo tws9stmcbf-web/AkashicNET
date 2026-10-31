@@ -11,6 +11,50 @@ page can run in another Safari tab without a localhost callback or forwarded por
 Actual Codespaces availability, Reddit authentication and hosted behaviour remain
 unverified. Do not describe this as a deployed or working hosted app.
 
+## Preflight Outcome, 31 October 2026
+
+**BLOCKED at browser access; no Codespaces or hosted Reddit validation completed.**
+The existing guide and PR branch were reused. At inspection, PR #414 was open,
+draft and unmerged at documentation commit
+`6a60da7e09fba2a0127b0acad43c7274393b0355`. This entry records access observations,
+not a repeated engineering assessment.
+
+| Preflight Item | Observed Result |
+| --- | --- |
+| Connected GitHub identity | `tws9stmcbf-web` verified through the GitHub connection; this does not authenticate a browser or grant Codespaces access |
+| Codespaces browser access | Opening the official Codespaces page redirected to the ordinary GitHub sign-in page; the secure sign-in step did not complete and a fresh page inspection still showed sign-in |
+| Entitlement, available quota, billing owner and spending restrictions | UNVERIFIED: no authenticated Codespaces or account-billing page was available; this is not evidence of exhausted quota, a billing restriction or account rejection |
+| Codespace creation or reuse | NOT RUN: no authenticated Codespace or terminal was established |
+| Node 24.22.1, npm 11.9.0 and installed Devvit 0.15.0 in Codespaces | NOT RUN; the existing documented pins remain unchanged |
+| Locked install, `npm run check` and `npm run metadata:git-check` in Codespaces | NOT RUN; historical task-runtime and CI results above are not substituted for Codespaces results |
+| Official Reddit copy-and-paste login | NOT RUN: no waiting Codespaces CLI or code exchange was established; current end-to-end authentication and token refresh remain unverified |
+| Reddit developer dashboard | The navigation attempt did not return a usable page observation and was cancelled; current Reddit browser access, identity and account status remain UNKNOWN |
+| Authenticated developer identity and existing app registrations | UNVERIFIED: neither `devvit whoami` nor `devvit list apps` ran; no owned registration for the provisional `akashicnet-research` slug was established |
+| Private community, moderator/reader permissions, installed app/version and hosted acceptance | UNVERIFIED / NOT RUN; no actual private destination or installation permissions were approved in this attempt |
+
+No authentication codes or tokens were obtained, copied to chat or recorded in
+Git. No Codespace creation, budget change, app registration, duplicate app,
+community creation, upload, installation or test post was performed. The Reddit
+navigation outcome is not a freshly verified network-security block or a Reddit
+account denial.
+
+**Next access dependency:** authenticate the intended GitHub account in the
+browser that will operate Codespaces, then inspect actual remaining usage,
+billing ownership and spending controls before starting compute. Continue using
+sections 1–3 below for the existing branch, pinned environment, non-publishing
+checks, official copy-and-paste login and read-only identity/app inventory.
+The GitHub connection's authentication does not establish the cloud browser's
+session; an independent iPad Safari session is a separate execution route.
+
+**Later approval dependencies:** establish the intended Reddit developer and an
+existing owned app first. If registration is needed, obtain approval of the actual
+app identity before creating it. Before hosted writes, verify an explicitly
+Private community, its actual name/ID, membership and operator/reader permissions,
+then obtain approval of that exact destination, app, permissions and any
+platform-created content. Preserve all section 4 checkpoints. Public subreddit
+deployment, live metadata integration and scientific evidence promotion remain
+outside this preflight. All hosted acceptance rows remain NOT RUN.
+
 ## Verified here and still pending
 
 | Item | Result |
