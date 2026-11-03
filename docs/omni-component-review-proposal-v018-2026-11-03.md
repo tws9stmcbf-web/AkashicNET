@@ -106,3 +106,16 @@ Proposed F07 disposition: retain the accepted attribution safeguard and substant
 | 9 July 2025 | [QMM-enhanced error correction, DOI 10.1002/qute.202500262](https://advanced.onlinelibrary.wiley.com/doi/10.1002/qute.202500262) | A separate hardware/error-suppression report. Its circuit results require their own code/data/control appraisal and do not establish the community extensions. |
 
 No verified correction to the three 2024 formula concerns was located in this bounded check. The indexed 1 July 2025 HTML-update date alone identifies no scientific change. Preserve the 2024 article's no-new-data scope without extending it to these later experiments. New papers do not silently replace the pinned component sources or complete independent review.
+
+## F07 July 2026 Hardware Appraisal Proposal — 3 November 2026
+
+AI-assisted appraisal of [Neukart, Marx and Vinokur, DOI 10.1007/s11128-026-05292-0](https://doi.org/10.1007/s11128-026-05292-0), separate from the 2024 primary paper and the pinned OMNI sources. Independent scientific acceptance remains deferred.
+
+| Question | Proposed Disposition / Follow-Up |
+| --- | --- |
+| Measurement scope | Accept the distinction between basis matching and tomographic fidelity. Require phase-sensitive validation before accepting coherent arbitrary-state recovery. |
+| Input-matched comparator | Figure 1 illustrates Ry(pi/3) preparation. Our ideal calculation gives p(field=1)=1/4 and 0.75 agreement for an always-zero output. Reassess the 0.5 comparator using measured marginals and matched no-imprint controls. This does not dismiss the separately reported mutual information. |
+| Phase controls | Our ideal Eq.(8) calculation with memory/output initially zero gives Pmatch=1-p+p*sin(theta/2)^2. Paired phase rotations cancel on that subspace. Obtain compiled circuits and matched idle-time/depth controls before attributing stress-test differences to decoherence. No noisy-hardware reanalysis was performed. |
+| Reproducibility | Reconcile the hardware-data account with the Data Availability statement. No study-specific repository locator was identified in the inspected publisher links or bounded search. Obtain raw joint counts, OpenQASM, preparations, job identifiers, calibration and mitigation/uncertainty code. No claim is made that these materials do not exist. |
+
+Retain F07 substantive deferral and the attribution safeguard. This appraisal certifies no fundamental space-time, consciousness or psi claim and resolves none of the earlier formula questions. Primary-paper figure inspection does not authenticate the exported M06 attachment or close any of the fourteen media decisions. No author contact, historical-source replacement, approval promotion or governed-input change occurred. PRISM locks, restrictions, public HOLD, BQ001 UNRESOLVED and v0.18 PLANNED remain preserved. Separate authorisation is required for merge, tag, deployment or release.
