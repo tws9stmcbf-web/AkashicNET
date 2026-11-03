@@ -1,0 +1,34 @@
+observations:
+- id: O03
+  timestamp: '2026-10-26'
+  provenance: ai-suggested
+  content: Fixed-mixture bounded betting merits independent review as a replacement family, with substantial power costs at smaller effects or fewer pairs.
+  context: README control argument; results/comparison.csv; these are synthetic findings, not approved operating characteristics or a sample recommendation.
+  potential_type: heuristic
+  bound_to: [N06, N07]
+  promoted: false
+  promoted_to: null
+  crystallized_via: null
+  stale: false
+- id: O04
+  timestamp: '2026-10-26'
+  provenance: ai-suggested
+  content: Ordinary pair bootstrap-t is not a general repair for skewed population-mean inference when adverse pair types may be absent from a sample.
+  context: Rare-adverse and sending-chance boundary cells; bootstrap remains approximate. No user endorsement or independent statistical review.
+  potential_type: constraint
+  bound_to: [N06, N07]
+  promoted: false
+  promoted_to: null
+  crystallized_via: null
+  stale: false
+- id: O05
+  timestamp: '2026-10-26'
+  provenance: ai-suggested
+  content: Finite-sample protection of scheduled score means does not repair scientific interpretation under selective omissions.
+  context: Selective omission shifts the operational estimand; integrity gate is separate and not a universal missing-data solution.
+  potential_type: constraint
+  bound_to: [N06, N07]
+  promoted: false
+  promoted_to: null
+  crystallized_via: null
+  stale: false

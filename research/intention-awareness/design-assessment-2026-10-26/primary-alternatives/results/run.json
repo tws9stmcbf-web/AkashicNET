@@ -1,0 +1,18 @@
+{
+  "status": "PROVISIONAL_SYNTHETIC_ONLY",
+  "plan_sha256": "1fbadf7a54c1447dd82c0eae27df250992e825cdb31319f50fcb7b5eda154fb9",
+  "seed": 202610260415,
+  "analytic_reps": 50000,
+  "bootstrap_reps": 4000,
+  "draws": 999,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "bit_generator": "PCG64",
+  "data_chunk": 2048,
+  "bootstrap_batch": 8,
+  "source_commit": "5647ea0f86d8c2ad2abaf2db063377b200f9ca5a",
+  "cells": 33,
+  "stream_order": "scenario then pairs; two children per cell: data, bootstrap",
+  "framework_sha256": "8d1c01dc1a831855ea8fc79f50116b3aea134f170be88825228f2fc983cf87de"
+}

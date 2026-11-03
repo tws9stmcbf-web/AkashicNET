@@ -1,0 +1,29 @@
+{
+  "status": "PROVISIONAL_SYNTHETIC_METHOD_COMPARISON_NOT_PROTOCOL",
+  "source_commit": "5647ea0f86d8c2ad2abaf2db063377b200f9ca5a",
+  "date_local": "2026-10-26",
+  "seed": 202610260415,
+  "alpha_each_component": 0.05,
+  "rule": "reject_A AND reject_Delta; gate reported separately and in conjunction",
+  "pairs": [20, 60, 160],
+  "analytic_reps": 50000,
+  "bootstrap_reps": 4000,
+  "bootstrap_draws": 999,
+  "bet_fractions": [0.1, 0.25, 0.5, 0.75, 0.99],
+  "bet_weights": "equal; fixed before simulation; never maximize after seeing data",
+  "scenarios": [
+    {"id": "delta_skew10", "m": 200, "A": 0.05, "Delta": 0.0, "role": "partial_null_Delta", "model": "S=.30; C=.28 with .9 probability or .48 with .1"},
+    {"id": "delta_reverse10", "m": 200, "A": 0.05, "Delta": 0.0, "role": "partial_null_Delta", "model": "S=.30; C=.32 with .9 probability or .12 with .1"},
+    {"id": "delta_rare02", "m": 200, "A": 0.05, "Delta": 0.0, "role": "partial_null_Delta", "model": "S=.30; C=.288 with .98 probability or .888 with .02"},
+    {"id": "chance_skew10", "m": 200, "A": 0.0, "Delta": 0.05, "role": "partial_null_A", "model": "S=.27 with .9 probability or .07 with .1; C=.20"},
+    {"id": "both_null", "m": 200, "A": 0.0, "Delta": 0.0, "role": "both_null", "model": "Inherited uniform latent rates .25/.25, rho=.05, independent arms"},
+    {"id": "delta_negative_cov", "m": 200, "A": 0.05, "Delta": 0.0, "role": "partial_null_Delta", "model": "Inherited uniform .30/.30 rho=.05, opposite U across arms"},
+    {"id": "alt05_independent", "m": 100, "A": 0.05, "Delta": 0.05, "role": "power", "model": "Inherited uniform .30/.25 rho=.05 independent"},
+    {"id": "alt03_shared", "m": 100, "A": 0.03, "Delta": 0.03, "role": "power", "model": "Inherited uniform .28/.25 rho=.05 shared"},
+    {"id": "alt10_independent", "m": 100, "A": 0.10, "Delta": 0.10, "role": "power", "model": "Inherited uniform .35/.25 rho=.05 independent"},
+    {"id": "alt05_mcar5", "m": 100, "A": 0.035, "Delta": 0.0475, "role": "power_with_omissions", "model": "Inherited .30/.25 independent rho=.05; 5% independent omissions in each arm"},
+    {"id": "selective_omission", "m": 200, "A": 0.044, "Delta": 0.114, "role": "estimand_shift_not_typeI", "model": "Latent S=C=.30; S omissions .02, C hits .40 and C misses .02; observed S=.294 C=.180"}
+  ],
+  "scope": "33 bounded cells; analytic methods on 50000 common synthetic datasets per cell; bootstrap and same-data comparator methods on first 4000. Prior factorial and trial-level randomisation grids are not rerun.",
+  "not_assessed": ["new trial-level randomisation procedure", "sample size search", "shared people across pairs", "carryover", "adaptive stopping", "consent-required deletion", "empirical participant data"]
+}

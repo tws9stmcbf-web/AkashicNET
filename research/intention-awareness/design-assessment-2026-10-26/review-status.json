@@ -1,0 +1,14 @@
+{
+  "status": "REVIEW_DRAFT_SYNTHETIC_ONLY",
+  "hypothesis": "UNTESTED",
+  "preregistered": false,
+  "participants_recruited": 0,
+  "empirical_validation": false,
+  "independent_statistical_review": "PENDING",
+  "final_sample_size": null,
+  "primary_test": "UNRESOLVED_AFTER_CALIBRATION_STRESS",
+  "website_changed": false,
+  "existing_addenda_changed": false,
+  "scientific_promotion": false,
+  "ions_endorsement": false
+}

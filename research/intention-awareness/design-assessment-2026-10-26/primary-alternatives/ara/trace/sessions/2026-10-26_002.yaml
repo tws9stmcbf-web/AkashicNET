@@ -1,0 +1,31 @@
+session:
+  id: 2026-10-26_002
+  date: '2026-10-26'
+  turn_count: 1
+  summary: Compared provisional primary alternatives using bounded synthetic follow-up; bounded betting prioritized for review, no method or sample adopted.
+events_logged:
+- {turn: 1, type: question, id: N05, routing: direct, provenance: user}
+- {turn: 1, type: experiment, id: N06, routing: direct, provenance: ai-executed}
+- {turn: 1, type: question, id: N07, routing: direct, provenance: ai-suggested}
+- {turn: 1, type: observation, id: O03, routing: staged, provenance: ai-suggested}
+- {turn: 1, type: observation, id: O04, routing: staged, provenance: ai-suggested}
+- {turn: 1, type: observation, id: O05, routing: staged, provenance: ai-suggested}
+ai_actions:
+- turn: 1
+  action: Read PR and inherited framework; froze a 33-cell plan, implemented three alternatives with references, ran synthetic comparisons, wrote methods/results and added arithmetic/enumeration/reproducibility checks.
+  provenance: ai-executed
+  files_changed: ['plan.json', 'alternatives.py', 'test_alternatives.py', 'results/', 'README.md', 'RESULTS.md', 'sources.json', 'review-status.json']
+claims_touched: []
+logic_revisions: []
+key_context:
+- turn: 1
+  excerpt: User requested provisional statistically defensible alternatives in PR 415; preserve both successes, original addenda and untested status; no duplicate correspondence, sample approval or recruitment.
+open_threads:
+- Independent statistical review of final mean-target test and implementation
+- Meaningful effects, efficiency and feasible design scale
+- Representative independent pairs; empirical covariance/completion assumptions
+- Deletion, missing logs, carryover and allocator audit
+- Any new studentized randomisation requires a design-specific derivation
+ai_suggestions_pending:
+- Prioritize bounded betting for independent review, without adopting the tested baseline mixture
+- Do not promote tested bootstrap-t as universally calibrated

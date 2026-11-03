@@ -1,0 +1,34 @@
+{
+  "repository_base": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+  "website_mutated": false,
+  "sources": [
+    {
+      "url": "https://akashicnet.org/intention-awareness",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://akashicnet.org/downloads/intention-awareness/refinement-2026-10-20/protocol-refinement.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://akashicnet.org/downloads/intention-awareness/statistical-addendum-2026-10-22/statistical-addendum.html",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "forthcoming_IONS_methods": "Not incorporated; no complete manuscript reviewed in this assessment",
+  "private_correspondence": "Not accessed or copied; dated public paraphrases only",
+  "content_access": "Public extracted text inspected through web retrieval; direct raw-byte requests returned HTTP 403, so no website-byte preservation hashes are claimed.",
+  "preservation_scope": "Append-only research package; no website or dated correction/addendum files edited.",
+  "method_sources": [
+    {
+      "citation": "Wu and Ding (2021), Randomization Tests for Weak Null Hypotheses in Randomized Experiments",
+      "url": "https://arxiv.org/abs/1809.07419",
+      "role": "Sharp and weak null distinction; not an implementation of their general method"
+    },
+    {
+      "citation": "Phipson and Smyth (2010), Permutation P-values Should Never Be Zero",
+      "url": "https://doi.org/10.2202/1544-6115.1585",
+      "role": "Inclusive upper tails and finite Monte Carlo plus-one convention"
+    }
+  ]
+}

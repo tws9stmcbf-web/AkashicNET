@@ -1,0 +1,32 @@
+name: Intention Awareness synthetic design checks
+
+on:
+  pull_request:
+    paths:
+      - 'research/intention-awareness/design-assessment-2026-10-26/**'
+      - '.github/workflows/intention-awareness-design.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c
+        with:
+          python-version: '3.11'
+      - name: Install isolated assessment dependencies
+        run: python -m pip install -r research/intention-awareness/design-assessment-2026-10-26/requirements.txt
+      - name: Arithmetic and distribution checks
+        working-directory: research/intention-awareness/design-assessment-2026-10-26
+        run: python -m unittest discover -s . -p 'test_*.py' -v
+      - name: Verify retained package hashes
+        working-directory: research/intention-awareness/design-assessment-2026-10-26
+        run: python verify_package.py
+      - name: Smoke run, not statistical calibration
+        working-directory: research/intention-awareness/design-assessment-2026-10-26
+        run: python assessment.py --out smoke --reps 20 --perm-reps 3 --draws 19

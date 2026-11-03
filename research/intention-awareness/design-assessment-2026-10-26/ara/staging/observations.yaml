@@ -1,0 +1,30 @@
+observations:
+- id: O01
+  timestamp: '2026-10-26'
+  provenance: ai-suggested
+  content: Cross-arm covariance needs explicit treatment when translating within-pair
+    ICC assumptions into contrast power.
+  context: Synthetic uniform random-effect comparisons in results/power.csv; not an
+    empirical covariance estimate.
+  potential_type: heuristic
+  bound_to:
+  - N02
+  promoted: false
+  promoted_to: null
+  crystallized_via: null
+  stale: false
+- id: O02
+  timestamp: '2026-10-26'
+  provenance: ai-suggested
+  content: The current pair t-test family should not be treated as generally calibrated
+    before statistical review.
+  context: Skewed weak-null challenge in results/skew-calibration.csv; no researcher
+    affirmation or reviewed replacement method.
+  potential_type: constraint
+  bound_to:
+  - N03
+  - N04
+  promoted: false
+  promoted_to: null
+  crystallized_via: null
+  stale: false

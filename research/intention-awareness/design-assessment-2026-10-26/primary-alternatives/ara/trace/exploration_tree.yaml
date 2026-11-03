@@ -1,0 +1,26 @@
+tree:
+- id: N05
+  type: question
+  title: Compare defensible primary-mean alternatives
+  provenance: user
+  timestamp: '2026-10-26'
+  description: Continue upstream N04 primary-method question; retain both mandatory success criteria, bounded new stress tests and independent-review gates.
+  upstream_context: '../../../ara/trace/exploration_tree.yaml#N04'
+  status: open
+- id: N06
+  type: experiment
+  title: Run predeclared bounded alternative-method comparison
+  provenance: ai-executed
+  timestamp: '2026-10-26'
+  also_depends_on: [N05]
+  evidence: ['../../plan.json', '../../alternatives.py', '../../results/comparison.csv', '../../results/bootstrap-vs-t-paired.csv']
+  result: Completed 33 cells, four methods on 50000 datasets each; bootstrap-t on matching 4000 datasets with 999 pair-vector resamples. Rare-adverse and chance-boundary stresses expose remaining bootstrap failures; bounded methods conservative with power costs.
+  status: resolved
+- id: N07
+  type: question
+  title: Independently review bounded betting and final inferential design
+  provenance: ai-suggested
+  timestamp: '2026-10-26'
+  also_depends_on: [N06]
+  description: Audit finite-sample arguments and implementation, efficiency, pair population, scoring and omission rules; review any design-specific studentized randomisation separately. No primary or sample adopted.
+  status: open

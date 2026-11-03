@@ -1,0 +1,8 @@
+{
+  "power.csv": "3b285a22c8362447c1ce07fffe55b7a22383622c14731d65d3aa979656de47ac",
+  "calibration.csv": "99146f94f1ddb0b1ea8948cc27fa181cbee19e7c9a8912b335dd7d2eef502ade",
+  "missing-allocation.csv": "c4da23e9ca7c3532c66f1d3130b7e09303ddfd8007b0bdb0f543555bdc301e2d",
+  "randomization.csv": "5e0db500cd437ccd702d3c17ec24fc689fa8b5247c5a2dced1d76003e615128f",
+  "run.json": "b3552e966ef9ce7fae9052c85a404014a5bedda9aedfdbcacf21a518ba8cd31d",
+  "../assessment.py": "8d1c01dc1a831855ea8fc79f50116b3aea134f170be88825228f2fc983cf87de"
+}
