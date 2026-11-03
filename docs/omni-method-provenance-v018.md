@@ -537,3 +537,78 @@ for that work. Prior test/CI results are historical until the final candidate is
 checked. Source recovery does not complete human appraisal, rights/cultural review,
 independent review, final validation or separate release approval. No merge, tag,
 release, deployment, accepted edge or truth/evidence/rights promotion follows.
+
+
+## Full Exported-Text Comparison And Media Triage · 3 November 2026
+
+AI-assisted follow-up to the text recovery above. Read **all six exported original
+post bodies and all seven registered comment bodies**, including their captions,
+and the main content of the unchanged pinned v0.5.0 manual. This advances reading
+beyond the earlier original-post heading/selected-passage check. That earlier
+check remains a dated record. Export-body digests still match the private recovery
+receipt; the manual HTML still matches its existing pin. No linked paper, wiki,
+image/video content, original case artifact or independent effectiveness result
+was read or authenticated by this comparison.
+
+### Seven Component-Level Review Findings
+
+| Component | Finding In Recovered Text | Required Treatment For This Pilot |
+| --- | --- | --- |
+| ACTC | Some cross-scale emergence language is stronger than its limitations; companion names differ from later source-defined expansions. | Treat the axioms as conceptual, retain old names as attributed variants and use the clarification for the proposed interface. Do not infer a tested causal model or rewrite historical text. |
+| METAD | QMM is assigned a broad mathematical-foundation role; four operations coexist with a longer lifecycle. | Keep uncertain QMM mappings unresolved. Distinguish conceptual roles from executed interfaces and preserve the four operations separately from the more detailed lifecycle. |
+| UMASC | Four system layers and five claim-domain categories coexist with coherence-ordering axioms. | Keep descriptive grouping, claim classification and proposed ontology separate; classification does not establish evidence or empirical equivalence. A three-group charter summary is not a silent replacement taxonomy. |
+| CUT | The original mixes symbolic caveats with stronger dimensional-access assertions and proposals labelled as empirical grounding. | Apply the clarification's limits: temporal views are a bounded application; proposed measurements are not results. Preserve unsupported source assertions as unassessed; do not promote them through adjacent citations. |
+| HOMESENSE700 | The displayed Working Draft v1.1 coexists with an older canonical-version history entry and offered ratification language. | Preserve observed draft status and history separately. No ratification event is established, and Phase 7 charter context does not replace the Phase 8/lived-experience perspective. |
+| PP | Both the draft and shared clarification retain optional philosophical exploration. | Keep awareness descriptions, fundamentality, information storage and personal identity distinct. No mandatory PP premise, automatic bridge or survival conclusion follows. |
+| QMM | Reproduced physics excerpts and community claims about consciousness, psi and temporal layers have different scopes. | The attribution clarification requires separate support for the extensions; keep the external hypothesis outside the default PP map. This follow-up does not appraise the complete linked physics paper. |
+
+The private reviewer record binds each finding to exact source-body digests,
+section anchors, line and character locations, original passages and clarification
+passages, plus the fixed manual scope. It records unresolved questions rather than
+blanket component compatibility or source acceptance. All findings are
+**AI_DRAFT_REQUIRES_HUMAN_REVIEW**. They are a component-reference comparison, not
+a completed twelve-perspective review of the BQ001 pilot. No new native PRISM
+assessment, evidence label or approved public projection is created.
+
+### Media Triage Is A Recommendation, Not A Coverage Waiver
+
+All **14 unique inline media references** are catalogued: five ACTC figures, one
+each for METAD, UMASC, HOMESENSE700 and QMM, and five CUT entries (three videos and
+two images). The account ZIP has no media/image/upload/attachment-named members;
+no attachment bytes were acquired or inspected. A caption remains a text record,
+not a substitute for the image or video.
+
+- ACTC Figures 0–3 need content inspection if their model topology, arrows, seven
+  layers or dual-lens distinctions are used. A diagram's conceptual appearance
+  does not establish a measured mechanism.
+- The QMM entry is captioned as an attributed theoretical figure. Any figure
+  analysis or reproduction needs the original figure/source and a separate scope
+  decision; this is not evidence for the community's consciousness extensions.
+- One CUT video has no caption; its role is unknown. The other CUT captions
+  suggest artistic material, including mechanism-like language that needs care
+  in any reuse. The text already contains a dimensional table, but that does not
+  prove that the unseen media adds no information.
+- The ACTC epilogue and the METAD, UMASC and HOMESENSE images are described by
+  their captions as artistic or conceptual. That is an AI triage recommendation,
+  not verification of their contents, permission or dispensability. The film-
+  inspired epilogue also needs attribution/scope review if reused.
+
+All fourteen inclusion/exclusion decisions remain pending. No attachment is
+silently declared unnecessary, deleted, cleared or complete. A narrower text-only
+method/source scope would need an explicit reviewed revision; none is made here.
+
+### Remaining Gates
+
+The full available **export text** has now received an AI reading and a source-bound
+comparison. Complete historical source/component authentication remains open:
+later text and dated headings still do not authenticate historical edit/capture
+state. Permissions, cultural context, privacy, retention/deletion controls,
+authenticated human method/source acceptance, independent review and separate
+release approval remain outstanding. The existing private review packet now has
+a dated Section 18 with the findings, media inventory and decision fields.
+
+The checksum-bound baseline inventory, original-source nulls, method/component
+flags, source/review contract, input packet/lock, adapter and real HOLD output are
+unchanged. PR #413 remains draft and unmerged; BQ001 UNRESOLVED; v0.18 PLANNED /
+not release-ready. Exact-commit checks for this documentation follow-up must be
+reported separately from the earlier recovery commit's successful runs.
