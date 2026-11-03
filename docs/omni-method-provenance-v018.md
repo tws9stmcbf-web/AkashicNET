@@ -447,3 +447,93 @@ BQ001 UNRESOLVED, public projection HOLD and v0.18 PLANNED / unreleased**. Scope
 rights/cultural decisions, authenticated human appraisal, independent review and
 separate release approval remain outstanding. No merge, tag, release, deployment,
 accepted edge or truth/evidence/rights/identity promotion is performed.
+
+
+## Supplied Account-Export Text Recovery · 3 November 2026
+
+AI-assisted, read-only recovery against the supplied 2 November account export,
+checked on 3 November (Europe/Berlin). This supersedes the earlier statement that
+no source text is available **for this newly inspected export representation**.
+The 27/30 October inventories remain valid accounts of the older holdings; they
+are not rewritten. PR #413 remains draft; BQ001 UNRESOLVED; real public output HOLD.
+
+### New Coverage
+
+The original private account export contains **13 unique, non-empty target text
+records: six posts and seven comments, covering all 14 declared bindings**. The
+shared ACTC/PP clarification is one record with two bindings. All six original
+post texts also match the newer private import package field-for-field. That
+package excludes comments; the seven comment texts were found in the original
+export, not inferred from the post-only import or reconstructed from drafts.
+
+| Component | Original Text In Export | Clarification Text In Export |
+| --- | --- | --- |
+| ACTC | `t3_1uld5ws`, v2.0 label | `t1_pcjwo7y`, v2.0.1 heading |
+| METAD | `t3_1ukdnzu`, v2.1 label | `t1_pcjx6eb`, v2.1.1 heading |
+| UMASC | `t3_1uk9qdp`, v7.2 label | `t1_pck0cro`, v7.2.1 heading |
+| CUT | `t3_1nlqn3o`, v4.0.3 heading | `t1_pck0jk6`, v4.0.4 heading |
+| HOMESENSE700 | `t3_1ul49l9`, Working Draft v1.1 heading | `t1_pck09dt`, Working Draft v1.1.1 heading |
+| PP | `t1_ovc6qyw`, Draft v1.0 heading | `t1_pcjwo7y`, PP v1.0.1 section |
+| QMM | `t3_1peyo0j`, community interpretation | `t1_pck0vdo`, dated attribution clarification |
+
+Read-only checks bind every target to its exact post/comment permalink and thread,
+reject duplicate target IDs and blank/deletion-placeholder bodies, and compare
+exported identity/date fields with their separate header records. The nested PP
+record's parent points to `ovc5sk0`; that companion-table record is also present in
+the same ACTC thread. This parent check does not add a fourteenth declared source.
+The original export digest agrees with the newer import's recorded source digest.
+
+A **private** reproducible receipt records container/member digests, selected CSV
+record ordinals, exported dates and decoded UTF-8 body byte lengths/digests. Raw
+account bytes, IP fields, source bodies, figures and private receipt contents are
+not committed to public Git. No account messages, chats or unrelated record text
+were inspected for this recovery. The receipt establishes consistency within the
+supplied holdings, not independent account-export authentication.
+
+### Scoped Reconciliation And Limits
+
+All seven registered comment bodies were read, including both sections of the
+shared ACTC/PP addendum. Together with original-post version headings, they support
+the existing method boundaries: QM, MM and QMM stay distinct; framework arrows are
+conceptual roles; PP is optional and does not establish survival; CUT's temporal
+views are a limited application; HOMESENSE clarification is not ratification;
+and QMM's physics source is separate from community extensions. This is a scoped
+text comparison, not full semantic appraisal of all six original posts, validation
+of their empirical claims or a completed twelve-perspective OMNI review.
+
+There are **14 inline image/video markers across the six post bodies**. Their media
+bytes were not acquired or inspected. Linked works/wiki pages are also outside
+this recovered text set. An exported text record is therefore not a complete
+rendered post or complete component bundle. No comment media field was non-empty
+for the seven target comments; this does not authenticate external-link coverage.
+
+The CSV dates are exported record dates, not authenticated capture times. Dated
+headings and matching version labels do not prove that the November text equals
+the historical version required by the October manual. The export provides no
+verified edit history, historical byte comparison or fresh live deletion check.
+The user-supplied acquisition context is not independent author/account identity
+verification. Decoded-body hashes identify this export text, not original HTTP
+responses or an independently timestamped historical source.
+
+### Gate Consequence And Next Review
+
+**Text-record recovery is complete within these supplied tables. Historical-source
+and complete-component verification remain incomplete.** All 13 historical
+dependencies remain pending under the unchanged checksum-bound baseline inventory;
+its original-source checksum nulls, method/component flags, adapter, r190 packet,
+manual and real public status are unchanged. No missing source is relabelled
+verified merely because text is now readable.
+
+Next work is to reconcile these exact representations with independently supported
+historical version/capture evidence, decide which linked media is necessary and
+recover that media under an appropriate scope, resolve retention/deletion and
+source-specific permissions, and obtain authenticated human method acceptance plus
+independent review. If a newer representation is proposed instead, that requires
+an explicit reviewed method/input revision; do not silently substitute it for the
+pinned historical specification. No such revision is made here.
+
+The existing human-review packet has a dated recovery addendum and private receipt
+for that work. Prior test/CI results are historical until the final candidate is
+checked. Source recovery does not complete human appraisal, rights/cultural review,
+independent review, final validation or separate release approval. No merge, tag,
+release, deployment, accepted edge or truth/evidence/rights promotion follows.
