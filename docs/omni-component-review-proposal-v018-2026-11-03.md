@@ -146,3 +146,11 @@ M06 matches the current publisher Figure 1 in dimensions (3011x3142) and decoded
 These observations revise only the later review scope and proposed media roles; preserve the earlier caption-only triage as a dated record. Source-specific creator/rights-holder evidence, credit lines, film/portrait/quotation and audio/music rights, cultural/privacy considerations where relevant, intended audience, retention/review limits, custodian and suppression/deletion process remain unresolved. Task-authorised inspection does not approve controlled preservation, redistribution or publication. No inclusion/exclusion, attribution, permission or historical gate is cleared by this AI proposal.
 
 Keep all thirteen historical dependencies pending and all fourteen media decisions open. Existing F01–F07 limits, pinned OMNI v0.5.0 authority, PRISM inputs/locks, restrictions, source history, public HOLD, BQ001 UNRESOLVED and v0.18 PLANNED remain preserved. Authenticated human review, independent appraisal and separate release authorisation remain outstanding.
+
+## Operator-Reported Graphic Provenance — 3 November 2026
+
+The operator confirms that the ACTC Figures 0–3 (M07–M10), HOMESENSE700 (M12), METAD (M13) and UMASC (M14) graphics were developed with ChatGPT assistance under their direction. Provenance: user statement in the current review, not independent creator or rights-holder authentication.
+
+Retrieved summaries of 1–2 July 2026 chats corroborate visualisation requests, drafting/caption work and image-revision discussion. Exact generation receipts, model/tool identity, uploaded reference inputs and an asset-to-session match were not recovered. These summaries do not authenticate the historical attachment bytes.
+
+Proposed attribution: user-directed graphics developed with ChatGPT assistance. This origin statement grants no new permission for preservation, reviewer sharing, quotation or public reproduction and makes no scientific-validity claim. Third-party source material, film/portrait/quotation and audio/music rights, retention decisions, historical dependencies and authenticated human/independent review remain open. Public HOLD, BQ001 UNRESOLVED, PRISM locks and v0.18 PLANNED are preserved.
