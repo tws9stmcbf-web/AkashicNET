@@ -79,3 +79,30 @@ A1 consequence: operator direction on the intended limits is recorded. Authentic
 A2–A6 remain pending: historical authentication and required media; upstream access/cultural-authority/privacy/provenance/rights and retention decisions; human appraisal with twelve reasoned dispositions; independent review; final governed-input validation and separate release authorisation. All fourteen media inclusion/exclusion decisions and thirteen historical dependencies remain open.
 
 This documentation-only decision does not revise the pinned manual, historical source text, PRISM input/lock, source/review contract, restrictions, original checksum nulls, component/method flags or public projection. Public HOLD, BQ001 UNRESOLVED, draft/unmerged PR #413 and v0.18 PLANNED / not release-ready are preserved. No merge, tag, deployment or release is authorised.
+
+## F07 Primary-Source Screening Proposal — 3 November 2026
+
+AI-assisted reading and narrow algebra checks; independent expert appraisal remains pending. Source: [Neukart, Brasher and Marx, DOI 10.3390/e26121039](https://pmc.ncbi.nlm.nih.gov/articles/PMC11726831/). The [INSPIRE-hosted PDF representation](https://inspirehep.net/files/a3fb9373faaae7428bb4851f356ddf31) was downloaded and hashed; printed pages 3, 4, 12, 17 and 21 were visually inspected. The current publisher HTML was also retrieved (793,527 bytes; SHA-256 600713792c04aa4dbbe22244600a294986adeef42ae23dfd0b5b568cd7e57cc7); its MathML retains the questioned Eqs.(3), (35) and (45). Neither representation is claimed byte-identical to a historical component pin.
+
+| Review Question | Printed Location | AI Check / Required Clarification |
+| --- | --- | --- |
+| Finite-cell canonical commutator | p.3, section 2.1.1, Eq.(3) | For finite dimension d>0, trace([X,P])=0 cannot equal trace(i*hbar*I)=i*hbar*d. Clarify intended operator domain, approximation or modified algebra. |
+| Worked retrieval dynamics | p.12, section 3.2.2, Eqs.(35)–(37) | The printed creation/raising plus annihilation/lowering pairing annihilates the stated initial state. It therefore cannot generate the displayed transfer trajectory as written. Clarify or correct the operator pairing and dependent illustration. |
+| Page-curve continuity | p.17 Eq.(45), compared with p.21 Eq.(51) | Assuming continuous black-hole entropy and positive entropy at Page time, Eq.(45) jumps from that positive value to a zero right limit. Reconcile the two prescriptions and their boundary conditions. |
+
+These are source-bound mathematical questions, not an independent certification or a disproof of every possible QMM formulation. The paper describes a theoretical local/causal four-dimensional model and acknowledges no direct evidence. The community's meaning, hidden-temporal-layer, retrocausal, consciousness and psi extensions are not established by citing it. Preserve each extension as a separately attributed, unsupported-by-this-citation proposal.
+
+The primary paper's Figure 1 was visually inspected. The exported M06 attachment was not acquired or byte-compared; its source match, inclusion, attribution and permission decisions remain pending. Inspection of the primary illustration closes no component-media gate.
+
+Proposed F07 disposition: retain the accepted attribution safeguard and substantive deferral; obtain qualified independent review or an authorised request for clarification before relying on the questioned mathematics. No author contact was made. Historical pins, source/review contracts, PRISM locks, restrictions and public HOLD remain unchanged; BQ001 stays UNRESOLVED and v0.18 PLANNED. This proposal changes no approval or release gate.
+
+### Later-Work Check — Separate Source Versions
+
+| Date | Later Source | Bounded Finding |
+| --- | --- | --- |
+| 21 July 2026 | [Reversible imprinting and retrieval, DOI 10.1007/s11128-026-05292-0](https://link.springer.com/article/10.1007/s11128-026-05292-0) | Defines a controlled-rotation/controlled-SWAP circuit and reports basis-matched retrieval. It distinguishes that metric from tomographic state fidelity and does not claim to reproduce Planck-scale dynamics; it is not a correction of the 2024 equations. |
+| 13 July 2026 | [Correction to the 2025 strong/weak-interaction extension, DOI 10.3390/e28070791](https://pmc.ncbi.nlm.nih.gov/articles/PMC13408791/) | Corrects references 21–24 in a different paper; bibliographic entries only, not the three flagged formulas. |
+| May 2026 | [Discrete electromagnetism, DOI 10.1016/j.rinp.2026.108629](https://www.sciencedirect.com/science/article/pii/S2211379726000550) | A separate gauge-covariant finite-information formulation. Publisher abstract/record screened; full operator-level comparison remains pending. |
+| 9 July 2025 | [QMM-enhanced error correction, DOI 10.1002/qute.202500262](https://advanced.onlinelibrary.wiley.com/doi/10.1002/qute.202500262) | A separate hardware/error-suppression report. Its circuit results require their own code/data/control appraisal and do not establish the community extensions. |
+
+No verified correction to the three 2024 formula concerns was located in this bounded check. The indexed 1 July 2025 HTML-update date alone identifies no scientific change. Preserve the 2024 article's no-new-data scope without extending it to these later experiments. New papers do not silently replace the pinned component sources or complete independent review.
