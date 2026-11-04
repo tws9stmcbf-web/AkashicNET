@@ -174,3 +174,26 @@ Supplement the earlier two-sequence inventory with this eight-stage sequence. Pr
 The bounded pilot analysis explicitly uses Observe, Model, Integrate and Steward, informed by v2.1 and its v2.1.1 clarification. This does not establish full framework conformity or completed lifecycle execution.
 
 Operator approval covers this descriptive correction and bounded analytical wording only. Historical authentication, authenticated human appraisal and independent review remain outstanding. Preserve PRISM locks and source history, public HOLD, BQ001 UNRESOLVED, draft/unmerged PR status and v0.18 PLANNED.
+
+## Operator-Approved Perspective Wording — 4 November 2026
+
+The operator approved the following AI-assisted wording proposals in conversation. These are proposed analytical dispositions for the selected Stevenson (1988) paper and community-post pair, not authenticated human source appraisal, independent review or native candidate transitions. The pinned AkashicOMNI v0.5.0 manual remains authoritative.
+
+| Perspective | Proposed Disposition | Accepted Scope And Limit |
+| --- | --- | --- |
+| AWAKEN | APPLIED | Distinguish reported recognition from verification, conflicting recollections, possible prompting and prior information exposure; no finding of proven fraud. |
+| HIERATIC | APPLIED | Examine cultural meaning and reported attachment without treating either as proof or disproof of reincarnation; participant accounts remain incomplete. |
+| HOMESENSE | APPLIED | Examine reported everyday needs and relationships; motives and longer-term wellbeing remain unestablished. |
+| ADAPT | APPLIED | Trace interpretation changes after follow-up inquiries; lasting methodological or participant change is unestablished. |
+| REGENERATE | INSUFFICIENT_INFORMATION | No adequate outcome evidence for repair, renewal or flourishing; not a finding of irrelevance. |
+| TRANSCEND | APPLIED | Identify unfamiliar conceptual frames and assumptions; no validated metaphysical mechanism or demonstrated personal transformation. |
+| METAD | APPLIED | Bounded v2.1-informed use of Observe, Model, Integrate and Steward with v2.1.1 clarification; no full conformity or completed lifecycle claim. |
+| ACTC | APPLIED | Compare explanatory relationships conceptually; narrative coherence and pattern similarity do not establish truth or identity continuity. |
+| CUT Past | APPLIED | Separate event reports, later recollections and source history; limited OMNI use with v4.0.4 clarification. |
+| CUT Present | APPLIED | State currently available, disputed and missing evidence; no physical-time or dimensional-access conclusion. |
+| CUT Future | APPLIED | Identify further verification and possible tests without treating anticipated results as evidence. |
+| UMASC | APPLIED | Separate experience, documentary evidence, conceptual interpretation and tradition-specific meaning; classification does not validate ontological axioms. |
+
+Source scope: [paper](https://med.virginia.edu/perceptual-studies/wp-content/uploads/sites/360/2016/12/STE23.pdf), selected-page reading of the recovered representation, and [community post](https://www.reddit.com/r/NeuronsToNirvana/comments/1tlcanb/n2n_insight_brief_biological_evidence_for/), current retrieved text. The lecture itself was not inspected. The recovered paper, current post and November component export remain distinct from historical r190 metadata; no reading-depth backfill or historical authentication follows.
+
+All twelve native candidate dispositions remain INSUFFICIENT_INFORMATION pending authenticated, exact-source human review. Historical source and necessary-media decisions, source-specific restrictions and retention, independent review and release approval remain outstanding. This appendix changes no source record, candidate, input lock, gate or public projection. Preserve PRISM histories, public HOLD, BQ001 UNRESOLVED, draft/unmerged PR #413 and v0.18 PLANNED.
