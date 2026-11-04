@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-22",
+  "status": "IMPLEMENTED_DRAFT_REAL_PILOT_HOLD",
+  "packet_revision": 190,
+  "packet_sha256_verified": "cbce536a124f0170b6d93ed8974cbe2c0110dc5409b986ddfb594cce91a7e71a",
+  "table_contracts_verified": 14,
+  "tests": {
+    "command": "python -m pytest -q tests/test_research_integration_v018.py tests/test_search_reddit_archive.py tests/test_bq001_public_status_boundary.py",
+    "passed": 59,
+    "failed": 0
+  },
+  "synthetic_before_after_byte_replay": "PASS",
+  "real_projection": "HOLD_NO_SOURCE_ROWS",
+  "human_review": "PENDING_NOT_INVENTED",
+  "independent_review": "PENDING",
+  "exact_commit_ci": "TRACK_IN_DRAFT_PR",
+  "release": "NOT_AUTHORIZED",
+  "primary_link_check": "2026-10-22 retrieval returned 404; not proof of deletion",
+  "reddit_link_check": "Pinned archive only; no live access",
+  "limitations": [
+    "No full primary appraisal",
+    "No rights or cultural-authority acceptance",
+    "OMNI full manual/component original-byte pins incomplete",
+    "Local review records are trusted input, not authenticated human identities",
+    "Native history validation exists; cross-packet primary history requires curated append-only observations"
+  ],
+  "followup": {
+    "date": "2026-10-22",
+    "status": "CROSS_REVISION_HISTORY_IMPLEMENTED_DRAFT",
+    "passed": 74,
+    "failed": 0,
+    "new_real_packet": "NONE_ADMITTED_R190_LOCK_UNCHANGED",
+    "synthetic_revision_replay": "PRIVATE_AND_PUBLIC_BYTE_COMPARISON_PASS",
+    "human_review": "PENDING",
+    "independent_review": "PENDING",
+    "exact_commit_ci": "TRACK_IN_DRAFT_PR"
+  },
+  "method_provenance_followup": {
+    "date": "2026-10-22",
+    "status": "ORIGINAL_HTML_AND_SELECTED_ASSETS_PINNED_COMPONENT_BUNDLES_INCOMPLETE",
+    "validated_baseline_commit": "9382394d0a0ab5aa896613a1b8c7b5409bd22eea",
+    "tests": {
+      "passed": 88,
+      "failed": 0,
+      "new_provenance_cases": 14
+    },
+    "inherited_correction_and_revision_byte_replay": "PASS",
+    "verified_original_http_bodies": 11,
+    "bundled_http_bodies": 4,
+    "independently_rehashed_selected_source_blobs": 15,
+    "original_component_bundles": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+    "original_html_pin": "VERIFIED_HTTP_200_SNAPSHOT",
+    "components_individually_pinned": false,
+    "full_method_pin_gate_complete": false,
+    "historical_text_checksum_preserved": true,
+    "real_projection": "UNCHANGED_HOLD_NO_SOURCE_ROWS",
+    "human_review": "PENDING",
+    "independent_review": "PENDING",
+    "exact_commit_ci": "TRACK_NEW_EXACT_HEAD_IN_DRAFT_PR_AND_ISSUE_411",
+    "release": "NOT_AUTHORIZED"
+  }
+}

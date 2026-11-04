@@ -1,0 +1,573 @@
+{
+  "schema": "akashicnet.omni-component-archive-review.v1",
+  "reviewed_on": "2026-10-27",
+  "reviewed_timezone": "America/Los_Angeles",
+  "reviewer_type": "AI_ASSISTED_NOT_INDEPENDENT",
+  "inspected_pr_head": "9ed741ced3fdf4338abdd988367368df6bd238c8",
+  "manual_sha256": "dca4484d7572ff81050a7da21eb16eecbf84fe2d3684478f38fcb797784d3953",
+  "status": "PARTIAL_PRESERVED_REPRESENTATION_FULL_BUNDLES_PENDING",
+  "complete_original_references_verified": 0,
+  "distinct_dependencies": 13,
+  "reference_bindings": 14,
+  "evidence_use": "READ_ONLY_TASK_INSPECTION_NOT_REDISTRIBUTION_OR_NEW_RETENTION_APPROVAL",
+  "content_committed": false,
+  "public_status": "HOLD",
+  "artifacts": [
+    {
+      "id": "partial-actc-capture",
+      "filename": "AkashicOMNI-v050-T06S-and-Recovered-Receipts-2026-10-02.zip",
+      "representation": "preserved_first_party_artifact",
+      "sha256": "31f67efa8c24900abaf4d5d0342609cb30632b7c9169bd0c901fae812bd62d4b",
+      "size_bytes": 161809,
+      "original_reddit_source": false,
+      "public_content_redistribution_approved": false,
+      "member": {
+        "filename": "patches-pinned-20260928.jpg",
+        "sha256": "17f0c45efac072e1d9b9611357c5be8d9c8db6475e760a7cadab13a9757c17fe",
+        "size_bytes": 132193,
+        "representation": "partial_screenshot",
+        "complete_source": false,
+        "capture_timestamp_verified": false,
+        "target_url_visible": false
+      }
+    },
+    {
+      "id": "candidate-rc4-a",
+      "filename": "AkashicOMNI-v0.5.0-Candidate-Specification.md",
+      "representation": "preserved_first_party_artifact",
+      "sha256": "243679e2930942ef0225fa8a26079924a5e4ac5974857a0a00ab7f49a4fd6729",
+      "size_bytes": 71691,
+      "original_reddit_source": false,
+      "public_content_redistribution_approved": false
+    },
+    {
+      "id": "applied-addendum-receipt",
+      "filename": "AkashicOMNI-Framework-Variant-Audit-2026-09-28.md",
+      "representation": "preserved_first_party_artifact",
+      "sha256": "8130f39a8c718e8217650dbed35b3773f34b2f7c84b9404d45f2196cd05875ac",
+      "size_bytes": 15943,
+      "original_reddit_source": false,
+      "public_content_redistribution_approved": false
+    },
+    {
+      "id": "component-audit",
+      "filename": "AkashicOMNI-v050-Component-Audit-2026-10-02.html",
+      "representation": "preserved_first_party_artifact",
+      "sha256": "7cd8273ba7445aa823a5c282f5064c72ae742448f9bd1660773fbcb94885aee9",
+      "size_bytes": 14628,
+      "original_reddit_source": false,
+      "public_content_redistribution_approved": false
+    },
+    {
+      "id": "metadata-archive",
+      "filename": "Reddit-Archive-Curation-2026-10-01.zip",
+      "representation": "preserved_first_party_artifact",
+      "sha256": "ab75fc2b676526e97135c9808d9aba093680797ca02278c061fe55416e9e8187",
+      "size_bytes": 1571520,
+      "original_reddit_source": false,
+      "public_content_redistribution_approved": false
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "reddit:t3_1uld5ws",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/",
+      "post_id": "1uld5ws",
+      "comment_id": null,
+      "bindings": [
+        {
+          "component": "ACTC",
+          "version_label": "v2.0",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "metadata-archive",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_pcjwo7y",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/pcjwo7y/",
+      "post_id": "1uld5ws",
+      "comment_id": "pcjwo7y",
+      "bindings": [
+        {
+          "component": "ACTC",
+          "version_label": "v2.0.1",
+          "role": "clarification"
+        },
+        {
+          "component": "PP",
+          "version_label": "v1.0.1 within ACTC addendum",
+          "role": "clarification"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "partial-actc-capture",
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ],
+      "partial_capture_scope": "ACTC_V2_0_1_VISIBLE_TOP_ONLY_PP_SECTION_NOT_VISIBLE"
+    },
+    {
+      "id": "reddit:t3_1ukdnzu",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ukdnzu/",
+      "post_id": "1ukdnzu",
+      "comment_id": null,
+      "bindings": [
+        {
+          "component": "METAD",
+          "version_label": "v2.1",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "metadata-archive",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_pcjx6eb",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ukdnzu/comment/pcjx6eb/",
+      "post_id": "1ukdnzu",
+      "comment_id": "pcjx6eb",
+      "bindings": [
+        {
+          "component": "METAD",
+          "version_label": "v2.1.1",
+          "role": "clarification"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t3_1uk9qdp",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uk9qdp/",
+      "post_id": "1uk9qdp",
+      "comment_id": null,
+      "bindings": [
+        {
+          "component": "UMASC",
+          "version_label": "v7.2",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "metadata-archive",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_pck0cro",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uk9qdp/comment/pck0cro/",
+      "post_id": "1uk9qdp",
+      "comment_id": "pck0cro",
+      "bindings": [
+        {
+          "component": "UMASC",
+          "version_label": "v7.2.1",
+          "role": "clarification"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t3_1nlqn3o",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/",
+      "post_id": "1nlqn3o",
+      "comment_id": null,
+      "bindings": [
+        {
+          "component": "CUT",
+          "version_label": "v4.0.3",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "metadata-archive",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_pck0jk6",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1nlqn3o/comment/pck0jk6/",
+      "post_id": "1nlqn3o",
+      "comment_id": "pck0jk6",
+      "bindings": [
+        {
+          "component": "CUT",
+          "version_label": "v4.0.4",
+          "role": "clarification"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t3_1ul49l9",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ul49l9/",
+      "post_id": "1ul49l9",
+      "comment_id": null,
+      "bindings": [
+        {
+          "component": "HOMESENSE700",
+          "version_label": "Working Draft v1.1",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "metadata-archive",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_pck09dt",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1ul49l9/comment/pck09dt/",
+      "post_id": "1ul49l9",
+      "comment_id": "pck09dt",
+      "bindings": [
+        {
+          "component": "HOMESENSE700",
+          "version_label": "Working Draft v1.1.1",
+          "role": "clarification"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_ovc6qyw",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1uld5ws/comment/ovc6qyw/",
+      "post_id": "1uld5ws",
+      "comment_id": "ovc6qyw",
+      "bindings": [
+        {
+          "component": "PP",
+          "version_label": "v1.0 nested draft",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t3_1peyo0j",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1peyo0j/",
+      "post_id": "1peyo0j",
+      "comment_id": null,
+      "bindings": [
+        {
+          "component": "QMM",
+          "version_label": "Community interpretation",
+          "role": "original"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "metadata-archive",
+        "candidate-rc4-a"
+      ]
+    },
+    {
+      "id": "reddit:t1_pck0vdo",
+      "url": "https://www.reddit.com/r/NeuronsToNirvana/comments/1peyo0j/comment/pck0vdo/",
+      "post_id": "1peyo0j",
+      "comment_id": "pck0vdo",
+      "bindings": [
+        {
+          "component": "QMM",
+          "version_label": "Dated attribution correction",
+          "role": "clarification"
+        }
+      ],
+      "status": "PENDING_AUTHORIZED_ARCHIVED_BYTES",
+      "original_bytes_sha256": null,
+      "historical_capture_timestamp": null,
+      "current_reddit_equivalence": "NOT_CHECKED_REDDIT_HOLD",
+      "rights_clearance": "PENDING_SCOPE_SPECIFIC_DECISION",
+      "retention_and_deletion": "PENDING_CONTROLLED_STORAGE_DECISION",
+      "required_evidence": [
+        "FULL_ARCHIVED_REPRESENTATION",
+        "EXACT_TARGET_BINDING",
+        "CAPTURE_TIME_AND_VERSION_EVIDENCE",
+        "REPRODUCIBLE_BYTE_INTEGRITY",
+        "SCOPE_SPECIFIC_USE_PERMISSION",
+        "RETENTION_DELETION_AND_SUPPRESSION_PLAN"
+      ],
+      "supporting_artifacts": [
+        "applied-addendum-receipt",
+        "candidate-rc4-a"
+      ]
+    }
+  ],
+  "manual_reconciliation": [
+    {
+      "component": "ACTC",
+      "manual_scope": "Conceptual axioms; not an evidence hierarchy.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "Partial ACTC screenshot supports distinct QM/MM/QMM naming and no automatic equivalence; remaining ACTC and PP content is outside the visible capture."
+    },
+    {
+      "component": "METAD",
+      "manual_scope": "Architecture and attribution; not a verified execution graph.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "No complete original-plus-clarification source bundle inspected."
+    },
+    {
+      "component": "UMASC",
+      "manual_scope": "Classification does not establish empirical equivalence.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "No complete original-plus-clarification source bundle inspected."
+    },
+    {
+      "component": "CUT",
+      "manual_scope": "Three temporal views of a broader symbolic source.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "No complete original-plus-clarification source bundle inspected."
+    },
+    {
+      "component": "HOMESENSE700",
+      "manual_scope": "Charter context; distinct from the Phase 8 perspective.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "No complete original-plus-clarification source bundle inspected."
+    },
+    {
+      "component": "PP",
+      "manual_scope": "Optional philosophical module.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "No complete original-plus-clarification source bundle inspected."
+    },
+    {
+      "component": "QMM",
+      "manual_scope": "External hypothesis; no established PP bridge.",
+      "declared_reference_bindings": "MATCH_PINNED_MANUAL",
+      "complete_component_semantics": "NOT_VERIFIED_MISSING_FULL_SOURCES",
+      "limited_observation": "No complete original-plus-clarification source bundle inspected."
+    }
+  ],
+  "timestamp_limits": [
+    "The screenshot filename attributes it to 28 September 2026; the pixels contain only relative ages and no target URL.",
+    "JPEG has no EXIF. ZIP member time 1 October 2026 15:45:46 has no timezone and is not a verified source capture time.",
+    "The containing package has provider creation metadata 1 October 2026 20:51:02.173768Z. This is package metadata, not source publication or capture authentication.",
+    "Prior applied/pinned receipts are narrative reports, not immutable Reddit snapshots or current deletion checks."
+  ],
+  "search_scope": [
+    {
+      "surface": "existing PR and component manifest",
+      "outcome": "No changes after inspected head; all 14 entries remain pending."
+    },
+    {
+      "surface": "preserved Library audit, clarification, source-pin and integration packages",
+      "outcome": "One partial ACTC screenshot, candidate and dated receipts; no full source bundles."
+    },
+    {
+      "surface": "larger preserved Reddit metadata curation archive",
+      "outcome": "Six original post IDs match; their stored title and summary are null; no original bodies or comment IDs recovered."
+    },
+    {
+      "surface": "connected Drive OMNI and ACTC searches",
+      "outcome": "No matching source archive returned."
+    },
+    {
+      "surface": "two public search indexes, exact original/addendum identifiers",
+      "outcome": "No source result returned; no direct live Reddit fetch or API use."
+    },
+    {
+      "surface": "Internet Archive CDX lookups for all six original post URL prefixes",
+      "outcome": "All six requests inaccessible through available retrieval; archive existence and capture coverage remain unknown."
+    }
+  ],
+  "limitations": [
+    "Available inventories are not an exhaustive archive census.",
+    "No independent timestamp, authorship, edit-history, deletion status or reuse-rights verification.",
+    "Current Reddit pages would be separate representations, never replacements for historical bytes.",
+    "A full pin remains dependent on a lawful complete representation plus capture/version and permitted-use evidence.",
+    "Internet Archive capture indexes were inaccessible; other archive providers and authorised private backups were not exhausted."
+  ]
+}

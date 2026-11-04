@@ -1,0 +1,224 @@
+{
+  "collection_release_policy": "DEPRECATED_AMBIGUOUS_NOT_A_RELEASE",
+  "contract_version": "0.18.0-pilot.1",
+  "dataset_revision": 1,
+  "fixture_kind": "SYNTHETIC",
+  "input_sha256": "0cf6d760b13a3600c964dc6752242c2ad6d70ab9c4fab9d13e92650ac126e277",
+  "promotion_guards": {
+    "edge_acceptance": false,
+    "evidence": false,
+    "identity": false,
+    "rights": false,
+    "truth": false
+  },
+  "question_id": "BQ001",
+  "question_status": "UNRESOLVED",
+  "reviews": [
+    {
+      "counter_evidence": [],
+      "direct_evidence": [],
+      "disclosures": [
+        {
+          "decision": "ALLOW_METADATA_ONLY",
+          "observation_sha256": "e53d71034b863fff3a4fbc0b3639c2016f8919a13999742ca57ba4883322c5d3",
+          "scope": "LINK_METADATA_ONLY",
+          "source_id": "https://example.invalid/primary"
+        },
+        {
+          "decision": "ALLOW_METADATA_ONLY",
+          "observation_sha256": "07c3025d43f2e174c518e4033559c3c0d92edad1e7e95c7738ada4b011a1ed5f",
+          "scope": "LINK_METADATA_ONLY",
+          "source_id": "SYNTHETIC-COMMUNITY"
+        }
+      ],
+      "hypothesis": [],
+      "interpretation": [],
+      "method": "OMNI-0.5.0-manual-reference",
+      "missing_information": [
+        "Original source appraisal, contrary evidence, rights and human review pending"
+      ],
+      "perspectives": {
+        "#METAD": "INSUFFICIENT_INFORMATION",
+        "ACTC": "INSUFFICIENT_INFORMATION",
+        "ADAPT": "INSUFFICIENT_INFORMATION",
+        "AWAKEN": "INSUFFICIENT_INFORMATION",
+        "CUT Future": "INSUFFICIENT_INFORMATION",
+        "CUT Past": "INSUFFICIENT_INFORMATION",
+        "CUT Present": "INSUFFICIENT_INFORMATION",
+        "HIERATIC": "INSUFFICIENT_INFORMATION",
+        "HOMESENSE": "INSUFFICIENT_INFORMATION",
+        "REGENERATE": "INSUFFICIENT_INFORMATION",
+        "TRANSCEND": "INSUFFICIENT_INFORMATION",
+        "UMASC": "INSUFFICIENT_INFORMATION"
+      },
+      "recorded_at": "2026-10-22",
+      "review_id": "OMNI-BQ001-PILOT-1",
+      "reviewer": "SIMULATED_NOT_A_HUMAN",
+      "source_bindings": {
+        "SYNTHETIC-COMMUNITY": "aa932a2ee2e84835418018baa40a493dec0ef0cd92cc48ee1620b3bc85dca428",
+        "https://example.invalid/primary": "2a62b5916cfd3132ef213ca77621cbec91f3d4395858bdb18d880f2548590195"
+      },
+      "state": "SIMULATED_REVIEW",
+      "supersedes": null,
+      "synthesis": [],
+      "uncertainty": [
+        "No BQ001 inference is justified by metadata integration"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "kind": "primary_research",
+      "observations": [
+        {
+          "access_scope": "Synthetic metadata only",
+          "correction_reason": null,
+          "evidence_status": "unassessed",
+          "input_path": "collections.source_metadata",
+          "input_sha256": "0cf6d760b13a3600c964dc6752242c2ad6d70ab9c4fab9d13e92650ac126e277",
+          "observation_id": "obs-1e8a3e4c47332e91cf4f9439",
+          "observed_at": "2026-10-20",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "privacy",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "provenance",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "rights",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": null,
+          "uncertainty": null,
+          "upstream_assessment_id": null,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/primary"
+        },
+        {
+          "access_scope": "Synthetic metadata only",
+          "correction_reason": "SYNTHETIC locator correction; no evidence change",
+          "evidence_status": "unassessed",
+          "input_path": "collections.source_metadata",
+          "input_sha256": "0cf6d760b13a3600c964dc6752242c2ad6d70ab9c4fab9d13e92650ac126e277",
+          "observation_id": "SYNTHETIC-CORRECTION-2",
+          "observed_at": "2026-10-22",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "privacy",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "provenance",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "rights",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": "obs-1e8a3e4c47332e91cf4f9439",
+          "uncertainty": null,
+          "upstream_assessment_id": null,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/primary-corrected"
+        }
+      ],
+      "relationships": [],
+      "source_id": "https://example.invalid/primary",
+      "visibility": "public",
+      "work_family": null
+    },
+    {
+      "kind": "community_citation",
+      "observations": [
+        {
+          "access_scope": "Synthetic metadata only",
+          "correction_reason": null,
+          "evidence_status": "unassessed",
+          "input_path": "collections.assessments",
+          "input_sha256": "0cf6d760b13a3600c964dc6752242c2ad6d70ab9c4fab9d13e92650ac126e277",
+          "observation_id": "obs-443de07879a2cbe16f74873c",
+          "observed_at": "2026-10-20",
+          "provenance": "SYNTHETIC fixture",
+          "rationale": null,
+          "reading_depth": "metadata_only",
+          "restrictions": [
+            {
+              "category": "access",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "cultural_authority",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "privacy",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "provenance",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            },
+            {
+              "category": "rights",
+              "scope": "Synthetic fixture only",
+              "status": "cleared_for_scope"
+            }
+          ],
+          "retrieved_at": null,
+          "supersedes": null,
+          "uncertainty": null,
+          "upstream_assessment_id": 1,
+          "upstream_integration_status": null,
+          "url": "https://example.invalid/community"
+        }
+      ],
+      "relationships": [],
+      "source_id": "SYNTHETIC-COMMUNITY",
+      "visibility": "public",
+      "work_family": null
+    }
+  ]
+}

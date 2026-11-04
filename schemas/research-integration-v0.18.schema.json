@@ -1,0 +1,462 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "fixture_kind",
+    "dataset_revision",
+    "input_sha256",
+    "collection_release_policy",
+    "question_id",
+    "question_status",
+    "promotion_guards",
+    "sources",
+    "reviews"
+  ],
+  "properties": {
+    "contract_version": {
+      "enum": [
+        "0.18.0-pilot.1"
+      ]
+    },
+    "fixture_kind": {
+      "enum": [
+        "SYNTHETIC",
+        "REAL_PRIVATE_INPUT"
+      ]
+    },
+    "dataset_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "input_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "collection_release_policy": {
+      "enum": [
+        "DEPRECATED_AMBIGUOUS_NOT_A_RELEASE"
+      ]
+    },
+    "question_id": {
+      "enum": [
+        "BQ001"
+      ]
+    },
+    "question_status": {
+      "enum": [
+        "UNRESOLVED"
+      ]
+    },
+    "promotion_guards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth",
+        "evidence",
+        "rights",
+        "identity",
+        "edge_acceptance"
+      ],
+      "properties": {
+        "truth": {
+          "const": false
+        },
+        "evidence": {
+          "const": false
+        },
+        "rights": {
+          "const": false
+        },
+        "identity": {
+          "const": false
+        },
+        "edge_acceptance": {
+          "const": false
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "kind",
+          "visibility",
+          "work_family",
+          "relationships",
+          "observations"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "primary_research",
+              "community_citation"
+            ]
+          },
+          "visibility": {
+            "enum": [
+              "public",
+              "private",
+              "unknown",
+              "restricted"
+            ]
+          },
+          "work_family": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "relationships": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "target_id",
+                "relation",
+                "state"
+              ],
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "relation": {
+                  "enum": [
+                    "CITES_CANDIDATE",
+                    "SAME_WORK_CANDIDATE"
+                  ]
+                },
+                "state": {
+                  "enum": [
+                    "NOT_ADJUDICATED"
+                  ]
+                }
+              }
+            }
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "observation_id",
+                "supersedes",
+                "observed_at",
+                "retrieved_at",
+                "url",
+                "reading_depth",
+                "evidence_status",
+                "access_scope",
+                "provenance",
+                "input_sha256",
+                "input_path",
+                "upstream_assessment_id",
+                "restrictions",
+                "correction_reason",
+                "rationale",
+                "uncertainty",
+                "upstream_integration_status"
+              ],
+              "properties": {
+                "observation_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "supersedes": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observed_at": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "retrieved_at": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "reading_depth": {
+                  "enum": [
+                    "metadata_only",
+                    "post_read",
+                    "selected_pages_recorded",
+                    "abstract_read",
+                    "full_text_read"
+                  ]
+                },
+                "evidence_status": {
+                  "const": "unassessed"
+                },
+                "access_scope": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "provenance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "input_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "input_path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "upstream_assessment_id": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "restrictions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "category",
+                      "status",
+                      "scope"
+                    ],
+                    "properties": {
+                      "category": {
+                        "enum": [
+                          "access",
+                          "cultural_authority",
+                          "privacy",
+                          "provenance",
+                          "rights"
+                        ]
+                      },
+                      "status": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "scope": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "correction_reason": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "rationale": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "uncertainty": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "upstream_integration_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "review_id",
+          "supersedes",
+          "recorded_at",
+          "method",
+          "state",
+          "reviewer",
+          "source_bindings",
+          "perspectives",
+          "direct_evidence",
+          "interpretation",
+          "synthesis",
+          "hypothesis",
+          "counter_evidence",
+          "missing_information",
+          "uncertainty",
+          "disclosures"
+        ],
+        "properties": {
+          "review_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supersedes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recorded_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "method": {
+            "enum": [
+              "OMNI-0.5.0-manual-reference"
+            ]
+          },
+          "state": {
+            "enum": [
+              "PENDING_HUMAN_REVIEW",
+              "HUMAN_REVIEWED",
+              "SIMULATED_REVIEW"
+            ]
+          },
+          "reviewer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_bindings": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "perspectives": {
+            "type": "object",
+            "additionalProperties": {
+              "enum": [
+                "INSUFFICIENT_INFORMATION",
+                "REVIEWED_WITH_LIMITS"
+              ]
+            }
+          },
+          "direct_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "interpretation": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "synthesis": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "hypothesis": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "counter_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "missing_information": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "uncertainty": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "disclosures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source_id",
+                "observation_sha256",
+                "scope",
+                "decision"
+              ],
+              "properties": {
+                "source_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "observation_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "scope": {
+                  "enum": [
+                    "LINK_METADATA_ONLY"
+                  ]
+                },
+                "decision": {
+                  "enum": [
+                    "ALLOW_METADATA_ONLY"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "minItems": 1
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://akashicnet.org/schemas/research-integration-v0.18.schema.json",
+  "title": "Bounded Research Integration Pilot 0.18.0-pilot.1"
+}
