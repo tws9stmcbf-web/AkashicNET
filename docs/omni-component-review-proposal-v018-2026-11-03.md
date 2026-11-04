@@ -164,3 +164,13 @@ A freshly retrieved [published-article PDF representation](https://inspirehep.ne
 Proposed M06 handling: retain the current visual attribution to Neukart, Brasher and Marx (2024), Figure 1, DOI 10.3390/e26121039; retain supplied copyright/licence notices and disclaimers, link source and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), indicate changes and imply no endorsement. The CDN PNG has a different encoding but unchanged decoded pixels in the recorded comparison. This proposal does not publish the image or clear permissions for the community text, other media or the selected pilot sources.
 
 No source/review contract, upstream restriction or historical gate is changed. Authenticated human appraisal, twelve reasoned perspective dispositions, historical-source or explicitly reviewed revision decisions, remaining rights/retention evidence, independent review and final release approval remain outstanding. Preserve the pinned OMNI authority, PRISM locks and histories, public HOLD, BQ001 UNRESOLVED, draft/unmerged PR #413 and v0.18 PLANNED.
+
+## F02 Additional Process Sequence — 4 November 2026
+
+Complete reading of the recovered METAD v2.1 text identifies a third longer process description: Adaptive Evolution, decoded export lines 502–537: Concept → Prototype → Discussion → Revision → Validation → Publication → Community Feedback → Next Version.
+
+Supplement the earlier two-sequence inventory with this eight-stage sequence. Preserve it separately from the Adaptive Knowledge Lifecycle, Adaptive Lifecycle and four core operations. No source-defined one-to-one crosswalk or completed validation is established.
+
+The bounded pilot analysis explicitly uses Observe, Model, Integrate and Steward, informed by v2.1 and its v2.1.1 clarification. This does not establish full framework conformity or completed lifecycle execution.
+
+Operator approval covers this descriptive correction and bounded analytical wording only. Historical authentication, authenticated human appraisal and independent review remain outstanding. Preserve PRISM locks and source history, public HOLD, BQ001 UNRESOLVED, draft/unmerged PR status and v0.18 PLANNED.
