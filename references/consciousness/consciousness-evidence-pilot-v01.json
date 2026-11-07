@@ -1,0 +1,78 @@
+{
+  "version": "0.1",
+  "status": "bounded-manual-pilot",
+  "canonicalPromotion": false,
+  "bq001Status": "UNRESOLVED",
+  "records": [
+    {
+      "id": "barcellos",
+      "title": "Is “Consciousness” a Folk Psychological Concept?",
+      "author": "Victor Machado Barcellos",
+      "date": "2026-08-12",
+      "url": "https://link.springer.com/article/10.1007/s11097-026-10197-5",
+      "kind": "philosophical argument reviewing empirical research",
+      "observation": "In vignette studies reviewed by Barcellos, respondents judged whether a human or robot saw red or felt pain. These were judgements about agents, not measurements of the agents’ experiences.",
+      "interpretation": "Barcellos argues that phenomenal consciousness is a specialist concept rather than a concept shared in ordinary thinking.",
+      "alternative": "Seeing red can mean detecting a colour. Vignette wording and conversational context can affect attribution without establishing that respondents lack the concept.",
+      "prism": "Record the exact question, population and response measure. Identify the respondent separately from the agent being judged.",
+      "omni": "Separate detection, attributed experience and first-person experience.",
+      "akashicnet": "Describe the finding as a difference in attributions; leave the robot’s experience undetermined."
+    },
+    {
+      "id": "fallon-pitts",
+      "title": "Revisiting the Neural Correlates of Consciousness",
+      "author": "Francis T. Fallon and Michael Pitts",
+      "date": "2026-09-28",
+      "url": "https://www.thetransmitter.org/consciousness/revisiting-the-neural-correlates-of-consciousness/",
+      "kind": "methodological perspective with hypothetical experiment",
+      "observation": "The essay describes an imagined EEG task with multiple signals separated in time. It reports no observations from that task.",
+      "interpretation": "The authors propose that several processes unfolding over time may contribute to conscious experience.",
+      "alternative": "A signal might reflect priming, memory retrieval or report preparation rather than the onset of perception.",
+      "prism": "Mark hypothetical inputs as illustrative. For empirical work, retain stimulus, measurement and report times separately.",
+      "omni": "Distinguish perception, access, memory and report. Treat timing as a question rather than a fixed stage.",
+      "akashicnet": "Label the proposal as a perspective, not a finding that consciousness is discontinuous."
+    },
+    {
+      "id": "chandaria",
+      "title": "From Cacophony to Hierarchy",
+      "author": "Shamil Chandaria and colleagues",
+      "date": "2026-09-28",
+      "url": "https://arxiv.org/html/2609.35618v1",
+      "kind": "theoretical preprint with illustrative modelling",
+      "observation": "The report compares candidate indicators at behavioural, computational, causal, organismic and organism–environment levels. Its numerical examples use stipulated inputs.",
+      "interpretation": "The authors propose weighing indicator evidence alongside confidence in the theories that make the indicators relevant.",
+      "alternative": "A different theory, indicator coding or prior can substantially change the model output.",
+      "prism": "Retain observed indicators and assumed inputs in distinct fields. Mark illustrative numbers as model outputs.",
+      "omni": "Tag the level of description. A claim about one level does not automatically support a claim about another.",
+      "akashicnet": "Present the outputs as sensitivity examples, not measured probabilities of consciousness."
+    },
+    {
+      "id": "holyoak-monti",
+      "title": "What Can Analogy Tell Us About Artificial Consciousness?",
+      "author": "Keith J. Holyoak and Martin M. Monti",
+      "date": "2026-10-01",
+      "url": "https://arxiv.org/html/2610.01002v1",
+      "kind": "philosophical preprint engaging empirical evidence",
+      "observation": "The essay draws on anaesthesia, neurological conditions and comparative research to discuss the relationship between mechanisms and observable behaviour.",
+      "interpretation": "The authors argue that resemblance in causally relevant mechanisms carries more weight than outward similarity alone.",
+      "alternative": "Different mechanisms might support experience; a weak analogy to humans does not exclude that possibility.",
+      "prism": "Label analogies as inferences and name the source and target of each comparison.",
+      "omni": "State the proposed mechanism, why it matters and which alternative mechanisms remain open.",
+      "akashicnet": "Avoid treating fluent behaviour as proof, or weak analogy as proof of impossibility."
+    },
+    {
+      "id": "lennon",
+      "title": "How Seriously Should We Take AI Welfare?",
+      "author": "Preston Lennon",
+      "date": "2026-07-13",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/phpr.70148",
+      "kind": "philosophical argument about knowledge and welfare",
+      "observation": "The article reviews scientific theories of consciousness. It does not report an experiment measuring AI experience.",
+      "interpretation": "Lennon argues that uncertainty about the available theories should constrain how seriously we take AI welfare in action and policy.",
+      "alternative": "Precaution might still be justified under substantial uncertainty, depending on the costs and consequences of acting or waiting.",
+      "prism": "Distinguish claims about evidence, confidence and policy in the source record.",
+      "omni": "Separate confidence in a theory from confidence that a particular system satisfies it.",
+      "akashicnet": "Record the judgement about consciousness separately from any reasons to act."
+    }
+  ]
+}
