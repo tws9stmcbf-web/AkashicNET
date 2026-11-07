@@ -32,3 +32,7 @@ Big Questions remain UNRESOLVED, accepted canonical edges remain 0, Reddit live
 access remains HOLD, and evidence, rights, privacy, cultural-authority, publication
 and promotion controls remain unchanged. This is neither pilot acceptance nor an
 engineering release authorization.
+
+## Consciousness Evidence Trail
+
+The [five-reading manual pilot](../references/consciousness/consciousness-evidence-pilot-v01.md) adds explicit distinctions between measurement, experience attribution and decisions under uncertainty. It is a bounded review exercise and does not change the v0.5.0 release or evidence status.
