@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "appraisal_date": "2026-10-25",
+  "timezone": "America/Los_Angeles",
+  "retrieval_utc_date": "2026-10-26",
+  "provenance": "ai-executed public-source documentary appraisal; independent scientific review pending",
+  "repository": "tws9stmcbf-web/AkashicNET",
+  "pull_request": 399,
+  "branch": "codex/ions-public-claims-demo-20261012",
+  "parent_head": "df6fd539bbdba0ddb0035b1cf338c254461d8c44",
+  "classification": "RELATED_EXPERIMENTS_SUBSTANTIALLY_DIFFERENT_METHODS",
+  "quantitative_synthesis": "NOT_CURRENTLY_JUSTIFIED",
+  "independent_review": "PENDING",
+  "existing_record_check": {
+    "pr_state": {
+      "draft": true,
+      "merged": false,
+      "comments_returned": 0
+    },
+    "branch_tree_truncated": false,
+    "agents_files_found": [],
+    "read_paths": [
+      "docs/IONS_TELEPHONE_METHODS_FOLLOWUP.md",
+      "docs/IONS_TELEPHONE_DATA_CHECK.md",
+      "docs/IONS_PUBLIC_CLAIMS_DEMO.md",
+      "references/akashicomni/IONS-Public-Claims-Extraction-2026-10-12.md",
+      "references/akashicomni/IONS-Telephone-Correction-2026-10-22.md",
+      "references/akashicomni/ions-telephone-methods-followup-2026-10-12.json",
+      "data/akashicomni/ions-public-claims-demo-v0.5.0.json"
+    ],
+    "default_branch_code_queries": [
+      "Stedall",
+      "Tressoldi"
+    ],
+    "pr_query": "Stedall",
+    "result": "No dedicated 2025 cross-study appraisal found in the inspected records; not a repository-wide or all-branch absence claim.",
+    "reused_correction": "Existing 22 October descriptive correction; no correspondence accessed and no data reprocessed."
+  },
+  "source_access": [
+    {
+      "id": "S1",
+      "url": "https://journalofscientificexploration.org/index.php/jse/article/view/3543/2345",
+      "type": "publisher primary full text",
+      "locations": "203-206; methods and registration link 204; results/table 205; exploratory discussion 206",
+      "status": "retrieved"
+    },
+    {
+      "id": "S2",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1048.pdf",
+      "type": "preregistration",
+      "locations": "1 leads/hypothesis; 2 stopping/test/exclusions; 3 bonding/RNG/protocol",
+      "status": "retrieved"
+    },
+    {
+      "id": "S3",
+      "url": "https://www.sheldrake.org/files/pdfs/papers/Whos-calling-evaluating-the-accuracy-of-guessing-who-is-on-the-phone.pdf",
+      "type": "primary article-in-press",
+      "locations": "3-5 recruitment/design/statistics; 6 historical results; 7-8 limitations/response-bias analyses",
+      "status": "retrieved; not corrected publisher-final edition"
+    },
+    {
+      "id": "S4",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062.pdf",
+      "type": "original preregistration",
+      "status": "retrieved relevant methods/analysis sections"
+    },
+    {
+      "id": "S5",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_2.pdf",
+      "type": "revision",
+      "status": "retrieved relevant methods/analysis sections"
+    },
+    {
+      "id": "S6",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_3.pdf",
+      "type": "revision",
+      "status": "retrieved relevant methods/analysis sections"
+    },
+    {
+      "id": "S7",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_4.pdf",
+      "type": "revision",
+      "status": "retrieved relevant methods/analysis sections"
+    },
+    {
+      "id": "S8",
+      "url": "https://akashicnet.org/noetic-sciences/telephone-study-correction",
+      "type": "project public correction plus repository correction note",
+      "status": "retrieved"
+    },
+    {
+      "id": "S9",
+      "url": "https://openpsychologyjournal.com/contents/volumes/V2/TOPSYJ-2-12/TOPSYJ-2-12.pdf",
+      "type": "independent primary methodological critique and experiments",
+      "locations": "12-13 critique; not a direct audit of 2025/Wahbeh implementations",
+      "status": "retrieved"
+    },
+    {
+      "id": "S10",
+      "url": "https://journals.lub.lu.se/jaex/article/view/25934",
+      "type": "same-author field synthesis",
+      "status": "landing page inspected; lineage context only"
+    },
+    {
+      "id": "registry_index",
+      "url": "https://koestlerunit.wordpress.com/study-registry/registered-studies/",
+      "status": "1048 publication linkage and 1062 revision listing inspected"
+    },
+    {
+      "id": "2025_data",
+      "url": "https://doi.org/10.6084/m9.figshare.24574174",
+      "status": "reported by S1; DOI, article API and numeric landing-page retrieval unsuccessful; contents/version/hash not verified"
+    }
+  ],
+  "search_scope": {
+    "engines": "two public search engines; bounded title/author/critique/response-bias/registry and data-DOI searches",
+    "queries": [
+      "Stedall Tressoldi telephone telepathy preregistration 117 604 critique",
+      "Wahbeh telephone critique randomization",
+      "Stedall Tressoldi calling criticism",
+      "telephone telepathy Schmidt Walach letter 2003 pdf",
+      "24574174 figshare",
+      "Who is calling Stedall critique preregistration"
+    ],
+    "finding": "Independent primary historical critique S9 recovered. No dedicated independent appraisal of S1 located in this bounded search. General polemics and secondary summaries not treated as primary methods evidence."
+  },
+  "unresolved": [
+    "KPU1048 bonding eligibility and optional role switching implementation",
+    "2025 recruitment dates and stopping/overshoot, failures, repeated participation and overlapping groups",
+    "actual RNG source and assignment/completion logs in both studies",
+    "KPU1062 random.org vs published PHP and attempt-cap discrepancy",
+    "2025 strategy coding reliability/blinding/multiplicity and causal confounding",
+    "2025 raw-data DOI contents and analysis syntax",
+    "corrected Wahbeh randomisation and public v2/final supplement/corrigendum"
+  ],
+  "preservation": {
+    "completed_correction_unchanged": true,
+    "first_six_rule_not_reapplied": true,
+    "scientific_packet_unchanged": true,
+    "promotion_flags_unchanged": true,
+    "private_correspondence_accessed": false,
+    "participant_data_accessed": false,
+    "website_changed": false,
+    "merge_authorized": false
+  },
+  "validation": "Documentation-only content and link/preservation checks; no new test-suite or current CI success claim."
+}

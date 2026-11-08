@@ -1,0 +1,60 @@
+{
+  "record_version": 1,
+  "checked_date": "2026-10-22",
+  "provenance": "ai-executed; conditional on author-provided completion-status mapping",
+  "source_doi": "10.6084/m9.figshare.21521235.v1",
+  "source_sha256": "83231d102887e6faae295afca161419cefce606c8463ed07e3246c6feeb03097",
+  "source_size_bytes": 87755,
+  "source_bytes_unchanged": true,
+  "independent_parser_agreement": true,
+  "completion_status_correction_triads": 3,
+  "retained_completer_triads": 35,
+  "expected_response_counts_per_retained_triad_confirmed": true,
+  "groups": {
+    "all_status": {
+      "pre_selected": {
+        "hits": 147,
+        "responses": 289,
+        "accuracy_percent": "50.9"
+      },
+      "post_selected": {
+        "hits": 243,
+        "responses": 762,
+        "accuracy_percent": "31.9"
+      }
+    },
+    "v1_label_completers": {
+      "pre_selected": {
+        "hits": 115,
+        "responses": 228,
+        "accuracy_percent": "50.4"
+      },
+      "post_selected": {
+        "hits": 216,
+        "responses": 666,
+        "accuracy_percent": "32.4"
+      }
+    },
+    "author_corrected_completers": {
+      "pre_selected": {
+        "hits": 101,
+        "responses": 210,
+        "accuracy_percent": "48.1"
+      },
+      "post_selected": {
+        "hits": 205,
+        "responses": 630,
+        "accuracy_percent": "32.5"
+      }
+    }
+  },
+  "first_six_rule_reapplied": false,
+  "completion_status_independently_verified": false,
+  "chronological_selection_independently_reproduced": false,
+  "inferential_tests_reproduced": false,
+  "corrected_randomization_p_value": null,
+  "independent_scientific_review": "PENDING",
+  "mechanism_verified": false,
+  "participant_identifiers_exported": false,
+  "row_level_records_exported": false
+}

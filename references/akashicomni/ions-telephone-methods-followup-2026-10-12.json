@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-12",
+  "status": "PARTIAL_NUMERICAL_RECONCILIATION_FINAL_SUBSET_UNRESOLVED",
+  "provenance": "ai-executed",
+  "independent_review": "PENDING",
+  "sources": [
+    {
+      "source_id": "ARTICLE-IN-PRESS",
+      "url": "https://www.sheldrake.org/files/pdfs/papers/Whos-calling-evaluating-the-accuracy-of-guessing-who-is-on-the-phone.pdf",
+      "source_kind": "Primary paper, third-party mirror; article-in-press",
+      "location": "pp4-6 methods and Table3",
+      "bytes": 1627071,
+      "sha256": "281946265179a7f0128ff6c2d2f494138b471c6edbcc07b85772d9efdeb56318",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    },
+    {
+      "source_id": "AUTHOR-PREPRINT",
+      "url": "https://osf.io/download/kdc8u/",
+      "source_kind": "Author preprint v1; same study",
+      "location": "pp35-44 embedded supplement; pp36-37 integer binomial inputs",
+      "bytes": 775170,
+      "sha256": "a59a90783bb88cbbc2c0cb8fbfb0edd151d9526309f11a41daf36139539a337a",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    },
+    {
+      "source_id": "FIGSHARE-V1",
+      "url": "https://doi.org/10.6084/m9.figshare.21521235.v1",
+      "source_kind": "Anonymized dataset, displayed CC BY 4.0",
+      "location": "Header and Legend inspected this turn; prior three-column recount reused",
+      "bytes": 87755,
+      "sha256": "83231d102887e6faae295afca161419cefce606c8463ed07e3246c6feeb03097",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    },
+    {
+      "source_id": "KPU1062-v1",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062.pdf",
+      "source_kind": "Official registration/revision",
+      "location": "Eligibility, six-per-path design, stopping rules and amendments",
+      "bytes": 262096,
+      "sha256": "b87efc2cd374ed789c81fdecf5285f0cf88e11d9ed7b67003621726e43a0ee23",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    },
+    {
+      "source_id": "KPU1062-v2",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_2.pdf",
+      "source_kind": "Official registration/revision",
+      "location": "Eligibility, six-per-path design, stopping rules and amendments",
+      "bytes": 224633,
+      "sha256": "0f7fbf48e776ac2f70a91ab2227799ac3ebbe690d35912c15dc28407fff5c6ef",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    },
+    {
+      "source_id": "KPU1062-v3",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_3.pdf",
+      "source_kind": "Official registration/revision",
+      "location": "Eligibility, six-per-path design, stopping rules and amendments",
+      "bytes": 228921,
+      "sha256": "c2132241ef5c492de148a5a945608b1bf34d8a12fc6f4a3eb928135a5238c445",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    },
+    {
+      "source_id": "KPU1062-v4",
+      "url": "https://www.koestler-parapsychology.psy.ed.ac.uk/Documents/KPU_Registry_1062_4.pdf",
+      "source_kind": "Official registration/revision",
+      "location": "Eligibility, six-per-path design, stopping rules and amendments",
+      "bytes": 240261,
+      "sha256": "ec2854984fb756de9d8faa396e2d4532d562af36f201d92e782fcfe377ae1e71",
+      "inspection": "AI_EXECUTED",
+      "human_verification": "PENDING"
+    }
+  ],
+  "figshare": {
+    "versions_returned": [
+      1
+    ],
+    "files_returned": 1,
+    "file_id": 38149656,
+    "md5": "07158e08d430cd17345428cf76728382",
+    "metadata_url": "https://api.figshare.com/v2/articles/21521235",
+    "versions_url": "https://api.figshare.com/v2/articles/21521235/versions"
+  },
+  "osf": {
+    "preprint": "hxj5n_v1",
+    "versions_returned": [
+      1
+    ],
+    "file_versions_returned": [
+      1
+    ],
+    "root_files_returned": 1,
+    "pagination_closed": true,
+    "file_id": "64fa5853989de6390ddd154b",
+    "metadata_sha256_matched": true,
+    "preprint_metadata_url": "https://api.osf.io/v2/preprints/hxj5n/",
+    "version_url": "https://api.osf.io/v2/preprints/hxj5n_v1/versions/",
+    "file_versions_url": "https://api.osf.io/v2/files/64fa5853989de6390ddd154b/versions/"
+  },
+  "documented_rule_evaluation": {
+    "first_six_preselected": "Described in article/preprint. Cannot operationalize from documented chronology in deposit. No truncation applied.",
+    "postselected_difference": "No public selection/recoding pipeline found.",
+    "prespecified_vs_observed": "Registration specifies design; it does not prove which records satisfy final criteria."
+  },
+  "partial_matches": {
+    "all_status_preselected": {
+      "hits": 147,
+      "responses": 289
+    },
+    "all_status_postselected": {
+      "hits": 243,
+      "responses": 762
+    },
+    "randomization_preselected_completers": {
+      "responses": 228,
+      "reported_proportion": 0.5044
+    }
+  },
+  "unresolved": [
+    "Final completer population mapping",
+    "Abstract versus Table3 endpoint differences",
+    "Excess-trial removal relative to deposited version",
+    "Current publisher-formatted full text and publisher supplement not fetched",
+    "Independent scientific review"
+  ],
+  "privacy": {
+    "participant_values_exported": false,
+    "identifiers_exported": false,
+    "per_triad_results_exported": false,
+    "workbook_committed": false,
+    "new_row_level_aggregation": false,
+    "new_inspection": "Headers and variable legend only; previous aggregate receipt reused"
+  },
+  "author_contact": {
+    "name": "Helane Wahbeh",
+    "email": "hwahbeh@noetic.org",
+    "verification": [
+      "Paper corresponding-author field",
+      "PubMed affiliation",
+      "KPU1062 PI contact",
+      "Current IONS profile"
+    ],
+    "sent": false
+  },
+  "non_goals": [
+    "Inferential reanalysis",
+    "Mechanism inference",
+    "Scientific evidence promotion",
+    "Merge or release"
+  ]
+}
