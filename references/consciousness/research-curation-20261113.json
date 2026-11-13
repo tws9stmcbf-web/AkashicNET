@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1",
+  "record_type": "DISCOVERY_PROVENANCE_OVERLAY_NOT_EVIDENCE_BATCH",
+  "checked_on": "2026-11-13",
+  "scope": "Five selected research sources from the 13 November editorial screening.",
+  "new_accepted_evidence_count": 0,
+  "human_review_completed": false,
+  "deduplication": {
+    "method": "DOI, PMID where available and distinctive title or species terms searched in tracked public main text",
+    "github_commit": "e342c8fea7ef6da7ffe2a5efa8fca17de72df6a4",
+    "scope_limit": "Public GitHub main and public Sites checkout checked for the primary identifiers. Private data and other GitHub branches were outside this check.",
+    "public_site_commit": "e52d03d36ea4e238d2e62e4f2cbaf345cb3f594e"
+  },
+  "records": [
+    {
+      "source_id": "SRC-KUNIK-GALERINA-2026",
+      "title": "The ‘dark magic mushroom’ co-produces amatoxins and psilocybin",
+      "authors_short": "Kunik et al.",
+      "journal": "Current Biology",
+      "doi": "10.1016/j.cub.2026.10.041",
+      "date": "2026-11-11",
+      "date_basis": "online publication",
+      "original_url": "https://doi.org/10.1016/j.cub.2026.10.041",
+      "discovery_url": "https://www.psychedelicresearchportal.com/",
+      "discovery_method": "Focused PubMed query modelled on the portal’s publication-date search",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/43014316/",
+      "design": "Fungal chemical and genomic characterisation",
+      "summary": "Mass spectrometry identified psilocybin and amatoxins in Galerina indica.",
+      "limitations": "Species-specific finding. The journal version and July preprint represent the same work.",
+      "editorial_destination": "r/microdosing risk reduction and AKN24",
+      "review_state": "candidate",
+      "related_publications": [
+        {
+          "doi": "10.64898/2026.07.17.739257",
+          "relation": "earlier preprint of this work"
+        }
+      ],
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-DAY-ZAHAVI-EGO-DISSOLUTION-2026",
+      "title": "Psychedelic ego-dissolution: a philosophical and qualitative critique",
+      "authors_short": "Day and Zahavi",
+      "journal": "Philosophical Transactions of the Royal Society B",
+      "doi": "10.1098/rstb.2025.0154",
+      "date": "2026-11-10",
+      "date_basis": "journal issue date",
+      "original_url": "https://doi.org/10.1098/rstb.2025.0154",
+      "discovery_url": "https://www.psychedelicresearchportal.com/",
+      "discovery_method": "Focused PubMed query modelled on the portal’s publication-date search",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/43007826/",
+      "design": "Philosophical critique and qualitative thematic analysis of 411 reports",
+      "summary": "The authors interpret some descriptions of 5-MeO-DMT ego dissolution as compatible with minimal self-consciousness.",
+      "limitations": "Retrospective, self-selected reports, including some with co-use. The interpretation cannot establish the contents of consciousness independently.",
+      "editorial_destination": "5-MeO-DMT editorial research and r/NeuronsToNirvana",
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-BERTHOLD-LOSLEBEN-MDMA-COMPASSION-2026",
+      "title": "Changes in wellbeing, self-compassion and alexithymia in a proof of principle trial with MDMA-assisted therapy for major depressive disorder",
+      "authors_short": "Berthold-Losleben et al.",
+      "journal": "Journal of Psychiatric Research",
+      "doi": "10.1016/j.jpsychires.2026.11.014",
+      "date": "2026-11-07",
+      "date_basis": "online publication",
+      "original_url": "https://doi.org/10.1016/j.jpsychires.2026.11.014",
+      "discovery_url": "https://www.psychedelicresearchportal.com/",
+      "discovery_method": "Focused PubMed query modelled on the portal’s publication-date search",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/43008413/",
+      "design": "Open-label, uncontrolled follow-up analysis of 12 adults",
+      "summary": "Participants reported higher self-compassion after MDMA-assisted therapy and at follow-up.",
+      "limitations": "Small sample, self-report and no comparator. MDMA, psychotherapy and expectancy effects cannot be isolated.",
+      "editorial_destination": "HIERATIC020 optional evidence note",
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-XIAO-AMYGDALA-MEMORY-2026",
+      "title": "Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success",
+      "authors_short": "Xiao et al.",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/s41593-026-02493-9",
+      "date": "2026-10-27",
+      "date_basis": "online publication",
+      "original_url": "https://doi.org/10.1038/s41593-026-02493-9",
+      "discovery_url": "https://scitechdaily.com/a-tiny-region-deep-inside-your-brain-helps-decide-what-you-remember/",
+      "discovery_method": "SciTechDaily coverage",
+      "coverage_date": "2026-11-12",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42946791/",
+      "design": "Human single-neuron recordings during a visual episodic memory task",
+      "summary": "Activity in category-selective amygdala neurons predicted later remembering of visual items.",
+      "limitations": "Predictive association within a specific task. Generalisation to other senses and causal necessity remain open.",
+      "editorial_destination": "AKN24 and r/NeuronsToNirvana",
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-BAKER-PSILOCYBIN-SYNAPTIC-REMODELLING-2026",
+      "title": "5-HT2A receptors in layer 5 pyramidal neurons mediate the neuroplastic but not the hallucinogenic effects of psilocybin",
+      "authors_short": "Baker et al.",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/s41593-026-02490-y",
+      "date": "2026-10-15",
+      "date_basis": "online publication",
+      "original_url": "https://doi.org/10.1038/s41593-026-02490-y",
+      "discovery_url": "https://scitechdaily.com/scientists-separate-psilocybins-brain-rewiring-power-from-its-hallucinations/",
+      "discovery_method": "SciTechDaily coverage",
+      "coverage_date": "2026-10-29",
+      "verification_url": "https://www.nature.com/articles/s41593-026-02490-y",
+      "design": "Mouse experiments with cell-type-specific receptor manipulation",
+      "summary": "Layer 5 pyramidal neuron 5-HT2A signalling was necessary and sufficient for the measured remodelling and dispensable for head-twitch behaviour.",
+      "limitations": "The head-twitch response is a rodent proxy. Human subjective, clinical and microdosing effects remain untested in this study.",
+      "editorial_destination": "Psychedelic mechanisms and AKN24",
+      "review_state": "already covered on the public site",
+      "operation": "LINK_EXISTING_SITE_RECORD",
+      "existing_record_refs": [
+        "https://akashicnet.org/akn24#psilocybinplasticityoct23",
+        "https://akashicnet.org/data/n2n-research-intake-2026-11-02.json"
+      ]
+    }
+  ],
+  "research_policy": [
+    {
+      "title": "HHS funding announcement for ibogaine development",
+      "date": "2026-11-12",
+      "source_type": "Funding announcement",
+      "original_url": "https://www.hhs.gov/press-room/hhs-advances-ibogaine-ptsd-research-rapid-acting-mental-health-treatments.html",
+      "summary": "Up to US$4.9 million for development work that can support future trials.",
+      "editorial_destination": "AKN24 research policy"
+    }
+  ]
+}
