@@ -1,0 +1,1716 @@
+diff --git a/app/privacy/page.tsx b/app/privacy/page.tsx
+index 13c96fae..d6e0ff5c 100644
+--- a/app/privacy/page.tsx
++++ b/app/privacy/page.tsx
+@@ -131,6 +131,15 @@ export default function PrivacyPage() {
+         </article>
+       </section>
+ 
++      <section id="homesense899-preferences" className="privacy-details" aria-label="HOMESENSE899 preferences">
++        <article>
++          <h2>HOMESENSE899 preferences</h2>
++          <p>The adults-only screen checks a visitor’s self-reported date of birth locally. The date stays in the browser. Adults can opt in to share country, preferred language and an optional comment of up to 40 characters. Viewing the talk is available either way.</p>
++          <p>AkashicNET uses OpenAI Sites and Cloudflare to keep separate country and language totals for translation planning. Totals are kept while this feature is in use and have no individual submission record. Comments are stored separately, available only to the site owner, and expire after 30 days. They are removed on the next submission or owner review after expiry. The application records no account ID, birth date or IP address with the preferences or comment. Hosting and security operations are described above.</p>
++          <p>For privacy questions, comment removal requests or summary totals, email <a href="mailto:support@akashicnet.org">support@akashicnet.org</a>. Include only enough information to identify the comment you want removed.</p>
++        </article>
++      </section>
++
+       <section className="privacy-details" aria-label="Retention and rights">
+         <article>
+           <p className="section-label">Retention</p>
+diff --git a/db/schema.ts b/db/schema.ts
+index daa7563b..742094f7 100644
+--- a/db/schema.ts
++++ b/db/schema.ts
+@@ -10,6 +10,18 @@ export const homesenseCommentLimits = sqliteTable("homesense_comment_limits", {
+  hour:integer("hour").primaryKey(),count:integer("count").notNull().default(0),
+ });
+ 
++export const homesense899PreferenceTotals = sqliteTable("homesense899_preference_totals", {
++  kind: text("kind").notNull(),
++  code: text("code").notNull(),
++  submissions: integer("submissions").notNull(),
++}, table => [primaryKey({ columns: [table.kind, table.code] })]);
++
++export const homesense899PreferenceComments = sqliteTable("homesense899_preference_comments", {
++  id: integer("id").primaryKey({ autoIncrement: true }),
++  comment: text("comment").notNull(),
++  expiresAt: integer("expires_at").notNull(),
++}, table => [index("homesense899_preference_comments_expiry").on(table.expiresAt)]);
++
+ // Personal Living Jigsaw drafts. Identity is the Sites authenticated user ID;
+ // only the matching visitor may read or write a row.
+ export const livingJigsawDrafts = sqliteTable("living_jigsaw_drafts", {
+diff --git a/drizzle/meta/_journal.json b/drizzle/meta/_journal.json
+index 06cbed45..2e76f3c1 100644
+--- a/drizzle/meta/_journal.json
++++ b/drizzle/meta/_journal.json
+@@ -71,6 +71,13 @@
+       "when": 1794025582201,
+       "tag": "0009_powerful_hobgoblin",
+       "breakpoints": true
++    },
++    {
++      "idx": 10,
++      "version": "6",
++      "when": 1794872464957,
++      "tag": "0010_optimal_reptil",
++      "breakpoints": true
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/public/scripts/homesense899-age-gate.js b/public/scripts/homesense899-age-gate.js
+index af72cb44..dc2dea93 100644
+--- a/public/scripts/homesense899-age-gate.js
++++ b/public/scripts/homesense899-age-gate.js
+@@ -1,41 +1,71 @@
++import { countries, languages } from "./homesense899-preference-options.mjs";
++
+ const ageGate = document.querySelector("#intimacy-age-gate");
+-if (ageGate) {
+-  const birthDate = ageGate.querySelector("[data-birth-date]");
+-  const residence = ageGate.querySelector("[data-residence]");
+-  const language = ageGate.querySelector("[data-preferred-language]");
+-  const status = ageGate.querySelector('[role="status"]');
+-  const talk = document.querySelector("#intimacy-talk");
+-  const today = new Date();
+-  const year = today.getFullYear();
+-  const month = today.getMonth() + 1;
+-  const day = today.getDate();
+-  birthDate.max = [year, month, day].map((part) => String(part).padStart(2, "0")).join("-");
+-
+-  ageGate.addEventListener("submit", (event) => {
+-    event.preventDefault();
+-    if (!ageGate.reportValidity()) return;
+-    const emptyAnswer = [residence, language].find((field) => !field.value.trim());
+-    if (emptyAnswer) {
+-      status.textContent = "Enter your country of residence and preferred language.";
+-      emptyAnswer.focus();
+-      return;
+-    }
++const birthDate = ageGate.querySelector("[data-birth-date]");
++const sharing = ageGate.querySelector("[data-share-preferences]");
++const preferences = ageGate.querySelector("[data-preference-fields]");
++const residence = ageGate.querySelector("[data-residence]");
++const language = ageGate.querySelector("[data-preferred-language]");
++const comment = ageGate.querySelector("[data-preference-comment]");
++const status = document.querySelector("#intimacy-status");
++const talk = document.querySelector("#intimacy-talk");
+ 
+-    const [birthYear, birthMonth, birthDay] = birthDate.value.split("-").map(Number);
+-    const birthdayPending = birthMonth > month || (birthMonth === month && birthDay > day);
+-    const age = year - birthYear - Number(birthdayPending);
+-    if (age < 18) {
+-      birthDate.value = "";
+-      status.textContent = "This talk is available to adults aged 18 and over.";
+-      birthDate.focus();
+-      return;
+-    }
++function addOptions(select, codes, type) {
++  const names = new Intl.DisplayNames(["en"], { type });
++  const labels = codes.map(code => [code, code === "other" ? "Other" : names.of(code)]);
++  labels.sort((a, b) => a[1].localeCompare(b[1], "en"));
++  for (const [code, label] of labels) select.add(new Option(label, code));
++}
++
++addOptions(residence, countries, "region");
++addOptions(language, languages, "language");
++sharing.addEventListener("change", () => {
++  preferences.hidden = !sharing.checked;
++  preferences.disabled = !sharing.checked;
++});
++
++const now = new Date();
++const year = now.getFullYear();
++const month = now.getMonth() + 1;
++const day = now.getDate();
++birthDate.max = [year, month, day].map(part => String(part).padStart(2, "0")).join("-");
+ 
+-    ageGate.reset();
++ageGate.addEventListener("submit", async event => {
++  event.preventDefault();
++  if (!ageGate.reportValidity()) return;
++
++  const [birthYear, birthMonth, birthDay] = birthDate.value.split("-").map(Number);
++  const birthdayPending = birthMonth > month || (birthMonth === month && birthDay > day);
++  if (year - birthYear - Number(birthdayPending) < 18) {
++    birthDate.value = "";
++    status.textContent = "This talk is available to adults aged 18 and over.";
++    birthDate.focus();
++    return;
++  }
++
++  if (sharing.checked) {
++    const payload = { adult: true, consent: true, country: residence.value, language: language.value, comment: comment.value };
++    ageGate.querySelector("fieldset").disabled = true;
++    status.textContent = "Saving your preferences…";
++    try {
++      const response = await fetch("/api/homesense899/preferences", {
++        method: "POST",
++        credentials: "omit",
++        headers: { "Content-Type": "application/json" },
++        body: JSON.stringify(payload),
++        signal: AbortSignal.timeout(8000),
++      });
++      status.textContent = response.ok ? "Your preferences were recorded." : "We could not confirm recording your preferences. You can still watch.";
++    } catch {
++      status.textContent = "We could not confirm recording your preferences. You can still watch.";
++    }
++  } else {
+     status.textContent = "";
+-    talk.hidden = false;
+-    ageGate.hidden = true;
+-    talk.querySelector("h3").focus();
+-  });
+-  ageGate.querySelector("fieldset").disabled = false;
+-}
++  }
++
++  ageGate.reset();
++  talk.hidden = false;
++  ageGate.hidden = true;
++  talk.querySelector("h3").focus();
++});
++ageGate.querySelector("fieldset").disabled = false;
+diff --git a/worker/index.ts b/worker/index.ts
+index b599e822..36db4d0d 100644
+--- a/worker/index.ts
++++ b/worker/index.ts
+@@ -14,6 +14,7 @@ import { livingRoomProposal } from "./living-room-proposal.mjs";
+ import { filofaxApi, filofaxGate, filofaxOwner } from "./filofax.mjs";
+ import { bookSandbox } from "./book-sandbox.mjs";
+ import { contactForm } from "./contact-form.mjs";
++import { homesense899Preferences } from "./homesense899-preferences.mjs";
+ import { mediaStorage, imageSource } from "./media-storage.mjs";
+ import { packedDataExport } from "./packed-data-export.mjs";
+ import quarterlyPdfData from "./quarterly-pdf-data.json";
+@@ -273,6 +274,9 @@ const worker = {
+     const contactResponse = await contactForm(request, env);
+     if (contactResponse) return withSecurityHeaders(contactResponse);
+ 
++    const preferencesResponse = await homesense899Preferences(request, env);
++    if (preferencesResponse) return withSecurityHeaders(preferencesResponse);
++
+     const sandboxResponse = await bookSandbox(request, env);
+     if (sandboxResponse) return sandboxResponse;
+ 
+diff --git a/worker/public-pages/homesense899-happy-ending.html b/worker/public-pages/homesense899-happy-ending.html
+index b4375a24..c55b229c 100644
+--- a/worker/public-pages/homesense899-happy-ending.html
++++ b/worker/public-pages/homesense899-happy-ending.html
+@@ -35,6 +35,8 @@ img{display:block;width:100%;height:auto;border-radius:10px}
+ figcaption{font-size:.89rem;margin:.38rem 0}
+ .art-sequence article{border-top:1px solid var(--line);padding:1rem 0}
+ .art-sequence article p{max-width:760px}
++.adult-fields select{min-width:0;min-height:44px;font:inherit;color:var(--text);background:#09101b;border:1px solid var(--line);border-radius:6px;padding:.4rem .7rem}
++.adult-gate input[type="checkbox"]{min-height:0}
+ .method summary{cursor:pointer;font-weight:700;font-size:1.2rem}
+ .method dl{margin:1rem 0}.method dt{font-weight:700;margin-top:.7rem}.method dd{margin:.2rem 0 .8rem}
+ .kino-player{margin:.7rem 0}
+@@ -55,18 +57,26 @@ figcaption{font-size:.89rem;margin:.38rem 0}
+ <h2 id="sacred-intimacy-title">Sacred Sex and Intimacy</h2>
+ <p><strong>Adults Only · 18+</strong> · Frank discussion of sexual experiences and LSD use.</p>
+ <form id="intimacy-age-gate" aria-describedby="intimacy-age-privacy" autocomplete="off">
+-<p id="intimacy-age-privacy" class="muted">The age check uses the date you enter. Your answers stay on this page and are cleared when you continue. The video is in English. The language field is for possible future translations.</p>
++<p id="intimacy-age-privacy" class="muted">Your birth date is checked in this browser and stays here. This is a self-reported age check. The video is in English.</p>
+ <fieldset disabled>
+ <div class="adult-fields">
+ <label>Date of Birth <input type="date" data-birth-date required></label>
+-<label>Country of Residence <input type="text" maxlength="100" data-residence required></label>
+-<label>Preferred Language <input type="text" maxlength="100" data-preferred-language required></label>
+ </div>
++<p id="intimacy-sharing" class="muted">If you opt in, AkashicNET counts your selected country and language separately to plan translations and keeps those running totals. An optional comment is stored separately and visible only to the site owner. It expires after 30 days and is removed during the next submission or owner review. Please leave out names, contact details and private information. The preference records contain no birth date, account ID or IP address. You can watch either way.</p>
++<label><input type="checkbox" data-share-preferences aria-describedby="intimacy-sharing"> Share preferences and any comment (optional)</label>
++<fieldset data-preference-fields hidden disabled>
++<div class="adult-fields">
++<label>Country of Residence <select data-residence required><option value="">Select a country</option></select></label>
++<label>Preferred Language <select data-preferred-language required><option value="">Select a language</option></select></label>
++<label>Comment (Optional, 40 Characters) <input type="text" data-preference-comment maxlength="40" autocomplete="off"></label>
++</div>
++</fieldset>
++<p><a href="/privacy#homesense899-preferences">Privacy and Data Requests</a> · <a href="mailto:support@akashicnet.org?subject=HOMESENSE899%20preference%20totals">Request Summary Totals by Email</a></p>
+ <button type="submit">Continue to the Talk</button>
+ </fieldset>
+-<p role="status"></p>
+ <noscript><p>Enable JavaScript to use the adults-only screen.</p></noscript>
+ </form>
++<p id="intimacy-status" role="status"></p>
+ <article id="intimacy-talk" hidden>
+ <h3 tabindex="-1">How Psychedelics Changed My Sex Life</h3>
+ <p class="muted">Stefana Bosse · Psymposia · Breaking Convention 2017</p>
+@@ -153,6 +163,6 @@ figcaption{font-size:.89rem;margin:.38rem 0}
+ </main>
+ <!-- reading-site-footer -->
+ <script src="/scripts/homesense899-kino.js" defer></script>
+-<script src="/scripts/homesense899-age-gate.js" defer></script>
++<script src="/scripts/homesense899-age-gate.js" type="module"></script>
+ </body>
+ </html>
+diff --git a/drizzle/0010_optimal_reptil.sql b/drizzle/0010_optimal_reptil.sql
+new file mode 100644
+index 00000000..13a58559
+--- /dev/null
++++ b/drizzle/0010_optimal_reptil.sql
+@@ -0,0 +1,13 @@
++CREATE TABLE `homesense899_preference_comments` (
++	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
++	`comment` text NOT NULL,
++	`expires_at` integer NOT NULL
++);
++--> statement-breakpoint
++CREATE INDEX `homesense899_preference_comments_expiry` ON `homesense899_preference_comments` (`expires_at`);--> statement-breakpoint
++CREATE TABLE `homesense899_preference_totals` (
++	`kind` text NOT NULL,
++	`code` text NOT NULL,
++	`submissions` integer NOT NULL,
++	PRIMARY KEY(`kind`, `code`)
++);
+diff --git a/drizzle/meta/0010_snapshot.json b/drizzle/meta/0010_snapshot.json
+new file mode 100644
+index 00000000..6dc15dfe
+--- /dev/null
++++ b/drizzle/meta/0010_snapshot.json
+@@ -0,0 +1,1339 @@
++{
++  "version": "6",
++  "dialect": "sqlite",
++  "id": "2f712868-ee78-40b0-b140-5d0d7a65d609",
++  "prevId": "393e5f3a-8c5b-4c91-8877-96fedbf38a05",
++  "tables": {
++    "consent_receipts": {
++      "name": "consent_receipts",
++      "columns": {
++        "response_id": {
++          "name": "response_id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "consent_version": {
++          "name": "consent_version",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "adult_confirmed": {
++          "name": "adult_confirmed",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "privacy_notice_confirmed": {
++          "name": "privacy_notice_confirmed",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "voluntary_participation_confirmed": {
++          "name": "voluntary_participation_confirmed",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "consented_at": {
++          "name": "consented_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "CURRENT_TIMESTAMP"
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {
++        "consent_receipts_response_id_responses_id_fk": {
++          "name": "consent_receipts_response_id_responses_id_fk",
++          "tableFrom": "consent_receipts",
++          "tableTo": "responses",
++          "columnsFrom": [
++            "response_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "cascade",
++          "onUpdate": "no action"
++        }
++      },
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "filofax_entries": {
++      "name": "filofax_entries",
++      "columns": {
++        "lane": {
++          "name": "lane",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "'later'"
++        },
++        "due_at": {
++          "name": "due_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "completed": {
++          "name": "completed",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 0
++        },
++        "id": {
++          "name": "id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "kind": {
++          "name": "kind",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "code": {
++          "name": "code",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "title": {
++          "name": "title",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "body": {
++          "name": "body",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "status": {
++          "name": "status",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "'draft'"
++        },
++        "email": {
++          "name": "email",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "phone": {
++          "name": "phone",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "organisation": {
++          "name": "organisation",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "source_url": {
++          "name": "source_url",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "evidence": {
++          "name": "evidence",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "'Personal reflection'"
++        },
++        "photo_key": {
++          "name": "photo_key",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "created_at": {
++          "name": "created_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "updated_at": {
++          "name": "updated_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "published_at": {
++          "name": "published_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "revision": {
++          "name": "revision",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 1
++        }
++      },
++      "indexes": {
++        "filofax_status_kind_date": {
++          "name": "filofax_status_kind_date",
++          "columns": [
++            "status",
++            "kind",
++            "published_at"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "governance_events": {
++      "name": "governance_events",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "integer",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": true
++        },
++        "study_id": {
++          "name": "study_id",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "response_id": {
++          "name": "response_id",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "event_type": {
++          "name": "event_type",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "detail_code": {
++          "name": "detail_code",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "occurred_at": {
++          "name": "occurred_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "CURRENT_TIMESTAMP"
++        }
++      },
++      "indexes": {
++        "governance_events_study_time_idx": {
++          "name": "governance_events_study_time_idx",
++          "columns": [
++            "study_id",
++            "occurred_at"
++          ],
++          "isUnique": false
++        },
++        "governance_events_response_idx": {
++          "name": "governance_events_response_idx",
++          "columns": [
++            "response_id"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {
++        "governance_events_study_id_studies_id_fk": {
++          "name": "governance_events_study_id_studies_id_fk",
++          "tableFrom": "governance_events",
++          "tableTo": "studies",
++          "columnsFrom": [
++            "study_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "restrict",
++          "onUpdate": "no action"
++        },
++        "governance_events_response_id_responses_id_fk": {
++          "name": "governance_events_response_id_responses_id_fk",
++          "tableFrom": "governance_events",
++          "tableTo": "responses",
++          "columnsFrom": [
++            "response_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "set null",
++          "onUpdate": "no action"
++        }
++      },
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "hieratic_review_limits": {
++      "name": "hieratic_review_limits",
++      "columns": {
++        "hour": {
++          "name": "hour",
++          "type": "integer",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "count": {
++          "name": "count",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 0
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "hieratic_review_notes": {
++      "name": "hieratic_review_notes",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "chapter": {
++          "name": "chapter",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "section": {
++          "name": "section",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "reviewer": {
++          "name": "reviewer",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "note": {
++          "name": "note",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "created_at": {
++          "name": "created_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {
++        "hieratic_review_notes_chapter_date": {
++          "name": "hieratic_review_notes_chapter_date",
++          "columns": [
++            "chapter",
++            "created_at"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "homesense899_preference_comments": {
++      "name": "homesense899_preference_comments",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "integer",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": true
++        },
++        "comment": {
++          "name": "comment",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "expires_at": {
++          "name": "expires_at",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {
++        "homesense899_preference_comments_expiry": {
++          "name": "homesense899_preference_comments_expiry",
++          "columns": [
++            "expires_at"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "homesense899_preference_totals": {
++      "name": "homesense899_preference_totals",
++      "columns": {
++        "kind": {
++          "name": "kind",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "code": {
++          "name": "code",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "submissions": {
++          "name": "submissions",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {
++        "homesense899_preference_totals_kind_code_pk": {
++          "columns": [
++            "kind",
++            "code"
++          ],
++          "name": "homesense899_preference_totals_kind_code_pk"
++        }
++      },
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "homesense_comment_limits": {
++      "name": "homesense_comment_limits",
++      "columns": {
++        "hour": {
++          "name": "hour",
++          "type": "integer",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "count": {
++          "name": "count",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 0
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "homesense_comments": {
++      "name": "homesense_comments",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "topic": {
++          "name": "topic",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "name": {
++          "name": "name",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "profile": {
++          "name": "profile",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "note": {
++          "name": "note",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "reuse": {
++          "name": "reuse",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 0
++        },
++        "delete_hash": {
++          "name": "delete_hash",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "created_at": {
++          "name": "created_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "expires_at": {
++          "name": "expires_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {
++        "homesense_comments_expiry": {
++          "name": "homesense_comments_expiry",
++          "columns": [
++            "expires_at"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "living_jigsaw_drafts": {
++      "name": "living_jigsaw_drafts",
++      "columns": {
++        "user_id": {
++          "name": "user_id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "data": {
++          "name": "data",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "revision": {
++          "name": "revision",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 1
++        },
++        "updated_at": {
++          "name": "updated_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "publishing_control_state": {
++      "name": "publishing_control_state",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "integer",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "revision": {
++          "name": "revision",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "entries": {
++          "name": "entries",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "radio_countries": {
++      "name": "radio_countries",
++      "columns": {
++        "episode": {
++          "name": "episode",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "country": {
++          "name": "country",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "action": {
++          "name": "action",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "count": {
++          "name": "count",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 0
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {
++        "radio_countries_episode_country_action_pk": {
++          "columns": [
++            "episode",
++            "country",
++            "action"
++          ],
++          "name": "radio_countries_episode_country_action_pk"
++        }
++      },
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "radio_counts": {
++      "name": "radio_counts",
++      "columns": {
++        "episode": {
++          "name": "episode",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "day": {
++          "name": "day",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "action": {
++          "name": "action",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "count": {
++          "name": "count",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": 0
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {
++        "radio_counts_episode_day_action_pk": {
++          "columns": [
++            "episode",
++            "day",
++            "action"
++          ],
++          "name": "radio_counts_episode_day_action_pk"
++        }
++      },
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "response_categories": {
++      "name": "response_categories",
++      "columns": {
++        "response_id": {
++          "name": "response_id",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "category": {
++          "name": "category",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {
++        "response_categories_response_id_responses_id_fk": {
++          "name": "response_categories_response_id_responses_id_fk",
++          "tableFrom": "response_categories",
++          "tableTo": "responses",
++          "columnsFrom": [
++            "response_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "cascade",
++          "onUpdate": "no action"
++        }
++      },
++      "compositePrimaryKeys": {
++        "response_categories_response_id_category_pk": {
++          "columns": [
++            "response_id",
++            "category"
++          ],
++          "name": "response_categories_response_id_category_pk"
++        }
++      },
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "response_contexts": {
++      "name": "response_contexts",
++      "columns": {
++        "response_id": {
++          "name": "response_id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "occurrence_year": {
++          "name": "occurrence_year",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "duration_band": {
++          "name": "duration_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "setting_type": {
++          "name": "setting_type",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "social_context": {
++          "name": "social_context",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "sleep_band": {
++          "name": "sleep_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "stress_band": {
++          "name": "stress_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "meditation_context": {
++          "name": "meditation_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "music_context": {
++          "name": "music_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "festival_conference_context": {
++          "name": "festival_conference_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "psychedelic_context": {
++          "name": "psychedelic_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "cannabis_context": {
++          "name": "cannabis_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "alcohol_context": {
++          "name": "alcohol_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "prescribed_medication_context": {
++          "name": "prescribed_medication_context",
++          "type": "integer",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "prior_similar_count_band": {
++          "name": "prior_similar_count_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "recall_confidence_band": {
++          "name": "recall_confidence_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {
++        "response_contexts_response_id_responses_id_fk": {
++          "name": "response_contexts_response_id_responses_id_fk",
++          "tableFrom": "response_contexts",
++          "tableTo": "responses",
++          "columnsFrom": [
++            "response_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "cascade",
++          "onUpdate": "no action"
++        }
++      },
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "response_effects": {
++      "name": "response_effects",
++      "columns": {
++        "response_id": {
++          "name": "response_id",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "effect_type": {
++          "name": "effect_type",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "effect_code": {
++          "name": "effect_code",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "intensity_band": {
++          "name": "intensity_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "duration_band": {
++          "name": "duration_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        }
++      },
++      "indexes": {
++        "response_effects_type_code_idx": {
++          "name": "response_effects_type_code_idx",
++          "columns": [
++            "effect_type",
++            "effect_code"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {
++        "response_effects_response_id_responses_id_fk": {
++          "name": "response_effects_response_id_responses_id_fk",
++          "tableFrom": "response_effects",
++          "tableTo": "responses",
++          "columnsFrom": [
++            "response_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "cascade",
++          "onUpdate": "no action"
++        }
++      },
++      "compositePrimaryKeys": {
++        "response_effects_response_id_effect_type_effect_code_pk": {
++          "columns": [
++            "response_id",
++            "effect_type",
++            "effect_code"
++          ],
++          "name": "response_effects_response_id_effect_type_effect_code_pk"
++        }
++      },
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "responses": {
++      "name": "responses",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "study_id": {
++          "name": "study_id",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "withdrawal_code_hash": {
++          "name": "withdrawal_code_hash",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "repeat_contributor_code_hash": {
++          "name": "repeat_contributor_code_hash",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "record_type": {
++          "name": "record_type",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "reported_impact": {
++          "name": "reported_impact",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "account_text": {
++          "name": "account_text",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "setting_text": {
++          "name": "setting_text",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "interpretation_text": {
++          "name": "interpretation_text",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "''"
++        },
++        "age_band": {
++          "name": "age_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "gender_text": {
++          "name": "gender_text",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "nationality_text": {
++          "name": "nationality_text",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "country_code": {
++          "name": "country_code",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "education_band": {
++          "name": "education_band",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "review_status": {
++          "name": "review_status",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "'unreviewed'"
++        },
++        "submitted_at": {
++          "name": "submitted_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "CURRENT_TIMESTAMP"
++        },
++        "reviewed_at": {
++          "name": "reviewed_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "delete_after": {
++          "name": "delete_after",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {
++        "responses_withdrawal_code_hash_unique": {
++          "name": "responses_withdrawal_code_hash_unique",
++          "columns": [
++            "withdrawal_code_hash"
++          ],
++          "isUnique": true
++        },
++        "responses_study_repeat_contributor_idx": {
++          "name": "responses_study_repeat_contributor_idx",
++          "columns": [
++            "study_id",
++            "repeat_contributor_code_hash"
++          ],
++          "isUnique": false
++        },
++        "responses_study_status_submitted_idx": {
++          "name": "responses_study_status_submitted_idx",
++          "columns": [
++            "study_id",
++            "review_status",
++            "submitted_at"
++          ],
++          "isUnique": false
++        },
++        "responses_delete_after_idx": {
++          "name": "responses_delete_after_idx",
++          "columns": [
++            "delete_after"
++          ],
++          "isUnique": false
++        }
++      },
++      "foreignKeys": {
++        "responses_study_id_studies_id_fk": {
++          "name": "responses_study_id_studies_id_fk",
++          "tableFrom": "responses",
++          "tableTo": "studies",
++          "columnsFrom": [
++            "study_id"
++          ],
++          "columnsTo": [
++            "id"
++          ],
++          "onDelete": "restrict",
++          "onUpdate": "no action"
++        }
++      },
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "studies": {
++      "name": "studies",
++      "columns": {
++        "id": {
++          "name": "id",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "protocol_version": {
++          "name": "protocol_version",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "consent_version": {
++          "name": "consent_version",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "status": {
++          "name": "status",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "'draft'"
++        },
++        "opens_at": {
++          "name": "opens_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "closes_at": {
++          "name": "closes_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "retention_ends_at": {
++          "name": "retention_ends_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": false,
++          "autoincrement": false
++        },
++        "created_at": {
++          "name": "created_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "CURRENT_TIMESTAMP"
++        },
++        "updated_at": {
++          "name": "updated_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false,
++          "default": "CURRENT_TIMESTAMP"
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    },
++    "tsc_choices": {
++      "name": "tsc_choices",
++      "columns": {
++        "code": {
++          "name": "code",
++          "type": "text",
++          "primaryKey": true,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "priority": {
++          "name": "priority",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        },
++        "updated_at": {
++          "name": "updated_at",
++          "type": "text",
++          "primaryKey": false,
++          "notNull": true,
++          "autoincrement": false
++        }
++      },
++      "indexes": {},
++      "foreignKeys": {},
++      "compositePrimaryKeys": {},
++      "uniqueConstraints": {},
++      "checkConstraints": {}
++    }
++  },
++  "views": {},
++  "enums": {},
++  "_meta": {
++    "schemas": {},
++    "tables": {},
++    "columns": {}
++  },
++  "internal": {
++    "indexes": {}
++  }
++}
+\ No newline at end of file
+diff --git a/public/scripts/homesense899-preference-options.mjs b/public/scripts/homesense899-preference-options.mjs
+new file mode 100644
+index 00000000..39badca4
+--- /dev/null
++++ b/public/scripts/homesense899-preference-options.mjs
+@@ -0,0 +1,3 @@
++// ISO 3166-1 alpha-2 codes from the public-domain TZ database country list.
++export const countries = "AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW".split(" ");
++export const languages = "ar bn de en es fa fr he hi id it ja ko mr nl pa pl pt ru ta te tr uk ur vi zh other".split(" ");
+diff --git a/worker/homesense899-preferences.mjs b/worker/homesense899-preferences.mjs
+new file mode 100644
+index 00000000..6efb3128
+--- /dev/null
++++ b/worker/homesense899-preferences.mjs
+@@ -0,0 +1,87 @@
++import { countries, languages } from "../public/scripts/homesense899-preference-options.mjs";
++import { filofaxOwner } from "./filofax.mjs";
++
++const submitPath = "/api/homesense899/preferences";
++const reportPath = "/contact-inbox/homesense899-preferences";
++const headers = { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" };
++const commentLifetime = 30 * 24 * 60 * 60;
++const increment = `INSERT INTO homesense899_preference_totals (kind, code, submissions)
++  VALUES (?, ?, 1) ON CONFLICT (kind, code)
++  DO UPDATE SET submissions = submissions + 1`;
++
++export async function homesense899Preferences(request, env) {
++  const url = new URL(request.url);
++  const today = Math.floor(Date.now() / 86400000) * 86400;
++  if (url.pathname === reportPath) {
++    if (!filofaxOwner(request, env)) return new Response(null, { status: 403, headers });
++    if (request.method === "DELETE") {
++      const id = Number(url.searchParams.get("comment"));
++      if (request.headers.get("Origin") !== url.origin || !Number.isSafeInteger(id) || id < 1) {
++        return new Response(null, { status: 400, headers });
++      }
++      await env.DB.prepare("DELETE FROM homesense899_preference_comments WHERE id = ?").bind(id).run();
++      return new Response(null, { status: 204, headers });
++    }
++    if (request.method !== "GET") return new Response(null, { status: 405, headers });
++    try {
++      const [, totals, comments] = await env.DB.batch([
++        env.DB.prepare("DELETE FROM homesense899_preference_comments WHERE expires_at <= ?").bind(today),
++        env.DB.prepare("SELECT kind, code, submissions FROM homesense899_preference_totals ORDER BY kind, submissions DESC, code"),
++        env.DB.prepare("SELECT id, comment, expires_at FROM homesense899_preference_comments ORDER BY id DESC"),
++      ]);
++      return Response.json({ submissionsByPreference: totals.results, comments: comments.results }, { headers });
++    } catch {
++      return new Response(null, { status: 503, headers });
++    }
++  }
++  if (url.pathname !== submitPath) return null;
++  if (request.method !== "POST") return new Response(null, { status: 405, headers });
++  if (request.headers.get("Origin") !== url.origin ||
++      request.headers.get("Content-Type") !== "application/json") {
++    return new Response(null, { status: 403, headers });
++  }
++  const reader = request.body?.getReader();
++  if (!reader) return new Response(null, { status: 400, headers });
++  let submitted;
++  try {
++    const decoder = new TextDecoder();
++    let body = "";
++    let bytes = 0;
++    for (;;) {
++      const { done, value } = await reader.read();
++      if (done) break;
++      bytes += value.byteLength;
++      if (bytes > 512) {
++        await reader.cancel();
++        return new Response(null, { status: 413, headers });
++      }
++      body += decoder.decode(value, { stream: true });
++    }
++    submitted = JSON.parse(body + decoder.decode());
++  } catch {
++    return new Response(null, { status: 400, headers });
++  }
++  if (!submitted || Object.keys(submitted).length !== 5 || submitted.adult !== true ||
++      submitted.consent !== true || !countries.includes(submitted.country) ||
++      !languages.includes(submitted.language) || typeof submitted.comment !== "string" ||
++      submitted.comment.length > 40 || /[\u0000-\u001F\u007F]/.test(submitted.comment)) {
++    return new Response(null, { status: 400, headers });
++  }
++  try {
++    const statements = [
++      env.DB.prepare(increment).bind("country", submitted.country),
++      env.DB.prepare(increment).bind("language", submitted.language),
++      env.DB.prepare("DELETE FROM homesense899_preference_comments WHERE expires_at <= ?").bind(today),
++    ];
++    const comment = submitted.comment.trim();
++    if (comment) {
++      statements.push(env.DB.prepare(
++        "INSERT INTO homesense899_preference_comments (comment, expires_at) VALUES (?, ?)"
++      ).bind(comment, today + commentLifetime));
++    }
++    await env.DB.batch(statements);
++    return new Response(null, { status: 204, headers });
++  } catch {
++    return new Response(null, { status: 503, headers });
++  }
++}
