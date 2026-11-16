@@ -1,0 +1,169 @@
+{
+  "schema_version": "0.1",
+  "record_type": "DISCOVERY_PROVENANCE_OVERLAY_NOT_EVIDENCE_BATCH",
+  "checked_on": "2026-11-16",
+  "scope": "Five distinct DOI records behind four editorial leads. Media items provide provenance and discovery routes. No evidence relationships have been adjudicated.",
+  "new_accepted_evidence_count": 0,
+  "human_review_completed": false,
+  "deduplication": {
+    "method": "Group secondary reports by DOI. Link Baker to existing site and PR 418 records. Keep Hawking's seven-dimensional remnant media trail on its existing feature.",
+    "scope_limit": "This is a public candidate intake. Private corpus matching and unified-index ingestion remain pending."
+  },
+  "records": [
+    {
+      "source_id": "SRC-FEDOSEEV-2025",
+      "title": "Coherent and Incoherent Light Scattering by Single-Atom Wave Packets",
+      "authors_short": "Fedoseev et al.",
+      "journal": "Physical Review Letters",
+      "doi": "10.1103/zwhd-1k2t",
+      "date": "2025-07-22",
+      "date_basis": "journal publication",
+      "original_url": "https://doi.org/10.1103/zwhd-1k2t",
+      "discovery_url": "https://scitechdaily.com/mit-just-proved-einstein-wrong-in-the-most-famous-quantum-experiment/",
+      "discovery_method": "Science-media discovery with primary-record check",
+      "coverage": [
+        {
+          "label": "MIT News",
+          "url": "https://news.mit.edu/2025/famous-double-slit-experiment-holds-when-stripped-to-quantum-essentials-0728",
+          "role": "secondary coverage"
+        },
+        {
+          "label": "SciTechDaily",
+          "url": "https://scitechdaily.com/mit-just-proved-einstein-wrong-in-the-most-famous-quantum-experiment/",
+          "role": "secondary coverage"
+        },
+        {
+          "label": "Popular Mechanics",
+          "url": "https://www.popularmechanics.com/science/a69928360/complementarity-experiment-einstein-bohr/",
+          "role": "secondary coverage"
+        }
+      ],
+      "design": "Single-photon scattering from ultracold atomic wave packets",
+      "summary": "The MIT team measured coherent and incoherent light scattering from expanding ultracold atomic wave packets and interpreted the result in terms of atom–photon entanglement and which-path information.",
+      "limitations": "The experiment controls a physical interaction between light and atoms. Directed human attention was outside its design.",
+      "editorial_destination": [
+        "/akashic-inquiry/double-slit-and-the-mind#single-atom-experiments"
+      ],
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-ZHANG-2025",
+      "title": "Tunable Einstein-Bohr Recoiling-Slit Gedankenexperiment at the Quantum Limit",
+      "authors_short": "Zhang et al.",
+      "journal": "Physical Review Letters",
+      "doi": "10.1103/93zb-lws3",
+      "date": "2025-12-02",
+      "date_basis": "journal publication",
+      "original_url": "https://doi.org/10.1103/93zb-lws3",
+      "discovery_url": "https://www.popularmechanics.com/science/a69928360/complementarity-experiment-einstein-bohr/",
+      "discovery_method": "Science-media discovery with primary-record check",
+      "coverage": [
+        {
+          "label": "Popular Mechanics",
+          "url": "https://www.popularmechanics.com/science/a69928360/complementarity-experiment-einstein-bohr/",
+          "role": "secondary coverage"
+        }
+      ],
+      "design": "Single-atom, tunable optical-tweezer interferometer",
+      "summary": "The USTC team varied the momentum uncertainty of a trapped atom and measured changes in single-photon interference visibility.",
+      "limitations": "The experiment distinguishes effects of momentum transfer from heating in this apparatus. It addresses physical path marking.",
+      "editorial_destination": [
+        "/akashic-inquiry/double-slit-and-the-mind#single-atom-experiments"
+      ],
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-BAKER-2026",
+      "title": "5-HT2A receptors in layer 5 pyramidal neurons mediate the neuroplastic but not the hallucinogenic effects of psilocybin",
+      "authors_short": "Baker et al.",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/s41593-026-02490-y",
+      "date": "2026-10-15",
+      "date_basis": "journal publication",
+      "original_url": "https://doi.org/10.1038/s41593-026-02490-y",
+      "discovery_url": "https://scitechdaily.com/scientists-separate-psilocybins-brain-rewiring-power-from-its-hallucinations/",
+      "discovery_method": "Science-media discovery with primary-record check",
+      "coverage": [
+        {
+          "label": "SciTechDaily",
+          "url": "https://scitechdaily.com/scientists-separate-psilocybins-brain-rewiring-power-from-its-hallucinations/",
+          "role": "secondary coverage"
+        }
+      ],
+      "design": "Mouse cell-type-specific receptor manipulation",
+      "summary": "In genetically modified mice, manipulating 5-HT₂A receptors in layer 5 pyramidal neurons separated psilocybin-induced structural synaptic plasticity from the head-twitch response.",
+      "limitations": "The head-twitch response is a rodent behavioural proxy. The experiment leaves human subjective effects, clinical benefit and microdosing outcomes open.",
+      "editorial_destination": [
+        "/akashicmicrodosing#psilocybin-endpoints"
+      ],
+      "review_state": "already covered on the public site",
+      "operation": "LINK_EXISTING_SITE_RECORD",
+      "existing_record_refs": [
+        "https://akashicnet.org/akn24#psilocybinplasticityoct23",
+        "https://akashicnet.org/data/n2n-research-intake-2026-11-02.json",
+        "https://github.com/tws9stmcbf-web/AkashicNET/pull/418"
+      ]
+    },
+    {
+      "source_id": "SRC-KHAN-2024",
+      "title": "Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats",
+      "authors_short": "Khan et al.",
+      "journal": "eNeuro",
+      "doi": "10.1523/ENEURO.0291-24.2024",
+      "date": "2024-08",
+      "date_basis": "journal issue month",
+      "original_url": "https://doi.org/10.1523/ENEURO.0291-24.2024",
+      "discovery_url": "https://www.popularmechanics.com/science/a73996987/quantum-consciousness-theory-evidence/",
+      "discovery_method": "Science-media discovery with primary-record check",
+      "coverage": [
+        {
+          "label": "Popular Mechanics · October 2026",
+          "url": "https://www.popularmechanics.com/science/a73996987/quantum-consciousness-theory-evidence/",
+          "role": "secondary coverage"
+        },
+        {
+          "label": "Popular Mechanics · February 2026",
+          "url": "https://www.popularmechanics.com/science/a70395978/consciousness-connects-with-universe/",
+          "role": "secondary coverage"
+        }
+      ],
+      "design": "Controlled rat pharmacology with inhaled isoflurane",
+      "summary": "Rats given epothilone B, a microtubule stabiliser, lost their righting reflex later under isoflurane than vehicle-treated rats.",
+      "limitations": "The behavioural endpoint supports investigating microtubules in anaesthesia. A quantum mechanism would require a quantum observable linked to an independently defined biological endpoint.",
+      "editorial_destination": [
+        "/tsc2026/quantum-biology-debate#microtubule-evidence"
+      ],
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    },
+    {
+      "source_id": "SRC-BHATTACHARJEE-2026",
+      "title": "The claustrum contributes to working memory maintenance in mice",
+      "authors_short": "Bhattacharjee et al.",
+      "journal": "Nature Communications",
+      "doi": "10.1038/s41467-026-78363-6",
+      "date": "2026-10-14",
+      "date_basis": "first online posting",
+      "original_url": "https://doi.org/10.1038/s41467-026-78363-6",
+      "discovery_url": "https://scitechdaily.com/scientists-reveal-how-a-mysterious-brain-structure-keeps-memories-from-fading/",
+      "discovery_method": "Science-media discovery with primary-record check",
+      "coverage": [
+        {
+          "label": "SciTechDaily",
+          "url": "https://scitechdaily.com/scientists-reveal-how-a-mysterious-brain-structure-keeps-memories-from-fading/",
+          "role": "secondary coverage"
+        }
+      ],
+      "design": "Mouse working-memory tasks with neural recording and perturbation",
+      "summary": "Claustrum activity retained information about cues across a delay. Suppressing activity impaired performance on sensory working-memory tasks.",
+      "limitations": "The experiments support a contribution of this circuit to working memory in mice. The separate question of how autobiographical memories persist remains open.",
+      "editorial_destination": [
+        "/big-questions/bq002/memory-within-a-thought#claustrum-working-memory"
+      ],
+      "review_state": "candidate",
+      "operation": "ADD_DISCOVERY_CANDIDATE"
+    }
+  ]
+}
