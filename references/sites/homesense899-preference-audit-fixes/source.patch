@@ -1,0 +1,569 @@
+diff --git a/app/privacy/page.tsx b/app/privacy/page.tsx
+index 68810b53..dde4534c 100644
+--- a/app/privacy/page.tsx
++++ b/app/privacy/page.tsx
+@@ -45,7 +45,7 @@ export default function PrivacyPage() {
+           deliver the site, measure aggregate traffic, load optional media and
+           answer email and contact-form enquiries.
+         </p>
+-        <time dateTime="2026-11-17">Last updated 17 November 2026</time>
++        <time dateTime="2026-11-19">Last updated 19 November 2026</time>
+       </header>
+ 
+       <section className="privacy-practices" aria-labelledby="privacy-practices-title">
+@@ -135,8 +135,8 @@ export default function PrivacyPage() {
+         <article>
+           <h2>HOMESENSE899 preferences</h2>
+           <p>The adults-only screen checks a self-reported date of birth in the browser. After opening the talk, visitors can choose to share their country of residence and preferred language for translation planning.</p>
+-          <p>OpenAI Sites and Cloudflare process the submission. The application keeps separate country and language totals while the planning feature is active. An individual contribution cannot be retrieved or withdrawn once it enters the totals. A random submission key is kept in page memory for retries. The application keeps its digest and a separate random transaction value for a 24-hour retry window, plus a shared hourly count to limit abuse. Expired records are removed on the next valid submission or scheduled maintenance, if configured.</p>
+-          <p>Earlier optional comments may remain in storage awaiting cleanup. Only the owner’s review can display those comments before their original expiry. To request removal, email <a href="mailto:support@akashicnet.org">support@akashicnet.org</a> with enough information to identify the comment. Hosting and security operations are described above.</p>
++          <p>OpenAI Sites and Cloudflare process the submission. Sharing preferences is voluntary and based on your consent under Article 6(1)(a) GDPR. The application keeps separate country and language totals while the planning feature is active. The need for these totals is reviewed annually and they are deleted when translation planning ends. An individual contribution cannot be retrieved or withdrawn once it enters the totals. A random submission key is kept in page memory for retries. The application keeps its digest and a separate random transaction value for a 24-hour retry window, plus a shared hourly count to limit abuse. Short-lived retry and abuse controls support reliable delivery and protection from misuse under Article 6(1)(f) GDPR. Expired records are removed on the next valid submission or scheduled maintenance, if configured. A scheduled handler is not a guarantee of scheduled deletion: until an active schedule and successful runs are verified, records can remain stored after expiry while the site is idle.</p>
++          <p>New comments are no longer accepted by this feature. Earlier optional comments have their original 30-day expiry and may remain in storage awaiting cleanup. Only the owner’s review can display those comments before their original expiry. To request removal, email <a href="mailto:support@akashicnet.org">support@akashicnet.org</a> with enough information to identify the comment. Hosting and security operations are described above.</p>
+         </article>
+       </section>
+ 
+diff --git a/docs/homesense899-preference-operations.md b/docs/homesense899-preference-operations.md
+new file mode 100644
+index 00000000..93f34144
+--- /dev/null
++++ b/docs/homesense899-preference-operations.md
+@@ -0,0 +1,106 @@
++# HOMESENSE899 Preference Fixes · Activation and Verification
++
++Prepared 19 November 2026 against Sites version 1923, source
++`5816499f243bff493632d5966efe3e8c8e4991e3`.
++PR #420 is historical and must not be reapplied over this implementation.
++
++## Scope
++
++This patch keeps the existing tables, aggregate totals and unexpired legacy
++comments. It adds no new visitor identifiers, comment collection or public
++report. Production deployment, cleanup execution and access changes are not
++part of this preparation. The tests use only disposable local SQLite storage.
++
++## Implemented
++
++- Explicit optionality and a Continue Without Sharing action. Skipping clears
++  unsent choices and focuses the talk heading. Loading the video is separate.
++- Retry-After cooldowns. A definite first rejection permits editing. An
++  ambiguous response freezes and reuses the original key and payload, even if
++  a later attempt is rejected. Retries stop after 23 hours, before the server's
++  24-hour receipt lifetime. No key or choice is persisted in browser storage.
++- Preference report access requires both a non-empty Sites user ID and the
++  existing configured owner email. No editor or extra account receives access.
++  GET remains read-only and filters expired comments; DELETE remains owner-only
++  and same-origin. Responses use private/no-store, identity Vary and nosniff.
++- Scheduled maintenance emits success/failure events containing only event
++  name, outcome and UTC time. Failure rejects the scheduled task. Cleanup
++  removes only expired comments/receipts and old shared quota rows; aggregate
++  totals and unexpired comments are preserved.
++- The Cloudflare build configuration requests `17 * * * *` (hourly, minute 17
++  UTC). This is a requested trigger, not evidence that Sites installs one.
++- The notice is dated 19 November, distinguishes optional sharing consent from
++  operational safeguards, describes retired comments and states the idle-time
++  retention limitation. Aggregate necessity is reviewed annually and totals
++  deleted when translation planning ends.
++
++## Deployment Gate: Still Pending
++
++Do not publish this patch as part of the audit preparation. Obtain an explicit
++deployment request, refresh the authoritative Site source, then merge this
++bounded change into any newer source. Preserve the current audience, owner
++configuration, records and bindings. Do not deploy from the old review PR.
++
++### Idle-Time Retention
++
++Before claiming scheduled physical deletion:
++
++1. Confirm that the deployed Sites runtime supports and installs the hourly
++   trigger emitted by the Cloudflare build. If it does not, use a supported
++   hosted scheduler and authenticated writer, retaining the owner boundary.
++   Do not create a public or unauthenticated purge route as a workaround.
++2. Run the scheduled entry point in isolated staging with expired and
++   unexpired synthetic comments, receipts and quota rows. Verify that expired
++   rows are gone and unexpired rows and totals are unchanged.
++3. Inspect a successful independently triggered run while no page is open.
++   Configure operational alerting on any failed event and on absence of a
++   success event for two hours. Do not send visitor content to alerts.
++4. Only then replace the conditional notice with the verified schedule and
++   actual deletion bound (expiry plus at most the interval to the next
++   successful run). Explain separately what happens during outages and in
++   provider backups. Do not promise deletion from backups without evidence.
++
++### Identity Boundary
++
++Sites provides signed-in identity via `oai-authenticated-user-id` and
++`oai-authenticated-user-email`. The app relies on dispatch to supply trusted
++values. This code adds a second required identity field but cannot validate
++header provenance itself. Do not change the shared Filofax authorisation helper
++or pin an invented user ID.
++
++In staging, verify anonymous and non-owner requests receive 403, the owner can
++read the report and only the owner can delete a synthetic comment with a
++matching Origin. Verify a caller-supplied identity header cannot impersonate
++the owner through every exposed origin. If stripping cannot be established,
++do not enable the report until a supported verified-identity boundary is used.
++Avoid requesting the production report merely to test this change.
++
++### Edge Abuse Controls
++
++The application still has its atomic shared hourly limit (default 60) and
++24-hour receipt deduplication. They limit growth and duplicate retries; they do
++not establish unique people or stop one caller consuming the entire quota.
++
++Deployment owner action: configure a supported Cloudflare edge rate-limit or
++managed challenge for POST `/api/homesense899/preferences`, retaining the
++shared application bound. Start with a staged rule limiting one source to
++five submission attempts per minute, assess false positives for shared
++networks, then select enforcement. Do not persist IPs in preference tables.
++Check provider processing/retention and update disclosures where needed.
++No edge rule or challenge service was activated by this patch.
++
++### Privacy Operations
++
++Record the deployment date of the revised notice, review aggregate necessity
++annually and remove totals when the translation-planning feature ends. Preserve
++the warning that individual aggregate contributions cannot be retrieved or
++withdrawn. Keep any approved aggregate disclosure sufficiently coarse to
++avoid exposing rare categories. Individual comments never enter public output.
++
++## Local Validation
++
++Run `node --test tests/homesense899-preferences.test.mjs tests/homesense899-sharing.test.mjs`.
++These tests simulate D1 transactions using SQLite. They do not prove production
++migrations, distributed concurrency, gateway header stripping, active triggers,
++alert delivery or edge enforcement. Production records must not be used as
++fixtures. No database migration is required by this patch.
+diff --git a/lib/site-search.generated.ts b/lib/site-search.generated.ts
+index 67830e4d..afa9718b 100644
+--- a/lib/site-search.generated.ts
++++ b/lib/site-search.generated.ts
+@@ -1732,7 +1732,7 @@ export const siteSearchIndex = [
+     "href": "/privacy",
+     "title": "Privacy — AkashicNET",
+     "description": "How AkashicNET handles visits, analytics, external media, support links and contact.",
+-    "text": "Privacy notice · Public beta Clear boundaries. Minimal collection. AkashicNET is designed as a public knowledge space, not a system for profiling visitors. This notice describes the data pathways used to deliver the site, measure aggregate traffic, load optional media and answer email and contact-form enquiries. Last updated 17 November 2026 Current practice What happens when you visit Language preferences and translation The language selector, automatic language switching and Google Translate links are temporarily switched off. Existing translated pages remain available through their direct addresses. Previously saved language preferences may remain on this device for up to 180 days from selection, but are not used while switching is paused. No Google translation script loads on AkashicNET. TSC2026 Field Notes The optional Field Notes tool stores saved notes and an unfinished draft in this browser’s local storage on the device. The tool has no account sync or notes upload endpoint. JSON backups are read and merged locally when you choose to restore them. Clearing browser data or storage eviction can remove notes; exported files are saved wherever you choose. Use a private device and export a backup regularly. My TSC Day The optional personal session shortlist is stored in this browser’s local storage. It has no account sync or upload endpoint and can be lost if browser data is cleared. It is separate from Field Notes and the organisers’ official programme. Controller contact AkashicNET public portal The project is operated from Munich, Germany. Privacy enquiries, objections and rights requests can be sent to support@akashicnet.org . Operator details and the service address are available in the Impressum Legal bases Purpose before processing Site delivery, security, limited aggregate measurement and correspondence are processed for legitimate interests under Article 6(1)(f) GDPR. Pre-contract enquiries may rely on Article 6(1)(b), and legal retention duties on Article 6(1)(c). Optional external players load only after your action, based on consent under Article 6(1)(a) GDPR and section 25(1) TDDDG where applicable. Services and recipients Who may receive technical data Site delivery: OpenAI Sites and Cloudflare infrastructure deliver and protect the public portal. Public media files may also be delivered from AkashicNET&apos;s GitHub-hosted media origin. Direct email: Messages sent to support@akashicnet.org are received and stored through Apple iCloud Mail. They are separate from contact-form submissions and are retained only while the enquiry is handled or where legal, accounting, security or dispute records require longer retention. Optional media: YouTube/Google, SoundCloud, Apple Podcasts or Mixcloud receive a request only after you activate their player. Their own privacy terms then apply. External support: Buy Me a Coffee is an independent destination. AkashicNET does not receive payment-card details from the public website. International processing: Some providers operate outside Germany or the EEA. Transfers are governed by the provider&apos;s applicable contractual and statutory safeguards. Visitors may use ordinary external links instead of loading an embedded player. Contact messages The contact form asks for your email address and message; name and subject are optional. The TSC2026 Commons question form uses the same protected inbox, with a fixed subject and no name field. These messages are used to handle your enquiry, not for marketing or automatic publication. A short anonymous excerpt appears in the Commons gallery only if you separately approve its exact proposed wording and AkashicNET reviews it. You can ask us to remove it through the contact address below. No phone number or attachment is requested. A translation request includes the public page path, requested language and any optional notes. A contact email and acknowledgement of the dated single-page guidance are required; anonymous translation requests are out of scope. Acknowledgement is stored with the request. The email is not verified by submission: confirmation by reply and separate acceptance of a fully disclosed quote are required before work begins. The same purpose and seven-day request retention rules apply; any later quote or agreement will explain its separate retention terms before acceptance. OpenAI Sites and Cloudflare infrastructure process the submission and store it in a protected AkashicNET owner inbox. An owner-authorised OpenAI assistant checks this inbox to prepare a daily review digest. The digest is sent through Google Gmail to the owner’s support mailbox and contains counts and review links, not message contents, names or sender addresses. Minimal application storage The application stores the submitted email address, optional name and subject, message, submission time and a seven-day expiry time. Expired messages are removed when the owner inbox is next opened or another contact form is submitted; they may remain in storage between expiry and that cleanup. It does not intentionally store the visitor’s IP address or log message content. A shared hourly submission counter controls abuse without identifying individual visitors. The owner may mark a message addressed or reopen it. This stores the message identifier and addressed time without extending its expiry. This inbox is access-controlled, not an end-to-end encrypted messaging service. Unsent text stays in the open page and is not saved to browser storage. If delivery cannot be confirmed, it remains in the form for you to retry or copy. Please avoid sending sensitive personal information. HOMESENSE899 preferences The adults-only screen checks a self-reported date of birth in the browser. After opening the talk, visitors can choose to share their country of residence and preferred language for translation planning. OpenAI Sites and Cloudflare process the submission. The application keeps separate country and language totals while the planning feature is active. An individual contribution cannot be retrieved or withdrawn once it enters the totals. A random submission key is kept in page memory for retries. The application keeps its digest and a separate random transaction value for a 24-hour retry window, plus a shared hourly count to limit abuse. Expired records are removed on the next valid submission or scheduled maintenance, if configured. Earlier optional comments may remain in storage awaiting cleanup. Only the owner’s rev"
++    "text": "Privacy notice · Public beta Clear boundaries. Minimal collection. AkashicNET is designed as a public knowledge space, not a system for profiling visitors. This notice describes the data pathways used to deliver the site, measure aggregate traffic, load optional media and answer email and contact-form enquiries. Last updated 19 November 2026 Current practice What happens when you visit Language preferences and translation The language selector, automatic language switching and Google Translate links are temporarily switched off. Existing translated pages remain available through their direct addresses. Previously saved language preferences may remain on this device for up to 180 days from selection, but are not used while switching is paused. No Google translation script loads on AkashicNET. TSC2026 Field Notes The optional Field Notes tool stores saved notes and an unfinished draft in this browser’s local storage on the device. The tool has no account sync or notes upload endpoint. JSON backups are read and merged locally when you choose to restore them. Clearing browser data or storage eviction can remove notes; exported files are saved wherever you choose. Use a private device and export a backup regularly. My TSC Day The optional personal session shortlist is stored in this browser’s local storage. It has no account sync or upload endpoint and can be lost if browser data is cleared. It is separate from Field Notes and the organisers’ official programme. Controller contact AkashicNET public portal The project is operated from Munich, Germany. Privacy enquiries, objections and rights requests can be sent to support@akashicnet.org . Operator details and the service address are available in the Impressum Legal bases Purpose before processing Site delivery, security, limited aggregate measurement and correspondence are processed for legitimate interests under Article 6(1)(f) GDPR. Pre-contract enquiries may rely on Article 6(1)(b), and legal retention duties on Article 6(1)(c). Optional external players load only after your action, based on consent under Article 6(1)(a) GDPR and section 25(1) TDDDG where applicable. Services and recipients Who may receive technical data Site delivery: OpenAI Sites and Cloudflare infrastructure deliver and protect the public portal. Public media files may also be delivered from AkashicNET&apos;s GitHub-hosted media origin. Direct email: Messages sent to support@akashicnet.org are received and stored through Apple iCloud Mail. They are separate from contact-form submissions and are retained only while the enquiry is handled or where legal, accounting, security or dispute records require longer retention. Optional media: YouTube/Google, SoundCloud, Apple Podcasts or Mixcloud receive a request only after you activate their player. Their own privacy terms then apply. External support: Buy Me a Coffee is an independent destination. AkashicNET does not receive payment-card details from the public website. International processing: Some providers operate outside Germany or the EEA. Transfers are governed by the provider&apos;s applicable contractual and statutory safeguards. Visitors may use ordinary external links instead of loading an embedded player. Contact messages The contact form asks for your email address and message; name and subject are optional. The TSC2026 Commons question form uses the same protected inbox, with a fixed subject and no name field. These messages are used to handle your enquiry, not for marketing or automatic publication. A short anonymous excerpt appears in the Commons gallery only if you separately approve its exact proposed wording and AkashicNET reviews it. You can ask us to remove it through the contact address below. No phone number or attachment is requested. A translation request includes the public page path, requested language and any optional notes. A contact email and acknowledgement of the dated single-page guidance are required; anonymous translation requests are out of scope. Acknowledgement is stored with the request. The email is not verified by submission: confirmation by reply and separate acceptance of a fully disclosed quote are required before work begins. The same purpose and seven-day request retention rules apply; any later quote or agreement will explain its separate retention terms before acceptance. OpenAI Sites and Cloudflare infrastructure process the submission and store it in a protected AkashicNET owner inbox. An owner-authorised OpenAI assistant checks this inbox to prepare a daily review digest. The digest is sent through Google Gmail to the owner’s support mailbox and contains counts and review links, not message contents, names or sender addresses. Minimal application storage The application stores the submitted email address, optional name and subject, message, submission time and a seven-day expiry time. Expired messages are removed when the owner inbox is next opened or another contact form is submitted; they may remain in storage between expiry and that cleanup. It does not intentionally store the visitor’s IP address or log message content. A shared hourly submission counter controls abuse without identifying individual visitors. The owner may mark a message addressed or reopen it. This stores the message identifier and addressed time without extending its expiry. This inbox is access-controlled, not an end-to-end encrypted messaging service. Unsent text stays in the open page and is not saved to browser storage. If delivery cannot be confirmed, it remains in the form for you to retry or copy. Please avoid sending sensitive personal information. HOMESENSE899 preferences The adults-only screen checks a self-reported date of birth in the browser. After opening the talk, visitors can choose to share their country of residence and preferred language for translation planning. OpenAI Sites and Cloudflare process the submission. Sharing preferences is voluntary and based on your consent under Article 6(1)(a) GDPR. The application keeps separate country and language totals while the planning feature is active. The need for these totals is reviewed annually and they are deleted when translation planning ends. An individual contribution cannot be retrieved or withdrawn once it enters the totals. A random submission key is kept in page memory for retries. The application keeps its digest and a separate random transaction value for a 24-hour retry window, plus a shared hourly count to limit abus"
+   },
+   {
+     "href": "/project-paradice",
+diff --git a/public/scripts/homesense899-age-gate.js b/public/scripts/homesense899-age-gate.js
+index cf7be4ab..0274605f 100644
+--- a/public/scripts/homesense899-age-gate.js
++++ b/public/scripts/homesense899-age-gate.js
+@@ -8,64 +8,13 @@ function localDateParts(now) {
+   return [now.getFullYear(), now.getMonth() + 1, now.getDate()];
+ }
+ 
+-function addOptions(select, codes, type) {
+-  const names = typeof Intl.DisplayNames === "function" ? new Intl.DisplayNames(["en"], { type }) : null;
+-  const labels = codes.map(code => [code, code === "other" ? "Other" : names?.of(code) ?? code]);
+-  labels.sort((a, b) => a[1].localeCompare(b[1], "en"));
+-  for (const [code, label] of labels) select.add(new Option(label, code));
+-}
+-
+ async function prepareSharing() {
+   if (typeof globalThis.crypto?.randomUUID !== "function") return;
+-  const { countries, languages } = await import("./homesense899-preference-options.mjs");
+-  const residence = shareForm.querySelector("[data-residence]");
+-  const language = shareForm.querySelector("[data-preferred-language]");
+-  const status = shareForm.querySelector('[role="status"]');
+-  const submit = shareForm.querySelector("button");
+-  addOptions(residence, countries, "region");
+-  addOptions(language, languages, "language");
+-
+-  let payload;
+-  let firstAttempt;
+-  shareForm.addEventListener("submit", async event => {
+-    event.preventDefault();
+-    if (submit.disabled || !shareForm.reportValidity()) return;
+-    firstAttempt ??= Date.now();
+-    if (Date.now() - firstAttempt >= 24 * 60 * 60 * 1000) {
+-      status.textContent = "The retry window has closed. Your first submission may have been recorded.";
+-      submit.disabled = true;
+-      return;
+-    }
+-    payload ??= { adult: true, consent: true, country: residence.value, language: language.value, submissionId: crypto.randomUUID() };
+-    residence.disabled = true;
+-    language.disabled = true;
+-    submit.disabled = true;
+-    status.textContent = "Saving your preferences…";
+-    try {
+-      const response = await fetch("/api/homesense899/preferences", {
+-        method: "POST",
+-        credentials: "omit",
+-        headers: { "Content-Type": "application/json" },
+-        body: JSON.stringify(payload),
+-        signal: AbortSignal.timeout(8000),
+-      });
+-      if (response.status === 204) {
+-        status.textContent = "Your preferences were recorded.";
+-        submit.hidden = true;
+-        return;
+-      }
+-      if (response.status === 429) {
+-        status.textContent = "The form has reached its hourly limit. You can try sharing again in the next hour.";
+-      } else {
+-        status.textContent = "We could not confirm recording your preferences. You can try again.";
+-      }
+-    } catch {
+-      status.textContent = "We could not confirm recording your preferences. You can try again.";
+-    }
+-    submit.textContent = "Retry Sharing Preferences";
+-    submit.disabled = false;
+-  });
+-  shareForm.hidden = false;
++  const [{ countries, languages }, { setupPreferenceSharing }] = await Promise.all([
++    import("./homesense899-preference-options.mjs"),
++    import("./homesense899-sharing.mjs"),
++  ]);
++  setupPreferenceSharing(shareForm, countries, languages);
+ }
+ 
+ birthDate.max = localDateParts(new Date()).map(part => String(part).padStart(2, "0")).join("-");
+diff --git a/public/scripts/homesense899-sharing.mjs b/public/scripts/homesense899-sharing.mjs
+new file mode 100644
+index 00000000..210ada04
+--- /dev/null
++++ b/public/scripts/homesense899-sharing.mjs
+@@ -0,0 +1,89 @@
++const retryWindow = 23 * 60 * 60 * 1000;
++const retryExplanation = " Retry uses your original choices because the first request may have succeeded.";
++
++function addOptions(select, codes, type) {
++  const names = typeof Intl.DisplayNames === "function" ? new Intl.DisplayNames(["en"], { type }) : null;
++  const labels = codes.map(code => [code, code === "other" ? "Other" : names?.of(code) ?? code]);
++  labels.sort((a, b) => a[1].localeCompare(b[1], "en"));
++  for (const [code, label] of labels) select.add(new Option(label, code));
++}
++
++export function setupPreferenceSharing(form, countries, languages) {
++  const residence = form.querySelector("[data-residence]");
++  const language = form.querySelector("[data-preferred-language]");
++  const status = form.querySelector('[role="status"]');
++  const submit = form.querySelector('[type="submit"]');
++  const dismiss = form.querySelector("[data-dismiss-preferences]");
++  addOptions(residence, countries, "region");
++  addOptions(language, languages, "language");
++
++  let payload;
++  let firstAttempt;
++  let uncertain = false;
++  let retryAt = 0;
++  const editable = () => { residence.disabled = false; language.disabled = false; };
++  dismiss.addEventListener("click", () => {
++    if (submit.disabled && !submit.hidden) return;
++    form.reset();
++    form.hidden = true;
++    document.querySelector("#intimacy-talk h3").focus();
++  });
++  form.addEventListener("submit", async event => {
++    event.preventDefault();
++    if (submit.disabled || !form.reportValidity()) return;
++    const now = Date.now();
++    if (now < retryAt) {
++      status.textContent = `Please retry after ${new Date(retryAt).toLocaleTimeString()}.` + (uncertain ? retryExplanation : " Your choices have not been added by this attempt.");
++      return;
++    }
++    firstAttempt ??= now;
++    if (now - firstAttempt >= retryWindow) {
++      status.textContent = "The safe retry window has closed. Your first submission may have been recorded. You can continue watching without sharing again.";
++      submit.hidden = true;
++      return;
++    }
++    payload ??= { adult: true, consent: true, country: residence.value, language: language.value, submissionId: crypto.randomUUID() };
++    residence.disabled = true;
++    language.disabled = true;
++    submit.disabled = true;
++    dismiss.disabled = true;
++    status.textContent = "Saving your preferences…";
++    try {
++      const response = await fetch("/api/homesense899/preferences", {
++        method: "POST", credentials: "omit", headers: { "Content-Type": "application/json" },
++        body: JSON.stringify(payload), signal: AbortSignal.timeout(8000),
++      });
++      if (response.status === 204) {
++        status.textContent = "Your preferences were recorded. You can continue watching.";
++        submit.hidden = true;
++        dismiss.textContent = "Continue to the Talk";
++        return;
++      }
++      // A rejection only proves this attempt did not write. It cannot settle an earlier timeout.
++      if ([400, 413, 415, 429].includes(response.status) && !uncertain) {
++        payload = undefined;
++        firstAttempt = undefined;
++        editable();
++      }
++      if (response.status === 429) {
++        const seconds = Number(response.headers.get("Retry-After"));
++        retryAt = Date.now() + (Number.isFinite(seconds) && seconds > 0 ? seconds : 3600) * 1000;
++        status.textContent = `The form has reached its hourly limit. Retry after ${new Date(retryAt).toLocaleTimeString()}.` + (uncertain ? retryExplanation : " Your choices have not been added by this attempt.");
++      } else if ([400, 413, 415].includes(response.status) && !uncertain) {
++        status.textContent = "These preferences were not recorded. Check your choices and try again.";
++      } else {
++        uncertain = true;
++        status.textContent = "We could not confirm recording your preferences." + retryExplanation;
++      }
++    } catch {
++      uncertain = true;
++      status.textContent = "We could not confirm recording your preferences." + retryExplanation;
++    } finally {
++      submit.disabled = false;
++      dismiss.disabled = false;
++      if (uncertain) dismiss.textContent = "Continue to the Talk";
++    }
++    submit.textContent = uncertain ? "Retry Original Preferences" : "Share Preferences";
++  });
++  form.hidden = false;
++}
+diff --git a/tests/homesense899-preferences.test.mjs b/tests/homesense899-preferences.test.mjs
+index a20919a7..920565d4 100644
+--- a/tests/homesense899-preferences.test.mjs
++++ b/tests/homesense899-preferences.test.mjs
+@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
+ import { DatabaseSync } from 'node:sqlite';
+ import test from 'node:test';
+ import { runInNewContext } from 'node:vm';
+-import { homesense899Preferences, purgeHomesense899Preferences } from '../worker/homesense899-preferences.mjs';
++import { homesense899Preferences, purgeHomesense899Preferences, maintainHomesense899Preferences } from '../worker/homesense899-preferences.mjs';
+ 
+ const origin = 'https://preference-test.example';
+ const submit = '/api/homesense899/preferences';
+@@ -49,8 +49,8 @@ function createFixture(t, limit = '2') {
+   const env = { DB: db, HOMESENSE899_HOURLY_LIMIT: limit, BOOK_SANDBOX_OWNER_EMAIL: owner, DUNE_ALLOWED_EMAILS: 'editor@example.test' };
+   const invoke = (path, method, headers = {}, body) => homesense899Preferences(new Request(origin + path, { method, headers, body }), env);
+   const post = (body = payload, headers = {}) => invoke(submit, 'POST', { Origin: origin, 'Content-Type': 'application/json', ...headers }, JSON.stringify(body));
+-  const get = (email = owner) => invoke(inbox, 'GET', email ? { 'oai-authenticated-user-email': email } : {});
+-  const remove = (id, expectedOrigin = origin) => invoke(`${inbox}?comment=${id}`, 'DELETE', { 'oai-authenticated-user-email': owner, Origin: expectedOrigin });
++  const get = (email = owner) => invoke(inbox, 'GET', email ? { 'oai-authenticated-user-email': email, 'oai-authenticated-user-id': 'verified-test-owner-id' } : {});
++  const remove = (id, expectedOrigin = origin) => invoke(`${inbox}?comment=${id}`, 'DELETE', { 'oai-authenticated-user-email': owner, 'oai-authenticated-user-id': 'verified-test-owner-id', Origin: expectedOrigin });
+   const totals = () => sqlite.prepare('SELECT kind, code, submissions FROM homesense899_preference_totals ORDER BY kind').all().map(row => ({ ...row }));
+   const comments = () => sqlite.prepare('SELECT id, comment, expires_at FROM homesense899_preference_comments ORDER BY id').all().map(row => ({ ...row }));
+   return { db, sqlite, invoke, post, get, remove, totals, comments };
+@@ -188,3 +188,32 @@ test('the local eighteenth birthday opens the talk without loading or sending pr
+   assert.equal(birth.value, '');
+   assert.equal(preferenceForm.hidden, true);
+ });
++
++
++test('owner email alone and non-owner identity cannot read reports', async t => {
++  const api = createFixture(t);
++  assert.equal((await api.invoke(inbox, 'GET', { 'oai-authenticated-user-email': owner })).status, 403);
++  assert.equal((await api.invoke(inbox, 'GET', { 'oai-authenticated-user-email': owner, 'oai-authenticated-user-id': ' ' })).status, 403);
++  assert.equal((await api.get('editor@example.test')).status, 403);
++  assert.equal((await api.get()).status, 200);
++});
++
++test('scheduled maintenance deletes only expired records and emits no visitor content', async t => {
++  const api = createFixture(t);
++  const seconds = Math.floor(Date.now() / 1000);
++  await api.post();
++  api.sqlite.prepare('INSERT INTO homesense899_preference_comments (comment, expires_at) VALUES (?, ?)').run('private sentinel', seconds);
++  api.sqlite.prepare('INSERT INTO homesense899_preference_comments (comment, expires_at) VALUES (?, ?)').run('retained sentinel', seconds + 3600);
++  const logged = [];
++  t.mock.method(console, 'info', event => logged.push(JSON.parse(event)));
++  const failures = [];
++  t.mock.method(console, 'error', event => failures.push(JSON.parse(event)));
++  await maintainHomesense899Preferences({ DB: api.db });
++  assert.deepEqual(api.comments().map(row => row.comment), ['retained sentinel']);
++  assert.deepEqual(api.totals().map(row => row.submissions), [1, 1]);
++  assert.deepEqual(Object.keys(logged[0]).sort(), ['at', 'event', 'outcome']);
++  assert.equal(logged[0].outcome, 'succeeded');
++  await assert.rejects(maintainHomesense899Preferences({ DB: { batch: async () => { throw new Error('private database failure'); }, prepare: api.db.prepare } }), /cleanup failed/);
++  assert.equal(failures[0].outcome, 'failed');
++  assert.equal(JSON.stringify(failures).includes('private'), false);
++});
+diff --git a/tests/homesense899-sharing.test.mjs b/tests/homesense899-sharing.test.mjs
+new file mode 100644
+index 00000000..1454978e
+--- /dev/null
++++ b/tests/homesense899-sharing.test.mjs
+@@ -0,0 +1,90 @@
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++import { runInNewContext } from 'node:vm';
++import test from 'node:test';
++
++function sharingFixture(responses) {
++  let now = Date.UTC(2026, 10, 19, 12);
++  let serial = 0;
++  let focused = false;
++  const requests = [];
++  const residence = { value: 'DE', disabled: false, add() {} };
++  const language = { value: 'pa', disabled: false, add() {} };
++  const status = { textContent: '' };
++  const submit = { disabled: false, hidden: false, textContent: 'Share Preferences' };
++  const dismiss = { disabled: false, addEventListener: (_event, fn) => { dismiss.click = fn; } };
++  const form = {
++    hidden: true,
++    querySelector: selector => ({ '[data-residence]': residence, '[data-preferred-language]': language, '[role="status"]': status, '[type="submit"]': submit, '[data-dismiss-preferences]': dismiss })[selector],
++    reportValidity: () => true,
++    reset: () => { residence.value = ''; language.value = ''; },
++    addEventListener: (_event, fn) => { form.send = () => fn({ preventDefault() {} }); },
++  };
++  class Clock extends Date { static now() { return now; } }
++  const source = readFileSync(new URL('../public/scripts/homesense899-sharing.mjs', import.meta.url), 'utf8').replace('export function setupPreferenceSharing', 'function setupPreferenceSharing');
++  const setup = runInNewContext(source + '\nsetupPreferenceSharing;', {
++    Date: Clock, Intl, Option: class {}, AbortSignal,
++    document: { querySelector: () => ({ focus: () => { focused = true; } }) },
++    crypto: { randomUUID: () => `key-${++serial}` },
++    fetch: async (_url, request) => {
++      requests.push(JSON.parse(request.body));
++      const next = responses.shift();
++      if (next instanceof Error) throw next;
++      return new Response(null, { status: next.status, headers: next.headers });
++    },
++  });
++  setup(form, ['DE', 'GB'], ['pa', 'en']);
++  return { form, residence, language, submit, dismiss, status, requests, advance: ms => { now += ms; }, focused: () => focused };
++}
++
++test('ambiguous retries preserve the same key and payload even after a later rejection', async () => {
++  const ui = sharingFixture([new Error('timeout'), { status: 400 }, { status: 204 }]);
++  await ui.form.send();
++  assert.match(ui.status.textContent, /original choices/);
++  assert.equal(ui.residence.disabled, true);
++  ui.residence.value = 'GB';
++  await ui.form.send();
++  assert.equal(ui.residence.disabled, true);
++  await ui.form.send();
++  assert.deepEqual(ui.requests[0], ui.requests[1]);
++  assert.deepEqual(ui.requests[1], ui.requests[2]);
++  assert.equal(ui.requests[2].country, 'DE');
++  assert.equal(ui.submit.hidden, true);
++  assert.equal(ui.dismiss.disabled, false);
++  assert.equal(ui.dismiss.textContent, 'Continue to the Talk');
++});
++
++test('definitive quota rejection honours Retry-After and allows correction', async () => {
++  const ui = sharingFixture([{ status: 429, headers: { 'Retry-After': '60' } }, { status: 204 }]);
++  await ui.form.send();
++  assert.equal(ui.residence.disabled, false);
++  assert.match(ui.status.textContent, /not been added/);
++  ui.residence.value = 'GB';
++  await ui.form.send();
++  assert.equal(ui.requests.length, 1);
++  ui.advance(60000);
++  await ui.form.send();
++  assert.equal(ui.requests.length, 2);
++  assert.equal(ui.requests[1].country, 'GB');
++  assert.notEqual(ui.requests[0].submissionId, ui.requests[1].submissionId);
++});
++
++test('safe retry deadline stops an ambiguous request before server receipt expiry', async () => {
++  const ui = sharingFixture([new Error('timeout')]);
++  await ui.form.send();
++  ui.advance(23 * 60 * 60 * 1000);
++  await ui.form.send();
++  assert.equal(ui.requests.length, 1);
++  assert.equal(ui.submit.hidden, true);
++  assert.match(ui.status.textContent, /safe retry window has closed/);
++});
++
++test('skipping clears unsent fields, returns focus and makes no request', () => {
++  const ui = sharingFixture([]);
++  ui.dismiss.click();
++  assert.equal(ui.form.hidden, true);
++  assert.equal(ui.residence.value, '');
++  assert.equal(ui.language.value, '');
++  assert.equal(ui.focused(), true);
++  assert.equal(ui.requests.length, 0);
++});
+diff --git a/vite.config.ts b/vite.config.ts
+index bd2f2505..08718a97 100644
+--- a/vite.config.ts
++++ b/vite.config.ts
+@@ -13,6 +13,9 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
+ 
+ const localBindingConfig = {
+   main: "./worker/index.ts",
++  // Requested hourly cleanup. Deployment must confirm that Sites installs this
++  // Worker trigger; the handler alone does not establish an active schedule.
++  triggers: { crons: ["17 * * * *"] },
+   assets: { binding: "ASSETS" },
+   compatibility_flags: ["nodejs_compat"],
+   d1_databases: d1
+diff --git a/worker/homesense899-preferences.mjs b/worker/homesense899-preferences.mjs
+index 2685e36e..f8c57ce8 100644
+--- a/worker/homesense899-preferences.mjs
++++ b/worker/homesense899-preferences.mjs
+@@ -3,7 +3,7 @@ import { filofaxOwner } from "./filofax.mjs";
+ 
+ const submitPath = "/api/homesense899/preferences";
+ const reportPath = "/contact-inbox/homesense899-preferences";
+-const headers = { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" };
++const headers = { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow", "Vary": "oai-authenticated-user-id, oai-authenticated-user-email", "X-Content-Type-Options": "nosniff" };
+ const hourSeconds = 3600;
+ const receiptLifetime = 24 * hourSeconds;
+ export const defaultHourlyLimit = 60;
+@@ -28,8 +28,24 @@ export async function purgeHomesense899Preferences(db, now = Math.floor(Date.now
+   await db.batch(purgeStatements(db, now));
+ }
+ 
++// These identity headers must come from Sites dispatch, never a direct public Worker origin.
++function preferenceOwner(request, env) {
++  return Boolean(request.headers.get("oai-authenticated-user-id")?.trim()) && filofaxOwner(request, env);
++}
++
++export async function maintainHomesense899Preferences(env) {
++  try {
++    await purgeHomesense899Preferences(env.DB);
++    // Operational events only: no visitor fields, comments, headers or database results.
++    console.info(JSON.stringify({ event: "homesense899-cleanup", outcome: "succeeded", at: new Date().toISOString() }));
++  } catch {
++    console.error(JSON.stringify({ event: "homesense899-cleanup", outcome: "failed", at: new Date().toISOString() }));
++    throw new Error("HOMESENSE899 cleanup failed");
++  }
++}
++
+ async function ownerReport(request, env, url, now) {
+-  if (!filofaxOwner(request, env)) return new Response(null, { status: 403, headers });
++  if (!preferenceOwner(request, env)) return new Response(null, { status: 403, headers });
+   try {
+     if (request.method === "GET") {
+       const [totals, comments] = await env.DB.batch([
+diff --git a/worker/index.ts b/worker/index.ts
+index 65da9070..4ccbb613 100644
+--- a/worker/index.ts
++++ b/worker/index.ts
+@@ -16,7 +16,7 @@ import { livingRoomProposal } from "./living-room-proposal.mjs";
+ import { filofaxApi, filofaxGate, filofaxOwner } from "./filofax.mjs";
+ import { bookSandbox } from "./book-sandbox.mjs";
+ import { contactForm } from "./contact-form.mjs";
+-import { homesense899Preferences, purgeHomesense899Preferences } from "./homesense899-preferences.mjs";
++import { homesense899Preferences, maintainHomesense899Preferences } from "./homesense899-preferences.mjs";
+ import { mediaStorage, imageSource } from "./media-storage.mjs";
+ import { packedDataExport } from "./packed-data-export.mjs";
+ import quarterlyPdfData from "./quarterly-pdf-data.json";
+@@ -168,7 +168,7 @@ function withSecurityHeaders(response: Response): Response {
+ 
+ const worker = {
+   async scheduled(_controller: unknown, env: Env, ctx: ExecutionContext): Promise<void> {
+-    ctx.waitUntil(purgeHomesense899Preferences(env.DB));
++    ctx.waitUntil(maintainHomesense899Preferences(env));
+   },
+ 
+   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+diff --git a/worker/public-pages/homesense899-happy-ending.html b/worker/public-pages/homesense899-happy-ending.html
+index 257f8bd9..206d289b 100644
+--- a/worker/public-pages/homesense899-happy-ending.html
++++ b/worker/public-pages/homesense899-happy-ending.html
+@@ -69,13 +69,15 @@ figcaption{font-size:.89rem;margin:.38rem 0}
+ <noscript><p>Enable JavaScript to use the adults-only screen.</p></noscript>
+ </form>
+ <form id="intimacy-preferences" aria-describedby="intimacy-sharing" autocomplete="off" hidden>
++<p><strong>Optional — you can watch without completing this form.</strong></p>
+ <p id="intimacy-sharing" class="muted">You can share your country of residence and preferred language to help AkashicNET plan translations. Each choice goes into a separate running total. The totals count submissions. Individual choices cannot be retrieved after they are added.</p>
+ <div class="adult-fields">
+-<label>Country of Residence <select data-residence required><option value="">Select a country</option></select></label>
+-<label>Preferred Language <select data-preferred-language required><option value="">Select a language</option></select></label>
++<label>Country of Residence <select data-residence required aria-describedby="intimacy-preference-status"><option value="">Select a country</option></select></label>
++<label>Preferred Language <select data-preferred-language required aria-describedby="intimacy-preference-status"><option value="">Select a language</option></select></label>
+ </div>
+ <button type="submit">Share Preferences</button>
+-<p role="status"></p>
++<button type="button" data-dismiss-preferences>Continue Without Sharing</button>
++<p id="intimacy-preference-status" role="status" aria-atomic="true"></p>
+ <p><a href="/privacy#homesense899-preferences">Privacy and Data Requests</a> · <a href="mailto:support@akashicnet.org?subject=HOMESENSE899%20preference%20totals">Request Summary Totals by Email</a></p>
+ </form>
+ <article id="intimacy-talk" hidden>
