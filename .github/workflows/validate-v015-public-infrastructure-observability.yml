@@ -6,6 +6,7 @@ on:
       - 'references/community/public-infrastructure-observability-v0.15.json'
       - 'references/community/public-status-v0.14.json'
       - 'scripts/validate_public_infrastructure_observability_v015.py'
+      - 'tests/test_public_infrastructure_observability.py'
       - '.github/workflows/validate-v015-public-infrastructure-observability.yml'
   push:
     branches: [main]
@@ -13,6 +14,7 @@ on:
       - 'references/community/public-infrastructure-observability-v0.15.json'
       - 'references/community/public-status-v0.14.json'
       - 'scripts/validate_public_infrastructure_observability_v015.py'
+      - 'tests/test_public_infrastructure_observability.py'
       - '.github/workflows/validate-v015-public-infrastructure-observability.yml'
   workflow_dispatch:
     inputs:
@@ -34,6 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/validate_public_infrastructure_observability_v015.py
+      - run: python -m unittest discover -s tests -p test_public_infrastructure_observability.py
 
   live:
     if: github.event_name == 'workflow_dispatch' && inputs.live_probe
